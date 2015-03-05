@@ -38,7 +38,7 @@ class JsonDocument():
             yield (subtree, path)
 
 def convert_to_json(path):
-	"""Extract from XML output and write to JSON"""
+    """Extract from XML output and write to JSON"""
     f = open(path, 'r')
     xml = f.read()
     f.close()
