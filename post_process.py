@@ -81,20 +81,20 @@ def convert_to_json(path):
     return {"header" : header_data, "references" : reference_data}
 
 def main():
-	"""Compare model output with ground truth"""
-	json_data = open('data.json')
-	json_data = json.load(json_data)
-	truth = JsonDocument(json_data, '')
+    """Compare model output with ground truth"""
+    json_data = open('data.json')
+    json_data = json.load(json_data)
+    truth = JsonDocument(json_data, '')
 
-	meta_data = convert_to_json('output-grobid/HMM.tei.xml')
-	meta = JsonDocument(meta_data['header'], '')
+    meta_data = convert_to_json('output-grobid/HMM.tei.xml')
+    meta = JsonDocument(meta_data['header'], '')
 
-	for node in truth.dfs():
-		value = node[0] ; path = node[1]
+    for node in truth.dfs():
+        value = node[0] ; path = node[1]
 
-		if value is not None:
-		    sm = difflib.SequenceMatcher(None, value, meta.index(path))
-		    print path, "-", sm.ratio()
+        if value is not None:
+            sm = difflib.SequenceMatcher(None, value, meta.index(path))
+            print path, "-", sm.ratio()
 
 if __name__ == "__main__":
     main()
