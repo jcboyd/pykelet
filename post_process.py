@@ -50,7 +50,6 @@ def convert_to_json(path):
     back = doc.tei.back
 
     # Process header
-
     header_data = {}
     
     header_data['idno'] = header.idno.text if header.idno is not None else None
@@ -58,24 +57,21 @@ def convert_to_json(path):
     header_data['keywords'] = header.keywords.text if header.keywords is not None else None
     header_data['title'] = header.title.text if header.title is not None else None
     header_data['abstract'] = front.p.text if header.p is not None else None
-    header_data['authors'] = [{"forename" : a.forename.text, "surname" : a.surname.text, "orgName" : a.orgname.text}
+    header_data['authors'] = [{"forename" : a.forename.text, "surname" : a.surname.text, "orgName" : a.orgname.text} \
                               for a in header.sourcedesc.biblstruct.analytic.findAll("author")]       
 
     # Process references
-
     reference_data = []
     i = 0
 
     for reference in back.div.listbibl.findAll("biblstruct"):
         reference_data.append({})
-        
         if reference.analytic:
             reference_data[i]["title"] = reference.analytic.title.text
-            reference_data[i]["authors"] = [{"forename" : a.forename.text, "surname" : a.surname.text} 
+            reference_data[i]["authors"] = [{"forename" : a.forename.text, "surname" : a.surname.text} \
                                             for a in reference.analytic.findAll("author")]
         if reference.monogr:
             pass
-        
         i += 1
 
     return {"header" : header_data, "references" : reference_data}
