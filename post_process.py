@@ -21,11 +21,11 @@ class JsonDocument():
             return None
 
     def dfs(self):
-        """Depth first search on json hierarchy."""
+        """Depth first search on JSON hierarchy."""
         return self.__dfs(self.document, self.root)
 
     def __dfs(self, subtree, path):
-        """Depth first search on json hierarchy."""
+        """Depth first search on JSON hierarchy."""
         if isinstance(subtree, list):
             for node in subtree:
                 for child in self.__dfs(node, path + "[" + str(subtree.index(node)) + "]"):
@@ -98,4 +98,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
