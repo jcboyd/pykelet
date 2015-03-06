@@ -90,7 +90,7 @@ def main():
 
         if value is not None:
             sm = difflib.SequenceMatcher(None, value, meta.index(path))
-            print path, "-", sm.ratio()
+            print "%s - %s" % (path, sm.ratio())
 
 if __name__ == "__main__":
     main()
