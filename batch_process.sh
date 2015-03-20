@@ -24,5 +24,5 @@ fi
 
 if [ "$1" = "all" ] || [ "$1" = "tag" ] || [ "$1" = "grobid" ]
 	then
-		java -Xmx1024m -jar grobid/grobid-core/target/grobid-core-0.3.3-SNAPSHOT.one-jar.jar -gH grobid/grobid-home -gP /grobid/grobid-home/config/grobid.properties -dIn input-pdf/ -dOut output-grobid/ -exe processFullText
+		java -Xmx1024m -jar grobid/grobid-home/target/grobid-home-0.3.3-SNAPSHOT.one-jar.jar -gH grobid/grobid-home -gP grobid/grobid-home/config/grobid.properties -dIn input-pdf/ -dOut output-grobid/ -exe processDate
 fi
