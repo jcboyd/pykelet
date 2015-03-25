@@ -2,31 +2,44 @@ import json
 import requests
 import re
 
-def retrieve_training_documents():
-    f1 = open('training/records-core-10k.json')
-    core_records = json.load(f1)
-    f1.close()
+MAX_DOWNLOAD = 1000
 
-    f2 = open('training/records-curated-10k.json')
-    curated_records = json.load(f2)
-    f2.close()
+class DocumentManager():
+	def __init__(self, records, output):
+		self.records = records
+		self.dir = output
 
-    for doc in core_records:
-	try:
-    	    for file_name in doc['filenames']:
-                if re.match('arXiv(.*)\.pdf', a):
-		    break
-	    print 'Downloading'
-	    r = requests.get('arxiv.org/pdf/' + file_name)
-    	    name = doc
-	    with open(output + name + ".pdf", "wb") as output_file:
-		output_file.write("output/" + r.content)
-	except KeyError:
-	    print 'File key not found...'
-	    continue
-	except:
-	    print 'Could not retrieve ' + doc['id']
-	    continue
+	def load_records(self):
+		f = open('training/records-core-10k.json')
+		self.records = json.load(f)
+		f.close()
+
+	def retrieve_training_documents(self):
+		num_downloaded = 0
+
+		for article in self.records:
+			try:
+				for doc in article['filenames']:
+					if re.match(r'arXiv(.*)\.pdf', doc):
+						doc = doc.replace(':', '.org/pdf/').replace('_', '/')
+						print 'Downloading %s...'%(doc)
+						r = requests.get("http://" + doc)
+						if r.status_code != 404:
+							f = open(self.dir + doc.replace("/", "_"), "wb")
+							f.write(r.content)
+							f.close()
+							num_downloaded += 1
+				if num_downloaded == MAX_DOWNLOAD:
+					break
+			except KeyError:
+				print 'Dictionary key not found...'
+				continue
+			except IOError:
+				print 'Output folder not found...'
+				continue
+			except:
+				print 'Could not retrieve document...'
+				continue
 
 if __name__ == "__main__":
 	retrieve_training_documents()
