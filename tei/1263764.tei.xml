@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Discretization Errors for the Gluon and Ghost Propagators in Landau Gauge using NSPT</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date>July 29 – August 3, 2013 8 Nov 2013</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Jakob</forename>
+								<surname>Simeth</surname>
+							</persName>
+							<email>E-mail: jakob.simeth@physik.uni-regensburg.de</email>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">André</forename>
+								<surname>Sternbeck</surname>
+							</persName>
+							<email>E-mail: andre.sternbeck@physik.uni-regensburg.de</email>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Ernst-Michael</forename>
+								<surname>Ilgenfritz</surname>
+							</persName>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Holger</forename>
+								<surname>Perlt</surname>
+							</persName>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Arwed</forename>
+								<surname>Schiller</surname>
+							</persName>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Jakob</forename>
+								<surname>Simeth</surname>
+							</persName>
+						</author>
+						<author>
+							<affiliation>
+								<orgName type="department">Institut für Theoretische Physik</orgName>
+								<orgName type="institution">Universität Regensburg</orgName>
+								<address>
+									<postCode>93040</postCode>
+									<settlement>Regensburg</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation>
+								<orgName type="department">Institut für Theoretische Physik</orgName>
+								<orgName type="institution">Universität Regensburg</orgName>
+								<address>
+									<postCode>93040</postCode>
+									<settlement>Regensburg</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation>
+								<orgName type="department">Institut für Theoretische Physik</orgName>
+								<orgName type="institution" key="instit1">Joint Institute for Nuclear Research</orgName>
+								<orgName type="institution" key="instit2">VBLHEP</orgName>
+								<address>
+									<postCode>141980</postCode>
+									<settlement>Dubna</settlement>
+									<country key="RU">Russia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation>
+								<orgName type="department">Institut für Theoretische Physik</orgName>
+								<orgName type="institution">Universität Leipzig</orgName>
+								<address>
+									<postCode>04109</postCode>
+									<settlement>Leipzig</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation>
+								<orgName type="institution">Universität Leipzig</orgName>
+								<address>
+									<postCode>04109</postCode>
+									<settlement>Leipzig, Mainz</settlement>
+									<country>Germany, Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Discretization Errors for the Gluon and Ghost Propagators in Landau Gauge using NSPT</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published">July 29 – August 3, 2013 8 Nov 2013</date>
+						</imprint>
+					</monogr>
+					<note>31st International Symposium on Lattice Field Theory LATTICE 2013 Discretization Errors for the Gluon and Ghost Propagators using NSPT</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>The subtraction of hypercubic lattice corrections, calculated at 1-loop order in lattice perturbation theory (LPT), is common practice, e.g., for determinations of renormalization constants in lattice hadron physics. Providing such corrections beyond 1-loop order is however very demanding in LPT, and numerical stochastic perturbation theory (NSPT) might be the better candidate for this. Here we report on a first feasibility check of this method and provide (in a parametrization valid for arbitrary lattice couplings) the lattice corrections up to 3-loop order for the SU(3) gluon and ghost propagators in Landau gauge. These propagators are ideal candidates for such a check, as they are available from lattice simulations to high precision and can be combined to a renormal-ization group invariant product (Minimal MOM coupling) for which a 1-loop LPT correction was found to be insufficient to remove the bulk of the hypercubic lattice artifacts from the data. As a bonus, we also compare our results with the ever popular H(4) method.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head>Introduction</head>
+
+				<p>With the advancement of computer technologies, lattice QCD calculations have become an essential tool to tackle problems of strong interaction physics. For many applications nowadays the statistical uncertainties have been reduced to such a degree that a full understanding of all systematic errors is more important to reach high precision than a further increase of statistics.</p>
+
+				<p>One of these systematic errors comes from the lattice itself: The symmetry group on the lattice is the hypercubic group H(4), a subgroup of O(4). This introduces lattice artifacts for any lattice momentum but zero which only disappear in the continuum limit. Of course, the severity of these hypercubic lattice artifacts depends on the lattice spacing a, but since lattice calculations are currently done for values of a between 0.04 and 0.09 fm it may be important to know these artifacts for one&apos;s favorite observable on a quantitative rather than qualitative level. In general, discretization effects are most visible at large lattice momentum a 2 p 2 with p µ = 2πk µ /aN µ with k µ ∈ (−N µ /2, N µ /2] . However, this dependence is non-monotonous as lattice observables transform as functions of the four H(4) invariants {p 2 , p [4] , p [6] , p [8] } with p [n] ≡ ∑ µ p n µ rather than just of p 2 as in the continuum. There are mainly two approaches that have been followed in the past to treat these artifacts. One is the so-called H(4)-method (see, e.g., [1]), which relies on fitting coefficients of an expansion in the hypercubic invariants. Another is calculating hypercubic corrections in lattice perturbation theory (LPT). This has been used and developed for precision determinations of renormalization constants for hadronic operators [2] where an efficient treatment of such artifacts is crucial. For these calculations one often uses plane-wave sources for the inversion of the fermion matrix to keep the statistical noise at a minimum and also restricts to momenta close to the lattice diagonal to minimize hypercubic lattice artifacts. To further reduce discretization errors, one subtracts the difference ∆O(p) of an operator O in LPT at finite lattice spacing a and its value in the corresponding limit a → 0. Unfortunately, the calculation of ∆O(p) even at 1-loop order can be rather involved in LPT for certain operators and actions. Furthermore, in some cases a 1-loop correction does not suffice. Numerical stochastic lattice perturbation theory (NSPT) provides a way out: It allows for a non-diagrammatic but stochastic treatment of LPT to high loop orders and so to get an estimate for ∆O(p) beyond 1-loop. 1 We will test the feasibility and precision of such an approach here for the gluon (Z) and ghost (J) dressing functions and in particular for the Minimal MOM coupling in Landau gauge [4]</p>
+
+				<figure>
+					<trash>α MM s (p) = g 2 0 (a) 4 π Z(a, p)J 2 (a, p), a → 0, (1)</trash>
+
+
+				</figure>
+
+				<p>which serves as an ideal benchmark for this: Its renormalization-group invariance is slightly broken on the lattice at larger momenta by the hypercubic lattice artifacts of the gluon and ghost dressing functions and a subtraction of the exact 1-loop correction was shown to be insufficient to repair this in the data for α MM s [5]. It also allows us to focus first on quenched QCD, keeping the additions of fermions to the NSPT calculations for later.</p>
+
+				<figure>
+					<trash>Discretization Errors for the Gluon and Ghost Propagators using NSPT Jakob Simeth 1 10 100 0.1 1 10 Z a 2 p 2 ∆Z 1-loop, NSPT continuum 2-loop, NSPT continuum 3-loop, NSPT continuum 0.1 1 10 0.1 1 10 J a 2 p 2 ∆J 1-loop, NSPT continuum 2-loop, NSPT continuum 3-loop, NSPT continuum Figure 1</trash>
+
+
+				</figure>
+
+				<p>: NSPT data for the gluon (left) and ghost (right) dressing functions for diagonal lattice momenta up to 3-loop order. Curves represent the a → 0 result (see text). Arrows mark the hypercubic lattice artifacts.</p>
+
+			</div>
+			<div>
+				<head>Z and J from Numerical Stochastic Perturbation Theory</head>
+
+				<p>To get the desired hypercubic corrections, we have to calculate the Landau-gauge gluon and ghost propagators in NSPT. Details for this can be found in [6]. Here it suffices to mention that their tensor structure (for the Wilson gauge action) is of the familiar form</p>
+
+				<figure>
+					<trash>D ab µν = δ µν − ˆ p µ ˆ p ν ˆ p 2 δ ab Z ˆ p 2 and G ab µν = δ µν δ ab J ˆ p 2 (2) wherê p µ = 2</trash>
+
+
+				</figure>
+
+				<p>a sin(a p µ /2) denotes the eigenvalues of the free lattice Laplacian. The results are obtained in orders of g 2 0 , because the SU(3) link fields U x,µ are kept as an expansion in powers of β = 2N c /g 2 0 which also requires algebraic operations to be performed with respect to this perturbative structure for operators A and B:</p>
+
+				<figure>
+					<trash>U x,µ = 1 + ∑ k≥1 β −k/2 U (k) x,µ , (A + B) (k) = A (k) + B (k) , (A B) (k) = k ∑ j=0 A (k) B (k− j) . (3)</trash>
+
+
+				</figure>
+
+				<p>Furthermore, the framework of NSPT relies on stochastic quantization. This is implemented by adding an artificial time τ to the gauge fields whose evolution in τ is governed by a Langevin equation, which is solved numerically. A suitable Euler scheme reads U x,µ (τ + ε) = exp{−i ε ∇ U x,µ S[U]</p>
+
+				<figure>
+					<trash>+ √ ε η x (τ)}U x,µ (τ), (4) where η = η a t a is a random gaussian distributed su(3) field (t a being the generators of SU(3)) and S[U]</trash>
+
+
+				</figure>
+
+				<p>(in our case) the Wilson plaquette action. ∇ U x,µ is the discretized left Lie derivative with respect to U x,µ . Since the Euler time step ε has to be finite, simulations have to be performed for several ε such that at the end the limit ε → 0 can be taken. We choose ε = 0.03, 0.02 and 0.01 for all our simulations and collect data for J (l) and Z (l) for l = 1, . . . , 4 loops after fixing U x,µ to Landau gauge. We will focus here on diagonal lattice momenta and our lattice sizes are 8 4 , 16 4 , 24 4 and 32 4 . Data for a 48 4 lattice is in progress.</p>
+
+			</div>
+			<div>
+				<head>Discretization Errors for the Gluon and Ghost Propagators using NSPT Jakob Simeth</head>
+
+				<p>In</p>
+
+				<p>Figure 1 we show our NSPT data for the gluon and ghost dressing functions up to 3-loop order. As we are interested in the hypercubic lattice corrections for diagonal lattice momenta we only show points for these momenta and compare it to the momentum dependence J</p>
+
+				<figure>
+					<trash>(i) cont (a 2 p 2 ) = j (i) 0 + i ∑ k=1 j (i) k log(a 2 p 2 ) k . (5)</trash>
+
+
+				</figure>
+
+				<p>expected in the limit a → 0 (for simplicity we write J meaning both J and Z). For the 1-loop curve we use the well-known coefficients, j</p>
+
+				<figure>
+					<trash>(1) 0 and j (1) 1 , from [7]</trash>
+
+
+				</figure>
+
+				<p>, while for the 2-loop and 3-loop curves we use the coefficients j (i=2,3) k&gt;0 multiplying the divergent logarithms from 3-loop continuum perturbation theory [8], and the finite j (i) 0 from our fits (see below). Within errors our values for the latter agree with those found in [6]. For a better illustration, we have marked the momentumdependent hypercubic lattice corrections ∆Z and ∆J in Figure 1 which we aim to quantify:</p>
+
+				<figure>
+					<trash>∆J (i) = J (i) lat (a 2 p 2 , a 4 p [4]</trash>
+
+
+				</figure>
+
+				<p>, a 6 p [6] , a 8 p [8] ) − J</p>
+
+				<figure>
+					<trash>(i) cont (a 2 p 2 ). (6)</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>Removal of finite size effects</head>
+
+				<p>Although a first look at Figure 1 suggests we will get ∆Z and ∆J straightaway, a closer inspection of the raw data reveals we have to carefully treat finite size effects first. These are visible in particular for the ghost propagator at small momenta (see, e.g., the open symbols in Figure 2).</p>
+
+				<p>To treat these effects we follow a procedure proposed in [6], albeit in a slightly different manner . It starts with the observation that an observable O on the lattice only depends on dimensionless quantities, namely on ap (in the way as mentioned above) and on pL which comes in due to the finite lattice extend N = L/a:</p>
+
+				<figure>
+					<figDesc>O(p a, p L) = O(p a, ∞) + δ O(p a, p L). (7) To get O in the infinite volume limit one can either extrapolate data for several volumes or calculate and subtract δ O(p a, p L) from the data. We choose the latter, which is more robust in our case, and determine δ O(p a, p L) in the following way, similarly to [6]</figDesc>
+
+				</figure>
+
+				<p>: We assume we can neglect the influence of additional (hypercubic) p a-corrections to δ O, i.e., δ O(p a, p L) ≈ δ O(0, p L). This quantity then only depends on the integer tuple k that defines the momentum ap, because p µ L = 2 π k µ N a N a = 2 π k µ . Furthermore, an observable O(pa, ∞) is expected to be equal for equal physical momenta, i.e., for equal k/N. That is, the difference must be due to the finite-size effect and we can write:</p>
+
+				<figure>
+					<trash>1. δ O(k, N 1 ) = δ O(k, N 2 ) 2. δ O(k 1 , N 1 ) = O(k 1 , N 1 ) − [O(k 2 , N 2 ) − δ O(k 2 , N 2 )] if k 1 /N 1 = k 2 /N 2 .</trash>
+
+
+				</figure>
+
+				<p>This allows us to go through our data along sequences of links (paths), each connecting two data points of either constant k/N or k, and to get the p L-error for each path recursively. As a starting point for this recursion we choose δ O(k max , N max ) = 0 which should be valid for large N max .</p>
+
+				<p>By that procedure we can reach nearly all pairs of (k, N). Most of them can be accessed by many different paths over which we average. The pL-error of points that are disconnected from the anchor (k max , N max ) is interpolated linearly between neighbouring values of k/N.</p>
+
+				<figure>
+					<trash>Discretization Errors for the Gluon and Ghost Propagators using NSPT Jakob Simeth −0.150 −0.100 −0.050 0.000 0.050 0.100 0.150 0.200 1 10 ∆Z a 2 p 2 1-loop −0.08 −0.07 −0.06 −0.05 −0.04 −0.03 −0.02 −0.01 0 0.1 1 10 ∆J a 2 p 2 t to NSPT exact LPT 1-loop raw NSPT data N = 8, 16, 24, 32 pL-corr. NSPT data N = 8, 16, 24, 32</trash>
+
+					<head>Figure 2:</head>
+
+					<figDesc>Hypercubic lattice artifacts at 1-loop order for the gluon (left) and ghost (right) dressing functions.</figDesc>
+
+				</figure>
+
+				<p>pL-corrected (uncorrected) data is shown by full (open) symbols. Green curves are the exact 1-loop LPT results from [5]. Red bands are from a fit to the data.</p>
+
+				<figure>
+					<trash>−0.010 0.000 0.010 0.020 0.030 0 5 10 15 20 25 30 35 ∆Z a 2 p 2 β = 6.92 1 -loop order (1+2)-loop order (1+2+3)-loop order −0.020 −0.015 −0.010 −0.005 0.000 0 5 10 15 20 25 30 35 ∆J a 2 p 2 β = 6.92 1 -loop order (1+2)-loop order (1+2+3)-loop order</trash>
+
+					<head>Figure 3:</head>
+
+					<figDesc>Hypercubic lattice artifacts up to 3-loop order for the gluon (left) and ghost (right) dressing functions at β = 6.92. Bands result from a fit to our NSPT data.</figDesc>
+
+				</figure>
+
+				<p>This method of finite-size corrections turns out to be very successful. To demonstrate that we show in Figure 2 (right) our 1-loop data for the uncorrected (open symbols) and the pL-corrected (full symbols) difference ∆J (Eq. (6)). There we see, finite size errors have quite an effect at low momenta and it is necessary to remove them, but after the pL-correction the ∆J data from different lattices falls on top of the curve one knows exactly from 1-loop LPT (from [5]). The gluon propagator data is currently too noisy for a removal of pL-effects and it thus remains uncorrected in what follows. Though, within errors, points lie on the 1-loop LPT curve already.</p>
+
+			</div>
+			<div>
+				<head>Results</head>
+
+				<p>Now, that we have checked that our 1-loop NSPT results conform with the exact from LPT, we can quantify the hypercubic lattice artifacts (Eq. (6)) up to 3-loop order. To ease their later use we will provide them in a parametrization independent of the lattice coupling β . For this we fit</p>
+
+				<figure>
+					<trash>Discretization Errors for the Gluon and Ghost Propagators using NSPT Jakob Simeth 0.10 0.12 0.14 0.16 0.18 0.20 0.22 0.24 0.1 1 10 α MM s 10 3 r 2 0 p 2 uncorrected β = 6.00 β = 6.40 β = 6.70 β = 6.92 0.1 1 10 10 3 r 2 0 p 2 corrected</trash>
+
+					<head>Figure 4:</head>
+
+					<figDesc>Coupling constant in the Minimal MOM scheme for quenched QCD in Landau gauge. Data is for a fixed physical volume (from [5]</figDesc>
+
+				</figure>
+
+				<p>), before (left) and after (right) correcting for discretization effects. each order separately to a polynomial of the H(4) invariants: ∆J (i) (p 2 , p [4] , p [6] , p [8] ) = c 2 p 2 + c 4 p [4] + c 6 p [6] + c 8 p [8] . (8)</p>
+
+				<p>The (summed-up) hypercubic lattice artifacts are then obtained for each value of β from: ∆J(β , p 2 , p [4] , p [6] , p [8]</p>
+
+				<figure>
+					<trash>) = 3 ∑ i=1 β −i ∆J (i) (p 2 , p [4]</trash>
+
+
+				</figure>
+
+				<p>, p [6] , p [8] ). (9) A comparison with the exact 1-loop LPT result from [5] shows that these fits describe the overall momentum dependence quite well, even though it cannot describe it perfectly (see Figure 2). There the fit is dominated by the many points at higher momentum while being constrained to zero at a 2 p 2 = 0. So there are small deviations for small a 2 p 2 . We therefore regard this fit model not as best but as best usable to parametrize the leading hypercubic artifacts. The final results for ∆Z and ∆J can be seen in Figure 3. There we choose β ≡ 6.92 and one sees that even for this fine lattice (a ≈ 0.026 fm) the 3-loop order correction still contributes rather significantly to the gluon dressing function. The ghost dressing function needs improvement to at least 2-loop order. This explains why a 1-loop correction of the data for α MM s is insufficient as seen in [5]. Our new results allows us now to correct the hypercubic lattice artifacts up to 3-loop order, and, as evidenced in Figure 4, with these we are successful: The corrected α MM s data (from [5]) for the different lattice spacings falls on top of each other for all momenta. Renormalization-group invariance is thus restored.</p>
+
+				<p>Comparison with the H(4)-Method It is interesting to compare our approach to the above-mentioned H(4)-method. With this, one tries to fit the coefficients c i of the hypercubic expansion of O(ap), e.g., truncated at O(a 4 ),</p>
+
+				<figure>
+					<trash>O(a ˆ p) = O(a 2 p 2 ) + c 2 a 2 p [4]</trash>
+
+
+				</figure>
+
+				<p>p 2 + c 4 a 4 p [4]</p>
+
+				<figure>
+					<figDesc>+ · · · . (10)</figDesc>
+
+				</figure>
+
+				<p>regarding O(a 2 p 2 ) as the discretization-artifacts-free operator [1]. A simultaneous fit of all the c i &apos;s in (10) requires many degenerate H(4) orbits for nearby a 2 p 2 , that is this method works best for intermediate momenta on large lattices. For a fair comparison, we therefore choose a 64 4 lattice, for which we have data for Z for many different orbits. Looking again at diagonal momenta, we find the H(4) correction scatter, where available, around our 3-loop NSPT correction (see Figure 5).</p>
+
+				<figure>
+					<trash>Conclusion −0.06 −0.05 −0.04 −0.03 −0.02 −0.01 0 0.01 0.02 0.03 0.04 0.05 0 5 10 15 20 25 30 35 40 ∆Z a 2 p 2 only diagonal momenta NSPT corrections H(4) corrections</trash>
+
+					<head>Figure 5:</head>
+
+					<figDesc>Hypercubic corrections for the gluon dressing function for diagonal momenta (64 4 lattice at β = 6.92). Blue crosses are from the H(4)- method, using all available orbits (not shown).</figDesc>
+
+				</figure>
+
+				<p>The curve is the 3-loop correction from NSPT.</p>
+
+				<p>We have developed a new way to determine and remove discretization errors which are present in any lattice observable due to the hypercubic lattice symmetry. Our method is based on a perturbative calculation in the framework of NSPT, and a first application to quenched data for the Minimal MOM coupling in Landau gauge has been very successful (see Figure 4). Our method can easily be extended, for instance , to aid calculations of renormalization constants for hadronic operators. It is planned to test this next. More details on our approach will be given in a forthcoming article.</p>
+
+			</div>
+
+			<note place="foot" n="1"> For a NSPT calculation of renormalization constants see for example [3].</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+				<head>Acknowledgments</head>
+				<p>We thank Francesco Di Renzo for insights on the determination of finite size effects. This work is supported by the European Union under the Grant Agreement IRG 256594. Grants of time on the Linux-Cluster of the Leibniz Rechenzentrum in Munich (Germany) are acknowledged.</p>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Becirevic</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Boucaud</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Leroy</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Micheli</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Pene</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev. Phys.Rev. Phys.Lett</title>
+		<editor>P. Boucaud, F. de Soto, J. Leroy, A. Le Yaouanc, J. Micheli, et al.</editor>
+		<imprint>
+			<biblScope unit="volume">609903364</biblScope>
+			<biblScope unit="issue">256</biblScope>
+			<biblScope unit="page" from="094509" to="114508" />
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+	<note>de. Soto and C. Roiesnel, JHEP 0709</note>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Göckeler</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">arXiv:1003 arXiv:1303</title>
+		<imprint>
+			<date type="published" when="2010" />
+			<biblScope unit="page" from="114511" to="0960191310" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Brambilla</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F. Di</forename>
+				<surname>Renzo</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Smekal</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Alkofer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Hauck</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev.Lett. Phys.Lett</title>
+		<editor>hep-ph/9705242</editor>
+		<editor>L. von Smekal, K. Maltman, and A. Sternbeck</editor>
+		<imprint>
+			<biblScope unit="volume">79</biblScope>
+			<biblScope unit="issue">681</biblScope>
+			<biblScope unit="page">336</biblScope>
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Sternbeck</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Maltman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Müller-Preussker</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Smekal</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Lattice2012</forename>
+				<surname>Pos</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="hep" to="lat" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Di</forename>
+				<surname>Renzo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E.-M</forename>
+				<surname>Ilgenfritz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Perlt</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Schiller</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Torrero</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Nucl.Phys. B831</title>
+		<editor>F. Di Renzo, E.-M. Ilgenfritz, H. Perlt, A. Schiller, and C. Torrero</editor>
+		<imprint>
+			<date type="published" when="2010" />
+			<biblScope unit="page" from="0912" to="122" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Kawai</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Nakayama</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Seo</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="volume">189</biblScope>
+			<biblScope unit="page">40</biblScope>
+			<date type="published" when="1981" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Gracey</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

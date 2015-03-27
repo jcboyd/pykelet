@@ -1,0 +1,1100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Topological aspects of G 2 Yang-Mills theory</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2012-10-22">22 Oct 2012</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Ernst-Michael</forename>
+								<surname>Ilgenfritz</surname>
+							</persName>
+							<affiliation>
+								<orgName type="institution" key="instit1">Joint Institute for Nuclear Research</orgName>
+								<orgName type="institution" key="instit2">VBLHEP</orgName>
+								<address>
+									<postCode>141980</postCode>
+									<settlement>Dubna</settlement>
+									<country key="RU">Russia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Axel</forename>
+								<surname>Maas</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Institute for Theoretical Physics</orgName>
+								<orgName type="institution">Friedrich-Schiller-University Jena</orgName>
+								<address>
+									<addrLine>Max-Wien-Platz 1</addrLine>
+									<postCode>D-07743</postCode>
+									<settlement>Jena</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Topological aspects of G 2 Yang-Mills theory</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2012-10-22">22 Oct 2012</date>
+						</imprint>
+					</monogr>
+					<note>Prepared for submission to JHEP (PACS 11.15.Ha, 12.38.Aw)</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Lattice gauge theory</term>
+					<term>Yang-Mills theory</term>
+					<term>instantons</term>
+					<term>G 2</term>
+					<term>topological charge</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>Yang-Mills theory and QCD are well-defined for any Lie group as gauge group. The choice G 2 is of great interest, as it is the smallest group with trivial center and being at the same time accessible to simulations. This theory has been found to have many properties in common with SU(3) Yang-Mills theory and QCD, permitting to study the role of the center. Herein, these investigations are extended to topological properties of G 2 Yang-Mills theory. After giving the instanton construction for G 2 , topological lumps with instanton topological charge are identified in cooled lattice configurations. The corresponding topological susceptibility is determined in the vacuum and at low and high temperatures, showing a significant response to the phase structure of the theory.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>Yang-Mills theory and QCD are well-defined theories for an arbitrary (semi-)simple Lie group as gauge group. One remarkable choice for the group is the exceptional Lie group G 2 instead of the physical group SU(3). Since its center is trivial the Wilson confinement criterion is not fulfilled, even in the pure Yang-Mills case [1]. The reason is that any static fundamental charge can be screened by three adjoint charges, i. e. gluons [1]. Nonetheless, the theory has only gauge-invariant bound states as observable states [1]. In fact, the gluons show a behavior quite similar to SU(N ) gauge theories [2–4].</p>
+
+				<p>It is not only in this respect that the G 2 case resembles SU(N ) Yang-Mills theory. Just like for SU(3) gauge theories it shows a first-order phase transition at finite temperature [5–7], which is accompanied by a quenched chiral transition [8]. There are other features that make the theory more like a theory with dynamical matter content. Especially the screening of static fundamental charges leads to string-breaking, though at intermediate distance a linearly rising static quark potential is present [6, 9, 10], and the theory can be described using an effective Polyakov loop dynamics [11]. The latter fact may be related to an SU(3) subgroup structure [1], to which the theory can be broken down using the Higgs mechanism [1, 12]. Besides these very interesting conceptual properties of the theory, it offers advantages that might also be of practical importance. Since all representations of G 2 are real, it is possible to simulate it using standard importance sampling techniques in the presence of dynamical, fundamental quarks [13] also at finite baryonic density without the notorious sign problem. It is therefore an interesting test case for model calculations. Since its spectrum contains fermionic baryons (besides bosonic baryons) [1], it also offers qualitative insight into a theory with fermionic bound state degrees of freedom at finite density. Given the similarities between the G 2 gauge theory and ordinary QCD and the practical usefulness of the G 2 case, it is an interesting question, whether topological aspects play a – 1 – similar role as in usual QCD. It has already been argued that the role of vortices is modified [6] compared to their role in QCD [14]. The question of monopoles [15] and dyons [16] has been addressed in principle, showing a similar structure as in ordinary QCD. Given the coincidence of the chiral and the Polyakov loop transition in the pure Yang-Mills case [8], we are interested in this paper whether topological charge carriers exist, which could play a similar role in this connection as in ordinary QCD [17]. To begin, we will construct the explicit one-instanton solution in the continuum in section 2. In section 3 we will describe our lattice simulations and cooling procedure used to identify topological lumps. We will discuss the resulting structures in section 4.</p>
+
+				<p>Finally, we will determine the topological charge susceptibility in the vacuum and at finite temperature in section 5. A few concluding remarks will be given in section 6. 2 G 2 instanton solution in the continuum</p>
+
+				<p>Like the SU(N ) gauge group, G 2 supports instanton solutions. This can be most easily seen using the McFarlane decomposition [18] of a G 2 element g</p>
+
+				<figure>
+					<trash>g = Z    U 0 0 0 1 0 0 0 U *    = e ig a τ a ,</trash>
+
+
+				</figure>
+
+				<p>where Z is an element of S 6 and U is an element of SU(3). Thus, the generators τ a can also be chosen such that six of them generate elements from the coset and the other eight generate the elements from the su(3) algebra, taking the form</p>
+
+				<figure>
+					<trash>τ 1...8 =    u 1...8 0 0 0 0 0 0 0 −u 1...8    ,</trash>
+
+
+				</figure>
+
+				<p>where the u i are the generators of the algebra su(3). Given the SU(2) instanton solution A SU(2) µ [19]</p>
+
+				<figure>
+					<trash>A SU(2) µ = 2 r 2 + λ 2 t µν r ν t µν = 1 4i (t µ ¯ t ν − t ν ¯ t µ ) t µ = (i t, 1) ¯ t µ = (−i ,1), with the Pauli matrices t i , the corresponding G 2 gauge field can be obtained, with the direct su(3) embedding of the su(2) solution, as A G 2 µ =    A SU(3) µ 0 0 0 0 0 0 0 −A SU(3) * µ    A SU(3) µ = A SU(2) µ 0 0 0 and re-distributions. – 2 –</trash>
+
+
+				</figure>
+
+				<p>This gauge field solves the the self-duality equations F µν = 1 2 ǫ µνρσ F ρσ immediately, due to the subgroup structure of G 2 , whereas the S 6 part acts as a spectator. The anti-instanton solution can be constructed along the same lines. The most remarkable difference compared to the SU(3) or SU(2) case is the topological charge of the G 2 instanton</p>
+
+				<figure>
+					<trash>Q = 1 64π 2 d 4 xǫ µνρσ F a µν F a ρσ = 2,</trash>
+
+
+				</figure>
+
+				<p>which is twice as large as the one of the (embedded) SU(2) instanton. Consequently, also the corresponding action is twice as large. This result is already sufficient to motivate the following numerical studies. The existence of exact solutions with single instanton topological charge will not be addressed here, though the numerical results below are suggestive in favor of their existence.</p>
+
+			</div>
+			<div>
+				<head n="3">Lattice setup and cooling</head>
+
+				<p>The G 2 gauge field configurations for pure Yang-Mills theory used here have been generated using a combined overrelaxation and heat-bath algorithm with respect to the one-plaquette Wilson action</p>
+
+				<figure>
+					<trash>A = β x;µ&gt;ν 1 − 1 7 trU µν (3.1)</trash>
+
+
+				</figure>
+
+				<p>with the plaquette U µν , as described in [3]. The list of lattice setups employed to study both zero and finite temperature are given in table 1. To make sure that auto-correlations, very prominent in SU(N ) gluodynamics [20], are duly taken into account only few measurements have been performed in many individual runs, with a large number of dropped configurations in between.</p>
+
+				<p>To identify topological structures, we needed to reduce the ultraviolet fluctuations.</p>
+
+				<p>Conventional APE smearing [21] turned out to be rather inefficient for G 2 , requiring too many sweeps to reduce the fluctuations substantially. We therefore employed the following cooling algorithm: In a checker-board fashion, every lattice site is visited. The links in all directions at that lattice site are then modified such as to locally minimize the action, which is done by a heat-bath update where only proposals reducing or keeping the action are accepted. This heat-bath update is performed for a single SU(2) sub-group of a G 2 element. In order to update all subgroups, after each such sweep a random gauge transformation of all links is performed, which mixes the different sub-groups. This cycle is done fifteen times before a single cooling sweep of the lattice is considered as completed. On these smeared configurations the measurements have then been performed. The observables have been the local action density and the local topological charge density q. The latter has been measured using the simplest lattice realization of the continuum operator</p>
+
+				<p><formula>q(x) = 1 256π 2 trǫ µνρσ F µν (x)F ρσ (x), (3.2) – 3 – β</formula></p>
+
+				<p>N t N s conf. therm. sweeps a [fm] L = aN s [fm] T = 1 aNt [MeV]</p>
+
+				<figure>
+					<trash>T Tc 9.515 8 8 214 380 80 0.210 1.68 - - 9.515 12 12 215 420 120 0.210 2.52 - - 9.515 16 16 129 460 160 0.210 3.36 - - 9.6 8 8 211 80 380 0.170 1.36 - - 9.6 12 12 210 420 120 0.170 2.04 - - 9.6 16 16 124 460 160 0.170 2.72 - - 9.73 8 8 226 380 80 0.134 1.07 - - 9.73 12 12 149 420 120 0.134 1.61 - - 9.73 16 16 132 460 160 0.134 2.14 - - 9.6 6 12 217 420 120 0.170 2.04 193 0.757 9.73 6 12 220 420 120 0.134 1.61 245 0.961 9.765 6 12 155 420 120 0.129 1.55 255 1.00 9.85 6 12 118 420 120 0.119 1.43 276 1.08 10 6 12 117 420 120 0.0954 1.14 344 1.35 9.6 6 16 138 460 160 0.170 2.72 193 0.757 9.73 6 16 150 460 160 0.134 2.14 245 0.961 9.765 6 16 141 460 160 0.129 2.06 255 1.00 9.85 6 16 121 460 160 0.119 1.90 276 1.08 10 6 16 212 460 160 0.0954 1.52 344 1.35</trash>
+
+					<head>Table 1.</head>
+
+
+				</figure>
+
+				<p>List of configurations employed. N t and N s are the temporal and spatial extension of the lattice. &quot; Therm. &quot; , &quot; sweeps &quot; , and &quot; conf. &quot; denote the number of thermalization and decorrelation sweeps, and the number of configurations, respectively. The scale has been set using the stringtension values given in [9], using the same strategy as in [8] and setting the intermediate distance string tension equal to (440 MeV) 2 . Note that for the Wilson action the critical value of β for a time extension of N t = 6 is 9.765 (T c = 255 MeV), significantly above the bulk transition, which occurs at β = 9.45 [5, 7]. In all cases, many independent runs haven been performed to reduce residual correlations. by calculating first the field strength tensor F µν at site x from the link variables, and then calculating the product (3.2). The full topological charge Q is then obtained by summation</p>
+
+				<figure>
+					<trash>Q = x q(x). We have furthermore determined the topological charge susceptibility χ Q = 1 N t N 3 s (Q 2 − Q 2 ), which has units of (energy) 4 . 4 Cooling histories, topological lumps, and topological charge</trash>
+
+
+				</figure>
+
+				<p>Cooling histories for typical configurations are shown in figure 1. The first observation is that the cooling process is still rather inefficient, and requires many sweeps to significantly – 4 – Cooling steps 0 500 1000 1500 2000 2500</p>
+
+				<figure>
+					<trash>Q -8 -6 -4 -2 0 2 4 6 Cooling histories Cooling steps 0 500 1000 1500 2000 2500 0 S/S β |Q|, 0 1 2 3 4 5 6 7 8 9 10 Topological charge and action</trash>
+
+					<head>Figure 1.</head>
+
+					<figDesc>Left panel: Cooling histories of the topological charge Q for a 12 4 lattice at β = 9.515.</figDesc>
+
+				</figure>
+
+				<p>Right panel: the absolute value of Q for the same cooling histories (black lines) compared to the cooling curves of the action divided by the naive action S 0 = 14π 2 β of a Q = 1 object (red lines). change a configuration. The next observation is the appearance of essentially integervalued plateaus, which are very stable in the course of the cooling process, while the changes between the plateaus are rather rapidly going on. This is the typical structure expected for the presence of topologically stable lumps. Furthermore, also the full Wilson action, including the constant term 6βV in (3.1), exhibits the same plateau structure in a one-to-one correspondence. Thus, again as in SU(N ) theories, the topological charge dominates the action after a sufficient number of cooling sweeps (above roughly 1200). In other words, globally (anti)selfdual configurations are obtained by cooling. Indeed, the presence of such (localized) lumps can be identified directly in the configurations . Furthermore, the presence of topological lumps reflects itself also in the action density. This is depicted for a hypersurface in a typical example configuration in figure 2. The one-to-one correspondence between the lumps of action and topological charge is very well visible, which supports the interpretation of topologically stable structures. To understand the structure of the lumps better, we have analyzed them for some configurations by a cluster finding algorithm (described and used, e. g., in [22]). The number of clusters found depends strongly on the lower bound of the local topological charge density applied in order to distinguish between the (outside) vacuum and a cluster. Nonetheless, with the running lower bound adjusted suitably, all the clusters found by this procedure contained almost all of both the topological charge and the action. Surprisingly, in most cases the number of clusters was around half of the topological charge of the configuration. Therefore, multiple-charged clusters dominate the structure of configurations with |Q| &gt; 1. Furthermore, the sizes of the clusters within one configuration varied by typically one order of magnitude. These findings indicate a very interesting substructure of the topological excitations. It may be worthwhile to pursue this investigation further in the future. A typical distribution of the topological charge per configuration after 1500 cooling sweeps is shown in figure 3. It is clearly visible that the topological charge values are concentrated around integer values. The few intermediate values are likely from configurations which are in the process of stepping down from one plateau to a lower one.</p>
+
+				<p><formula>Whether – 5 – x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 0.005 0.01 0.015 0.02 0.025 0.03 0.035 0.04 0.045 t=15 z=0 action density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 0 0.005 0.01 0.015 0.02 0.025 0.03 0.035 0.04 t=15 z=1 action density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 0 0.005 0.01 0.015 0.02 0.025 0.03 0.035 t=15 z=2 action density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 0.005 0.01 0.015 0.02 0.025 t=15 z=3 action density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 0.002 0.004 0.006 0.008 0.01 0.012 0.014 0.016 0.018 t=15 z=4 action density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 0.002 0.004 0.006 0.008 0.01 0.012 t=15 z=5 action density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 0.002 0.003 0.004 0.005 0.006 0.007 0.008 0.009 t=15 z=6 action density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 0.003 0.004 0.005 0.006 0.007 0.008 0.009 0.01 t=15 z=7 action density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 0.002 0.004 0.006 0.008 0.01 0.012 0.014 t=15 z=8 action density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 0.005 0.01 0.015 0.02 0.025 t=15 z=9 action density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 0.005 0.01 0.015 0.02 0.025 0.03 0.035 0.04 t=15 z=10 action density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 0 0.01 0.02 0.03 0.04 0.05 t=15 z=11 action density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 0 0.01 0.02 0.03 0.04 0.05 0.06 t=15 z=12 action density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 0 0.01 0.02 0.03 0.04 0.05 0.06 t=15 z=13 action density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 0.005 0.01 0.015 0.02 0.025 0.03 0.035 0.04 0.045 t=15 z=14 action density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 0.005 0.01 0.015 0.02 0.025 0.03 0.035 0.04 t=15 z=15 action density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 -0.006 -0.005 -0.004 -0.003 -0.002</formula></p>
+
+				<figure>
+					<trash>-0.001 0 t=15 z=0 topological charge density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 -0.006 -0.005 -0.004 -0.003 -0.002 -0.001 0 t=15 z=1 topological charge density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 -0.005 -0.004 -0.003 -0.002 -0.001 0 t=15 z=2 topological charge density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 -0.004 -0.0035 -0.003 -0.0025 -0.002 -0.0015 -0.001 -0.0005 0 t=15 z=3 topological charge density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 -0.0025 -0.002 -0.0015 -0.001 -0.0005 t=15 z=4 topological charge density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 -0.0018 -0.0016 -0.0014 -0.0012 -0.001 -0.0008 -0.0006 -0.0004 -0.0002 t=15 z=5 topological charge density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 -0.0012 -0.001 -0.0008 -0.0006 -0.0004 t=15 z=6 topological charge density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 -0.0014 -0.0012 -0.001 -0.0008 -0.0006 -0.0004 t=15 z=7 topological charge density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 -0.0022 -0.002 -0.0018 -0.0016 -0.0014 -0.0012 -0.001 -0.0008 -0.0006 -0.0004 -0.0002 t=15 z=8 topological charge density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 -0.0035 -0.003 -0.0025 -0.002 -0.0015 -0.001 -0.0005 t=15 z=9 topological charge density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 -0.006 -0.005 -0.004 -0.003 -0.002 -0.001 0 t=15 z=10 topological charge density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 -0.008 -0.007 -0.006 -0.005 -0.004 -0.003 -0.002 -0.001 0 t=15 z=11 topological charge density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 -0.008 -0.006 -0.004 -0.002 0 t=15 z=12 topological charge density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 -0.008 -0.007 -0.006 -0.005 -0.004 -0.003 -0.002 -0.001 0 t=15 z=13 topological charge density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 -0.007 -0.006 -0.005 -0.004 -0.003 -0.002 -0.001 0 t=15 z=14 topological charge density x 0 2 4 6 8 10 12 14 y 0 2 4 6 8 10 12 14 -0.006 -0.005 -0.004 -0.003 -0.002 -0.001 0 t=15 z=15 topological charge density</trash>
+
+					<head>Figure 2.</head>
+
+					<figDesc>Hyper surfaces with action density (top four rows) and topological charge density (bottom four rows) of a configuration obtained after 1500 cooling sweeps from a 16 4 lattice Monte Carlo configuration generated at β = 9.515.</figDesc>
+
+				</figure>
+
+				<p>the observed distribution is Gaussian or follows a different multiplicity distribution cannot be reliably determined with the available amount of data. Nonetheless, the presence of (anti)selfdual topological lumps with integer topological charge is therefore well-established, as well as their correlation with action lumps.</p>
+
+				<figure>
+					<trash>Q -8 -6 -4 -2 0 2 4 6 8 10 Number of configurations 0 2 4 6 8 10 12 14 16 18 20 22 Topological charge distribution</trash>
+
+					<head>Figure 3.</head>
+
+
+				</figure>
+
+				<p>Histogram of the topological charges per configuration after 1500 sweeps on a 12 4 lattice at β = 9.515.</p>
+
+				<p>It is possible to define a residual configuration, in which each link U r µ is given by</p>
+
+				<p><formula>U r µ = U cooled−1 µ U µ ,</formula></p>
+
+				<p>where U µ is the original link and U cooled µ the cooled link. These &quot; residual configurations &quot; have an action which is almost independent of the cooling, and possess no discernible topological structures. They thus appear to be dominated by the ultraviolet fluctuations.</p>
+
+			</div>
+			<div>
+				<head n="5">Topological charge and susceptibility at zero and finite temperature</head>
+
+				<p>After establishing the properties of the individual lumps, the next step is to determine their statistical properties forming full lattice configurations. Their properties will be discussed first at zero temperature, to identify any kind of volume and discretization artifacts, and to give an estimate of the topological susceptibility in the continuum and infinite volume limit.</p>
+
+				<p>In figure 4, the average and absolute values of the topological charge and the topological susceptibility are shown. As could already be inferred from figure 3, the average value of the topological charge is zero, though with rather large errors. The average absolute value of the topological charge increases quickly with volume. This indicates that with larger and larger volume more and more topological lumps fit into the given lattice volume. At the</p>
+
+				<figure>
+					<trash>Cooling sweeps 0 500 1000 1500 2000 Q -1 -0.5 0 0.5 1 Average topological charge Cooling sweeps 0 500 1000 1500 2000 |Q| 0 1 2 3 4 5 6 7 8 Average absolute value of the topological charge Cooling sweeps 0 500 1000 1500 2000 [GeV] 1/4 Q χ 0 0.05 0.1 0.15 0.2 , a=0.21 fm 4 V=(1.68 fm) , a=0.21 fm 4 V=(2.52 fm) , a=0.21 fm 4 V=(3.36 fm) Topological susceptibility Cooling sweeps 0 500 1000 1500 2000 Q -1 -0.5 0 0.5 1 Average topological charge Cooling sweeps 0 500 1000 1500 2000 |Q| 0 1 2 3 4 5 6 7 8</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>Average absolute value of the topological charge Cooling sweeps 0 500 1000 1500 2000 [GeV]</head>
+
+				<figure>
+					<trash>1/4 Q χ 0 0.05 0.1 0.15 0.2 , a=0.13 fm 4 V=(1.07 fm) , a=0.13 fm 4 V=(1.61 fm) , a=0.13 fm 4 V=(2.14 fm) Topological susceptibility Cooling sweeps 0 500 1000 1500 2000 Q -1 -0.5 0 0.5 1 Average topological charge Cooling sweeps 0 500 1000 1500 2000 |Q| 0 1 2 3 4 5 6 7 8</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>Average absolute value of the topological charge Cooling sweeps 0 500 1000 1500 2000 [GeV]</head>
+
+				<figure>
+					<trash>1/4 Q χ 0 0.05 0.1 0.15 0.2 , a=0.21 fm 4 V=(2.52 fm) , a=0.17 fm 4 V=(2.04 fm) , a=0.13 fm 4 V=(2.14 fm)</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>Topological susceptibility Figure 4</head>
+
+				<p>. The average of the topological charge, of the absolute value of the topological charge, and topological susceptibility as a function of the cooling sweeps for various volumes and discretizations. Only the measurements performed for every 20-th cooling sweep are shown. same time this number is rather insensitive to the lattice spacing. Thus, even with a rather coarse lattice the topological structure of the cooled vacuum seems to be well resolvable. Finally, the topological susceptibility turns out to be neither very sensitive to volume nor to the discretization. It also changes only weakly as a function of the number of cooling sweeps, and therefore appears to be a good observable. Its fourth root has a value of about 150 MeV, with a one sigma error band of the order of 25 MeV for all investigated cases. It is thus about six sigma away from zero, giving a rather good evidence for a non-zero topological susceptibility, apart from possible systematic errors. Thus, G 2 is in this respect rather similar, both qualitatively and quantitatively, to SU(N ) Yang-Mills theory. Another feature of SU(N ) Yang-Mills theories is that the topological properties change at the phase transition. This is often invoked to explain both the restoration of chiral symmetry as well as deconfinement [14, 17]. Although G 2 Yang-Mills theory has no deconfinement comparable to QCD, it shows a sudden rise of the Polyakov loop at some</p>
+
+				<figure>
+					<trash>– 8 – 1/L [fm] 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 ] -4 |Q|/V [fm 0 0.1 0.2 0.3 0.4 0.5 a=0.21 fm a=0.17 fm a=0.13 fm Average absolute value of the topological charge 1/L [fm] 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 [GeV] 1/4 Q χ 0 0.1 0.2 0.3 Topological susceptibility</trash>
+
+					<head>Figure 5.</head>
+
+					<figDesc>Volume and discretization dependence of the average absolute value of the topological charge density |Q|/V and of the fourth root of the topological susceptibility after 1500 cooling sweeps.</figDesc>
+
+				</figure>
+
+				<p>temperature, and chiral symmetry is restored at the same transition temperature in a similar way as in usual QCD [8]. If the restoration of chiral symmetry is indeed related to the topological degrees of freedom, the phase transition should therefore reflect itself in the topological properties.</p>
+
+				<p>The investigation of this interconnection is somewhat complicated by the presence of a bulk transition on coarse lattices, requiring to use rather fine lattices with at least N t = 6 [7]. This implies significant changes in the physical volumes, as going to larger volumes incurs too large computational costs. This has to be taken into account. To address it in an at least heuristic way, the volume-dependence of the average value of the absolute value of the topological charge and of the topological susceptibility after a fixed number of cooling sweeps is shown in figure 5. The obtained qualitative results do not depend on the number of cooling sweeps: The topological charge density |Q|/V depends strongly on both volume and discretization.</p>
+
+				<p>It appears that the larger the volume the less the absolute topological charge. At the same time, the better the discretization, the higher the absolute topological charge. Given that with larger lattice volumes more and more topological lumps of both signs should fit into the system, it appears likely that the total charge diminishes quickly with volume. Discretization effects seem to offset this to some extent. However, for a full understanding the detailed cluster structure must be understood more systematically, which requires significantly more resources. Notice in this context that cooling has a tendency to lower the action by eliminating different-sign topological lumps, which may affect this outcome. This should not as strongly affect the topological fluctuations, in agreement with figure 5. This makes it rather complicated to disentangle the temperature and volume effects for the topological charge density, even if the topological charge turns out to be a decreasing function of temperature. From these observation it appears reasonable to use only the topological susceptibility</p>
+
+				<figure>
+					<trash>– 9 – c T/T 0 0.2 0.4 0.6 0.8 1 1.2 1.4 [Gev] 1/4 χ &gt; (a.u.), Ψ Ψ P (a.u.), &lt; 0 0.05 0.1 0.15 0.2 Polyakov loop Chiral condensate 3 12 × Topological susceptibility from 6 3 16 × Topological susceptibility from 6 Phase transition</trash>
+
+					<head>Figure 6.</head>
+
+
+				</figure>
+
+				<p>The topological susceptibility as a function of temperature on both the 6 × 12 3 and the 6 × 16 3 lattices. For comparison the results for the Polyakov loop and the chiral condensate are also shown, both from [8] to study the change of topological properties with temperature. It is shown in figure 6, compared to the Polyakov loop and the chiral condensate. The topological susceptibility reacts to the phase transition by starting to drop from its zero-temperature value to a finite, high-temperature value. However, the drop is not as sharp as for the Polyakov loop and the chiral condensate, and the high-temperature value is reached somewhat above the critical temperature, at T /T c ≈ 1.1. Thus, the phase transition leaves an imprint on the topological properties of the theory. Interestingly, topological degrees of freedom are still present in the high-temperature phase, but a manual survey showed that only very few topological lumps remain. That the topological susceptibility is not reacting to temperature below the phase transition and does not vanish in the high-temperature phase close to the transition temperature, is similar to the case of SU(N ) gauge theory for not too large N [23–25]. In contrast to pure gluodynamics, in QCD the residual topological susceptibility in the high-temperature phase could be suppressed with an increasing number of quark flavors [26]. However, more recent investigations find a sharper drop for the Yang-Mills case, while the QCD transition is smoother [27]. If this would be confirmed then G 2 Yang-Mills theory would behave more similar to the QCD case. However, one should be wary that systematic effects, especially from both the definition of the topological charge operator and the cooling procedure, can substantially alter the result. E. g., for the 6 × 16 3 lattice at the highest temperature the fourth root of the topological susceptibility, χ</p>
+
+				<figure>
+					<trash>1 4 , changes from 0.099(6) over 0.093(7) to 0.085(6) GeV when increasing the number of cooling sweeps from 500 over 1500 to 2500. – 10 –</trash>
+
+
+				</figure>
+
+			</div>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+				<head>Acknowledgments</head>
+				<p>We are grateful to Christof Gattringer for helpful discussions. A. M. was supported by the FWF under grant number M1099-N16 and by the DFG under grant number MA 3935/5-1. Computing time was provided by the HPC cluster of the University of Graz.</p>
+				<p>The ROOT framework [28] has been used in this project.</p>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">We have presented the first numerical lattice investigation of topological properties of</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">We found that topological lumps exist, which can be identified individ- ually by cooling, and which provide an integer topological charge for a given configuration. From this, we could determine the topological susceptibility and its dependence on tem- perature. This susceptibility changes at the phase transition from one finite to another finite value. In total, the results show a remarkable qualitative, and to some extent even quantitative, similarity to SU(N ) Yang-Mills theories at small N . This underlines once more that</title>
+		<author>
+			<persName>
+				<forename type="first">Yang-Mills</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">spite of the group-theoretical differences</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title level="m" type="main">Yang-Mills theory is quite similar to SU(N ) Yang-Mills theory. This emphasizes that the center structure is for many quantities of little concern</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">References</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Holland</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Minkowski</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Pepe</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">U</forename>
+				<forename type="middle">J</forename>
+				<surname>Wiese</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">668</biblScope>
+			<biblScope unit="issue">207</biblScope>
+			<biblScope unit="page">0302023</biblScope>
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Maas</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Mod</forename>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<editor>0506066. [3] A. Maas and S. Olejní</editor>
+		<imprint>
+			<date type="published" when="2005" />
+			<biblScope unit="page" from="1797" to="070" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Maas</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="page" from="076" to="1012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Pepe</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">U</forename>
+				<forename type="middle">J</forename>
+				<surname>Wiese</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2007" />
+			<biblScope unit="page">0610076</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Greensite</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Langfeld</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">ˇ</forename>
+				<forename type="middle">S</forename>
+				<surname>Olejní</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Reinhardt</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Tok</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">75</biblScope>
+			<biblScope unit="page">0345010609050</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Cossu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">D</forename>
+				<surname>Elia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Di Giacomo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Lucini</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Pica</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2007" />
+			<biblScope unit="page" from="100" to="0709" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Danzer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Gattringer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Maas</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page" from="024" to="0810" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Liptak</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Olejní</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">78</biblScope>
+			<biblScope unit="page" from="074501" to="0807" />
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">H</forename>
+				<surname>Wellegehausen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Wipf</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Wozar</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">83</biblScope>
+			<biblScope unit="page" from="016001" to="1006" />
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">H</forename>
+				<surname>Wellegehausen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Wipf</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Wozar</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">80</biblScope>
+			<biblScope unit="page" from="065028" to="0907" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">H</forename>
+				<surname>Wellegehausen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Wipf</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Wozar</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Phys.Rev. D83</title>
+		<editor>13] A. Maas, L. von Smekal, B. Wellegehausen, and A. Wipf</editor>
+		<imprint>
+			<date type="published" when="1900" />
+			<biblScope unit="page" from="114502" to="1102" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Greensite</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Prog. Part. Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">51</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page">0301023</biblScope>
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">Di</forename>
+				<surname>Giacomo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Lepori</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Pucci</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="0808" to="4041" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Diakonov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Petrov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Aip</forename>
+				<surname>Conf</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. 1343</title>
+		<meeting>. 1343</meeting>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="page" from="1011" to="5636" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<title/>
+		<imprint>
+			<biblScope unit="page">11</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Schafer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">V</forename>
+				<surname>Shuryak</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Rev.Mod.Phys</title>
+		<imprint>
+			<biblScope unit="volume">70</biblScope>
+			<biblScope unit="issue">323</biblScope>
+			<biblScope unit="page">9610451</biblScope>
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">J</forename>
+				<surname>Macfarlane</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Mod. Phys</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page">2595</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<title level="m" type="main">Gauge theories of the strong and electroweak interaction</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Bohm</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Denner</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Joos</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2001" />
+			<pubPlace>Teubner, Stuttgart</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Schaefer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Sommer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Virotta</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="volume">845</biblScope>
+			<biblScope unit="page" from="93" to="1009" />
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">A</forename>
+				<surname>Degrand</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Hasenfratz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">G</forename>
+				<surname>Kovacs</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">520</biblScope>
+			<biblScope unit="issue">301</biblScope>
+			<biblScope unit="page">9711032</biblScope>
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E.-M</forename>
+				<surname>Ilgenfritz</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="page" from="034506" to="0705" />
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Gattringer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Hoffmann</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Schaefer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2002" />
+			<biblScope unit="page">0203013</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Debbio</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Panagopoulos</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Vicari</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2004" />
+			<biblScope unit="page" from="028" to="0407068" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Alles</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">D</forename>
+				<surname>Elia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A. Di</forename>
+				<surname>Giacomo</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="volume">494</biblScope>
+			<biblScope unit="issue">281</biblScope>
+			<biblScope unit="page">9605013</biblScope>
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Alles</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">D</forename>
+				<surname>Elia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A. Di</forename>
+				<surname>Giacomo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<editor>0004020. [27] V. G. Bornyakov, E.-M. Ilgenfritz, B. V. Martemyanov, V. K. Mitrushkin, and M. Mü-Preussker</editor>
+		<imprint>
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+	<note>in. preparation</note>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Brun</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Rademakers</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Instrum. Meth</title>
+		<imprint>
+			<biblScope unit="volume">389</biblScope>
+			<biblScope unit="page">81</biblScope>
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<monogr>
+		<title/>
+		<imprint>
+			<biblScope unit="page">12</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

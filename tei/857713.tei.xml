@@ -1,0 +1,2321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Wilsonian Approach to Fluid/Gravity Duality</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2011-09-29">29 Sep 2011</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Irene</forename>
+								<surname>Bredberg</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Center for the Fundamental Laws of Nature</orgName>
+								<orgName type="institution">Harvard University</orgName>
+								<address>
+									<postCode>02138</postCode>
+									<settlement>Cambridge</settlement>
+									<region>MA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Cynthia</forename>
+								<surname>Keeler</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Center for the Fundamental Laws of Nature</orgName>
+								<orgName type="institution">Harvard University</orgName>
+								<address>
+									<postCode>02138</postCode>
+									<settlement>Cambridge</settlement>
+									<region>MA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Vyacheslav</forename>
+								<surname>Lysov</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Center for the Fundamental Laws of Nature</orgName>
+								<orgName type="institution">Harvard University</orgName>
+								<address>
+									<postCode>02138</postCode>
+									<settlement>Cambridge</settlement>
+									<region>MA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Andrew</forename>
+								<surname>Strominger</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Center for the Fundamental Laws of Nature</orgName>
+								<orgName type="institution">Harvard University</orgName>
+								<address>
+									<postCode>02138</postCode>
+									<settlement>Cambridge</settlement>
+									<region>MA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Wilsonian Approach to Fluid/Gravity Duality</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2011-09-29">29 Sep 2011</date>
+						</imprint>
+					</monogr>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>The problem of gravitational fluctuations confined inside a finite cutoff at radius r = r c outside the horizon in a general class of black hole geometries is considered. Consistent boundary conditions at both the cutoff surface and the horizon are found and the resulting modes analyzed. For general cutoff r c the dispersion relation is shown at long wavelengths to be that of a linearized Navier-Stokes fluid living on the cutoff surface. A cutoff-dependent line-integral formula for the diffusion constant D(r c) is derived. The dependence on r c is interpreted as renormalization group (RG) flow in the fluid. Taking the cutoff to infinity in an asymptotically AdS context, the formula for D(∞) reproduces as a special case well-known results derived using AdS/CFT. Taking the cutoff to the horizon , the effective speed of sound goes to infinity, the fluid becomes incompressible and the Navier-Stokes dispersion relation becomes exact. The resulting universal formula for the diffusion constant D(horizon) reproduces old results from the membrane paradigm. Hence the old membrane paradigm results and new AdS/CFT results are related by RG flow. RG flow-invariance of the viscosity to entropy ratio η s is shown to follow from the first law of thermodynamics together with isentropy of radial evolution in classical gravity. The ratio is expected to run when quantum gravitational corrections are included.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<note>Contents 1. Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1 1.1. Applications . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4 1.2. Outline . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5 2. Background geometry . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6 2.1. The general case . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6 2.2. Some special cases . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8 3. Electromagnetic warmup . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9 3.1. The setup . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9 3.2. Equations and boundary conditions . . . . . . . . . . . . . . . . . . . . . . 10 3.3. Long wavelength expansion . . . . . . . . . . . . . . . . . . . . . . . . . 11 3.4. Near horizon expansion . . . . . . . . . . . . . . . . . . . . . . . . . . . 15 3.5. Subsummary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16 4. Gravity . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17 4.1. Vector/shear modes . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17 4</note>
+
+				<p>.2. A D-theorem and other special properties of ¯</p>
+
+			<note>D c . . . . . . . . . . . . . . . . 19 4.3. Tensor modes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21 4.4. Scalar/sound modes . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22 4.5. Charged black brane . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24 4.6. Asymptotically flat black p-brane . . . . . . . . . . . . . . . . . . . . . . 25 5. Brown-York stress tensor . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26 5.1. Background stress-energy . . . . . . . . . . . . . . . . . . . . . . . . . . 27 5.2. Perturbations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28 6.</note>
+
+				<p>RG flow, the first law of thermodynamics and</p>
+
+			<note>η s universality . . . . . . . . . . . . 29</note>
+
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>If you disturb a black hole, the horizon responds like a viscous fluid [1,2,3]. In particular , damped shear waves propagate outward from the disturbance. The fluid viscosity was computed to be 1 η =</p>
+
+			</div>
+			<div>
+				<head n="1">16πG</head>
+
+				<p>in a prescient 1978 thesis by Damour [4], see also [5-10].</p>
+
+				<p>Dividing this viscosity by the Bekenstein-Hawking horizon entropy density s =</p>
+
+				<figure>
+					<trash>1 4G yields the dimensionless ratio η s = 1 4π .</trash>
+
+
+				</figure>
+
+				<p>The ingredients of the computation are only the basic equations of general relativity and (in the computation of s) quantum mechanics.</p>
+
+				<figure>
+					<trash>A quarter century later, η s = 1 4π reappeared in a beautiful paper by Policastro, Starinets and Son (PSS)[11]</trash>
+
+
+				</figure>
+
+				<p>, see also [12-28] and the review [29]. They considered the hydrodynamics of supersymmetric N = 4 U (N ) gauge theory. Stress tensor correlators at spatial infinity were computed in an AdS-black-brane geometry giving η =</p>
+
+				<p><formula>π 8 N 2 T 3 and s = π 2 2 N 2 T 3 . This again yields η s = 1 4π</formula></p>
+
+				<p>. The ingredients of this computation are much more extensive than that of Damour and include string theory, supersymmetric gauge theories and AdS/CFT.</p>
+
+				<p>On the face of it, the Damour and PSS computations are very different. However, there are strong indications that they are related. Firstly, they both relate a theory of gravity to a &quot; dual &quot; fluid theory living in one fewer dimension; without the radial direction.</p>
+
+				<p>Secondly, both approaches lead to the same numerical ratio for η s . An important difference is that the Damour calculation is performed at the black hole horizon r = r h , while the PSS calculation is performed at spatial infinity r = ∞. Both the basic relation between redshift and radius 2 and, in the special context of string theory, results from AdS/CFT suggest that from the point of view of the fluid theory (which does not have an r coordinate)</p>
+
+				<p>changing r is equivalent to renormalization group (RG) flow. Hence one expects the Damour calculation to be related to the PSS calculation by some kind of RG flow into the IR. This view is advocated in [12,30,29,31-35]. 3 In order to verify this expectation, one must first define what one means by the gravity and fluid theory associated to finite r. In this paper, among other things, we propose a precise definition of the finite r theory and show that the expectation is indeed realized.</p>
+
+				<p>The basic idea is to introduce a cutoff surface Σ c at some fixed radius r = r c outside the black hole or brane. We then impose ingoing boundary conditions at the horizon and fix the induced metric on Σ c . These boundary conditions do not fully specify a solution.</p>
+
+				<p>The problem is then to identify the remaining internal degrees of freedom and describe their dynamics. We solve this to linear order in the internal fluctuations (in appropriate expansions) and show they correspond to those of a fluid. A formula is derived for the diffusion rate and other hydrodynamic quantities, which generically run as a function of the cutoff r c . We hope that it is possible to extend our approach beyond the next-to-leading order considered here, but we defer that problem to future work. This reformulation of fluid/gravity duality is the analog -or holographic dual -of Wilson&apos;s reformulation of quantum field theory. Wilson did not insist on an ultraviolet completion of quantum field theory, and we do not insist on an asymptotically AdS region 2 Radial transformations are referred to as renormalization already in [8]</p>
+
+				<figure>
+					<figDesc>. 3 These references typically study RG flow by looking at the r-dependence of correlators whose boundary conditions are imposed in an asymptotically AdS region. This corresponds to choosing a specific UV completion. In this paper we will formulate the problem in a way that does not involve such a choice. of the geometry. Specifying the couplings at the Wilsonian cutoff Λ W is the analog of specifying the boundary conditions for the induced metric (and other fields if present) on Σ c . If we scatter fields at energies below Λ W , we needn&apos;t know anything about the theory at energies above Λ W . Similarly if we disturb a black hole by throwing something at it from the radius r c , we needn&apos;t know anything about the geometry outside r c . 4 One advantage of the Wilsonian approach is that a much broader class of theories can be discussed. In addition to providing new methods of computation and broadening the space of applications, several new qualitative insights are gained in this approach. As the cutoff is taken to the horizon (r c → r h ), the relevant geometry is simply Rindler space, and the transport coefficients all approach simply computable universal values which are largely insensitive to details of the geometry or matter couplings.</figDesc>
+					<trash>5 In particular η s → 1 4π . Moreover the fluctuations dissipate according to the linearized Navier-Stokes equations, with no higher-derivative corrections. Hence our near horizon scaling is the geometric version of the low-velocity scaling in which fluids are governed by (as it turns out incompressible) Navier-Stokes. At any finite r c &gt; r h there are infinitely many higher derivative corrections to the Navier-Stokes dispersion relation, and one computes only the leading term at long wavelengths. The leading dispersion constant in general runs and does not take a universal value at radial infinity. If we specialize to an asymptotically AdS black brane and take r c → ∞, our computations are all in manifest agreement with the usual AdS/CFT definitions of the transport coefficients. All of this supports the picture that Damour was computing in the IR of the dual fluid theory while PSS were computing in the UV. The extra ingredients required for the PSS calculation are the extra ingredients needed to specify a theory all the way up to the UV, while the universality of η s is a characteristic of the IR fixed point and needs only the IR near-horizon Rindler space. Interestingly enough, in contrast to the generic transport coefficient, in the classical gravity limit the particular ratio η s typically does not run and equals 1 4π everywhere. This is why the UV and IR PSS and Damour calculations agree for this quantity. Although still partially mysterious to us, we show that this RG-flow invariance stems from the first law of</trash>
+
+
+				</figure>
+
+				<p>thermodynamics applied to the radial flow, together with the fact that, in the classical gravity limit, there is no entropy except horizon entropy and the flow is therefore isentropic.</p>
+
+				<p>This will not be the case when quantum corrections are included, as there is then entropy in the gas of Hawking radiation as well as entanglement entropy across Σ c . Therefore we expect η s to run at the quantum level.</p>
+
+			</div>
+			<div>
+				<head n="1.1">Applications</head>
+
+				<p>This work has several distinct applications and motivations.</p>
+
+			</div>
+			<div>
+				<head>• Condensed matter / cold atoms</head>
+
+				<p>One possible application is to the recent exciting work (for reviews see [36,37,38]) on trying to solve or understand a variety of condensed matter and cold atomic systems via the construction of holographic gravity duals. Most of this has involved asymptotically AdS geometries. If this program is to succeed, it cannot depend on the existence of such an AdS region (or underlying string theory), as one thing we know for sure about real world materials is that they are not conformally invariant in the UV, and certainly do not become supersymmetric N = 4 Yang-Mills or critical string theory! Rather success of this program should depend on the more universal features of the holographic relation between gravity and matter systems. The existence of such a universal relation became clear already in the 70&apos;s, but many aspects of its form and origin remain(ed) deeply mysterious. The emergence of partially soluble examples within string theory has enabled us to guess much about how this more general relation must work. In this paper, we have set up a framework which attempts to liberate the essential features of fluid/gravity duality from the confines of the string theory/AdS context. We hope that this will enable a broader class of applications, and circumvent the often unnecessary discussions of the asymptotic AdS region. 6 • The Navier-Stokes equation The Einstein and Navier-Stokes equation are two of the most important differential equations in physics and mathematics. Any direct relation between them is extremely interesting . For example, it was suggested in [40] that the problem of Navier-Stokes turbulence might be mapped to a problem in general relativity, with the different scales appearing in turbulent phenomena being mapped to different radii in the dual geometry. We hope that our approach will facilitate this mapping, as one need not include an AdS region (irrelevant for turbulence), and the forcing term can be supplied by time-dependent boundary conditions on Σ c . Of course, for this perspective to be useful, we must understand the duality beyond the linearized fluctuations considered in this paper. @BULLETThe gravity/thermo/quantum triangle</p>
+
+				<p>The previous two applications aim to employ gravity to solve problems in other areas of physics or math. However it is possible that the ideas involved have more than technical utility. Ever since the seminal work of Bekenstein and Hawking, it has been clear that there is a deep and fundamental relation between gravity, thermodynamics and quantum mechanics, while its detailed form and origin was and is largely mysterious. Much light has been shed on this triangle in the specific context of string theory following the microscopic description of black holes as a finite temperature two dimensional CFT [41] and its higherdimensional generalization to AdS/CFT [42]. It seems likely that the basic triangular relationships transcend string theory and AdS/CFT, although lessons from string theory are likely useful guides for unraveling the more general picture.</p>
+
+				<p>It is our hope that the attempt here to generalize fluid/gravity duality away from the stringy context to its most essential ingredients may be useful in understanding this triangle. Much of the current work on fluid/gravity duality attempts to learn about matter systems from gravity: we would like to reverse the arrow towards an understanding of quantum gravity. In this regard, there may be interesting connections with previous work in this direction including in particular [43,44,45].</p>
+
+			</div>
+			<div>
+				<head n="1.2">Outline</head>
+
+				<p>This paper is organized as follows. In section 2 we write down the most general p + 2- dimensional general geometry which, on symmetry grounds, could serve as a holographic dual to a fluid in p + 1 dimensions. Explicit expressions are given for the asymptotically flat and asymptotically AdS black branes with and without charges to serve as illustrative examples.</p>
+
+				<p>Section 3 treats the case of an electromagnetic field propagating on these geometries as a simple warm up. Dirichlet (ingoing) boundary conditions are imposed at the cutoff surface r = r c (horizon r = r h ). It is then shown in a long-wavelength expansion that the remaining dynamical modes are described by a charge density which evolves according to Fick&apos;s law in p + 1 flat dimensions. The diffusion constant is given by a line integral of certain metric coefficients from r h to r c , and &quot; runs &quot; as r c is varied. If the cutoff r c is taken to r h , no long wavelength expansion is needed and the Fick law becomes exact.</p>
+
+				<p>Moreover it is shown in this limit that, after carefully normalizing by the divergent local Unruh temperature, the diffusion constant approaches a universal constant determined by the properties of Rindler space.</p>
+
+				<p>In section 4 the analysis is adapted to linearized gravity fluctuations. After fixing the cutoff and horizon boundary conditions, the vector or shear modes are shown to obey the linearized Navier-Stokes equation in a long wavelength expansion, and a running formula for the diffusion constant is derived. As the cutoff is taken to the horizon, the linearized Navier-Stokes equation becomes exact and the constant is shown to approach the universal Damour value. Some special features of the RG flow for the gravitational case are also discussed. Tensor modes are shown to have no dynamics in the appropriate limit, while there is a dynamical &quot; sound &quot; mode in the scalar sector. Very interestingly, the effective speed of sound goes to infinity and hence the sound mode decouples as the cutoff is taken to the horizon. This means the fluid is becoming incompressible. Specific examples of the charged and neutral AdS black branes and asymptotically flat S 3 -reduced NS5 branes are worked out in detail.</p>
+
+				<p>In section 5 we introduce the Brown-York stress tensor t ab on the cutoff surface. Prior to this point only equations of motion have been used so entropy, viscosity, energy and pressure (which depend on the normalization of the action) could not be discussed. We show that t ab not only is conserved with our boundary conditions but takes the form of a fluid stress tensor (to linear order). We compute the thermodynamic quantities in terms of the spacetime geometry.</p>
+
+				<p>In section 6 we compute the viscosity to entropy ratio η s and show that, under rather general assumptions, the radial RG evolution equations imply it is cutoff independent and equal to 1 4π for Einstein gravity. It is shown that these radial equations are nothing but in the fluid picture -the first law of thermodynamics for isentropic variations in disguise.</p>
+
+				<p>The radial flow is isentropic because in classical gravity there is no entropy outside the black hole. It is accordingly suggested that the RG-invariance of η s will be violated by quantum gravity corrections.</p>
+
+			</div>
+			<div>
+				<head n="2">Background geometry 2.1. The general case</head>
+
+				<p>In this paper we are interested in studying the dynamics of fluids in p flat space dimensions and one flat time dimension. The holographic dual of such a fluid in its ground state should be a p+2-dimensional spacetime geometry, with isometries generating the Euclidean group of p-dimensional rotations/translations plus time translations. The corresponding line element can be written in the form</p>
+
+				<figure>
+					<trash>ds 2 p+2 = −h(r)dτ 2 + 2dτ dr + e 2t(r) dx i dx i , (2.1)</trash>
+
+
+				</figure>
+
+				<p>where the index i = 1, ...p here and hereafter is raised and lowered with δ ij . Lines of constant τ and varying r are null. We consider the case where there is a horizon r h at which h(r h ) = 0, (2.2) and h(r) is positive for r &gt; r h . Lines of constant r = r h and varying τ are the null generators of the future horizon, while those of constant r &gt; r h and varying τ are timelike and accelerated. For convenience we choose the scaling of the spatial x i coordinate so that</p>
+
+				<figure>
+					<trash>t(r h ) = 0. (2.3)</trash>
+
+
+				</figure>
+
+				<p>A special role will be played by the &quot; cutoff &quot; surfaces Σ c of constant r = r c &gt; r h . The induced metric on such a surface is flat p +</p>
+
+				<figure>
+					<trash>1-dimensional Minkowski space ds 2 p+1 = −h dτ − dr h 2 + e 2t dx i dx i , (2.4) with τ the time coordinate. We will sometimes collectively denote the Minkowskian coordinates by x a ∼ (x i , τ ), a = 0, · · · p. (2.5) It is convenient to introduce proper intrinsic coordinates on Σ c x 0 c = h(r c )τ, x i c = e t(r c ) x i . (2.6)</trash>
+
+
+				</figure>
+
+				<p>The advantage of these coordinates is that the induced metric is simply</p>
+
+				<figure>
+					<trash>ds 2 p+1 = η ab dx a c dx b c , (2.7</trash>
+
+					<figDesc>) so that they directly measure proper distances on Σ c . Full bulk coordinates will be denoted</figDesc>
+					<trash>x µ ∼ (x i , τ, r), µ = 0, · · · p + 1. (2.8) We denote by ℓ µ the normal satisfying ℓ µ ∂ µ = (∂ τ + h∂ r ), ℓ 2 = h. (2.9)</trash>
+
+
+				</figure>
+
+				<p>At r = r h , ℓ is null, normal and tangent to the future horizon.</p>
+
+			</div>
+			<div>
+				<head n="2.2">Some special cases</head>
+
+				<p>Here we collect some specific examples which will be used as illustrations in the text. (2.1) of course reduces to flat space for h = t = 0. Another useful way to write flat space</p>
+
+				<figure>
+					<trash>is in &quot; ingoing Rindler &quot; form 7 h(r) = r, t = 0, ds 2 R = −rdτ 2 + 2dτ dr + dx i dx i . (2.10) Observers at fixed r &gt; 0 and x i are then Rindler observers. The asymptotically AdS p+2 black p-brane solutions are h = r 2 R 2 1 − r p+1 h r p+1 , e t = r r h , ds 2 BB = − r 2 R 2 1 − r p+1 h r p+1 dτ 2 + 2dτ dr + r 2 r 2 h dx i dx i . (2.11) Rindler space (2.10) is a limit of the black brane geometry (2.11). To see this define r ′ = R 2 (r − r h ) (p + 1)r h , τ ′ = (p + 1)r h R 2 τ. (2.12) The horizon is then at r ′ → 0 near which ds 2 BB = −r ′ dτ ′2 + 2dτ ′ dr ′ + dx i dx i 1 + O( r ′ R 2 ) . (2.13)</trash>
+
+
+				</figure>
+
+				<p>Hence Rindler space is both the near-horizon and R → ∞ limits of the black brane.</p>
+
+				<p>If we add a U (1) gauge field and charge density Q to the black brane, the metric and gauge field A are</p>
+
+				<figure>
+					<trash>h = r 2 R 2 1 − 1 + αQ 2 r p+1 h r p+1 + αQ 2 r 2p h r 2p , e t = r r h , A = Qr h p − 1 1 − r p−1 h r p−1 dτ. (2.14) Here α = R 2 8πG p(p−1)</trash>
+
+
+				</figure>
+
+				<p>, and we have set the electromagnetic coupling constant to one.</p>
+
+				<figure>
+					<trash>7 Writing τ = 2 ln t + , r = −t + t − , the 2D part of the metric becomes −4dt + dt − .</trash>
+
+
+				</figure>
+
+				<p>A specific example with no AdS region is provided by the well-studied asymptotically flat NS5 brane (we omit the case of general p for brevity). This is a solution of tendimensional supergravity with a three-form field strength threading an S 3 which surrounds the brane. This ten-dimensional geometry of course is not of the form (2.1). However if we Kaluza-Klein reduce to 7 dimensions on the S 3 , then it does take this form.</p>
+
+				<figure>
+					<trash>In the 7-dimensional Einstein frame and coordinates (2.1), the metric is h(r) = y 6/5 1 + L 2 y 2 1/5 1 − y 2 h y 2 , e 2t(r) = y 6/5 y 6/5 h 1 + L 2 y 2 1/5 1 + L 2 y 2 h −1/5 (2.15) Here y(r) is the solution of r = y dy ′ y ′6/5 1 + L 2 y ′2 7/10 . (2.16)</trash>
+
+
+				</figure>
+
+				<p>The right hand side is a hypergeometric function.</p>
+
+				<p>We wish to stress that our approach applies to geometries of the general form (2.1) and is not tied to the above specific examples. Other interesting examples include the proposed holographic duals to superconductors [46], for which the metric cannot in general be found analytically, or other cases ([47,48] to mention a few) which are not asymptotically AdS and correspond to systems which are not conformally invariant in the UV.</p>
+
+			</div>
+			<div>
+				<head n="3">Electromagnetic warmup</head>
+
+				<p>In this section we warm up to the gravity problem by considering the conceptually similar, but mathematically simpler, problem of an electromagnetic field F propagating in the geometry (2.1).</p>
+
+			</div>
+			<div>
+				<head n="3.1">The setup</head>
+
+				<p>Our first step is to introduce a cutoff surface Σ c outside the horizon in the general</p>
+
+				<figure>
+					<trash>geometry (2.1) Σ c : r = r c &gt; r h , (3.1) with coordinates x a ∼ (x i , τ ). (3.2)</trash>
+
+
+				</figure>
+
+				<p>The induced metric on Σ c is flat and given by (2.4) with r = r c . We wish to study the dynamics of an electromagnetic field F within the region r h ≤ r ≤ r c . (3.3) This requires boundary conditions at both r c and r h . Since r h is a black hole horizon, we impose ingoing boundary conditions there. At r c , a natural Dirichlet-like choice is to fix the components of the field strength tangent to Σ c</p>
+
+				<figure>
+					<trash>F ab (x e , r c ) = f ab (x e ) a, b, e = 0, ...p. (3.4)</trash>
+
+
+				</figure>
+
+				<p>We view the f s as the parameters defining the cutoff theory, and Σ c as the place where experiments are set up and measurements made which probe the entire region (3.3) below the cutoff. Fixing a radius where experiments are performed is dual, in the fluid picture, to fixing the scale at which experiments are performed. The boundary conditions at r c and r h do not uniquely specify a solution of the Maxwell equations for F . The problem is to describe the remaining dynamical degrees of freedom. We will see that, in the limits we consider, they are described by a single function q(x a ) which obeys a simple diffusion equation on p+1-dimensional Minkowski space. q can be thought of as a charge density on the horizon or, by a simple rescaling, as a charge density at the cutoff q c . We will compute the diffusivity and also see that the data f ab specifying the boundary conditions at Σ c function as a source for the charge density. This enables cutoff observers to probe the dynamics of the charge density. Let us now turn to the details of this description.</p>
+
+			</div>
+			<div>
+				<head n="3.2">Equations and boundary conditions</head>
+
+				<p>We have a bulk gauge field with components F τ r , F ir , F iτ , F ij . In terms of these the</p>
+
+				<figure>
+					<trash>bulk Maxwell&apos;s equations may be written r : e 2t ∂ τ F τ r + ∂ i F τ i = h∂ i F ir , (3.5) i : ∂ τ F ir +((2 −p)t ′ −φ ′ )F τ i −∂ r F τ i +h ′ F ir = −h∂ r F ir +h((2 −p)t ′ −φ ′ )F ir +e −2t ∂ j F ji , (3.6) τ : ∂ r F τ r + (pt ′ + φ ′ )F τ r + e −2t ∂ i F ir = 0, (3.7) where ∂ i = δ ij ∂ j and for future utility we have allowed for a position-dependent gauge coupling 1 g 2 = e φ normalized so that g(r h ) = 1 and φ(r h ) = 0. In addition we will need the Bianchi identities ∂ r F iτ = ∂ τ F ir − ∂ i F τ r , (3.8) ∂ r F ij = ∂ i F rj − ∂ j F ri . (3.9)</trash>
+
+
+				</figure>
+
+				<p>We wish to impose ingoing boundary conditions on the gauge field at the future horizon. As our coordinates are regular on this horizon, we require F to be regular there:</p>
+
+				<figure>
+					<trash>8 F ri (r h ) = finite. (3.10)</trash>
+
+					<figDesc>The other data at the horizon are the horizon current and charge density, defined as</figDesc>
+					<trash>9 j i (x a ) ≡ F iτ (x a , r h ), q(x a ) ≡ F rτ (x a , r h ), (3.11) together with F ij (x a , r h ). Given the regularity condition, the Maxwell equation (3.5) at the horizon becomes current conservation ∂ τ q + ∂ i j i = 0. (3.12) 3.3. Long wavelength expansion</trash>
+
+					<head>In this subsection we introduce a non-relativistic long-wavelength expansion which is suitable for studying hydrodynamics.</head>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>• Solving the equations The general solution of the Maxwell equation cannot be found analytically in a general geometry of the form (2.1). To proceed further we consider a long-wavelength expansion parameterized by ǫ → 0. We take temporal and spatial derivatives to have the</figDesc>
+					<trash>relativistic scaling ∂ τ ∼ ǫ 2 , ∂ i ∼ ǫ. (3.13) 8 We thank Stephen Green and Robert Wald for pointing out an error in the previous version of our paper. 9 We may also write this in terms of the normal (2.9) as (q, j i ) a = F ab ℓ b . The gauge field has the associated expansion F ir = ǫ F 0 ir + ǫF 1 ir + · · · , F τ r = ǫ 2 F 0 τ r + ǫF 1 τ r + · · · , F ij = ǫ 2 F 0 ij + ǫF 1 ij + · · · , F iτ = ǫ 3 F 0 iτ + ǫF 1 iτ + · · · . (3.14) We will solve for F 0 µν (x a , r</trash>
+
+
+				</figure>
+
+				<p>) in terms of its value at the horizon r = r h by integrating the first order radial evolution equations (3.6) and (3.7) outward to r &gt; r h , and then demanding agreement with the boundary conditions (3.4) when the cutoff r = r c is reached. At lowest order in ǫ these equations are</p>
+
+				<figure>
+					<trash>i0 : h ′ F 0 ir = −h∂ r F 0 ir + h((2 − p)t ′ − φ ′ )F 0 ir , (3.15) τ 0 : ∂ r F 0 τ r + (pt ′ + φ ′ )F 0 τ r + e −2t ∂ i F 0 ir = 0. (3.16)</trash>
+
+
+				</figure>
+
+				<p>There are no non-trivial solutions of (3.15) which obey the ingoing boundary condition (3.10). Therefore F 0 ir = 0. (3.17) The general solution of the second equation (3.16) is then F 0 τ r (x a , r) = −e −pt(r)−φ(r) q 0 (x a ). (3.18) The leading order Bianchi identity ∂ r F 0 iτ = e −pt(r)−φ(r) ∂ i q</p>
+
+				<figure>
+					<trash>0 (3.19) then implies the leading term in F iτ F 0 iτ (x a , r) = − r c r dse −pt(s)−φ(s) ∂ i q 0 (x a ) + f 0 iτ (x a ), (3.20)</trash>
+
+
+				</figure>
+
+				<p>where we have used the boundary conditions at the cutoff to determine the integration constants. Evaluated at the horizon r = r h (3.20) gives the Fick-Ohm law in p</p>
+
+				<figure>
+					<trash>+ 1 dimensions j 0 i = −D EM c ∂ i q 0 + f 0 iτ , (3.21) with diffusivity given by the line integral D EM c (r c ) = r c r h dse −pt(s)−φ(s) . (3.22) Current conservation (3.12) then implies ∂ τ q 0 = D EM c ∂ 2 q 0 − ∂ i f 0 iτ . (3.23)</trash>
+
+					<figDesc>In particular if we choose conducting boundary conditions so that the electric field vanishes at the cutoff we find Fick&apos;s second law</figDesc>
+					<trash>∂ τ q 0 = D EM c ∂ 2 q 0 . (3.24)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Taking the Fourier transform of this equation, we see that the charge density propagates according to the dispersion relation</figDesc>
+					<trash>iω = D EM c k 2 . (3.25) We still need to solve for F 0 ij (x a , r). The leading term in the Bianchi identity (3.9) is ∂ r F 0 ij = 0. (3.26) The solution of this with the given boundary conditions is simply F 0 ij (x a , r) = f 0 ij (x a ). (3.27) Hence there are no dynamics associated with F 0 ij . To leading order in ǫ, (3.17), (3.18), (3.20) and (3.27) comprise the most general</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>tion of the Maxwell equation with the given boundary data. The solution is characterized by a single function in p + 1 dimensions, the charge density q 0 (x a ), which obeys the dispersion relation (3.23). Away from the scaling limit ǫ = 0, the dispersion relation (3.25) for q has corrections of order k 4 . Other parameterizations of the solution space are possible. One alternative is to take the normal component of the electric field at the cutoff, which is not fixed by the boundary condition there. This is simply related at leading order to the horizon charge density, according to (</figDesc>
+					<trash>3.18), by 10 q 0 c (x a ) ≡ e 2t(r c ) F 0 rτ (x a , r c ) = e −(p−2)t(r c )−φ(r c ) q 0 (x a ), (3.28) 10 We could of course have couched our entire argument in terms of q c , but the derivation is then burdened by extra terms which cancel in the end. and hence obeys the same dispersion relation. This parameterization is more natural from our perspective as we want to think of measuring the dynamical modes and dispersion constants with experimental devices positioned on the cutoff surface Σ c . The charge density can be sourced, according to (3.23), by turning on an electric field f iτ . Hence the dispersion constant can be measured by turning on a tangential electric field at the cutoff and watching how the normal component decays. We shall henceforth adopt q c as our basic variable. • Normalizing the diffusivity As it stands, the value of D EM c (3.25</trash>
+
+
+				</figure>
+
+				<p>) is not very meaningful because it is dimensionful and can be set to any value by a change of coordinates. We therefore introduce the proper frequency ω c and proper momentum k c conjugate to proper time and distance in the cutoff hypersurface r = r c .</p>
+
+				<figure>
+					<trash>These are ω c = ω h(r c ) ∼ −i ∂ ∂x 0 c , k i c = e −t(r c ) k i ∼ i ∂ ∂x i c . (3.29)</trash>
+
+
+				</figure>
+
+				<p>Observers at the cutoff equipped with a thermometer measure a non-zero temperature T c . 11 To determine T c , note that very near the horizon r → r h , observers with worldlines of fixed r and x i are highly accelerated. They therefore detect a Rindler temperature which</p>
+
+				<figure>
+					<trash>diverges as 12 T R = ∂ r h 4πh 1/2 = h ′ (r h ) 4π √ r − r h + O √ r − r h (3.30)</trash>
+
+					<figDesc>for any smooth quantum state. For an equilibrium state, the temperature as a function of r is determined by the Tolman relation</figDesc>
+					<trash>T (r) √ h = T H = constant. (3.31)</trash>
+
+
+				</figure>
+
+				<p>For an asymptotically flat spacetime, h → 1 at infinity, and T H is the Hawking temperature . The relation (3.31) together with the boundary condition (3.30) determines the local temperature at the cutoff to be</p>
+
+				<figure>
+					<trash>T c ≡ T (r c ) = T H h(r c ) , T H = h ′ (r h ) 4π . (3.32)</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>11</head>
+
+				<p>The formulation here naturally leads to a cutoff-dependent temperature. If we want to keep the temperature at the cutoff fixed as we change r c , we would have to simultaneously move in the space of black-brane solutions. 12 We have set ¯ h = 1, otherwise it would appear on the right hand side of this equation.</p>
+
+				<figure>
+					<trash>The quantity ¯ D EM c defined by iω c = ¯ D EM c T c k 2 c , (3.33)</trash>
+
+					<figDesc>then gives the diffusivity in units of the cutoff temperature. Our final expression for the coordinate-invariant, dimensionless diffusivity ¯</figDesc>
+
+				</figure>
+
+				<p><formula>D EM c is ¯ D EM c = e 2t(r c ) h ′ (r h ) 4πh(r c ) r c r h dse −pt(s)−φ(s) . (3.34) For r c → r h , ¯ D EM c has the universal behavior ¯ D EM c = 1 4π + O(r c − r h ) (3.35)</formula></p>
+
+				<p>for any geometry. Unsurprisingly, it follows from (2.10) that the leading term is exact for all r c for Rindler space. For an AdS black p-brane with p &gt; 1 and a constant gauge coupling (φ = 0) the integral is easily evaluated and yields</p>
+
+				<figure>
+					<trash>¯ D EM c = p + 1 4π(p − 1) 1 − ( r h r c ) p−1 1 − ( r h r c ) p+1 . (3.36) Near the boundary r c = ∞ we obtain ¯ D EM ∞ = p + 1 4π(p − 1) + O r h r c . (3.37)</trash>
+
+					<figDesc>The leading term agrees with the result of Kovtun and Ritz [21]</figDesc>
+
+				</figure>
+
+				<p>and Starinets [29].</p>
+
+				<figure>
+					<figDesc>We see that the dimensionless diffusivity runs from their result to the universal 1 4π in (3.35) as the cutoff is taken from infinity to the horizon.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="3.4">Near horizon expansion</head>
+
+				<figure>
+					<figDesc>Here we consider the near-horizon dynamics when r → r h . There is then no need to make the long-wavelength ǫ expansion which required small ω and k. Inspired by the diffusion behavior of (3.25), or equivalently (3.33), we let (τ, r) → (t, ρ) where</figDesc>
+
+				</figure>
+
+				<p><formula>τ = t λ , r = r h + λρ. (3.38)</formula></p>
+
+				<p>Taking the limit λ → 0 corresponds to focusing on the near-horizon region. We also have</p>
+
+				<figure>
+					<trash>h(r) = λρ + O(λ 2 ), e t(r) = 1 + O(λ). (3.39)</trash>
+
+					<figDesc>Since we wish to consider couplings which are regular in r we can write e φ = e φ 0 + O(λ) (3.40) where φ 0 is a constant. The gauge field has an associated expansion</figDesc>
+					<trash>F µν = F (0) µν + F (1) µν λ + O(λ 2 ). (3.41) At leading order (3.6) and (3.7) give F (0) iρ = 0, ∂ ρ F (0) tρ = 0. (3.42) From (3.6) and (3.8) we find ∂ i F (1) iρ = ∂ 2 F (0) tρ , F (0) ti = (ρ − ρ c ) ∂ i F (0) tρ + f ti (t, x j ) (3.43)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>where f ti is any function of (t, x i ). The cutoff surface is at r c = r h + λρ c and there we impose the boundary condition F</figDesc>
+					<trash>(0) it = 0. Identifying F (0) tρ = e −φ 0 q c together with equation (3.5) at O(λ) leads to ∂ t F (0) tρ = ρ c ∂ 2 F (0) tρ (3.44) which is equivalent to ∂ t q c = ρ c ∂ 2 q c . (3.45)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Alternatively we can write this in terms of the dispersion relation</figDesc>
+
+				</figure>
+
+				<p><formula>iω c = 1 4πT c k 2 c (3.46)</formula></p>
+
+				<p>with no subleading k 4 corrections for r c → r h . This makes sense since taking the cutoff to the horizon should correspond to an infrared limit in which higher derivative corrections are scaled away.</p>
+
+			</div>
+			<div>
+				<head n="3.5">Subsummary</head>
+
+				<p>To summarize this section, for large r c , which should correspond to taking the fluid cutoff to the UV, the charge density obeys a complicated non-linear dispersion relation.</p>
+
+				<p>For small ω ∼ k 2 , Fick&apos;s law holds (for any r c ) with a dimensionless diffusivity ¯ D EM c expressed as a radial line integral from the horizon to the cutoff. In the infrared limit as the cutoff is taken to the horizon, the dispersion relation simplifies to the Fick law and ¯ D EM c takes the universal value 1 4π .</p>
+
+			</div>
+			<div>
+				<head n="4">Gravity</head>
+
+				<p>Now we will adapt this to gravity. The linearized Einstein equations become rather complicated in the general background (2.1) but have been completely analyzed in a series of papers whose results we shall use without rederivation. One important feature, demonstrated in [17] and [13], is that the linearized gravity fluctuations decouple into so-called vector, scalar (or sound) and tensor type, characterized by their transformations under the O(p) rotational symmetry. We consider these different types in turn.</p>
+
+				<p>We stress that throughout this section we assume that linearized metric fluctuations are governed by equations of motion whose form is given by the linearization of the Einstein tensor. R 2 corrections or even certain matter couplings could change this. Quite often these equations are unchanged, especially for the shear mode. We expect qualitative generalizations of our results to hold for any type of couplings.</p>
+
+			</div>
+			<div>
+				<head n="4.1">Vector/shear modes</head>
+
+				<p>In this section we consider the vector fluctuations, which turn out to be the most interesting for our purposes. These have nonzero h ia components which obey ∂ i h iτ = 0, h ij = F (r)∂ (i h j)τ . (4.1)</p>
+
+				<p>In terms of these we define U(1) gauge fields</p>
+
+				<figure>
+					<trash>A i = e −2t h i a dx a , (4.2) and field strengths F i = dA i . (4.3)</trash>
+
+
+				</figure>
+
+				<p>Here the index i labels the different field strengths. Following [12], by considering dimensional reduction along the polarization direction of the metric perturbations, the linearized Einstein equation for each F i is precisely that of an abelian gauge field with</p>
+
+				<figure>
+					<trash>dependent gauge coupling e φ = e 2t . (4.4)</trash>
+
+					<figDesc>This reduces the equation for the metric vector fluctuations to p − 1 independent copies of the Maxwell equations. We may therefore read the answer off of the solution of the previous section. We take ingoing boundary conditions at the horizon and Dirichlet boundary conditions on h i a (x a , r c ) at the cutoff. This amounts to fixing the induced metric on Σ c .</figDesc>
+
+				</figure>
+
+				<p>The analog of the charge density q c is the vector field</p>
+
+				<figure>
+					<trash>v i (x a ) ≡ (∂ r − 2t ′ )h i τ (x a , r c ). (4.5)</trash>
+
+
+				</figure>
+
+				<p>It follows from (4.1) that these are divergence free ∂ i v i = 0. (4.6)</p>
+
+				<p>The analog of the Fick-Ohm law is the forced linearized Navier-Stokes equation</p>
+
+				<figure>
+					<trash>∂ τ v i = D c ∂ 2 v i + s i (4.7) where the diffusivity is D c = r c r h dse −(p+2)t(s) . (4.8) Here the forcing term s i is s i = e −2t(r c ) (∂ j ∂ τ h i j (x a , r c ) − ∂ 2 h i τ (x a , r c )). (4.9)</trash>
+
+					<figDesc>We wish to define a dimensionless coordinate invariant diffusivity 13 ¯ D c by transforming to proper coordinates and multiplying by the local temperature T c . This proceeds exactly as in the electromagnetic case and the result is</figDesc>
+					<trash>¯ D c = e 2t(r c ) h ′ (r h ) 4πh(r c ) r c r h dse −(p+2)t(s) . (4.10)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>When the boundary conditions are chosen so that the forcing term vanishes, the transverse velocity fields v i propagate with the dispersion relation</figDesc>
+
+				</figure>
+
+				<p><formula>14 iω c = ¯ D c k 2 c . (4.11) 13</formula></p>
+
+				<p>The quantity ¯ D c , which is the kinematic viscosity times the temperature, differs from the dynamic viscosity η by a factor involving the energy density, temperature and pressure. It is a more basic quantity from our perspective in that it is directly related to the measured decay rate of a perturbation. At this point we cannot define η, because we have not determined the energy density or pressure. This requires a bit more machinery -the Brown-York stress tensor -and will be worked out in section 5. 14 We have set ¯ h = c = 1, and the Newton constant G does not enter our calculations. In more general conventions iω c = ¯</p>
+
+				<p><formula>hc 2 ¯ D c k 2 c .</formula></p>
+
+				<p>The ¯ h appears in this classical calculation because the diffusivity is expressed in terms of the local temperature which is itself proportional to ¯ h.</p>
+
+				<p>The dimensionless diffusivity behaves universally in the infrared as the cutoff is taken to the horizon</p>
+
+				<p><formula>15 ¯ D c → 1 4π for r c → r h . (4.12)</formula></p>
+
+				<p>This agrees with the result obtained three decades ago in [4]. It applies for any geometry of the form (2.1). It is really a property of the linearized Einstein equation in Rindler space, which is the only relevant region for the calculation in the r c → r h limit.</p>
+
+			</div>
+			<div>
+				<head>4</head>
+
+				<figure>
+					<figDesc>.2. A D-theorem and other special properties of ¯ D c So far the discussion of the electromagnetic and gravitational diffusivity have been exactly parallel. However some special features arise in the gravitational case. This first is that the integrand of (4.8) turns out to obey</figDesc>
+					<trash>e −(p+2)t = ∂ r he −(p+2)t h ′ − 2t ′ h + 16πG he −(p+2)t (h ′ − 2t ′ h) 2 T µν ζ µ ζ ν . (4.13)</trash>
+
+
+				</figure>
+
+				<p>Here T µν is the bulk matter stress tensor and ζ is any null vector tangent to the brane with time component h −1/2 ∂ τ . Hence if there is no matter or if T µν ζ µ ζ ν = 0, the integrand is a total derivative. ¯ D c is then given by the simple expression</p>
+
+				<figure>
+					<trash>¯ D c = h ′ (r h ) 4π e −pt(r c ) h ′ (r c ) − 2t ′ (r c )h(r c ) . (4.14)</trash>
+
+
+				</figure>
+
+				<p>The fact that the expression for the diffusivity can be integrated stems from the fact that the shear modes are pure gauge at zero momentum (we generalize here [29]). h iτ is nonzero for k i = ω = 0, and we can derive its radial dependence from the zero momentum Einstein equation. However we can also solve this equation with a gauge transformation of the form δx i = e i τ + Be i e −2t dr, δτ = −Be i x i (4.15) with B, e i arbitrary constants. The second term in δx i is added to preserve our gauge condition h rµ = 0. The nonzero component is h iτ =</p>
+
+				<figure>
+					<trash>Bh + e 2t e i (4.16) 15 The results of [19,20,24,27,28]</trash>
+
+
+				</figure>
+
+				<p>suggest the universal value will be modified by higher-derivative gravity corrections.</p>
+
+				<p>In order to preserve the boundary condition h iτ (r c ) = 0, we must take</p>
+
+				<figure>
+					<trash>B = − e 2t(r c ) h(r c ) , (4.17) resulting in h iτ (r) = e i e 2t(r) − h(r) h(r c ) e 2t(r c ) ≡ f 1 (r)e i . (4.18)</trash>
+
+
+				</figure>
+
+				<p>Of course we already found this solution, which is not pure gauge at non-zero-momentum, using the Einstein equation.</p>
+
+				<p>The present derivation has the distinct advantage that it follows from gauge invariance and therefore is completely independent of the prescribed dynamics. Note that we can also find matter perturbations compatible with this gravity solution by the same method. ¯ D c can be expressed as a ratio of the coefficients of ∂ r h iτ and ∂ r h ij . The latter vanishes at zero momentum so we need to work to next order in ǫ expansion. We promote e i → e i (x a ), with ∂ i e i (x a ) = 0. By symmetry h ij = e 2t f 2 (r)(∂ i e j + ∂ j e i ) for some function f 2 (r), determined from the ij components of the linearized Einstein equation δG ij = 8πGδT ij . (4.19)</p>
+
+				<p>Again by symmetry the variation of T ij with the matter fields is of the form t m (∂ i e j +∂ j e i ) and (4.19) reduces to a single equation which becomes e −(p−2)t ∂ r [−e (p−2)t f 1 + e tp h∂ r f 2 ] = −16πGt m (4.20) in the long wavelength limit. In many cases (all that we have studied) t m = 0 and hence</p>
+
+				<figure>
+					<trash>h(r)∂ r f 2 (r) = e −2t(r) f 1 (r) − f 1 (r h )e −pt(r) . (4.21)</trash>
+
+
+				</figure>
+
+				<p>This is then enough information to reproduce (4.14). So the universality of (4.14) is at least in part a consequence of zero-momentum gauge invariance.</p>
+
+				<p>Interestingly, if we plug in the neutral AdS black brane metric (</p>
+
+				<figure>
+					<trash>2.11) we find the surprising result ¯ D c = 1 4π (4.22)</trash>
+
+					<figDesc>for any value of r c . Hence in this particular case ¯ D c (unlike ¯ D EM c for the same geometry) does not run. In general one expects ¯ D c and as well as all transport coefficients to run.</figDesc>
+
+				</figure>
+
+				<p>Indeed for the charged black brane (2.14) we will exhibit a rather nontrivial RG flow in section 4.5 below. The constant value appearing in (4.22) is directly related to the fact that η s does not run, which will be discussed in section 6 below. However for now we briefly note the relation. The viscosity is related to ¯ D c by the relation η =</p>
+
+				<figure>
+					<trash>¯ D c (E+P) T c where E (P)</trash>
+
+
+				</figure>
+
+				<p>is the energy density (pressure). In the absence of chemical potentials, the entropy density is determined from T c s = E + P, implying ¯ D c = η s . When there are chemical potentials such as for the charged black brane this simple formula no longer holds, and ¯ D c runs.</p>
+
+				<p>We now show that, in a wide range of circumstances, ¯ D c decreases with increasing r c , i.e. it increases under RG flow into the infrared. We follow in spirit the A-theorem of [49].</p>
+
+				<figure>
+					<trash>Define the quantity H(r c ) ≡ e (p−2)t(r c ) h 2 (r c )∂ r c 4π ¯ D c h ′ (r h ) = e −2t h − (h ′ − 2ht ′ )e pt r c r h dse −(p+2)t(s) . (4.23) Since h(r h ) = 0, we have H(r h ) = 0. The gradient of H then obeys ∂ r H(r) = −16πGT µν ζ µ ζ ν e pt(r) r r h dse −(p+2)t(s) . (4.24) This relation employs the Einstein equation 16πGT µν ζ µ ζ ν = 2G µν ζ µ ζ ν = h ′′ + (p − 2)h ′ t ′ − 2t ′′ h − 2pt ′2 h. (4.25)</trash>
+
+
+				</figure>
+
+				<p>The null energy condition implies T µν ζ µ ζ ν ≥ 0, and hence that ∂ r H ≤ 0. Since H(r h ) = 0 we conclude that H(r) ≤ 0 for r ≥ r h . It then immediately follows from the definition</p>
+
+				<figure>
+					<trash>(4.23) that ∂ r c ¯ D c ≤ 0. (4.26)</trash>
+
+
+				</figure>
+
+				<p>We expect that the general approach of this proof will be applicable to a wide range of situations. However, we wish to note that the precise result (4.26) may also be obtained from (4.14) simply by differentiating with respect to r c .</p>
+
+			</div>
+			<div>
+				<head n="4.3">Tensor modes</head>
+
+				<p>The tensor modes of the metric have nonzero components h ij with h i i = ∂ i h i j = 0. The equations governing their fluctuations appear in [17], and are equivalent to a (p + 2)- dimensional scalar Laplacian for each of the (p − 2)(p + 1)/2 tensor components. The analysis of these modes in our setup is very similar to the one given in section 3 for the F ij modes of the electromagnetic fluctuations, and will not be spelled out here. The conclusion is that, in either the near-horizon or long-wavelength expansions (3.13), their values are everywhere fixed by the boundary conditions on Σ c and the horizon. There are no dynamical modes in these expansions.</p>
+
+			</div>
+			<div>
+				<head n="4.4">Scalar/sound modes</head>
+
+				<p>In this subsection we consider the scalar or sound mode. The equations of motion are somewhat complicated and we restrict ourselves here to the case of the AdS black threebrane so that p = 3, although we expect the more general case to be similar. For p = 3 the equations have been fully analyzed in [17]. They found that the metric fluctuations are determined by a certain linear combination of the components, denoted Z 2 , obeying a second order radial differential equation which they express (equation 4.35) in Schwarzschild-like coordinates. For our purposes it is more convenient to work in the advanced coordinates (2.11), because these are smooth at the future horizon and the ingoing boundary condition is simply regularity at r = r h . Z 2 , which is a Fourier transform with respect to Schwarzschild time, is traded in these coordinates for the Fourier transform with respect to τ denoted here by X. X is related to Z 2 via a factor of e</p>
+
+				<figure>
+					<trash>iω r dr ′ h : X = r − r h r + r h −iωR 2 4r h Z 2 (4.27)</trash>
+
+
+				</figure>
+
+				<p>Rewritten in terms of X and the coordinate r the equation for the sound mode, equation (4.35) of reference [17]</p>
+
+				<figure>
+					<trash>, is r 4 − r 4 h ∂ 2 r X + r 4 − r 4 h 5r 4 − r 4 h r r 4 − r 4 h + 8r 4 h k 2 rr 4 h k 2 + 3r 5 −k 2 + ω 2 + iR 2 ω r 2 − r 2 h ∂ r X = k 2 R 4 − ω 2 R 4 3r 2 + r 2 h 4(r 2 + r 2 h ) − iωR 2 3r 2 + r 2 h 2r + 4r 4 h k 2 4r 4 h − iωR 2 r r 2 h + r 2 r 2 (r 4 h k 2 + 3r 4 (−k 2 + ω 2 )) X. (4.28)</trash>
+
+
+				</figure>
+
+				<p>Let us now analyze this equation in the long-wavelength expansion (3.13) with ω ∼ k 2 ∼ ǫ 2 → 0. Note that there are no poles appearing in (4.28) for small ω ∼ k 2 , so we can safely take ǫ → 0 for all r. One finds the equation for the leading term in the ǫ-expansion</p>
+
+				<figure>
+					<trash>of X ∂ 2 r X 0 + 5r 4 − r 4 h r(r 4 − r 4 h ) − 8r 4 h r(3r 4 − r 4 h ) ∂ r X 0 + 16r 8 h r 2 (3r 4 − r 4 h )(r 4 − r 4 h ) X 0 = 0, (4.29)</trash>
+
+
+				</figure>
+
+				<p>which does not depend on ω or k. This has a unique solution, up to an overall scale, which is non-singular at r = r h . The scale is then fixed by the boundary condition at the cutoff r c . Unsurprisingly we learn that there are no dynamical degrees of freedom in the sound mode in the expansion (3.13).</p>
+
+				<p>It is interesting, but outside the scope of this paper, to consider an alternate scaling limit in which ω ∼ k. In this limit nontrivial sound modes may appear with some fixed velocity v s . In the limit (3.13), all fixed velocities including v s are sent to infinity.</p>
+
+				<figure>
+					<figDesc>Now let us now consider the near horizon expansion. In this expansion we take r c → r h without any preassumed relation between ω and k. In this case it is not so simple to take r c → r h , as a quick inspection of (4.28) indicates there may be poles at ω = ± 2 3 k. (4.30) Let us first consider the case where ω does not take the value (4.30). Then we can safely take r c → r h , and as in our long-wavelength expansion above there are no degrees of freedom. Hence the only possibility for dynamical modes are those that obey (4.30). Equation (4.30) can be written in terms of the coordinate-invariant proper quantities and local temperature as</figDesc>
+					<trash>ω c = ± 2 3 e t(r c ) T c T H k c . (4.31)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>This is a dispersion relation for a sound mode with velocity of sound</figDesc>
+
+				</figure>
+
+				<p><formula>v s = 2 3 e t(r c ) T c T H . (4.32)</formula></p>
+
+				<p>However note that as r c → r h , T c and hence the velocity of sound goes to infinity. Hence, in an expansion in r c − r h , no sound modes appear and the fluid at the horizon is</p>
+
+			</div>
+			<div>
+				<head>pressible.</head>
+
+				<p>This again is consistent with the expectation that the limit r c → r h is a nonrelativistic, low energy limit. It is low energy because of the high redshifts, and non-relativistic because the degeneracy of the induced metric on Σ c appears only in the temporal and not the spatial components. In its most general form, the Navier-Stokes equation for a fluid contains both sound and shear modes. However one may take a further limit of these equations of the form (3.13) in which velocities scale as v i → ǫv i → 0 (see [23] for a nice discussion). In this limit the sound velocity goes to infinity. The fluid retains its nonlinear interactions and is described by the incompressible Navier-Stokes equation. The near-horizon limit resembles a bulk version of this limit.</p>
+
+				<p>This leads us to the interesting conclusion that the fluid which lives at the horizon is, at linear order, universally given by an incompressible fluid with dimensionless diffusivity ¯ D c = 1 4π .</p>
+
+			</div>
+			<div>
+				<head n="4.5">Charged black brane</head>
+
+				<p>In this section we consider the case of the charged black brane geometry (2.14) as a somewhat more non-trivial illustration of our approach. If symmetry allows, a metric perturbation can source a matter perturbation already at the linear level. For the charged black brane there is a matter perturbation of the general form δA = a j dx j . (4.33)</p>
+
+				<p>We can solve the coupled equations by transforming them back to the previous case. First, let us define a shift of the &quot; gravitational &quot; field strength appearing in (</p>
+
+				<figure>
+					<trash>4.2) and (4.3) by ˜ F j τ r = F j τ r − 16πGa j e −2t A ′ τ (r), (4.34)</trash>
+
+
+				</figure>
+
+				<p>with A τ given in equation (2.14). (Note that, in a notational clash, neither F nor F here is the field strength of A! Instead, F refers to the &quot; gravitational &quot; field strength as defined in (4.2) and (4.3).) ˜ F j τ r then obeys exactly the same equations (3.5) through (3.7) obeyed by F j τ r in the neutral case.</p>
+
+				<p>Consequently, following the logic in Section 4.3, we find at lowest order, similarly to</p>
+
+				<figure>
+					<trash>(3.18), ˜ F j τ r = −e −(p+2)t ˜ v j (x a ) (4.35) where ˜ v j (x a ) ≡ ˜ F j rτ (x a , r h ). (4.36)</trash>
+
+
+				</figure>
+
+				<p>Note that the effective &quot; charge &quot; ˜ v j in (4.36) is modified from the corresponding equation (3.11).</p>
+
+				<p>Now we must examine the two remaining equations: the lowest order Bianchi identity</p>
+
+				<figure>
+					<trash>∂ r F j iτ = −∂ i F j τ r (4.37) and the Maxwell equation for the gauge perturbation a j F j τ r = 1 Q ∂ r e (p−2)t h∂ r a j . (4.38)</trash>
+
+
+				</figure>
+
+				<p>Note that we have written these two equations in terms of F j τ r ; by doing so we can now quickly see that the right hand side of (4.37) is just a total derivative. Thus we find, similarly to (3.43) for r = r h ,</p>
+
+				<figure>
+					<trash>F j iτ (x a , r h ) = 1 Q r c r h dr ∂ r e (p−2)t h∂ i ∂ r a j + f iτ (x a ). (4.39)</trash>
+
+
+				</figure>
+
+				<p>Before we can use (4.39) to find the diffusivity D c , we must first find a j . To do so, we simply plug (4.35) and (4.38) into (4.34), additionally imposing the boundary condition a j (r c ) = 0. We thus find</p>
+
+				<figure>
+					<trash>a j (r) = ˜ v j (x a ) 16πGQ 1 − e pt(r)−pt(r c ) h ′ (r) − 2t ′ (r)h(r) h ′ (r c ) − 2t ′ (r c )h(r c ) . (4.40)</trash>
+
+
+				</figure>
+
+				<p>Again we can find a dimensionless coordinate invariant diffusivity which is</p>
+
+				<figure>
+					<trash>¯ D Q c = h ′ (r h ) 4π e −pt(r c ) h ′ (r c ) − 2t ′ (r c )h(r c ) = p + 1 − αQ 2 (p − 1) 4π p + 1 + αQ 2 p + 1 − 2p r p−1 h r p−1 c . (4.41)</trash>
+
+
+				</figure>
+
+				<p>Note that the first line of (4.41) is identical to (4.14), corroborating the universality of (4.14). However when we plug in the metric coefficients for the charged black brane to get the second line of (4.41), we see that, unlike the case of the neutral black brane, the diffusivity is no longer constant. 4.6. Asymptotically flat black p-brane</p>
+
+				<p>In our next example we consider the asymptotically flat S 3 -compactified black NS5 solution (2.15). The 7-dimensional effective action for the rotationally invariant modes is Einstein gravity plus scalars, hence according to section 4.</p>
+
+				<figure>
+					<trash>2, ∂ r c ¯ D c = 0, and ¯ D c = η s = 1 4π</trash>
+
+
+				</figure>
+
+				<p>at any scale. Of course this can be reproduced by direct calculation. The local temperature is a non-trivial function of radial position:</p>
+
+				<p><formula>T c = 1 2πy h y 3/5 c 1 + L 2 y 2 h −1/2 1 + L 2 y 2 c −1/10 1 − y 2 h y 2 c −1/2 . (4.42)</formula></p>
+
+				<p>General formulae from the following section for the energy density plus pressure give</p>
+
+				<figure>
+					<trash>E + P = y 2 h 8πGy 18/5 c 1 + L 2 y 2 c −3/5 1 − y 2 h y 2 c −1/2 (4.43) and entropy density s = e −5t(r c ) 4G = y 3 h 4Gy 3 c 1 + L 2 y 2 c −1/2 1 + L 2 y 2 h 1/2 . (4.44)</trash>
+
+
+				</figure>
+
+				<p>We note that E + P = T c s. The L → ∞ throat limit of these expressions should describe the thermodynamics of the quantum theory on the NS5-brane, but we will not further pursue this here.</p>
+
+			</div>
+			<div>
+				<head n="5">Brown-York stress tensor</head>
+
+				<p>Up until this point, all of our results have followed from equations of motion and boundary conditions. These are sufficient to determine diffusion rates. However they are not sufficient to determine quantities such as the energy, entropy or viscosity which depend on the normalization of the action. In this section we introduce the Brown-York stress tensor t ab whose overall coefficient depends on the action. We propose that, with our boundary condition, t ab evaluated at the cutoff is the stress tensor of the fluid. As we will see, the introduction of t ab makes the calculations and analysis considerably more concise, as well as enabling us to compute more quantities.</p>
+
+				<p>The Brown-York stress tensor associated to a hypersurface Σ with unit normal n is defined by t ab = 1 8πG (γ ab K − K ab + Cγ ab ) , (5.1) where γ ab ≡ g ab − n a n b (5.2) is the induced metric on Σ, the extrinsic curvature is</p>
+
+				<figure>
+					<trash>K ab ≡ 1 2 L n γ ab = 1 2 n c ∂ c γ ab + ∂ a n c γ cb + ∂ b n c γ ac = 1 2 L n g ab − n a n c L n g cb − n b n c L n g ac , (5.3)</trash>
+
+
+				</figure>
+
+				<p>and L n is the Lie derivative along n. t ab is ambiguous up to a constant multiple of the induced metric which we denote here C. This is equivalent to the ambiguity in shifting the pressure of a fluid by a constant.</p>
+
+				<p>The Einstein equation G µν = 8πGT µν implies that t ab obeys the conservation law ∇ a t ab = n µ T µb , (5.4) where a, b are projected to Σ, ∇ is the γ-covariant derivative and T µν is bulk stress tensor.</p>
+
+				<p>We are interested in the case for which Σ = Σ c is the cutoff hypersurface and will always impose &quot; energy-conserving &quot; boundary conditions so that the right hand side of (5.4) vanishes. We then have ∇ a t ab | Σ c = 0. (5.5)</p>
+
+				<p>Note that if we were to allow fluctuations in both the induced metric and extrinsic curvature, the linearization of (5.5) about the background would be</p>
+
+				<figure>
+					<trash>(δ∇ a )t 0 ab + ∇ 0a (δt ab ) Σ c = 0. (5.6)</trash>
+
+
+				</figure>
+
+				<p>This equation implies that the linearized Brown-York stress-tensor is not in general conserved in the background geometry, precluding a simple interpretation as the linearized fluid stress tensor. However with our boundary conditions the induced metric on Σ c is held fixed and all is well.</p>
+
+			</div>
+			<div>
+				<head n="5.1">Background stress-energy</head>
+
+				<p>Now we evaluate t ab for our general metric (2.1) at the cutoff hypersurface Σ c . The unit normal is</p>
+
+				<figure>
+					<trash>n = √ h∂ r + 1 √ h ∂ τ (5.7) and K µν dx µ dx ν = √ h − h ′ 2 dτ − dr h 2 + t ′ e 2t dx i dx i , (5.8) γ µν dx µ dx ν = −h dτ − dr h 2 + e 2t dx i dx i . (5.9) In intrinsic coordinates to Σ c as defined in (2.6) K ab dx a dx b = − h ′ 2 √ h (dx 0 c ) 2 + √ ht ′ dx ci dx i c , (5.10) γ ab dx a dx b = η ab dx a c dx b c . (5.11) The leading order Brown-York stress tensor is t 0 ab dx a dx b = √ h 8πG −pt ′ (dx 0 c ) 2 + (p − 1)t ′ + h ′ 2h dx ic dx i c + C ′ η ab dx a c dx b c , (5.12)</trash>
+
+
+				</figure>
+
+				<p>where all r-dependent quantities are evaluated at r = r c . This is the stress tensor of a fluid at rest with constant pressure P and energy density E. The constant part of the difference E − P depends on the choice of constant C: the behavior of the linearized fluid depends only on the sum</p>
+
+				<figure>
+					<trash>E + P = √ h 8πG h ′ 2h − t ′ . (5.13) Note that for r c → r h , E + P → T c</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>4G</head>
+
+				<p>= T c s, where s is the entropy density of the horizon.</p>
+
+			</div>
+			<div>
+				<head n="5.2">Perturbations</head>
+
+				<p>Now we consider a small perturbation h. It is convenient to choose the gauge h rr = h rτ = h ri = 0, (5.14) so that the metric retains the general form (2.1). Moreover, our boundary condition implies h ab (r c ) = 0. (5.15)</p>
+
+				<p>It then follows that the leading correction to the extrinsic curvature in the long wavelength limit simplifies to 2K</p>
+
+				<figure>
+					<trash>1 ab = √ h∂ r h ab , and t 1 ab (x a , r c ) = √ h 16πG −∂ r h ab + γ ab γ cd ∂ r h cd . (5.16)</trash>
+
+
+				</figure>
+
+				<p>For the shear mode, only h iτ and h ij are nonzero. Moreover, as shown in [13] the Einstein equation implies they are related by F ∂ (j h i)τ = h ij for some function F (r), as in equation (4.1) previously. Conservation of the Brown-York stress tensor implies that F (r c ) =</p>
+
+				<figure>
+					<trash>¯ D c T H on Σ c and ∂ r h ij = ¯ D c T H ∂ r ∂ (i h j)τ . (5.17) Defining the velocity field v i = − e −t 16πG(E + P) ∂ r h iτ , (5.18) The linearized stress tensor can be written in intrinsic coordinates t 1 ab dx a c dx b c = 2(E + P)v i dx i c dτ c + η∂ i v j dx i c dx j c (5.19) with viscosity given by η = ¯ D c (E + P) T c . (5.20) Using (3.32), (4.14) and (5.13), this becomes η(r c ) = e −pt(r c ) 16πG , (5.21) in agreement with [4]</trash>
+
+
+				</figure>
+
+				<p>for r c → r h where t → 0.</p>
+
+				<p>We see from the above that the stress tensor for the linearized shear mode indeed takes the form of an incompressible fluid.</p>
+
+				<p>6. RG flow, the first law of thermodynamics and</p>
+
+			</div>
+			<div>
+				<head>η s universality</head>
+
+				<p>In this section we want to show that the first law of thermodynamics together with isentropy of the radial flows is equivalent to a radial component of the Einstein equation, and moreover imply that η s does not run. A general type of equivalence between the</p>
+
+				<p>Einstein equation and the first law has been demonstrated by Jacobson [43], see also [50].</p>
+
+				<p>We suspect our equivalence is related to this -as well as the recent work [44] -but we defer this issue to future consideration.</p>
+
+				<p>For the present purposes, it is convenient to consider a quotient of the general geometry</p>
+
+				<figure>
+					<trash>(2.1) under shifts of x i x i ∼ x i + n i , n i ∈ Z. (6.1) This turns the spatial R p in the p-torus T p with r-dependent volume V p = e pt . (6.2)</trash>
+
+
+				</figure>
+
+				<p>The total entropy S = sV p as a function of the total energy E = EV p , pressure P, charge Q, chemical potential µ, inverse temperature β = T −1 c and volume V p are related by S = βE + βPV p − βµQ. (6.3)</p>
+
+				<p>In general there will be one µQ term for each chemical potential present; in our case we consider only the charged brane given in (2.14), for which µ = A τ / √ h.</p>
+
+				<p>Now let us consider the first law of thermodynamics for radial variations under the assumption that the variation is isentropic. This reads 0 = ∂ r S = ∂ r β (E + PV p − µQ) + β (∂ r E + ∂ r PV p + P∂ r V p − ∂ r µQ) .</p>
+
+				<figure>
+					<trash>(6.4) Using expressions (3.32), (5.13) and (6.2) for the thermodynamic quantities 16 one finds (6.4) becomes ∂ r S = V p 16πGT H (h ′′ + (p − 2)h ′ t ′ − 2t ′′ h − 2pt ′2 h) − V p T H T µν ζ µ ζ ν . (6.5)</trash>
+
+
+				</figure>
+
+				<p>Here we have also used V p T µν ζ µ ζ ν = Q 2 e −pt for the charged brane. Comparing with (4.25), we see that the right hand side is exactly a component of the Einstein equations.</p>
+
+			</div>
+			<div>
+				<head>16</head>
+
+				<p>We are considering here only the thermodynamic quantities associated to the background. It would be interesting, but beyond the scope of this paper, to understand if this reasoning applies at quadratic order in the fluctuations, where shear dissipation produces entropy.</p>
+
+				<p>Therefore, isentropy of the RG flow implies a radial Einstein equation. Of course this can be turned around to state that the radial Einstein equation implies the isentropy of RG flow.</p>
+
+				<figure>
+					<trash>Now if S = constant, then s = e −pt 4G , (6.6) where the overall multiplicative factor is fixed by demanding the Bekenstein-Hawking law s = 1 4G at the horizon. Combining with (5.21), we deduce that on Σ c η(r c ) s(r c ) = 1 4π (6.7) for any value of r c . 17</trash>
+
+
+				</figure>
+
+				<p>We have already seen in our formalism that (6.7) for the special value r c = r h is a universal feature of Rindler space. Now we see that under quite general assumptions, it does not change under RG flow, and so the value (6.7) will also apply to r c = ∞, in agreement with findings in [31,24]. So far we have not asked the question: why should radial evolution be isentropic? A physical answer from the gravity side is that the only entropy associated with a classical solution is the horizon of the black hole. Therefore the total entropy inside any hypersurface outside the horizon should be independent of radius.</p>
+
+				<p>This also gives a clue as to when the relation (6.7) might be violated [51]. When quantum corrections are included on the gravity side, the entropy will generically depend on radius. For example there might be a thermal gas of Hawking radiation surrounding the black hole or entanglement entropy across Σ c . These are suppressed by a factor of ¯ h relative to the horizon entropy. We then see no reason to expect that (6.7) should survive such quantum corrections. The universality of (6.7) is presumably a statement about the classical gravity limit. We note of course that the classical gravity limit is in general not the same as the classical limit of the quantum theory underlying the fluid.</p>
+
+			</div>
+
+			<note place="foot" n="1"> Throughout this paper we use G for Newton&apos;s constant and set ¯ h = k B = 1.</note>
+
+			<note place="foot" n="4"> In this analogy, large r c corresponds to large Λ W , but a precise functional relation will not be found herein. 5 This remains true as long as the linearized gravity fluctuations are governed by the linearized Einstein equation, which is not the case with higher derivative corrections.</note>
+
+			<note place="foot" n="6"> This view has already begun to emerge in various discussions. For example, in a recent talk [39], Polchinski drew a line at the inner (IR) boundary of the AdS region and threw the AdS region out because it was irrelevant to the IR physics under consideration. In this paper, we attempt to understand how the boundary conditions at Polchinski&apos;s line (our Σ C ) are defined so that we need never draw the AdS region in the first place.</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+				<head>Acknowledgements</head>
+				<p>We are grateful to S. Cremonini, T. Damour, F. Denef, B. Freivogel, S. Gubser, S.</p>
+				<p>Hartnoll, S. Kachru, H. Liu, R. Loganayagam, A. Maloney, S. Minwalla, P. Petrov, S.</p>
+				<p>Sachdev, L. Susskind, K. Thorne and E. Verlinde for useful discussions over the two years this paper has been incubating. This work was supported by DOE grant</p>
+			</div>
+			<div>
+				<head>FG0291ER40654 and the Fundamental Laws Initiative at Harvard.</head>
+				<p>17 Closely related observations were made in a different formalism by Iqbal and Liu [31].</p>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Energy And Angular Momentum Flow Into A Black Hole</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">W</forename>
+				<surname>Hawking</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">B</forename>
+				<surname>Hartle</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="page">283</biblScope>
+			<date type="published" when="1972" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Tidal Friction in Slowly Rotating Black Holes</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">B</forename>
+				<surname>Hartle</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page">1010</biblScope>
+			<date type="published" when="1973" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Tidal shapes and shifts on rotating black holes</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">B</forename>
+				<surname>Hartle</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page">2749</biblScope>
+			<date type="published" when="1974" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Quelques propriété mé, ´ electromagné, thermody- namiques et quantiques des trous noirs</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Damour</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Th ese de Doctorat d&apos;Etat</title>
+		<meeting><address><addrLine>Paris VI</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1979" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Black Hole Eddy Currents</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Damour</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="issue">3598</biblScope>
+			<date type="published" when="1978" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">The electric and magnetic conductivity of a Kerr hole</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">L</forename>
+				<surname>Znajek</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mon. Not. R. Astron. Soc</title>
+		<imprint>
+			<biblScope unit="volume">185</biblScope>
+			<biblScope unit="page">833</biblScope>
+			<date type="published" when="1978" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Surface effects in Black Hole Physics</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Damour</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the second Marcel Grossmann Meeting on general Relativity</title>
+		<meeting>the second Marcel Grossmann Meeting on general Relativity<address><addrLine>Ed. R.Ruffini, North-Holland</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1982" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Membrane viewpoint on black holes: properties and evolution of the stretched horizon</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">H</forename>
+				<surname>Price</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">S</forename>
+				<surname>Thorne</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page">915</biblScope>
+			<date type="published" when="1986" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<title level="m" type="main">Black Holes: the Membrane Paradigm</title>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">S</forename>
+				<surname>Thorne</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">H</forename>
+				<surname>Price</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">A</forename>
+				<surname>Macdonald</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1986" />
+			<publisher>Yale Univ. Pr</publisher>
+			<biblScope unit="page">367</biblScope>
+			<pubPlace>New Haven, USA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title level="m" type="main">String theory, gravity and experiment</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Damour</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Lilley</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="hep" to="th" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">The shear viscosity of strongly cou- pled N = 4 supersymmetric Yang-Mills plasma From AdS/CFT correspondence to hydrodynamics</title>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Policastro</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">T</forename>
+				<surname>Son</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">O</forename>
+				<surname>Starinets</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett. JHEP 0209</title>
+		<imprint>
+			<biblScope unit="volume">87</biblScope>
+			<biblScope unit="page" from="081601" to="043" />
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Holography and hydrodynamics: Diffusion on stretched horizons</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Kovtun</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">T</forename>
+				<surname>Son</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">O</forename>
+				<surname>Starinets</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP 0310</title>
+		<imprint>
+			<biblScope unit="page">064</biblScope>
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Brane world cosmology: Gauge-invariant for- malism for perturbation</title>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Kodama</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Ishibashi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Seto</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">62</biblScope>
+			<biblScope unit="page">064022</biblScope>
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<title level="m" type="main">The hydrodynamics of M-theory</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">P</forename>
+				<surname>Herzog</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2002" />
+			<biblScope unit="page">026</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+		<title level="m" type="main">From AdS/CFT correspondence to hydrodynamics. II: Sound waves</title>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Policastro</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">T</forename>
+				<surname>Son</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">O</forename>
+				<surname>Starinets</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2002" />
+			<biblScope unit="page">054</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">N = 2* hydrodynamics</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">708</biblScope>
+			<biblScope unit="issue">451</biblScope>
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Quasinormal modes and holography</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">K</forename>
+				<surname>Kovtun</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">O</forename>
+				<surname>Starinets</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">72</biblScope>
+			<biblScope unit="page">086009</biblScope>
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">The shear viscosity of gauge the- ory plasma with chemical potentials</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Benincasa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Buchel</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Naryshkin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">645</biblScope>
+			<biblScope unit="issue">309</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Effect of curvature squared corrections in AdS on the viscosity of the dual gauge theory</title>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Kats</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Petrov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP 0901</title>
+		<imprint>
+			<biblScope unit="page">044</biblScope>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Viscosity Bound Violation in Higher Derivative Gravity</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Brigante</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Liu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">C</forename>
+				<surname>Myers</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Shenker</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Yaida</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="page">126006</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Universal conductivity and central charges</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Kovtun</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Ritz</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">78</biblScope>
+			<biblScope unit="page">066009</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Quasinormal spectrum and the black hole membrane paradigm</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">O</forename>
+				<surname>Starinets</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">670</biblScope>
+			<biblScope unit="issue">442</biblScope>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<monogr>
+		<title level="m" type="main">The Incompressible Non-Relativistic Navier-Stokes Equation from Gravity</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Bhattacharyya</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Minwalla</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">R</forename>
+				<surname>Wadia</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page">059</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Beyond eta/s = 1/4pi</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Buchel</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">C</forename>
+				<surname>Myers</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Sinha</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">JHEP 0903</title>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page">084</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Holo- graphic GB gravity in arbitrary dimensions</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Buchel</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Escobedo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">C</forename>
+				<surname>Myers</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">F</forename>
+				<surname>Paulos</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Sinha</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Smolkin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">JHEP 1003</title>
+		<imprint>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<title level="m" type="main">Black holes in five- dimensional gauged supergravity with higher derivatives</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Cremonini</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Hanaki</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">T</forename>
+				<surname>Liu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Szepietowski</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page">045</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<monogr>
+		<title level="m" type="main">Holographic Hydrodynamics with a Chem- ical Potential</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">C</forename>
+				<surname>Myers</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">F</forename>
+				<surname>Paulos</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Sinha</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page">006</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Higher derivative effects on eta/s at finite chemical potential</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Cremonini</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Hanaki</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">T</forename>
+				<surname>Liu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Szepietowski</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">80</biblScope>
+			<biblScope unit="page">025002</biblScope>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Viscosity, Black Holes, and Quantum Field Theory</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">T</forename>
+				<surname>Son</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">O</forename>
+				<surname>Starinets</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ann. Rev. Nucl. Part. Sci</title>
+		<imprint>
+			<biblScope unit="volume">57</biblScope>
+			<biblScope unit="page">95</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Universality of the shear viscosity in supergravity</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Buchel</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">T</forename>
+				<surname>Liu</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">93</biblScope>
+			<biblScope unit="page">090602</biblScope>
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Universality of the hydrodynamic limit in AdS/CFT and the membrane paradigm</title>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Iqbal</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Liu</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">79</biblScope>
+			<biblScope unit="page">025023</biblScope>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">The Incompressible Navier-Stokes Equations From Membrane Dynamics</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Eling</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Fouxon</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Oz</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">680</biblScope>
+			<biblScope unit="issue">496</biblScope>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Relativistic CFT Hydrodynamics from the Membrane Paradigm</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Eling</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Oz</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP 1002</title>
+		<imprint>
+			<biblScope unit="page">069</biblScope>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Transport coefficients, membrane couplings and universality at ex- tremality</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">F</forename>
+				<surname>Paulos</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP 1002</title>
+		<imprint>
+			<biblScope unit="page">067</biblScope>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<monogr>
+		<title level="m" type="main">Nonlinear Hydrodynamics from Flow of Retarded Green&apos;s Function</title>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Banerjee</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Dutta</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="hep" to="th" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Lectures on holographic methods for condensed matter physics</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">A</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Class. Quant. Grav</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page">224002</biblScope>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<monogr>
+		<title level="m" type="main">Holographic duality with a view toward many-body physics</title>
+		<author>
+			<persName>
+				<surname>Mcgreevy</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<monogr>
+		<title level="m" type="main">Condensed matter and AdS/CFT</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sachdev</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<monogr>
+		<title level="m" type="main">Semi-holographic Fermi Liquids</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Polchinski</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Forced Fluid Dynamics from Gravity</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Bhattacharyya</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Loganayagam</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Minwalla</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Nampuri</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">P</forename>
+				<surname>Trivedi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">R</forename>
+				<surname>Wadia</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP 0902</title>
+		<imprint>
+			<biblScope unit="page">018</biblScope>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Microscopic Origin of the Bekenstein-Hawking Entropy</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Strominger</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Vafa</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">379</biblScope>
+			<biblScope unit="issue">99</biblScope>
+			<biblScope unit="page" from="hep" to="th" />
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">The large N limit of superconformal field theories and supergrav- ity</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">M</forename>
+				<surname>Maldacena</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Theor. Math. Phys.Int. J. Theor. Phys</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">38</biblScope>
+			<biblScope unit="page" from="231" to="1113" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Thermodynamics of space-time: The Einstein equation of state</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Jacobson</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">75</biblScope>
+			<biblScope unit="page">1260</biblScope>
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<monogr>
+		<title level="m" type="main">On the Origin of Gravity and the Laws of Newton</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">P</forename>
+				<surname>Verlinde</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="hep" to="th" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<monogr>
+		<title level="m" type="main">Comments on quantum gravity and entanglement, &quot; arXiv:0907.2939 [hep-th] Building up spacetime with quantum entanglement</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">Van</forename>
+				<surname>Raamsdonk</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="hep" to=" th" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Holographic Superconductors</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">A</forename>
+				<surname>Hartnoll</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">P</forename>
+				<surname>Herzog</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">T</forename>
+				<surname>Horowitz</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">JHEP 0812</title>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="page">015</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Supergravity and a confining gauge theory: Du- ality cascades and chiSB-resolution of naked singularities</title>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">R</forename>
+				<surname>Klebanov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">J</forename>
+				<surname>Strassler</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">0008</biblScope>
+			<biblScope unit="page">052</biblScope>
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<monogr>
+		<title level="m" type="main">OM Theory in Diverse Dimensions</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Gopakumar</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Minwalla</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Seiberg</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Strominger</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2000" />
+			<biblScope unit="page">008</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Renormalization group flows from holography supersymmetry and a c-theorem</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">Z</forename>
+				<surname>Freedman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">S</forename>
+				<surname>Gubser</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Pilch</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<forename type="middle">P</forename>
+				<surname>Warner</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Theor. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">39904017</biblScope>
+			<biblScope unit="page">363</biblScope>
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Thermodynamical Aspects of Gravity: New insights</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Padmanabhan</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Rept. Prog. Phys</title>
+		<imprint>
+			<biblScope unit="volume">73</biblScope>
+			<biblScope unit="page">046901</biblScope>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Quantum corrections to eta/s</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">C</forename>
+				<surname>Myers</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">F</forename>
+				<surname>Paulos</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Sinha</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">79</biblScope>
+			<biblScope unit="page">041901</biblScope>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

@@ -1,0 +1,934 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Noise reduction algorithm for Glueball correlators</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2014-06-20">20 Jun 2014</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Pushan</forename>
+								<surname>Majumdar</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Department of Theoretical Physics</orgName>
+								<orgName type="institution">Indian Association for the Cultivation of Science</orgName>
+								<address>
+									<settlement>Kolkata</settlement>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Nilmani</forename>
+								<surname>Mathur</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Department of Theoretical Physics</orgName>
+								<orgName type="institution">Tata Institute of Fundamental Research</orgName>
+								<address>
+									<region>Mumbai</region>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Sourav</forename>
+								<surname>Mondal</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Department of Theoretical Physics</orgName>
+								<orgName type="institution">Indian Association for the Cultivation of Science</orgName>
+								<address>
+									<settlement>Kolkata</settlement>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Noise reduction algorithm for Glueball correlators</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2014-06-20">20 Jun 2014</date>
+						</imprint>
+					</monogr>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>glueball mass</term>
+					<term>error reduction</term>
+					<term>multilevel algorithm</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>We present an error reduction method for obtaining glueball correlators from monte carlo simulations of SU(3) lattice gauge theory. We explore the scalar and tensor channels at three different lattice spacings. Using this method we can follow glueball correlators to temporal separations even up to 1 fermi. We estimate the improvement over the naive method and compare our results with existing computations.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>Glueballs are colourless states in Quantum Chromodynamics (QCD) made entirely out of gluons. QCD predicts the existence of glueballs. However, no glueball has yet been discovered unambiguously even though there are several candidate glueball resonances, such as f 0 (1370), f 0 (1500), f 0 (1710), f J (2220) etc. [1]. One reason is that glueball states can mix with mesons in the same J P C channel and so it is very difficult to unambiguously extract glueball masses experimentally. It remains nevertheless a very exciting proposition and for a recent review on the status of glueball searches we refer the reader to ref. [2]. Glueball masses can be computed in lattice quantum chromodynamics and a lot of effort has been directed towards this computation. However there is still no consensus regarding the mass spectrum. It is a difficult computation in lattice QCD with dynamical fermions due to the high masses of the glueballs (&gt; 1 GeV) and their mixing with mesonic operators in the same symmetry channels.</p>
+
+				<p>In recent times computation of glueball masses in lattice QCD with dynamical fermions have been attempted in references [3, 4, 5].</p>
+
+				<p>Glueball masses are often computed in pure Yang-Mills theory. Advantages are that there is no mixing with mesonic operators and the glueballs are stable as they cannot decay. Thus it is much easier to extract the glueball masses from monte-carlo simulations of pure Yang-Mills theory than lattice QCD with dynamical fermions. Nevertheless , even in this theory, glueball correlation functions are dominated by statistical noise at large temporal separations and contribution from excited states at short separations. Global fits become difficult and one often computes the &quot; effective mass &quot; which is the logarithm of the ratio of the values of the correlation function between successive time slices. If the effective mass does not vary over a significant temporal range then one assumes that the effective mass is the same as the globally fitted mass.</p>
+
+				<p>To remove the effect of excited states, conventional methods involve computing correlation matrices with matrix elements between a large set of interpolating operators constructed from smeared or fuzzed links [6] in the relevant symmetry channel 1 . The ground state is obtained by diagonalizing the correlation matrix in each channel [8, 9, 10].</p>
+
+				<p>As it is difficult to follow the correlator signal to large physical distances, even using the above techniques, one often uses asymmetric lattices with a significantly smaller temporal spacing compared to the spatial lattice spacing with the expectation to observe a flat behaviour of the effective masses [11, 12] over several time slices. A different approach is to use noise reduction algorithms . Such algorithms have been used in the past for computing the glueball spectrum for U(1), SU(2) and SU(3) lattice gauge theories [13, 14, 15, 16, 17, 18].</p>
+
+				<p>In this article we follow the latter approach. We restrict ourselves to pure Yang-Mills theory with gauge group SU(3) and employ only the standard operators in each J P C channel (scalar and tensor) but try to follow the correlator to large temporal separations using a new noise reduction algorithm. Since the contamination due to excited states fall off exponentially, we expect that correlators at distances beyond 0.5 fermi to be dominated by the ground state.</p>
+
+				<p>In section 2 we describe the algorithm. Section 3 is devoted to our results on the correlators and masses for the scalar and tensor channels. In section 4 we discuss the improvement obtained over existing conventional methods.</p>
+
+				<p>Finally in section 5 we draw our conclusions and outline</p>
+
+				<figure>
+					<trash>time A B C sub−lattice Figure 1</trash>
+
+
+				</figure>
+
+				<p>: Multilevel scheme for computing glueball correlators. The time slices marked A, B and C are held fixed during the sub-lattice updates. The thick links are the ones which are replaced by their multihit averages. directions for future studies.</p>
+
+			</div>
+			<div>
+				<head n="2">Algorithm</head>
+
+				<p>We compute glueball correlators using Mote-Carlo simulations of SU(3) lattice gauge theory with the Wilson gauge action at three different lattice spacings for both the scalar and the tensor channels. For updating the links we use the usual Cabibbo-Marinari heat-bath for SU(3) and use three over-relaxation steps for every heat-bath step. We set the scale on the lattice through the Sommer parameter r 0 [19]. Our simulation parameters are given in table 1. The Sommer parameter for our lattices have been computed in [20] and we use those values.</p>
+
+				<p>The noise reduction scheme we implement follows the philosophy of the multilevel algorithm. The multilevel algorithm was introduced in [21] as an exponential noise reduction technique for measuring polyakov loop correlators in lattice gauge theories with a local action. However the principle is general and can be applied to other observables as well. In addition to polyakov loop correlators , it has been used to measure observables such as the polyakov loop [22], wilson loop [23], components of the energy-momentum tensor [24] as well as the glueball mass spectrum [13, 14, 15, 16, 17, 18].</p>
+
+				<p>The main principle of the multilevel algorithm is to compute expectation values in a nested manner. Intermediate values are first constructed by averaging over sub-lattices with boundaries and then the full expectation values are obtained by averging over the intermediate values with different boundaries. We refer the reader to [15] for details. For our implementation, we slice the lattice along the temporal direction by fixing the spatial links and compute the intermediate expectation values of the glueball operators by performing several sub-lattice updates. Individual correlators are created using products of the averaged operators at different time slices. The scheme is depicted in figure 1 and the extents of the sub-lattices and number of sub-lattice updates along with other simulation parameters are shown in table 1. The glueball operators between which we compute our correlation function (source and sink) are extended wilson loops denoted by P ab where a, b go over the three spatial directions x, y, z. The operators are projected to zero momentum states as usual. We denote the temporal separation between the source and sink operator by ∆t. The sizes of the loops used for the different lattices are given in table 1. Correlation functions between large loops have the advantage that they have much less contamination from the higher excited states compared to those between elementary plaquettes. Such an approach was reported in [25]. There, however, single exponential fits to the correlators were not possible as the data was too noisy. Nevertheless it was observed that glueballs seemed to have the largest overlap with loops of spatial extent 0.5 fermi in each direction. We therefore choose loops of roughly the extent r 0 × r 0 to construct our glueball operators. Our first noise reduction step is a semi-analytic multihit on the SU(3) links [26] with which the wilson loops are constructed and in addition we use sub-lattice updates to obtain the expectation values of the glueball operators with very little noise. The choice of the number of sublattice updates &quot; iupd &quot; is an important parameter of the algorithm. For the tensor channel, the rule of the thumb we follow is that the operator expectation value over the sub-lattice updates should be the same order as the square root of the correlator at a large value of ∆t. For the scalar channel the same holds but for the connected parts. We compare the overall noise reduction of our algorithm with the naive method (where operators are constructed from elementary plaquettes and only full lattice updates using heat-bath and over-relaxation is used) in section 4. The multilevel algorithm is very efficient for calculating quantities with very small expectation values. While the operators in</p>
+
+				<figure>
+					<figDesc>the tensor channel viz. E 1 = Re (P xz − P yz )</figDesc>
+
+				</figure>
+
+				<p>and E 2 = Re (P xz + P yz − 2P xy ) have zero expectation values and are therefore ideal for direct evaluation using the multilevel scheme, the scalar operator A = Re (P xy + P xz + P yz ) has a non-zero expectation value which has to be subtracted to obtain the connected correlator . For the scalar channel, we therefore do the simulation in two steps. The first step is to determine the expectation value of the glueball operator. This has to be determined very accurately so that the error in the expectation value has negligible contribution to the error on the correlator. Otherwise the error on the expectation value of the operator will dominate the total error and further error reduction on the correlator would be impossible. We use multi-hit on the links to determine the expectation value of the glueball operator. While this was sufficient for our loop size and coupling, if necessary a multi-level scheme can also be used for this estimate. Then we directly computed the connected correlator using (A − A) as the operator with a zero expectation value. The choice of &quot; iupd &quot; was done in the same way as in the tensor chan- nel. An alternative to the above is to evaluate the derivative</p>
+
+				<figure>
+					<trash>Lattice Size β (r 0 /a) sub−lattice thickness iupd loop size # meas. A 10 3 × 18 5.7 2.922(9) 3 30 2 × 2 1000000 B 12 3 × 18 5.8 3.673(5) 3 25 3 × 3 1248000 C 16 3 × 20 5.95 4.898(12) 4 50 5 × 5 1024000 D 12 3 × 18 5.8 3.673(5) 3 70 3 × 3 5760000 E 12 3 × 20 5.95 4.898(12) 5 100 5 × 5 3456000 F 12 3 × 20 6.07 6.033(17) 5 100 5 × 5 1536000</trash>
+
+					<head>Table 1:</head>
+
+					<figDesc>Simulation parameters for all the lattices. Lattices A,B and C were used for the scalar channel while D,E and F were for the tensor channel.</figDesc>
+
+				</figure>
+
+				<p>of the glueball correlator directly as that does not need a subtraction. This was carried out in [15] for the U(1) case.</p>
+
+				<p>In our current calculations we found that the subtraction procedure was more efficient compared to evaluating the derivative. We observed one more phenomenon which is particular to this algorithm. For the smaller values of ∆t where most contributions come from slices which are within the same sub-lattice, there are strong effects due to the short temporal extent of the sub-lattice itself. In such cases we were forced to take into account only correlators between those time slices which lay in different sub-lattices. We found this effect to be significant only in the tensor channel (probably because of the larger value of &quot; iupd &quot; in those cases).</p>
+
+			</div>
+			<div>
+				<head n="3">Results -masses</head>
+
+				<p>In this section we describe our fitting procedures and the masses we obtain. All the correlators were fitted to the form</p>
+
+				<figure>
+					<trash>C(∆t) = A e −m∆t + e −m(T −∆t) (1)</trash>
+
+
+				</figure>
+
+				<p>where m is the glueball mass and T is the full temporal extent of the lattice. Since the correlator is symmetric about T /2, as usual, we fold the data about T /2 and use only one half of the temporal range for the fits. For fitting we use the &quot; non-linear model fit &quot; of mathematica and the fit range was decided on the following two criteria: (i) the range should extend to as large a value of ∆t as possible and (ii) the fit to the form in eq. 1 should have a p-value &lt; 0.01 for both m and A. We found that the p-value for A gave the most stringent criterion for accepting the fit. The fit range for all the different channels and couplings along with the χ 2 /d.o.f are indicated in table 2.</p>
+
+				<p>In addition to masses from global fits, we also compute the effective masses from the correlators as</p>
+
+				<figure>
+					<trash>am eff = − ln C(∆t + 1) C(∆t) (2)</trash>
+
+					<figDesc>where a is the lattice spacing. To estimate the error on the effective masses we take C(∆t) to be a jackknife bin and we compute masses for 20 such bins. The error on the effective mass is the jackknife error computed from the spread of the masses from the different bins. The effective masses are also reported in table 2</figDesc>
+
+				</figure>
+
+				<p>In figure 2 we plot the correlators along with the respective fits for each channel and coupling. Even though the fits were done on the folded data, in the figures we plot the fitted correlator on the full range. It can be clearly seen, especially in the tensor channel that the correlators have contamination form the excited states for the smaller values of ∆t. The same thing is seen for the effective masses.</p>
+
+				<p>The masses fall at first and then stabilize to a plateau albeit with increasing error bars for larger values of ∆t.</p>
+
+				<p>We cross-check our data by comparing them with results in [10, 13, 14, 16, 18]. In [10] scalar and tensor glueball masses were computed on a symmetric lattice with the Wilson action in the β range 5.6925 to 6.3380 and we compared mostly with the data presented there using exponential interpolation wherever necessary. In the scalar channel at β = 5.6925 &amp; 5.6993 the masses obtained were 0.941(25) and 0.969(18) respectively. In [13] the same mass at β = 5.7 was computed to be 0.929(49) and in [18], from the ratio of partition functions, as 0.935(42). These compare quite well with our global fit value of 0.952(11) at β = 5.7. The effective masses we obtain are also consitent with this value. At β = 5.7995 &amp; 5.8 [10] reports values for scalar masses as 0.909(15) and 0.945(21). We obtain 0.906(8). Finally at β = 5.95 we obtain, using interpolation , a value of 0.743(12) from the results in [10]</p>
+
+				<figure>
+					<figDesc>. A fit to the correlator gives us a value of 0.7510(15) and our effective mass values are also consistent with this estimate. In the tensor channel at β = 5.8, we look at two lattices (8 3 ×18 and 12 3 ×18) with different spatial volumes. Unfortunately the data was noisy and we did not get a signal for correlators beyond ∆t of 7. At this β, we report the results from the operator E 2 as the corresponding correlators were less noisy. For the 8 3 ×18 lattice we obtain ma = 1.525(35) and for the 12 3 × 18 lattice we get ma = 1.585(54). This is in the same ball park as the values reported in [10]</figDesc>
+
+				</figure>
+
+				<p>viz. ma = 1.52(5) at β = 5.7995 and ma = 1.57(6) at β = 5.8 both at spatial volumes of 10 3 . At β = 5.95, interpolating the data in [10] between β = 5.8945 and β = 6.0625 we get ma = 1.148(19) for the tensor mass. Our best estimate gives ma = 0.938(17) for the fit range between ∆t = 6 and ∆t = 10. However if we include the point ∆t = 5 in our fit, the mass changes to ma = 1.115(39).</p>
+
+				<figure>
+					<trash>1e-8 1e-7 1e-6 1e-5 1e-4 2 4 6 8 10 12 14 16 C(∆)t ∆t β=5.7 1e-12 1e-11 1e-10 1e-9 1e-8 1e-7 1e-6 1e-5 2 4 6 8 10 12 14 16 C(∆)t ∆t β=5.8 1e-8 1e-7 1e-6 1e-5 1e-4 2 4 6 8 10 12 14 16 C(∆)t ∆t β=5.8 1e-12 1e-11 1e-10 1e-9 1e-8 1e-7 2 4 6 8 10 12 14 16 18 C(∆)t ∆t β=5.95 1e-10 1e-9 1e-8 1e-7 1e-6 2 4 6 8 10 12 14 16 18 C(∆)t ∆t β=5.95 1e-11 1e-10 1e-9 1e-8 1e-7 2 4 6 8 10 12 14 16 18 C(∆)t ∆t β=6.07 Figure 2</trash>
+
+
+				</figure>
+
+				<p>: The correlators along with their fits at the different β values. The left column (with boxes) are for the scalar channel while the right column (with circles) are for the tensor channel.</p>
+
+				<figure>
+					<trash>Scalar Channel Tensor Channel global fit effective mass global fit effective mass # range ma χ 2 d.o.f t-slice ma # range ma χ 2 d.o.f t-slice ma 2-9 0.981(3) 1.8 2/3 0.991(2) 2-7 1.758(9) 32.2 2/3 1.763(2) 3-9 0.961(2) 0.05 3/4 0.977(6) D 3-7 1.656(12) 1.98 3/4 1.661(14) A 4-9 0.962(5) 0.06 4/5 0.966(22) 4-7 1.585(54) * 1.64 4/5 1.605(49) 5-9 0.952(11) * 0.066 5/6 0.957(41) 5/6 1.39(19) 6/7 0.89(12) 2-9 0.936(4) 5.7 2/3 0.944(1) 4-10 1.166(13) 3 2/3 1.311(1) 3-9 0.915(2) 0.3 3/4 0.919(4) E 5-10 1.115(39) 2.4 3/4 1.223(3) B 4-9 0.904(2) 0.05 4/5 0.899(8) 6-10 0.938(17) * 0.12 4/5 1.177(8) 5-9 0.911(3) 0.025 5/6 0.909(21) 5/6 1.152(20) 6-9 0.906(8) * 0.03 6/7 0.899(53) 6/7 0.951(52) 3-10 0.765(3) 1.3 2/3 0.822(1) 4-10 0.988(10) 3.3 2/3 1.177(1) C 4-10 0.7537(9) 0.04 3/4 0.773(2) F 5-10 0.929(10) 0.44 3/4 1.070(2) 5-10 0.7510(15) * 0.02 4/5 0.755(4) 6-10 0.885(16) * 0.16 4/5 1.004(7) 6-10 0.7499(38) 0.03 5/6 0.751(9) 5/6 0.939(10) 6/7 0.734(20) 6/7 0.899(46) 7/8 0.723(39) 7/8 0.869(89)</trash>
+
+					<head>Table 2:</head>
+
+					<figDesc>Glueball masses in lattice units (a denotes the lattice spacing) for all lattices along with the fit parameters. A * on the mass denotes our best estimate for a particular coupling and channel.</figDesc>
+					<trash>Lattice Size β th iupd loop size A 1 6 3 × 16 5.7 2 20 2 × 2 B 1 6 3 × 18 5.8 3 25 3 × 3 C 1 8 3 × 24 5.95 4 50 5 × 5 D 1 6 3 × 18 5.8 3 50 3 × 3 E 1 8 3 × 30 5.95 5 100 5 × 5 F 1 10 3 × 30 6.07 6 130 6 × 6</trash>
+
+
+				</figure>
+
+				<figure>
+					<head>Table 3:</head>
+
+					<figDesc>Simulation parameters for additional lattices on which comparisons with the naive method were carried out. Lattices A 1 ,B 1 and C 1 were used for the scalar channel while D 1 ,E 1 and F 1 were for the tensor channel. (th denotes the sub-lattice thickness)</figDesc>
+
+				</figure>
+
+				<p>The same trend is there in the effective masses as well. Between ∆t = 5 &amp; 6, am eff jumps from around 1.15 to 0.95. At β = 6.07, we obtain ma = 0.885(16) from our fit and the effective masses are consistent with that. The value reported in [10] is 0.922(13) at β = 6.0625 and interpolation gives ma = 0.913(13) at β = 6.07, consistent with our value. At β = 5.95 &amp; 6.07 our results are from the operator E 1 .</p>
+
+			</div>
+			<div>
+				<head n="4">Results -algorithmic gains</head>
+
+				<p>To investigate the advantage of the current algorithm over the naive method, we did a few runs for the same computer time using both methods. Since it is not yet clear how the algorithm behaves as either ∆t or β changes we report our experience for different values of ∆t and β. For the lattice D 1 , we carried out runs for 200 hours. The multilevel algorithm had an error of 3% at ∆t = 3 which is just below r 0 (see table 1), while the naive algorithm had an error of 81%. It would be interesting to compare the performance at a value of ∆t between r 0 and 2r 0 . So we choose points around 1.5r 0 (in this case ∆t = 6). Even after 200 hrs of runtime we do not have a signal at that distance for the naive method. So to estimate the % error we multiply the naive correlator at the largest value of ∆t where we have a signal (i.e. ∆t = 3) by corr multilevel (∆t = 6)/corr multilevel (∆t = 3). Doing this we get the % error to be 850% for the naive method while it is 29% for the multilevel scheme. Thus for the tensor channel at β = 5.8 we estimate that the error reduction algorithm produces an error which is between 27 times smaller than the naive method at both ∆t = 3 and 6. Since the error ∝ time 2 we estimate the new method is more efficient by at least a factor of 729 or so.</p>
+
+				<p>At β = 5.95 (lattice E 1 ), the runs were for about 100 hours. There at ∆t = 3 the multilevel algorithm produced an error of about 4% while the naive algorithm had an error of 75%. Doing a similar estimate as β = 5.8 we estimate that at 1.5r 0 (∆t = 8) the errors are 150% for the multilevel algorithm while it is about 3000% for the naive method. At this β value therefore, the gains in terms of % error is about a factor 20. At β = 6.07, we did not get a signal for the naive algorithm for any ∆t other than ∆t = 1 even after about 300 hours of runs. Thus we see that the gain has very little dependence on ∆t but does depend on β.</p>
+
+				<figure>
+					<figDesc>For the scalar channel using lattice A, runs were carried out for about 3850 mins. Comparing the errors around 1.4r 0 , we got a gain of about 5.7 in terms of errors or 32 in terms of time. At β = 5.8 (lattice B 1 ) the runs were</figDesc>
+					<trash>Scalar channel Tensor channel # time err n gain # time err n gain (min) err ml (min) err ml A 3850 5.7 32 D 1 12000 27 729 B 1 1000 5.5 30 E 1 5775 20 400 C 1 1100 18 324 F 1 15000 − −</trash>
+
+					<head>Table 4:</head>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Comparison of error bars between the naive and error reduction methods. Please see the text in section 4 for a discussion on these values. errn stands for error in the naive method while err ml denotes error in the multilevel scheme. gain is in terms of time and is given by (errn/err ml ) 2 .</figDesc>
+
+				</figure>
+
+				<p>carried out for about 1000 mins. In this case we have a signal at 1.5r 0 for both methods and we get an error of 13% for the multilevel scheme while it is about 70% for the naive method. Thus the gain in terms of % error is about 5.5 or in terms of time about 30. At β = 5.95 in the scalar channel, again we do not have a signal at 1.5r 0 using the naive method and are forced to use the same method as in the tensor channel to estimate the errors. At ∆t = 3 we obtain the errors to be 2% and 37% for the multilevel and the naive methods respectively while at 1.5r 0 they are 29% and 500% (estimated) respectively. Thus the ratio of errors is about 18 or gain in terms of time 324. A compilation of our results is presented in table 4.</p>
+
+				<p>In addition to the above, at β = 5.7 we have one more comparison using the lattice A 1 . There we obtain a gain of 2.5 in terms of errors or 6 in terms of time. Thus the gain seems to increase with increase in volume. We expect this will help us go to larger lattices. Error reduction techniques only reduce statistical errors . There are systematic errors as well and the most important among that are finite volume effects. In our lattices with small physical volumes (B 1 to F 1 ), we encounter them. For example at β = 5.8 (lattices B 1 and D 1 ) the mass in the tensor channel is smaller than the mass in the scalar channel which is the expected behaviour at small volumes [27, 28, 29]. For a recent study of finite volume effects we refer the reader to [30]. To mitigate these we choose our lattices (A to F) such that mL &gt; 9 in all cases [31]</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="5">Conclusions</head>
+
+				<p>Extraction of glueball masses from correlators is a difficult problem in lattice QCD due to a very low signal to noise ratio at large Euclidean times. In this article we present a new method, based on the multilevel scheme, to enhance the signal to noise ratio in glueball correators. We observe that this error reduction technique works quite well at least in pure gauge theories. For a given computational cost, the improvement over the naive method in the signal to noise ratio is several times to more than an order of magnitude. We are able to follow the correlator to temporal separations of about 1 fermi and can perform global fits to the correlators between 0.5 and 1 fermi. Our effective masses also show a plateau in the same range obtained from the global fits.</p>
+
+				<p>We improve upon the existing error bars on the masses in the scalar channel and in the tensor channel our error bars are comparable to the existing ones in the range of β that we have looked at. It is of course of interest to reach the continuum limit and we are continuing our runs at finer and larger lattices and will report our results in subsequent publications.</p>
+
+			</div>
+
+			<note place="foot">Email addresses: tppm@iacs.res.in (Pushan Majumdar,), nilmani@theory.tifr.res.in (Nilmani Mathur), tpsm5@iacs.res.in (Sourav Mondal)</note>
+
+			<note place="foot" n="1"> Computation of glueball correlators using the wilson flow for smoothening the gauge fields has been reported in [7].</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+				<head>Acknowledgments</head>
+				<p>The runs were carried out partly on the cluster bought under the DST project SR/S2/HEP-35/2008 and partly on the CRAY XE6-XK6 at IACS. The authors would like to thank DST, IACS and ILGTI for these facilities. The authors would also like to thank Peter Weisz for a careful reading of the manuscript and his comments on finite volume effects.</p>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">References</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Particle Data Group)</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Beringer</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="page">86</biblScope>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Ochs</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys</title>
+		<imprint>
+			<biblScope unit="page" from="40" to="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Hart</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Teper</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="page" from="65" to="034502" />
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Hart</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">UKQCD Collaboration] Phys. Rev</title>
+		<imprint>
+			<biblScope unit="page" from="74" to="114504" />
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">M</forename>
+				<surname>Richards</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">UKQCD Collaboration] Phys. Rev</title>
+		<imprint>
+			<biblScope unit="page" from="82" to="034501" />
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Teper</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1987" />
+			<biblScope unit="page">183</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Chowdhury</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Harindranath</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Maiti</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="06" to="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">S</forename>
+				<surname>Bali</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">UKQCD Collaboration] Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">309</biblScope>
+			<biblScope unit="issue">378</biblScope>
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Vaccarino</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Weingarten</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<editor>114501. [10] B. Lucini, M. Teper, U. Wenger</editor>
+		<imprint>
+			<biblScope unit="page" from="60" to="0406" />
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">J</forename>
+				<surname>Morningstar</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">J</forename>
+				<surname>Peardon</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="page" from="60" to="034509" />
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Chen</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">73</biblScope>
+			<biblScope unit="page">014516</biblScope>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">B</forename>
+				<surname>Meyer</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2003" />
+			<biblScope unit="page">048</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">B</forename>
+				<surname>Meyer</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2004" />
+			<biblScope unit="page">030</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Majumdar</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Koma</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Koma</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">273</biblScope>
+			<biblScope unit="page">677</biblScope>
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">B</forename>
+				<surname>Meyer</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page">071</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">B</forename>
+				<surname>Meyer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">J</forename>
+				<surname>Teper</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2005" />
+			<biblScope unit="page">605</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">Della</forename>
+				<surname>Morte</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Giusti</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">1105</biblScope>
+			<biblScope unit="page">056</biblScope>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Sommer</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Guagnelli</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Sommer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Wittig</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">389</biblScope>
+			<biblScope unit="page">535</biblScope>
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Lü</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Weisz</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">0109</biblScope>
+			<biblScope unit="page">010</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Banerjee</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="page" from="85" to="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Majumdar</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">664</biblScope>
+			<biblScope unit="issue">213</biblScope>
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">B</forename>
+				<surname>Meyer</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="page" from="76" to="101701" />
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Gupta</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">43</biblScope>
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<surname>Ph</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>De Forcrand</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Roiesnel</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<editor>M. Lü</editor>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="issue">233</biblScope>
+			<biblScope unit="page" from="151" to="219" />
+			<date type="published" when="1983" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Lü</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Mü</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">232</biblScope>
+			<biblScope unit="page">445</biblScope>
+			<date type="published" when="1984" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Weisz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Ziemann</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">284</biblScope>
+			<biblScope unit="issue">157</biblScope>
+			<date type="published" when="1987" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">B</forename>
+				<surname>Meyer</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2005" />
+			<biblScope unit="page" from="0503" to="064" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<monogr>
+		<title level="m" type="main">Quantum Fields on a Lattice, Cam- bridge University Press</title>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Montvay</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Mü</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

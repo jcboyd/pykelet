@@ -1,0 +1,2667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main"></title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2013-01-18">18 Jan 2013</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Keith</forename>
+								<surname>Hamilton</surname>
+							</persName>
+							<email>E-mail: keith.hamilton@cern.ch</email>
+							<affiliation>
+								<orgName type="department">Theory Division</orgName>
+								<orgName type="institution">CERN</orgName>
+								<address>
+									<postCode>1211</postCode>
+									<settlement>Geneva 23</settlement>
+									<region>CH–</region>
+									<country key="CH">Switzerland</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Paolo</forename>
+								<surname>Nason</surname>
+							</persName>
+							<affiliation>
+								<orgName type="institution" key="instit1">INFN</orgName>
+								<orgName type="institution" key="instit2">Sezione di Milano Bicocca</orgName>
+								<address>
+									<addrLine>Piazza della Scienza 3</addrLine>
+									<postCode>20126</postCode>
+									<settlement>Milan</settlement>
+									<country key="IT">Italy</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Carlo</forename>
+								<surname>Oleari</surname>
+							</persName>
+							<email>E-mail: Carlo.Oleari@mib.infn.it</email>
+							<affiliation>
+								<orgName type="laboratory">Rudolf Peierls Centre for Theoretical Physics</orgName>
+								<orgName type="institution" key="instit1">Universit a di Milano-Bicocca</orgName>
+								<orgName type="institution" key="instit2">INFN</orgName>
+								<address>
+									<addrLine>Sezione di Milano-Bicocca Piazza della Scienza 3, 1 Keble Road</addrLine>
+									<postCode>20126</postCode>
+									<settlement>Milan</settlement>
+									<country key="IT">Italy</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Giulia</forename>
+								<surname>Zanderighi</surname>
+							</persName>
+							<email>E-mail: g.zanderighi1@physics.ox.ac.uk</email>
+							<affiliation>
+								<orgName type="institution">University of Oxford</orgName>
+								<address>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2013-01-18">18 Jan 2013</date>
+						</imprint>
+					</monogr>
+					<note>Preprint typeset in JHEP style -PAPER VERSION * On leave from University College London.</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>QCD</term>
+					<term>Phenomenological Models</term>
+					<term>Hadronic Colliders</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>Merging H/W/Z + 0 and 1 jet at NLO with no merging scale: a path to parton shower + NNLO matching Abstract: We consider the POWHEG generator for a H/W/Z boson plus one jet, augmented with the recently proposed MiNLO method for the choice of scales and the inclusion of Sudakov form factors. Within this framework, the generator covers all the transverse-momentum region of the H/W/Z boson, i.e. no generation cuts are needed to obtain a finite result. By construction, the generator achieves NLO accuracy for distributions involving a finite (and relatively large) transverse momentum of the boson. We examine the conditions under which also the totally inclusive distributions (e.g. the boson rapidity distribution) achieve NLO accuracy. We find that a minimal modification of the MiNLO prescription is sufficient to achieve such accuracy. We thus construct a NLO generator for H/W/Z boson plus one jet production such that it smoothly merges into a NLO single boson production in the small transverse-momentum region. We notice that, by simply reweighting the boson rapidity distribution to NNLO predictions, we achieve a NNLO accurate generator matched to a shower. The approach applies to all production processes involving a colorless massive system plus one jet. We discuss how it may be extended to general processes.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+				<figure>
+					<trash>Contents 1. Introduction 1 2. Accuracy of the BJ+MiNLO generators 4 2.1 Preliminaries 4 2.2 The NLO (0) accuracy and BJ+MiNLO 7 2.3 Summary 9 3. Secondary proof of NLO accuracy 9 3.1 NLO q T spectra with MiNLO scale choices 10 3.2 Differential cross section in the MiNLO programs 11 3.3 Integrating the MiNLO q T spectrum with NLO accuracy 14 3.4 Extension to vector-boson decay products 16 4. Implementation and plots 17 5. How to build an NNLO+PS generator with MiNLO 26 6. MiNLO merging for more complex processes 27 7. Conclusions 28 A. The NNLL resummed differential cross section 29 B. Scale variation in the resummed expression 34 B.1 Process dependent form 36 C. A mathematical complement 37</trash>
+
+
+				</figure>
+
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>In recent times, next-to-leading order parton shower (NLO+PS) matching techniques have been developed and realised as practical simulation tools [1, 2, 3]. The programs and methods underlying them have matured to the point where they are routinely used in LHC data analysis. NLO+PS methods can also be applied to processes involving associated jet production at leading order. In the case of Higgs boson production, for example, there exist POWHEG simulations for inclusive production of a Higgs boson (the H generator from now on) [4], Higgs boson production with an associated jet (HJ), and also for the case of two associated jets (HJJ) [5]. These simulations overlap in their population of phase space. However, the relative accuracies of each one in the various regions is complementary. Specifically, the H generator yields NLO accurate inclusive Higgs boson distributions, describing the radiation of a single jet with leading-order (LO) accuracy and the radiation of more than one jet with the accuracy of the shower to which it is interfaced (the collinear, leading-log, approximation). On the other hand, the HJ generator gives NLO precision for observables inclusive in the production of a Higgs boson plus one jet; it has only LO quality if we require two jets, with further radiation generated in the parton shower approximation. The HJ generator cannot be used to describe inclusive jet cross sections, since the NLO calculation on which it is based requires the presence of at least one jet. Similar considerations hold for the HJJ generator. It is natural to ask whether one can merge the H, HJ and HJJ simulations, in such a way that all classes of observables have NLO accuracy in the end results. That is to say, one would ideally like to have a unified NLO+PS simulation, or simulation output, yielding inclusive Higgs boson distributions accurate at the NLO level, α 3 S , and, at the same time, distributions involving the Higgs boson plus one jet accurate at order α 4 S .</p>
+
+				<p>Several collaborations have addressed this merging problem [6, 7, 8, 9, 10, 11, 12, 13].</p>
+
+				<p>They all typically separate the output of each component simulation (the equivalent of H, HJ or HJJ) according to the jet multiplicity of the events it produces, discarding those having a multiplicity for which the generator does not possess the relevant NLO corrections. Having processed the output of each simulation in this way, the event samples are joined to give an inclusive sample. In a nutshell, each generator can therefore be regarded as contributing a single exclusive jet bin to the final inclusive sample, the magnitude of each bin being predominantly determined by the jet resolution scale used in performing the merging, the so-called merging scale. The merging scale is an unphysical parameter, and the dependence on it is, rightly, well studied in the implementations of the merging algorithms cited above, with different approaches invoking different means to mitigate the dependence on it. Relatedly, we point out that in all of the practical applications of NLO merging to date, the jet algorithms employed do not correspond to those currently used in LHC experimental analyses, albeit for good theoretical reasons: in particular, to lessen the dependence on the merging scale through the resummation of spurious large logarithmic corrections associated with it.</p>
+
+				<p>In all cases the choice of the merging scale poses a dilemma: if the merging scale is too low, the sample is dominated by the higher-multiplicity generators, while if it is chosen too large, one loses their benefit, since one is forced to describe relatively hard jets only with tree-level accuracy, or, worse still, with the parton-shower approximation.</p>
+
+				<p>To further clarify the situation consider again Higgs boson production. As stated above, the H generator yields O(α 3 S ) accuracy for inclusive quantities, i.e. quantities that are integrated over the transverse momentum of the Higgs boson. Consider, however, the same integrated cross section up to a certain transverse momentum cut p cut T . Assuming that the Sudakov form factor provided by the NLO+PS implementation is next-to-leading log (NLL) accurate, missing next-to-next-to-leading log (NNLL) corrections to this quantity (corresponding to a factor ∼ exp[α 2 S L] ∼ 1 + α 2 S L + ..., where L = log(M H /p cut T ), and M H is the Higgs boson mass) reduce the accuracy of the distribution, depending upon the size of – 2 – α S L. If we assume α S L 2 ∼ 1, as in the vicinity of the Sudakov region, these neglected NNLL terms are of relative order α 1.5 S with respect to the Born term. Thus, the NLO quality (that requires neglected terms to be of relative order α 2 S or higher) is lost. Thus, although the inclusive distributions are NLO accurate, the cut cross section may well not be if the cut is too low. Of course, if the cut is high enough the NLO precision is restored, since NLO+PS simulations describe the high transverse-momentum tail with tree-level accuracy and the fully integrated spectrum at the NLO level.</p>
+
+				<p>Turning now to look at the HJ generator from the same perspective, if we consider the cross section with a transverse momentum cut p T &gt; p cut T , we know that large logarithmic corrections of the form α S L 2 relative to the Born term arise in the cross section, hence, if α S L 2 ∼ 1, the predictions completely fail. Some of the new NLO merging techniques attempt to resum these logarithmic corrections to all orders, in general though this resummation is, with the notable exception of ref. [11], limited to NLL contributions and with the neglect of the NNLL terms, as in the H case, leading to errors at the level of ∼ α 1.5 S terms relative to the leading-order cross section.</p>
+
+				<p>In order to avoid this problem, the authors of ref. [10], conservatively, use merging scales which are not too low. The authors of ref. [13] proposes to tackle the problem by forcing unitarity on the approach, using suitable subtractions in order to restore NLO accuracy. In ref. [11] the accuracy of the resummation is improved in order to reach the required precision for matching.</p>
+
+				<p>In the present work we study the possibility of building a NLO generator that does not lose NLO accuracy when the radiated parton is integrated over. In other words, we want to achieve the goals of merging without actually doing any merging at all.</p>
+
+				<p>In a recent paper [14], some of us have proposed a prescription (MiNLO: Multi-scale Improved NLO) for the choice of renormalization and factorization scales and the inclusion of Sudakov form factors in NLO calculations, such that the higher-multiplicity calculations seem to merge well with the lower-multiplicity ones. The numerical results of ref. [14] are quite striking, in that they seem to suggest that with this method, for example, the HJJ simulation yields a good description also for observables that are best computed with the HJ or H programs. In ref. [14], however, no arguments are given to justify this behaviour, and no attempt is made to quantify the formal accuracy that a generator which is NLO accurate in the description of (n + 1)-jet observables has for those sensitive to m jet topologies, with m ≤ n.</p>
+
+				<p>In the present work, we address precisely these issues. We consider BJ generators, where B denotes either the Higgs (H), the W (W) or the Z boson (Z) and ask the following questions: • How precise is the BJ generator, when improved with the MiNLO prescription, in describing inclusive boson production observables? • Is it possible to modify the MiNLO procedure in such a way that we achieve NLO accuracy also for these observables?</p>
+
+				<p>We will show that: – 3 – • The inclusive boson observables are described by the BJ+MiNLO programs at relative order α S with respect to the Born cross section. However, they do not reach NLO accuracy, since they also include ambiguous contributions of relative order α 1.5 S , rather than α 2 S .</p>
+
+				<p>• The second question has a positive answer. In the main body of the paper we will clarify what needs to be done in order to gain genuine NLO precision for inclusive observables. The modifications needed for reaching this goal are simple and we have implemented them in our current MiNLO-POWHEG BOX HJ, WJ and ZJ generators. • As a final point, we notice that by reweighting the new BJ-MiNLO generators in such a way that the inclusive boson rapidity and decay kinematics are matched to the nextto-next-to-leading order (NNLO) result, one obtains a NNLO calculation matched to a parton shower simulation, i.e. a NNLO+PS generator.</p>
+
+				<p>The event generators built in this way can be further enhanced, so as to yield an improved description also for the third hardest emission, as proposed in ref. [7]. To this end, it is enough to simply feed the events obtained with the BJ-MiNLO programs through the relevant BJJ simulation, with the latter attaching the third hardest parton to the events with LL+LO accuracy. The paper is organized as follows. In Section 2 we discuss the precision of the original BJ+MiNLO generator and the modifications that are necessary to attain NLO accuracy in the description of inclusive boson distributions. In Section 3 we give an alternative, more detailed proof. In Section 4 we present results obtained with our revised MiNLO approach and discuss issues related to the scale variation as an estimator of the theoretical error on the predictions. In Section 5 we show how we can improve the generators that we have constructed in order to achieve NNLO accuracy. In Section 6 we discuss briefly how the present findings may be generalized to more complex processes. Finally we present our conclusions in Section 7.</p>
+
+			</div>
+			<div>
+				<head>2.</head>
+
+				<p>Accuracy of the BJ+MiNLO generators</p>
+
+			</div>
+			<div>
+				<head n="2.1">Preliminaries</head>
+
+				<p>We want to determine the accuracy of the BJ+MiNLO generators when integrated over the boson transverse momentum at fixed rapidity. We will illustrate explicitly the case of Higgs boson plus jet production, but our findings hold trivially for WJ and ZJ as well, and for the production of a heavy colour-neutral system accompanied by one jet.</p>
+
+				<p>In order to avoid confusion, we will refer to the accuracy of inclusive results, integrated over the boson transverse momentum, as the (0) accuracy, and will refer instead to the accuracy in the H + j inclusive cross section as the (1) accuracy. Thus, for example, by LO (0) and NLO (0) we mean leading (i.e. α 2 S ) and next-to-leading (i.e. α 3 S ) order accuracy in the Higgs boson inclusive rapidity distribution, and with LO (1) and NLO (1) we mean leading (i.e. α 3 S ) and next-to-leading (i.e. α 4 S ) order accuracy in the Higgs boson plus one jet distributions.</p>
+
+			</div>
+			<div>
+				<head>– 4 –</head>
+
+				<p>We focus upon the HJ generator with the MiNLO prescription. As illustrated in [14], this is obtained by modifying the POWHEG ¯ B function with the inclusion of the Sudakov form factor and with the use of appropriate scales for the couplings, according to the formula</p>
+
+				<figure>
+					<trash>¯ B = α 2 S M 2 H α S q 2 T ∆ 2 g (M H , q T ) B 1 − 2∆ (1) g (M H , q T ) + V + dΦ rad R , (2.1)</trash>
+
+
+				</figure>
+
+				<p>where we have stripped away three powers of α S from the Born (B), the virtual (V ) and the real (R) contribution, factorizing them in front of eq. (2.1). We will comment later on the scale at which the remaining power of α S in R, V and ∆</p>
+
+				<figure>
+					<trash>(1) g is evaluated. ∆ g is the gluon Sudakov form factor ∆ g (Q, q T ) = exp − Q 2 q 2 T dq 2 q 2 A α S q 2 log Q 2 q 2 + B α S q 2 , (2.2) and ∆ g (Q, q T ) = 1 + ∆ (1) g (Q, q T ) + O α 2 S (2.3)</trash>
+
+
+				</figure>
+
+				<p>is the expansion of ∆ g in powers of α S . In the previous equations, q T stands for the Higgs boson transverse momentum in the underlying Born kinematics, and Q 2 its virtuality. The functions A and B have a perturbative expansion in terms of constant coefficients</p>
+
+				<figure>
+					<trash>A (α S ) = ∞ i=1 A i α i S , B (α S ) = ∞ i=1 B i α i S . (2.4)</trash>
+
+
+				</figure>
+
+				<p>In MiNLO, only the coefficients A 1 , A 2 and B 1 are used. They are known for the quark [15] and for the gluon [16] and are given by</p>
+
+				<figure>
+					<trash>A q 1 = 1 2π C F , A q 2 = 1 4π 2 C F K, B q 1 = − 3 4π C F , (2.5) A g 1 = 1 2π C A , A g 2 = 1 4π 2 C A K, B g 1 = −b 0 , (2.6) where b 0 = 11C A − 2n f 12π , (2.7) K = 67 18 − π 2 6 C A − 5 9 n f . (2.8) The O (α S ) expansion of the Sudakov form factor in eq. (2.3) is given by ∆ (1) g (Q, q T ) = α S − 1 2 A 1 log 2 q 2 T Q 2 + B 1 log q 2 T Q 2 . (2.9)</trash>
+
+
+				</figure>
+
+				<p>In ref. [14], we give a particular prescription for the choice of the renormalization scale in the power of α S accompanying V , R and ∆</p>
+
+			</div>
+			<div>
+				<head>(1)</head>
+
+				<p>g , and for the explicit renormalization and factorization scales present in V and R, that we do not need to specify at this moment. Now we will assume, at variance with [14] (for reasons that will become clear later), that the renormalization scale for the power of α S accompanying V , R and ∆</p>
+
+			</div>
+			<div>
+				<head>(1)</head>
+
+				<p>g is q T .</p>
+
+				<p>Our argument is based upon the following considerations: 1. Equation (2.1) yields the exact NLO (1) cross section if expanded in terms of the strong coupling (two powers of them evaluated at the scale M H , and the remaining ones at the scale q T ), and of the parton densities evaluated at the scale q T . Thus, when integrated in the whole phase space, keeping fixed only the Higgs boson q T and rapidity, and expanded up to order α 4 S , eq. (2.1), must include, for small q T , all the singular parts of the NLO (1) result for the H + j cross section. 2. The singular parts of the H + j cross section at NLO (1) can also be obtained using the NNLL resummation formula for the Higgs boson transverse momentum. 3. The NNLL formula, plus the regular part of the LO (1) H + j cross section, when integrated over all values of q T , is NLO (0) accurate. This is due to the fact that, up to order α 3</p>
+
+				<figure>
+					<trash>S M 2 H , the NNLL formula includes terms of the following form: δ q 2 T , log q 2 T q 2 T + , 1 q 2 T + , (2.10)</trash>
+
+
+				</figure>
+
+				<p>and thus, when adding to it the regular terms, we achieve NLO (0) accuracy. 4. By comparing eq. (2.1) and the NNLL formula, we can thus see what is missing in eq. (2.1) in order to achieve NLO (0) accuracy. Before we continue, however, we should remember that, in the MiNLO formula, q T stands for the Higgs boson transverse momentum in the underlying Born kinematics, rather than the true Higgs boson transverse momentum. We ignore this difference, assuming that a similar formula also holds for the underlying Born transverse momentum. Later on we will modify the MiNLO prescription to achieve full consistency. We adopt the following NNLL formula for the Higgs boson transverse-momentum distribution at fixed rapidity</p>
+
+				<figure>
+					<trash>dσ dydq 2 T = σ 0 d dq 2 T C ga ⊗ f a/A (x A , q T ) × C gb ⊗ f b/B (x B , q T ) × exp S (Q, q T ) + R f , (2.11)</trash>
+
+
+				</figure>
+
+				<p>where f a/A and f b/B are the parton distribution functions for partons a and b in hadrons A and B, respectively, x A and x B denoting the partons&apos; momentum fractions at the point of annihilation (y =</p>
+
+				<figure>
+					<trash>1 2 log x A x B ). The convolution operator, ⊗, and Sudakov exponent, S, are defined (f ⊗ g) (x) ≡ 1 x dz z f (z) g x z , exp S (Q, q T ) ≡ ∆ 2 g (Q, q T ) , (2.12) with the coefficient functions C ij having the following perturbative expansion C ij (α S , z) = δ ij δ(1 − z) + ∞ n=1 α n S C (n) ij (z) . (2.13) – 6 –</trash>
+
+
+				</figure>
+
+				<p>Lastly, we have used R f to label the non-singular part of the cross section. The renormalization and factorization scales in eq. (2.11) are set to q T , as indicated explicitly in the argument of the convolution. Transverse-momentum resummation is usually performed in impact-parameter space. A formulation of resummation in q T space for vector-boson production of the form (2.11) is given in ref. [17]. It is however integrated in rapidity. Furthermore it is not of NNLL, and not even of NLL order in the usual sense [18]. In Appendix A we show that it is however possible to derive a complete NNLL resummation formula in q T space starting from the b-space formula. It will become clear in the following that the difference of this formula from the one of ref. [17] is in fact irrelevant for our proof.</p>
+
+				<p>In the following, together with the explicit values of A 1 , A 2 and B 1 , we need the expression for the B 2 coefficient too. For Higgs boson production, it was computed in ref. [19]. Including the modification needed to go from the impact-parameter space to the transverse-momentum expression (see ref. [17] and also Appendix A) it assumes the form 1</p>
+
+				<figure>
+					<trash>B g(H) 2 = 1 2π 2 23 24 + 11 18 π 2 − 3 2 ζ 3 C 2 A + 1 2 C F n f − 1 12 + π 2 9 C A n f − 11 8 C A C F + 4ζ 3 (A g 1 ) 2 , (2.14)</trash>
+
+
+				</figure>
+
+				<p>while for Drell-Yan production it was computed in [20, 21] and is given by</p>
+
+				<figure>
+					<trash>B q(DY) 2 = 1 2π 2 π 2 4 − 3 16 − 3ζ 3 C 2 F + 11 36 π 2 − 193 48 + 3 2 ζ 3 C F C A + 17 24 − π 2 18 C F n f + 4ζ 3 (A q 1 ) 2 . (2.15) 2.2 The NLO (0) accuracy and BJ+MiNLO We now examine in more details under which conditions eq. (2.11) achieves NLO (0) accuracy . By integrating it in dq 2 T , we get dσ dy = σ 0 C ga ⊗ f a/A (x A , Q) × C gb ⊗ f b/B (x B , Q) + dq 2 T R f , (2.16)</trash>
+
+
+				</figure>
+
+				<p>where we have neglected the lower bound of the integration of the first term, since, at small q T , the integrand is strongly suppressed by the Sudakov exponent, exp S (Q, q T ). We thus see that, in order to reach NLO (0) accuracy, the C gi and C gj functions should be accurate at order α S (i.e. they should include the C (1) ij term) and R f should be LO (1) accurate.</p>
+
+				<p>Notice that the form of eq. (2.11) (i.e. the fact that it is given as a total derivative) is such that the NLO (0) accuracy is maintained by construction, independently of the particular form of the Sudakov form factor, as long as one includes the C</p>
+
+				<figure>
+					<head>(1)</head>
+
+					<figDesc>ij terms.</figDesc>
+
+				</figure>
+
+				<p>We now want to show that even if we take the derivative in eq. (2.11), and discard terms of higher order in α S , the NLO (0) accuracy is maintained. We consider eq. (2.11) after the derivative is taken, for q T .</p>
+
+				<p>In order to maintain its relative NLO (1) accuracy, we need to include the C</p>
+
+			</div>
+			<div>
+				<head>(1)</head>
+
+				<p>ij terms, the A 1 and A 2 terms, and the B 1 and B 2 terms of eq. (2.4). After the derivative is taken, we get terms of the following form</p>
+
+				<figure>
+					<trash>σ 0 1 q 2 T α S , α 2 S , α 3 S , α 4 S , α S L, α 2 S L, α 3 S L, α 4 S L exp S (Q, q T ) , (2.17) where L = log Q 2 /q 2 T and the α S L and α 2</trash>
+
+
+				</figure>
+
+				<p>S L terms arise from the A term in the derivative of the Sudakov exponent. Some terms of order α S and α 2 S also arise in this way, from the B term. Others arise from the derivative of the parton distribution functions (pdfs). Terms of order α 4 S arise, for example, from two C</p>
+
+			</div>
+			<div>
+				<head>(1)</head>
+
+				<p>ij terms together with the B 2 term in the derivative of the Sudakov exponent. All powers of α S in the square bracket of eq. (2.17), and the relevant pdfs, are evaluated at q T .</p>
+
+				<p>If we do not drop any higher-order terms from eq. (2.17), its integral is still NLO (0) accurate. This is, of course, the case, since the formula can be written back as an exact derivative, its integral is given by eq. (2.16), and the C</p>
+
+			</div>
+			<div>
+				<head>(1)</head>
+
+				<p>ij terms are included. We now want to show that even if we drop the higher-order terms, the NLO (0) accuracy is not spoiled.</p>
+
+				<p>We estimate the size of each contribution using the formula</p>
+
+				<figure>
+					<trash>Q 2 Λ 2 dq 2 T q 2 T log m Q 2 q 2 T α n S q 2 T exp S (Q, q T ) ≈ α S Q 2 n− m+1 2 . (2.18) This formula is a consequence of the fact that the dominant Sudakov singularities carry two logarithms for each power of α S , and thus each logarithm counts as 1/ √ α S . We give however a detailed derivation of this formula, including the effect of the running coupling, in Appendix C.</trash>
+
+
+				</figure>
+
+				<p>Among all terms of order higher than α 2 S in the square bracket of eq.</p>
+
+				<figure>
+					<trash>(2.17), the dominant one is α 3 S L. This term gives a contribution of relative order α S Q 2 3− 2 2 = α 2 S Q 2 . Thus, all terms of order α 3</trash>
+
+					<figDesc>S and higher can be dropped without spoiling the NLO (0) accuracy. Dropping these terms, we get essentially the full singular part of the MiNLO HJ formula, except that the original MiNLO formula does not have the B 2 term in S. In fact, if we expand the Sudakov factor up to O(α S ) and combine it with the content of the squared parenthesis, we get the full singular part of the HJ cross section. Since also the MiNLO HJ formula has the same property, the two must agree. We also remark that the choice of the scale in the power of α S entering V , ∆ (1) and R (that we have taken equal to q T ) is essential for our argument to work. For example, if we choose instead a scale equal to Q, the largest difference arises in the terms of order α 2</figDesc>
+					<trash>S L in eq. (2.17), where they would give an O α 3 S L 2 variation. This yields a contribution of order O α 1.5</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>S Q 2 upon integration. On the other hand, we will show in the following this kind of contributions are of the same size as the effect of the B 2 term. Thus, if the latter is not included, this scale choice remains ambiguous. We now investigate what is the loss of precision due to the lack of the B 2 term in the MiNLO formula. In order to do this, we drop the B 2 term in the Sudakov exponent in eq. (2.11). The resulting formula still satisfies eq. (2.16), and thus is NLO (0) accurate. When taking the derivative, however, we will get all the terms in the square bracket of</figDesc>
+					<trash>– 8 – eq. (2.17), except for the term σ 0 1 q 2 T α 2 S (q 2 T ) B 2 exp S (Q, q T ) . (2.19)</trash>
+
+
+				</figure>
+
+				<p>This term is instead present in the MiNLO result, that agrees with eq. (2.17) up to the terms of order α 2 S in the square bracket, and differs from it only by subleading terms in the Sudakov exponent. We conclude that, if we take away the contribution of eq. (2.19) from the MiNLO result, we recover the NLO (0) accuracy. Thus, the MiNLO formula, as is, violates the NLO (0) accuracy by this term, which yields, according to eq. (2.18), a contribution of relative order O α 1.5 S Q 2 upon integration.</p>
+
+			</div>
+			<div>
+				<head n="2.3">Summary</head>
+
+				<p>Summarizing our findings: • the original BJ+MiNLO generator of [14], is less than NLO (0) accurate, in that it includes incorrect terms of relative order O</p>
+
+				<p><formula>α 1.5 S Q 2 .</formula></p>
+
+				<p>• In order to achieve NLO (0) accuracy for the BJ+MiNLO generator, we must – include the B 2 term in the Sudakov form factor of eq. (2.2); – take the scale of the power of α S entering V , ∆ (1) and R equal to q T .</p>
+
+				<p>In this section we have not considered the possibility of varying the factorization and renormalization scales in the MiNLO improved B functions. It is indeed possible to vary them in such a way that the NLO (0) accuracy for the BJ+MiNLO generator is maintained.</p>
+
+				<p>In Appendix B we show in detail how this can be done.</p>
+
+			</div>
+			<div>
+				<head n="3">Secondary proof of NLO accuracy</head>
+
+				<p>In this section we describe an independent derivation, corroborating that of Sect. 2, that MiNLO heavy boson plus jet production computations, with minor modifications, yield predictions NLO accurate in the description of both inclusive and jet-associated observables.</p>
+
+				<p>The alterations to the original MiNLO algorithm required here are the same as those discussed previously in Sect. 2. Principally this amounts to using the transverse momentum of the heavy boson, as opposed to the scale obtained on clustering the Born kinematics with the k T -jet algorithm, as an input to the pdfs, strong coupling and Sudakov form factor, together with the inclusion of the NNLL B 2 coefficient in the latter. The analysis essentially comprises of four steps: 1. Using existing expressions for their singular parts, we write the NLO cross section for heavy boson plus jet production, differential in the boson&apos;s rapidity, y, and transverse momentum, q T , as the sum of a q T → 0 divergent part, dσ S , and a finite remainder, dσ F , with scales set according to the slightly revised MiNLO conventions. – 9 – 2. The MiNLO Sudakov form factor and coupling constant weights are applied to the resulting expression and the related subtraction terms, necessary to maintain NLO accuracy in the presence of these weights, are inserted. 3. By neglecting terms which, on integration over q T , give rise to unenhanced terms O α 2 S with respect to the lowest order heavy boson production process, we are able to cast the singular part of the MiNLO cross section in the form of a total derivative. 4. The q T integration of the singular cross section may be performed at NLO accuracy and combined with the leading part of the remainder cross section, dσ F , whereupon the sum can be identified as the NLO differential cross section.</p>
+
+				<p>In the following we give details regarding these steps, pointing out any deviations with respect to the original MiNLO algorithm as they enter. The mathematical description of the algorithm, as given here, reflects, precisely, that of the implementation whose results we present in Sect. 4. Lastly, we further stress that although the formulae we use explicitly refer only to the heavy bosons&apos; rapidity distributions, the derivations hold, with a simple modification, also for the case of distributions involving the heavy-boson decay products.</p>
+
+				<p>This generalization is discussed in Sect. 3.4. 3.1 NLO q T spectra with MiNLO scale choices</p>
+
+				<p>To begin proving the NLO accuracy of the MiNLO predictions for inclusive observables, we require an expression for the cross section differential in the transverse momentum and rapidity of the heavy boson, employing the renormalization and factorization scales set out in ref. [14]. Contrary to the original MiNLO prescription, however, we now insist that the transverse momentum of the massive boson be used as the factorization scale, moreover, we now also wish that this scale, q T , be used as the argument in evaluating the extra α S factor accompanying the NLO corrections (α</p>
+
+			<note>NLO S ).</note>
+
+				<p>The asymptotic q T → 0 limit of W and Z transverse momentum spectra was given in ref. [22] to next-to-leading order accuracy. The NLO Higgs boson transverse momentum spectrum has also been computed in ref. [23]. In the latter work the authors derived the limit directly from their NLO computation and found agreement with the expression obtained by taking the analogous limit of the b-space resummation formula of ref. [24]. For W , Z and Higgs boson production processes the results are quoted for arbitrary renormalization (µ R ) and factorization scales (µ F ).</p>
+
+				<p>Using these results one can directly write down NLO expressions for the small transverse momentum limit of the heavy-boson q T spectra, by simply replacing all instances of µ R and µ F (explicit and implicit) by K R Q and K F q T , respectively, in the asymptotic expressions of refs. [22, 23]. K F and K R simply denote constant rescaling factors used to perform scale uncertainty estimates, thus they are nominally set equal to one, nevertheless, we retain them explicitly in order to better clarify the nature of such variations. Having made the aforesaid replacements, one can trivially substitute the additional power of α S in the NLO terms by α</p>
+
+				<figure>
+					<trash>NLO S = α S (K 2 R Q 2 ) simply, with no further changes of any kind. – 10 –</trash>
+
+
+				</figure>
+
+				<p>We thus write the q T spectrum of a heavy boson resulting from the annihilation of partons i and j, from beam particles A and B respectively, as the sum of a q T → 0 singular contribution, dσ S , and a finite regular remainder term, dσ F ,</p>
+
+				<figure>
+					<trash>dσ dq 2 T dy = dσ S dq 2 T dy + dσ F dq 2 T dy , (3.1) where the singular part takes, precisely, the form dσ S dq 2 T dy = N q 2 T α S 2π n 2 r=1 2r−1 s=0 α S 2π r r D s L s , (3.2) with L = log Q 2 /q 2 T .</trash>
+
+
+				</figure>
+
+				<p>The r D s coefficients are directly obtained from the m C n coefficients given in Appendix A.2 of ref. [22] and Appendix C of ref. [23], following the replacements described above. Since the resulting expressions are lengthy but trivial to derive we refrain from quoting them explicitly here. Lastly, in the normalization of eq. (3.2) the factor of α n S accounts of there being n powers of the strong coupling associated with the leading order production process (n = 0 for W and Z production, n = 2 for Higgs boson production) while N comprises constant factors such that the product of N (α S /2π) n with the pdfs gives the LO cross section for H/W/Z production in the i, j channel, differential in y.</p>
+
+				<p>Equation (3.1) describes, precisely, the cross section returned by the MiNLO programs prior to the introduction of Sudakov form factor and coupling constant reweightings. In particular, since the cross section we write here is intended to refer to that coded in the programs, there are no unknown O α n+3 S terms or beyond omitted anywhere, throughout it contains explicitly only contributions proportional to α</p>
+
+			</div>
+			<div>
+				<head>n+1</head>
+
+				<p>S and α n+2 S , with all strong coupling and pdfs factors utilizing the scale settings already elaborated on.</p>
+
+			</div>
+			<div>
+				<head>3.2</head>
+
+				<p>Differential cross section in the MiNLO programs</p>
+
+				<p>Following the MiNLO procedure we must now multiply the NLO cross section by a Sudakov form factor and, to maintain NLO accuracy, simultaneously subtract a term corresponding to the O α n+2 S contribution implicit in the product of the leading order terms with the form factor. In so doing, as was with the choice of factorisation scale, here we wish to change the lower scale entering the Sudakov form factor, from that obtained on the first clustering of the underlying Born kinematics with the k T -jet algorithm, to simply q T .</p>
+
+				<p>In our programs we have used the following Sudakov form factor, describing the evolution of a quark / gluon line from scale Q to q T , generalised to account for a renormalization scale rescaling factor K R</p>
+
+				<figure>
+					<trash>log ∆ (Q, K R q T ) = − Q 2 K 2 R q 2 T dq 2 q 2 ˜ A α S q 2 log Q 2 q 2 + ˜ B α S q 2 , (3.3) wherein ˜ A (α S ) = ∞ i=1 α i S ˜ A i , and B (α S ) = ∞ i=1 α i S ˜ B i , (3.4) – 11 – with the A i and B i coefficients related to the A i and B i of Sect. 2 as follows ˜ A 1 = A 1 (3.5) ˜ A 2 = A 2 + A 1 b 0 log K 2 R (3.6) ˜ B 1 = B 1 + A 1 log K 2 R (3.7) ˜ B 2 = B (X) 2 + 1 2 nb 2 0 log K 2 R + A 2 log K 2 R + 1 2 A 1 b 0 log 2 K 2 R . (3.8) Here, in the definition of B 2 , we have used B (X) 2 to denote either B g(H) 2 or B q(DY) 2 , as defined in eqs. (2.14) and (2.15) respectively.</trash>
+
+
+				</figure>
+
+				<p>The derivation of the scale dependence of these coefficients is given in Appendix B.</p>
+
+				<p>For the case of NLO Higgs or vector boson plus jet production processes, the MiNLO algorithm will multiply the full cross section by the product of two such Sudakov form factors. Introducing the abbreviation, ˜ L = L − log K 2 R , the first order expansion of this aggregate form factor is given by</p>
+
+				<figure>
+					<trash>∆ 2 (Q, K R q T ) = 1 − α S ˜ A 1 ˜ L 2 + 2 ˜ B 1 ˜ L + O α 2 S ˜ L 4 . (3.9)</trash>
+
+
+				</figure>
+
+				<p>To compensate the spurious O α n+2 S contribution which this will generate, when it multiplies the leading order part of the heavy boson plus jet cross section (distinguished by the subscript LO), a corresponding counterterm is added.</p>
+
+				<p>In addition to the Sudakov form factor, the MiNLO procedure, for Higgs, W and Z plus jet processes, prescribes that the whole cross section be multiplied by an overall factor comprised of a ratio of coupling constants</p>
+
+				<figure>
+					<trash>α S K 2 R q 2 T /α S K 2 R Q 2 = 1 + α S b 0 L + O α 2 S L 2 . (3.10)</trash>
+
+
+				</figure>
+
+				<p>As for the factorisation scale and the low scale for the Sudakov form factor, here we have revised the original MiNLO algorithm by taking the scale in α S in the numerator to be K R q T .</p>
+
+				<p>To apply this overall weight factor and maintain the integrity of the NLO cross section, a counterterm is introduced in the MiNLO cross section, balancing the erroneous contribution which it elicits at O α n+2 S .</p>
+
+				<p>Taking into account the Sudakov form factor, the coupling constant ratios, and their respective counterterms, the MiNLO cross section, dσ M ,</p>
+
+				<figure>
+					<trash>reads as follows dσ M dq 2 T dy = ∆ 2 (Q, K R q T ) α S K 2 R q 2 T α S (K 2 R Q 2 ) × dσ dq 2 T dy + dσ dq 2 T dy LO α NLO S ˜ A 1 ˜ L 2 + 2 ˜ B 1 ˜ L − b 0 ˜ L + log K 2 R . (3.11)</trash>
+
+
+				</figure>
+
+				<p>All modifications explained in this cross section have been defined precisely, with no ambiguities of any kind, higher order or otherwise, that is to say, eq. (3.11) reflects, exactly, the implementation of the differential cross section in the MiNLO programs for Higgs, W and Z plus jet production.</p>
+
+			</div>
+			<div>
+				<head>– 12 –</head>
+
+				<p>Combining eqs. (3.1), (3.2) and (3.11), using only basic algebraic manipulations, we may write the cross section from the MiNLO programs in such a way as to isolate the leading q T → 0 behaviour. Specifically, we further develop our dσ M formula as</p>
+
+				<figure>
+					<trash>dσ M dq 2 T dy = dσ MS dq 2 T dy + dσ MF dq 2 T dy , (3.12) with the leading q T → 0 part given by dσ MS dq 2 T dy = ∆ 2 (Q, K R q T ) N q 2 T α S 2π n 2 r=1 1 s=0 α r S r E s ˜ L s , (3.13) and subleading</trash>
+
+
+				</figure>
+
+				<p>part given by eq. (3.11) save for the replacements dσ M → dσ MF on the left-and dσ → dσ F on the right-hand side. In eq. (3.13) n powers of α S are evaluated at a scale K R Q and the remainder at K R q T . Assuming the same shorthand as ref. [22] for the pdfs, f i = f i/A (x A , µ F ), the r E s coefficients are found to be</p>
+
+				<figure>
+					<trash>1 E 1 = 2 ˜ A 1 f i f j , (3.14) 1 E 0 = 2 ˜ B 1</trash>
+
+
+				</figure>
+
+				<p>f i f j + [P ik ⊗ f k ] f j + [P jk ⊗ f k ] f i ,</p>
+
+				<figure>
+					<trash>2E 1 = ˜ A 2 f i f j + 2 ˜ A 1 C (1) ik ⊗ f k f j + {i ↔ j} , 2 E 0 = ˜ B 2 f i f j + 2 ˜ B 1 C (1) ik ⊗ f k f j + P (2) ik ⊗ f k f j + b 0 ln K 2 R K 2 F [P ik ⊗ f k ] f j + C (1) ik ⊗ f k [P jl ⊗ f l ] + C (1) ik ⊗ P kl ⊗ f l f j − b 0 C (1) ik ⊗ f k f j + {i ↔ j} , with C (1) ik defined, exactly, as C (1) ik (z) = C (1) ik (z) + 1 2 n b 0 log K 2 R δ ik δ (1 − z) − log K 2 F P ik (z) − 1 2 A 1 log 2 K 2 R + B 1 log K 2 R δ ik δ (1 − z) . (3.15) The C (1)</trash>
+
+					<figDesc>ik terms are NLO corrections to the coefficient functions in the conventional b-space resummation formula, while P ik (z) denotes the leading order splitting function for parton k branching to a parton i with momentum fraction z, P</figDesc>
+					<trash>(2) ik representing its relative O (α S ) corrections. The C (1)</trash>
+
+
+				</figure>
+
+				<p>ik and P ik functions here are equal to those in refs. [22, 23] divided by 2π, similarly, our P (2) ik functions are equal to those in refs. [22, 23] divided by (</p>
+
+				<figure>
+					<trash>2π) 2 . 2 In determining eq. (3.12) from eq. (3.11) we have at no point employed Taylor expansions , renormalization group or DGLAP equations; eq. (3.12) follows exactly from eq. (3.11) without neglect of terms at O α n+3 S or beyond. Thus eq. (3.12) corresponds precisely, without ambiguities of any kind, higher order or otherwise, to the differential cross section returned by the MiNLO programs. 2 In simplifying the r Es coefficients, in particular for collecting the C (1) ik terms, the following trivial identities are useful: fi = δ ik δ (1 − z) ⊗ f k and P ik ⊗ f k = δ ik δ (1 − z) ⊗ P kl ⊗ f l . – 13 – 3.3 Integrating the MiNLO q T spectrum with NLO accuracy</trash>
+
+
+				</figure>
+
+				<p>In this subsection, through judicious omission of higher order contributions, together with application of the DGLAP and coupling constant evolution equations, we write the leading q T → 0 part of the MiNLO cross section, dσ MS , in the form of a derivative with respect to q T . To this end we use the following result derived from the integral in Appendix C: terms in the differential cross section O</p>
+
+				<figure>
+					<trash>α n+r S L s /q 2 T , with r ≥ 1 2 (s + 5), multiplied by the Sudakov form factor, yield contributions O α n+2</trash>
+
+
+				</figure>
+
+				<p>S or higher on integration over the low q T domain, i.e. such terms do not affect inclusive observables at the NLO level, nor, for r ≥ 3, do they affect NLO accuracy of jet-associated H/W/Z production observables.</p>
+
+				<figure>
+					<trash>Neglecting contributions not greater than O α n+3 S L/q 2</trash>
+
+
+				</figure>
+
+				<p>T times the Sudakov form factor , one can replace the sum of terms proportional tõ A i and B i in dσ MS by the q T derivative of the Sudakov form factor, multiplied by a product of the coefficient functions, C ik , defined</p>
+
+				<figure>
+					<trash>C ik (α NLO S , z) = δ ik δ (1 − z) + α NLO S C (1) ik (z) . (3.16) Further, dropping terms O α n+3 S inside the summation of eq. (3.13), one may substitute α S K 2 R q 2 T P ik + α NLO S P (2) ik + b 0 P ik log K 2 R K 2 F ⊗ f k → q 2 T df i dq 2 T , (3.17)</trash>
+
+
+				</figure>
+
+				<p>with the implicit scale in the pdfs being K F q T as usual. 3 The same replacement without the α NLO S terms on the left-hand side holds, at the same level of approximation, for the two remaining terms in 2 E 0 containing the leading order splitting functions. Lastly, discarding additional terms of the same order as those omitted in eq. (3.17), one may also replace the remaining b 0 factor in the 2 E 0 coefficient as</p>
+
+				<figure>
+					<trash>b 0 → − q 2 T α 2 S dα S dq 2 T , (3.18)</trash>
+
+
+				</figure>
+
+				<p>with the scale for α S in the denominator and the derivative being K R q T . With the help of these substitutions the leading q T → 0 part of the MiNLO cross section, neglecting terms no greater than ∼</p>
+
+				<figure>
+					<trash>∆ 2 α n+3 S L/q 2 T , can finally be written as dσ MS dq 2 T dy = N α S 2π n d dq 2 T ∆ 2 (Q, K R q T ) C ik ⊗ f k C jl ⊗ f l , (3.19)</trash>
+
+					<figDesc>where the n powers of α S explicit in the prefactor retain K R Q as their argument, with K R q T holding for the rest. Integrating eq.</figDesc>
+					<trash>(3.20) over q T yields dσ MS dy = N α S 2π n ∆ 2 (Q, K R Q) C ik ⊗ f k C jl ⊗ f l , (3.20) with the coupling constants in the C ik having K R Q as their argument and the scale in the pdfs set now, here, to K F Q. The Sudakov form factor here contains no large logarithms 3 Among the O α n+3 S terms forgone in this replacement are contributions proportional to α n+3 S log 2 K 2 R /K 2</trash>
+
+
+				</figure>
+
+				<p>F , which we neglect in the understanding that the ratio KR/KF will be of order 1. In fact, in our phenomenology section 4, the ratio is confined to the interval</p>
+
+				<p><formula>1 2 , 2 . – 14 –</formula></p>
+
+				<p>since the integral range in the exponent is limited to high values, K 2 R Q 2 , Q 2 , thus we may reliably expand eq. (3.20) in powers of α S neglecting NNLO sized contributions to give simply</p>
+
+				<figure>
+					<trash>dσ MS dy = N α S 2π n f i f j + α S C (1) ik ⊗ f k f j + α S C (1) jk ⊗ f k f i , (3.21)</trash>
+
+
+				</figure>
+
+				<p>wherein all pdf and α S factors are evaluated at the common scale Q. The disappearance of all factors of A i , B i in this expression follows from the cancellation of the NLO expansion of the Sudakov factor, ∆ 2 (Q, K R Q), with an equal and opposite contribution in the product of the C ik coefficient functions. Similarly, the vanishing of all K R and K F factors attributes to the explicit log K 2 R/F terms being absorbed in the pdfs and strong coupling constant factors, renormalizing the scales in these factors, in the leading order contribution, from K R/F Q to Q. The scales of the pdfs and coupling constants in the remaining (NLO) terms are freely changeable at this level of accuracy.</p>
+
+				<p>To proceed we must explain the nature of the NLO component of the coefficient functions , C (1) ik . These are given, essentially as a matter of definition, by half of the sum of the virtual and real, q T → 0 singular, components of the NLO cross section for heavy boson plus jet production, with the real-radiation phase space below q T = Q having been integrated over. This calculation is carried out explicitly in ref. [25], for the case of Higgs boson production, and in Sect. 2 of ref. [26] for the q ¯ q channel in vector boson production. The coefficients obtained agree precisely with those in refs. [23, 25], i.e. with those employed in the expressions for the NLO q T -spectra from which we started our analysis in Sect. 3.1. Additionally, at the end of Appendix C in ref. [27] the integral of the W and Z q T spectra up to some arbitrary q T is shown, wherein one can readily identify the NLO C ij functions as the combined virtual and integrated real, q T → 0 singular, contributions to the weak boson cross section. 4 Finally we assert that the integral of the remaining part of the q T spectrum, dσ MF , is equal to that of the original q T → 0 regular component, dσ F , (with the coupling constant and pdf scales of order Q), up to formally relative order α 2 S terms. This statement follows from the fact that the regular parts are suppressed by a factor q 2 T /Q 2 relative to their diverging counterparts in dσ S . Thus, in the region q T Qα S Q 2 surrounding the Sudakov peak, the regular piece is effectively a relative α 2 S Q 2 contribution and hence entirely negligible from the point of view of our NLO analysis. Just outside this region the same principle applies, namely, that provided the proportionate contribution made by the regular piece is small with respect to the finite ones, the impact that the Sudakov form factor makes on them is of higher order significance. This argument holds a fortiori given that the Sudakov form factor is introduced with compensating terms, multiplying all of the Born cross section, cancelling its effects at O (α S ), effectively deferring them to yet lower regions in the q T spectrum, i.e. to regions where the q 2 T /Q 2 suppression of the regular cross section have already rendered its contribution small. Finally, by way of a more quantitative 4 Up to an irrelevant notational difference of a factor of two, the coefficient functions in ref. [27] are identical to those of ref. [25]</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>– 15 –</head>
+
+				<p>ratification of this claim we note the following integral,</p>
+
+				<figure>
+					<trash>Q 2 Λ 2 dq 2 q 2 q 2 Q 2 α S 1 + α S A log 2 Q 2 q 2 exp −2 Q 2 q 2 dµ 2 µ 2 A α S log Q 2 µ 2 = α S + O α 3 S , (3.22) performed assuming</trash>
+
+
+				</figure>
+
+				<p>the coupling to be fixed at a scale O (Q). This integral has the form of those which would be encountered in evaluating the dσ MF , showing it to be equivalent to the analogous dσ F integral. 5 Although we have resorted to a fixed coupling approximation here, experience suggests this gives results compatible with other approaches, moreover, for NLO accuracy we only require the dσ F and dσ MF integrations be the same up to O α 2 S corrections rather than the observed O α 3 S . We therefore conclude that the contributions from dσ F and dσ MF may be safely taken as being equal. With the correspondence between the C ij coefficient functions and the NLO fixed order computations clear, as well as that between the q T integral of dσ F and dσ MF , we have thus proved that their combination, viz. the integrated / inclusive MiNLO cross section, is equivalent to that of a conventional fixed order computation at NLO accuracy. 3.4 Extension to vector-boson decay products While our discussion has only referred explicitly to the rapidity distributions of the W , Z and Higgs bosons, the proof that these distributions are NLO accurate straightforwardly extends to the case where the cross section is further differential in the kinematics of their decay products. For the case of a scalar Higgs boson this is trivial, with the decay essentially decoupled from the production stage, occurring isotropically in its rest frame.</p>
+
+				<p>In the case of vector-boson production we are not aware of explicit results in the literature for the q T → 0 limit of the NLO cross sections, including the dependence on the momenta of the decay products. However, we may infer such expressions using ref. [28], which clarifies how to incorporate variables parametrizing the momenta of such particles in the b-space resummation formalism. This is achieved by modifying the resummation formula of ref. [24] via the insertion of the unit normalised LO partonic cross section, differential in the decay variables, at the front of the expression (outside the b-space integration ), together with the inclusion of a hard function, H F c , multiplying the coefficient functions C ij . The hard function partly encodes the NLO corrections to the leading order distribution of the decay products&apos; momenta. Clearly, with these localised changes, if one carries out a perturbative expansion of this b-space formula one will re-obtain the asymptotic q T → 0 cross sections of refs. [22, 23], modified by an overall factor of the leading order cross section differential in the decay variables and with the O (α S ) terms in the C ij coefficient functions modified to include NLO corrections to that distribution. Thus including dependencies on the details of the vector-boson decay leaves our proof unmodified up to inclusion of an overall angular factor describing the decay kinematics and, in general, an implicit dependence on these variables in the O (α S ) part of the coefficient functions.</p>
+
+				<p>Taking a different tack, for the case that the decay variables are the Collins-Soper angles [29], this extension of the resummation formalism was already well studied in transverse-momentum space [17] and impact-parameter space [27, 30]. In the former article , in transverse momentum space, one can readily see the angular dependence of the resummed cross section present as a global angular prefactor. In fact, in refs. [30, 27, 17] the only modification of the &apos;standard&apos; resummation formulae is just that: the coefficient functions are not modified with respect to those used for resummation of vector-boson production processes where the decay is not considered. We attribute this to the fact that the virtual QCD corrections, simply act to rescale the hadronic tensor for the production vertex by an overall factor, i.e. the dependence on the Collins-Soper decay angles (defined in the decaying boson&apos;s rest frame) is the same in the virtual and Born contributions to the cross section. Moreover, only those parts of the real cross section which are singular when q T → 0 are integrated over in combining with the virtual corrections to give the NLO C ij terms, as one would expect, these parts therefore have an angular dependence for the decay products which is the same as that of the Born term. 6 Consequently, the only modification needed to the asymptotic q T spectrum formula in ref. [22], to account for these angular variables, is the inclusion of an overall factor describing the dependence at the relative O α 0 S / Born level.</p>
+
+			</div>
+			<div>
+				<head n="4">Implementation and plots</head>
+
+				<p>In the following we discuss results obtained from an implementation of our revised MiNLO method in the POWHEG BOX, for the HJ [4, 5], WJ and ZJ generators [31, 32]. For the purpose of this study, we will use throughout the pdf set MSTW2008NLO [33]. Any other popular set [34, 35] can be used equivalently, and we are not interested here to explore pdf dependencies. For the Higgs boson case, we use throughout M H = 125 GeV and in the H generator we set the hfact parameter to 100 [36]. We have advocated that the MiNLO prescription, updated as described in the previous section, can achieve NLO (0) accuracy, that is to say, it can describe inclusive boson distributions at NLO accuracy. We thus begin with the most inclusive quantity, i.e. the total cross section. We would like to see if the total cross section obtained by integrating the BJ-MiNLO formulae is compatible with the NLO total cross section obtained with standard NLO calculations. Notice that we expect agreement only up to terms of higher order in α S , since the BJ-MiNLO results include terms of higher order, and also since the meaning of the scale choice is different in the two approaches. For similar reasons, we do not expect the scale variation bands to be exactly the same in the two approaches. In tab. 1, we list the results for the total cross sections obtained with the HJ-MiNLO and the H programs, both at full NLO level and at leading order, for different scale combinations. The scale variation in the HJ-MiNLO result is obtained by multiplying the factorization scale and each of the several renormalization scales that appear in the procedure by the scale factors K F and K R , respectively. The Sudakov form factor is also changed according to the prescription of Appendix B. The maximum and minimum of the cross-sections are highlighted. In the case of MiNLO, the leading-order result is obtained by keeping only the Born term</p>
+
+				<figure>
+					<figDesc>in POWHEG (i.e. by setting the bornonly flag to 1), and by downgrading the Sudakov form factor to pure NLL accuracy, i.e. we set B 2 to zero. In the MiNLO case, the central value is chosen according to the procedure discussed earlier, with more than one renormalization scale for each phase space point. In the H fixed order calculation, we choose as central renormalization and factorization scales the boson mass. From the table, it is clear that the standard NLO result and the integrated Higgs boson production total cross sections in pb at the LHC</figDesc>
+					<trash>, 8 TeV K R , K F 1, 1 1, 2 2, 1 1, 1 2 1 2 , 1 1 2 , 1 2 2, 2 HJ-MiNLO NLO 13.33(3) 13.49(3) 11.70(2) 13.03(3) 16.53(7) 16.45(8) 11.86(2) H NLO 13.23(1) 13.28(1) 11.17(1) 13.14(1) 15.91(2) 15.83(2) 11.22(1) HJ-MiNLO LO 8.282(7) 8.400(7) 5.880(5) 7.864(6) 18.28(2) 17.11(2) 5.982(5) H LO 5.741(5) 5.758(5) 4.734(4) 5.644(5) 7.117(6) 6.996(6) 4.748(4)</trash>
+
+					<head>Table 1:</head>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Total cross section for Higgs boson production at the 8 TeV LHC, obtained with the HJ-MiNLO and the H programs, both at full NLO level and at leading order, for different scales combinations. The maximum and minimum are highlighted.</figDesc>
+
+				</figure>
+
+				<p>HJ-MiNLO one are fairly consistent, both at the NLO and at the LO level. At the NLO level, the renormalization-scale variation dominates the uncertainty band, and it turns out to be very similar for the HJ-MiNLO and H results, with the first one being slightly shifted upwards. The central values are even closer. Notice that the factorization scale variation is wider for the HJ-MiNLO result, a fact that we will comment on later. At leading order the HJ-MiNLO central result exceeds the fixed order one by almost 50%. We again see that the renormalization scale variation dominates the uncertainties. The scale variation, however, is quite larger than that of the fixed order result.</p>
+
+				<figure>
+					<figDesc>For W − production we have considered both the LHC at 8 TeV configuration (tab. 2) and the Tevatron at 1.96 TeV (tab. 3). Here we notice that the WJ-MiNLO NLO result W − → e − ¯ ν production total cross sections in nb at the LHC,</figDesc>
+					<trash>8 TeV K R , K F 1, 1 1, 2 2, 1 1, 1 2 1 2 , 1 1 2 , 1 2 2, 2 WJ-MiNLO NLO 4.35(1) 4.65(1) 4.031(7) 3.818(8) 4.84(2) 4.62(2) 4.462(8) W NLO 4.612(8) 4.738(8) 4.552(8) 4.425(7) 4.687(8) 4.530(8) 4.703(8) WJ-MiNLO LO 3.182(1) 3.862(1) 2.713(1) 2.4531(1) 5.006(2) 3.792(2) 3.305(1) W LO 4.002(6) 4.379(7) 3.999(6) 3.566(6) 3.999(6) 3.566(6) 4.379(7)</trash>
+
+					<head>Table 2:</head>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Total cross section for W − → e − ¯</figDesc>
+
+				</figure>
+
+				<p>ν production at the 8 TeV LHC, obtained with the WJ-MiNLO and the W programs, both at full NLO level and at leading order, for different scales combinations. The maximum and minimum are highlighted. has a much wider scale-variation band than the fixed-order one. In both cases, the band is larger by about a factor of 3. The central value is lower in both cases by about 4-5%. In the leading order case, the WJ-MiNLO scale band is more than twice as large as the fixed order one at the LHC. At the Tevatron, the scale variation for the W LO result is clearly too small, the NLO result being incompatible with it. On the other hand, for both LHC and Tevatron predictions, if only symmetric scale variations are considered (i.e. the last – 18 – W − → e − ¯ ν production total cross sections in nb at the</p>
+
+				<p><formula>Tevatron KR, KF 1, 1 1, 2 2, 1 1, 1 2 1 2 , 1 1 2 , 1 2 2, 2 WJ-MiNLO NLO 1.204(2) 1.225(2) 1.155(1) 1.177(2) 1.240(4) 1.288(4) 1.186(1) W NLO 1.253(1) 1.264(1) 1.232(1) 1.246(1) 1.281(1) 1.273(1) 1.241(1) WJ-MiNLO LO 0.9633(3) 0.9988(3) 0.8334(3) 0.8962(3) 1.5971(6) 1.4696(5) 0.8677(3) W LO 1.127(1) 1.130(1) 1.127(1) 1.116(1) 1.127(1) 1.116(1) 1.130(1)</formula></p>
+
+				<figure>
+					<head>Table 3:</head>
+
+					<figDesc>Total cross section for W − → e − ¯</figDesc>
+
+				</figure>
+
+				<p>ν production at the 1.96 TeV Tevatron, obtained with the WJ-MiNLO and the W programs, both at full NLO level and at leading order, for different scales combinations. The maximum and minimum are highlighted.</p>
+
+				<p>two columns of the tables), the WJ-MiNLO NLO band contains the fixed order one, and is comparable to it.</p>
+
+				<p>We notice now, that comparing full independent scale variation in the WJ-MiNLO and in the W approaches does not seem to be totally fair. In fact, in the W case, there is no renormalization scale dependence at LO, while there is such a dependence in WJ-MiNLO. Since the W and WJ-MiNLO cross sections are related in a known way, we can track the effects of scale variation in both formulae, at least in the LO case. We write, schematically, the leading order W production cross section as</p>
+
+				<figure>
+					<trash>σ (K F ) = L K 2 F Q 2 ⊗ σ 0 , (4.1)</trash>
+
+
+				</figure>
+
+				<p>where with the convolution sign we schematically represent the integral with the luminosity L. We have explicitly indicated the factorization scale dependence in the formula. Here Q stands for the reference scale, that, in this case, is the W mass. In order to make contact with the LO MiNLO formula, we rewrite eq.</p>
+
+				<figure>
+					<trash>(4.1) as σ (K F ) = Q 2 0 dq 2 d dq 2 exp S(Q, q) L K 2 F q 2 ⊗ σ 0 , (4.2) where S(Q, q) = − Q 2 q 2 dµ 2 µ 2 α S µ 2 A 1 log Q 2 µ 2 + B 1 , (4.3)</trash>
+
+					<figDesc>that, being the integral of an exact differential, yields eq. (4.1) up to non-perturbative effects, that we here neglect, related to the low-end of the integration. Taking explicitly the derivative, we get</figDesc>
+					<trash>σ (K F ) = Q 2 0 dq 2 q 2 exp S(Q, q) α S K 2 F q 2 P ⊗ L K 2 F q 2 + α S q 2 A 1 log Q 2 q 2 + B 1 L K 2 F q 2 ⊗ σ 0 = Q 2 0 dq 2 q 2 exp S(Q, q) α S K 2 F q 2 ˆ P ⊗ L K 2</trash>
+
+
+				</figure>
+
+				<p><formula>F q 2 ⊗ σ 0 + α S q 2 − α S K 2 F q 2 A 1 log Q 2 q 2 + B 1 L K 2 F q 2 ⊗ σ 0 . (4.4) – 19 –</formula></p>
+
+				<p>We have made use of the schematic equation</p>
+
+				<p><formula>P ⊗ L K 2 F q 2 + A 1 log Q 2 q 2 + B 1 L K 2 F q 2 = ˆ P ⊗ L K 2 F q 2 , (4.5)</formula></p>
+
+				<p>where P stand for the regularized (i.e. including the plus prescriptions) Altarelli-Parisi splitting functions, whilê P are the unregularized ones. In the last case, we assume that the integration in the convolution has the correct kinematic cutoff. On the other hand, the MiNLO formula for the total cross section has the form</p>
+
+				<p><formula>σ (K R , K F ) = Q 2 0 dq 2 q 2 α S K 2 R q 2 ˆ P ⊗ L K 2 F q 2 exp S(Q, q) ⊗ σ 0 + L K 2 F q 2 ⊗ R f , (4.6)</formula></p>
+
+				<p>where the last term corresponds to the R f finite contribution. We thus see that an independent scale variation in the W formula corresponds at least in part to a symmetric scale variation in the MiNLO formula. It is thus not surprising that the MiNLO independent scale variation is so much larger than the W one also at NLO. If we limit ourselves to consider only symmetric scale variations, the MiNLO and the W results are more consistent, although the W scale variation band is extremely small. The full NNLO result for the W cross section, on the other hand, lies outside the W uncertainty band in this case, which suggests that, after all, the MiNLO scale band is not unreasonable.</p>
+
+				<p>In tables 4, 5 and 6 we show the total cross section for Z → e + e − production at the Tevatron and at the LHC at 8 and 14 TeV. As in the W case, we see that the full 7-point Z → e + e − production total cross sections in nb at the Tevatron</p>
+
+				<figure>
+					<trash>K R , K F 1, 1 1, 2 2, 1 1, 1 2 1 2 , 1 1 2 , 1 2 2, 2 ZJ-MiNLO NLO 0.2407(4) 0.2434(3) 0.2321(3) 0.2378(3) 0.2459(8) 0.2552(7) 0.2359(3) Z NLO 0.2498(3) 0.2513(3) 0.2455(3) 0.2491(3) 0.2552(3) 0.2543(3) 0.2467(3) ZJ-MiNLO LO 0.19508(7) 0.19883(7) 0.16948(6) 0.18572(6) 0.3213(1) 0.3029(1) 0.17336(6) Z LO 0.2052(2) 0.2041(2) 0.2052(2) 0.2052(2) 0.2052(2) 0.2052(2) 0.2041(2)</trash>
+
+					<head>Table 4:</head>
+
+					<figDesc>Total cross section for Z − → e + e − production, obtained with the ZJ-MiNLO and the Z programs, both at full NLO level and at leading order, for different scales combinations. The maximum and minimum are highlighted. Z → e + e − production total cross sections in nb at the LHC, 8 TeV</figDesc>
+					<trash>KR, KF 1, 1 1, 2 2, 1 1, 1 2 1 2 , 1 1 2 , 1 2 2, 2 ZJ-MiNLO NLO 1.044(2) 1.111(2) 0.974(1) 0.933(1) 1.157(3) 1.116(3) 1.067(1) Z NLO 1.107(1) 1.135(1) 1.093(1) 1.066(1) 1.125(1) 1.091(1) 1.126(1) ZJ-MiNLO LO 0.7751(3) 0.9260(3) 0.6632(2) 0.6111(2) 1.2114(4) 0.9405(3) 0.7950(3) Z LO 0.9597(9) 1.0443(1) 0.9604(9) 0.8647(9) 0.9604(9) 0.8647(9) 1.0443(1)</trash>
+
+
+				</figure>
+
+				<figure>
+					<head>Table 5:</head>
+
+					<figDesc>Total cross section for Z − → e + e − production, obtained with the ZJ-MiNLO and the Z programs, both at full NLO level and at leading order, for different scales combinations. The maximum and minimum are highlighted.</figDesc>
+
+				</figure>
+
+				<p>scale variation yields a much wider band in the ZJ-MiNLO result with respect to the Z one.</p>
+
+				<p>After having shown that the total cross sections obtained with the BJ-MiNLO generator are in good agreement with the standard NLO cross sections, we would like to show that</p>
+
+			</div>
+			<div>
+				<head>– 20 –</head>
+
+				<p>Z → e + e − production total cross sections in nb at the 14 TeV LHC K R , K F</p>
+
+				<p><formula>1, 1 1, 2 2, 1 1, 1 2 1 2 , 1 1 2 , 1 2 2, 2 ZJ-MiNLO NLO 1.916(5) 2.065(6) 1.776(2) 1.662(3) 2.18(1) 2.022(6) 1.987(3) Z NLO 2.039(3) 2.100(3) 2.015(2) 1.938(2) 2.068(3) 1.984(2) 2.092(3) ZJ-MiNLO LO 1.3827(5) 1.7322(6) 1.1806(4) 1.0348(3) 2.1280(7) 1.5677(5) 1.4831(5) Z LO 1.793(2) 2.014(2) 1.793(2) 1.555(2) 1.793(2) 1.555(2) 2.014(2)</formula></p>
+
+				<figure>
+					<head>Table 6:</head>
+
+					<figDesc>Total cross section for Z − → e + e</figDesc>
+
+				</figure>
+
+				<p>− production, obtained with the ZJ-MiNLO and the Z programs, both at full NLO level and at leading order, for different scales combinations. The maximum and minimum are highlighted.</p>
+
+				<figure>
+					<trash>10 −2 10 −1 10 0 10 1 dσ/dy H [pb]</trash>
+
+
+				</figure>
+
+				<p>ratio y H dσ/dy H [pb] ratio</p>
+
+				<p><formula>H+Pythia HJ+Pythia 0.5 1.0 1.5 -4 -3 -2 -1 0 1 2 3 4 10 −2 10 −1 10 0 10 1 dσ/dy H [pb] ratio 0.5 1.0 1.5 -4 -3 -2 -1 0 1 2 3 4 y H dσ/dy H [pb]</formula></p>
+
+				<p>ratio HJ+Pythia H+Pythia Figure 1: Comparison between the H+PYTHIA result and the HJ-MiNLO+PYTHIA result for the Higgs-boson rapidity distribution at the LHC at 8 TeV. The left plot shows the 7-point scalevariation band for the H generator, while the right plot shows the HJ-MiNLO 7-point band. also the rapidity distributions are in good agreement. We thus show in fig. 1 the rapidity distribution of the Higgs boson at the 8 TeV LHC, computed with the H and with the HJ- MiNLO generators, both interfaced to PYTHIA 6 [37] for shower. We have used the Perugia-0 tune of PYTHIA (that is to say, PYTUNE(320)). Hadronization, underlying event and multiparton collisions were turned off.</p>
+
+				<figure>
+					<figDesc>The two plots show the scale-variation band for each generator. The band is obtained as the upper and lower envelope of the results obtained by setting the scale factor parameters (K R , K F ) to (1</figDesc>
+
+				</figure>
+
+				<p><formula>, 1), (1, 2), (2, 1), (1, 1 2 ), ( 1 2 , 1), ( 1 2 , 1 2 ) and (2, 2</formula></p>
+
+				<p>). We see considerable agreement between the two approaches, with the scalevariation band of the HJ-MiNLO result being slightly larger.</p>
+
+				<p>In figs. 2 and 3 we show the Higgs transverse momentum distributions. We begin by noticing that the central values of the H and HJ-MiNLO generators are in very good agreement. This is not a surprise, since in the H generator, the parameter hfact, that separates the real cross section contribution into the sum of a singular and a finite one, was set to the value M H /1.2, motivated by the fact that this yields better agreement with the NNLO result. We notice that, for large transverse momenta, the HJ-MiNLO generator has a smaller scale variation band with respect to the H one. We expect this behaviour, since the HJ- MiNLO generator achieves NLO accuracy for one-jet inclusive distributions, while the H generator is only tree-level accurate. We also notice that the scale uncertainty band of HJ-MiNLO widens at small transverse momentum. This behaviour is also expected, since,</p>
+
+				<figure>
+					<trash>– 21 – 10 −3 10 −2 10 −1 10 0 dσ/dp H T [pb/GeV]</trash>
+
+
+				</figure>
+
+				<p>ratio p H T [GeV] dσ/dp H T [pb/GeV]</p>
+
+				<figure>
+					<trash>ratio H+Pythia HJ+Pythia 0.5 1.0 1.5 0 50 100 150 200 250 300 350 400 10 −3 10 −2 10 −1 10 0 dσ/dp H T [pb/GeV]</trash>
+
+
+				</figure>
+
+				<p>ratio p H T [GeV] dσ/dp H T [pb/GeV] ratio</p>
+
+				<p><formula>HJ+Pythia H+Pythia 0.5 1.0 1.5 0 50 100 150 200 250 300 350 400</formula></p>
+
+				<figure>
+					<head>Figure 2:</head>
+
+					<figDesc>Comparison between the H+PYTHIA result and the HJ-MiNLO+PYTHIA result for the Higgs boson transverse-momentum distribution. The bands are obtained as in fig. 1</figDesc>
+
+				</figure>
+
+				<p><formula>. 10 −1 10 0 dσ/dp H T [pb/GeV]</formula></p>
+
+				<p>ratio p H T [GeV] dσ/dp H T [pb/GeV] ratio</p>
+
+				<figure>
+					<trash>H+Pythia HJ+Pythia 0.5 1.0 1.5 0 20 40 60 80 100 10 −1 10 0 dσ/dp H T [pb/GeV]</trash>
+
+
+				</figure>
+
+				<p>ratio p H T [GeV] dσ/dp H T [pb/GeV]</p>
+
+				<figure>
+					<trash>ratio HJ+Pythia H+Pythia 0.5 1.0 1.5 0 20 40 60 80 100</trash>
+
+					<head>Figure 3:</head>
+
+					<figDesc>Same as fig. 2 for a different p H T range.</figDesc>
+
+				</figure>
+
+				<p>in that direction, we approach the strong coupling regime. Observe also that the H result does not show a realistic scale uncertainty in the p H T &lt; M H region. This too is understood, and it follows from the fact that this region is dominated by S-type events (see refs. [36, 38] for a detailed explanation). As a last point, we see from fig. 3, that a noticeable difference in shape is present in the very small transverse-momentum region. This again does not come as a surprise, since the POWHEG-generated Sudakov form factor in the H generator differs by NNLL terms, and also by non-singular contributions, from the HJ-MiNLO one. Notice also that, unlike in the H case [38], the scale variation in the HJ-MiNLO generator induces a change in shape of the transverse momentum spectrum in the Sudakov region, leading to a better understanding of the associated uncertainty.</p>
+
+				<p>We now turn to the case of W − production. Motivated by the discussion given for the total cross section case, we consider only a 3-point scale variation, i.e. K R = K F = {1/2, 1, 2} for the WJ-MiNLO generator. In fig. 4 we show the l − rapidity distribution at the Tevatron computed with the W and WJ+MiNLO generators. We essentially see no shape difference in this distribution, therefore, as for the inclusive cross section, we find that the WJ+MiNLO central value is about 5% below the W one. The WJ band is slightly larger than</p>
+
+				<figure>
+					<trash>– 22 – 100 200 300 400 dσ/dy l [pb] Ratio 0.8 1 1.2 -4 -3 -2 -1 0 1 2 3 4 y l dσ/dy l [pb]</trash>
+
+
+				</figure>
+
+				<p>Ratio W+Pythia WJ+Pythia 100 200 300 400 dσ/dy l [pb] Ratio y l dσ/dy l [pb] Ratio</p>
+
+				<figure>
+					<trash>WJ+Pythia W+Pythia 0.8 1 1.2 -4 -3 -2 -1 0 1 2 3 4 Figure 4</trash>
+
+
+				</figure>
+
+				<p>: Comparison between the W+PYTHIA result and the WJ-MiNLO+PYTHIA result for the l − rapidity distribution at the Tevatron. The bands are obtained as in fig. 1 for the W+PYTHIA generator, while for the WJ-MiNLO+PYTHIA generator they are obtained by taking the upper and lower envelope of the curves computed with K R = K F = {1/2, 1, 2}. the W one for central rapidities, widening towards larger rapidities.</p>
+
+				<figure>
+					<trash>10 −3 10 −2 10 −1 10 0 10 1 10 2 dσ/dp W T [pb/GeV] ratio 0.8 1.0 1.2 0 50 100 150 200 250 300 p W T [GeV]</trash>
+
+
+				</figure>
+
+				<p>dσ/dp</p>
+
+				<figure>
+					<trash>W T [pb/GeV] ratio W+Pythia WJ+Pythia 10 −3 10 −2 10 −1 10 0 10 1 10 2 dσ/dp W T [pb/GeV]</trash>
+
+
+				</figure>
+
+				<p>ratio p W T [GeV]</p>
+
+				<figure>
+					<trash>dσ/dp W T [pb/GeV] ratio WJ+Pythia W+Pythia 0.8 1.0 1.2 0 50 100 150 200 250 300</trash>
+
+					<head>Figure 5:</head>
+
+					<figDesc>Comparison between the W+PYTHIA result and the WJ-MiNLO+PYTHIA result for the W − transverse-momentum distribution at the Tevatron. The bands are obtained as in fig. 4.</figDesc>
+
+				</figure>
+
+				<p>In figs. 5 and 6 we present predictions for the W − boson transverse-momentum spectrum . In this case we find noticeable shape differences between the W and WJ+MiNLO distribution, especially at low p W T . In particular, we observe that the WJ+MiNLO Sudakov form factor peaks at a lower value of p W T . These differences do not come as a surprise, since this distribution is described only at LO by the W generator, while the WJ+MiNLO description is NLO accurate. We also note that the W uncertainty band is small and uniform in the whole p W T range. This is a feature of POWHEG when no separation is performed between singular and regular contributions to the cross section. In this case, the size of the scale variation amounts to a factor 1 + O(α 2 S ), that is clearly too small in the moderate to large p W T region, where the W generator is only tree-level accurate. The error band given by the WJ+MiNLO generator is of an acceptable size at large transverse momenta, while it seems to be excessively small in the very low transverse momentum region.</p>
+
+				<p>Finally, we discuss the case of Z production at the 14 TeV LHC.</p>
+
+				<figure>
+					<trash>In fig. 7 we show the – 23 – 10 0 10 1 10 2 dσ/dp W T [pb/GeV] ratio 0.8 1.0 1.2 0 20 40 60 80 100 p W T [GeV]</trash>
+
+
+				</figure>
+
+				<p>dσ/dp W T [pb/GeV] ratio</p>
+
+				<figure>
+					<trash>W+Pythia WJ+Pythia 10 0 10 1 10 2 dσ/dp W T [pb/GeV]</trash>
+
+
+				</figure>
+
+				<p>ratio p W T [GeV] dσ/dp W T [pb/GeV]</p>
+
+				<figure>
+					<trash>ratio WJ+Pythia W+Pythia 0.5 1 1.5 0 20 40 60 80 100</trash>
+
+					<head>Figure 6:</head>
+
+					<figDesc>Same as fig. 5 for a different p</figDesc>
+					<trash>W T range. 100 200 300 dσ/dy Z [pb]</trash>
+
+
+				</figure>
+
+				<p>ratio y Z dσ/dy Z [pb]</p>
+
+				<figure>
+					<trash>ratio Z+Pythia ZJ+Pythia 0.8 1 1.2 -4 -3 -2 -1 0 1 2 3 4 100 200 300</trash>
+
+
+				</figure>
+
+				<p>dσ/dy Z [pb] ratio y Z dσ/dy Z [pb]</p>
+
+				<figure>
+					<trash>ratio ZJ+Pythia Z+Pythia 0.8 1 1.2 -4 -3 -2 -1 0 1 2 3 4 Figure 7</trash>
+
+
+				</figure>
+
+				<p>: Comparison between the Z+PYTHIA result and the ZJ-MiNLO+PYTHIA result for the Z rapidity distribution at the LHC at 14 TeV. The bands are obtained as in fig. 4. Z boson rapidity distribution. As in the case of W production, we note that the ZJ+MiNLO central value is lower than the Z one and that its uncertainty band is comparable at central rapidities, widening in the forward-backward region. We also notice a slight change of shape in the extreme rapidities, with the Z result remaining compatible with the ZJ+MiNLO uncertainty band.</p>
+
+				<p>In figs. 8 and 9 we show the transverse-momentum distribution of the Z boson. We notice the same features already observed in the W case. However we also observe now a considerable difference of the Z and ZJ-MiNLO distributions at large transverse momenta. Following arguments in ref. [39] we suggest that this difference arises due to NLO corrections in the ZJ-MiNLO generator which are not present in the Z one, for example those related to threshold logarithms.</p>
+
+				<p>In conclusion, we have seen that in the case of vector-boson production (Z and W ), the agreement of the BJ-MiNLO and the B generators is less than perfect. We also have shown that there is not a close correspondence between the scale variations in the two types of generators. We may conclude from this observation that either the scale variation in the MiNLO generator is excessive, and should be limited (for example by considering only 3-point scale variations), or that the scale uncertainty obtained in the W and Z generators</p>
+
+				<figure>
+					<trash>– 24 – −2 10 −1 10 0 10 1 10 2 dσ/dp Z T [pb/GeV] ratio 1.0 1.2 1.4 0 50 100 150 200 250 300 p Z T [GeV] dσ/dp Z T [pb/GeV] ratio Z+Pythia ZJ+Pythia 10 −2 10 −1 10 0 10 1 10 2 dσ/dp Z T [pb/GeV] ratio 0.8 1.0 0 50 100 150 200 250 300 p Z T [GeV]</trash>
+
+
+				</figure>
+
+				<p>dσ/dp Z T [pb/GeV] ratio ZJ+Pythia Z+Pythia Figure 8: Comparison between the Z+PYTHIA result and the ZJ-MiNLO+PYTHIA result for the Z transverse-momentum distribution at the LHC at 14 TeV. The bands are obtained as in fig. 4</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+					<trash>10 0 10 1 10 2 dσ/dp Z T [pb/GeV] ratio 0.8 1 1.2 0 20 40 60 80 100 p Z T [GeV] dσ/dp Z T [pb/GeV] ratio Z+Pythia ZJ+Pythia 10 0 10 1 10 2 dσ/dp Z T [pb/GeV]</trash>
+
+
+				</figure>
+
+				<p>ratio p Z T [GeV]</p>
+
+				<figure>
+					<trash>dσ/dp Z T [pb/GeV] ratio ZJ+Pythia Z+Pythia 0.8 1 1.2 0 20 40 60 80 100</trash>
+
+					<head>Figure 9:</head>
+
+					<figDesc>Same as fig. 8 for a different p Z T range.</figDesc>
+
+				</figure>
+
+				<p>underestimates the true error. We also remark that if we use the full 7-point scale variation for the WJ and ZJ generators, the error bands for the transverse-momentum distributions do not shrink as much at small transverse momenta, thus leading to better compatibility with the W and Z generators distributions. On the other hand, by doing so, the error on the total cross section might be too conservative. The problems with the application of our method to these generators may be related to the fact that the bulk of the Sudakov region is relatively low, the peak being below 5 GeV. We have ignored some problems that may be relevant in this region. For example, the pdf evolution switches from 5 to 4 and to 3 flavours in this region, while we have used constant n f = 5 in the BJ-MiNLO generator.</p>
+
+				<figure>
+					<figDesc>Similarly, inaccuracies in the pdf evolution in this region may also be relevant. While we have checked that our results are not affected in a relevant way by the infrared cutoffs of the calculation, we believe that further work will be needed to better assess the importance of low-p T Sudakov region.</figDesc>
+
+				</figure>
+
+				<p>On the contrary, in the Higgs boson case, we find from our study a fairly good agreement between the H and HJ-MiNLO generators, both for the total cross sections and for the distributions. The scale variation bands are also comparable, which confirms that our result yields an improved and more accurate description of Higgs boson production, fulfilling – 25 – also, in a practical, way our goals.</p>
+
+			</div>
+			<div>
+				<head n="5">How to build an NNLO+PS generator with MiNLO</head>
+
+				<p>We argue now that a generator built according to the MiNLO prescription, improved with the findings of the present work, can be easily turned into an NNLO+PS generator. For the sake of simplicity, we consider the Higgs boson generator. We have concluded that such a simulation achieves O(α 4 S ) accuracy for all distributions involving at least one jet and O(α 3 S ) accuracy for inclusive distributions. We denote by dσ dy HJ (5.1) the inclusive Higgs boson rapidity distribution obtained with this event generator. We denote by dσ dy NNLO (5.2) the inclusive Higgs boson rapidity distribution calculated with a fixed NNLO calculation.</p>
+
+				<p>We claim that by reweighting the HJ-MiNLO output with the weight factor</p>
+
+				<p><formula>dσ dy NNLO dσ dy HJ (5.3)</formula></p>
+
+				<p>we achieve full NNLO accuracy for our generator. The proof is simple. The above ratio has a formal expansion</p>
+
+				<figure>
+					<trash>dσ dy NNLO dσ dy HJ = c 2 α 2 S + c 3 α 3 S + c 4 α 4 S c 2 α 2 S + c 3 α 3 S + d 4 α 4 S ≈ 1 + c 4 − d 4 c 2 α 2 S + O(α 3 S ). (5.4)</trash>
+
+
+				</figure>
+
+				<p>Notice that the numerator and denominator agree at O(α 3 S ) since the HJ-MiNLO generator achieves O(α 3 S ) accuracy for inclusive observables. Thus, the reweighting factor does not spoil the α 4 S accuracy of the HJ-MiNLO generator in the one-jet region. In this region, in fact, the dominant contributions to the HJ-MiNLO generator are of order α 3 S , and the reweighting generates extra contributions of order α 5 S , that are beyond the nominal accuracy. On the other hand, the inclusive distributions are reweighted to achieve α 4 S accuracy, so that the generator has indeed α 4 S accuracy in the whole phase space. Variants of these schemes are also possible. Rather than reweighting using the full rapidity distribution, one can split the cross section as</p>
+
+				<figure>
+					<trash>d 2 σ dq T dy = d 2 σ dq T dy h (q T ) + d 2 σ dq T dy [1 − h (q T )] , (5.5) where h is a smooth positive function such that h(q T ) → 1 as q T → 0 and h(q T ) → 0 for q T M H , such as h(q) = c M α H c M α H + q α , (5.6) – 26 –</trash>
+
+
+				</figure>
+
+				<p>with α ≥ 1 and c a constant of order 1. One can then reweight the cross section as d 2 σ dq T dy h (q T ) W (y) + d 2 σ dq T dy [1 − h (q T )] ,</p>
+
+				<figure>
+					<trash>(5.7) with W (y) = dq T h (q T ) d 2 σ dq T dy NNLO dq T h (q T ) d 2 σ dq T dy HJ . (5.8)</trash>
+
+
+				</figure>
+
+				<p>In this way, for q T M H the effect of the reweighting vanishes.</p>
+
+				<p>We notice that this NNLO+PS generator would be NNLO accurate in the same sense in which the current MC@NLO or POWHEG type generators are NLO accurate, i.e. integrated quantities achieve NLO/NNLO accuracy, while LL/NLL/NNLL accuracy is achieved in the Sudakov region, depending upon the accuracy of the implementation of the Sudakov form factors. We postpone a phenomenological study including reweighting to a future publication.</p>
+
+				<p>There are a number of more complex processes to which this procedure can be generalized , typically processes where the heavy particle decays, or processes involving pair production of massive colourless objects. In this case, the NNLO reweighting must be performed as a function of more variables. One would typically use the rapidity of the heavy system, plus the kinematical variables describing its internal structure. For example, one can go to the longitudinal rest frame of the heavy system with a Lorentz boost, perform a transverse boost of the system such that its transverse momentum vanishes, and use variables that describe the kinematics of the heavy system in this frame.</p>
+
+			</div>
+			<div>
+				<head n="6">MiNLO merging for more complex processes</head>
+
+				<p>In the present work, we have dealt with relatively simple processes, i.e. a colour-neutral massive particle in association with one jet. The results of ref. [14] strongly suggest that our procedure may be generalized to higher jet multiplicities. Since, at the level of one associated jet, we had to improve the MiNLO prescription with the inclusion of certain NNLL terms in the Sudakov form factor, it is clear that, in general, we need to find a similar improvement for the more general case. A first question that we would like to consider is whether our MiNLO procedure downgraded to the LO level (that is to say, to the CKKW procedure [40] as applied to the inclusive sample), already achieves our goal at LO accuracy, that is to say, it is such that by integrating the softest emission one gets a LO accurate matrix element for one less emission. It is easy to convince ourselves that as soon as we deal with matrix elements involving more than four coloured particles (including the softest emission), this is not the case. In fact, after the first clustering, that in our procedure simply sets the Q 0 scale, we are left with four or more coloured partons. Soft gluon resummation, in this case, also involve soft, non-collinear terms that arise from interference of the emission from the coloured external lines [41, 42, 43]. These terms are of NLL accuracy, and, according to – 27 – our counting, they can contribute terms of relative order √ α S . By not including them, we thus introduce an error of this magnitude, while LO accuracy requires the neglected terms to be of order α S . Notice that this problem does not manifest itself in the HJJ case, since precisely four coloured partons are present here (two in the initial state and two in the final state). In processes like t ¯ t production in association with one jet, such terms would have to be accounted for. On the other hand, it is possible to compute these terms using standard resummation techniques. It is thus conceivable that the LO MiNLO formula can also be improved including these interference terms. But we also stress that the CKKW procedure, as is, does not satisfy our requirement at leading order.</p>
+
+				<p>In the present work, we have used as a clustering variable the transverse momentum of the boson, since it is a simple variable and the corresponding resummation formulae are well known. As an alternative, we could have used the hardest jet transverse momentum, taking B 2 from ref. [44]. If this method is to be extended to processes with more than one radiated parton, it is clear that other clustering variables should be chosen, likely with good resummation properties. One should then seek either an NNLL extension of the CKKW procedure, or, construct a product of standard soft resummation factors, accurate at the NLL level, modifying the Sudakov form factor in each one to include the B 2 term relevant to the associated configuration of clustered particles. Notice that within our method it was never necessary to know explicitly the hard resummation correction that is usually included in NLL and NNLL resummation formulae, since the NLO matrix elements intrinsically provide this.</p>
+
+			</div>
+			<div>
+				<head n="7">Conclusions</head>
+
+				<p>In the present work, we have illustrated a method for constructing NLO+PS generators for the production of a heavy system accompanied by a radiated parton, such that, when integrating over the parton&apos;s phase space, one recovers the accuracy of a corresponding NLO+PS generator for the production of the heavy system alone. In essence, in our method, we start from the MiNLO prescription of ref. [14], and we look explicitly for the places in which it needs to be modified in order to maintain NLO accuracy on integrating out all radiation. We have found that the inclusion of the A 2 and the B 2 term in the resummation formula is enough to achieve this goal. Since we do not know the B 2 term for the type of clustering that we performed in ref. [14], we have modified the prescription so that the transverse momentum of the boson is used instead. More specifically, the prescription is applicable to any clustering scheme in which the last step is performed using the transverse momentum of the boson as the clustering scale. We have not explored, at this moment, any issues related to the logarithmic accuracy of our approach. In other words, the logarithmic accuracy should be at the same level as that of the NLO+PS generators we are referring to. We postpone to future studies, a more accurate assessment of, and possible improvements to, the precision of the resummation. We have tested our method in the framework of H/W/Z production. We find that the method performs remarkably well. We have also found that the usual scale-variation method used in order to determine uncertainties may be deceiving in our case, especially for – 28 – processes like W/Z production, where, at the Born level, there is no renormalization scale dependence. We track this problem to the fact that, in the corresponding BJ calculation, a renormalization scale variation is already possible at the Born level. We point out that, using our BJ-MiNLO generators, it is actually possible to construct an NNLO+PS generator, simply by reweighting the transverse-momentum integral of the cross section to the one computed at the NNLO level. We postpone a phenomenological study of this method to a future publication.</p>
+
+				<p>While this work was under completion, a publication has appeared that has some points in common with our work [11]. This work focuses on the accuracy of the matching conditions, and sets up a framework, using NNLL accurate resummation of soft-parton emission, such that one has no loss of NLO accuracy when matching. Also our approach is motivated by the requirement of preserving the NLO accuracy. It is more focussed, however, upon finding the minimal modification to the soft-parton resummation such that no matching is needed at all, and, in fact, we identify precisely where do we need to improve the resummation formula in order to achieve our goal. In this way, we find that its implementation in the BJ case requires only a minimal modification to the MiNLO procedure, that, by itself, is quite simple.</p>
+
+			</div>
+			<div>
+				<head>Acknowledgments We thank Gavin</head>
+
+				<figure>
+					<figDesc>Salam and Massimiliano Grazzini for useful discussions. G.Z. is supported by the British Science and Technology Facilities Council. G.Z., P.N. and C.O. acknowledge the support also of grant PITN-GA-2010-264564 from the European Commission.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>A. The NNLL resummed differential cross section</head>
+
+				<p>The NNLL differential cross section for the production of a colourless system, denoted by B, of virtuality Q 2 (when dealing with a single vector boson, we assume that Q is equal to the vector boson mass M ), in the partonic scattering i + j → B, is given by</p>
+
+				<figure>
+					<trash>dσ dq 2 T dy B = σ 0 d 2 b e i q T · b C ia ⊗ f a/A x A , c 1 b C jb ⊗ f b/B x B , c 1 b × exp S c 2 Q, c 1 b , (A.1) where we have used the following definition of convolution C ij ⊗ f j/J (x, q) ≡ 1 x dξ ξ f i/J (ξ, q) C ij α S q 2 , x ξ . (A.2) The σ 0 factor is such that, at leading order, dσ dy B LO = f i/A (x A , µ F ) f j/B (x B , µ F ) σ 0 , (A.3)</trash>
+
+
+				</figure>
+
+				<p>and the rapidity of the B system is given by</p>
+
+				<p><formula>y B = 1 2 log x A x B . (A.4) – 29 –</formula></p>
+
+				<p>The Sudakov form factor S (q , q) is defined by 7</p>
+
+				<figure>
+					<trash>S q , q = − q 2 q 2 dµ 2 µ 2 A α S µ 2 log q 2 µ 2 + B α S µ 2 , (A.5)</trash>
+
+
+				</figure>
+
+				<p>and the C ij coefficients have the following perturbative expansion C ij ≡ C ij (α S , z) = δ ij δ (1 − z) + α S C</p>
+
+				<figure>
+					<trash>(1) ij (z) + . . . (A.6)</trash>
+
+
+				</figure>
+
+				<p>The C ij functions can thus be absorbed into a redefinition of the pdfs. We will thus assume now that our pdfs include this factor, and only at the end we will reinstate it. Equation (A.1) is easily manipulated by going to Mellin space. However, we do not want to lose the information on the rapidity y B of the B system. We then define the following</p>
+
+				<p><formula>Mellin transform σ N ≡ dτ dy B τ α−1 e i 2 β y B dσ dq 2 T dy B (A.7) where τ = x A x B , (A.8)</formula></p>
+
+				<p>so that S = Q 2 /τ , where S is the hadronic center-of-mass energy. Notice that the τ integration is performed by considering that S goes from Q 2 to infinity. We can then introduce a complex number N such that N = α + i β, so that we can write σ N = 1 0 dx A dx B τ Re[N ]−1 e i 2 Im[N ]</p>
+
+				<figure>
+					<trash>y B dσ dq 2 T dy B = 1 0 dx A dx B (x A x B ) Re[N ]−1 x A x B iIm[N ] dσ dq 2 T dy B = 1 0 dx A dx B x A x B x N A x N * B dσ dq 2 T dy B = σ 0 d 2 b e i q T · b f a/A,N c 1 b f b/B,N * c 1 b exp S c 2 Q, c 1 b , (A.9) with f a/A,N c 1 b = 1 0 dx A x N −1 A f a/A (x A , c 1 b ) . (A.10)</trash>
+
+					<figDesc>By solving the DGLAP equations for the pdfs to the required logarithmic accuracy, and evolving the moments of the C ij coefficients too, we can write</figDesc>
+					<trash>f a/A,N c 1 b f b/B,N * c 1 b = f a/A,N (c 2 Q) f b/B,N * (c 2 Q) exp Re G N c 2 Q, c 1 b ≡ F N (c 2 Q) exp Re G N c 2 Q, c 1 b , (A.11) with (see eq. (2.22) of ref. [18]) G N c 2 Q, c 1 b = −2 c 2 2 Q 2 c 2 1 /b 2 dµ 2 µ 2 γ N α S µ 2 . (A.12) 7</trash>
+
+
+				</figure>
+
+				<p>Note that this Sudakov is the square of the Sudakov form factor ∆ q/g considered in Sec. 2 (see eq. 2.12).</p>
+
+				<p>Therefore the coefficients Ai and Bi here are twice those given in eqs.</p>
+
+				<p><formula>(2.5) and (2.6). – 30 – We define α S = α S c 2 2 Q 2 , (A.13) y = −α S b 0 log c 2 1 c 2 2 b 2 Q 2 , (A.14)</formula></p>
+
+				<p>and, using the solution the renormalization group equation for α S ,</p>
+
+				<figure>
+					<trash>dα S d log µ 2 = −b 0 α 2 S − b 1 α 3 S − b 2 α 4 S + . . . , (A.15) we write S c 2 Q, c 1 b ≡ S (α S , y) = 1 α S f 0 (y) + f 1 (y) + α S f 2 (y) + . . . , (A.16) where f 0 (y) = A 1 b 2 0 [y + log (1 − y)] , f 1 (y) = A 1 b 1 b 3 0 1 2 log 2 (1 − y) + y 1 − y + log (1 − y) 1 − y − A 2 b 2 0 log (1 − y) + y 1 − y + B 1 b 0 log (1 − y) , f 2 (y) = − B 2 b 0 y (1 − y) + B 1 b 1 b 2 0 y + log (1 − y) 1 − y − A 3 2b 2 0 y 2 (1 − y) 2 + A 2 b 1 2b 3 0 3y 2 − 2y + (4y − 2) log (1 − y) (1 − y) 2 + A 1 2b 4 0 1 (1 − y) 2 b 2 1 (1 − 2y) log 2 (1 − y) + 2 b 0 b 2 (1 − y) 2 + b 2 1 y (1 − y) log (1 − y) − 3b 0 b 2 y 2 + b 2 1 y 2 + 2b 0 b 2 y . (A.17)</trash>
+
+
+				</figure>
+
+				<p>Notice that the coefficients A 2 , B 1 and B 2 do depend explicitly upon c 1 and c 2 (see ref. [24]). The values c 2 = 1 and c 1 = 2e −γ E give the coefficients that are usually reported in the literature. Similarly, we can expand G N (c 2 Q, c 1 /b), using</p>
+
+				<figure>
+					<trash>γ N (α S ) = α S γ 1,N + α 2 S γ 2,N , (A.18) we can write G N c 2 Q, c 1 b ≡ G N (α S , y) = g 1,N (y) + α S g 2,N (y) , (A.19) with g 1,N (y) = γ 1,N b 0 log (1 − y) , (A.20) g 2,N (y) = 2 b 2 0 (1 − y) [γ 1,N b 1 log (1 − y) − (b 0 γ 2,N − b 1 γ 1,N ) y] . (A.21)</trash>
+
+
+				</figure>
+
+				<p>We first perform the angular integration in eq. (A.9), we change the integration variable tô b = bq T and we integrate by part, to get (see ref. [18] for more details)</p>
+
+				<p><formula>dσ N dq 2 T = F N (c 2 Q) d dq 2 T ∞ 0 d ˆ b J 1 ( ˆ b) exp S c 2 Q, c 1 q T ˆ b exp G N c 2 Q, c 1 q T ˆ b , (A.22) – 31 –</formula></p>
+
+				<p>at NNLL accuracy. We then write y = y 0 + α S b 0 l b ,</p>
+
+				<figure>
+					<trash>(A.23) with y 0 = −α S b 0 log q 2 T c 2 2 Q 2 , l b = log b 2 c 2 1 . (A.24)</trash>
+
+
+				</figure>
+
+				<p>Now we have to consider l b as not being parametrically large, while y 0 is the variable that becomes of order 1 in the small q T limit. We thus expand S and G N at NNLL order</p>
+
+				<figure>
+					<trash>S N (α S , y) = S N (α S , y 0 ) + f 0 (y 0 ) b 0 l b + α S 2 f 0 (y 0 ) b 2 0 l 2 b + α S f 1 (y 0 ) b 0 l b , (A.25) G N (α S , y) = G N (α S , y 0 ) + α S g 1,N (y 0 ) b 0 l b . (A.26) We get dσ N dq 2 T = F N (c 2 Q) d dq 2 T exp S (α S , y 0 ) exp Re [G N (α S , y 0 )] ∞ 0 d ˆ b J 1 ( ˆ b) × exp f 0 (y 0 ) b 0 l b + α S f 1 (y 0 ) b 0 l b + α S Re g 1,N (y 0 ) b 0 l b + α S 2 f 0 (y 0 ) b 2 0 l 2 b . (A.27) We now work out the integral I = ∞ 0 d ˆ bJ 1 ( ˆ b) exp f 0 (y 0 ) b 0 l b + α S f 1 (y 0 ) b 0 l b + α S Re g 1,N (y 0 ) b 0 l b + α S 2 f 0 (y 0 ) b 2 0 l 2 b = ∞ 0 d ˆ b J 1 ( ˆ b) 1 + α S b 0 f 1 (y 0 ) + Re g 1,N (y 0 ) 2 ∂ ∂h + α S 2 f 0 (y 0 ) b 2 0 4 ∂ ∂h 2 ˆ b h 1 c 1 h = 1 + 2α S b 0 f 1 (y 0 ) + Re g 1,N (y 0 ) ∂ ∂h + 2α S f 0 (y 0 ) b 2 0 ∂ ∂h 2 2 c 1 h Γ (1 + h/2) Γ (1 − h/2) , (A.28) where h = 2f 0 (y 0 ) b 0 = − 2A 1 b 0 y 0 1 − y 0 . (A.29) We then obtain I = 1 + α S b 0 f 1 (y 0 ) + Re g 1,N (y 0 ) ψ 0 1 + h 2 + ψ 0 1 − h 2 + 2γ E + α S 2 f 0 (y 0 ) b 0 ψ 1 1 + h 2 + ψ 2 0 1 + h 2 + 2ψ 0 1 − h 2 ψ 0 1 + h 2 + 4γ E ψ 0 1 + h 2 − ψ 1 1 − h 2 + ψ 2 0 1 − h 2 + 4γ</trash>
+
+
+				</figure>
+
+				<p><formula>E ψ 0 1 − h 2 + 4γ 2 E e γ E h Γ 1 + h 2 Γ 1 − h 2 , (A.30) where ψ 0 (z) = d dz Γ(z) . (A.31) – 32 –</formula></p>
+
+				<p>Notice that the N -dependent term, that prevents rewriting the luminosity in x space, depends upon N through the factor g 1,N . Thus, the N -dependent term can be factorized with the required accuracy as exp Re [G N (α S , y 0 )] exp α S b 0 K Re</p>
+
+				<figure>
+					<trash>g 1,N (y 0 ) = exp G N (α S , y 0 ) 2 exp α S b 0 K g 1,N (y 0 ) 2 exp G N * (α S , y 0 ) 2 exp α S b 0 K g 1,N * (y 0 ) 2 = exp 1 2 G N (α S , y 0 ) + α S g 1,N (y 0 ) b 0 log (exp K) × exp 1 2 G N * (α S , y 0 ) + α S g 1,N * (y 0 ) b 0 log (exp K) = exp 1 2 G N c 2 Q, q T exp K 2 exp 1 2 G N * c 2 Q, q T exp K 2 , (A.32) where K = ψ 0 1 + h 2 + ψ 0 1 − h 2 + 2γ E . (A.33)</trash>
+
+
+				</figure>
+
+				<p>and we have used eqs. (A.26) and the definition of G N in eq. (A.12).</p>
+
+				<p>We can now perform the inverse Mellin/Fourier transform back to x space, obtaining dσ N dq 2 T dy B = d dq 2 T C ia ⊗ f a/A x A , q T exp K 2 C jb ⊗ f b/B x B , q T exp</p>
+
+				<figure>
+					<trash>K 2 exp S (α S , y 0 ) I 0 , (A.34) where I 0 is equal to eq. (A.30) with the g 1,N term deleted I 0 = 1 + α S b 0 f 1 (y 0 ) ψ 0 1 + h 2 + ψ 0 1 − h 2 + 2γ E + α S 2 f 0 (y 0 ) b 0 ψ 1 1 + h 2 + ψ 2 0 1 + h 2 + 2ψ 0 1 − h 2 ψ 0 1 + h 2 +4γ E ψ 0 1 + h 2 − ψ 1 1 − h 2 + ψ 2 0 1 − h 2 + 4γ E ψ 0 1 − h 2 + 4γ 2 E e γ E h Γ 1 + h 2 Γ 1 − h 2 . (A.35)</trash>
+
+					<figDesc>At the moment we are not interested in developing this expression, that is interesting of its own, any further. For our purpose, we just need to expand I 0 to get</figDesc>
+					<trash>I 0 = 1 + 2α S b 0 f 1 (y 0 ) ∂ ∂h + 2α S f 0 (y 0 ) b 2 0 ∂ ∂h 2 2 c 1 h Γ (1 + h/2) Γ (1 − h/2) ≈ 1 + 2α S b 0 f 1 (y 0 ) ∂ ∂h + 2α S f 0 (y 0 ) b 2 0 ∂ ∂h 2 1 − ζ 3 h 3 12 + O h 5 ≈ 1 − ζ 3 h 3 12 − α S 2 b 0 f 1 (y 0 ) ζ 3 h 2 − α S f 0 (y 0 ) b 2 0 ζ 3 h + . . . (A.36)</trash>
+
+
+				</figure>
+
+				<p>Thus, the factor I 0 corrects the formula in ref. [45] by terms of the following order</p>
+
+				<figure>
+					<trash>h 3 ≈ α 3 S L 3 , 3 powers of L down from leading term α 3 S L 6 ; α S h 2 ≈ α 3 S L 2 , 4 powers of L down from leading term; α S h ≈ α 2 S L, 3 powers of L down from leading term α 2 S L 4 . (A.37) – 33 –</trash>
+
+
+				</figure>
+
+				<p>Furthermore, the scale choice in the pdfs, q T exp K/2, induces a change of relative order α S K ≈ α S h</p>
+
+				<p><formula>2 ≈ α 3 S L 2 . (A.38)</formula></p>
+
+				<p>If we are only interested in terms of relative order α 2 S with respect to the Born contribution, the only term that we need to keep is the one of order α S h, i.e. the term</p>
+
+				<figure>
+					<trash>−α S f 0 (y 0 ) b 2 0 ζ 3 h ≈ 2 ζ 3 A 2 1 α 2 S log q 2 T c 2 2 Q 2 . (A.39)</trash>
+
+
+				</figure>
+
+				<p>This is the term kept by Ellis and Veseli in ref. [17], and the replacement</p>
+
+				<figure>
+					<trash>B 2 → B 2 + 2 ζ 3 A 2 1</trash>
+
+					<figDesc>(A.40) is sufficient to incorporate this term.</figDesc>
+
+				</figure>
+
+				<p>B. Scale variation in the resummed expression</p>
+
+				<p>We consider the resummed cross section written in the process-independent form of eq. (13) of ref. [46] dσ dq 2 T dy B = σ F d 2 b e i q T · b C ia ⊗ f a/A x A , c 1 b C jb ⊗ f b/B x B ,</p>
+
+				<figure>
+					<trash>c 1 b exp S c 2 Q, c 1 b , (B.1) where σ F = σ 0 × H, H = 1 + α S (Q 2 )H 1 + . . . (B.2) We further rewrite this formula as dσ dq 2 T dy B = σ F d 2 b e i q T · b C ia c 1 b , µ F ⊗ f a/A (µ F ) (x A ) × C jb c 1 b , µ F ⊗ f b/B (µ F ) (x B ) exp S c 2 Q, c 1 b . (B.3)</trash>
+
+
+				</figure>
+
+				<p>Since eq. (B.3) is process independent, it must be possible to introduce the scale variations independently in the integrand and in the prefactor σ F . Furthermore, in the prefactors involving the pdfs there is a built-in scale independence as far as the factorization scale variations are concerned. Thus, the Sudakov exponent must be written in a scale-invariant form by itself to recover the full scale dependence. We thus write</p>
+
+				<figure>
+					<trash>S c 2 Q, c 1 b = exp − c 2 2 Q 2 c 2 1 /b 2 dµ 2 µ 2 A α S µ 2 log c 2 2 Q 2 µ 2 + B α S µ 2 . (B.4) Performing the change of variable µ = K R µ, (B.5) we get S c 2 Q, c 1 b = exp − K 2 R c 2 2 Q 2 K 2 R c 2 1 /b 2 dµ 2 µ 2 A α S µ 2 K 2 R log K 2 R c 2 2 Q 2 µ 2 + B α S µ 2 K 2 R . (B.6) – 34 – We relabel µ → µ, and, using α S µ 2 /K 2 R = α S µ 2 − b 0 log 1 K 2 R α 2 S µ 2 . . . , (B.7) we find A α S µ 2 K 2 R = A 1 α S µ 2 + (A 2 + 2b 0 A 1 log K R ) α 2 S µ 2 + A 3 + A 1 b 2 0 2b 1 log K R + 4 log 2 K R + 4b 0 A 2 log K R α 3 S µ 2 + O α 4 S , B α S µ 2 K 2 R = B 1 α S µ 2 + (B 2 + 2b 0 B 1 log K R ) α 2 S µ 2 + O α 3 S . (B.8) Defining A α S µ 2 , K R = A 1 α S µ 2 + (A 2 + 2b 0 A 1 log K R ) α 2 S µ 2 + A 3 + A 1 b 2 0 2b 1 log K R + 4 log 2 K R + 4b 0 A 2 log K R α 3 S µ 2 + O α 4 S , B α S µ 2 , K R = B 1 α S µ 2 + (B 2 + 2b 0 B 1 log K R ) α 2 S µ 2 + A 1 α S µ 2 + (A 2 + 2b 0 A 1 log K R ) α 2 S µ 2 2 log K R = [B 1 + 2A 1 log K R ] α S µ 2 + B 2 + 2 (A 2 + b 0 B 1 ) log K R + 4b 0 A 1 log 2 K R α 2 S µ 2 + O α 3 S , (B.9) we get S c 2 Q, c 1 b = exp − K 2 R c 2 2 Q 2 K 2 R c 2 1 /b 2 dµ 2 µ 2 A α S µ 2 , K R log c 2 2 Q 2 µ 2 + B α S µ 2 , K R . (B.10)</trash>
+
+					<figDesc>We can now break the integral in the exponent into two integrals</figDesc>
+					<trash>− K 2 R c 2 2 Q 2 K 2 R c 2 1 /b 2 . . . = − c 2 2 Q 2 K 2 R c 2 1 /b 2 . . . − K 2 R c 2 2 Q 2 c 2 2 Q 2 . . . , (B.11) and we call the last integral I I ≡ − K 2 R c 2 2 Q 2 c 2 2 Q 2 dµ 2 µ 2 A α S µ 2 , K R log c 2 2 Q 2 µ 2 + B α S µ 2 , K R . (B.12)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Since this integral does not have large logarithms, we can evaluate it at order α S c 2 2 Q 2 , ignoring the running of α S ,</figDesc>
+					<trash>I = A 1 α S c 2 2 Q 2 c 2 2 Q 2 K 2 R c 2 2 Q 2 dµ 2 µ 2 log c 2 2 Q 2 µ 2 + (B 1 + 2A 1 log K R ) α S c 2 2 Q 2 c 2 2 Q 2 K 2 R c 2 2 Q 2 dµ 2 µ 2 = α S c 2 2 Q 2 2A 1 log 2 K R − 2 (B 1 + 2A 1 log K R ) log K R = −2 α S c 2 2 Q 2 A 1 log 2 K R + B 1 log K R . (B.13) Using the renormalization group equation for α S µ 2 dα S dµ 2 = −b 0 α 2 S =⇒ α 2 S dµ 2 µ 2 = − 1 b 0 dα S , (B.14) – 35 – we can write the identity − c 2 2 Q 2 K 2 R c 2 1 /b 2 dµ 2 µ 2 α 2 S µ 2 = c 2 2 Q 2 K 2 R c 2 1 /b 2 1 b 0 dα S µ 2 = 1 b 0 α S c 2 2 Q 2 − α S K 2 R c 2 1 b 2 . (B.15) Solving this equation for α S c 2 2 Q 2 and inserting it into the expression of I of eq. (B.13) we get I = − c 2 2 Q 2 K 2 R c 2 1 /b 2 dµ 2 µ 2 α 2 S µ 2 −2b 0 A 1 log 2 K R − 2b 0 B 1 log K R − α S K 2 R c 2 1 b 2 2A 1 log 2 K R + 2B 1 log K R . (B.16) Using eqs. (B.11), (B.12) and (B.16), we can write eq. (B.10) as S c 2 Q, c 1 b = exp − c 2 2 Q 2 K 2 R c 2 1 /b 2 dµ 2 µ 2 A α S µ 2 , K R log c 2 2 Q 2 µ 2 + B α S µ 2 , K R × 1 − α S K 2 R c 2 1 b 2 2A 1 log 2 K R + 2B 1 log K R , (B.17) where B α S µ 2 , K R = [B 1 + 2A 1 log K R ] α S µ 2 + B 2 + 2A 2 log K R + 2 b 0 A 1 log 2 K R α 2 S µ 2 . (B.18)</trash>
+
+
+				</figure>
+
+				<p>The last term in curly braces of eq. (B.17) affects the C ij terms by a contact term. In our case it is irrelevant, since we always deal with the O α 2 S expanded cross section multiplied by the Sudakov exponential. Notice also that the argument of α S in the contact term can be changed by a factor of order 1 at the required accuracy. Thus, the K R dependence drops from there, and α S can be evaluated at a scale of the order of the low scale, i.e. c 2 1 /b 2 .</p>
+
+			</div>
+			<div>
+				<head>B.1 Process dependent form</head>
+
+				<p>We can also translate eq. (B.18) to the case of a process-dependent form, which is similar to formula (B.3) except that the prefactor σ F is replaced by σ 0 . In order to perform this translation, the H factor must be somehow incorporated in the C ij coefficients and in the Sudakov exponent. In order to do this, we first notice that if the Born term is of order α n S in the strong coupling constant, the scale dependence of H is derived using the identity</p>
+
+				<figure>
+					<trash>α n S K 2 R Q 2 H F c α S K 2 R Q 2 , K R = α n S Q 2 H F c α S Q 2 , 1 , (B.19) which, using eq. (B.2), leads to H F c α S K 2 R Q 2 , K R = 1 + α S K 2 R Q 2 H 1 + nb 0 log K 2 R + . . . (B.20) This can be replaced by H F c α S K 2 R Q 2 , K R = 1 + α S K 2 R c 2 1 b 2 H 1 + nb 0 log K 2 R × exp (H 1 + nb 0 log K 2 R ) α S K 2 R Q 2 − α S K 2 R c 2 1 b 2 , (B.21) – 36 – and using eq. (B.15) H F c α S K 2 R Q 2 , K R = 1 + α S K 2 R c 2 1 b 2 (H 1 + 2nb 0 log K R ) × exp − K 2 R Q 2 K 2 R c 2 1 /b 2 dµ 2 µ 2 α 2 S µ 2 b 0 [H 1 + 2nb 0 log K R ] . (B.22)</trash>
+
+					<figDesc>On the other hand, the scale dependence in the resummation factor must be equal to what we have found in eq. (B.17). Inserting eq. (B.22) in the process independent formula, we should get the process dependent result. This induces the modification 8</figDesc>
+					<trash>B F 2 = B 2 + b 0 H 1 + 2nb 2 0 log K R , (B.23)</trash>
+
+
+				</figure>
+
+				<p>and the modification of the C ij coefficients by a contact term C ij (z) → C ij (z) + δ (1 −</p>
+
+				<figure>
+					<trash>z) 1 2 (H 1 + 2nb 0 log K R ) α S K 2 R c 2 1 b 2 , (B.24)</trash>
+
+
+				</figure>
+
+				<p>where the 1/2 factor comes from the fact that, in the resummed expressions, there is the product of two C ij terms.</p>
+
+			</div>
+			<div>
+				<head>C. A mathematical complement</head>
+
+				<p>In this section, we explicitly estimate the size of the following integral, that we use throughout to estimate the contributions to the inclusive cross section</p>
+
+				<figure>
+					<trash>I(m, n) ≡ Q 2 Λ 2 dq 2 q 2 log Q 2 q 2 m α n S q 2 exp − Q 2 q 2 dµ 2 µ 2 A α S µ 2 log Q 2 µ 2 , (C.1) with α S (µ 2 ) = 1 b 0 log µ 2 Λ 2 , (C.2</trash>
+
+					<figDesc>) where Λ is the usual Λ QCD . We first evaluate the argument of the exponent</figDesc>
+					<trash>Q 2 q 2 dµ 2 µ 2 A α S µ 2 log Q 2 µ 2 = Q 2 q 2 d log µ 2 Λ 2 A 1 b 0 log µ 2 Λ 2 log Q 2 Λ 2 − log µ 2 Λ 2 = A b 0 L l dx 1 x (L − x) = A b 0 L log L l − L + l , (C.3) where we have defined l = log q 2 Λ 2 , L = log Q 2 Λ 2 , x = log µ 2 Λ 2 . (C.4) 8</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Note the difference of a factor 2 between the last term in eq. (B.23) and the corresponding factor in eq. (3.8), due to the square factor in the definition of the Sudakov form factor we are using in eq. (2.12).</figDesc>
+					<trash>– 37 – Equation (C.1) then becomes I(m, n) = L 0 dl (L − l) m 1 b n 0 l n exp {−a [L (log L − log l) − L + l]} = 1 b n 0 L 0 dl exp {m log(L − l) − n log l − a [L (log L − log l) − L + l]} = 1 b n 0 L 0 dl exp [f (l)] , (C.5) where f (l) = m log(L − l) − n log l − a [L (log L − log l) − L + l] , (C.6)</trash>
+
+
+				</figure>
+
+				<p>and we have defined a = A/b 0 . This integral has to be computed for large L. We look for an approximation of the integral using the saddle-point technique, i.e. we expand the argument of the exponent around its maximum</p>
+
+				<figure>
+					<trash>f (l) = f (l M ) + 1 2 f (l M ) (l − l M ) 2 + O (l − l M ) 3 (C.7) with l M = 1 2a m − n + 2 a L − (m − n) 2 + 4 a m L = L − mL a + O (1) . (C.8) For large L we have f (l M ) = m 2 − n log L + O (1) , (C.9) f (l M ) = − 2a L + O L −3/2 , (C.10) and we get I(m, n) ≈ 1 b n 0 L m 2 −n L 0 dl exp − a L (l − l M ) 2 = 1 b n 0 L m 2 −n L−l M −l M dl exp − a L l 2 = 1 b n 0 1 √ a L m+1 2 −n √ a L (L−l M ) − √ a L l M dx exp −x 2 ≈ 1 b n 0 1 √ a L m+1 2 −n √ m − √ aL dx exp −x 2 ≤ 1 b n 0 1 √ a L m+1 2 −n ∞ −∞ dx exp −x 2 = 1 b n 0 π a L m+1 2 −n ≈ α S (Q 2 ) n− m+1 2 . (C.11)</trash>
+
+					<figDesc>In other words, for each power of the logarithm in eq. (C.1), we lose half power of α S .</figDesc>
+
+				</figure>
+
+			</div>
+
+			<note place="foot" n="1"> Notice that, because of the expression of the Sudakov form factor in eq. (2.12), our A and B coefficients are divided by 2 with respect to those of refs. [19, 20, 21]. – 7 –</note>
+
+			<note place="foot" n="5"> The same integral without the exponential or log 2 Q 2 /q 2 terms. – 16 –</note>
+
+			<note place="foot" n="6"> This is elaborated on in Appendices B and E of ref. [27]. – 17 –</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Matching NLO QCD computations and parton shower simulations</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Frixione</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">R</forename>
+				<surname>Webber</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">06</biblScope>
+			<biblScope unit="issue">029</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">A new method for combining NLO QCD with shower Monte Carlo algorithms</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Nason</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">040</biblScope>
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title/>
+		<imprint>
+			<biblScope unit="page">38</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Matching NLO QCD computations with Parton Shower simulations: the POWHEG method</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Frixione</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Nason</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Oleari</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">070</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<monogr>
+		<title level="m" type="main">NLO Higgs boson production via gluon fusion matched with shower in POWHEG</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Alioli</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Nason</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Oleari</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Re</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page">002</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">M</forename>
+				<surname>Campbell</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">K</forename>
+				<surname>Ellis</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Frederix</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Nason</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Oleari</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">NLO Higgs Boson Production Plus One and Two Jets Using the POWHEG BOX, MadGraph4 and MCFM</title>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="1207" to="092" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Extending CKKW-merging to One-Loop Matrix Elements</title>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Lavesson</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Lonnblad</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">0812</biblScope>
+			<biblScope unit="issue">070</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Practical improvements and merging of POWHEG simulations for vector boson production</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Alioli</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Hamilton</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Re</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">1109</biblScope>
+			<biblScope unit="issue">104</biblScope>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<title level="m" type="main">QCD matrix elements + parton showers: The NLO case</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Hoeche</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Krauss</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Schonherr</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Siegert</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title level="m" type="main">NLO QCD matrix elements + parton showers in e + e − to hadrons</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Gehrmann</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Hoche</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Krauss</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Schonherr</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Siegert</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title level="m" type="main">Merging meets matching in MC@NLO</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Frederix</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Frixione</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title level="m" type="main">Combining Higher-Order Resummation with Multiple NLO Calculations and Parton Showers in GENEVA</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Alioli</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">W</forename>
+				<surname>Bauer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">J</forename>
+				<surname>Berggren</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Hornig</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<forename type="middle">J</forename>
+				<surname>Tackmann</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title level="m" type="main">Controlling inclusive cross sections in parton shower + matrix element merging</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Platzer</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<title level="m" type="main">Merging Multi-leg NLO Matrix Elements with Parton Showers</title>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Lonnblad</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Prestel</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">MINLO: Multi-Scale Improved NLO</title>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Hamilton</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Nason</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Zanderighi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">1210</biblScope>
+			<biblScope unit="issue">155</biblScope>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Summing Soft Emission in QCD</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Kodaira</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Trentadue</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Lett</title>
+		<imprint>
+			<biblScope unit="page" from="112" to="66" />
+			<date type="published" when="1982" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">The gluon form-factor to higher orders: gluon gluon annihilation at small Q t</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Catani</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">D</forename>
+				<surname>Emilio</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Trentadue</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Lett</title>
+		<imprint>
+			<biblScope unit="page" from="211" to="335" />
+			<date type="published" when="1988" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">W and Z transverse momentum distributions: Resummation in q T space</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">K</forename>
+				<surname>Ellis</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Veseli</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="volume">9706526</biblScope>
+			<biblScope unit="page" from="511" to="649" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Problems in the resummation of soft gluon effects in the transverse momentum distributions of massive vector bosons in hadronic collisions</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Frixione</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Nason</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Ridolfi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="volume">5429809367</biblScope>
+			<biblScope unit="page" from="311" to="328" />
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Next-to-next-to-leading logarithmic corrections at small transverse momentum in hadronic collisions</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>De Florian</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Grazzini</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev.Lett</title>
+		<imprint>
+			<biblScope unit="volume">85</biblScope>
+			<biblScope unit="page" from="4678" to="4681" />
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Nonleading Corrections to the Drell-Yan Cross-Section at Small Transverse Momentum</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Davies</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">J</forename>
+				<surname>Stirling</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="volume">337</biblScope>
+			<biblScope unit="page">244</biblScope>
+			<date type="published" when="1984" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Drell-Yan Cross-Sections at Small Transverse Momentum</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Davies</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Webber</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">J</forename>
+				<surname>Stirling</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="page" from="256" to="413" />
+			<date type="published" when="1985" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<monogr>
+		<title/>
+		<imprint>
+			<biblScope unit="page">39</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">W and Z production at next-to-leading order: From large q(t) to small</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">B</forename>
+				<surname>Arnold</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">P</forename>
+				<surname>Kauffman</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="page" from="349" to="381" />
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Next-to-leading corrections to the Higgs boson transverse momentum spectrum in gluon fusion</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">J</forename>
+				<surname>Glosser</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">R</forename>
+				<surname>Schmidt</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">0212</biblScope>
+			<biblScope unit="page">016</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Transverse Momentum Distribution in Drell-Yan Pair and W and Z Boson Production</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">C</forename>
+				<surname>Collins</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">E</forename>
+				<surname>Soper</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">F</forename>
+				<surname>Sterman</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="page">250</biblScope>
+			<date type="published" when="0199" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Kauffman</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="page" from="1512" to="1517" />
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Altarelli</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">K</forename>
+				<surname>Ellis</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Greco</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Martinelli</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<publisher>Vector Boson Production at Colliders: A Theoretical Reappraisal</publisher>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page">246</biblScope>
+			<date type="published" when="1984" />
+			<publisher>Vector Boson Production at Colliders: A Theoretical Reappraisal</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Soft gluon effects on lepton pairs at hadron colliders</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Balazs</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Yuan</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">569704258</biblScope>
+			<biblScope unit="page" from="5558" to="5583" />
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">QCD transverse-momentum resummation in gluon fusion processes</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Catani</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Grazzini</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="page" from="845" to="297" />
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Angular Distribution of Dileptons in High-Energy Hadron Collisions</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">C</forename>
+				<surname>Collins</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">E</forename>
+				<surname>Soper</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="page" from="16" to="2219" />
+			<date type="published" when="1977" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Vector boson production in hadronic collisions</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">K</forename>
+				<surname>Ellis</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Ross</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Veseli</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="volume">5039704239</biblScope>
+			<biblScope unit="page" from="309" to="338" />
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">NLO vector-boson production matched with shower in POWHEG</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Alioli</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Nason</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Oleari</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Re</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">0807</biblScope>
+			<biblScope unit="page">060</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Vector boson plus one jet production in POWHEG</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Alioli</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Nason</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Oleari</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Re</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">01</biblScope>
+			<biblScope unit="page">095</biblScope>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">D</forename>
+				<surname>Martin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">J</forename>
+				<surname>Stirling</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">S</forename>
+				<surname>Thorne</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Watt</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Parton</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Lhc</forename>
+				<surname>For</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Eur</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. J</title>
+		<imprint>
+			<biblScope unit="volume">63</biblScope>
+			<biblScope unit="page" from="189" to="285" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H.-L</forename>
+				<surname>Lai</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Guzzi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Huston</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+				<surname>Li</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">M</forename>
+				<surname>Nadolsky</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">New parton distributions for collider physics</title>
+		<imprint>
+			<date type="published" when="2010" />
+			<biblScope unit="page" from="82" to="074024" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Parton distributions with LHC data</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">D</forename>
+				<surname>Ball</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Bertone</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Carrazza</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">S</forename>
+				<surname>Deans</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Debbio</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="volume">867</biblScope>
+			<biblScope unit="page" from="244" to="289" />
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<monogr>
+		<title level="m" type="main">Handbook of LHC Higgs Cross Sections: 2. Differential Distributions</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Dittmaier</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Dittmaier</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Mariotti</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Passarino</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Tanaka</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>Report. of the LHC Higgs Cross Section Working Group</note>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Sjostrand</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Mrenna</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">Z</forename>
+				<surname>Skands</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">PYTHIA 6.4 Physics and Manual, JHEP 0605</title>
+		<imprint>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<monogr>
+		<title level="m" type="main">Next-to-Leading-Order Event Generators</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Nason</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Webber</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Rubin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">P</forename>
+				<surname>Salam</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sapeta</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Qcd K-Factors</forename>
+				<surname>Giant</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Nlo</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Qcd matrix elements + parton showers</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Catani</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Krauss</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Kuhn</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">R</forename>
+				<surname>Webber</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">063</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Subleading logarithms in QCD hard scattering</title>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Kidonakis</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">F</forename>
+				<surname>Sterman</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Lett</title>
+		<imprint>
+			<biblScope unit="page" from="387" to="867" />
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<monogr>
+		<title level="m" type="main">– 40 –</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Resummation for qcd hard scattering</title>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Kidonakis</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Sterman</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">9705234</biblScope>
+			<biblScope unit="page" from="505" to="321" />
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Sudakov resummation of multiparton QCD cross-sections</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Bonciani</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Catani</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">L</forename>
+				<surname>Mangano</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Nason</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Lett</title>
+		<imprint>
+			<biblScope unit="volume">575</biblScope>
+			<biblScope unit="page" from="268" to="278" />
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Higgs and Z-boson production with a jet veto</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Banfi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">F</forename>
+				<surname>Monni</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">P</forename>
+				<surname>Salam</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Zanderighi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev.Lett</title>
+		<imprint>
+			<biblScope unit="volume">109</biblScope>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Hard semi-inclusive processes in QCD</title>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<forename type="middle">L</forename>
+				<surname>Dokshitzer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Troyan</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Lett</title>
+		<imprint>
+			<biblScope unit="volume">290</biblScope>
+			<biblScope unit="page">78</biblScope>
+			<date type="published" when="1978" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Universality of nonleading logarithmic contributions in transverse momentum distributions</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Catani</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>De Florian</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Grazzini</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="volume">596</biblScope>
+			<biblScope unit="page" from="299" to="312" />
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<monogr>
+		<title/>
+		<imprint>
+			<biblScope unit="page">41</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

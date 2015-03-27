@@ -1,0 +1,1441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Nonperturbative Renormalisation Group: Applications to the few and many-body systems</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2009-12-18">18 Dec 2009</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">B</forename>
+								<surname>Krippa</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">School of Physics and Astronomy</orgName>
+								<orgName type="institution">University of Manchester</orgName>
+								<address>
+									<postCode>M13 9PL</postCode>
+									<settlement>Manchester</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+							<affiliation>
+								<orgName type="department">Institute for Theoretical and Experimental Physics</orgName>
+								<address>
+									<postCode>117259</postCode>
+									<region>Moscow</region>
+									<country key="RU">Russia</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Nonperturbative Renormalisation Group: Applications to the few and many-body systems</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2009-12-18">18 Dec 2009</date>
+						</imprint>
+					</monogr>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>We consider the applications of functional renormalisation group to few and many-body systems. As an application to the few-body dynamics we study the ratio between the fermion-fermion scattering length and the dimer-dimer scattering length for systems of few nonrelativistic fermions. We find a strong dependence on the cutoff function used in the renormalisation flow for a two-body truncation of the action. Adding a simple three-body term substantially reduces this dependence. In the context of many-body physics we study the dynamics of both symmetric and asymmetric many-fermion systems using the same functional renormalisation technique. It is demonstrated that functional renormalisation group gives sensible and reliable results and provides a solid theoretical ground for the future studies. Open questions as well as lines of further developments are discussed.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+				<p>Nonperturbative/Exact Renormalisation Group (ERG) has become a popular tool to study strongly interacting dynamics [1]. It has been used to study a variety of physical systems, from nonrelativistic two-body [2] and many-body [3] systems to effective quark models [4] and gauge theories [5]. The main object of the ERG is the scale-dependent average effective action Γ k , where k is an auxiliary running scale (see the reviews [6] for detailed discussion). The evolution of Γ k with the running scale is described by a flow equation. The average effective action at scale k 2 contains the fluctuations with momenta q 2 larger than k 2 . Fluctuations with momenta smaller than k 2 are integrated out. In the limit k → 0 all the fluctuations are included and the full effective action is recovered. To integrate out modes with q 2 &lt; k 2 one introduces a cutoff function R k (q) in path integral. This function should vanish in the limit k → 0 to ensure the physical results to be cutoff independent and behave like k α , α &gt; 0 when q → 0. In the limit of large k the average effective action should turn into the basic action.</p>
+
+				<p>In this paper we consider several applications of ERG to the physical systems. Namely, we calculate the scattering length of two dimers -bound states of two fermions, which play an important role in dynamics of ultra-cold and dilute Fermi gases. We also consider both symmetric and asymmetric many-fermion systems with pairing interaction and analyse some physical characteristic of these systems such as pairing gap, chemical potential and ground state energy.</p>
+
+				<p>The field of ultra-cold Fermi gases has become one of the hot topics in atomic physics. An important feature of such systems is superfluidity which is the result of attractive fermion-fermion interactions leading to pairing. Recent advances in using Feshbach resonances allow a tuning a e-mail: boris.krippa@manchester.ac.uk of the fermion-fermion scattering length a. For negative scattering length we get the small-coupling BCS state. For positive values of a bound states of two fermions (dimers) form and these can be arranged into a Bose -Einstein condensate (BEC) [7]. The size of dimers is determined by the fermion-fermion scattering length and their binding energy is of order 1/a 2 .</p>
+
+				<p>The exact relation between dimer-dimer and fermionfermion scattering lengths a B = 0.6a was established in [8] by solving the Schrödinger equation for two composite bosons interacting with an attractive zero-range potential. This method, however, is difficult to extend to the manybody case. Therefore, it is useful to study the ratio a B /a in an approach which can be used both for few and manybody problems. For an exact solution of the functional RG equation we expect cut-off independent results for a B . In practice, however some dependence of the results on the cut-off is inevitable . We can use this dependence as a measure of the completeness of our parametrisation. We will see that the ansatz used for the effective action with two-body interaction is too crude and needs to be modified by including the term with the three-body interaction. The flow of the scale-dependent effective action satis- fies</p>
+
+				<figure>
+					<trash>∂ k Γ = − i 2 S T r (∂ k R) (Γ (2) − R) −1 . (1) where Γ (2</trash>
+
+
+				</figure>
+
+				<p>) is the second functional derivative taken with respect to the fields entering the action, and R is an operator that drives the RG evolution. The operation S T r denotes the supertrace [9] taken over both energy-momentum EPJ Web of Conferences variables and internal indices and is defined as S T r A BB A BF A FB A FF = T r(A BB ) − T r(A FF ). (2)</p>
+
+				<p>In the case of mixed boson-fermion systems ∂ k R(q) acts on both boson or fermion degrees of freedom. As mentioned above the flow equation is a functional differential equation, and since there are no general methods to solve such equations numerically, we must resort to approximations . One approach is to parametrise the effective action by a finite set of coefficients, turning the evolution into a system of coupled ordinary differential equations which can then be solved numerically.</p>
+
+				<p>In this paper, where we study possible truncations for the system of a few interacting s-wave fermions, our choice of ansatz for effective action is motivated by both studies of many-body systems [3] and few-fermion systems in the effective field theory (EFT) approach [10]. The study of such few-body physics in the framework of ERG has just begun. The famous Skornyakov and Ter-Martirosyan equation has been rederived in Ref. [11] and Efimov type of physics has been considered in Ref. [12] (see also [13]). Here we follow Ref.[14] We first consider the case when fermions interact pairwise . This case was previously considered by the Heidelberg group [15] and more recently in [2], where many the technical details can be found. Here we just give a brief account of the formalism, concentrating on the dimer-dimer scattering length. We reproduce the results from Ref. [15] which allow us to establish the framework for examining the cutoff scale dependence of the results. At some starting scale we demand the microscopic action to be a purely fermionic theory with the contact 4-fermion interaction without derivatives. This kind of interaction has been extensively used in the EFT-based studies of nucleon-nucleon forces [10]. It is convenient to modify the theory by introducing an auxiliary composite boson field. Using the Hubbard-Stratonovich transformation the 4-fermion interaction gets replaced by a &quot; Yukawa &quot; type of coupling between the fermions and an auxiliary boson. A kinetic term for the boson is then generated in the RG evolution. We also add a local three-body interaction, which we expect to be generated during the evolution, to the standard twobody result. This can be captured in a following parametrisation of the effective action, Γ[ψ, ψ † , φ, φ † , k] = Γ 2b [ψ, ψ † , φ, φ † , k]</p>
+
+				<figure>
+					<trash>−λ d 4 x ψ † (x)φ † (x)φ(x)ψ(x), (3) where Γ 2b [ψ, ψ † , φ, φ † , k] = d 4 x        d 4 x ′ φ † (x)Π(x, x ′ ; k)φ(x ′ ) +ψ † (x) i∂ t + 1 2M ∇ 2 ψ(x) −g i 2 ψ T (x)σ 2 ψ(x)φ † (x) − i 2 ψ † (x)σ 2 ψ †T (x)φ(x)        . (4)</trash>
+
+
+				</figure>
+
+				<p>We shall first concentrate on the two-body part Γ 2b . Here Π(x, x ′ ; k) is the scale-dependent boson self-energy.</p>
+
+				<p>The evolution of this self-energy is given by</p>
+
+				<figure>
+					<trash>∂ k Π(x, x ′ ; k) = δ 2 δφ(x ′ )δφ † (x) ∂ k Γ| φ=0 , (5)</trash>
+
+
+				</figure>
+
+				<p>but from here-on we shall express all evolution in momentum space. Note that only fermion loops, which only depend on the fermion cut-off R F and its derivatives, contribute to the evolution of the boson self-energy in vacuum.</p>
+
+				<p>Integrating the ERG equation with the fermionic cut-off</p>
+
+				<figure>
+					<trash>R F (q, k) = k 2 − q 2 2M θ(k − q), (6</trash>
+
+					<figDesc>) and the renormalisation condition that the constant term in Π(P 0 , P; 0) reproduces the inverse of the zero energy T matrix, we find</figDesc>
+					<trash>Π(P 0 , P; K) = g 2 M 4π 2 − 4 3 K + π a + 16 3K MP 0 − P 2 2 − P 3 24K 2 + ... . (7) The on-shell fermion-fermion scattering amplitude in the physical limit k → 0 is given by 1 T (p) = 1 g 2 Π(P 0 , P; 0), (8) where p = 2MP 0</trash>
+
+
+				</figure>
+
+				<p>− P 2 /2 is the relative momentum of two fermions and P 0 (P) denote the total energy (momentum ) flowing through the system. From the gradient expansion , we define boson wave-function and mass renormalisation factors by</p>
+
+				<figure>
+					<trash>Z φ (k) = ∂ ∂P 0 Π(P 0 , P; k) P 0 =E D ,P=0 , (9) and 1 4M Z m (k) = − ∂ ∂P 2 Π(P 0 , P; k) P 0 =E D ,P=0 . (10) Here E D = −1/(Ma 2</trash>
+
+
+				</figure>
+
+				<p>) which is the bound-state energy of a pair of fermions. Note that these renormalisation factors are only identical in vacuum for a limited subset of cutoff functions preserving Galilean invariance to otherwise the identity Z φ (k) = Z m (k) holds only in the physical limit k → 0 and the evolution of these renormalisation factors should be calculated separately.</p>
+
+				<p>The evolution of the boson-boson scattering amplitude follows from</p>
+
+				<figure>
+					<trash>− 2 (2π) 4 ∂ k u 2 (E D , k) = δ 4 δφ 2 (E D , 0)δφ †2 (E D , 0) ∂ k Γ| φ=0 . (11)</trash>
+
+
+				</figure>
+
+				<p>The evolution can be separated into fermionic and bosonic contributions containing ∂ k R F and ∂ k R B , respectively. We first look at the mean-field result, where boson contributions are neglected. The evolution of u 2 is then given by</p>
+
+				<figure>
+					<trash>∂ k u 2 = − 3g 4 4 d 3 q (2π) 3 ∂ k R F (E FR (q, k) − E D /2)] 4 , (12) where E FR (q, k) = 1 2M q 2 + R F (q, k). Explicit calculations give u 2 (0) = 1 16π M 3 g 4 a 3 (13)</trash>
+
+
+				</figure>
+
+				<p>where we have again used the sharp cut-off function of the form Eq. (6). The mean field scattering amplitude at threshold is</p>
+
+				<figure>
+					<trash>T BB = 8π 2M a B = 2u 2 (0) Z 2 φ = 8πa M . (14)</trash>
+
+
+				</figure>
+
+				<p>This is the well-known mean-field result a B = 2a [16] which is far from the exact value a B = 0.6a [8]. This implies that beyond-mean-field effects such as dimer-dimer rescattering are important to be considered. To include these effects one needs to take into account the boson loops. After some algebra we get</p>
+
+				<figure>
+					<trash>∂ k u 2 = ∂ k u 2 | F + ∂ k u 2 | B (15) Here ∂ k u 2 | B = u 2 2 (k) 2Z 3 φ (k) d 3 q (2π) 3 ∂ k R B E BR (q, k) − E D 4 (16) and ∂ k u 2 | F = − 3g 4 4 d 3 q (2π) 3 ∂ k R F E FR (q, k) − E D /2 4 (17) where E BR (q, k) = 1 4M q 2 + u 1 (k) Z φ (k) + R B (q, k) Z φ (k) (18) and u 1 (k) = −Π(E D , 0; k). (19)</trash>
+
+
+				</figure>
+
+				<p>The boson cut-off function is to be chosen as close as possible to the fermionic one,</p>
+
+				<figure>
+					<trash>R B (q, k) = Z φ (c B k) 2 − q 2 2M θ(c B k − q), (20) apart from the addition of a parameter c B , which sets the relative scale of the fermion and boson regulators, and a factor of Z φ . The latter has two main advantages: Firstly, it leads to universality, where all contributions to a single evolution equation decay with the same power of k for large k and secondly we get a F scaling, where all terms in a single evolution equation have the same dependence on a F . The mean-field result is recovered when c B = 0. The limit of c B → ∞ leads to a B → 0. Using c B = 1 gives the value of the ratio a B /a = 1.13. Choosing c B = √ 2 results in a B /a F = 0.75 as in Ref. [15]</trash>
+
+
+				</figure>
+
+				<p>. In general, the results show rather strong dependence on the boson scale parameter c B (see Fig. 1). This is unwanted as it means that the physical results depend strongly on the choice of regulator. As announced above we shall now consider the effect of the three-body force (??). The equations for u 1 and Z φ remain unchanged but the one for u 2 gets modified by the term describing the 3-body interaction :</p>
+
+				<figure>
+					<trash>∂ k u 3B 2 = −2λg 2 d 3 q (2π) 3 ∂ k R F E FR (q, k) − E D /2 3 (21) where we denote E FR,P B = E FR − P B /2 and E BR,P B = E BR − P B .</trash>
+
+
+				</figure>
+
+				<p>The evolution equation for λ is defined by an expansion at the energy of the bound state pole for bosons, and half of that for fermions,</p>
+
+				<figure>
+					<trash>∂ k λ = − i 2 δ 4 S T r ∂ k R(Γ (2) − R) −1 δφ † (E D , 0)δφ(E D , 0)δψ † (E D /2, 0)δψ(P B /2, 0) (22) There are three distinct contributions to the running of λ coming from a ladder, triangle and box diagrams. We denote the corresponding driving terms as D b , D l and D t , splitting the last two terms in fermionic and bosonic contributions . After evaluation of traces and contour integrals we get D l = λ 2 d 3 q (2π) 3 ∂ k R F Z φ + ∂ k R B (E FR,P B Z φ + E BR,P B ) 2 , (23) D F t = g 2 λ d 3 q (2π) 3 ∂ k R F (E BR,P B + 2Z φ E FR,P B ) E 2 FR,P B (E FR,P B Z φ + E BR,P B ) 2 (24) D B t = g 2 λ d 3 q (2π) 3 ∂ k R B E FR,P B (E FR,P B Z φ + E BR,P B ) 2 , (25) D F b = g 4 4 d 3 q (2π) 3 ∂ k R F (2E BR,P B + 3Z φ E FR,P B ) E 3 FR,P B (E FR,P B Z φ + E BR,P B ) 2 (26) D B b = g 4 4 d 3 q (2π) 3 ∂ k R B E 2 FR,P B (E FR,P B Z φ + E BR,P B ) 2 . (27)</trash>
+
+					<figDesc>We denote E FR,P B = E FR − P B /2 and E BR,P B = E BR − P B with P B being some external energy. The evolution equation for λ is defined by an expansion at the energy of the bound state pole for bosons, and half of that for fermions, Note that the the evolution of the three-fermion term λ does not depend on the four-fermion term interaction u 2 , but u 2</figDesc>
+
+				</figure>
+
+				<p>depends on λ. We now need an initial condition for λ. At infinite k, there is no fundamental three-fermion interaction , and thus λ = 0. To simplify the calculations we have assumed that λ = 0 is also zero at the starting scale, since λ behaves like 1/k 2 this can be used reliably. Now we turn to the results. We first note that the results are numerically independent of the choice of starting scale provided it is chosen to be at least ka F ≃ 100. For k ≫ 1/a the system is in the &quot; scaling regime &quot; and evolves near the fixed point until the scale becomes comparable with Fig. 1. Ratio of boson-boson to fermion-fermion scattering length as a function of the scale parameter c B . The blue (solid) curve shows results without 3 body forces, the red (dashed) curve contains the effect of a 3-body force. 1/a. This can easily be seen if we switch to dimensionless coupling k 2 λ and analyse its evolution. We have found that the ratio of a B /a decreases when the three-body term is included. For example, assuming c B = 1 leads to the value a B /a = 0.74 compared with a B /a = 1.13 without inclusion of the the three-body term, and the choice c B = √ 2 as used in [15] gives a B /a = 0.69. We have shown in Fig.1</p>
+
+				<figure>
+					<figDesc>the behaviour of a B /a as a function of the scale c B .</figDesc>
+
+				</figure>
+
+				<p>The upper curve corresponds to the calculations without three-body term and the lower curve gives the results of the full calculations with three-body term included. It is seen from Fig.1</p>
+
+				<figure>
+					<figDesc>that taking into account the three-body forces results in significantly weaker dependence of a B /a on the scale c B . Note that at large c B , which corresponds to integrating out fermions first, the two curves approach each other. Indeed, in this limit the dominant contribution to a B /a comes from the bosonic part (proportional to R B ) of the equation for u 2 which does not depend on the threebody coupling λ. On the other hand, with small c B the main contribution comes from the fermion loops which get modified when the three-body coupling λ is included. We expect this picture to be qualitatively correct for any type of boson regulator although the quantitative details will vary depending on the functional form of the regulator used. In spite of showing a clear improvement over the calculations with the two-body interactions only, adding the simplest possible three-body term is not enough to ensure the complete (or almost complete) independence of the results from the scale parameter c B in the region c B ≃ 1. It is worth emphasising again that, as long as any truncation of the effective action is made, the results will never be completely independent of the scale c B . Instead, we expect some &quot; stability window &quot; where the slope of a B /a is small.</figDesc>
+
+				</figure>
+
+				<p>It is somewhat similar to the QCD sum rules [17], where the physical observables are expected to be independent of an auxiliary parameter called Borel mass. It seems likely that further extensions of the effective action will result in stability of the results with respect to the variations of c B in wider region. Such extensions may include both four-body interactions as well as energy and/or momentum dependent three-body forces. Work along these lines is now in progress.</p>
+
+				<p>We next consider the applications of the ERG to the finite density many-fermion systems. It is well established that in the medium even a weak attraction between fermions may lead to the intrinsically nonperturbative phenomenon, the superfluidity, characterised by rearrangement of the ground state and appearance of the gap in the spectrum. The fermions form correlated pairs which, depending on the strength of the interaction, may lead to different physical regimes. The weak coupling regime (BCS phase) corresponds to a pair with the spatial size much larger then the radius of the interaction so that no actual bound two-body subsystem is formed, while in the strong regime corresponding to the Bose-Einstein Condensation (BEC) the fermion pairs form compact deeply bound two-body states. We demand that at high scale our theory be a purely fermionic theory with the contact interaction described by the lagrangian</p>
+
+				<figure>
+					<trash>L i = − 1 4 C 0 ψ † σ 2 ψ †T ψ T σ 2 ψ , (28)</trash>
+
+					<figDesc>which is identical to one, used to calculate the fermionfermion scattering in vacuum so we can link the vacuum and in-medium ERG calculations. This is what makes the approach universal. Since we are interested in the appearance of the correlated fermion pairs in a physical ground state, we need to parametrise our effective action in terms of corresponding variables. A natural way to do this is to introduce a boson field whose vacuum expectation value (VEV) describes this correlated pair and study the</figDesc>
+
+				</figure>
+
+				<p>tion of this effective degrees of freedom. At the start of the RG evolution, the boson field is not dynamical and is introduced through a Hubbard-Stratonovich transformation of the four-point interaction. As we integrate out more and more of the fermion degrees of freedom by running k to lower values the dynamical term in the bosonic effective action is generated. The corresponding ansatz for the boson-fermion effective action can be written as Γ[ψ, ψ † , φ, φ</p>
+
+				<p><formula>† , k] = d 4 x φ † Z φ (i∂ t + 2µ) + Z m 2m ∇ 2 φ − U(φ, φ † ) +ψ † Z ψ (i∂ t + µ) + Z M 2M ∇ 2 ψ −g i 2 ψ T σ 2 ψφ † − i 2 ψ † σ 2 ψ †T φ . (29)</formula></p>
+
+				<p>Here M is the mass of the fermions in vacuum and the factor 1/2m in the boson kinetic term is chosen simply to make Z m dimensionless. The couplings, the chemical potential µ, the wave-function renormalisations Z φ,ψ and the kinetic-mass renormalisations Z m,M all run with k, the scale of the regulator. The bosons are , in principle coupled to the chemical potential via a quadratic term in φ, but this can be absorbed into the potential by defining ¯ U = U − 2µZ φ φ † φ.</p>
+
+				<p>We expand this potential about its minimum, φ † φ = ρ 0 , so that the coefficients u i are defined at ρ = ρ 0 ,</p>
+
+				<figure>
+					<trash>¯ U(ρ) = u 0 + u 1 (ρ − ρ 0 ) + 1 2 u 2 (ρ − ρ 0 ) 2 + 1 6 u 3 (ρ − ρ 0 ) 3 + · · · , (30)</trash>
+
+
+				</figure>
+
+				<p>where we have introduced ρ = φ † φ. The phase of the system is determined by the coefficient u 1 .</p>
+
+				<p>In the symmetric phase we have ρ 0 = 0 so that the expansion takes the form</p>
+
+				<figure>
+					<trash>¯ U(ρ) = u 0 + u 1 ρ + 1 2 u 2 ρ 2 + · · · . (31)</trash>
+
+					<figDesc>The potential in the condensed phase can be simplified to</figDesc>
+					<trash>¯ U(ρ) = u 0 + 1 2 u 2 (ρ − ρ 0 ) 2 + · · · . (32)</trash>
+
+
+				</figure>
+
+				<p>In our current work we shall truncate this potential at quartic order in the field (order ρ 2 ). We treat the wave function renormalisation factor for the bosons in the same way, expanding it about ρ = ρ 0 as Z φ (ρ) = z φ0 + z φ1 (ρ − ρ 0 ) + · · · . (33)</p>
+
+				<p>The other couplings and renormalisation factors can be treated similarly. The fermions are not dressed at this point, the bosons are just auxiliary fields and therefore we can assume that Z ψ (K) = 1 and Z M (K) = 1. After rather lengthy algebra one can obtain the explicit expressions for the couplings in the effective action. As an example we show below the corresponding ERG equation for the effective potential.</p>
+
+				<figure>
+					<trash>∂ k ¯ U = = − 1 Z ψ d 3 q (2π) 3 E FR E 2 FR + ∆ 2 ∂ k R F + 1 2Z φ d 3 q (2π) 3 E BR E 2 BR − V 2 B ∂ k R B . (34) where E BR (q, k) = Z m 2m q 2 +u 1 +u 2 (2φ † φ−ρ 0 )+R B (q, k), V B = u 2 φ † φ. (35)</trash>
+
+
+				</figure>
+
+				<p>The evolution equations for the coefficients in our expansion of the effective potential are obtained from the derivatives of ∂ k ¯ U with respect to ρ = φ † φ. The initial conditions for them can be fixed by demanding that at high scale the evolution of the system is close to the vacuum one.One could introduce a cut-off function that tends to a p F -independent form for K ≫ p F . However in practice a modification of the renormalisation procedure is more convenient. In the region K ≫ p F , we can ignore boson loops. The evolution of quantities such as u 1 (p F , K), u 2 (p F , K), Z φ (p F , K) and Z m (p F , K) is thus similar to the vacuum case, except for the different cut-off. This allows us to define u 1 (p F , K) to be</p>
+
+				<figure>
+					<trash>u 1 (p F , K) g 2 = − M 4πa + 1 2 d 3 q (2π) 3 1 E FR (q, 0, 0) − sgn(q − p F ) E FR (q, p F , K) . (36)</trash>
+
+
+				</figure>
+
+				<p>This expression can be thought of as being generated by the vacuum evolution using a modified cut-off that interpolates smoothly between R F (q, p F ,</p>
+
+				<figure>
+					<trash>k) for k ≫ p F and 0 5 10 k (fm -1 ) 0 2 u 1 0 5 k (fm -1 ) 0 2 4 6 u 2 0 2 k (fm -1 ) 0.1 0.2 µ 0 0.15 ∆ 0 1</trash>
+
+					<figDesc>Z φ Fig. 2. Numerical solution of the evolution equations for infinite scattering length.The thinner curve (orange online) corresponds to the mean-field calculations and the thicker one (blue online) includes boson loops. The difference however is noticeable only for the evolution of u 2 (graph in the middle). R F (q, 0, k) for k ≃ p F . It ensures that our renormalised parameter u 1 (p F , K), defined using R F (q, p F , k) for large k, corresponds to the physical scattering length in vacuum. The initial values for u 2 (p F , K), Z φ (p F , K) and Z m (p F , K)</figDesc>
+
+				</figure>
+
+				<p>can be determined using similar procedures, although this is not so crucial since these quantities do not contain linearly divergent pieces and so all their p F -dependence is suppressed by powers of p F /K. One convenient choice is to take their starting values to be zero at some large but finite scale K. An alternative is to require that they tend to zero as K → ∞. The initial condition for the energy density is most conveniently expressed in terms of u 0 which, in the symmetric phase, is simply given by the energy of a free Fermi gas, measured relative to the chemical potential, and so its initial value is just</p>
+
+				<figure>
+					<trash>˜ u 0 (K) = 2 d 3 q (2π) 3 E FR (q, p F , 0)θ(p F − q). (37)</trash>
+
+
+				</figure>
+
+				<p>Now we turn to the results which are shown on Fig. 2. First we note that the value of the physical gap is practically independent of the starting scale K provided K &gt; 5 f m −1 .</p>
+
+				<p>At starting scale the system is in the symmetric phase and remains in this phase until u 1 hits zero at k crit ≃ 1.2 f m −1 where the artificial second order phase transition to a broken phase occurs and the energy gap is formed. Already at k ≃ 0.5 the running scale has essentially no effect on the gap. The results obtained for the gap correspond to the case of the infinite negative scattering length. To study the BCS-BEC crossover we have to solve the evolution equation for a wider range of the scattering lengths, including the positive values. The corresponding results for the evolution of chemical potential as a function of the parameter p F a are shown in Fig.3.</p>
+
+				<figure>
+					<trash>EPJ Web of Conferences 0.001 0.01 0.1 1 ∆/ε F -5 0 5 1/(p F a 0 ) -40 -30 -20 -10 0 µ/ε</trash>
+
+
+				</figure>
+
+			<div>
+				<head>F Fig. 3</head>
+
+				<p>. Evolution of the chemical potential While the vacuum scattering length is large and negative , the system is in the BCS-like phase with positive chemical potential, whereas if the scattering length is chosen to be large and positive reflecting the existence of a bound state near threshold the system ends up being the collection of weakly overlapping tightly bound pairs with negative chemical potential.</p>
+
+				<p>As in the case of dimer-dimer scattering we expect here some dependence on the regulator used. By analogy with the vacuum case the inclusion of the three-body forces will probably make the results more stable although the corresponding calculations are much more involved compared to the vacuum case. Work along this line is in progress as well.</p>
+
+				<p>We have also calculated the ground state energy of the many-fermion system in the unitary regime -the idealised case of the infinite fermionic scattering length [18]. In this regime the dynamics of the many-body system becomes independent of the microscopical details of the underlying interaction between two fermions. In the a → −∞ limit the ground state energy per particle is proportional to that of the non-interacting Fermi gas.</p>
+
+			</div>
+			<div>
+				<head>E GS</head>
+
+				<p><formula>= ξE FG = ξ 3 5 k 2 F 2M = ξ 3 5 E F , (38)</formula></p>
+
+				<p>where M and k F are the fermion mass and Fermi momentum correspondingly and ξ is the universal proportionality constant, which does not depend on the details of the interaction or type of fermions. The other dimensional characteristics of the cold Fermi-gas in the UR such as paring energy ∆ or chemical potential µ can also be represented in the same way µ = ηE FG , ∆ = ǫE FG (39)</p>
+
+				<p>The infinite scattering length implies nonperturbative treatment that why the ERG formalism is a very useful tool here. We found the values of 0.62, 0.96 and 1.11 for the universal coefficients ξ, η and ǫ correspondingly.</p>
+
+				<p>The obtained value for ξ is close to the experimental data from [19], ξ = 0.74(7). The other measurements give ξ = 0.34(15) and η = 0.6(15)[20]; ξ = 0.32</p>
+
+				<figure>
+					<trash>+0.13 −0.10 and η = 0.53 +0.13 −0.10 [21]</trash>
+
+
+				</figure>
+
+				<p>; ξ = 0.46(5) and η = 0.77(5)[22]; ξ = 0.51(4) and η = 0.85(4) [23]. The results of theoretical calculations are summarised in Table I.</p>
+
+				<figure>
+					<head>Table 1. Universal coefficients Ref ξ ǫ η [24]</head>
+
+
+				</figure>
+
+				<p>0.42 0.9 0.71 [25] 0.22 [27] 0.41 0.7 [26] 0.44 0.93 [28] 1.03 [29] 0.39 [30] 0.3 0.66 [31] 0.55</p>
+
+				<p>As one can see both experiment and numerical simulations do not provide the coherent value of the ξ constant so it is difficult to judge the quality of the numerical estimates provided by the ERG calculations. One may only conclude that the ERG approach leads to the sensible values of the universal coefficients consistent with the experiment and lattice calculation but more detailed comparison can be done when more accurate date are obtained. We note, however that the value of the universal parameters are still somewhat higher then the &quot; world average &quot; . One possible cause could be the neglection of the screening effects [32] which are known to decrease the values of the gap and energy density. Naive extrapolation of our results using the known value of the Gorkov -Melik-Barkhudarov&apos;s correction [32] indeed brings the values of the universal coefficients closer to the &quot; world average &quot; of the lattice and experimental data. Clearly, this point requires further anal- ysis. We now turn to the case of asymmetric many-fermion system. This asymmetry can be provided by unequal masses, different densities and/or chemical potentials. Understanding the pairing mechanism in such settings would be of immense value for different many fermion systems from atomic physics to strongly interacting quark matter. The important theoretical issue to be resolved here is the nature of the ground state. Several competing states have been proposed so far. These include: LOFF [33] phase, breachedpair (BP) superfluidity [34] (or Sarma phase) and mixed phase [35]. Establishing the true ground state is still an open question. It was shown, for example, that LOFF and mixed phases are more stable then the Sarma phase in the systems of fermions with the mismatched Fermi surfaces and with both equal and different masses [36]. We concentrate on the case of two fermion species. The ansatz for the effective action we use to run the ERG evolution is a simple generalisation of the one used for the many-fermion system with one type of fermions and consists of summing over two types of fermions. Calculating the second functional derivatives, taking the matrix trace and carrying out the pole integration in the loop integrals we get the evolution equation for ¯ U at constant chemical potentials</p>
+
+				<figure>
+					<trash>∂ k ¯ U = − 1 2 d 3 q (2π) 3 E F,S E 2 F,S + ∆ 2 [∂ k R F,a + ∂ k R F,b ] + 1 2Z φ d 3 q (2π) 3 E B E 2 B − V 2 B ∂ k R B . (40)</trash>
+
+
+				</figure>
+
+				<p>It is worth mentioning that poles in the fermion propagator occur at</p>
+
+				<figure>
+					<trash>q 1,2 0 = −E A ± E S (q, k) 2 + ∆ 2 . (41) Here E S = (E FR,a +E FR,b )/2, E A = (E FR,a −E FR,b )/2, (42) and E FR,i (q, p µ,i , k) = 1 2M i q 2 − µ i + R F (q, k), ∆ 2 = g 2 φ † φ. (43)</trash>
+
+
+				</figure>
+
+				<p>and we have introduced p µ,i = 2M i µ i , the Fermi momentum corresponding to the (running) value of µ i . At k = 0 (R F = 0) in the condensed phase, these become exactly the dispersion relations obtained in [34] where the possibility of having the gapless excitations has been discussed. The ordinary BCS spectrum can easily be recovered when the asymmetry of the system is vanishing (E A → 0). The first term in the evolution equation for the effective potential describes the evolution of the system related to the fermionic degrees of freedom whereas the second one takes into account the bosonic contribution. The mean field results can be recovered if the second term is omitted. In this case the equation for the effective potential can be integrated analytically and then, by differentiating the effective potential with respect to ρ and setting the derivative equal to zero, one can derive the standard mean-field gap equation.</p>
+
+				<p>In this paper we consider the simplified case of two fermion species with the different masses and the same Fermi momenta [37]. It implies that the chemical potentials are different. In this situation neither the Sarma phase nor the LOFF phase exists and the system experiences the BCS pairing depending however on the mass asymmetry. The general case of the mismatched Fermi surfaces will be discussed in the subsequent publication. For simplicity we consider the case of the hypothetical &quot; nuclear &quot; matter with short range attractive interaction between two types of fermions, light and heavy, and study the behaviour of the energy gap as the function of the mass asymmetry. We choose the Fermi momentum to be p F = 1.37 f m −1 .</p>
+
+				<p>One notes that the formalism is applicable to any type of a many-body system with two fermion species from quark matter to fermionic atoms so that the hypothetical asymmetrical &quot; nuclear &quot; matter is simply chosen as a study case. We assume that M a &lt; M b , where M a is always the mass of the physical nucleon.</p>
+
+				<p>First we consider the case of the unitary limit where the scattering length a = −∞. The results of our calculations for the gap are shown on Fig. 4</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+					<trash>0 10 20 30 40 50 (M b -M a )(fm -1 ) 0.08 0.1 0.12 0.14 0.16 0.18 0.2 Energy gap (fm -1</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>) Fig. 4</figDesc>
+					<head>.</head>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Evolution of the gap in the MF approach (dashed curve) and with boson loops (solid curve) in the unitary regime a = −∞ as a function of a mass asymmetry.</figDesc>
+
+				</figure>
+
+				<p>We see from this figure that increasing mass asymmetry leads to a decreasing gap that seems to be a natural result . However, the effect of the boson loops is found to be small. We found essentially no effect in symmetric phase, 2 − 4% corrections for the value of the gap in the broken phase and even smaller corrections for the chemical potential so that one can conclude that the MF approach indeed provides the reliable description in the unitary limit for both small and large mass asymmetries. It is worth mentioning that the boson contributions are more important for the evolution of u 2 where they drive u 2 to zero as k → 0 making the effective potential convex in agreement with the general expectations. This tendency retains in the unitary regime regardless of the mass asymmetry.</p>
+
+				<p>We have also considered the behaviour of the gap as the function of the parameter p F a for the cases of the zero asymmetry M a = M b and the maximal asymmetry M b = 10M a . The results are shown on Fig.5. One can see from Fig.5</p>
+
+				<figure>
+					<figDesc>that in the case of zero (or small) asymmetry the corrections stemming from boson loops are small at all values of the parameter p F a considered here (down to p F a = 0.94). On the contrary, when M b = 10M a these corrections, being rather small at p F a ≥ 2 becomes significant (∼ 40%) when the value of p F a decreases down to p F a ∼ 1. We found that at p F a ∼ 1 the effect of boson fluctuations becomes ∼ 10% already for M b = 5M a . One can therefore conclude that the regime of large mass asymmetries, which starts approximately at M b &gt; 5M a , with moderate</figDesc>
+
+				</figure>
+
+				<p>scattering length and/or the Fermi momenta is the one where the MF description becomes less accurate so that the calculations going beyond the MFA are needed. One might expect that the deviation from the mean field results could even be stronger in a general case of a large mass asymmetry and the</p>
+
+				<figure>
+					<trash>EPJ Web of Conferences -2 -1.8 -1.6 -1.4 -1.2 -1 p F a 0 0.02 0.04 0.06 0.08 Energy gap (fm -1</trash>
+
+					<figDesc>) Fig. 5</figDesc>
+
+				</figure>
+
+				<p>. Evolution of the gap as a function of the parameter p F a.</p>
+
+				<p>The upper pair of the curves corresponds to the calculations with no asymmetry in the MF approach (dashed curve) and with boson loops (solid curve) and the lower pair of the curves describes the results of calculations with the maximal asymmetry when M b = 10M a .</p>
+
+				<p>matched Fermi surfaces but the detailed conclusion can only be drawn after the actual calculations are performed.</p>
+
+				<p>In summary, we have performed the ERG analysis of a number of fermionic systems. In particular we have considered boson-boson scattering length, where bosons are just bound states of two fermions. Our study has revealed that, starting from rather simple ansatz with two-body interaction term one can get the results, close to the exact value. However, the results turn out quite sensitive to the value of c B , the boson scale parameter. We have shown that the inclusion of the three-body interaction brings the ratio a B /a closer to the exact value and significantly reduce the sensitivity of the results to the boson scale parameter. We have also studied the many-fermion systems with attraction leading to pairing phenomena and calculated a number the many-body parameters such as gap and its dependence on mass asymmetry, chemical potential both in BCS and BEC regions and the ground state energy. The directions for further improvement of the approach are outlined.</p>
+
+			</div>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+				<head n="1">Acknowledgement</head>
+				<p>The author is supported by the EU FP7 programme (Grant 219533).</p>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Wetterich</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1993" />
+			<biblScope unit="page">90</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">C</forename>
+				<surname>Birse</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="page">047001</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">C</forename>
+				<surname>Birse</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Krippa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">A</forename>
+				<surname>Mcgovern</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<forename type="middle">R</forename>
+				<surname>Walet</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D.-U</forename>
+				<surname>Jungnickel</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Wetterich</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">539505267</biblScope>
+			<biblScope unit="issue">5142</biblScope>
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Gies</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Berges</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Tetradis</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Wetterich</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Rept</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<editor>Delam- otte, D. Mouhanna and M. Tissier</editor>
+		<imprint>
+			<biblScope unit="volume">363</biblScope>
+			<biblScope unit="issue">69</biblScope>
+			<biblScope unit="page">134413</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Greiner</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">A</forename>
+				<surname>Regal</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">S S</forename>
+				<surname>Jin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Jochim</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Bartenstein</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Altmeyer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Hendl</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Riedl</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Chin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Hecker</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Denschlag</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Grimm</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature Phys. Rev. Lett</title>
+		<editor>M. W. Zwierlein, C. A. Stan, C. H. Schunck, S. M. F. Raupach, S. Gupta, Z. Hadzibabic, and W. Ketterle.</editor>
+		<imprint>
+			<biblScope unit="volume">426</biblScope>
+			<biblScope unit="issue">91</biblScope>
+			<biblScope unit="page">25040110</biblScope>
+			<date type="published" when="1038" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">S</forename>
+				<surname>Petrov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Salomon</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">V</forename>
+				<surname>Shlyap-Nikov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">93</biblScope>
+			<biblScope unit="page" from="09040410" to="1103090404" />
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">A Supersymmetry Primer &quot; in Perspectives on supersymmetry</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Martin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">world Scientific</title>
+		<editor>L. Kane, ed.</editor>
+		<imprint>
+			<biblScope unit="volume">9709356</biblScope>
+			<biblScope unit="page" from="hep" to="ph" />
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Weinberg</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Nucl</forename>
+				<forename type="middle">D B</forename>
+				<surname>Ka-Plan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">J</forename>
+				<surname>Savage</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">B</forename>
+				<surname>Wise</surname>
+			</persName>
+		</author>
+		<editor>P. F. Bedaque, H. W. Hammer and U. van Kolck, Nucl. Phys. A676</editor>
+		<imprint>
+			<date type="published" when="1991" />
+			<biblScope unit="page">357</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Diehl</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">C</forename>
+				<surname>Krahl</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Scherer</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">78</biblScope>
+			<biblScope unit="page">034001</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Moroz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Floerchinger</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Schmidt</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Wetterich</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">79</biblScope>
+			<biblScope unit="page">042705</biblScope>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Schmidt</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Floerchinger</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Wetterich</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. A</title>
+		<imprint>
+			<biblScope unit="volume">79</biblScope>
+			<biblScope unit="page">053633</biblScope>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Krippa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<forename type="middle">R</forename>
+				<surname>Walet</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">C</forename>
+				<surname>Birse</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Diehl</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Gies</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">M</forename>
+				<surname>Pawlowski</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Wetterich</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="page">021602</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Haussmann</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">91</biblScope>
+			<biblScope unit="page">291</biblScope>
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">A</forename>
+				<surname>Shifman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">I</forename>
+				<surname>Vainshtein</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">I</forename>
+				<surname>Zakharov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">147</biblScope>
+			<biblScope unit="page">385</biblScope>
+			<date type="published" when="1979" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Krippa</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J.Phys</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="issue">465002</biblScope>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">E</forename>
+				<surname>Gehm</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="page" from="68" to="011401" />
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">93</biblScope>
+			<biblScope unit="issue">050401</biblScope>
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Bartenstein</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">92</biblScope>
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">B</forename>
+				<surname>Partridge</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">311</biblScope>
+			<biblScope unit="issue">503</biblScope>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Kinast</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">307</biblScope>
+			<biblScope unit="page">1296</biblScope>
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Carlson</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">91</biblScope>
+			<biblScope unit="issue">050401</biblScope>
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Lee</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">73</biblScope>
+			<biblScope unit="page">115112</biblScope>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Bulgac</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">E</forename>
+				<surname>Drut</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Magierski</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">E</forename>
+				<surname>Astrakharchik</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">93</biblScope>
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">Y</forename>
+				<surname>Chang</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">70</biblScope>
+			<biblScope unit="issue">043602</biblScope>
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Nishida</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">T</forename>
+				<surname>Son</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">97</biblScope>
+			<biblScope unit="page">050403</biblScope>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Abe</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Seki</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev. C79</title>
+		<imprint>
+			<biblScope unit="page">054003</biblScope>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Floerchinger</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev. B78</title>
+		<imprint>
+			<biblScope unit="page">174528</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">P</forename>
+				<surname>Gorkov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">K</forename>
+				<surname>Melik-Barkhudarov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Sov</forename>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1018" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">I</forename>
+				<surname>Larkin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Yu</forename>
+				<forename type="middle">N</forename>
+				<surname>Ovchinnikov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<editor>P. Fulde and R. A. Ferrell</editor>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="issue">550</biblScope>
+			<date type="published" when="1964" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">V</forename>
+				<surname>Liu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Wilczek</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett Phys. Rev. Lett</title>
+		<editor>047002</editor>
+		<editor>E. Gubankova, W. V. Liu and F. Wilczek</editor>
+		<imprint>
+			<biblScope unit="volume">91</biblScope>
+			<biblScope unit="page" from="90" to="032001" />
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Sarma</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Phys. Chem.Solid</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="issue">1029</biblScope>
+			<date type="published" when="1963" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">F</forename>
+				<surname>Bedaque</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">91</biblScope>
+			<biblScope unit="page">247002</biblScope>
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Caldas</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">69</biblScope>
+			<biblScope unit="issue">063602</biblScope>
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Krippa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">B643 104</title>
+		<imprint>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

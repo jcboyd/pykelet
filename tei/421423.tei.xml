@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Approximate Black Holes for Numerical Relativity</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="1996-07-30">(July 30, 1996)</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName>
+								<forename type="first">Maurice</forename>
+								<forename type="middle">H P M</forename>
+								<surname>Van Putten</surname>
+							</persName>
+							<email>vanputte@spacenet.tn.cornell.edu</email>
+							<affiliation>
+								<orgName type="department" key="dep1">CRSR &amp; Cornell Theory Center</orgName>
+								<orgName type="department" key="dep2">Department of Mathematics</orgName>
+								<orgName type="institution">Cornell University Ithaca</orgName>
+								<address>
+									<postCode>14853-6801</postCode>
+									<region>NY</region>
+								</address>
+							</affiliation>
+							<affiliation>
+								<orgName type="institution">MIT</orgName>
+								<address>
+									<postCode>02139</postCode>
+									<settlement>Cambridge</settlement>
+									<region>MA</region>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Approximate Black Holes for Numerical Relativity</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="1996-07-30">(July 30, 1996)</date>
+						</imprint>
+					</monogr>
+					<note>y Present address: 1</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>soliton stars</term>
+					<term>Brans-Dicke theory</term>
+					<term>black holes</term>
+					<term>numerical rel- 
+ ativity 
+ Electronic address:</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>Spherically symmetric solutions in Brans-Dicke theory of relativity with zero coupling constant, ! = 0, are derived in the Schwarzschild line-element. The solutions are obtained from a cubic transition equation with one small parameter. The exterior space-time of one family of solutions is arbitrarily close to the exterior Schwarzschild space-time. These nontopological solitons have some similarity with soliton stars, and are proposed as candidates for approximate black holes for the use in numerical relativity, in particular for treatment of horizon boundary conditions.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head>I. INTRODUCTION</head>
+
+				<p>Numerical relativity is considered the prime vehicle for the prediction of gravitational wave forms in the late stages of coalescence in binary systems of black holes and neutron stars. This eeort is complementary to recent analytical approaches for the prediction of waveforms in the early stages of coalescence 2,1]. Prediction of waveforms is an important factor in the detection of gravitational radiation by LIGO and VIRGO 6,5]. The greatest challenges in numerical relativity involve the simulations of multiple orbits in the presence of black holes or horizon formation. One of the open problems is proper numerical treatment of horizon boundary conditions.</p>
+
+				<p>In this Letter, we explore the possibility of using approximate black holes (ABHs) for the purpose of numerical relativity by introducing a small parameter, , in a modiied setting of the physics of the problem. The ABHs to be considered are nontopological solitons in that they are produced by a real scalar eld in an asymptotically at space-time, such that the exterior space-time of ABHs approximates the exterior space-time of black holes (BHs) as ! 0. As a rst step in this direction, the existence of such solitons shall be demonstrated in the Schwarzschild line-element, leaving the general case as an open problem. The fact that the scalar eld is real, and that the stress-energy tensor in Brans-Dicke does not stem from an additive contribution to the Lagrangian 1 , however, makes these objects distinct from existing soliton stars.</p>
+
+				<p>Concentrating on the problem of black hole coalescence, and thereby ingoring the presence of matter, we are at liberty to consider Brans-Dicke theory with ! = 0 as an approximation of general relativity. As will be clariied further in what follows, the limit of small , instead of large !, will serve to approximate general relativity in a suitable way. Vacuum with ! = 0 in Brans-Dicke theory is described by</p>
+
+				<p><formula>G ab R ab 1 2 g ab R = 1 r a r b S ab ; (1) 1</formula></p>
+
+				<p>The author thanks Ira Wasserman for emphasizing this point. where G ab is the Einstein tensor, R ab the Ricci tensor, R = 0 the scalar curvature, g ab the metric and the real Brans-Dicke scalar eld. The stress-energy tensor S ab is trace-free, whence 2 = 0. It thus has the property of a unique coupling to the Einstein tensor in G ab = S ab , namely = 0; 1 10]. In a sense, S ab is a four-dimensional, scale free generalization of surface tension in three-dimensional continuum mechanics. Soliton solutions can be found from their transition equation 11]. In seeking soliton solutions with approximate exterior Schwarzschild space-times, we shall work with the</p>
+
+				<figure>
+					<trash>Schwarzschild line-element ds 2 = e dr 2 + r 2 (d 2 + sin 2 d 2 ) e dt 2 : (2) Earlier analytic studies, by Brans and Dicke 7,3,8] and more recently by Campanelli &amp; Lousto 4]</trash>
+
+
+				</figure>
+
+				<p>, have employed diierent line-elements (including isotropic spatial coordinates). Thèblack hole&apos; solutions of Campanelli &amp; Lousto 4] are non-standard, in that their solutions have innnite horizon surface area, and their exterior space-times arèfunnels&apos; characterized by a local minimum of area of surfaces of constant r.</p>
+
+				<figure>
+					<trash>II. TRANSITION EQUATION We have S ab = 1 r a @ b = 1 ( r a r b 00 0 r ab ) 0 , where c ab are the connections and f 0 df dr . Because of 2 = 0, we have 00 0 = e g ab r ab and 0 = A r 2 e 2 , where A is an integration constant, which may be taken to be positive. Because r ab = diag( 0 2 ; re ; r sin 2 e ; 0 2 e ), we have 00 0 = e g ab r ab = ( 0 2 0 2 2 r ): In manifestly trace-free form S b a = diag( 1 2 r 0 + 2; 1; 1; 1 2 r 0 ) e r 2 ; (3) where e = A r e + 2 . Einstein&apos;s equations (1) become 8 &gt; &gt; &gt; &gt; &gt; &gt; &lt; &gt; &gt; &gt; &gt; &gt; &gt; : R r r 1 2 R = e ( 0 r + 1 r 2 ) 1 r 2 = ( 1 2 r 0 + 2) e r 2 ; R 1 2 R = e ( 00 2 + 02 4 0 0 4 + 0 0 2r ) = e r 2 ; R t t 1 2 R = e ( 0 r 1 r 2 ) 1 r 2 = 1 2 r 0 e r 2 : (4) To obtain a diierential equation for , write = e + 2 . Upon diierentiation, we have A r 2 e 2 = 0 = 1 2 ( 0 + 0 )+e + 2 0 , while substraction of the rst and third of Einstein&apos;s equations above gives 0 + 0 = (r 0 + 2) e + r = (r 0 + 2) A r 2 e 2 . Combining the last two identities gives 0 = 1 2 r 0 A r 2 e . Now, re = A , whence e (1 + r 0 ) = ( A ) 0 = e e 2 1 2 r 0 : Thus, we shall work with 8 &gt; &gt; &gt; &gt; &gt; &gt; &lt; &gt; &gt; &gt; &gt; &gt; &gt; : 1 + r 0 = e + 1 2 r 0 ; 1 + r 0 = e (1 + ( 1 2 r 0 + 2)e ); 1 r 0 = e (1 1 2 r 0 e ): (5)</trash>
+
+
+				</figure>
+
+				<p>Now, introduce z = log r r 0 , where r 0 is a ducial mass. Then the combinations rf 0 reduce to df dz , which we shall also denote by f 0 .</p>
+
+				<figure>
+					<trash>System (5) becomes the autonomous system of ordinary diierential equations 8 &gt; &gt; &gt; &gt; &gt; &gt; &lt; &gt; &gt; &gt; &gt; &gt; &gt; : 0 + 1 2 e + 0 = 1; (1 1 2 e + ) 0 = 1 + e + 2e + ; 0 1 2 e + 0 = 1 e ; (6) in which r a S ab = 0 has been used to replace the second of Einstein&apos;s equations. Note that solutions to (6) are approximately Schwarzschild, wherever 1 2 e + &lt;&lt; 1. Next, consider Z = 1 2 e + . System (6) gives 0 + 12Z 1Z (e 1) 4Z 2 1Z = 0 with Z 0 +e Z = 0. Let f(z) = e (z) , so that (1 Z)ff 0 + (1 2Z)(f 1)f + 4Z 2 f 2 = 0 (7) with Z 0</trash>
+
+
+				</figure>
+
+				<p>+ Z f = 0. Because Z is a strictly monotone function (in the presence of nontrivial S ab and wherever the solution is deened), we are at liberty to change the independent variable:</p>
+
+				<figure>
+					<trash>f(z) g(Z(z)). Note that d dz f(z) = Z g d dZ g(Z). We shall denote d dZ g(Z) also by g 0 , and hence Z(1 Z)g 0 + (1 2Z)(1 g)g 4Z 2 g 2 , that is, f(Z Z 2 )gg 0 g 2 (4Z 2 2Z + 1) = 0: (8) Writing h = (Z Z 2 )g, we get ( 1 h ) 0 = 4Z 2 2Z+1 (ZZ 2 ) 2 = 1 Z 2 + 3 (1Z) 2 . Evaluation gives e = 1 4Z + 1 Z(1 Z) 1 (Z 1 + Z)(Z 2 Z); (9) where 1 is an integration constant. Consequently, (6) gives the reduced equation 0 (z) = 1</trash>
+
+					<figDesc>Z(z). The zeros Z = Z 1 and Z = Z 2 1 3 as becomes small. By the</figDesc>
+
+				</figure>
+
+				<p><formula>aforementioned relation Z 0 + e Z, Z(z) satisses Z 0 = 1 Z(Z + Z 1 )(Z Z 2 ); (10)</formula></p>
+
+				<p>which we shall refer to as the the transition equation (cf: the analogous, but second order equations in 11]). The solutions to the transition equation are sketched in Figure 1. With three zeros in its potential&apos;</p>
+
+			<note>1 Z(Z + Z 1 )(Z Z 2 ),</note>
+
+				<p>the transition equation possesses two transitions for a given . With the choices &gt; 0 and &lt; 0, therefore, there are altogether four diierent possible transitions, that is, four types of solutions. The solutions to the transition equation have a transition from either Z = Z 1 or Z = Z 2 to the exterior</p>
+
+				<p>Schwarzschild limit Z = 0 if &gt; 0, or from the interior Schwarzschild limit Z = 0 to either Z = Z 1 or Z = Z 2 if &lt; 0. These solutions can be regarded to be of exterior and interior Schwarzschild type, respectively. The rst, exterior Schwarzschild type solutions are the soliton solutions of interest to us.</p>
+
+			</div>
+			<div>
+				<head>III. NONTOPOLOGICAL SOLITONS</head>
+
+				<p>To integrate the transition equation, write Z 0 f</p>
+
+			<note>1 Z 1 Z 2 +Z 1 ( Z 1 ZZ 2 + Z 2 Z+Z 1 )g = 1 Z 1 Z 2 ,</note>
+
+				<figure>
+					<trash>so that Z(z) follows from the transcedental equation jZj Z 1 +Z 2 jZ 2 Zj Z 1 jZ + Z 1 j Z 2 = Ke z Z 1 Z 2 (Z 1 +Z 2 ) Ke z ; (11) where K is an integration constant and () = Z 1 Z 2 (Z 1 + Z 2 ) 1. By the aforementioned relations 0 = 1</trash>
+
+
+				</figure>
+
+				<p>Z and Z 0 + e Z = 0, can be integrated to give</p>
+
+				<p><formula>e = ( 1 Z Z 2 1 + Z Z 1 ) 1 Z 1 +Z 2 ; (12)</formula></p>
+
+				<p>which, together with (9) and the transcedental equation (11), completely deenes the line element.</p>
+
+				<p>The solutions can be treated analytically for the special case =</p>
+
+				<figure>
+					<trash>1 4 , in which case the transition equation reads Z 0 = 4Z(Z 2 1 4 ), and Z 1 = Z 2 = 1 2</trash>
+
+
+				</figure>
+
+				<p>. With the choice K = 1, the transcedental equation can be inverted analytically to obtain the asymptotically at soliton solution</p>
+
+				<p><formula>e = 1 1+( r 0 r ) 2 ; e = p 1+( r 0 r ) 2 r 0 r p 1+( r 0 r ) 2 + r 0 r : (13)</formula></p>
+
+				<p>The solutions of interest are those with Z 0 as z ! 1. For small , Z 1 + Z 2 1; 1; Z 1 ; Z 2 1 and (Z 2 Z) Z 1 1. If &gt; 0, but small, therefore, Z Z+ Ke z , and hence Z Ke z 1Ke z . The approximation to the exterior Schwarzschild solution thus follows:</p>
+
+				<p><formula>8 &gt; &gt; &lt; &gt; &gt; : e 1 + Z 1 1Ke z = 1 1 2M r ; e 1 1+ Z 1 Ke z = 1 2M r ; (14)</formula></p>
+
+				<p>after imposing the relationship Kr 0 = 2M, where M the Schwarzschild mass of the hole.</p>
+
+				<p>Because for &lt; 0 the transition equation shows soliton solutions with Z ! Z 1 6 = 0 as z ! 1, i:e:, non-Schwarzschild-like exterior space-times, &gt; 0 shall be considered henceforth. The interior space-time (r &lt; 2M) of the solitons is similarly found to be 8 &gt; &gt; &lt; &gt; &gt; :</p>
+
+				<p><formula>e 1 ( r 2M ) 1== ; e ( r 2M ) 1== ; (15)</formula></p>
+
+				<p>Note the extremely rapid decay towards zero of both e and e as r ! 0, while e</p>
+
+				<figure>
+					<trash>1 2 ( r 2M ) 2 . Consequently, 0 (r) 1 2M ( r 2M ) 3 as r ! 0 (taking A = 2M), so that 1 2 ( r 2M ) 2 . Note, therefore, that the densities p g and S b a p g 2diag( 1 2 + 2; 1; 1; 1 2 ) r 2M (16)</trash>
+
+					<figDesc>are nite and regular near the origin. We shall interpret the solutions as regular, nontopological soliton solutions for Z. The coupling to the metric is through Z ! ! S ab .</figDesc>
+
+				</figure>
+
+				<p>The transition represents an eeective horizon in that it represents a thin layer of arbitrarily high redshift. Thus, in the classical sense, the horizon is removed by S ab , and reduced to an eeective horizon for suuciently small . In particular, with P = l=2M, where l is the Planck length, the distinction between the eeective horizon in the presence of S ab and a true horizon in the absence of it can only be discussed in the context of quantum gravity for black holes. The new solitons with small can therefore be regarded as approximations to Schwarzschild black holes, in that the diierence between the exterior space-time of the solitons and that of Schwarzschild black holes is within the realm of quantum gravity for P . We expect that the present arguments carry through in the case of Kerr black holes, but have not pursued this point.</p>
+
+				<p>If S ab is indeed physical, the extreme soliton solutions put Hawking&apos;s theorem 9] on the non-existence of black holes in BD theory with non-constant in somewhat diierent perspective. Hawking&apos;s theorem is purely classical and does not take into account (nor prohibit) the possibility encountered here of non-black hole, soliton solutions which are classically indistinguishable from black holes, their diierence being within the realm of quantum gravity. Their interior space-times, however, are dramatically distinct from that in standard black holes. In this context, note that a Schwarzschild black hole remains a solution of (1), by considering =const, so that, in fact, (1) deenes two solutions with like exterior space-times. The nontopological solitons, therefore, may be considered bifurcations from Schwarzschild black holes in space-time with S ab , where the bifurcation parameter is .</p>
+
+			</div>
+			<div>
+				<head>IV. CONCLUSIONS</head>
+
+				<p>The approximation of black holes by extreme soliton solutions ooers the advantages of a global time-like coordinate and a regularization of horizon surfaces due to an everywhere nite (but arbitrary large) redshift (and hence allowing for a great degree of freedom in spacetime slicing). In light of this, the solitons are proposed as an Ansatz for treating black holes in numerical relativity. Perhaps the a priori most immediate aspects to be addressed are (i) the nature and handling of the singularity at the origin and (ii) the persistence of the soliton solutions during genuine three-dimensional time-evolutions. It would be of interest to consider the eeect of a nite coupling constant, ! &lt;&lt; 1, on the behavior of near the origin. The strong interaction of two solitons in a binary system, furthermore, challenges their existence, in that radiation of to innnity may threaten to disperse the solitons. It should be appreciated that small serves to reduce radiation of from the region near the eeective horizon, in view of the associated high redshift. It would take three-dimensional experiments to verify these radiation and stability aspects.</p>
+
+				<figure>
+					<head>FIGURE 1.</head>
+
+					<figDesc>The solutions to the transition equation Z 0 =</figDesc>
+
+				</figure>
+
+			<note>1 Z(Z + Z 1 )(Z Z 2 ) for &gt; 0.</note>
+
+				<p>The curves shown are those for = 1 4 ; for general &gt; 0 the asymptotes Z 1 6 = Z 2 . Two nontopological soliton solutions are shown, corresponding to the transition Ia (Z Z 2 to Z 0) and Ib (Z Z 1 to Z 0. The two diverging solutions IIa and IIb describe nite volume solutions, existing for r &lt; r 0 only, while the two constant solutions IIIa (Z = Z 2 ) and IIIb (Z = Z 1 ) solutions do not approach the exterior Schwarzschild solution Z = 0.</p>
+
+				<p>The soliton solution Ia is the nontopological soliton of interest. FIGURE 2. The nontopological soliton for the case = 1=100. A transition layer forms at r = r 0 with high redshift as becomes small. The transition layer serves to replace the horizon of the correpsonding Schwarzschild black hole. The radius is normalized with respect to 2M. The exterior space-time of the soliton approximates the exterior Schwarzschild space- time.</p>
+
+				<figure>
+					<trash>−5 −4 −3 −2 −1 0 1 2 3 4 5 −2 −1.5 −1 −0.5 0 0.5 1 1.5 2 Schwarzschild space−time (Z=0) Ia Ib IIa IIb IIIa (Z=Z_2) IIIb (Z=−Z_1) Z=Z_2 Z=−Z_1 Solutions to transition equation for epsilon &gt; 0 z Z(z) 0 0.5 1 1.5 2 2.5 3 −20 −10 0 10 20 e^\lambda Schwarzschild BH soliton radius 0 0.5 1 1.5 2 2.5 3 −0.5 0 0.5 e^\nu Schwarzschild BH soliton radius</trash>
+
+
+				</figure>
+
+			</div>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+				<p>Acknowledgment. The author greatfully acknowledges stimulating discussions with Amir Levinson, Ira Wasserman, and Saul Teukolsky. This work has been supported in part by NSF grant 94-08378 and by the Grand Challenge grant NSF PHY 93-18152/ASC 93- 18152 (ARPA supplemented). The Cornell Theory Center is supported by NSF, NY State, ARPA, NIH, IBM and others.</p>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Gravitational-radiation damping of compact binary systems to second post-newtonian order</title>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Blanchet</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Damour</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Iyer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">M</forename>
+				<surname>Wiseman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">G</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="issue">18</biblScope>
+			<biblScope unit="page" from="743515" to="3518" />
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Gravitational waves from inspiralling compact bina- ries: energy loss and waveform to second-post-newtonian order</title>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Blanchet</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Damour</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Iyer</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="page" from="5360" to="5386" />
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Brans</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physical Review</title>
+		<imprint>
+			<biblScope unit="volume">125</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="2194" to="2201" />
+			<date type="published" when="1962" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Campanelli</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">O</forename>
+				<surname>Lousto</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Mod. Phys. D</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="451" to="462" />
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Bradaschia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Caloni</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Cobal</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">Di</forename>
+				<surname>Fasbro</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Virgilio</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="middle">A</forename>
+				<surname>Giazotta</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Holloway</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Kautzky</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="middle">B</forename>
+				<surname>Michelozzi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="middle">V</forename>
+				<surname>Montelatici</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Pascuello D. and Proceedings of the Bann Summer Institute</title>
+		<editor>R. Mann &amp; P. Wesson</editor>
+		<meeting><address><addrLine>Bann, Alberta ; Singapore ; Gravitation</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Abramovici</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">E</forename>
+				<surname>Althouse</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">W P</forename>
+				<surname>Drever</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Kawamura</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Raab</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<forename type="middle">J</forename>
+				<surname>Shoemakes</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Siewers</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Spero</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">E</forename>
+				<surname>Thorne</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">S</forename>
+				<surname>Vogt</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">E</forename>
+				<surname>Weis</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Whitcomb</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">E. &amp; Zucker M.E. Science</title>
+		<imprint>
+			<biblScope unit="volume">256</biblScope>
+			<biblScope unit="page">325</biblScope>
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Brans</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">H</forename>
+				<surname>Dicke</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physical Review</title>
+		<imprint>
+			<biblScope unit="volume">124</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="925" to="935" />
+			<date type="published" when="1961" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">H</forename>
+				<surname>Dicke</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1962" />
+			<biblScope unit="page" from="2163" to="2167" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">W</forename>
+				<surname>Hawking</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Comm</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page" from="167" to="171" />
+			<date type="published" when="1972" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">P M</forename>
+				<surname>Putten</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Math. Phys</title>
+		<imprint/>
+	</monogr>
+	<note>submitted</note>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">D</forename>
+				<surname>Lee</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Pang</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physics Reports</title>
+		<imprint>
+			<biblScope unit="volume">221</biblScope>
+			<biblScope unit="issue">56</biblScope>
+			<biblScope unit="page" from="251" to="350" />
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

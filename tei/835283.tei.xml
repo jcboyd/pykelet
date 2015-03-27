@@ -1,0 +1,1613 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main"></title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2010">2010</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Jordan</forename>
+								<forename type="middle">–</forename>
+								<surname>Schwinger Representations</surname>
+							</persName>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Factorised</forename>
+								<surname>Yang</surname>
+							</persName>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Baxter</forename>
+								<surname>Operators</surname>
+							</persName>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">David</forename>
+								<surname>Karakhanyan</surname>
+							</persName>
+						</author>
+						<author role="corresp">
+							<persName>
+								<forename type="first">Roland</forename>
+								<surname>Kirschner</surname>
+							</persName>
+							<email>E-mail: Roland.Kirschner@itp.uni-leipzig.de</email>
+						</author>
+						<author>
+							<affiliation>
+								<orgName type="institution">Yerevan Physics Institute</orgName>
+								<address>
+									<addrLine>Br. Alikhanian Str. 2</addrLine>
+									<postCode>375036</postCode>
+									<settlement>Yerevan</settlement>
+									<country key="AM">Armenia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation>
+								<orgName type="department">Institut fürTheoretischePhysik</orgName>
+								<orgName type="institution">UniversitätLeipzig</orgName>
+								<address>
+									<postCode>100920, D-04009</postCode>
+									<settlement>Leipzig</settlement>
+									<region>PF</region>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Methods and Applications SIGMA</title>
+						<imprint>
+							<biblScope unit="volume">6</biblScope>
+							<biblScope unit="page" from="29" to="16"/>
+							<date type="published" when="2010">2010</date>
+						</imprint>
+					</monogr>
+					<idno type="DOI">10.3842/SIGMA.2010.029</idno>
+					<note type="submission">Received October 28, 2009, in final form March 30, 2010;</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Yang–Baxter equation</term>
+					<term>factorisation method 
+ 2010 Mathematics Subject Classification: 81R50</term>
+					<term>82B23</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>The construction elements of the factorised form of the Yang–Baxter R operator acting on generic representations of q-deformed sℓ(n + 1) are studied. We rely on the iterative construction of such representations by the restricted class of Jordan–Schwinger representations. The latter are formulated explicitly. On this basis the parameter exchange and intertwining operators are derived.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>Generic representations of sℓ q (n + 1) can be iteratively constructed from Jordan–Schwinger ones of sℓ q (m + 1), m = 1, . . . , n, [1] as an application of the method of induced representations [2, 3].</p>
+
+				<p>This iterative relation is conveniently formulated in terms of Lax matrices [4], the Yang–Baxter solutions intertwining a generic with the fundamental representation. The generic representation of gℓ(n + 1) may be labelled by ℓ 1 , . . . , ℓ n+1 , the eigenvalues of the Cartan subalgebra elements in action on the lowest weight states. ℓ i refers to the U (1) factor. The Lax matrix will be denoted by L(u 1 , . . . , u n+1 ), where the spectral parameter u is combined with the representation parameters to u i = u + ℓ i .</p>
+
+				<p>The Yang–Baxter operator R acting on the tensor product of two generic representations is defined by the Yang–Baxter relation with two Lax matrices,</p>
+
+				<figure>
+					<trash>RL(u 1 , . . . , u n+1 )L(v 1 , . . . , v n+1 ) = L(v 1 , . . . , v n+1 )L(u 1 , . . . , u n+1 )R. (1.1)</trash>
+
+
+				</figure>
+
+				<p>The solution of the Yang–Baxter relation has to be treated in the framework of the quantum group theory, the emergence of which was initiated by solving problems of quantum integrable systems. The q-deformed algebra and co-algebra relations are encoded in the particular Yang– Baxter relation of the fundamental R matrix with Lax matrices (for a comprehensive review see e.g. [5]). In [6] the universal R operator has been constructed, covering the case sℓ q (n + 1) in particular, in algebraic terms based on the combinatorial structure of root systems. In [7, 8] the solutions of Yang–Baxter relation have been constructed and studied with restriction to cyclic representations of sℓ q (n + 1) and with the algebra relations modified for application to the generalised chiral Potts model. In [9] a method for constructing the R operator in spectral D. Karakhanyan and R. Kirschner decomposition has been developed applicable to tensor products of affinisable representations of (super) algebras.</p>
+
+				<p>The generic Yang–Baxter operator (1.1) can be constructed as a product of operators permuting pairs of parameters. As elementary factor operators one may use the ones permuting adjacent parameters of one Lax matrix, e.g. W i (u i , u i+1 ) permuting u i with u i+1 , and the operator F permuting u n+1 with v 1 . The former are the intertwiners transforming between equivalent representations with representation labels appearing in different order. The latter intertwine between equivalent tensor product representations.</p>
+
+				<p>In studies of the chiral Potts model [10, 11, 12, 13] concerning cyclic representations of sℓ q (2) the R operator is represented as a product of four Boltzmann weights which are identified as intertwiners of equivalent cyclic representations. In the extension to the generalised chiral Potts model involving cyclic representations of sℓ q (n + 1) this factorisation is used [7, 8, 14, 15].</p>
+
+				<p>Motivated by applications of integrable chains to problems of gauge field theory [16, 17], where infinite-dimensional representations appear, we consider realisations of representation generators in terms of Heisenberg canonical pairs. In the sℓ(2) case one pair, x, ∂, [∂, x] = 1 is sufficient and representations are spanned by monomials x m with 1 representing the lowest weight vector. The factorisation of the R operator can be observed also in this formulation. For example, its integral kernel appears factorised into four symmetric two-point functions being the kernels of intertwining operators [18]. The construction of the R operator with sℓ(2) symmetry in terms of canonical pairs and by factors permuting representation parameters in the product of Lax matrices has been proposed in [19], applied to the study of Baxter operators in [20] and worked out for the rational, trigonometric and elliptic cases in [21].</p>
+
+				<p>In the extension of this approach to higher rank the class of Jordan–Schwinger representations plays the key role. This notion stands for the realisation of the sℓ(n + 1) algebra generators in terms of n+1 canonical pairs described below and representation modules spanned by monomials of x i with 1 representing the lowest weight vector. Generic representations can be constructed iteratively based on the ones of Jordan–Schwinger type. We consider the trigonometric case with generic values of the deformation parameter q, excluding roots of 1. Then these modules do not involve cyclic representations and appear just as deformations of the classical representation modules [2]. A treatment of the rational (q = 1) case is given in [22]; in the present paper the part of the results concerning the intertwining and exchange operators is extended to the quantum case.</p>
+
+				<p>The case sℓ q (3) has been studied in [23] relying on direct calculations instead of the detailed Lax matrix factorisation considered here.</p>
+
+				<p>In this paper we obtain the permutation and intertwining operators being the construction elements for Yang–Baxter R operators by the factorisation outlined above. The iterative construction of the generic Lax matrix from Jordan–Schwinger ones helps to find the intertwiners W i , because the calculation reduces to the analysis of the lower rank gℓ(i + 1) case. Also the parameter permutation operator F can be obtained by solving the reduced problem, where the Lax matrices are substituted by the Jordan–Schwinger ones in two forms. Indeed one can do the iterative construction in one way such that the Jordan–Schwinger Lax matrix involving v 1 appears as the left-most factor or in the other way such that u n+1 appears as the right-most factor. Then the permutation of u n+1 with v 1 is determined by these Jordan–Schwinger Lax matrices only.</p>
+
+				<p>In the next section we formulate the Jordan–Schwinger representations [24, 25] of sℓ q (n + 1) and the corresponding Lax matrix in several versions. In Section 3 we derive factorised forms of the Jordan–Schwinger Lax matrix. The dependence on the parameters u + = u + 2ℓ, u − = u − 1 appears separated, one enters by a left matrix factor and the other by a right one. Therefore the factorised forms of the Lax matrix are useful for the simplification of the relation defining the permutation operator F . The defining relation for F and its solution are discussed in detail in Section 4. The defining relations can be represented as the discrete and deformed analogon of a wave equation for a chain of n + 1 sites. The solution F is analogous to a standing wave, the multiplicative superposition of a forward and a backward travelling wave expressed in terms of the q-exponential. Further, in Section 5, the intertwining operators W i are obtained. We find first operators D i changing the Lax matrix with ℓ i , ℓ i+1 to the one with ℓ i + 1, ℓ i+1 − 1 up to some remainders, and this leads to W i as a power of D i .</p>
+
+			</div>
+			<div>
+				<head n="2">Jordan–Schwinger representations</head>
+
+				<p>With n + 1 Heisenberg conjugated pairs we can construct operators generating the q-deformed gl(n + 1) algebra. These generators induce by lowest weight construction representations of the restricted Jordan–Schwinger type, where a constant function represents the vector of lowest weight. We start at the definitions of the operators</p>
+
+				<figure>
+					<trash>E J ij = x i x j [N j ], E −J ij = − x j x i [N j ], E T J ij = −[N i ] x j x i , E −T J ij = [N i ]</trash>
+
+
+				</figure>
+
+				<p>x i x j , for i = j, i, j = 1, . . . , n+1. N i = x i ∂ i acts as infinitesimal dilatation operator on the coordinate operator x i . The square bracket denotes the q-number of the entry, [N ] = q N −q −N q−q −1 .</p>
+
+				<p>These definitions result in 4 versions (distinguished by the label J, −J, T J, −T J) of the Jordan–Schwinger representation of gℓ q (n + 1). The operators with superscripts −J, −T S are related to the corresponding ones with J, T J by inversion of coordinates x i → x −1 i with the corresponding transformation of the derivative operators. The operators with superscript T J, −T J are related to the corresponding ones J, −J by transposition defined like result of partial integration, x T i = x i , N T i = −N i − 1, and a shift of N i proportional to the identity operator, N i + 1 → N i .</p>
+
+				<p>The commutation relation between the operators of the same superscript are close to the gℓ q (n + 1) algebra relations, [E J ij , E J jk ] q ±1 = q ∓N j E J ik for i = k and [E J ij , E J ji ] 1 = [N i − N j ]. Here we use an appropriate modification of the commutator notation defined as [A, B] q = AB − qBA.</p>
+
+				<p>The relations for operators with superscript −T J are the same and the ones for the operators with the superscript T J or −J are obtained by substituting the factor on r.h.s. of the first relation as q ∓N j → q ±N j and supplementing the r.h.s. of the second relation by a minus sign. These operators can be related to the Chevalley basis of the sl q (</p>
+
+				<figure>
+					<trash>n + 1) algebra as e C i = E C i,i+1 , f C i = E C i+1,i , 2h C i = (−1) |C| [N i − N i+1 ], i = 1, . . . , n.</trash>
+
+
+				</figure>
+
+				<p>C stands for J, −J, T J, −T J and in the last relation the sign is dependent on the superscript as (−1) |C| where |C| = 0 for C = J, −T J and |C| = 1 for C = −J, T J. The algebra relations including Serre&apos;s relations can be checked. Alternatively one can extend the construction to the Cartan–Weyl generators by defining them by q-commutators iteratively,</p>
+
+				<figure>
+					<trash>E i,i+1 = e i , E i+1,i = f i (2.1) E ij = [E i,j−1 , E j−1,j ] q , i + 1 &lt; j, E ij = [E i,i−1 , E i−1,j ] q −1 , i &gt; j + 1. In the cases X = J, −JT this leads to E JS ij = q −(N i+1 +···+N j−1 ) E J ij , i &lt; j, E JS ij = q (N i−1 +···+N j+1 ) E J ij , i &gt; j, i, j = 1, . . . , n + 1.</trash>
+
+
+				</figure>
+
+				<p>The same relations apply to the case −JT . The resulting generators are distinguished by adding to the superscript the letter S. The relation for the cases JT , −J are obtained by modifying the factors on r.h.s. by changing the signs in the exponents of q.</p>
+
+				<figure>
+					<trash>We define also E C ii = (−1) |C| N i . D. Karakhanyan and R. Kirschner We study the Lax matrix in Jimbo&apos;s form [26]</trash>
+
+
+				</figure>
+
+				<p>where the matrix elements are related to the generators as</p>
+
+				<figure>
+					<trash>L ij (u) = q −(u− 1 2 )− 1 2 (E ii +E jj ) E j,i , i &gt; j, L ij (u) = q +(u− 1 2 )+ 1 2 (E ii +E jj ) E j,i , i &lt; j, L ii (u) = [u + E ii ]. Substituting the Cartan–Weyl generators constructed in four versions CS = JS, −JS, JT S, −JT S we obtain L CS ij (u) = q (u− 1 2 )(−1) |C| N ij ) E C j,i , i &lt; j, (2.2) L CS ij (u) = q −(u− 1 2 )(−1) |C| N ji ) E C j,i , i &gt; j, L CS ii (u) = [u + (−1) |C| N i ]. (2.3) We use the notation N ij defined as N ij = 1 2 N i + N i+1 + · · · + N j−1 + 1 2 N j , where the addition on the indices is evaluated mod (n + 1). We shall use also N ij + N ji = n+1 1 N s = 2 ˆ ℓ, 1 2 (N ij − N ji ) = N ′ i,j .</trash>
+
+
+				</figure>
+
+				<p>These versions of Jordan–Schwinger Lax matrices allow factorised forms where the coordinates and the dilatation operators are separated. Different forms give preference to some index value i = 1, . . . , n + 1. In the case JS we introduce the set of quantum coordinates</p>
+
+				<figure>
+					<trash>X i = q −N i,n+1 x i , i = 1, . . . , n + 1, N n+1,n+1 = 0. (2.4) Then we obtain L JS (u) = ˆ X −1 L JS (u) ˆ X, ˆ X = diag (X 1 , . . . , X n+1 ). (2.5) The central factor involves the dilatation operators N i only ˜ L JS (u) =     [u − 1 + N 1 ]</trash>
+
+
+				</figure>
+
+				<p>q u−1 [N 1 ] . . . q u−1 [N 1 ] q u−1 [N 1 ] q 1−u [N 2 ] [u − 1 + N 2 ] . . . q u−1 [N 2 ] q u−1 [N 2 ] .</p>
+
+			<note>. . . . . . . . . . . . . . q 1−u [N n+1 ]</note>
+
+				<p>q 1−u [N n+1 ] . . . q 1−u [N n+1 ] [u − 1 + N n+1 ] </p>
+
+				<p><formula>   . (2.6)</formula></p>
+
+				<p>In the case −JS we have with the same definition (2.4) L −JS (u) = ˆ X ˜ L −JS (u) ˆ X −1 , (2.7) where L −JS (u) is obtained from L JS (u) by substituting N i by −N i .</p>
+
+				<p>In the cases T JS and −T JS we introduce the set of quantum coordinates X T i = x i q −N i,1 , i = 1, . . . , n + 1.</p>
+
+				<p>These coordinates can be factorised in terms of diagonal matrices similar to (</p>
+
+				<figure>
+					<trash>2.5), (2.7), L T JS (u) = ˆ X T ˜ L T JS (u) ˆ X −1 T , L −T JS (u) = ˆ X −1 T ˜ L −T JS (u) ˆ X T , ˆ X T = diag (X T 1 , . . . , X T n+1 ). The central factor is in the case −T JS L −T JS (u) =     [u − 1 + N 1 ]</trash>
+
+
+				</figure>
+
+				<p>q u−1 [N 2 ] . . . q u−1 [N n ] q u−1 [N n+1 ] q 1−u [N 1 ] [u − 1 + N 2 ] . . . q u−1 [N n ] q u−1 [N n+1 ] .</p>
+
+			<note>. . . . . . . . . . . . . . q 1−u [N 1 ]</note>
+
+				<p>q 1−u [N 2 ] . . . q 1−u [N n ] [u − 1 + N n+1 ]     and the corresponding matrix for the case T JS is obtained from the latter by changing the sign in front of all N i .</p>
+
+			</div>
+			<div>
+				<head n="3">Factorisation of Lax matrices</head>
+
+				<p>The simple form of the Jordan–Schwinger representation Lax matrix (2.2) leads to factorised expressions. Let us formulate and proof the details in the version JS.</p>
+
+				<figure>
+					<trash>We introduce the following notations Λ = q 2 ˆ N ′ * ,n+1 , ˆ N ′ * ,n+1 = diag (N ′ 1,n+1 , . . . , N ′ n,n+1 , − ˆ ℓ), ˆ B = q ˆ N Λ, ˆ N = diag (N 1 , . . . , N n+1 ), M 1,−1 (A) = ˆ m 1,−1 − Aσ − . We use the standard matrices σ − = ˆ e n+1,1 , ˆ m 1 and m 1,−1 , ˆ m 1 =       1 0 . . . 0 0 0 1</trash>
+
+
+				</figure>
+
+			<note>. . . 0 0 . . . . . . . . . . . . . . .</note>
+
+				<figure>
+					<trash>0 0 . . . 1 0 1 1 . . . 1 1       , ˆ m 1,−1 =       1 −1 . . . 0 0 0 1</trash>
+
+
+				</figure>
+
+			<note>. . . 0 0 . . . . . . . . . . . . . . .</note>
+
+				<figure>
+					<trash>0 0 . . . 1 −1 0 0 . . . 0 1       (3.1) and its inversê m −1 1,−1</trash>
+
+
+				</figure>
+
+				<p>with all upper-triangular elements including the diagonal equal to 1 and the other equal to 0.</p>
+
+				<figure>
+					<head>Proposition 1.</head>
+
+					<trash>The Jordan–Schwinger form of the Jordan–Schwinger Lax matrix (2.2) can be written as L JS (u) = ˆ X −1 Λ −1 M 1,−1 q −2(u−1+2 ℓ) ˆ B[u − 1]M −1 1,−1 (q u−1 ) ˆ X. (3.2)</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>Proof .</head>
+
+				<p>We start the proof from the triangular factorisation used earlier [4]. The central Lax matrix factor (2.6) can be represented as a product of 3 matrices, the central factor being upper triangular and the first and third factors being lower triangular of special type</p>
+
+				<figure>
+					<trash>˜ L JS (u) = M L (u)K JS (u)M R (u), M R (u) = D −1 R (u − 1) ˆ m 1 D R (u − 1), M L (u) = D −1 L (M R (u)) −1 D L , D R (u) = diag (q −2u , . . . , q −2u , 1), D L = diag (q α 1 , . . . , q αn , 1), α i = −2N n+1,i .</trash>
+
+
+				</figure>
+
+				<p>The matrix m 1 has unit elements on the diagonal and on the last row with all others vanishing. The upper-triangular central factor is given by</p>
+
+				<figure>
+					<trash>K JS (u) =     [u − 1]</trash>
+
+
+				</figure>
+
+				<p>q N 1 λ[u − 1][N 1 ] . . . λ[u − 1][N 1 ] q u−1 [N 1 ] 0 [u − 1]q N 2 . . . λ[u − 1][N 2 ] q u−1 [N 2 ] .</p>
+
+			<note>. . . . . . . . . . . . . .</note>
+
+				<figure>
+					<trash>0 0 . . . 0 k *     , k * = q N n+1 − n+1 1 Ns u − 1 + n+1 1 N s . (3.3)</trash>
+
+
+				</figure>
+
+				<p>The essential ingredients of the first and the third factors of the triangular factorisation enter in terms of diagonal matrices D R (u), D L . The lower-triangular form is provided by the standard matrix m 1 (3.1). Now we observe that the central upper-triangular factor can be further factorised and the same diagonal feature appears. The form of K</p>
+
+				<figure>
+					<trash>JS (u) (3.3) suggests the first step of further factorisation K JS (u) = diag q N 1 , . . . , q Nn , k * λq 1−u K JS diag [u − 1], . . . , [u − 1], q u−1 λ . (3.4) D. Karakhanyan and R. Kirschner Then we use the standard matrix m 1,−1 , to obtain ˜ K JS = B −1 m 1,−1 B ˆ m −1 1,−1 B = diag (. . . q β i . . . ), (3.5) β i are determined up to a constant, β i = 2 n+1 i N s + c, i = 1, . . . , n + 1. We choose c = −N n+1 − n+1 1 N s , thus β i = N i + 2N ′ i,n+1 , i = 1, . . . , n, β n+1 = − n 1 N s .</trash>
+
+
+				</figure>
+
+				<p>We consider now the complete factorised expression for the Lax matrix, L(u) = ˆ X −1 M L KM R ˆ X. It is appropriate to modify the definition of the left and right lower-triangular factors including one of the diagonal factors into which K JS has been decomposed now</p>
+
+				<figure>
+					<trash>M ′ R (u) = diag 1, . . . , q u λ[u] M R (u + 1). We obtain L JS (u) = ˆ X −1 Λ −1 M ′−1 R (u − 1 + 2 ˆ ℓ) ˆ m 1,−1 B ˆ m −1 1,−1 [u − 1]M ′ R (u − 1) ˆ X.</trash>
+
+
+				</figure>
+
+				<p>The two steps (3.4) and (3.5) result in the factorisation of the upper-triangular central factor K JS (u) where the dependence on the operators N i and on the spectral parameter u enter in terms of diagonal matrices. The lower triangular special matrix m 1 can be related to the upper triangular special mat- rix m 1,−1 with the help of σ − =</p>
+
+				<figure>
+					<trash>ˆ e n+1,1 M ′−1 R (u) = M −1 R (u + 1) diag 1, . . . , 1, 1 − q −2u = M 1,−1 q −2û m −1 1,−1 .</trash>
+
+
+				</figure>
+
+				<p>This allows to write the Jordan–Schwinger form of the Lax matrix as has been claimed, completing the proof.</p>
+
+				<figure>
+					<trash>The representation constraint Φ c = n+1 1 N s = (−1) |C| 2ℓ I (3.6) reduces</trash>
+
+
+				</figure>
+
+				<p>the algebra to a simple one and fixes the representation of sℓ q (n + 1) which is irreducible for generic values of ℓ. The constraint operator commutes with N i but not with the coordinate operators. Actually the Lax matrices depend only on coordinate ratios which commute with Φ c . Therefore we transform the obtained factorisation formulae first into forms expressed in terms of ratios of coordinates dividing out one of them. Then the constraint can be imposed simply by substituting the related N operator by the expression obtained from the constraint equation (3.6). In the case JS we write</p>
+
+				<figure>
+					<trash>X i = x n+1 q γ X ′ i , X ′ i = q − ˆ ℓ− 1 2 −N ′ i,n+1 −γ x i x n+1 , ˜ X ′ i = q ˆ ℓ+ 1 2 +N ′ i,n+1 −ñ+1 , i = 1, . . . , n, (3.7) and modify the definition of the diagonal matrices of the coordinates as ˆ X = diag (X ′ 1 , . . . , X ′ n , 1), ˆ X d = diag ( ˜ X ′ 1 , . . . , ˜ X ′ n , 1), Γ(γ) = diag (1, . . . , 1, q −γ ).</trash>
+
+
+				</figure>
+
+				<p>Now x n+1 can be cancelled in the expression for the Lax matrix (3.2) and the representation constraint can be imposed by simply replacing the operator ℓ by the number ℓ. The form of the spectral parameter dependence becomes more symmetric after the shift u ′ = u + ℓ and it is convenient to introduce u + = u ′ + ℓ, u − = u ′ − 1 − ℓ. Then we have</p>
+
+				<figure>
+					<trash>L JS (u + , u − ) = ˆ X d−1 Γ −1 (˜ γ)M 1,−1 q −2u + ˆ BM −1 1,−1 q −2u − Γ(γ) ˆ X. (3.8) In the case T JS we write X ′ T j = q ˆ ℓ−N ′ i1+ −γ T x j x 1 , ˜ X ′ T j = q − ˆ ℓ+N ′ i1+ −ñ + 1 (3.9) ˆ X T = diag (1, X ′ T 2 , . . . , X T n+1 ), ˆ X d T = diag (1, ˜ X ′ T 2 , . . . , ˜ X T n+1 ), Γ T (γ) = diag (q −γ , 1, . . . , 1), ˆ B T = diag q − n+1 2 Ns , q N 2 −2N ′ 2,1 , . . . , q N n+1 −2N ′ n+1,1 .</trash>
+
+					<figDesc>Now x 1 can be cancelled in the expression for the Lax matrix and the representation constraint can be imposed by eliminating N 1 in favour of ℓ and replacing the operator ℓ by the number −ℓ</figDesc>
+					<trash>L T JS (u − , u + ) = ˆ X T Γ T (γ)M −1 1,−1 q −2u − ˆ B −1 T M 1,−1 q −2u + Γ −1 T (˜ γ T ) ˆ X d−1 T . (3.10) 4 Parameter exchange operator 4.1 The defining relation We consider the defining equation for an operator interchanging representation parameters in the product of two Jordan–Schwinger Lax matrices, ˆ F L y (u − , u + )L x (v + , v − ) = L y (u − , v + )L x (u + , v − ) ˆ F . (4.1) Let us substitute L y (u − , u + ) by the Lax matrix in the version T JS (3.10), L y (u − , u + ) = L T JS (u − , u</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>+ ) with the definitions given in (3.9) and the substitution of the canonical pairs by y i , ∂ yi as indicated by subscript y and L x (v + , v − ) by the one in the version JS (3.8), L x (v + , v − ) = L JS (v + , v − ) with the definitions given in (3.7). We rely on the fact that in all cases the quantum coordinates X ′ i commute with all coordinate operators</figDesc>
+					<trash>X ′ j and try as ansatz ˆ F = F ˆ Y d T , ˆ X d . The defining condition reduces to ˆ F ˆ B −1 T y M 1,−1 q −2u + Γ −1 T (˜ γ T ) ˆ Y d−1 T ˆ X d−1 Γ −1 (˜ γ)M 1,−1 q −2v + ˆ B x = ˆ B −1 T y M 1,−1 q −2v + Γ −1 T (˜ γ T ) ˆ Y d−1 T ˆ X d−1 Γ −1 (˜ γ)M 1,−1 q −2u + ˆ B x ˆ F .</trash>
+
+
+				</figure>
+
+				<p>The condition is now specified by the assumption that the phases depend on the spectral and the representation parameters as γ(v + ), ˜ γ T (u + ), on l.h.s. and that also the arguments u + , v + in the phases are subject to the interchanging operation by F .</p>
+
+				<figure>
+					<head>Proposition 2.</head>
+
+					<figDesc>The parameter exchange operator F acting as in (4.1) on the product of Jordan– Schwinger Lax matrices of version T JS (3.10) for L y and JS (3.8) for L x and with specifying γ(u) = ˜ γ T (u) = u has the form</figDesc>
+					<trash>F = (X d 1 ) u + −v + e q 2 (q u + −v + +1 Z)e q −2 (−q v + −u + −1 Z), Z = n 2 q v + −1 X ′ j ˜ Y ′ T j X ′−1 1 + ˜ Y ′ T n+1 X ′−1 1 , e q 2 (Z) denotes the deformed exponential. The definition of X ′ j , ˜ Y ′ T j has been given in (3.7), (3.9).</trash>
+
+
+				</figure>
+
+				<p>The proof will be arranged in three parts. In the first part, up to the end of this subsection, the defining conditions are written in a convenient form. The result is reminicent of a chain with n + 1 sites where the boundaries at sites 1 and n + 1 give extra contributions as compared to the bulk region. In the bulk, outside the boundary sites, we find q-deformed discrete waves. This is the second step of the proof given in Subsection 4.2. In the final step, in Subsection 4.3, we show how the boundary conditions fix the wave number and result in a multiplicative superposition of travelling waves.</p>
+
+				<p>The defining condition can be transformed to</p>
+
+				<figure>
+					<trash>ˆ Y d T Γ T (v + )M −1 1,−1 q −2v + ˆ B T y ˆ F ˆ B −1 T y M 1,−1 q −2u + ˆ Γ −1 T (u + )Y d−1 T = ˆ X d−1 Γ −1 (u + )M 1,−1 q −2u + ˆ B x ˆ F ˆ B −1 x M −1 1,−1 q −2v + Γ(v + ) ˆ X d .</trash>
+
+					<figDesc>The quantum coordinates X ′ i , Y ′ T i do not enter the resulting condition. We shall suppress temporarily primes and the signs on the dual coordinates</figDesc>
+					<trash>X ′ i , ˜ Y ′ T i ˆ X d , ˆ Y d</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>T indicating the deviation from X ′ i , Y ′ T i . We consider the transformation of the arguments of F by</figDesc>
+
+				</figure>
+
+				<p><formula>B T y ˆ F ˆ B −1 T y , q β T 1 ˆ Y T q −β T 1 = ˆ Y T ˆ b T 1 = ˆ Y T diag 1, q −1 , . . . , q −1 , q β T i ˆ Y T q −β T i = ˆ Y T ˆ b T i = ˆ Y T diag 1, q, . . . , q, i q , . . . , q −1 , i = 2, . . . , n + 1. The transformation by B x ˆ F ˆ B −1 x acts similar, q β i ˆ Xq −β i = ˆ X ˆ b i = ˆ X diag q −1 , . . . , q −1 , i q , . . . , q, 1 , i = 1, . . . , n, q β n+1 Xq −β n+1 = ˆ X ˆ b n+1 = ˆ X diag q −1 , . . . , q −1 , 1 .</formula></p>
+
+				<p>The commutation relation of the quantum coordinates are X i X j = qX j X i , 1 ≤ i &lt; j ≤ n, Y T i Y T j = qY T j Y T i , 2 ≤ i &lt; j ≤ n + 1.</p>
+
+				<p>This results in an analogous pattern for the similarity transformations:</p>
+
+				<p><formula>X i ˆ XX −1 i = ˆ X ˆ s i = ˆ X diag q −1 , . . . , i 1, q, . . . q, 1 , i = 1, . . . , n, Y T i ˆ Y T Y −1 T i = ˆ Y T ˆ s T i = ˆ Y T diag 1, q −1 , . . . , i 1, q, . . . q , i = 2, . . . , n + 1. We complete the definitions by s n+1 = ˆ I, ˆ s T 1 = ˆ I. Then the action on F is ˆ B T y ˆ F ˆ B −1 T y = diag . . . F y i . . . , ˆ B x ˆ F ˆ B −1 x = diag . . . F x i . . . , where the following abbreviations are convenient F y i = F ˆ X, ˆ Y ˆ b T i , F x i = F ˆ X ˆ b i , ˆ Y , Y T j F y i Y −1 T j = F ˆ X, ˆ Y ˆ b T i ˆ s T j = F y i,j , X −1 j F x i X j = F ˆ X ˆ b i ˆ s −1 j , ˆ Y = F x i,j .</formula></p>
+
+				<p>The abbreviations allow to write the defining condition as</p>
+
+				<p><formula>Γ T (v + ){l.h.s.}Γ −1 T (u + ) = Γ −1 (u + ){r.h.s.}Γ(v + ), (4.2) {l.h.s.} = diag F y j−1,j + ˆ Y T ˆ m −1 1,−1 Y −1 T diag F y j,j − F y j−1,j + q −2v + 1 − q −2v + ˆ Y T ˆ M 1 ˆ Y −1 T diag F y j,j − F y j−1,j + 1 − q −2(u + −v + ) ˆ Y T ˆ m −1 1,−1 σ − ˆ Y −1 T F y n+1,1 , {r.h.s.} = diag F x j+1,j + diag F x j,j − F x j+1,j ˆ X −1 m −1 1,−1 X + q −2v + 1 − q −2v + diag F x j,j − F x j+1,j ˆ X −1 M 1 ˆ X + 1 − q −2(u + −v + ) F x 1,n+1 X −1 σ − ˆ m −1 1,−1 X .</formula></p>
+
+				<p>We have used the properties of the matrices M 1,−1 (q −2u ) in particular the decomposition of their products with diagonal matrices.</p>
+
+			</div>
+			<div>
+				<head n="4.2">Travelling waves</head>
+
+				<p>Let us consider first the equations resulting from the matrix elements (i, j) with i, j = 1, n + 1. From the diagonal we have</p>
+
+				<p><formula>F y j,j − q −2v + F y j−1,j = F x j,j − q −2v + F x j+1,j . (4.3) Since ˆ b T j ˆ s T j = ˆ b j ˆ s −1 j = diag 1, . . . , 1, j q , 1, . . . , 1 , (4.4) ˆ b T j−1 s T j = ˆ b j+1 s −1 j = diag 1, . . . , 1, j q −1 , 1, . . . , 1 , j = 2, . . . , n,</formula></p>
+
+				<figure>
+					<figDesc>these equations are fulfilled by requiring the equality of the first terms on both sides and of the second terms</figDesc>
+					<trash>F y j,j = F x j,j , F y j−1,j = F x j+1,j (4.5) and this implies F = F ( ˆ X · ˆ Y ), i.e</trash>
+
+
+				</figure>
+
+				<p>. the dependence assumed in the ansatz is specified as on the n + 1 products of the diagonal elements, X 1 , X 2 Y T 2 , . . . , X n Y T n , Y T n+1 .</p>
+
+				<p>The non-diagonal bulk matrix elements in (4.2)result in the conditions</p>
+
+				<figure>
+					<trash>Y −1 T j F y j,j − F y j−1,j X −1 j = Y −1 T i F x i,i − F x i+1,i X −1 i , i, j = 1, n + 1. (4.6)</trash>
+
+
+				</figure>
+
+				<p>We have obtained a multiplicatively formulated difference equation close to a wave equation. Instead of a displacement of the position variable at site i we have its multiplication by q ±1 , and we find solutions corresponding to waves of such multiplicative displacements going forward or backward in the chain.</p>
+
+				<p>In order to find a particular solution we try the ansatz</p>
+
+				<figure>
+					<trash>F + = k↑ f (Z k ), Z k = X k Y T k . Then l.h.s. of (4.6) results in Y −1 T j F y j,j − F y j−1,j X −1 j = j−1 f (qZ k ) f (qZ j ) − f q −1 Z j Z −1 j j+1 f (qZ k ), and this becomes independent of j provided f (qZ j ) − f q −1 Z j Z −1 j = c ′ + f (qZ j ). (4.7) This can be rewritten as f (q −2 Z) = 1 − c ′ + q Z f (Z), i.e. the functional equation for the q-deformed exponential. We set c ′ + = qc + and obtain f + (Z) = e q −2 (c + Z), F + = e q −2 c + X j Y j .</trash>
+
+
+				</figure>
+
+				<p>The multiplication property of the q-exponential [27], e q (V )e q (U ) = e q (U + V ) for U V = qV U allows to write the products in F + in terms of a q-exponential again. The alternative ansatz</p>
+
+				<figure>
+					<trash>F − = k↓ f (Z k ), Z k = X k Y T k D. Karakhanyan and R. Kirschner leads to the condition f (qZ j ) − f q −1 Z j Z −1 j = c ′ − f q −1 Z j (4.8) for the independence of j. We obtain (for c ′ − = −q −1 c − ) f − (Z) = e q 2 (c − Z), F − = e q 2 c − X j Y j .</trash>
+
+
+				</figure>
+
+				<p>The boundary conditions result in a combination of these solutions. The multiplicative form of the defining equations results in a product instead of a sum. Before analysing the boundary we show that indeed the product of the obtained solutions of (4.6) is a solution too. This is true if the chain has one site only,</p>
+
+				<figure>
+					<trash>Z −1 f + (qZ)f − (qZ) − f + q −1 Z f − q −1 Z = Z −1 f + (qZ) − f + q −1 Z f − (qZ) + f + q −1 Z Z f − (qZ) − f − q −1 Z = c ′ + f + (qZ)f − (qZ) + c ′ − f + q −1 Z f − q −1 Z = (c + + c − )f + (qZ)f − q −1 Z .</trash>
+
+
+				</figure>
+
+				<p>In the last step the functional equation of the q-exponentials and c ′ ± = ±q ±1 c ± has been used. The proof for the general case of the chain with many sites can be done relying on the multiplication property of the q-exponential.</p>
+
+			</div>
+			<div>
+				<head n="4.3">Boundary conditions</head>
+
+				<p>We reconsider the equations arising from the diagonal now focussing on the boundary. For i = j = n + 1 and i = j = 1 we have from (</p>
+
+				<figure>
+					<trash>4.2) F y n+1,n+1 − q −2v + F y n,n+1 = q γ d (u + )−γ d (v + ) F x n+1,n+1 − q −2u + F x 1,n+1 , (4.9) q γ d T (u + )−γ d T (v + ) F y 1,1 − q −2u + F y n+1,1 = F x 1,1 − q −2v + F x 2,1 . The relations (4.4) extend to the boundary as ˆ b T 1 ˆ s T 1 = q −1 b 1 ˆ s −1 1 , ˆ b T n+1 s T n+1 = q ˆ b n+1 s −1 n+1 , ˆ b T n+1 s T 1 = q ˆ b 2 ˆ s −1 1 , ˆ b T n ˆ s T n+1 = q −1 b 1 ˆ s −1 n+1 .</trash>
+
+
+				</figure>
+
+				<p>A consistent solution is possible if we specify the dependence of the additional phases as ˜ γ(u) = ˜ γ T (u) = u.</p>
+
+				<p>Then the boundary diagonal equations are fulfilled if</p>
+
+				<figure>
+					<trash>F y 1,1 q u + −v + = F x 1,1 , F y n+1,1 q v + −u + = F x 2,1 , (4.10) F y n+1,n+1 = q u + −v + F x n+1,n+1 , F y n,n+1 = q v + −u + F x 1,n+1 . These sufficient conditions are solved by F = X u + −v + 1 F ′ (Z 2 , . . . , Z n , Z n+1 ), (4.11) Z k = X k Y k X −1 1 , k = 2, . . . , n, Z n+1 = q α Y n+1 X −1 1 .</trash>
+
+
+				</figure>
+
+				<p>This is compatible with the bulk solution to the non-diagonal equations because c ± may depend on the variables referring to the boundary. We can write the non-diagonal equations (i, j)</p>
+
+				<figure>
+					<trash>in (4.2) in the form Y −1 T j q δ j,1 u + F y j,j − q −δ j,1 2(u + −v + ) F y j−1,j q δ j,n+1 v + X −1 j = Y −1 T i q δ i,1 v + F x i,i − q −δ i,n+1 2(u + −v + ) F x i+1,i q δ i,n+1 u + X −1 i . The diagonal equations have been solved by relating F y j,j , F y j−1,j to F x j,j , F x j+1,j as in (4.5), (4.10). This reduces the non-diagonal conditions to Y −1 T j F y j,j − F y j−1,j X −1 j = q u + F y 1,1 − q −2(u + −v + ) F y n+1,1 X −1 1 = Y −1 T n+1 F y n+1,n+1 − F y n,n+1 q v + . (4.12)</trash>
+
+
+				</figure>
+
+				<p>We start now with the ansatz compatible with the bulk conditions (</p>
+
+				<figure>
+					<trash>4.3), (4.6) and with the diagonal boundary conditions (4.9) F = X u + −v + 1 F + (Z ′ )F − (Z ′ ), F ± (Z ′ ) = e q ∓2 (c ± Z ′ ), Z ′ = n+1 2 Z k . (4.13)</trash>
+
+
+				</figure>
+
+				<p>The first factor takes care of the diagonal boundary relations but is not relevant in the following. We shall see that the product form with specific constants c ± results only from the relation involving j = 1. First we check that the specification of the argument Z k in (4.11) does not invaliditate the condition of independence of j of the first expression in (</p>
+
+				<figure>
+					<trash>4.12) Y −1 T j F y ±j,j − F y ±j−1,j X −1 j = c ′ ± F ± q ±1 Z X −1 1 q.</trash>
+
+
+				</figure>
+
+				<p>The relation involving j = n + 1 is obeyed by F ± separately and also by the product; it fixes just α in (4.11) because the difference equation for the factor f ± (Z n+1 ) is modified to</p>
+
+				<figure>
+					<trash>q v + +α Z −1 f ± (qZ) − f ± q −1 Z = c ′ ± qf ± q ±1 Z</trash>
+
+
+				</figure>
+
+				<p>and for α = −v + + 1 the difference to the corresponding equations for j = 2, . . . , n (4.7), (4.8) disappears. Notice that b T 1 s T 1 = diag(1, q −1 , . . . , q −1 ) and b T,n+1 s T 1 = diag(1, q, . . . , q).</p>
+
+				<figure>
+					<trash>The condition involving j = 1 is q v + q u + −v + F + q −1 Z ′ F − q −1 Z ′ − q v + −u + F + (qZ ′ )F − (Z ′ ) = (c ′ + + c ′ − )qF + (qZ ′ )F − q −1 Z ′ . It is solved by fixing c ′ ± in (4.13) by the following conditions q u + −v + c ′ + − q v + −u + c ′ − = 0, λ[u − v]q v + = (c ′ + + c ′ − )q.</trash>
+
+
+				</figure>
+
+				<p>This leads to the result for the operator interchanging the parameters u + , v + in the product of two Jordan–Schwinger Lax matrices as formulated in the proposition (Z = q v + −1 Z ′ ), completing the proof.</p>
+
+			</div>
+			<div>
+				<head n="5">Intertwiners</head>
+
+				<p>The formulation of the iterative construction of a generic Lax matrix from Jordan–Schwinger ones takes to introduce canonical pairs x i,k , ∂ i,k , i = 1, . . . , k+1, k = 1, . . . , n. The corresponding generators and Lax matrices will be denoted by superscript k, being constructed from the canonical pairs x i,k 1 , ∂ i,k 1 , k 1 ≤ k as above. The Lax matrix representing gℓ q (n + 1) is obtained in terms of the one of gℓ q (n) as [u − 1]L</p>
+
+				<figure>
+					<trash>(n) (u) = L JS,n (u)L n−1′ (u − 1), (5.1)</trash>
+
+
+				</figure>
+
+				<p>D. Karakhanyan and R. Kirschner where the first factor is the gℓ q (n + 1) Jordan–Schwinger Lax matrix (n + 1) × (n + 1) and the second factor is calculated in terms of the Lax matrix L (n−1) of gℓ q (n) as</p>
+
+				<figure>
+					<trash>L n−1′ (u) = L (n−1) αβ (v)ˆ e αβ + q −u A (n−1) α ˆ e n+1,α + [u]</trash>
+
+
+				</figure>
+
+				<p>ˆ e n+1n+1 , α, β, γ = 1, . . . , n,</p>
+
+				<figure>
+					<trash>(5.2) A (n−1) α = − n γ=1 L (n−1) γα (0)X γ,n .</trash>
+
+
+				</figure>
+
+				<p>At each iteration step one representation parameter enters by imposing the representation constraint (3.6). This involves to change the coordinates to their ratio x i,k → x ′ i,k =</p>
+
+				<figure>
+					<trash>x i,k x k+1,k and to eliminate N (k) k+1 in favour of k+1 1 N (k) s = ℓ k+1 . We use the notation N (k) i</trash>
+
+
+				</figure>
+
+				<p>= x i,k ∂ i,k . The parameter ℓ n+1 does not enter the second factor in (5.1).</p>
+
+				<p>In this way the result depends besides of the spectral parameter on the representation parameters ℓ 1 , . . . , ℓ n+1 and we write L (n )(ℓ 1 , . . . , ℓ n+1 |u).</p>
+
+				<p>We shall construct intertwiners W m , m = 1, . . . , n acting as W m L (n) (ℓ 1 , . . . , ℓ m , ℓ m+1 , . . . ℓ n+1 |u) = L (n) (ℓ 1 , . . . , ℓ m+1 , ℓ m , . . . ℓ n+1 |u)W m . (5.3) For n = 1 the complete Lax operator is obtained from (5.1), (5.2) with the trivial 1 × 1 matrix L (0) (ℓ 1 |u) = [u + ℓ 1 ] L</p>
+
+				<figure>
+					<trash>(1) (ℓ 1 , ℓ 2 |u) =   [u + E (1) 11 ] q u+ 1 2 (E (1) 11 +E (1) 22 −1) E (1) 21 q −u− 1 2 (E (1) 11 +E (1) 22 −1) E (1) 12 [u + E (1) 22 ]   . We have D 1 = E (1) 21 = 1 x 1,1 N (1) 1 , N (1) 1 ≡ x 1,1 ∂ 1,1 and the remaining gℓ q (2) generators are given by E (1) 11 = ℓ 1 + N (1) 1 , E (1) 12 = x 1,1 ℓ 2 − ℓ 1 − N (1) 1 , E (1) 22 = ℓ 2 − N (1) 1 . Then we check easily D 1 L (1) αβ (ℓ 1 , ℓ 2 |u) = L (1) αβ (ℓ 1 + 1, ℓ 2 − 1|u)D 1 + [ℓ 2 − ℓ 1 ]δ 2 α δ 1 β q −u− 1 2 (ℓ 1 +ℓ 2 −1) , (5.4) and further D n 1 L (1) αβ (ℓ 1 , ℓ 2 |u) = L (1) αβ (ℓ 1 + n, ℓ 2 − n|u)D n 1 + [n][ℓ 2 − ℓ 1 + 1 − n]δ 2 α δ 1 β q −u− 1 2 E (1) 11 +E (1) 22 −1 , from which one deduces that W 1 = D ℓ 2 −ℓ 1 +1 1</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>.</head>
+
+				<p>Passing to the gℓ q (3) Lax matrix L (2) according to (5.1) one sees that the same operator W 1 = D ℓ 2 −ℓ 1 +1 1 intertwines the representation parameters ℓ 1 , ℓ 2 there. Taking into account that the first factor in (5.1) commutes with D 1 and does not depend on ℓ 1 and ℓ 2 , while the second factor obeys (5.4) one concludes that (5.4) becomes:</p>
+
+				<figure>
+					<trash>D 1 L (2) αβ (ℓ 1 , ℓ 2 , ℓ 3 |u) = L (2) αβ (ℓ 1 + 1, ℓ 2 − 1, ℓ 3 |u)D 1 + [ℓ 2 − ℓ 1 ] q q −u− 1 2 (E (2) 11 +E (2) 22 −1) δ 2 α δ 1 β − q −u− 1 2 (E (2) 11 +E (2) 33 −1) δ 3 α δ 1 β x 23 q E (2) 33 −E (1) 22 , here E (2)</trash>
+
+
+				</figure>
+
+				<p>αβ stand for the gℓ q (3) generators and the intertwining operator is again given by D</p>
+
+				<figure>
+					<trash>ℓ 2 −ℓ 1 +1 1</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>.</head>
+
+				<p>The analogous relation in gℓ q (4) case looks like:</p>
+
+				<figure>
+					<trash>D 1 L (3) αβ (ℓ 1 , ℓ 2 , ℓ 3 , ℓ 4 |u) = L (3) αβ (ℓ 1 + 1, ℓ 2 − 1, ℓ 3 , ℓ 4 |u)D 1 + + [ℓ 2 − ℓ 1 ] q q −u− 1 2 (E (3) 11 +E (3) 22 −1) δ 2 α δ 1 β − q −u− 1 2 (E (3) 11 +E (3) 33 −1) δ 3 α δ 1 β x 2,2 q E (2) 33 −E (1) 22 + (q 2 − 1) x 2,3 x 3,3 N (3) 3 − q −u− 1 2 (E (3) 11 +E (3) 44 −1) δ 4 α δ 1 β x 2,3 q E (3) 44 −E (2) 22 −N (3) 3 +1 − x 2,2 x 3,3 q E (3) 44 −E (1) 22 +1 , E (3)</trash>
+
+
+				</figure>
+
+				<p>αβ stand for generators of gℓ q (4). This means that by recurrent construction the gℓ q (n + 1) Lax matrix inherits the ℓ 1 and ℓ 2 intertwining operator form the gℓ q (2) case for any n &gt; 2. Indeed, because Jordan–Schwinger Lax matrix commutes with D 1 while the second matrix multiplier in (5.1) produces inhomogeneous terms upon commutation with D 1 only in the first column. D 1 does not commute only with A</p>
+
+				<figure>
+					<trash>(n) 1 .</trash>
+
+
+				</figure>
+
+				<p>Then the matrix multiplication rule tells that inhomogeneous terms can appear only in first column of complete Lax operator and this proves the assertion. We pass now to the operator D 2 intertwining ℓ 2 and ℓ 3</p>
+
+				<figure>
+					<trash>D 2 = 1 x 2,2 N (2) 2 q N (2) 1 −N (1) 1 + x 1,1 x 1,2 N (2) 1</trash>
+
+					<figDesc>.</figDesc>
+
+				</figure>
+
+				<p>One finds that the wanted homogeneous transformation rule:</p>
+
+				<figure>
+					<trash>D 2 L αβ (ℓ 1 , ℓ 2 , ℓ 3 |u) = L αβ (ℓ 1 , ℓ 2 + 1, ℓ 3 − 1|u)D 2 , (5.5) in gℓ q (3</trash>
+
+
+				</figure>
+
+				<p>) case is violated in two matrix elements of the Lax operator, L 32 and L 31 , by appearance in the r.h.s. of (5.5) of inhomogeneous terms [ℓ 3</p>
+
+				<figure>
+					<trash>− ℓ 2 ]q u− 1 2 (E (2) 22 +E (2) 33 −1) and x 1,1 [ℓ 3 − ℓ 2 ]q u− 1 2 (E (2) 22 +E (2) 33 +N (2) 1 −N (2) 2 −1) , correspondingly. The next intertwining operator is calculated from D 3 = q N (3) 1 +N (3) 2 −N (2) 1 −N (2) 2 1 x 3,3 N (3) 3 + q N (3) 1 −N (2) 1 x 2,2 x 2,3 N (3) 2 + x 1,2 x 1,3 N (3) 1</trash>
+
+					<figDesc>.</figDesc>
+
+				</figure>
+
+				<p>The considered examples lead us to the</p>
+
+				<figure>
+					<head>Proposition 3.</head>
+
+					<figDesc>The intertwining operator W m def ined by (5.3) can be constructed as</figDesc>
+					<trash>W m = D ℓ m+1 −ℓm+1 m , where D m = x 1,m−1 x 1,m N (m) 1 + q N (m) 1 −N (m−1) 1 x 2,m−1 x 2,m N (m) 2 + q N (m) 1 −N (m−1) 1 +N (m) 2 −N (m−1) 2 x 3,m−1 x 3,m N (m) 3 + · · · + q m−2 k=1 (N (m) k −N (m−1) k ) x m−1,m−1 x m−1,m N (m) m−1 + q m−1 k=1 (N (m) k −N (m−1) k ) 1 x m,m N (m) m . (5.6)</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>Proof .</head>
+
+				<p>We start the proof with the case m = n and check first the intertwining relation in the undeformed case q → 1, where D n | q=1 = ∂ n,n + x n−1,n−1 ∂ n−1,n + · · · + x 1,n−1 ∂ 1n .</p>
+
+				<p>The ansatz for q = 1 is obtained by substituting the derivatives as ∂ i,n → x −1 i,n [N (n) i ] and including a factor q α i in each term. α i are then determined to result in (5.6) by demanding that</p>
+
+				<figure>
+					<trash>D n L (n) αβ (ℓ 1 , ℓ 2 , . . . , ℓ n , ℓ n+1 |u) = L (n) αβ (ℓ 1 , ℓ 2 , . . . , ℓ n + 1</trash>
+
+
+				</figure>
+
+				<p>, ℓ n+1 − 1|u)D n + · · · , where the dots stands for the contribution to the single matrix element L n+1,n , for which the r.h.s. contains the additional inhomogeneous term [ℓ n+1 − ℓ n ]q</p>
+
+				<figure>
+					<trash>−u− 1 2 (E (n) nn +E (n) n+1n+1 −1) . This remainder disappears in the corresponding relation for W n = D ℓ n+1 −ℓn+1 n</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>.</head>
+
+				<p>Note that the canonical pairs with k &lt; n − 1 are passive in this step.</p>
+
+				<p>In the case m &lt; n similar remainders appear in the commutation relation of D m with L (n) in the matrix elements L ij , 1 ≤ j ≤ m, m + 1 ≤ i ≤ n + 1. It is sufficient to consider i = m + 1, j = m and check the vanishing of these remainders for the commutation with W m .</p>
+
+				<p>The commutation with other matrix elements does not result in more conditions because the corresponding generators E ij , 1 ≤ i ≤ k, k + 1 ≤ j ≤ n + 1 are obtained from E k+1,k by (2.1).</p>
+
+				<p>In this way W m interchanges the representation labels ℓ m , ℓ m+1 not only in L (m) but in all Lax matrices L (n) , n ≥ m, proving the assertion.</p>
+
+			</div>
+			<div>
+				<head n="6">Discussion</head>
+
+				<p>The intertwining operators W i and the parameter exchange operator F can be used to obtain the generic Yang–Baxter R operator in a factorised form. This provides a convenient approach because the defining conditions for these factors are much simpler compared to the one for R. It is instructive to compare with the treatment of the rational (q = 1) case [22] in detail, although the reduction to Jordan–Schwinger representations was not used there. In both cases the Lax matrices are factorised to separate coordinate from shift operators. In our case we are lead to modified coordinate operators with q-deformed commutation relations. The intertwiners are given by powers of operators, where the powers are determined from the representation labels in the same way. How the operators appearing in the q = 1 case are deformed is clearly seen in Proposition 3. In the rational case the exchange operator appears as a power calculated from representation labels of a coordinate difference expression. The expression involving the q-exponential is the appropriate deformation for the restricted case of Jordan–Schwinger representations. The representation spaces can be spanned on polynomial functions of x ′ i,k , on which the above canonical pairs of operators act by multiplication or differentiation, the constant function representing the lowest weight vector of a generic representation. This polynomial representation works for the algebra elements and also for the complete R operator. However the action of the W i , F as constructed above lead from polynomials to branched functions, i.e. to quite different realisations of the algebra representations. This may be regarded as less important as long as the latter appear merely as construction elements of R, but requires more investigation in general.</p>
+
+				<p>We observe similarities in the result for F and W i . Both are expressed in terms of the set canonical pairs of two Jordan–Schwinger representations. It should be possible to relate both expressions by transformations of these canonical pairs. We have obtained construction elements needed for the treatment of integrable systems defined by a generalised Heisenberg spin chain with the ordinary spin replaced by generic representations of sℓ q (n + 1).</p>
+
+			</div>
+
+			<note place="foot">⋆ This paper is a contribution to the Proceedings of the XVIIIth International Colloquium on Integrable Systems and Quantum Symmetries (June 18–20, 2009, Prague, Czech Republic). The full collection is available at http://www.emis.de/journals/SIGMA/ISQS2009.html</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+				<head>Acknowledgements</head>
+				<p>We are grateful to S.E. Derkachov and P. Valinevich for joint work and useful discussions. The work has been supported in part by Deutsche Forschungsgemeinschaft (KI 623/6-1).</p>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">An extension of the Borel–Weil construction to the quantum group Uq(n)</title>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">C</forename>
+				<surname>Biedenharn</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">A</forename>
+				<surname>Lohe</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comm. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">146</biblScope>
+			<biblScope unit="page" from="483" to="504" />
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<title level="m" type="main">Quantum group symmetry and q-tensor algebras</title>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">C</forename>
+				<surname>Biedenharn</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">A</forename>
+				<surname>Lohe</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1995" />
+			<publisher>World Scientific Publishing Co., Inc</publisher>
+			<pubPlace>River Edge, NJ</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Unitary representations of the classical groups</title>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">M</forename>
+				<surname>Gelfand</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">A</forename>
+				<surname>Naimark</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Trudy Math. Inst. Steklov. Izdat. Nauk SSSR</title>
+		<imprint>
+			<publisher>German transl Akademie Verlag</publisher>
+			<biblScope unit="volume">36</biblScope>
+			<date type="published" when="1950" />
+			<publisher>German transl Akademie Verlag</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Borel</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Weil</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Representations lineaires et espaces homogenes Kä des groupes de Lie compactes</title>
+		<meeting><address><addrLine>Sem. Bourbaki</addrLine></address></meeting>
+		<imprint>
+			<publisher>Serre</publisher>
+			<date type="published" when="1954-03" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Iterative construction of Uq(sl(n + 1)) representations and Lax matrix factorisation</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">E</forename>
+				<surname>Derkachov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">R</forename>
+				<surname>Karakhanyan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Kirschner</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Valinevich</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lett. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">85</biblScope>
+			<biblScope unit="page" from="221" to="234" />
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Quantum groups and Yang–Baxter equations, Sov</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">P</forename>
+				<surname>Isaev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Part. Nucl</title>
+		<imprint>
+			<publisher>Preprint</publisher>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page" from="501" to="525" />
+			<date type="published" when="1995" />
+			<publisher>Preprint</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Universal R-matrix for quantized (super)algebras</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">M</forename>
+				<surname>Khoroshkin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">N</forename>
+				<surname>Tolstoy</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comm. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">141</biblScope>
+			<biblScope unit="page" from="599" to="617" />
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Generalized chiral Potts model and minimal cyclic representations of Uq( gl</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Date</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Jimbo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Miki</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Miwa</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comm. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">137</biblScope>
+			<biblScope unit="page" from="133" to="147" />
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">V</forename>
+				<surname>Bazhanov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">M</forename>
+				<surname>Kashaev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">V</forename>
+				<surname>Mangazeev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Stroganov</forename>
+				<forename type="middle">G</forename>
+				<surname>Yu</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">ZN ×) n−1 generalization of the chiral Potts model</title>
+		<imprint>
+			<date type="published" when="1991" />
+			<biblScope unit="page" from="393" to="408" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">On the construction of trigonometric solutions of the Yang–Baxter equation</title>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">W</forename>
+				<surname>Delius</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">D</forename>
+				<surname>Gould</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<forename type="middle">Z</forename>
+				<surname>Zhang</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nuclear Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">4329405030</biblScope>
+			<biblScope unit="page" from="377" to="403" />
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Chiral Potts model as a descendant of the six-vertex model</title>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">V</forename>
+				<surname>Bazhanov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Stroganov</forename>
+				<forename type="middle">G</forename>
+				<surname>Yu</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Statist. Phys</title>
+		<imprint>
+			<biblScope unit="page" from="59" to="799" />
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Algebraic derivation of the broken ZN symmetric model</title>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Hasegawa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Yamada</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. A</title>
+		<imprint>
+			<biblScope unit="volume">146</biblScope>
+			<biblScope unit="page" from="387" to="396" />
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Cyclic monodromy matrices for the R-matrix of the six-vertex model and the chiral Potts model with fixed spin boundary conditions, in Infinite Analysis</title>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">O</forename>
+				<surname>Tarasov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Ser. Math. Phys</title>
+		<imprint>
+			<publisher>World Sci. Publ., River Edge, NJ</publisher>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page" from="963" to="975" />
+			<date type="published" when="1991" />
+			<publisher>World Sci. Publ., River Edge, NJ</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">New relations in the algebra of the Baxter Q-operators</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">A</forename>
+				<surname>Belavin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">V</forename>
+				<surname>Odesskii</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">A</forename>
+				<surname>Usmanov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Theoret. and Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">130</biblScope>
+			<biblScope unit="page" from="323" to="350" />
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Yang–Baxter equation for the sl(n) chiral Potts model</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">M</forename>
+				<surname>Kashaev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">V</forename>
+				<surname>Mangazeev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Nakanishi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nuclear Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">362</biblScope>
+			<biblScope unit="page" from="563" to="582" />
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Cyclic monodromy matrices for sl(n) trigonometric R-matrices</title>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Tarasov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comm. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">158</biblScope>
+			<biblScope unit="page" from="459" to="483" />
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">High energy asymptotics of multi-color QCD and exactly solvable lattice models</title>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">N</forename>
+				<surname>Lipatov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JETP Lett</title>
+		<imprint>
+			<biblScope unit="volume">59</biblScope>
+			<biblScope unit="page" from="596" to="599" />
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Integrability of three-particle evolution equations in QCD</title>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">M</forename>
+				<surname>Braun</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">E</forename>
+				<surname>Derkachov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">N</forename>
+				<surname>Manashov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="page" from="2020" to="2023" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Universal R operator with deformed conformal symmetry</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Karakhanyan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Kirschner</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Mirumyan</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nuclear Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">636</biblScope>
+			<biblScope unit="page" from="529" to="548" />
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Factorization of R-matrix and Baxter&apos;s Q-operator, Zap. Nauchn. Sem. S.-Peterburg</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">E</forename>
+				<surname>Derkachov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Otdel. Mat. Inst. Steklov. (POMI) J. Math. Sci. (N.Y.)</title>
+		<imprint>
+			<biblScope unit="volume">335</biblScope>
+			<biblScope unit="issue">151</biblScope>
+			<biblScope unit="page" from="144" to="166" />
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+	<note>English. transl. math. .QA/0507252</note>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Q-operators of the XXZ chain and R-matrix factori- zation</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Derkachov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Karakhanyan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Kirschner</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Baxter</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nuclear Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">738</biblScope>
+			<biblScope unit="page" from="368" to="390" />
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Derkachov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Karakhanyan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Kirschner</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">–</forename>
+				<surname>Yang</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R-Operators</forename>
+				<surname>Baxter</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Parameter</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nuclear Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">785</biblScope>
+			<biblScope unit="page" from="263" to="285" />
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Karakhanyan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Kirschner</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">E</forename>
+				<surname>Derkachov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">N</forename>
+				<surname>Manashov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Q-Operators</forename>
+				<surname>Baxter</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>The</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Sl ( N</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2006" />
+			<publisher>SI</publisher>
+			<biblScope unit="page" from="084" to="20" />
+			<pubPlace>SIGMA</pubPlace>
+		</imprint>
+	</monogr>
+	<note>invariant. spin chain</note>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Factorization of the R-matrix for the quantum algebra slq(3)</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">A</forename>
+				<surname>Valinevich</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">E</forename>
+				<surname>Derkachov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Karakhanyan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Kirschner</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Zap. Nauchn. Sem. S.-Peterburg. Otdel. Mat. Inst. Steklov. (POMI)</title>
+		<imprint>
+			<biblScope unit="volume">335</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<surname>English</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Math. Sci. (N.Y.)</title>
+		<imprint>
+			<biblScope unit="volume">151</biblScope>
+			<biblScope unit="page" from="2848" to="2858" />
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Der Zusammenhang der symmetrischen und linearen Gruppen und das Mehrkö</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Jordan</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Z. Phys</title>
+		<imprint>
+			<biblScope unit="volume">94</biblScope>
+			<biblScope unit="page" from="531" to="535" />
+			<date type="published" when="1935" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Quantum mechanics of angular momentum. A collection of reprints and original papers</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Schwinger</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">C. Biedenharn and H. van Dam</title>
+		<imprint>
+			<publisher>Academic Press</publisher>
+			<date type="published" when="1965" />
+			<publisher>Academic Press</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">A q-difference analog of U (g) and the Yang–Baxter equation</title>
+		<author>
+			<persName>
+				<forename type="first">Jimbo</forename>
+				<forename type="middle">M</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lett. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="63" to="69" />
+			<date type="published" when="1985" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="m">Hecke algebra, and the Yang–Baxter equation</title>
+		<editor>Jimbo M., A q-analogue of U (gl(N + 1</editor>
+		<imprint>
+			<date type="published" when="1986" />
+			<biblScope unit="page" from="247" to="252" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">D</forename>
+				<surname>Faddeev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">M</forename>
+				<surname>Kashaev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Quantum</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Modern Phys. Lett. A</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="427" to="434" />
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">N</forename>
+				<surname>Kirillov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Dilogarithm identities</title>
+		<imprint>
+			<date type="published" when="1995" />
+			<biblScope unit="page" from="61" to="142" />
+		</imprint>
+	</monogr>
+	<note>Suppl. .</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

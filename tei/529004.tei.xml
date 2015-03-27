@@ -1,0 +1,1950 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">RIEMANNIAN GEOMETRY OF QUANTUM GROUPS AND FINITE GROUPS WITH NONUNIVERSAL DIFFERENTIALS</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2001-09-11">11 Sep 2001 May 2000 – revised August 2001</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Shahn</forename>
+								<surname>Majid</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">School of Mathematical Sciences</orgName>
+								<orgName type="institution" key="instit1">Queen Mary</orgName>
+								<orgName type="institution" key="instit2">University of London</orgName>
+								<address>
+									<addrLine>Mile End Rd</addrLine>
+									<postCode>E1 4NS</postCode>
+									<settlement>London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">RIEMANNIAN GEOMETRY OF QUANTUM GROUPS AND FINITE GROUPS WITH NONUNIVERSAL DIFFERENTIALS</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2001-09-11">11 Sep 2001 May 2000 – revised August 2001</date>
+						</imprint>
+					</monogr>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>We construct noncommutative &apos;Riemannian manifold&apos; structures on dual quasitriangular Hopf algebras such as C q [SU 2 ] with its standard bicovariant differential calculus, using the quantum frame bundle approach introduced previously. The metric is provided by the braided-Killing form on the braided-Lie algebra on the tangent space and the n-bein by the Maurer-Cartan form. We also apply the theory to finite sets and in particular to finite group function algebras C[G] with differential calculi and Killing forms determined by a conjugacy class. The case of the permutation group C[S 3 ] is worked out in full detail and a unique torsion free and cotorsion free or &apos;Levi-Civita&apos; connection is obtained with noncommutative Ricci curvature essentially proportional to the metric (an Einstein space). We also construct Dirac operators D / in the metric background, including on finite groups such as S 3. In the process we clarify the construction of connections from gauge fields with nonuniversal calculi on quantum principal bundles of tensor product form.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>Noncommutative geometry has been proposed for many years as a natural generalisation of geometry to include quantum effects. Particularly important should be &apos;Riemannian&apos; geometry and moreover (in our opinion) quantum groups or Hopf algebras should play a central role[1] just as Lie groups do in the classical case. With such motivation, a systematic formalism of a quantum groups-based approach to &apos;quantum manifolds&apos; and &apos;quantum Riemannian manifolds&apos; on (possibly noncommutative) algebras was already introduced a few years ago in [2]. We used the notion of quantum principal bundles (with quantum group fibre) and connections in [3], to define &apos;frame bundle&apos;, &apos;spin connection&apos;, &apos;vielbeins&apos; etc. The paper studied both the classical limit and at the other extreme with the universal differential calculus (which is formally defined on any algebra). We now follow up [2] with a detailed application of this formalism to uncover a rich noncommutative Riemannian geometry both of quantum groups and finite groups equipped with general differential structures. That q-deformation quantum groups should have a rich but q-deformed Riemannian geometry is hardly surprising but that we can encode it, proving as we do in Section 4 that all standard q-deformations of simple Lie groups are quantum Riemannian manifolds is a good test of our theory. More surprising perhaps is that finite groups have as equally rich a Riemannian geometry as Lie groups. It is well known that their bicovariant differential structures are defined by conjugacy classes (this is immediate from [4]), but we now take this much further in Section 5 to a braided-Lie algebra of invariant vector fields,</p>
+
+				<p>Civita spin connections, Ricci tensor etc. fully analogous to the Lie case. The formulation of Ricci tensors also make clear that we are in a position now to do gravitational physics in this noncommutative setting. In the finite group case functional integration over moduli spaces of metrics, etc., becomes finite-dimensional integration. In contrast to lattice approximation the finite spacing is not an &apos;error&apos; but simply a noncommutative modification of the geometry which remains exact and hence valid even for a finite number of points. Meanwhile in the q-deformed case infinities can be expected to be at least partly regularised as poles at q = 1. It may also be[6] that spin-network quantum gravity in the presence of a cosmological constant should lead specifically to a q-deformation of conventional Riemannian geometry. Another application of Hopf algebras to Planck scale physics is the observable-state duality introduced in[1] and this has been related recently to T-duality in σ-models on groups[7]. Also, the first systematic predictions for astronomical data (for gamma-rays of cosmological origin) coming out of models with noncommutative spacetime coordinates have emerged[8] with measurable effects even if the noncommutativity is of Planck scale order. In another direction, noncommutative tori such as studied by Connes, Rieffel and others have emerged as relevant to string theory[9]. Although we will not attempt such applications here, we do put on the table a general approach to such models that can be fully computed and which is (as we show) adequate to include the rich geometry of quantum groups and finite groups as basic building blocks, while in now way limited to them.</p>
+
+				<p>From a mathematical point of view our constructive &apos;bottom up&apos; approach, in which we build up the layers of geometry more or less up to (in the present paper) the construction of Dirac operators, provides a useful complement to the powerful &apos;top down&apos; approach of Connes[5], in particular, coming out of K-theory and cyclic cohomology. There one starts with a spectral triple or &apos;axiomatic Dirac operator&apos; on an algebra as implicitly defining the noncommutative geometry.</p>
+
+				<p>It appears that reconciling these two approaches should be rather important to a full development of both and this provides a second motivation for the work. Section 5 contains, for example, a first result comparing the constructive approach with the Connes approach in the case of Dirac operators built up on finite groups. A physical application of such an understanding would be in the Connes-Lott approach to the standard model[10] where a discrete Dirac operator encodes the fermion mass matrix. A geometrical way to build up such a D / would translate directly into a prediction for this. A first step in this direction is in [11].</p>
+
+				<p>An outline of the paper is the following. We recall briefly in Section 2 the global theory from [2], with general differential calculi on the base M , fibre H and &apos;total space&apos; algebra P of the (frame) bundle. The new results begin in Section 3 where we specialise to the &apos;local&apos; theory (the parallelizable case) where P = M ⊗ H. Most of the work in this section goes into constructing a suitable nonuniversal differential structure Ω(P ) and showing that local data such as V -bein and &apos;gauge field&apos; indeed provide a global bundle with soldering form and global connection.</p>
+
+				<p>This situation is unusual in that the global theory is known but until now the trivial bundle theory has not been constructed as a case of this (other than with the universal differential structure). What we achieve in this way is a theory that works at the level of a general algebra M equipped with a suitable parallelizable differential structure and associated framing, which is roughly the level of generality that we are used to in quantum theory by the time one has added * -structures and Hilbert spaces (we do not do this here since we have enough to do at the algebraic level). It is therefore also the level of generality appropriate to a definitive &apos;quantum</p>
+
+				<p>Riemannian geometry&apos;. Note that a quantum group here is not an essential input and one could in principle use a more general &apos;coalgebra bundle&apos;[12]. The quantum-mechanical meaning of coalgebra bundles is discussed in [13], which also announces the present results.</p>
+
+				<p>In Section 4 we apply this theory to the case where the base M is itself a quantum group. The main result is the construction of Riemannian metrics for general differential calculi from Adinvariant bilinear forms on the underlying braided-Lie algebra[14], which we apply to standard quantum groups such as C q [SU 2 ]. For completeness also consider the other extreme of usual enveloping algebras U (g) as noncommutative &apos;flat&apos; spacetimes.</p>
+
+				<p>Finally in Section 5 we specialise our theory to finite sets and, in particular, to finite groups.</p>
+
+				<p>The main results are in Section 5.3 where we compute everything for the concrete example of the permutation group S 3 with its order 3 conjugacy class. We are able to explicitly solve the torsion-free and metric-compatibility (or &apos;cotorsion-free&apos;) equations for the &apos;braided Killing form&apos; metric and obtain a unique &apos;Levi-Civita&apos; spin connection. We also compute the Ricci tensor and find that S 3 is essentially an Einstein space, and we compute the natural Dirac operator. The contribution of the gravitational spin connection to this is absolutely essential for a charge conjugation operator or symmetric distribution of eigenvalues about zero and we consider this a good test of the consistency of our constructive approach. Let us note that following [2] there have been one or two other constructive attempts at noncommutative Riemannian geometry for finite sets and finite groups, see e.g[16][15]. The first of these (as well as some earlier works on &apos;Levi-Civita connections&apos; on q-deformed quantum groups and homogeneous spaces, such as [17]) takes a linear connection ∇ point of view and not a frame bundle and spin connection one (which is essential for us arrive at a Dirac operator constructively). Meanwhile [15], while speaking of &apos;vielbeins&apos; and &apos;spin connections&apos; does not actually provide any form of &apos;metric compatibility&apos; between them and hence cannot be considered as a theory of gravity at all. Moreover, there is not any actual noncommutative geometry of the calculus order by order. Thus Ω 1 (M ) has a maximal prolongation by Leibniz and d 2 = 0, and Ω 2 (M ) can then be specified as a quotient of the degree 2 part of that, etc.</p>
+
+				<p>In the case of a Hopf algebra H one can construct[4] the bicovariant Ω 1 (H) equivalently in terms of crossed modules Ω 0 ∈ M H H where H acts and coacts on Ω 0 from the right in a compatible manner. Then Ω 1 (H) = H ⊗ Ω 0 with the tensor product (co)action from the right and the regular (co)action of H from the left via its (co)product. The universal calculus in this case corresponds to Ω 0 = ker ǫ and a general calculus is a a quotient of this by a right ideal Q H which is invariant under the right adjoint coaction. Equally well we can write Ω 1 (H) = ¯ Ω 0 ⊗ H where ¯ Ω 0 ∈ H H M etc. There is a canonical higher order exterior algebra characterised by d 2 = 0 and the additional relations defined by quotienting by the kernel of id −</p>
+
+				<figure>
+					<trash>Ψ, where Ψ(v ⊗ H w) = w ⊗ H v, v ∈ Ω 0 , w ∈ ¯ Ω 0 . (1)</trash>
+
+
+				</figure>
+
+				<p>A quantum principal bundle[3] over an algebra M with universal calculus is (P, H, ∆ R ) where P is an algebra, H a Hopf algebra, ∆ R : P → P ⊗ H a right coaction and algebra map, with</p>
+
+				<figure>
+					<trash>M = P H = {p ∈ P | ∆ R (p) = p ⊗ 1} ⊂ P (2) and P is flat as an M -bimodule, and the sequence 0 → P (Ω 1 M )P → Ω 1 P ver −→P ⊗ ker ǫ (3)</trash>
+
+
+				</figure>
+
+				<p>is exact, where ver(p ⊗ p ′ ) = p∆ R (p ′ ). This is equivalent to a &apos;Hopf-Galois&apos; extension in the theory of Hopf algebras, e.g. [19], while arising in this &apos;differential&apos; form in [3].</p>
+
+				<p>For a general calculus Ω 1 (M ), a bundle means (P, H, ∆ R ) as before and also a choice of calculus Ω 1 (P ) and Ω 1 (H) with the former is right-covariant in the sense ∆ R N P ⊂ N P ⊗ H and</p>
+
+				<figure>
+					<trash>N M = N P ∩ Ω 1 M ⊂ Ω 1 P, ver(N P ) = P ⊗ Q H . (4) The first condition here states that we recover Ω 1 (M ) = {md P n| m, n ∈ M } ⊂ Ω 1 (P ) (5) as a restriction, while the second ensures exactness 0 → P Ω 1 (M )P → Ω 1 (P ) ver N P −→ P ⊗ Ω 0 (6)</trash>
+
+
+				</figure>
+
+				<p>by the induced map ver N P . This is equivalent to the formulation in [3], as explained in [20]</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="2">Framings and Riemannian geometry with nonuniversal calculi</head>
+
+				<p>Here we briefly recall from [2] how the basic definitions of quantum group gauge theory can be extended to frame bundles, torsion, metric etc., with new emphasis on the case of general differential calculus that will concerns us. This is the noncommutative geometrical picture used in the paper. First of all, if V is a right H-comodule we define</p>
+
+				<figure>
+					<trash>E = (P ⊗ V ) H , E * = hom H (V, P ) (7)</trash>
+
+
+				</figure>
+
+				<p>to be &apos;associated&apos; bundles. They are dual in the sense that composition and multiplication in P gives a pairing E ⊗ M E * → M of M -bimodules (or every element of E * induces a left M -module map E → M ). This is the same as for the universal calculus. We further assume natural flatness properties so that (P Ω 1 (M )) H = Ω 1 (M ) etc. We will see these in detail for tensor bundles.</p>
+
+				<figure>
+					<trash>Definition 2.1 A frame resolution of (M, Ω 1 (M )) is a quantum bundle (P, H, ∆ R , Ω 1 (P ), Ω 1 (H))</trash>
+
+
+				</figure>
+
+				<p>over it as above, a right H-comodule V and an equivariant θ : V → P Ω 1 (M ) such that the induced left M -module map by applying θ and multiplying in P is an isomorphism s θ : E ∼ =Ω 1 (M ).</p>
+
+				<p>This expresses the cotangent bundle as an associated bundle to a principal bundle, which is the role of framing. The choice of H is far from unique, however, and need not be any kind of analogue of GL n . Once framed, vector fields are Ω −1 (M ) ∼ =E * and similarly for their powers.</p>
+
+				<p>We call this also a &apos;framing isomorphism&apos; induced by θ. We then define a quantum metric as an isomorphism E ∼ =E * , i.e. we require nondegeneracy but do not necessarily impose any symmetry (which would be unnatural in the noncommutative theory). When V is finite-dimensional note that V * is a left H-comodule automatically and we can view E * as given by the same construction as for E but with a left-right reversal and V replaced by V * . We define ¯ H = H op (with the opposite product) and ¯ P = P as an algebra but with the left coaction</p>
+
+				<figure>
+					<trash>∆ L p ≡ p ¯ (0) ⊗ p ¯ (1) = S −1 p ¯ (2) ⊗ p ¯ (1) (8)</trash>
+
+
+				</figure>
+
+				<p>in terms of the original right coaction. Then we have a left-handed bundle and a metric is equivalent to a coframing with this bundle and V * , θ * : V * → Ω 1 (M )P giving an isomorphism E * ∼ =Ω 1 (M ) as right M -modules. This is the &apos;self-dual&apos; generalisation of Riemannian geometry as the existence of a framing and coframing at the same time. The corresponding metric is</p>
+
+				<figure>
+					<trash>g = a θ * (f a ) ⊗ P θ(e a ) ∈ Ω 1 (M ) ⊗ M Ω 1 (M ) (9)</trash>
+
+
+				</figure>
+
+				<p>where {e a } is a basis of V and {f a } is a dual basis. Or to avoid explicitly dualising V we can of course work with θ * ∈ Ω 1 (M )P ⊗ V and the metric as the composition with θ and ⊗ M , etc.</p>
+
+				<p>Finally, a connection on a quantum principal bundle is an equivariant complement of P Ω 1 (M )P ⊂ Ω 1 (P ). In concrete terms this is equivalent to a connection form, which is an equivariant map</p>
+
+				<figure>
+					<trash>ω : Ω 0 → Ω 1 (P ), ver N P • ω = 1 ⊗ id (10)</trash>
+
+
+				</figure>
+
+				<p>where we recall that Ω 0 is a right comodule by the adjoint coaction (as part of the crossed module structure). The associated projection Π ω = · P (id ⊗ ω)ver N P defines a covariant derivative</p>
+
+				<figure>
+					<trash>D ω : E → Ω 1 (M ) ⊗ M E, D ω = (id − Π ω ) • d ⊗ id (11) provided (id − Π ω ) • dP ⊂ Ω 1 (M )P , in</trash>
+
+
+				</figure>
+
+				<p>which case one says that ω is strong. It is clear that a (strong) connection ω U on the bundle with universal calculus such that ω U (Q H ) ⊂ N P induces one on the bundle with general calculus. In the presence of a framing, we define:</p>
+
+				<figure>
+					<trash>Definition 2.2 Associated to strong ω is the covariant derivative ∇ ω : Ω 1 (M ) → Ω 1 (M ) ⊗ M Ω 1 (M )</trash>
+
+
+				</figure>
+
+				<p>according to the framing isomorphism s θ , namely ∇ ω = (id ⊗ s θ ) • D ω • s −1 θ .</p>
+
+				<p>Both D ω and hence ∇ ω behave in the expected way with respect to left-multiplication by M . One can then proceed to identify other geometrical objects in terms of ω, θ.</p>
+
+				<figure>
+					<trash>Thus, torsion T : Ω 1 (M ) → Ω 2 (M ) (12)</trash>
+
+
+				</figure>
+
+				<p>corresponds under framing isomorphisms to ¯ D ω ∧ θ : V → P Ω 2 (M ) (here we need a left-handed version of the bundle as explained in [2].) Specifically, we apply this in the same manner as the construction of s θ to give a map E → Ω 2 (M ) which becomes T as stated under s θ . In this self-dual formulation it is natural to ask also that the &apos;cotorsion&apos; vanishes. This is the torsion of ω with respect to the coframing, i.e.</p>
+
+				<figure>
+					<trash>Dθ * ∈ Ω 1 (M ) ⊗ M E which we view via s θ as Γ ∈ Ω 2 (M ) ⊗ M Ω 1 (M ). (13)</trash>
+
+
+				</figure>
+
+				<p>Its vanishing is a generalisation of &apos;metric compatability&apos; as explained in [2]. Note that the vanishing torsion and cotorsion require us to specify Ω 2 (M ) suitably. We look at this in detail for trivial bundles in the next section. Similarly, the Riemann curvature is</p>
+
+				<figure>
+					<trash>R : Ω 1 (M ) → Ω 2 (M ) ⊗ M Ω 1 (M ) (14)</trash>
+
+
+				</figure>
+
+				<p>as left M -module map corresponding to the curvature of ω. With some mild additional structure we can also define the Ricci tensor by a contraction. The most explicit, which we will adopt, is to apply lift i : Ω 2 (M ) → Ω 1 (M ) ⊗ M Ω 1 (M ) and take a trace as an M -module map with values in the remaining Ω 1 (M ) ⊗ M Ω 1 (M ). One could also view this as associated to an interior product or a Hodge * -operation. Let us also note that once Ω 2 (M ) is specified one could impose a &apos;symmetry&apos; condition on the metric if desired, as in the kernel of the wedge product</p>
+
+				<figure>
+					<trash>∧(g) = 0. (15)</trash>
+
+
+				</figure>
+
+				<p>Finally, we discuss some general aspects in this context of &apos;Dirac operator&apos;. Most of the definition is straightforward; we define a spinor as ψ ∈ S = (P ⊗ W ) H the associated bundle to some other representation of H. Since H is not required to be anything like SO n but can be a more general framing it is not necessary to speak here of double covers or lifting; we simply frame by the more suitable quantum group to begin with. Then D ω ψ ∈ Ω 1 (M ) ⊗ M S maps over under the framing to E ⊗ M S. The missing data to define an operator D / : S → S with reasonable properties under scalar multiplication of spinors is therefore a left M -module map</p>
+
+				<figure>
+					<trash>γ : E ⊗ M S → S. (16)</trash>
+
+
+				</figure>
+
+				<p>Classically, this would be induced by a map γ : V ⊗ W → W with equivariance and &apos;Clifford algebra&apos; properties with respect to the metric. Note also that in place of an &apos;inner product&apos; on S it is natural in our self-dual formulation to have instead an adjoint spinor space S * = hom H (W, P ) and D / defined on this similarly with γ * . We do not attempt here a full formulation but will look at some of these issues for trivial bundles and quantum groups.</p>
+
+			</div>
+			<div>
+				<head n="3">Parallelizable Riemannian structures on algebras</head>
+
+				<p>In this section we apply the formalism above to obtain a general class of quantum Riemannian manifold structures on algebras M for which the quantum frame bundle has the tensor product form P = M ⊗ H, i.e. the parallelizable case. Other trivialisations can change this form, i.e.</p>
+
+				<p>we work in what we call the tensor product gauge. Our main result is the construction of Ω 1 (P ) such that the global theory above is induced from a &apos;local&apos; theory where global connections correspond to gauge fields A : Ω 0 → Ω 1 (M ) and soldering forms to V -beins e : V → Ω 1 (M ).</p>
+
+				<p>The choice of Ω 1 (P ) is far from obvious, for example N P generated as a P -bimodule by N M , N H as suggested in [20] would not allow these correspondences to proceed.</p>
+
+				<figure>
+					<trash>Proposition 3.1 On P = M ⊗ H with Ω 1 (M ), Ω 1 (H) given, we take ∆ R , Ω 1 (P ) defined by ∆ R = id ⊗ ∆, N P = N M ⊗ H ⊗ H + M ⊗ M ⊗ N H + Ω 1 M ⊗ Ω 1 H where we identify P ⊗ P = M ⊗ M ⊗ H ⊗ H. Then (P, Ω 1 (P ), ∆ R ) is a quantum principal bundle with nonuniversal calculus over M, Ω 1 (M ). Moreover, we may identify the H-comodules Ω 1 (M )P = P Ω 1 (M )P = P Ω 1 (M ) = Ω 1 (M ) ⊗ H.</trash>
+
+
+				</figure>
+
+				<p>Proof The coaction ∆ R is only on the H ⊗ H part and each component of N P is clearly invariant under this. Hence ∆ R (N P ) ⊂ N P ⊗ H. Also ver = · M ⊗ ver H , ver(m i ⊗ n i ⊗ h i ⊗ g i ) = m i n i ⊗ h i g i(1) ⊗ g i(2) for m i n i ⊗ h i g i = 0 has ver(Omega 1 M ⊗ H ⊗ H) = 0 and hence ver(N P ) = P ⊗ Q H as required (here ver H corresponds to H as a bundle over k). Next we note that for any algebras M, H,</p>
+
+				<figure>
+					<trash>M ⊗ M = M ⊗ 1 ⊕ Ω 1 M = 1 ⊗ M ⊕ Ω 1 M, H ⊗ H = H ⊗ 1 ⊕ Ω 1 H = 1 ⊗ H ⊕ Ω 1 H</trash>
+
+
+				</figure>
+
+				<p>by identifying m ⊗ n = mn ⊗ 1−mdn or m ⊗ n = 1 ⊗ mn−(dm)n for the two cases and similarly for H ⊗ H. Hence (making choices, i.e. not canonically) we can write</p>
+
+				<figure>
+					<trash>N P = N M ⊗ 1 ⊗ H ⊕ M ⊗ 1 ⊗ N H ⊕ Ω 1 M ⊗ Ω 1 H</trash>
+
+
+				</figure>
+
+				<p>as a vector space. From this it is clear that N P ∩ Ω 1 M ⊗ 1 ⊗ 1 = N M ⊗ 1 ⊗ 1 as required. Hence we have a quantum principal bundle. Also from a similar decomposition we identify</p>
+
+				<figure>
+					<trash>N P ∩ P Ω 1 M = N M ⊗ H ⊗ 1, N P ∩ (Ω 1 M )P = N M ⊗ 1 ⊗ H and hence we can identify Ω 1 (M )P = Ω 1 (M ) ⊗ 1 ⊗ H and P Ω 1 (M ) = Ω 1 (M ) ⊗ H ⊗ 1. Finally, N P ∩ P (Ω 1 M )P = N M ⊗ 1 ⊗ H ⊕ Ω 1 M ⊗ Ω 1 H = N M ⊗ H ⊗ 1 ⊕ Ω 1 M ⊗ Ω 1 H</trash>
+
+
+				</figure>
+
+				<p>so that we can identify P Ω 1 (M )P with either Ω 1 (M )P or P Ω 1 (M ). When the context is clear we therefore omit the ⊗ 1 and identify all three with Ω 1 (M ) ⊗ H. It remains to verify that these identifications are ∆ R -covariant, in particular that of P Ω 1 (M )P . We need for this that the identifications H ⊗ H ∼ =1 ⊗ H ⊕ Ω 1 H etc., are equivariant under the tensor product of the coaction ∆ in each factor up to an error in Ω 1 H. In particular the projection to 1 ⊗ H by multiplication is covariant just because ∆ is an algebra homomorphism. ⋄</p>
+
+				<p>As a justification for this calculus note that classically the three spaces P Ω 1 (M ), Ω 1 (M )P and P Ω 1 (M )P coincide, which we have arranged also here. It means that all connections are automatically strong, etc, as in the classical theory. Also, Ω 1 (P ) has the right size.</p>
+
+				<figure>
+					<trash>Thus, for any (say) finite-dimensional algebra M define dim(Ω 1 (M )) = dim(M ) − 1 − dim(N M ) dim(M ) . (17)</trash>
+
+
+				</figure>
+
+				<p>which is the dimension over M in the free case. Then for the above Ω</p>
+
+				<figure>
+					<trash>1 (P ) we have dim(Ω 1 (P )) = dim(Ω 1 (M )) + dim(Ω 1 (H)). (18)</trash>
+
+
+				</figure>
+
+				<p>Next we consider framings and coframings with the above Ω 1 (P ) understood. As for the universal calculus in [2] we define to this end a &apos;V -bein&apos; and &apos;V -cobein&apos; as linear maps</p>
+
+				<figure>
+					<trash>e : V → Ω 1 (M ), e * : V * → Ω 1 (M ) (19) such that there are induced isomorphisms s e : M ⊗ V ∼ =Ω 1 (M ), s e * : V * ⊗ M ∼ =Ω 1 (M ), s e (m ⊗ v) = me(v), s e * (w ⊗ m) = e * (w)m.</trash>
+
+					<head>Proposition 3</head>
+
+					<figDesc>.2 A framing and coframing of M with P = M ⊗ H are equivalent to (V, e, e * )</figDesc>
+
+				</figure>
+
+				<p>where V is a right H-comodule and e, e * are a V -bein and V -cobein in the sense above.</p>
+
+				<figure>
+					<trash>The (co)frame resolutions and quantum metric are θ(v) = e(v ¯ (1) ) ⊗ v ¯ (2) ⊗ 1, θ * (w) = e * (w ¯ (1) ) ⊗ 1 ⊗ w ¯ (2) , g = a e * (f a ) ⊗ M e(e a ). Proof Note first that (H ⊗ V ) H ∼ =V by ǫ in one direction and conversely by v → S −1 v ¯ (2) ⊗ v ¯ (1) , hence E ∼ =M ⊗ V . Likewise hom H (V, H) ∼ =V * by composing with ǫ in one direction and w → φ(w), φ(w)(v) = w, v ¯ (1) v ¯ (2) , hence E * ∼ =V * ⊗ M . This part</trash>
+
+
+				</figure>
+
+				<p>of the standard analysis for associated bundles in the trivial case[3]. Given e, e * we define respectively θ, θ * as stated and verify they are equivariant. Thus θ(v</p>
+
+				<figure>
+					<trash>¯ (1) ) ⊗ v ¯ (2) = e(v ¯ (1) ¯ (1) ) ⊗ v ¯ (1) ¯ (2) ⊗ v ¯ (2) ⊗ 1 = ∆ R θ(v) as V is a right comodule. Similarly for θ * where V * is a right H-comodule by v, w ¯ (1) w ¯ (2) = v ¯ (1) , wS −1 v ¯ (2</trash>
+
+					<figDesc>) as usual (i.e. the adjoint of the left H-comodule structure on V corresponding in the manner of (8) the right comodule structure on V ). Finally the induced</figDesc>
+					<trash>s θ (m ⊗ h ⊗ v) = (m ⊗ h)e(v ¯ (1) ) ⊗ v ¯ (2) ⊗ 1 = me(v ¯ (1) ) ⊗ hv ¯ (2) ⊗ 1 under the above identification becomes m ⊗ v → s θ (m ⊗ S −1 v ¯ (2) ⊗ v ¯ (1) ) = me(v ¯ (1) ¯ (1) ) ⊗(S −1 v ¯ (2) )v ¯ (1) ¯ (2) ⊗ 1 = me(v) ⊗ 1 ⊗ 1</trash>
+
+
+				</figure>
+
+				<p>i.e. reduces to s e . Likewise s θ * reduces to s e * . Hence we obtain framings and coframings respectively from e, e * . Conversely any equivariant θ, θ * must have this form by similar arguments as for E, E * . Given these, the general formula for the metric then reduces to the one shown on using invariance of f a ⊗ e a . In fact the computation here is the same as for the universal calculus and works for any reasonable calculus on P where Ω 1 (M )P ∼ =Ω 1 (M ) ⊗ 1 ⊗ H etc. For our particular Ω 1 (P ) we can suppress the ⊗ 1 in the formulae for θ, θ * . ⋄</p>
+
+				<p>Next, for the principal bundle P = M ⊗ H a trivial reference connection is provided by</p>
+
+				<figure>
+					<trash>ω 0 (v) = 1 ⊗ 1 ⊗ π N H (S ˜ v (1) ⊗ ˜ v (2) ) (20)</trash>
+
+
+				</figure>
+
+				<p>where v ∈ ker ǫ is any lift of v ∈ Ω 0 and π N H the projection to Ω 1 (H) (the Maurer-Cartan form of H viewed in Ω 1 (P )). Here we view Ω 1 (H) ⊂ Ω 1 (P ) by the same arguments as for Ω 1 (M ) (their situation is symmetric). Any other connection then corresponds to the addition of an</p>
+
+				<p>Ad-equivariant form in the kernel of ver N P , i.e. ω − ω 0 : Ω 0 → P Ω 1 (M )P . For our choice of Ω 1 (P ) the target here can be identified with Ω 1 (M )P .</p>
+
+				<figure>
+					<head>Theorem 3</head>
+
+					<figDesc>.3 A connection on Ω 1 (P ) is equivalent to a linear map or &apos;gauge field&apos;</figDesc>
+					<trash>A : Ω 0 → Ω 1 (M ). The resulting connection and corresponding projection are ω(v) = ω 0 (v) + π N P ((S ˜ v (1) ) · A(π Ω 0 ˜ v (2) ) · ˜ v (3) ) (id − Π ω )(m i ⊗ n i ⊗ h i ⊗ g i ) = −m i n i A(π Ω 0 g i(1) ) ⊗ 1 ⊗ h i g i(2) + m i dn i ⊗ 1 ⊗ h i g i ∈ Ω 1 (M )P</trash>
+
+
+				</figure>
+
+				<p>in a manifestly strong form. Here v, m i ⊗ n i ⊗ h i ⊗ g i are representatives in ker ǫ and Ω 1 P respectively and π Ω 0 denotes the canonical projection to Ω 0 , etc.</p>
+
+				<figure>
+					<trash>Proof For any H-comodule V we identify equivariant maps V → Ω 1 (M )P with linear maps V → Ω 1 (M )P by the same construction as above for V → P . Thus A : V → Ω 1 (M ) corresponds tõ A(v) = A(v ¯ (1) ) ⊗ 1 ⊗ v ¯ (2</trash>
+
+					<figDesc>) and conversely every ω has this form. In particular we take V = Ω 0</figDesc>
+
+				</figure>
+
+				<p>and the right adjoint coaction given by projecting down that on ker ǫ.</p>
+
+				<figure>
+					<trash>Thus ˜ A(v) = A(π Ω 0 ˜ v (2) ) ⊗ 1 ⊗(S ˜ v (1) )˜ v (3) . When we identify Ω 1 (M )P with P Ω 1 (M )P we obtain the form for ω − ω 0 shown. Note that π N P (A(π Ω 0 ˜ v (2) ) ⊗ S ˜ v (1) ⊗ ˜ v (3) ) = π N P (A(π Ω 0 ˜ v (2) ) ⊗ 1 ⊗(S ˜ v (1) )˜ v (3) )</trash>
+
+
+				</figure>
+
+				<p>so that the left hand side is manifestly well-defined. Here the difference between the expressions is in Ω 1 (M ) ⊗ Ω 1 H and hence killed by the form of N P . Conversely it clear that ω − ω 0 is necessarily of this form as explained. Finally. given such a connection, we have from the form of ver N P , the corresponding projector Π ω (m i ⊗ n i ⊗ h i ⊗ g i ) = π N P (m i n i A</p>
+
+				<figure>
+					<trash>(π Ω 0 g i(3) ) ⊗ h i g i(1) ⊗(Sg i(2) )g i(4) )) + m i n i ⊗ 1 ⊗ π N H (h i ⊗ g i )</trash>
+
+
+				</figure>
+
+				<p>for any representative m i ⊗ n i ⊗ h i ⊗ g i ∈ Ω 1 P . Under π N P we can move the h i g i(1) to the second factor and cancel using the antipode axioms. We also write m i n i ⊗ 1 = m i ⊗ n i − m i dn i and m i dn i ⊗ h i ⊗ g i = m i dn i ⊗ 1 ⊗ h i g i under π N P . In this form we have no further quotient and drop the π N P as shown. Note that if h i ⊗ g i ∈ N H then h i g i(1) ⊗ g i(2) ∈ H ⊗ Q H , but since Q H</p>
+
+				<figure>
+					<trash>is Ad-invariant we have h i g i(1) ⊗ g i(3) ⊗(Sg i(2) )g i(4</trash>
+
+					<figDesc>) ∈ H ⊗ Q H ⊗ H. Multiplying the two copies</figDesc>
+
+				</figure>
+
+				<p>of H we conclude that h i g i(2) ⊗ g i(1) ∈ H ⊗ Q H also. Therefore id − Π ω is well-defined. ⋄ Note that we do not consider here the question of gauge transformations themselves, which is much more subtle for nonuniversal calculi even when the bundle is trivial: we simply show that all connections in our &apos;tensor product gauge&apos; have the above form. Basically, a gauge transformation changes the description of the bundle to a cocycle cross product as explained in [21], which in turn changes the description of the calculus (this is a quantum effect in that one does not have this cocycle classically). Other trivialisations and correspondingly the formulae in other gauges can in principle be computed via a bundle automorphism if one wants formulae for &apos;gauge theory&apos; but the tensor product form of the bundle P will also transform.</p>
+
+				<figure>
+					<head>Proposition 3.4</head>
+
+					<figDesc>Given a gauge field on M as above and V any right H-comodule, the vector spaces E = M ⊗ V and E * = Lin(V, M ) acquire covariant derivatives</figDesc>
+					<trash>D A : E * → Ω 1 (M ) ⊗ M E * , (D A σ)(v) = dσ(v) − σ(v ¯ (1) ) · A(˜ π Ω 0 v ¯ (2) ), D A : E → Ω 1 (M ) ⊗ M E, D A ψ = (d ⊗ id)ψ − ψ i A(˜ π Ω 0 ψ i ¯ (0) ) ⊗ ψ i ¯ (1) ,</trash>
+
+
+				</figure>
+
+				<p>where ψ = ψ i ⊗ ψ i ∈ M ⊗ V is a notation and π Ω 0 denotes projection to ker ǫ followed by π Ω 0 .</p>
+
+				<figure>
+					<trash>Proof Given σ ∈ E * we view it as Σ ∈ hom H (V, P ) as usual by Σ(v) = σ(v ¯ (1) ) ⊗ v ¯ (2) . Then (id − Π ω )(dΣ(v)) = (id − Π ω )[1 ⊗ σ(v ¯ (1) ) ⊗ 1 ⊗ v ¯ (2) − σ(v ¯ (1) ) ⊗ 1 ⊗ v ¯ (2) ⊗ 1] = dσ(v ¯ (1) ) ⊗ 1 ⊗ v ¯ (2) − σ(v ¯ (1) )A(˜ π Ω 0 v ¯ (2) (1) ) ⊗ 1 ⊗ v ¯ (2) (2) . However, this equivariant map V → Ω 1</trash>
+
+					<figDesc>(M )P is in the image of the identification (as in the proposition above) with Lin(V, Ω 1 (M )) = Ω 1 (M ) ⊗ M E * of D A σ as stated. Similarly for D A ψ.</figDesc>
+
+				</figure>
+
+				<p>One may verify directly that both maps are well-defined. ⋄ These formulae are characterised not by gauge covariance but by the global constructions of the previous section specialised to the case of a tensor product bundle. They are the basic local formulae of quantum group gauge theory with nonuniversal calculus in the tensor product gauge. Now we suppose the existence of V -(co)beins or framings and coframings as explained above. Then D A induces ∇ A etc. under the framing isomorphisms:</p>
+
+				<figure>
+					<trash>Corollary 3.5 The covariant derivative ∇ A : Ω 1 (M ) → Ω 1 (M ) ⊗ M Ω 1 (M ) is given by ∇ A = ds −1 ei ⊗ M e(s e −1i ) − s −1 ei · A(˜ π Ω 0 s e −1i ¯ (0) ) ⊗ M e(s e −1i ¯ (1) ), where s −1 ei ⊗ s e −1i denotes the output of s −1 e</trash>
+
+
+				</figure>
+
+				<p>and we use the projected right adjoint coaction viewed as a left coaction as in (8). If we write α = α a · e(e a ) for all α ∈ Ω 1 (M ), then this is</p>
+
+				<figure>
+					<trash>∇ A α = dα a ⊗ M e(e a ) − α a A(˜ π Ω 0 e a ¯ (0) ) ⊗ M e(e a ¯ (1) ).</trash>
+
+
+				</figure>
+
+				<p>Similarly for trivial bundles we can look at the construction of γ. Here S can be identified with S = M ⊗ W as a left M -module as explained above for any associated bundle.</p>
+
+				<figure>
+					<head>Corollary 3.6</head>
+
+					<figDesc>For P = M ⊗ H and given s e and a right-comodule W , suitable γ in (16) are provided by linear maps γ : V → End(W ). The corresponding Dirac operator S → S is given on</figDesc>
+					<trash>ψ = ψ i ⊗ ψ i ∈ M ⊗ W by D /ψ = ∂ a ψ i ⊗ γ a (ψ i ) − ψ i A a (˜ π Ω 0 ψ i ¯ (0) ) ⊗ γ a (ψ i ¯ (1) ), s −1 e • d = ∂ a ⊗ e a , γ a = γ(e a )</trash>
+
+
+				</figure>
+
+				<p>where A a are the components of A as above.</p>
+
+				<p>Proof Since γ is a left M -module map and defined on (M ⊗ V ) ⊗ M (M ⊗ W ) ∼ =M ⊗ V ⊗ W , it is determined by γ((1 ⊗ v) ⊗ M (1 ⊗ w)) ≡ γ(1 ⊗ v ⊗ w) ≡ γ(v)(w) ∈ M ⊗ W , say. It is natural to assume here that γ(v)(w) ∈ W itself. Note that the right M -module structure on M ⊗ V is not the obvious one (it is the one corresponding to that of Ω 1 (M ) via s e ) but becomes irrelevant after we absorb ⊗ M M . We then compute D / by the above formulae for D A on S and the left M -module isomorphism s −1 e as before (with the notations stated) to map dψ and A over to M ⊗ V , thereby obtaining an element of M ⊗ V ⊗ W . We then apply γ to V and evaluate its output in End(W ) on the other (spinor) component of ψ. ⋄</p>
+
+				<p>We note that the operators ∂ a in these expressions are not derivations but characterised by</p>
+
+				<figure>
+					<trash>∂ a (mn) = m(∂ a n) + (∂ b m)ρ b a (n); (21) where we write the &apos;generalised braiding&apos; or entwining operator induced by s e as Ψ e : V ⊗ M → M ⊗ V, Ψ e (e a ⊗ m) = s −1 e (e(e a )m) = ρ a b (m) ⊗ e b (22) for operators ρ a b on M . They evidently obey ρ a b (1) = δ a b and ρ a b (mn) = ρ a c (m)ρ c b (n) as an expression of the right module structure of Ω 1 (M ). In this notation, [D /, m] = (∂ a m)ρ a b ⊗ γ(e b ) (23)</trash>
+
+
+				</figure>
+
+				<p>if one wants to compare this approach with that of Connes[5]. From this it is clear that if γ : V → End(W ) is injective then ker π D / = N M , where π D / (mdn) = m[D /, n]. Hence these approaches correspond to the same differential calculus at degree 1. At higher degree Connes proposes to quotient the universal exterior algebra by the differential ideal generated from repeated commutators with D /. At degree 2 the requirement that we recover a given choice of Ω 2 (M ) is a quadratic constraint on the linear maps γ appearing in Corollary 3.6. Another aspect to the &apos;correct&apos; choice of γ would be to demand that it is H-equivariant as an analogue of the idea that the gamma-matrices generate a representation of the spin group. We will look at these constraints in detail in the settings of Sections 4 and 5.</p>
+
+				<p>We require similar properties as in Proposition 3.1 for Ω 2 (M ) and Ω 2 (P ) needed for the global picture of curvature, torsion and cotorsion.</p>
+
+				<figure>
+					<trash>Namely, we require Ω 2 (M ) ⊂ Ω 2 (P ), Ω 2 (M )P ⊂ Ω 2 (P ) (24)</trash>
+
+
+				</figure>
+
+				<p>etc. in the obvious way by ⊗ 1 (as above for 1-forms). For example Ω 1 (P ) itself determines a &apos;maximal prolongation&apos; to higher forms consisting of Ω 1 (P ) ⊗ P Ω 1 (P ) modulo the additional relations implied by extending d : Ω 1 (P ) → Ω 2 (P ) with a graded Leibniz rule and d 2 = 0, and a short computation shows that this works. A general choice will be a bimodule quotient of this.</p>
+
+				<p>Similarly for higher degree. We may then proceed to make calculations along exactly the same lines as for 1-forms above. Specifically, it is clear that Lin(V, Ω 2 (M )) corresponds in the same manner as before to equivariant maps V → Ω 2 (M )P , etc. One has therefore</p>
+
+				<figure>
+					<trash>D A : Lin(V, Ω n (M )) → Lin(V, Ω n+1 (M )), D A σ(v) = dσ(v) + (−1) n+1 σ(v ¯ (1) ) ∧ A(˜ π Ω 0 v ¯ (2) )</trash>
+
+
+				</figure>
+
+				<p>etc. Here D A is d on P followed by (id − Π ω ) in each copy of Ω 1 (P ). The proof is just as for the universal calculus in [3] followed by the required projections. See also [21].</p>
+
+				<figure>
+					<trash>Proposition 3.7 For all σ ∈ Lin(V, M ), D A D A σ(v) = −σ(v ¯ (1) )F A (π ǫ v ¯ (2) ), where F A : ker ǫ → Ω 2 (M ), F A (v) = dA(˜ π Ω 0 v) + A(˜ π Ω 0 v (1) ) ∧ A(˜ π Ω 0 v (2) ) and π ǫ (h) = h − ǫ(h). We say that A is &apos;regular&apos; if F descends to Ω 0 → Ω 2 (M ), i.e. if A(˜ π Ω 0 q (1) ) ∧ A(˜ π Ω 0 q (2) ) = 0, ∀q ∈ Q H .</trash>
+
+
+				</figure>
+
+				<p>Proof We apply the above formulae for D A and compute exactly as for the universal calculus.</p>
+
+				<p>As in the usual computation iteration of the coaction produces a coproduct and the well-defined formula for D A D A σ(v) as stated. We omit details since they as the same as the universal case in [3]. See also [21]. The map A • π Ω 0 plays the role of A : ker ǫ → Ω 1 M in the universal calculation and all expressions are finally projected to the relevant differentials. In doing this one only knows that F A : ker ǫ → Ω 2 (M ) as stated. ⋄ It is not such a problem if A is not regular. Classically it would mean that F A was not Lie algebra valued but valued in the enveloping algebra. Such a condition depends very much on the form of A and of the calculus Ω 2 (M ) and Ω 1 (H). One could view it as some kind of &apos;differentiability&apos; condition on A. Next we clarify the geometric meaning of our objects. ∇∧ denotes applying the covariant derivative ∇ and then projecting to Ω 2 (M ).</p>
+
+				<figure>
+					<trash>Corollary 3.8 The curvature R : Ω 1 (M ) → Ω 2 (M ) ⊗ M Ω 1 (M ) for a regular connection obeys R = ((id ∧ ∇) − (d ⊗ id)) • ∇. The torsion T : Ω 1 (M ) → Ω 2 (M ) and cotorsion Γ ∈ Ω 2 (M ) ⊗ M Ω 1 (M ) corresponding to ¯ D A e(v) = de(v) + A(˜ π Ω 0 v ¯ (0) ) ∧ e(v ¯ (1) ), D A e * (w) = de * (w) + e * (w ¯ (1) ) ∧ A(˜ π Ω 0 w ¯ (2) ) respectively (assuming a V -cobein in the second case) ∇∧ = d − T, Γ = (∇ ∧ id − id ∧ ∇)g + (T ⊗ id)g.</trash>
+
+
+				</figure>
+
+				<p>Proof These results follow from the general theory outlined in Section 2 specialised to the bundle P = M ⊗ H along the lines already given. However, for trivial bundles one may give a direct self-contained proof as well. For the curvature the notation (id ∧ ∇) means to act in the second tensor factor of Ω 1 (M ) ⊗ M Ω 1 (M ) and then project the first two of the resulting three factors to Ω 2 (M ). From the definition of ∇ we have on a 1-form α,</p>
+
+				<figure>
+					<trash>Rα = ((id ∧ ∇) − (d ⊗ id))(dα a ⊗ M e(e a ) − α a A(˜ π Ω 0 e a ¯ (0) ) ⊗ M e(e a ¯ (1) ) = dα a ∧ (−A(˜ π Ω 0 e a ¯ (0) ) ⊗ M e(e a ¯ (1) )) + A(˜ π Ω 0 e a ¯ (0) ) ∧ A(˜ π Ω 0 e a ¯ (1) ¯ (0) ) ⊗ M e(e a ¯ (1) ¯ (1) ) +d(α a A(˜ π Ω 0 e a ¯ (0) )) ⊗ M e(e a ¯ (1) ) = α a F A (˜ π Ω 0 e a ¯ (0) ) ⊗ M e(e a ¯ (1</trash>
+
+					<figDesc>) ) using the Leibniz rule and the left comodule property. This also gives the way to compute the action of R from F A . For torsion we project the definition of ∇ down to Ω 2 (M ), so that</figDesc>
+					<trash>∇ ∧ α = (dα a ) ∧ e(e a ) − α a A(˜ π Ω 0 e a ¯ (0) ) ∧ e(e a ¯ (1) ) = dα − α a de(e a ) − α a A(˜ π Ω 0 e a ¯ (0) ) ∧ e(e a ¯ (1) ) = dα − α a ¯ D A e(e a ) by the Leibniz rule in Ω 2</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>(M ). This also makes it clear how T can be efficiently determined from ¯ D A e. For the cotorsion we use the metric to similarly relate it to D A e * , namely</figDesc>
+					<trash>Γ = D A e * (f a ) ⊗ M e(e a ) = de * (f a ) ⊗ M e(e a ) + e * (f a ¯ (1) ) ∧ A(˜ π Ω 0 f a ¯ (2) ) ⊗ M e(e a ) = de * (f a ) ⊗ M e(e a ) + e * (f a ) ∧ A(˜ π Ω 0 e a ¯ (0) ) ⊗ M e(e a ¯ (1) ) = de * (f a ) ⊗ M e(e a ) − e * (f a ) ∧ ∇ ⊗ M e(e a )</trash>
+
+
+				</figure>
+
+				<p>where we use that the right coaction on V * is adjoint to the left one on V (obtained as in (8)).</p>
+
+				<figure>
+					<trash>Specifically, it means that f a ¯ (1) ⊗ e a ⊗ f a ¯ (2) = f a ⊗ e a ¯ (1) ⊗ S −1 e a ¯ (2</trash>
+
+					<figDesc>) for the relation between the two coactions. Finally, we use the characterisation of torsion already obtained. ⋄</figDesc>
+
+				</figure>
+
+				<p>The corollary shows in particular one of the key ideas in our approach[2]; the vanishing of cotorsion (or rather the difference between the torsion and the cotorsion) is a skew-symmetrized version of the &apos;Levi-Civita&apos; condition of metric compatibility. From the Riemman tensor above, it is clear that if we are given a bimodule map i :</p>
+
+				<figure>
+					<trash>Ω 2 (M ) → Ω 1 (M ) ⊗ M Ω 1 (M ) (preferably splitting the surjection ∧ but not necessarily) we have a well-defined Ricci tensor Ricci = i(R)(e(e a )), f a = i(F A (˜ π Ω 0 e a ¯ (0) )) ab e(e b ) ⊗ M e(e a ¯ (1) ) (25) where F A = F ab A e(e a ) ⊗ M e(e b</trash>
+
+
+				</figure>
+
+				<p>) defines its components. The first trace expression is with the pairing applied to the first component of i(R) with all coefficients taken to the left in the V -bein basis and me(e a ), f b = mδ a b . It is independent of the basis of V . One may go further and similarly contract to the scalar curvature. Finally, let us note that we are taking a view in which the underlying variables are a V -bein for the framing and, given this, an independent V -cobein e * for the metric. If we fix a specific reference choice of that, e.g. e * ref (f b ) = e(e a )η ab for some fixed equivariant isomorphism η : V * ∼ =V , then any other V -cobein has the form e * (</p>
+
+				<figure>
+					<trash>f b ) = e * ref (f a )g a b for some g ∈ GL(n, M ) where n = dim(V ). Then (summations understood) g = e * ref (f a )g a b ⊗ M e(e b ) = e(e a )g ab ⊗ M e(e b ); g ac = η ab g b c . (26) This completes our treatment of parallelizable quantum Riemannian manifold structures on general algebras M , which can be expected to be the minimum level of generality for comparison with quantum theory. The rest of the paper is devoted to constructing examples of this including quantum groups, finite sets and finite groups. One could in principle also apply it to specific quantum systems as well as to discrete algebras such as quaternions in the setting of [10]</trash>
+
+					<figDesc>.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="4">Riemannian geometry of quantum groups</head>
+
+				<p>In this section we construct quantum Riemannian geometries where M is a quantum group. This covers both finite groups and Lie groups (in an algebraic form) as well as their q-deformations. In fact Hopf algebras have been used historically to unify Lie theory and finite group theory and we do the same here by working with general Hopf algebras. The main result follows in Section 4.1 with the construction of a natural metrics on the standard C q [G] from a braided-Killing form on the braided-Lie algebra tangent to the fibres of the frame bundle.</p>
+
+				<p>For framing we take the same quantum group H = M . The classical meaning of this is explained in [2], with the same bicovariant differential calculi on M and H. These are determined by ideals Q M = Q H as usual. Here V = Ω 0 = ker ǫ/Q H has a right coaction Ad R and is the dual of the braided-Lie algebra in the fibre direction. We begin by checking the various conditions needed to establish a framing or quantum manifold structure in the sense of Section 3. In effect we are able for the first time properly to interpret the well-known &apos;Maurer-Cartan&apos; form in [4] in a geometrical manner. It also provides an actual connection (generally with torsion).</p>
+
+				<figure>
+					<trash>Lemma 4.1 For P = M ⊗ H and M a Hopf algebra, if Ω 1 (M ) is bicovariant then so is Ω 1 (P ), Q P = Q M ⊗ H + M ⊗ Q H + ker ǫ M ⊗ ker ǫ H , Ω 0P = Ω 0M ⊗ 1 ⊕ 1 ⊗ Ω 0H and the exterior algebras Ω · (P ), Ω · (M ) obey (24). In the case M = H the Maurer-Cartan form e : Ω 0 → Ω 1 (H), e(v) = π N H (S ˜ v (1) ⊗ ˜ v (2) ) for any representative v of v ∈ Ω 0 provides a framing as well as a zero curvature gauge field A = e : Ω 0 → Ω 1 (H). Proof For the differential calculus, it is evident that ∆ M ⊗ H (m ⊗ h) = m (1) ⊗ h (1) ⊗ m (2) ⊗ h (2</trash>
+
+					<figDesc>) is a left or right coaction on M ⊗ H and that N P is bicovariant just because N M and N H are. The map ver M ⊗ H (not to be confused with that of the bundle) easily computes as an isomorphism N P ∼ =M ⊗ Q M ⊗ H ⊗ H + M ⊗ M ⊗ H ⊗ Q H + M ⊗ ker ǫ M ⊗ H ⊗ ker ǫ H = M ⊗ H ⊗ Q P under the usual identification of the vector spaces. Note also that we have Q P = Q M ⊗ 1 ⊕ 1 ⊗ Q H ⊕ ker ǫ M ⊗ ker ǫ H as right Ad M ⊗ H -comodules. We then apply the Woronowicz construction for Ω · (P ), Ω · (M ).</figDesc>
+
+				</figure>
+
+				<p>Here the additional relations on Ω 1 (P ) ⊗ P Ω 1 (P ) are defined by the kernel of id − Ψ where the braiding Ψ is determined by the usual flip on left and right invariant forms on P . But these are just the images of those either from M or from H. Next, that e provides an Ω 0 -bein and hence a framing is precisely the geometric meaning of the isomorphism Ω 1 (H) ∼ =H ⊗ Ω 0 , namely with inverse being s e for the Maurer-Cartan form. Regularity of A is also immediate since e is known to obey the well-known &apos;Maurer-Cartan equation&apos;</p>
+
+				<figure>
+					<trash>de(v) + e(˜ π Ω 0 ˜ v (1) ) ∧ e(˜ π Ω 0 ˜ v (2) ) = 0. (27) (This in turn is immediate by working in the universal calculus where e(˜ v) = S ˜ v (1) ⊗ ˜ v (2) − 1 ⊗ 1ǫ(˜ v) = S ˜ v (1) d˜rom the</trash>
+
+					<figDesc>Cartan equation it follows that if we view A = e as a gauge field then it is regular and has zero curvature. ⋄ The operators ρ a b in (21) for this framing are those of right translation according to</figDesc>
+					<trash>e(v)g = g (1) e(vg (2) ), ∀v ∈ Ω 0 , g ∈ H. (28) There is also a right-handed framing defined by ¯ e(v) = π N H (˜ v (1) ⊗ S ˜ v (2) ) and related by e(v) = ¯ e(Sπ Ω 0 ˜ v (2) )(S ˜ v (1) )˜ v (3) . (29)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Hence the braiding Ψ in the definition Ω · (H) can be written in the crossed module form</figDesc>
+					<trash>Ψ(e(v) ⊗ H e(w)) = e(π Ω 0 ˜ w (2) ) ⊗ H e(v(S ˜ w (1) ) ˜ w (3) ) (30) rather than the more standard form with e, ¯ e as in (1). We clearly have a natural &apos;lift&apos; i = id − Ψ : Ω 2 (H) → Ω 1 (H) ⊗ H Ω 1 (H), (31) since Ω 2 (H) is by definition Ω 1 (H) ⊗ H Ω 1 (H) modulo ker(id − Ψ) and</trash>
+
+
+				</figure>
+
+				<p>hence isomorphic to the image of id − Ψ. On the other hand, Ψ does not generally obey Ψ 2 = id and as a result this map does not generally split ∧, i.e. i • ∧ is not a projection. Therefore one can use this i to define the Ricci tensor and interior products, etc., but it is not necessarily the best choice.</p>
+
+				<figure>
+					<trash>The torsion tensor corresponds from Section 3 to D A e(v) = de(v) + A(˜ π Ω 0 (S −1 v (3) )˜ v (1) ) ∧ e(π Ω 0 ˜ v (2) ) (32)</trash>
+
+
+				</figure>
+
+				<p>since the coaction on Ω 0 to be used is the right adjoint one converted to a left coaction by (8). We do not solve this in general (this would appear to require further data) but it is worth noting that classically A = 1 2 e is a torsion free connection, and also cotorsion free for the Killing metric for any classical compact Lie group[2]. The latter is an example of an important class of quantum metrics where Ω 0 -cobein e * : Ω * 0 → Ω 1 (H) is defined by a nondegenerate Ad-invariant bilinear form. Such an element corresponds to an Ad-invariant element of η = η</p>
+
+				<figure>
+					<trash>(1) ⊗ η (2) ∈ Ω 0 ⊗ Ω 0</trash>
+
+
+				</figure>
+
+				<p>nondegenerate as a map η : Ω * 0 → Ω 0 by evaluation against the second component.</p>
+
+				<figure>
+					<trash>Proposition 4.2 Any nondegenerate Ad-invariant η ∈ Ω 0 ⊗ Ω 0 defines a coframing e * = e • η. The corresponding metric g = e(η (1) ) ⊗ H e(η (2) ) is symmetric in the sense ∧(g) = 0 iff η = η (2) ⊗ S 2 η (1) . Its cotorsion in terms of e is given by D A e(v) = de(v) + e(π Ω 0 ˜ v (2) ) ∧ A(˜ π Ω 0 (S ˜ v (1) )˜ v (3) ).</trash>
+
+
+				</figure>
+
+				<p>Proof For the framing the only delicate part is to check that η : Ω * 0 → Ω 0 is equivariant, where Ω * 0 has the right coaction adjoint to the left coaction on Ω 0 given as in (8) by S −1 ,</p>
+
+				<figure>
+					<trash>i.e. that η (1) ⊗ η (2) (2) ⊗ S −1 ((Sη (2) (1) )η (2) (3) ) = η (1) (2) ⊗ η (2) ⊗(Sη (1) (1) )η (1) (3) , using Hopf algebra methods[18]</trash>
+
+
+				</figure>
+
+				<p>. Next, the condition that e(η</p>
+
+				<figure>
+					<trash>(1) ) ∧ e(η (2) ) = 0 is that (e ⊗ H e) • η is in the kernel of (id − Ψ) where Ψ is as above. The corresponding Ψ on Ω 0 ⊗ Ω 0 computes as Ψ(η (1) ⊗ η (2) ) = η (2) (2) ⊗ η (1) (Sη (2) (1) )η (2) (3) = η (2) ⊗ S 2 η (1) in view of the equivariance of η. Finally, cotorsion from Section 3 corresponds to D A e * = (d ⊗ id)e * + e * (1) ∧ A(˜ π Ω 0 e * (2) ¯ (0) ) ⊗ e * (2) ¯ (1) where e * = e * (1) ⊗ e * (2) ∈ Ω 1 (H) ⊗ Ω 0 , or equivalently D A e * (w) = de * (w) + e * (w ¯ (1) ) ∧ A(˜ π Ω 0 w ¯ (2) ) (33)</trash>
+
+
+				</figure>
+
+				<p>for the right coaction on Ω * 0 adjoint to the left coaction on Ω 0 obtained as in (8). This second form where e * : Ω * 0 → Ω 1 (H) and equivariance of η immediately gives the result. ⋄ Hence we have a canonical framing and metric and at least one natural (not generally torsion free or cotorsion free) connection on any Hopf algebra, and concrete equations for the torsion and cotorsion conditions. We also have a &apos;tautological&apos; choice of &apos;gamma&apos; matrix and hence an induced Dirac operator for each connection. Thus, let W be a right H-comodule viewed as in (8) as a left comodule. Also let the inverse map η −1 (</p>
+
+				<figure>
+					<trash>v) = η −(1) η −(2) , v define η −1 ∈ Ω * 0 ⊗ Ω * 0 or η −1 : Ω 0 ⊗ Ω 0</trash>
+
+
+				</figure>
+
+				<p>→ k depending on ones point of view (we assume finite-dimensionality).</p>
+
+				<figure>
+					<head>Corollary 4.3</head>
+
+					<figDesc>For any right comodule W and η as above there is a canonical equivariant map</figDesc>
+					<trash>γ : Ω 0 ⊗ W → W, γ(v)w = η −1 (v ⊗ ˜ π Ω 0 (w ¯ (0) ))w ¯ (1) obeying additionally the identity (γ • γ)(η)w = c, w ¯ (0) w ¯ (1) , c = η −(1) η −(2) . Proof By similar Hopf algebra methods equivariance of η can be written as η −1 (v ¯ (1) ⊗ w ¯ (1) )v ¯ (2) w ¯ (2) = η −1 (v ⊗ w). From this one similarly computes ∆ R (γ(v)w) = w ¯ (1) ¯ (1) η −1 (v ¯ (1) ⊗ S −1 w ¯ (1) ¯ (2) ) ⊗ v ¯ (2) w ¯ (2) = γ(v ¯ (1) )w ¯ (1) ⊗ v ¯ (2) w ¯ (2) , γ(η (1) )γ(η (2) )w = w ¯ (1) ¯ (1) η −1 (η (1) ⊗ S −1 w ¯ (1) ¯ (2) )η −1 (η (2) ⊗ S −1 w ¯ (2) ) = w ¯ (1) ¯ (1) η −1 (S −1 w ¯ (2) ⊗ S −1 w ¯ (1) ¯ (2) ) = w ¯ (1) η −1 ((S −1 w ¯ (2) ) (1) ⊗(S −1 w ¯ (2) ) (2) ) as required. Note that c is invariant under the right coadjoint coaction on Ω * 0 because η −(2) ⊗ η −(1)</trash>
+
+
+				</figure>
+
+				<p>is (the reversal is because it is the left coadjoint coaction that respects the product here). ⋄ There is also a tautological γ * defined similarly without the η −1 i.e. just from the comodule itself and with similar features. The equivariance of γ (and γ * ) here replaces the idea that the antisymmetric products of γ classically generates a representation of the rotation group or that γ generates a representation of the spin group. Meanwhile, the coadjoint invariant element c is central at least when it lies in a Hopf algebra U dually paired with H (which will generally be the case). We denote by ρ W the left action of U corresponding to the right coaction of H so when ρ W is irreducible then (γ • γ)(η) etc. will be a multiple of the identity, which is a remnant of the usual &apos;Clifford algebra&apos; property for the symmetric products of γ.</p>
+
+			</div>
+			<div>
+				<head>Proposition 4.4</head>
+
+				<p>With framing and connection provided by the Maurer-Cartan form itself and with the tautological γ as above, the Dirac operator associated to any right H-comodule is</p>
+
+				<figure>
+					<trash>D / = ∂ a γ a − ρ W (S −1 c), γ a = η −1 ab ρ W (S −1 f b ). Proof Here η −1 ab = η −1 (e</trash>
+
+
+				</figure>
+
+				<p>a ⊗ e b ). The general expression for the Dirac operator is in Corollary 3.6. We note that if A = e = A a e(e a ) then its components are A a (v) = f a , v. Here f a are a dual basis of Ω * 0 ⊂ ker ǫ ⊂ U (which we assume for convenience of presentation). Hence f a , h = f a , ˜ π Ω 0 h automatically makes the projection, giving the general form of D / as stated.</p>
+
+				<p>We write the coaction as an action of the dual basis for convenience. For the particular form of γ itself given by the coaction or by ρ W we immediately obtain the result stated. ⋄ This completes our analysis for general Hopf algebras. Before turning to nontrivial examples let us note that for H cocommutative (e.g. classically an Abelian group) all connections A are torsion free and induce the same ∇ given by ∇α = dα a ⊗ H e(e a ) with zero Riemannian curvature. Any nondegenerate bilinear form η ∈ Ω 0 ⊗ Ω 0 defines a metric with zero cotorsion as well. This does however, give a simple example of noncommutative geometry fully in keeping with the classical picture. For example, for a Lie algebra g the enveloping algebra H = U (g) can be viewed &apos;up side down&apos; as the quantisation of the Kirillov-Kostant bracket on g * .</p>
+
+				<figure>
+					<head>Proposition 4.5</head>
+
+					<figDesc>For H = U (g), coirreducible calculi are provided by (V, λ) with V an irreducible right module (with right action ρ) and λ ∈ P (V ) a ray.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>Here</head>
+
+				<p>Ω 0 = ker ǫ/ ker ρ λ , ρ λ : Ω 0 ∼ =V, ρ λ (h) = λ · ρ(h), ∀h ∈ U (g).</p>
+
+				<p>Then e = e M C • ρ −1 λ is a framing, where e M C is the Maurer-Cartan form, and e(v)ξ = ξe(v) + e(v · ρ(ξ)), d(ξ 1 · · · ξ n ) = n−1 m=0 σ∈S m|n−m ξ σ(1) · · · ξ σ(m) e(ρ λ (ξ σ(m+1) · · · ξ σ(n) )), where ξ, ξ i ∈ g and S m|n−m denotes permutations of {1, 2, · · · , n} such that σ(1) &lt; · · · &lt; σ(m) and σ(m + 1) &lt; · · · &lt; σ(n) (an m-shuffle). Any bilinear form η in V ⊗ V defines a metric as above, and ∇ is torsion free and cotorsion free.</p>
+
+				<p>Proof The differential calculus is a &apos;differentiation&apos; of the classification in [22] for the calculi for group algebras as a pair consisting of an irreducible representation and ray. After differentiating those formulae one verifies directly that the above defines a calculus and that it is coirreducible.</p>
+
+				<p>Here ker ρ λ is clearly an ideal and for fixed ρ and in the irreducible case the image of ρ λ must be all of V . Actually the minimum we need for a calculus here is that λ is a cyclic vector. If we simply identify Ω 0 with V in this way then clearly dξ = λρ(ξ), vξ = ξv + vρ(ξ) (34) which is easily seen to extend by Leibniz to a well-defined calculus. Thus d(ξη) = (λρ(ξ))η + ξ(λρ(η)) = ξλρ(η) + ηλρ(ξ) + λρ(ξη) so that d(ξη − ηξ) = d[ξ, η]. A proof by induction gives the general form of d (writing the identification e explicitly). Also the right action on V corresponds to right multiplication on Ω 0 as it should, since ρ λ (hξ) = λρ(hξ) = λρ(h)ρ(ξ) = ρ λ (h)ρ(ξ). If Ω ′ 0 defines a quotient differential calculus then it corresponds to a surjection φ : V → Ω ′ 0 an intertwiner as U (g)modules which, for irreducible V , must be an isomorphism. To form a commutative triangle, dξ = φ(λρ(ξ)) = φ(λ)ρ ′ (ξ), say, so that the quotient calculus is isomorphic to our (V, λ) calculus with λ ′ = φ(λ). Moreover, (V, λ) is isomorphic to (V, λ ′ ) if and only if φ is a nonzero multiple of the identity i.e. λ ′ proportional to λ, i.e. the calculus depends on λ only up to scale. This describes the calculus that we use. While these are not all possible calculi (any ideal in ker ǫ defines a calculus since H is cocommutative), they are the natural &apos;integrable&apos; calculi in the sense that they &apos;differentiate&apos; the formulae in the finite group case. We compute the geometric structure. This is defined in terms of Ω 0 (which is hard to work with) so we work instead with the its isomorphic image which is V as stated. Hence we take V itself as the framing space and e the Maurer-Cartan form converted under the identification (similarly for all the formulae above). For the exterior algebra we have de(v) = 0 and e(v) ∧ e(w) = −e(w) ∧ e(v). ⋄</p>
+
+				<figure>
+					<figDesc>More generally, it is clear from the proof that any representation V and cyclic λ likewise gives a framing, etc. (if we do not care about irreducibility). This describes U (g) as a &apos;noncommutative flat space&apos; (namely quantized g * ). One can also choose interesting spinor spaces and γ-matrices and hence a Dirac operator sensitive to A. On U (su 2 ) for example one could take the usual γ (Pauli) matrices. And, of course, one can have other metrics not induced by constant η.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>4.1</head>
+
+				<p>Killing form metric on C q [G] We now turn to our main construction which is the example of M = H a dual quasitriangular Hopf algebra. It means that there is a &apos;universal R-matrix functional&apos; R : H ⊗ H → k, which includes the standard deformations C q [G]</p>
+
+				<figure>
+					<figDesc>of the classical simple Lie groups. Ω 1 (H) is built from a finite-dimensional right comodule W (which we view as a left module of H * with action ρ W . The element Q = R 21 R is the &apos;universal Killing form&apos; and we view it as a map Q : H → H * by evaluation, i.e. g, Q(h) = Q(h ⊗ g) = R(g (1) ⊗ h (1) )R(h (2) ⊗ g (2) ) for g, h ∈ H. We assume that ρ W • Q is surjective (e.g. if R is factorisable and ρ W irreducible). We also define the induced actions of H:</figDesc>
+
+				</figure>
+
+				<p><formula>ρ + (h) α β = R(h ⊗ ρ α β ), ρ − (h) α β = R −1 (ρ α β ⊗ h) (35)</formula></p>
+
+				<p>where e α → e β ⊗ ρ β α defines the matrix elements of ρ W for a basis {e α } of W . With these notations one knows that there is a bicovariant differential calculus defined by Ω 0 = ker ǫ/ ker ρ W • Q, ρ W • Q : Ω 0 ∼ =End(W ). (36) This is part of the construction in [22], where it was shown that such calculi with ρ W irreducible essentially classify all the coirreducible calculi for factorisable quantum groups such as C q [G].</p>
+
+				<p>We let W • be the predual of W as a right comodule.</p>
+
+				<figure>
+					<head>Proposition 4</head>
+
+					<figDesc>.6 A dual-quasitriangular Hopf algebra H with calculus defined by (W, ρ W ) is framed by V = End(W ) = W ⊗ W • and e = e M C • (ρ W • Q) −1 . We have e(φ)h = h (1) e(ρ − (Sh (2) ) • φ • ρ + (h (3) )), dh = ·(id ⊗ e)(h (1) ⊗ ρ W • Q(h (2) ) − h ⊗ id) for all h ∈ H, φ ∈ End(W ). Moreover, there is a natural choice of spinor space, namely W , with equivariant γ : V ⊗ W → W provided by the identity matrix and</figDesc>
+
+				</figure>
+
+				<p><formula>(D /ψ) α = ∂ α β ψ β − A(˜ π Ω 0 S −1 ρ β γ ) α β ψ γ ,</formula></p>
+
+				<p>where ψ α ∈ H are the spinor components.</p>
+
+			</div>
+			<div>
+				<head>Proof</head>
+
+				<figure>
+					<figDesc>With the identification (36) understood, one could write the calculus Ω 1 (H) as dh = h (1) ρ W • Q(h (2) ) − hid, φh = h (1) ρ − (Sh (2) ) • φ • ρ + (h (3) ), ∀h ∈ H (37) for the exterior derivative and bimodule structure on φ ∈ End(W ). In our context this identification is made by the framing and gives the structure shown when we write this explicitly. One may check that ρ W • Q(hg) = ρ − (S(hg) (1) )ρ + ((hg) (2) ) = ρ − (Sg (1) )ρ − (Sh (1) )ρ + (h (2) )ρ + (g (2) ) = ρ − (Sg (1) )ρ W • Q(h)ρ + (g (2) )</figDesc>
+
+				</figure>
+
+				<p>which leads to the stated H-module structure on V . Meanwhile, the right adjoint coaction is known[18] to intertwine under Q with the right coadjoint coaction on H * , which means</p>
+
+				<figure>
+					<trash>ρ W • Q(h (2) ) α β ⊗(Sh (1) )h (3) = ρ W • Q(h) a b ⊗ ρ α a Sρ b β . (38)</trash>
+
+
+				</figure>
+
+				<p>In our present setting the equivariance follows easily from the dual-quasitriangularity axioms for R provided the coaction maps a dual basis element as f α → f β ⊗ Sρ α β . This means that we identify V = W ⊗ W • as stated. It is straightforward to verify that d as stated obeys the</p>
+
+				<p>Leibniz rule and that we indeed have a calculus. Also from (38) and (30) one obtains easily the braiding in terms of R-matrices R α β γ δ = R(ρ α β ⊗ ρ γ δ ) and R α β γ δ = R(ρ α β ⊗</p>
+
+				<p><formula>Sρ γ δ ), Ψ(φ ⊗ ψ) α β γ δ = R a µ α b φ µ ν R b σ ν c ψ σ τ R −1τ d c δ ˜ R γ a d β , ∀φ, ψ ∈ End(W ), (39) ∆ L L L L = Ψ ∆ [ , ] [ , ]</formula></p>
+
+				<p>L</p>
+
+				<p><formula>L H Ad V V* = T (b) L L L [ , ] [ , ] [ , ]</formula></p>
+
+				<p>L (a) (c) [ , ] = = η L L</p>
+
+			</div>
+			<div>
+				<head>∆ [ , ]</head>
+
+				<p>[ , ] [ , ] L L L [ , ] [ , ] L = (d)</p>
+
+				<figure>
+					<head>Figure 1:</head>
+
+					<figDesc>Pentagonal axiom (a) of a braided-Lie algebra. Induced &apos;double braiding&apos; (b), braided- Killing form and its braided symmetry (c) and construction (d) as η = ∆T in our formulation. or i ψ i 2 Rφ i 1 R 21 = Rφ 1 R 21 ψ 2 if Ψ(φ ⊗ ψ) ≡ i ψ i ⊗ φ i in a standard notation. The partial derivatives are as usual the coefficient in d of the basic forms e(e α ⊗ f β ), which means</figDesc>
+					<trash>∂ α β (h) = h (1) ρ W • Q(h (2) ) α β − hδ α β . (40)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>We define the gamma-matrices as projectors in W ⊗ W • acting by evaluation (or γ : V → W ⊗ W • the identity map). Thus γ β α (ψ) = e β ψ α and γ β α = e β ⊗ f α , giving D / as stated. ⋄</figDesc>
+
+				</figure>
+
+				<p>We turn now to the construction of a natural &apos;Killing form&apos; metric. In fact we will give a self-contained quantum-group construction which avoids braided categories, but the following is the picture behind it. Thus, it was shown in [22] that for all such calculi the dual of Ω 0 forms a braided-Lie algebra L in the sense of [14]. These are modelled on the properties of the 1-dimensional extension g ⊕ k.c when g is an ordinary Lie algebra; there is a coproduct ∆ : L → L ⊗ L and an extended bracket [ , ] : L ⊗ L → L and everything lives in a braided category (classically we would extend by [ξ, c] = ξ, [c, ξ] = 0 for ξ ∈ g and [c, c] = c with ∆c = c ⊗ c, ∆ξ = ξ ⊗ c + c ⊗ ξ for the coproduct, and have a trivial braiding). The main &apos;pentagonal Jacobi identity&apos; axiom of a (right-handed) braided Lie algebra is shown in Figure 1(a) in a diagrammatic notation[18] with operations flowing down the page and with the braidcrossing denoting the &apos;background braiding&apos; of the category. The axioms for (L, [ , ], ∆) and a counit are strong enough to define an additional &apos;double&apos; braiding Ψ shown in Figure 1</p>
+
+				<figure>
+					<figDesc>(b) and from this an enveloping algebra U (L) as a bialgebra or &apos;braided group&apos; in the braided category. This is defined as the quadratic algebra generated by L with relations of symmetry with respect to Ψ (i.e. setting to zero the image of id − Ψ) and coproduct extending ∆ on L (classically this would recover a quadratic extension of the usual U (g)). There is also a braided-Killing form η in Figure 1</figDesc>
+
+				</figure>
+
+				<p>(c) which is shown there to be braided-symmetric in the sense η = η • Ψ. Here ∪ and ∩ are evaluation and coevaluation of L with a suitable dual. The braided-Killing form η classically restricts to the usual one on g and η(c, c) = 1. Thus Lie theory is contained as a special class of braided-Lie algebras and acquires extra structure such as the double braiding Ψ.</p>
+
+				<p>In our case L = W * ⊗ W = V * in the preceding proposition with basis {x α β = f α ⊗ e β } and ∆x α β = x α γ ⊗ x γ β has a matrix form. The Lie bracket [ , ] is given in [14]</p>
+
+				<figure>
+					<figDesc>in an R-matrix form as well as the background braiding defined by R. The double braiding Ψ is the adjoint of (39) for the exterior algebra and correspondingly the enveloping bialgebra U (L) is the lefthanded braided matrices B L (R) with relations x 2 Rx 1 R 21 = Rx 1 R 21 x 2 . There is an algebra map U (L) → H * sending x α β to ρ W • Q( ) α β ∈ H * and we identify the image of L with Ω * 0 by the counit projection to</figDesc>
+
+				</figure>
+
+				<p><formula>f α β = ρ W • Q( ) α β − δ α β ǫ ∈ H * (41)</formula></p>
+
+				<p>adjoint to the restriction to ker ǫ ⊂ H in (36). The braided Killing form on L ⊗ L can then be viewed in Ω 0 ⊗ Ω 0 . We now give a version of this construction directly in our setting.</p>
+
+			</div>
+			<div>
+				<head>Theorem 4.7</head>
+
+				<p>Let H be a dual-quasitriangular Hopf algebra with differential calculus as above.</p>
+
+				<p>There is a braided-symmetric and Ad-invariant &apos;braided-Killing form&apos;</p>
+
+				<figure>
+					<trash>η Ω 0 = (˜ π Ω 0 ⊗ ˜ π Ω 0 )∆T ∈ Ω 0 ⊗ Ω 0 ; T = R(τ (1) ⊗ Sτ (2) )τ (3) , τ = ρ α α Sρ β β ∈ H η</trash>
+
+					<figDesc>= (ρ W • Q ⊗ ρ W • Q)(∆T ) − id ⊗ ρ W • Q(T ) − ρ W • Q(T ) ⊗ id + ǫ(T )id ⊗ id ∈ V ⊗ V.</figDesc>
+
+				</figure>
+
+				<p>If nondegenerate, there is a braided-symmetric Riemannian metric g = (e ⊗ H e)η with ∧(g) = 0.</p>
+
+				<p>Proof The two applications of [ , ] in the &apos;figure of eight&apos; braided trace in Figure 1</p>
+
+				<figure>
+					<figDesc>(c) can be written as a product in U (L) followed by a single [ , ]</figDesc>
+
+				</figure>
+
+				<p>and this dualises to the coproduct of U (L) * applied to the element T in Figure 1</p>
+
+				<figure>
+					<figDesc>(d) (after some convention adjustments). This coproduct of U (L) * is essentially that of H, so we have η ′ = (ρ W • Q ⊗ ρ W • Q)∆T ∈ V ⊗ V, (42)</figDesc>
+
+				</figure>
+
+				<p>where we use ρ W • Q to map H to V . This is the natural object from the braided-Lie theory and we will see that it has the stated features of η, however for our geometrical application we have to first project ∆T down to Ω 0 ⊗ Ω 0 which is η Ω 0 as stated (we have done the same in previous sections in the expressions (id ⊗ ˜ π Ω 0 )Ad : Ω 0 → Ω 0 ⊗ Ω 0 dual to [ , ]). Or by (36) we apply the counit projection π ǫ to ∆T and then ρ W • Q to give the corresponding element of V ⊗ V .</p>
+
+				<p>We now directly verify the properties of η ′ and hence η. Notice first that if {e a } is a basis of V and {f a } a dual basis of V * , let</p>
+
+				<figure>
+					<trash>τ = e a ¯ (1) , f a e a ¯ (2) . (43)</trash>
+
+					<figDesc>Cyclicity of the trace here appears as the following fact: τ (1) ⊗ τ (2) ⊗ . . . ⊗ τ (n) = τ (n) ⊗ τ (1) ⊗ · · · ⊗ τ (n−1) . (44)</figDesc>
+
+				</figure>
+
+				<p>This is because the first expression may be written as the trace of n applications of the coaction,</p>
+
+				<figure>
+					<trash>τ = e a ¯ (1)··· ¯ (1) , f a e a ¯ (1)··· ¯ (1) ¯ (2) ⊗ · · · ⊗ e a ¯ (1) ¯ (2) ⊗ e a ¯ (2) . The outermost ¯ (1</trash>
+
+					<figDesc>) is equivalent due to equivariance of the duality pairing to f a ¯</figDesc>
+					<trash>(1) and e a ¯ (1)··· ¯ (1) ¯ (2) replaced by Sf a ¯ (2) . On the other hand f a ¯ (1) ⊗ e a ⊗ Sf a ¯ (2) = f a ⊗ e a ¯ (1) ⊗ e a ¯ (2</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>) by a change of basis (or invariance of the coevalution element f a ⊗ e a ). Hence we may replace the coaction on f a by an innermost coaction e a</figDesc>
+					<trash>¯ (1) , putting an extra ¯ (1) in all the other places and replacing Sf a ¯ (2) by e ¯ (2</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>) . Converting the iterated coactions back to coproducts gives the cyclicity property (in fact one needs only a coalgebra for the cyclicity with the appropriate adjoint operation in the role of S). In our case V = W ⊗ W • with the coaction given in the preceding proposition. Then</figDesc>
+
+				</figure>
+
+				<p><formula>τ = (e α ⊗ f β ) ¯ (1) , f α ⊗ e β (e α ⊗ f β ) ¯ (2) = f α ⊗ e β , e a ⊗ f b ρ a α Sρ β b = ρ α α Sρ β β .</formula></p>
+
+				<p>Now we compute the figure-of eight braided trace, which is fairly routine[18]. We read Figure 1</p>
+
+				<figure>
+					<figDesc>(d) from the top down, starting with f a ⊗ e a . This becomes f a ⊗ e a</figDesc>
+					<trash>¯ (1) ⊗ e a ¯ (2</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>) . We then apply the background braiding to the first two places and evaluation, to find</figDesc>
+					<trash>T = e a ¯ (1) ¯ (1) , f a ¯ (1) R(f a ¯ (2) ⊗ e a ¯ (1) ¯ (2) )e a ¯ (2) = e a ¯ (1) ¯ (1) ¯ (1) , f a R(S −1 e a(2) ⊗ e a ¯ (1) ¯ (1) ¯ (2) )e a ¯ (1) ¯ (2) = τ (2) R(S −1 τ (3) ⊗ τ (1) ) = R(τ (1) ⊗ Sτ (2) )τ (3) = v(τ (1) )τ (2)</trash>
+
+
+				</figure>
+
+				<p>using that R is S ⊗ S-invariant and cyclicity (44) again. Note that T = v(τ (1) )τ (2) where v(h) = R(h (1) ⊗ Sh (2) ) implements S −2 by convolution[18]. Next,</p>
+
+				<figure>
+					<trash>AdT = R(τ (1) ⊗ Sτ (2) )τ (4) ⊗(Sτ (3) )τ (5) = R(τ (2) ⊗ Sτ (3) )τ (5) ⊗(Sτ (4) )τ (1) = R(τ (1) ⊗ Sτ (4) )τ (5) ⊗ τ (2) Sτ (3) = T ⊗ 1</trash>
+
+
+				</figure>
+
+				<p>by cyclicity and the axioms of a dual-quasitriangular structure or that v implements S −2 [18].</p>
+
+				<p>So T and hence η ′ are Ad-invariant (since ∆ and ρ W • Q (and π Ω 0 ) are Ad-covariant). Similarly from the cyclicity (44) and the property of v it is clear that ST = T and (id ⊗ S 2 )∆ op T = ∆T so η ′ and hence η are Ψ-invariant as in Proposition 4.2. One also has explicit formulae using the definition of Q and the dual-quasitriangularity axioms for R,</p>
+
+				<figure>
+					<trash>η ′α β γ δ = u b 5 b 6 Q b 6 b 1 a 2 a 3 ˜ R a 1 a 2 a 3 a 4 Q a 4 a 5 a b ˜ R α a b 4 b 5 R −1b 3 b 4 b β Q a 5 a 1 c d ˜ R γ c b 2 b 3 R −1b 1 b 2 d δ (45) ρ W • Q(T ) α β = ˜ R a 1 a 2 a 3 a 4 Q b 4 b 1 a 2 a3 Q a 4 a 1 a b R −1b 1 b 2 b β ˜ R α a b 2 b 3 u b 3 b 4 , ǫ(T ) = u b 1 b 2 Q b 2 b 1 a 2 a 3 ˜ R a 1 a 2 a 3 a 1 , (46) where u = ˜ R a · · a and Q = R 21 R. ⋄</trash>
+
+
+				</figure>
+
+				<p>The braided-Killing form the standard quantum groups C q [G] is closely related to the usual</p>
+
+				<p>Killing form and is typically nondegenerate for generic q = 1 (being rational functions in q they need to be nondegenerate at only one point to establish this). Hence the theorem above provides a construction of the metric for such quantum groups and their standard bicovariant differential calculi. We will demonstrate this explicitly for the case of C q [SU 2 ] with its standard 4-dimensional calculus. (here W is the spin</p>
+
+			</div>
+			<div>
+				<head n="1">2</head>
+
+				<p>representation). The exterior algebra in this case is well-known and in our conventions is as follows. We let e 1 1 = e a , e 2 1 = e b , etc. for brevity, and θ = e a + e d . Then e a , e b , e c behave like usual forms or Grassmann variables and e a ∧ e d + e d ∧ e a + λe b ∧ e c = 0, e d ∧ e b + q 2 e b ∧ e d + λe a ∧ e b = 0, e c ∧ e d + q 2 e d ∧ e c + λe c ∧ e a = 0, e 2 d = λe b ∧ e c , d = [θ, ], e a a b c d = qa q −1 b qc q −1 d e a , [e b , b] = [e b , d] = [e c , a] = [e c , c] = 0 [e b , a] = qλ be a , [e b , c] = qλ de a , [e c , b] = qλ ae a , [e c , d] = qλ ce a [e d , a] q −1 = λbe c , [e d , b] q = λae b + qλ 2 be a , [e d , c] q −1 = λde c , [e d , d] q = λce b + qλ 2 de a where [x, y] q = xy − qyx and λ = (1 − q −2 ), and a, b, c, d ∈ SU q (2). Note that the ∧ relations are essentially those for the exact differentials on q-Minkowski space[18, Sec. 10.5] given by the braid statistics Ψ + for the addition law on that, as must be the case because B L (R) is the coordinate algebra of q-Minkowski space as well as U (L) (details will appear elsewhere [23]).</p>
+
+				<figure>
+					<head>Proposition 4.8</head>
+
+					<figDesc>Let [n]</figDesc>
+
+				</figure>
+
+				<p>q = (1−q n )/(1−q). The braided-Killing form for the spin 1 2 differential calculus on C q [SU 2 ], divided by (q − 1) 2 is η = q −12 [8] q [2] q η K − λ [3] q (q −9 + q −7 ) − [2] 2 q q −2 θ ⊗ θ η K = e b ⊗ e c + q 2 e c ⊗ e b + (e a ⊗ e a − qe a ⊗ e d − qe d ⊗ e a + q(q 2 + q − 1)e d ⊗ e d ) [2] q Proof We use the R-matrix formulae obtained in Theorem 4.7. In fact the difference between η and η ′ is a multiple of θ ⊗ θ = id ⊗ id so only affects the second term here. One has ρ W • Q(T ) = id(2 + q −4 + q −8 ) and ǫ(T ) = (1 + q −2 )(1 + q −4 ) and their subtraction from η ′ makes η K the leading term and θ ⊗ θ O(q − 1) relative to it. This η K is a q-deformation of ρ W of the usual</p>
+
+				<figure>
+					<trash>split Casimir X + ⊗ X − + X − ⊗ X + + 1 2</trash>
+
+
+				</figure>
+
+				<p>H ⊗ H, as it should be. The θ ⊗ θ is a kind of &apos;null mode&apos; that does not affect the geometry and could be dropped from the metric. ⋄</p>
+
+			</div>
+			<div>
+				<head n="5">Finite Riemannian Geometry</head>
+
+				<p>In this section we apply the general results above to the special case of M = C[G] the algebra of functions on a finite group G. We first specialise the results of Section 3 to M = C[Σ] for Σ a finite set and list the main formulae of Riemannian geometry for this case in a self-contained manner that could be put on a computer. We then proceed to concentrate on the group case as good source of examples where there are clear choices for the differential structures etc. Finally, we compute everything for the permutation group S 3 including solving for a canonical torsion free cotorsion free or &apos;Levi-Civita&apos; spin connection in it.</p>
+
+			</div>
+			<div>
+				<head n="5.1">Riemannian geometry on finite sets</head>
+
+				<p>Here we will see that even finite sets can be endowed with a rich variety of &apos;manifold&apos; structures using the framework of Section 3. In fact it is not true that every differential calculus on a finite set is parallelizable (see below); i.e. there may be a still more general theory over finite sets where we specialise the global constructions of Section 2. This is not relevant to the finite group case which is our main goal, and will therefore be considered elsewhere. On the other hand, we keep the fiber of the frame bundle to be a Hopf algebra H equipped with a bicovariant differential calculus defined by Ω 0 of dimension n, since no special simplification is afforded by specialising further for the tensor product bundle. To be as concrete as possible (we have in mind actual matrix computations for numerical gravity on finite sets) let us assume that H is finite-dimensional and choose a basis {e i } for it with e 0 = 1 and π Ω 0 (e i ) = e i for 1 ≤ i ≤ n with the image here a basis of Ω 0 (and zero otherwise). In this way we identify Ω 0 with its lift in H.</p>
+
+				<p>The dual basis {f i } similarly splits with 1 ≤ i ≤ n a basis of Ω * 0 . The coproduct is of course ∆e i = c i jk e j ⊗ e k , (47) for some structure constants. Finally, we write right H-comodules V explicitly as left actions ρ V of H * . We define (since we typically convert right actions to left ones by S −1 ) the matrices</p>
+
+				<figure>
+					<trash>τ i = ρ V (S −1 f i ) (48)</trash>
+
+
+				</figure>
+
+				<p>In fact the formulae below in the tensor product bundle depend only in this coalgebra and the choice of quotient space (so that similar formulae hold for coalgebra bundles[12] as well except that we would specify the matrices τ i or right action of H * directly.)</p>
+
+				<p>Next, we let Σ be a finite set and M = C[Σ] spanned by delta-functions {δ x } for x ∈ Σ. It is easy to see (and well-known) that a general differential calculus Ω 1 (M ) corresponds to a subset</p>
+
+				<figure>
+					<trash>E ⊆ Σ × Σ − diagonal, Ω 1 (M ) = {δ x ⊗ δ y | (x, y) ∈ E} = CE, (49)</trash>
+
+
+				</figure>
+
+				<p>where we set to zero delta-functions corresponding to the complement of E and identify the remainder with their lifts as shown. If f = f x δ x is a function with components f x , then df has components (df ) x,y = f y − f x for (x, y) ∈ E.</p>
+
+				<p>Lemma 5.1 A V -bein for a finite set Σ is a vector space on which H coacts and 1-forms E a = (x,y)∈E E a,x,y δ x ⊗ δ y for each element of a basis {e a } a∈I of V such that the matrices {E a,x,y } are invertible for each x ∈ Σ held fixed. A necessary and sufficient condition for the existence of a V -bein is that E is fibred over Σ, which implies in particular that |E| = |Σ| dim(V ).</p>
+
+				<p>Proof We write E a = e(e a ), etc. In principle we require the matrices s e z,a x,y = δ z y E a,x,y to be invertible as maps M ⊗ V → Ω 1 (M ), but since they are left M -module maps (or from their special form) we know that their inverses must also be left M -module maps and hence of the form s e −1x,y z,a = δ z x E −1 a x,y for a collection of matrices E −1 a x,y inverse to the E a,x,y for each x. This requires in particular that for each x ∈ Σ the set F x = {y| (x, y) ∈ E} has the same size, namely the dimension of V , i.e. that E is a fibration over Σ (and E a,x,y is a trivialisation of the vector bundle with fiber CF x over x). The fibration is also sufficient for the existence of a trivialisation since bundles over finite sets are trivial. Indeed, a natural &apos;local&apos; class of V -beins is just given by any collection of bijections s x : I ∼ =F x with E a,x,y = δ sx(a),y . ⋄ Similarly a V -cobein is a collection of 1-forms with components E * a x,y with respect to a dual basis {f a } and with the matrices {E * a x,y } invertible for each y ∈ Σ held fixed. The metric is then</p>
+
+				<figure>
+					<trash>g = (x,y,z)∈F g x,y,z δ x ⊗ δ y ⊗ δ z , g x,y,z = E * a x,y E a,y,z , F = {(x, y, z) ∈ Σ 3 | (x, y), (y, z) ∈ E}, (50) where Ω 1 (M ) ⊗ M Ω 1 (M ) = CF . Moreover, a</trash>
+
+
+				</figure>
+
+				<p>connection or gauge field with values in the dual of Ω 0 is clearly a collection of 1-forms with components A i,x,y . In our case H coacts on V so that it plays the role of frame transformations in the frame bundle approach. In that case A induces a covariant derivative on 1-forms</p>
+
+				<figure>
+					<trash>(∇α) x,y,z = (α a y − α a x )E a,y,z − α a x A a,x,y E b,y,z τ ib a , (51)</trash>
+
+
+				</figure>
+
+				<p>where α = α a E a defines the component functions α a of a 1-form α in the V -bein basis.</p>
+
+				<p>Next we specify Ω 2 (M ) by a bimodule surjection ∧ : Ω 1 (M ) ⊗ M Ω 1 (M ) → Ω 2 (M ).</p>
+
+			</div>
+			<div>
+				<head>Lemma 5.2</head>
+
+				<p>The surjections ∧ are necessarily given by quotients V x,z of the spaces CF x,z where F x,z = {y ∈ Σ| (x, y, z) ∈ F } such that the image of the vector (1, 1, · · · , 1) is zero whenever</p>
+
+				<figure>
+					<trash>(x, z) / ∈ E with x = z. Explicitly, (∧f ) x,α,z = y∈Fx,z f x,y,z p x,z y α , (52)</trash>
+
+
+				</figure>
+
+				<p>for a family of matrices p x,z with respect to a basis {e α } of each V x,z and with rows summing to zero when (x, z) / ∈ E with x = z.</p>
+
+				<p>Proof We require to quotient Ω 1 (M ) ⊗ M Ω 1 (M ) = CF by a subbimodule. This must therefore take the form shown for some surjections p x,z . The additional stated condition is for d 2 = 0 (so the maximal prolongation will be V x,z = CF x,z when (x, y) ∈ E and CF x,z /C.(1, 1, · · · , 1) otherwise). The argument is similar to that in [20]. There may be additional restrictions imposed by requiring the Ω 2 (M ) to be part of a global Ω 2 (P ) as explained in Section 3. ⋄ When α x,y , β x,y are the components of 1-forms as above then (dα) x,α,z = y∈Fx,z (α x,y + α y,z − α x,z )p x,z y α , (α ∧ β) x,α,z = y∈Fx,z α x,y β y,z p x,z y α . (53)</p>
+
+				<p>With such an explicit description of Ω 2 (M ) it is clear that a connection A is regular if</p>
+
+				<figure>
+					<trash>1≤j,k≤n,y c i jk A j,x,y A k,y,z p x,z y α = 0, ∀q / ∈ C ∪ {e}. (54) Its curvature is F i,x,α,z = (dA i ) x,α,z + 1≤j,k≤n,y c i jk A j,x,y A k,y,z p x,z y α . (55)</trash>
+
+
+				</figure>
+
+				<p>The actual Riemann tensor is the 2-form valued operator on 1-forms,</p>
+
+				<figure>
+					<trash>R x,α,z a b = F i,x,α,z τ ia b , Rα = α a R b a ⊗ M E b . (56) Meanwhile, the zero torsion and zero cotorsion equations are vanishing of ( ¯ D ∧ e) a,x,α,z = (dE a ) x,α,z + i,b,y A i,x,y E b,y,z p x,z y α τ ib a , (57) (D ∧ e * ) a x,α,z = (dE * a ) x,α,z + i,b,y E * b x,y A i,y,z p y x,zα τ ia b . (58) Also, a &apos;lift&apos; i : Ω 2 (M ) → Ω 1 (M ) ⊗ M Ω 1 (M</trash>
+
+
+				</figure>
+
+				<p>) is given similarly to the discussion above by a collection of inclusions i x,z : V x,z → CF x,z or a family of rectangular matrices i x,z α y . We let π x,z = i x,z • p x,z so that π y w = p y α i α w at each x, z. If i is a true lift so that p • i = id then i • ∧ is a projection splitting Ω 1 (M ) ⊗ M Ω 1 (M ) into something isomorphic to Ω 2 (M ) plus a complement and the π x,z are likewise a family of projection matrices. We do not want to strictly assume this, however. Given i, we have an interior product and, in particular,</p>
+
+				<figure>
+					<trash>a Ricci tensor Ricci x,y,z = i(F i ) ab x E b,x,y E c,y,z τ ic a . (59)</trash>
+
+
+				</figure>
+
+				<p>Here i(F i ) x,w,z in Ω 1 (M ) ⊗ M Ω 1 (M ) is as in (55) but with π x,z y α in place of p x,z y α written there.</p>
+
+				<p>The V -bein components here are defined by i(F i ) x,y,z = i(F i ) ab x E a,x,y E b,y,z as usual. Finally, gamma-matrices are a collection of matrices γ a acting on spinors ψ which are functions with values in a vector space W on which H coacts by ρ W , say. We define the corresponding matrices τ a W as above. Then the associated Dirac operator is</p>
+
+				<figure>
+					<trash>D / = ∂ a γ a − A a i γ a τ i W . (60)</trash>
+
+
+				</figure>
+
+				<p>For the case when H = C[G] it is actually useful to chose a different basis for H that reflects better the group structure, namely we label the basis by the group elements themselves (so e i is the delta-function at i ∈ G and c i jk = δ jk i ). This has the same form as above except that the old e 0 above is the sum of all the new basis elements. The role of e 1 , · · · , e n is played by e i for i ∈ C a subset of order n not containing the identity element e ∈ G (see below), which is purely a notational change. All the formulae above have the same form in this case except the regularity and curvature equations, for which one has to make a careful change of basis (or use the form of π Ω 0 in the new basis as given in the next section). One has instead,</p>
+
+				<figure>
+					<trash>jk=q,y A j,x,y A k,y,z p y x,zα = 0, ∀q / ∈ C ∪ {e} (61) F i,x,α,z = (dA i ) x,α,z + jk=i,y A j,x,y A k,y,z p y x,z α − j,y (A j,x,y A i,y,z + A i,x,y A j,y,z )p y x,z α (62) respectively, with i, j, k ∈ C.</trash>
+
+
+				</figure>
+
+				<p>Whereas the above tensorial formulae are suitable for numerical computations, let us note finally that we also have more algebraic &apos;Cartan calculus&apos; formulae based on (21). Thus, E a f = ρ a b (f )E b , df = [θ, f ]</p>
+
+				<figure>
+					<trash>; ρ a b (f )(x) = y∈Fx E −1xy b f (y)E axy , θ = θ a E a , θ a (x) = y∈Fx E −1xy a (63) for all functions f . For Ω 2 (M ) we can build ∧ from a G-equivariant projector π(e a ⊗ e b ) ≡ π ab cd e c ⊗ e d on V ⊗ V . Then π x,z y w = π ab cd E −1xy a E −1yz b E cxw E dwz (64)</trash>
+
+
+				</figure>
+
+				<p>for the above family of projection matrices. This imposes contraints on (π, E) and defines a moduli space of G-parallelizable manifold structures on a finite set of a given order.</p>
+
+			</div>
+			<div>
+				<head n="5.2">Riemannian geometry on finite groups</head>
+
+				<p>We now specialise further to the case the case M = H = C[G] with the same bicovariant differential calculus on both. This gives a nontrivial setting at the level of finite groups. In principle one obtains &apos;geometric invariants&apos; of finite groups equipped with a differential calculus (i.e. a conjugacy class), which is certainly of independent mathematical interest as well as of physical interest as a simple toy setting for finite gravity.</p>
+
+				<p>As mentioned above, the coirreducible calculi are classified immediately from [4] by nontrivial conjugacy classes C ⊂ G. In fact we do not need to assume that the calculus is irreducible and hence in what follows C is any Ad-stable subset not containing the group unit element e ∈ G.</p>
+
+				<p>We denote the elements of C by a, b, c, etc. Then Q H = {δ q | q = e, q / ∈ C}, Ω 0 = {δ a | a ∈ C} = CC,</p>
+
+				<figure>
+					<trash>Ad(δ a ) = g∈G δ gag −1 ⊗ δ g (65) df = a∈C (∂ a f ) · E a , ∂ a = R a − id, E a · f = R a (f ) · E a (66) where R a (f ) = f (( )a).</trash>
+
+
+				</figure>
+
+				<p>In this description we identify a basis element e a of Ω 0 with a fixed lift δ a ∈ ker ǫ, which is an Ad-invariant identification. The projection from C[G] to Ω 0 is then</p>
+
+				<figure>
+					<trash>˜ π Ω 0 (δ g ) =      δ g if g ∈ C − a∈C δ a if g = e 0 else. (67)</trash>
+
+
+				</figure>
+
+				<p>The elements of Ω 0 viewed in Ω 1 (H) are the values of the Maurer-Cartan form e : Ω 0 → Ω 1 (H),</p>
+
+				<figure>
+					<trash>E a = e(δ a ) = π N H ( g∈G δ g ⊗ δ ga ), N H = {δ g ⊗ δ gq | g ∈ G, q = e, q / ∈ C}. (68)</trash>
+
+
+				</figure>
+
+				<p>In terms of the general finite set case, we have a local form of the V -bein and the action, s x (a) = xa, E a,x,y = δ xa,y , τ</p>
+
+				<figure>
+					<trash>ab c = δ b a −1 ca − δ b c . (69)</trash>
+
+
+				</figure>
+
+				<p>The rest of our treatment in the finite group case, is more easily handled in the &apos;Cartan calculus&apos; form at the end of Section 5.1 i.e. by algebraic relations among the {E a } generators of the entire exterior algebra rather than in &apos;spacetime coordinates&apos; α x,y , etc. Thus, the higher exterior algebra is generated[4] by the relations at the first order and the additional relations implied by the braiding</p>
+
+				<figure>
+					<trash>Ψ(E a ⊗ H E b ) = E aba −1 ⊗ H E a . (70)</trash>
+
+
+				</figure>
+
+				<p>Thus, in Ω 2 (H) the quotient to the wedge product consists in setting to zero all linear combinations invariant under Ψ. In particular, for all g ∈ G the elements ab=g E a ⊗ E b are invariant (after a change of variables), hence these along with the clearly invariant E a ⊗ E a give some immediate relations a,b∈C, ab=g E a ∧ E b = 0, ∀g ∈ G, E a ∧ E a = 0. (71)</p>
+
+				<p>Using these relations and (67) the Maurer-Cartan equation on any Hopf algebra becomes dE a − b (E a ∧ E b + E b ∧ E a ) = 0. (72)</p>
+
+				<p>Meanwhile, the partial derivatives trivially obey</p>
+
+				<figure>
+					<trash>∂ a (mn) = m∂ a n + (∂ a m)R a (n), ∂ a ∂ b = ∂ ab − ∂ a − ∂ b (73)</trash>
+
+
+				</figure>
+
+				<p>as R ab = R a R b , where we extend the same definitions to ab ∈ G. One can also write</p>
+
+				<figure>
+					<trash>∂ a ∂ b − ∂ b ∂ b −1 ab = ∂ b −1 ab − ∂ a (74)</trash>
+
+
+				</figure>
+
+				<p>as some form of Lie algebra[4], however such a point of view can only be taken so far, and we do not use it. Rather, the ∂ a form a representation of a braided-Lie algebra[14]. The above formulae, with the exception of our notations such as (67) and the observation (71), are all immediate from the general theory of [4] and are the starting point of any quantum-groups inspired noncommutative geometry on finite groups. We will also need a more full description of Ω 2 (H) in the finite group case, provided by the following lemma.</p>
+
+				<p>Lemma 5.3 For all g ∈ G let P g = (CC ∩ gC −1 ) σ the invariant subspace of the vector space with basis C ∩ gC −1 , where σ sends a basis element a to a −1 g. Let {λ g,α } be a basis of P g . Then the relations of Ω 2 (H) are a,b∈C, ab=g λ g,α a E a ∧ E b = 0, ∀g ∈ G, ∀α.</p>
+
+				<p>Proof For any λ ∈ P g , we clearly have invariance under Ψ as ab=g λ a E aba −1 ⊗ H E a = cd=g λ c −1 g E c ⊗ H E d = ab=g λ a E a ⊗ H E b , by the σ-invariance of λ. Hence relations of the form shown hold in Ω 2 (H) for any basis of P g , for each g ∈ G. One can show that this is a full set of relations after a detailed analysis of the kernel of id − Ψ in this case. ⋄</p>
+
+				<p>We are now ready to specialise our results of Sections 3,4 to obtain a theory of Riemannian geometry for finite groups. First of all, as a trivial example of the theory in [14] we may view Ω * 0 as the image under π ǫ of a braided-Lie algebra with trivial background braiding and L = {x a | a ∈ C} = CC, [x a , x b ] = x b −1 ab , ∆x a = x a ⊗ x a . (75)</p>
+
+				<p>The braided enveloping bialgebra U (L) from [14] in this case (because the background braiding is trivial) is actually a usual bialgebra or quantum group without antipode. It comes with a bialgebra homomorphism to the group algebra CG,</p>
+
+				<figure>
+					<trash>U (L) = Cx a / x a x b = x b x b −1 ab , p : U (L) → CG, p(x a ) = a. (76)</trash>
+
+
+				</figure>
+
+				<p>The further projection of the braided-Lie algebra generators to the kernel of the counit gives the basis {f a = a − e} of Ω * 0 dual to the e a = δ a via Hopf algebra duality. One may also consider &apos;braided gauge theory&apos; with A having values in L rather than in Ω * 0 , but for the present we need this theory mainly to have a braided-Killing form.</p>
+
+				<p>Proposition 5.4 The braided-Killing form of L is a symmetric positive-integer valued and Adinvariant bilinear form on the conjugacy class given by η(x a , x b ) = n(ab) ≡ #{c ∈ C| cab = abc} = η(x b , x b −1 ab ), ∀a, b ∈ C.</p>
+
+				<p>We say that a conjugacy class is semisimple if this associated Killing form is nondegenerate.</p>
+
+				<p>Proof The braided-Killing form is defined as the trace η(x a , x b ) = c∈C δ c , [[x c , x a ], x b ] which is clearly as shown (the number of c ∈ C commuting with ab). Its formal properties are part of the general theory of braided-Lie algebras. The relevant braiding in the present case is that of the category of crossed CG-modules and has the form Ψ(x a ⊗ x b ) = x b ⊗ x b −1 ab (as above for differentials), so that η, depending only on the product, is clearly braided-symmetric in the sense η = η • Ψ. Hence it is also symmetric in the usual sense (because S 2 = id in Proposition 4.2.)</p>
+
+				<p>Ad-invariance is clear as well. Note that the braided-Lie algebra itself is bosonic as the category of C[G]-comodules in which it lives has a trivial background braiding. ⋄ Because Ω * 0 can be identified naturally (and Ad-invariantly) with L viewed inside CG, we pull back this braided-Killing form to obtain on Ad-invariant bilinear form η(f a , f b ) ≡ η(x a , x b ) = n(ab). (77)</p>
+
+				<p>Note that this gives a slightly different Killing form than the trace of Ad f a Ad f b i.e. taking &apos;Lie bracket&apos; as the quantum group adjoint action of f a = a − e in CG, giving instead η(f a , f b ) = n(ab) − n(a) − n(b) + n(e) more similar to Theorem 4.7. This is also Ad-invariant so (if nondegenerate) could also be used to define a metric with essentially the same geometry. Also note that for an Abelian group the conjugacy classes are singletons but we make take C a collection of these and the same formulae as above for a (reducible) differential calculus. The Killing form will be degenerate in this case but the δ-function provides instead a suitable symmetric and invariant bilinear form. Let</p>
+
+				<figure>
+					<trash>η ab = η(f a , f b ), η −1 ab = η −1 (δ a , δ b ) (78)</trash>
+
+
+				</figure>
+
+				<p>for the braided Killing form and its inverse in our basis. We will write α = α a · E a for any 1-form and similarly for the components of higher cotensors. We sum over repeated indices a, b ∈ C in tensor expressions.</p>
+
+				<p>In this setting the main equations of &apos;quantum group Riemannian geometry&apos; of Section 3 become as follows. A framing is a collection of 1-forms {E a } such that every 1-form is a unique linear combination of these with coefficients functions from the left (e.g. as above). A spin connection is a collection {A a } of 1-forms and the covariant derivative associated to a spin connection and framing on any 1-form α is</p>
+
+				<figure>
+					<trash>∇α = dα a ⊗ H E a − α a b A b ⊗ H (E b −1 ab − E a ). (79)</trash>
+
+
+				</figure>
+
+				<p>The extra term in ∇ comes from the projectioñ π Ω 0 or equivalently from the fact that the role of &apos;Lie algebra&apos; is being played by the vectors {a − e} in the group algebra as explained above.</p>
+
+				<p>The associated torsion tensor T : Ω 1 (H) → Ω 2 (H) measures the deviation T α = d ∧ α − ∇α and the zero-torsion condition is vanishing of ¯ D A ∧ E a = dE a + b A b ∧ (E b −1 ab − E a ). (80)</p>
+
+				<p>The curvature ∇ 2 associated to a regular connection corresponds to a collection of two forms</p>
+
+				<figure>
+					<trash>{F a } defined by F a = dA a + cd=a, c,d∈C A c ∧ A d − b (A b ∧ A a + A a ∧ A b ) (81) where regularity in Section 3 becomes the condition ab=q, a,b∈C A a ∧ A b = 0, ∀q = e, q / ∈ C. (82)</trash>
+
+
+				</figure>
+
+				<p>It ensures that the curvature descends to Ω 0 , otherwise it potentially has values {F g } for all g = e. It is clear that the Maurer-Cartan form can be viewed as a regular connection with zero curvature. For any connection the associated Riemann curvature is the 2-form-valued operator</p>
+
+				<figure>
+					<trash>Rα = α a b F b ⊗ H (E b −1 ab − E a ) (83) on 1</trash>
+
+
+				</figure>
+
+				<p>-form α = α a E a , according to the correspondence in Section 3.</p>
+
+				<p>To define the Ricci tensor (or to define interior products in general) we need a bimodule inclusion or &apos;lift&apos; Ω 2 (H) → Ω 1 (H) ⊗ H Ω 1 (H). The obvious one for the bicovariant calculus, although not precisely a lift any more (not covered by ∧) is provided by i = id − Ψ, i(E a ∧ E b ) = E a ⊗</p>
+
+				<figure>
+					<trash>H E b − E aba −1 ⊗ H E a . (84)</trash>
+
+
+				</figure>
+
+				<p>We provide now another possibility which is actually a lift in a natural manner, so that i • ∧ is an actual projection operator on Ω 1 (H) ⊗ H Ω 1 (H). ∧ to a bimodule projection operator, defined by</p>
+
+				<figure>
+					<trash>i(E a ⊗ H E b ) = E a ⊗ H E b − α µ α,a cd=g λ α c E c ⊗ H E d</trash>
+
+
+				</figure>
+
+				<p>where µ α ∈ P g are a dual basis to the λ α with respect to the dot product as vectors in CC ∩ gC −1 , and g = ab is fixed.</p>
+
+				<p>Proof Here the summed terms vanish under ∧ by Proposition 5.1, so that i as stated indeed splits this for any choice of coefficients µ α . We choose these to be the dual basis to the λ α so that a∈C∩gC −1 µ α,a λ β a = δ α,β . Here g = ab is suppressed in our notation. Then one may verify that the map is well-defined on Ω 2 (H), i.e. ab=g λ a i(E a ∧ E b ) = 0. Finally, i by definition extends as a left H-module map and, since we only add terms of the same &apos;total degree&apos; g with respect to the right action, it becomes also a right module map. ⋄</p>
+
+				<p>Given the choice of &apos;lift&apos;, the Ricci tensor constructed from the Riemann tensor by making a point-wise trace over the input and the first output of i(R), is</p>
+
+				<figure>
+					<trash>Ricci = a,b,c i(F ) ab c E b ⊗ H (E c −1 ac − E a ), (85) where i(F c ) = i(F ) ab c E a ⊗ E b .</trash>
+
+
+				</figure>
+
+				<p>Next, a gamma-matrix is a collection of endomorphisms {γ a } of a vector space W on which G acts by a representation ρ W say, subject to further constraints to be discussed on the γ. A &apos;spinor&apos; field is a W -valued function on G, and</p>
+
+				<figure>
+					<trash>D / = ∂ a γ a − A b a γ a τ b W , τ a = ρ W (a −1 − e) (86)</trash>
+
+
+				</figure>
+
+				<p>where A b = A b a E a determines the components of each A a . The τ a W are the &apos;Lie algebra&apos; generators f a in the representation ρ W . The group inverse here makes them actually a rightaction rather than a left one (just as the ∂ a are actually right-derivations).</p>
+
+				<p>Finally, a metric is determined by a choice of framing and a coframing {E * a } which is a collection of 1-forms such that every 1-form is a unique combination of these with coefficient functions from the right. Given a framing, a general coframimg and hence a general metric is determined by a point-wise invertible function-valued matrix {g ab } and given as a cotensor by</p>
+
+				<figure>
+					<trash>g = E a g ab ⊗ H E b (87)</trash>
+
+
+				</figure>
+
+				<p>where g ab is the matrix inverse (e.g. g ab = η ab above). The cotorsion of the spin connection is the torsion with respect to the coframing and corresponds to</p>
+
+				<figure>
+					<trash>D A E * a = dE * a + c (E * cac −1 − E * a ) ∧ A c . (88)</trash>
+
+
+				</figure>
+
+				<p>Vanishing of the cotorsion generalises the notion of metric compatibility in a slightly weaker &apos;skew&apos; formulation appropriate to our not requiring the metric symmetric[2]. One is at liberty now to do &apos;finite gravity&apos;. That is one can look at the moduli spaces for the above data and solve the various equations as well as others such as given by the variation or minimisation of an action. The role of Einstein-Hilbert action can be played for example by the trace of D / 2 . Since everything is finite we do not need to worry about regularisations and Dixmier traces etc. as in the approach of Connes[5]. We will not attempt this here but we will show for a nontrivial example in the next section that the moduli space of our basic data is not empty.</p>
+
+				<p>For example, we could fix the framing and coframing to be the natural ones on any quantum group defined as above by the Maurer-Cartan form and a &apos;braided-Killing form&apos; g = η. We have established these canonical choices in Section 4. If one wants a torsion free spin connection we then we have to solve (in view of the Maurer-Cartan equations already obeyed), the condition b =a A b ∧ (E b −1 ab − E a ) + E b ∧ E a + E a ∧ E b = 0, ∀a ∈ C. (89)</p>
+
+				<p>We need only solve this for all except one a since the sum over a is automatically zero in view of (71). Finally we could take for γ a the &apos;tautological&apos; one in Section 4,</p>
+
+				<figure>
+					<trash>γ a = b η −1 ab ρ W (b − e). (90) These are equivariant and obey η ab γ a γ b = ρ W (C), C = a,b∈C η −1 ab (a − e)(b − e) (91)</trash>
+
+
+				</figure>
+
+				<p>where C is the braided Casimir element associated to the braided-Killing form.</p>
+
+				<p>We can also consider other choices of gamma-matrices {γ a }. Our other new proposal mentioned in Section 4 is that the gamma-matrices could be restricted by the requirement that Connes prescription[5] for the exterior algebra Ω · D / obtained from D / should coincide with our bicovariant approach above, which would be the case classically. This condition is independent of the choice of framing, coframing or spin-connection since the commutators [D /, m] relevant for this (m any function) are independent of these. The following proposition shows, however, that this is not necessarily a natural restriction in the present context of finite groups.</p>
+
+				<p>Theorem 5.6 A necessary condition for the Connes exterior algebra induced by D / to contain the relations of the Woronowicz bicovariant one on C[G] is γ 2 a = 0, if a 2 ∈ C ∪ {e}, a ∈ C, ab=g, a,b∈C γ a γ b = 0, ∀g ∈ C ∪ {e}.</p>
+
+				<p>Proof We recall that [5] considers a representation π D / of the universal exterior algebra a spectral triple. The relevant part of this construction, however, does not depend on Hilbert spaces or self-adjointness and works for any algebra M and operator D / on a vector space in which M is also represented. In our case the algebra is M = H = C[G] and the vector space is of the form M ⊗ W and M is represented by multiplication. Then π D / : Ω · M → End(M ⊗ W ), π D / (m ⊗ n ⊗ · · · ⊗ p) = m[D /, n] · · · [D /, p] defines the exterior algebra Ω · D / as the quotient of the universal one modulo the differential graded ideal generated by the kernel of π D / . At degree 1 we know from Section 3 that m[D /, n] = a∈C m(∂ a n)R a ⊗ γ a from which it is clear that for an injective map γ : Ω 0 → End(W ) the kernel of π D / at degree 1 is the same as N H , the ideal set to zero by mdn = m(∂ a n)E a . At degree 2 we have</p>
+
+				<figure>
+					<trash>[D /, m][D /, n] = c,d∈C (∂ c m) • R c • (∂ d n)R d ⊗ γ c γ d = c,d∈C (∂ c m)(∂ d R c n)R dc ⊗ γ c γ c −1 dc</trash>
+
+
+				</figure>
+
+				<p>after a change of variables. Next, working in the universal calculus, the product of</p>
+
+				<figure>
+					<trash>Cartan forms is e(δ g ) ⊗ H e(δ h ) = b∈G δ b ⊗ δ bg ⊗ δ bgh and one finds π D / (e(δ g ) ⊗ H e(δ h )) = c,d∈C,b∈G</trash>
+
+
+				</figure>
+
+				<p>δ b (δ bgc −1 − δ bg )(δ bghc −1 d −1 − δ bghc −1 )R dc ⊗ γ c γ c −1 dc = b δ b R gh ⊗ γ g γ h = R gh ⊗ γ g γ h where only the leading term in each difference contributes when g = e and h = e. The δ-functions then fix c = g and d = ghg −1 provided h ∈ C (otherwise we obtain zero).</p>
+
+				<figure>
+					<trash>Also, π D / (dN H ) = π D / {(dδ g ) ⊗ H e(δ q ) + δ g de(q)| g ∈ G, q = e, q / ∈ C} = {δ g R q ⊗ c,d∈C,dc=q γ c γ c −1 dc | g ∈ G, q = e, q / ∈ C} = {δ g R q ⊗ a,b∈C,ab=q</trash>
+
+
+				</figure>
+
+				<p>γ a γ b | g ∈ G, q = e, q / ∈ C} where the first term fails to contribute since it is of the form a function times e(δ h ) ⊗ H e(δ q ) where h, q = e and q / ∈ C (see above). The second term only contributes π D / (δ g ⊗ δ bh −1 ⊗ δ b ) which comes out as stated by similar computations to those above and a further change of variables as shown. Hence π D / applied to the expressions leading to the relations (71) in the</p>
+
+			</div>
+			<div>
+				<head>Woronowicz calculus, namely</head>
+
+				<p>R g ⊗ ab=g γ a γ b , R a 2 ⊗ γ 2 a do not lie in π D / (dN H ) if g, a 2 ∈ C ∪ {e} respectively, unless zero. Hence for the Woronowicz ideal at degree 2 to be contained in ker π D / + dN H a necessary condition is for these operators to vanish when g, a 2 ∈ C ∪ {e}. This gives the conditions stated. ⋄</p>
+
+				<p>This will often be a sufficient condition as well, for suitably non-degenerate γ and in the nice cases where (71) are all the relations (at least at degree 2). Moreover, when the conclusion holds it often means that the Connes and Woronowicz calculi actually coincide, because the Woronowicz one tends to have the most relations anyway in practice. The theorem is a surprising result but easily verified for example on C[Z 2 ]. This has only one nontrivial conjugacy class C = {u} where u with u 2 = e is the nontrivial element of Z 2 . The Woronowicz calculus has E u ∧ E u = 0 and hence Ω 2 = 0 while the Connes prescription can give this (if) and only if γ 2 u = 0. The nilpotency is associated to the order 2 of u and means in particular that the Dirac operator itself will not typically be Hermitian with respect to the obvious inner products. Such nilpotent models could still be physically interesting and one of them, on C[Z 2 × Z 2 ], will be explored elsewhere as a model where Connes&apos; approach and the quantum groups approach to the discrete part of the geometry intersect[11]. One may easily make the same analysis in the general setting of Section 4 for any Hopf algebra but this simple example is enough to show the limitations of this approach (therefore we have omitted the full analysis). The result means that for γ chosen according to other criteria (such as equivariance) one will typically have a different induced higher order calculus Ω D / than the usual bicovariant one of Woronowicz natural in this context. One may work with either one or with the maximal prolongation with the difference appearing at Ω 2 and higher, i.e. affecting the curvature and vanishing of torsion etc.</p>
+
+			</div>
+			<div>
+				<head>5.3</head>
+
+				<p>Riemannian geometry of S 3</p>
+
+				<p>We now turn to a concrete example, the permutation group G = S 3 generated by u, v with relations u 2 = v 2 = e, uvu = vuv. (92)</p>
+
+				<p>The conjugacy class C = {u, v, uvu} is semisimple in the sense of Proposition 5.1 while the other nontrivial conjugacy class {uv, vu} is not. We therefore fix this first case, i.e. work with a 3-dimensional bicovariant differential calculus. In this case one finds by enumeration that η ab = 3δ ab . (93)</p>
+
+				<p>The braided-Lie algebra here is [x u , x v ] = x w = [x v , x u ], [x u , x w ] = x v = [x w , x u ], [x v , x w ] = x u = [x w , x v ] (94) and U (L) is generated by 1 and x a with the relations</p>
+
+				<figure>
+					<trash>x u x v = x v x w = x w x u , x v x u = x u x w = x w x v . (95)</trash>
+
+
+				</figure>
+
+				<p>If one defined the Killing form by the adjoint action of the f a then one would have instead η ab = 3δ ab + 3. In fact any constant offset here not change anything in terms of the resulting connection etc. (but could render η degenerate). The various metrics just differ by a multiple of a,b E a ⊗ H E b which will turn out to play a somewhat neutral role.</p>
+
+				<p>The explicit form of the higher differential calculus is well-known and in this case (71) give all the relations at degree 2, namely E u ∧ E u = E v ∧ E v = E uvu ∧ E uvu = 0 E u ∧ E v + E v ∧ E uvu + E uvu ∧ E u = 0, E v ∧ E u + E uvu ∧ E v + E u ∧ E uvu = 0 (96) so that Ω 2 (C[S 3 ]) is 4-dimensional. Lemma 5.1 establishes that these are in fact a full set of relations in this case. The Maurer-Cartan equations (72) immediately become dE u + E uvu ∧ E v + E v ∧ E uvu = 0, dE v + E u ∧ E uvu + E uvu ∧ E u = 0 dE uvu + E v ∧ E u + E u ∧ E v = 0. (97)</p>
+
+				<p>This has been observed by many authors using Woronowicz bicovariant calculus. With this background we now construct explicit solutions to our torsion and cotorsion conditions.</p>
+
+				<p>Proposition 5.7 For the framing by the Maurer-Cartan form, the moduli space of zero-torsion spin connections is 12-dimensional and takes the form A u = (α + 1)E u + γE v + βE uvu , A v = γE u + (β + 1)E v + αE uvu A uvu = βE u + αE v + (γ + 1)E uvu , α + β + γ = −1, where α, β, γ are functions subject to the constraint shown. They obey a A a = 0.</p>
+
+			</div>
+			<div>
+				<head>Proof</head>
+
+				<figure>
+					<figDesc>We solve the two equations A v ∧ (E uvu − E u ) + A uvu ∧ (E v − E u ) = E uvu ∧ E v + E v ∧ E uvu A u ∧ (E uvu − E v ) + A uvu ∧ (E u − E v ) = E u ∧ E uvu + E uvu ∧ E u where the third equation in (89) will be automatic given the other two. The right hand sides here are −dE u and −dE v respectively. Into these equations we write the component decomposition A a = A a b E b with</figDesc>
+
+				</figure>
+
+				<p>A u u = α + 1, A v v = β + 1, A uvu uvu = γ + 1 say (these could be functions on the group, not numbers). We then write everything in terms of any four linearly independent 2-forms, say E u ∧ E v , E v ∧ E u , E u ∧ E uvu and E uvu ∧ E u , writing the other two in terms of these via the above relations in Ω 2 . The coefficients of these four 2-forms must separately vanish and give us the four equations A uvu u − β = 0, −A uvu v − γ − (β + 1) = 0, A v u − γ = 0, −A v uvu − (γ + 1) − β = 0 respectively. Similarly for the other equation to give the solution stated. ⋄ Next we consider metrics. The general moduli space of all metrics is clearly GL 3 raised to the 6th power, as we have a reference metric η ab provided by the braided-Killing form, and hence a natural reference coframing E * a = η ba E b . The corresponding metric induced by the braided</p>
+
+				<p>Killing form is of course</p>
+
+				<figure>
+					<trash>g = η ab E a ⊗ H E b = 3 a E a ⊗ H E a . (98)</trash>
+
+					<head>Corollary 5.8</head>
+
+					<figDesc>(i) The moduli space of cotorsion-free connections with respect to the coframing</figDesc>
+
+				</figure>
+
+				<p>defined by the braided-Killing form metric η ab is also 12-dimensional and has a similar form to the above, with coefficients α, β, γ on the right. (ii) The moduli of torsion free and cotorsion free connections is 2-dimensional, with α, β, γ numbers. (iii) The point α = β = γ = − 1 3 in this moduli space is the unique regular torsion-free and cotorsion-free or &apos;Levi-Civita&apos; connection on S 3 . This and its nonzero curvature are A a = E a − 1 3 θ, θ = a E a , F a = dE a .</p>
+
+				<p>Proof We have to show vanishing of (88) for the coframing E * a = η ba E a . However, because η is Ad-invariant and constant, this reduces in terms of E to vanishing of D A E a = dE a + b (E bab −1 − E a ) ∧ A b .</p>
+
+				<p>Note that this is a different equation from the torsion equation solved above. However, since every element of C has order 2, the inverse is irrelevant and the equation then differs only by a reversal of the ∧. Looking at the equations solved for zero torsion above, we see that they are invariant under such a reversal provided we write A a = E b A ′ a b with coefficients A ′ a b from the right. Next we consider the intersection of the moduli of torion-free and cotorsion-free connections. Given the bimodule structure, if A u = E u (α ′ + 1) + E v γ ′ + E uvu β ′ , etc., is also torsion free, we need R u (α ′ ) = α, R v (γ ′ ) = γ and R uvu (β ′ ) = β, and similarly for A v , A uvu . As a result, R a (α ′ ) = α for all a, hence α is a multiple of the identity function (a number) and α = α ′ . Similarly for β, γ. Finally in this moduli of torsion-free and cotorsion-free connections we look for regular connections, i.e. those for which A u ∧ A v + A uvu ∧ A u + A v ∧ A uvu = 0, A v ∧ A u + A uvu ∧ A v + A u ∧ A uvu = 0, (99) corresponding to products of elements from C with values uv or vu. As before, we take the first equation, write A u = (α + 1)E u + γE v + βE uvu etc., (as found above), and write all products in terms of our chosen four 2-forms. The coefficients of E u ∧ E v and E v ∧ E u each yield α = γ, while those of E u ∧ E uvu and E uvu ∧ E u each yield α = β. The second equation above follows in an identical manner and can only give the same constraints by a symmetry in which we reverse the ∧. Hence there is a unique regular connection among torsion free and cotorsion free ones.</p>
+
+				<p>We write it in the way shown in terms of the Maurer-Cartan form and θ.</p>
+
+				<p>Finally, for any regular connection in our example, the curvature has to take the form F a = dA a −</p>
+
+			</div>
+			<div>
+				<head>b</head>
+
+				<figure>
+					<figDesc>(A b ∧ A a + A a ∧ A b ) (100)</figDesc>
+
+				</figure>
+
+				<p>because the product of all distinct elements of the conjugacy class lie outside it, so there is no A c ∧ A d term in (81). For our connections the second term vanishes since b A b = 0. Also, dθ = 0 when we put in the values of each dE a and average and use (71). Hence F a = dE a , which is certainly non-zero, being equal to the quadratic parts in the Maurer-Cartan equation. ⋄</p>
+
+				<figure>
+					<trash>The explicit ∇ from the general formulae in Section 5.2 is ∇E u = −E u ⊗ H E u − E v ⊗ H E uvu − E uvu ⊗ H E v + 1 3 θ ⊗ H θ ∇E v = −E v ⊗ H E v − E u ⊗ H E uvu − E uvu ⊗ H E u + 1 3 θ ⊗ H θ ∇E uvu = −E uvu ⊗ H E uvu − E v ⊗ H E u − E u ⊗ H E v + 1 3 θ ⊗ H θ (101)</trash>
+
+
+				</figure>
+
+				<p>and one may then verify that indeed torsion and cotorsion vanish as</p>
+
+				<figure>
+					<trash>∇ ∧ E a = dE a , (∇ ∧ id − id ∧ ∇)( a E a ⊗ H E a ) = 0.</trash>
+
+					<figDesc>On the other hand the similar computation to the latter gives</figDesc>
+					<trash>∇( a E a ⊗ H E a ) = 2 not a=b=c E a ⊗ H E b ⊗ H E c − 2 σ∈S 3 E σ(u) ⊗ H E σ(v) ⊗ H E σ(uvu) = 0,</trash>
+
+
+				</figure>
+
+				<p>where we keep the left output of ∇ to the far left and act as a derivation. This is manifestly nonzero (as well as somewhat basis dependent i.e. not really a computation on E a ⊗ H E a ).</p>
+
+				<p>Therefore full metric compatibility in the naive sense does not hold even for this simplest nontrivial example. This justifies our weaker notion of vanishing cotorsion as the appropriate generalisation for noncommutative geometry.</p>
+
+				<p>We are then able from the general theory above to compute the Riemann and Ricci curvatures etc., for the Levi-Civita connection on S 3 , the latter with respect to a choice of &apos;lift&apos;.</p>
+
+				<figure>
+					<trash>One choice (84) is clearly i(E u ∧ E v ) = E u ⊗ H E v − E w ⊗ H E u , i(E uvu ∧ E u ) = E u ⊗ H E uvu − E v ⊗ H E u i(E v ∧ E u ) = E v ⊗ H E u − E uvu ⊗ H E v , i(E u ∧ E uvu ) = E u ⊗ H E uvu − E v ⊗ H E u . (102)</trash>
+
+
+				</figure>
+
+				<p>For the second choice, the basis of P uv and P vu are easily seen to be the unique vector λ u = λ v = λ uvu = 1 so that the lift in Proposition 5.3 is</p>
+
+				<figure>
+					<trash>i(E a ∧ E b ) = E a ⊗ H E b − 1 3 cd=ab E c ⊗ H E d , ∀a = b. (103)</trash>
+
+					<head>Proposition 5.9</head>
+
+					<figDesc>The unique Levi-Civita connection on S 3 constructed above has constant curvature with respect to either of the above two lifts, with</figDesc>
+
+				</figure>
+
+				<p>Ricci = µ(−g + θ ⊗ H θ), where g is the metric (98) induced by the Killing form and µ = 1, 2/3 respectively.</p>
+
+				<p>Proof This is a direct computation from (85). The Riemann tensor is</p>
+
+				<figure>
+					<trash>RE u = dE u ⊗ H E u + dE v ⊗ H E uvu + dE uvu ⊗ H E v , RE v = dE v ⊗ H E v + dE u ⊗ H E uvu + dE uvu ⊗ H E u RE uvu = dE uvu ⊗ H E uvu + dE v ⊗ H E u + dE u ⊗ H E v (104)</trash>
+
+
+				</figure>
+
+				<p>since a dE a = 0. We lift each term by applying the chosen i, then pick out the coefficient of E u ⊗ in RE u etc., for the trace. ⋄</p>
+
+				<p>Thus S 3 with its natural Riemannian structure is more or less an &apos;Einstein space&apos;. We could take g λ = g − λθ ⊗ H θ as the metric from the start without changing anything above (although λ = 1 itself is degenerate). The scalar curvature itself is the further contraction of this with the inverse metric. One can similarly consider several other lifts with the same conclusions but a different value of µ. Note also that our trace conventions for Ricci in the classical case would become the first and third indices of the Riemann tensor, so that we have an opposite sign convention to the usual one. Hence S 3 above for the natural choices of lift looks more like a compact manifold with constant positive curvature in usual terms.</p>
+
+				<p>Finally, to fix a Dirac operator for the sake of discussion we choose the tautological γ defined as in (90) by the two-dimensional representation</p>
+
+				<figure>
+					<trash>ρ W (u) = 0 1 1 0 , ρ W (v) = 1 0 −1 −1 . (105) The braided-Casimir is C = 1 3 ((u − e) 2 + (v − e) 2 + (uvu − e) 2 ) = 2 − 2 3 (u + v + uvu), ρ W (C) = 2 (106) so that from (91), γ a γ b η ab = ρ W (C) = 2. (107) Hence by Theorem 5.4</trash>
+
+					<figDesc>(because the elements of C all have order 2) the calculus implied by</figDesc>
+
+				</figure>
+
+				<p>D / for these will be different from the one that we have already imposed from quantum group considerations. In fact D / imposes fewer relations. This is not a problem from the quantum groups point of view, we can still use D / perfectly well. The gamma-matrices are explicitly</p>
+
+				<figure>
+					<trash>γ u = 1 3 −1 1 1 −1 , γ v = 1 3 0 0 −1 −2 , γ uvu = 1 3 −2 −1 0 0 . (108)</trash>
+
+
+				</figure>
+
+				<p>They have some nice identities, however. In fact for any ρ W with ρ W (uv − e) invertible, which is the case here, one can show by enumeration of the cases and the identity ρ W (e + uv +</p>
+
+				<figure>
+					<trash>(uv) 2 ) = 0 which then holds, that γ a γ b + γ b γ a + 2 3 (γ a + γ b ) = 1 3 (δ ab − 1), a γ a = −1. (109) Proposition 5.10 The Dirac</trash>
+
+
+				</figure>
+
+				<p>operator on S 3 for the above gamma-matrices and the canonical &apos;Levi-Civita&apos; connection on S 3 constructed above, we have</p>
+
+				<figure>
+					<trash>D / = ∂ a γ a − 1 = 1 3 −∂ u − 2∂ uvu − 3 ∂ u − ∂ uvu ∂ u − ∂ v −∂ u − 2∂ v − 3 .</trash>
+
+
+				</figure>
+
+				<p>Proof To find this note first that τ a W = ρ W (a −1 − e) = 3γ a since all elements of C have order 2. The canonical connection in terms of components is A a b = δ a b −</p>
+
+				<figure>
+					<trash>1 3 , hence D / = ∂ a γ a − 3 a γ 2 a + a,b</trash>
+
+
+				</figure>
+
+				<p>γ a γ b .</p>
+
+				<p>We then use the gamma-matrix identities above. ⋄</p>
+
+			</div>
+			<div>
+				<head>The −1</head>
+
+				<p>appearing here reflects again a &apos;constant curvature&apos; now detected for S 3 with its canonical Riemannian structure by the Dirac operator. Finally we note that while we have focussed here on the canonical metric induced by the braided-Killing form, one can similarly consider more general triples (A, e, e * ) and solve for zero torsion, and zero cotorsion, compute the curvature, etc. One may then minimise an action defined for example by suitable contraction of the Ricci curvature, i.e. proceed to finite quantum gravity. Also, there is no problem introducing Maxwell or Yang-Mills fields and matter fields since we already have a bundle formalism, sections etc. This intended application is beyond our present scope and will be attempted in detail elsewhere. A further application may be to insert our canonical Dirac operator on S 3 into the framework for elementary particle Lagrangians of Connes and Lott.</p>
+
+			</div>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Hopf algebras for physics at the Planck scale</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Majid</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Classical and Quantum Gravity</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="1587" to="1606" />
+			<date type="published" when="1988" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Quantum and braided group Riemannian geometry</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Majid</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Geom. Phys</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="page" from="113" to="146" />
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Quantum group gauge theory on quantum spaces</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Brzezi´</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Majid</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Math. Phys. Erratum</title>
+		<imprint>
+			<biblScope unit="volume">157</biblScope>
+			<biblScope unit="issue">167</biblScope>
+			<biblScope unit="page" from="591" to="638235" />
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<monogr>
+		<title level="m" type="main">Differential calculus on compact matrix pseudogroups (quantum groups)</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">L</forename>
+				<surname>Woronowicz</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Commun. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">122</biblScope>
+			<biblScope unit="page" from="125" to="170" />
+			<date type="published" when="1989" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title level="m" type="main">Noncommutative Geometry</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Connes</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1994" />
+			<publisher>Academic Press</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Quantum deformation of quantum gravity</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Major</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Smolin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">473</biblScope>
+			<biblScope unit="page" from="267" to="290" />
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Poisson-Lie T-duality for quasitriangular Lie bialgebras</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Beggs</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Majid</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">220</biblScope>
+			<biblScope unit="page" from="455" to="488" />
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Waves on noncommutative spacetime and gamma-ray bursts</title>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Amelino-Camelia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Majid</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Mod. Phys. A</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="4301" to="4323" />
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Noncommutative geometry and matrix theory: compactification on tori</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Connes</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">R</forename>
+				<surname>Douglas</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Schwarz</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. High Energy Phys</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="40" to="74" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Noncommutative geometry and reality</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Connes</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page">6194</biblScope>
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title level="m" type="main">Z 2 × Z 2 Lattice as a Connes-Lott-Quantum Group Model</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Majid</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Schucker</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Preprint</title>
+		<imprint>
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Quantum geometry of algebra factorisations and coalgebra bundles</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Brzezi´</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Majid</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">213</biblScope>
+			<biblScope unit="page" from="491" to="521" />
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Conceptual issues for noncommutative gravity on algebras and finite sets</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Majid</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Mod. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page" from="2427" to="2449" />
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Quantum and braided Lie algebras</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Majid</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Geom. Phys</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page" from="307" to="356" />
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Gravity on finite groups</title>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Castellani</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">To appear Commun. Math. Phys</title>
+		<imprint>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Discrete Riemannian geometry</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Dimakis</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Muller-Hoissen</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="page">1518</biblScope>
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Levi-Civita connections on the quantum groups SLq(N), Oq(N) and Sp(q)(N)</title>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Heckenberger</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Schmudgen</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">185</biblScope>
+			<biblScope unit="page" from="177" to="196" />
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<title level="m" type="main">Foundations of Quantum Group Theory</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Majid</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1995" />
+			<publisher>Cambridge Univeristy Press</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Principal homogeneous spaces for arbitrary Hopf algebras</title>
+		<author>
+			<persName>
+				<forename type="first">H-J</forename>
+				<surname>Schneider</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Isr. J. Math</title>
+		<imprint>
+			<biblScope unit="volume">72</biblScope>
+			<biblScope unit="page" from="167" to="195" />
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Quantum differentials and the q-monopole revisited</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Brzezi´</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Majid</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Acta Appl. Math</title>
+		<imprint>
+			<biblScope unit="volume">54</biblScope>
+			<biblScope unit="page" from="185" to="232" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Diagrammatics of braided group gauge theory</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Majid</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Knot Th. Ramif</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="731" to="771" />
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Classification of bicovariant differential calculi</title>
+		<author>
+			<persName>
+				<surname>Majid</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Geom. Phys</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page" from="119" to="140" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">X</forename>
+				<surname>Gomez</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Majid</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>In. preparation</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

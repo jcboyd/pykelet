@@ -1,0 +1,1150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">RENORMALONS AND THE HEAVY QUARK EFFECTIVE THEORY</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="1995-02-20">20 Feb 1995 February 1995</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">G</forename>
+								<surname>Martinelli</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Theory Division</orgName>
+								<orgName type="institution">CERN</orgName>
+								<address>
+									<postCode>1211</postCode>
+									<settlement>Geneva 23</settlement>
+									<country key="CH">Switzerland</country>
+								</address>
+							</affiliation>
+							<affiliation>
+								<orgName type="department">On leave of absence from Dip. di Fisica</orgName>
+								<orgName type="institution">Universit a degli Studi &quot; La Sapienza &quot;</orgName>
+								<address>
+									<settlement>Rome</settlement>
+									<country key="IT">Italy</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">C</forename>
+								<forename type="middle">T</forename>
+								<surname>Sachrajda</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Dep. of Physics</orgName>
+								<orgName type="institution">University of Southampton</orgName>
+								<address>
+									<postCode>SO17 1BJ</postCode>
+									<settlement>Southampton</settlement>
+									<country key="GB">U.K</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">RENORMALONS AND THE HEAVY QUARK EFFECTIVE THEORY</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="1995-02-20">20 Feb 1995 February 1995</date>
+						</imprint>
+					</monogr>
+					<note>CERN-TH.7517/94 SHEP 94/95-13</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>We propose a non-perturbative method for defining the higher dimensional operators which appear in the Heavy Quark Effective Theory (HQET), such that their matrix elements are free of renormalon singularities, and diverge at most logarithmically with the ultraviolet cutoff. Matrix elements of these operators can be computed numerically in lattice simulations of the HQET. We illustrate our procedures by presenting physical definitions of the binding energy (¯ Λ) and of the kinetic energy (-λ 1 /2m Q) of the heavy quark in a hadron. This allows us to define a &quot; subtracted pole mass &quot; , whose inverse can be used as the expansion parameter in applications of the HQET.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>The Heavy Quark Effective Theory (HQET) has developed during the last few years into a very useful tool for the study of strong interaction effects in heavy quark physics [1]-[4] (for a comprehensive review see ref.[5]). In this approach physical quantities are studied systematically as series in inverse powers of the mass of the heavy quark 1 .</p>
+
+				<p>In particular, local composite operators of QCD, whose matrix elements contain the longdistance gluonic effects in physical processes, are expanded in terms of the operators of the HQET</p>
+
+				<figure>
+					<trash>O QCD = n,α C n,α (m Q /µ) m n Q O HQET n,α (µ) , (1)</trash>
+
+
+				</figure>
+
+				<p>where m Q is the mass of the heavy quark and µ is the renormalisation scale used in defining the renormalised operators O HQET n,α (µ). For the moment we assume that the operators O HQET n,α (µ) are renormalised in some scheme based on the dimensional regularisation of ultra-violet divergences, such as the M S scheme. The QCD operators O QCD generally also depend on some renormalisation scale, which we take to be different from µ, and we do not exhibit this dependence explicitly. Renormalon singularities lead to ambiguities in the Wilson coefficient functions C n,α , and in the matrix elements of the operators O HQET n,α . Although these ambiguities cancel (see ref.[6] and references therein, and refs.[7]-[10]), the presence of renormalons requires an alternative definition of the renormalised operators O HQET n,α , if the HQET is to be applicable beyond leading order in the heavy quark mass, and in particular if the coefficient functions are to be calculable using perturbation theory. The renormalon singularities and the corresponding ambiguities which we are considering here are those induced by the introduction of the expansion in eq.(1). Of course the matrix elements of the QCD operator O QCD will themselves contain non-perturbative long-distance effects, but, as usual, these effects do not appear in the coefficient functions, but only in the matrix elements of the operators of the HQET.</p>
+
+				<p>The use of a hard (dimensionful) ultra-violet cut-off Λ in the effective theory (instead of dimensional regularisation) leads to matrix elements and coefficient functions which are free of renormalon ambiguities [8]. However in this case the matrix elements in the effective theory diverge as powers of the cut-off Λ. The subtraction of these power divergences cannot be performed using perturbation theory; such a subtraction reintroduces renormalon ambiguities in the matrix elements and coefficient functions.</p>
+
+				<p>This point will be discussed in detail below.</p>
+
+				<p>In this paper, in contrast to previous approaches, we propose a non-perturbative definition of the renormalised operators O HQET n,α , such that they are free of both renormalon ambiguities and power divergences. This allows us to present &quot; physical &quot; definitions of parameters such as the binding energy ( ¯ Λ) or the kinetic energy (−λ 1 /2m Q ) of the heavy quark in a heavy hadron. By &quot; physical &quot; we mean that they do not depend on any regularisation or renormalisation scale, nor on the method used to regulate the ultra-violet divergences (although they do depend on the renormalisation prescription used to define them).</p>
+
+				<p>An immediate, and related, question concerns the choice of the mass parameter m Q used in the expansion. The pole mass is ambiguous due to the presence of infra-red renormalon singularities [7, 8], and so a different definition of m Q is required. We introduce the definition of a &quot; subtracted pole mass &quot; , m S Q , from which the renormalon ambiguities have been subtracted non-perturbatively. m S Q has the attractive property that it can be determined from the mass of a hadron H containing the heavy quark Q, by calculations performed entirely within the HQET. For each such hadron H we define a parameter ¯ Λ ≡ m H − m S Q , and ¯ Λ → constant as m Q → ∞ (for simplicity of notation we suppress the label H on ¯ Λ). ¯ Λ remains finite when the ultraviolet cut-off is taken to infinity, and can be computed numerically in lattice simulations of the HQET.</p>
+
+				<p>We discuss the question of the definition and evaluation of ¯ Λ to leading order in section 2, and to O(1/m Q ) in section 3.</p>
+
+				<p>As a further illustration of our general procedure we study in section 3 the matrix elements which determine the kinetic energy of the heavy quark in a hadron 2</p>
+
+				<figure>
+					<trash>λ 1 = H| ¯ h D 2 h|H 2m H (2)</trash>
+
+
+				</figure>
+
+				<p>where h represents the heavy quark field in the HQET, and H is a hadron (of mass m H ) containing a heavy quark (we suppress the label H on λ 1 ). The λ 1 &apos;s are important ingredients in the study of the spectroscopy and inclusive decays of heavy hadrons.</p>
+
+				<p>The chromomagnetic operator ¯ hσ ij G ij h, where G ij are the spatial components of the gluon field strength tensor, appears at the same order of the heavy quark expansion as the kinetic energy operator. However the spin structure of the chromomagnetic operator ensures that its matrix elements are free of renormalon singularities.</p>
+
+				<p>In ref.[13], together with L.Maiani, we pointed out that in the lattice formulation of the HQET the evaluation of higher order terms in 1/m Q involves the appearance of ultra-violet singularities which diverge as inverse powers of the lattice spacing a. This is due to the fact that the higher order terms generally involve matrix elements of higher dimensional operators which can mix with lower dimensional ones (e.g. ¯ h D 2 h can mix with 1/a ¯ hD 4 h and 1/a 2 ¯ hh). In ref.[13] it was further stressed that these divergences must be subtracted non-perturbatively, since factors such as</p>
+
+				<figure>
+					<trash>1 a exp − g 0 (a) dg ′ β(g ′ ) = Λ QCD (3)</trash>
+
+
+				</figure>
+
+				<p>which do not appear in perturbation theory, give non-vanishing contributions as a → 0.</p>
+
+				<p>Renormalons represent an explicit example of non-perturbative effects of this kind. In this paper we explain how the subtraction of power divergences and of renormalon singularities, can be performed non-perturbatively, illustrating our ideas with the evaluation of ¯ Λ and λ 1 .</p>
+
+				<p>Much of the discussion in this paper is presented within the framework of lattice field theory, however all the theoretical questions addressed below have to be faced with any ultra-violet regularisation scheme [14]. Moreover, our proposed definitions of subtracted higher dimensional operators in general, and of ¯ Λ and λ 1 in particular, are in fact independent of the regularisation. The primary aim of this paper is to provide an understanding of these theoretical issues. In addition however, lattice simulations provide the opportunity for the evaluation of the parameters of the HQET, such as ¯ Λ and λ 1 , from first principles. In the following sections we also explain how this can be done in principle, and in ref.[15] we present some results from an exploratory numerical study (some preliminary numerical results, and a summary of the ideas of this paper have been presented in ref.[16]). However, instead of using lattice simulations, it is also possible to use other non-perturbative methods, such as QCD sum rules, to compute the matrix elements of the operators defined by our prescription. These matrix elements are free of renormalons and power divergences.</p>
+
+				<p>Throughout this paper we use the following notation for ultra-violet cut-offs and renormalisation scales. We denote by M the scale used to define the renormalised operators in QCD (O QCD ), and by µ that to define the operators in the HQET (the O HQET n,α</p>
+
+				<p>). Thus µ ≪ m Q ≪ M . It will also be convenient to consider bare operators in the HQET, and we denote by Λ the corresponding ultra-violet cut-off. Where the discussion is particular to the lattice formulation of the HQET we replace Λ by a −1 .</p>
+
+				<p>The plan of the remainder of this paper is as follows. In the next section we discuss the definition of ¯ Λ, and explain how it can be computed in lattice simulations.</p>
+
+				<p>We explain our general procedure for the definition of subtracted higher dimensional operators in section 3, using the matrix elements λ 1 as examples. Section 4 contains a discussion of &quot; matching &quot; , i.e. the determination of the coefficient functions C n,α corresponding to our definition of the operators. Finally in section 5 we present our conclusions.</p>
+
+				<figure>
+					<trash>2 The Binding Energy -¯ Λ</trash>
+
+
+				</figure>
+
+				<p>In this section we discuss the definition of the heavy quark mass m S Q , from which the ambiguities from the leading renormalon singularities have been subtracted nonperturbatively . m S Q can thus be used as the expansion parameter in the HQET. We start however by reviewing very briefly some of the relevant points concerning the renormalon singularities in the propagator of the heavy quark.</p>
+
+			</div>
+			<div>
+				<head n="2.1">Renormalons in the Heavy Quark Propagator</head>
+
+				<p>Our discussion follows closely the presentation by Beneke and Braun [7], in which these authors study the heavy quark propagator in the large N f limit, where N f is the number of light quark flavours. We refer the reader to ref.[7] for more details, and also to ref.[14] in which the discussion is extended to include the terms of O(1/m Q ) in the inverse propagator. To leading non-trivial order in 1/N f , the renormalon singularities are obtained by summing over an arbitrary number of light quark loops in the gluon propagator. The Borel transformed gluon propagator (in the Landau gauge) is written</p>
+
+				<figure>
+					<trash>as D AB µν (k, u) = ∞ n=0 1 n! D AB µν,n (k) −4π u β 0 α s n = iδ AB e C µ 2 −u k µ k ν − k 2 g µν (−k 2 ) 2+u (4)</trash>
+
+
+				</figure>
+
+				<p>where β 0 is the coefficient of α s /4π in the first term of the β-function (β 0 = −(11 − 2/3N f ) ), and A and B are colour labels. µ is the renormalisation scale and C is a scheme dependent constant. D AB µν,n (k) is the contribution to the gluon propagator from the diagram with n quark loops. Of course in leading order in N f it is only the term 2/3N f which appears, however it is assumed that the replacement of 2/3N f by β 0 is a consistent one for identifying the singularities. This assumption is based on the intuition, that it is the infra-red behaviour of the running coupling constant which is (at least partially) responsible for the singularities.</p>
+
+				<p>Feynman diagrams evaluated with the Borel transformed propagator (4) may have poles at positive values of u, rendering the inverse Borel transform (which requires an integral over positive values of u) ambiguous 3 . This is particularly true in Operator Product Expansions, where such singularities in the Wilson coefficient functions are cancelled by those in the matrix elements of higher dimensional, or higher twist, operators [6, 17]. The expansion in inverse powers of the mass of the heavy quark is an interesting example of this phenomenon. We start by considering the quark propagator.</p>
+
+				<p>The inverse quark propagator in QCD can be written in the form</p>
+
+				<figure>
+					<trash>S −1 (p, m) = / p − m − Σ(p, m) (5) where Σ(p, m) = mΣ 1 (p 2 , m) + (/ p − m)Σ 2 (p 2 , m) (6)</trash>
+
+
+				</figure>
+
+				<p>and m is the bare mass. We now write p = m Q v + k (7) where m Q is some well defined choice of the heavy quark mass, to be specified later.</p>
+
+				<p>In all the explicit examples given in sections 2.2 and 3 we will take v = (1, 0). It is also convenient to define the quark propagator sandwiched between projection operators</p>
+
+				<figure>
+					<trash>1 + / v 2 S P (k, m Q ) ≡ 1 + / v 2 S(p, m) 1 + / v 2 (8) Then, [7], S −1 P (k, m Q ) = m Q −m pole (m Q , µ)−C(m Q /µ) S −1 eff (v·k, µ)+O (v · k) 2 m Q , k 2 ⊥ m Q , 1 N 2 f (9)</trash>
+
+
+				</figure>
+
+				<p>where S eff is the quark propagator in the HQET (whose action is given by ¯ hiv · Dh; h represents the field of the heavy quark), µ is the renormalisation scale, and k 2 ⊥ = k 2 − (v · k) 2 . S −1 eff is linearly divergent in perturbation theory. In dimensional regularisation the Borel transforms of both m pole and S −1 eff have renormalon singularities at u = 1/2, the infra-red renormalon in m pole cancels the ultra-violet renormalon in S −1 eff on the r.h.s. of eq.(9) [7]. The connection between power divergences and renormalons can be seen by noting that if S −1 eff is linearly divergent in one-loop perturbation theory (which corresponds to using (4) with u = 0 as the gluon propagator), then its Borel transform is logarithmically divergent at u = 1/2, corresponding to a pole singularity at this point. In particular S −1 eff (0, µ) is not equal to zero, which is a signal of the presence of ultra-violet renormalon singularities at u = 1/2. A more detailed account of the correspondence between power divergences and renormalons is given in ref.[14].</p>
+
+				<p>For the discussion below, it is convenient to re-express eq.(9) in terms of the bare propagator in the effective theory with a hard cut-off Λ,</p>
+
+				<figure>
+					<trash>S −1 P (k, m Q ) = m Q − m pole (m Q , Λ) − C(m Q /Λ) S −1 eff (v · k, Λ) + O (v · k) 2 m Q , k 2 ⊥ m Q , 1 N 2 f . (10) Now m pole (m Q , Λ) and S −1 eff (v · k, Λ) both</trash>
+
+
+				</figure>
+
+				<p>diverge linearly with the cut-off, but their Borel transforms have no poles at u = 1/2. Thus we have replaced the problem of the ambiguities associated with renormalon singularities with that of determining the exponentially small terms when power divergences are present (see eq.(3) and the corresponding discussion). By adding a residual mass counterterm (δm ¯ hh) to the action of the HQET, it is possible to impose the non-perturbative condition S −1 eff (0, Λ) = 0, thus removing the power divergences. In the following subsection, we impose instead an equivalent condition on the static (i.</p>
+
+				<figure>
+					<trash>e. v = 0) heavy quark propagator in Euclidean configuration space (S ij eff (x; y), where i and j are colour labels) in the Landau gauge: lim t→∞ d dt ln |S ii eff (x; 0)| = 0 (11) where t = x 0</trash>
+
+
+				</figure>
+
+				<p>and S ii eff is the trace over the colour components of the propagator. Since the operator we are subtracting ( ¯ hh) is conserved, either of these conditions is sufficient to determine its coefficient δm fully. Matching the effective theory onto full QCD now implies that m pole on the r.h.s. of eq.(10) is replaced by a &quot; subtracted pole mass &quot; , m S Q , from which the power divergences (and indeed all the dependence on Λ) have been subtracted. m S Q is therefore a natural choice for the expansion parameter m Q of the HQET. The implementation of the above subtraction requires the non-perturbative evaluation of the quark propagator in the HQET because of the arguments given in the discussion of eq.(3). Lattice simulations provide the possibility for such an evaluation, and in the following subsection we discuss an explicit definition of m S Q based on eq.(11), and of the corresponding ¯ Λ parameter, ¯ Λ = m H − m S Q , where H is a hadron containing one heavy quark Q. In spite of the fact that the entire discussion of the following subsection is in the framework of lattice field theory, the value of ¯ Λ is determined by its definition based on the condition (11), and is independent of the method of regularisation.</p>
+
+			</div>
+			<div>
+				<head>2.2</head>
+
+				<p>Definition of ¯ Λ In this subsection we present our definition of ¯ Λ explicitly, and also discuss how it might be evaluated using the lattice formulation of the HQET. The discussion is presented in Euclidean space, and we take as the action of the HQET in the static (</p>
+
+				<figure>
+					<trash>i.e. v = 0) case L eff = ¯ hD 4 h (12) where h represents the field of the heavy quark. Consider the correlation function C(t) = x 0| J Γ ( x, t) ¯ J † Γ ( 0, 0) |0 (13) where J †</trash>
+
+					<figDesc>Γ and J Γ are interpolating operators which can create or annihilate a meson state in the HQET. For example, we may take J = ¯ hΓq where q represents the field of the light quark and Γ is one of the Dirac matrices 4 . For sufficiently large times, so that only the ground state contributes significantly to the correlation function,</figDesc>
+					<trash>C(t) → Z 2 exp(−Et) (14)</trash>
+
+
+				</figure>
+
+				<p>where the constant Z is independent of the time. The exponent E is equivalent to the definition of ¯ Λ proposed in ref.[18]</p>
+
+				<figure>
+					<trash>¯ Λ = −∂ 4 0| ¯ hΓq |M 0| ¯ hΓq |M (15)</trash>
+
+					<figDesc>However E, and hence ¯ Λ defined through eq.(15), is not a physical quantity, since it diverges linearly as a → 0 (as can be demonstrated in one-loop perturbation theory). If the matrix elements in eq.(15) are defined in the M S scheme, then the corresponding definition of ¯ Λ contains an ambiguity of O(Λ QCD ). The linear divergence in E</figDesc>
+
+				</figure>
+
+				<p>appears due to the mixing of the operator ¯ hD 4 h in the effective action, with the lower dimensional operator ¯ hh. It is possible to subtract this divergence non-perturbatively by adding a residual mass term δm ¯ hh to the action, where δm is determined by imposing a suitable renormalisation condition. We now state explicitly our proposal for a physical definition of ¯ Λ, and for its non-perturbative evaluation: i) Evaluate the heavy quark propagator in the theory defined by the action (12), in some fixed gauge (the Landau gauge say). In practice this will be done using lattice simulations. The heavy quark propagator in a smooth gauge, such as the Landau gauge, is of the form (</p>
+
+				<figure>
+					<trash>for t &gt; 0) S ij h ( x, t; 0, 0) = 0 | h i (x) ¯ h j (0) | 0 = δ 3 ( x) δ ij A(t) exp(−λt) (16)</trash>
+
+
+				</figure>
+
+				<p>where the ultra-violet divergences associated with the quark mass are contained in the exponent λ. i and j are colour labels, and unless specifically required they will be suppressed below.</p>
+
+				<figure>
+					<trash>A(t) satisfies the condition lim t→∞ d dt ln{|A(t)|} = 0 (17)</trash>
+
+					<figDesc>In the explicit examples below we will use the following lattice covariant derivative</figDesc>
+					<trash>D 4 f ( x, t) = 1 a f ( x, t) − U † 4 ( x, t − a)f ( x, t − a) (18)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>where {U µ ( x, t)} are the link variables. Other lattice definitions of D 4 are also acceptable. ii) Add a residual mass term to the effective action 5</figDesc>
+
+				</figure>
+
+				<p><formula>L ′ eff = 1 1 + δm a ¯ hD 4 h + δm ¯ hh (19)</formula></p>
+
+				<p>where δm will be specified in iii) below. With the new action, the heavy quark propagator (now denoted by S ′ h ) is given by S ′ h ( x, t; 0, 0) = S h ( x, t; 0, 0) exp(− ln(1 + δm a)t/a)</p>
+
+			</div>
+			<div>
+				<head>(20)</head>
+
+				<p>This result demonstrates that the divergences associated with mass renormalisation do indeed exponentiate. iii) We fix the residual mass counterterm δm by the condition</p>
+
+				<figure>
+					<trash>− ν = ln(1 + δm a) a ≡ lim t→∞ 1 a ln |S ii h ( x, t + a; 0, 0)| |S ii h ( x, t; 0, 0)| (21)</trash>
+
+					<figDesc>ν can be computed in numerical simulations by studying the logarithm on the right hand side of eq.(21) as a function of t.</figDesc>
+					<trash>iv) The &quot; physical &quot; definition of ¯ Λ is ¯ Λ ≡ E − ν = E + 1 a ln(1 + δm a) (22)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>¯ Λ is finite in the limit a → 0 and is free of renormalon ambiguities. The corresponding &quot; subtracted &quot; pole mass m S Q is defined by m S Q ≡ m H − ¯ Λ . (23) m S Q is independent of a, and contains no renormalon ambiguities. Thus from the computed value of m S Q one can determine m M S (µ), or any other short-distance definition of the quark mass (up to uncertainties which are now of O(1/m Q )), using perturbation theory. This will be discussed in section 4. The counterterm ν defined above is gauge-invariant, in spite of the fact that it is calculated from the heavy quark propagator in a fixed gauge. The argument goes as follows. The linear divergence is eliminated from any correlation function, i.e. for any external state, by subtracting from the action (12) a term proportional to the gauge-invariant operator ¯ hh. Since in this way one eliminates all divergences both for quark and hadron external states, the coefficient of the mixing has to be gauge-invariant. This must be true also for the finite non-perturbative term which accompanies the linear divergence. The gauge-invariance of the linearly divergent term has been checked explicitly in one-loop perturbation theory. The same argument can be applied to the evaluation of the subtraction constants which appear in the definition of a finite kinetic energy operator, to be discussed in the following section.</figDesc>
+
+				</figure>
+
+				<p>It may appear more natural to define ¯ Λ using eqs.(21) and (22), but with ν determined at a small value of t, (t * say, with 1/t * ≫ Λ QCD ). In particular it may seem that the value of ¯ Λ obtained from a measurement at &quot; short distances &quot; can be used more reliably to determine some standard short distance mass in QCD (m M S (µ) say, with µ ≫ Λ QCD ) using perturbation theory. This is not the case however, since in addition to the non-perturbative contribution of O(Λ QCD ) to ¯ Λ, there is a perturbative contribution which is proportional to 1/t * ,</p>
+
+				<figure>
+					<trash>− ν pert (t * ) ≡ 1 a ln |S ii pert ( x, t * + a; 0, 0)| |S ii pert ( x, t * ; 0, 0)| = − 1 a α s C F 4π γ ψ ln 1 + a t * + O(α 2 s ) (24) → − α s C F 4π γ ψ t * + O(α 2 s ) (as a → 0) (25)</trash>
+
+
+				</figure>
+
+				<p>where S pert is the heavy quark propagator in perturbation theory, which for t &gt; 0 takes the form</p>
+
+				<figure>
+					<trash>S ij pert ( x, t; 0, 0) = δ (3) ( x) δ ij 1 − α s C F 4π (γ ψ ln(t/a) + c t ) + ... (26)</trash>
+
+
+				</figure>
+
+				<p>and the anomalous dimension of the heavy quark field (γ ψ ) and c t are constants (in the</p>
+
+				<p>Landau gauge γ ψ = −6). C F is the eigenvalue of the quadratic Casimir operator in the fundamental representation (C F =4/3). In order to determine ¯ Λ, from the propagator computed at a finite value of t * , the perturbative contribution must be subtracted. The evaluation of the term proportional to 1/t * in perturbation theory (which in practice can only be performed up to some low order), becomes less accurate as t * is decreased.</p>
+
+				<p>The reason is that, although the calculation of the coefficient of the term proportional to 1/t * becomes more accurate as t * decreases, the presence of the factor 1/t * implies that the subtraction becomes larger numerically and that the error due to (unknown) higher order pertubative corrections also increases, reducing the accuracy of the result for ¯ Λ. For this reason we propose to define δm from eq.(21), i.e. from measurements of the propagator at large values of t.</p>
+
+				<p>In some simulations it may not be possible to compute the propagators at sufficiently large values of t for a plateau to be reached (i.e. for the ratio of the propagators on the right hand side of eq.(21) to be independent of t). In those cases it may be necessary to determine m S Q from measurements taken at intermediate values of t, and to perform the subtraction of the terms proportional to 1/t, either by using perturbation theory or by fitting −ν to a function of t and extracting the asymptotic value (i.e. the value as t → ∞). In refs.[15, 16] it has been shown that the latter method can be used to give a precise determination of ¯</p>
+
+				<figure>
+					<trash>Λ, and hence of m S Q . 3 The Kinetic Energy -λ 1</trash>
+
+
+				</figure>
+
+				<p>In this section we present our proposal for the elimination of power divergences and renormalons from the matrix elements of higher dimensional operators. We illustrate our method by considering explicitly the kinetic energy operator ¯ h D 2 h. The matrix elements of this operator contain power divergences because it can mix with the lower dimensional operators ¯ hD 4 h and ¯ hh 6 . A subtracted kinetic energy operator, one which is free of power divergences, is of the form</p>
+
+				<figure>
+					<trash>¯ h D 2 S h = ¯ h D 2 h − c 1 ( ¯ hD 4 h + δm ¯ hh) − c 2 ¯ hh (27)</trash>
+
+
+				</figure>
+
+				<p>where the constants c 1 and c 2 are fixed by imposing appropriate renormalisation conditions . We propose to define c 1 and c 2 by imposing that the matrix element of ¯ h D 2 S h between quark states with k = 0 (where k is the momentum of the quark), and in the</p>
+
+				<figure>
+					<trash>Landau gauge, vanishes h( k = 0)| ¯ h D 2 S h|h( k = 0) = 0 . (28)</trash>
+
+
+				</figure>
+
+				<p>Although not unique, this is perhaps the most intuitive definition of the kinetic energy of the heavy quark in a hadron. Specifically we determine the constants c 1 and</p>
+
+				<figure>
+					<trash>c 2 by using 7 c 1 + c 2 t x = x, y ty=0,tx 0 | h( x, t x ) ¯ h( y, t y ) D 2 y h( y, t y ) ¯ h( 0, 0) | 0 x 0 | h( x, t x ) ¯ h( 0, 0) | 0 . (29)</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>6</head>
+
+				<p>The relation between power divergences in matrix elements of the particular operator ¯ h D 2 h and renormalon ambiguities in dimensional regularisation is subtle and not fully understood. A detailed discussion of this subject can be found in ref. [14]. 7 From now on we will work in lattice units, setting a = 1.</p>
+
+				<p>In deriving eq.(29) it is implied that we are using the action L ′ given in eq.(19) which contains the residual mass counterterm. However, from the discussion in the previous section we can readily see that this is equivalent to using the action L given in eq.(12) which has no residual mass term. The only difference in using the actions L ′ and L is a factor exp(νt x ) in both the numerator and denominator of the right hand side of eq.(29).</p>
+
+				<p>For some important applications it is only the constant c 2 which is required. This</p>
+
+				<figure>
+					<trash>is because 1 1 + δm ( ¯ hD 4 h + δm ¯ hh)S ′ h (x; y) = δ 4 (x − y) , (30)</trash>
+
+
+				</figure>
+
+				<p>so that if the operators in a correlation function are separated (i.e. up to contact terms), then the term proportional to c 1 vanishes. c 2 can also be determined directly by eliminating the sum over t y in eq.(29):</p>
+
+				<figure>
+					<trash>c 2 = x, y 0 | h( x, t x ) ¯ h( y, t y ) D 2 y h( y, t y ) ¯ h( 0, 0) | 0 x 0 | h( x, t x ) ¯ h( 0, 0) | 0 , (31) for t y = 0, t x .</trash>
+
+
+				</figure>
+
+				<p>Having defined the subtracted operator ¯ h D 2 s h, λ 1 can be determined from a computation of two-and three-point correlation functions in the standard way. Consider the meson three-point correlation function (the extension of this discussion to baryons is entirely straightforward)</p>
+
+				<figure>
+					<trash>C D 2 S (t x , t y ) = x 0|J Γ ( x, t x ) ¯ h( y, t y ) D 2 S h( y, t y )J † Γ ( 0, 0)|0 (32) For sufficiently large values of t y and t x − t y C D 2 S (t x , t y ) → Z 2 λ 1 exp (−(E − ν)t x ) (33) where λ 1 is defined by eq.(2), using the subtracted kinetic energy operator, λ 1 = H| ¯ h D 2 S h|H 2m H , (34)</trash>
+
+
+				</figure>
+
+				<p>and H is the lightest meson state which can be created by the operator J † Γ . A convenient way to extract λ 1 is to consider the ratio</p>
+
+				<figure>
+					<trash>R(t x , t y ) = C D 2 S (t x , t y ) C(t x ) → λ 1 (35)</trash>
+
+
+				</figure>
+
+				<p>As usual λ 1 must be evaluated in an interval in which R(t x , t y ) is independent of the times t y and t x , so that the contribution from the excited states can be neglected. By the same argument as was given after eq.(29), the ratio in eq.(35) can be evaluated using the action L of eq.(12) with no residual mass term. In the present case the difference between the matrix elements of the subtracted and unsubtracted operators is given by</p>
+
+				<figure>
+					<trash>λ 1 ≡ H| ¯ h D 2 S h|H 2m H = H| ¯ h D 2 h|H 2m H − c 2 . (36)</trash>
+
+
+				</figure>
+
+				<p>We conclude this section by presenting the definition of the subtracted quark mass up to, and including the terms of O</p>
+
+				<figure>
+					<trash>(1/m Q ), ˜ M B = m S Q + E − ν − λ 1 2m S Q (37) where M B is the spin-averaged mass, ˜ M B = 1 4</trash>
+
+					<figDesc>(M B + 3M B * ), which has no contribution from the chromomagnetic operator. Eq.(37) must be modified to include the effects of perturbative corrections. We denote the renormalised kinetic energy operator in some continuum renormalisation scheme by ¯ hD 2 cont h. In one loop perturbation theory we have ¯ hD</figDesc>
+					<trash>2 cont h = 1 + α s 4π X D 2 S ¯ hD 2 S h (38) from which we derive ˜ M B = m S Q + E − ν − 1 + α s 4π X D 2 S λ 1 2m S Q (39) The term proportional to X D 2 S in eq.(39</trash>
+
+
+				</figure>
+
+				<p>) is absent in continuum formulations of the HQET, and is a manifestation of the lack of reparametrisation invariance in the lattice version. It has been calculated in ref.[13].</p>
+
+				<p>Although we have restricted our explicit discussion to the kinetic energy operator, clearly the same techniques can be applied to a wide class of operators. This includes, for example, the operators whose matrix elements determine the 1/m Q corrections to exclusive leptonic and semileptonic decays of B-mesons [5]. In each case one can construct linear combinations of higher and lower dimensional operators which are free of power divergences and renormalon ambiguities, by imposing appropriate normalisation conditions for matrix elements between quark states in a fixed gauge, and at given momenta. This approach is a particular application of the general method for the non-perturbative normalisation of lattice operators proposed in ref.[19]</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="4">Matching</head>
+
+				<p>In the preceeding sections we have proposed a method for defining higher-dimensional operators O HQET n,α , whose matrix elements are free of (ultra-violet) renormalon ambiguities and power divergences, and which can be computed in lattice simulations. In order to derive physical predictions from these matrix elements it is necessary to calculate the corresponding coefficient functions, i.e. the C n,α of eq.(1). The subtraction of the ultra-violet renormalons from the matrix elements, implies the elimination of the corresponding infra-red renormalons from the coefficient functions, which can therefore be computed in perturbation theory [17, 20, 21]. To illustrate the &quot; matching &quot; procedure consider a simple situation for which we can write eq.(1) as:</p>
+
+				<figure>
+					<trash>O QCD (M ) = C 1 ( m Q M , Λ M )O HQET 1 (Λ) + 1 m Q C 2 ( m Q M , Λ M )O HQET 2 (Λ) + O(1/m 2 Q ) (40)</trash>
+
+
+				</figure>
+
+				<p>i.e. where there is a single operator in each of the first two terms of the heavy quark expansion (the discussion can readily be extended to the general case). In eq.(40) we have exhibited explicitly the dependence on the scale M used to normalise the QCD operators O QCD (M ) (i.e. the operators in the full theory). Λ is the (hard) ultra-violet cut-off in the effective theory (for example in the lattice formulation of the HQET Λ = a −1 ), and the operators on the right-hand side of eq.(40) are bare operators. m Q can be considered as the subtracted pole mass m S Q defined in section 2. Note that although we have chosen to write eq.(40) in terms of the bare operators in the effective theory, this equation is equivalent to eq.(1), which is written using renormalised operators. From the bare operators (computed in lattice simulations for example), one can determine the corresponding ones renormalised in a given (continuum ) scheme by using perturbation theory, or by some non-perturbative method (such as that given in ref.[19]). The determination of the matrix elements of renormalised operators of the effective theory may be a convenient intermediate step, but it is not necessary. We choose instead to compute the matrix elements of the QCD operators O QCD directly from the bare operators of the effective theory.</p>
+
+				<p>With a hard cut-off the Borel transforms of the coefficient function C 1 and the matrix elements of O HQET 2 do not have renormalon singularities at u = 1/2. For example, in the large N f limit, the Borel transform of C 1 in the vicinity of u = 1/2 will have the structure</p>
+
+				<figure>
+					<trash>˜ C 1 ( m Q M , Λ M , u) ∝ 1 (1 − 2u) m Q M −2u − Λ m Q Λ M −2u (41)</trash>
+
+
+				</figure>
+
+				<p>where the tilde denotes the Borel transform. Although the residue of the pole vanishes at u = 1/2, both C 1 and the matrix elements of O HQET 2 contain terms which, in perturbation theory, diverge linearly with the ultra-violet cut-off Λ. The use of a hard factorisation scale to organise the heavy quark expansion has been suggested by Bigi et al. [8] (see also ref.[22] for a very recent study of the definition of the higher twist operators relevant for studies of deep inelastic structure functions). Our proposal is to subtract these power divergences non-perturbatively, and to use the subtracted operators, which are free of power divergences and renormalon ambiguities, as the basis for the expansion in eq.(1).</p>
+
+				<p>Following the discussion in the preceding sections, we define a subtracted operator</p>
+
+				<figure>
+					<trash>O HQET 2;S which does not mix with O HQET 1 , O HQET 2;S (Λ) = O HQET 2 (Λ) − c(Λ)O HQET 1 (Λ) (42) where the dependence of the matrix elements of O HQET 2;S</trash>
+
+					<figDesc>(Λ) on Λ is at most logarithmic.</figDesc>
+
+				</figure>
+
+				<p>c(Λ) is computed non-perturbatively, whereas the functions C 1 and C 2 are calculated in perturbation theory. Eq.(40) can be rewritten as:</p>
+
+				<figure>
+					<trash>O QCD (M ) = C 1 ( m Q M , Λ M ) + c(Λ) m Q C 2 ( m Q M , Λ M ) O HQET 1 (Λ) + 1 m Q C 2 ( m Q M , Λ M ) O HQET 2;S (Λ) + O(1/m 2 Q ) (43)</trash>
+
+
+				</figure>
+
+				<p>By using a combination of perturbative and non-perturbative techniques, we have ensured that the coefficient of O HQET 1 in eq.(43) does not contain terms which diverge linearly with Λ, nor ambiguities due to renormalon singularities at u = 1/2. The remaining ambiguities are of O(Λ 2 QCD /m 2 Q ) or less, and are associated with the renormalons at u = 1,</p>
+
+			</div>
+			<div>
+				<head>3</head>
+
+				<figure>
+					<figDesc>2 · · ·, or the corresponding power divergences in matrix elements of operators of higher dimension than O</figDesc>
+					<head>HQET 2</head>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>. These can be eliminated by generalising our procedure to higher orders of the heavy quark expansion, by defining subtracted operators O</figDesc>
+					<trash>HQET 3;S , O HQET 4;S</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>· · · which cannot mix with lower dimensional ones, and using these subtracted operators as the basis of the expansion in eq.(1). Indeed by using such a basis one eliminates the ambiguities from all coefficient functions, up to the order in 1/m Q for which the subtraction coefficients have been computed. Of course in general the coefficient function of O</figDesc>
+					<head>HQET 1</head>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>depends logarithmically on Λ, the dependence being given by the anomalous dimension of O HQET 1</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>.</head>
+
+				<p>Throughout this paper we have been stressing the necessity of performing the subtractions of power divergences non-perturbatively. We now present a specific example demonstrating this explicitly. Consider the evaluation of the subtraction constant c(Λ) in the case for which O</p>
+
+				<figure>
+					<trash>HQET 1 = ¯ hh and O HQET 2</trash>
+
+					<figDesc>= ¯ h v · D h as happens in the expansion of the QCD operator ¯ QQ, where Q is the field of the heavy quark in the full theory, and in the discussion of ¯ Λ in section 2.2. The Borel transform of the forward matrix element of O</figDesc>
+					<trash>HQET 2 between heavy quark states of momentum k (T = h(k)| ¯ hv · Dh |h(k)), in the vicinity of u = 1/2, has the structure ˜ T (u) ∝ 1 (1 − 2u) v · k v · k Λ −2u − Λ . (44)</trash>
+
+
+				</figure>
+
+				<p>The residue of the pole vanishes at u = 1/2, in a similar way to that in the coefficient function C 1 in eq.(41). The two terms in the square brackets in eq.(44), contribute equal and opposite ambiguous terms of O(Λ QCD ) to the matrix element of O HQET 2 at v · k = 0. In perturbation theory however, the first term does not appear at v · k = 0, and hence the Borel transform of c(Λ) contains a renormalon at u = 1/2. It is for this reason that we insist on the non-perturbative determination of the subtraction coefficients.</p>
+
+				<p>One can also imagine performing the matching completely non-perturbatively, by simulating both the HQET and QCD (with a bottom quark) on the lattice. However the latter requires a very small lattice spacing, a −1 ≫ m b , which will not be possible for some time to come. Moreover, once one is able to simulate the b-quark directly (and reliably) on the lattice, the necessity of using the HQET is removed. It may still however, be a useful guide to scaling properties and symmetry relations.</p>
+
+			</div>
+			<div>
+				<head n="5">Conclusions</head>
+
+				<p>In this paper we have presented a method for defining higher dimensional operators of the HQET, in such a way that their matrix elements are free of ambiguities due to (ultra-violet) renormalon singularities, and of power divergences. We have illustrated our approach by proposing a physical definition of ¯ Λ (= m H − m S Q ) and of the matrix elements of the subtracted kinetic energy operator (H| D 2 S |H). The definition of the higher dimensional operators involves the subtraction of lower dimensional ones with the same quantum numbers. The subtraction coefficients are determined by imposing normalisation conditions on Green functions between quark and gluon states (or in the case of ¯ Λ, on the heavy quark propagator). Lattice simulations of the HQET allow for a numerical evaluation of the subtraction coefficients, as well as of the matrix elements of the subtracted operators. The renormalisation procedure proposed above can, however, be applied with any other non-perturbative method for computing matrix elements in effective theories. Our approach can also be extended to other cases, for example to the higher twist contributions to the structure functions of deep inelastic scattering.</p>
+
+				<p>Having defined operators O HQET n,α whose matrix elements are free of renormalon ambiguities, we still have to match the HQET operators onto those of QCD, i.e. to determine the coefficient functions C n,α of eq.</p>
+
+				<figure>
+					<figDesc>(1). This is done using perturbation theory, by calculating the matrix elements of O QCD and O HQET n,α between suitable external states, and combining the results with the subtraction coefficients which have been computed non-perturbatively (see section 4 above).</figDesc>
+
+				</figure>
+
+				<p>The procedures defined in this paper allow one to study quantitatively many important physical processes and quantities in heavy quark physics using a systematic expansion in the mass of the heavy quark. These include the leptonic and semi-leptonic decays of heavy mesons and baryons, as well as relations between the masses and lifetimes of heavy hadrons. The &quot; subtracted pole mass &quot; is a suitable parameter for the expansion.</p>
+
+			</div>
+
+			<note place="foot" n="1"> In B → D decays the expansion may be performed simultaneously in the inverse powers of the masses of both heavy quarks.</note>
+
+			<note place="foot" n="2"> Here we consider the effective theory for a heavy quark at rest. The generalisation to an arbitrary four-velocity is straightforward, although there are considerable subtleties in formulating the effective theory at non-zero velocity in Euclidean space [11, 12].</note>
+
+			<note place="foot" n="3"> When the calculations are extended beyond the leading order in 1/N f , the poles become replaced by branch points of cut singularities.</note>
+
+			<note place="foot" n="4"> The generalisation to heavy baryons is straightforward.</note>
+
+			<note place="foot" n="5"> The normalisation factor 1/(1 + δm a) is introduced for convenience, as will become apparent below.</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+				<head>Acknowledgements</head>
+				<p>We thank M.Beneke, M,Crisafulli, V.Gimenez, M.Neubert and J.Nieves for interesting discussions. G.M. acknowledges partial support from M.U.R.S.T., and CTS acknowledges the Particle Physics and Astronomy Research Council for its support through the award of a Senior Fellowship. We also acknowledge partial support by the EC contract CHRX-CT92-0051.</p>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Nussinov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Wetzel</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="page" from="36" to="130" />
+			<date type="published" when="1987" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">B</forename>
+				<surname>Voloshin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">A</forename>
+				<surname>Shifman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Sov</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J.Nucl.Phys. Sov.J.Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="issue">292</biblScope>
+			<biblScope unit="page" from="47" to="511" />
+			<date type="published" when="1987" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Wise, Phys.Letters B232 (1989) 113; Phys</title>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Isgur</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">B</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Letters</title>
+		<imprint>
+			<biblScope unit="volume">237</biblScope>
+			<biblScope unit="page">527</biblScope>
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Georgi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Letters</title>
+		<imprint>
+			<biblScope unit="volume">240</biblScope>
+			<biblScope unit="page">447</biblScope>
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">M.Neubert Phys.Reports</title>
+		<imprint>
+			<biblScope unit="volume">245</biblScope>
+			<biblScope unit="page">259</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title level="m" type="main">QCD -20 Years Later</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">H</forename>
+				<surname>Mueller</surname>
+			</persName>
+		</author>
+		<editor>P.M.Zerwas and H.A.Kastrup</editor>
+		<imprint>
+			<date type="published" when="1993" />
+			<publisher>World Scientific</publisher>
+			<biblScope unit="page">162</biblScope>
+			<pubPlace>Singapore</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Beneke</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">M</forename>
+				<surname>Braun</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="page" from="426" to="301" />
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">I</forename>
+				<surname>Bigi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">A</forename>
+				<surname>Shifman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<forename type="middle">G</forename>
+				<surname>Uraltsev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">I</forename>
+				<surname>Vaishtein</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="page" from="50" to="2234" />
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Neubert</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">T</forename>
+				<surname>Sachrajda</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Th</forename>
+				<surname>Cern</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1994" />
+			<biblScope unit="page">9407394</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Luke</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">V</forename>
+				<surname>Manohar</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">J</forename>
+				<surname>Savage</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Nucl</forename>
+				<forename type="middle">U</forename>
+				<surname>Aglietti</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Aglietti</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Crisafulli</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Masetti</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Phys.Letters B294</title>
+		<editor>281</editor>
+		<editor>U. Aglietti and S.Capitani</editor>
+		<imprint>
+			<biblScope unit="page" from="421" to="993" />
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">E</forename>
+				<surname>Mandula</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">C</forename>
+				<surname>Ogilvie</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="page" from="45" to="2183" />
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Maiani</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Martinelli</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">T</forename>
+				<surname>Sachrajda</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="page" from="368" to="281" />
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Martinelli</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Neubert</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">T</forename>
+				<surname>Sachrajda</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Cern</forename>
+				<surname>Preprint</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+	<note>in. preparation</note>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Crisafulli</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Gimenez</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Martinelli</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">T</forename>
+				<surname>Sachrajda</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1994" />
+			<biblScope unit="page">1071</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Crisafulli</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Gimenez</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Martinelli</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">T</forename>
+				<surname>Sachrajda</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">H</forename>
+				<surname>Mueller</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Letters</title>
+		<imprint>
+			<biblScope unit="volume">308</biblScope>
+			<biblScope unit="page">355</biblScope>
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">F</forename>
+				<surname>Falk</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Neubert</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Luke</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="page" from="388" to="363" />
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Martinelli</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Pittori</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">T</forename>
+				<surname>Sachrajda</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Testa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Vladikas</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="9411010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Grunberg</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Letters</title>
+		<imprint>
+			<biblScope unit="volume">325</biblScope>
+			<biblScope unit="page">441</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Neubert</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Cern</forename>
+				<surname>Preprint</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">X</forename>
+				<surname>Ji</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Mit</forename>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Mit-Ctp-</forename>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1994" />
+			<biblScope unit="page">2381</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

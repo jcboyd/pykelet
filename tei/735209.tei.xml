@@ -1,0 +1,2110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Reducible Gauge Algebra of BRST-Invariant Constraints</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2007-11">Nov 2007 December 24, 2013</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">I</forename>
+								<forename type="middle">A</forename>
+								<surname>Batalin</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department" key="dep1">I.E. Tamm Theory Division P.N. Lebedev Physics Institute</orgName>
+								<orgName type="department" key="dep2">Institute for Theoretical Physics &amp; Astrophysics</orgName>
+								<orgName type="institution">Russian Academy of Sciences</orgName>
+								<address>
+									<addrLine>53 Leninisky Prospect</addrLine>
+									<postCode>119991</postCode>
+									<settlement>Moscow</settlement>
+									<country key="RU">Russia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">K</forename>
+								<surname>Bering</surname>
+							</persName>
+							<affiliation>
+								<orgName type="institution">Masaryk University</orgName>
+								<address>
+									<addrLine>Kotlářská 2</addrLine>
+									<postCode>CZ-611 37</postCode>
+									<settlement>Brno</settlement>
+									<country key="CZ">Czech Republic</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Reducible Gauge Algebra of BRST-Invariant Constraints</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2007-11">Nov 2007 December 24, 2013</date>
+						</imprint>
+					</monogr>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>We show that it is possible to formulate the most general first-class gauge algebra of the operator formalism by only using BRST-invariant constraints. In particular, we extend a previous construction for irreducible gauge algebras to the reducible case. The gauge algebra induces two nilpotent, Grassmann-odd, mutually anticommuting BRST operators that bear structural similarities with BRST/anti-BRST theories but with shifted ghost number assignments. In both cases we show how the extended BRST algebra can be encoded into an operator master equation. A unitarizing Hamiltonian that respects the two BRST symmetries is constructed with the help of a gauge-fixing Boson. Abelian reducible theories are shown explicitly in full detail, while non-Abelian theories are worked out for the lowest reducibility stages and ghost momentum ranks.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head>Contents 1</head>
+
+			<note>Introduction 3 1.1 Operator Ordering . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5 1.2 Notation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5 2 Old BRST Algebra 6 2.1 Old Ghosts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6 2.2 Old BRST Operator . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6 2.3 BRST-Improved Hamiltonian . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8 2.4 Anti-BRST algebra . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9 2.5 The S −2 Operator . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10 2.6 The S −4 Operator . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10 2.7 Operator Master Equation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11 3 New BRST algebra 11 3.1 New Ghosts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11 3.2 Ghost Operators . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12 3.3 Improved BRST Operator Ω . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13 3.4 Improved Anti-BRST Operator ¯ Ω . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14 3.5 New BRST Operator Ω 1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15 3.6 BRST-Improved Hamiltonian . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17 3.7 The S 1 Operator . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17 3.8 The S 2 Operator . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18 3.9 Operator Master Equation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</note>
+
+				<figure>
+					<trash>. 19 3.10 An Inverse Relation to Ω 1</trash>
+
+
+				</figure>
+
+			<note>= {Ω, S 1 } . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21 4 Assembling the Pieces 21 4.1 The Main Relation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21 4.2 Non-Minimal Sector . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22 5 Abelian Case 24 5.1 Old BRST Operator Ω 0 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24 5.2 Anti-BRST Operator ¯ Ω 0 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25 5.3 Improved BRST Operators Ω and ¯ Ω . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26 5.4 The S 1 Operator . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26 5.5 New BRST Operator Ω 1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27 5.6 The S 2 Operator . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28 5.7 The Higher S k Operators . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29 5.8 Another Abelian Solution . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29 6 Algebras of Constraints 30 6.1 Unitary Transformations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30 6.2 Algebra of Constraints . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 32 6.3 Antibracket Algebra of Constraints . . . . . . . . . . . . . . . . . . . . . . . . . . . .</note>
+
+				<figure>
+					<trash>. 32 7 Conclusion 33 A Critical Open Bosonic String Theory 34 B Superfield Formulation 35 D Operator Master Equations 38 E A New Tilde BRST Operator Ω 1 41</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>In the quantization of a classical system with first-class constraints T α , {T α , T β } P B = U αβ γ T γ , (1.1) it is well-known that there may appear quantum anomalies in the expression for the operator commutator [T α , T β ] at quadratic (or higher) orders in ¯ h. A useful approach to circumvent this obstacle, is, to replace the initial constraints T α with BRST-invariant constraints T α . In practice, it turns out that the BRST invariance of T α protects the commutator [T α , T β ] against anomalies. Our goal is to investigate this fact systematically in a general setting. For irreducible first class constraint such an investigation is undertaken in Ref. [1]. Here we will develop that construction and extend it to reducible gauge algebras.</p>
+
+				<p>The use of BRST-invariant constraints is best illustrated by a motivating example. Consider the critical open Bosonic string theory in D = 26 dimensions with an intercept/normal-ordering constant a = 1, cf. Ref. [2], Ref. [3]</p>
+
+				<figure>
+					<trash>and Appendix A. The matter Virasoro generators T m = 1 2 η µν n : α µ m−n α ν n : −¯ haδ 0 m (1.2) form a Virasoro algebra with non-zero central extension [T m , T n ] = ¯ h(m−n)T m+n + ¯ h 2 A m δ 0 m+n , (1.3) A m ≡ Dm(m 2 − 1) 12 + 2ma . (1.4)</trash>
+
+
+				</figure>
+
+				<p>The remedy is well-known: When one adds the appropriate ghost contributions T</p>
+
+				<figure>
+					<trash>(c) m to the Virasoro constraints, T m = T m + T (c) m , T (c) m = n (m−n) : b m+n c −n : (1.5)</trash>
+
+
+				</figure>
+
+				<p>the new constraints T m obey a Virasoro algebra with no central extension, also known as a Witt algebra, precisely for D = 26 and a = 1, [T m</p>
+
+				<figure>
+					<trash>, T n ] = ¯ h(m−n)T m+n + ¯ h 2 A m δ 0 m+n , (1.6) A m ≡ (D − 26)m 3 + (24a + 2 − D)m 12 = 0 . (1.7)</trash>
+
+
+				</figure>
+
+				<p>How does the BRST formulation [4, 5] fit into this? Surprisingly, the new anomaly-free constraints T m happen to be BRST-superpartners of the ghosts momenta b m ,</p>
+
+				<figure>
+					<trash>T m = 1 ¯ h [b m , Ω 0 ] , (1.8) where Ω 0</trash>
+
+
+				</figure>
+
+				<p>denotes the BRST operator. As a simple consequence of eq. (1.8), the new constraints T m are BRST-invariant, [T m , Ω 0 ] = 1 ¯ h [[b m , Ω 0 ], Ω 0 ] = 1 2¯ h [b m , [Ω 0 , Ω 0 ]] = 0 . (1.9)</p>
+
+				<p>Here we argue that eq. (1.8) should be viewed as the rule rather than the exception. First of all, eq. (1.8) respects ghost number conservation, since Ω 0 , T m and b m carry ghost number 1, 0 and −1, respectively. In general, ghost number conservation severely restricts what can happen. Secondly, it follows from eq. (1.8), using quite broad assumptions, that the [T m , T n ] commutator cannot develop a quantum anomaly, which is a strong hint. For instances, guided by ghost number conservation, it is reasonable to expect that the commutator [T m , b n ] between the BRST-invariant constraints T m and the ghost momenta b n again is proportional to the ghost momenta. In detail, let us assume that [T m , b n ] =</p>
+
+				<p><formula>¯ h p U mn p b p (1.10)</formula></p>
+
+				<p>for some BRST-invariant structure functions U mn p . Then the proof goes as follows: [T m</p>
+
+				<figure>
+					<trash>, T n ] = 1 ¯ h [T m , [b n , Ω 0 ]] = 1 ¯ h [[T m , b n ], Ω 0 ] = p U mn p [b p , Ω 0 ] = ¯ h p U mn p T p , (1.11) i.e. there are no terms of order O(¯ h 2 ). Therefore the eqs. (1.8) and (1.10) imply that the [T m , T n ]</trash>
+
+
+				</figure>
+
+				<p>commutator is anomaly-free. Such an assurance is a rare commodity in a full-fledged quantum theory, and this is why we would like to systematically seek for relationships of the form (1.8). (In string theory much more is known: The ghost momentum b(z) = m b m z −m−2 is a primary field of conformal weight 2, which means that [T m , b n ] = ¯ h(m−n)b m+n , thereby confirming the Ansatz (1.10) with U mn p = (m−n)δ p n+m . However, we emphasize the versatility of the argument.) Later in the construction a new generation of ghosts C A is introduced, and the BRST-doublets T A = {T m ; b m } (1.12) are turned into twice as many first-class constraints for a new BRST operator called Ω 1 = C A T A + . . ., cf. eq. (3.41) below.</p>
+
+				<p>We stress that choosing BRST-invariant constraints T α is not a miraculous cure that turns anomalous theories into anomaly-free ones. Rather it is a useful tool in overcoming a poor initial choice of constraint basis T α for otherwise sound theories. For instance, in the case of critical open Bosonic strings, the BRST formulation requires – for starters – that the BRST charge Ω 0 is nilpotent,</p>
+
+				<figure>
+					<trash>0 = [Ω 0 , Ω 0 ] = m,n ([T m , T n ] − ¯ h(m−n)T m+n )c −m c −n = ¯ h 2 m A m c −m c m , (1.13) which by itself implies the familiar D = 26 and a = 1, cf. eqs. (1.7) and (A.10). In general, we shall simply assume as a starting point that an anomaly-free nilpotent BRST operator Ω 0 has been given. (For a typical physical model with infinitely many degrees of freedom, it takes a fair amount of mathematical analysis to rigorously establish this beyond the formal level [6, 7, 8]</trash>
+
+
+				</figure>
+
+				<p>.)</p>
+
+				<p>The paper is organized as follows. In Section 2 the standard Hamiltonian BRST construction [6, 7, 8, 9, 10] is reviewed. In Section 3 a new generation of ghosts and BRST symmetry is introduced. An anti-BRST operator is used to infer cohomologically the existence of an S operator, which satisfies an operator master equation [11], [S, [S, Ω]] = (i¯ h)[S, Ω] , (1.14) cf. eq. (3.63) below. The S operator contains the so-called tilde constraints T A , which are the analogues of the above string ghost momenta b m , and which descend via the relation</p>
+
+				<figure>
+					<trash>T A 0 = V A 0 B 0 ˜ T B 0 + i ¯ h [ ˜ T A 0 , Ω 0 ] , (1.15) to the new T A constraints (1.12), cf. eq. (4.1) below. Eq. (1.15) generalizes eq. (1.8</trash>
+
+
+				</figure>
+
+				<p>) and is the heart of the construction. It guarantees that the new T A 0 constraints are BRST-invariant up to the first term on the left-hand side, which depends on ghost momenta and vanishes in the unitary limit. In short, Section 3 presents the various pieces and definitions that go into the construction. In Section 4 we assemble all the pieces and show how to gauge-fix, i.e. construct the unitarizing Hamiltonian. One of our main new points is that the construction shares strikingly many similarities with BRST/anti-BRST symmetric models. In particular, it has two nilpotent, Grassmann-odd, mutually anticommuting BRST operators, although their ghost number assignments are different. Here the first BRST operator Ω is a ghostdeformed version of the ordinary BRST operator Ω 0 , and the second BRST operator is the new BRST operator Ω 1 , associated with a next generation of ghosts C A , cf. eq. (1.12). Similar to BRST/anti- BRST theories, the gauge-fixing will depend on a gauge-fixing Boson, and the unitarizing Hamiltonian will respect both BRST symmetries.</p>
+
+				<p>In Section 5 the Abelian case is treated in full details. The Abelian case, which besides being an important example in its own right, establishes at the theoretical level the existence of the whole construction . Later, in Section 6 we discuss algebraic properties of the constraints. Section 7 briefly states our conclusions. The paper also includes five appendices: Appendix A gives an elementary derivation of the conformal anomaly for the critical open Bosonic string. Appendix B and Appendix C discuss an optional superfield and matrix formulation, respectively. The superfield formulation explores a (perfectly consistent) ghost number deficit among the two superpartners of new constraints T A , as already evident from eq. (1.12). Finally, Appendix D analyzes possible candidates for the operator master eq. (1.14), and Appendix E reformulates certain additional involution relations as a nilpotency condition for a BRST operator.</p>
+
+			</div>
+			<div>
+				<head n="1.1">Operator Ordering</head>
+
+				<p>String theory is most often formulated using elementary Fock space creation and annihilation operators , α µ m , b m and c m , also referred to as Wick operators. The ordering prescription is Wick (=normal) ordering, cf. eqs. (A.2) and (A.3); and the Hermitian conjugation is implemented through opposite modes m ↔ −m,</p>
+
+				<figure>
+					<trash>(α µ m ) † = α µ −m , b † m = b −m , c † m = c −m . (1.16)</trash>
+
+
+				</figure>
+
+				<p>However for a general theory, one does not want to make unnecessary assumptions about the index structure of the fundamental operators, and one would therefore have to write the Hermitian conjugation &quot; † &quot; explicitly, thereby producing quite lengthy formulas. To avoid this, we take from now on the fundamental operators to be Hermitian or anti-Hermitian, and the ordering prescription to be qp-ordering, i.e. the coordinates q ordered to the left of the momenta p. (In the sectors of the theory that is not written out explicitly, one is of course free to assume any ordering.) For more on the Wick formalism and the string example, see Subsection 6.B of Ref. [12] and Subsection 6.2 of Ref. [1]</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+					<trash>1.2 Notation Square brackets [A, B] ≡ AB − (−1) ε A ε B BA , [A, B] + ≡ AB + (−1) ε A ε B BA , (1.17)</trash>
+
+
+				</figure>
+
+				<p>denote the supercommutator and the anti-supercommutator of two operators A and B of Grassmann parities ε A and ε B . As we already saw in the Introduction, it becomes quite tedious to write out every ¯ h, so from now on we shall let a curly bracket</p>
+
+				<figure>
+					<trash>{A, B} ≡ 1 i¯ h [A, B] (1.18)</trash>
+
+
+				</figure>
+
+				<p>denote a normalized supercommutator. As usual, the normalized commutator (1.18) becomes a Poisson bracket {A, B} P B of commuting functions A and B in the classical limit ¯ h → 0 by the well-known correspondence principle of quantum mechanics. However, we stress that the normalized commutator (1.18) is an operator for ¯ h = 0. The notation (1.18) enables us to 1) almost eliminate appearances of i¯ h, 2) provide a full-fledged quantum operator formalism and 3) at the same time give classical expressions. Note that {A; B} separated by a semicolon &quot; ; &quot; instead of a comma &quot; , &quot; will denote a set of two elements A and B.</p>
+
+				<p>As a rule of thumb, calligraphic letters are associated with the new ghost sector, cf. Subsection 3.1. A bar &quot; − &quot; over a quantity refers to negative ghost number, while a tilde &quot; ∼ &quot; (resp. breve &quot; ⌣ &quot; ) over a quantity means that it is associated with S 1 (resp. S 2 ), cf. Subsection 3.7 (resp. 3.8).</p>
+
+			</div>
+			<div>
+				<head n="2">Old BRST Algebra</head>
+
+				<p>In this Section 2 we review the construction of a general BRST operator algebra [6, 7, 8, 9, 10, 13, 14, 15, 16] with the operator ordering prescription taken to be qp-ordering. The review is partially to fix notation and partially to motivate later constructions. The BRST algebra will only serve as a starting point, and we shall refer to it as the &quot; old &quot; or the &quot; ordinary &quot; system to distinguish it from newer sectors to be added in later Sections.</p>
+
+			</div>
+			<div>
+				<head n="2.1">Old Ghosts</head>
+
+				<p>Besides the original phase variables (q i , p j ), which almost always appear only implicitly in formulas, the ordinary phase space consists of L+1 stages of ordinary ghosts</p>
+
+				<figure>
+					<trash>C α = {C αs |s = 0, . . . , L} , (2.1) and their momenta ¯ P α = { ¯ P αs |s = 0, . . . , L} , (2.2) with canonical commutation relations {C α , C β } = 0 , {C α , ¯ P β } = δ α β = (−1) ε β { ¯ P β , C α } , { ¯ P α , ¯ P β } = 0 . (2.3)</trash>
+
+
+				</figure>
+
+				<p>Here the index α s runs over the set {1, . . . , m s }, the subscript s is associated with stage s ∈ {0, . . . , L}, while the index α is a shorthand for all the stages α 0 , . . . , α L , i.e. the index α runs over {1, . . . , L s=0 m s }, and so forth. The Grassmann parity and ghost number of the ordinary ghosts are</p>
+
+				<figure>
+					<trash>ε(C α ) = ε α +1 = ε( ¯ P α ) , ε(C αs ) = ε αs +s+1 = ε( ¯ P αs ) , gh(C αs ) = s+1 = −gh( ¯ P αs ) . (2.4) 2.2 Old BRST Operator The ordinary BRST operator Ω 0 = Ω 0 (q, p; C, ¯ P ) is Grassmann-odd, nilpotent and with ghost number 1, {Ω 0 , Ω 0 } = 0 , ε(Ω 0 ) = 1 , gh(Ω 0 ) = 1 . (2.5)</trash>
+
+
+				</figure>
+
+				<p>It is a power series expansion in the ordinary ghosts C and ¯ P , and ordered according to the C</p>
+
+				<figure>
+					<trash>¯ P ordering prescription, Ω 0 = L s=0 C αs T αs + 1 2 r, s ≥ 0 r+s ≤ L C βs C αr U αrβs γ r+s ¯ P γ r+s (−1) ε βs +ε γ r+s +r + 1 2 r, s ≥ 0 r+s+2 ≤ L C γ r+s+2 U γ r+s+2 βsαr ¯ P αr ¯ P βs (−1) ε αr +r + 1 4 0 ≤ r, s, t, u ≤ L r+s = t+u+1 C βs C αr U αrβs γtδu ¯ P δu ¯ P γt (−1) ε βs +s+ε δu +u + O(C 3 ¯ P , C ¯ P 3 ) , (2.6) where U α... β... = U α... β... (q</trash>
+
+
+				</figure>
+
+				<p>, p) denote structure functions of the original phase space. The Ω 0 operator starts with the original first-class constraints T α 0 = T α 0 (q, p), and in the reducible case one also introduces higher-stage constraints, which depend linearly on the ghost momenta,</p>
+
+				<figure>
+					<trash>T α s+1 ≡ Z α s+1 βs ¯ P βs (−1) ε βs +s , s ∈ {0, . . . , L−1} . (2.7)</trash>
+
+
+				</figure>
+
+				<p>Note that the higher-stage constraints T α do not necessarily commute with the C β ghosts. The Grassmann parity and ghost number are</p>
+
+				<figure>
+					<trash>ε(T α ) = ε α , ε(T αs ) = ε αs +s , gh(T αs ) = − s , (2.8) which are opposite of the corresponding ordinary C and ¯ P ghosts. The reducible structure functions Z αs β s−1 = Z αs β s−1 (q, p) have Grassmann parity and ghost number given by ε(Z αs β s−1 ) = ε αs +ε β s−1 , gh(Z αs β s−1 ) = 0 . (2.9)</trash>
+
+
+				</figure>
+
+				<p>To be systematic, let m −1 = γ −1 +γ 0 denote half the number of original phase variables (q, p), i.e. the original phase space consists effectively of 2γ −1 physical degrees of freedom, γ 0 irreducible gaugegenerating constraints, and γ 0 irreducible gauge-fixing constraints. The logic behind reducible gauge algebras, is, that due to requirements of locality and symmetries, such as e.g. Lorentz symmetry, it is impossible to pick an irreducible set of constraints. At each stage s (except the last stage) one keeps overshooting the number of remaining gauge symmetries. In detail, the s&apos;th stage consists of m s = γ s +γ s+1 ghosts, which corresponds to γ s independent gauge symmetries, and γ s+1 redundant symmetries, which in turn become gauge symmetries for the next stage s+1. If L &lt; ∞ is finite, the process stops at the L&apos;th stage with γ L+1 = 0.</p>
+
+				<figure>
+					<trash>γ 0 = rank(T α 0 ) &gt; 0 , (2.10) γ s = L r=s (−1) r−s m r = 0 for s ≥ L+1 , rank(Z αs β s−1 ) &gt; 0 otherwise . (2.11)</trash>
+
+					<figDesc>This leads to a rank condition on the Ω 0 operator. It should contain as many non-trivial constraints as possible, i.e. a quarter of the total number of non-physical degrees of freedom,</figDesc>
+					<trash>∞ s=0 γ s = 1 2 ∞ s=0 m s = ∞ r=0 m 2r = ∞ r=0 m 2r+1 . (2.12)</trash>
+
+
+				</figure>
+
+				<p>Equivalently, the antibracket (·, ·) Ω 0 should have half rank in the non-physical sector. Here the (normalized , operator-valued) antibracket * is defined as [17, 18, 19, 20] (</p>
+
+				<figure>
+					<trash>A, B) Ω 0 ≡ 1 2 {A, {Ω 0 , B}} + 1 2 {{A, Ω 0 }, B} , (2.13)</trash>
+
+
+				</figure>
+
+				<p>where A and B are arbitrary operators. We remark that this antibracket always satisfies the pertinent Jacobi identity modulo BRST-exact terms, and that the Jacobi identity holds strongly within a Dirac * The antibracket in Ref. [1] is based on the bare commutator (1.17), while we here use the normalized commutator</p>
+
+				<figure>
+					<trash>(1.18), so that (·, ·) there Ω ≡ (i¯ h) 2 (·, ·) here Ω 0 . subalgebra [20]</trash>
+
+
+				</figure>
+
+				<p>, which is by definition a maximal subalgebra that is 1) Abelian with respect to the commutator and 2) stabile under the antibracket (2.13).</p>
+
+				<p>The rank R of a theory is defined as the highest power of ghost momenta ¯ P α in Ω 0 . Some of the consequences of the Ω 0</p>
+
+				<figure>
+					<trash>nilpotency (2.5) are Z α 1 β 0 T β 0 = 0 , (2.14) {T α 0 , T β 0 } = U α 0 β 0 γ 0 T γ 0 , (2.15) {T α 0 , Z β s+1 γs } = U α 0 β s+1 δ s+1 Z δ s+1 γs + (−1) ε α 0 (ε β s+1 +s) Z β s+1 δs U δsα 0 γs −U α 0 β s+1 γsδ 0 T δ 0 + O(¯ h) terms, if R ≥ 2 , (2.16) Z α s+2 γ s+1 Z γ s+1 βs = U α s+2 βsγ 0 T γ 0 − i¯ h 2 s r=0 U α s+2 δ s−r γr U γrδ s−r βs + O(¯ h 2 ) terms, if R ≥ 3 and s ≥ 1 . (2.17)</trash>
+
+
+				</figure>
+
+				<p>One recognizes the involution relation (2.15) for the first class constraints T α 0 , and the reducibility relations (2.14) and (2.17). Eq. (2.14) shows that the zeroth-stage constraints T α 0 are reducible if rank(Z α 1 β 0 ) = 0. One can re-express the eq. (2.17) in the s = 0 case as</p>
+
+				<figure>
+					<trash>Z α 2 β 1 Z β 1 γ 0 = 1 2 U α 2 δ 0 β 0 Z β 0 δ 0 γ 0 , (2.18) where Z α 0 β 0 γ 0 is defined as Z α 0 β 0 γ 0 ≡ T α 0 δ γ 0 β 0 − i¯ h 2 U α 0 β 0 γ 0 − (−1) ε α 0 ε β 0 (α 0 ↔ β 0 ) . (2.19)</trash>
+
+
+				</figure>
+
+				<p>If one takes the classical limit ¯ h → 0 and go on-shell with respect to the constraints T α 0 , the quantities Z α 0 β 0 γ 0 vanish, so that the structure functions Z α 2 β 1 become left zero-eigenvectors for the matrix Z β 1 γ 0 , cf. eq. (2.18). At the quantum level and off-shell, the quantities Z α 0 β 0 γ 0 fulfill</p>
+
+				<figure>
+					<trash>Z α 0 β 0 γ 0 T γ 0 = [T α 0 , T β 0 ] − i¯ hU α 0 β 0 γ 0 T γ 0 = 0 , (2.20) due to eq. (2.15). 2.3 BRST-Improved Hamiltonian</trash>
+
+
+				</figure>
+
+				<p>We mention for completeness that the original Hamiltonian H or = H or (q, p), which commutes weakly with the first-class constraints</p>
+
+				<figure>
+					<trash>{T α 0 , H or } = V α 0 β 0 T β 0 , (2.21) is supposed to be BRST-improved, H 0 = H or + C α V α β ¯ P β (−1) ε β + O(C 2 ¯ P , C ¯ P 2 ) , (2.22) by letting the improved Hamiltonian H 0 = H 0 (q, p; C, ¯ P ) depend on the ghosts C α and ¯ P β in such a way that it becomes BRST-invariant, {Ω 0 , H 0 } = 0 , ε(H 0 ) = 0 , gh(H 0 ) = 0 . (2.23)</trash>
+
+
+				</figure>
+
+				<p>Contrary to the standard approach [6, 7, 8, 9, 10] one does not introduce non-minimal variables in the old sector. Instead, the idea is roughly speaking to supply the gauge-generating constraints T α = 0 with more gauge-generating constraints, which kill the ordinary ghost momenta ¯ P α = 0, and supply the gauge-fixing constraints χ α = 0 with more gauge-fixing constraints, which kill the ordinary ghosts C α = 0. The complete gauge-fixing procedure will be mediated through non-minimal variables in a new ghost sector, see Subsection 4.2.</p>
+
+			</div>
+			<div>
+				<head n="2.4">Anti-BRST algebra</head>
+
+				<p>At this point we mention an interesting possibility to include an anti-BRST operator ¯ Ω 0 = ¯ Ω 0 (q, p; C, ¯ P ). Although anti-BRST algebras are not an essential part of this paper (i.e. one is free to simply let ¯ Ω 0 = 0), they nevertheless constitute an important topic that is worthwhile mentioning. In general, the anti-BRST operator ¯ Ω 0 is required to satisfy</p>
+
+				<figure>
+					<trash>{ ¯ Ω 0 , ¯ Ω 0 } = 0 , {Ω 0 , ¯ Ω 0 } = 0 , ε( ¯ Ω 0 ) = 1 , gh( ¯ Ω 0 ) = − 1 . (2.24)</trash>
+
+
+				</figure>
+
+				<p>We caution that the pertinent anti-BRST algebra [21] will here be different from the traditional notion of an anti-BRST algebra [22, 23, 24]. Recall that in the traditional setting, the anti-BRST algebra explores an Sp(2) duality among the Faddeev-Popov ghost and antighost C α ↔ ¯ C α . Roughly speaking, the traditional anti-BRST operator (which are closely related to a co-BRST operator [25]) amounts to substitute C α → ¯ C α in Ω 0 , while keeping the constraints T α the same. However in our current setup, there is no Faddeev-Popov antighost within the minimal framework; only a ghost momenta ¯ P α . (Instead the Faddeev-Popov antighost typically belongs to a non-minimal sector.) The crucial difference is that the traditional Sp(2) doublets (C α ; ¯ C β ) of Faddeev-Popov ghost pairs commute [C α , ¯ C β ] = 0, while the canonical pairs (C α ; ¯ P β ) do not commute. Also the anti-constraints ¯ T α 0 in ¯ Ω 0 will in general be different from the first-class constraints T α 0 , cf. eq. (2.38) below. In detail, the ¯ Ω 0 operator is a power series expansion in ordinary ghosts C and ¯ P , and ordered according to the</p>
+
+				<figure>
+					<trash>C ¯ P -ordering prescription, ¯ Ω 0 = L s=0 ¯ T αs ¯ P αs (−1) ε αs +s + 1 2 r, s ≥ 0 r+s ≤ L C γ r+s ¯ U γ r+s βsαr ¯ P αr ¯ P βs (−1) ε αr +r + 1 2 r, s ≥ 0 r+s+2 ≤ L C βs C αr ¯ U αrβs γ r+s+2 ¯ P γ r+s+2 (−1) ε βs +ε γ r+s+2 +r + 1 4 0 ≤ r, s, t, u ≤ L r+s+1 = t+u C βs C αr ¯ U αrβs γtδu ¯ P δu ¯ P γt (−1) ε βs +s+ε δu +u + O(C 3 ¯ P , C ¯ P 3 ) . (2.25) The ¯ Ω 0</trash>
+
+
+				</figure>
+
+				<p>operator starts with the anti-constraints ¯ T α 0 = ¯ T α 0 (q, p), and in the reducible case one also introduces higher-stage anti-constraints, which depend linearly on the ghosts,</p>
+
+				<figure>
+					<trash>¯ T αs ≡ C β s−1 ¯ Z β s−1 αs , s ∈ {1, . . . , L} . (2.26) The anti-constraints ¯ T α carry the same Grassmann parity as the corresponding constraints T α , ε( ¯ T α ) = ε α , ε( ¯ T αs ) = ε αs +s , gh( ¯ T αs ) = s . (2.27) The reducible structure functions ¯ Z αs β s+1 = ¯ Z αs β s+1 (q, p) have Grassmann parity and ghost number given by ε( ¯ Z αs β s+1 ) = ε αs +ε β s+1 , gh( ¯ Z αs β s+1 ) = 0 . (2.28) Some of the consequences of the ¯ Ω 0 -nilpotency (2.24) are ¯ T α 0 ¯ Z α 0 β 1 = 0 , (2.29) { ¯ T α 0 , ¯ T β 0 } = ¯ T γ 0 ¯ U γ 0 α 0 β 0 , (2.30) { ¯ Z γs β s+1 , ¯ T α 0 } = ¯ Z γs δ s+1 ¯ U δ s+1 β s+1 α 0 + (−1) ε α 0 (ε β s+1 +s) ¯ U γs α 0 δs ¯ Z δs β s+1 − ¯ T δ 0 ¯ U δ 0 γs β s+1 α 0 + O(¯ h) terms, if R ≥ 2 , (2.31) ¯ Z αs γ s+1 ¯ Z γ s+1 β s+2 = ¯ T γ 0 ¯ U γ 0 αs β s+2 − i¯ h 2 s r=0 ¯ U αs δ s−r γr ¯ U γr δ s−r β s+2 + O(¯ h 2 ) terms, if R ≥ 3 and s ≥ 1 . (2.32)</trash>
+
+
+				</figure>
+
+				<p>Some of the consequences of the compatibility (2.24) of the BRST and the anti-BRST operator, i.e. the fact that they commute, are</p>
+
+				<figure>
+					<trash>¯ T α 0 T α 0 = 0 , (2.33) {T α 0 , ¯ T β 0 } + ¯ Z α 0 γ 1 Z γ 1 β 0 = ¯ T γ 0 U γ 0 α 0 β 0 + ¯ U α 0 β 0 γ 0 T γ 0 − i¯ h 2 ¯ U α 0 δ 0 γ 0 U γ 0 δ 0 β 0 + O(¯ h 2 ) = ¯ T γ 0 U γ 0 α 0 β 0 + 1 2 ¯ U α 0 γ 0 δ 0 Z δ 0 γ 0 β 0 + O(¯ h 2 ) , (2.34) Z αs γ s−1 ¯ Z γ s−1 βs + ¯ Z αs γ s+1 Z γ s+1 βs = ¯ T γ 0 U γ 0 αs βs + ¯ U αs βsγ 0 T γ 0 − i¯ h 2 s r=0 ¯ U αs δ s−r γr U γrδ s−r βs − i¯ h 2 s−2 r=0 U αs δ s−2−r γr ¯ U γr δ s−2−r βs + O(¯ h 2 ) . (2.35) 2.5 The S −2 Operator</trash>
+
+
+				</figure>
+
+				<p>We have up until now mostly reviewed the notions of BRST and anti-BRST symmetry in the Hamiltonian setting. In the next Subsections 2.5-2.7 we shall make a series of new observations concerning the cohomology of Ω 0 , which lead to an operator master equation, cf. eq. (2.42) below. There is a parallel operator master eq. (3.63) for the main construction, to be presented in Section 3.</p>
+
+				<p>Normally it is assumed that the cohomology of {Ω 0 , ·} is trivial in sectors of non-vanishing ghost number. Then the Ω 0</p>
+
+				<figure>
+					<trash>closeness (2.24) of ¯ Ω 0 implies that ¯ Ω 0 is Ω 0 -exact, i.e. there exists a Bosonic operator S −2 such that ¯ Ω 0 = {Ω 0 , S −2 } , ε(S −2 ) = 0 , gh(S −2 ) = − 2 . (2.36)</trash>
+
+
+				</figure>
+
+				<p>In detail, the S −2 operator is a power series expansion in the ordinary ghosts C</p>
+
+				<figure>
+					<trash>and ¯ P , S −2 = 1 2 A β 0 α 0 ¯ P α 0 ¯ P β 0 (−1) ε α 0 + A α 1 ¯ P α 1 (−1) ε α 1 + O(C ¯ P ) , (2.37) where A α 0 β 0 = −(−1) ε α 0 ε β 0 A β 0 α 0 and A α 1 are arbitrary operators. For instance, the complete ¯ T α 0 solution to eq. (2.33) alone, is ¯ T γ 0 = 1 2 A β 0 α 0 Z α 0 β 0 γ 0 + A α 1 Z α 1 γ 0 , (2.38) where Z α 0 β 0 γ 0 is defined in eq. (2.19). 2.6 The S −4 Operator</trash>
+
+
+				</figure>
+
+				<p>Similarly, one may define an S −4 operator as follows. First note that the antibracket (S −2 , S −2 ) Ω 0 of S −2 with itself can be written as the commutator of S −2 and ¯</p>
+
+				<figure>
+					<trash>Ω 0 , (S −2 , S −2 ) Ω 0 = {S −2 , {Ω 0 , S −2 }} = {S −2 , ¯ Ω 0 } . (2.39) The antibracket (S −2 , S −2 ) Ω 0 is Ω 0 -closed, as the following calculation shows, {Ω 0 , (S −2 , S −2 ) Ω 0 } = {Ω 0 , {S −2 , ¯ Ω 0 }} = {{Ω 0 , S −2 }, ¯ Ω 0 } = { ¯ Ω 0 , ¯ Ω 0 } = 0 , (2.40) since ¯ Ω 0 is Ω 0 -closed and nilpotent, cf. eq. (2.24). Hence the antibracket (S −2 , S −2 ) Ω 0 is Ω 0 -exact, i.e. there exists a quantity S −4 , such that 1 2 (S −2 , S −2 ) Ω 0 = {Ω 0 , S −4 } , ε(S −4 ) = 0 , gh(S −4 ) = − 4 . (2.41) 2.7 Operator Master Equation</trash>
+
+
+				</figure>
+
+				<p>The process of finding higher and higher cohomology relations may be automated by introducing an operator master equation −(S, S) Ω 0 ≡ {S, {S, Ω 0 }} = Ω 0 . (2.42)</p>
+
+				<p>To define the operator S, one first let a quantity S 0 be the ghost operator, S 0 = G , (2.43) see eq. (3.10) below. Furthermore, one may show by mathematical induction that there exist quantities S −2k for each positive integer k ≥ 1, and with quantum numbers ε(S −2k ) = 0 , gh(S −2k ) = − 2k , (2.44) such that the sum</p>
+
+				<figure>
+					<trash>S ≡ ∞ k=0 S −2k , ε(S) = 0 , (2.45)</trash>
+
+
+				</figure>
+
+				<p>of indefinite ghost number, satisfies the above operator master eq. (2.42), cf. Appendix D. The master eq. (2.42) is really an infinite tower of equations. The first non-trivial equation is eq. (2.41).</p>
+
+				<p>Although we shall not pursue this here, let us mention that a stronger formulation of the anti-BRST algebra would impose rank conditions on ¯ Ω 0 (i.e. the analogues of conditions (2.10)-(2.12) for Ω 0 ), and the anti-BRST algebra would contain non-trivial information, which allows for a complexification the whole BRST algebra. For starters, the dimension m s must then be even at each stage s ∈ {0, . . . , L}.</p>
+
+				<p>In contrast, there are no such requirements for a traditional Sp(2) algebra.</p>
+
+			</div>
+			<div>
+				<head n="3">New BRST algebra</head>
+
+				<p>In this Section 3 we present all the ingredients of the main construction.</p>
+
+			</div>
+			<div>
+				<head n="3.1">New Ghosts</head>
+
+				<p>The new BRST algebra depends on L+1 stages of new ghosts</p>
+
+				<figure>
+					<trash>C A = {C As |s = 0, . . . , L} , (3.1) and their momenta ¯ P A = { ¯ P As |s = 0, . . . , L} , (3.2) with canonical commutation relations {C A , C B } = 0 , {C A , ¯ P B } = δ A B = (−1) ε B { ¯ P B , C A } , { ¯ P A , ¯ P B } = 0 . (3.3)</trash>
+
+					<figDesc>In addition there are non-minimal variables, which we will often not write explicitly in formulas for the sake of simplicity, cf. Subsection 4.2. Technically, the various expansions will be kept under control by a bi-graded mesh of integer-graded conservation laws, which (besides the usual ghost number conservation) includes a new ghost number grading, denoted &quot; ngh &quot; . The Grassmann parity and new ghost number of the new ghosts are</figDesc>
+					<trash>ε(C A ) = ε A +1 = ε( ¯ P A ) , ε(C As ) = ε As +s+1 = ε( ¯ P As ) , ngh(C As ) = s+1 = −ngh( ¯ P As ) . (3.4) In detail, each of the new ghosts consist of two superpartners C A ≡ {C α 0 ; C α 1 } ≡ {B α ; (−1) ε α +1 Π α * } , C As ≡ {B αs ; (−1) ε αs +s+1 Π αs * } , ¯ P A ≡ { ¯ P 0 α ; ¯ P 1 α } ≡ {Π α ; B * α } , ¯ P As ≡ {Π αs ; B * αs } , (3.5) Note that there are two equivalent notations C α 0 ≡ B α , C α 1 ≡ (−1) ε α +1 Π α * , ¯ P 0 α ≡ Π α and ¯ P 1 α ≡ B * α for each of the superpartners. The latter notation stresses a relationship with the antifield formalism, cf. eq. (5.26) below. The canonical commutation relations read {C α 0 , ¯ P 0 β } = {B α , Π β } = δ α β , (3.6) {C α 1 , ¯ P 1 β } = {B * β , Π α * } = δ α β , (3.7)</trash>
+
+
+				</figure>
+
+				<p>with the remaining canonical commutation relations being zero. There are twice as many new ghosts (C A , ¯ P A ) as old ghosts (C α , ¯ P α ). In other words, the index A s corresponds to two copies of index α s , s ∈ {0, . . . , L}. Moreover, the index A is a shorthand for all stages A 0 , . . . , A L . The Grassmann parity and the old ghost number are shifted among the ghost superpartners as follows</p>
+
+				<figure>
+					<trash>ε(C α 0 ) = ε α +1 = ε( ¯ P 0 α ) , ε(C αs 0 ) = ε αs +s+1 = ε( ¯ P 0 αs ) , ε(C α 1 ) = ε α = ε( ¯ P 1 α ) , ε(C αs 1 ) = ε αs +s = ε( ¯ P 1 αs ) , gh(C αs 0 ) = s+1 = −gh( ¯ P 0 αs ) , gh(C αs 1 ) = s+2 = −gh( ¯ P 1 αs ) , ε(B α ) = ε α +1 = ε(Π α ) , ε(B αs ) = ε αs +s+1 = ε(Π αs ) , ε(B * α ) = ε α = ε(Π α * ) , ε(B * αs ) = ε αs +s = ε(Π αs * ) , gh(B αs ) = s+1 = −gh(Π αs ) , gh(Π αs * ) = s+2 = −gh(B * αs ) . (3.8) The shifts (3.8) in Grassmann and</trash>
+
+
+				</figure>
+
+				<p>ghost statistics will play a crucial role in the following. It is compelling that the 2 × 2 ghost superpartners (3.5) can be incorporated into two N = 1 superfields of definite Grassmann and ghost statistics, where the offsets in statistics have been compensated by the appearance of a θ-parameter; see Appendix B for details.</p>
+
+				<figure>
+					<trash>3.2 Ghost Operators The old (resp. new) ghost number &quot; gh(A) &quot; (resp. &quot; ngh(A) &quot; ) of an arbitrary operator A may be implemented through a corresponding ghost operator G (resp. G) as follows † {G, A} = gh(A)A , {G, A} = ngh(A)A , (3.9) Here the ghost operators read G ≡ G C + G − 1 2 L s=0 [ ¯ P 1 αs , C αs 1 ] + = G C + G + 1 2 L s=0 [Π αs * , B * αs ] + , (3.10) G C ≡ − 1 2 L s=0 (s+1)[ ¯ P αs , C αs ] + , (3.11) G ≡ − 1 2 L s=0 (s+1)[ ¯ P As , C As ] + = − L s=0 (s+1) ¯ P As C As = 1 2 L s=0 (s+1)([Π αs * , B * αs ] + − [Π αs , B αs ] + ) . (3.12)</trash>
+
+
+				</figure>
+
+				<p>The anti-supercommutators (1.17) in the above formulas (3.10)-(3.12) ensure the Hermiticity of the ghost operators. Whereas the eqs. (3.11) and (3.12) contain no surprises, note that the last term in eq. (3.10) implements a crucial additional shift in the ghost number assignments for the antifields B * α and Π α * , cf. the last line of eq. (3.8).</p>
+
+			</div>
+			<div>
+				<head n="3.3">Improved BRST Operator Ω</head>
+
+				<p>The next step is to improve the old BRST charge Ω 0 = Ω 0 (q, p; C, ¯ P ) so that it also probes the new ghost sector (C, ¯ P). This is needed for covariance of the theory under (C, ¯ P)-dependent unitary transformations . In detail, one introduces an improved charge Ω =</p>
+
+				<figure>
+					<trash>Ω(q, p; C, ¯ P ; C, ¯ P) as a C ¯ P-ordered power series expansion in the new ghosts C and ¯ P. First of all, Ω should meet the boundary condition Ω = Ω 0 + O(C ¯ P) . (3.13) Moreover, the quantum numbers of Ω should be the same as for Ω 0 . Therefore Ω should satisfy {Ω, Ω} = 0 , ε(Ω) = 1 , gh(Ω) = 1 , ngh(Ω) = 0 . (3.14) In more detail, the Ω operator has the form ‡ Ω = Ω 0 + L s=0 C As V As Bs ¯ P Bs (−1) ε Bs +s + 1 2 r, s ≥ 0 r+s+1 ≤ L C Bs C Ar V ArBs C r+s+1 ¯ P C r+s+1 (−1) ε Bs +ε C r+s+1 +r+1 + 1 2 r, s ≥ 0 r+s+1 ≤ L C C r+s+1 V C r+s+1 BsAr ¯ P Ar ¯ P Bs (−1) ε Ar +r + 1 4 0 ≤ r, s, t, u ≤ L r+s = t+u C Bs C Ar V ArBs CtDu ¯ P Du ¯ P Ct (−1) ε Bs +s+ε Du +u + O(C 3 ¯ P, C ¯ P 3 ) = Ω 0 + B α (−1) ε α +1 Π α * V 0β α0 V 0β α1 V 1β α0 V 1β α1 (−1) ε β Π β (−1) ε β +1 B * β + O(C 2 ¯ P, C ¯ P 2 ) , (3.15</trash>
+
+
+				</figure>
+
+			<note>) where V A... B... = V A... B..</note>
+
+				<figure>
+					<figDesc>. (q, p; C, ¯ P ) denote structure functions of the old phase space. Finally, Ω should contain as many non-trivial constraints as possible, i.e. a quarter of the total number of non-physical ‡ Ref. [1]</figDesc>
+
+				</figure>
+
+				<p>uses a different notation for the various BRST operators.</p>
+
+				<figure>
+					<trash>In general, Ω there ≡ Ω here 0 , ∆ there ≡ Ω here , ¯ ∆ there ≡ ¯ Ω here and Σ there 1 ≡ Ω here 1 . phase variables. One implements this by demanding that the southwestern quadrant V 1β α0 (i.e. the block below the diagonal) of the matrices V A B is invertible, rank V 1β α0 = m ≡ L s=0 m s . (3.16) Equivalently, the antibracket (·, ·) Ω should have maximal rank in the BB * -sector, because V 1β α0 = (−1) ε α +1 (B * α , B β ) Ω , (3.17) cf. eq. (2.13). (Again, we</trash>
+
+
+				</figure>
+
+				<p>have for simplicity notationally suppressed that Ω is supposed to have quadratic dependence on half the non-minimal variables to allow for gauge-fixing, cf. eq.</p>
+
+				<figure>
+					<trash>(4.7) below.) Some of the consequences of the Ω-nilpotency (3.14) are {Ω 0 , Ω 0 } = 0 , (3.18) {V As Bs , Ω 0 }(−1) ε Bs +s = V As Cs V Cs Bs + i¯ h 2 s−1 r=0 V As D s−r−1 Cr V CrD s−r−1 Bs + O(¯ h 2 ) terms, if s ≥ 2 . (3.19) 3.4 Improved Anti-BRST Operator ¯ Ω There is also an improved version ¯ Ω = ¯ Ω 0 + O(C ¯ P) , (3.20) of the anti-BRST operator ¯ Ω 0 such that { ¯ Ω, ¯ Ω} = 0 , ε( ¯ Ω) = 1 , gh( ¯ Ω) = − 1 , ngh( ¯ Ω) = 0 . (3.21)</trash>
+
+					<figDesc>Perhaps surprisingly, one does not demand that the improved BRST and anti-BRST operators commute . Instead the normalized commutator of the two improved charges is assumed to be equal to the new ghost operator G, {Ω, ¯ Ω} = G . (3.22)</figDesc>
+
+				</figure>
+
+				<p>In this way, the ¯ Ω charge becomes a homotopy operator for the BRST complex of Ω. As a result the cohomology of {Ω, ·} is trivial in sectors of non-zero new ghost number. Proof: If A is a Ω-closed operator, i.e. {Ω, A} = 0, and if A has non-zero new ghost number, it is possible to rewrite A as a Ω-exact operator,</p>
+
+				<figure>
+					<trash>A = g −1 {G, A} = g −1 {{Ω, ¯ Ω}, A} = g −1 {Ω, { ¯ Ω, A}} = {Ω, { ¯ Ω, g −1 A}} , (3.23) because the operator g ≡ {G, ·} commutes with both {Ω, ·} and { ¯ Ω, ·}.</trash>
+
+
+				</figure>
+
+				<p>On the other hand, since ultimately one requires that the physical model in question is Ω-invariant, the homotopy eq. (3.22) implies that one can no longer maintain the anti-BRST symmetry of the model. In this sense, the anti-BRST algebra plays here only a secondary rôle . Similarly, to be consistent, we will not require that the BRST-improved Hamiltonian obeys the anti-BRST symmetry, cf.</p>
+
+				<figure>
+					<trash>Subsection 3.6 below. 3.5 New BRST Operator Ω 1</trash>
+
+
+				</figure>
+
+				<p>The Ω operator has no net new ghost charge, ngh(Ω) = 0, and is merely a deformation of the old BRST operator Ω 0 . In general, it is not adequate to control expansions in the new ghosts. To this end, one introduces a new BRST generator Ω 1 that is charged with respect to the new ghost number.</p>
+
+				<figure>
+					<trash>In detail, the new BRST charge Ω 1 = Ω 1 (q, p; C, ¯ P ; C, ¯ P) has properties {Ω 1 , Ω 1 } = 0 , (3.24) ε(Ω 1 ) = 1 , gh(Ω 1 ) = 1 , ngh(Ω 1 ) = 1 . (3.25)</trash>
+
+					<figDesc>It should also respect the symmetries of the improved charge Ω, i.e. Ω 1 should be Ω-closed,</figDesc>
+					<trash>{Ω, Ω 1 } = 0 . (3.26) The new BRST operator Ω 1 is a C ¯ P-ordered power series expansion in the new ghosts C and ¯ P. Ω 1 = L s=0 C As T As + 1 2 r, s ≥ 0 r+s ≤ L C Bs C Ar U ArBs C r+s ¯ P C r+s (−1) ε Bs +ε C r+s +r + 1 2 r, s ≥ 0 r+s+2 ≤ L C C r+s+2 U C r+s+2 BsAr ¯ P Ar ¯ P Bs (−1) ε Ar +r + 1 4 0 ≤ r, s, t, u ≤ L r+s = t+u+1 C Bs C Ar U ArBs CtDu ¯ P Du ¯ P Ct (−1) ε Bs +s+ε Du +u + O(C 3 ¯ P, C ¯ P 3 ) = L s=0 (B αs T αs − Π αs * X αs ) + O(C 2 ¯ P, C ¯ P 2 ) . (3.27)</trash>
+
+
+				</figure>
+
+				<p>It starts with the new constraints T A 0 = T A 0 (q, p; C, ¯ P ), and in the reducible case one also introduces higher-stage constraints</p>
+
+				<figure>
+					<trash>T A s+1 ≡ Z A s+1 Bs ¯ P Bs (−1) ε Bs +s , s ∈ {0, . . . , L−1} . (3.28) The Grassmann parity and new ghost number are ε(T A ) = ε A , ε(T As ) = ε As +s , ngh(T As ) = − s . (3.29) The reducible structure functions Z As B s−1 = Z As B s−1 (q, p; C, ¯ P ) have Grassmann parity and new ghost number given by ε(Z As B s−1 ) = ε As +ε B s−1 , ngh(Z As B s−1 ) = 0 . (3.30) Altogether, the construction is governed by the two mutually commuting Grassmann-odd nilpotent BRST operators Ω and Ω 1 , which form a Sp(2)-like algebra, {Ω, Ω} = 0 , {Ω, Ω 1 } = 0 , {Ω 1 , Ω 1 } = 0 , (3.31) cf. eqs. (3.14), (3.24) and (3.26). Some of the consequences of the Ω-closeness condition (3.26) for Ω 1 read {T A 0 , Ω 0 } = −V A 0 B 0 T B 0 , (3.32) {Z A s+1 Bs , Ω 0 }(−1) ε Bs +s = Z A s+1 Cs V Cs Bs + V A s+1 C s+1 Z C s+1 Bs − V A s+1 BsC 0 T C 0 + i¯ h 2 s−1 r=0 U A s+1 D s−r−1 Cr V CrD s−r−1 Bs + i¯ h 2 s r=0 V A s+1 D s−r Cr U CrD s−r Bs + O(¯ h 2 ) terms, if R ≥ 3 and s ≥ 1 , (3.33) {U A 0 B 0 C 0 , Ω 0 }(−1) ε C 0 = −{T A 0 , V B 0 C 0 } + 1 2 U A 0 B 0 D 0 V D 0 C 0 − (−1) ε B 0 V A 0 D 0 U D 0 B 0 C 0 − 1 4 V A 0 B 0 D 0 E 0 Z E 0 D 0 C 0 − (−1) ε A 0 ε B 0 (A 0 ↔ B 0 ) , (3.34) {U A 0 Bs Cs , Ω 0 }(−1) ε Cs +s = −{T A 0 , V Bs Cs } + U A 0 Bs Ds V Ds Cs + (−1) ε A 0 (ε Bs +s+1) V Bs Ds U DsA 0 Cs −V A 0 Bs CsD 0 T D 0 + O(¯ h) terms, if R ≥ 2 , s = 0 , (3.35) where Z A 0 B 0 C 0 is defined as Z A 0 B 0 C 0 ≡ T A 0 δ C 0 B 0 − i¯ h 2 U A 0 B 0 C 0 − (−1) ε A 0 ε B 0 (A 0 ↔ B 0 ) . (3.36)</trash>
+
+
+				</figure>
+
+				<p>Here R continues to denote the rank of the theory. In particular, eq. (3.32) shows that the new zerothstage constraints T A 0 are on-shell BRST-invariant. Some of the consequences of the Ω 1</p>
+
+				<figure>
+					<trash>nilpotency (3.24) are Z A 1 B 0 T B 0 = 0 , (3.37) {T A 0 , T B 0 } = U A 0 B 0 C 0 T C 0 , (3.38) {T A 0 , Z B s+1 Cs } = U A 0 B s+1 D s+1 Z D s+1 Cs + (−1) ε A 0 (ε Bs +s+1) Z B s+1 Ds U DsA 0 Cs −U A 0 B s+1 CsD 0 T D 0 + O(¯ h) terms, if R ≥ 2 , (3.39) Z A s+2 C s+1 Z C s+1 Bs = U A s+2 BsC 0 T C 0 − i¯ h 2 s r=0 U A s+2 D s−r Cr U CrD s−r Bs + O(¯ h 2 ) terms, if R ≥ 3 and s ≥ 1 . (3.40)</trash>
+
+
+				</figure>
+
+				<p>The analogy with the old sector eq. (2.14)-(2.17) is evident. If the original theory is of rank R, one may choose Ω and Ω 1 to have at most R powers of new ghost momenta ¯ P A . In the case of a rank R = 1 theory, some of the consequences of eq. (3.31) can neatly be recast as a nilpotency condition for a matrix Ω A B with operator-valued entries, cf. Appendix C.</p>
+
+				<figure>
+					<head>The new constraints T</head>
+
+					<figDesc>As consist of two superpartners §</figDesc>
+					<trash>T A ≡ {T 0 α ; T 1 α } ≡ {T α ; (−1) ε α X α } , T As ≡ {T αs ; (−1) ε αs +s X αs } , (3.41) with boundary conditions T α 0 = Λ α 0 β 0 T β 0 + O(C ¯ P) , (3.42) where Λ α 0 β 0 = Λ α 0 β 0</trash>
+
+
+				</figure>
+
+				<p>(q, p) is an invertible matrix. The zero-stage constraints T 0 α 0 ≡ T α 0 are the new BRST-invariant constraints that one is seeking for. In fact, the zero-stage components T 0 α 0 and T 1 α 0 are the analogues of the BRST-invariant Virasoro constraints T m and the string ghost momenta b m mentioned in the Introduction. The Grassmann parity and the old ghost number are shifted among the two superpartner constraints</p>
+
+				<figure>
+					<trash>ε(T 0 α ) = ε α = ε(T 1 α )+1 , ε(T 0 αs ) = ε αs +s = ε(T 1 αs )+1 , gh(T 0 αs ) = −s = gh(T 1 αs )+1 , ε(T α ) = ε α = ε(X α )+1 , ε(T αs ) = ε αs +s = ε(X αs )+1 , gh(T αs ) = −s = gh(X αs )+1 . (3.43) § Ref. [1] uses a different notation: X there α 0 ≡ (−1) ε α 0 +1 X here α 0 .</trash>
+
+
+				</figure>
+
+				<p>Note that the new constraints T A have non-positive ghost numbers gh(T A ) ≤ 0 and ngh(T A ) ≤ 0, and they vanish if the old contraints T α and the ghost momenta ¯ P α and ¯ P A are put to zero,</p>
+
+				<figure>
+					<trash>˜ T A = O(T, ¯ P , ¯ P) . (3.44)</trash>
+
+
+				</figure>
+
+				<p>In other words, if one takes the unitary limit, where the new ghost momenta ¯ P A → 0 vanish, then the new zero-stage constraints T A 0 → 0 imply that both the old zero-stage constraints T α → 0 and the old zero-stage ghost momenta ¯ P α 0 → 0 vanish, at least within the naive path integral formulation, cf. eq.</p>
+
+				<figure>
+					<trash>(4.25) below. 3.6 BRST-Improved Hamiltonian The old BRST-improved Hamiltonian H 0 = H 0 (q, p; C, ¯ P ) is once again BRST-improved (this time with respect to the new BRST structures), H = H 0 + O(C ¯ P) , (3.45) by letting the improved Hamiltonian H = H(q, p; C, ¯ P ; C, ¯ P) depend on the new ghosts C A and ¯ P B ) in such a way that it becomes BRST-invariant with respect to both Ω and Ω 1 , {Ω, H} = 0 , {Ω 1 , H} = 0 , ε(H) = 0 , ngh(H) = 0 , gh(H) = 0 . (3.46)</trash>
+
+
+				</figure>
+
+				<p>The reason why H can be chosen to commute simultaneously with both BRST operators Ω and Ω 1 is that Ω and Ω 1 , after all, convey the same BRST symmetry, originally encoded in the Ω 0 operator.</p>
+
+			</div>
+			<div>
+				<head n="3.7">The S 1 Operator</head>
+
+				<p>It is useful to think of the new BRST operators Ω and Ω 1 as analogues of the old BRST/anti-BRST operators Ω 0 and ¯ Ω 0 , in particular because of the Sp(2)-like algebra (3.31) although the ghost number assignments are different, cf. Table 1 below. We shall now widen this analogy by introducing a counterpart S 1 of the old S −2 of Subsection 2.5. To this end, note that Ω 1 is Ω-closed (3.26) and has non-zero new ghost number. Hence, it must be Ω-exact, cf. eq.</p>
+
+				<figure>
+					<trash>(3.22), i.e. there exists a quantity S 1 with quantum numbers ε(S 1 ) = 0 , ngh(S 1 ) = 1 , gh(S 1 ) = 0 , (3.47) such that Ω 1 = {Ω, S 1 } . (3.48) In detail, one may expand S 1 as follows: S 1 = L s=0 C As T As + 1 2 r, s ≥ 0 r+s ≤ L C Bs C Ar U ArBs C r+s ¯ P C r+s (−1) ε Bs +ε C r+s +r + 1 2 r, s ≥ 0 r+s+2 ≤ L C C r+s+2 U C r+s+2 BsAr ¯ P Ar ¯ P Bs (−1) ε Ar +r + O(C 3 ¯ P, C 2 ¯ P 2 , C ¯ P 3 ) = L s=0 (B αs X αs − Π αs * ˜ Y αs ) + O(C 2 ¯ P, C ¯ P 2 ) . (3.49) It starts with the so-called tilde constraints T A 0 = ˜ T A 0 (q, p; C, ¯ P ), and in the reducible case one also introduces higher-stage tilde constraints ˜ T A s+1 ≡ ˜ Z A s+1 Bs ¯ P Bs (−1) ε Bs +s , s = 0, . . . , L−1 . (3.50) The T A constraints carry the same Grassmann parity as the new ghosts C or ¯ P, or equivalently, the opposite Grassmann parity of T A , ε( ˜ T A ) = ε A +1 , ε( ˜ T As ) = ε As +s+1 , ngh( ˜ T As ) = − s . (3.51) The reducible structure functions Z As B s−1 = ˜ Z As B s−1 (q, p; C, ¯ P ) have Grassmann parity and new ghost number given by ε( ˜ Z As B s−1 ) = ε As +ε B s−1 +1 , ngh( ˜ Z As B s−1 ) = 0 . (3.52) The tilde constraints consist of two superpartners ˜ T A ≡ { ˜ T 0 α ; ˜ T 1 α } ≡ { ˜ X α ; (−1) ε α ˜ Y α } , ˜ T As ≡ { ˜ X αs ; (−1) ε αs +s Y αs } . (3.53) To lowest order, the zeroth-stage tilde constraints T A 0 ≡ { ˜ T 0 α 0 ; ˜ T 1 α 0 } ≡ { ˜ X α 0 ; (−1) ε α 0 ˜ Y α 0 } are just linear combinations of the old ghost momenta { ¯ P α 0 ; ¯ P α 1 }, ˜ X α 0 = X α 0 β 0 ¯ P β 0 (−1) ε β 0 +1 + O(C ¯ P) , ˜ Y α 0 = Y α 0 β 1 ¯ P β 1 (−1) ε β 1 + O(C ¯ P) . (3.54) The Grassmann parity and the old ghost number are shifted among the two superpartner constraints ε( ˜ T 0 α )+1 = ε α = ε( ˜ T 1 α ) , ε( ˜ T 0 αs )+1 = ε αs +s = ε( ˜ T 1 αs ) , gh( ˜ T 0 αs ) = −s−1 = gh( ˜ T 1 αs )+1 , ε( ˜ X α )+1 = ε α = ε( ˜ Y α ) , ε( ˜ X αs )+1 = ε αs +s = ε( ˜ Y αs ) , gh( ˜ X αs ) = −s−1 = gh( ˜ Y αs )+1 . (3.55) The tilde constraints T A have non-positive ghost numbers gh( ˜ T A ) &lt; 0 and ngh( ˜ T A ) ≤ 0, and they vanish if the ghost momenta ¯ P α and ¯ P A are put to zero, ˜ T A = O( ¯ P , ¯ P) . (3.56) Eq. (3.56) shows</trash>
+
+
+				</figure>
+
+				<p>that tilde constraints T A indeed can be viewed as bona-fide constraints in the unitary limit, where the new ghost momenta ¯ P A → 0 vanish, cf. eq. (4.25) below. The vanishing of the old zerostage ghost momenta ¯ P α 0 → 0 is enforced via the superpartners T 1 α 0 of the new zero-stage constraints</p>
+
+				<figure>
+					<trash>T A 0 ≡ {T 0 α 0 ; T 1 α 0 }, cf. eq. (3.41). 3.8 The S 2 Operator Similarly, one may define a S 2 quantity as follows. First note that the antibracket (S 1 , S 1 ) Ω of S 1 with itself can be written as a commutator of S 1 and Ω 1 , (S 1 , S 1 ) Ω = {S 1 , {Ω, S 1 }} = {S 1 , Ω 1 } . (3.57) The antibracket (S 1 , S 1 ) Ω is Ω-closed, as the following calculation shows, {Ω, (S 1 , S 1 ) Ω } = {Ω, {S 1 , Ω 1 }} = {{Ω, S 1 }, Ω 1 } = {Ω 1 , Ω 1 } = 0 , (3.58) since Ω 1 is Ω-closed and nilpotent, cf. eqs. (3.24) and (3.26). Hence there exists a quantity S 2 with quantum numbers ε(S 2 ) = 0 , ngh(S 2 ) = 2 , gh(S 2 ) = 0 , (3.59)</trash>
+
+					<head>Table 1</head>
+
+					<figDesc>: A dictionary between notions in the old and the new sector.</figDesc>
+					<trash>↓ Notion \ Sector → Old New Ghosts C α C A ≡ {B α ; (−1) ε α +1 Π α * } Ghost momenta ¯ P α ¯ P A ≡ {Π α ; B * α } Ghost operator G = S 0 G = S 0 Ghost number gh = {G, ·} ngh = {G, ·} 1st BRST operator Ω 0 Ω 2nd BRST operator ¯ Ω 0 = {Ω 0 , S −2 } Ω 1 = {Ω, S 1 } Homotopy operator (Not introduced) ¯ Ω S −2k S k S = ∞ k=0 S −2k S = ∞ k=0 S k Operator master eq. {S, {S, Ω 0 }} = Ω 0 {S, {S, Ω}} = {S, Ω} such that (S 1 , S 1 ) Ω = {S 2 , Ω} . (3.60) One may expand S 2 as follows: S 2 = L s=1 C As ˘ T As + 1 2 C B 0 C A 0 ˘ U A 0 B 0 (−1) ε B 0 + 1 2 r, s ≥ 0 0 ≤ r+s−1 ≤ L C Bs C Ar ˘ U ArBs C r+s−1 ¯ P C r+s−1 (−1) ε Bs +ε C r+s−1 +r−1 + 1 2 r, s ≥ 0 r+s+3 ≤ L C C r+s+3 ˘ U C r+s+3 BsAr ¯ P Ar ¯ P Bs (−1) ε Ar +r + O(C 3 ¯ P, C 2 ¯ P 2 , C ¯ P 3 ) . (3.61)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>It starts with the breve constraints ˘ T A 1 = ˘ T A 1 (q, p; C, ¯ P ), and in the L ≥ 2 case one also introduces higher-stage breve constraints</figDesc>
+					<trash>˘ T A s+2 ≡ ˘ Z A s+2 Bs ¯ P Bs (−1) ε Bs +s , s = 0, . . . , L−2 . (3.62)</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="3.9">Operator Master Equation</head>
+
+				<p>The process of finding higher and higher cohomology relations may be automated by introducing an operator master equation [11]</p>
+
+				<figure>
+					<figDesc>(S, S) Ω ≡ {{S, Ω}, S} = {Ω, S} . (3.63)</figDesc>
+
+				</figure>
+
+				<p>The operator master equation (3.63) expresses that {S, ·} acts as an idempotent on Ω, cf. Ref. [26].</p>
+
+				<p>To define the operator S, one first let a quantity S 0 be the new ghost operator,</p>
+
+				<figure>
+					<trash>S 0 = G . (3.64)</trash>
+
+					<figDesc>Furthermore, one may show by mathematical induction that there exist quantities S k for each positive integer k ≥ 1, and with quantum numbers</figDesc>
+					<trash>ε(S k ) = 0 , ngh(S k ) = k , gh(S k ) = 0 , (3.65) such that the sum S ≡ ∞ k=0 S k , ε(S) = 0 , gh(S) = 0 , (3.66)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>of indefinite new ghost number, satisfies the above operator master eq. (3.63), cf. Appendix D. The master eq. (3.63) is really an infinite tower of equations,</figDesc>
+					<trash>k−1 j=1 (S j , S k−j ) Ω = (k−1){S k , Ω} , k ∈ {0, 1, 2, . . .} . (3.67)</trash>
+
+
+				</figure>
+
+				<p>The first non-trivial equation (with k = 2) is just eq. (3.60). The maximal arbitrariness of solutions S to the operator master eq. (3.63) with the boundary conditions (3.48) and (3.64) is given by canonical transformations of the form [19]</p>
+
+				<figure>
+					<trash>S ′ = e − i ¯ h {Ω,Ψ} Se i ¯ h {Ω,Ψ} = e {{Ω,Ψ}, · } S , (3.68) where the generating Fermionic operator Ψ ≡ ∞ k=1 Ψ k , ε(Ψ) = 1 , gh(Ψ) = − 1 , (3.69) has indefinite new ghost number, ε(Ψ k ) = 1 , ngh(Ψ k ) = k , gh(Ψ k ) = − 1 . (3.70) The first few components of the transformed solution (3.68) read S ′ 0 = S 0 = G , (3.71) S ′ 1 = S 1 − {Ω, Ψ 1 } , (3.72) S ′ 2 = S 2 + {{Ω, Ψ 1 }, S 1 } − 2{Ω, Ψ 2 } , (3.73) . . .</trash>
+
+
+				</figure>
+
+				<p>It is instructive to mention that the new ghost operator G by itself is a trivial solution for S to the operator master eq. (3.63) and to the first boundary condition (3.64), but it fails to meet the second boundary condition (3.48).</p>
+
+				<p>Proof of properties related to eq. (3.68): It follows from the Baker-Campbell-Hausdorff Theorem that the transformations (3.68) form a group. It is also clear that the transformations (3.68) preserve the operator master eq. (3.63) with the boundary conditions (3.48) and (3.64), so it only remains to prove that all solutions are connected this way. Let there be given two arbitrary solutions S (1) and S (2) .</p>
+
+				<p>For all k ≥ 1, call the difference for X k ≡ S</p>
+
+				<p><formula>(2) k − S (1) k .</formula></p>
+
+				<p>Consider successively, for each k ≥ 1, starting with the smallest k and going up, whether the difference X k is Ω-exact. If this is the case, perform a suitable transformation (3.68) of the second solution S (2) , generated by some Ψ k , such that the new difference X k = 0 becomes identically zero. One now proceeds by indirect reasoning: Assume that this process stops at some step k, i.e. X 1 = X 2 = . . . = X k−1 = 0, but X k is not Ω-exact.</p>
+
+				<figure>
+					<figDesc>On the other hand, the two eqs. (3.48) and (3.67) now guarantee that the difference X k is Ω-closed in the two cases k = 1 and k ≥ 2, respectively. Since X k has non-vanishing new ghost number, ngh(X k ) = k = 0, one then concludes from cohomology considerations that X k is Ω-exact, cf. eq. (3.22). This is in contradiction with the above, and hence the process did not stop after all. 3.10 An Inverse Relation to Ω 1 = {Ω, S 1 } For any given solution S, it is possible to create an interesting primed solution S ′ by a canonically transformation (3.68) that has an ¯ Ω-exact Fermionic generator of the form Ψ 1 = { ¯ Ω, S 1 } , (3.74) and where the higher generators Ψ k≥2 remain unspecified. Then an application of the Jacobi identity {Ω, { ¯ Ω, S 1 }} = {{Ω, ¯ Ω}, S 1 } − { ¯ Ω, {Ω, S 1 }} yields</figDesc>
+					<trash>S ′ 1 = S 1 − {Ω, Ψ 1 } = S 1 − {G, S 1 } + { ¯ Ω, {Ω, S 1 }} = { ¯ Ω, Ω 1 } , (3.75) cf. eqs. (3.22), (3.48) and (3.72). Eq. (3.75</trash>
+
+
+				</figure>
+
+				<p>) can be thought of as an inverse relation to eq. (3.48). Whereas eq. (3.48) gives the new T A 0 constraints in terms of the tilde constraints T A 0 , cf. eq. (4.1) below, the inverse relation (3.75) gives the primed tilde constraints T ′</p>
+
+			</div>
+			<div>
+				<head>A 0</head>
+
+				<p>in terms of the T A 0 constraints.</p>
+
+				<p>Finally note that if one successively repeats the above transformation (3.74) and transforms the primed solution S ′ with a</p>
+
+				<figure>
+					<trash>Fermionic generator Ψ ′ 1 = { ¯ Ω, S ′ 1 } = { ¯ Ω, { ¯ Ω, Ω 1 }} = 0 , (3.76)</trash>
+
+
+				</figure>
+
+				<p>nothing happens, because of the ¯ Ω nilpotency (3.21). So the primed solution S ′ is stabile in this sense.</p>
+
+			</div>
+			<div>
+				<head n="4">Assembling the Pieces</head>
+
+				<p>Let us briefly summarize the construction so far. We are considering a physical gauge system, which is ordinarily described by a BRST-improved Hamiltonian H 0 , an ordinary BRST charge Ω 0 and an ordinary ghost number &quot; gh &quot; . We introduced twice as many new ghosts C A and an improved BRST operator Ω, which is the old BRST charge Ω 0 adapted to the new ghost sector. We then collected the old constraints T α 0 and the old ghost momenta ¯ P α 0 into new constraints T A 0 and introduced a new BRST charge Ω 1 = C A T A + . . ., and a new ghost number called &quot; ngh &quot; . We then lifted cohomologically the new BRST operator Ω 1 to a hierarchy of quantities S ≡ ∞ k=0 S k , which satisfies an operator master eq. (3.63). In this Section we will stress the main features and show how to gauge-fix the Hamiltonian.</p>
+
+			</div>
+			<div>
+				<head n="4.1">The Main Relation</head>
+
+				<p>We now display some of the consequences of the relation Ω 1 = {Ω, S 1 } in more detail, cf. (3.48).</p>
+
+				<figure>
+					<trash>T A 0 = V A 0 B 0 ˜ T B 0 − { ˜ T A 0 , Ω 0 } , (4.1) Z A s+1 Bs = V A s+1 C s+1 Z C s+1 Bs − ˜ Z A s+1 Cs V Cs Bs + { ˜ Z A s+1 Bs , Ω 0 }(−1) ε Bs +s +V A s+1 BsC 0 ˜ T C 0 (−1) ε Bs +s + i¯ h 2 s r=0 V A s+1 CrD s−r U D s−r Cr Bs − i¯ h 2 s−1 r=0 U A s+1 CrD s−1−r V D s−1−r Cr Bs + O(¯ h 2 ) terms, if R ≥ 3 and s ≥ 1 , (4.2) U A 0 B 0 C 0 = −V A 0 D 0 ˜ U D 0 B 0 C 0 (−1) ε B 0 − 1 2 ˜ U A 0 B 0 D 0 V D 0 C 0 + 1 2 V A 0 B 0 D 1 ˜ Z D 1 C 0 + 1 2 { ˜ U A 0 B 0 C 0 , Ω 0 }(−1) ε C 0 − { ˜ T A 0 , V B 0 C 0 }(−1) ε B 0 + 1 2 V A 0 B 0 C 0 D 0 ˜ T D 0 (−1) ε C 0 + i¯ h 4 V A 0 B 0 D 0 E 0 ˜ U E 0 D 0 C 0 − (−1) ε A 0 ε B 0 (A 0 ↔ B 0 ) . (4.3) From eq. (4.1) follows</trash>
+
+
+				</figure>
+
+				<p>that the new zeroth-stage constraints T A 0 are BRST-invariant up to the first term on the left-hand side, which depends on ghost momenta and vanishes in the unitary limit, cf. eq. (4.25) below. Eq. (4.1) is the heart of the construction. It may be regarded as a generalization of eq. (1.8) in the Introduction, where the tilde constraints T A 0 generalize the string ghost momenta b m .</p>
+
+			</div>
+			<div>
+				<head n="4.2">Non-Minimal Sector</head>
+
+				<p>In this Subsection we show how to gauge-fix the extended BRST symmetries. We shall for simplicity concentrate on the irreducible case L = 0. The reducible case L &gt; 0 will be discussed elsewhere. One first introduces new non-minimal variables (P A 0 , ¯ C B 0 ; λ A 0 , π B 0 ) with canonical commutation relations</p>
+
+				<figure>
+					<trash>{P A 0 , ¯ C B 0 } = δ A 0 B 0 , {λ A 0 , π B 0 } = δ A 0 B 0 , (4.4)</trash>
+
+
+				</figure>
+
+				<p>and where the remaining canonical commutation relations are zero. (Pay attention to the perhaps confusing but commonly used convention that P A 0 is a coordinate, while the Faddeev-Popov antighost ¯ C A 0 is a momentum.) The Grassmann parity and new ghost number are</p>
+
+				<figure>
+					<trash>ε(P A 0 ) = ε A 0 +1 = ε( ¯ C A 0 ) , ngh(P A 0 ) = 1 = −ngh( ¯ C A 0 ) , ε(λ A 0 ) = ε A 0 = ε(π A 0 ) , ngh(λ A 0 ) = 0 = ngh(π A 0 ) . (4.5) The 4 new non-minimal variables (P A 0 , ¯ C B 0 ; λ A 0 , π B 0</trash>
+
+					<figDesc>) are naturally divided into 2 × 4 = 8 superpartner fields. The Grassmann parity and the old ghost number are shifted among the superpartners as follows</figDesc>
+					<trash>ε(P α 0 0 ) = ε α 0 +1 = ε( ¯ C 0 α 0 ) , gh(P α 0 0 ) = 1 = −gh( ¯ C 0 α 0 ) , ε(P α 0 1 ) = ε α 0 = ε( ¯ C 1 α 0 ) , gh(P α 0 1 ) = 2 = −gh( ¯ C 1 α 0 ) , ε(λ α 0 0 ) = ε α 0 = ε(π 0 α 0 ) , gh(λ α 0 0 ) = 0 = gh(π 0 α 0 ) , ε(λ α 0 1 ) = ε α 0 +1 = ε(π 1 α 0 ) , gh(λ α 0 1 ) = 1 = −gh(π 1 α 0 ) . (4.6)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>The non-minimal extensions of the two BRST operators Ω and Ω 1 are</figDesc>
+					<trash>Ω = Ω min + P α 0 1 ¯ C 0 α 0 − λ α 0 1 π 0 α 0 , (4.7) Ω 1 = Ω 1,min + P A 0 π A 0 . (4.8)</trash>
+
+
+				</figure>
+
+				<p>This extension is consistent with the Sp(2)-like algebra (3.31). Similarly, the non-minimal extensions to the ghost operators G and G and the anti-BRST operator ¯ Ω read</p>
+
+				<figure>
+					<trash>G = G min − 1 2 [ ¯ C 0 α 0 , P α 0 0 ] + − [ ¯ C 1 α 0 , P α 0 1 ] + − 1 2 [π 1 α 0 , λ α 0 1 ] + , (4.9) G = G min − 1 2 [ ¯ C A 0 , P A 0 ] + = G min − ¯ C A 0 P A 0 , (4.10) ¯ Ω = ¯ Ω min − P α 0 0 ¯ C 1 α 0 . (4.11) The gauge-fixed (or unitarizing) Hamiltonian H Φ = H + {Ω 1 , {Ω, Φ}} = H + {Ω 1 , Ψ Φ } (4.12) depends on a gauge Boson Φ through a Ω-exact gauge Fermion Ψ Φ of the form Ψ Φ ≡ {Ω, Φ} . (4.13)</trash>
+
+					<figDesc>Here the BRST-improved Hamiltonian H should be invariant with respect to both the BRST operators Ω and Ω 1 , cf. eq. (3.46). The quantum numbers for Φ and Ψ Φ are</figDesc>
+					<trash>ε(Φ) = 0 , ngh(Φ) = −1 , gh(Φ) = −2 , ε(Ψ Φ ) = 1 , ngh(Ψ Φ ) = −1 , gh(Ψ Φ ) = −1 . (4.14) A simple gauge choice is Φ = ¯ C 1 α 0 χ α 0 0 + ¯ P 1 α 0 λ α 0 0 , (4.15) where the Faddeev-Popov matrix {χ α 0 0 , T 0 β 0 } carries maximal rank rank{χ α 0 0 , T 0 β 0 } = m 0 . (4.16) Then the corresponding gauge fermion Ψ Φ becomes Ψ Φ = {Ω 1 , Ψ Φ } = ¯ C 0 α 0 χ α 0 0 − ¯ C 1 α 0 {χ α 0 0 , Ω 0 } + ¯ P 1 α 0 λ α 0 1 + {Ω, ¯ P 1 α 0 }λ α 0 0 . (4.17) This is consistent with a gauge fermion Ψ Φ of the form Ψ Φ = ¯ C A 0 χ A 0 + X A 0 λ A 0 + O(λC ¯ P 2 ) . (4.18) where χ A 0 ≡ {χ α 0 0 ; χ α 0 1 } are gauge-fixing conditions with ε(χ A 0 ) = ε A 0 , ngh(χ A 0 ) = 0 , ε(χ α 0 0 ) = ε α 0 , gh(χ α 0 0 ) = 0 , ε(χ α 0 1 ) = ε α 0 +1 , gh(χ α 0 1 ) = 1 . (4.19) The superpartners χ α 0 1 are of the form χ α 0 1 = − {χ α 0 0 , Ω 0 } = − {χ α 0 0 , T β 0 }C β 0 + O(C 2 ¯ P ) = O(C) . (4.20)</trash>
+
+
+				</figure>
+
+				<p>They have positive ghost number, and they vanish if and only if the old ghosts C α 0 are put to zero.</p>
+
+				<p>The X A 0 ≡ {X 0 α 0 ; X 1 α 0 } are superpartners to the new constraints T A 0 , i.e. one may introduce a next generation of superpartners T A 0 ≡ {T A 0 ; X A 0 } ≡ {T 0 α 0 , T 1 α 0 ; X 0 α 0 , X 1 α 0 }. (This leads naturally to a third generation of BRST operators and ghost numbers. Here we count the old BRST operator Ω 0 and the old ghost number &quot; gh &quot; as belonging to the first generation, and the new BRST operator Ω 1 and the new ghost number &quot; ngh &quot; as the second generation. Therefore in this terminology the next generation is the third generation. In principle, one may introduce infinitely many generations.) One has</p>
+
+				<figure>
+					<trash>ε(X A 0 ) = ε A 0 +1 , ngh(X A 0 ) = − 1 . (4.21) In fact, X 0 α 0 = V 1 α 0 β 0 0 ¯ P 0 β 0 (−1) ε β 0 , (4.22) X 1 α 0 = ¯ P 1 α 0 , (4.23) where V 1 α 0 β 0</trash>
+
+					<figDesc>0 is the invertible matrix from eq. (3.16). The constraints X A 0 have negative ghost numbers gh(X A 0 ) &lt; 0 and ngh(X A 0 ) &lt; 0, and they vanish if and only if the new ghost momenta ¯ P A 0 are put to zero, X A 0 = O( ¯ P) . (4.24)</figDesc>
+
+				</figure>
+
+				<p>Let us mention for completeness that the unitary limit is obtained through the substitution</p>
+
+				<figure>
+					<trash>¯ C A 0 → ǫ ¯ C A 0 , π A 0 → ǫ π A 0 , χ A 0 → 1 ǫ χ A 0 , (4.25)</trash>
+
+
+				</figure>
+
+				<p>and letting the parameter ǫ → 0. In the naive path integral, the kinetic terms for the</p>
+
+				<figure>
+					<trash>original variables ¯ P A 0 ˙ C A 0 + ¯ C A 0 ˙ P A 0 + π A 0 ˙ λ A 0 → 0 (4.26) vanish in this limit. The unitarizing Hamiltonian (4.12) becomes H Φ = H + π A 0 χ A 0 + T A 0 {C A 0 , X B 0 }λ B 0 + X A 0 P A 0 + ¯ C A 0 {χ A 0 , T B 0 }C B 0 + higher order terms . (4.27)</trash>
+
+
+				</figure>
+
+				<p>The second (resp. third) term on the right-hand side is the delta-function term for the gauge-fixing (resp. gauge-generating) constraints χ A 0 (resp. T A 0 ), where the integration is over the π A 0 (resp. λ A 0 ) variables. The fourth term is the delta-function term for the next generation of superpartners X A 0 to the gauge-generating constraints, where the integration is now over the P A 0 variables. (Recall that X A 0 are the new ghost momenta ¯ P A 0 in disguise, cf. eqs. (4.22) and (4.23). This fact implies that the first kinetic term (4.26) drops out. The last two kinetic terms (4.26) are suppressed by a factor of ǫ, cf. eq. (4.25).) And finally, the fifth term in eq. (4.27) is the Faddeev-Popov determinant term.</p>
+
+			</div>
+			<div>
+				<head n="5">Abelian Case</head>
+
+				<p>In this Section we provide details for the construction in the Abelian reducible case. Recall that one may in principle Abelianize any BRST operator Ω 0 by unitary similarity transformations (although locality and symmetries, such as e.g. Lorentz symmetry, may be lost in the process). Therefore, from a theoretical perspective, it is enough to consider the Abelian case.</p>
+
+				<figure>
+					<trash>5.1 Old BRST Operator Ω 0 The reducible Abelian Ansatz for Ω 0 is defined as Ω 0 = C α T α = C α 0 T α 0 + L−1 s=0 C α s+1 Z α s+1 βs ¯ P βs (−1) ε βs +s . (5.1)</trash>
+
+
+				</figure>
+
+				<p>The Ω 0 nilpotency (2.5) is equivalent to the following set of equations:</p>
+
+				<figure>
+					<trash>Z α 1 β 0 T β 0 = 0 , (5.2) Z α s+2 β s+1 Z β s+1 γs = 0 , (5.3) {T α 0 , T β 0 } = 0 , (5.4) {T α 0 , Z β s+1 γs } = 0 , (5.5)</trash>
+
+					<head>Table 2:</head>
+
+					<figDesc>The rectangular matrix Z α s+1 βs subjected to the ultimate Abelianization consists entirely of blocks of zero-matrices and unit-matrices.</figDesc>
+					<trash>α \ β β 0 β 1 · · · β L−2 β L−1 α 1 0 1 0 0 α 2 0 1 0 0 . . . . . . α L−1 0 1 0 0 α L 0 1 (−1) (ε β s+1 +s)(ε γs +s+1) {Z α s+1 γs , Z β s+1 δs } = (−1) (ε γs +s)(ε δs +s) (γ s ↔ δ s ) , (5.6) {Z α r+1 γr , Z β s+1 δs } = 0 , r = s . (5.7)</trash>
+
+
+				</figure>
+
+				<p>The Ω 0 nilpotency (2.5) does not guarantee by itself that all the structure functions Z α s+1 βs commute, cf. eq. (5.6), i.e. there could be a small non-Abelian remnant left in the Abelian Ansatz (5.1), despite the name. Nevertheless, it is always possible to ensure that all the structure functions Z β s+1 γs commute {Z α r+1 γr , Z β s+1 δs } = 0 , (5.8) with the help of a rotation that preserves the Ansatz (5.1), cf. Table 2</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+					<trash>5.2 Anti-BRST Operator ¯ Ω 0 Similarly, the anti-BRST operator ¯ Ω 0 is in the reducible Abelian case given as ¯ Ω 0 = ¯ T α ¯ P α (−1) ε α = ¯ T α 0 ¯ P α 0 (−1) ε α 0 + L s=1 C α s−1 ¯ Z α s−1 βs ¯ P βs (−1) ε βs +s . (5.9) The ¯ Ω 0 nilpotency (2.24) is equivalent to the following set of equations: ¯ T α 0 ¯ Z α 0 β 1 = 0 , (5.10) ¯ Z αs β s+1 ¯ Z β s+1 γ s+2 = 0 , (5.11) { ¯ T α 0 , ¯ T β 0 } = 0 , (5.12) { ¯ T α 0 , ¯ Z βs γ s+1 } = 0 , (5.13) (−1) (ε βs +s+1)(ε γ s+1 +s) { ¯ Z αs γ s+1 , ¯ Z βs δ s+1 } = (−1) (ε αs +s)(ε βs +s) (α s ↔ β s ) , (5.14) { ¯ Z αr γ r+1 , ¯ Z βs δ s+1 } = 0 , r = s . (5.15)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>The compatibility (2.24) of the BRST and the anti-BRST operator, i.e. the fact that they commute, yields</figDesc>
+					<trash>¯ T α 0 T α 0 = 0 , (5.16) Z αs β s−1 ¯ Z β s−1 γs + ¯ Z αs β s+1 Z β s+1 γs = 0 , (5.17) {T α 0 , ¯ T γ 0 } + ¯ Z α 0 β 1 Z β 1 γ 0 = 0 , (5.18) {T α 0 , ¯ Z βs γ s+1 } = 0 , (5.19) {Z α s+1 βs , ¯ T γ 0 } = 0 , (5.20) {Z α r+1 γr , ¯ Z βs δ s+1 } = 0 . (5.21)</trash>
+
+
+				</figure>
+
+				<p>In view of the non-Abelian remnant in eqs. (5.6) and (5.14), it is a small miracle that the structure functions Z α r+1 γr and ¯ Z βs δ s+1 commute, cf. eq. (5.21). The complete ¯ T α 0 solution to eq.</p>
+
+				<figure>
+					<trash>(5.16) alone, is ¯ T α 0 = A α 0 β 0 T β 0 + A β 1 Z β 1 α 0 , (5.22) where A α 0 β 0 = −(−1) ε α 0</trash>
+
+
+				</figure>
+
+				<p>ε β 0 A β 0 α 0 and A β 1 are arbitrary operators, cf. eq. (2.38). Moreover, one may show that there exists an Abelian maximal rank solution for ¯ T α 0 and ¯ Z βs γ s+1 to all of the eqs. (5.10)- (5.21) if all the integers m s are even, where s ∈ {0, .</p>
+
+				<figure>
+					<trash>. . , L}. 5.3 Improved BRST Operators Ω and ¯ Ω</trash>
+
+
+				</figure>
+
+				<p>The new ghost sector is Abelianized with (C, ¯ P)-dependent unitary transformations. The Abelian Ansätze for the improved BRST and anti-BRST operators are</p>
+
+				<figure>
+					<trash>Ω = Ω 0 + L s=0 C αs 1 ¯ P 0 αs = Ω 0 − L s=0 (−1) ε αs +s Π αs * Π αs , (5.23) ¯ Ω = ¯ Ω 0 − L s=0 (s+1)C αs 0 ¯ P 1 αs = ¯ Ω 0 − L s=0 (s+1)B αs B * αs , (5.24) respectively.</trash>
+
+
+				</figure>
+
+				<p>The two improved charges Ω and ¯ Ω are nilpotent, and their normalized commutator yields the new ghost operator G,</p>
+
+				<figure>
+					<trash>{Ω, ¯ Ω} = L s=0 (s+1)(B * αs Π αs * (−1) ε αs +s − Π αs B αs ) = − L s=0 (s+1) ¯ P As C As = G , (5.25) cf. eqs. (3.12) and (3.22). The antibracket (B α , B * β ) Ω = δ α β (5.26) is non-degenerated in the BB * -sector, as it should be, cf. eq. (3.17). 5.4 The S 1 Operator The Abelian Ansatz for S 1 is S 1 = C A ˜ T A = − Π α 0 * ˜ Y α 0 + L s=0 B αs X αs = Π α 0 * Y α 0 β 1 ¯ P β 1 (−1) ε β 1 +1 + ¯ P α 0 B α 0 + L s=1 B αs Z αs β s−1 B * β s−1 , (5.27) where the constraints T A ≡ { ˜ X α ; (−1) ε α ˜ Y α } are on the form ˜ X α 0 = (−1) ε α 0 +1 ¯ P α 0 , ˜ Y α 0 = Y α 0 β 1 ¯ P β 1 (−1) ε β 1 , ˜ X αs = Z αs β s−1 B * β s−1 , ˜ Y αs = 0 , s ∈ {1, . . . , L} . (5.28) The higher-stage tilde constraints can be rephrased as T A s+1 ≡ ˜ Z A s+1 Bs ¯ P Bs (−1) ε Bs +s , where the tilde structure functions Z A s+1 Bs are given by the old structure functions Z α s+1 βs , { ˜ T A s+1 , C Bs } = ˜ Z A s+1 Bs = 0 Z α s+1 βs (−1) ε βs +s+1 0 0 , s ∈ {0, . . . , L−1} , (5.29)</trash>
+
+
+				</figure>
+
+				<p>and are therefore nilpotent. The rectangular matrix Y α 0 β 1 = Y α 0 β 1 (q, p) in eq. (5.28) is the first in a sequence of rectangular matrices Y α s−1 βs = Y α s−1 βs (q, p), s ∈ {1, . . . , L}, which are chosen as a right inverse for the Z αs β s−1 matrix,</p>
+
+				<figure>
+					<trash>Z αs β s−1 Y β s−1 γs = δ γs αs − Y αs β s+1 Z β s+1 γs , s ∈ {1, . . . , L−1} , (5.30) modulo matrices Y αs β</trash>
+
+
+				</figure>
+
+				<p>s+1 and Z β s+1 γs associated with the next reducibility stage. One also assumes that the matrices Y α s−1 βs commute with 1) the constraints T α 0 , 2) the structure functions Z α s+1 βs and 3) among themselves, to avoid higher-order terms in expansions later-on. (This is legitimate because after all, one could just have chosen all the structure functions as constants.)</p>
+
+				<figure>
+					<trash>{T α 0 , Y β s−1 γs } = 0 , (5.31) {Z αr β r−1 , Y γ s−1 δs } = 0 , (5.32) {Y α r−1 βr , Y γ s−1 δs } = 0 , r, s ∈ {1, . . . , L} . (5.33) The first two conditions (5.31) and (5.32) are equivalent to {Ω 0 , Y α s−1 βs } = 0 , s ∈ {1, . . . , L} . (5.34) Notice that the tilde constraints T A in eq. (5.28) are Abelian, i.e. they commute, { ˜ T A , ˜ T B } = 0 . (5.35)</trash>
+
+					<figDesc>The involution (5.35) is not a consequence of any of the nilpotency relations that we have encountered so far. (However, see Appendix E.) The tilde constraints T A are also Abelian in the antibracket sense,</figDesc>
+					<trash>i.e. ( ˜ T A , ˜ T B ) Ω 0 = 0 , ( ˜ T A , ˜ T B ) Ω = 0 . (5.36) The antibracket involution (5.36) is closely related to the master eq. (3.60), cf. eq. (5.49) below. 5.5 New BRST Operator Ω 1</trash>
+
+
+				</figure>
+
+				<p>The new BRST operator Ω 1 may be calculated as the commutator of Ω and S 1 , cf. eq.</p>
+
+				<figure>
+					<trash>(3.48). One finds Ω 1 = {Ω, S 1 } = {Ω, C A } ˜ T A − C A { ˜ T A , Ω} = Π α 0 * { ˜ Y α 0 , Ω} − L s=0 B αs { ˜ X αs , Ω} + Π αs * ˜ X αs = B α 0 T α 0 + Π α 0 * (δ γ 0 α 0 − Y α 0 β 1 Z β 1 γ 0 ) ¯ P γ 0 (−1) ε γ 0 + L−1 s=0 B α s+1 Z α s+1 βs Π βs (−1) ε βs +s − Π α s+1 * Z α s+1 βs B * βs , (5.37)</trash>
+
+					<figDesc>where use is made of eqs. (5.8) and (5.34) among others. Evidently the Ω 1 operator has the Abelian form Ω 1 = C A T A =</figDesc>
+					<trash>L s=0 (B αs T αs − Π αs * X αs ) , (5.38) with the new constraints T A ≡ {T α ; (−1) ε α X α } given by T α 0 = −{ X α 0 , Ω 0 } = T α 0 , X α 0 = ˜ X α 0 − { ˜ Y α 0 , Ω 0 } = (δ γ 0 α 0 − Y α 0 β 1 Z β 1 γ 0 ) ¯ P γ 0 (−1) ε γ 0 +1 , T αs = −{ X αs , Ω} X αs = ˜ X αs = Z αs β s−1 B * β s−1 , = Z αs β s−1 Π β s−1 (−1) ε β s−1 +s−1 , s ∈ {1, . . . , L} , (5.39)</trash>
+
+
+				</figure>
+
+				<p>where in general only the new constraints T α in the first column of eq. (5.39) are BRST-invariant. The new constraints T α 0 are just the old constraints, since they are already BRST-invariant in the Abelian case. The rôle of the Y α 0 β 1 matrix is to appropriately reduce the number of independent constraints among the zeroth-stage superpartners X α 0 . We also mention that the new higher-stage constraints can be rephrased as T A s+1 ≡ Z A s+1 Bs ¯ P Bs (−1) ε Bs +s , where the new structure functions Z A s+1 Bs are two copies of the old structure functions Z α s+1 βs ,</p>
+
+				<figure>
+					<trash>{T A s+1 , C Bs } = Z A s+1 Bs = Z α s+1 βs 0 0 (−1) ε α s+1 +ε βs Z α s+1 βs , s ∈ {0, . . . , L−1} . (5.40)</trash>
+
+
+				</figure>
+
+				<p>It is easy to check that the new constraints (5.39) do commute with the tilde constraints (5.28),</p>
+
+				<figure>
+					<trash>{ ˜ T A , T B } = 0 , (5.41) do commute among themselves, {T A , T B } = 0 , (5.42) and that the new BRST operator Ω 1 = C A T A is nilpotent. 5.6 The S 2 Operator The {S 1 , Ω 1 } commutator is Ω-exact {S 1 , Ω 1 } = (S 1 , S 1 ) Ω = {S 2 , Ω} , (5.43)</trash>
+
+
+				</figure>
+
+				<p>according to the general theory, cf. eqs. (3.57) and (3.60). When the commutator of S 1 and Ω 1 is calculated using the Abelian Ansätze (5.27) and (5.37), one indeed finds that it is Ω-exact:</p>
+
+				<figure>
+					<trash>{S 1 , Ω 1 } = B α 1 Z α 1 β 0 (2δ δ 0 β 0 − Y β 0 γ 1 Z γ 1 δ 0 ) ¯ P δ 0 (−1) ε δ 0 + Π α 1 * Z α 1 β 0 Y β 0 γ 1 ¯ P γ 1 (−1) ε γ 1 +1 = B α 1 Z α 1 β 0 Y β 0 γ 1 Z γ 1 δ 0 ¯ P δ 0 (−1) ε δ 0 + Π α 1 * Z α 1 β 0 Y β 0 γ 1 ¯ P γ 1 (−1) ε γ 1 +1 = {Ω, B α 1 Z α 1 β 0 Y β 0 γ 1 ¯ P γ 1 (−1) ε γ 1 } . (5.44)</trash>
+
+
+				</figure>
+
+				<p>Here use is made of eq. (5.30) in the second equality. In the irreducible case L = 0, one can just let S 2 = 0 be zero, but this is no longer true in the reducible case L &gt; 0. (However, for an alternative solution with S 2 = 0 even for the reducible case L &gt; 0, see Subsection 5.8 below.) In the general Abelian case, it is consistent to define S 2 as</p>
+
+				<figure>
+					<trash>S 2 = C A ˘ T A = C A { ˜ T A , C B } ˜ T B = L−1 s=0 C A s+1 Z A s+1 Bs T Bs = −B α 1 Z α 1 β 0 Y β 0 γ 1 ¯ P γ 1 (−1) ε γ 1 = − B α 1 (δ γ 1 α 1 − Y α 1 β 2 Z β 2 γ 1 ) ¯ P γ 1 (−1) ε γ 1 . (5.45) In particular, the ˘ T A constraints are linear combinations of the tilde constraints T A , ˘ T A = { ˜ T A , C B } ˜ T B , ˘ T A s+1 = ˜ Z A s+1 Bs T Bs . (5.46) It is easy to check that they commute { ˘ T A , ˘ T B } = 0 . (5.47)</trash>
+
+
+				</figure>
+
+				<p>One may wonder if there is a broader derivation of the fact that the Abelian Ansatz S 1 = C A ˜ T A fulfills the master eq. (3.60)? It turns out that the question hangs on a somewhat artificially looking formula,</p>
+
+				<figure>
+					<trash>( ˜ T A , C B ) Ω ˜ T B = { ˜ T A , C B }{ T B , Ω} , (5.48) which is essentially eq. (5.30) in disguise. One calculates (S 1 , S 1 ) Ω = {{C A ˜ T A , Ω}, C B ˜ T B } = 2C A ( ˜ T A , C B ) Ω ˜ T B − C A { ˜ T A , C B }{ T B , Ω} − {Ω, C A }{ T A , C B } ˜ T B = C A { ˜ T A , C B }{ T B , Ω} − {Ω, C A }{ T A , C B } ˜ T B = {C A { ˜ T A , C B } ˜ T B , Ω} = {S 2 , Ω} , (5.49) where use has been made of eqs. (5.35), (5.36), (5.48) and {{ T A , C B }, Ω} = 0 . (5.50)</trash>
+
+
+				</figure>
+
+				<p>Not surprisingly, there is a complete one-to-one correspondence between this derivation (5.49) and the first derivation (5.44).</p>
+
+				<figure>
+					<trash>5.7 The Higher S k Operators There are no further non-trivial antibrackets, (S 1 , S 2 ) Ω = 1 2 {S 2 , Ω 1 } + 1 2 {S 1 , {Ω 1 , S 1 }} = 0 , (5.51) (S 2 , S 2 ) Ω = {S 2 , {Ω 1 , S 1 }} = 0 , (5.52) cf. eq. (5.43) and the explicit expressions (5.27), (5.44) and (5.45) for S 1 , {S 1 , Ω 1</trash>
+
+
+				</figure>
+
+				<p>} and S 2 . Therefore it is consistent to put all the higher S k operators to zero,</p>
+
+				<figure>
+					<trash>S k = 0 , k ∈ {3, 4, 5, . . .} , (5.53) cf. eq. (3.67). 5.8 Another Abelian Solution We now apply the Abelian Ansatz (5.27) to the primed solution S ′ from Subsection 3.10. Recall that S ′ is mediated by an ¯ Ω-exact Fermionic generator of the form Ψ 1 = { ¯ Ω, S 1 } = B α 0 (Y α 0 β 1 − ¯ Z α 0 β 1 ) ¯ P β 1 (−1) ε β 1 − Π α 0 * Y α 0 β 1 ¯ Z β 1 γ 2 ¯ P γ 2 (−1) ε γ 2 . (5.54) The change in S 1 is Ω-exact, S 1 − S ′ 1 = {Ω, Ψ 1 } = Π α 0 * Y α 0 δ 1 − (δ γ 0 α 0 − Y α 0 β 1 Z β 1 γ 0 ) ¯ Z γ 0 δ 1 ¯ P δ 1 (−1) ε δ 1 +1 −B α 0 (Y α 0 β 1 − ¯ Z α 0 β 1 )Z β 1 γ 0 ¯ P γ 0 (−1) ε γ 0 , (5.55) cf. eqs. (3.72) and (5.17). Then the primed solution S ′ 1 reads S ′ 1 = Π α 0 * (δ γ 0 α 0 − Y α 0 β 1 Z β 1 γ 0 ) ¯ Z γ 0 δ 1 ¯ P δ 1 (−1) ε δ 1 +1 −B α 0 δ γ 0 α 0 − (Y α 0 β 1 − ¯ Z α 0 β 1 )Z β 1 γ 0 ¯ P γ 0 (−1) ε γ 0 + L s=1 B αs Z αs β s−1 B * β s−1 . (5.56)</trash>
+
+
+				</figure>
+
+				<p>Derived from a canonical transformation (3.72), the primed solution (5.56) is guaranteed to meet the correct boundary condition (3.48). Moreover, the primed solution has the remarkable property that the S ′ 2 operator vanishes identically,</p>
+
+				<figure>
+					<trash>S ′ 2 = 0 , (5.57) if one chooses Ψ 2 = 0. This is because the change in S 2 is given by S ′ 2 − S 2 = {{Ω, Ψ 1 }, S 1 } = B α 1 Z α 1 β 0 Y β 0 γ 1 ¯ P γ 1 (−1) ε γ 1 = − S 2 , (5.58) cf. eqs. (3.73), (5.30) and (5.45).</trash>
+
+
+				</figure>
+
+				<p>Hence it is consistent to choose all the higher operators S ′ k≥2 = 0 equal to zero. To simplify, let us specialize to the case of trivial anti-BRST symmetry ¯ Ω 0 = 0. In this case, the structure functions ¯</p>
+
+				<figure>
+					<trash>Z α 0 β 1 = 0 vanish, and the S ′ 1 operator (5.56) becomes S ′ 1 = − B α 0 (δ γ 0 α 0 − Y α 0 β 1 Z β 1 γ 0 ) ¯ P γ 0 (−1) ε γ 0 + L s=1 B αs Z αs β s−1 B * β s−1 . (5.59)</trash>
+
+
+				</figure>
+
+				<p>Clearly the primed solution (5.59) (or its alter ego (5.56)) is too complicated to serve as a first principle. For instance, the projection inside the B α 0 ¯ P γ 0 term looks rather artificial if postulated from scratch. Also the Hessian of the primed solution (5.59) has a smaller rank than its unprimed counterpart, and hence it represents a solution that is not proper.</p>
+
+			</div>
+			<div>
+				<head n="6">Algebras of Constraints</head>
+
+				<p>We now return to the fully non-Abelian case. An interesting question is what type of algebra do the new constraints T A and tilde constraints T A in general obey? We will address this topic in this Section.</p>
+
+			</div>
+			<div>
+				<head n="6.1">Unitary Transformations</head>
+
+				<p>To study the question of constraint algebras, it is useful to observe how the new structure functions behave under unitary transformations</p>
+
+				<figure>
+					<trash>A = e − i ¯ h G A (0) e i ¯ h G = e {G,·} A (0) (6.1) in</trash>
+
+
+				</figure>
+
+				<p>the new ghost sector, where A (0) (resp. A) denotes any operator before (resp. after) a unitary transformation. Here G = G † is a finite Hermitian generator of the transformation,</p>
+
+				<figure>
+					<trash>G = G 0 + L s=0 C As G As Bs ¯ P Bs (−1) ε Bs +s + 1 2 r, s ≥ 0 r+s+1 ≤ L C Bs C Ar G ArBs C r+s+1 ¯ P C r+s+1 (−1) ε Bs +ε C r+s+1 +r+1 + 1 2 r, s ≥ 0 r+s+1 ≤ L C C r+s+1 G C r+s+1 BsAr ¯ P Ar ¯ P Bs (−1) ε Ar +r + O(C 3 ¯ P, C 2 ¯ P 2 , C ¯ P 3 ) , (6.2</trash>
+
+					<figDesc>) and where G A... B... = G A... B... (q, p; C, ¯ P ) depends on the old phase space variables. See Ref. [27]</figDesc>
+
+				</figure>
+
+				<p>for a related discussion. The quantum numbers for G are</p>
+
+				<figure>
+					<trash>ε(G) = 0 , gh(G) = 0 = ngh(G) . (6.3)</trash>
+
+					<figDesc>Hermiticity of G = G † imposes non-trivial conditions on the G A... B... structure functions [10]</figDesc>
+
+				</figure>
+
+				<p>. The G 0 generates canonical transformations and rotations within the old sector, and it plays only a relatively minor rôle in the new ghost sector, so we shall assume that G 0 = 0 is zero in this Section to keep the formulas as simple as possible. Then the BRST operator</p>
+
+				<figure>
+					<trash>Ω 0 = Ω (0) 0 (6.4) is invariant under such unitary transformations (6.1). Similarly, the constraints T A 0 , ˜ T A 0 and ˘ T A 0 transform covariantly, T A 0 = Λ A 0 B 0 T (0) B 0 , (6.5) ˜ T A 0 = Λ A 0 B 0 ˜ T (0) B 0 , (6.6) ˘ T A 1 = Λ A 1 B 1 ˘ T (0) B 1 , (6.7) where Λ A B denotes the exponential of the matrix G A B , i.e. Λ A B ≡ δ B A + G A B + 1 2 G A C G C B + 1 6 G A C G C D G D B + . . . . (6.8)</trash>
+
+
+				</figure>
+
+				<p>One deduces via Abelianization that there exists a set of new breve structure functions ˘</p>
+
+				<figure>
+					<trash>Z A 1 B 0 such that ˘ T A 1 = ˘ Z A 1 B 0 ˜ T B 0 = O( ˜ T ) , (6.9) because this holds in the Abelian case, cf. eq. (5.46), and because both types of constraints T A 0 and ˘ T A 0 transform covariantly, cf. eqs. (6.6) and (6.7). (For the purely rotational case, where the generator G = C A G A B ¯ P B (−1) ε B is linear in both C A and ¯ P A , the breve structure functions ˘ Z A 1 B 0 = ˜ Z A 1 B 0</trash>
+
+					<figDesc>match their tilde counterparts as we shall soon see, cf. eq. (6.11) below.) In detail, let (Λ λ ) A B denote the λth power of the Λ A B matrix, i.e. the exponential of the matrix λG A B . Then the structure functions Z</figDesc>
+					<trash>A s+1 Bs , ˜ Z A s+1 Bs and V As Bs transform as Z A s+1 Bs = − 1 0 dλ (Λ 1−λ ) A s+1 C s+1 G C s+1 DsE 0 (Λ λ ) E 0 F 0 T (0) F 0 (Λ λ−1 ) Ds Bs +Λ A s+1 C s+1 Z (0) C s+1 Ds (Λ −1 ) Ds Bs + O(¯ h) terms, if R ≥ 2 , (6.10) ˜ Z A s+1 Bs = 1 0 dλ (Λ 1−λ ) A s+1 C s+1 G C s+1 DsE 0 (Λ λ ) E 0 F 0 ˜ T (0) F 0 (Λ λ−1 ) Ds Bs (−1) ε Ds +s +Λ A s+1 C s+1 Z (0) C s+1 Ds (Λ −1 ) Ds Bs + O(¯ h) terms, if R ≥ 2 , (6.11) V As Ds = Λ As Bs V (0) Bs Cs (Λ −1 ) Cs Ds + (−1) ε As +s {Ω 0 , Λ As Bs }(Λ −1 ) Bs Ds + O(¯ h) terms, if R ≥ 2 and s ≥ 1 , (6.12)</trash>
+
+
+				</figure>
+
+				<p>Note that eq. (6.12) resembles the transformation law for a connection one-form, if one identifies V As Bs with the connection one-form and the BRST transformation {Ω 0 , ·} with the de Rham exterior derivative. In this interpretation, the right-hand side of eq. (4.1) behaves as a covariant derivative, so that the new constraints T A 0 on the corresponding left-hand side can transform covariantly, cf. eq.</p>
+
+				<figure>
+					<trash>(6.5). The structure functions ˘ U A 0 B 0 inside S 2 transform as ˘ U A 0 B 0 = ˘ Λ A 0 B 0 C 0 D 0 ˘ U (0) C 0 D 0 + 1 0 dλ ( ˘ Λ 1−λ ) A 0 B 0 C 0 D 0 G C 0 D 0 E 1 (Λ λ ) E 1 F 1 ˘ T (0) F 1 . (6.13) Here ˘ Λ A 0 B 0 C 0 D 0 denotes the exponential of the matrix ˘ G A 0 B 0 C 0 D 0 = 1 2 G A 0 C 0 δ D 0 B 0 − (−1) ε A 0 ε B 0 (A 0 ↔ B 0 ) − (−1) ε C 0 ε D 0 (C 0 ↔ D 0 ) . (6.14)</trash>
+
+					<figDesc>The antisymmetrization in the above eq. (6.14) ensures the antisymmetry of the structure functions</figDesc>
+					<trash>˘ U A 0 B 0 = −(−1) ε A 0 ε B 0 ˘ U B 0 A 0 . Since ˘ U (0) A 0 B 0 = 0 in the Abelian case, there exist breve structure functions ˘ U A 0 B 0 C 1 , such that ˘ U A 0 B 0 = ˘ U A 0 B 0 C 1 ˘ T C 1 = O( ˘ T ) . (6.15)</trash>
+
+
+				</figure>
+
+				<p>In the purely rotational case, the breve structure functions ˘ U A 0 B 0 = 0 vanish.</p>
+
+			</div>
+			<div>
+				<head n="6.2">Algebra of Constraints</head>
+
+				<p>The T A 0 and T A 0 constraints are in weak involution,</p>
+
+				<figure>
+					<trash>{T A 0 , T B 0 } = U A 0 B 0 C 0 T C 0 , (6.16) { ˜ T A 0 , T B 0 } = E A 0 B 0 C 0 ˜ T C 0 + ˜ E A 0 B 0 C 0 T C 0 , (6.17) { ˜ T A 0 , ˜ T B 0 } = F A 0 B 0 C 0 ˜ T C 0 , (6.18) where U A 0 B 0</trash>
+
+
+				</figure>
+
+				<p>C 0 is part of Ω 1 , cf. eq. (3.27), and where E A 0 B 0 C 0 , ˜ E A 0 B 0 C 0 and F A 0 B 0 C 0 are some new structure functions. The first involution (6.16) follows from the Ω 1 nilpotency (3.24). The involutions (6.17) and (6.18) are not consequences of any of the nilpotency relations that we have encountered so far (However, see Appendix E), but follows for instance because of Abelianization. Namely, recall that there exist unitarily equivalent Abelian constraints in strong involution,</p>
+
+			</div>
+			<div>
+				<head>{T</head>
+
+				<figure>
+					<trash>(0) A 0 , T (0) B 0 } = 0 , (6.19) { ˜ T (0) A 0 , T (0) B 0 } = 0 , (6.20) { ˜ T (0) A 0 , ˜ T (0) B 0 } = 0 , (6.21) cf. eqs. (5.35), (5.41) and (5.42</trash>
+
+
+				</figure>
+
+				<p>), which imply that the T A 0 and T A 0 constraints are in general in weak involution as displayed in eqs. (6.16), (6.17) and (6.18). In the purely rotational case, the structure functions read</p>
+
+				<figure>
+					<trash>U A 0 B 0 E 0 = Λ A 0 C 0 {T (0) C 0 , Λ B 0 D 0 } + 1 2 (−1) ε B 0 ε D 0 {Λ A 0 D 0 , Λ B 0 C 0 }T (0) C 0 (Λ −1 ) D 0 E 0 −(−1) ε A 0 ε B 0 (A 0 ↔ B 0 ) , (6.22) F A 0 B 0 E 0 = Λ A 0 C 0 { ˜ T (0) C 0 , Λ B 0 D 0 } + 1 2 (−1) (ε B 0 +1)(ε D 0 +1) {Λ A 0 D 0 , Λ B 0 C 0 } ˜ T (0) C 0 (Λ −1 ) D 0 E 0 −(−1) (ε A 0 +1)(ε B 0 +1) (A 0 ↔ B 0 ) , (6.23) E A 0 B 0 E 0 = −(−1) (ε A 0 +1)ε B 0 Λ B 0 C 0 {T (0) C 0 , Λ A 0 D 0 } + 1 2 (−1) ε B 0 (ε D 0 +1) {Λ A 0 D 0 , Λ B 0 C 0 }T (0) C 0 (Λ −1 ) D 0 E 0 , (6.24) ˜ E A 0 B 0 E 0 = Λ A 0 C 0 { ˜ T (0) C 0 , Λ B 0 D 0 } − 1 2 (−1) (ε A 0 +1)(ε B 0 +ε D 0 ) {Λ B 0 D 0 , Λ A 0 C 0 } ˜ T (0) C 0 (Λ −1 ) D 0 E 0 . (6.25) 6.3 Antibracket Algebra of Constraints The complete set of T A 0 and T A 0 constraints form a closed antibracket algebra, (T A 0 , T B 0 ) Ω 0 = Q A 0 B 0 C 0 T C 0 , (6.26) ( ˜ T A 0 , T B 0 ) Ω 0 = R A 0 B 0 C 0 ˜ T C 0 + ˜ R A 0 B 0 C 0 T C 0 , (6.27) ( ˜ T A 0 , ˜ T B 0 ) Ω 0 = S A 0 B 0 C 0 ˜ T C 0 + ˜ S A 0 B 0 C 0 T C 0 , (6.28) where the structure functions Q A 0 B 0 C 0 , R A 0 B 0 C 0 , ˜ R A 0 B 0 C 0 , S A 0 B 0 C 0 and S A 0 B 0 C 0 are given by 2Q A 0 B 0 C 0 = {T A 0 , V B 0 C 0 }(−1) ε B 0 − V A 0 D 0 U D 0 B 0 C 0 − (−1) (ε A 0 +1)(ε B 0 +1) (A 0 ↔ B 0 ) , (6.29) 2R A 0 B 0 C 0 = −{T B 0 , V A 0 C 0 }(−1) ε A 0 ε B 0 + V A 0 D 0 E D 0 B 0 C 0 +V B 0 D 0 E A 0 D 0 C 0 (−1) (ε A 0 +1)(ε B 0 +ε D 0 +1)+ε B 0 , (6.30) 2 ˜ R A 0 B 0 C 0 = { ˜ T A 0 , V B 0 C 0 }(−1) ε B 0 + V A 0 D 0 ˜ E D 0 B 0 C 0 +V B 0 D 0 ˜ E A 0 D 0 C 0 (−1) (ε A 0 +1)(ε B 0 +ε D 0 +1)+ε B 0 − U A 0 B 0 C 0 , (6.31) 2S A 0 B 0 C 0 = V A 0 D 0 F D 0 B 0 C 0 + { ˜ T A 0 , V B 0 C 0 } − E A 0 B 0 C 0 (−1) ε B 0 −(−1) ε A 0 ε B 0 (A 0 ↔ B 0 ) , (6.32) 2 ˜ S A 0 B 0 C 0 = − ˜ E A 0 B 0 C 0 (−1) ε B 0 − (−1) ε A 0 ε B 0 (A 0 ↔ B 0 ) , (6.33) cf. eqs. (2.13), (3.32), (4.1), (6.16), (6.17) and (6.18).</trash>
+
+
+				</figure>
+
+				<p>It is an important observation that the new T A 0 constraints by themselves form a closed antibracket algebra (6.26). On the other hand, when considering the tilde constraints T A 0 by themselves, they are not necessarily in involution with respect to the antibracket (·, ·) Ω 0 — not even at the classical level.</p>
+
+				<p>This is despite the fact that the Abelian constraints T</p>
+
+				<figure>
+					<trash>(0) A 0 satisfy ( ˜ T (0) A 0 , ˜ T (0) B 0</trash>
+
+
+				</figure>
+
+				<p>) Ω 0 = 0, cf. eq. (5.36). Classically and on-shell with respect to the constraints T A 0 , the antibracket ( ˜</p>
+
+				<figure>
+					<trash>T A 0 , ˜ T B 0 ) Ω 0 contains non-vanishing contributions ( ˜ T A 0 , ˜ T B 0 ) Ω 0 −→ 1 2 Λ A 0 C 0 { ˜ T (0) C 0 , Λ B 0 D 0 } P B { ˜ T (0) D 0 , Ω 0 } P B (−1) ε B 0 +O( ˜ T ) − (−1) ε A 0 ε B 0 (A 0 ↔ B 0 ) for ¯ h → 0 . (6.34)</trash>
+
+
+				</figure>
+
+				<p>There are practically no conditions on the rotation matrix Λ A 0 B 0 = Λ A 0 B 0 (q, p; C, ¯ P ), and hence the right-hand side of eq. (6.34) does not always vanish. The crucial difference between eq. (6.34) and the above commutator involutions (6.16), (6.17) and (6.18), is, that the operator antibracket (2.13) does not satisfy the pertinent Leibniz rule, while the commutator does. One can easily check with the help of eq. (4.1) that the emerging extra contributions are proportional to the new T A 0 constraints, cf. last term on the right-hand side of eq. (6.28).</p>
+
+			</div>
+			<div>
+				<head n="7">Conclusion</head>
+
+				<p>We have extended the construction of BRST-invariant constraints in Ref. [1] to include reducible gauge algebras. We have also stressed a deep relationship with BRST/anti-BRST symmetric models. Here the two nilpotent, Grassmann-odd, mutually anti-commuting BRST operators come from a deformed version Ω of the ordinary BRST operator Ω 0 , and a new BRST operator Ω 1 = C A T A + . . ., which encodes the new constraints T A . Note however, that all three charges Ω 0 , Ω and Ω 1 have ordinary ghost number +1, and only the latter operator is charges with respect to the new ghost number, ngh(Ω 1 ) = 1, which is different from the usual BRST/anti-BRST formulation. Nevertheless, one finds many similarities at the algebraic level. Some of them is exposed in Table 1.</p>
+
+				<p>In particular, we have constructed a unitarizing Hamiltonian that respects the two BRST operators Ω and Ω 1 with the help of a Gauge Boson.</p>
+
+				<p>The S ≡ ∞ k=0 S k operator, which satisfies an operator master eq. (3.63), plays a prominent rôle in the construction. For instance, the operator S 1 = C A ˜ T A + . . . contains the tilde constraints T A , which decent through eq. (1.15) to the BRST-invariant constraints T A . The existence of the S operator is deduced from cohomological considerations of the pertinent BRST operators. In Appendix D we have considered various candidates to the operator master equation. In particular, we have analyzed the simplest cases, which are likely to become important for practical calculations.</p>
+
+				<p>We have also investigated the algebras of new constraints T A and tilde constraints T A , cf. Section 6. It is found that the corresponding commutator algebras are closed, but only the former follows (with the machinery introduced in the main text excluding Appendix E) from a BRST nilpotency relation. The full antibracket algebra of T A and T A constraints is also closed. So is the antibracket algebra of T A constraints. However, the antibracket algebra of tilde constraints T A is, on the other hand, in general an open algebra.</p>
+
+				<p>Acknowledgement</p>
+
+				<figure>
+					<figDesc>: I.A.B. thanks R. Marnelius for numerous discussions. I.A.B. also thanks R. von Unge and the Masaryk University for the warm hospitality extended to him in Brno. The work of I.A.B. and K.B. is supported by the Ministry of Education of the Czech Republic under the project MSM 0021622409. The work of I.A.B. is also supported by grants RFBR 05-01-00996, RFBR 05-02-17217 and LSS-4401.2006.2.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>A Critical Open Bosonic String Theory</head>
+
+				<p>For completeness, we here list the standard definitions that go into critical open Bosonic string theory. Let η µν = η νµ be a constant invertible target space metric. There are Bosonic matter fields α µ m and Fermionic ghost variables c m and b m , where µ ∈ {1, . . . , D} and m ∈ {. . . , −2, −1, 0, 1, 2 . . .} is an integer. The canonical commutation relations are [α µ m , α ν n ] = ¯ hκ |m| mδ 0 n+m η µν , [c m , b n ] = ¯ hκ |m| δ 0 n+m , (A.1) and zero in all the remaining sectors. Here κ → 1 is a regularization parameter, which at the end of the calculations should be set to 1. From a world-sheet perspective, the κ-regularization smears the singularity of the operator product expansion (i.e. the OPE relation). The normal ordering &quot; : : &quot; , also known as Wick ordering, is</p>
+
+				<p><formula>: α µ m α ν n : = θ(n−m)α µ m α ν n + θ(m−n)α ν n α µ m , (A.2)</formula></p>
+
+				<p>− : b n c m : = : c m b n : = θ(n−m)c m b n − θ(m−n)b n c m , (A.3) where θ denotes the Heaviside step function with θ(</p>
+
+				<p><formula>0) = 1 2 .</formula></p>
+
+				<p>Here we outline a simple (and we think compelling) proof of the conformal anomaly, which does not rely on zeta function regularization or a choice of vacuum. (In reality, one should make sure that the choice of normal ordering prescription can be accompanied with a compatible choice of bra and ket vacuum states. This of course is the case.) One first rewrites the commutators of Virasoro constraints (1.2) and (1.5) in terms of anti-supercommutators of the elementary modes by straightforward algebraic manipulation, which uses the commutation relations (A.1), [T m</p>
+
+				<figure>
+					<trash>, T n ] = ¯ h 2 η µν i iκ |i| [α µ m−i , α ν n+i ] + , (A.4) [T (c) m , T (c) n ] = ¯ h 2 i (m+i)(2n+i)κ |i| [b m−i , c n+i ]</trash>
+
+
+				</figure>
+
+				<p>+ − (m ↔ n) . (A.5) When one normal-orders the anti-supercommutators, cf. eq. (1.17), one gets two terms: one quadratic and one constant in the elementary modes, [</p>
+
+				<p><formula>α µ m , α ν n ] + = 2 : α µ m α µ n : +¯ hκ |m| |m|δ 0 n+m η µν , (A.6) [b m , c n ]</formula></p>
+
+				<p>+ = 2 : b m c n : +¯ hκ |m| sgn(m)δ 0 n+m . (A.7) Here sgn(m) denotes the sign of a number m with sgn(0) = 0. In the κ → 1 limit, the quadratic pieces in eqs. (A.4) and (A.5) become ¯ h(m−n)(T m+n +¯ haδ 0 m+n ) and ¯ h(m−n)T (c) m+n , respectively. On the other hand, for any κ with |κ| &lt; 1, the constant pieces in eqs. (A.4) and (A.5) are of the form ¯ h 2 A</p>
+
+				<figure>
+					<trash>(α) m δ 0 m+n and ¯ h 2 A (c) m δ 0 m+n , respectively, where A (α) m = D i, j i + j = m i|j|κ |i|+|j| = Dm(m 2 − 1) 12 κ |m| , (A.8) A (c) m = − i, j i + j = m (m+i)(m+j)sgn(j)κ |i|+|j| = m(1 − 13m 2 ) 6 κ |m| . (A.9)</trash>
+
+
+				</figure>
+
+				<p>A few remarks are in order. In the restricted double summations (A.8) and (A.9), which are absolutely and unconditionally convergent for |κ| &lt; 1, note that the (i, j)&apos;th term is antisymmetric under an (i ↔ j) exchange if the summation variables i and j have opposite signs. Therefore one only has to consider i&apos;s and j&apos;s with weakly the same sign. (The word weakly refers to that i or j could be 0.) Since at the same time the sum i+j = m of i and j is held fixed, the restricted (i, j) double sum contains only finitely many terms, which may be readily summed to give the familiar expression for the conformal anomaly, cf. eqs. (A.8) and (A.9). In retrospect, the κ-regularization has picked a particular (although very natural) summation ordering for two infinite sums, which are conditionally convergent.</p>
+
+				<p>The BRST charge Ω 0 and the ghost operator G c read [2]</p>
+
+				<figure>
+					<trash>Ω 0 = m T m c −m + 1 2 m,n (m−n) : b m+n c −n c −m : = m : (T m + 1 2 T (c) m )c −m : = m T m c −m − 1 2 m,n (m−n) b m+n c −n c −m , (A.10) G c = m</trash>
+
+					<figDesc>: c −m b m : . (A.11)</figDesc>
+
+				</figure>
+
+				<p>The last expression in eq. (A.10), which has only normal ordering inside T m , is useful when proving the nilpotency relation (1.13). The Hermitian conjugate &quot; † &quot; is defined in eq. (1.16), which leads to</p>
+
+				<figure>
+					<trash>T † m = T −m , Ω † 0 = Ω 0 , G † c = G c . (A.12)</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>B Superfield Formulation</head>
+
+				<p>A peculiar (although absolutely consistent) feature of the new ghosts sector is that the new ghosts can be organized in superpartners that carry shifted ghost numbers. It is tempting to rewrite the superpartner fields as N = 1 superfields by introducing a Fermionic θ-coordinate, and absorb the ghost number deficit into this θ,</p>
+
+				<figure>
+					<trash>gh(θ) = − 1 , ngh(θ) = 0 , ε(θ) = 1 . (B.1)</trash>
+
+					<figDesc>In detail, one may rewrite the construction as follows</figDesc>
+					<trash>C A ≡ {C α 0 ; C α 1 } ≡ {B α ; (−1) ε α +1 Π α * } −→ C α (θ) ≡ C α 0 + θC α 1 = B α − Π α * θ , ¯ P A ≡ { ¯ P 0 α ; ¯ P 1 α } ≡ {Π α ; B * α } −→ ¯ P α (θ) ≡ − ¯ P 0 α θ + ¯ P 1 α = −Π α θ + B * α , T A ≡ {T 0 α ; T 1 α } ≡ {T α ; (−1) ε α X α } −→ T α (θ) ≡ −T 0 α θ + T 1 α = −T α θ + X α (−1) ε α . (B.2)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>As a result, the above superfields carry definite ghost number, gh(C αs (θ)) = s+1 = − gh(T αs (θ)) = − gh( ¯ P αs (θ))−1 . (B.3)</figDesc>
+
+				</figure>
+
+				<p>A similar trick may be applied to the non-minimal variables (4.6) and the gauge-fixing condition (4.19). The superfield transcription (B.2) basically amounts to rewrite all previous capital indices, A; B; C; . . ., in the corresponding superfield indices, α, θ; β, θ ′ ; C, θ ′′ ; . . .. A sum A over a repeated dummy index, which one normally does not write explicitly, now also involve a Berezin integration α dθ, and so forth. In detail, we use the following superconventions,</p>
+
+				<figure>
+					<trash>dθ θ ≡ 1 , δ(θ) ≡ θ . (B.4) Then the canonical commutation relations (2.3) read {C α (θ), ¯ P β (θ ′ )} = δ α β δ(θ−θ ′ ) = { ¯ P β (θ), C α (θ ′ )} . (B.5) Likewise, one gets dθ C α (θ)T α (θ) = B α T α − Π α * X α = C A T A , (B.6) Ω = Ω 0 + dθ C α (θ)V α β (θ, θ ′ ) ¯ P α (θ ′ )dθ ′ + . . . , (B.7) Ω 1 = dθ C α (θ)T α (θ) + 1 2 dθdθ ′ C β (θ ′ )C α (θ)U αβ γ (θ, θ ′ , θ ′′ ) ¯ P γ (θ ′′ )dθ ′′ + . . . , (B.8) and {T α (θ), T β (θ ′ )} = U αβ γ (θ, θ ′ , θ ′′ ) dθ ′′ T γ (θ ′′ ) . (B.9)</trash>
+
+
+				</figure>
+
+				<p>While aesthetically nice, the super-transcription unfortunately tend to increase the formula size, which is why the superfield formulation is not used in the main part of the paper. We also stress that this superfield formulation only affects the new ghost sector (C A , ¯ P B ), while the old phase variables (q i , p j ; C α , ¯ P β ) remain in a non-supersymmetric formulation.</p>
+
+				<figure>
+					<head>Table 3:</head>
+
+					<figDesc>The operator-valued matrix Ω A B .</figDesc>
+					<trash>A \ B B 0 B 1 B 2 · · · A 0 (−1) ε A 0 Ω 0 δ B 0 A 0 −i¯ hV A 0 B 0 A 1 −i¯ hZ A 1 B 0 −(−1) ε A 1 Ω 0 δ B 1 A 1 −i¯ hV A 1 B 1 A 2 −i¯ hZ A 2 B 1 (−1) ε A 2 Ω 0 δ B 2 A 2 −i¯ hV A 2 B 2 A 3 −i¯ hZ A 3 B 2 · · · . . . · · ·</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>C Matrix Formulation</head>
+
+				<p>Here we give a matrix formulation of certain aspects of a rank 1 theory, i.e. a theory with no terms of the form O(C ¯ P 2 ) in the power series expansions for Ω and Ω 1 , cf. eqs. (3.15) and (3.27). Some of the consequences of the Ω-nilpotency (3.14) then read [Ω 0</p>
+
+				<figure>
+					<trash>, Ω 0 ] = 0 , (C.1) [V As Cs , Ω 0 ](−1) ε Cs +s = i¯ hV As Bs V Bs Cs , (C.2) (−1) (ε Bs +s+1)(ε Cs +s+1) [V As Cs , V Bs Ds ] = (−1) (ε As +s)(ε Bs +s) (A s ↔ B s ) , (C.3) [V Ar Cr , V Bs Ds ] = 0 , r = s . (C.4) where r, s ∈ {0, . . . , L}. Similarly, some of the consequences of the Ω-closeness (3.26) for Ω 1 read [Z A s+1 Cs , Ω 0 ](−1) ε Cs +s = i¯ hZ A s+1 Bs V Bs Cs + i¯ hV A s+1 B s+1 Z B s+1 Cs , (C.5) (−1) (ε Bs +s+1)(ε Cs +s+1) [Z A s+1 Cs , V Bs Ds ] = (−1) (ε Cs +s)(ε Ds +s) (C s ↔ D s ) , (C.6) (−1) (ε Bs +s+1)(ε Cs +s+1) [V As Cs , Z Bs D s−1 ] = (−1) (ε As +s)(ε Bs +s) (A s ↔ B s ) , s = 0 , (C.7) [Z A s+1 Cs , V Br Dr ] = 0 , r − s = 0 , 1 , (C.8) where r ∈ {0, . . . , L} and s ∈ {0, . . . , L−1}. And finally, some of the consequences of the Ω 1 -nilpotency (3.24) read Z A s+1 Bs Z Bs C s−1 = 0 , s = 0 , (C.9) (−1) (ε B s+1 +s)(ε Cs +s+1) [Z A s+1 Cs , Z B s+1 Ds ] = (−1) (ε Cs +s)(ε Ds +s) (C s ↔ D s ) , (C.10) [Z A r+1 Cr , Z B s+1 Ds ] = 0 , r = s , (C.11) where r, s ∈ {0, . . . , L−1}. All these relations (C.1)-(C.11) can precisely be recast into a nilpotency condition [ ˆ Ω, ˆ Ω] = 0 (C.12) for an operator ˆ Ω = C A ˆ Ω A B ¯ P B (−1) ε B = −Ω 0 L s=0 C As ¯ P As (−1) ε As +s − i¯ h L s=0 C As V As Bs ¯ P Bs (−1) ε Bs +s −i¯ h L−1 s=0 C A s+1 Z A s+1 Bs ¯ P Bs (−1) ε Bs +s , (C.13) cf. Table 3</trash>
+
+
+				</figure>
+
+				<p>. The second and third term on the right-hand side of eq. (C.13) contain the parts of the Ω and Ω 1 operator that are linear in both C A and ¯ P A . Thê Ω operator (C.13) is Grassmann-odd, has ghost number gh( ˆ Ω) = 1, has indefinite new ghost number (either 0 or 1), and is not necessarily Hermitian. In turn, thê Ω nilpotency (C.12) is equivalent to following conditions for the matrix</p>
+
+				<figure>
+					<trash>elements Ω A B = ˆ Ω A B (q, p, C, ¯ P ), ˆ Ω A B ˆ Ω B C = 0 , (C.14) (−1) (ε B +1)(ε C +1) [ ˆ Ω A C , ˆ Ω B D ] = (−1) ε A ε B (A ↔ B) , (−1) ε C ε D (C ↔ D) . (C.15)</trash>
+
+
+				</figure>
+
+				<p>In particular, one sees that the operator-valued matrix element Ω A B are nilpotent in a mixed operator/matrix sense, cf. eq. (C.14). The two possible right-hand sides of eq. (C.15) are one and the same condition written twice. A similar story is true for ¯ Ω, and the Ω ↔ ¯ Ω interplay yields an interesting canonical commutation relation in the operator/matrix sense,</p>
+
+				<figure>
+					<trash>ˆ Ω A B ˆ ¯ Ω B C + ˆ ¯ Ω A B ˆ Ω B C = i¯ hδ C A , (C.16) cf. eq. (5.11) of Ref. [1]</trash>
+
+
+				</figure>
+
+				<p>.</p>
+
+			</div>
+			<div>
+				<head>D Operator Master Equations</head>
+
+				<p>In this Appendix we consider candidates to the operator master equations for S and S, cf. eqs. (2.42) and (3.63), respectively. We start with candidates M = 0 to the master eq. for S, and we assume that M takes the form</p>
+
+				<figure>
+					<trash>M ≡ N n=0 α n Φ n Ω (S, S, . . . , S n entries ) , α N = 0 , (D.1) where Φ n Ω (S, S, . . . , S) are higher antibrackets [17, 20]</trash>
+
+
+				</figure>
+
+				<p>. In general the n&apos;th (normalized, operator) antibracket of n operators A 1 , A 2 ,</p>
+
+				<figure>
+					<trash>. . ., A n , is defined as Φ n Ω (A 1 , A 2 , . . . , A n ) ≡ 1 n! π∈Sn (−1) ε π,A {{. . . {Ω, A π(1) }, . . .}, A π(n) } n normalized commutators , Φ 0 Ω ≡ Ω . (D.2)</trash>
+
+
+				</figure>
+
+				<p>The sign-factor ε π,A arises from permuting the operators A 1 , A 2 , . . ., A n under the permutation π ∈ S n , see Ref. [20] for details, and see Refs. [28] and [29] for early field-antifield formulations of higher antibrackets. The Ansatz (D.1) is partly motivated by the fact that the M operator has a well-defined classical limit. This is because the multiple nested normalized commutators (1.18) inside the higher antibracket (D.2) simply reduce to multiple nested Poisson brackets {·, ·} P B when ¯ h → 0. Let us also assume that S 0 is a linear combination of the old and the new ghost operator, S 0 = µG + νG . (D.3)</p>
+
+				<p>We are interested in which S 0 and M that would guarantee a solution for S ≡ ∞ k=0 S k . In other words, which coefficients µ, ν, α 0 , α 1 , α 2 , . . ., would provide the existence of S? Note that M =</p>
+
+				<figure>
+					<trash>∞ k=0 M k has quantum numbers ε(M) = ε(M k ) = 1 , ngh(M k ) = k , gh(M) = gh(M k ) = 1 . (D.4)</trash>
+
+
+				</figure>
+
+				<p>Let us for the sake of simplicity restrict attention to the second-order case with N = 2, cf. eq. (D.1). We will show in this case that for each choice of S 0 (more precisely, for each choice of µ and ν = 0), there exists a unique M up to an over-all normalization factor. The proof goes as follows:</p>
+
+				<figure>
+					<trash>M k = α 2 k j=0 Φ 2 Ω (S j , S k−j ) + α 1 Φ 1 Ω (S k ) + δ 0 k α 0 Φ 0 Ω (D.5) =      α 2 k−1 j=1 Φ 2 Ω (S j , S k−j ) + (α 1 − α 2 (2µ + kν))Φ 1 Ω (S k ) for k ≥ 1 , (α 1 − α 2 (2µ + ν))Ω 1 for k = 1 , (µ 2 α 2 − µα 1 + α 0 )Ω for k = 0 . (D.6) The equations M 0 = 0 and M 1 = 0 yield two conditions, α 0 α 2 = µ(µ + ν) , α 1 α 2 = 2µ + ν , α 2 = 0 . (D.7) The equation M 2 = 0 then becomes −(S 1 , S 1 ) Ω ≡ Φ 2 Ω (S 1 , S 1 ) = νΦ 1 Ω (S 2 ) ≡ ν{Ω, S 2 } . (D.8) One knows that the antibracket (S 1 , S 1 ) Ω = 0 does not always vanish, see for instance eq. (5.44), so one must demand that ν = 0 . (D.9) One next seeks for an integrability condition I = 0, where I ≡ m, n m+n ≤ N β nm Φ n Ω (Φ m M (S, S, . . . , S m entries ), S, S, . . . , S n−1 entries ) , ε(I) = 0 , gh(I) = 2 . (D.10)</trash>
+
+
+				</figure>
+
+				<p>The coefficients β nm are to be adjusted such that eq. (D.10) is a non-trivial linear combination of generalized Jacobi identities for the antibracket hierarchy. In the N = 2 case, the relevant generalized Jacobi identities are [20]</p>
+
+				<figure>
+					<trash>Φ 1 Ω (Φ 0 Ω ) = 0 , (D.11) Φ 1 Ω (Φ 1 Ω (S)) = 0 , (D.12) Φ 2 Ω (Φ 0 Ω , S) = 0 , (D.13) Φ 1 Ω (Φ 2 Ω (S, S)) + 2Φ 1 Ω (Φ 1 Ω (S), S) = 0 , (D.14) 6Φ 2 Ω (Φ 2 Ω (S, S), S) − Φ 1 Ω (Φ 3 Ω (S, S, S)) = 0 . (D.15) They are all consequences of the Ω nilpotency (3.14). In the N = 2 case, the integrability condition (D.10) reads I ≡ β 10 Φ 1 Ω (Φ 0 M ) + β 11 Φ 1 Ω (Φ 1 M (S)) + β 20 Φ 2 Ω (Φ 0 M , S) = β 10 Φ 1 Ω α 2 Φ 2 Ω (S, S) + α 1 Φ 1 Ω (S) + α 0 Φ 0 Ω +β 11 Φ 1 Ω α 2 Φ 3 Ω (S, S, S) + α 1 Φ 2 Ω (S, S) + α 0 Φ 1 Ω (S) +β 20 Φ 2 Ω α 2 Φ 2 Ω (S, S) + α 1 Φ 1 Ω (S) + α 0 Φ 0 Ω , S) = (β 10 α 2 + β 11 α 1 )Φ 1 Ω (Φ 2 Ω (S, S)) + β 11 α 2 Φ 1 Ω (Φ 3 Ω (S, S, S)) +β 20 α 2 Φ 2 Ω (Φ 2 Ω (S, S), S) + β 20 α 1 Φ 2 Ω (Φ 1 Ω (S), S) . (D.16)</trash>
+
+
+				</figure>
+
+				<p>The β nm coefficients are then tuned so that I = 0 is automatically satisfied. This yield two conditions:</p>
+
+				<figure>
+					<trash>β 20 β 11 = − 6 , β 10 β 11 = − 4 α 1 α 2 = − 4(2µ + ν) , β 11 = 0 . (D.17) I = ∞ k=0 I k is itself a sum of terms I k with quantum numbers, ε(I k ) = 0 , ngh(I k ) = k , gh(I k ) = 2 . (D.18)</trash>
+
+
+				</figure>
+
+				<p>One can now show the existence of a solution S to the master equation M = 0. Recall that the existence of S 1 and S 2 follows from the Ω-closeness (3.26) and the nilpotency (3.24) of Ω 1 , cf. Subsections 3.7 and 3.8, respectively. One now proceeds by mathematical induction in the integer k ≥ 3. Assume that there exist S 1 , S 2 , . . ., S k−1 , such that M 0 = M 1 = M 2 = . . . = M k−1 = 0. One wants to prove that there exists S k , such that M k = 0. The k&apos;th integrability condition reads</p>
+
+				<figure>
+					<trash>I k = β 10 {Ω, M k } + β 11 {Ω, {M k , S 0 }} + β 20 2 {{Ω, M k }, S 0 } + {{Ω, S 0 }, M k } = 2(k−2)νβ 11 {Ω, M k } , (D.19) cf. eq. (D.16). I k = 0</trash>
+
+
+				</figure>
+
+				<p>implies that M k is Ω-closed, and hence Ω-exact, cf. statement after eq. (3.22). Therefore the Φ 2 -term in eq. (D.6) must be Ω-exact, and hence there exists an S k that makes M k = 0 vanish. The factor (k−2) in eq. (D.19) indicates that non-trivial information must be added to the construction at the second induction step, k = 2, namely the Ω 1 nilpotency (3.24).</p>
+
+				<p>The master eq. (D.1) simplifies further if α 0 = 0, i.e. if µ is either equal to 0 or −ν, cf. eq. (D.7). In the main part of this paper we choose ¶ S 0 = G corresponding to (µ, ν) = (0, 1).</p>
+
+				<p>Now let us drop the use of calligraphic letters and consider candidates M = 0 to the master eq. for S in the old sector, cf. eq. (2.42). The analysis is very similar to the above case, so we shall be brief. Let us assume that S 0 is proportional to the old ghost operator,</p>
+
+				<figure>
+					<trash>S 0 = µG . (D.20) Note that M = ∞ k=0 M 1−2k has quantum numbers ε(M ) = ε(M 1−2k ) = 1 , gh(M 1−2k ) = 1−2k . (D.21) One finds M 1−2k = α 2 k j=0 Φ 2 Ω 0 (S −2j , S 2(j−k) ) + α 1 Φ 1 Ω 0 (S −2k ) + δ 0 k α 0 Φ 0 Ω 0 (D.22) =      α 2 k−1 j=1 Φ 2 Ω 0 (S −2j , S 2(j−k) ) + (α 1 + 2(k−1)µα 2 )Φ 1 Ω 0 (S −2k ) for k ≥ 1 , α 1 ¯ Ω 0 for k = 1 , (µ 2 α 2 − µα 1 + α 0 )Ω 0 for k = 0 . (D.23) The equations M 1 = 0 and M −1 = 0 yield two conditions, α 0 α 2 = − µ 2 , α 1 α 2 = 0 , α 2 = 0 . (D.24) The equation M −3 = 0 then becomes (S −2 , S −2 ) Ω 0 ≡ − Φ 2 Ω 0 (S −2 , S −2 ) = 2µΦ 1 Ω 0 (S −4 ) ≡ 2µ{Ω 0 , S −4 } . (D.25)</trash>
+
+
+				</figure>
+
+				<p>One knows that the antibracket (S −2 , S −2 ) Ω 0 = 0 does not always vanish, so one must demand that µ = 0 . (D.26)</p>
+
+				<p>As before one adjusts the β nm coefficients so that the integrability condition (D.16) is automatically satisfied. This yield two conditions:</p>
+
+				<figure>
+					<trash>β 20 β 11 = − 6 , β 10 β 11 = − 4 α 1 α 2 = 0 , β 11 = 0 . (D.27) I = ∞ k=0 I 2(1−k) is itself a sum of terms I 2(1−k) with quantum numbers, ε(I 2(1−k) ) = 0 , gh(I 2(1−k) ) = 2(1−k) . (D.28) The k&apos;th integrability condition reads I 2(1−k) = β 10 {Ω 0 , M 1−2k } + β 11 {Ω 0 , {M 1−2k , S 0 }} + β 20 2 {{Ω 0 , M 1−2k }, S 0 } + {{Ω 0 , S 0 }, M 1−2k } = 4(2−k)µβ 11 {Ω 0 , M 1−2k } . (D.29)</trash>
+
+
+				</figure>
+
+				<p>In the main text we have chosen S 0 = G corresponding to µ = 1. ¶ Note that Ref. [1] has S0 = G−G corresponding to (µ, ν) = (1, −1). The operator master eq. (3.63) remains the same, while there is a change of sign in eq. (3.60); see eqs. (5.22) and (5.19) in Ref. [1]</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+					<trash>E A New Tilde BRST Operator Ω 1</trash>
+
+
+				</figure>
+
+				<p>In this Appendix we briefly outline how the involution relations (6.17) and (6.18) could be reformulated as nilpotency requirement for a new tilde BRST operator Ω 1 ,</p>
+
+				<figure>
+					<trash>{ ˜ Ω 1 , ˜ Ω 1 } = 0 , ε( ˜ Ω 1 ) = 1 , gh( ˜ Ω 1 ) = 1 , ngh( ˜ Ω 1 ) = 1 . (E.1) The tilde BRST operator Ω 1 is a deformation of Ω 1 , ˜ Ω 1 = Ω 1 + L s=0 C As T As + 1 2 r, s ≥ 0 r+s ≤ L ˜ C Bs C Ar F ArBs C r+s ¯ P C r+s (−1) ε Bs +ε C r+s +r + r, s ≥ 0 r+s ≤ L C Bs C Ar E ArBs C r+s ¯ P C r+s − E ArBs C r+s ¯ P C r+s (−1) ε Bs +ε C r+s +r + . . . . (E.2) Here we have introduced a new set of tilde ghosts C A ≡ { ˜ C α 0 , ˜ C α 1 } and ¯ P A ≡ { ˜ ¯ P 0 α , ˜ ¯ P 1 α } with canonical commutation relations { ˜ C A , ˜ C B } = 0 , { ˜ C A , ˜ ¯ P B } = δ A B = − (−1) ε B { ˜ ¯ P B , ˜ C A } , { ˜ ¯ P A , ˜ ¯ P B } = 0 , (E.3) which have Grassman parity and new ghost number given by ε( ˜ C A ) = ε A = ε( ˜ ¯ P A ) , ε( ˜ C As ) = ε As +s = ε( ˜ ¯ P As ) , ngh( ˜ C As ) = s+1 = −ngh( ˜ ¯ P As ) . (E.4)</trash>
+
+					<figDesc>The Grassmann parity and the old ghost number are shifted among the tilde ghost superpartners as follows ε( ˜</figDesc>
+					<trash>C α 0 ) = ε α = ε( ˜ ¯ P 0 α ) , ε( ˜ C αs 0 ) = ε αs +s = ε( ˜ ¯ P 0 αs ) , ε( ˜ C α 1 ) = ε α +1 = ε( ˜ ¯ P 1 α ) , ε( ˜ C αs 1 ) = ε αs +s+1 = ε( ˜ ¯ P 1 αs ) , gh( ˜ C αs 0 ) = s+2 = −gh( ˜ ¯ P 0 αs ) , gh( ˜ C αs 1 ) = s+3 = −gh( ˜ ¯ P 1 αs ) . (E.5)</trash>
+
+
+				</figure>
+
+				<p>It is now straightforward to check that the weak involution relations (6.16), (6.17) and (6.18) follow from the Ω 1 nilpotency (E.1). An aesthetically drawback of the approach, is, that the tilde constraints T A appear inside two different generating expansions, namely S 1 and Ω 1 .</p>
+
+			</div>
+
+			<note place="foot">arXiv:hep-th/0612221v4 7 Nov 2007</note>
+
+			<note place="foot">† The new ghost number should not be confused with the notion of new ghost number in Sp(2) theories [24], although the underlying motivation is basically the same: namely, to tame the ghost expansions. Ref. [1] calls the new ghost number for degree: deg there ≡ ngh here .</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">A</forename>
+				<surname>Batalin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">V</forename>
+				<surname>Tyutin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Theor. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">138</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Hwang</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="page">28</biblScope>
+			<date type="published" when="1983" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">B</forename>
+				<surname>Green</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">H</forename>
+				<surname>Schwarz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Witten</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1987" />
+			<publisher>Cambridge University Press</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">B54 (1974) 344; Commun</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Becchi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Rouet</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Stora</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Math. Phys. Ann. Phys. (NY)</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="issue">287</biblScope>
+			<biblScope unit="page">98</biblScope>
+			<date type="published" when="1975" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">V</forename>
+				<surname>Tyutin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Lebedev Institute preprint 39</title>
+		<imprint>
+			<date type="published" when="1975" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">S</forename>
+				<surname>Fradkin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">A</forename>
+				<surname>Vilkovisky</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1975" />
+			<biblScope unit="page">55</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">A</forename>
+				<surname>Batalin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">A</forename>
+				<surname>Vilkovisky</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1977" />
+			<biblScope unit="page">69</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">S</forename>
+				<surname>Fradkin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">E</forename>
+				<surname>Fradkina</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1978" />
+			<biblScope unit="page">72</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">A</forename>
+				<surname>Batalin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">S</forename>
+				<surname>Fradkin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1983" />
+			<biblScope unit="page">122</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">A</forename>
+				<surname>Batalin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">S</forename>
+				<surname>Fradkin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Riv. Nuovo Cim</title>
+		<imprint>
+			<biblScope unit="volume">303</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page">128</biblScope>
+			<date type="published" when="1983" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">A</forename>
+				<surname>Batalin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Marnelius</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1998" />
+			<biblScope unit="page">441</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">A</forename>
+				<surname>Batalin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">S</forename>
+				<surname>Fradkin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Ann</forename>
+				<surname>Inst</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Henri</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Poincare</title>
+		<imprint>
+			<biblScope unit="volume">49</biblScope>
+			<biblScope unit="page">145</biblScope>
+			<date type="published" when="1988" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Kugo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Ojima</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Progr. Theor. Phys</title>
+		<imprint>
+			<biblScope unit="volume">66</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<date type="published" when="1979" />
+		</imprint>
+	</monogr>
+	<note>Suppl</note>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">B238 (1984) 601; Progr</title>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Nishijima</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Theor. Phys</title>
+		<imprint>
+			<biblScope unit="volume">80</biblScope>
+			<biblScope unit="issue">897</biblScope>
+			<biblScope unit="page" from="80" to="905" />
+			<date type="published" when="1988" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Henneaux</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rep</title>
+		<imprint>
+			<biblScope unit="volume">126</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<date type="published" when="1985" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<monogr>
+		<title level="m" type="main">Quantization of Gauge Systems</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Henneaux</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Teitelboim</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1992" />
+			<publisher>Princeton University Press</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">A</forename>
+				<surname>Batalin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Marnelius</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1998" />
+			<biblScope unit="page" from="434" to="312" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">A</forename>
+				<surname>Batalin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Marnelius</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. Journ. Mod. Phys</title>
+		<imprint>
+			<biblScope unit="volume">5049</biblScope>
+			<biblScope unit="page">14</biblScope>
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">A</forename>
+				<surname>Batalin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Marnelius</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Theor. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">120</biblScope>
+			<biblScope unit="page">0603116</biblScope>
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+	<note>1115. . [20] K. Bering</note>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">A</forename>
+				<surname>Batalin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Grigoriev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Mod. Phys</title>
+		<imprint>
+			<biblScope unit="page" from="18" to="4485" />
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Curci</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Ferrari</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1976" />
+			<biblScope unit="page" from="63" to="91" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Ojima</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Progr</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Theor</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="page">625</biblScope>
+			<date type="published" when="1980" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">A</forename>
+				<surname>Batalin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">M</forename>
+				<surname>Lavrov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">V</forename>
+				<surname>Tyutin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Math. Phys. Int. J. Mod. Phys</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">3599</biblScope>
+			<biblScope unit="page" from="31" to="31" />
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Kalau</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">W</forename>
+				<surname>Van Holten</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">233</biblScope>
+			<biblScope unit="page">361</biblScope>
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">A</forename>
+				<surname>Batalin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Lyakhovich</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Marnelius</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2002" />
+			<biblScope unit="page">534</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">A</forename>
+				<surname>Batalin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">V</forename>
+				<surname>Tyutin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Mod. Phys</title>
+		<imprint>
+			<biblScope unit="volume">895</biblScope>
+			<biblScope unit="page">20</biblScope>
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Bering</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">H</forename>
+				<surname>Damgaard</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Alfaro</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="page" from="478" to="459" />
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">A</forename>
+				<surname>Batalin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Bering</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">H</forename>
+				<surname>Damgaard</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1996" />
+			<biblScope unit="page">389</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

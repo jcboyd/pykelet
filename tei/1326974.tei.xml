@@ -1,0 +1,1411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main"></title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2014-11-10">10 Nov 2014</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Louise</forename>
+								<surname>Dolan</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Department of Physics</orgName>
+								<orgName type="institution">University of North Carolina</orgName>
+								<address>
+									<postCode>27599</postCode>
+									<settlement>Chapel Hill</settlement>
+									<region>NC</region>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Yang</forename>
+								<surname>Sun</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Department of Physics</orgName>
+								<orgName type="institution">University of North Carolina</orgName>
+								<address>
+									<postCode>27599</postCode>
+									<settlement>Chapel Hill</settlement>
+									<region>NC</region>
+								</address>
+							</affiliation>
+						</author>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2014-11-10">10 Nov 2014</date>
+						</imprint>
+					</monogr>
+					<note>Electric-magnetic Duality of Abelian Gauge Theory on the Four-torus, from the Fivebrane on T 2 × T 4 , via their Partition Functions *</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>We compute the partition function of four-dimensional abelian gauge theory on a general four-torus T 4 with flat metric using Dirac quantization. In addition to an SL(4, Z) symmetry, it possesses SL(2, Z) symmetry that is electromagnetic S-duality. We show explicitly how this SL(2, Z) S-duality of the 4d abelian gauge theory has its origin in symmetries of the 6d (2, 0) tensor theory, by computing the partition function of a single fivebrane compactified on T 2 times T 4 , which has SL(2, Z) × SL(4, Z) symmetry. If we identify the couplings of the abelian gauge theory τ = θ 2π + i 4π e 2 with the complex modulus of the T 2 torus τ = β 2 + i R 1 R 2 , then in the small T 2 limit, the partition function of the fivebrane tensor field can be factorized, and contains the partition function of the 4d gauge theory. In this way the SL(2, Z) symmetry of the 6d tensor partition function is identified with the S-duality symmetry of the 4d gauge partition function. Each partition function is the product of zero mode and oscillator contributions, where the SL(2, Z) acts suitably. For the 4d gauge theory, which has a Lagrangian, this product redistributes when using path integral quantization.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+
+				<p>Electric-magnetic Duality of Abelian Gauge Theory on the Four-torus, from the Fivebrane on T</p>
+
+				<figure>
+					<trash>2 × T 4 , via their Partition Functions Louise Dolan * and Yang Sun † Department of Physics University of North Carolina, Chapel Hill, NC 27599</trash>
+
+
+				</figure>
+
+			<div>
+				<head>Abstract</head>
+
+				<p>We compute the partition function of four-dimensional abelian gauge theory on a general fourtorus T 4 with flat metric using Dirac quantization. In addition to an SL(4, Z) symmetry, it possesses SL(2, Z) symmetry that is electromagnetic S-duality. We show explicitly how this SL(2, Z) S-duality of the 4d abelian gauge theory has its origin in symmetries of the 6d (2, 0) tensor theory, by computing the partition function of a single fivebrane compactified on T 2 times T 4 , which has SL(2, Z) × SL(4, Z) symmetry. If we identify the couplings of the abelian gauge theory τ = θ 2π + i 4π e 2 with the complex modulus of the T 2 torus τ = β 2 + i</p>
+
+				<figure>
+					<trash>R 1 R 2</trash>
+
+
+				</figure>
+
+				<p>, then in the small T 2 limit, the partition function of the fivebrane tensor field can be factorized, and contains the partition function of the 4d gauge theory. In this way the SL(2, Z) symmetry of the 6d tensor partition function is identified with the S-duality symmetry of the 4d gauge partition function. Each partition function is the product of zero mode and oscillator contributions, where the SL(2, Z) acts suitably. For the 4d gauge theory, which has a Lagrangian, this product redistributes when using path integral quantization.</p>
+
+			</div>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>Four-dimensional N = 4 Yang-Mills theory is conjectured to possess S-duality, which implies the theory with gauge coupling g, gauge group G, and theta parameter θ is equivalent to one with τ ≡ θ 2π + 4πi g 2 transformed by modular transformations SL(2, Z), and the group to G ∨ [1]-[3], with the weight lattice of G ∨ dual to that of G . The conjecture has been tested by the Vafa-Witten partition function on various four-manifolds [4]. More recently, a computation of the N = 4 Yang-Mills partition function on the four-sphere using the localization method for quantization, enables checking S-duality directly [5].</p>
+
+				<p>This duality is believed to have its origin in a certain superconformal field theory in six dimensions, the M5 brane (2, 0) theory. When the 6d, N = (2, 0) theory is compactified on T 2 , one obtains the 4d, N = 4 Yang-Mills theory, and the SL(2, Z) group of the torus should imply the S-duality of the four-dimensional gauge theory [6]-[9].</p>
+
+				<p>In this paper, we compare the partition function of the 6d chiral tensor boson of one fivebrane compactified on T 2 × T 4 , with that of U (1) gauge theory with a θ parameter, compactified on T 4 . We use these to show explicitly how the 6d theory is the origin of S-duality in the gauge theory. Since the 6d chiral boson has a self-dual three-form field strength and thus lacks a Lagrangian [10], we will use the Hamiltonian formulation to compute the partition functions for both theories.</p>
+
+				<p>As motivated by [11], the four-dimensional U (1) gauge partition function on T 4 is</p>
+
+				<figure>
+					<trash>Z 4d,M axwell ≡ tre −2πH 4d +i2πγ α P 4d α = Z 4d zero modes · Z 4d osc , (1.1) where the Hamiltonian and momentum are H 4d = 2π 0 d 3 θ e 2 4 R 2 6 √ g g αβ Π α Π β + e 2 32π 2 √ g θ 2 4π 2 + 16π 2 e 4 g αβ g γδ F αγ F βδ + θe 2 16π 2 R 2 6 √ g g αβ ǫ αγδ F γδ Π β , P 4d α = 2π 0 d 3 θ Π β F αβ (1.2)</trash>
+
+
+				</figure>
+
+				<p>in terms of the gauge field strength tensor F ij (θ 3 , θ 4 , θ 5 , θ 6 ), the conjugate momentum Π α , and the constant parameters g αβ , R 6 and γ α in the metric G ij of T 4 . They will be derived from the abelian gauge theory Lagrangian, given here for Euclidean signature</p>
+
+				<figure>
+					<trash>I = 1 8π T 4 dθ 3 dθ 4 dθ 5 dθ 6 4π e 2 √ gF ij F ij + iθ 4π ǫ ijkl F ij F kl , (1.3) with ǫ 3456 = 1, ǫ ijkl = gǫ ijkl , and g = det(G ij ).</trash>
+
+
+				</figure>
+
+				<p>In contrast, the partition function of the abelian chiral two-form on T 2 × T 4 is [12]</p>
+
+				<figure>
+					<trash>Z 6d,chiral = tr e −2πR 6 H+i2πγ α Pα = Z 6d zero modes · Z 6d osc , H = 1 12 2π 0 dθ 1 . . . dθ 5 √ G 5 G 5 mm ′ G 5 nn ′ G 5 pp ′ H mnp ( θ, θ 6 ) H m ′ n ′ p ′ ( θ, θ 6 ), P α = − 1 24 0 2π dθ 1 ...dθ 5 ǫ mnprs H mnp ( θ, θ 6 ) H αrs ( θ, θ 6 ) (1.4) where θ 1</trash>
+
+
+				</figure>
+
+				<p>and θ 2 are the coordinates of the two one-cycles of T 2 . The time direction θ 6 is common to both theories, the angle between θ 1 and θ 2 is β 2 , and G 5 mn is the inverse metric of G 5mn , where 1 ≤ m, n ≤ 5. The eight angles between the two-torus and the four-torus are set to zero.</p>
+
+				<p>Section 2 is a list of our results; their derivations are presented in the succeeding sections. In section 3, the contribution of the zero modes to the partition function for the chiral theory on the manifold M = T 2 × T 4 is computed as a sum over ten integer eigenvalues using the Hamiltonian formulation. The zero mode sum for the gauge theory on the same T 4 ⊂ M is calculated with four integer eigenvalues. We find that once we identify the modulus of the T 2 contained in M , τ = β 2 + i</p>
+
+				<figure>
+					<trash>R 1 R 2 , with the gauge couplings τ = θ 2π + i 4π e 2</trash>
+
+
+				</figure>
+
+				<p>, then the two theories are related by Z 6d zero modes = ǫZ 4d zero modes , where ǫ is due to the zero modes of the scalar field that arises in addition to F ij from the compactification of the 6d self-dual three-form. In section 4, the abelian gauge theory is quantized on a four-torus using Dirac constraints, and the Hamiltonian and momentum are computed in terms of oscillator modes. For small T 2 , the Kaluza-Klein modes are removed from the partition function of the chiral two-form, and in this limit it agrees with the gauge theory result, up to the scalar field contribution. In Appendix A, we show the path integral quantization gives the same result for the 4d gauge theory partition function as canonical quantization. However, the zero and oscillator mode contributions differ in the two quantizations. In Appendix B, we show how the zero and oscillator mode contributions transform under SL(2, Z) for the 6d theory, as well as for both quantizations of the 4d theory. We prove the partition functions in 4d and 6d are both SL(2, Z) invariant. In Appendix C, the vacuum energy is regularized. In Appendix D, we introduce a complete set of SL(4, Z) generators, and then prove the 4d and 6d partition functions are invariant under SL(4, Z) transformations.</p>
+
+				<p>We compute partition functions for a chiral boson on T 2 × T 4 and for a U (1) gauge boson on the same T 4 . The geometry of the manifold T 2 × T 4 will be described by the line element,</p>
+
+				<figure>
+					<trash>ds 2 = R 2 2 (dθ 2 − β 2 dθ 1 ) 2 + R 2 1 (dθ 1 ) 2 + α,β g αβ (dθ α − γ α dθ 6 )(dθ β − γ β dθ 6 ) + R 2 6 (dθ 6 ) 2 , (2.1) with 0 ≤ θ I ≤ 2π, 1 ≤ I ≤ 6, and 3 ≤ α ≤ 5. R 1 , R 2</trash>
+
+
+				</figure>
+
+				<p>are the radii for directions I = 1, 2 on T 2 , and β 2 is the angle between them. g αβ fixes the metric for a T 3 submanifold of T 4 , R 6 is the remaining radius, and γ α is the angle between those. So, from (2.1) the metric is</p>
+
+				<figure>
+					<trash>T 2 : G 11 = R 1 2 + R 2 2 β 2 β 2 , G 12 = −R 2 2 β 2 , G 22 = R 2 2 ; T 4 : G αβ = g αβ , G α6 = −g αβ γ β , G 66 = R 6 2 + g αβ γ α γ β ; G α1 = G α2 = 0, G 16 = G 26 = 0; (2.2) and the inverse metric is T 2 : G 11 = 1 R 1 2 , G 12 = β 2 R 1 2 , G 22 = 1 R 2 2 + β 2 β 2 R 1 2 ≡ g 22 + β 2 β 2 R 1 2 ; T 4 : G αβ = g αβ + γ α γ β R 6 2 , G α6 = γ α R 6 2 , G 66 = 1 R 6 2 G 1α = G 2α = 0, G 16 = G 26 = 0. (2.3) θ 6</trash>
+
+
+				</figure>
+
+				<p>is chosen to be the time direction for both theories. In the 4d expression (1.3) the indices of the field strength tensor have 3 ≤ i, j, k, l ≤ 6, whereas in (1.4), the Hamiltonian and momentum are written in terms of fields with indices 1 ≤ m, n, p, r, s ≤ 5. The 5-dimensional inverse in directions 1, 2, 3, 4, 5 is G 5 mn ,</p>
+
+				<figure>
+					<trash>G 11 5 = 1 R 1 2 , G 12 5 = β 2 R 1 2 , G 22 5 = g 22 + β 2 β 2 R 1 2 G αβ 5 = g αβ , G 1α 5 = 0, G 2α 5 = 0. (2.4)</trash>
+
+
+				</figure>
+
+				<p>g αβ is the 3d inverse of g αβ . The determinants are related by</p>
+
+				<figure>
+					<trash>√ G = detG IJ = R 1 R 2 √ g = R 1 R 2 R 6 ˜ g = R 6 G 5 , (2.5)</trash>
+
+
+				</figure>
+
+				<p>where G is the determinant for 6d metric G IJ . G 5 , g and g are the determinants for the 5d metric G mn , 4d metric G ij , and 3d metric g αβ respectively.</p>
+
+				<p>The zero mode partition function of the 6d chiral boson on T 2 × T 4 with the metric (</p>
+
+				<figure>
+					<trash>2.3) is Z 6d zero modes = n 8 ,n 9 ,n 10 exp{− πR 6 R 1 R 2 ˜ gg αα ′ H 12α H 12α ′ } · n 7 exp{− π 6 R 6 R 1 R 2 ˜ gg αα ′ g ββ ′ g δδ ′ H αβδ H α ′ β ′ δ ′ − iπγ α ǫ γβδ H 12γ H αβδ } · n 4 ,n 5 ,n 6 exp{− π 2 R 6 R 1 R 2 ˜ g( 1 R 2 2 + β 2 2 R 1 2 )g αα ′ g ββ ′ H 2αβ H 2α ′ β ′ } · n 1 ,n 2 ,n 3 exp{−π R 6 R 2 R 1 ˜ gβ 2 g αα ′ g ββ ′ H 1αβ H 2α ′ β ′ + iπγ α ǫ γβδ H 1γβ H 2αδ − π 4 R 6 R 2 R 1 ˜ g(g αα ′ g ββ ′ − g αβ ′ g βα ′ )H 1αβ H 1α ′ β ′ } (2.6)</trash>
+
+
+				</figure>
+
+				<p>where the zero mode eigenvalues of the field strength tensor are integers, and (2.6) factors into a sum on H αβγ as H 345 = n 7 , H 12α as H 123 = n 8 , H 124 = n 9 , H 125 = n 10 ; and a sum over H 1αβ defined as H 134 = n 1 , H 145 = n 2 , H 135 = n 3 and H 2αβ as H 234 = n 4 , H 245 = n 5 , H 235 = n 6 , as we will show in section 3.</p>
+
+				<p>The zero mode partition function of the 4d gauge boson on T 4 with the metric (</p>
+
+				<figure>
+					<trash>2.2) Z 4d zero modes = n 4 ,n 5 ,n 6 exp{− e 2 4 R 2 6 √ g g αβ Π α Π β } · n 1 ,n 2 ,n 3 exp{− θe 2 8π R 2 6 √ g g αβ ǫ αγδ F γδ Π β } · exp{− e 2 √ g 8 ( θ 2 4π 2 + 16π 2 e 2 )g αβ g γδ F αγ F βδ + 2πiγ α Π β F αβ }, (2.7) where Π α take integer values Π 3 = n 4 , Π 4 = n 5 , Π 6 = n 6 , and F 34 = n 1 , F 35 = n 2 , F 45 = n 3 , from section 3. We identify the integers H 2αβ = F αβ and H 1αβ = 1 ˜ g ǫ αβγ Π γ , (2.8) where g = g R −2 6 from (2.5), and the modulus τ = β 2 + i R 1 R 2 = θ 2π + i 4π e 2 , so that as shown in section 3, we have the factorization Z 6d zero modes = ǫ Z 4d zero modes , (2.9)</trash>
+
+
+				</figure>
+
+				<p>where ǫ comes from the remaining four zero modes H αβγ and H 12α due to the additional scalar that occurs in the compactification of the 6d self-dual three-form field strength,</p>
+
+				<figure>
+					<trash>ǫ = n 8 ,n 9 ,n 10 exp{− πR 6 R 1 R 2 ˜ gg αα ′ H 12α H 12α ′ } · n 7 exp{− π 6 R 6 R 1 R 2 ˜ gg αα ′ g ββ ′ g δδ ′ H αβδ H α ′ β ′ δ ′ − iπγ α ǫ γβδ H 12γ H αβδ }. (2.10) From section 4, there is a similar relation between the oscillator partition functions lim R 1 ,R 2 →0 Z 6d osc = ǫ ′ Z 4d osc , (2.11) where Z 6d osc = e R 6 π −3 n = 0 √ G 5 (Gmp n m n p ) 3 p∈Z 5 = 0 1 1 − e −2πR 6 √ g αβ pαp β +˜2πiγ α pα 3 , (2.12) Z 4d osc = e 1 8 R 6 π −2 n =0 √ ˜ g (g αβ n α n β ) 2 · n∈Z 3 = 0 1 1 − e −2πR 6 √ g αβ nαn β −2πiγ α nα 2 , (2.13) and ǫ ′ is the oscillator contribution from the additional scalar, ǫ ′ = e 1 8 R 6 π −2 n =0 √ ˜ g (g αβ n α n β ) 2 · n∈Z 3 = 0 1 1 − e −2πR 6 √ g αβ nαn β −2πiγ α nα . (2.14) Therefore, in the limit of small T 2 , we have lim R 1 ,R 2 →0 Z 6d, chiral = ǫ ǫ ′ Z 4d, M axwell . (2.15)</trash>
+
+
+				</figure>
+
+				<p>We use this relation between the 6d and 4d partition functions to extract the S-duality of the latter from a geometric symmetry of the former. For τ = β 2 + i</p>
+
+				<figure>
+					<trash>R 1 R 2 = θ 2π + i 4π e 2 , under the SL(2, Z) transformations τ → − 1 τ ; τ → τ − 1, (2.16) Z 6d</trash>
+
+
+				</figure>
+
+				<p>zero modes and Z 6d osc are separately invariant, as are Z 4d zero modes and Z 4d osc , which we will prove in Appendix B. A path integral computation agrees with our U (1) partition function, as we review in Appendix A [13]. Nevertheless, in the path integral quantization the zero and nonzero mode contributions are rearranged, and although each is invariant under τ → τ −1, they transform differently under τ → − 1 τ , with Z P I zero modes → |τ | 3 Z P I zero modes and Z P I non−zero modes → |τ | −3 Z P I non−zero modes . For a general spin manifold, the U (1) partition function transforms as a modular form under S-duality [14], but in the case of T 4 the weight is zero.</p>
+
+				<p>In this section, we show details for the computation of the zero mode partition functions. The N = (2, 0), 6d world volume theory of the fivebrane contains a chiral two-form B M N , which has a self-dual three-form field strength H LM N =</p>
+
+				<figure>
+					<trash>∂ L B M N + ∂ M B N L + ∂ N B LM with 1 ≤ L, M, N ≤ 6, H LM N ( θ, θ 6 ) = 1 6 √ −G G LL ′ G M M ′ G N N ′ ǫ L ′ M ′ N ′ RST H RST ( θ, θ 6 ). (3.1)</trash>
+
+
+				</figure>
+
+				<p>Since there is no covariant Lagrangian description for the chiral two-form, we compute its partition function from (1.4). As in [12],[15] the zero mode partition function of the 6d chiral theory is calculated in the Hamiltonian formulation similarly to string theory,</p>
+
+				<figure>
+					<trash>Z 6d zero modes = tr e −tH+iy l P l (3.2) where t = 2πR 6 and y l = 2π G l6 G 66 , with l = 1, ..5. However, y 1 and y 2 are zero due to the metric (2.3). Neglecting the integrations and using the metric (2.4) in (1.4), we find −tH = − π 6 R 6 R 1 R 2 ˜ gg αα ′ g ββ ′ g λλ ′ H αβλ H α ′ β ′ λ ′ − π 2 R 6 R 1 R 2 ˜ gg αα ′ g ββ ′ H 2αβ H 2α ′ β ′ − π 2 R 6 R 1 R 2 β 2 2 g αα ′ g ββ ′ ˜ gH 2αβ H 2α ′ β ′ − π R 6 R 1 R 2 β 2 ˜ gg αα ′ g ββ ′ H 1αβ H 2α ′ β ′ − πR 6 R 1 R 2 ˜ gg αα ′ H 12α H 12α ′ − π 4 R 2 R 6 R 1 ˜ g(g αα ′ g ββ ′ − g αβ ′ g α ′ β )H 1αβ H 1α ′ β ′ , (3.3) and the momentum components 3 ≤ α ≤ 5 are P α = − 1 2 ǫ γβδ H 12γ H αβδ + 1 2 ǫ γβδ H 1γβ H 2αδ , (3.4</trash>
+
+					<figDesc>) where the zero modes of the ten fields H lmp are labeled by integers n 1 , . . . n 10 [12]</figDesc>
+
+				</figure>
+
+				<p>. Then (3.2) is given by (2.6).</p>
+
+				<p>Similarly, we compute the zero mode partition function for the 4d U (1) theory from (1.1). We consider the charge quantization condition</p>
+
+				<figure>
+					<trash>n I = 1 2π Σ I 2 F ≡ 1 2π Σ I 2 1 2 F αβ dθ α ∧ dθ β , n I ∈ Z, for each 1 ≤ I ≤ 3. (3.5) as well as the commutation relation obtained from (4.17) Σ γ 1 A α ( θ, θ 6 )dθ α , d 3 θ ′ 2π Π β ( θ ′ , θ 6 ) = i 2π Σ γ 1 dθ β = i δ β γ . (3.6)</trash>
+
+
+				</figure>
+
+				<p>and use the standard argument [15],[16] to show that the field strength F αβ and momentum Π α zero modes have eigenvalues</p>
+
+				<figure>
+					<trash>F αβ = n α,β 2π , n α,β ∈ Z for α &lt; β, and Π α ( θ ′ , θ 6 ) = n (α) (2π) 2 , n (α) ∈ Z 3 . (3.7) Thus we define integer valued modes F αβ ≡ 2πF αβ and Π α ≡ (2π) 2 Π α . Taking into account the spatial integrations dθ α , (1.2) gives − 2πH 4d + i2πγ α P 4d α = − e 2 4 R 2 6 √ g g αβ Π α Π β − e 2 √ g 8 θ 2 4π 2 + 16π 2 e 4 g αβ g γδ F αγ F βδ − θe 2 8π R 2 6 √ g g αβ ǫ αγδ F γδ Π β + 2πiγ α Π β F αβ , (3.8) where (1.2) itself is derived in section 4. So from (3.8) and (1.1), Z 4d zero modes = n 4 ,n 5 ,n 6 exp{− e 2 4 R 2 6 √ g g αβ Π α Π β } · n 1 ,n 2 ,n 3 exp{− θe 2 8π R 2 6 √ g g αβ ǫ αγδ F γδ Π β } · exp{− e 2 √ g 8 ( θ 2 4π 2 + 16π 2 e 2 )g αβ g γδ F αγ F βδ + 2πiγ α Π β F αβ }, (3.9) where n I are integers, with F 34 = n 1 , F 35 = n 2 , F 45 = n 3 , and Π 3 = n 4 , Π 4 = n 5 , Π 6 = n 6 . (3.9) is the zero mode contribution to the 4d U (1) partition function (1.1). If we identify the gauge couplings τ = θ 2π + i 4π e 2 with the modulus of T 2 , τ = β 2 + i R 1 R 2 , then e 2 4π = R 2 R 1 , θ 2π = β 2 , (3.10) and (3.9) becomes Z 4d zero modes = n 4 ,n 5 ,n 6 exp{−π R 2 R 2 6 R 1 √ g g αβ Π α Π β } · n 1 ,n 2 ,n 3 exp{−πβ 2 R 2 R 2 6 R 1 √ g g αβ ǫ αγδ F γδ Π β } · exp{− π 2 R 2 R 1 √ g(β 2 2 + R 2 1 R 2 2 )g αβ g γδ F αγ F βδ + 2πiγ α Π β F αβ }. (3.11) Then the last four terms in the chiral boson zero mode sum (2.6) are equal to (2.7) since − π 2 R 2 R 6 √ ˜ g R 1 ( R 2 1 R 2 2 + β 2 2 )g αα ′ g ββ ′ H 2αβ H 2α ′ β ′ = − π 2 R 2 R 6 R 1 ˜ g ( R 2 1 R 2 2 + β 2 2 )g αβ g γδ F αγ F βδ , −π R 6 R 2 R 1 ˜ g β 2 g αα ′ g ββ ′ H 1αβ H 2α ′ β ′ = −πβ 2 R 6 R 2 R 1 √ ˜ g g αβ ǫ αγδ F γδ Π β , iπγ α ǫ γβδ H 1γβ H 2αδ = 2πiγ α ˜ Π β ˜ F αβ , − π 2 R 6 R 2 R 1 ˜ gg αα ′ g ββ ′ H 1αβ H 1α ′ β ′ = −π R 6 R 2 R 1 √ ˜ g g αβ Π α ˜ Π β , (3.12) when we identify the integers H 2αβ = F αβ and H 1αβ = 1 ˜ g ǫ αβγ Π γ , (3.13) with g = g R −2 6 from (2.5). Thus the 6d and 4d zero mode sums from (2.6) and (2.7) are related by Z 6d zero modes = ǫ Z 4d zero modes , (3.14) where ǫ = n 8 ,n 9 ,n 10 exp{− πR 6 R 1 R 2 ˜ gg αα ′ H 12α H 12α ′ } · n 7 exp{− π 6 R 6 R 1 R 2 ˜ gg αα ′ g ββ ′ g δδ ′ H αβδ H α ′ β ′ δ ′ − iπγ α ǫ γβδ H 12γ H αβδ }. (3.15)</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="4">Oscillator modes</head>
+
+				<p>To compute the oscillator contribution to the partition function (1.1), we quantize the U (1) gauge theory with a theta term on the T 4 manifold using Dirac brackets. From (1.3), the equations of motion are ∂ i F ij = 0, since the theta term is a total divergence and does not contribute to them. So in Lorenz gauge, the gauge potential A i with field strength tensor F ij = ∂ i A j − ∂ j A i is obtained by solving the equation</p>
+
+				<figure>
+					<trash>∂ i ∂ i A j = 0, with ∂ i A i = 0. (4.1) The potential has a plane wave solution A i ( θ, θ 6 ) = zero modes + k =0 (f i (k)e ik·θ + (f i (k)e ik·θ ) * ) (4.2) with momenta satisfying the on shell condition and gauge condition G ij L k i k j = 0, k i f i = 0. (4.3) As in [11]</trash>
+
+
+				</figure>
+
+				<p>,[15] the Hamiltonian H 4d and momentum P 4d α are quantized with a Lorentzian signature metric that has zero angles with the time direction, γ α = 0. So we modify the metric on the</p>
+
+				<figure>
+					<trash>torus (2.2), (2.3) to be G L αβ = g αβ , G L 66 = −R 6 2 , G L α6 = 0 G αβ L = g αβ , G 66 L = − 1 R 2 6 , G α6 L = 0, G L = det G L ij = −g. (4.4) Solving for k 6 from (4.3) we find k 6 = − G 66 L G 66 L |k|, (4.5) where 3 ≤ α, β ≤ 5, and |k| ≡ g</trash>
+
+
+				</figure>
+
+				<p>αβ k α k β . Employ the remaining gauge invariance f i → f ′ i = f i + k i λ to fix f ′ 6 = 0, which is the gauge choice A 6 = 0.</p>
+
+				<p>This reduces the number of components of A i from 4 to 3. To satisfy (4.3), we can use the ∂ i F i6 = −∂ 6 ∂ α A α = 0 component of the equation of motion to eliminate f 5 in terms of f 3 , f 4 ,</p>
+
+				<figure>
+					<trash>f 5 = − 1 p 5 (p 3 f 3 + p 4 f 4 ),</trash>
+
+					<head>leaving just two independent polarization vectors corresponding to the physical degrees of freedom of a four-dimensional gauge theory. From the Lorentzian Lagrangian and energy-momentum tensor</head>
+
+					<trash>L = − 1 2e 2 − G L G ik L G jl L F ij F kl + θ 32π 2 ǫ ijkl F ij F kl , T i j = δL δ∂ i A k ∂ j A k − δ i j L, (4.6) we obtain the Hamiltonian and momentum operators H c ≡ d 3 θ T 6 6 = d 3 θ − √ g e 2 G 66 L g αβ F 6α F 6β + √ g 2e 2 g αα ′ g ββ ′ F αβ F α ′ β ′ − ∂ α Π α A 6 , (4.7) P α ≡ d 3 θ T 6 α = d 3 θ − 2 e 2 √ g G 66 L g βγ F 6γ F αβ − ∂ β Π β A α + Π 6 ∂ α A 6 , (4.8) where we have integrated by parts; and the conjugate momentum is Π α = δL δ∂ 6 A α = − 2 e 2 √ g G 66 L g αβ F 6β − θ 8π 2 ǫ αβγ F βγ , Π 6 = δL δ∂ 6 A 6 = 0. (4.9) Then we have H c − iγ α P α = dθ 3 R 2 6 4 e 2 √ g g αβ Π α + θ 8π 2 ǫ αγδ F γδ Π β + θ 8π 2 ǫ βρσ F ρσ + √ g 2e 2 g α ˜ α g β ˜ β F αβ F ˜ α ˜ β − iγ α Π β + θ 8π 2 ǫ βγδ F γδ F αβ , (4.10)</trash>
+
+
+				</figure>
+
+				<p>up to terms proportional to A 6 and ∂ α Π α which vanish in Lorenz gauge. Note the term proportional to ǫ βγδ F γδ F αβ vanishes identically. (4.10) is equal to H 4d − iγ α P 4d α given in (1.2), and is used to compute the zero mode partition function in (2.7) via (3.8).</p>
+
+				<p>To compute the oscillator modes, the appearance of θ only in the combination Π α + θ 8π 2 ǫ αγδ F γδ in (4.10) suggests we make a canonical transformation on the oscillator fields Π α ( θ, θ 6 ), A β ( θ, θ 6 ) [17]. Consider the equal time quantum bracket, suppressing the θ 6 dependence,</p>
+
+				<figure>
+					<trash>d 3 θ ′ ǫ αβδ F αβ A δ , Π γ ( θ) = 2iǫ γαβ F αβ ( θ), (4.11) and the canonical transformation U (θ) = exp{i θ 32π 2 d 3 θ ′ ǫ αβγ F αβ A γ }, (4.12) under which Π α ( θ, θ 6 ), A β ( θ, θ 6 ) transform to Π α ( θ, θ 6 ), A β ( θ, θ 6 ), Π α ( θ) = U −1 (θ) Π α ( θ) U (θ) = Π α ( θ) + θ 8π 2 ǫ αγδ F γδ ( θ) A β ( θ) = U −1 (θ) A β ( θ) U (θ) = A β ( θ). (4.13) Therefore the exponent (4.10) contains no theta dependence when written in terms of Π α , which now reads H c − iγ α P α = dθ 3 − R 2 6 4 e 2 √ g g αβ Π α Π β + √ g 2e 2 g α ˜ α g β ˜ β F αβ F ˜ α ˜ β − iγ α Π β F αβ . (4.14)</trash>
+
+
+				</figure>
+
+				<p>Thus, for the computation of the oscillator partition function we will quantize with θ = 0. Note that had we done this for the zero modes, it would not be possible to pick the zero mode integer charges consistently. Since the zero and oscillator modes commute, we are free to canonically transform the latter and not the former.</p>
+
+				<p>In the discussion that follows we assume θ = 0 and drop the hats. We directly quantize the Maxwell theory on the four-torus with the metric (4.4) in Lorenz gauge using Dirac constraints [18, 19]. The theory has a primary constraint Π 6 ( θ, θ 6 ) ≈ 0. We can express the Hamiltonian (4.7) in terms of the conjugate momentum as</p>
+
+				<figure>
+					<trash>H c = dθ 3 R 2 6 4 e 2 √ g g αβ Π α Π β + √ g 2e 2 g α ˜ α g β ˜ β F αβ F ˜ α ˜ β . (4.15) The primary Hamiltonian is defined by H c = dθ 3 R 2 6 4 e 2 √ g g αβ Π α Π β + √ g 2e 2 g α ˜ α g β ˜ β F αβ F ˜ α ˜ β − ∂ α Π α A 6 + λ 1 Π 6 , (4.16) with λ 1 as a Lagrange multiplier. As in [15]</trash>
+
+
+				</figure>
+
+				<p>, we use the Dirac method of quantizing with constraints for the radiation gauge conditions A 6 ≈ 0, ∂ α A α ≈ 0, and find the equal time commutation relations: [Π β</p>
+
+				<figure>
+					<trash>( θ, θ 6 ), A α ( θ ′ , θ 6 )] = −i δ β α − g ββ ′ (∂ α 1 g γγ ′ ∂ γ ∂ γ ′ ∂ β ′ ) δ 4 (θ − θ ′ ), [A α ( θ, θ 6 ), A β ( θ ′ , θ 6 )] = 0, [Π α ( θ, θ 6 ), Π β ( θ ′ , θ 6 )] = 0. (4.17)</trash>
+
+
+				</figure>
+
+				<p>In A 6 = 0 gauge, the vector potential on the torus is expanded as</p>
+
+				<figure>
+					<trash>A α ( θ, θ 6 ) = zero modes + k =0, k∈Z 3 (f κ α a κ k e ik·θ + f κ * α a κ † k e −ik·θ ), where 1 ≤ κ ≤ 2, 3</trash>
+
+
+				</figure>
+
+				<p>≤ α ≤ 5 and k 6 defined in (4.5). The sum is on the dual lattice k = k α ∈ Z 3 = 0. Here we only consider the oscillator modes expansion of the potential and the conjugate momentum in in (</p>
+
+				<figure>
+					<trash>4.9) with vanishing θ angle A α ( θ, θ 6 ) = k =0 (a k α e ik·θ + a † k α e −ik·θ ), Π β ( θ, θ 6 ) = −i 2 √ g e 2 G 66 L g ββ ′ k k 6 (a k β ′ e ik·θ − a † k β ′ e −ik·θ ). (4.18) and the polarizations absorbed in a k α = f κ α a κ k . (4.19) From (4.17), the commutator in terms of the oscillators is d 3 θd 3 θ ′ (2π) 6 e −ikαθ α e −ik ′ αθ ′α [A α ( θ, 0), A β ( θ ′ , 0)] = [(a k α + a † − k α ), (a k ′ β + a † − k ′ β )] = 0. (4.20) We consider the Fourier transform (4.18) of the commutators (4.17), the commutators of the oscillator can be found: [a k α , a † k ′ β ] = e 2 2 √ g G 66 L k 6 1 2(2π) 3 g αβ − k α k β g γγ ′ k γ k γ ′ δ k, k ′ , [a k α , a k ′ β ] = 0, [a † k α , a † k ′ β ] = 0. (4.21) In A 6 = 0 gauge, we use the (4.18) and (4.21) to evaluate the Hamiltonian and momentum in (4.7) and (4.8) H c = d 3 θ 2 √ g e 2 − 1 2 G 66 L g αα ′ ∂ 6 A α ∂ 6 A α ′ + 1 4 g αα ′ g ββ ′ F αβ F α ′ β ′ , P α = 2 R 2 6 e 2 2π 0 dθ 3 dθ 4 dθ 5 √ g g ββ ′ F 6β ′ F αβ . (4.22) With (4.18), (4.22) can be expressed in terms of the oscillator modes where time-dependent terms cancel, H c = (2π) 3 2 √ g e 2 k∈Z 3 = 0 g αα ′ |k| 2 (a k α a † k α ′ + a † k α a k α ′ ), P α = − 2 √ g e 2 G 66 L g ββ ′ (2π) 3 k∈Z 3 = 0 k 6 k α a k β ′ a † k β + a † k β ′ a k β . (4.23) and we have used the on-shell condition G 66 L k 6 k 6 + |k| 2 = 0, and the transverse condition k α a k α = k α a † k α = 0. Then, −H c + iγ α P α = −i 1 R 6 2 √ g e 2 (2π) 3 k∈Z 3 = 0 |k| − iR 6 |k| + γ α k α g ββ ′ a k β a † k β ′ + a † k β a k β ′ . (4.24) Inserting the polarizations as a k α = f κ α a κ k and a † k α = f λ * α a λ † k from (4.19) in the commutator (4.21) gives [a k α , a † k ′ β ] = e 2 2 √ g R 6 |k| 1 2(2π) 3 g αβ − k α k β |k| 2 δ k, k ′ = f κ α f λ * β [a κ k , a λ † k ], (4.25) where we choose the normalization [a κ k , a λ † k ′ ] = δ κλ δ k, k ′ , (4.26) with 1 ≤ κ, λ ≤ 2. Then the polarization vectors satisfy f κ α f λ * β δ κλ = e 2 2 √ g R 6 |k| 1 2(2π) 3 g αβ − k α k β |k| 2 , g ββ ′ f κ β f λ * β ′ δ κλ = e 2 2 √ g R 6 |k| 1 2(2π) 3 · 2, g ββ ′ f κ β f λ * β ′ = δ κλ e 2 2 √ g R 6 |k| 1 2(2π) 3 . So the exponent in (1.2) is given by −H c + iγ α P α = −iR 6 2 √ g e 2 (2π) 3 k∈Z 3 = 0 |k| − iR 6 |k| + γ α k α g ββ ′ 2a † k β a k β ′ + [a k β , a † k β ′ ] = −i k∈Z 3 = 0 γ α k α − iR 6 |k| a κ † k a κ k − i 2 k∈Z 3 = 0 − iR 6 |k| δ κκ . (4.27) Then the U (1) partition function is Z 4d,M axwell ≡ tr exp{2π(−H c + iγ i P i )} = Z 4d zero modes Z 4d osc , (4.28) so from (4.27), Z 4d osc = tr e −2πi k∈Z 3 = 0 γ α kα−iR 6 |k| a κ † k a κ k − πR 6 k∈Z 3 = 0 |k| δ κκ . (4.29) From the usual Fock space argument tr ω p pa † p ap = p ∞ k=0 k|ω pa † p ap |k = p 1 1 − ω p , we perform the trace on the oscillators, Z 4d osc = e −πR 6 n∈Z 3 √ g αβ nαn β n∈Z 3 = 0 1 1 − e −i2π(γ α nα−iR 6 √ g αβ nαn β ) 2 , (4.30) Z 4d,M axwell = Z 4d zero modes · e −πR 6 n∈Z 3 √ g αβ nαn β n∈Z 3 = 0 1 1 − e −2πR 6 √ g αβ nαn β −2πiγ α nα 2 , (4.31) where Z 4d zero modes is given in (2.7). (4.31) and (4.37) are each manifestly SL(3, Z) invariant due to the underlying SO(3) invariance we have labeled as α = 3, 4, 5. We use the SL(3, Z) invariant regularization of the vacuum energy reviewed in Appendix C to obtain Z 4d,M axwell = Z 4d zero modes · e 1 8 R 6 π −2 n =0 √ ˜ g (g αβ n α n β ) 2 n∈Z 3 = 0 1 1 − e −2πR 6 √ g αβ nαn β −2πiγ α nα 2 . (4.32) −2πR 6 H + i2πγ i P i = iπ 12 2π 0 d 5 θH lrs ǫ lrsmn H 6mn = iπ 2 2π 0 d 5 θ √ −GH 6mn H 6mn = −iπ 2π 0 d 5 θ(Π mn H 6mn + H 6mn Π mn ) = −2iπ p =0 p 6 C κ † p B κ p − iπ p =0 p 6 δ κκ , (4.33) where Π mn = − √ −G 4 Π 6mn</trash>
+
+
+				</figure>
+
+				<p>, and Π 6mn is the momentum conjugate to B M N . In the gauge B 6n = 0, the normal mode expansion for the free quantum fields B mn and Π mn on a torus is given in terms of oscillators B κ p and C κ † p defined in [12], with the commutation relations [B</p>
+
+				<figure>
+					<trash>κ p , C λ † p ′ ] = δ κλ δ p, p ′ (4.34) where 1 ≤ κ, λ ≤ 3 labels</trash>
+
+
+				</figure>
+
+				<p>the three physical degrees of freedom of the chiral two-form, and p = (p 1 , p 2 , p α ) lies on the integer lattice Z 5 . From the on-shell condition G LM p L p M = 0,</p>
+
+				<figure>
+					<trash>p 6 = −γ α p α − iR 6 g αβ p α p β + p 2 1 R 2 1 + ( 1 R 2 2 + β 2 2 R 2 1 )p 2 2 + 2 β 2 R 2 1 p 1 p 2 . (4.35) Thus the oscillator partition function of the chiral two-form on T 2 ×T 4 is obtained by tracing over the oscillators Z 6d osc = tr e −2iπ p =0 p 6 C κ † p B κ p −iπ p =0 p 6 δ κκ = e −πR 6 p √ g αβ pαp β +˜0 1 1 − e −2πip 6 3 = e −πR 6 p √ g αβ pαp β +˜∈Z 5 = 0 1 1 − e −2πR 6 √ g αβ pαp β +˜2πiγ α pα 3 , (4.36) where p 2 ≡ p 2 1 R 2 1 + ( 1 R 2 2 + β 2 2 R 2 1 )p 2 2 + 2 β 2 R 2 1 p 1 p 2 .</trash>
+
+
+				</figure>
+
+				<p>Regularizing the vacuum energy in the oscillator sum [12]</p>
+
+				<figure>
+					<figDesc>yields</figDesc>
+					<trash>Z 6d = Z 6d zero modes · e R 6 π −3 n = 0 √ G 5 (Gmp n m n p ) 3 p∈Z 5 = 0 1 1 − e −2πR 6 √ g αβ pαp β +˜2πiγ α pα 3 , (4.37) where n ∈ Z</trash>
+
+
+				</figure>
+
+				<p>5 is on the dual lattice, G mp is defined in (2.2), and Z 6d zero modes is given in (2.6).</p>
+
+				<p>Comparing the 4d and 6d oscillator traces (4.31) and (4.36), the 6d chiral boson sum has a cube rather than a square, corresponding to one additional polarization, and it contains Kaluza-Klein modes. In Appendix D, we prove that the product of the zero mode and the oscillator mode partition function for the 4d theory in (4.32) is SL(4, Z) invariant.</p>
+
+				<figure>
+					<trash>In (D.48) we give an equivalent expression, Z 4d,M axwell = Z 4d zero modes · e πR 6 6R 3 n 3 =0 1 1 − e −2π R 6 R 3 |n 3 |+2πiγ 3 n 3 2 · (na)∈Z 2 =(0,0) e −2πR 6 &lt;H&gt; 4d p ⊥ n 3 ∈Z 1 1 − e −2πR 6 √ g αβ nαn β +2πiγ α nα 2 , (4.38) where 5 ≤ a ≤ 6, with &lt; H &gt; 4d p ⊥ defined in (C.3). In Appendix D, we also prove the SL(4, Z) invariance of the 6d chiral partition function (4.37), using the equivalent form (D.65), Z 6d,chiral = Z 6d zero modes · e πR 6 6R 3 n 3 ∈Z =0 1 1 − e −2π R 6 R 3 |n 3 |+2πi γ 3 n 3 ) 3 · n ⊥ ∈Z 4 =(0,0,0,0) e −2πR 6 &lt;H&gt; 6d p ⊥ n 3 ∈Z 1 1 − e −2πR 6 √ g αβ nαn β +|ˆ| 2 +i2πγ α nα 3 , (4.39) with &lt; H &gt; 6d p ⊥ in (D.64).</trash>
+
+
+				</figure>
+
+				<p>In the limit when R 1 and R 2 are small with respect to the metric parameters g αβ , R 6 of the four-torus, the contribution from each polarization in (4.38) and (4.39) is equivalent. To see this limit since we can separate the product on n ⊥ =</p>
+
+				<figure>
+					<trash>(n 1 , n 2 , n a ) = 0 ⊥ in (4.39), into (n 1 = 0, n 2 = 0, n a = (0, 0)), (n 1 = 0, n 2 = 0 all n a ), (n 1 = 0, n 2 = 0, all n a ), (n 1 = 0, n 2 = 0, all n a )) to find, at fixed n 3 , n ⊥ ∈Z 4 =(0,0,0,0) 1 1 − e −2πR 6 g αβ nαn β + (n 1 ) 2 R 2 1 +( 1 R 2 2 + β 2 R 2 1 )n 2 2 + β 2 R 2 1 n 2 n 1 +2πiγ α nα = na∈Z 2 =(0,0) 1 1 − e −2πR 6 √ g αβ nαn β +2πiγ α nα · n 1 =0,n 2 =0,(na∈Z 3 ) 1 1 − e −2πR 6 g αβ nαn β + (n 1 ) 2 R 2 1 +( 1 R 2 2 + β 2 R 2 1 )n 2 2 + β 2 R 2 1 n 2 n 1 +2πiγ α nα · n 1 =0,n 2 =0,(na∈Z 3 ) 1 1 − e −2πR 6 g αβ nαn β +( 1 R 2 2 + β 2 R 2 1 )n 2 2 +2πiγ α nα · n 2 =0,n 1 =0,(na∈Z 3 ) 1 1 − e −2πR 6 g αβ nαn β + (n 1 ) 2 R 2 1 +2πiγ α nα (4.40) Thus for T 2 smaller than T 4 , the last three products reduce to unity, so n ⊥ ∈Z 4 = 0 1 1 − e −2πR 6 √ g αβ nαn β +|ˆ| 2 +2πiγ α n β R 1 ,R 2 →0 − −−−−− → nα∈Z 3 = 0 1 1 − e −2πR 6 √ g αβ nαn β +2πiγ α nα . (4.41) The regularized vacuum energies in (C.3) and (D.64), &lt; H &gt; 4d p ⊥ =0 = −π −1 R 3 |p ⊥ | ∞ n=1 cos(p a κ a 2πn) K 1 (2πnR 3 |p ⊥ |) n , for |p ⊥ | ≡ g ab n a n b , &lt; H &gt; 6d p ⊥ =0 = −π −1 R 3 |p ⊥ | ∞ n=1 cos(p a κ a 2πn) K 1 (2πnR 3 |p ⊥ |) n , for |p ⊥ | ≡ |ˆ| 2 + g ab n a n b , (4.42) have the same form of spherical Bessel function, but the argument differs by modes (p 1 , p 2 ). Again separating the product on n ⊥ = (n 1 , n 2 , n a ) in (4.39), into (n 1 = 0, n 2 = 0, n a = (0, 0)), (n 1 = 0, n 2 = 0 all n a ), (n 1 = 0, n 2 = 0, all n a ), (n 1 = 0, n 2 = 0, all n a )) we have n ⊥ ∈Z 4 =(0,0,0,0) e −2πR 6 &lt;H&gt; 6d p ⊥ = na∈Z 2 =(0,0) e −2πR 6 &lt;H&gt; 4d p ⊥ · n 1 =0,n 2 =0,na∈Z 2 e −2πR 6 &lt;H&gt; 6d p ⊥ · n 1 =0,n 2 =0,na∈Z 2 e −2πR 6 &lt;H&gt; 6d p ⊥ · n 1 =0,n 2 =0,na∈Z 2 e −2πR 6 &lt;H&gt; 6d p ⊥ (4.43)</trash>
+
+
+				</figure>
+
+				<p>In the limit R 1 , R 2 → 0, the last three products are unity. For example, the second is unity because for n 1 ,</p>
+
+				<figure>
+					<trash>n 2 = 0, lim R 1 ,R 2 →0 |ˆ| 2 + g αβ n α n β ∼ |ˆ| 2 , lim R 1 ,R 2 →0 (|p ⊥ | K 1 (2πnR 3 |p ⊥ |) = lim R 1 ,R 2 →0 |ˆ| 2 K 1 2πnR 3 |ˆ| 2 = 0, (4.44) since lim x→∞ xK 1 (x) ∼ √ x e −x → 0 [20]. So (4.43) leads to lim R 1 ,R 2 →0 n ⊥ ∈Z 4 =(0,0,0,0) e −2πR 6 &lt;H&gt; 6d p ⊥ = na∈Z 2 =(0,0) e −2πR 6 &lt;H&gt;p ⊥ . (4.45) Thus in the limit when T 2 is small with respect to T 4 , lim R 1 ,R 2 →0 n ⊥ ∈Z 4 =(0,0,0,0) e −2πR 6 &lt;H&gt; 6d p ⊥ n 3 ∈Z 1 1 − e −2πR 6 (g αβ nαn β + n 2 1 R 2 1 + β 2 R 2 1 )n 2 2 + β 2 R 2 1 n 2 n 1 +i2πγ α nα = na∈Z 2 =(0,0) e −2πR 6 &lt;H&gt;p ⊥ n 3 ∈Z 1 1 − e −2πR 6 √ g αβ nαn β +2πiγ α nα . (4.46)</trash>
+
+
+				</figure>
+
+				<p>We have shown the partition functions of the chiral theory on T 2 × T 4 and of gauge theory on T 4 , agree in the small T 2 limit upon neglecting less interesting contribution ǫ ′ ,</p>
+
+				<figure>
+					<trash>lim R 1 ,R 2 →0 Z 6d,chiral osc = ǫ ′ · Z 4d,M axwell osc . (4.47) Again, ǫ ′ is equivalently the contribution from one polarization, that is ǫ ′ = e 1 8 R 6 π −2 n =0 √ ˜ g (g αβ n α n β ) 2 · n∈Z 3 = 0 1 1 − e −2πR 6 √ g αβ nαn β −2πiγ α nα (4.48)</trash>
+
+
+				</figure>
+
+				<p>The relation between the 4d gauge and 6d tensor partition function is shown in the small T</p>
+
+				<figure>
+					<trash>2 limit, lim R 1 ,R 2 →0 Z 6d,chiral = ǫǫ ′ · Z 4d,M axwell . (4.49) 5 S-duality of Z 4d,M axwell from Z 6d,chiral</trash>
+
+
+				</figure>
+
+				<p>In Appendices B and D we show explicitly how the SL(2, Z) × SL(4, Z) symmetry of the partition function of the 6d tensor field of the M-fivebrane of N = (2, 0) theory compactified on T 2 ×T 4 implies the SL(2, Z) S-duality of the 4d U (1) gauge field partition function. These computations use the Hamiltonian formulation. In Appendix A we review the path integral formalism for the 4d zero and non-zero mode partition functions, and give their relations to the Hamiltonian quantities. The results are summarized here.</p>
+
+				<figure>
+					<trash>Z 4d zero modes = (Im τ ) 3 2 g 1 4 R 2 6 Z P I zero modes . (5.1) Z 4d osc = (Im τ ) − 3 2 g − 1 4 R 2 6 Z P I osc . (5.2) Z 4d zero modes −→ Z 4d zero modes , Z P I zero modes −→ |τ | 3 Z P I zero modes under S Z 4d zero modes −→ Z 4d zero modes , Z P I zero modes −→ Z P I zero modes under T (5.3) and Z 4d osc −→ Z 4d osc , Z P I osc −→ |τ | −3 Z P I osc under S Z 4d osc −→ Z 4d osc , Z P I osc −→ Z P I osc under T . (5.4) S and T are the generators of SL(2, Z), S : τ → − 1 τ , T : τ → τ − 1, where τ = θ 2π + i 4π e 2 is also given by the modulus of the two-torus, τ = β 2 + i R 1 R 2</trash>
+
+					<figDesc>.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="6">Discussion and Conclusions</head>
+
+				<p>We computed the partition function of the abelian gauge theory on a general four-dimensional torus T 4 and the partition function of a chiral boson compactified on T 2 ×T 4 . The coupling for the 4d gauge theory, τ = θ 2π + i 4π e 2 , is identified with the complex modulus τ = β 2 + i</p>
+
+				<figure>
+					<trash>R 1 R 2 of T 2 .</trash>
+
+
+				</figure>
+
+				<p>Assuming the metric of T 2 is much smaller than T 4 , the 6d partition function factorizes to a partition function for gauge theory on T 4 and a contribution from the extra scalar arising from compactification. The 6d partition function has a manifest SL(2, Z) × SL(4, Z) symmetry. Therefore the SL(2, Z) symmetry with the group action on the coupling, τ = θ 2π + i 4π e 2 , known as S-duality becomes manifest in the 4d Maxwell theory.</p>
+
+				<p>The 6d chiral boson has no Lagrangian, so we use the Hamiltonian approach to compute both the 4d and 6d partition functions. For gauge theory, the integration of the electric and magnetic fields as observables around one-and two-cycles respectively take integer values due to charge quantization. We sum over all possible integers to get the zero mode partition function. For the oscillator mode calculation, we quantize the gauge theory using the Dirac method with constraints. In 6d, the partition function follows from [12],[15].</p>
+
+				<p>We have also given the result of the 4d partition function, computed by the path integral formalism. It agrees with the partition function obtained with the Hamiltonian formulation. However, the path integral form factors into zero modes and oscillator modes differently, which leads to different SL(2, Z) transformation properties for the components. The 6d and 4d partition functions share the same SL(2, Z) × SL(4, Z) symmetry.</p>
+
+				<p>If we consider supersymmetry, compactification of the 6d theory on T 2 leads to N = 4 gauge theory in the limit of small T 2 . On the other hand, an N = 2 theory of class S [21],[22] arises when the 6d, (2, 0) theory is compactified on a punctured Riemann surface with genus g. Here the mapping class group of the Riemann surfaces acts as a generalized S-duality on 4d super-Yang-Mills theory [23]-[25]. In another direction, we can study the 2d conformal field theory present when 6d theory is compactified on a four-dimensional manifold. The 2d-4d relation can also be studied from a topological point of view [26],[27]. Finding explicit results, such as we have derived for T 2 × T 4 , for these more general investigations would be advantageous.</p>
+
+				<p>A Comparison of the 4d U(1) partition function in the Hamiltonian and path integral formulations For convenience in comparing the 4d gauge theory and the 6d theories in sections 2 and 3, we quantized both theories using canonical quantization. Since in 4d a Lagrangian exists for the gauge theory, it is useful to check that the path integral quantization agrees with canonical quantization. We find that the two formulations distribute the zero and oscillator mode contributions differently, and thus these components transform differently under the action of SL(2, Z). We summarize the results from [13], [14], [28]. Following [14], the zero modes, F 2π is the harmonic representative and can be expanded in terms of the basis α I =</p>
+
+				<figure>
+					<trash>1 2 dθ i ∧ dθ j , I = 1, 2, .., 6 namely F 2π ≡ m = I m I α I (A.1) Define (m, n) to be the intersection form such that (m, n) = m ∧ n, and thus (m, m) = 1 16π 2 d 4 θǫ ijkl F ij F kl (m, * m) = 1 8π 2 d 4 θ √ gF ij F ij . (A.2) So the action (1.3) is given as I = 4π 2 e 2 (m, * m) + iθ 2 (m, m) = 1 2e 2 d 4 θ √ gF ij F ij + iθ 32π 2 d 4 θǫ ijkl F ij F kl . (A.3)</trash>
+
+
+				</figure>
+
+				<p>The zero mode partition function from path integral formalism can be expressed as a lattice sum over the integral basis of m I [14],</p>
+
+				<figure>
+					<trash>Z P I zero modes = m I ∈Z 6 exp − 4π 2 e 2 m, * m − iθ 2 m, m = m I ∈Z 6 exp − iπ 2 τ m, m − m, * m − iπ 2 ¯ τ m, m + m, * m , (A.4) where τ = θ 2π + i 4π e 2</trash>
+
+					<figDesc>. Alternatively the zero mode sum be can written in terms of the metric using (A.3)</figDesc>
+					<trash>Z P I zero modes = 4π e 2 F ij ∈Z 6 exp{− π 2 R 6 ˜ gg αβ g γδ F αγ F βδ − π √ ˜ g R 6 g δδ ′ F δβ γ β F δ ′ β ′ γ β ′ − π √ ˜ g R 6 g αβ F 6α F 6β − 2π √ ˜ g R 6 g αδ F 6α F δβ γ β − i θe 2 8π ǫ αβγ F 6α F βγ } (A.5) where F ij = F ij 2π</trash>
+
+
+				</figure>
+
+				<p>= m I are integers due to the charge quantization. To compare the zero mode partition function from the Hamiltonian and path integral formalisms, we rewrite the result (</p>
+
+				<figure>
+					<trash>2.7) as Z 4d osc = Π α , F αβ exp − e 2 R 6 4 √ ˜ g g αβ Π α + i 4π √ ˜ g e 2 R 6 g αδ F δλ γ λ − θǫ αγδ 4π F γδ · Π β + i 4π √ ˜ g e 2 R 6 g βδ ′ F δλ ′ γ λ ′ − θǫ βγ ′ δ ′ 4π F γ ′ δ ′ − 4π 2 e 2 √ ˜ g R 6 g δδ ′ F δβ γ β F δ ′ β ′ γ β ′ − 2π 2 e 2 ˜ gg αβ g γδ F αγ F βδ . (A.6) After Poisson resummation, n∈Z exp[−π(n + x) · A · (n + x)] = (detA) − 1 2 n∈Z e −πn·A −1 ·n e 2πin·x , (A.7) where A αβ ≡ e 2 R 6 4π √ ˜ g g αβ and x α ≡ i 4π √ ˜ g e 2 R 6 g αδ F δλ γ λ − β 2 2 ǫ αγδ F γδ , we get the Hamiltonian expression as Z 4d zero modes = ( e 2 4π ) − 3 2 g 1 4 R 6 3 2 exp{− 4π 2 √ ˜ g e 2 R 6 g αβ Π α ˆ Π β − i θ 2 ˆ Π α ǫ αγδ F γδ − 8π 2 R 1 √ ˜ g e 2 R 6 g αβ Π α F βδ γ δ − 4π 2 e 2 √ ˜ g R 6 g δδ ′ F δβ γ β ˜ F δ ′ β ′ γ β ′ − 2π 2 R 6 e 2 ˜ gg αβ g γδ F αγ F βδ } = (Im τ ) 3 2 g 1 4 R 6 3 2 Z P I zero modes , (A.8) wherê Π α is the integer value of Π α , and we identify Π α with F 6α in (A.5). Then Z P I zero modes = (Im τ ) − 3 2 R 2 6 g 1 4 Z 4d zero modes . (A.9) Following [13]</trash>
+
+
+				</figure>
+
+				<p>, the non-zero mode partition function is defined by a path integral as</p>
+
+				<figure>
+					<trash>Z P I osc = A DA vol(U (1)) e −I(A) . (A.10) Performing the functional integration with the Fadeev-Popov approach, we get Z P I osc = 1 (2π) b 1 −1 2 ( detG 1 volT 4 ) 1 2 det(∆ 0 ) det(2πImτ ∆ 0 ) det(2πImτ ∆ 1 ) 1 2 = ( detG 1 (2π) 4 √ g ) 1 2 (Imτ ) b 1 −1 2 det∆ 0 det∆ 1 2 1 , (A.11) where b 1</trash>
+
+					<figDesc>= 4 is the dimension of the group H 1 (T 4 ). ∆ p = (d † d + dd † ) p is the kinetic energy operator acting on the p-form. G 1 is defined as follows, G 1mn = ω m ∧ * ω n . (A.12)</figDesc>
+
+				</figure>
+
+				<p>ω m , m = 1, .., b 1 is the harmonic one-form representative with integer coefficient on T 4 which can be chosen as dθ m 2π with the appropriate normalization Σ n ω m = δ nm and thus detG 1 = detG ij = g.</p>
+
+				<figure>
+					<trash>Also, det(∆ 1 ) = det(∆ 0 ) 4 and thus Z P I osc = g 1 4 (2π) 2 (2πImτ ) 3 2 det∆ −1 0 . (A.13) The determinant can be computed det∆ − 1 2 0 = (2π) 1 4 R −1 6 n∈Z 3 =0 e −πR 6 √ g αβ nαn β 1 − e −2πi(γ α nα−iR 6 √ g αβ nαn β ) , (A.14) where we use the identity Dφ exp{−φ i A ij φ j } = (detA) − 1 2 = exp{− 1 2 trlnA}. (A.15) For A = ∆ 0 , then exp{− 1 2 trln∆ 0 } = exp − 1 2 trln − G 66 ∂ 2 6 − 2G 6α ∂ 6 ∂ α − G αβ ∂ α ∂ β = exp − 1 2 nα n 6 ln 1 R 2 6 n 2 6 + 2 γ α R 2 6 n α n 6 + G αβ n α n β = exp − 1 2 nα n 6 ln 1 R 2 6 (n 6 + γ α n α ) 2 + g αβ n α n β . (A.16) Let µ(E) ≡ n 6 ln 1 R 2 6 (n 6 + γ α n α ) 2 + E 2 , where E 2 ≡ g αβ n α n β , ρ = 2πR 6 , ∂µ(E) ∂E = n 6 2E 1 R 2 6 (n 6 + γ α n α ) 2 + E 2 = ρ sinh(ρE) cosh(ρE) − cos(2πγ α n α ) = ∂ E ln cosh(ρE) − cos(2πγ α n α ) . (A.17) After integration, we have µ(E) = ln cosh(ρE) − cos(2πγ α n α ) + ln( √ 2π R 2 6 ). (A.18) where the constant ln( √ 2π R 2 6 ) maintains the SL(4, Z) invariance of the partition function. So, det∆ 0 − 1 2 = exp − 1 2 trln∆ 0 = e − 1 2 nα µ(E) = (2π) 1 4 R 6 nα∈Z 3 1 cosh(ρE) − cos(2πγ α n α ) = (2π) 1 4 R 6 nα∈Z 3 e − ρE 2 1 − e −ρE+2πiγ α nα . (A.19) Therefore, using (A.13), we have Z P I osc = (2π) −2 g 1 4 (2πImτ ) 3 2 √ 2π R 2 6 Z 4d osc = (Im τ ) 3 2 g 1 4 R 2 6 Z 4d osc . (A.20)</trash>
+
+					<figDesc>Together with (A.9), the partition functions from the two quantizations agree but they factor differently into zero and oscillator modes,</figDesc>
+					<trash>Z 4d,M axwell = Z 4d zero modes Z 4d osc = Z P I zero modes Z P I osc . (A.21) B SL(2, Z) invariance of the Z 6d,chiral and Z 4d,M axwell partition functions The S-duality group SL(2</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>, Z) group has two generators S and T which act on the parameter τ to give</figDesc>
+					<trash>S : τ → − 1 τ , T : τ → τ − 1. (B.1) Since τ = β 2 + i R 1 R 2 = θ 2π + i 4π e 2 , the transformation S corresponds to R 1 → R 1 |τ | −1 , R 2 → R 2 |τ |, β 2 → −|τ | −2 β 2 , (B.2) and T corresponds to β 2 → β 2 − 1. (B.3) Or equivalently S : 4π e 2 → 4π e 2 |τ | −2 , θ → −θ|τ | −2 T : θ → θ − 2π, (B.4) which for θ = 0 is the familiar electromagnetic duality transformation e 2 4π → 4π e 2 . 6d partition function The 6d chiral boson zero mode partition function (2.6), Z 6d zero modes = n 8 ,n 9 ,n 10 exp{− πR 6 R 1 R 2 ˜ gg αα ′ H 12α H 12α ′ } · n 7 exp{− π 6 R 6 R 1 R 2 ˜ gg αα ′ g ββ ′ g δδ ′ H αβδ H α ′ β ′ δ ′ − iπγ α ǫ γβδ H 12γ H αβδ } · n 4 ,n 5 ,n 6 exp{− π 2 R 6 R 1 R 2 ˜ g( 1 R 2 2 + β 2 2 R 1 2 )g αα ′ g ββ ′ H 2αβ H 2α ′ β ′ } · n 1 ,n 2 ,n 3 exp{−π R 6 R 2 R 1 ˜ gβ 2 g αα ′ g ββ ′ H 1αβ H 2α ′ β ′ + iπγ α ǫ γβδ H 1γβ H 2αδ − π 4 R 6 R 2 R 1 ˜ g(g αα ′ g ββ ′ − g αβ ′ g βα ′ )H 1αβ H 1α ′ β ′ } (B.5) where H 134 = n 1 ,H 145 = n 2 , H 145 = n 3 , H 234 = n 4 , H 245 = n 5 , H 235 = n 6 , H 345 = n 7 , H 123 = n 8 , H 124 = n 9</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>, H 125 = n 10 , is invariant under both S and T . To show the invariance using (B.2,B.3) we group the exponents in (B.5) into two sets,</figDesc>
+					<trash>− πR 6 R 1 R 2 ˜ gg αα ′ H 12α H 12α ′ − π 6 R 6 R 1 R 2 ˜ gg αα ′ g ββ ′ g δδ ′ H αβδ H α ′ β ′ δ ′ − iπγ α ǫ γβδ H 12γ H αβδ , (B.6) and − π 2 R 6 R 1 R 2 ˜ g( 1 R 2 2 + β 2 2 R 1 2 )g αα ′ g ββ ′ H 2αβ H 2α ′ β ′ − π R 6 R 1 R 2 ˜ gβ 2 g αα ′ g ββ ′ H 1αβ H 2α ′ β ′ + iπγ α ǫ γβδ H 1γβ H 2αδ − π 2 R 6 R 1 R 2 ˜ g g αα ′ g ββ ′ H 1αβ H 1α ′ β ′ . (B.7) (B.6</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>) has no β 2 dependence and therefore is invariant under T . (B.7) transforms under under T to become</figDesc>
+					<trash>− π 2 R 6 R 1 R 2 ˜ g( 1 R 2 2 + β 2 2 R 1 2 )g αα ′ g ββ ′ H 2αβ H 2α ′ β ′ − π R 6 R 1 R 2 ˜ gβ 2 g αα ′ g ββ ′ H 1αβ H 2α ′ β ′ + iπγ α ǫ γβδ H 1γβ H 2αδ − π 2 R 6 R 1 R 2 ˜ g g αα ′ g ββ ′ H 1αβ H 1α ′ β ′ + π R 6 R 1 ˜ gR 2 β 2 g αα ′ g ββ ′ H 2αβ H 2α ′ β ′ − π 2 R 6 R 1 ˜ gR 2 g αα ′ g ββ ′ H 2αβ H 2α ′ β ′ + π R 6 R 1 R 2 ˜ gg αα ′ g ββ ′ H 1αβ H 2α ′ β ′ (B.8)</trash>
+
+
+				</figure>
+
+				<p>which is equivalent to (B.7) in the sum where we shift the integer zero mode field strength H 1αβ to H 1αβ − H 2αβ . Under S, we see (B.6) as a function of R 1 R 2 is invariant, and find</p>
+
+				<figure>
+					<trash>(B.7) transforms to − π 2 R 6 R 2 R 1 ˜ gg αα ′ g ββ ′ H 2αβ H 2α ′ β ′ + π R 6 R 1 R 2 ˜ gβ 2 g αα ′ g ββ ′ H 1αβ H 2α ′ β ′ − π 2 R 1 R 6 R 2 ˜ g(g 22 + β 2 2 R 2 1 )g αα ′ g ββ ′ H 1αβ H 1α ′ β ′ . (B.9)</trash>
+
+
+				</figure>
+
+				<p>So by shifting the integer field strength tensors H 1αβ → H 2αβ and H 2αβ → −H 1αβ , the sum on (B.7) is left invariant by S. Thus we have proved SL(2, Z) invariance of the 6d zero mode partition function (2.6), and that its factors ǫ and Z 4d zeromodes in (2.9) are separately SL(2, Z) invariant.</p>
+
+				<p>For the oscillator modes (4.36), the only term that transforms in the sum and product is</p>
+
+				<figure>
+					<trash>˜ p 2 ≡ p 1 2 R 1 2 + (g 22 + β 2 2 R 1 2 )p 2 2 + 2β 2 R 1 2 p 1 p 2 , (B.10) which is invariant under T by shifting the momentum p 1 → p 1 + p 2 . With the S transformation , ˜ p 2 becomes p 1 2 (g 22 + β 2 2 R 1 2 ) + 1 R 1 2 p 2 2 − 2β 2 R 1 2 p 1 p 2 , (B.11)</trash>
+
+
+				</figure>
+
+				<p>and by also exchanging the momentum p 1 → p 2 and p 2 → −p 1 , the term remains the same. So the 6d oscillator partition function (4.36) is SL(2Z) invariant, which holds also for regularized vacuum energy as given in (4.37). 4d U (1) partition function</p>
+
+				<p>In the Hamiltonian formulation, SL(2, Z) leaves invariant the U (1) oscillator partition function (4.30). We have also checked above, starting from 6d, that the zero mode 4d partition function (2.7) is invariant. Thus the U (1) partition function from the Hamiltonian formalism is S-duality invariant.</p>
+
+				<p>The S-duality transformations on the corresponding quantities in the path integral quantization can be derived from (</p>
+
+				<figure>
+					<trash>A.8) and (A.20). Since Im τ → 1 |τ | 2 Imτ under S, and is invariant under T, we have Z 4d zero modes −→ Z 4d zero modes , Z P I zero modes −→ |τ | 3 Z P I zero modes under S Z 4d zero modes −→ Z 4d zero modes , Z P I zero modes −→ Z P I zero modes under T (B.12) and Z 4d osc −→ Z 4d osc , Z P I osc −→ |τ | −3 Z P I osc under S Z 4d osc −→ Z 4d osc , Z P I osc −→ Z P I osc under T . (B.13)</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>C</head>
+
+				<p>Regularization of the vacuum energy for 4d Maxwell theory The sum in (4.30) is divergent. We regularize the vacuum energy following [12],[15]</p>
+
+				<figure>
+					<trash>. For &lt; H &gt;= 1 2 g αβ n α n β , the regularized vacuum energy is &lt; H &gt;= − 1 16π 3 ˜ g n∈Z 3 =0 1 (g αβ n α n β ) 2 = −π g n∈Z 3 =0 1 |2π n| 4 . (C.1)</trash>
+
+
+				</figure>
+
+				<p>For the discussion of SL(4, Z) invariance in Appendix D, it is also useful to write the regularized sum (</p>
+
+				<figure>
+					<trash>C.1), as &lt; H &gt; = p ⊥ ∈Z 2 &lt; H &gt; p ⊥ =&lt; H &gt; p ⊥ =0 + p ⊥ ∈Z 2 =0 &lt; H &gt; p ⊥ , (C.2) where p ⊥ = p a ∈ Z 2 , a = 4, 5, and &lt; H &gt; p ⊥ =0 = 1 2 p 2 ∈Z g 33 p 3 p 3 = 1 R 3 ∞ n=1 n = 1 R 2 ζ(−1) = − 1 12R 3 ; &lt; H &gt; p ⊥ =0 = +|p ⊥ | 2 R 3 ∞ n=1 cos(p a κ a 2πn) K 2 (2πnR 3 |p ⊥ |) − K 0 (2πnR 3 |p ⊥ |) . (C.3) D SL(4, Z) invariance of Z 4d,Maxwell and Z 6d,chiral Rewriting the 4d metric (3,4,5,6) From (2.2) the metric on the four-torus, for α, β = 3, 4, 5, is G αβ = g αβ , G α6 = −g αβ γ β , G 66 = R 2 6 + g αβ γ α γ β , G 4 ≡ det G ij = R 2 6 det g αβ ≡ R 2 6 ˜ g. (D.1) We can rewrite this metric using a, b = 4, 5, g 33 ≡ R 2 3 + g ab κ a κ b , g a3 ≡ −g ab κ b , g ab ≡ g ab , (γ 3 )κ a − γ a ≡ − γ a , (D.2) G 33 = R 2 3 + g ab κ a κ b , G 36 = −(γ 3 )R 2 3 + g ab κ b γ a , G 3a = −g ab κ b , G ab = g ab , G a6 = −g ab γ b , G 66 = R 2 6 + (γ 3 ) 2 R 2 3 + g ab γ a γ b . (D.3) The 3d inverse of g αβ is g ab = g ab + κ a κ b R 2 2 , g a3 = κ a R 2 3 , g 33 = 1 R 2 3 , (D.4) where g ab is the 2d inverse of g ab . g ≡ det G ij = R 2 6 det g αβ ≡ R 2 6 g = R 2 6 R 2 3 det g ab ≡ R 2 6 R 2 3 ¯ g. The line element can be written as ds 2 = R 2 6 (dθ 6 ) 2 + α,β=3,4,5 g αβ (dθ α − γ α dθ 6 )(dθ β − γ β dθ 6 ) = R 2 3 (dθ 3 − (γ 3 )dθ 6 ) 2 + R 2 6 (dθ 6 ) 2 + a,b=4,5 g ab (dθ a − γ a dθ 6 − κ a dθ 3 ) (dθ b − γ b dθ 6 − κ b dθ 3 ). (D.5) We define τ ≡ γ 3 + i R 6 R 3 . (D.6) The 4d inverse is G 33 4 = | τ | 2 R 2 6 = G 66 4 | τ | 2 , G 66 4 = 1 R 2 6 , G 36 4 = γ 3 R 2 6 , G 3a 4 = κ a | τ | 2 R 2 6 + γ 3 γ a R 2 6 , G ab 4 = g ab + κ a κ b R 2 6 | τ | 2 + γ a γ b R 2 6 + γ 3 ( γ a κ b + κ a γ b ) R 2 6 , G 6a 4 = γ a R 2 6 = γ 3 κ a + γ a R 2 6 . (D.7) Generators of GL(n, Z)</trash>
+
+
+				</figure>
+
+				<p>The GL(n, Z) unimodular group can be generated by three matrices [29]. For GL(4, Z) these can be taken to be U 1 , U 2 and U 3 ,</p>
+
+				<figure>
+					<trash>U 1 =     0 1 0 0 0 0 1 0 0 0 0 1 1 0 0 0     ; U 2 =     1 0 0 0 1 1 0 0 0 0 1 0 0 0 0 1     ; U 3 =     −1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1     , (D.8) so that every matrix M in GL(4, Z) can be written as a product U n 1 1 1 U n 1 2 2 U n 1 3 3 U n 2 1 1 U n 2 2 2 U n 2 3 3 . . . . Matrices U 1 , U 2 and U 3 act on the basis vectors of the four-torus α i where α i · α j ≡ α k i α l j G kl = G ij , α 3 = (1, 0, 0, 0) α 6 = (0, 1, 0, 0) α 4 = (0, 0, 1, 0) α 5 = (0, 0, 0, 1). (D.9) For our metric (D.3), the U 2 transformation     α ′ 3 α ′ 6 α ′ 4 α ′ 5     = U 2     α 3 α 6 α 4 α 5     =     1 0 0 0 1 1 0 0 0 0 1 0 0 0 0 1     (D.10) results in α ′ 3 · α ′ 3 ≡ α ′ i 3 α ′ j 3 G ij = G 33 = G ′ 33 , α ′ 3 · α ′ 6 ≡ α ′ i 3 α ′ j 6 G ij = G 33 + G 36 = G ′ 36 , etc. So U 2 corresponds to R 3 → R 3 , R 6 → R 6 , γ 3 → γ 3 − 1, κ a → κ a , γ a → γ a + κ a , g ab → g ab , (D.11) or equivalently R 6 → R 6 , γ 3 → γ 3 − 1, g αβ → g αβ , γ a → γ a , (D.12)</trash>
+
+
+				</figure>
+
+				<p>which leaves invariant the line element (D.5) if dθ 3 → dθ 3 − dθ 6 , dθ 6 → dθ 6 , dθ α → dθ α . U 2 is the generalization of the usual τ → τ − 1 modular transformation. The 3d inverse metric g αβ ≡ {g ab , g a3 , g 33 } does not change under U 2 . It is easily checked that U 2 is an invariance of the 4d Maxwell partition function (4.32) as well as the 6d chiral boson partition function (4.37). It leaves the zero mode and oscillator contributions invariant separately. The other generator, U 1 is related to the SL(2, Z) transformation τ → −( τ ) −1 that we discuss as follows:</p>
+
+				<figure>
+					<trash>U 1 = U ′ M 3 (D.13) where M 3 is a GL(3, Z) transformation given by M 3 =     0 0 −1 0 0 1 0 0 0 0 0 1 1 0 0 0     (D.14)</trash>
+
+					<figDesc>and U ′ is the matrix corresponding to the transformation on the metric parameters (D.16),</figDesc>
+					<trash>U ′ =     0 1 0 0 −1 0 0 0 0 0 1 0 0 0 0 1     . (D.15) Under U ′ , the metric parameters transform as R 3 → R 3 | τ |, R 6 → R 6 | τ | −1 , γ 3 → −γ 3 | τ | −2 , κ a → γ a , γ a → −κ a , g ab → g ab . τ → − 1 τ . Or equivalently, G ab → G ab , G a3 → G a6 , G a6 → −G a3 , G 33 → G 66 , G 66 → G 33 , G 36 → −G 36 , G ab 4 → G ab 4 , G a3 4 → G a6 4 , G a6 4 → − G a3 4 , G 33 4 → G 33 4 | τ | 2 , G 66 4 → | τ | 2 G 66 4 , G 36 4 → − G 36 4 , (D.16) where 4 ≤ a, b ≤ 5, and τ ≡ γ 3 + i R 6 R 3 , | τ | 2 = (γ 3 ) 2 + R 2 6 R 2 3 . (D.17)</trash>
+
+
+				</figure>
+
+				<p>The transformation (D.16) leaves invariant the line element (D.5) when dθ 3 → dθ 6 , dθ 6 → −dθ 3 , dθ a → dθ a . The generators have the property det U 1 = 1, det U 2 = 1, det U ′ = 1, det M 3 = 1. Under M 3 , the metric parameters transform as</p>
+
+				<figure>
+					<trash>R 6 → R 6 , γ 3 → −γ 4 , γ a → γ a+1 , g ab → g a+1,b+1 , g a3 → −g a+1,3 , g 33 → g 44 , g ab → g a+1,b+1 , g a3 → −g a+1,4 , g 33 → g 44 , det g αβ = ˜ g, ˜ g → ˜ g. Or equivalently, G ab → G a+1,b+1 , G a3 → −G a+1,4 , G a6 → G a+1,6 , G 33 → G 44 , G 66 → G 66 , G 36 → −G 46 , G ab 4 → G a+1,b+1 5 , G a3 4 → − G a+1,4 5 , G a6 4 → G a+1,6 4 , G 33 4 → G 44 4 , G 36 4 → −G 46 4 , G 66 4 → G 66 4 , det G 4 = R 6 ˜ g, det G 4 → det G 4 , (D.18) where 4</trash>
+
+
+				</figure>
+
+				<p>≤ a, b ≤ 5, and a + 1 ≡ 3 for a = 5. We can check that M 3 , given in (D.18), takes Z 4d zero modes to its complex conjugate. Letting the M 3 transformation (D.18) act on (2.7), we find that the three subterms in the exponent</p>
+
+				<figure>
+					<trash>− π 2 R 2 R 6 √ ˜ g R 1 (β 2 2 + R 2 1 R 2 2 ) g aa ′ g bb ′ F ab F bb ′ + 4g aa ′ g b3 F ab F a ′ 3 + 2g aa ′ g 33 F a3 F a ′ 3 − 2g a3 g a ′ 3 F a3 F a ′ 3 , − π R 2 R 6 R 1 √ ˜ g ˜ Π α g αβ Π β , − πβ 2 R 2 R 6 R 1 √ ˜ g g αβ ǫ αγδ F γδ Π β (D.19) are separately invariant under (D.18) if we replace the integers F αβ ∈ Z 3 , ˜ Π α ∈ Z 3 by ˜ F ab → ˜ F a+1,b+1 , ˜ F a3 → − ˜ F a+1,4 , ˜ Π 3 → ˜ Π 4 , ˜ Π a → − ˜ Π a+1 , (D.20) However, acted by the M 3 with the field shift (D.20) the term 2πiγ α ˜ Π β F αβ → −2πiγ α ˜ Π β F αβ (D.21) changes sign. Thus we have M 3 : Z zero modes → Z * zero modes (D.22) U ′ acts on Z 4d zero modes</trash>
+
+
+				</figure>
+
+				<p>Next we show that under U ′ , Z 4d zero modes transforms to | τ | 2 Z 4d zero modes .</p>
+
+				<figure>
+					<trash>From (A.5) and (A.9), we have Z H zero modes = ( R 1 R 2 ) − 3 2 ˜ g 1 4 R 3 2 6 ˜ F ij ∈Z 6 exp{− π 2 R 6 ˜ g R 1 R 2 g ij g i ′ j ′ ˜ F ii ′ ˜ F jj ′ − iπβ 2 ǫ αβγ F 6α F βγ }, (D.23)</trash>
+
+					<figDesc>it will be easy to see how it transforms under the U ′ transformation. Under U ′ from (D.16), the coefficient transforms as</figDesc>
+					<trash>U ′ : ( R 1 R 2 ) − 3 2 ˜ g 1 4 R 3 2 6 → ( R 1 R 2 ) − 3 2 ˜ g 1 4 R 3 2 6 | τ | 2 , (D.24)</trash>
+
+
+				</figure>
+
+				<p>The Euclidean action for the zero mode computation is invariant under U ′ , as we show next by first summing i = {3, a, 6}, with 4 ≤ a ≤ 5.</p>
+
+				<figure>
+					<trash>− π 2 R 6 ˜ g R 1 R 2 g ij g i ′ j ′ ˜ F ii ′ ˜ F jj ′ = − πR 1 R 6 √ ˜ g 2R 2 G aa ′ 4 G bb ′ 4 F ab F a ′ b ′ + 4 G aa ′ 4 G b3 4 ˜ F ab F a ′ 3 + 4 G aa ′ 4 G b6 4 ˜ F ab F a6 + 2 G aa ′ 4 G 33 4 ˜ F a3 − 2 G a3 4 G a3 4 F a3 F a3 + 4 G aa ′ 4 G 36 4 ˜ F a3 F a ′ 6 − 4 G a6 4 G a3 4 ˜ F a3 F a6 + 4 G a3 4 G a6 4 ˜ F aa ′ f 36 + 2 G aa ′ 4 G 66 4 ˜ F a6 F a6 − 2 G a6 4 G a6 4 ˜ F a6 F a6 + 4 G a3 4 G 36 4 ˜ F a3 F 36 − 4 G a6 4 G 33 4 ˜ F a3 F 36 + 4 G a3 4 G 66 5 ˜ F a6 F 36 − 4 G a6 4 G 36 4 ˜ F a6 F 36 − 2 G 36 4 G 36 4 ˜ F 36 F 36 + 2 G 33 4 G 66 4 ˜ F 36 F 36 . (D.25)</trash>
+
+					<figDesc>Letting the U ′ transformation (D.16) act on (D.25), we see the first term of (D.25) changes</figDesc>
+					<trash>to − πR 1 √ g 2R 2 g ij g i ′ j ′ ˜ F ii ′ ˜ F jj ′ ′ = − πR 1 g 2R 2 G aa ′ 4 G bb ′ 4 ˜ F ab F a ′ b ′ + 4 G aa ′ 4 G b6 4 ˜ F ab F a3 − 4 G aa ′ 4 G b3 4 ˜ F ab F a ′ 6 + 2 | τ | 2 G aa ′ 4 G 33 4 ˜ F a3 F a ′ 3 − 2 G a6 4 G a ′ 6 4 ˜ F a3 F a ′ 3 − 4 G aa ′ 4 G 36 4 ˜ F a3 F a ′ 6 + 4 G a3 4 G a ′ 6 4 ˜ F a3 F a ′ 6 − 4 G α6 5 G α ′ 2 5 ˜ F aa ′ ˜ F 36 + 2| τ | 2 G aa ′ 4 G 66 4 F a6 F a ′ 6 − 2 G a6 4 G a ′ 3 4 ˜ F a6 F a ′ 6 − 4 G a6 4 G 36 4 ˜ F a3 F 36 + 4 | τ | 2 G a3 4 G 33 4 ˜ F a3 F 36 + 4| τ | 2 G a6 4 G 66 4 ˜ F a6 F 36 − 4 G a3 4 G 36 4 ˜ F a6 F 36 − 2 G 36 4 G 36 4 ˜ F 36 F 36 + 2 G 33 4 G 66 4 ˜ F 36 F 36 . (D.26)</trash>
+
+
+				</figure>
+
+				<p>The second term in the exponential of (D.23) is a topological term, and under the action, it transforms trivially as</p>
+
+				<figure>
+					<trash>iβ 2 ǫ αβγ F 6α F βγ ′ = 2iβ 2 F 63 F 45 − 2i F 64 F 35 + 2i F 65 F 34 ′ = 2iβ 2 F 63 F 45 − F 64 F 35 + F 65 F 34 (D.27)</trash>
+
+
+				</figure>
+
+				<p>If we replace the integers F 3a → F 6a and F a6 → − F a3 , the two subterms are left invariant.</p>
+
+				<figure>
+					<trash>˜ F ij ∈Z 6 e −2π R 1 √ g 4R 2 g ij g i ′ j ′ ˜ F ii ′ ˜ F jj ′ ′ +iπβ 2 ǫ αβγ F 6α F βγ = ˜ F ij ∈Z 6 e −2π R 1 √ g 4R 2 g ij g i ′ j ′ ˜ F ii ′ ˜ F jj ′ +iπβ 2 ǫ αβγ F 6α F βγ . (D.28) So we showed that under the U ′ transformation (D.16), Z 4d zero modes (R 3 | τ |, R 6 | τ | −1 , g ab , −γ 3 | τ | 2 , γ a , −κ a ) = | τ | 2 Z 4d zero modes (R 3 , R 6 , g ab , γ 3 , κ a , γ a ); (D.29) Also from (D.23), we can write (D.22) as M 3 : Z zero modes (R 1 , R 2 , β 2 , g αβ ) → Z zero modes (R 1 , R 2 , −β 2 , g αβ ). (D.30) and thus under the GL(4, Z) generator U 1 , Z 4d zero modes → | τ | 2 Z 4d zero modes * . (D.31)</trash>
+
+
+				</figure>
+
+				<p>The residual factor | τ | 2 is sometimes referred to as an SL(2, Z) anomaly of the zero mode partition function, because U ′ includes the τ → − 1 τ transformation. Finally we will show how this anomaly is canceled by the oscillator contribution.</p>
+
+				<p>Under U 3 , the metric parameters transform as</p>
+
+				<figure>
+					<trash>R 6 → R 6 , γ 3 → −γ 3 , γ a → γ a , g ab → g ab , g a3 → −g a,3 , g 33 → g 33 , g ab → g ab , g a3 → −g a,3 , g 33 → g 33 , det g αβ = ˜ g, ˜ g → ˜ g. Or equivalently, G ab → G a,b , G a3 → −G a,3 , G a6 → G a,6 , G 33 → G 33 , G 66 → G 66 , G 36 → −G 36 , G ab 4 → G a,b 4 , G a3 4 → − G a,3 4 , G a6 4 → G a,6 4 , G 33 4 → G 33 4 , G 36 4 → −G 36 4 , G 66 4 → G 66 4 , det G 4 = R 6 ˜ g, det G 4 → det G 4 , (D.32) where 4</trash>
+
+
+				</figure>
+
+				<p>≤ a, b ≤ 5 and G αβ is the 3d inverse. We can check that Z 4d zero modes becomes its complex conjugate under U 3 given in (D.32) as follows. Letting the U 3 transformation (D.32) act on (2.7), we find that the three subterms in the exponent</p>
+
+				<figure>
+					<trash>− π 2 R 2 R 6 √ ˜ g R 1 (β 2 2 + R 2 1 R 2 2 ) g aa ′ g bb ′ F ab F bb ′ + 4g aa ′ g b3 F ab F a ′ 3 + 2g aa ′ g 33 F a3 F a ′ 3 − 2g a3 g a ′ 3 F a3 F a ′ 3 , − π R 2 R 6 R 1 √ ˜ g ˜ Π α g αβ Π β , − πβ 2 R 2 R 6 R 1 √ ˜ g g αβ ǫ αγδ F γδ Π β (D.33) are separately invariant under (D.18), if we replace the the integers F αβ ∈ Z 3 , ˜ Π α ∈ Z 3 by F ab → F ab , ˜ F a3 → − ˜ F a,3 , ˜ Π 3 → ˜ Π 3 , ˜ Π a → − ˜ Π a , (D.34) However the subterm 2πiγ α ˜ Π β ˜ F αβ → −2πiγ α ˜ Π β ˜ F αβ (D.35)</trash>
+
+
+				</figure>
+
+				<p>acted by U 3 with the field shift in (D.34). Therefore the zero mode partition function goes to its complex conjugate under U 3 .</p>
+
+				<p>Appropriate generators for SL(4, Z)</p>
+
+				<p>We claim that U 2 1 , U 2 and U 1 U 3 generate the group SL(4, Z) since GL(n, Z) is generated by U 1 , U 2 and U 3 or alternatively R 1 = U 1 , R 2 = U −1 3 U 2 and R 3 = U 3 , i.e., any element in GL(n, Z) U can be written as</p>
+
+				<figure>
+					<trash>U = R 1 n 1 R 2 n 2 R 3 n 3 R 1 n 4 R 2 n 5 R 3 n 6 .... (D.36)</trash>
+
+
+				</figure>
+
+				<p>It is understood that SL(n, Z) is generated by even numbers of R 1 , R 2 and R 3 . Thus, the possible set of group generators for SL(n, Z) is</p>
+
+				<figure>
+					<trash>R 2 1 , R 2 2 , R 2 3 , R 1 R 2 , R 2 R 3 , R 3 R 1 , R 2 R 1 , R 3 R 2 , R 1 R 3 (D.37) with the properties that R 2 2 = 1 and R 2 3 = 1. A smaller set of the SL(4, Z) generators is R 2 1 , R 1 R 3 , R 2 R 3 , (D.38)</trash>
+
+					<figDesc>since other generators in (D.37) can be expressed with the generators in (D.40) through the following relations</figDesc>
+					<trash>R 1 R 2 = R 1 R 3 (R 2 R 3 ) −1 , R 2 R 1 = R 2 1 (R 1 R 2 ) −1 R 3 R 2 = (R 2 R 3 ) −1 , R 3 R 1 = (R 1 R 3 ) −1 R 2 1 . (D.39) Notice that {R 2 1 , R 1 R 3 , R 2 R 3 } = {U 2 1 , U 1 U 3 , U 2 }. (D.40)</trash>
+
+
+				</figure>
+
+				<p>Since we have tested the invariance of the zero mode partition function under U 2 , we only need to check its invariance under U 1 U 3 and U 2 1 . For U 1 U 3 , as previous, we separate U 1 into U ′ and M 3 . Thus U 1 U 3 can be written as</p>
+
+				<figure>
+					<trash>U 1 U 3 = U ′ M 3 U 3 = U ′ (M 3 U 3 ) (D.41)</trash>
+
+					<figDesc>We showed that under U ′ , the zero mode partition function transforms as</figDesc>
+					<trash>Z 4d zero modes (R 3 | τ |, R 6 | τ | −1 , g ab , −γ 3 | τ | 2 , γ a , −κ a ) = | τ | 2 Z 4d zero modes (R 3 , R 6 , g ab , γ 3 , κ a , γ a ). (D.42)</trash>
+
+
+				</figure>
+
+				<p>Since both M 3 and U 3 take Z 4d zero modes to its complex conjugate, M 3 U 3 is an invariance of the zero mode partition function. Thus, we have</p>
+
+				<figure>
+					<trash>U 1 U 3 : Z 4d zero modes → | τ | 2 Z 4d zero modes (D.43) U 1 2 acts on Z 4d zero modes Also as we have shown before U 1 : Z 4d zero modes → | τ | 2 Z 4d * zero modes (D.44) Thus, U 1 2 : Z 4d zero modes → Z 4d zero modes (D.45) To summarize, we have U 2 : Z 4d zero modes → Z 4d zero modes ; U 1 U 3 : Z 4d zero modes → | τ | 2 Z 4d zero modes ; U 1 2 : Z 4d zero modes → Z 4d zero modes . (D.46) One can easily derive similar transformation property for Z 6d zero modes using (2.9) U 2 : Z 6d zero modes → Z 6d zero modes ; U 1 U 3 : Z 6d zero modes → | τ | 3 Z 6d zero modes ; U 1 2 : Z 6d zero modes → Z 6d zero modes . (D.47) U ′ acts on Z 4d osc</trash>
+
+
+				</figure>
+
+				<p>To derive how U ′ acts on Z 4d osc , we first separate the product on n = (n, n a ) = 0 into a product on (all n, but n α = (0, 0)) and on (n = 0, n a = (0, 0)). Then using the regularized vacuum energy (C.1) expressed as sum over zero and non-zero transverse momenta p ⊥ = n a in (C.2), we find that (4.32) becomes</p>
+
+				<figure>
+					<trash>Z 4d,M axwell = Z 4d zero modes · e πR 6 6R 3 n =0 1 1 − e −2π R 6 R 3 |n|−2πiγ 3 n 2 · na∈Z 2 =(0,0) e −2πR 6 &lt;H&gt;p ⊥ n 3 ∈Z 1 1 − e −2πR 6 √ g αβ nαn β −2πiγ α nα 2 . (D.48) As in [12]</trash>
+
+
+				</figure>
+
+				<p>we observe the middle expression above can be written in terms of the Dedekind eta function η( τ ) ≡ e</p>
+
+				<figure>
+					<trash>πi τ 12 n∈Z =0 (1 − e 2πi τ ), with τ = γ 3 + i R 6 R 3 , e πR 6 6R 3 n =0 1 1 − e −2π R 6 R 3 |n|−2πiγ 3 n 2 = (η( τ )¯ η( ¯ τ )) −2 . (D.49) This transforms under U ′ in (D.16) as (η(− τ −1 )¯ η(− ¯ τ −1 )) −2 = | τ | −2 (η( τ )¯ η( ¯ τ )) −2 , (D.50) where η(− τ −1 ) = (i τ ) 1</trash>
+
+					<figDesc>2 η( τ ). In this way the anomaly of the zero modes in (D.42) is canceled by (D.50). Lastly we demonstrate the third expression in (D.48) is invariant under U ′ ,</figDesc>
+					<trash>na∈Z 2 =(0,0) e −2πR 6 &lt;H&gt; ⊥ n 3 ∈Z 1 1 − e −2πR 6 √ g αβ nαn β −2πiγ α nα 2 = P.I (D.51)</trash>
+
+
+				</figure>
+
+				<p>where P I is the modular invariant 2d path integral of two massive scalar bosons of mass g ab n a n b , coupled to a worldsheet gauge field following [12]. We extract from (4.31),</p>
+
+				<figure>
+					<trash>Z 4d osc = (e −πR 6 n∈Z 3 √ g αβ nαn β n∈Z 3 = 0 1 1 − e −2πR 6 √ g αβ nαn β − 2πiγ α n α 2 (D.52) a</trash>
+
+
+				</figure>
+
+				<p>2d path integral of the free bosons coupling to the gauge field for fixed mass g αβ n α n β ,</p>
+
+				<figure>
+					<trash>where n α = 0, (P I) 1 2 ≡ e −πR 6 n 3 ∈Z √ g αβ nαn β n 3 ∈Z 1 1 − e −2πR 6 √ g αβ nαn β +2πiγ α nα = s∈Z e − ρE 2 1 − e −ρE+2πi(γ 3 s+γ a na) where s ≡ n 3 , E ≡ g αβ n α n β = s∈Z 1 √ 2 cosh ρE − cos 2π(γ 3 s + γ a n a ) for n a → −n a = e − 1 2 s∈Z ln [cosh ρE−cos 2π(γ 3 s+γ a na)]+ln 2 ≡ e − 1 2 s∈Z ν(E) , (D.53) where s∈Z ν(E) ≡ s∈Z ln [cosh ρE − cos 2π(γ 3 s + γ a n a )] + ln 2 = s∈Z r∈Z ln [ 4π 2 ρ 2 (r + γ 3 s + γ a n a ) 2 + E 2 ]. (D.54) We can show directly that (D.54) is invariant under U ′ , since E 2 = g αβ n α n β = g 33 s 2 + 2g 3a sn a + g ab n a n b = 1 R 2 3 (s + κ a ) 2 + g ab n a n b , 4π 2 ρ 2 (r + γ 3 s + γ a n a ) 2 = 1 R 2 6 (r + γ a n a + γ 3 (s + κ a n a )) 2 , (D.55) then 4π 2 ρ 2 (r + γ 3 s + γ a n a ) 2 + E 2 = 1 R 2 6 (s + κ a n a ) 2 | τ | 2 + 1 R 2 6 (r + γ a n a ) 2 + 2γ 3 R 2 6 (r + γ a n a )(s + κ a n a ) + g ab n a n b . (D.56)</trash>
+
+					<figDesc>So we see the transformation U ′ given in (D.16) leaves (D.56) invariant if s → r and r → −s. Therefore (D.54) is invariant under U ′ , so that (P I)</figDesc>
+					<trash>1 2 given in (D.53) is invariant under U ′ . M 3 acts on Z 4d osc</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>M 3 leaves the Z 4d osc invariant as can be seen from (D.48) by shifting the integer n α as</figDesc>
+					<trash>n 3 → −n 4 , n a → n a+1 . (D.57) So, under U 1 = U ′ M 3 , Z 4d osc → | τ | −2 Z 4d osc . (D.58)</trash>
+
+
+				</figure>
+
+				<p>It is easy to show to check U 2 is an invariance of the oscillator partition function. U 3 acts on Z 4d osc M 3 leaves the Z 4d osc invariant as can be seen from (D.48) by shifting the integer n α as n 3 → −n 3 , n a → n a . (D.59) Thus, we have the oscillator partition function transforms under the SL</p>
+
+				<figure>
+					<trash>(4, Z) generators {U 2 1 , U 1 U 3 , U 2 } as U 2 : Z 4d osc → Z 4d osc ; U 1 U 3 : Z 4d osc → | τ | −2 Z 4d osc ; U 1 2 : Z 4d osc → Z 4d osc (D.60) together with (D.46</trash>
+
+
+				</figure>
+
+				<p>) we have established invariance under (D.40), and thus proved the partition function for the 4d Maxwell theory on T 4 , given alternatively by (4.32) or (D.48), is invariant under SL(4, Z), the mapping class group of T 4 .</p>
+
+				<p>U ′ acts on Z 6d osc For the 6d chiral theory on T 2 × T 4 , the regularized vacuum energy from (C.3),</p>
+
+				<figure>
+					<trash>&lt; H &gt; 6d = −32π 2 G 5 n = 0 1 (2π) 6 g αβ n α n β + n 2 1 R 2 1 + ( 1 R 2 2 + β 2 2 R 2 1 )n 2 2 + 2 β 2 R 2 1 n 2 n 1 (D.61) can be decomposed similarly to (C.2), &lt; H &gt; 6d = p ⊥ ∈Z 4 &lt; H &gt; 6d p ⊥ = &lt; H &gt; 6d p ⊥ =0 + p ⊥ ∈Z 3 =0 &lt; H &gt; 6d p ⊥ , (D.62) where &lt; H &gt; 6d p ⊥ = −32π 2 G 5 1 (2π) 4 d 4 y ⊥ e −ip ⊥ ·y ⊥ n 3 ∈Z =0 1 |2πn 3 + y ⊥ | 6 , (D.63) with denominator |2πn 3 + y ⊥ | 2 = G 33 (2πn 3 ) 2 + 2(2πn 3 )G 3k y k ⊥ + G kk ′ y k ⊥ y k ′ ⊥ , &lt; H &gt; 6d p ⊥ =0 = − 1 12R 3 , &lt; H &gt; 6d p ⊥ =0 = |p ⊥ | 2 R 3 ∞ n=1 cos(p a κ a 2πn) K 2 (2πnR 3 |p ⊥ |) − K 0 (2πnR 3 |p ⊥ |) = −π −1 |p ⊥ |R 3 ∞ n=1 cos(p a κ a 2πn) K 1 (2πnR 3 |p ⊥ |) n , (D.64) where p ⊥ = (p 1 , p 2 , p a ) = n ⊥ = (n 1 , n 2 , n a ) = (n 1 , n 2 , n 4 , n 5 ) ∈ Z 4 , |p ⊥ | = (n 1 ) 2 R 2 1 + 2 β 2 R 2 1 + ( 1 R 2 2 + β 2 2 R 2 1 )n 2 2 + g ab n a n b . The U ′ invariance of (4.32) follows when we separate the product on n ∈ Z 5 = 0 into a product on (n 3 = 0, n ⊥ ≡ (n 1 , n 2 , n 4 , n 5 ) = (0, 0, 0, 0),) and on (all n 3 , but n ⊥ = (n 1 , n 2 , n 4 , n 5 ) = (0, 0, 0, 0)). Then Z 6d,chiral = Z 6d zero modes · e πR 6 6R 3 n 3 ∈Z =0 1 1 − e 2πi (γ 3 n 3 +i R 6 R 3 |n 3 | ) 3 · n ⊥ ∈Z 4 =(0,0,0,0) e −2πR 6 &lt;H&gt; 6d p ⊥ n 3 ∈Z 1 1 − e −2πR 6 (n 1 ) 2 R 2 1 +2 β 2 R 2 1 +( 1 R 2 2 + β 2 2 R 2 1 )n 2 2 + g ab nan b +i2πγ a na 3 = Z 6d zero modes · η( τ ) ¯ η( ¯ τ ) −3 · (n 1 ,n 2 ,n 4 ,n 5 )∈Z 4 =(0,0,0,0) e −2πR 6 &lt;H&gt; 6d p ⊥ n 3 ∈Z 1 1 − e −2πR 6 g ab nan b + n 2 1 R 2 1 +2 β 2 R 2 1 +( 1 R 2 2 + β 2 2 R 2 1 )n 2 2 +i2πγ a na 3 , (D.65) where τ = γ 3 + i R 6 R 3 . So from (D.47), U ′ leaves invariant Z 6d zero modes · η( τ ) ¯ η( ¯ τ ) −3 . (D.66) The part of the 6d partition function (D.65) at fixed n ⊥ = 0, e −2πR 6 &lt;H&gt; n ⊥ =0 n 3 ∈Z 1 1 − e −2πR 6 g ab nan b + n 2 1 R 2 1 +2 β 2 R 2 1 +( 1 R 2 2 + β 2 2 R 2 1 )n 2 2 +i2πγ a na (D.67)</trash>
+
+
+				</figure>
+
+				<p>is a partition function of a 2d massive boson on a twisted two-torus with SL(2, Z) symmetry with U ′ transformation given in (D.16), as follows [12]. Each term with fixed n ⊥ = 0 given in (D.67) is the square root of the partition function on T 2 (in the directions 3,6) of a massive complex scalar with m 2 ≡ G 11 n 2 1 + G 22 n 2 2 + 2G 12 n 1 n 2 + g ab n a n b , 4 ≤ a, b ≤ 5, that couples to a constant gauge field A µ ≡ iG µi n i with µ, ν = 3, 6; i, j = 1, 2, 4, 5. The metric on T 2 is</p>
+
+				<figure>
+					<trash>h 33 = R 2 3 , h 66 = R 2 6 + (γ 3 ) 2 R 2 3 , h 36 = −γ 3 R 2 3 . Its inverse is h 33 = 1 R 2 3 + (γ 3 ) 2 R 2 6 , h 66 = 1 R 2 6 and h 36 = γ 3 R 2 6</trash>
+
+
+				</figure>
+
+				<p>. The manifestly SL(2, Z) invariant path integral on the two-torus is</p>
+
+				<figure>
+					<trash>P.I. = dφ d ¯ φ e − 2π 0 dθ 3 2π 0 dθ 6 h µν (∂µ+Aµ) ¯ φ(∂ν −Aν )φ+m 2 ¯ φφ = d ¯ φ dφe − 2π 0 dθ 3 2π 0 dθ 6 ¯ φ(−( 1 R 2 3 + (γ 3 ) 2 R 2 6 )∂ 2 3 −( 1 R 6 ) 2 ∂ 2 6 −2 γ 3 R 2 6 ∂ 3 ∂ 6 +2A 3 ∂ 3 +2A 6 ∂ 6 +G 11 n 1 n 1 +G 22 n 2 n 2 +2G 12 n 1 n 2 +G ab nan b )φ = det [−( 1 R 2 3 + ( γ 3 R 6 ) 2 )∂ 2 3 − ( 1 R 6 ) 2 ∂ 2 6 − 2γ 3 ( 1 R 6 ) 2 ∂ 3 ∂ 6 + G 11 n 1 n 1 + G 22 n 2 n 2 + 2G 12 n 1 n 2 + G ab n a n b + 2iG 3a n a ∂ 3 + 2iG 6a n a ∂ 6 ] −1 = e −trln −( 1 R 2 3 +( γ 3 R 6 ) 2 )∂ 2 3 −( 1 R 6 ) 2 ∂ 2 6 −2γ 3 ( 1 R 6 ) 2 ∂ 3 ∂ 6 +G 11 n 1 n 1 +G 22 n 2 n 2 +2G 12 n 1 n 2 +G ab nan b +2iG 3a na∂ 3 +2iG 6a na∂ 6 = e − s∈Z r∈Z ln( 4π 2 ρ 2 r 2 +( 1 R 2 3 +( γ 3 R 6 ) 2 )s 2 +2γ 3 ( 1 R 6 ) 2 rs+G 11 n 1 n 1 +G 22 n 2 n 2 +2G 12 n 1 n 2 +G ab nan b +2G 3a na s+2G 6a na r) = e − s∈Z ν(E) (D.68) where from (2.3), G 11 = 1 R 2 1 , G 22 = g 22 + β 2 2 R 2 1 , G 12 = β 2 R 2 1 , G ab = g ab + γ a γ b R 6 2 , G 3a = g 3a + γ 3 γ a R 2 6 , G 6a = γ a R 2 6 , G 63 = γ 3 R 2 6 and ∂ 3 φ = −isφ; ∂ 6 φ = −irφ, and n 3 ≡ s. The sum on r is ν(E) = r∈Z ln 4π 2 ρ 2 (r + γ 3 s + γ a n a ) 2 + E 2 , (D.69) with E 2 ≡ G lm 5 n l n m = G 11 5 n 1 n 1 + G 22 5 n 2 n 2 + G 21 5 n 2 n 1 + G ab 5 n a n b + 2G a3 5 n a n 3 + G 33 5 n 3 n 3 , and G 11 5 = 1 R 2 1 , G 12 = β 2 R 2 1 , G 22 = β 2 R 2 1 , G 1α 5 = G 2α 5 = 0, G 3a 5 = g 3a = κ a R 2 3 , G 33 5 = g 33 = 1 R 2 3 , G ab 5 = g ab = g ab + κ a κ b R 2 3 . We evaluate the divergent sum ν(E) on r by ∂ν(E) ∂E = r 2E 4π 2 ρ 2 (r + γ 3 s + γ a n a ) 2 + E 2 = ∂ E ln cosh ρE − cos 2π γ 3 s + γ a n a , (D.70) using the sum n∈Z 2y (2πn+z) 2 +y 2 = sinh y cosh y−cos z . Then integrating (D.70), we choose the integration constant to maintain modular invariance of (D.68), ν(E) = ln cosh ρE − cos 2π γ 3 s + γ a n a + ln 2. (D.71) It follows for n 3 ≡ s we have that (D.68) is (P.I.) 1 2 = s∈Z 1 √ 2 cosh ρE − cos 2π(γ 3 s + γ a n a ) = s∈Z e − ρE 2 1 − e −ρE+2πi(γ 3 s+γ a na) = e −πR 6 s∈Z √ G lm 5 n l nm s∈Z 1 1 − e −2πR 6 √ G lm 5 n l nm+2πiγ 3 s+2πiγ a na = e −2πR 6 &lt;H&gt; n⊥ n 3 ∈Z 1 1 − e −2πR 6 √ G lm 5 n l nm+2πiγ 3 n 3 +2πiγ a na , (D.72) which is (D.67</trash>
+
+
+				</figure>
+
+				<p>). Its invariance under U ′ follows since (D.16) is an SL(2, Z) transformation on T 2 combined with a gauge transformation on the 2d gauge field, A µ ≡ h µν in i G νi where µ, ν = 3, 6, A µ → A µ + ∂ µ λ, and φ → e iλ φ, ¯ φ → e −iλ ¯</p>
+
+				<figure>
+					<trash>φ, λ(θ 3 , θ 6 ) = θ 3 i( γ a − κ a ) − θ 6 i( γ a + κ a ) (D.73) since A 3 = iκ a n a , A 6 = i γ a n a . Hence (D.72) and thus (D.67) are invariant under U ′ . One can further show that under U ′ , Z 6d zero modes (− 1 τ ) = | τ | 3 Z 6d zero modes ( τ ) (D.74)</trash>
+
+
+				</figure>
+
+				<p>Using the same approach proving the SL(4, Z) symmetry of the 4d partition function, we can show the 6d oscillator partition function for the chiral boson given by (</p>
+
+				<figure>
+					<trash>4.32) or equivalently (D.65) transform as U 2 : Z 6d osc → Z 6d osc ; U 1 U 3 : Z 6d osc → | τ | −3 Z 6d osc ; U 1 2 : Z 6d osc → Z 6d osc (D.75) Together with (D.47), the 6d parition function is SL(4, Z) invariant.</trash>
+
+
+				</figure>
+
+			</div>
+
+			<note place="foot">* E-mail: ldolan@physics.unc.edu † E-mail: sylmf@email.unc.edu</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Magnetic Monopoles as Gauge Particles?</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Montonen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">I</forename>
+				<surname>Olive</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">72</biblScope>
+			<biblScope unit="page">117</biblScope>
+			<date type="published" when="1977" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Nuyts and D. I. Olive, Gauge Theories and Magnetic Charge</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Goddard</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">125</biblScope>
+			<biblScope unit="page">1</biblScope>
+			<date type="published" when="1977" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Supersymmetry Algebras That Include Topological Charges Phys</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Witten</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">I</forename>
+				<surname>Olive</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lett</title>
+		<imprint>
+			<biblScope unit="volume">78</biblScope>
+			<biblScope unit="page">97</biblScope>
+			<date type="published" when="1978" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">A Strong Coupling Test of S Duality</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Vafa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Witten</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">4319408074</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="hep" to="th" />
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Localization of Gauge Theory on a Four-Sphere and Supersymmetric Wilson Loops</title>
+		<author>
+			<persName>
+				<forename type="first">Vasily</forename>
+				<surname>Pestun</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">313</biblScope>
+			<biblScope unit="page">71</biblScope>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title level="m" type="main">Geometric Langlands from Six Dimensions, [arxiv:0905.2720 [hep-th]</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Witten</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Some Comments On String Dynamics Future Per- spectives in String Theory* 501-523, [arxiv:hep-th/9507121</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Witten</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">*Los Angeles Witten, Conformal Field Theory in Four and Six Dimensions</title>
+		<imprint>
+			<date type="published" when="1995" />
+			<biblScope unit="page">07120157</biblScope>
+		</imprint>
+	</monogr>
+	<note>math. .RT]]</note>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Global Aspects of Electric-Magnetic Duality</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Verlinde</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nuclear Physics B</title>
+		<imprint>
+			<biblScope unit="volume">455</biblScope>
+			<biblScope unit="issue">211</biblScope>
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Five-brane Effective Action in M theory</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Witten</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J.Geom.Phys</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="issue">103</biblScope>
+			<biblScope unit="page" from="hep" to="th" />
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">B</forename>
+				<surname>Green</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">H</forename>
+				<surname>Schwarz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Witten</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Superstring</forename>
+				<surname>Theory</surname>
+			</persName>
+		</author>
+		<editor>Cambridge, U.K</editor>
+		<imprint>
+			<date type="published" when="1987" />
+			<publisher>Cambridge University Press</publisher>
+			<biblScope unit="page">40</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">A Modular Invariant Partition Function for the Five-brane [arxiv:hep-th/9806016]; The Ramond-Ramond Self- dual Five Form&apos;s Partition Function on the Ten Torus, Mod</title>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Dolan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">R</forename>
+				<surname>Nappi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B Phys. Lett. A</title>
+		<imprint>
+			<biblScope unit="volume">5300005074</biblScope>
+			<biblScope unit="issue">15</biblScope>
+			<biblScope unit="page">1261</biblScope>
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Abelian Duality And Abelian Wilson Loops</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Zucchini</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">242</biblScope>
+			<biblScope unit="page">473</biblScope>
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title level="m" type="main">On S-duality In Abelian Gauge Theory Selecta Math</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Witten</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1995" />
+			<biblScope unit="page">383</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<title level="m" type="main">Partition Functions for Maxwell Theory on the Five-torus and for the Fivebrane</title>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Dolan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Sun</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page">011</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Henningson The Quantum Hilbert Space of a Chiral Two-Form in d = 5 + 1 Dimen- sions</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">0203</biblScope>
+			<biblScope unit="page">021</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Mod. Phys. A</title>
+		<editor>Kikuchi Poincare Invariance in Temporal Gauge Canonical Quantization and Theta- Vacua</editor>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page">2741</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">A M</forename>
+				<surname>Dirac</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Lectures on Quantum Mechanics</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1964" />
+			<biblScope unit="page">87</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<monogr>
+		<title level="m" type="main">Lectures on Quantum Field Theory</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Das</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2008" />
+			<publisher>World Scientific</publisher>
+			<pubPlace>Hackensack, USA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<title level="m" type="main">Handbook of Mathematical Functions</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Abramowitz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Stegun</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1972" />
+			<publisher>Dover Publications</publisher>
+			<biblScope unit="page">378</biblScope>
+			<pubPlace>New York</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Four-dimensional Wall-Crossing via Three-dimensional Field Theory</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">D</forename>
+				<surname>Gaiotto</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">W</forename>
+				<surname>Gaiotto</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Moore</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Neitzke</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">1208</biblScope>
+			<biblScope unit="issue">299</biblScope>
+			<biblScope unit="page" from="034" to="163" />
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+	<note>hep. -th]]</note>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Liouville Correlation Func- tions from Four-dimensional Gauge Theories</title>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">F</forename>
+				<surname>Alday</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Gaiotto</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Tachikawa</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lett. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">91</biblScope>
+			<biblScope unit="page">167</biblScope>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Reading Between the Lines of Four- dimensional Gauge Theories</title>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Aharony</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Seiberg</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Tachikawa</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">1308</biblScope>
+			<biblScope unit="issue">115</biblScope>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">On the 6d Origin of Discrete Additional Data of 4d Gauge Theories Fivebranes and 4-Manifolds, [arXiv:1306</title>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Tachikawa</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">JHEP 1405</title>
+		<editor>A. Gadde, S. Gukov, and P. Putrov</editor>
+		<imprint>
+			<date type="published" when="2014" />
+			<biblScope unit="page">0204320</biblScope>
+		</imprint>
+	</monogr>
+	<note>hep. -th]]</note>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Gadde</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Gukov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Putrov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Trialities, JHEP 1403</title>
+		<imprint>
+			<date type="published" when="2014" />
+			<biblScope unit="page">076</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Etesi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Nagy</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S-Duality In Abelian Gauge</forename>
+				<surname>Theory Revisited</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Geom</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys</title>
+		<imprint>
+			<biblScope unit="volume">61</biblScope>
+			<biblScope unit="issue">693</biblScope>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<title level="m" type="main">Generators and Relations for Discrete Groups</title>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Coxeter</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Moser</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1980" />
+			<publisher>Springer Verlag</publisher>
+			<biblScope unit="page">85</biblScope>
+			<pubPlace>New York</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

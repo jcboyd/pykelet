@@ -1,0 +1,1631 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Derivation of transport equations for a strongly interacting Lagrangian in powers of ¯ h and 1/N</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">C</forename>
+							</persName>
+							<affiliation>
+								<orgName type="department">Institut fürTheoretischePhysik</orgName>
+								<address>
+									<addrLine>Philosophenweg19</addrLine>
+									<postCode>D-69120</postCode>
+									<settlement>Heidelberg</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">S</forename>
+								<forename type="middle">P</forename>
+								<surname>Klevansky</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Institut fürTheoretischePhysik</orgName>
+								<address>
+									<addrLine>Philosophenweg19</addrLine>
+									<postCode>D-69120</postCode>
+									<settlement>Heidelberg</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">A</forename>
+								<surname>Ogura</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Institut fürTheoretischePhysik</orgName>
+								<address>
+									<addrLine>Philosophenweg19</addrLine>
+									<postCode>D-69120</postCode>
+									<settlement>Heidelberg</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">J</forename>
+								<surname>Hüfner</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Institut fürTheoretischePhysik</orgName>
+								<address>
+									<addrLine>Philosophenweg19</addrLine>
+									<postCode>D-69120</postCode>
+									<settlement>Heidelberg</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Derivation of transport equations for a strongly interacting Lagrangian in powers of ¯ h and 1/N</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<note>arXiv:hep-ph/9708263v1 6 Aug 1997</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>Transport theory for an interacting fermionic system is reviewed and applied to the chiral Lagrangian of the Nambu–Jona-Lasinio model. Two expansions must be applied: an expansion in the inverse number of colors, 1/N c , due to the nature of the strong coupling theory, and a semiclassical expansion, in powers of ¯ h. The quasiparticle approximation is implemented at an early stage, and spin effects are omitted.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+				<p>automatically fulfilled by the quasiparticle ansatz. The expressions for the self-energy to order O((1/N c )) lead to the collision term. Here one sees explicitly that particle-antiparticle creation and annihilation processes are suppressed that would otherwise be present, should an off-shell energy spectral function be admitted. A clear identification of the s, t and u channel scattering processes in connection with the self-energy graphs is made and the origin of the mixed terms is made evident. Finally, after ordering according to powers in ¯ h, a Boltzmannlike form for the collision integral is obtained.</p>
+
+			<div>
+				<head>I. INTRODUCTION</head>
+
+				<p>The description of physical systems that are out of thermal and chemical equilibrium has its origins in the early work of Boltzmann in 1872 which describes the development of a system via an equation for the single particle distribution function . The formal derivation of non-relativistic transport equations from a specific field theory can be traced back to the work of Kadanoff and Baym [1], but which can be succinctly stated in a closed time path (CTP) formalism that is independently due to Schwinger and Keldysh [2] 1 . To date, this formalism has been applied to many non-relativistic problems, but also to some in its relativistic generalization.</p>
+
+				<p>There are several excellent books and reviews available [4–7], which elucidate the techniques, both from an operator or path integral point of view, to which we refer the reader.</p>
+
+				<p>Recently there has been an additional surge of interest in non-equilibrium formulations of field theory from the nuclear physics community, as a need exists for describing heavy-ion collisions within such a framework. A seminal article on this topic is that of Mrówczy´ski and Heinz [8], who, independently of Schönhofen et al. [9], have derived transport equations for the Walecka model. The derivation of such transport equations is in fact more general than appears on first sight, and the basic equations of motion for the Green functions, as they occur in Ref. [8] are applicable to any field theory. The major difficulty in the fermionic sector lies in the fact that (a) there are in general 16 × 2 equations to be solved, and (b) should one in any event introduce a simplifying assumption such as the quasiparticle approximation, one has to perform a complicated evaluation of the self-energy that goes beyond the mean field approximation, if one wishes to describe interesting physics. While this has often been done (see for example, Ref. [9,10]), it is often unclear how the final collision integral is related to scattering diagrams in a strict Feynman sense, although one knows heuristically that the Boltzmann equation must emerge from a semi-classical approximation.</p>
+
+				<p>The purpose of this paper is twofold. On the one hand, we wish to make clear 1 Some work that already introduced the necessary concepts by Bakshi and Mahanthappa was already published in Ref. [3] how the collision term in a specific model is related to the Boltzmann equation via Feynman (and not heuristic) diagrams in evaluating the scattering cross section that appears in this expression, and also to explicitly demonstrate the limits of the quasiparticle assumption in that it supresses vacuum fluctuations and particle production and annihilation processes that would be present if the on-shell condition were relaxed. Although the calculation is performed for a specific model, its generality is evident. A transport calculation for QCD, or any other theory involving relativistic fermions, for that matter, should also display the structure given in this paper 2 Thus this calculation gives a working guide for the general construction of the collision term.</p>
+
+				<p>The second purpose of this manuscript is to develop the transport theory for a fermionic chiral Lagrangian, in our case, the minimal version of the</p>
+
+				<p>Lasinio (NJL) model [12,13]. This specific choice is motivated by the following physical considerations. Lattice simulations of QCD, which are equilibrium studies of this field theory, show a chiral phase transition at a fixed value of the temperature [14], a feature which can be simply modelled by the NJL Lagrangian, see for example [15]. Unfortunately, due to the difficulties inherent in QCD itself, there appears to be no means of observing such a phase transition in an equilibrium system and extract, for example, critical exponents. Rather, the experimental search for clues to a phase transition that has been conceived, is to proceed via heavy ion collisions, in which both high temperatures and densities are to be reached. Much effort has been expended in this direction and will continue to be so during the early course of the next century, particularly at RHIC and CERN. In addition, the simple equilibrium picture of the static lattice simulations is inadequate for a complete description of such heavy ion experiments. We note that, from the theoretical side, there is at present no single conclusive observable that might indicate the occurrence of the chiral phase transition, given that one is dealing with a non-equilibrium system 3 .</p>
+
+				<p>complexity of the manipulations tremendously. They also correspond to what is at present possible in numerical calculations. (iii) Noting that the NJL model is a strong interaction theory, one requires a non-perturbative expansion of the selfenergies in the inverse number of colors 1/N c [18,19]. (iv) In addition, transport equations are usually made tractable by introducing a derivative expansion. We take the classical limit of the transport equation, classifying all the terms in powers of ¯ h. Note that this only partly corresponds to the derivative expansion that is usually made. Thus there are two relevant expansions here, which are to be overlaid. We treat this double expansion with great care, and explicitly display all powers of ¯ h explicitly. It is essential at each stage of the expansion, that in addition to the usual constraint of energy conservation, chiral symmetry is also preserved. To this end, (i) the 1/N c expansion must be consistently applied and (ii) it is important to see that the semiclassical expansion does not destroy the symmetry properties. This has been rigorously proven for the lowest order terms in 1/N c .</p>
+
+				<p>To start with, we examine the terms of O((1/N c ) 0 ) in the expansion. This corresponds to taking the Hartree term only. Such a calculation is usually performed self-consistently and this is our approach here also. We then derive the transport and constraint equations to O((1/N c ) 0 ), and this is done semi-classically, where only the leading terms according to powers of ¯ h are retained. Note that the aspect of chiral symmetry enters into these equations at this point in the property of the subsidiary equation, the gap equation, which must be solved concomitantly with the transport and constraint equations.</p>
+
+				<p>We next move to terms of order O((1/N c ) 1 ) that give rise to collisions. The lowest of these terms contains two interaction lines. According to our philosophy of working in a 1/N c expansion, the self-consistently evaluated Hartree Green functions must now be employed in this evaluation. In this approximation, we again derive the transport and constraint equations, and again use ¯ h ordering to decide to what level terms in these equations should be accepted. In doing so, we are able to demonstrate explicitly, in a fully relativistic fashion, that the Boltzmann-like collision term is recovered, containing as heuristically expected, matrix elements for the elastic scattering processes, qq ′ → qq ′ and q ¯ q ′ → q ¯ q ′ , here of course only in the Born approximation. In an exact sense, we have rewritten the collision term in terms of scattering cross-sections with well defined Feynman graphs, and we have illustrated explicitly which self-energy graphs are required to obtain our result. In doing this, we have generalized the non-relativistic treatment of Kadanoff and Baym [1]. Several other authors have examined the collision term, see for example Refs. [9,10]. To our knowledge, however, this is the first paper that links the cross-sections that occur in the Boltzmann-like equation with Feynman graphs for the scattering processes.</p>
+
+				<p>There is, however, a major difference that arises here. By direct calculation, one sees explicitly that, even at this level, terms which describe the three body creation and annihilation processes, such as q ↔ (q ¯ q)q as well as vacuum fluctuations, are present, but are suppressed by the on-shell requirement of the quasiparticle approximation . Relaxing this condition would lead automatically to particle production / destruction.</p>
+
+				<p>The above calculations have been carried out, in this first exploratory article, by considering only one term in the 1/N c expansion. Clearly the full set is required that would completely include the mesonic degrees of freedom. This generalization to include the complete mesonic sector is however in itself a complex problem, which builds on the concepts and ideas presented here. Again, in this context, care must be taken in the ¯ h expansion, to see that the properties of chiral symmetry remain intact.</p>
+
+				<p>Using these methods, it should become possible to construct a consistent theory of quarks and mesons in which the collision term contains inter alia the hadronization processes q ¯ q ′ → MM ′ in addition to the usual elastic scattering q ¯ q ′ → q ¯ q ′ and qq ′ → qq ′ in the quark sector. The details of the mesonic sector, however, are left to a future publication [20].</p>
+
+				<p>We conclude this section by mentioning some other papers that are relevant, but we do not attempt to provide an exhaustive list.</p>
+
+				<p>Relativistic kinetic equations for a Yukawa model were first derived in Ref. [10]. Here the difficulties in expressing the collision integral in terms of actual Feynman graphs is apparent. A seminal paper discussing the Walecka model has followed this [8], see also [9]. A transport theory for the NJL model, derived from a path integral approach with a semi-bosonized Lagrangian was first undertaken by [21]. We differ from this in two respects, viz (i) our approach is canonical, and treats the theory from a fermionic point of view, and (ii) that the terms are ordered according to the double expansion with regard to 1/N c as well as the power counting in ¯ h.</p>
+
+				<p>This paper is organized as follows: in Section II, we review the general nonequilibrium transport theory for fermions, derived from a canonical point of view.</p>
+
+				<p>We construct the general transport and constraint equations. In Section III, we discuss the quasiparticle approximation, introduce our Lagrange density and explain the strategy of the 1/N c and ¯ h expansions. In Section IV, we calculate the mean field self-energy and transport and constraint equations in the Hartree approximation.</p>
+
+				<p>We devote Section V to the evaluation of the collision term and demonstrate that the classical limit leads us to the Boltzmann equation. Off-shell terms that are dropped are seen explicitly. The constraint equation, to this level of approximation, is also given. In this section, we present the major new work of this paper. We conclude in</p>
+
+				<p>Section VI. We have, for completeness, included several appendices that give closer detail of some of the technical and / or repetitive aspects of the derivations.</p>
+
+			</div>
+			<div>
+				<head>II. GENERAL TRANSPORT THEORY FOR FERMIONS A. Equations of motion</head>
+
+				<p>Non-equilibrium phenomena are completely described via the Schwinger</p>
+
+				<p>Keldysh formalism for Green functions [2]. Many conventions exist in the literature . In this section, we give ours. For our purposes, it is simplest to use the convention of Landau 4 [5]. In this, the designations + and − are attributed to the closed time path that is shown in Fig.1</p>
+
+				<figure>
+					<trash>, and the fermionic Green functions are defined as i¯ hS c (x, y) = T ψ(x) ¯ ψ(y) = i¯ hS −− (x, y) i¯ hS a (x, y) = ˜ T ψ(x) ¯ ψ(y) = i¯ hS ++ (x, y) i¯ hS &gt; (x, y) = ψ(x) ¯ ψ(y) = i¯ hS +− (x, y) i¯ hS &lt; (x, y) = − ¯ ψ(y)ψ(x) = i¯ hS −+ (x, y), (2.1)</trash>
+
+
+				</figure>
+
+				<p>where T is the usual time ordering operator and T the anti-time ordering operator.</p>
+
+				<p>These can be summarized into the compact matrix notation</p>
+
+				<figure>
+					<trash>S =   S −− S −+ S +− S ++   . (2.2) The matrix of irreducible proper self-energies, Σ =   Σ −− Σ −+ Σ +− Σ ++   , (2.3) is introduced via the Dyson equation, S(x, y) = S 0 (x, y) + d 4 zd 4 wS 0 (x, w)Σ(w, z)S(z, y) = S 0 (x, y) + d 4 zd 4 wS(x, w)Σ(w, z)S 0 (z, y) (2.4) where S 0</trash>
+
+
+				</figure>
+
+				<p>is the matrix of propagators for the non-interacting system. In a standard fashion, one constructs equations of motion for the matrix of Green functions. These take the form</p>
+
+				<figure>
+					<trash>(i¯ h ∂ x − m 0 ) S(x, y) = σ z δ 4 (x − y) + d 4 zσ z Σ(x, z)S(z, y), (2.5) where σ z =   1 0 0 −1   (2.6)</trash>
+
+
+				</figure>
+
+				<p>has been introduced. Note that the entries in the matrices of Green functions, Eq.(2.2) and self-energies Eq.(2.3) are amongst one another not independent. They are linearly related in a way that is obvious from their definitions, i.e.</p>
+
+				<figure>
+					<trash>S −− αβ (x, y) + S ++ αβ (x, y) = S −+ αβ (x, y) + S +− αβ (x, y). (2.7) It is also useful to introduce the retarded and advanced Green functions, S R and S A respectively, that are defined as i¯ hS R αβ (x, y) = θ(x 0 − y 0 ) ψ α (x), ψ β (y) (2.8) and i¯ hS A αβ (x, y) = −θ(y 0 − x 0 ) ψ α (x), ψ β (y) . (2.9)</trash>
+
+
+				</figure>
+
+				<p>Important relationships that connect the Green functions with each other, as well as those pertaining to the self-energies, are listed in Appendix A. In particular, it is also useful to note that</p>
+
+				<figure>
+					<trash>Σ R = Σ −− + Σ −+ (2.10) and Σ A = Σ −− + Σ +− (2.11) link</trash>
+
+
+				</figure>
+
+				<p>the retarded and advanced self-energies to Σ ij , i, j = ±.</p>
+
+			</div>
+			<div>
+				<head>B. Transport and constraint equations.</head>
+
+				<p>In this section, we give a brief derivation of the transport and constraint equations following the lines of Ref. [8] 5 , and writing them in a concise form. It will be sufficient for us to examine only one component of this equation, the off diagonal element S −+ , together with the equation for the hermitian conjugate. This simplification arises from the quasiparticle approximation (see below) in which all four Green functions S ij can be expressed in terms of two distribution functions.</p>
+
+				<figure>
+					<trash>The equations of motion are (i¯ h ∂ x − m 0 ) αβ S −+ βγ (x, y) = d 4 z Σ −− αβ (x, z)S −+ βγ (z, y) + Σ −+ αβ (x, z)S ++ βγ (z, y) (2.12) and S −+ αβ (x, y) −i¯ h ← − ∂ y − m 0 βγ = d 4 z −S −− αβ (x, z)Σ −+ βγ (z, y) − S −+ αβ (x, z)Σ ++ βγ (z, y) (2.13)</trash>
+
+
+				</figure>
+
+				<p>It turns out to be expedient to eliminate S ++ , S −− , Σ ++ and Σ −− in terms of the advanced / retarded forms, together with the off-diagonal elements of the Green functions and self-energies, as this will lead us directly to a convenient form for the transport equation.</p>
+
+				<figure>
+					<trash>Employing Eqs.(A4), (A5) and (A13) -(A15), one can rewrite Eqs.(2.12) and (2.13) as 6 (i¯ h ∂ x − m 0 ) αβ S −+ βγ (x, y) = d 4 z{Σ −+ αβ (x, z)S +− βγ (z, y) − Σ +− αβ (x, z)S −+ βγ (z, y) +Σ A αβ (x, z)S −+ βγ (z, y) − Σ −+ αβ (x, z)S R βγ (z, y)} (2.15) and S −+ αβ (x, y) −i¯ h ← − ∂ y − m 0 βγ = d 4 z −S R αβ (x, z)Σ −+ βγ (z, y) + S −+ αβ (x, z)Σ A βγ (z, y) , (2.16)</trash>
+
+
+				</figure>
+
+				<p>One now moves to relative and centre of mass variables, u = x−y and X = (x+y)/2. A Fourier transform with respect to the relative coordinate, or Wigner transform,</p>
+
+				<figure>
+					<trash>S(X, p) = d 4 ue ip·u/¯ h S X + u 2 , X − u 2 (2.17)</trash>
+
+
+				</figure>
+
+				<p>is then performed on the above two equations. Simple rules for the calculation with the Wigner transform are given in Appendix B. In general, the Wigner transforms</p>
+
+				<figure>
+					<trash>of Eqs.(2.15) and (2.16) are {i¯ hγ µ ( 1 2 ∂ ∂X µ − ip µ ¯ h ) − m 0 }S −+ (X, p) = Σ −+ (X, p) ˆ ΛS +− (X, p) − Σ +− (X, p) ˆ ΛS −+ (X, p) + Σ A (X, p) ˆ ΛS −+ (X, p) − Σ −+ (X, p) ˆ ΛS R (X, p) (2.18) and 6 Note that the more usual form of the first equation would be (i¯ h ∂ x − m 0 ) αβ S −+ βγ (x, y) = d 4 z Σ R S −+ − Σ −+ S A , (2.14)</trash>
+
+
+				</figure>
+
+				<p>from which one can immediately see that the right hand side is simply the hermitian conjugate of the right hand side of Eq.(2.16). The form that we have chosen, however, already anticipates the loss and gain terms that one expects of the collision integral.</p>
+
+				<figure>
+					<trash>S −+ (X, p){−i¯ hγ µ ( 1 2 ← − ∂ ∂X µ + ip µ ¯ h ) − m 0 } = − S R (X, p) ˆ ΛΣ −+ (X, p) + S −+ (X, p) ˆ ΛΣ A (X, p), (2.19) respectively, with ˆ Λ = exp   − i¯ h 2 ( ← − ∂ ∂X µ − → ∂ ∂p µ − ← − ∂ ∂p µ − → ∂ ∂X µ )   . (2.20)</trash>
+
+
+				</figure>
+
+				<p>Now, on subtracting and adding the two resulting transformed equations, one constructs the so-called transport and constraint equations:</p>
+
+				<figure>
+					<trash>i¯ h 2 {γ µ , ∂S −+ ∂X µ } + [ p, S −+ (X, p)] = I − (2.21) and i¯ h 2 [γ µ , ∂S −+ ∂X µ ] + { p − m 0 , S −+ } = I + , (2.22) respectively. Here I ∓ = I coll + I A ∓ + I R ∓ , (2.23) where the collision term is I coll = Σ −+ (X, p) ˆ ΛS +− (X, p) − Σ +− (X, p) ˆ ΛS −+ (X, p) = I gain coll − I loss coll , (2.24) and terms containing retarded and advanced components are contained in I R ∓ = −Σ −+ (X, p) ˆ ΛS R (X, p) ± S R (X, p) ˆ ΛΣ −+ (X, p) (2.25) and I A ∓ = Σ A (X, p) ˆ ΛS −+ (X, p) ∓ S −+ (X, p) ˆ ΛΣ A (X, p). (2.26)</trash>
+
+
+				</figure>
+
+				<p>Note that the equations (2.21) and (2.22) are general equations that are generic for any relativistic fermionic theory. These are already well known, and have been derived for the Walecka model in Ref. [8] and rederived for QCD in Ref. [11], for example.</p>
+
+				<p>At this point, one has to specify the particular theory that one wishes to investigate – in our case, this is the simplest version of the NJL model – and to calculate the self-energy terms systematically. In particular, the difficulty that we wish to address in this paper, is the evaluation of the collision term in a form that is understandable on physical grounds.</p>
+
+				<figure>
+					<trash>III. APPROXIMATION SCHEMES AND FEYNMAN-LIKE RULES A. Quasiparticle Approximation Equations (2.21) and (2.22</trash>
+
+
+				</figure>
+
+				<p>) are each a system of coupled equations for the 16 matrix elements of S −+ αβ in spinor space. A complete method of solution of these equations can be developed on inserting the spinor decomposition</p>
+
+				<figure>
+					<trash>− i¯ hS −+ = F + iγ 5 P + γ µ V µ + γ µ γ 5 A µ + 1 2 σ µν S µν , (3.1) for S −+</trash>
+
+
+				</figure>
+
+				<p>into the above equation. Similar decompositions for all other quantities are required, so that an extremely complicated system of coupled equations results.</p>
+
+				<p>While this guarantees a correct solution from a formal point of view, even in the collisionless system, it leads to a set of 16 × 2 equations that must be solved simultaneously [22,23]. Only in limited cases where spatial gradients have been neglected, can such a set of equations been solved exactly numerically [17].</p>
+
+				<p>A tremendous simplification arises from the quasi-particle approximation. We do this in a fashion which, as will become evident in the following section, represents a self-consistent solution within a mean field approximation, i.e. we assume that the system consists of fermions that, in interacting only with the mean field, acquire a mass m(X) that depends on space and time, and which will be dynamically generated due to the breaking of the chiral symmetry of the underlying Lagrangian.</p>
+
+				<p>This is as yet undetermined. The dressed fermions (the &quot; constituent quarks &quot; ) may then collide with each other. The index &quot; H &quot; appearing on the Green functions below indicates that they are the mean field ( &quot; Hartree &quot; ) functions.</p>
+
+				<figure>
+					<trash>S −+ H (X, p) = 2πi 1 2E p [δ(p 0 − E p ) ss ′ u s ′ (p)¯ u s (p)f ss ′ q (X, p) + δ(p 0 + E p ) ss ′ v s ′ (−p)¯ v s (−p) ¯ f ss ′ ¯ q (X, −p)], (3.2) and S +− H (X, p) = −2πi 1 2E p [δ(p 0 − E p ) ss ′ u s (p)¯ u s (p) ¯ f ss ′ q (X, p) + δ(p 0 + E p ) ss ′ v s (−p)¯ v s ′ (−p)f ss ′ ¯ q (X, −p)], (3.3) that introduces the quark and antiquark distribution functions f ss ′ q (X, p) and f ss ′ ¯ q (X, p) respectively.</trash>
+
+
+				</figure>
+
+				<p>These functions give the number density per degree of freedom in phase space for on the energy shell quarks, E</p>
+
+				<figure>
+					<trash>2 p = m 2 (X) + p 2 . In each case, we have introduced the abbreviation ¯ f ss ′ q,¯ q (X, p) = 1 − f ss ′ q,¯ q</trash>
+
+
+				</figure>
+
+				<p>(X, p). The u&apos;s and v&apos;s are normalized according to ¯ u s (p)u s (p) = 2mδ ss ′ and ¯ v s (p)v s (p) = −2mδ ss ′ . In principle, all spin combinations are possible. We shall restrict ourselves, however, to the case f ss ′ q,¯ q = δ ss ′ f q,¯ q , i.e. we do not allow for spin polarizations. Under this assumption, one has</p>
+
+				<figure>
+					<trash>S −+ H (X, p) = 2πi p + m 2E p [δ(p 0 − E p )f q (X, p) − δ(p 0 + E p ) ¯ f ¯ q (X, −p)] (3.4) and S +− H (X, p) = −2πi p + m 2E p [δ(p 0 − E p ) ¯ f q (X, p) − δ(p 0 + E p )f ¯ q (X, −p)] (3.5) using</trash>
+
+
+				</figure>
+
+				<p>s u s (p)¯ u s (p) = p + m and s v s (p)¯ v s (p) = p − m. Using this convention, the time ordered and anti-time ordered free particle Green functions can be written as</p>
+
+				<figure>
+					<trash>S −− H (X, p) = p + m p 2 − m 2 + iǫ +2πi p + m 2E p [δ(p 0 − E p )f q (X, p) + δ(p 0 + E p )f ¯ q (X, −p)] (3.6) and S ++ H (X, p) = − p + m p 2 − m 2 − iǫ +2πi p + m 2E p [δ(p 0 − E p )f q (X, p) + δ(p 0 + E p )f ¯ q (X, −p)]. (3.7)</trash>
+
+
+				</figure>
+
+				<p>Note that in terms of the decomposition Eq.(3.1), the decomposition for S −+ H above implies that only the scalar and vector components,</p>
+
+				<figure>
+					<trash>F = −i 1 4 ¯ htrS −+ H = 2π¯ h m 2E p [δ(p 0 − E p )f q (X, p) − δ(p 0 + E p ) ¯ f ¯ q (X, −p)] (3.8) and V µ = p µ m F (3.9)</trash>
+
+
+				</figure>
+
+				<p>survive. Here the trace is regarded as being over the spinor variable only.</p>
+
+				<p>Since all four Green functions S ij (X, p) depend only on the two distribution functions f q (X, p) and f ¯ q (X, p), one needs only to consider the equation for S −+ , c.f. Eq. (2.12). Thus the 2 × 16 equations reduce to two.</p>
+
+			</div>
+			<div>
+				<head>B. The Lagrangian</head>
+
+				<p>In order to proceed further, we must specify our Lagrange density. We choose the NJL model form as being</p>
+
+				<figure>
+					<trash>L = ψ (i¯ h ∂ − m 0 ) ψ + G ψψ 2 + ψiγ 5 ψ 2 , (3.10)</trash>
+
+
+				</figure>
+
+				<p>where G is a dimensionful coupling, [G] =MeV −2 . Since the Lagrangian generates a non-renormalizable theory, Eq.(3.10) has to be supplemented by a regularization scheme. We shall use a 3 − d cutoff Λ. For simplicity, we have ignored the flavor degree of freedom in Eq.(3.10). The color degree of freedom is to be implicitly understood . This minimal form of the NJL model is chirally symmetric for m 0 = 0, and exhibits dynamical symmetry breaking at temperature T = 0. An equilibrium study of the model indicates that a phase transition to a chirally symmetric state occurs at a finite value of the temperature. By formulating the non-equilibrium theory for this model, we hope to gain insight into the dynamical consequences of chiral symmetry breaking and restoration. The basic problems concerning formulation of the transport theory can be studied within the framework of this simpler model, and the generalizations to include isospin are obvious.</p>
+
+				<p>From a perturbative expansion in the interaction picture, Feynman-like rules can be constructed for the component functions of the matrix of Green functions and their self-energies. These follow on considering the same skeleton graphs that one would derive for the time ordered equilibrium Green function using an extended interaction, and decorating the interaction line with the same sign at each vertex.</p>
+
+				<p>To each interaction line with a + or − sign is attributed a function ∓Γ2iG/¯ hΓ, with Γ = 1 or iγ 5 for the scalar or pseudoscalar vertex, as is required. External legs have a sign attributed to them as well, in accordance with the function to be evaluated.</p>
+
+				<p>Internal lines take all possible combinations of the signs. For example, the Dyson equation for the full component S ++ (X, p) is given diagrammatically in Fig. 2. One can see that this diagram and the convention given are in accordance with Eq.(2.4).</p>
+
+				<p>Further examples follow in the evaluation of the self-energy in the following sections.</p>
+
+				<p>C. The double expansion in powers of 1/N c and ¯ h</p>
+
+				<p>Before we evaluate the right hand sides of the transport and constraint equations, I − and I + respectively, we explain our strategy of a double expansion in powers of 1/N c and ¯ h.</p>
+
+				<p>In general, an expansion in powers of the coupling constant is inappropriate for a strongly interacting theory. In our theory, Eq.(3.10), the relevant parameter is GΛ 2 , which has a value close to two, and thus precludes a perturbative expansion. It is therefore customary to perform suitable partial summations of relevant diagrams. A perturbative expansion in the inverse number of colors, 1/N c has been proposed by Witten in connection with QCD proper, and such an expansion technique has proven extremely useful in connection with calculating observables in the NJL model. In this scheme, a diagram containing n interaction vertices and m fermion loops is of order G n N m c = (N c ) n−m , if one sets GN c = 1, using a symbolic notation. Applied to the NJL model, the partial summation at the level O((1/N c ) 0 ) is equivalent to the Hartree approximation (Fig. 3), and leads to the concept of constituent quarks, while to order O((1/N c ) 1 ), one recovers the Random Phase approximation which gives rise to mesonic masses and qq and q ¯ q cross sections.</p>
+
+				<p>When investigating the transition of a quantum system to its classical limit, one often treats ¯ h as a small quantity (although this is inappropriate because of its dimension) and keeps only the leading orders in ¯ h or takes the limit ¯ h → 0. In the transport and constraint equations, Eqs.(2.21) and (2.22), the right hand sides I − and I + , respectively depend on ¯ h in two ways: (i) The derivative operator Λ, Eq.(2.20), contains ¯ h to all orders. Its expansion in ¯ h generates the various terms of the so-called gradient expansion, and (ii) the self-energies Σ R and Σ −+ may have overall factors in ¯ h. While to order O((1/N c ) 0 ), Σ R = m, and is directly related to the mass, which we treat as a quantity that has a direct classical interpretation, we find Σ −+ ∝ ¯ hdσ/dΩ, and is only related via a factor ¯ h to a quantity with direct physical interpretation. Note that while we use the overall factors in ¯ h 0 or ¯ h 1 in Σ R or Σ −+ in our ¯ h classification, we do not expand the quantities m or dσ/dΩ in powers of ¯ h. We will detail this strategy in the calculation of the mean field term and collision integrals.</p>
+
+			</div>
+			<div>
+				<head>IV. MEAN FIELD APPROXIMATION</head>
+
+				<p>The first term in the expansion of the self-energy in powers of 1/N c is the Hartree diagram of Fig. 3. This is evaluated self-consistently. Only diagonal elements exist for Σ H , i.e. Σ</p>
+
+				<figure>
+					<trash>−+ H (x, y) = Σ +− H (x, y) = 0. One finds by direct calculation that − iΣ −− H (x, y) = −2i¯ hG triS −− H (x, x) + iγ 5 triS −− H (x, x)iγ 5 δ 4 (x − y) (4.1) while − iΣ ++ H (x, y) = 2i¯ hG triS ++ H (x, x) + iγ 5 triS ++ H (x, x)iγ 5 δ 4 (x − y), (4.2)</trash>
+
+
+				</figure>
+
+				<p>where tr = tr c tr γ = N c tr γ . From this self-energy, we may derive two things, (i) the gap equation and (ii) the transport and constraint equations at this level.</p>
+
+				<p>Firstly, by examining the form of the retarded Green function for a free particle , see Appendix A, one may identify the self-consistently determined mass of the particle to be m(X) = m 0 + Σ</p>
+
+				<figure>
+					<trash>R H (X, p = 0) = m 0 + Σ −− H (X, p = 0) to this level of approximation . Because of the δ functions in Eq.(4.1), Σ R H (X) is in fact independent of the momentum variable. Note that Σ −− H and Σ ++ H are scalars in spinor space, since the second term in both Eqs.(4.1) and (4.2) vanishes, in view of the quasiparticle approximation Eq.(3.4). Now, inserting the quasiparticle decomposition for S −− H (X, p), see Eq.(3.6), with m = m(X) into Eq. (4.1) and performing a Wigner transform, we arrive at the gap equation for a non-equilibrium medium, m(X) = m 0 + 4GN c m(X) d 3 p (2π¯ h) 3 1 E p (X) [1 − f q (X, p) − f ¯ q (X, p)], (4.3)</trash>
+
+
+				</figure>
+
+				<p>which is a non-linear equation for m(X), and one recovers the result of [21,23].</p>
+
+				<p>We may now return to the transport and constraint equations and investigate their form. The only contribution from the right hand side of the transport and constraint equations, Eqs.(2.21) and (2.22) that is non-vanishing, stems from the advanced self-energy Σ</p>
+
+				<figure>
+					<trash>A H that occurs in I A ∓ in Eq.(2.26). Closer examination of I A ∓ , shows that I A − = − i¯ h 2 {∂ µ Σ A H (X), ∂ µ p S −+ H (X, p)} (4.4) while I A + = {Σ A H (X), S −+ H (X, p)}. (4.5)</trash>
+
+
+				</figure>
+
+				<p>Here we have made use of the fact that Σ A is a scalar and is only a function of X,</p>
+
+				<figure>
+					<trash>and have expanded Λ in Eq.(2.20) to retain only the first non-vanishing term. One thus has i¯ h 2 {γ µ , ∂S −+ H (X, p) ∂X µ } + [ p, S −+ H (X, p)] = −i¯ h∂ µ Σ A H (X)∂ µ p S −+ H (X, p) (4.6) and i¯ h 2 [γ µ , ∂S −+ H ∂X µ ] + { p − m 0 , S −+ H } = {Σ A H (X), S −+ H (X, p)} (4.7) for the transport and constraint equations. From these, one constructs equations for the distribution functions f q,¯ q (X, p) by inserting Eq.(3.4) into (4.6) and (4.7), integrating over p 0 over an interval ∆ ± that contains E p (X) or −E p (X) respectively, and performing a spinor trace. Then Eq. (4.6) becomes the Vlasov equation for f q,¯ q , p µ ∂ µ f q,¯ q (X, p) + m(X)∂ µ m(X)∂ µ p f q,¯ q (X, p) = 0, (4.8) where p 0</trash>
+
+
+				</figure>
+
+				<p>= E p (X). We have detailed this derivation in Appendix C, since some care must be taken in bringing the equation into this form. The constraint equation,</p>
+
+				<figure>
+					<trash>Eq.(4.7), which is somewhat simpler to treat, is also discussed briefly in Appendix C. On inserting S −+ (X, p), and repeating the procedure described above, one finds (p 2 − m 2 (X))f q,¯ q = 0. (4.9) It is interesting to note that, in moving from Eqs.(4.6) and (4.7) to Eqs.(4.8) and (4.9), the commutator terms in Eqs.(4.6) and (4.7) do not contribute. One sees</trash>
+
+
+				</figure>
+
+				<p>therefore explicitly that the constraint equation (4.7) has no multiplicative factors of ¯ h, while the transport equation contains a simple power of ¯ h throughout. This is a particular feature of the covariant approach to quantum transport theories which has been known for some time [22,24].</p>
+
+				<p>The resulting set of equations (4.8) and (4.9), as is evident, forms the classical limit of the set of transport and constraint equations in the Hartree approximation, since m(X) is a classical quantity. We note that Eq.(4.9) is trivially fulfilled for the quasiparticle approximation.</p>
+
+			</div>
+			<div>
+				<head>V. COLLISIONAL SELF-ENERGY</head>
+
+				<p>In this section, we come to the main new aspects of the paper. Here our task is to calculate the collisional self-energy for the model, and to manipulate the resulting equations in the semiclassical limit into the form of a Boltzmann-like equation, thereby explicitly exposing the weaknesses of the quasiparticle approximation and explicitly showing the connection between the self-energies evaluated in this approach and the cross-section that appears in the transport equation. In particular, we wish to identify the Feynman graphs that are present in the cross-section, and their relation to the graphs evaluated for the self-energy. Note that some calculations that evaluate the collision term already exist in the literature [8–10]. However, in some cases, in which the standard spinor decomposition is used [10], the connection to cross-sections is not evident and the resulting expressions are unwieldy and model-specific. In others, see for example [9], although it is somewhat simpler to connect the result to cross-sections, this has not been done in as general a fashion as will be presented here.</p>
+
+				<p>To be specific, we investigate self-energy graphs that contain two interaction lines, and which form the contributions to lowest order to the off-diagonal matrix elements of Σ, and which are illustrated for Σ −+ in Fig. 4. The diagram in Fig. 4(a), which we denote as the &quot; direct &quot; graph, is a term of order 1/N c . The exchange graph of Fig. 4</p>
+
+				<figure>
+					<figDesc>(b) has the order 1/N 2</figDesc>
+
+				</figure>
+
+				<p>c . Nevertheless, we retain this graph, noting that this correction still renders our calculation correct to O(1/N c ). As will be seen, the exchange graph plays an essential role. It leads directly to the cross terms in the scattering amplitudes that we will encounter. We note that in a rigorous 1/N c expansion, the propagators occurring in Fig. 4 are now not to be recalculated selfconsistently , but are to be replaced by the self-consistent Hartree propagators that were already determined in the previous section. In addition, the simple use of the bare interaction, G, in Fig. 4 at this level is too naive: there are further terms that are also of the same order in 1/N c that must also be included for completeness [18,19].</p>
+
+				<p>Nevertheless, this simplification, which corresponds to a kind of Born approximation is a first step in understanding the role of these diagrams in a clear fashion, and which paves the way for its generalization to include mesonic intermediate states fully [20]. The particular highlight of this study is that illustrates explicitly how the relativistically formulated transport theory in the semiclassical limit results in a Boltzmann-like collision term, that can be expressed in terms of a scattering cross section which in turn can be evaluated from a well-defined set of Feynman graphs. We do this without introducing the added complexity of the complete set of 1/N c terms that correspond to the inclusion of mesons. We have nevertheless alluded to this extension by our use of notation, labelling the scalar and pseudoscalar interaction vertices with a σ or π respectively. The full extension of this method to include the mesonic degrees of freedom will be handled in a separate publication [20].</p>
+
+				<p>We will now evaluate the first term of the collision integral Eq.(2.24) within the derivative expansion with Λ = 1, in order to establish the order in ¯ h of this term.</p>
+
+				<p>A further analysis of the remaining terms that occur in I − can then be made.</p>
+
+				<p>In order to evaluate the collision integral, Eq.(2.24), we require the off-diagonal self-energies. Consider say Σ +− . This can be decomposed into three parts,</p>
+
+				<figure>
+					<trash>Σ +− (X, p) = Σ +− σ (X, p) + Σ +− π (X, p) + Σ +− mixed (X, p), (5.1) and similarly for Σ −+ . Here, Σ +− σ and Σ +− π refer to Fig. 4</trash>
+
+
+				</figure>
+
+				<p>in which all vertices have a factor unity or iγ 5 in spinor space attributed to them respectively. Σ +− mixed contains the vertices 1 and iγ 5 in a mixed fashion and is shown graphically in Fig. 5. Note that the direct graphs do not appear here, as they are identically zero in the quasiparticle approximation. Direct translation of the diagrams of Fig. 4 and 5 in x-space can be performed, and then Wigner transformed.</p>
+
+				<figure>
+					<trash>This results in Σ +− σ (X, p) = −4G 2 ¯ h 2 d 4 p 1 (2π¯ h) 4 d 4 p 2 (2π¯ h) 4 d 4 p 3 (2π¯ h) 4 (2π¯ h) 4 δ(p − p 1 + p 2 − p 3 ) × [S +− (X, p 1 )tr S −+ (X, p 2 )S +− (X, p 3 ) −S +− (X, p 1 )S −+ (X, p 2 )S +− (X, p 3 )], (5.2) while Σ +− π (X, p) = −4G 2 ¯ h 2 d 4 p 1 (2π¯ h) 4 d 4 p 2 (2π¯ h) 4 d 4 p 3 (2π¯ h) 4 (2π¯ h) 4 δ(p − p 1 + p 2 − p 3 ) × [γ 5 S +− (x, p 1 )γ 5 tr S −+ (X, p 2 )γ 5 S +− (X, p 3 )γ 5 −γ 5 S +− (X, p 1 )γ 5 S −+ (X, p 2 )γ 5 S +− (X, p 3 )γ 5 ] (5.3) and Σ +− mixed (X, p) = −4G 2 ¯ h 2 d 4 p 1 (2π¯ h) 4 d 4 p 2 (2π¯ h) 4 d 4 p 3 (2π¯ h) 4 (2π¯ h) 4 δ(p − p 1 + p 2 − p 3 ) × [γ 5 S +− (X, p 1 )S −+ (X, p 2 )γ 5 S +− (X, p 3 ) +S +− (X, p 1 )γ 5 S −+ (X, p 2 )S +− (X, p 3 )γ 5 ]. (5.4)</trash>
+
+					<head>The corresponding expressions for Σ</head>
+
+					<figDesc>−+ are obtained from these by exchanging + and −.</figDesc>
+
+				</figure>
+
+				<p>Let us now construct the transport equation for f q (X, p). As was indicated in Section IV, this follows on integrating the transport equation for the Green function over the energy variable p 0 on an interval ∆ + containing E p and taking the trace.</p>
+
+				<p>Applying this procedure to I coll , we define</p>
+
+				<figure>
+					<trash>J q coll = tr ∆ + dp 0 I coll = ∆ + dp 0 tr Σ −+ (X, p)S +− (X, p) − ∆ + dp 0 tr Σ +− (X, p)S −+ (X, p) = J q,gain coll − J q,loss coll (5.5) having set Λ = 1. Now, on taking cognisance of Eq.(5.1</trash>
+
+
+				</figure>
+
+				<p>), it is clear that each of these terms itself is to be constructed of three components:</p>
+
+				<figure>
+					<trash>J q,gain/loss coll = J q,gain/loss coll,σ + J q,gain/loss coll,π + J q,gain/loss coll,mixed (5.6)</trash>
+
+
+				</figure>
+
+				<p>in which the corresponding subindex is placed on Σ −+ or Σ +− . In the following section, we shall construct the loss term, and do this in detail for the scalar-scalar interaction, J</p>
+
+			</div>
+			<div>
+				<head>q,loss</head>
+
+				<p>coll,σ in particular. The calculations for the remaining terms then follow by analogy, and these are then sketched briefly.</p>
+
+				<p>A. The loss term a. The scalar-scalar interation. The scalar-scalar interaction contributes to the loss term via</p>
+
+				<figure>
+					<trash>J q,loss coll,σ = 2πi 2E p tr Σ +− σ (X, p 0 = E p , p) s u s (p)¯ u s (p)f q (X, p) , (5.7) on inserting Eq.(3.2) into the definition Eq.(5.5), and assuming no spin dependence. One may now insert Σ +− σ (X, p 0 = E p , p) from Eq.(5.2) into Eq.(5.7) and multiply out the resulting expression. This rather lengthy result contains eight terms, J q,loss coll,σ = πi E p 4iG 2 ¯ h d 4 p 1 (2π¯ h) 4 d 4 p 2 (2π¯ h) 4 d 4 p 3 (2π¯ h) 4 (2π¯ h) 4 δ(E p − p 0 1 + p 0 2 − p 0 3 ) ×δ( p − p 1 + p 2 − p 3 )(2π¯ h) 3 1 2E p 1 1 2E p 2 1 2E p 3 8 i=1 T i (5.8) with T 1 = δ(p 0 1 − E p 1 )δ(p 0 2 − E p 2 )δ(p 0 3 − E p 3 )[tr(u¯ u) p (u¯ u) 1 tr(u¯ u) 2 (u¯ u) 3 −tr(u¯ u) p (u¯ u) 1 (u¯ u) 2 (u¯ u) 3 ] ¯ f q (p 1 )f q (p 2 ) ¯ f q (p 3 )f q (p), (5.9) T 2 = δ(p 0 1 − E p 1 )δ(p 0 2 − E p 2 )δ(p 0 3 + E p 3 )[tr(u¯ u) p (u¯ u) 1 tr(u¯ u) 2 (v¯ v) −3 −tr(u¯ u) p (u¯ u) 1 (u¯ u) 2 (v¯ v) −3 ] ¯ f q (p 1 )f q (p 2 )f ¯ q (−p 3 )f q (p), (5.10) T 3 = δ(p 0 1 − E p 1 )δ(p 0 2 + E p 2 )δ(p 0 3 − E p 3 )[tr(u¯ u) p (u¯ u) 1 tr(v¯ v) −2 (u¯ u) 3 −tr(u¯ u) p (u¯ u) 1 (v¯ v) −2 (u¯ u) 3 ] ¯ f q (p 1 ) ¯ f ¯ q (−p 2 ) ¯ f q (p 3 )f q (p), (5.11) T 4 = δ(p 0 1 − E p 1 )δ(p 0 2 + E p 2 )δ(p 0 3 + E p 3 )[tr(u¯ u) p (u¯ u) 1 tr(v¯ v) −2 (v¯ v) −3 −tr(u¯ u) p (u¯ u) 1 (v¯ v) −2 (v¯ v) −3 ] ¯ f q (p 1 ) ¯ f ¯ q (−p 2 )f ¯ q (−p 3 )f q (p), (5.12) T 5 = δ(p 0 1 + E p 1 )δ(p 0 2 − E p 2 )δ(p 0 3 − E p 3 )[tr(u¯ u) p (v¯ v) −1 tr(u¯ u) 2 (u¯ u) 3 −tr(u¯ u) p (v¯ v) −1 (u¯ u) 2 (u¯ u) 3 ]f ¯ q (−p 1 )f q (p 2 ) ¯ f q (p 3 )f q (p), (5.13) T 6 = δ(p 0 1 + E p 1 )δ(p 0 2 − E p 2 )δ(p 0 3 + E p 3 )[tr(u¯ u) p (v¯ v) −1 tr(u¯ u) 2 (v¯ v) −3 −tr(u¯ u) p (v¯ v) −1 (u¯ u) 2 (v¯ v) −3 ]f ¯ q (−p 1 )f q (p 2 )f ¯ q (−p 3 )f q (p), (5.14) T 7 = δ(p 0 1 + E p 1 )δ(p 0 2 + E p 2 )δ(p 0 3 − E p 3 )[tr(u¯ u) p (v¯ v) −1 tr(v¯ v) −2 (u¯ u) 3 −tr(u¯ u) p (v¯ v) −1 (v¯ v) −2 (u¯ u) 3 ]f ¯ q (−p 1 ) ¯ f ¯ q (−p 2 ) ¯ f q (p 3 )f q (p), (5.15) T 8 = δ(p 0 1 + E p 1 )δ(p 0 2 + E p 2 )δ(p 0 3 + E p 3 )[tr(u¯ u) p (v¯ v) −1 tr(v¯ v) −2 (v¯ v) −3 −tr(u¯ u) p (v¯ v) −1 (v¯ v) −2 (v¯ v) −3 ]f ¯ q (−p 1 ) ¯ f ¯ q (−p 2 )f ¯ q (−p 3 )f q (p)], (5.16)</trash>
+
+
+				</figure>
+
+				<p>where spin indices have been suppressed. Here, the indices &quot; i &quot; mean p i , i = 1, 3, while the notation &quot; −i &quot; refer to the negative four-momenta, −p i . At first sight, this expression appears formidable. It provides us, however, with some physical insight. Each term contains a product of a combination of four quark and antiquark distribution functions, with f q (p) being present in all of them, being the external function under study. One may attribute a diagram to each of these processes in a loose sense, by assigning incoming quark/antiquark lines to f q,¯ q and outgoing ones to ¯ f q,¯ q . In doing so, it appears that quark-quark scattering terms arise from T 1 , and that quark-antiquark scattering graphs arise from T 4 and T 7 . The remaining graphs correspond to the processes shown in Fig. 6, and which involve particle and antiparticle creation / annihilation. Note that time runs from left to right in these diagrams. We emphasise that the graphs depicted in this figure are not Feynman graphs. The identification of Feynman graphs requires a detailed analysis of the coefficient factors, such as that which will be done for T 1 , T 4 and T 7 . In Fig. 6, graph (a) corresponds to the process of T 3 , while (b) corresponds to those of T 2 and T 5 . The expression for T 8 is given by (c), while the vacuum fluctuations of (d) correspond to T 6 . Note that these all are categorized as off-shell processes: on performing the energy integrations over dp</p>
+
+				<figure>
+					<trash>0 1 , dp 0 2 and dp 0 3</trash>
+
+
+				</figure>
+
+				<p>, it becomes manifest that these terms vanish due to to energy-momentum conservation. Thus, in contrast to the non-relativistic case, one notes that the quasiparticle assumption serves to suppress particle / antiparticle creation / annihilation, a restriction that may be too severe for application to a fundamental theory of quarks and gluons.</p>
+
+				<p>It now remains for us to validate that T 1 , T 4 and T 7 indeed correspond to the processes of quark-quark and quark-antiquark scattering and to identify the scattering graphs in a strict sense. Here we wish to identify actual Feynman diagrams, and not simply associate a heuristic diagram to the processes occurring in these terms. To this end, we require a detailed analysis of the coefficients. We thus proceed by evaluating the energy integrals, and make the substitution p i → −p i for the antiquark state, to find</p>
+
+				<figure>
+					<trash>J q,loss coll,σ = − πi E p 4G 2 i 3 ¯ h d 3 p 1 (2π¯ h) 3 2E p 1 d 3 p 2 (2π¯ h) 3 2E p 2 d 3 p 3 (2π¯ h) 3 2E p 3 (2π¯ h) 4 × [δ 4 (p − p 1 + p 2 − p 3 )(tr(u¯ u) p (u¯ u) 1 tr(u¯ u) 2 (u¯ u) 3 −tr(u¯ u) p (u¯ u) 1 (u¯ u) 2 (u¯ u 3 )) ¯ f q (p 1 )f q (p 2 ) ¯ f q (p 3 )f q (p) + δ 4 (p − p 1 − p 2 + p 3 )(tr(u¯ u) p (u¯ u) 1 tr(v¯ v) 2 (v¯ v) 3 −tr(u¯ u) p (u¯ u) 1 (v¯ v) 2 (v¯ v) 3 ) ¯ f q (p 1 ) ¯ f ¯ q (p 2 )f ¯ q (p 3 )f q (p) + δ 4 (p + p 1 − p 2 − p 3 )(tr(u¯ u) p (v¯ v) 1 tr(v¯ v) 2 (u¯ u) 3 −tr(u¯ u) p (v¯ v) 1 (v¯ v) 2 (u¯ u) 3 )f ¯ q (p 1 ) ¯ f ¯ q (p 2 ) ¯ f q (p 3 )f q (p)]. (5.17)</trash>
+
+
+				</figure>
+
+				<p>This can be simplified slightly, if one makes the substitution p 1 ↔ p 3 in the last term, enabling one to combine the second and third terms. At the same time, one notes that there is a symnmetry in the first term in the variables p 1 and p 3 . We employ this to rewrite the first term also. One then has the form</p>
+
+				<figure>
+					<trash>J q,loss coll,σ = − πi E p 4G 2 i 3 ¯ h d 3 p 1 (2π¯ h) 3 2E p 1 d 3 p 2 (2π¯ h) 3 2E p 2 d 3 p 3 (2π¯ h) 3 2E p 3 (2π¯ h) 4 × {δ 4 (p − p 1 + p 2 − p 3 ) 1 2 [tr(u¯ u) p (u¯ u) 1 tr(u¯ u) 2 (u¯ u) 3 +tr(u¯ u) p (u¯ u) 3 tr(u¯ u) 2 (u¯ u) 1 − tr(u¯ u) p (u¯ u) 1 (u¯ u) 2 (u¯ u) 3 −tr(u¯ u) p (u¯ u) 3 (u¯ u) 2 (u¯ u) 1 ] ¯ f q (p 1 )f q (p 2 ) ¯ f q (p 3 )f q (p) + δ 3 (p − p 1 − p 2 + p 3 )[tr(u¯ u) p (u¯ u) 1 tr(v¯ v) 2 (v¯ v) 3 +tr(u¯ u) p (v¯ v) 3 tr(v¯ v) 2 (u¯ u) 1 − tr(u¯ u) p (u¯ u) 1 (v¯ v) 2 (v¯ v) 3 −tr(u¯ u) p (v¯ v) 3 (v¯ v) 2 (u¯ u) 1 ] ¯ f q (p 1 ) ¯ f ¯ q (p 2 )f ¯ q (p 3 )f q (p)} (5.18)</trash>
+
+
+				</figure>
+
+				<p>Now, by directly examining the quark-quark scattering processes, see Fig. 7, one sees that the first two terms that arose from the direct graph of Fig. 4(a) correspond to the t and u channel exchange diagrams respectively, while the remaining terms that arose from the exchange graph of Fig. 4</p>
+
+				<figure>
+					<figDesc>(b), are constructed from the product combinations of the t and u channel matrix elements. The individual matrix elements for these processes are</figDesc>
+					<trash>− iM t σ (qq → qq) = 2iG ¯ h ¯ u α 1 u α p ¯ u β 3 u β 2 (5.19) −iM u σ (qq → qq) = 2iG ¯ h ¯ u α 1 u α 2 ¯ u β 3 u β p . (5.20)</trash>
+
+
+				</figure>
+
+				<p>Similarly, in the quark antiquark channel shown in Fig. 8, the s and t channel graphs are represented together with their products. Their individual matrix elements are</p>
+
+				<figure>
+					<trash>− iM s σ (q ¯ q → q ¯ q) = 2iG ¯ h ¯ u α 1 v α 2 ¯ v β 3 u β p (5.21) −iM t σ (q ¯ q → q ¯ q) = 2iG ¯ h ¯ u α 1 u α p ¯ v β 3 v β 2 . (5.22)</trash>
+
+
+				</figure>
+
+				<p>Squaring these matrix elements and comparing the result with the terms in</p>
+
+				<figure>
+					<trash>Eq.(5.18), one arrives at the simple form J loss,σ q = − π¯ h E p d 3 p 1 (2π¯ h) 3 2E p 1 d 3 p 2 (2π¯ h) 3 2E p 2 d 3 p 3 (2π¯ h) 3 2E p 3 (2π¯ h) 4 × {δ 4 (p − p 1 + p 2 − p 3 ) 1 2 |M σ qq→qq (p2 → 13)| 2 ¯ f q (p 1 )f q (p 2 ) ¯ f q (p 3 )f q (p) + δ 4 (p − p 1 − p 2 + p 3 ) |M σ q ¯ q→q ¯ q (p3 → 12)| 2 ¯ f q (p 1 ) ¯ f ¯ q (p 2 )f ¯ q (p 3 )f q (p)}, (5.23) where |M σ qq→qq | = |M t (qq → qq) − M u (qq → qq)| and |M σ q ¯ q→q ¯ q | = |M s (q ¯ q → q ¯ q) − M t (q ¯ q → q ¯ q)|</trash>
+
+
+				</figure>
+
+				<p>contains the relevant s, t and u channels, and the sum refers to all spin variables.</p>
+
+				<p>In this calculation, one has explicitly observed that in the quark-quark scattering, the direct graph of Fig. 4(a) leads to the squares of the matrix elements of both the t and u channels, while cross terms are attributed to the exchange graph. Similarly, for the quark-antiquark processes, the direct graph of Fig. 4(a) leads to the squares of the matrix elements for the s and t channels, again with the cross terms arising from Fig. 4(b). One thus sees the necessity of retaining both of these graphs in order to derive the sum of different channels in the cross section. b. The pseudoscalar-pseudoscalar interaction. The interaction graphs of Fig. 4 that contain only the pseudoscalar iγ 5 at each vertex contribute to the collision term</p>
+
+				<figure>
+					<trash>via J q,loss coll,π = 2πi 2E p tr Σ +− π (X, p 0 = E p , p) s u s (p)¯ u s (p)f q (X, p) , (5.24) with Σ −+ π given in Eq.(5.3</trash>
+
+
+				</figure>
+
+				<p>). This term may be dealt with in the same fashion as the scalar term. Explicit details are left to the Appendix D.</p>
+
+				<figure>
+					<trash>After some manipulation, one finds J loss,π q = − π¯ h E p d 3 p 1 (2π¯ h) 3 2E p 1 d 3 p 2 (2π¯ h) 3 2E p 2 d 3 p 3 (2π¯ h) 3 2E p 3 (2π¯ h) 4 × {δ 4 (p − p 1 + p 2 − p 3 ) 1 2 |M π qq→qq (p2 → 13)| 2 ¯ f q (p 1 )f q (p 2 ) ¯ f q (p 3 )f q (p) + δ 4 (p − p 1 − p 2 + p 3 ) |M π q ¯ q→q ¯ q (p3 → 12)| 2 ¯ f q (p 1 ) ¯ f ¯ q (p 2 )f ¯ q (p 3 )f q (p)}, (5.25) where |M π qq→qq | = |M t π (qq → qq) − M u π (qq → qq)| and |M π q ¯ q→q ¯ q | = |M s π (q ¯ q → q ¯ q) − M t π (q ¯ q → q ¯ q)|</trash>
+
+
+				</figure>
+
+				<p>contain the relevant s, t and u channel scattering processes that are given in Figs. 7 and 8 with the vertices iγ 5 everywhere.</p>
+
+				<p>One can now combine Eqs.(5.23) and (5.25). These are added. In addition, it is useful to relabel the variables 2 ↔ 3 in the quark-antiquark scattering terms, so that one may extract a common δ-function. One then has the combined terms</p>
+
+				<figure>
+					<trash>J loss,q coll,σ+π = J q,loss coll,σ + J q,loss coll,π = − π¯ h E p d 3 p 1 (2π¯ h) 3 2E p 1 d 3 p 2 (2π¯ h) 3 2E p 2 d 3 p 3 (2π¯ h) 3 2E p 3 (2π¯ h) 4 δ 4 (p − p 1 + p 2 − p 3 ) × { 1 2 ( |M σ qq→qq (p2 → 13)| 2 + |M π qq→qq (p2 → 13)| 2 ) × ¯ f q (p 1 )f q (p 2 ) ¯ f q (p 3 )f q (p) + ( |M σ q ¯ q→q ¯ q (p2 → 13)| 2 + |M π q ¯ q→q ¯ q (p2 → 13)| 2 ) × ¯ f q (p 1 ) ¯ f ¯ q (p 3 )f ¯ q (p 2 )f q (p)}. (5.26)</trash>
+
+
+				</figure>
+
+				<p>From this form, it is evident that both scalar and pseudoscalar interaction terms combine to give the individual matrix elements squared. What is still missing, however, is the mixed self-energy. This is examined briefly in the following section.</p>
+
+				<figure>
+					<trash>c. Mixed interaction. The mixed self-energy, given in Eq.(5.4) contributes to the loss term via J q,loss coll,mixed = 2πi 2E p tr Σ +− mixed (X, p 0 = E p , p) s u s (p)¯ u s (p)f q (X, p) . (5.27)</trash>
+
+
+				</figure>
+
+				<p>Dealing with this term as with the scalar interaction, one finds a series of terms, the details of which are to be found in Appendix E. One can identify these in terms of the amplitudes of the scalar and pseudoscalar scattering matrix elements, see</p>
+
+				<figure>
+					<trash>Eqs.(5.20), (5.22), (D2) and (D3) and one finds J q,loss coll,mixed = − π¯ h E p d 3 p 1 (2π¯ h) 3 2E p 1 d 3 p 2 (2π¯ h) 3 2E p 2 d 3 p 3 (2π¯ h) 3 2E p 3 (2π¯ h) 4 δ(p − p 1 + p 2 − p 3 ) × { 1 2 [ M u σ M t π * + M t σ M u π * + M t π M u σ * + M u π M t σ * ] qq→qq × ¯ f q (p 1 )f q (p 2 ) ¯ f q (p 3 )f q (p) + [ M s σ M t π * + M t σ M s π * + M t π M s σ * + M s π M t σ * ] q ¯ q→q ¯ q × ¯ f q (p 1 ) ¯ f ¯ q (p 3 )f ¯ q (p 2 )f q (p)}. (5.28) Thus, the final result for the collision term, J q,loss coll , constructed by adding Eq.(5.28) to Eq.(5.26), is J q,loss coll = − π¯ h E p d 3 p 1 (2π¯ h) 3 2E p 1 d 3 p 2 (2π¯ h) 3 2E p 2 d 3 p 3 (2π¯ h) 3 2E p 3 (2π¯ h) 4 δ 4 (p − p 1 + p 2 − p 3 ) ×{ 1 2 |M qq→qq (p2 → 13)| 2 ¯ f q (p 1 )f q (p 2 ) ¯ f q (p 3 )f q (p) + |M q ¯ q→q ¯ q (p2 → 13)| 2 ¯ f q (p 1 ) ¯ f ¯ q (p 3 )f ¯ q (p 2 )f q (p)}, (5.29) where the matrix elements are now complete in both the quark-quark and quarkantiquark sectors, M qq→qq = M σ qq→qq + M π qq→qq and M q ¯ q→q ¯ q = M σ q ¯ q→q ¯ q + M π q ¯ q→q ¯ q . We comment once again that although this result has been derived using a constant interaction or in Born approximation, it will also hold in an extended form, where the interaction proceeds rather via a momentum dependent coherent mesonic state [20]</trash>
+
+
+				</figure>
+
+				<p>.</p>
+
+			</div>
+			<div>
+				<head>B. The gain term</head>
+
+				<p>Construction of the gain term proceeds exactly as in the loss case with the evaluation of</p>
+
+				<figure>
+					<trash>J q,gain coll = − 2πi 2E p tr Σ −+ (X, p 0 = E p , p) s u s (p)¯ u s (p) ¯ f q (X, p) (5.30) for the three different forms of Σ −+ . We do not repeat this procedure here, but simply quote the final result. One has J q,gain coll = − π¯ h E p d 3 p 1 (2π¯ h) 3 2E p 1 d 3 p 2 (2π¯ h) 3 2E p 2 d 3 p 3 (2π¯ h) 3 2E p 3 (2π¯ h) 4 δ 4 (p − p 1 + p 2 − p 3 ) ×{ 1 2 |M qq→qq (p2 → 13)| 2 f q (p 1 ) ¯ f q (p 2 )f q (p 3 ) ¯ f q (p) + |M q ¯ q→q ¯ q (p2 → 13)| 2 f q (p 1 )f ¯ q (p 3 ) ¯ f ¯ q (p 2 ) ¯ f q (p)} (5.31) with the complete quark-quark and quark-antiquark scattering matrix elements as defined in Eq.(5.29).</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>C. The transport equation</head>
+
+				<p>In this section, our aim is to construct the transport equation that now includes the self-energies represented in Figs.4 and 5. In order to do so, we first combine the results of Section V A and V B to construct the collision integral J q coll that was defined by Eq.(5.5). This energy integrated collision term can then be written as</p>
+
+				<figure>
+					<trash>J q coll = − π¯ h E p dQ d 3 p 2 (2π¯ h) 3 2E p 2 × { 1 2 |M qq→qq (p2 → 13)| 2 (f q (p 1 ) ¯ f q (p 2 )f q (p 3 ) ¯ f q (p) − ¯ f q (p 1 )f q (p 2 ) ¯ f q (p 3 )f q (p)) + |M q ¯ q→q ¯ q (p2 → 13)| 2 (f q (p 1 ) ¯ f ¯ q (p 2 )f ¯ q (p 3 ) ¯ f q (p) − ¯ f q (p 1 ) ¯ f ¯ q (p 3 )f ¯ q (p 2 )f q (p)}, (5.32) where dQ = (2π¯ h) 4 δ 4 (p + p 2 − p 1 − p 3 ) d 3 p 1 (2π¯ h) 3 2E p 1 d 3 p 3 (2π¯ h) 3 2E p 3 (5.33) is the Lorentz invariant phase space factor. One can, however, reexpress the right hand side of this equation in terms of the differential scattering cross section. One can see this simply if one considers centre of mass variables: noting that dQ = 1 4π 2 ¯ h 2 |p 1 | 4 √ s dΩ (5.34) and dσ dΩ = 1 64π 2 ¯ h 2 s |p 1 | |p 2 | | ¯ M | 2 , (5.35) where | ¯ M | 2 is the spin and color averaged scattering matrix element squared. One thus has J q coll = − 4N 2 c π¯ h E p dΩ d 3 p 2 (2π¯ h) 3 2E p 2 | v p − v 2 |2E p 2E p 2 × { 1 2 dσ dΩ | qq→qq (p2 → 13)[f q (p 1 ) ¯ f q (p 2 )f q (p 3 ) ¯ f q (p) − ¯ f (p 1 )f q (p 2 ) ¯ f q (p 3 )f q (p)] + dσ dΩ | q ¯ q→q ¯ q (p2 → 13)[f q (p 1 ) ¯ f ¯ q (p 2 )f ¯ q (p 3 ) ¯ f q (p) − ¯ f q (p 1 ) ¯ f ¯ q (p 3 )f ¯ q (p 2 )f q (p)]} (5.36)</trash>
+
+
+				</figure>
+
+				<p>for the collision term. We have thus obtained the final expression for the collision integral that looks formally similar to that expected in the semi-classical limit. In addition, we note that this term is proportional to ¯ h, explicitly demonstrating our a priori claim of Sec. III C that terms containing off-diagonal matrix elements of Σ multiplied with S are proportional to ¯ h.</p>
+
+				<p>In view of this, we may examine the right hand side of the transport equation</p>
+
+				<figure>
+					<trash>Eq.(2.21) that contains I − of Eq.(2.23). We require the energy integrated and traced form of I − , i.e. J q − = J coll + J q,A − + J q,R − , (5.37) with J q,A/R − = tr ∆ + dp 0 I A,R − . (5.38) We are required to consider J q,A − and J q,R − (or alternatively I R − and I A − ) also only to this first order of ¯ h for this term in the self-energy. Examining Eqs.(2.25) and (2.26), one notes that J q,A − and J q,R − then vanish</trash>
+
+
+				</figure>
+
+				<p>identically, due to the cyclic property of the trace. Higher orders would be of order O(¯ h 2 ), and may therefore be discarded.</p>
+
+				<figure>
+					<trash>Thus the transport equation Eq.(4.6) now becomes modified to read i¯ h 2 {γ µ , ∂S −+ (X, p) ∂X µ } + [ p, S −+ (X, p)] = −i¯ h∂ µ Σ A H (X)∂ µ p S −+ (X, p) + I coll , (5.39) with I coll related to J coll via Eq.(5.38) and J coll as given in Eq.(5.36). It becomes clear, on integrating over the positive energies p 0 and performing the spinor trace, i¯ h 2 ∆ + dp 0 tr{γ µ , ∂S −+ (X, p) ∂X µ } = −i¯ h ∆ + dp 0 ∂ µ Σ A H (X)∂ µ p S −+ (X, p) + J coll (5.40) that all terms that survive this procedure, are directly proportional to ¯ h, and that the resulting transport equation p µ ∂ µ f q ( X, p) + m(X)∂ µ m(X)∂ µ p f q (X, p) = N c dΩ d 3 p 2 (2π¯ h) 3 2E p 2 | v p − v 2 |2E p 2E p 2 × { 1 2 dσ dΩ | qq→qq (p2 → 13)(f q (p 1 ) ¯ f q (p 2 )f q (p 3 ) ¯ f q (p) − ¯ f(p 1 )f q (p 2 ) ¯ f q (p 3 )f q (p)) + dσ dΩ | q ¯ q→q ¯ q (p2 → 13)(f q (p 1 ) ¯ f ¯ q (p 2 )f ¯ q (p 3 ) ¯ f q (p) − ¯ f q (p 1 ) ¯ f ¯ q (p 3 )f ¯ q (p 2 )f q (p))}, (5.41)</trash>
+
+
+				</figure>
+
+				<p>is the classical result. Here this equation has been cast into a form that is reminiscent of the non-relativistic Boltzmann equation [25]. To make this analogy exact, one should regard this equation rather in terms of the quark density distribution, that is given as n q (p, X) = 2N c f q (p, X). It is thus apparent that the lowest order term in the derivative expansion of I coll gives the relativistic analogue of the classically expected collision term [25]. By contrast, the first order term was required in the local self-energy in deriving the force term from the Hartree approximation. Finally, we comment that the transport equation for the antiquark distribution function is simply obtained from the aforegoing by replacing q ↔ ¯ q everywhere.</p>
+
+				<p>Before concluding this section, we make a comment with regard to the relevance of chiral symmetry to Eq.(5.41). Formally, any arbitrary interaction will lead to a similar form as has been given in Eq.(5.41) for the transport equation, and therein lies the generality of this calculation. However, a different self-energy would describe the mean field part or Vlasov part. For the NJL model, this amounts to a dynamically generated quark mass m(X) appearing, that arises because of the symmetry breaking. Note that in the Wigner-Weyl realization of the symmetry, this term would vanish identically. In addition, the issue of chiral symmetry reflects itself again in the cross-sections that are to be calculated for Eq.(5.41), see Ref. [26]</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>D. The constraint equation</head>
+
+				<p>The constraint equation, Eq.(2.22), can also be examined in light of the ¯ h expansion . One notes that it is intrinsically of one order less than the transport equation in terms of an ¯ h expansion: the semiclassical form of Eq.(2.22) arises from ¯ h 0 structures . Thus, in extending the Hartree equation to include collisional self-energies, one may immediately disregard the collisional term I coll , as well as I R + since they are one order higher in ¯ h than the Hartree approximation. An additional correction to the mass could at most arise from I</p>
+
+				<figure>
+					<trash>A + but which represents O(1/N c ) corrections to m(X) = m H (X) calculated via Eq.(4.3). In the absence of this term, the constraint equation retains the form already given in Eq.(4.9)</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>VI. SUMMARY AND CONCLUSIONS</head>
+
+				<p>In this paper, we have presented a general derivation for transport and constraint equations for a fermionic system from a canonical point of view along the lines of Ref. [8]. We have evaluated these for the single flavor NJL model. Here two expansion schemes are overlaid. The strong coupling theory is dealt with via an expansion in the inverse number of colors, 1/N c , in what is by now standard practice. We make an expansion in ¯ h, whch only partly is identical with the gradient expansion.</p>
+
+				<p>We have evaluated the lowest order self-energy term in the 1/N c expansion, and constructed transport (Vlasov) and constraint (mass-shell) equations. In addition, that one is working with a chiral model evidences itself in that the gap equation must be solved in addition to the transport and constraint equation emerges, and must be solved together with these. It is demonstrated explicitly that differing orders in ¯ h are required for these two equations 7 , the constraint equation being of order ¯ h 0 7 Although this feature is known in the literature [22], it is not often made explicit [24]. while the transport equation has order ¯ h 1 .</p>
+
+				<p>We then examine a term of the next order in the 1/N c expansion. We treat the simplest one that gives rise to a non-vanishing collision integral, and show explicitly that it is of order ¯ h, and therefore is necessary for constructing a consistent transport equation. By the same token, it has no relevance for the constraint equation, for which only additional mass changes can occur. In the derivation of the relativistic Boltzmann equation, we have gone to some trouble to indicate explicitly that the on-mass shell condition restricts the collision integral to contain only elastic scattering processes, and suppresses pair creation and annihilation amplitudes q ↔ (q ¯ q)q and also vacuum fluctuations that would otherwise be present. The derivation of the collision integral that we have given here is general for all relativistic two body interactions – minimal additional manipulations are required for a momentum dependent interaction. Once again, the addition feature of the chiral symmetry manifests itself in that one has to solve a gap equation concomitantly. In addition, the cross-sections are a function of the dynamically generated quark mass, and therefore also reflect the chiral symmetry aspect of the problem. In our calculation, we have also been able to identify the associated t and u channel matrix elements required to this level of approximation for quark-quark scattering, as well as the s and t channel amplitudes for quark-antiquark scattering, i.e. we are able to explicitly attribute actual Feynman graphs, and not simply heuristic diagrams, to each of these processes.</p>
+
+				<p>In this paper, we have not made any attempt to include the Fock term, which is also of order O(1/N c ). This is deliberate. Since the next stage in this study involves the incorporation of the mesonic sector, of which the Fock term forms a part, it has no relevance here at this stage and can at most modify the quasiparticle mass arising from the Hartree term. It is important to include all diagrams to O(1/N c ), thereby incorporating the mesonic sector completely. This in itself is a complex task, and contains several other difficulties. This will be the subject of a future paper [20].</p>
+
+			</div>
+			<div>
+				<head>ACKNOWLEDGMENTS</head>
+
+				<p>Two of the authors, S.P.K. and J.H., gratefully acknowledge the various collaborations with R.H. Lemmer, during which they have profited immensely from his experience in the techniques of many-body theory. This paper is therefore dedicated to him. This work has been supported in part by the</p>
+
+				<figure>
+					<trash>Deutsche Forschungsgemeinschaft DFG under the contract number Hu 233/4-4, and by the German Ministry for Education and Research (BMBF) under contract number 06 HD 742. APPENDIX A: GREEN FUNCTIONS</trash>
+
+
+				</figure>
+
+				<p>In this section, we list relations among the various Green functions and the self-energies. They can, in almost all cases, be simply derived from their definitions.</p>
+
+				<figure>
+					<trash>The causal and anticausal Green functions, see Eq.(2.1), are related to S −+ and S +− via the relations S −− αβ (x, y) = θ(x 0 − y 0 )S +− αβ (x, y) + θ(y 0 − x 0 )S −+ αβ (x, y), (A1) and S ++ αβ (x, y) = θ(y 0 − x 0 )S +− αβ (x, y) + θ(x 0 − y 0 )S −+ αβ (x, y). (A2)</trash>
+
+
+				</figure>
+
+				<p>The Green functions are not independent. They are linearly related in a way that is obvious from their definitions,</p>
+
+				<figure>
+					<trash>S −− αβ (x, y) + S ++ αβ (x, y) = S −+ αβ (x, y) + S +− αβ (x, y) = S K αβ (x, y) = − i ¯ h ψ α (x), ψ β (y) (A3) and which defines the Keldysh Green function. On the other hand, the retarded and advanced Green functions that were introduced in Eqs.(2.8) and (2.9) can also be related to the S ij , i, j = ±, via S R αβ (x, y) = θ(x 0 − y 0 ) S +− αβ (x, y) − S −+ αβ (x, y) = S −− αβ (x, y) − S −+ αβ (x, y) = S +− αβ (x, y) − S ++ αβ (x, y) (A4) and S A αβ (x, y) = −θ(y 0 − x 0 ) S +− αβ (x, y) − S −+ αβ (x, y) = S −− αβ (x, y) − S +− αβ (x, y) = S −+ αβ (x, y) − S ++ αβ (x, y). (A5) In addition, the following relations are evident: S R αβ (x, y) − S A αβ (x, y) = S +− αβ (x, y) − S −+ αβ (x, y) (A6) S R αβ (x, y) + S A αβ (x, y) = S −− αβ (x, y) − S ++ αβ (x, y). (A7) It is often useful to alternatively consider the matrix of Green functions S ′ =   0 S A S R S K   , (A8) that can be obtained from S by a transformation S ′ = R −1 S R , (A9) with R = 1 √ 2   1 1 −1 1   , R −1 = 1 √ 2   1 −1 1 1   . (A10) The transformed self-energy matrix Σ ′ is Σ ′ =   Σ K Σ R Σ A 0   . (A11) with Σ K = Σ −− + Σ ++ (A12) Σ R = Σ −− + Σ −+ (A13) Σ A = Σ −− + Σ +− . (A14) This can be seen directly, on using the equation Σ ++ + Σ −− = −(Σ +− + Σ −+ ), (A15) which, in itself can be derived via Eq.(A3). The Dyson equation for the transformed matrix is S ′ (x, y) = S ′ (0) (x, y) + d 4 zd 4 wS ′ (0) (x, w)Σ ′ (w, z)S ′ (z, y) (A16) leading to equations for the retarded and advanced Green functions that are individually closed: S R,A βγ (x, y) = S R,A(0) βγ (x, y) + d 4 zd 4 wS R,A(0) βµ (x, w)Σ R,A µν (w, z)S R,A νγ (z, y) (A17) (i¯ h ∂ x − m 0 ) αβ S R,A βγ (x, y) = δ αγ δ 4 (x − y) + d 4 zΣ R,A αβ (x, z)S R,A βγ (z, y). (A18) The equation of motion for the Keldysh Green function S K is found on multiplying out Eq.(A16) and using the fact that (i ∂ x − m 0 )S K (0) = 0. One then has (i¯ h ∂ x − m 0 ) S K = (Σ K S A + Σ R S K )d 4 z, (A19) i.e</trash>
+
+
+				</figure>
+
+				<p>. an integro-differential equation, whose interpretation should also lead to the generalization of the Boltzmann equation [5]. This, together with Eq.(A18) form a complete set of equations. Usually, the solution of either S R or S A is required as these are hermitian conjugates of one another. We now write down the solutions for the free particle case. It is simplest to evaluated S R,A . A direct evaluation leads to the form</p>
+
+				<figure>
+					<trash>S R,A (p) = p + m 0 p 2 − m 2 0 ± iǫp 0 . (A20) When a self-energy is included, one has S R,A (p) = p + (m 0 + Σ R,A ) p 2 − (m 0 + Σ R,A ) 2 + iǫp 0 . (A21) Using Eqs.(A4), (3.2) and (3.3), one may verify that S −− (X, p) and S ++ (X, p) take the forms that have been given in Eqs.(3.6) and (3.7). APPENDIX B: WIGNER TRANSFORMS</trash>
+
+					<figDesc>The transformation rules for applying the Wigner transform to the functions required in the equations of motion are</figDesc>
+					<trash>∂ µ y f (x, y) → (i p µ ¯ h + 1 2 ∂ µ X )f (X, p) (B1) ∂ µ x f (x, y) → (−i p µ ¯ h + 1 2 ∂ µ X )f (X, p) (B2) f (y)g(x, y) → f (X) exp   i¯ h 2 ← − ∂ ∂X µ − → ∂ ∂p µ   g(X, p) (B3) f (x)g(x, y) → f (X) exp   − i¯ h 2 ← − ∂ ∂X µ − → ∂ ∂p µ   g(X, p) (B4) d 4 zf (x, z)g(z, y) → f (X, p) exp   − i¯ h 2 ( ← − ∂ ∂X µ − → ∂ ∂p µ − ← − ∂ ∂p µ − → ∂ ∂X µ )   g(X, p). (B5)</trash>
+
+
+				</figure>
+
+				<p>These relations can be derived simply from the definition for the Wigner transform,</p>
+
+				<figure>
+					<trash>Eq.(2.17) and retaining only first order derivatives in the expansion need be kept. APPENDIX C: VLASOV AND CONSTRAINT EQUATIONS In this Appendix, we derive the Vlasov equation from the Hartree approximation to the self-energy in the transport equation, and the constrained equation in this approximation. Starting with the transport equation, Eq.(4.6), i¯ h 2 {γ µ , ∂S −+ (X, p) ∂X µ } + [ p, S −+ (X, p)] = −i¯ h∂ µ Σ A (X)∂ µ p S −+ (X, p), (C1) we insert Eq.(3.4) for S −+ for the Green function. The anticommutator on the left hand side of Eq.(C1) does not vanish, whereas the commutator does after a spinor trace is performed. One finds ∂ ∂X µ ( p µ 2E p [δ(p 0 − E p )f q (X, p) − δ(p 0 + E p ) ¯ f ¯ q (X, −p)]) + m(X)∂ µ m(X)∂ µ p ( 1 2E p [δ(p 0 − E p )f q (X, p) − δ(p 0 + E p ) ¯ f ¯ q (X, −p)]) = 0 (C2)</trash>
+
+
+				</figure>
+
+				<p>where a spinor trace has been performed, and we have made use of the fact that ∂ µ Σ A (X) = ∂ µ m(X), since m 0 is a constant. Now this equation is integrated over a positive energy range. In this fashion, only the quark distribution function can survive. One thus has</p>
+
+				<figure>
+					<trash>∂ ∂X µ ∆ + dp 0 p µ E p δ(p 0 − E p )f q (X, p) + m(X)∂ µ m(X) ∆ + dp 0 ∂ µ p 1 E p δ(p 0 − E p )f q (X, p) = 0. (C3) It is useful to write the Lorentz indices out explicitly. Using the notation i = 1..3, this reads ∂ ∂X 0 f q (X, p) + p i ∂ i ( f q (X, p) E p ) + m(X)∂ i m(X)∂ i p ( f q (X, p) E p ) = 0. (C4) Note that no term proportional to m(X)∂ 0 m(X) occurs, as this term contains a vanishing surface integral. If one explicitly performs the differentiations indicated, noting that ∇ x E −1 p = −(m(X) ∇m(X))/E 3 p and ∇ p E −1 p = − p/E 3 p , one finds ∂ ∂X 0 f q (X, p) + v · ∇f q (X, p) − ∇E p · ∇ p f q (X, p) = 0, (C5)</trash>
+
+
+				</figure>
+
+				<p>where we have written v = p/E p . This is the Vlasov equation, and it is manifestly non-covariant. One can, however, extract a factor E</p>
+
+				<figure>
+					<trash>−1 p from the above equation, and write 1 E p (p µ ∂ µ f q (X, p) + m(X)∂ µ m(X)∂ µ p f q (X, p)) = 0, (C6)</trash>
+
+
+				</figure>
+
+				<p>giving it a covariant appearance. Of course, in the above expression, p 0 = E p , while there is no p 0 dependence in the distribution function. It is this equation that has appeared as Eq.(4.8) in the main text.</p>
+
+				<p>The derivation of the constraint equation is far simpler. Consider Eq.(4.7), and insert the quasiparticle form Eq.(3.4) for S −+ . The commutator, which is the first term of this equation, gives no contribution upon taking the spinor trace. The remaining anticomutator terms can be combined, to give</p>
+
+				<figure>
+					<trash>tr{ p − m(X), S −+ } = 0 (C7) since m(X) = m 0 + Σ A (X) = m 0 + Σ R (X) in this approximation. Integrating on ∆ + leads directly to the equation (p 2 − m 2 (X))f q (X, p) = 0 (C8) that was quoted in Eq.(4.9). APPENDIX D: PSEUDOSCALAR COLLISION TERM</trash>
+
+
+				</figure>
+
+				<p>In this appendix, we provide the detail required to construct the collision term from Eq.(5.24) with the self-energy as calculated via Fig.4 using the pseudoscalar vertices iγ 5 . The self-energy has been given in Eq.(5.3). On inserting this into Eq.(5.24) and multiplying out the result, one again finds inter alia off-shell processes of the form shown in Fig. 6, where the interaction vertex is now pseudoscalar.</p>
+
+				<p>Retaining only those terms that survive energy-momentum conservation, and performing the same manipulations that led to Eq.(5.17), one finds the analogous result</p>
+
+				<figure>
+					<trash>J q,loss coll,π = − πi E p 4G 2 i 3 ¯ h d 3 p 1 (2π¯ h) 3 2E p 1 d 3 p 2 (2π¯ h) 3 2E p 2 d 3 p 3 (2π¯ h) 3 2E p 3 (2π¯ h) 4 × {δ 4 (p − p 1 + p 2 − p 3 )[tr(u¯ u) p γ 5 (u¯ u) 1 γ 5 tr(u¯ u) 2 γ 5 (u¯ u) 3 γ 5 −tr(u¯ u) p γ 5 (u¯ u) 1 γ 5 (u¯ u) 2 γ 5 (u¯ u 3 )γ 5 ] ¯ f q (p 1 )f q (p 2 ) ¯ f q (p 3 )f q (p) + δ 4 (p − p 1 − p 2 + p 3 )[tr(u¯ u) p (u¯ u) 1 tr(v¯ v) 2 (v¯ v) 3 −tr(u¯ u) p γ 5 (u¯ u) 1 γ 5 (v¯ v) 2 γ 5 (v¯ v) 3 γ 5 ] ¯ f q (p 1 ) ¯ f ¯ q (p 2 )f ¯ q (p 3 )f q (p) + δ 4 (p + p 1 − p 2 − p 3 )[tr(u¯ u) p γ 5 (v¯ v) 1 γ 5 tr(v¯ v) 2 γ 5 (u¯ u) 3 γ 5 −tr(u¯ u) p γ 5 (v¯ v) 1 γ 5 (v¯ v) 2 γ 5 (u¯ u) 3 γ 5 ]f ¯ q (p 1 ) ¯ f ¯ q (p 2 ) ¯ f q (p 3 )f q (p)}. (D1)</trash>
+
+
+				</figure>
+
+				<p>Note that the terms with two traces arose from the direct graph Fig. 4</p>
+
+				<figure>
+					<figDesc>(a) while the term with one trace originated from the exchange graph Fig. 4</figDesc>
+
+				</figure>
+
+				<p>(b). now, once again, Fig. 7 may be examined with pseudoscalar vertices, leading to the t and s channel forms,</p>
+
+				<figure>
+					<trash>− iM t π (qq → qq) = 2iG ¯ h ¯ u α 1 (iγ 5 ) αβ u β p ¯ u α ′ 3 (iγ 5 ) α ′ β ′ u β ′ 2 (D2) −iM u π (qq → qq) = 2iG ¯ h ¯ u α 1 (iγ 5 ) αβ u β 2 ¯ u α ′ 3 (iγ 5 ) α ′ β ′ u β ′ p (D3)</trash>
+
+					<figDesc>for quark-quark scattering. The squares of these terms correspond to the first two terms of Eq.(D1), while the latter two terms are given by the combination</figDesc>
+
+				</figure>
+
+				<p><formula>(M u π M t π * + M t π M u π * ).</formula></p>
+
+				<p>In a similar fashion, the quark-antiquark channels from Fig. 8</p>
+
+				<p><formula>are − iM s π (q ¯ q → q ¯ q) = 2iG ¯ h ¯ u α 1 (iγ 5 ) αβ v β 2 ¯ v α ′ 3 (iγ 5 ) α ′ β ′ u β ′ p (D4) −iM t π (q ¯ q → q ¯ q) = 2iG ¯ h ¯ u α 1 (iγ 5 ) αβ u β p ¯ v α ′ 3 (iγ 5 ) α ′ β ′ v β ′ 2 (D5)</formula></p>
+
+				<p>which combine in the same way to yield the terms that form the sum multiplying the second δ-function. One thus has</p>
+
+				<figure>
+					<trash>J loss,π q = − π¯ h E p d 3 p 1 (2π¯ h) 3 2E p 1 d 3 p 2 (2π¯ h) 3 2E p 2 d 3 p 3 (2π¯ h) 3 2E p 3 (2π¯ h) 4 × {δ 4 (p − p 1 + p 2 − p 3 ) 1 2 |M π qq→qq (p2 → 13)| 2 ¯ f q (p 1 )f q (p 2 ) ¯ f q (p 3 )f q (p) + δ 4 (p − p 1 − p 2 + p 3 ) |M π q ¯ q→q ¯ q (p3 → 12)| 2 ¯ f q (p 1 ) ¯ f ¯ q (p 2 )f ¯ q (p 3 )f q (p)}, (D6) where |M π qq→qq | = |M t π (qq → qq) − M u π (qq → qq)| and |M π q ¯ q→q ¯ q | = |M s π (q ¯ q → q ¯ q) + M t π</trash>
+
+					<figDesc>(q ¯ q → q ¯ q)| again contain the relevant s, t and u channels. This was quoted as Eq.(5.25). APPENDIX E: MIXED COLLISION TERM In this appendix, the contribution of Σ +− mixed to the collision term is examined. As before, S −+ and S +− are inserted into Σ +− mixed given by Eq.(5.4), and the expression for J</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>q,loss</head>
+
+				<p>coll,mixed of Eq.(5.27) is multiplied out. One may directly identify the energymomentum conserving terms in this case to be</p>
+
+				<figure>
+					<trash>J q,loss coll,mixed = − πi E p 4G 2 i 3 ¯ h d 3 p 1 (2π¯ h) 3 2E p 1 d 3 p 2 (2π¯ h) 3 2E p 2 d 3 p 3 (2π¯ h) 3 2E p 3 (2π¯ h) 4 × {δ(p − p 1 + p 2 − p 3 )[tr(u¯ u) p γ 5 (u¯ u) 1 (u¯ u) 2 γ 5 (u¯ u) 3 +tr(u¯ u) p (u¯ u) 1 γ 5 (u¯ u) 2 (u¯ u) 3 γ 5 ] ¯ f q (p 1 )f 2 (p 2 ) ¯ f q (p 3 )f q (p) + δ(p − p 1 − p 2 + p 3 )[tr(u¯ u) p γ 5 (u¯ u) 1 (v¯ v) 2 γ 5 (v¯ v) 3 +tr(u¯ u) p (u¯ u) 1 γ 5 (v¯ v) 2 (v¯ v) 3 γ 5 + tr(u¯ u) p γ 5 (v¯ v) 3 (v¯ v) 2 γ 5 (u¯ u) 1 +tr(u¯ u) p (v¯ v) 3 γ 5 (v¯ v) 2 (u¯ u) 1 γ 5 ] ¯ f q (p 1 ) ¯ f ¯ q (p 2 )f ¯ q (p 3 )f q (p)}. (E1) A slight simplification can be introduced on letting 2 ↔ 3 in the second term. One has J q,loss coll,mixed = − πi E p 4G 2 i 3 ¯ h d 3 p 1 (2π¯ h) 3 2E p 1 d 3 p 2 (2π¯ h) 3 2E p 2 d 3 p 3 (2π¯ h) 3 2E p 3 × (2π¯ h) 4 δ(p − p 1 + p 2 − p 3 ) × [tr(u¯ u) p γ 5 (u¯ u) 1 (u¯ u) 2 γ 5 (u¯ u) 3 + tr(u¯ u) p (u¯ u) 1 γ 5 (u¯ u) 2 (u¯ u) 3 γ 5 ] × ¯ f q (p 1 )f 2 (p 2 ) ¯ f q (p 3 )f q (p) + [tr(u¯ u) p γ 5 (u¯ u) 1 (v¯ v) 2 γ 5 (v¯ v) 3 + tr(u¯ u) p (u¯ u) 1 γ 5 (v¯ v) 2 (v¯ v) 3 γ 5 +tr(u¯ u) p γ 5 (v¯ v) 3 (v¯ v) 2 γ 5 (u¯ u) 1 + tr(u¯ u) p (v¯ v) 3 γ 5 (v¯ v) 2 (u¯ u) 1 γ 5 ] × ¯ f q (p 1 ) ¯ f ¯ q (p 2 )f ¯ q (p 3 )f q (p)}. (E2)</trash>
+
+
+				</figure>
+
+				<p>It is now essential to identify these terms. In order to do so, we note that, for the scattering processes of Fig. 7 that include both t and u channels, the complete scattering amplitude is</p>
+
+				<p><formula>M qq→qq = M t σ − M u σ + M t π − M u π . (E3) Squaring this leads to |M qq→qq | 2 = |M σ | 2 + |M π | 2 + M t σ M t π * − M t σ M u π * − M u σ M t π * + M u σ M u π * + M t π M t σ * − M t π M u σ * − M u π M t σ * + M u π M u σ * . (E4)</formula></p>
+
+				<p>The first two terms of this expression have already been generated in Eq.(5.26).</p>
+
+				<p>Performing the sum over spinor indices, one sees from Eqs</p>
+
+				<figure>
+					<trash>.(5.19), (5.20), (D2) and (D3), that M t σ M t π * = 0 = M u σ M u π * , (E5) but that M u σ M t π * = − 4G 2 ¯ h 2 tr(u¯ u) p γ 5 (u¯ u) 1 (u¯ u) 2 γ 5 (u¯ u) 3 M t σ M u π * = − 4G 2 ¯ h 2 tr(u¯ u) p γ 5 (u¯ u) 3 (u¯ u) 2 γ 5 (u¯ u) 1 M t π M u σ * = − 4G 2 ¯ h 2 tr(u¯ u) p (u¯ u) 3 γ 5 (u¯ u) 2 (u¯ u) 1 γ 5 M u π M t σ * = − 4G 2 ¯ h tr(u¯ u) p (u¯ u) 1 γ 5 (u¯ u) 2 (u¯ u) 3 γ 5 (E6)</trash>
+
+
+				</figure>
+
+				<p>Now, direct inspection of Eq.(E1) indicates that all the terms of Eq.(E6) are present, if one extracts a factor 1/2 and makes use of the symmetry in the variables 1 and 3. The q ¯ q scattering term can be viewed similarly in its s and t channels for π and σ, and the terms may all be identified. One thus finds the result for J</p>
+
+			</div>
+			<div>
+				<head>q,loss</head>
+
+				<p>coll,mixed that was quoted in Eq.(5.28).</p>
+
+				<p>FIGURE CAPTIONS. Fig.1 : Closed time path on which the Green functions are defined. Fig.2</p>
+
+				<figure>
+					<figDesc>: Diagrammatic expansion of the Dyson equation for the Green function S ++ . Fig.3</figDesc>
+
+				</figure>
+
+				<p>: Self-consistent Hartree approximation to the self-energy. Fig.4 : Direct (a) and exchange (b) graphs that contribute to Σ −+ and which contain two interaction lines. Fig.5 : Mixed graphs that contribute to Σ +− mixed and which contain two interaction lines. Fig.6 : Processes of the form q → (q ¯ q)q and (q ¯ q)q → q as well as vacuum fluctuations that are suppressed in the quasiparticle approximation. These are heuristic graphs and are not Feynman graphs. They should be read from left to right. Fig.7 : The t and u channel Feynman graphs for elastic quark-quark scattering. Fig.8 : The s and t channel Feynman graphs for elastic quark-antiquark</p>
+
+			<note>ing. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . + Figure 1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</note>
+
+				<p><formula>. . . . iS ++ = = + + + + x x x x x x x x + + + + + + + + + + + + + + + + Figure 2</formula></p>
+
+				<p>i ii H =</p>
+
+			<note>i = +; . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . x x i i Figure 3 i + = + . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . x x x x x x x x . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . + + + + (a) (b) Figure 4 i + mixed = + . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</note>
+
+				<p><formula>. . x x x x x x x x + + + + 1 1 1 1 ii 5 ii 5 ii 5 ii 5 (a) (b) Figure 5</formula></p>
+
+				<p>.</p>
+
+			<note>. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . x x (a) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . x x (b) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . x x (c) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . x x (d) Figure 6 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</note>
+
+				<p><formula>x x x x p 2 1 3 p 2 1 3 t-channel u-channel Figure 7</formula></p>
+
+				<p>.</p>
+
+			<note>. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</note>
+
+				<p><formula>x x x x p 2 1 3 p 2 1 3 t-channel s-channel Figure 8</formula></p>
+
+			</div>
+
+			<note place="foot">arXiv:hep-ph/9708263v1 6 Aug 1997</note>
+
+			<note place="foot">* Dedicated to Professor R.H. Lemmer on the occasion of his 65th birthday</note>
+
+			<note place="foot" n="2"> This is not evident, for example, in the diagrams shown by Geiger [11] who omits exchange graphs. 3 Some research has been undertaken on the basis of static calculations that imply that substantial changes my occur in the mesonic spectrum, in particular with regard to the ρ</note>
+
+			<note place="foot" n="4"> Note that this convention differs from that of Ref. [6] in that those authors attribute the opposite signs to the contour branches. There is also another difference that arises in that the off diagonal self-energies in this convention of [5] differ from that of [6] and [8] by a minus sign.</note>
+
+			<note place="foot" n="5"> We will recover those equations of Ref. [8] in the fermionic sector. Here, however, we retain all factors of ¯ h explicitly.</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Quantum Statistical Mechanics</title>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">P</forename>
+				<surname>Kadanoff</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Baym</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ben- jamin</title>
+		<imprint>
+			<date type="published" when="1962" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Schwinger</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Math. Phys.V. Keldysh JETP</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">20</biblScope>
+			<date type="published" when="1018" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">1,12</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">M</forename>
+				<surname>Bakshi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">T R</forename>
+				<surname>Mahanthappa4 ] S</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>De</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">A</forename>
+				<surname>Groot</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Ch</forename>
+				<forename type="middle">G</forename>
+				<surname>Van Leeuwen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Weert</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Math. Phys</title>
+		<imprint>
+			<publisher>North Holland</publisher>
+			<biblScope unit="volume">4</biblScope>
+			<date type="published" when="1963" />
+			<publisher>North Holland</publisher>
+		</imprint>
+	</monogr>
+	<note>Rela. - tivistic Kinetik Theory</note>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">D</forename>
+				<surname>Landau</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">M</forename>
+				<surname>Lifschitz</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1986" />
+			<publisher>Physikalische Kinetik Akademie Verlag</publisher>
+			<pubPlace>Berlin</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Botermans</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Malfliet</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rep</title>
+		<imprint>
+			<biblScope unit="volume">198</biblScope>
+			<biblScope unit="issue">115</biblScope>
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K.-C</forename>
+				<surname>Chou</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Z.-B</forename>
+				<surname>Su</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B.-L</forename>
+				<surname>Hao</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Yu</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rep</title>
+		<imprint>
+			<biblScope unit="volume">118</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<date type="published" when="1985" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Mró</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">U</forename>
+				<surname>Heinz</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ann. Phys. (N.Y.)</title>
+		<imprint>
+			<biblScope unit="volume">229</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Schö</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Cubero</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">L</forename>
+				<surname>Friman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Nö</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Gy</forename>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Wolf, Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">572</biblScope>
+			<biblScope unit="issue">112</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">E</forename>
+				<surname>Davis</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">J</forename>
+				<surname>Perry</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">43</biblScope>
+			<biblScope unit="page">1893</biblScope>
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Geiger</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">54</biblScope>
+			<biblScope unit="page">949</biblScope>
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Nambu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Jona-Lasinio</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">122</biblScope>
+			<biblScope unit="issue">124</biblScope>
+			<biblScope unit="page">246</biblScope>
+			<date type="published" when="1961" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">See</forename>
+				<forename type="middle">U</forename>
+				<surname>For Reviews</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Vogl</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Weise</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Prog. Part. Nucl. Phys. S.P. Klevansky, Rev. Mod. Phys</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="issue">64</biblScope>
+			<biblScope unit="page">649</biblScope>
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<surname>Kunihiro</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rep</title>
+		<imprint>
+			<biblScope unit="volume">247</biblScope>
+			<biblScope unit="page">241</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<surname>See</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>For Example</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Laermann</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. A</title>
+		<imprint>
+			<biblScope unit="volume">610</biblScope>
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+	<note>1c</note>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Hatsuda</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T. Kunihiro</forename>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lett</title>
+		<imprint>
+			<biblScope unit="volume">304</biblScope>
+			<biblScope unit="page">185</biblScope>
+			<date type="published" when="1987" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">P</forename>
+				<surname>Rehberg</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Klevansky</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Hü</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. C</title>
+		<imprint>
+			<biblScope unit="volume">53</biblScope>
+			<biblScope unit="page">410</biblScope>
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Hü</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">P</forename>
+				<surname>Klevansky</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Rehberg</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="page" from="606" to="260" />
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Zhuang</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>private. communication</note>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Quack</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">P</forename>
+				<surname>Klevansky</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. C</title>
+		<imprint>
+			<biblScope unit="volume">49</biblScope>
+			<biblScope unit="page">3283</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Dmitraš</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Tegen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">H</forename>
+				<surname>Lemmer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Ann</forename>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1995" />
+			<biblScope unit="page">332</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">P</forename>
+				<surname>Klevansky</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Rehberg</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Hü</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>in. preparation</note>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">M</forename>
+				<surname>Zhang</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Wilets</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<date type="published" when="1900" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Vasak</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Gyulasy</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Th</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Elze, Ann. Phys. (N.Y.)</title>
+		<imprint>
+			<biblScope unit="volume">173</biblScope>
+			<biblScope unit="page">462</biblScope>
+			<date type="published" when="1987" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Florkowski</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Hü</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">P</forename>
+				<surname>Klevansky</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Neise</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ann. Phys. (N.Y.)</title>
+		<imprint>
+			<biblScope unit="volume">249</biblScope>
+			<biblScope unit="page">445</biblScope>
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Zhuang</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">U</forename>
+				<surname>Heinz</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ann. Phys</title>
+		<imprint>
+			<biblScope unit="volume">245</biblScope>
+			<biblScope unit="page">311</biblScope>
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<monogr>
+		<title level="m" type="main">Fundamentals of Statistical and Thermal Physics</title>
+		<author>
+			<persName>
+				<surname>Reif</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1965" />
+			<publisher>McGraw-Hill</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Rehberg</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">P</forename>
+				<surname>Klevansky</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Hü</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">608</biblScope>
+			<biblScope unit="page">260</biblScope>
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

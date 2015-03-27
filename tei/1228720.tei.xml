@@ -1,0 +1,1370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Higher Spin Fields and Symplectic Geometry</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2013-04-25">25 Apr 2013</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Dmitry</forename>
+								<surname>Ponomarev</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Service de MécaniqueetGravitation</orgName>
+								<orgName type="institution">UniversitédeMons–UMONS</orgName>
+								<address>
+									<addrLine>20PlaceduParc</addrLine>
+									<postCode>7000</postCode>
+									<settlement>Mons</settlement>
+									<country key="BE">Belgium</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Higher Spin Fields and Symplectic Geometry</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2013-04-25">25 Apr 2013</date>
+						</imprint>
+					</monogr>
+					<note>1 dmitri.ponomarev@umons.ac.be</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>We argue that higher spin fields originate from Hamiltonian mechanics and play a role of gauge fields ensuring covariance of geometric observables such as length and volume with respect to canonical transformations in the same way as a metric tensor in Riemannian geometry ensures covariance with respect to diffeomorphisms. We consider a reparametrization invariant action of a point particle in Hamiltonian form. Reparametrization invariance is achieved in the standard way by coupling to the auxiliary world-line metric. Identifying Hamiltonian function with a generating function for higher spin fields this action can be viewed as an action for the point particle in a higher spin background , while canonical transformations act as higher spin symmetries. We define the gauge invariant length as a proper time of a particle moving along the geodesic. Following the usual geometrical interpretation we introduce the volume form and the scalar curvature for a combined lower spin sector. As for the general case, we show that notions of local volume and scalar curvature are not compatible with symplectic transformations. We propose symplectically invariant counterparts for the total volume of the space and Einstein-Hilbert action.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>Besides the underlying role played in general relativity, (pseudo)-Riemannian geometry exists independently as an inherent part of numerous branches of modern physics and geometry. Taking metric as an exhausting characteristic of curved space it allows to treat notions of length, angle, geodesic, parallel transport, volume, curvature , etc. In turn, general relativity claims that the metric is dynamical, it is governed by non-linear equations of motion and can be sourced by other fields.</p>
+
+				<p>From this perspective it is to be expected that higher spin theory 2 , being an extension of usual gravity, should not only be an interacting theory of higher spin fields, but it should also preserve or deform properly underling geometrical concepts listed above. Despite the success of Vasiliev&apos;s theory [5, 6] as a theory of interacting higher spin fields consistent at all orders in coupling constant, the geometrical interpretation of higher spin fields remains vague. Neither length nor curvature are gauge invariant with respect to higher spin transformations. Absence of gauge invariant geometric observables leads to significant difficulties in interpretation of solutions to higherspin equations [7, 8, 9, 10, 11, 12, 13]. For instance, the position of the horizon of the higher-spin black hole cannot be defined because the usual interval changes under higher-spin gauge transformations.</p>
+
+				<p>The other role of the gravity field is that it insures covariance with respect to diffeomorphisms via replacing usual derivatives with covariant ones, etc. In contrast to internal symmetries, diffeomorphisms are transformations of the space-time, which makes difficult to unify gravity with other interactions. This conceptual problem can be resolved via the frame-like approach where gravity enters in Cartan&apos;s form. It is believed to be inevitable when one needs to deal with fermions. In the framelike approach one introduces locally a basis where the metric is Minkowskian. Then gravity becomes a gauge theory of local Poincare or SO(d − 1, 2) symmetry acting in a fiber space, while diffeomorphisms covariance is ensured by usage of differential forms. In this way the frame-like approach erases any difference between gravity and other fields treating all of them as gauge fields for local internal symmetries.</p>
+
+				<p>In particular, in Vasiliev&apos;s theory diffeomorphisms are no longer associated with gravity, being shared in the same extent by all the higher spin fields.</p>
+
+				<p>In this paper we chose the opposite option. Namely, we argue that the higher spin extension of diffeomorphisms should be viewed as a group of transformations of the space, which obviously, should be enlarged with new coordinates, since diffeomorphisms already exhaust all the transformations of the ordinary space-time. The proper extension is an extension of coordinates with momenta, which leads to the phase space, while diffeomorphisms become enlarged to canonical transformations also called symplectic diffeomorphisms or symplectomorphisms. One can similarly consider quantum analogue of canonical transformations, forming Heisenberg group, but we restrict ourselves to a more simple classical case. Let us mention that canonical transformations in one way or another appeared in the context of higher spin theories [14, 5, 15, 16, 6, 17, 18, 19, 20, 21, 22, 23]. The very fact that higher spin transformations acting on higher spin fields can be thought of as transformation of Hamiltonian function induced by symplectomorphisms gives a strong evidence that higher spin symmetries should be treated exactly from this point of view. The setting where one deals with the phase space in the context of higher spin theory and identifies Hamiltonian function and canonical transformations with the generating functions for higher spin fields and symmetries respectively has been used in [24, 15, 16, 19, 20, 21]. In particular, in [16] fully non-linear conformal higher spin theory has been built. There are several well-known facts from Hamiltonian and quantum mechanics, which imply that coordinates and momenta should be treated on the same footing: • the full set of the initial data is given by initial coordinates and momenta; • coordinates and momenta appear in canonical commutation relations in a symmetric way; • phase-space admits a natural volume form; as a result, the path integral measure for the Lagrangian formulation of a point particle can be derived only from the Hamiltonian one.</p>
+
+				<p>Thus, both the phase space with canonical transformations acting in it and Riemannian geometry are the inherent parts of physics. Regardless of the connection with higher spin fields, it seems natural to try to unify them by making a generalization of Riemannian geometry, that is covariant under canonical transformations. The aim of this paper is to construct some geometrical observables of higher spin geometry generalizing respective notions of (pseudo)-Riemannian geometry. In Section 2 we discuss the action of a point particle interacting with a background higher spin field introduced in [15] 3 . It is the most general action, that depends on coordinates and velocities only, while the reparametrization invariance is achieved in the standard way by coupling to an auxiliary world-line metric. Written in a Hamiltonian form it is manifestly invariant with respect to canonical transformations , which are identified as higher-spin symmetries. In the same time Hamiltonian should be thought of as the generating function for all higher-spin fields, which is inferred in Section 3. The proper time measured by the inner world-line metric provides a manifestly invariant definition of length. This is discussed and exemplified in Section 4. Let us note that the reparametrization invariance of the point particle action implies an extra symmetry acting on Hamiltonian. It was called hyper-Weyl symmetry in [15]. Presence of this symmetry in the higher spin action eventually results in a conformal higher spin theory not a massless one. The length introduces a distinguished parametrization and thereby breaks this symmetry. All the notions that we are going to construct next essentially rely on the length. In this sense, the length is the additional structure that allows to construct a wider set of natural symplectic invariants not necessary being invariant with respect to hyper-Weyl symmetry. In Section 5 we introduce a volume form so as it agrees with the length, namely, we require that the volume of an infinitesimal geodesic ball depends on its radius in the same way as in the flat case. This enables us to introduce a scalar curvature in Section 6 in a conventional way extracting it from the volume defect of a geodesic ball in subleading orders in radius. Since generically canonical transformations mix coordinates with momenta, the volume of the domain in x space is not well-defined quantity. So, there are no reasons to expect that the curvature defined is invariant and can be used to construct invariant action for higher spin fields. Nevertheless, this curvature is manifestly scalar with respect to diffeomorphisms and electromagnetic gauge transformations and thereby allows to build an invariant action for spins 0, 1 and 2, which directly generalizes Einstein-Hilbert action to the sector of lower spin fields. It is to be expected that this action should appear as a lower spin truncation of the full one. The lower spin action is computed in Section 6.</p>
+
+				<p>In Section 7 we discuss symplectic invariants, that are given in terms of lengths of closed geodesics. After considering a simple example we propose two such invariants as candidates for higher spin generalizations of the total volume and Einstein-Hilbert action.</p>
+
+			</div>
+			<div>
+				<head n="2">Point particle action</head>
+
+				<p>Let us consider the most general reparametrization invariant action of a point particle that depends only on coordinates and velocities</p>
+
+				<figure>
+					<trash>S = L(x, u)edt, (2.1) where e(t) is a world-line metric and u i = dx i edt = ˙ x i e .</trash>
+
+
+				</figure>
+
+				<p>Under the reparametrization of the world-line t → t the world-line metric transforms so as the interval ds = e(t</p>
+
+				<figure>
+					<trash>(t))dt = e(t)dt (2.2) remains constant, which ensures reparametrization invariance. The same action can be transformed to the Hamiltonian form S = (p i dx i − ˜ H(p, x)dt), (2.3) where H is a Legendre transform of the Lagrangian ˜ L(x, ˙ x) = L(x, ˙ x e )e, (2.4) that is H(p, x) = p i ˙ x i − ˜ L(x, ˙ x(p, x)) (2.5) and ˙ x is expressed in terms of x and p via p i = ∂ ˜ L ∂ ˙ x i (x, ˙ x). (2.6) It is easy to check, that the action (2.3) admits an equivalent form S = (p i dx i − H(p, x)edt), (2.7) where H is a Legendre transform of L(x, u), that is H(p, x) = p i u i (p, x) − L(x, u(p, x)),</trash>
+
+
+				</figure>
+
+				<p>and u(p, x) solves p i = ∂L ∂u i (x, u), which is equivalent to (2.6). The action (2.7) up to boundary terms is invariant with respect to canonical transformations, which infinitesimally are δx i = [ε(p, x), x i ], δp i = [ε(p,</p>
+
+				<figure>
+					<trash>x), p i ], (2.8) δH(p, x) = −[ε(p, x), H(p, x)] (2.9) with [f, g] = ∂f (p, x) ∂p i ∂g(p, x) ∂x i − ∂f (p, x) ∂x i ∂g(p, x) ∂p i . (2.10)</trash>
+
+
+				</figure>
+
+				<p>Let us note that H transforms as a scalar under the action of canonical transformations in the sense that δH(p, x) = H (p, x) − H(p, x) where H (p + δp, x + δx) = H(p, x).</p>
+
+				<p>This is not to be confused with the increment δf (p, x) of a fixed function f (p, x) produced by the change of its arguments (p, x) → (p + δp, x + δx) δf (p, x) = f (p + [ε, p], x + [ε, x]) − f (p, x) = [ε(p, x), f (p, x)], which gives the opposite sign compared to (2.9). Transformations (2.8), (2.9) can be translated into lagrangian representation, thus giving transformations acting on coordinates, velocities and Lagrangian func- tion.</p>
+
+				<figure>
+					<trash>The action (2.7) also enjoys hyper-Weyl symmetry H = A(x, p)H, e = A −1 (x, p)e. (2.11)</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="3">Higher spin fields</head>
+
+				<p>Our aim is to show that one can regard H and L as generating functions for higher spin fields, while (2.1), (2.7) acquire meaning of the action of a point particle in the higher spin background. More precisely, we identify the particular values of H</p>
+
+				<figure>
+					<trash>(0) and L (0</trash>
+
+
+				</figure>
+
+				<p>) that should be associated with the Minkowski space and show that at the linear order in fluctuations H</p>
+
+				<figure>
+					<trash>(1) and L (1) • coefficients h a(s) (x) and l a(s) (x) 4 of Taylor expansion H (1) (p, x) = ∞ s=0 1 s! h a(s) (x) s p a . . . p a , L (1) (x, u) = ∞ s=0 1 s! l a(s) (x) s u a . . . u a (3.1) behave</trash>
+
+
+				</figure>
+
+				<p>as rank-s contravariant and covariant tensors under diffeomorphisms respectively. Diffeomorphisms form the subalgebra of canonical transformations (2.9) generated by ε, that are linear in momenta; • Canonical transformations (2.9) linearized near the background Minkowski space acting on h a(s) and l a(s) reproduce standard linear higher spin gauge transformations δφ a(s) = ∂ a ε a(s−1) as in Fronsdal&apos;s theory [26], but with unconstrained gauge parameters and fields 5 .</p>
+
+				<p>This allows to interpret h a(s) and l a(s) as off-shell spin-s field. Both ways to identify the higher spin field are legitimate, moreover, as we will illustrate, for small fluctuations around Minkowski space h a(s) and l a(s) are related by Legendre transform, which up to a sign factor coincides with the usual convention for raising and lowering indices via background Minkowski metric. However, for general field configuration relation between h a(s) and l a(s) is far not as straightforward because it implies solving velocities in terms of momenta or vice versa. One should not be bothered by this fact because notion of spin is defined only in vicinity of Minkowski space. For general field configuration the only natural way to deal with higher spin fields is to consider all them within one generating function H or L. Before showing this explicitly let us make the following comment. Since all the higher spin fields are unified by the symmetry group, the point particle can have only one charge with respect to this group. It appears as an overall factor in front of the point particle action and can be omitted for brevity. In nature, however, particle charges with respect to fields of different spin, such as mass and electric charge, can vary independently. Without breaking the symmetry of the theory this 4 Here notation a(s) means that the tensor is a rank-s symmetric one. We will also use notation of the form ∂ a ε a(s−1) to indicate that s − 1 symmetric indices of ε are symmetrized with the index carried by the derivative with the strength one. For a partial derivative ∂/∂x i we sometimes use a shortcut notation ∂ i . Derivatives with respect to other variables are written explicitly. 5 In Fronsdal&apos;s approach [26] fields are supposed to be doubletracaless, while gauge parameters are traceless. These constraints appear naturally in the frame-like approach to higher spin fields [27, 2]. The other point of view is to let fields and gauge parameters be unconstrained [28, 29, 30, 31, 32, 33, 34]. For a review on different approaches see [1]. can happen if particles appear as solitonic solutions and thereby charges show up only as integration constants of particular solutions.</p>
+
+				<p>In Minkowski space the action of a point particle is</p>
+
+				<figure>
+					<trash>S = 1 2 η mn dx m edt dx m edt − 1 2 m 2 edt, (3.2)</trash>
+
+
+				</figure>
+
+				<p>where we use the mostly plus convention for Minkowski metric η. Eliminating e through its equations of motion it can be put into more recognizable form S = −m −η mn dx m dx n .</p>
+
+				<p>As it was discussed, without loss of generality we can set m to unity.</p>
+
+				<p>Comparing (3.2) with (2.1) we can deduce that for Minkowski space the background values of gravitational and scalar fields should be nonzero</p>
+
+				<figure>
+					<trash>L (0) (x, u) = 1 2 g (0) mn u m u n + φ (0) ⇔ H(p, x) = 1 2 g (0)mn p m p n − φ (0) , (3.3) g (0) mn = η mn , φ (0) = − 1 2 . (3.4)</trash>
+
+
+				</figure>
+
+				<p>If we let φ be non-constant in terms of the action (3.2) it will be viewed as a particle with coordinate-dependent mass. It offers interesting possibilities to describe dark matter in a way similar to [35]. It would be interesting to treat this issue elsewhere. Let us consider small fluctuations around (3.3) such that</p>
+
+				<figure>
+					<trash>L = L (0) (x, u) + L (1) (x, u). (3.5) Then p n = η mn u m + ∂L (1) ∂u n (x, u) ⇔ u m = η ma p a − ∂L (1) ∂u n (x, p i η ij ) + o(L (1) ), (3.6) so H = H (0) − L (1) (x, p i η ij ) + o(L (1) ). (3.7) Introducing a small fluctuation of Hamiltonian field as H = H (0) (p, x) + H (1) (p, x) we see that in the first order of vanishing Legendre transform maps L (1) (x, u) ⇔ H (1) (p, x) = −L (1) (x, p i η ij ). (3.8) In terms of the coefficients in the power series expansion (3.1) it implies l (1) a(s) (x) ⇔ h (1)a(s) (x) = −l (1) b(s) (x) s η ab . . . η ab . (3.9) One can readily compute from (2.9), that under diffeomorphisms, which are generated by parameters ε linear in momenta ε(p, x) = ε(x) i p i δh a(s) = −ε b ∂ b h a(s) + s∂ m ε a h ma(s−1) . (3.10) Eq. (3.10) implies that h a(s) manifests itself as a contravariant rank-s tensor δh a(s) = −L ε h a(s) , where L ε</trash>
+
+
+				</figure>
+
+				<p>h is a Lie derivative of a field h along a vector field ε. In turn from (3.9) it follows that at a given level of perturbative expansion l a(s) is a rank-s covariant tensor. Moreover, decomposing (2.9) into perturbative expansion it comes out that</p>
+
+				<figure>
+					<trash>δH (1) = −[ε, H (0) ] − [ε, H (1) ] = ∂ m εη mn p n + . . . (3.11) In terms of the expansion coefficients (3.1) we reproduce the unconstrained Fronsdallike higher spin transformation δh a(s) = η ab ∂ b ε a(s−1) .</trash>
+
+
+				</figure>
+
+				<p>This implies that h a(s) propagates correct degrees of freedom to describe the off-shell massless spin-s field. From (3.9) the same holds true for l a(s) .</p>
+
+				<p>So, there are two natural ways to identify higher spin fields inside the point particle action. The first way is to define higher spin fields as coefficients l a(s) of the Lagrangian expansion in powers of velocities. Historically lower spin fields were introduced exactly this way. The other way is to identify higher spin fields as coefficients h a(s) of Hamiltonian expansion in powers of momenta. The advantage of this convention as well as Hamiltonian formulation in general is that symmetry with respect to canonical transformation is manifest and has simpler form. In particular, (3.10) remains true beyond the perturbative expansion around Minkowski background , while l a(s) generically do not transform as tensors. As follows from (3.9) at the linear level these two definitions differ by sign in the sense that if one uses the standard convention for raising and lowering indices then one finds h a(s) = −l a(s) . Note that the standard convention implies a distinguished role of the metric. In our setting, where all the higher spin fields are treated on the same footing, raising and lowering indices via Legendre transform seems to be more motivated.</p>
+
+			</div>
+			<div>
+				<head n="4">Length</head>
+
+				<figure>
+					<figDesc>Before defining a length of a vector in higher spin background let us make few comments on equations of motion of a point particle. One can always eliminate world-line metric by its equation of motion, however it is more convenient to keep it and treat as Lagrange multiplier enforcing constraints in the (p, x) phase space or, equivalently in the (x, u) space of Lagrangian approach. In the Hamiltonian approach e plays role of Lagrange multiplier for a constraint</figDesc>
+					<trash>H(p, x) = 0. (4.1) Let us denote the subset of the phase space, that satisfies (4.1) as M H M H = {(p, x) : H(p, x) = 0}. (4.2) Variation of (2.7) with respect to p and x gives usual Hamiltonian equations dx i edt = dx i ds = ∂H ∂p i = [H, x i ], dp i edt = dp i ds = − ∂H ∂x i = [H, p i ] (4.3) with respect to time, measured by the interval ds = edt. In turn in Lagrangian approach (2.1) variation with respect to e enforces the constraint L(x, u) = u i ∂L(x, u) ∂u i , (4.4) while the variation with respect to x gives ordinary Euler-Lagrange equations ∂L ∂x i = d ds ∂L ∂u i . (4.5) The subset of (x, u) satisfying (4.4) will be denoted as M L M L = {(x, u) : L(x, u) = u i ∂L(x, u) ∂u i }. (4.6) In both cases (4.3), (4.5) proper</trash>
+
+
+				</figure>
+
+				<p>time s serves as a natural non-negative parameter of a geodesic. So one can define the length ∆s of a geodesic γ(s i , s f ) with s ∈ (s i , s f ) as an interval ∆s = s f − s i γ(s f , s i ) → ∆s = s f − s i . (4.7) Since the form of Hamiltonian equations (4.3) is preserved under canonical transformations , the length is gauge invariant quantity. As it was discussed above, ∆s is reparametrization invariant (2.2) as well.</p>
+
+				<p>In a standard way this induces the length into the tangent space. Indeed, the geodesic passing through the point x(0) with the velocity u(0) in the linear approximation is described by the equation</p>
+
+				<figure>
+					<trash>dx i = x i (ds) − x i (0) = u i (0)ds + O(ds 2 ). (4.8) This allows one to assign a length |dx| = ds to a displacement vector dx at a point x dx i → |dx i | = ds, where dx i = dsu i and (x i , u i ) ∈ M L . (4.9)</trash>
+
+
+				</figure>
+
+				<p>In general, it is not always possible to present dx in the form dsu with u ∈ M L and ds &gt; 0. As a result, length is defined only for time-like vectors, that is for those, that can serve as a tangent vectors to geodesics. For other vectors the length can be defined through analytical continuation. Finally, the length is a homogeneous function of degree one |αdx| = α|dx| for α ≥ 0.</p>
+
+				<p>Since the length defined by (4.9) is nothing but interval, in practice one can solve (4.4) for e and compute the length as</p>
+
+				<figure>
+					<trash>|dx| = ds(dx) = e(x, dx dt )dt = e(x, dx). (4.10)</trash>
+
+					<figDesc>Let us show that the given definitions reproduce known definitions in a lower spin case. The lower spin Lagrangian is</figDesc>
+					<trash>S = 1 2 g mn (x) ˙ x m e ˙ x n e + A m (x) ˙ x m e + φ(x) edt, (4.11) where g mn , A m and φ are gravity, electromagnetic and scalar fields respectively. Solving for e from its equations of motion e = −g mn ˙ x m ˙ x n −2φ (4.12) and plugging it back to the action one finds S = − −g mn ˙ x m ˙ x n −2φ + A m ˙ x m dt. (4.13) The Hamiltonian form of the action (4.11) is S = p i ˙ x i − e[ 1 2 h mn (x)p m p n + h m (x)p m + h(x)] dt, (4.14) where g mn = (h −1 ) mn , A m = −h n (h −1 ) mn , φ = −h + 1 2 (h −1 ) mn h m h n . (4.15) The lower spin sector of canonical transformations (2.9) is ε(p, x) = ε n (x)p n + ε(x). (4.16) It consists of diffeomorphisms ε n (x) and U (1) gauge transformations ε(x), which act as follows δh kl = −ε m ∂ m h kl + ∂ n ε k h nl + ∂ n ε l h nk = −L ε h kl , (4.17) δh k = −ε m ∂ m h k + ∂ m ε k h m + h mk ∂ m ε = −L ε h k + h mk ∂ m ε, (4.18) δh = −ε m ∂ m h + h m ∂ m ε = −L ε h + h m ∂ m ε (4.19) or, equivalently, δg kl = −ε n ∂ n g kl − ∂ k ε n g nl − ∂ l ε n g nk = −L ε g kl , (4.20) δA k = −ε m ∂ m A k − ∂ k ε m A m − ∂ k ε = −L ε A k − ∂ k ε, (4.21) δφ = −ε m ∂ m φ = −L ε φ. (4.22) Eqs. (4.20)-(4.22</trash>
+
+
+				</figure>
+
+				<p>) reproduce standard lower spin gauge transformations.</p>
+
+				<p>The length of the geodesic is given by (4.12)</p>
+
+				<figure>
+					<trash>s = ds = edt = −g mn ˙ x m ˙ x n −2φ dt, (4.23) while the constraint (4.4) reads as g mn u m u n = 2φ. (4.24)</trash>
+
+					<figDesc>In the case when scalar field takes the background value −1/2 (3.4) length (4.23) and the constraint (4.24) reproduce standard formulas</figDesc>
+
+				</figure>
+
+				<p><formula>ds = −g mn ˙ x m ˙ x n dt and g mn dx m ds dx n ds = −1.</formula></p>
+
+				<p>Let us finally note that ds = edt is not invariant with respect to (2.11), so the length and all further notions constructed out of it are not hyper-Weyl invariant.</p>
+
+			</div>
+			<div>
+				<head n="5">Volume</head>
+
+				<p>In the previous Sections we defined geodesics and length measured by the particle in higher spin background. In the case of Riemannian geometry once geodesics and length are known one can unambiguously define all the remaining geometric notions such as volume form, parallel transport, scalar curvature, tidal forces, characterized by Riemann tensor etc. One of such quantities is Einstein-Hilbert action, which is an integral of the scalar curvature over the space, weighted with the volume form. It is tempting to mimic this definitions of Riemannian geometry in the case of higher spin fields to get a higher spin action. However, these rules cannot be applied literally to the higher spin case. In particular, the action obtained in this way is not gauge invariant. To illustrate this problem let us consider the volume form. It is supposed to define a measure assigned to any infinitesimal set x ∈ Ω in the x-space. The reasonable extension of this notion to the phase space could be to assign volumes to infinitesimal cylinders of the form Ω ⊗ P with x ∈ Ω and p any, that is p i ∈ (−∞, +∞) for all i. However, in general, canonical transformations do not act within a class of such cylinders mapping them to more general sets in the phase space. Thereby a notion of volume in x space is not compatible with canonical transformations. Nonetheless, a subgroup of transformations (4.16) still acts within such a class of cylinders, so with respect to lower-spin symmetries a notion of volume perfectly makes sense. In the following we derive the literal geometrical generalization of Einstein-Hilbert action to the full lower spin sector. Let us consider a geodesic ball B x (r) with the center x and radius r. A natural way to define the volume form ω is to demand that the volume of a small geodesic ball of radius r in the leading order in r is given by the standard flat space formula, that is</p>
+
+				<p><formula>Bx 0 (r) ω(x)d d x = π d 2 Γ( d 2 + 1) r d + O(r d+1 ). (5.1)</formula></p>
+
+				<p>Obviously, in this approximation one can pull ω out through the integration sign and evaluate it at the point x 0 . Hence</p>
+
+				<p><formula>ω(x 0 ) = lim r→0 π d 2 r d Γ( d 2 + 1) 1 Bx 0 (r) d d x . (5.2)</formula></p>
+
+				<p>Geodesic ball of radius r consists of a points x such that their geodesic distance s from the origin x 0 is less than r, that is</p>
+
+				<figure>
+					<trash>B x 0 (r) = {x i : x i = x i 0 + u i s + O(s 2 ), where s &lt; r and u ∈ M L }. (5.3)</trash>
+
+
+				</figure>
+
+				<p>One can regard (5.3) as a map between x coordinates inside the geodesic ball and coordinates (u, s), where u ∈ M L and s ∈ [0, r). Instead, it is more convenient to use a map</p>
+
+				<figure>
+					<trash>B x 0 (r) = {x : x i = x i 0 + u i s + O(s 2 ), where s = r and u ∈ N L }, (5.4)</trash>
+
+					<figDesc>where N L is the interior of M L , that is ∂N L = M L or, more explicitly</figDesc>
+					<trash>N L = {(x, u) : u i ∂L ∂u i &gt; L}. (5.5) The map (5.4) allows to compute easily Bx 0 (r) d d x = N L det ∂x i ∂u j d d u = r d N L d d u + O(r d+1 ). (5.6) Plugging this to (5.2) we finally obtain ω(x 0 ) = π d 2 Γ( d 2 + 1) 1 N L d d u . (5.7)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Analogously, in Hamiltonian approach one can parametrize points of the geodesic ball by initial momenta</figDesc>
+
+				</figure>
+
+				<p><formula>x i = x i 0 + ∂H ∂p i s + O(s 2 ). (5.8)</formula></p>
+
+				<p>As before, we fix s to be r and let p run over the interior N H of M H</p>
+
+				<figure>
+					<trash>N H = {(p, x) : H(p, x) &lt; 0}. Eventually, we find Bx 0 (r) d d x = N H det ∂x i ∂p j d d p = r d N H det ∂ 2 H ∂p i ∂p j d d p + O(r d+1 ) (5.9) and the volume form is ω(x 0 ) = π d 2 Γ( d 2 + 1) 1 N H det ∂ 2 H ∂p i ∂p j d d p . (5.10)</trash>
+
+
+				</figure>
+
+				<p>Let us note that the construction discussed in this Section is well-defined only if N is compact. For physically reasonable fields it is not so. For example, for Minkowski space M is a hyperboloid and N is enclosed between N and coordinate hypersurfaces. If we will perform literally the computation discussed above we will encounter infinities. Instead of doing so one can compute as if N is compact and then analytically continue the result for any values of fields. Obviously, it will not spoil transformation properties, that are of the most importance at this stage. In what follows we will act as if N is compact. For example, one can consider the action (4.11) with a positive definite g mn , positive φ and any A m . Then constraint (4.24) defines a compact surface M L .</p>
+
+				<figure>
+					<trash>Instead of (4.23) we have s = g mn ˙ x m ˙ x n 2φ dt. (5.11)</trash>
+
+					<figDesc>For φ = 1/2 one recovers standard Riemannian geometry. From (5.7) one can easily derive that in the lower spin case</figDesc>
+
+				</figure>
+
+				<p><formula>ω(x) = g (2φ) d . (5.12)</formula></p>
+
+				<p>Volume form defined in this way transforms as a density with respect to transformations of the x-space. Indeed, the right hand side of (5.1) is constant, so ω(x) should compensate transformations of d d x, which means that ω(x) is a density. As it was already mentioned, transformation properties of d d x under symplectomorphisms are ill-defined, since d d x does not contain any information about pcoordinates of a point, while under canonical transformation (x, p) → (x , p ) generically the transformed coordinate x depends both on initial x and p. More suitable way to define a volume covariantly will be discussed in Section 7.</p>
+
+			</div>
+			<div>
+				<head n="6">Curvature</head>
+
+				<p>In Riemannian geometry the scalar curvature represents the amount by witch the volume of a geodesic ball B(r) deviates from that of the standard ball in Euclidean space in subleading orders in r. More precisely the volume of B(r) in curved space is given by</p>
+
+				<figure>
+					<trash>V (B x 0 (r)) = Bx 0 (r) ω(x)d d x. (6.1)</trash>
+
+
+				</figure>
+
+				<p>The right hand side of (6.1) can be decomposed into power series in r and, according to the definition of the volume form (5.1) the leading term reproduces the flat space formula. In Riemannian geometry the subleading term vanishes, so the first nontrivial term is of order r d+2 . The scalar curvature R is defined as</p>
+
+				<figure>
+					<trash>V (B x 0 (r)) = π d 2 Γ( d 2 + 1) r d 1 − R(x 0 ) 6(d + 2) r 2 + O(r 3 ) . (6.2)</trash>
+
+
+				</figure>
+
+				<p>We apply this definition to the case of lower spin fields and thereby obtain the corresponding generalization of Einstein-Hilbert action. The computation goes similarly to that of the previous Section. The only difference is that now we should compute the integral in the right hand side of (6.1) in the leading three orders in r. As before, we perform a change of integration variables from x i to u i as in (5.4) but now we keep further orders in r</p>
+
+				<figure>
+					<trash>x i = x i 0 + u i r + v i (x 0 , u) r 2 2 + w i (x 0 , u) r 3 6 + O(r 4 ), (6.3) where v i = d 2 x i ds 2 and w i = d 3 x i ds 3</trash>
+
+					<figDesc>, which on-shell can be expressed in terms of the initial data given by x 0 and u by the equation of motion (4.5). For small enough r (6.3) provides a one-to-one map from u that belong to N L to the interior of the geodesic ball x ∈ B x 0 (r). In terms of new integration variables one has</figDesc>
+					<trash>Bx 0 (r) ω(x)d d x = N L ω(x(u))det ∂x i ∂u j d d u. (6.4)</trash>
+
+
+				</figure>
+
+				<p>Both determinant and ω(x) should be decomposed into power series in r using (6.3). Keeping three leading terms and performing integration, one can identify the analog of the curvature. This computation is performed in details in Appendix for the lower spin case and gives (7.24)</p>
+
+				<figure>
+					<trash>R = 2φR + (d + 2)g il g kj F k,l F j,i + 2(d − 1)g ij D i D j φ, (6.5) where F m,n = 1 2</trash>
+
+					<figDesc>(∂ m A n − ∂ n A m )</figDesc>
+
+				</figure>
+
+				<p>and D i denotes standard covariant derivative. Then the lower spin sector counterpart of Einstein-Hilbert action is</p>
+
+				<figure>
+					<trash>S[g ij , A i , φ] = d d x g (2φ) d 2φR + (d + 2)g il g kj F k,l F j,i + 2(d − 1)g ij D i D j φ . (6.6)</trash>
+
+
+				</figure>
+
+				<p>In the case of lower spin symmetries ω transforms as a density, which entails that V (B x 0 (r)) is a scalar. This in turn implies that the curvature defined as in (6.2) is a scalar by construction. For a general canonical transformation the above reasoning does not work because the volume form itself is ill-defined. Let us finally note that Minkowski space (3.4) solves equations of motion derived from (6.6).</p>
+
+			</div>
+			<div>
+				<head n="7">Symplectic invariants</head>
+
+				<p>Up to now, in order to find the higher spin counterpart of Einstein-Hilbert action, we tried to mimic the rules of Riemannian geometry. However, notions of local volume and scalar curvature proved to be incompatible with symplectic symmetries of the phase space. In this section we tackle the problem from the opposite side: we look at symplectic invariants and choose suitable ones. Before doing that, let us review some well-known results on symplectic invariants (see, for example [36]).</p>
+
+				<p>Usually, the term &quot; symplectic invariant &quot; means some measure assigned to a set N in the symplectic space that remains invariant under symplectic diffeomorphisms. For instance, one can consider the phase space volume N d d pd d x.</p>
+
+				<p>However, it is not the only symplectic invariant. Whenever one has a compact convex set N one can construct a Hamiltonian function H such that it vanishes on the boundary M of N :</p>
+
+				<figure>
+					<trash>H(p, x) = 0, ∀(p, x) ∈ M. (7.1)</trash>
+
+
+				</figure>
+
+				<p>Obviously, such H is not unique. Each of them induces a Hamiltonian flow on the hypersurface M. It is easy to see that different Hamiltonians satisfying (7.1) have geodesics that differ only by reparametrization. If a Hamiltonian system given by H is integrable, then M contains d closed geodesics. One can profit from reparametrization freedom so as to make the periods of each closed geodesic equal 2π. Then, on-shell action on these geodesics provides d independent symplectic invariants 6 .</p>
+
+				<p>Let us, however, note that the problem that we are to solve is slightly different. The above discussed invariants depend only on points where H = 0. Nothing prevents us from considering more general invariants, that contain more information about H. The reason why we should not restrict ourselves to the invariants described above is that such invariants have extra hyper-Weyl symmetry, which is inherent in symplectic higher spin fields only [15, 16].</p>
+
+				<p>To find suitable invariants let us consider a case of quadratic Hamiltonian with an extra constant piece</p>
+
+				<figure>
+					<trash>H = 1 2 d ij p i p j + e i j p i x j + 1 2 f ij x i x j − C 2 . (7.2)</trash>
+
+
+				</figure>
+
+				<p>Suppose, the quadratic part of H is positive definite. Then, for positive C Hamiltonian H defines a non-empty compact set N . It is well-known, that by linear 6 The invariants that we will construct later, thereby, are defined only for integrable Hamiltonian systems. Our aim for the future research is to find an integral form of these invariants, that is to represent them in a more conventional way as L(H)d d xd d p, wherê L is an operator. It will allow to define them for any H, not necessarily integrable. The example of such an invariant is a phasespace volume of the set N , which can be expressed in terms of actions on closed geodesics, but in the same time it can be formulated as θ(−H)d d xd d p, which exists independently of integrability of H.</p>
+
+				<figure>
+					<trash>symplectic transformation (7.2) can be put into the normal form H = d i=1 ω j p 2 j + x 2 j 2 − C 2 . (7.3)</trash>
+
+
+				</figure>
+
+				<p>The associated system is the harmonic oscillator whose equations of motion read dx j ds = ω j p j , dp j ds = −ω j x j . (7.4)</p>
+
+				<p>If a frequencies vector is non-resonant, that is if n i=1 k i ω i = 0 ∀k ∈ Z\{0} then (7.4) on a constraint surface H = 0 has only d closed orbits. For each i one has a circular geodesic in (p i , x i )-plane with a frequency ω i , or, equivalently, of length L i = 2π/ω i (in the sense of Section 4). Lengths of closed geodesics provide another sort of symplectic invariants, which in the same time do not posses hyper-Weyl symmetry. The volume form (5.10) for (7.3) is</p>
+
+				<p><formula>ω(x) ∼ (ω 1 ω 2 . . . ω d ) −1/2 (C − d i=1 ω j x 2 j ) −d/2 .</formula></p>
+
+				<p>It can be integrated over d i=1 ω j x 2 j &lt; C (this is a projection of N to the x space) to give</p>
+
+				<figure>
+					<trash>V ∼ d i=1 ω j x 2 j &lt;C d d x(ω 1 ω 2 . . . ω d ) −1/2 (C − d i=1 ω j x 2 j ) −d/2 = 1 ω 1 . . . ω d d i=1 y 2 j &lt;1 d d y (1 − d i=1 y 2 i ) d/2 (7.5)</trash>
+
+					<figDesc>By dropping the infinite overall factor coming from the integration we find that</figDesc>
+
+				</figure>
+
+				<p><formula>V ∼ 1 ω 1 . . . ω d ∼ L 1 . . . L d . (7.6)</formula></p>
+
+				<p>Thereby, the total volume is naturally defined as a product of lengths of closed geodesics. The definition of the total volume (7.6) has an advantage that it is manifestly symplectically invariant. Let us now plug the ansatz (7.3) to the action (6.6). The only term that survives in the brackets is g ij D i D j φ ∼ d i=1 ω 2 i . It is constant, so one can pull it out the integration sign. Eventually for the action (6.6) one finds</p>
+
+				<p><formula>S ∼ d i=1 ω 2 i ω 1 . . . ω d ∼ L 1 . . . L d d i=1 (1/L i ) 2 . (7.7)</formula></p>
+
+				<p>These formulas admit a straightforward extension to integrable Hamiltonian systems . Indeed, in this case it is possible to make a canonical change of coordinates (p, x) → (I, θ) such that one has H = H(I) and Hamiltonian equations read dI j ds = 0, dθ j ds = ∂H ∂I j . (7.8)</p>
+
+				<p>Variables (I, θ) are called action-angle variables. Physically, the existence of these coordinates can be treated as the generalized equivalence principle, which implies that higher spin forces can be locally gauged away by an appropriate change of coordinates. For each i, 1 ≤ i ≤ d there is a unique closed geodesic in the plane (I i , θ i ). Indeed, let us introduce h i (I i ) = H(0, . . . , 0, I i , 0, . . . , 0). (7.9)</p>
+
+				<p>With some monotonicity assumptions the constraint h i (I i ) = 0 has a unique solution I i = I 0 i . From (7.8) one sees that I i is conserved, while</p>
+
+				<figure>
+					<trash>dθ j ds = dh i dI I i =I 0 i ≡ ω i . (7.10)</trash>
+
+
+				</figure>
+
+				<p>Recalling that the angle variables are cyclic θ i + 2π = θ i one finds that ω i of (7.10) is a frequency of motion of a point particle along a closed geodesic in (I i , θ i ) plane. One can use these frequencies for any i to find the total volume (7.6) of the space in general higher spin background and the higher spin counterpart of Einstein-Hilbert action (7.7).</p>
+
+			</div>
+			<div>
+				<head>Conclusion</head>
+
+				<p>Hints that coordinates and momenta should be treated on the same footing are present in physics for a long time. In particular, it is known from classical mechanics that trajectories of particles are uniquely determined by initial coordinates and velocities or, equivalently, by initial coordinates and momenta. Canonical commutation relations of quantum mechanics rest on the notion of phase space where coordinates and momenta are equal in rights. These theories have a large symmetry , which is a group of canonical transformations in the classical case. We argue, that any manipulations to be covariant with respect to canonical transformations naturally require higher spin fields in the same way as metric assures covariance of Riemannian geometry and Einstein gravity with respect to diffeomorphisms. Our ultimate goal was to extend all the objects of Riemannian geometry such as geodesic, length, volume, curvature etc. to a phase space in a symplectically covariant way.</p>
+
+				<p>In order to do that we considered the most general action for a relativistic point particle that depends on coordinates and velocities. Reparametrization invariance is achieved in a standard way by coupling to an auxiliary world-line metric. By identifying Hamiltonian with the generating function for higher spin fields this action admits interpretation as an action of a point particle in the higher spin background. Canonical transformations act as higher spin symmetries. Having a point particle action in our disposal we receive access to first geometrical notions we aimed for: geodesics and length, which is measured by the world-line metric. Knowing them both in Riemannian geometry one can derive all that remains.</p>
+
+				<p>In particular, the volume form should be defined so as the volume of an infinitesimal geodesic ball depends in a standard way on its radius. The scalar curvature can be extracted from subleading orders of this dependence. However, it is clear, that these rules cannot be mimicked if we are aiming at covariance with respect to higher spin symmetry. The reason is that already the notion of a set in x space is not compatible with canonical transformations. As a result its volume is also ill-defined. Out of that one can conclude that some of the notions we used to have in Riemannian geometry undergo essential changes once we go to symplectic geometry. Despite listed difficulties for general canonical transformations, the local volume and the curvature perfectly make sense for gauge symmetries associated with lower spin transformations. We compute the volume form, the curvature and the counterpart of Einstein-Hilbert action for a joint sector of spin zero, one and two fields. We expect that this action is the same as a truncation of the full action containing higher spin fields to the lower spin sector. We also propose the candidates for total volume of the space and the higher spin counterpart of Einstein-Hilbert action. They are both defined in terms of lengths (or, equivalently, frequencies) of closed geodesics. It would be important to reformulate them in more conventional terms such as in terms of integrals over the phase space or, probably, over the surface in it. This would allow to check if the given action can be used to describe massless higher spin fields. Let us mention that the ansatz we used to find the symplectic invariant candidate for the action does not really probe the Einstein-Hilbert part of the lower spin action. So, strictly speaking, the invariant we found rather generalizes the action of the scalar field than Einstein-Hilbert one.</p>
+
+			</div>
+			<div>
+				<head>Acknowledgments</head>
+
+				<p>I am grateful to N. Boulanger, E. Skvortsov, P. Sundell, V. Didenko, D. Chialva, K. Siampos, G. Lucena Gomez, E.</p>
+
+				<figure>
+					<figDesc>Joung, A. Artsukevich, M. Valenzuela and N. Colombo for stimulating discussions. I also thank M. Vasiliev for interesting comments at the early stage of the work and for pointing out references [16, 21]</figDesc>
+
+				</figure>
+
+				<p>. I am grateful to X. Bekaert for reading the manuscript and giving valuable comments. I acknowledge the organizers of the workshop &quot; Higher Spins, Strings and Duality &quot; where this work was partially performed. This research was supported in part by an ARC contract No. AUWB-2010-10/15-UMONS-1.</p>
+
+			</div>
+			<div>
+				<head>Appendix</head>
+
+				<p>Here we compute in details the volume of a geodesic ball B x 0 (r) in the first three orders in radius r in lower spin background. To this end we should compute the</p>
+
+				<figure>
+					<trash>integral V (B x 0 (r)) = N L ω(x(u))det ∂x i ∂u j d d u, where x i = x i 0 + u i r + v i (x 0 , u) r 2 2 + w i (x 0 , u) r 3 6 + O(r 4 ), (7.11) v i = d 2 x i ds 2 and w i = d 3 x i ds 3 . In the lower spin case ω(x) is (5.12) ω(x) = g (2φ) d , N L is given by u that satisfy (5.5) 1 2 g mn u m u n &lt; φ, (7.12) while v and w read v i = − Γ i ,mn u m u n + 2g ij F j,m u m + g ij ∂ j φ, (7.13) w i = − ∂ r Γ i ,mn u r u m u n − 2Γ i ,mn (−Γ m ,kl u k u l + 2g mt F t,k u k + g mt ∂ t φ)u n +2∂ n g ij u n F j,m u m + 2g ij ∂ n F j,m u n u m + 2g ij F j,m (−Γ m ,kl u k u l +2g mt F t,k u k + g mt ∂ t φ) + ∂ m g ij u m ∂ j φ + g ij ∂ m ∂ j φu m , (7.14) where F m,n = 1 2 (∂ m A n − ∂ n A m ), Γ i ,jk = 1 2 g im (∂ j g mk + ∂ k g mj − ∂ m g jk ).</trash>
+
+					<figDesc>It is convenient to single out the leading order of V (B x 0 (r)) in r in the following way</figDesc>
+					<trash>V (B x 0 (r)) = N L ω(x(u))det ∂x i ∂u j d d u = r d N L ω(x(u))M d d u, (7.15) where M = det M i j , M i j = δ i j + r 2 ∂v i ∂u j + r 2 6 ∂w i ∂u j + O(r 3 ). (7.16) Expanding ω and M into power series in r ω =ω r=0 + ∂ω ∂x i r=0 (u i r + r 2 2 v i ) + 1 2 ∂ 2 ω ∂x i ∂x j r=0 u i ru j r + O(r 3 ), M =M r=0 + dM dr r=0 r + d 2 M dr 2 r=0 r 2 2 + O(r 3 ), and plugging the result into (7.15) in leading orders we obtain V (B x 0 (r)) =r d N L (ω · M ) r=0 d d u + r d+1 N L ω dM dr + ∂ω ∂x i u i M r=0 d d u + r d+2 2 N L ω d 2 M dr 2 + 2 ∂ω ∂x i u i dM dr + ∂ 2 ω ∂x i ∂x j u i u j M + ∂ω ∂x i v i M r=0 d d u. (7.17)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>The derivatives of determinants can be written in terms of derivatives of matrix elements in a standard way</figDesc>
+					<trash>dM dr =M (M −1 ) i j dM j i dr , d 2 M dr 2 =M (M −1 ) i j dM j i dr (M −1 ) k l dM l k dr −M (M −1 ) i j dM j k dr (M −1 ) k l dM l i dr + M (M −1 ) i j d 2 M j i</trash>
+
+					<head>dr 2 .</head>
+
+
+				</figure>
+
+				<p>The integration domain (7.12) is symmetric with respect to the origin, so the odd powers of u drop out under integration. The u-independent and quadratic in u terms give</p>
+
+				<figure>
+					<trash>N L d d u = 1 2 gmnu m u n &lt;φ d d u = π d 2 Γ( d 2 + 1) (2φ) d g , (7.18) N L a ij u i u j d d u = 1 2 gmnu m u n &lt;φ a ij u i u j d d u = π d 2 Γ( d 2 + 1) (2φ) d g · 2φa ij g ij d + 2 . (7.19)</trash>
+
+					<figDesc>Now we apply (7.18), (7.19) and compute (7.17). The leading r d term reproduces the standard flat contribution as enforced by the construction of the volume form, the coefficient in front of r d+1 vanishes, while the remaining integrals read</figDesc>
+					<trash>N L ω d 2 M dr 2 r=0 d d u = π d 2 Γ( d 2 + 1) 2φ d + 2 Γ l ,lm Γ j ,jn + 1 3 Γ i ,km Γ k ,in + 2 3 Γ i ,ji Γ j ,mn − 1 3 ∂ i Γ i ,mn − 2 3 ∂ m Γ i ,in g mn + π d 2 Γ( d 2 + 1) − 1 4 g it g ks F k,t F s,i − 2 3 Γ i ,mi g mt ∂ t φ + 1 3 ∂ i g li ∂ l φ + 1 3 g il ∂ i ∂ l φ , (7.20) N L 2 ∂ω ∂x i u i dM dr r=0 d d u = π d 2 Γ( d 2 + 1) 2φ d + 2 Γ l ,jl − d 2 ∂ j φ φ −2Γ i ,im g mj , (7.21) N L ∂ 2 ω ∂x i ∂x j u i u j M r=0 d d u = π d 2 Γ( d 2 + 1) 2φ d + 2 ∂ j Γ l ,il − d 2 ∂ i ∂ j φ φ − ∂ i φ∂ j φ φ 2 + Γ l ,il − d 2 ∂ i φ φ Γ m ,jm − d 2 ∂ j φ φ g ij , (7.22) N L ∂ω ∂x i v i M d d u r=0 = π d 2 Γ( d 2 + 1) 2φ d + 2 Γ l ,il − d 2 ∂ i φ φ −Γ i ,mn g mn + π d 2 Γ( d 2 + 1) Γ l ,il − d 2 ∂ i φ φ g ij ∂ i φ. (7.23) Plugging (7.20)-(7.23) into (7.17) we finally find V (B x 0 (r)) = π d 2 Γ( d 2 + 1) r d 1 − r 2 2 2φR 3(d + 2) + 1 3 g il g kj F k,l F j,i + 2(d − 1) 3(d + 2) g ij D i D j φ + O(r d+3 ), (7.24)</trash>
+
+
+				</figure>
+
+				<p>where R is the standard scalar curvature of gravitational field and D i is a covariant derivative.</p>
+
+			</div>
+
+			<note place="foot" n="1"> dmitri.ponomarev@umons.ac.be arXiv:1304.4896v2 [hep-th] 25 Apr 2013</note>
+
+			<note place="foot" n="2"> For recent reviews on higher spin gauge theories see e.g. [1, 2, 3, 4]</note>
+
+			<note place="foot" n="3"> The problem of construction of the point particle action invariant with respect to higher spin transformations has been addressed and solved in the first non-trivial order in higher spin fields in [25].</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Introduction to the classical theory of higher spins</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Sorokin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">AIP Conf.Proc. 767</title>
+		<imprint>
+			<date type="published" when="2005" />
+			<biblScope unit="page" from="172" to="202" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<title level="m" type="main">Nonlinear higher spin theories in various dimensions</title>
+		<author>
+			<persName>
+				<forename type="first">X</forename>
+				<surname>Bekaert</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Cnockaert</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Iazeolla</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Vasiliev</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page">0503128</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">How higher-spin gravity surpasses the spin two barrier: no-go theorems versus yes-go examples</title>
+		<author>
+			<persName>
+				<forename type="first">X</forename>
+				<surname>Bekaert</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Boulanger</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Sundell</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Rev.Mod.Phys</title>
+		<imprint>
+			<biblScope unit="volume">84</biblScope>
+			<biblScope unit="page" from="987" to="10090435" />
+			<date type="published" when="1007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<monogr>
+		<title level="m" type="main">Notes on Strings and Higher Spins</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Sagnotti</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="1112" to="4285" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Consistent equation for interacting gauge fields of all spins in (3+1)-dimensions</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">A</forename>
+				<surname>Vasiliev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Lett</title>
+		<imprint>
+			<biblScope unit="page" from="243" to="378" />
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Nonlinear equations for symmetric massless higher spin fields in (A)dS(d)</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Vasiliev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Lett</title>
+		<imprint>
+			<biblScope unit="volume">567</biblScope>
+			<biblScope unit="page" from="139" to="151" />
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">BTZ Black Hole as Solution of 3-D Higher Spin Gauge Theory</title>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Didenko</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Matveev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Vasiliev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Theor.Math.Phys</title>
+		<imprint>
+			<biblScope unit="volume">153</biblScope>
+			<biblScope unit="page" from="1487" to="1510" />
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Static BPS black hole in 4d higher-spin gauge theory</title>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Didenko</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Vasiliev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Lett</title>
+		<imprint>
+			<biblScope unit="volume">682</biblScope>
+			<biblScope unit="page" from="305" to="315" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<title level="m" type="main">Higher Spin Black Holes</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Gutperle</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Kraus</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="page" from="1105" to="022" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title level="m" type="main">Families of exact solutions to Vasiliev&apos;s 4D equations with spherical, cylindrical and biaxial symmetry</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Iazeolla</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Sundell</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="page" from="1112" to="084" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title level="m" type="main">Conical Defects in Higher Spin Theories</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Castro</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Gopakumar</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Gutperle</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Raeymaekers</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="1202" to="096" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title level="m" type="main">Biaxially symmetric solutions to 4D higher-spin gravity</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Iazeolla</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Sundell</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="1208" to="4077" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title level="m" type="main">Black holes in three dimensional higher spin gravity: A review</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Ammon</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Gutperle</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Kraus</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Perlmutter</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="1208" to="5182" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<forename type="middle">A</forename>
+				<surname>Berends</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Burgers</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Van Dam</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>On</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>The</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">In</forename>
+				<surname>Problems</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Constructing</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Involving</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Spin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Particles</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="page" from="260" to="295" />
+			<date type="published" when="1985" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+		<title level="m" type="main">Point particle in general background fields and generalized equivalence principle</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">Y</forename>
+				<surname>Segal</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page">0008105</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Conformal higher spin theory</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">Y</forename>
+				<surname>Segal</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="volume">664</biblScope>
+			<biblScope unit="page" from="59" to="130" />
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Actions, charges and off-shell fields in the unfolded dynamics approach</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Vasiliev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int.J.Geom.Meth.Mod.Phys</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="37" to="80" />
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Brane partons and singleton strings</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Engquist</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Sundell</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="volume">752</biblScope>
+			<biblScope unit="page" from="206" to="279" />
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<title level="m" type="main">Off-shell gauge fields from BRST quantization</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Grigoriev</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page">0605089</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<monogr>
+		<title level="m" type="main">On higher spin interactions with matter</title>
+		<author>
+			<persName>
+				<forename type="first">X</forename>
+				<surname>Bekaert</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Joung</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Mourad</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page" from="0903" to="3338" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<title level="m" type="main">Effective action in a higher-spin background</title>
+		<author>
+			<persName>
+				<forename type="first">X</forename>
+				<surname>Bekaert</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Joung</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Mourad</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="page" from="1102" to="048" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">A stepping stone between einstein-yang-mills and strings?</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Neveu</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lebedev Physical Institute</title>
+		<imprint>
+			<date type="published" when="2011-03" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<monogr>
+		<title level="m" type="main">Parent formulations, frame-like Lagrangians, and generalized auxiliary fields</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Grigoriev</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="1212" to="048" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Gauge symmetry in phase space with spin: A Basis for conformal symmetry and duality among many interactions</title>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Bars</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Deliduman</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">106004</biblScope>
+			<biblScope unit="page" from="58" to="9806085" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Systematics of Higher Spin Gauge Fields</title>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>De Wit</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">Z</forename>
+				<surname>Freedman</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">358</biblScope>
+			<biblScope unit="page">21</biblScope>
+			<date type="published" when="1980" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Massless Fields with Integer SpinGauge&apos; Form of Description of Massless Fields with Arbitrary Spin</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">A</forename>
+				<surname>Vasiliev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev. Sov.J.Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="volume">3624</biblScope>
+			<biblScope unit="issue">855</biblScope>
+			<biblScope unit="page" from="18" to="439" />
+			<date type="published" when="1978" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Description of the higher massless irreducible integer spins in the BRST approach</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Pashnev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Tsulaia</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mod.Phys.Lett</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page" from="1853" to="1864" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Lagrangian formulation of the massless higher integer spin fields in the AdS background</title>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Buchbinder</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Pashnev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Tsulaia</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Lett</title>
+		<imprint>
+			<biblScope unit="volume">523</biblScope>
+			<biblScope unit="page" from="338" to="346" />
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Free geometric equations for higher spins</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Francia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Sagnotti</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Lett</title>
+		<imprint>
+			<biblScope unit="volume">543</biblScope>
+			<biblScope unit="page" from="303" to="310" />
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Tensor gauge fields in arbitrary representations of GL(D,R): Duality and Poincare lemma</title>
+		<author>
+			<persName>
+				<forename type="first">X</forename>
+				<surname>Bekaert</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Boulanger</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun.Math.Phys</title>
+		<imprint>
+			<biblScope unit="volume">245</biblScope>
+			<biblScope unit="page" from="27" to="67" />
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Exotic tensor gauge theory and duality</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>De Medeiros</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Hull</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun.Math.Phys</title>
+		<imprint>
+			<biblScope unit="volume">235</biblScope>
+			<biblScope unit="page" from="255" to="273" />
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">On the geometry of higher spin gauge fields</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Francia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Sagnotti</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Class.Quant.Grav</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="473" to="486" />
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">On geometric equations and duality for free higher spins</title>
+		<author>
+			<persName>
+				<forename type="first">X</forename>
+				<surname>Bekaert</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Boulanger</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Lett</title>
+		<imprint>
+			<biblScope unit="page" from="561" to="183" />
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">A Modification of the Newtonian dynamics as a possible alternative to the hidden mass hypothesis</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Milgrom</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Astrophys.J</title>
+		<imprint>
+			<biblScope unit="volume">270</biblScope>
+			<biblScope unit="page" from="365" to="370" />
+			<date type="published" when="1983" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<monogr>
+		<title level="m" type="main">Symplectic invariants and Hamiltonian dynamics. Modern Birkhauser Classics</title>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Hofer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Zender</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

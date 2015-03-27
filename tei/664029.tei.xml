@@ -1,0 +1,800 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Numerical investigation of friction in inflaton equations of motion</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2004-11">Nov 2004 (Dated: February 7, 2008)</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Ian</forename>
+								<forename type="middle">D</forename>
+								<surname>Lawrie</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">School of Physics and Astronomy</orgName>
+								<orgName type="institution">The University of Leeds</orgName>
+								<address>
+									<postCode>LS2 9JT</postCode>
+									<settlement>Leeds</settlement>
+									<country key="GB">England</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Numerical investigation of friction in inflaton equations of motion</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2004-11">Nov 2004 (Dated: February 7, 2008)</date>
+						</imprint>
+					</monogr>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords scheme="pacs">
+					<term>1110Wx</term>
+					<term>0530-d</term>
+					<term>9880Cq</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>The equation of motion for the expectation value of a scalar quantum field does not have the local form that is commonly assumed in studies of inflationary cosmology. We have recently argued that the true, temporally non-local equation of motion does not possess a time-derivative expansion and that the conversion of inflaton energy into particles is not, in principle, described by the friction term estimated from linear response theory. Here, we use numerical methods to investigate whether this obstacle to deriving a local equation of motion is purely formal, or of some quantitative importance. Using a simple scalar-field model, we find that, although the non-equilibrium evolution can exhibit significant damping, this damping is not well described by the local equation of motion obtained from linear response theory. It is possible that linear response theory does not apply to the situation we study only because thermalization turns out to be slow, but we argue that that the large discrepancies we observe indicate a failure of the local approximation at a more fundamental level.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+				<p>The equation of motion for the expectation value of a scalar quantum field does not have the local form that is commonly assumed in studies of inflationary cosmology. We have recently argued that the true, temporally non-local equation of motion does not possess a time-derivative expansion and that the conversion of inflaton energy into particles is not, in principle, described by the friction term estimated from linear response theory. Here, we use numerical methods to investigate whether this obstacle to deriving a local equation of motion is purely formal, or of some quantitative importance.</p>
+
+				<p>Using a simple scalar-field model, we find that, although the non-equilibrium evolution can exhibit significant damping, this damping is not well described by the local equation of motion obtained from linear response theory. It is possible that linear response theory does not apply to the situation we study only because thermalization turns out to be slow, but we argue that that the large discrepancies we observe indicate a failure of the local approximation at a more fundamental level.</p>
+
+				<p>PACS numbers: 11.10.Wx, 05.30.-d,98.80.Cq</p>
+
+			<div>
+				<head>I. INTRODUCTION</head>
+
+				<p>The dynamics of a classical inflaton field is commonly assumed to be governed by a local equation of motion of the form ¨ φ + 3H ˙ φ + η(φ) ˙ φ + V eff (φ) = 0, (1.1) where the friction term η(φ) ˙ φ represents the dissipative mechanism through which inflaton energy is converted into particles. In particular, in &apos;warm inflation&apos; scenarios [1, 2, 3, 4], this term is taken to be large enough for a significant fraction of the energy to be dissipated during inflation. Assuming that the classical inflaton φ is the expectation value of quantum scalar field Φ, its equation of motion can be derived straightforwardly from a suitable quantum field theory, and it is not of the form (1.1). For example, if φ couples to a scalar quantum field χ through an interaction 1 2 gφ 2 χ 2 , one obtains a term gφχ 2 in the equation of motion, and the expectation value depends on φ through the effective mass of the χ particles, m</p>
+
+				<figure>
+					<trash>2 χ (φ) = m 2 χ + gφ 2 .</trash>
+
+
+				</figure>
+
+				<p>The field χ here might be the quantum part of Φ (that is, Φ = φ + χ, with φ = Φ) or it might be an independent field.</p>
+
+				<p>In any case, the expectation value χ 2 is a highly nonlocal quantity: it depends in a complicated way on the entire history of φ, in contrast to the local equation (1.1), where φ, ˙ φ and φ are all evaluated at a single time t. This situation is quite generic: a Yukawa coupling g ′ φ ¯ ψψ to a spin- 1 2 field ψ produces a φ-dependent mass for the ψ particles and a term g ′ ¯ ψψ in the equation of motion, and in general the equation of motion contains a sum of terms of this sort, but no friction term. The question naturally arises, whether the true equation of motion might be adequately approximated, under suitable circumstances, by a local equation similar to (1.1). An apparently rather plausible argument suggests that this is indeed possible when φ changes sufficiently slowly with time, and supplies an estimate of the friction coefficient η(φ). To evaluate χ 2 (t) at a fixed time t, one expresses φ(t ′ ) at some earlier time t ′ as</p>
+
+				<figure>
+					<trash>φ(t ′ ) = φ(t) + (t ′ − t) ˙ φ(t) + 1 2 (t ′ − t) 2 ¨ φ(t) + . . . . (1.2) The evolution of χ(t ′ ) is governed by a Hamiltonian H(t ′ ) = H(χ, φ(t ′ )) that depends explicitly on time through φ(t ′ ). Inserting the expansion (1.2), we have H(t ′ ) = H(χ, φ(t)) + ∆H(t ′ ), (1.3)</trash>
+
+
+				</figure>
+
+				<p>where the first term, say H 0 (χ) ≡ H(χ, φ(t)) is independent of t ′ . Assuming that the state of the χ field is always close to thermal equilibrium, the time-dependent correction ∆H(t ′ ) can be treated using the standard methods of linear response theory, which yields the approximation</p>
+
+				<figure>
+					<trash>χ 2 (t) ≈ χ 2 eq + i t dt ′ [∆H(t ′ ), χ 2 (t)] eq (1.4)</trash>
+
+
+				</figure>
+
+				<p>where the expectation values are taken in the equilibrium ensemble associated with H 0 . Keeping just the first two terms in (1.2), we find that ∆H(t ′ ) is proportional to ˙ φ(t), and in this way we recover an equation of the form (1.1). Using this or equivalent methods, estimates of the friction coefficient were found in the 1980s for a single self-interacting scalar field [5, 6, 7], and more recently (mainly in the context of warm inflation) for more complicated models [8, 9, 10, 11, 12, 13]. Plausible though these calculations seem to be, they rely on an unproven assumption: namely, that the true nonequilibrium dynamics can legitimately be replaced by the linear response of a state of exact thermal equilibrium. It is therefore important to ask whether the same results can be recovered from the slow-evolution limit of the nonequilibrium dynamics. Recently [14, 15], we have addressed this question by exhibiting a sequence of approximations through which the exact non-equilibrium dynamics can be reduced to a set of local, coupled evolution equations for φ(t) and quantities characterizing the state of the particles into which φ decays. To recover the local equation of motion (1.1), it is necessary that the solution of these evolution equations should have an adiabatic expansion in powers of derivatives of φ(t). Somewhat surprisingly, we found, as reviewed in section II below, that no such solution exists. Formally, this means that the equation of motion for φ(t) is intrinsically non-local, and does not have a time-derivative expansion. In particular, the friction coefficient η(φ) does not exist. This formal result indicates that the local equation of motion is never strictly valid, but that does not necessarily mean that it cannot serve as a reasonably accurate approximation. Intuitively, one might still expect that (at least under favourable circumstances) dissipative effects, which certainly are a feature of the non-equilibrium evolution, should be fairly well represented by the friction term calculated in linear response theory. It is this issue that we attempt to address here by numerical methods. More specifically, one can envisage a further approximation to the non-equilibrium evolution equations in which self-energies are replaced with the values they would have in a state of thermal equilibrium. Then (see section II below) the solution of the resulting equations does have a time-derivative expansion, and one recovers essentially the friction coefficient obtained from linear response theory. In what follows, we try to assess (within a particular model) whether the local equation of motion obtained in this way provides a good approximation to the non-equilibrium dynamics.</p>
+
+				<p>Section II describes the non-equilibrium evolution equations and the adiabatic approximation to these equations that we solve numerically. In section III, we present solutions for the evolution from two different initial states: one is a state in which the adiabatic approximation predicts underdamped motion (section III A), while in the other it predicts overdamped motion (section III B). In both cases, we find that, although although the non-equilibrium dynamics does yield damping, this damping is not well described by the adiabatic approximation. A brief account of the numerical methods used to obtain these results is given in section III C. Finally, section IV is a self-contained summary, during the course of which consider what might account for the failure of the adiabatic approximation in the situation we have studied.</p>
+
+			</div>
+			<div>
+				<head>II. APPROXIMATE EVOLUTION EQUATIONS FOR A SCALAR-FIELD MODEL</head>
+
+				<p>As in [14, 15] we work with a Minkowski-space theory. Extending our analysis to a Robertson-Walker spacetime presents no difficulties of principle, but it introduces complications which seem to have no bearing on the issue we address. Consider, then, a quantum field theory defined by the Lagrangian density</p>
+
+				<figure>
+					<trash>L = 1 2 ∂ µ Φ∂ µ Φ − V (Φ) + 1 2 ∂ µ χ∂ µ χ − 1 2 m 2 χ χ 2 − 1 4! λχ 4 − 1 2 gΦ 2 χ 2 . (2.1) It should be emphasized at once that we will not attempt to study the exact non-equilibrium dynamics of this model. In fact, we will arbitrarily discard various terms in its equations of motion which, though they may well affect the dynamics significantly, are irrelevant to the question on which we wish to focus.</trash>
+
+
+				</figure>
+
+				<p>The first such approximation is to replace the quantum field Φ(x, t) with its expectation value φ(t), where we assume a spatially homogeneous state. Then the equation of motion for φ(t) is</p>
+
+				<figure>
+					<trash>¨ φ + V ′ (φ) + gφχ 2 (x, t) = 0 (2.2) while the dynamics of the remaining quantum field χ(x, t) is governed by the Lagrangian L χ = 1 2 ∂ µ χ∂ µ χ − 1 2 m 2 (t)χ 2 − 1 4! λχ 4 (2.3) with m 2 (t) = m 2 χ + gφ 2 (t).</trash>
+
+
+				</figure>
+
+				<p>An approximate treatment of this non-equilibrium dynamics yields, for the expectation value in (2.2) (which is independent of x for a homogeneous state)</p>
+
+				<figure>
+					<trash>χ 2 (x, t) = d 3 k (2π) 3 2ω k (t) [1 + 2n k (t) + 2Re ν k (t)] , (2.4) where ω k = k 2 + m 2</trash>
+
+					<figDesc>(t) and the functions n k (t) and ν k (t), which characterize the state of the system of χ particles, are solutions of the evolution equations</figDesc>
+					<trash>ǫ∂ t n k (t) = α k (t) − Γ k (t) [1 + 2n k (t)] + ǫ ˙ ω k (t) ω k (t) Re ν k (t) (2.5) ǫ∂ t ν k (t) = −2i [ω k (t) − iΓ k (t)] ν k (t) − α k (t) + ǫ ˙ ω k (t) 2ω k (t) [1 + 2n k (t)] . (2.6) In these equations, α k (t) and Γ k (t) are given by α k (t) = c 4π 2 d 3 k 1 d 3 k 2 d 3 k 3 δ(ω k1 + ω k2 − ω k3 − ω k )δ(k 1 + k 2 − k 3 − k) ω k ω k1 ω k2 ω k3 × [(1 + n k1 )(1 + n k2 )n k3 + n k1 n k2 (1 + n k3 )] (2.7) Γ k (t) = c 4π 2 d 3 k 1 d 3 k 2 d 3 k 3 δ(ω k1 + ω k2 − ω k3 − ω k )δ(k 1 + k 2 − k 3 − k) ω k ω k1 ω k2 ω k3 × [(1 + n k1 )(1 + n k2 )n k3 − n k1 n k2 (1 + n k3 )] (2.8) with c = λ 2 /64(2π) 3</trash>
+
+
+				</figure>
+
+				<p>, while ǫ, which has the value ǫ = 1, is a formal parameter introduced to facilitate an adiabatic expansion.</p>
+
+				<p>The approximations that lead to these equations are described in detail in [15]. Essentially, they arise as a solution to the Dyson-Schwinger equations for 2-point functions, via a local Ansatz for self-energies, which are evaluated at 2-loop order in perturbation theory. For a free-field theory, with λ = 0, which also means α k (t) = Γ k (t) = 0, the evolution equations are exact (see, for example [6]) and the functions n k (t) and ν k (t) can be identified in terms of creation and annihilation operators for χ particles:</p>
+
+				<figure>
+					<trash>a † k (t)a k ′ (t) = (2π) 3 δ(k − k ′ )n k (t) (2.9) a k (t)a k ′ (t) = (2π) 3 δ(k + k ′ )ν k (t). (2.10) With interactions included, (2.5) can be interpreted as a Boltzmann equation for number densities n k (t); the quantity S k (t) = α k (t) − Γ k (t)[1 + 2n k (t)] (2.11) is the standard scattering integral associated with two-body elastic scattering, while the source j(t) = ˙ ω k (t) ω k (t) Re ν k (t) (2.12)</trash>
+
+
+				</figure>
+
+				<p>represents particle creation and absorption due to the time-dependent mass m(t). Although the evolution equations (2.5) and (2.6) are local, their solution is not. One can attempt to obtain a solution in the form of a time-derivative expansion, by writing</p>
+
+				<figure>
+					<trash>n k (t) = n eq k (t) + ǫδn k (t) + O(ǫ 2 ) (2.13) ν k (t) = ν eq k (t) + ǫδν k (t) + O(ǫ 2 ), (2.14)</trash>
+
+
+				</figure>
+
+				<p>expanding in powers of ǫ and finally setting ǫ = 1. However, it turns out that no such solution exists, for the following reason. To find the leading correction δn k , one has to solve the integral equation</p>
+
+				<figure>
+					<trash>∞ 0 dk ′ K(k, k ′ )δn k ′ = ∂ t n eq k − ˙ ω k ω k Re ν eq k , (2.15) where K(k, k</trash>
+
+					<figDesc>′ ) = (δS k /δn k ′ ) n=n eq . It is straightforward to show that conservation of energy in two-body scattering implies the sum rule</figDesc>
+					<trash>∞ 0 dk k 2 ω k K(k, k ′ ) = 0</trash>
+
+
+				</figure>
+
+				<p>. The right-hand side of (2.15) does not respect this sum rule, so the equation is not self-consistent and the desired solution does not exist. (For elastic scattering, there is a second sum rule associated with particle-number conservation, which is also not respected by (2.15); however, corrections to the Boltzmann equation (2.5) from higher orders of perturbation theory would introduce inelastic scattering terms, destroying this second sum rule.) To the extent that our approximations afford an adequate description of non-equilibrium evolution (an important caveat, upon which we comment further in section IV) this shows that the equation of motion (2.2) does not have a time-derivative expansion and cannot be represented by a local equation such as (1.1). However, we can recover a timederivative expansion by making a further approximation. The functions α k (t) and Γ k (t) are related to quasiparticle self-energies Σ ± k (t) (whose exact meanings are given in [15]</p>
+
+				<figure>
+					<trash>) by α k (t) = − i 4ω k (t) Σ + k (t) + Σ − k (t) (2.16) Γ k (t) = − i 4ω k (t) Σ + k (t) − Σ − k (t) . (2.17)</trash>
+
+
+				</figure>
+
+				<p>Let us replace these self-energies with constant equilibrium values. In what follows, we will call this the adiabatic approximation. Using this approximation, the time-derivative expansion can be carried through without difficulty. In particular, α k (t) and Γ k (t) no longer depend on δn k (t), and the troublesome equation (2.15) does not arise. Since ˙ ω k (t) is proportional to ˙ φ(t), so are δn k (t) and δν k (t), and these contributions to χ 2 give rise to a friction coefficient</p>
+
+				<figure>
+					<trash>η(φ) = g 2 φ 2 4π 2 ∞ 0 dk k 2 β(ω 2 k + 3Γ 2 k )n k (1 + n k ) Γ k (ω 2 k + Γ 2 k ) 2 + Γ k (ω 2 k − 3Γ 2 k )(1 + 2n k ) ω k (ω 2 k + Γ 2 k ) 3 . (2.18) Here, n k stands for the equilibrium Bose-Einstein distribution n eq k = e βω k − 1 −1 , while</trash>
+
+
+				</figure>
+
+				<p>Γ k is found by substituting this equilibrium distribution in (2.8). This expression agrees, for example, with the result given in [7] in the limit Γ k &lt;&lt; ω k considered by these authors. Roughly speaking, the second term represents a loss of inflaton energy arising from particle creation, while the first represents a transfer of energy to particles already present. This agreement is not surprising: the adiabatic approximation we have just introduced is roughly equivalent to the assumptions on which linear response theory is based. Intuitively, it would seem that this should be a fair approximation if φ(t) does not change too rapidly, and if the state of the χ particles does not stray too far from an equilibrium distribution. We now attempt to test this intuition by comparing numerically the non-equilibrium evolution resulting from (2.5) and (2.6) with that implied by the adiabatic approximation.</p>
+
+				<p>To simplify matters a little, we observe that the frictional effect we want to study arises from the last two terms in the expression (2.4) for χ 2 , and will discard the first term. Thus, we study the equation of motion</p>
+
+				<figure>
+					<trash>¨ φ + V ′ (φ) + gφχ 2 (x, t) trunc = 0 (2.19) with the truncated expectation value χ 2 (x, t) trunc = 2 d 3 k (2π) 3 2ω k (t) [n k (t) + Re ν k (t)] , (2.20) the evolution of n k (t) and ν k (t) being governed by (2.5) and (2.6). The adiabatic approximation yields the estimate gφχ 2 (x, t) adiab trunc = ∆V ′ (φ) + η(φ) ˙ φ (2.21) where η(φ) is given by (2.18) and the contribution from the leading order terms of the adiabatic expansion is ∆V ′ (φ) = gφ 2π 2 ∞ 0 dk k 2 ω k [n eq k + Re ν eq k ] (2.22) with Re ν eq k = − Γ 2 k (1 + 2n eq k ) 2(ω 2 k + Γ 2 k ) . (2.23) In order to evaluate χ 2 (x, t) adiab trunc</trash>
+
+
+				</figure>
+
+				<p>, we need values for the inverse temperature β of the assumed equilibrium state.</p>
+
+				<p>To this end, we observe that the evolution equations (</p>
+
+				<figure>
+					<trash>2.19), (2.5) and (2.6) conserve exactly the energy given by E = 1 2 ˙ φ 2 + V (φ) + 1 2π 2 ∞ 0 dk k 2 ω k n k . (2.24)</trash>
+
+
+				</figure>
+
+				<p>We will determine the evolving temperature in the adiabatic approximation by requiring this energy to remain constant. To avoid confusion, it may be worthwhile to reiterate that our goal is to test whether the expectation value (2.20) is adequately represented by the adiabatic expression (2.21). We will do this by comparing solutions to the nonequilibrium evolution equations (</p>
+
+				<figure>
+					<trash>2.19), (2.20), (2.5) and (2.6) with the adiabatic approximation to these equations, which consists of the equation of motion ¨ φ + η(φ) ˙ φ + V ′ (φ) + ∆V ′ (φ) = 0, (2.25)</trash>
+
+					<figDesc>with η(φ) and ∆V ′ (φ) given by (2.18) and (2.22) respectively, and β determined by energy conservation. The fact that we have arbitrarily discarded several terms does not affect this comparison, though of course it does mean that we are not in a good position to study the true dynamics of the original model (2.1). Equally, our approximations are based in part on perturbation theory but the neglected higher-order terms do not affect the comparison, and we will not be concerned with choosing parameter values so as to make these terms small.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>III. NUMERICAL RESULTS</head>
+
+				<p>We have obtained numerical solutions of the evolution equations presented in the previous section, taking the simplest available potential, namely</p>
+
+				<figure>
+					<trash>V (φ) = 1 2 M 2 φ 2 . (3.1)</trash>
+
+					<figDesc>This section presents two sets of solutions. In the first, the motion of φ is an underdamped oscillation; in the second, the motion is predicted by the adiabatic approximation to be overdamped. In each case, we solve, on the one hand the non-equilibrium equation of motion (2.19) together with (2.5) and (2.6), and on the other hand the adiabatic approximation to this equation (2.25), starting from identical initial conditions. At the end of the section, we comment briefly on the numerical methods used.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>A. Underdamped motion Figure 1</head>
+
+				<p>shows the motion of φ obtained in the two approximations, starting from a more or less arbitrary initial state. Throughout, the units are fixed by taking the mass of χ particles to be m χ = 1. Here, we chose the parameter values c = 0.5, g = 1.0 and M 2 = 0.4. The initial state for φ was φ = 5.0, ˙ φ = 0 and the initial state of the χ particles was a state of thermal equilibrium with inverse temperature β = 0.3. With these values, the energy of the particles is about 86% of the total energy, so one might expect a significant transfer of further energy to these particles as well as a frictional effect from particle creation. The two superimposed oscillations in figure 1 are not easily distinguished, so we have plotted envelopes for the two curves: the solid envelope indicates the solution to the non-equilibrium evolution equations, while the dashed one corresponds to the adiabatic approximation. At first sight, there seems to be a similar rate of damping in each case, but there are significant differences. The friction coefficient of the adiabatic approximation given in (2.18) is a rather complicated function of φ, but suppose that it can be written as η(φ) = φ 2 ˆ η(φ), wherê η(φ) varies relatively slowly with φ. This suggests that large-amplitude oscillations should be strongly damped, while at small amplitudes damping would be ineffective. This behaviour is clearly apparent from figure 1. However, the solution of the full evolution equations shows a different tendency: damping is smaller at large amplitudes than that predicted by the adiabatic approximation, and it does not disappear at small amplitudes. Thus, in this situation, although the non-equilibrium evolution equations do yield a damped motion, the damping is not well represented by the friction term as estimated from the adiabatic approximation. This is not necessarily unexpected, since both approximations yield fairly rapid oscillations, and the adiabatic approximation might not be expected to work well. We therefore turn to a different initial state which, according to the adiabatic approximation, ought to result in overdamped motion and slow evolution.</p>
+
+			</div>
+			<div>
+				<head>B. Overdamped motion</head>
+
+				<p>Suppose, as above, that the adiabatic friction coefficient can be represented as η(φ) ≈ ˆ ηφ 2 and also that the adiabatic correction to the effective potential (2.22) is φ times a slowly varying function. Then the adiabatic equation</p>
+
+				<p><formula>0 50 100 150 200 250 300 -6 -4 -2 0 2 4 6 t noneq adiab FIG. 1</formula></p>
+
+				<figure>
+					<figDesc>: Underdamped motion of φ(t) as calculated from the non-equilibrium evolution equations and via the adiabatic approximation . Envelopes of the two oscillatory curves are drawn to aid the eye.</figDesc>
+					<trash>of motion (2.25) becomes ¨ φ + ˆ ηφ 2 ˙ φ + µ 2 φ = 0 (3.2) wherê η and µ 2 = M 2 + ∆V</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>′ /φ are, at least over some period of time, approximately constant. If φ can be neglected, then this equation has the overdamped solution</figDesc>
+					<trash>φ(t) ≈ φ(0) 2 − 2µ 2 t ˆ η 1/2 , (3.3) with a &quot; terminal velocity &quot; ˙ φ ≈ − µ 2 ˆ ηφ . (3.4) Under these circumstances, we havë φ ≈ −µ 4 /ˆ η 2 φ 3 , so overdamped motion should occur if | ¨ φ| ≪ |µ 2 φ|, or µ 2 η 2 ≪ 1. (3.5)</trash>
+
+
+				</figure>
+
+				<p>Intuitively, the adiabatic approximation ought to be good if, in addition to this condition for neglecting φ, the state of the χ particles thermalizes rapidly. According to the Boltzmann-like equation (2.5), the mode n k of the particle distribution relaxes towards equilibrium with a characteristic relaxation time τ k = 1/Γ k . Taking the k = 0 mode as representative, one can guess at a rough criterion for efficient thermalization, namely that the fractional change in the effective particle mass m 2 = m 2 χ + gφ 2 over a time τ k=0 should be small. That is, τ k=0 |dm 2 /dt| ≪ m 2 or 2gφ ˙ φ m 2 Γ k=0 ≪ 1. (3.6) 0 50 100 150 200 250 300 -80 -60 -40 -20 0 20 40 60 80 t noneq adiab FIG. 2: Motion of φ(t) as calculated from the non-equilibrium evolution equations and via the adiabatic approximation. As determined from the adiabatic approximation, the initial conditions should lead to overdamped motion.</p>
+
+				<p>Ideally, we would like to study a state in which both conditions (3.5) and (3.6) are well satisfied, but this proves to be quite difficult. In particular, the second condition seems hard to achieve. Using (3.4), it can be rewritten as</p>
+
+				<figure>
+					<head>2gµ 2 m 2 ˆ ηΓ k=0 ≪ 1 (3.7) and the thermal effects that makê η and Γ k large also tend to produce large values of µ 2 . The dependence of η(φ)</head>
+
+					<figDesc>(equation (2.18)) on the parameters at our disposal is so complicated as to make a systematic survey of the parameter space impractical. By trial and error, we have chosen a set of values which yield</figDesc>
+					<trash>µ 2 η 2 ≈ 5.9 × 10 −5 and 2gφ ˙ φ m 2 Γ k=0 ≈ 0.97. (3.8)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>This means that according to the adiabatic approximation, the system is strongly overdamped, but thermalization is only moderately efficient. A careful, but by no means exhaustive, exploration suggests that this situation cannot be much improved within the model studied here. The parameter values leading to this state are c = g = 1.0, M 2 = 0.005, β = 0.09 and φ = 80.0. The terminal velocity (3.4) turns out to be ˙ φ = −0.08967 . . .. Taking these initial conditions, we find for φ(t) the motion depicted in figure 2. Evidently, the motion obtained from the adiabatic approximation (the thinner curve) is indeed overdamped at early times. In fact the solution agrees well with (3.3) for times up to about t = 150. But as φ becomes smaller, the condition (3.5) for overdamping no longer holds and, as in figure 1, the motion at small amplitudes is essentially undamped.</figDesc>
+
+				</figure>
+
+				<p>The solution of the non-equilibrium evolution equations (the thicker curve in figure 2) is strikingly different: although there is significant damping, the motion is far from being overdamped. We observe, though, that the average rate of energy loss is quite similar, as indicated in figure 3, where we plot the energy that exists in the form of particles (the last term in (2.24)) as a fraction of the conserved total energy. In fact, this figure shows that the overall conversion of inflaton energy into particles is somewhat more efficient in the non-equilibrium evolution than is suggested by the adiabatic approximation.</p>
+
+				<figure>
+					<trash>0 50 100 150 200 250 300 0.5 0.6 0.7 0.8 0.9 1.0 E particle /E total t non-equilibrium adiabatic FIG. 3:</trash>
+
+					<figDesc>Energy of particles as a fraction of the conserved total energy.</figDesc>
+
+				</figure>
+
+				<p>Of course, the question arises, what accounts for the large qualitative difference between the non-equilibrium evolution and that obtained from the adiabatic approximation? A simple answer is that, as shown in section II, no adiabatic expansion of the non-equilibrium evolution equations actually exists, and our numerical results merely confirm that the adiabatic approximation is wrong. This may perhaps be the appropriate answer, but it needs some further discussion, because we also showed in section II that the adiabatic expansion does exist if we take the extra step of replacing self-energies with their equilibrium values, and one might think that this step is relatively innocuous if the state is not too far from equilibrium. Consider first the initial state, which was chosen to be a state of exact thermal equilibrium. According to the adiabatic approximation, the criterion for neglecting φ is very well satisfied (equation (3.8)), and the motion should be strongly overdamped. However, we see from figure 2 that | ¨ φ| as calculated from the non-equilibrium evolution equations is very large. The reason for this is not hard to discover.</p>
+
+				<p>In a state of exact thermal equilibrium, the term gφχ 2 (x, t) trunc in the equation of motion (2.19) is precisely the quantity ∆V ′ (φ) that appears in the adiabatic equation (2.25). Thus, while the original equation of motion asserts that U (φ) ≡ V ′ (φ) + ∆V ′ (φ) is equal to − ¨ φ, the adiabatic approximation asserts that U (φ) ≈ −η(φ) ˙ φ, the value of φ being very small. Clearly, the adiabatic approximation gives a wrong answer for a state of exact thermal equilibrium. In fact, the informal arguments given in [5, 6] and reviewed in [15] show that the frictional effects arise precisely from small departures from equilibrium. Figure 4 illustrates the departure from thermal equilibrium at times near t ≈ 20, corresponding to the first negative peak in figure 2, where about one half-cycle of oscillation has been completed. The quantity plotted is k 2 ω k n k , whose integral gives the total energy in particles. The solid curve uses the distribution n k (t) generated by the non-equilibrium evolution, while the broken curve uses the equilibrium distribution n eq k with the temperature β −1 adjusted to give the same total energy. (This is quite independent of the equilibrium distribution n adiab k generated by the adiabatic evolution.) Clearly, these two distributions are different, but the difference does not greatly affect the time evolution. For example, we show in figure 5 the quasiparticle width Γ k , which appears in the evolution equations (2.5) and (2.6), calculated from n k (t) and n eq k , and the difference is seen to be marginal. We can use the effective value of β calculated as above, together with the non-equilibrium values of n k and Γ k in the expressions (</p>
+
+				<figure>
+					<trash>2.18) and (2.22) to find 0 50 100 150 200 0 10 20 30 40 50 60 k 2 k n k k non-equilibrium equilibrium FIG. 4</trash>
+
+
+				</figure>
+
+				<p>: Weighted particle distribution k 2 ω k n k at time t = 19.9 (solid curve) and the same quantity calculated from the equilibrium distribution for the same total particle energy (broken curve). an effective, non-equilibrium value for the ratio µ 2 /η 2 which, according to (3.5), gives a criterion for overdamping at times near t = 20. The result is that |µ 2 /η 2 | ≈ 9.5 × 10 −5 . Thus, the criterion for overdamping (as obtained from the adiabatic approximation) is well satisfied by the non-equilibrium state at t ≈ 20, just as it was by the initial equilibrium state.</p>
+
+				<p>The main point of the preceding discussion is this. In order to obtain the adiabatic approximation, we had to replace non-equilibrium self-energies Σ k [n] with the values Σ k [n eq ] associated with a state of thermal equilibrium. In the initial state at t = 0 these two self energies are identical, and in the state illustrated in figure 5 the difference is quite small. Clearly, this difference does not account for the drastic failure of the adiabatic approximation in the situation we have examined. The difference between the two evolutions in figure 2 (and, for that matter, those shown in figure 1) indicates that the expectation value χ 2 (x, t) trunc is not well represented as the sum of the two terms in (2.21), regardless of whether the coefficients ∆V ′ (φ) and η(φ) are calculated using the non-equilibrium state or an effective equilibrium state. Thus, although the rate of thermalization may well be an important factor, its importance does not lie in the relatively small effect that inefficient thermalization would have on the values of these coefficients. Having made this point, we defer further discussion to section IV, but we observe here that thermalization in the situation we have studied is rather less efficient than one might infer from the value 0.97 for the ratio in (3.6). In the initial state, the relaxation time τ k = Γ −1 k has values τ k ≈ 400 for all the modes used in the calculation, and this is longer than the whole time for which the evolution was studied. From the point of view of the adiabatic approximation, this means that although thermalization might have been expected to be moderately efficient by comparison with the initially slow evolution, it is much less efficient by comparison with the more rapid evolution at later times. In the non-equilibrium evolution, there are quite large departures from equilibrium when φ changes rapidly. For example, we show in figure 6 the particle distribution (again weighted by k 2 ω k ) at the time t ≈ 10.2 where φ first becomes very small. This figure illustrates the fact that the particles created by the source (2.12) have a non-thermal spectrum weighted towards high energies: it falls off roughly as ω −5 k compared with the exponential fall-off of the thermal distribution. It is on account of this difference that the integral equation (2.15) fails to respect the energy sum rule, and thus to be self-consistent.</p>
+
+				<p>Comparing figures 4 and 6, it appears that, although the created particles are not</p>
+
+				<p><formula>0 50 100 150 200 0.002 0.003 0.004 k k non-equilibrium equilibrium</formula></p>
+
+				<p>FIG. 5: The quasiparticle width Γ k calculated from the particle distributions of figure 4. thermalized instantaneously, a significant amount of thermalization has taken place during the quarter-cycle between t = 10.2 and t = 19.9. This appearance is somewhat illusory, however, as we explain in section IV.</p>
+
+			</div>
+			<div>
+				<head>C. Numerical details</head>
+
+				<p>The calculations reported above were performed using modest computing resources (a PC), and a moderate numerical accuracy seems to be adequate for the issues we seek to address. The most demanding aspect of the calculations is the solution of the evolution equations (2.5) and (2.6). To deal with these, we computed the evolution of N modes (that is, N values of the momentum k) for the distribution functions n k and ν k , with an upper cutoff k max = 200. Of the various integrals that are needed, the energy integral (2.24) attaches the largest weight to high-momentum modes and the chosen cutoff is large enough to make this integral reasonably accurate, as illustrated by the integrands in figures 4 and 6. Since the calculations are quite lengthy (the data needed to produce figure 2 were obtained from 3 weeks continuous running) we did not attempt to make the entire process converge by increasing k max and N systematically. However, the results presented here, using N = 400, which adequately resolves the structure of the distributions generated, differ negligibly from those obtained using N = 200, and seem to be insensitive to the cutoff k max .</p>
+
+				<p>It is apparent from (2.6) that the functions ν k (t) oscillate with frequencies roughly equal to ω k . The basic time stepper used was a semi-implicit method, which is stable for these oscillations, with a fixed time step δt about onetenth of the period of the fastest oscillation. However, computation of the scattering integrals (2.7) and (2.8) is very time-consuming (even after analytical reduction to triple integrals), so α k and Γ k , which change quite slowly relative to the fast oscillations, were updated at longer time intervals ∆t, using a predictor-corrector method that typically converged after two or three iterations. This larger time interval ∆t was assigned values between 20δt and 150δt, according to the rate of change of Γ k (see figure 7). The values of n k needed in these integrals were obtained by interpolating the N tabulated values with a cubic spline. The quality of the data obtained by these methods is illustrated in figure 7, which shows the variation over a typical</p>
+
+				<p><formula>0 50 100 150 200 0 20 40 60 80 100 k 2 k n k k non-equilibrium equilibrium</formula></p>
+
+				<p>FIG. 6: Weighted particle distribution at t = 10.2, compared with the equilibrium distribution for the same energy. cycle of φ and the k = 0 modes of Γ k and n k . The sharp peaks in Γ k appear in all modes, and are largely due to the factor 1/ω k in (2.17). The basic operations of evaluating integrals, and so on, were carried out with a tolerance of 0.5% or better. The energy (2.24), which formally is exactly conserved, exhibits small variations, but is constant to within about 1%, which we estimate as the overall accuracy of the calculation.</p>
+
+			</div>
+			<div>
+				<head>IV. SUMMARY AND DISCUSSION</head>
+
+				<p>According to quantum field theory, the equation of motion for the expectation value of a scalar field is a complicated, non-local integro-differential equation. In applications to inflationary cosmology, it is typically assumed that this equation of motion can be replaced by a local equation similar to (1.1). If it is further assumed that the state of the quantum system is fairly close to thermal equilibrium, then it seems plausible that one should be able to apply the methods of linear response theory, which yield quantitative estimates of the friction coefficient η(φ) and the effective potential V eff (φ). Here and in [14, 15] we have tried to address the question whether the local equation of motion obtained in this way adequately approximates the actual non-equilibrium evolution, at least when this evolution is sufficiently slow. The indications are that it does not, but the treatment we have given cannot be considered as definitive, and we wish to set out clearly the issues that are involved. The first issue is that we have treated the non-equilibrium evolution on the basis of an approximate set of local equations (2.2), (2.4), (2.5) and (2.6). As described in detail in [15], they arise from a local Ansatz for quasiparticle self-energies, and it is not easy to assess how good an approximation this is. For the purposes of estimating the nonequilibrium behaviour numerically, other approximation schemes have recently become available (see, for example, [16, 17, 18, 19]) which are in some respects superior to this one. However for the purpose of deriving a local effective equation of motion, approximations more or less equivalent to ours would seem to be inevitable. To be precise, the question we address here is whether the fully local equation of motion (2.25) as derived from linear response theory yields a good approximation to the non-equilibrium behaviour as described by our evolution equations. If it does not</p>
+
+				<p><formula>200 205 210 215 0.0 0.1 0.2 0.3 0.4 t n k=0 0 5 10 15 20 k=0 -10 -5 0 5 10</formula></p>
+
+				<p>FIG. 7: Variation of φ, n k=0 and Γ k=0 over a typical cycle of oscillation. Data points are separated by the time interval ∆t explained in the text.</p>
+
+				<p>(as we seem to find), then it is also unlikely to provide a good approximation to the true non-equilibrium dynamics. The phrase &quot; fully local &quot; above means the following. The evolution equations (2.2), (2.5) and (2.6) are local, in the sense that they involve φ(t), n k (t) and ν k (t) together with their time derivatives, all evaluated at the same time t: they describe a Markovian process. In principle, one can envisage solving (2.5) and (2.6) for n k (t) and ν k (t) as functionals of φ(t). These solutions are non-local: they depend on the entire history of φ(t). So, substituting these solutions into the remaining equation (2.2), we have a non-local equation of motion for φ. This non-local equation might be approximated by the &quot; fully local &quot; equation (2.25) if the quantity gφχ 2 has a time-derivative expansion whose first two terms are ∆V ′ (φ) and η(φ) ˙ φ. Although we cannot find the complete functionals n k (t), and ν k (t), we can attempt to find their time-derivative expansions. As explained in section II, these expansions do not exist. However, if we make the further approximation of calculating self-energies from an equilibrium particle distribution rather than the non-equilibrium distribution, we can obtain a time derivative expansion, which essentially reproduces the results of linear response theory. This is what we have referred to as the adiabatic approximation. In section III, we compared numerically the non-equilibrium evolution with that resulting from the adiabatic approximation, and found very large differences. We also saw that, for the model studied here, thermalization is not very fast compared with the motion of φ. Intuitively, it seems that this poor thermalization might account for the failure of the adiabatic approximation.</p>
+
+				<p>The second issue we want to discuss is, therefore, that of thermalization. As indicated in section III B, the relaxation time τ k = 1/Γ k is roughly equal to φ/ ˙ φ in the initial state from which figure 2 was generated. On the basis of the adiabatic approximation, which indicates strong overdamping, one would perhaps expect the non-equilibrium evolution to exhibit a period of overdamped motion, albeit with significant corrections due to a modest thermalization rate. What we actually found was oscillatory motion with a period much shorter than τ k . Over one quarter-period of this motion, the particle distribution changes from that shown in figure 4 to that shown in figure 6. From these figures, it would seem that significant thermalization has taken place over a period of time much shorter than τ k . However, figure 7 suggests a different explanation. From that figure, we see that particles with a non-thermal distribution are radiated over a short period of time as φ 2 decreases towards 0, and that these particles, rather than being thermalized, are quickly reabsorbed as φ 2 subsequently increases. So thermalization is indeed slow on the time scale of the non-equilibrium motion. We cannot altogether rule out the possibility that it is this slow thermalization that accounts for the failure of the adiabatic approximation in the situation we have studied. However, we do not think that this is the correct explanation. One reason is that, as we have just remarked, consideration of the adiabatic approximation alone would suggest that thermalization, while modest, is not so slow as to produce the gross discrepancy apparent in figure 2. A more compelling reason is that, as discussed in section III B, the non-equilibrium motion is not well represented by the adiabatic equation (2.25) even at those times when the state is close to thermal equilibrium. This strongly indicates that the step of replacing, say, Γ k [n] with Γ k [n eq ] is wrong in principle and not just because of the quantitative discrepancy which, as seen in figure 5, may be quite small. In more detail, suppose that the distributions n k (t) and ν k (t) are indeed close to thermal equilibrium. Then it should be a good approximation to linearize the evolution equations (</p>
+
+				<figure>
+					<trash>2.5) and (2.6), using n k (t) = n eq k (t) + δn k (t) and ν k (t) = ν eq k (t) + δν k (t). In particular, the linearized version of (2.5) is ∂ t δn k + ∞ 0 dk ′ K(k, k ′ )δn k ′ = ∂ t n eq k − ˙ ω k ω k Re [ν eq k + δν k ]. (4.1) Unlike (2.15</trash>
+
+
+				</figure>
+
+				<p>), this equation is self-consistent; the energy sum rule merely gives an expression for the rate of change of the quantity dk k 2 ω k δn k . (This equation is not self-contained, however. To solve it, we would need a prescription, such as the conservation of energy, for determining the time-dependent temperature that specifies n eq k . As a matter of fact, the scattering integral S k vanishes when n eq k has an arbitrary chemical potential. In the adiabatic calculations of section III, we did not allow for the possibility of a non-zero chemical potential because there is no conserved particle number that could be used to determine its value.) The important point here is that the linearized equation (4.1) is a differential equation. Its solution is again a non-local functional of φ, which will not reproduce the adiabatic equation (2.25), regardless of how small δn k might be. To do that, we need not just a linear approximation, but a time-derivative expansion which, as we have emphasized, is not self-consistent.</p>
+
+				<p>In summary, our numerical study indicates that that the non-equilibrium evolution of φ is not well described by a local equation of motion with the friction term estimated by linear response theory. It is possible that an adiabatic approximation would work better for a model in which thermalization is more efficient, and we plan to explore this in future work. However, for the reasons just discussed, we do not think that poor thermalization is the principal cause of the large discrepancies we observed.</p>
+
+			</div>
+
+			<note place="foot">arXiv:hep-ph/0411130v1 9 Nov 2004</note>
+
+			<note place="foot">* Electronic address: i.d.lawrie@leeds.ac.uk</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">G</forename>
+				<surname>Moss</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1985" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Berera</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">75</biblScope>
+			<biblScope unit="page">3218</biblScope>
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Berera</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">Z</forename>
+				<surname>Fang</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">74</biblScope>
+			<date type="published" when="1912" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Berera</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Hosoya</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Sakagami</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="page">2228</biblScope>
+			<date type="published" when="1984" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Morikawa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Sasaki</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Prog</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Theor</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys</title>
+		<imprint>
+			<biblScope unit="volume">72</biblScope>
+			<biblScope unit="page">782</biblScope>
+			<date type="published" when="1984" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Morikawa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Sasaki</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">165</biblScope>
+			<biblScope unit="page">59</biblScope>
+			<date type="published" when="1985" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Gleiser</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">O</forename>
+				<surname>Ramos</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="page">2441</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Berera</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">O</forename>
+				<surname>Gleiser</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Ramos</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">58</biblScope>
+			<biblScope unit="page">123508</biblScope>
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Berera</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">O</forename>
+				<surname>Ramos</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">63</biblScope>
+			<biblScope unit="page">103509</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Berera</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">O</forename>
+				<surname>Ramos</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">567</biblScope>
+			<biblScope unit="issue">294</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Berera</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">O</forename>
+				<surname>Ramos</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2004" />
+			<biblScope unit="page">0406339</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">O</forename>
+				<surname>Ramos</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2004" />
+			<biblScope unit="page">0409353</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">D</forename>
+				<surname>Lawrie</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">66</biblScope>
+			<biblScope unit="page">041702</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">D</forename>
+				<surname>Lawrie</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">67</biblScope>
+			<biblScope unit="page">045006</biblScope>
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Aarts</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Berges</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="page">105010</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Berges</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Serreau</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">91</biblScope>
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Berges</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2004" />
+			<biblScope unit="page">0409233</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Berges</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Serreau</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2004" />
+			<biblScope unit="page" from="hep" to="ph" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

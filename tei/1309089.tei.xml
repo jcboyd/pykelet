@@ -1,0 +1,1782 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Primordial quantum nonequilibrium and large-scale cosmic anomalies</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2014-07-31">31 Jul 2014</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Samuel</forename>
+								<surname>Colin</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Department of Physics and Astronomy</orgName>
+								<orgName type="laboratory">Kinard Laboratory</orgName>
+								<orgName type="institution">Clemson University</orgName>
+								<address>
+									<postCode>29634-0978</postCode>
+									<settlement>Clemson</settlement>
+									<region>SC</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Antony</forename>
+								<surname>Valentini</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Department of Physics and Astronomy</orgName>
+								<orgName type="laboratory">Kinard Laboratory</orgName>
+								<orgName type="institution">Clemson University</orgName>
+								<address>
+									<postCode>29634-0978</postCode>
+									<settlement>Clemson</settlement>
+									<region>SC</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Primordial quantum nonequilibrium and large-scale cosmic anomalies</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2014-07-31">31 Jul 2014</date>
+						</imprint>
+					</monogr>
+					<note>1 Corresponding author (antonyv@clemson.edu) 1</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>We study incomplete relaxation to quantum equilibrium at long wavelengths, during a pre-inflationary phase, as a possible explanation for the reported large-scale anomalies in the cosmic microwave background (CMB). Our scenario makes use of the de Broglie-Bohm pilot-wave formulation of quantum theory, in which the Born probability rule has a dynamical origin. The large-scale power deficit could arise from incomplete relaxation for the amplitudes of the primor-dial perturbations. We show, by numerical simulations for a spectator scalar field, that if the pre-inflationary era is radiation dominated then the deficit in the emerging power spectrum will have a characteristic shape (an inverse-tangent dependence on wavenumber k, with oscillations). It is found that our scenario is able to produce a power deficit in the observed region and of the observed (approximate) magnitude for an appropriate choice of cosmological parameters. We also discuss the large-scale anisotropy, which could arise from incomplete relaxation for the phases of the primordial perturbations. We present numerical simulations for phase relaxation, and we show how to define characteristic scales for amplitude and phase nonequilibrium. The extent to which the data might support our scenario is left as a question for future work. Our results suggest that we have a potentially viable model that might explain two apparently independent cosmic anomalies by means of a single mechanism.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>According to inflationary cosmology, the observed anisotropies in the cosmic microwave background (CMB) were ultimately seeded by primordial quantum fluctuations [1, 2, 3, 4]. Precision measurements of the CMB may therefore be interpreted as tests of quantum mechanics – as well as of fundamental physics generally – at very early times and at very short distances [5, 6, 7, 8, 9, 10, 11, 12].</p>
+
+				<p>In this paper we focus on a scenario in which the quantum Born probability rule may have been violated at very early times, resulting in corrections to the primordial spectrum at very large wavelengths [6, 7, 8, 12]. This scenario is natural in the de Broglie-Bohm pilot-wave formulation of quantum theory [13, 14, 15, 16, 17], in which it has been argued that the Born rule is not a law but only a particular state of statistical equilibrium [18, 19, 20, 21, 22, 23, 6, 7, 24, 8, 25, 26]. In a cosmology with a radiation-dominated pre-inflationary phase [27, 28, 29, 30, 31], if the universe is assumed to begin in a state of &apos;quantum nonequilibrium&apos; with a statistical spread smaller than that implied by the Born rule, then on expanding space the dynamics yields efficient relaxation to equilibrium at short (sub-Hubble) wavelengths and a suppression or retardation of relaxation at long (super-Hubble) wavelengths [6, 7, 8, 12]. It is then a natural prediction of pilotwave theory that, at the onset of inflation, the primordial spectrum will show an anomalous deficit at sufficiently long wavelengths [6, 7, 8, 12]. Data from the Planck satellite appear to show a power deficit of 5–10% in the multipole region l 40, with a statistical significance in the range 2.5–3σ (depending on the estimator) [32]. The statistical significance is not high, but nevertheless (as the Planck team has noted) it is important to consider theoretical models that predict a low-l deficit, in order to better assess the potential significance of this finding. A related anomaly concerns the (temperature) twopoint angular correlation function at large scales, which is smaller than expected with a statistical significance exceeding 3σ [33]. It is conceivable that the observed deficit is caused by an incomplete relaxation to quantum equilibrium during a pre-inflationary era (though of course it might be caused by some other effect). The measured wavelength at which a relaxation-induced power deficit could set in will depend on unknown cosmological parameters, in particular the number of inflationary e-folds. It is possible that the purported effect exists, but at wavelengths too large to be observable. On the other hand, should the effect exist in an observable range, what particular signatures would it display? That is the subject of this paper. We perform extensive numerical simulations of quantum relaxation for a spectator scalar field on a radiation-dominated (purportedly pre-inflationary) background, for varying wavelengths, as well as for varying numbers of excited states and for varying time intervals. Our aim is to find features of the corrected spectrum that are broadly independent of the precise (and unknown) details of the putative pre-inflationary era – features that, in future work, could be subjected to a rigorous statistical comparison with data. We find in particular that the primordial spectrum will be diminished by a factor ξ(k) that is predicted to be an inverse-tangent function of wavenumber k (with oscillations around this curve). Data from the Planck satellite also appear to show significant deviations from statistical isotropy in the CMB at very large scales, in the region l 10 [34]. As noted by the Planck team, it would be desirable to have a physically compelling model that provides a common origin for both the large-scale power deficit and the large-scale anisotropy. We shall see that our quantum relaxation scenario is able to provide such a common origin, at least in principle (as was already suggested in ref. [12]). On the basis of numerical simulations of pilot-wave dynamics for primordial phases, we show that our relaxation scenario naturally predicts anomalous phases at very large scales as well as a power deficit at slightly smaller scales. A proper comparison with data is left for future work.</p>
+
+				<p>In this paper we focus on delineating the broad features that are to be expected from a quantum relaxation scenario. We also show by simple estimates that our model is able to generate a power deficit of approximately the correct magnitude, and at approximately the correct angular scales, for an appropriate choice of cosmological parameters. We conclude that our model is potentially viable as an explanation for both the large-scale power deficit and the large-scale anisotropy by means of a single mechanism (the suppression of quantum relaxation at long wavelengths on expanding space).</p>
+
+			</div>
+			<div>
+				<head n="2">Background</head>
+
+				<p>In this section we summarise the required background for the implementation of our model. (For further details see refs. [6, 7, 8, 12] and references therein.)</p>
+
+			</div>
+			<div>
+				<head n="2.1">Dynamical suppression of quantum noise at long wave- lengths</head>
+
+				<p>In pilot-wave theory, a system has an actual configuration q(t) with a velocity ˙ q ≡ dq/dt determined by the wave function ψ(q, t), where ψ obeys the usual Schrödinger equation i∂ψ/∂t = ˆ Hψ (with = 1). For standard Hamiltonians H, the velocity ˙ q is proportional to the gradient ∂ q S of the phase S of ψ.</p>
+
+			</div>
+			<div>
+				<head>2</head>
+
+				<p>Quite generally we have ˙ q = j/|ψ| 2 where j = j [ψ] = j(q, t) is the Schrödinger current [36]. In this theory ψ is a &apos;pilot wave&apos; (defined in configuration space) guiding the motion of an individual system; it has no a priori connection with probabilities. For an ensemble with the same initial wave function ψ(q, t i ), it is possible in pilot-wave theory to consider an arbitrary initial distribution ρ(</p>
+
+				<figure>
+					<trash>q, t i ) of configurations q(t i ). The evolving distribution ρ(q, t) will necessarily satisfy the continuity equation ∂ρ ∂t + ∂ q · (ρ ˙ q) = 0 . (1)</trash>
+
+
+				</figure>
+
+				<p>Since |ψ| 2 obeys the same equation (as a simple consequence of the Schrödinger equation), it follows trivially that an initial &apos;quantum equilibrium&apos; distribution ρ(q, t i ) = |ψ(q, t i )| 2 will evolve into a final quantum equilibrium distribution ρ(q, t) = |ψ(q, t)| 2 .</p>
+
+				<p>In this equilibrium state, the probabilities match the Born rule and pilot-wave dynamics reproduces the empirical predictions of quantum theory [15, 16]. On the other hand, for an initial nonequilibrium ensemble (ρ(q, t i ) = |ψ(q, t i )| 2 ) the statistical predictions will in general disagree with the quantum Born rule. Thus, from a pilot-wave perspective, quantum physics is a special equilibrium case of a wider nonequilibrium physics [18, 19, 20, 21, 22, 23, 6, 7, 24, 8, 25, 26]. The quantum-theoretical equilibrium state ρ QT = |ψ| 2 arises from a dynamical process of relaxation (analogous to thermal relaxation). This process may be quantified by a coarse-grained H-function</p>
+
+				<figure>
+					<trash>¯ H = dq ¯ ρ ln(¯ ρ/¯ ρ QT ) (2) (where ¯ ρ, ¯ ρ</trash>
+
+
+				</figure>
+
+				<p>QT are respectively coarse-grained values of ρ, ρ QT ), where ¯ H obeys a coarse-graining H-theorem ¯ H(t) ≤ ¯ H(0) [18, 20, 22]. The theorem assumes that the initial distributions have no fine-grained micro-structure. The minimum ¯ H = 0 corresponds to equilibrium (¯ ρ = ¯ ρ QT ). Like its classical analogue, the theorem provides a general mechanism in terms of which one can understand how equilibrium is approached. The extent to which equilibrium is actually reached depends on the system and on the initial conditions. For initial wave functions that are superpositions of energy eigenstates, numerical simulations demonstrate rapid relaxation ¯ ρ −→ ¯ ρ QT on a coarse-grained level [20, 22, 37, 38, 39, 40], with an approximately exponential decay of ¯ H(t) with time [37, 39]. Thus we may understand the Born rule as a consequence of a relaxation process that took place in the remote past, presumably in the very early universe [18, 19, 20, 21]. On this basis we may expect ordinary laboratory systems today – which have a long and violent astrophysical history – to obey the Born rule to high accuracy (in accordance with observation). On the other hand, initial quantum nonequilibrium could leave observable traces in the CMB (or perhaps in relic particles that decoupled at sufficiently early times) [22, 6, 7, 24, 8, 12].</p>
+
+				<p>To model this process, we consider a spectator scalar field φ with a classical Lagrangian density L =</p>
+
+			</div>
+			<div>
+				<head n="1">2</head>
+
+				<p>√ −gg µν ∂ µ φ∂ ν φ, evolving on expanding flat space with line element dτ 2 = dt 2 − a 2 dx 2 . Here a = a(t) is the scale factor and we take c = 1. We then have</p>
+
+				<figure>
+					<trash>L = 1 2 a 3 ˙ φ 2 − 1 2 a(∇φ) 2 . (3) Working in Fourier space and writing the field components as φ k = √ V (2π) 3/2 (q k1 + iq k2 ) – with real variables q kr (r = 1, 2) and a normalisation volume V – the Lagrangian L = d 3 x L reads L = kr 1 2 a 3 ˙ q 2 kr − ak 2 q 2 kr .</trash>
+
+
+				</figure>
+
+				<p>We then have canonical momenta π kr ≡ ∂L/∂ ˙ q kr = a 3 ˙ q kr and the Hamiltonian becomes a sum H = kr H kr where</p>
+
+				<figure>
+					<trash>H kr = 1 2a 3 π 2 kr + 1 2 ak 2 q 2 kr</trash>
+
+
+				</figure>
+
+				<p>is the Hamiltonian of a harmonic oscillator with time-dependent mass m = a 3 and time-dependent angular frequency ω = k/a [6, 7, 8]. We focus on the case of a decoupled (that is, unentangled) mode k. If the wave functional Ψ takes the form Ψ = ψ k (q k1 , q k2 , t)κ, where κ depends only on degrees of freedom for modes k = k, we obtain an independent dynamics for the mode with wave function ψ k (q k1 , q k2 , t). Dropping the index k, the wave function ψ = ψ(q 1 , q 2 ,</p>
+
+				<figure>
+					<trash>t) satisfies the Schrödinger equation i ∂ψ ∂t = r=1, 2 − 1 2m ∂ 2 r + 1 2 mω 2 q 2 r ψ , (4) while de Broglie&apos;s equation of motion for the configuration (q 1 , q 2 ) reads ˙ q r = 1 m Im ∂ r ψ ψ (5) (with ∂ r ≡ ∂/∂q r ). The marginal distribution ρ = ρ(q 1 , q 2 , t) for the mode evolves according to the continuity equation ∂ρ ∂t + r=1, 2 ∂ r ρ 1 m Im ∂ r ψ ψ = 0 . (6)</trash>
+
+
+				</figure>
+
+				<p>Thus we may discuss relaxation for a single field mode in terms of relaxation for a harmonic oscillator with time-dependent mass and angular frequency [6, 7].</p>
+
+				<p>We study the case of a radiation-dominated expansion, a ∝ t 1/2 . We consider that our results model a relaxation process taking place during a pre-inflationary era. The field φ is taken to model the behaviour of whatever generic fields may have been present at that time. The relation between our field φ and particular fields such as the inflaton field is not really known or specified, pending the future development of a more detailed model. Our aim here is to obtain general features that could emerge from an incomplete relaxation to quantum equilibrium during pre-inflation. It should be noted that, in what follows, equation (6) does all of the mathematical work in generating the results. This same equation appears in standard quantum theory as a simple consequence of the Schrödinger equation. The key difference is that here we allow ourselves to evolve this equation forward in time starting from anomalous initial conditions that violate the Born rule – a possibility that makes no sense in ordinary quantum theory but which is perfectly natural in pilot-wave theory. Specifically, we assume that at the initial time the width of ρ(q 1 , q 2 , t i ) is smaller than the width of |ψ(q 1 , q 2 , t i )| 2 . This (mathematically) tiny change might provide a common origin for the observed large-scale cosmic anomalies. It has been shown that the time evolution of our field mode on expanding space, as defined by equations (4)–(6), is mathematically equivalent to the time evolution of a standard harmonic oscillator with real time t replaced by a &apos;retarded time&apos; t ret (t) that depends on the wavenumber k of the mode [12]. (The equivalence also requires the use of appropriately rescaled variables for each system.)</p>
+
+				<figure>
+					<trash>Defining a parameter ε ≡ t i a 2 i k 2 , (7)</trash>
+
+
+				</figure>
+
+				<p>for completeness we note that the retarded time is given by</p>
+
+				<figure>
+					<trash>t ret (t) = t i + 1 ω i Θ(t) (8)</trash>
+
+
+				</figure>
+
+				<p>where ω i is equal to ω at time t i and where (for a = a i (t/t i )</p>
+
+				<figure>
+					<trash>1/2 ) Θ(t) = tan −1 1 + 4εt i 4εt i tan (2 √ εt − 2 √ εt i ) + 1 2 √ εt i + π.nint( 2 √ εt − 2 √ εt i π ) − tan −1 1 2 √ εt i . (9)</trash>
+
+
+				</figure>
+
+				<p>(with nint(x) returning the integer nearest to x) [12]. This result provides us with a convenient means of performing simulations. A desired time evolution from initial conditions at t i to final conditions at t may be obtained by evolving a standard harmonic oscillator (with the same initial conditions) from t i to t ret (t). We emphasise, however, that this is simply a convenient means of evolving the continuity equation (6) forwards in time for a field mode on expanding space. One could simply integrate this equation directly; the results will be the same. In the short-wavelength (sub-Hubble) limit t ret (t) reduces to real time t and we recover the evolution of a field mode on Minkowski spacetime. In this limit, for a superposition of excited states, relaxation will take place rapidly as for an ordinary oscillator.</p>
+
+				<p>In contrast, at long (super-Hubble) wavelengths t ret (t) &lt;&lt; t and relaxation is retarded. (For a detailed discussion see ref. [12].) Relaxation suppression at super-Hubble wavelengths may also be understood in terms of an upper bound on the mean displacement of the trajectories [7, 41].</p>
+
+				<p>Let us consider an initial wave function that is a superposition</p>
+
+				<figure>
+					<trash>ψ(q 1 , q 2 , t i ) = 1 √ M √ M −1 n1=0 √ M −1 n2=0 e iθn 1 n 2 Φ n1 (q 1 )Φ n2 (q 2 ) (10) of M energy eigenstates Φ n1 Φ n2 of the initial Hamiltonian. The coefficients c n1n2 (t i ) = (1/ √ M )e iθn 1 n 2</trash>
+
+
+				</figure>
+
+				<p>have equal amplitude and randomly-chosen phases θ n1n2 . (Because n 1 , n 2 have the same range the number M of modes is the square of an integer.) The wave function at time t is then</p>
+
+				<figure>
+					<trash>ψ(q 1 , q 2 , t) = 1 √ M √ M −1 n1=0 √ M −1 n2=0 e iθn 1 n 2 ψ n1 (q 1 , t)ψ n2 (q 2 , t) , (11)</trash>
+
+
+				</figure>
+
+				<p>where the exact solution for ψ n (q, t) is given by equation (19) of ref. [12]. At time t we have an equilibrium distribution ρ QT (q 1 , q 2 , t) = |ψ(q 1 , q 2 , t)| 2 . As in ref. [12], we take an initial nonequilibrium distribution</p>
+
+				<figure>
+					<trash>ρ(q 1 , q 2 , t i ) = |Φ 0 (q 1 )Φ 0 (q 2 )| 2 = ω i m i π e −miωiq 2 1 e −miωiq 2 2 (12)</trash>
+
+
+				</figure>
+
+				<p>(equal to the equilibrium distribution for the ground state Φ 0 (q 1 )Φ 0 (q 2 )). This is chosen on grounds of simplicity only. Clearly ρ(q 1 , q 2 , t i ) = |ψ(q 1 , q 2 , t i )| 2 and the initial width (or variance) is smaller than the equilibrium width. By calculating the time evolution ρ(q 1 , q 2 , t) of the ensemble distribution one may study the extent to which it approaches the equilibrium distribution |ψ(q 1 , q 2 , t)| 2 (on a coarse-grained level).</p>
+
+				<p>In our simulations the time evolution of ρ is reconstructed from a calculation of trajectories traversing a fine grid, where the trajectories are simulated using the equivalence to a standard oscillator with a retarded time. (For details see ref. [12].) But again these are merely convenient techniques for evolving (6) forwards in time. As we have noted, our results follow from equation (6) alone.</p>
+
+				<p>In ref. [12] we performed an illustrative numerical simulation of the evolution of ρ(q 1 , q 2 , t) for the case of M = 25 energy states. We considered a field mode of wavenumber k such that the initial (physical) wavelength was ten times the initial Hubble radius and we evolved forwards to a final time t f = t enter (k) where t enter (k) is the time of mode entry. This example served to illustrate time evolution in the super-Hubble regime. Only a partial relaxation towards equilibrium was observed. In particular, the support of ρ remained significantly narrower than the support of |ψ| 2 , the final width of the former being about one half of the final width of the latter (see Figure 2 of ref. [12]). Whereas with no expanding space – or equivalently, in the short-wavelength (Minkowski) limit – over the same period of time there is almost complete relaxation: the final distributions ρ and |ψ| 2 match very closely (on a coarse-grained level) as regards both detailed features and their respective widths (see Figure 3 of ref. [12]). The contrast between these results illustrates the retardation or suppression of relaxation in the super-Hubble regime as compared with the short-wavelength limit.</p>
+
+			</div>
+			<div>
+				<head n="2.2">Primordial quantum nonequilibrium and the CMB</head>
+
+				<p>Such suppression of relaxation may have occurred during a radiation-dominated pre-inflationary era [6, 7, 8, 12]. It is of particular interest to consider a preinflationary phase with a small number of excitations above the vacuum, since it is generally assumed that during inflation itself the quantum state is in or very close to the vacuum. For the two-dimensional harmonic oscillator it has been found that even for a quantum state with a minimal number of excitations, of the form ∼ |00 + |01 + |10 + |11 (with randomly-chosen relative initial phases), relaxation still takes place (at least to a good approximation) over sufficiently long timescales [42]. Therefore, if the pre-inflationary phase lasts long enough, at the onset of inflation we can expect approximate equilibrium at short wavelengths even with a tiny number (M = 4) of excited pre-inflationary states. This is an important feature because a significant number of excitations above the inflationary vacuum is likely to cause a back-reaction problem [43]</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>3</head>
+
+				<p>According to our proposed scenario, the spectrum of perturbations that remains at the end of the pre-inflationary era will seed the spectrum at the onset of inflation. It has been shown that, during inflation itself, no further relaxation takes place and the perturbations are simply transferred to larger lengthscales [6, 8]. By this means, incomplete relaxation during the pre-inflationary era can affect the spectrum of primordial perturbations that generate the temperature anisotropy in the CMB (and that trigger the formation of large-scale structure generally).</p>
+
+				<p>Implicit in this scenario is the assumption that the spectrum at the end of pre-inflation will survive the transition to inflation and seed the inflationary spectrum. The assumption seems plausible, since we have a transition from preinflation with relaxation suppression on super-Hubble scales to inflation with completely suppressed relaxation on all scales. It then appears possible that super-Hubble modes that are out of equilibrium just before the transition will not completely relax during the transition. However, to test this assumption requires a model of the transition and a study of how nonequilibrium modes will evolve across the transition. This is left for future work. Strictly speaking, the results presented in this paper are for the spectrum at the end of a radiationdominated era. To apply our results as a possible explanation for the observed large-scale cosmic anomalies requires us to assume that the spectrum will not be greatly affected by the transition. Note also that pre-inflationary nonequilibrium super-Hubble modes can contribute to the CMB spectrum only if they are driven inside the Hubble radius during the transition to inflation. This requires that the comoving Hubble radius increases during the transition. It was shown in ref. [12] that this can occur for a reasonable time variation of the equation-of-state parameter. We emphasise that we study a spectator scalar field, without a specific inflationary model. We do not know how this field is related to the inflaton field or to other perturbative fields. We take the behaviour of our field as a simple model of presumably generic field behaviour, and we assume that broad features of its spectrum will be similarly present for the relevant fields in a full model. The complexity of our numerical simulations necessarily restricts us to a simplified model, at least at this initial exploratory stage. We hope in future work to develop more complete models. With these assumptions and caveats, we may tentatively apply our results to the possible interpretation of large-scale cosmic anomalies. Before proceeding, let us briefly recap how quantum nonequilibrium can generate corrections to predictions for the CMB [6, 8].</p>
+
+				<figure>
+					<figDesc>As we have noted, there is no relaxation during the inflationary era itself. An inflaton perturbation φ k generates a curvature perturbation R k ∝ φ k (more precisely, R k is proportional to the late-time perturbation φ k evaluated at a time a few e-folds after the mode exits the Hubble radius) [1]</figDesc>
+
+				</figure>
+
+				<p>. This in turn generates coefficients [44]</p>
+
+				<figure>
+					<trash>a lm = i l 2π 2 d 3 k T (k, l)R k Y lm ( ˆ k) (13) (where T (k, l) is the transfer function) that appear in the spherical harmonic expansion ∆T (θ, φ) ¯ T = ∞ l=2 +l m=−l a lm Y lm (θ, φ) (14) of the observed CMB temperature anisotropy. Statistical isotropy for ∆T (θ, φ) implies that a * l m a lm = δ ll δ mm C l , (15) where ... denotes an average over the underlying theoretical ensemble and C l ≡ |a lm | 2 is the angular power spectrum [2, 45]. Statistical homogeneity for R k implies further that R k R * k ´ = δ kk´R k | 2 . From (13) we then have C l = 1 2π 2 ∞ 0 dk k T 2 (k, l)P R (k) , (16) where P R (k) ≡ 4πk 3 V |R k | 2 (17) is the primordial power spectrum (with V a normalisation volume). Thus, observational constraints on C l imply observational constraints on P R (k) and hence (since R k ∝ φ k ) observational constraints on the primordial variance |φ k | 2 for φ k . Writing |φ k | 2 = |φ k | 2 QT ξ(k) , (18) where ... QT denotes the quantum-theoretical expectation value, we have P R (k) = P QT R (k)ξ(k) (19) where P QT R (k</trash>
+
+
+				</figure>
+
+				<p>) is the primordial power spectrum predicted by quantum theory . Measurements of the angular power spectrum C l may then be used to set experimental bounds on ξ(k) [8].</p>
+
+				<p>The &apos;nonequilibrium function&apos; ξ(k) measures the power deficit (if ξ(k) &lt; 1) as a function of k. We expect ξ(k) to be smaller for smaller k – since during pre-inflation there will be more suppression of relaxation at longer wavelengths – while we expect ξ(k) to approach 1 in the short-wavelength limit of large k. But can we make a precise prediction for ξ(k) as a function of k? It would be of interest to obtain quantitative predictions for the shape of the curve ξ = ξ(k) and to compare these with the data for P R (k) and C l .</p>
+
+			</div>
+			<div>
+				<head n="3">Predictions for the power deficit</head>
+
+				<p>To obtain a prediction for the deficit function ξ = ξ(k), we must repeat the simulation of ref. [12] for varying values of k, calculate ξ(k) for each and plot the results (as a function of k). We should also repeat the simulations for varying numbers M of energy states and for varying final times t f , with a view to finding features of the function ξ(k) that are as far as possible independent of details of the pre-inflationary era – features that might provide an observational signature of primordial quantum nonequilibrium (as opposed to a mere generic power deficit that could equally be produced by other effects). In general we would expect the pre-inflationary era to be in a mixed quantum statê ρ =</p>
+
+				<figure>
+					<figDesc>n p n |Ψ n Ψ n | where the Ψ n &apos;s will be distinct superpositions (with different numbers M of modes, and coefficients with different amplitudes and phases). 4 The observed or effective function ξ(k) will then be an average over the statistical mixture of Ψ n &apos;s. Consider a given wave number k. For each Ψ n we may evolve the initial nonequilibrium distribution (12) forwards in time (from t i to t f ) to obtain the final variances D</figDesc>
+					<trash>2 nr (k) and ∆ 2 nr (k) of ρ(q 1 , q 2 , t f ) and |Ψ n (q 1 , q 2 , t f )| 2 respectively. We may then calculate a nonequilibrium function ξ nr (k) ≡ D 2 nr (k)/∆ 2 nr (k) (for each r = 1, 2). For each Ψ n we then have two nonequilibrium functions ξ n1 (k), ξ n2 (k) and a mean ξ n (k) ≡ 1 2 (ξ n1 (k) + ξ n2 (k)).</trash>
+
+
+				</figure>
+
+				<p>The statistical observations will be sensitive to the ensemble average ξ(k) ≡ ξ n (k) ens (where the average ... ens is taken over the mixture of Ψ n &apos;s). For simplicity we focus on mixtures whose component wave functions take the form (11), with a fixed number M of modes with equally-weighted amplitudes but with randomly-chosen initial phases θ n1n2 . For each M and k we calculate values of ξ n (k) for different sets of initial phases (where the index n now labels the set of initial phases that characterises the quantum state). We then average these values to obtain ξ(k). (It would also be of interest to study mixtures of wave functions with different values of M but we leave this for future work.)</p>
+
+				<p>Such calculations are computationally intensive. As in ref. [12], we evolve over a fixed time interval (t i , t f ) = (10 −4 , 10 −2 ) (with units = c = 1), where for convenience we take a 0 = 1 at t 0 = 1. The calculation is performed for varying values of k and M , keeping the time interval fixed. Later, we also look at varying t f for fixed M . Note that at the final time t f = 10 −2 we have a scale factor a f = t</p>
+
+				<figure>
+					<trash>1/2 f = 0.1 and a Hubble radius H −1 f = 2t</trash>
+
+
+				</figure>
+
+				<p>f = 0.02. For the mode with λ = 0.2 or k = 2π/λ = 10π, the final physical wavelength λ phys (t f ) = a f λ = 0.02 is equal to the final Hubble radius H −1 f . For smaller k (&lt; 10π) the mode will be outside the Hubble radius at t f ; for larger k (&gt; 10π) the mode will be inside the Hubble radius at t f .</p>
+
+				<p>In our simulations we use natural units with = c = 1, in which time has dimensions of an inverse mass. With ∼ 10 −33 Js, an initial time 10 −37 s in standard units corresponds to an initial time 10 −37 / ∼ 10 −4 in our units. These numbers are not intended to have any special significance; they are chosen for numerical convenience only. We proceed as follows. For each M the calculation is repeated for varying values of k. For each k six separate calculations are performed with different sets of randomly-chosen initial phases. Thus, for each M , we obtain six curves ξ n = ξ n (k). We then average these results to obtain the final curve ξ = ξ(k). An example is shown in Figure 1 for M = 25. We plot results for k = nπ with n = 1, 2, 3, ..., 50 and with n = 60, 70. (We have found it difficult to calculate accurately beyond k = 80π where the normalisation of the density starts to deviate significantly from unity, since the number of inaccurate trajectories is too high.) The individual curves ξ n (k) show rather large oscillations. The averaged curve ξ(k) is considerably smoother but still shows oscillations, though these appear to be damped for larger k.</p>
+
+			</div>
+			<div>
+				<head n="3.1">Fixed time interval and varying number of modes</head>
+
+				<p>We first consider the mean curve ξ = ξ(k) obtained from evolution over a fixed time interval (t i , t f ) = (10 −4 , 10 −2 ) and for varying values of M . The results are shown in Figure 2, for M = 4, 6, 9, 12, 16, 20, 25. The curves show some interesting small-scale features. But to a first approximation we may focus on the smooth, overall structure and try fitting to a simple function with no oscillations. (Fits that include oscillations will be considered in Section 3.3.) For each M we find a best fit of ξ(k) to the curve</p>
+
+				<figure>
+					<trash>ξ(k) = tan −1 (c 1 k π + c 2 ) − π 2 + c 3 (20) where c 1 , c 2</trash>
+
+
+				</figure>
+
+				<p>and c 3 are free parameters. Note that ξ → c 3 as k → ∞. Thus this choice of fitting function includes the possibility that ξ does not approach unity at large k – in which case there will be a residual nonequilibrium ξ &lt; 1 even in the short-wavelength limit. (For example, for M = 12 we will find that c 3 = 0.95.) Such a residue would in effect Figure 1: Simulations for M = 25 modes. We plot six curves ξ n = ξ n (k) obtained with different sets of randomly-chosen initial phases. Also shown (in blue with the bullets) is the averaged curve ξ = ξ(k), which is more relevant to observation.</p>
+
+				<figure>
+					<head>Figure 2:</head>
+
+					<figDesc>Averaged curves ξ(k) for varying M</figDesc>
+					<trash>= 4, 6, 9, 12, 16, 20, 25 with a fixed time interval (t i , t f ) = (10 −4 , 10 −2 ).</trash>
+
+
+				</figure>
+
+				<p>induce an overall renormalisation of the observed power spectrum and would therefore in itself not really be observable (or at least not distinguishable from an equivalent shift in other cosmological parameters). Given the best fits for each M , we may then study how the parameters c 1 , c 2 and c 3 depend on M , in the hope of extracting general features. From Figure 2 we may discern some overall trends: (i) At low k we see that ξ is smaller for larger M . This is simply because at low k little evolution has taken place (owing to retardation at long wavelengths) and so the distributions approximate their initial values, where for larger M the initial equilibrium distribution has a larger spread. (ii) There are oscillations in ξ(k). While the oscillations appear regular in some cases (notably M = 4 and 16) for others they are rather erratic (for example M = 9). (iii) At high k there is an approximate convergence of ξ towards 1. As one would expect, ξ generally reaches closer to 1 for larger M . (This is expected since for a given time interval there will be more relaxation for larger M .) As we shall see presently, the best-fit limiting value c 3 generally increases for increasing M . However, the curve for M = 20 is in this respect somewhat puzzling, since the corresponding value of c 3 is found to be significantly larger than for M = 25 in contradiction with the overall trend. This is clear by eye from Figure 2. The curve for M = 20 begins approximately mid-way between the curves for M = 16 and M = 25, and yet it ends significantly higher than any of the other curves. At present we have no explanation for this seemingly anomalous result for M = 20. In attempting to extract a general functional dependence for the parameters c 1 , c 2 and c 3 , we find it convenient to omit the results for M = 20. Pending further understanding, it seems reasonable to discount this case – especially since, as we shall see, taken on their own the other results mostly follow a clear and simple pattern. Let us then examine the results of best-fits to the function (20) for M = 4, 6, 9, 12, 16, 25 (omitting M = 20). The results are shown in Figure 3. For each M we display the curve ξ(k) obtained from the simulations together with the best-fit curve. We find good fits to the function (20) on the whole interval (π, 70π), with oscillations around the curve. As is plain from Figure 3, the simulated functions ξ(k) have an oscillatory structure around a smooth curve that is well-approximated by (20). We may then study how the best-fit parameters c 1 , c 2 , c 3 vary with M .</p>
+
+				<p>The numerical values obtained for c 1 , c 2 , c 3 as M varies are listed in Figure 4. We see that c 1 is roughly constant ( 0.12). As M increases c 2 decreases monotonically. As M increases c 3 steadily approaches 1 – except for a spike at M = 6. Given the best-fit values c 2 , c 3 for varying M , we now examine how these values may be fit to simple functions c 2 = c 2 (M ), c 3 = c 3 (M ). For c 2 as a function of M we find a good fit to the curve</p>
+
+				<figure>
+					<trash>c 2 = 0.87 + 6e −0.26M . (21)</trash>
+
+
+				</figure>
+
+				<p>This is shown in Figure 5, which includes data points at M = 4, 6, 9, 12, 16, 25 (omitting the &apos;anomalous&apos; case M = 20). Figure 3: Results for M = 4, 6, 9, 12, 16, 25 (omitting the &apos;anomalous&apos; case M = 20). For each M we plot the curve ξ(k) obtained from simulations (solid line) and the best fit to the function (20) (dashed line).</p>
+
+				<figure>
+					<head>Figure 4:</head>
+
+					<figDesc>Results for the best-fit parameters c 1 , c 2 and c 3 for varying M (with the fixed time interval (t i , t f ) = (10 −4 , 10 −2 )).</figDesc>
+
+				</figure>
+
+				<figure>
+					<head>Figure 5:</head>
+
+					<figDesc>Plot of c 2 as a function of M , with a best-fit curve (21). For c 3 as a function of M we find a good fit to</figDesc>
+					<trash>c 3 = tan −1 (0.87M + 2.11) − π 2 + 1.03 . (22)</trash>
+
+
+				</figure>
+
+				<p>This is shown in Figure 6, which includes data points at M = 4, 9, 12, 16, 25 (omitting the &apos;anomalous&apos; cases M = 6, 20).</p>
+
+				<figure>
+					<figDesc>As we have noted, the parameter c 3 is the limiting value (or &apos;residue&apos;) of ξ as k → ∞. According to (22), this parameter in turn has a limiting value c 3 → c 1 as M → ∞. (The difference of the fitted value c = 1.03 from 1 does not seem sufficiently large to be considered significant, given the accuracy of our simulations and of our fits.) It then appears that, as best as we are able to determine, in the limiting regime where the wavenumber and the number of modes are both large we will find that ξ 1 – that is, equilibrium will be obtained to good accuracy, as one expects in a regime with both short wavelengths and large numbers of modes.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="3.2">Varying time interval and fixed number of modes</head>
+
+				<p>We have also performed simulations for ξ(k) with a varying final time t f (the initial time t i = 10 −4 is kept fixed) and with a fixed number M = 12 of modes. In Figure 7 we display our results for t f = 0.01x, where x = 1/3, 2/3, 1, 4/3, 5/3, 2, together with best-fits to the function (20). There is again a good fit to the function (20). We see that, as t f increases, ξ(k) increases overall. This is expected, since a longer time interval will in Figure 6: Plot of c 3 as a function of M , with a best-fit curve (22). Figure 7: Results for ξ(k) with varying final time t f = 0.01x (where x = 1/3, 2/3, 1, 4/3, 5/3, 2) and a fixed number M = 12 of modes. The initial time t i = 10 −4 is kept fixed. Also displayed are best fits to the function (20).</p>
+
+				<figure>
+					<head>Figure 8:</head>
+
+					<figDesc>Best-fit parameters c 1 , c 2 , c 3 for varying t f (with fixed t i = 10 −4 , M = 12).</figDesc>
+
+				</figure>
+
+				<figure>
+					<head>Figure 9:</head>
+
+					<figDesc>Plot of c 1 as a function of t f , together with a best-fit parabola (23).</figDesc>
+
+				</figure>
+
+				<p>general yield more relaxation for fixed M . (As before, to a first approximation we may ignore the oscillations. We note, however, that as t f increases the period of the oscillations decreases.) The values of the best-fit parameters c 1 , c 2 and c 3 for varying t f are shown in Figure 8. While c 1 varies considerably, c 2 and c 3 are approximately constant. This is in contrast with the results for varying M , where c 1 is approximately constant and c 2 , c 3 vary considerably. In Figure 9 we plot c 1 as a function of t f , together with a best-fit to a parabola c 1 = 1.65 t f − 0.03 .</p>
+
+			</div>
+			<div>
+				<head>(23)</head>
+
+				<p>A fuller exploration of the range of parameters t f , M must be left for future work, perhaps with greater computational resources. To a first approximation, in the regime studied here, we find that c 1 depends on t f and not on M , while c 2 , c 3 depend on M and not on t f .</p>
+
+				<figure>
+					<figDesc>In each case the dependence approximately follows a simple formula – the curves (23), (21) and (22) respectively. Thus the three parameters may be written as functions c 1 (t f ), c 2 (M ), c 3 (M ) of just two parameters t f , M , in effect yielding a two-parameter model for the power deficit (with a fixed initial time t i and a given initial nonequilibrium distribution (12)).</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="3.3">Oscillations in the power deficit</head>
+
+				<p>Our simulated deficit functions ξ(k) show oscillations. As a first approximation we have ignored these and found fits to the inverse-tangent function (20). Here we attempt to find fits that capture the oscillations as well.</p>
+
+				<p>The oscillations in ξ(k) may be related to the retarded time, which has an oscillatory dependence on k (see equations (7)–(9)). In effect, up to a final time t f our field system evolves like an ordinary oscillator up to a final time t ret (t f , k) that depends on k. As t ret (t f , k) rises or falls with varying k, we broadly expect a larger or smaller degree of relaxation respectively. Since the ordinary oscillator shows an exponential decay of the coarse-grained H-function ¯ H(t) with time t, and since ξ approaches 1 as the system relaxes, it is heuristically natural to attempt a fit of the form ξ(k) = a − b exp(−ct ret (t f , k)) .</p>
+
+			</div>
+			<div>
+				<head>(24)</head>
+
+				<p>Best fits to the function (24) have been performed for varying M = 4, 6, 9, 12, 16, 20, 25 (with fixed t f = 10 −2 ). Illustrative results for the cases M = 4, 9, 16, 25 are shown in Figure 10. We see that the fit (24) captures the overall shape of the curve just as well as the inverse-tangent fit (20), while in addition capturing some features of the oscillations in particular at low k. The fit to the oscillations is better for larger M . However, the fit to the oscillations is poor at very low M (where as we have noted very low M is probably most realistic for the pre-inflationary phase). As M increases from M = 4 to M = 25 (with fixed t f = 10 −2 ) the bestfit values of a, c are almost constant while b increases monotonically (the case M = 20 again being an exception, see Figure 11). In Figure 12 we plot b as a function of M with a best-fit curve</p>
+
+				<figure>
+					<trash>b = 0.63 − 0.76 exp(−0.15M ) (25)</trash>
+
+
+				</figure>
+
+				<p>(omitting the &apos;anomalous&apos; spike at M = 20).</p>
+
+				<p>Best fits to the curve (24) have also been evaluated for varying t f = 0.01x where x = 1/3, 2/3, 1, 4/3, 5/3, 2 (with fixed M = 12). The best-fit values of a, b, c are very nearly constant over this range of t f , with a and b steadily increasing by a small fraction while c decreases slightly (see Figure 13). Thus to a first approximation ξ depends on t f only via the known function t ret (t f , k). (Note that the expression for t ret (t f , k), as defined by equations (7)–(9), is independent of M .) Figure 10: Fitting the oscillations in the power deficit with the exponential function (24) of the retarded time t ret (t f , k) (with varying M and fixed t f = 10 −2 ).</p>
+
+				<figure>
+					<head>Figure 11:</head>
+
+					<figDesc>Best-fit parameters a, b, c for the curve (24) (varying M and fixed t f = 10 −2 ).</figDesc>
+
+				</figure>
+
+				<figure>
+					<head>Figure 12:</head>
+
+					<figDesc>The parameter b as a function of M .</figDesc>
+
+				</figure>
+
+				<figure>
+					<head>Figure 13:</head>
+
+					<figDesc>Best-fit parameters a, b, c for the curve (24) (varying t f and fixed M = 12).</figDesc>
+
+				</figure>
+
+				<figure>
+					<head>Figure 14:</head>
+
+					<figDesc>An alternative best-fit curve (26) for the case M = 4 (with coefficients</figDesc>
+					<trash>c 1 = 0.42, c 2 = 3.0, c 3 = 0.85, c 4 = 0.07, c 5 = 0.57, c 6 = 0.05).</trash>
+
+
+				</figure>
+
+				<p>We again have a two-parameter model of the power deficit in terms of parameters t f , M (again for a fixed initial time t i and a given initial nonequilibrium distribution (12)). The fit (24) provides an approximate account of the oscillations in ξ(k) for the low-k region. However it does not at all capture the oscillations in ξ(k) for higher k, which are especially large for very low M . We have tried an alternative fit of the form ξ(k) = tan −1 (c 1 k/π + c 2 ) − π/2 + c 3 + c 4 cos(c 5 k/π) sin(c 6 k/π) , (26) which simply adds an oscillatory function to the inverse tangent (20). 5 We find a fairly good fit for M = 4, as shown in Figure 14, but not for M = 6 or M = 9. For the latter cases Fourier analysis shows the presence of additional frequencies. (As we have noted, by eye one sees from Figure 2 that the oscillations in ξ(k) can be rather erratic even if they appear regular for M = 4.) A full characterisation of the oscillations is left for future work. However, we may make some general comments. First, oscillations in the large-scale (low-k) primordial spectrum appear to be a generic prediction of our model (although further study is required to fully parameterise their features). Second, oscillations in the primordial spectrum also seem to be a generic prediction of models with trans-Planckian corrections to quantum field theory [43]. How these (generally differing) predictions may be compared and distinguished is left for future work. Finally, the overall success of the fit (24) – which performs at least as well as the inverse-tangent fit (20) – suggests that the power deficit will approximately follow this generic form for arbitrary cosmological expansions and not just for a radiation-dominated expansion (where different functions of time for the scale factor a = a(t) will imply different functions for the retarded time t ret (t, k)).</p>
+
+			</div>
+			<div>
+				<head n="4">Phase relaxation</head>
+
+				<p>So far we have studied the nonequilibrium deficit function ξ(k), which measures the deviation of the width of the primordial distribution from the equilibrium value. The observed power deficit at l 40 might be caused by a dip in ξ(k) at long wavelengths (small k). Also of interest is the distribution of the phase θ k = tan −1 (q k2 /q k1 ) of the Fourier component of the primordial field. The observed anisotropy in the CMB at l 10 might be caused by nonequilibrium phases at long wavelengths. As we have noted, statistical isotropy for the CMB implies the standard relations (15). (These might be satisfied, for example, by a Gaussian field with uncorrelated phases.) Isotropy therefore requires that a * l m a lm = 0 for all l, m = l , m . However, data from the Planck satellite show evidence for &apos;phase correlations&apos; at low l, in the sense that a * l m a lm = 0 for some l, m = l , m at low values of l, l (in the region l, l 10). The Planck team also report a seemingly anomalous or unlikely mode alignment, as well as various other effects that indicate statistical anisotropy [34]. The reported phase correlations refer to the phases of the complex coefficients a lm , and not directly to the phases of the primordial perturbations. From the linear expression (13) for a lm in terms of R k , it is clear that the phase of a given a lm is in principle related to all of the primordial phases – that is, to the phases of all of the R k &apos;s or (equivalently) to the phases of all of the φ k &apos;s. Writing φ k = |φ k | e iθ k , it has been shown that during inflation the phases θ k are static along the de Broglie-Bohm trajectories for the inflaton perturbations, so that an initial nonequilibrium distribution for the θ k &apos;s will remain unchanged during the inflationary era [8]. Thus, if there is an anomalous distribution of primordial phases at the beginning of inflation, this distribution will be preserved in time and transferred to cosmological lengthscales (as occurs with the power deficit).</p>
+
+				<p>The resulting anomalous phases in the primordial curvature perturbations R k will then affect the observed phases of the coefficients a lm in the CMB. It therefore seems important to study the relaxation of phases during our radiation-dominated expansion, as a model of phase relaxation during a possible pre-inflationary era, with a view to perhaps explaining the observed anisotropy and associated phase correlations in the a lm &apos;s. Figure 15: Phase relaxation for M = 4 (final time t f = 10 −2 and one set of initial phases in the wave function). The blue and red curves are the nonequilibrium and equilibrium distributions respectively.</p>
+
+				<p>Thus we now study relaxation for the phases θ k associated with our spectator scalar field on a radiation-dominated background. Consider a mode of wave number k. We shall calculate the time evolution of the phase marginal ρ(θ k , t) – that is, of the marginal probability distribution for θ k (obtained by integrating over the amplitude |φ k | in the total probability distribution). For the initial (Gaussian) nonequilibrium distribution (12) the phase marginal is uniform on the unit circle. Whereas for the initial wave function (10) the equilibrium phase marginal is non-uniform. Thus we have a nonequilibrium phase marginal at the initial time t i = 10 −4 . We may then calculate the phase marginal at the final time t f = 10 −2 for varying M and k.</p>
+
+				<p>In Figures 15 and 16 we plot some illustrative results for the final (coarsegrained ) phase marginals ¯ ρ(θ, t f ) and ¯ ρ QT (θ, t f ), 6 for M = 4 and M = 25 respectively, each with varying values of k. (The set of initial phases in the wave function is fixed.) By eye one can discern an approximate relaxation as k increases.</p>
+
+				<p>We must quantify nonequilibrium in a way that is relevant to observations.</p>
+
+				<p>For amplitudes, observationally what matters is the width of the distribution and so a calculation of ξ(k) suffices. Whereas for phases, observationally what Figure 16: Phase relaxation for M = 25 (final time t f = 10 −2 and one set of initial phases in the wave function). The blue and red curves are the nonequilibrium and equilibrium distributions respectively. matters is whether they are in quantum equilibrium or not. (For the inflationary vacuum, equilibrium phases are uniformly distributed on (0, 2π).) To quantify the deviation of the (coarse-grained) phase marginal ¯ ρ(θ, t) from the equilibrium marginal ¯ ρ QT (θ, t) we may use the coarse-grained H-function (omitting the label k)</p>
+
+				<figure>
+					<trash>¯ H θ (t) = dθ ¯ ρ(θ, t) ln (¯ ρ(θ, t)/¯ ρ QT (θ, t)) . (27)</trash>
+
+
+				</figure>
+
+				<p>Thus, while we use ξ as a measure of nonequilibrium for amplitudes, we use ¯ H θ as a measure of nonequilibrium for phases. Of interest here is the process of relaxation towards quantum equilibrium, ¯ ρ(θ, t) → ¯ ρ QT (θ, t), as quantified by ¯ H θ (t). We consider the phase-marginal H-function at the final time, ¯ H θ (t f ), for varying k and M . Since t f = 10 −2 is fixed, for each M we may regard ¯ H θ as a function of k. The simulations are run for six sets of initial phases in the wave function. For each M we then obtain six separate curves ¯ H θn (k) (where as before the index n labels the initial wave function corresponding to the choice of initial phases). These may be averaged to yield a mean curve, which we denote by ¯ H θ (k). Some illustrative results are shown in Figure 17 for M = 4, 12 and 25, each with k in the range (π, 50π). Many of the curves show an initial increase. Overall, however, there is a general decrease – indicating relaxation – as k increases. (Note that the initial increase is consistent, since the ratio ¯ ρ(θ, t)/¯ ρ QT (θ, t) is not conserved along trajectories for marginals and so the usual H-theorem [18] cannot be derived for marginals.)</p>
+
+			</div>
+			<div>
+				<head n="5">Relaxation scales for amplitude and phase</head>
+
+				<p>For the primordial perturbations we may define two critical k-scales, k amp and k phase , that characterise relaxation for the amplitudes and phases respectively. We shall define k amp as a value of k below which the amplitudes may roughly be said to have not fully relaxed (so that there is a significant nonequilibrium power deficit). Similarly, we define k phase as a value of k below which the phases may roughly be said to have not fully relaxed (so that there is a significant departure from quantum randomness). Precise definitions are given below. The best-fit function (20) for ξ(k) has three parameters c 1 , c 2 and c 3 . As we have noted, ξ → c 3 &lt; 1 as k → ∞, so that c 3 represents a nonequilibrium residue at short wavelengths. As shown above, we expect that c 3 1 for large M . But in a cosmology where the pre-inflationary era contains a small number of modes, we may expect that c 3 is slightly less than 1 (indicating a slightly incomplete relaxation even at short wavelengths). Observationally speaking, this would imply an overall renormalisation of the power spectrum, in the sense that the value of c 3 would be absorbed into effective values for other cosmological parameters (in particular the overall amplitude for the power spectrum). Thus, a residual nonequilibrium c 3 &lt; 1 in the power spectrum for large k would not by itself be noticeable. We might, however, notice a dip in the function ξ(k) for small values of k. Thus the observable deficit in ξ should be defined relative to the limiting value c 3 .</p>
+
+				<figure>
+					<head>Figure 17:</head>
+
+					<figDesc>Coarse-grained H-functions for final phase marginals, for M = 4, 12, 25 (calculated with t f = 10 −2 and six sets of initial phases in the wave function) and for k in the range (π, 50π). The mean curve is shown in black. Figure 18</figDesc>
+
+				</figure>
+
+				<p>: Results for the k-scales k amp 10% and k amp 5% for varying M (with the fixed time interval (t i , t f ) = (10 −4 , 10 −2 )).</p>
+
+				<p>Let us then define the &apos;renormalised&apos; scale k amp to be the value of k such that ξ dips significantly below c 3 . For example, we might take ξ(k amp ) = 0.9c 3 or 0.95c 3 . (28)</p>
+
+				<p>We shall consider both choices (the exact definition is of course a matter of taste). We denote the resulting values by k amp 10% and k amp 5% – corresponding to 10% and 5% (primordial) power deficits respectively. We consider the ξ-curves that were obtained for fixed t f = 10 −2 and varying M (Section 3.1). For these cases the best-fit parameters c 1 , c 2 , c 3 are listed in Figure 4. From (28) we obtain the two values k amp 10% and k amp 5% of the characteristic k-scale, for each value of M (again omitting the &apos;anomalous&apos; case M = 20). The results are displayed in Figure 18. We find that k amp 10% 80π and k amp 5% 170π (each varying with M by about 20%). For the mean k amp ≡ 1 2 (k amp 10% + k amp 5% ) we have k amp 125π</p>
+
+				<p>(again varying with M by about 20%). To define a phase relaxation scale k phase , we may use the mean curve ¯ H θ (k) for the coarse-grained phase marginal. While the curve ¯ H θ (k) shows an overall decrease with k, the dependence is not exponential (see Figure 17). Even so, given an &apos;initial&apos; point k i we may define k phase by ¯ H θ (k i + k phase ) = (1/e) ¯ H θ (k i ) (29) (as one would if ¯ H θ were decaying exponentially on a characteristic scale k phase ). Again focussing on the case of fixed t f = 10 −2 and varying M , we have performed simulations for M = 4, 12, 16, 20, 25 (each with six sets of initial phases). For each M we obtain an averaged curve ¯ H θ (k), from which we may obtain a characteristic scale k phase defined by (29) (we take k i = π). The results are: k phase = 38π, 25π, 43π, 32π, 25π for M = 4, 12, 16, 20, 25 respectively. Approximately, we find k phase 35π (varying with M by about 30%).</p>
+
+				<p>Thus we find a ratio k phase /k amp approximately in the range 0.2 − 0.4.</p>
+
+				<p>Roughly speaking, primordial perturbations on a scale k affect the CMB at a multipole l (2/H 0 )k (where H 0 is the Hubble parameter today) [1]. If we define analogous quantities l amp and l phase as those values of l below which we observe a power deficit and phase anomalies in the CMB, then we should find a ratio l phase l amp = k phase k amp ∼ 0.3</p>
+
+				<p>The Planck data indicate values (roughly) of l phase 10 and l amp 40, with a ratio l phase l amp</p>
+
+			</div>
+			<div>
+				<head>0.25</head>
+
+				<p>This seems consistent with our numerical results (even if these are of course only estimates).</p>
+
+			</div>
+			<div>
+				<head n="6">Angular power deficit</head>
+
+				<p>Let us study more precisely how the proposed deficit in the primordial power spectrum could yield the reported deficit in the angular power spectrum at low l.</p>
+
+				<p>At low l the (square of) the transfer function takes the form [1]</p>
+
+				<figure>
+					<trash>T 2 (k, l) = πH 4 0 j 2 l (2k/H 0 ) . (30)</trash>
+
+
+				</figure>
+
+				<p>As a first approximation let us assume that the quantum-theoretical primordial spectrum P QT R (k) is scale invariant. From (16) and (19) we then have an approximate ratio</p>
+
+				<figure>
+					<trash>C l C QT l = 2l(l + 1) ∞ 0 dk k j 2 l (2k/H 0 )ξ(k) (31) (where C</trash>
+
+
+				</figure>
+
+				<p>QT l is the quantum-theoretical angular power spectrum). 7 A low power anomaly C l /C QT l &lt; 1 in the CMB may be explained by an appropriate primordial deficit ξ(k) &lt; 1 [8, 12]. If the primordial deficit takes the inverse-tangent form (20), we may evaluate the expression (31) numerically to find the range of parameters c 1 , c 2 , c 3 giving an angular power deficit in the (crudely speaking) observed range ∼ 5 − 10% – that is, giving a ratio C l /C QT l in the range 0.9 − 0.95. (Of course the deficit reported by the Planck team is a statistical aggregate for the whole low-l region and does not refer to individual multipoles, so this is only a rough characterisation of the data.) It is convenient to use the variable x ≡ 2k/H 0 and to define a rescaled coefficient c 1 ≡ (H 0 /2π)c 1 .</p>
+
+				<figure>
+					<trash>(32) We then have C l C QT l = 2l(l + 1) ∞ 0 dx x j 2 l (x) tan −1 (˜ c 1 x + c 2 ) − π 2 + c 3 (33) (where j 2</trash>
+
+
+				</figure>
+
+				<p>l (x) is dominated by the scale x l). We have evaluated this expression numerically at low l for varying values of c 1 , c 2 but keeping c 3 fixed at c 3 = 1. Our results are trivially extended to arbitrary c 3 , since writing c 3 = 1 + (c 3 − 1) the expression (33) takes the form</p>
+
+				<figure>
+					<trash>C l /C QT l = C l /C QT l c3=1 + (c 3 − 1) where we have used ∞ 0 dx x j 2 l (x) = 1/2l(l + 1).</trash>
+
+					<figDesc>Plots of the calculated deficit C l /C QT l on the parameter space (˜ c 1 , c 2 ) are displayed in Figure 19</figDesc>
+
+				</figure>
+
+				<p>for l = 10, 14, 18, 22, 26, 30. (Each plot uses 20 × 20 grid points.) The green region corresponds to C l /C QT l in the range 0.9 − 0.95. The blue region corresponds to C l /C QT l &lt; 0.9 while the red region corresponds to C l /C QT l &gt; 0.95. The green &apos;deficit region&apos; (with C l /C QT l in the range 0.9 − 0.95) has parame- ters c 1 in the approximate range [0, 1.5] and c 2 in the approximate range [0, 20] (restricting ourselves to the regioñ c 1 , c 2 &gt; 0).</p>
+
+			</div>
+			<div>
+				<head>8</head>
+
+				<p>Of course we have not performed a best-fit, we have simply obtained the magnitudes that c 1 and c 2 must have in order for the low-l angular spectrum to drop by 5 − 10%.</p>
+
+			</div>
+			<div>
+				<head n="7">Comparing with observation</head>
+
+				<p>Let us now compare the required ranges for c 1 , c 2 – as deduced from the required angular power deficits – with the results for c 1 , c 2 obtained from our model. (We will not consider c 3 here as it may be reabsorbed into an overall renormalisation of the primordial power spectrum.) To relate our results to observable quantities, we must take into account the spatial expansion by a factor R ≡ a(t today ) a(t f ) (34) that will have taken place from the end of pre-inflation at time t f until today at time t today . The true coefficient c 1 (or c 1 ) that appears in the observable power spectrum is then multiplied by the unknown number R. Let us consider this last point more carefully. In our simulations we used natural units ( = c = 1) with fiducial initial and final times t i = 10 −4 , t f = 10 −2 . For convenience we also took a 0 = 1 at t 0 = 1. This means that in our Figure 19: Parameter space (˜ c 1 , c 2 ) for l = 10, 14, 18, 22, 26, 30. The green regions have C l /C QT l in the range 0.9−0.95; the blue regions have C l /C</p>
+
+				<figure>
+					<trash>QT l &lt; 0.9; the red regions have C l /C QT l &gt; 0.95.</trash>
+
+
+				</figure>
+
+				<p>simulations – which yielded a deficit function ξ(k) of the form (20) – k was the physical wavenumber at time t = t 0 = 1 (in our units). During the simulated pre-inflationary era we have a(t) = a 0 (t/t 0 ) 1/2 = t 1/2 and so at the end of preinflation our scale factor is a f = t 1/2 f = 10 −1 . Thus physical wavenumbers at the final time t f are ten times larger than the physical wavenumbers k referred to in our simulations. It follows that physical wavenumbers today, which we might temporarily denote as k today , are given by k today = (10/R)k . (35) Now, if we assume that our simulated deficit function ξ(k) survives the transition to inflation and indeed provides a correction to the inflationary power spectrum, then the same deficit will enter as a factor in the spectrum of primordial perturbations. It follows that the true correction ξ today (k today ) multiplying the observable primordial spectrum will be ξ today (k today ) = [ξ(k)] k=(R/10)k today (36) (since the mode which we today label k today was the mode labelled k = (R/10)k today in our simulations). We may then drop the subscript &apos;today&apos; and simply write the true deficit correction as ξ(k) with k now denoting physical wavenumbers today (as is more conventional). In other words, the true correction multiplying the observable primordial spectrum will be numerically equal to our simulated function ξ(k) but with k replaced by (R/10)k and with k then reinterpreted as the physical wavenumber today. With this understanding, we obtain a true deficit function ξ(k) = tan</p>
+
+				<figure>
+					<trash>−1 (˜ c 1 x + c 2 ) − π 2 + c 3 (37) with x = 2k/H 0 and c 1 ≡ c 1 RH 0 /20π . (38)</trash>
+
+
+				</figure>
+
+				<p>Thus the deficit in the angular power spectrum will still take the form (33) but with an observed coefficient c 1 given by (38), where c 1 is the coefficient generated by our numerical simulations of the pre-inflationary era (using our convenient units). We have seen that our simulations yield (to a first approximation) a coefficient c 1 that depends on t f and not on M and coefficients c 2 , c 3 that depend on M and not on t f . The observable spectra will be sensitive to c 1 via the term c 1 R appearing in (38), and so uncertainty in the value of t f (and hence of c 1 ) is compounded with uncertainty in the value of R. On the other hand, the spectra are (at least in principle) directly sensitive to the values of c 2 , c 3 – which are determined by the dynamics of our model (for a given number M of pre-inflationary excited states and for a given duration (t i , t f ), and assuming the simple initial nonequilibrium distribution (12)). The spectra are also in principle directly sensitive to the inverse-tangent functional form of ξ(k), a feature that is again determined by the dynamics of our model and which seems to be a robust prediction for a fairly broad range of parameters (t f , M ) characterising the pre-inflationary era. Our simulations also predict phase anomalies at slightly smaller k, though the implications of this for observable quantities (such as signatures of anisotropy) remain to be explored. We are unable to predict R, but it is subject to well-known constraints. Should R be too large, the effective coefficient c 1 as given by (38) could be so large that our deficit function (37) appearing in (33) will be essentially equal to the constant c 3 and will therefore simply generate an overall renormalisation of the power spectrum. If more interesting features of ξ(k) are to be observable, we must assume that the value of c 1 is such that the deficit ξ(k) &lt; 1 occurs in an observable range of k-space. If we are fortunate and this is correct, we will then be able to test the other (predicted) details of the function ξ(k) – its functional dependence on k, and the values of the other two coefficients c 2 , c 3 .</p>
+
+				<p>The first thing to check is whether or not our model can yield the required angular power deficit – with C l /C QT l within the &apos;green zone&apos; of Figure 19 – for reasonable values of the expansion factor R. It suffices to find an example of our predicted coefficients c 1 , c 2 (for some pair of parameters t f , M ) that corresponds to the observed deficit region for an acceptable choice of cosmological parameters. Our simulations with fixed t f = 10 −2 and varying M (Section 3.1) yielded c 1 0.1 and c 2 in the range [0.85, 3]. Let us consider the &apos;preferred&apos; case with the smallest number M = 4 of excited states, which yielded values c 1 0.1 and c 2 3 (see Figure 4). If we could take c 1 0.5 then from Figure 19 we see that the point (˜ c 1 , c 2 ) (0.5, 3) would lie in or close to the green zone for all the displayed multipoles l. To obtaiñ c 1 0.5 when c 1 0.1 requires (from (38)) RH 0 /20π ∼ 5. Now our coefficient c 1 has conventional units of length, or mass dimension −1 in natural units, and so our numerical values c 1 = x must be multiplied by c to obtain values c 1 (2 × 10 −23 cm)x in conventional units. Thus our requirement RH 0 /20π ∼ 5 is really (</p>
+
+				<figure>
+					<trash>2 × 10 −23 cm)RH 0 /20π ∼ 5 or R ∼ 10 53 (39) (where H −1 0 10 28 cm). Is (39</trash>
+
+
+				</figure>
+
+				<p>) consistent with known cosmological constraints? To see that it is, let us write R as R ≡ a today /a f = (a today /a end )(a end /a f ) , where a end is the scale factor at the end of inflation. We may neglect the expansion that takes place during the transition (from pre-inflation to inflation) compared to the expansion that takes place during inflation. Thus we may approximately identify a f with the scale factor a begin at the beginning of inflation. We then have a end /a f e N where N is the number of inflationary e-folds. Let us similarly neglect the expansion that takes place during the transition from inflation to post-inflation. We can then write a today /a end T end /T today (where T end is the temperature at which inflation ends). We then find R e N (T end /T today ) . (40)</p>
+
+				<p>The value of the reheating temperature T end depends on the details of the reheating process. (See for example refs. [4, 46].) We certainly have an upper bound T end T f , where T f is the temperature at the end of pre-inflation. Indeed we could even have T end &lt;&lt; T f . We may expect T f to be comparable to the energy scale H inf ∼ 10 16 GeV of inflation (where H inf is the Hubble parameter during inflation). Thus we may safely write an upper bound T end 10 16 GeV. Lower bounds on T end in the range 390 GeV − 890 TeV (depending on the inflationary model) have been obtained from CMB data [47]. Thus we may take a rough lower bound T</p>
+
+				<figure>
+					<trash>end 1 TeV. We then have 10 16 &lt; T end /T today &lt; 10 29 (where T today ∼ 10 −4 eV), which from (40) implies the bounds 10 16 e N &lt; R &lt; 10 29 e N . Our condition (39) then implies a range 55 &lt; N &lt; 85 . (41)</trash>
+
+
+				</figure>
+
+				<p>This is compatible with standard constraints, which indicate that the minimum number N = N min of e-folds (required for inflation to solve the horizon and flatness problems) is N min 70 – with some authors taking N min 60. See, for example, ref. [4]. (The actual number N of e-folds could of course be much larger than N min . As we have noted, if N is too large then the power deficit generated by our model would exist at wavelengths too large to be observable.) Thus there exist acceptable values for the cosmological parameters N , T end such that (39) is satisfied, in which case the simulated coefficients c 1 0.1, c 2 3 will be consistent with the observed deficit (corresponding to the green zone of Figure 19). We conclude that the range of values for c 1 , c 2 required by observation is compatible with the range of values obtained from our relaxation simulations. Thus we may say that our model seems viable – pending a full treatment of the transition to inflation.</p>
+
+			</div>
+			<div>
+				<head n="8">Conclusion</head>
+
+				<p>Primordial quantum relaxation provides a single mechanism that can generate both a power deficit and a statistical anisotropy (anomalous phases) at large angular scales in the CMB. Our estimates show that, with an appropriate choice of cosmological parameters, our model is able to generate a power deficit at approximately the angular scales and of approximately the magnitude that has been reported by the Planck team, as well as generating anomalous phases at slightly larger angular scales. In addition, the same mechanism generates oscillations in the primordial spectrum. There are of course other mechanisms that can produce a large-scale power deficit, such as a suitable period of inflationary &apos;fast rolling&apos; [48]. It is hoped that the particular form of our power deficit ξ(k), given by (37) as a function of wavenumber k, will distinguish it from the deficit predicted by alternative models. From the viewpoint of our underlying model, it must be assumed that the number of inflationary e-folds is not too large, for otherwise our effects would exist at wavelengths that are too large to be detectable. On the other hand, once this assumption is made our model makes several clear and testable predictions: an inverse-tangent correction ξ(k) to the large-scale primordial spectrum, with oscillations around the curve, and with anomalous phases at somewhat larger scales. Of the three parameters c 1 , c 2 , c 3 appearing in our fit (37), the first depends on the number N of inflationary e-folds but the second and third are entirely determined by our model. The three parameters c 1 , c 2 , c 3 have been shown to be simple functions of the final time t f and of the number M of excited energy states (both defined for the pre-inflationary era). An alternative fit (24), involving an exponential of the retarded time t ret (t f , k), provides an equally good fit to the overall shape of the curve while also capturing some features of the oscillations in the low-k region.</p>
+
+				<p>In effect, then, we have a model of the power deficit in terms of two parameters t f , M (for a given initial time t i and a given initial nonequilibrium distribution (12)). The model generates some rather complex features: a power deficit of a particular form with oscillations around the curve, and anomalous phases at slightly larger scales. The prospects are therefore good for a definitive comparison with data. It is of course quite possible that the number of inflationary e-folds is so large that, even if our effects exist, they will be too faint to be observable. But if the effects are visible, they should show detailed signatures. The extent to which the data support our model remains to be seen. A first step would be to evaluate likelihoods for corrections to the power spectrum of the form (37) [49]. A second step would be to evaluate the extent to which our predicted oscillations are present in the data. Finally, one may also consider in more detail the apparent large-scale anisotropy in the CMB and how it might be explained by the anomalous primordial phases that our model suggests would exist at very large scales. Acknowledgements.AVwishestothankPatrickPeterforhelpfuldiscussions .WearegratefultoMurrayDawforkindlyprovidinguswithextra computationalresourcesontheClemsonUniversityPalmettoCluster.This researchwasfundedjointlybytheJohnTempletonFoundationandClemson University.</p>
+
+			</div>
+
+			<note place="foot" n="1"> Corresponding author (antonyv@clemson.edu) 1 arXiv:1407.8262v1 [astro-ph.CO] 31 Jul 2014</note>
+
+			<note place="foot" n="2"> Historically the theory was proposed in this form – with a dynamical law for velocity – by de Broglie at the 1927 Solvay conference (for a many-body system) [14]. It was revived in a different form – with a dynamical law for acceleration, involving a &apos;quantum potential&apos; – by Bohm in 1952 [15, 16]. It has recently been shown that Bohm&apos;s version of the dynamics is unstable and therefore untenable [35].</note>
+
+			<note place="foot" n="3"> AV is grateful to Jérô Martin for helpful discussions of this point.</note>
+
+			<note place="foot" n="4"> Note that in pilot-wave theory a mixed quantum state is interpreted in terms of a preferred decomposition.</note>
+
+			<note place="foot" n="5"> This suffices in the studied k-region, though the sine function might be replaced by a Gaussian so as to damp away the oscillations at k &gt; 70π.</note>
+
+			<note place="foot" n="6"> To calculate the coarse-grained marginals, we first take 1001 equally-spaced angles at which we calculate the fine-grained marginals by integrating the fine-grained joint distributions radially. We then coarse-grain the results, yielding 20 coarse-grained values for each distribution (where each value is an average over 51 fine-grained values).</note>
+
+			<note place="foot" n="7"> We ignore the small contribution from the integrated Sachs-Wolfe effect at very low l.</note>
+
+			<note place="foot" n="8"> Note that we have mapped only a part of the possible parameter space for (˜ c 1 , c 2 ). This suffices for our present purposes.</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">Cosmological Inflation and Large-Scale Struc- ture</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">R</forename>
+				<surname>Liddle</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">H</forename>
+				<surname>Lyth</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2000" />
+			<publisher>Cambridge University Press</publisher>
+			<pubPlace>Cambridge</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Mukhanov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physical Foundations of Cosmology</title>
+		<imprint>
+			<publisher>Cambridge University Press</publisher>
+			<date type="published" when="2005" />
+			<publisher>Cambridge University Press</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Weinberg</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cosmology</title>
+		<imprint>
+			<publisher>Oxford University Press</publisher>
+			<date type="published" when="2008" />
+			<publisher>Oxford University Press</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Peter</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J.-P</forename>
+				<surname>Uzan</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Primordial Cosmology</title>
+		<imprint>
+			<publisher>Oxford University Press</publisher>
+			<date type="published" when="2009" />
+			<publisher>Oxford University Press</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Perez</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Sahlmann</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Sudarsky</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Class. Quantum Grav</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page">2317</biblScope>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Valentini</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">A: Math. Theor</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="page">3285</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title level="m" type="main">De Broglie-Bohm prediction of quantum violations for cosmo- logical super-Hubble modes</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Valentini</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="hep" to="th" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Valentini</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="page">063513</biblScope>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Martin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Vennin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Peter</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="page">103524</biblScope>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title/>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">J</forename>
+				<surname>Landau</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">G</forename>
+				<surname>Scó</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Sudarsky</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">85</biblScope>
+			<biblScope unit="page">123001</biblScope>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Cañ</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Pearle</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Sudarsky</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">87</biblScope>
+			<biblScope unit="page">104024</biblScope>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title/>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">[arXiv:1306.1579 [hep-th</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Colin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Valentini</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Electrons et Photons: Rapports et Discussions du Cin-quì eme Conseil de Physique (Gauthier-Villars</title>
+		<meeting><address><addrLine>Paris</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1928" />
+			<biblScope unit="page">103515</biblScope>
+		</imprint>
+	</monogr>
+	<note>English. trans- lation in ref</note>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Quantum Theory at the Crossroads: Reconsidering the 1927 Solvay Conference</title>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Bacciagaluppi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Valentini</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bohm, Phys. Rev</title>
+		<imprint>
+			<publisher>Cambridge University Press</publisher>
+			<biblScope unit="volume">85</biblScope>
+			<biblScope unit="page">166</biblScope>
+			<date type="published" when="1952" />
+			<publisher>Cambridge University Press</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Bohm</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">85</biblScope>
+			<biblScope unit="issue">180</biblScope>
+			<date type="published" when="1952" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<monogr>
+		<title level="m" type="main">The Quantum Theory of Motion: an Account of the de Broglie-Bohm Causal Interpretation of Quantum Mechanics</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">R</forename>
+				<surname>Holland</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1993" />
+			<publisher>Cambridge University Press</publisher>
+			<pubPlace>Cambridge</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Valentini</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. A</title>
+		<imprint>
+			<biblScope unit="volume">156</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Valentini</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. A</title>
+		<imprint>
+			<biblScope unit="volume">158</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">]</forename>
+				<forename type="middle">A</forename>
+				<surname>Valentini</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International School for Advanced Studies</title>
+		<imprint>
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<title/>
+		<imprint>
+			<date type="published" when="1963" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<title level="m" type="main">Bohmian Mechanics and Quantum Theory: an Appraisal</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Valentini</surname>
+			</persName>
+		</author>
+		<editor>J. T. Cushing et al.</editor>
+		<imprint>
+			<date type="published" when="1996" />
+			<pubPlace>Kluwer, Dordrecht</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Valentini</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Physics: Foundations and Perspectives</title>
+		<editor>J. Bricmont et al.</editor>
+		<meeting><address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Valentini</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pramana – J. Phys</title>
+		<imprint>
+			<biblScope unit="volume">59</biblScope>
+			<biblScope unit="issue">269</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Valentini</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physics World 22N11</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Valentini</surname>
+			</persName>
+		</author>
+		<editor>Everett, Quantum Theory, and Reality S. Saunders et al.</editor>
+		<imprint>
+			<date type="published" when="2010" />
+			<publisher>Oxford University Press</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Pearle</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Valentini</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Encyclopaedia of Mathematical Physics</title>
+		<editor>J.-P. Franç et al.</editor>
+		<imprint>
+			<publisher>Elsevier, North-Holland</publisher>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Vilenkin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">H</forename>
+				<surname>Ford</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page">1231</biblScope>
+			<date type="published" when="1982" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<editor>28] A. D. Linde</editor>
+		<imprint>
+			<biblScope unit="volume">116</biblScope>
+			<biblScope unit="issue">335</biblScope>
+			<date type="published" when="1982" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">A</forename>
+				<surname>Starobinsky</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">117</biblScope>
+			<biblScope unit="issue">175</biblScope>
+			<date type="published" when="1982" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">A</forename>
+				<surname>Powell</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">H</forename>
+				<surname>Kinney</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="page">063512</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I.-C</forename>
+				<surname>Wang</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K.-W</forename>
+				<surname>Ng</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="page">083501</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Planck</forename>
+				<surname>Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">:</forename>
+				<forename type="middle">P A R</forename>
+				<surname>Ade</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Planck 2013 results. XV. CMB power spectra and likelihood</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<monogr>
+		<title level="m" type="main">Lack of large- angle TT correlations persists in WMAP and Planck</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">J</forename>
+				<surname>Copi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Huterer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">J</forename>
+				<surname>Schwarz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">D</forename>
+				<surname>Starkman</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Planck</forename>
+				<surname>Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">:</forename>
+				<forename type="middle">P A R</forename>
+				<surname>Ade</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Planck 2013 results. XXIII. Isotropy and statistics of the CMB</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<monogr>
+		<title level="m" type="main">Instability of quantum equilibrium in Bohm&apos;s dynamics, arXiv:1306.1576 [quant-ph</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Colin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Valentini</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Struyve</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Valentini</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">A: Math. Theor</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="page">035301</biblScope>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Valentini</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Westman</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Roy. Soc. Lond. A 461</title>
+		<meeting>. Roy. Soc. Lond. A 461</meeting>
+		<imprint>
+			<date type="published" when="2005" />
+			<biblScope unit="page">253</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<monogr>
+		<title/>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Efthymiopoulos</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Contopoulos</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. A: Math. Gen</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="page">1819</biblScope>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">D</forename>
+				<surname>Towler</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<forename type="middle">J</forename>
+				<surname>Russell</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Valentini</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Roy. Soc. Lond. A 468</title>
+		<meeting>. Roy. Soc. Lond. A 468</meeting>
+		<imprint>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Colin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Roy. Soc. Lond. A 468</title>
+		<meeting>. Roy. Soc. Lond. A 468</meeting>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page">1116</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<monogr>
+		<title level="m" type="main">Hidden Variables in Modern Physics and Beyond</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Valentini</surname>
+			</persName>
+		</author>
+		<imprint>
+			<publisher>Cambridge University Press</publisher>
+		</imprint>
+	</monogr>
+	<note>forthcoming</note>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<monogr>
+		<title level="m" type="main">Long-time relaxation in pilot-wave theory</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Abraham</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Colin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Valentini</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>quant. -ph]</note>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">H</forename>
+				<surname>Brandenberger</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Martin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Class. Quantum Grav</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="page">113001</biblScope>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">H</forename>
+				<surname>Lyth</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Riotto</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rep</title>
+		<imprint>
+			<biblScope unit="volume">314</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<monogr>
+		<title level="m" type="main">Statistical isotropy and the spherical harmonics decompo- sition</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">D P</forename>
+				<surname>Vitenti</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>unpublished</note>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Allahverdi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Brandenberger</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F.-Y</forename>
+				<surname>Cyr-Racine</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Mazumdar</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Annu. Rev. Nucl. Part. Sci</title>
+		<imprint>
+			<biblScope unit="volume">60</biblScope>
+			<biblScope unit="issue">27</biblScope>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Martin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="page">023511</biblScope>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<monogr>
+		<title/>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">R</forename>
+				<surname>Contaldi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Peloso</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Kofman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Linde</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Cosm</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2003" />
+			<biblScope unit="page">002</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Peter</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Valentini</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">D P</forename>
+				<surname>Vitenti</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>in. preparation</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

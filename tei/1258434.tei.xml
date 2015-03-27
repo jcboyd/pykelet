@@ -1,0 +1,2090 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Notes on Mayer Expansions and Matrix Models</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2014-02-03">3 Feb 2014</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName>
+								<forename type="first">Jean-Emile</forename>
+								<surname>Bourgine</surname>
+							</persName>
+							<email>e-mail address : jebourgine@apctp.org</email>
+							<affiliation>
+								<orgName type="laboratory">Asia Pacific Center for Theoretical Physics (APCTP)</orgName>
+								<address>
+									<postCode>790-784</postCode>
+									<settlement>Pohang, Gyeongbuk</settlement>
+									<country key="KR">Republic of Korea</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Notes on Mayer Expansions and Matrix Models</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2014-02-03">3 Feb 2014</date>
+						</imprint>
+					</monogr>
+					<note>*</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>Mayer cluster expansion is an important tool in statistical physics to evaluate grand canonical partition functions. It has recently been applied to the Nekrasov instanton partition function of N = 2 4d gauge theories. The associated canonical model involves coupled integrations that take the form of a generalized matrix model. It can be studied with the standard techniques of matrix models, in particular collective field theory and loop equations. In the first part of these notes, we explain how the results of collective field theory can be derived from the cluster expansion. The equalities between free energies at first orders is explained by the discrete Laplace transform relating canonical and grand canonical models. In a second part, we study the canonical loop equations and associate them to similar relations on the grand canonical side. It leads to relate the multi-point densities, fundamental objects of the matrix model, to the generating functions of multi-rooted clusters. Finally, a method is proposed to derive loop equations directly on the grand canonical model.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>The AGT correspondence [1] implies a relation between the canonical partition function of a β-ensemble and the grand canonical partition function of a generalized matrix model. The former represents a correlator of Liouville theory, according to the proposal of Dijkgraaf and Vafa [2], further investigated in [3, 4, 5, 6, 7, 8, 9, 10, 11]. The latter describes the instanton partition function of a 4d N = 2 supersymmetric gauge theory in the Ω-background, as derived using localization techniques in [12]. Here the term &apos;generalized matrix model&apos; do not pertain to a matrix origin for the model, but instead refers to a set of models that can be studied using techniques initially developed in the realm of matrix models. Among these techniques, the topological recursion [13] exploits the invariance of the integration measure to derive a tower of nested equations satisfied by the correlators of the model. These equations, referred as loop equations, are solved employing methods from algebraic geometry. This technique has recently been extended to a wide spectrum of coupled integrals models in [14].</p>
+
+				<p>In a suitable limit of the β-ensemble, AGT-equivalent to the Nekrasov-Shatashvili (NS) limit of the Ω-background [15], loop equations are no longer algebraic but first order linear differential equations. 1 In this context, the βensemble is a natural quantization of the Hermitian matrix model, to which it reduces at β = 1. The first element of this tower of differential equations has been mapped to the TQ relation derived in [16, 17, 18] that describes the dual SUSY gauge theory in the NS limit [19, 20, 21, 22]. It is then natural to ask about the existence of a structure similar to loop equations on the gauge side of the correspondence. 2 But so far, the loop equation technique has not been applied to grand canonical matrix models. On the other hand, the cluster expansion of Mayer and Montroll [26] has been successfully employed to derived an effective action relevant to the NS limit [15]. Can we relate this cluster expansion to the topological expansion of a generalized matrix model? Is there an equivalent of the loop equations technique on the grand canonical side? And more generally, how do canonical and grand canonical coupled integrals relate to each other? These are the issues we propose to address in these notes.</p>
+
+				<p>For this purpose, we consider the following grand canonical generalized matrix model,</p>
+
+				<figure>
+					<trash>Z GC (¯ q) = ∞ N =0 ¯ q N N ! Z C (N ), Z C (N ) = R N N i=1 Q(φ i ) dφ i 2iπ N i,j=1 i&lt;j K(φ i − φ j ). (1.1)</trash>
+
+
+				</figure>
+
+				<p>In analogy with the Nekrasov partition function, integrals are understood as contour integrals over the real line. The potential Q(x) and the kernel K(x) are free of singularities over the real axis. 3 We propose to study the expansion of Z GC (q) when the kernel is close to one. More precisely, we assume the form K(x) = 1 + f (x), → 0, (1.2) with f an even function, non-vanishing at x = 0. Although the results of these notes are very general, what we have in mind for the function f is typically</p>
+
+				<figure>
+					<trash>f (x) = 1 x 2 − γ 2 , Im γ = 0. (1.3)</trash>
+
+
+				</figure>
+
+				<p>It is crucial for our considerations that f is independent of . In this way, we exclude a class of models more relevant to the study of Nekrasov partition functions. For instance, setting = γ 2 , one recovers the model proposed by J. Hoppe in [27]. This model is a one-parameter version of the Nekrasov partition function that depends on two Ω-background equivariant deformation parameters 1 and 2 [28, 29]. As → 0, it exhibits a phenomenon referred</p>
+
+				<figure>
+					<head>Figure 1:</head>
+
+					<figDesc>First orders in the Mayer expansion of the free energy.</figDesc>
+
+				</figure>
+
+				<p>as instanton clustering in the context of SUSY gauge theories [15]. It corresponds to poles coming from the kernel and pinching the integration contour. Such poles should be avoided by a deformation of the contour, picking up the corresponding residues. As a result, terms of the -expansions we are considering are reshuffled and the results presented here are no longer valid. These notes are organized as follows. In the second section, we compare the Mayer cluster expansion of the grand canonical model with the collective field theory describing the large N limit of the canonical model. Taking the coupled limit → 0 and N → ∞ with N fixed, we derive relations between the free energies at first orders. These relations are a consequence of the fact that the grand canonical partition function is the discrete Laplace transform of the canonical one. We go on with the study of the canonical loop equations. We show that they relate to graphical identities between generating functions of rooted clusters. Such generating functions show up in the Mayer expansion and are identified with the multi-point densities. Finally, we present a technique to derive directly the grand canonical loop equations. The main results are summarized in the concluding section.</p>
+
+			</div>
+			<div>
+				<head>2</head>
+
+				<p>Comparison of the free energies at first orders</p>
+
+			</div>
+			<div>
+				<head n="2.1">Mayer expansion of the grand canonical model</head>
+
+				<p>The cluster expansion was introduced by Mayer and Montroll as a way to compute the free energy knowing the form of the interaction between particles [26] (see also the book [30] and the excellent review by Andersen [31]). It allows to derive the equation of state for various types of fluids. To do so, the kernel is expanded in , which corresponds to strength of molecular interactions in the case of non-ideal gases. The terms of the series consist of coupled integrals with the kernel f instead of K, and their expression is encoded into clusters. Here, a cluster is a set of vertices connected by at most one link. The partition function is a sum over disconnected clusters, but after taking the logarithm the summation is restricted to connected ones. We denote by C l a generic connected cluster with l vertices, E(C l ) the set of its links (or edges) and V (C l ) the set of vertices. To each vertex i of a cluster is associated an integration over the particle of coordinate φ i with measure ¯ qQ(φ i )dφ i /2iπ. The edge &lt; ij &gt; between particles i and j represents the kernel f (φ i − φ j ). Thus, the logarithm of the partition function writes</p>
+
+				<figure>
+					<trash>log Z GC (¯ q) = ∞ l=0 ¯ q l C l 1 σ(C l ) i∈V (C l ) Q(φ i ) dφ i 2iπ &lt;ij&gt;∈E(C l ) f (φ i − φ j ), (2.1)</trash>
+
+
+				</figure>
+
+				<p>where the symmetry factor σ(C l ) is the cardinal of the group of automorphism for the cluster, i.e. the number of permutations of vertices that leave C l invariant. The first terms of the expansion and their symmetry coefficients are given in figure 1. The Mayer expansion (2.1) is an expansion at small (bare) fugacity ¯ q. We would like to reformulate it as a ¯ q-exact expansion in the parameter . We will also renormalize the fugacity, keeping q = ¯ q fixed. By analogy, ¯ q would encode the gauge coupling constant of the Nekrasov partition function, and the Mayer cluster expansion is an expansion upon the number of instantons. More precisely, ¯ q would correspond to q gauge ( 1 + 2 )// 1 2 and should be renormalized by a factor 2 in the NS limit 2 → 0. In this context, the -expansion we study corresponds to an expansion in the Ω-background parameter 2 , or in the AGT dual, to the semi-classical expansion of Liouville correlators. Figure 2: The leading order free energy as a sum over trees. Figure 3: First terms in the expansion of the rooted tree generating function Y 0 (x).</p>
+
+				<p>Since each link brings a factor of , at first order only the clusters with a minimal number of links contribute. These clusters, denoted T l , have a tree structure, with l − 1 links for l vertices. Thus, at first order in the free energy is given by the following sum over trees,</p>
+
+				<figure>
+					<trash>F (0) GC (q) = lim →0 log Z GC (¯ q) = ∞ l=0 q l T l 1 σ(T l ) i∈V (T l ) Q(φ i ) dφ i 2iπ &lt;ij&gt;∈E(T l ) f (φ ij ), (2.2)</trash>
+
+
+				</figure>
+
+				<p>where we used the shortcut notation φ ij = φ i − φ j . Note that we have renormalized the free energy by a factor of , which is reminiscent of the volume of the Ω-background 1 2 by which the prepotential should be multiplied in order to be finite in the R 4 limit 1 , 2 → 0. The first terms of this expansion are given in the figure 2.</p>
+
+				<p>To evaluate F</p>
+
+			</div>
+			<div>
+				<head>(0)</head>
+
+				<p>GC , it is convenient to consider the generating function of rooted trees T x l , defined as</p>
+
+				<figure>
+					<trash>Y 0 (x) = qQ(x) ∞ l=0 T x l 1 σ(T x l ) i∈V (T x l {x}) qQ(φ i ) dφ i 2iπ &lt;ij&gt;∈E(T x l {x}) f (φ ij ) &lt;xi&gt;∈E(T x l ) f (x − φ i ), (2.3)</trash>
+
+
+				</figure>
+
+				<p>where with a slight abuse of notations we denoted the root and its coordinate by the same letter x. The first order terms of this expansion are given in figure 3. This function is interpreted as a tree-level dressed vertex. We should also emphasize that &apos;rooting&apos; a tree, or marking a vertex, reduces the symmetry factor σ(T x l ) ≤ σ(T l ) since automorphisms are now constraint to leave the root, or the marked vertex, invariant. The function Y 0 (x) obeys an integral equation that can be obtained as follows. Let us assume that the root x is directly connected to p vertices, and sum over the possible numbers p. Each of these p vertices is the root of a new tree, and we deduce the relation,</p>
+
+				<figure>
+					<trash>Y 0 (x) = qQ(x) ∞ p=0 1 p! R dy 2iπ f (x − y)Y 0 (y) p , (2.4)</trash>
+
+
+				</figure>
+
+				<p>graphically represented on figure 4. The symmetry factor p! takes into account the possibility of permuting the p vertices. Performing the summation, and taking the logarithm, we obtain the integral equation satisfied by Y 0 ,</p>
+
+				<figure>
+					<trash>log Y 0 (x) qQ(x) = R dy 2iπ f (x − y)Y 0 (y). (2.5)</trash>
+
+
+				</figure>
+
+				<p>It remains to relate the free energy to the generating function Y 0 . This is done using the following formula due to B. Basso, A. Sever and P. Vieira [32]</p>
+
+				<figure>
+					<trash>, 4 F (0) GC (q) = R Y 0 (x) dx 2iπ − 1 2 R 2 dx 2iπ dy 2iπ Y 0 (x)Y 0 (y)f (x − y). (2.6)</trash>
+
+					<head>Figure 4:</head>
+
+					<figDesc>Graphical representation of the recursion relation obeyed by Y 0 .</figDesc>
+
+				</figure>
+
+				<p>It is easy to see that both terms in the RHS will produce a sum over clusters weighted by the same integrals as in (2.2), but with different symmetry factors. A combinatorial proof of this formula is given in appendix A. It is useful to reformulate the previous expression (2.6) of the free energy at first order as the value of an effective action S GC [Y 0 ] at its extremum Y</p>
+
+				<figure>
+					<trash>* 0 , F (0) GC (q) = S GC [Y * 0 ], such that δS GC δY 0 Y 0 =Y * 0 = 0, (2.7)</trash>
+
+
+				</figure>
+
+				<p>This action is obtained after introducing the integral equation (2.5) into (2.6),</p>
+
+				<figure>
+					<trash>S GC [Y 0 ] = 1 2 R 2 dx 2iπ dy 2iπ Y 0 (x)Y 0 (y)f (x − y) − R dx 2iπ Y 0 (x) [log Y 0 (x) − 1] + R dx 2iπ Y 0 (x) log (qQ(x)). (2.8)</trash>
+
+
+				</figure>
+
+				<p>It is remarkable that the saddle point equation derived from this action is nothing else than the integral equation (2.5). It is also worth noticing that when instanton clustering phenomenon is taken into account, one arrive at a similar expression, with logarithms replaced by dilogarithms in the second term. For instance, the effective action derived by Nekrasov and Shatashvili to describe N = 2 SYM reads S NS [ρ]</p>
+
+				<figure>
+					<trash>= 1 2 ρ(x)ρ(y)G(x − y) + Li 2 (1 − e −ρ(x) ) − ρ(x) log(1 − e −ρ(x) ) dx + ρ(x) log (qQ(x)) dx, (2.9) where</trash>
+
+
+				</figure>
+
+				<p>we used the notations of [15]. Expanding the middle term in ρ, we recover at the order o(ρ 2 ) the action (2.8) obtained previously. This type of &apos;cut-off&apos; term for the action has been studied in [22].</p>
+
+				<figure>
+					<trash>Subleading order We now focus on F (1)</trash>
+
+
+				</figure>
+
+				<p>GC , the second order term in the -expansion of the free energy at fixed q,</p>
+
+				<figure>
+					<trash>log Z GC (¯ q) = ∞ k=0 k F (k) GC (q). (2.10)</trash>
+
+
+				</figure>
+
+				<p>At this order, clusters that contribute have l links for l vertices, which means that they have exactly one cycle. Such clusters will be denoted S l . The relevant terms of the Mayer expansion for the free energy are</p>
+
+				<figure>
+					<trash>F (1) GC (q) = ∞ l=3 q l S l 1 σ(S l ) i∈V (S l ) Q(φ i ) dφ i 2iπ &lt;ij&gt;∈E(S l ) f (φ ij ). (2.11)</trash>
+
+
+				</figure>
+
+				<p>The q-expansion starts here at l = 3 since at least three vertices are needed to form a cycle. As we go to higher orders in , more vertices will be needed to form the cycles, leading to a higher first order term in q.</p>
+
+				<figure>
+					<trash>Thus, F (0) GC fully determines the q-expansion of the free energy up to order O(q 2 ), and F (0) GC + F (1) GC up to O(q 3 ).</trash>
+
+
+				</figure>
+
+				<p>To evaluate the summation over clusters S l , we first consider the clusters depicted on figure 5, and for which all vertices belong to the cycle. Such clusters have a symmetry factor of σ(S l ) = 2l due to the invariance under l rotations, and a reflexion symmetry. Their contribution writes</p>
+
+				<figure>
+					<trash>1 2l l i=1 f (φ i − φ i+1 )qQ(φ i ) dφ i 2iπ , (2.12)</trash>
+
+					<head>Figure 5:</head>
+
+					<figDesc>Pure cycle clusters.</figDesc>
+
+				</figure>
+
+				<p>where indices are taken modulo l. All the clusters of type S l may be obtained by dressing the vertices of a pure cycle cluster by appropriate trees.</p>
+
+				<p>Summing over the dressing possibilities boils down to replace qQ(φ) in the formula (2.12) by the tree-level dressed vertex Y 0 (φ). The expression for the free energy correction follows,</p>
+
+				<figure>
+					<trash>F (1) GC (q) = ∞ l=3 1 2l l i=1 f (φ i − φ i+1 )Y 0 (φ i ) dφ i 2iπ . (2.13)</trash>
+
+					<figDesc>This is actually the expansion of the logarithm of a Fredholm determinant where the first two terms are missing. Taking the exponential, we find</figDesc>
+					<trash>e F (1) GC (¯ q) = e − 1 2 f (0) dx 2iπ Y 0 (x) det δ(x − y) − 1 2iπ f (x − y)Y 0 (y) exp − 1 4 dx 2iπ dy 2iπ Y 0 (x)Y 0 (y)f (x − y) 2 . (2.14)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>The two missing terms correspond to a tadpole (a vertex with a link looping back to it) and two vertices doubly connected.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>2.2</head>
+
+				<p>Collective field theory of the canonical model The action (2.8) obtained above describes a Dyson gas of particles with the non-singular interaction f at β = 0 [34]. It is also the effective action of a collective field theory for a generalized matrix model at large N [35]. We will show here that the corresponding matrix model is simply the canonical model Z C defined in the introduction (up to minor corrections). The fact that grand canonical and canonical models share the same effective action further leads to relate the rooted vertex generating function at tree level Y 0 with the collective field at large N . At first order in , the canonical partition function is equivalent to</p>
+
+				<figure>
+					<trash>Z C (N, ) N i=1 Q(φ i ) dφ i 2iπ N i,j=1 i&lt;j e f (φ ij ) . (2.15)</trash>
+
+
+				</figure>
+
+				<p>The collective field is by definition a generating function of invariants under the permutation of eigenvalues. It is convenient to use the eigenvalue density,</p>
+
+				<figure>
+					<trash>ρ 0 (x) = 1 N N i=1 δ(x − φ i ), (2.16)</trash>
+
+
+				</figure>
+
+				<p>that has been normalized to one. It is usual for matrix models to assume that in the large N limit, eigenvalues condense into a finite union of connected sets, typically a union of intervals for Hermitian matrices. This set Γ is the support of a continuous eigenvalue density ρ 0 obtained as the large N limit of the finite densities defined in (2.16). Depending on the explicit form of potential and interaction, this assumption might not be valid. We will nonetheless work in this framework, the results derived following this approach being consistent with those obtained on the grand canonical model.</p>
+
+				<p>In the collective field theory approach, the canonical free energy is given at first order by the extrema of an effective action S C ,</p>
+
+				<figure>
+					<trash>e N Z C (N, ) e N S C [ρ * 0 ] , ∂ x δS C δρ 0 (x) ρ 0 =ρ * 0 = 0. (2.17)</trash>
+
+
+				</figure>
+
+				<p>The factor e N has been introduced here to facilitate later comparison with the previous subsection. The canonical action is a sum of three terms,</p>
+
+				<figure>
+					<trash>S C [ρ 0 ] = 1 2 N f (x − y)ρ 0 (x)ρ 0 (y)dxdy + ρ 0 (x) log Q(x) 2iπ dx − ρ 0 (x) [log ρ 0 (x) − 1] dx. (2.18)</trash>
+
+
+				</figure>
+
+				<p>The derivation of the first two terms is rather straightforward since it is sufficient to write down the integrand of (2.15) in an exponential form, and replace the sum over eigenvalues by integrals of the density. The third term corresponds to the entropic term introduced by Dyson in [34]. It is a Gibbs factor, coming from the fact that the Coulomb gas charges are indistinguishable. Following [35, 36], it is re-derived in the appendix C as a Jacobian in the change of measure from the discrete set of variables dφ i to the functional integral over D[ρ 0 ]. In the case of Hermitian matrix models, such entropic factors cancel with the energetic term coming from the regularization of the kernel at coinciding eigenvalues. However, here f (x) is finite at x = 0 and cancellation does not occur. 5</p>
+
+				<p>Comparing (2.18) and (2.8), we deduce that the effective actions are equivalent, upon the identification of Y 0 (x) with the density 2πiρ 0 (x), and provided we set = 1/N . However, by definition the density ρ 0 is normalized to one, and this identification would require Y 0 to have also a unite norm. To resolve this issue, we introduce the norm α of Y 0 and identify as follows,</p>
+
+				<figure>
+					<trash>Y 0 (x) = 2iπαρ 0 (x), with α = Y 0 (x) dx 2iπ . (2.19)</trash>
+
+
+				</figure>
+
+				<p>This identification requires to set N = α = O(1) in the limit N → ∞ and → 0. This relation signifies that the summation (1.1) defining the grand canonical model is dominated at → 0 by the term with N = α// variables. Similarly, the Nekrasov partition function expressed as a sum over Young tableaux is dominated in the Seiberg-Witten limit 1 , 2 → 0 by a partition with N ∼ 1// 1 2 boxes [38, 39]. It also justifies the approach of [16, 17, 18, 40, 22] to the study of the NS limit. Under the previous identification between the dressed vertex Y 0 and the density ρ 0 , canonical and grand canonical actions are related through S C [ρ 0 ] = 1 α S GC [Y 0 ] + log(α/q). (2.20)</p>
+
+				<p>The term proportional to log q is missing from the action (2.18), but it can be introduced by hand, exploiting the fact that the density ρ 0 is normalized to one. In this case, log q plays the role of a Lagrange multiplier imposing the unit norm.</p>
+
+				<p>The two actions S C and S GC produce equivalent equations of motions, and the free energies satisfy at first order</p>
+
+				<figure>
+					<trash>F (0) C + log q = 1 α F (0) GC (q) + log α − 1, with F (0) C = lim N →∞ 1 N log Z C (N, = α/N ). (2.21)</trash>
+
+
+				</figure>
+
+				<p>Since F C depends on N but not on q, and the opposite for F GC , this relation only holds for a specific value of N (q) or q(N ). More comments on this will follow in the next subsection where this relation is re-derived by exploiting the fact that Z GC is the discrete Laplace transform of Z C .</p>
+
+				<p>One loop determinant The subleading, or genus one, correction to the free energy can also be computed in the framework of the collective field theory. There are two types of corrections. The first one corresponds to amend the canonical action by a subleading term δS C , and the second type to the Gaussian fluctuations around the saddle point.</p>
+
+				<p>The modification of the action is due to an earlier kernel approximation that should now be refined. Indeed, at the second order in the approximation (2.15) of Z C is no longer acceptable and must be replaced by</p>
+
+				<figure>
+					<trash>Z C (N, ) e − 1 2 N f (0) N i=1 Q(φ i ) dφ i 2iπ N i,j=1 e 1 2 f (φ ij )− 1 4 2 f (φ ij ) 2 . (2.22)</trash>
+
+
+				</figure>
+
+				<p>The correction to the kernel is responsible for an additional contribution to the canonical action,</p>
+
+				<figure>
+					<trash>δS C = − 1 4 2 N f (x − y) 2 ρ 0 (x)ρ 0 (y)dxdy, (2.23)</trash>
+
+					<figDesc>which reproduces the term in the second exponential of the expression (2.14) for F</figDesc>
+					<head>(1)</head>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>GC (¯ q), provided we set again N = α. The first exponential corresponds to the factor in front of the integrals in (2.22), and comes from the diagonal part of the kernel. It is well known that the integration of Gaussian fluctuations around the classical solution produces the inverse square root of (minus) the Hessian matrix determinant,</figDesc>
+					<trash>det − δ 2 S C δρ 0 (x)δρ 0 (y) = e − log ρ 0 (x)dx det [δ(x − y) − N ρ 0 (x)f (x − y)] . (2.24)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>The prefactor involving the integral of log ρ 0 (x) cancels with the sub-leading order of the entropic term computed in appendix C, formula (C.10). The remaining determinant reproduces the one which appears in (</figDesc>
+					<trash>2.14), upon the identification Y 0 (x) = 2iπαρ 0 (x) and N = α. Gathering all contributions, we find e F (1) C = e − 1 2 αf (0) e − 1 4 α 2 f (x−y) 2 ρ 0 (x)ρ 0 (y)dxdy det [δ(x − y) − αρ 0 (x)f (x − y)] . (2.25)</trash>
+
+
+				</figure>
+
+				<p>Comparing with (2.14), we conclude that the sub-leading contributions to the free energy of both models are equal. Again, this equality holds only for a specific value of q(N ) or N (q).</p>
+
+			</div>
+			<div>
+				<head n="2.3">Discrete</head>
+
+				<figure>
+					<head>Laplace transform at large N</head>
+
+					<figDesc>The observed relations between free energies at first orders originate in the discrete Laplace transform, also called Z-transform, performed in (1.1) to define the grand canonical model. This transformation can be inverted by considering a contour integral over q = ¯ q circling the origin,</figDesc>
+					<trash>Z C (N, ) = N ! 0 dq 2iπq q −N N Z GC (¯ q, ). (2.26)</trash>
+
+
+				</figure>
+
+				<p>In the large N limit, it is possible to evaluate the integral using a saddle point technique [41], and the relation between grand canonical and canonical free energies is a simple Legendre transform,</p>
+
+				<figure>
+					<trash>N (F C (N, ) + 1 − log(N )) −1</trash>
+
+
+				</figure>
+
+				<p>F GC (q, ) − N µ. (2.27) On the LHS, the additional terms are due to the factor 1/N ! and can be absorbed in the definition of F C (N, ). Under this transformation, the number of particles N and the chemical potential µ = log q are conjugate variables. They are related through the saddle point equation,</p>
+
+				<figure>
+					<trash>q∂ q F GC (q, ) = N . (2.28)</trash>
+
+					<figDesc>This equation can be solved in terms of N (q) and (2.27) provides the grand canonical free energy knowing the canonical one. Inverting the Legendre transform, F C can be derived from F GC with µ = −∂ N (N F C − N log N ).</figDesc>
+
+				</figure>
+
+				<p>In the previous considerations, was a simple spectator. The novelty in these notes is to tune the parameter toward zero as the number of particles is sent to infinity, keeping N = α fixed. The Legendre transformation (2.27) survives this limit and produces the relation (2.21) between first orders free energies. In this limit, the conjugate variables are α and µ. It is also interesting to note that the saddle point equation (2.28) gives the normalization condition for the dressed vertex Y</p>
+
+				<figure>
+					<trash>(x), q∂ q F GC (q, ) = Y (x) dx 2iπ = α. (2.29)</trash>
+
+					<figDesc>The dressed vertex is the generating function of connected rooted clusters. Its expression is given by (2.3) after replacing the summation over rooted tree by a general summation over rooted clusters C x l with appropriate factors. The first equality in (2.29) is shown in the appendix B using the Mayer expansion (2.1) of the free energy. It is the equivalent of the Matone relation for SUSY gauge theories [42]. The normalization condition expands in , providing refined approximations for the saddle point q * = q * 0 (α) + q * 1 (α) + · · · . In order to investigate the subleading orders, we need to introduce some notation for the large N expansion of the canonical model at = α/N with α fixed,</figDesc>
+					<trash>F C (N, α/N ) = 1 N log Z C (N, α/N ) = ∞ n=0 N −n F (n) C (α). (2.30)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Let us emphasize that this expansion is different from the standard topological expansion at fixed . It is the reason why the one-loop term in (2.25) is not only given by the determinant but also contains corrective terms to the action. The inverse discrete Laplace transform (2.26) with the constraint N = α specializes to</figDesc>
+					<trash>e N F C (N,α/N ) = α N N ! N N 0 dq 2iπq e −N [log q−α −1 F GC (q,α/N )] . (2.31) At sub-leading order, this integral is approximately equal to e N F C (N,α/N ) = α N e −N 1 iq * √ d e −N [log q * −α −1 F GC (q * ,α/N )] + O(1/N ), (2.32) with q * (α) solution of the normalization condition (2.29), and d = ∂ 2 q log q − α −1 F GC (q) q=q * . (2.33)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>This quantity d can be expressed in terms of the norm n of the two points grand canonical density ¯</figDesc>
+					<trash>ρ(x, y), defined in (2.45), using a formula derived in appendix B, n = ¯ ρ(x, y)dxdy = (q∂ q ) 2 F GC (q). (2.34) At the saddle point, we have n = −(q * ) 2 αd. Expanding (2.32) in , we obtain at second order the following relation between free energies, F (1) C = F (1) GC (q * 0 ) − 1 2 log(n 0 /α). (2.35)</trash>
+
+
+				</figure>
+
+				<p>To retrieve the equality previously observed among the free energies at subleading order, we have to assume that the norm n 0 of ¯ ρ 0 (x, y) is equal to α at the saddle point. It implies that the tree-level propagator Y 0 (x, y), which is the generating function of bi-rooted trees, has a vanishing norm (see (2.46) below). It is however possible that we missed a factor in our treatment of the canonical partition function, in particular when we discarded the zero-mode in appendix C. This is why we will remain cautious and keep the critical value of n 0 arbitrary in the following.</p>
+
+			</div>
+			<div>
+				<head>Density and dressed vertex</head>
+
+				<p>The comparison of the effective actions led us to propose an identification between the tree-level dressed vertex of the grand canonical model and the large N eigenvalue density associated to the canonical model. This identification can also be derived by general considerations involving the discrete Laplace transform. It will be done here in two steps. First we have to relate the dressed vertex Y (x) to a grand canonical density ¯ ρ(x). Then, we will exploit the inverse Laplace transformation to deduce an equality between canonical and grand canonical densities at first order. To complete our program, we need to define the grand canonical vev of an operator O</p>
+
+				<figure>
+					<trash>(x), O(x) = 1 Z GC (¯ q) ∞ N =0 ¯ q N N ! Z C (N ) N |O(x)| N . (2.36) It is expressed in terms of the canonical vevs, N |O(x)| N = 1 Z C (N ) R N O(x) N i=1 Q(φ i ) dφ i 2iπ N i,j=1 i&lt;j K(φ i − φ j ), (2.37)</trash>
+
+
+				</figure>
+
+				<p>where the operator depends on N fields in a permutation invariant manner. We focus on the density operator, and consider the sourced partition function Z GC [J]</p>
+
+				<figure>
+					<trash>= Z GC exp dxJ(x)D(x) , D(x) = i δ(x − φ i ). (2.38) The grand canonical density is defined as ¯ ρ(x) = D(x) = δ log Z GC [J] δJ(x) J=0 . (2.39)</trash>
+
+					<figDesc>Introducing the source term J in the partition function corresponds to replace the potential by Q(φ) → e J(φ) Q(φ), as can be seen from</figDesc>
+					<trash>Z GC [J] = Z GC i e J(φ i ) . (2.40)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Thus, the Mayer expansion also applies to the sourced quantity, leading to (2.1) with e J(φ i ) inserted into the product over vertices. From this expression, we compute the derivative δ log Z GC [J]</figDesc>
+					<trash>δJ(x) J=0 = ∞ l=0 ¯ q l C l l σ(C l ) Q(x) 2iπ i∈V (C l )\{x} Q(φ i ) dφ i 2iπ &lt;ij&gt;∈E(C l ) f (φ ij ). (2.41)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>The identity (B.3) demonstrated in appendix B allows to replace the clusters summation by a summation over rooted clusters. In doing so, we obtain exactly the dressed vertex δ log Z GC [J]</figDesc>
+					<trash>δJ(x) J=0 = 1 2iπ Y (x), (2.42) and we deduce from (2.39) the identity Y (x) = 2iπ ¯ ρ(x</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>) at the level of one marked point. It is easy to check that this identification is compatible with the property (2.29) by computing the norm of the density ¯ ρ(x) from the definition (2.39). It remains to take the Laplace transform. The canonical density is by definition</figDesc>
+					<trash>ρ(x) = 1 N N |D(x)| N , (2.43)</trash>
+
+
+				</figure>
+
+				<p>it reduces to the collective field at large N , ρ(x) ρ 0 (x). Hence, Z GC ¯ ρ is related to αZ C ρ by a discrete transformation similar to (1.1). Using a saddle point technique, we find at subleading order the relation ¯ ρ 0 (x) = αρ 0 (x), in agreement with the proposed identification between Y 0 and ρ 0 . It is also possible to derive this relation considering the inverse Laplace transform of the sourced partition function. It implies a Legendre relation of the type (2.27) among sourced free energies. Taking the functional derivative with respect to the source J, we recover the relation between one-point density. One has to be careful because the saddle point depends on the source. But, contrary to the case of 2-points densities treated below, the dependence vanishes here.</p>
+
+				<p>Higher point densities and cluster generating functions The previous argument generalizes to a higher number of marked vertices and multi-points densities. The two points grand canonical density defined as the connected correlator 6</p>
+
+				<figure>
+					<trash>¯ ρ(x, y) = δ 2 F GC [J] δJ(x)δJ(y) J=0 = D(x)D(y) c , (2.45) relates to the full propagator Y (x, y), generating function of bi-rooted trees, as ¯ ρ(x, y) = 1 (2iπ) 2 Y (x, y) + 1 2iπ δ(x − y)Y (x). (2.46)</trash>
+
+
+				</figure>
+
+				<p>This identity is obtained by taking the second derivative of the sourced free energy F GC [J]. The additional term in the RHS of this relation corresponds to coinciding eigenvalues in the decomposition</p>
+
+				<figure>
+					<trash>−1 ¯ ρ(x, y) = i =j δ(x − φ i )δ(y − φ j ) c + i δ(x − φ i )δ(y − φ i ) . (2.47)</trash>
+
+
+				</figure>
+
+				<p>The second term in the RHS produces a delta function of x − y times the one-point density, and Y (x, y) corresponds to the non-diagonal terms. The second part of the argument exploits the fact that the sourced partition functions are also related through a discrete Laplace transform. But now the saddle point q * depends on the source J, for instance</p>
+
+				<p><formula>δq * δJ(x) J=0 = − q * n ¯ ρ(x, y)dy. (2.48)</formula></p>
+
+				<p>At leading order, the sourced free energies satisfy the equation (2.21). Taking twice the derivative with respect to the source, we obtain the relation between two points densities at first order,</p>
+
+				<figure>
+					<trash>αρ 0 (x, y) = ¯ ρ 0 (x, y) − 1 n 0 ¯ ρ 0 (x, u)du ¯ ρ 0 (y, v)dv, (2.49) 6 Since the partition function behave at small as ZGC ∼ e −1 F (0)</trash>
+
+
+				</figure>
+
+				<p>GC , we have the factorization property [33],</p>
+
+				<figure>
+					<trash>D(x)D(y) = D(x) D(y) + D(x)D(y) c with D(x)D(y) c D(x) D(y) = O(). (2.44) It ensures that ¯ ρ(x, y) = O(1).</trash>
+
+
+				</figure>
+
+				<p>where ρ 0 (x, y) is the leading order of the canonical two points connected density ρ(x, y) = δ 2 F C [J] δJ(x)δJ(</p>
+
+				<p><formula>y) J=0 = 1 N N |D(x)D(y)| N c . (2.50)</formula></p>
+
+				<p>The second term in (2.49) is due to the dependence of the saddle point in the source. This expression is compatible with the requirement of vanishing norm for the connected correlator ρ 0 (x, y).</p>
+
+				<p>At higher points, we expect relations similar to (2.46) to hold between multi-rooted clusters generating functions and grand canonical densities. They can be derived by performing higher derivations of the free energy with respect to the source. On the other hand, the relation between canonical and grand canonical densities becomes increasingly complicated and cannot be worked out easily using this method, even at the planar order.</p>
+
+			</div>
+			<div>
+				<head n="3">Loop equations</head>
+
+				<p>In the previous section, we have compared canonical and grand canonical models at the level of free energies. We have shown how to recover the collective field theory description of the canonical model from the cluster expansion of the grand canonical partition function. This comparison was restricted to the two first orders in large N and small . On the canonical side, it is possible compute higher order terms by employing the recursive technique of loop equations. This technique, originally developed for matrix models, has recently been extended to a large class of models to which Z C belongs [14]. 7 Our goal in this section is to map these loop equations to similar relations among objects pertaining to the cluster expansion. These objects are the n-points Y -functions, generating functions of n-rooted clusters. We have already encountered the cases n = 1 and n = 2, corresponding respectively to the dressed vertex Y (x) and the propagator Y (x, y).</p>
+
+				<p>Loop equations for the canonical densities are obtained in the following manner. First, the invariance of the measure allows to write a set of linear relations among (non-connected) correlators. These correlators are decomposed into connected parts. The connected correlators involved are resolvents, i.e. multiple Cauchy transforms of the densities. As such, they have a branch cut along the support Γ of the densities in each of their variables. Taking the discontinuities of the previous equations, we are able to derive a set of coupled integral equations among densities. These equations can be expanded in large N , and solved recursively. The recursion involves both the genus, that is the order in N −1 and the number of points. At this level, loop equations also depends on the derivative of densities. They can be integrated with a little bit of algebra. The resulting &apos;primitive&apos; equations no longer contain the densities derivative. In the process, a constant of integration appears. It is fixed by imposing a vanishing norm to the n-points densities with n &gt; 1.</p>
+
+				<p>Grand-canonical densities also obey the canonical loop equations. Indeed, those equations are linear in the (nonconnected ) canonical correlators, and valid for any N . They can be summed over N with appropriate coefficients to produce equations among grand canonical correlators. Next, these correlators are decomposed into connected parts. We must emphasize that the connected grand canonical correlators are no-longer the discrete Laplace transform of canonical ones. These connected correlators are also the resolvents associated to the multi-points grand canonical densities. For infinitesimal, these densities are assumed to be continuous on a connected support, just like the canonical ones. The discontinuity process still works, leading to the same &apos;derivative&apos; loop equations. Densities are then expanded in , which plays a role equivalent to the the large N topological expansion for the canonical model.</p>
+
+				<p>After integration, we recover the same integral equations, but with different constant of integrations since grand canonical and canonical densities have a different norm.</p>
+
+				<p>In this section, the strategy is as follows. We first provide the derivation of the canonical loop equation, and re-write them in the integrated form. Then, we compare this equation with a relation among Y -functions derived using the Mayer expansion. We deduce from the relation between Y and ¯ ρ that this density obey the integrated canonical loop equation. We conclude that the Y -function relations are the equivalent of loop equations. Finally, a technique to derive the loop equation for grand canonical densities is presented in subsection 3.4.</p>
+
+			</div>
+			<div>
+				<head n="3.1">One-point density at leading order and rooted trees</head>
+
+				<p>The simplest loop equation is derived from the identity</p>
+
+				<p><formula>0 = N k=1 N i=1 dφ i ∂ ∂φ k    1 z − φ k N i=1 Q(φ i ) 2iπ N i,j=1 i&lt;j K(φ ij )   . (3.1)</formula></p>
+
+				<p>It produces an equation satisfied by the resolvent W (z) which is the Cauchy transform of the density ρ(</p>
+
+				<p><formula>x), W (z) = ρ(x)dx z − x = 1 N N N i=1 1 z − φ i N . (3.2)</formula></p>
+
+				<p>We will also need to introduce an auxiliary quantity P (z) defined as</p>
+
+				<figure>
+					<trash>P (z) = 1 N N N k=1 V (z) − V (φ k ) z − φ k N , V (z) = log Q(z) 2iπ , (3.3)</trash>
+
+					<figDesc>with V (z) the standard &apos;matrix model&apos; potential. Then, the first loop equation takes the form</figDesc>
+					<trash>P (z) = −W (z) + V (z)W (z) + N R 2 k(x − y) z − y ρ(x)ρ(y) + 1 N ρ(x, y) dxdy. (3.4</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>) with the shortcut notation k(x) = ∂ x log K(x) for the logarithmic derivative of the kernel. We have assumed that the eigenvalues condense on the support Γ of ρ in the large N limit. It implies that W (z) has a branch cut on Γ, with a discontinuity given by −2iπρ(x). On the other hand, by construction P (z) is not singular over Γ. Thus, taking the discontinuity of the loop equation (3.4) over Γ allows to eliminate P (z) and write an equation involving only densities,</figDesc>
+					<trash>ρ (x) = ∂ x log(Q(x))ρ(x) + R k(x − y) (N ρ(x)ρ(y) + ρ(x, y)) dy. (3.5)</trash>
+
+
+				</figure>
+
+				<p>The next step is to expand the density at large N , we denote ρ n the term of order O(N −n ). At the first order, the dependence in the two points density drops, and we find an integral equation for ρ 0 which is precisely the equation of motion (2.17) derived from the canonical action S C . Integrating once, we recover the integral equation (</p>
+
+				<figure>
+					<trash>2.5) obeyed by Y 0 , log 2iαπρ 0 (x) Q(x) = α f (x − y)ρ 0 (y)dy + γ 0 , (3.6)</trash>
+
+
+				</figure>
+
+				<p>provided we choose the integration constant γ 0 to be log q. A priori, the unit norm constraint over the density should fix this integration constant. However, it is very non-trivial to impose this condition in practice due to the complicated form of the integral equation. At the saddle point, Y 0 (x) = 2iπ ¯ ρ 0 (x) = 2iπαρ 0 (x) and γ 0 = log q * 0 (α).</p>
+
+			</div>
+			<div>
+				<head n="3.2">Two-points density at leading order and bi-rooted trees</head>
+
+				<p>The subleading order of the first loop equation contains the two points density at first order ρ 0 (x, y). To compute this quantity, we need a second loop equation, derived from the identity</p>
+
+				<p><formula>0 = N k=1 N i=1 dφ i ∂ ∂φ k    1 z − φ k N l=1 1 w − φ l N i=1 Q(φ i ) 2iπ N i,j=1 i&lt;j K(φ ij )   . (3.7)</formula></p>
+
+				<p>It provides an equation satisfied by the two points resolvent W (z, w) and involving an auxiliary quantity P (z, w),</p>
+
+				<p><formula>W (z, w) = 1 N N N i,j=1 1 z − φ i 1 w − φ j N c , P (z, w) = 1 N N N i=1 V (z) − V (φ i ) z − φ i N j=1 1 w − φ j N c . (3.8)</formula></p>
+
+				<figure>
+					<figDesc>This equation also involves the three-points density, but this dependence drops at leading order. The first loop equation (3.4) can be used to simplify the result, which gives</figDesc>
+					<trash>P (z, w) = − ∂ z W (z, w) + ∂ w W (z) − W (w) z − w + V (z)W (z, w) + N k(x 1 − x 2 ) (z − x 2 )(w − x 3 ) ρ(x 1 , x 3 )ρ(x 2 ) + ρ(x 2 , x 3 )ρ(x 1 ) + 1 N ρ(x 1 , x 2 , x 3 ) dx 1 dx 2 dx 3 . (3.9)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Just like P (z), P (z, w) has not branch on Γ for its variable z, and will be eliminated by taking the discontinuity of the equation. In this process, the difference of resolvents must be regularized at coincident values as follows, 8</figDesc>
+					<trash>W (x) − W (y) x − y → −(2iπ) 2 δ(x − y)ρ(x). (3.11)</trash>
+
+
+				</figure>
+
+				<p>Taking the discontinuity over the variable z and w, extracting the first order and integrating once, we get ρ 0 (x, y) = ρ 0 (x)δ(x − y) + αρ 0 (x) duf (x − u)ρ 0 (u, y) + γ 00 (y)ρ 0 (x), (3.12) with the integration constant γ 00 (y) that may depend on y. This degree of freedom is fixed by imposing that ρ 0 (x, y) is a symmetric function of its parameters, and has zero norm since it is a connected density. We would like to recover the loop equation (3.12) using the Mayer expansion. According to our previous discussion in subsection 2.3, this equation should be obeyed by the tree-level propagator Y 0 (x, y), generating function of bi-rooted tree. Let us recall its definition,</p>
+
+				<figure>
+					<trash>Y 0 (x, y) = Y 0 (x) ∞ l=1 ¯ Y l (x, y), ¯ Y l+1 (x, y) = Y 0 (y) l i=1 Y 0 (φ i ) dφ i 2iπ f (x − φ 1 )f (φ 12 ) · · · f (φ l−1 l )f (φ l − y), (3.13) where Y 0 (x) ¯ Y l+1</trash>
+
+
+				</figure>
+
+				<p>(x, y) is the generating function of bi-rooted trees such that the roots are connected through a chain of l intermediate vertices (and l + 1 links). We should also supply the definition of the first member of this set of 8 To derive this contact term, we take a test function r(x) regular on the branch cut Γ, and consider</p>
+
+				<figure>
+					<trash>Γ r(y)dyDisc y Disc x W (x) − W (y) x − y = 2iπρ(x) Γ r(y) x − y dy = −(2iπ) 2 ρ(x)r(x), (3.10)</trash>
+
+					<figDesc>since x belongs to the integration contour. functions, ¯ Y 1 (x, y) = f (x − y)Y 0 (y), obtained when the roots are directly connected. 9 Contrary to the functions</figDesc>
+
+				</figure>
+
+				<p>¯ Y l (x, y), Y 0 (x, y) is a symmetric function of x and y. The functions ¯ Y l obey an obvious recursion relation that is interpreted as attaching to the vertex x a new rooted vertex z,</p>
+
+				<figure>
+					<trash>¯ Y l+1 (z, y) = f (z − x) ¯ Y l (x, y)Y 0 (x) dx 2iπ . (3.15)</trash>
+
+
+				</figure>
+
+				<p>In this process, x is still &apos;marked&apos; in the sense that it is determined uniquely being the first vertex attached to z on the path to y, but we will not consider it as a &apos;root&apos; anymore, preferring the endpoint z. Summing over l, we deduce the integral equation obeyed by Y 0 (x,</p>
+
+				<figure>
+					<trash>y), Y 0 (x, y) = f (x − y)Y 0 (x)Y 0 (y) + Y 0 (x) f (x − z)Y 0 (z, y) dz 2iπ . (3.16)</trash>
+
+
+				</figure>
+
+				<p>Making use of the relation (2.46) between the grand canonical two points density ¯ ρ(x, y) and the propagator Y (x, y), we deduce that at first order in , α −1 ¯ ρ 0 (x, y) obey the integrated loop equation (</p>
+
+				<figure>
+					<trash>3.12) with a vanishing integration constant γ 00 (y) = 0, ¯ ρ 0 (x, y) = ¯ ρ 0 (x)δ(x − y) + ¯ ρ 0 (x) duf (x − u)¯ ρ 0 (u, y). (3.17)</trash>
+
+
+				</figure>
+
+				<p>The relation (2.49) between ρ 0 (x, y) and ¯ ρ 0 (x, y) is compatible with the loop equations (3.12) and (3.17). This can be shown by taking the q-derivative of the equation (</p>
+
+				<figure>
+					<trash>2.5) satisfied by ¯ ρ 0 (x) = Y 0 (x)/2iπ, q∂ q ¯ ρ 0 (x) = ¯ ρ 0 (x) + ¯ ρ 0 (x) f (x − u)q∂ q ¯ ρ 0 (u)du, ¯ ρ 0 (x, y)dy = q∂ q ¯ ρ 0 (x). (3.18)</trash>
+
+
+				</figure>
+
+				<p>The second equality is a consequence of (B.7) and (2.46). We deduce the expression of γ 00 (y) at the saddle point,</p>
+
+				<figure>
+					<trash>γ 00 (y) = − 1 n 0 ¯ ρ 0 (y, u)du. (3.19) 3.3 One-point density at subleading order and rooted 1-cycles</trash>
+
+
+				</figure>
+
+				<p>To obtain the equation satisfied by the genus one correction to the 1-point density ρ 1 (x), we examine the first loop equation (3.5) at subleading order. Again, the result can be simplified using the first order result (</p>
+
+				<figure>
+					<trash>3.6), and integrated, leading to ρ 1 (x) ρ 0 (x) = α f (x − y)ρ 1 (y)dy − 1 2 α 2 f (x − y) 2 ρ 0 (y)dy + s(x), (3.20) where s(x) contains the contribution of the two points density, s (x) = α ρ 0 (x) f (x − y)ρ 0 (x, y)dy. (3.21)</trash>
+
+
+				</figure>
+
+				<p>The equation (3.12) obtained upon the 2-points density can be used to simplify the expression (3.21) and integrate it, leading to the following loop equation for ρ 1 (</p>
+
+				<figure>
+					<trash>x), 10 ρ 1 (x) ρ 0 (x) = α f (x − y)ρ 1 (y)dy− 1 2 α 2 f (x − y) 2 ρ 0 (y)dy+ 1 2 α ρ 0 (x) f (x − y) [ρ 0 (x, y) + γ 00 (y)ρ 0 (x)] dy+γ 1 , (3.24) 9</trash>
+
+
+				</figure>
+
+				<p>Note that the free energy at subleading order can be expressed using ¯ Y l (x, y) if we merge the two roots in order to build a cycle,</p>
+
+				<figure>
+					<trash>F (1) GC (¯ q) = ∞ l=3 1 2l dx 2iπ ¯ Y l (x, x). (3.14) 10 The equation (3.12) has originally be obtained in the form ∂x ρ0(x, y) ρ0(x) = δ (x − y) + α duf (x − u)ρ0(u, y). (3.22) Figure 6</trash>
+
+
+				</figure>
+
+				<p>: Equation satisfied by the one-cycle dressed vertex, empty circles represent tree-level dressed vertices. where the integration constant γ 1 is fixed by a normalization condition. The integrated loop equation (3.24) we have obtained for ρ 1 (x) should be compared to the equation satisfied by Y 1 (x), the generating function of rooted clusters with exactly one cycle,</p>
+
+				<figure>
+					<trash>Y 1 (x) = Y 0 (x) f (x − y)Y 1 (y) dy 2iπ + 1 2 Y 0 (x, y)f (x − y) dy 2iπ − 1 2 Y 0 (x) f (x − y) 2 Y 0 (y) dy 2iπ . (3.25)</trash>
+
+
+				</figure>
+
+				<p>In this expression, represented graphically on figure 6, the first term corresponds to the case where x does not belong to the cycle. Hence, there is a vertex y, directly linked to x such that if we remove this link, the cycle is present in the cluster rooted by y. In the second term, x directly belongs to the cycle. In this case, we choose a vertex y from the cycle and directly connected to x. Cutting the link x − y, we obtain a bi-rooted tree. In the process, we gain a symmetry factor 1/2 due to the choice of y. Finally, the third term correspond to trees of Y 0 (x, y) for which x and y are directly related. For those clusters, x and y cannot get an extra link, and their contribution must be withdrawn from the previous term.</p>
+
+				<p>Comparing (3.24) and (3.25), we deduce that ¯ ρ 1 (x) = Y 1 (x)/2iπ satisfies the loop equation (3.24) with vanishing integration constants γ 1 = γ 00 (y) = 0.</p>
+
+			</div>
+			<div>
+				<head n="3.4">Yet another way to derive grand canonical loop equations</head>
+
+				<p>Another possibility to establish grand canonical loop equations is to start from the definition of the density ¯ ρ(x) and make use of the δ-function to fix one of the integration variables. The canonical correlator of N variables reduces to a correlator of N − 1 variables, and after summation over N we obtain an equation satisfied by the grand canonical density,</p>
+
+				<figure>
+					<trash>2iπ ¯ ρ(x) = qQ(x) i K(x − φ i ) . (3.26)</trash>
+
+
+				</figure>
+
+				<p>At first order in , it is possible to use the factorization property</p>
+
+				<figure>
+					<trash>k i=1 K(x − φ i ) e i f (x−φ i ) exp i f (x − φ i ) . (3.27)</trash>
+
+
+				</figure>
+
+				<p>The sum over φ i can be replaced by an integral over density ρ(x). Expanding (3.26) in , and keeping only the first order, we deduce that ¯ ρ 0 (x) satisfies the integral equation (2.5) with Y 0 (x) = 2iπ ¯ ρ 0 (x). At the subleading order in , the factorization property becomes</p>
+
+				<figure>
+					<trash>i K(x − φ i ) = e i f (x−φ i )   1 − 1 2 2 i f (x − φ i ) 2 + 1 2 2 i,j f (x − φ i )f (x − φ j ) c + O( 2 )   . (3.28)</trash>
+
+
+				</figure>
+
+				<p>Integrating this expression multiplied by f (x − y) over y, and then using the primitive relation (3.12) to simplify the result, we obtain the identity f (x −</p>
+
+				<figure>
+					<trash>y)∂x ρ0(x, y) ρ0(x) dy = f (x − y) ρ0(x, y) ρ0(x) − γ00(y) dy, (3.23) since f (0) = 0</trash>
+
+
+				</figure>
+
+				<p>. This identity is then plugged into the expression (3.21) of s (x).</p>
+
+				<p>In the RHS bracket, the first term comes from the expansion of log K, the last term is the first order correction to the factorization property. Replacing sum over variables φ i with densities, and expanding in , we get at the second order an equation satisfied by the subleading correction to ¯ ρ(x),</p>
+
+				<figure>
+					<trash>¯ ρ 1 (x) ¯ ρ 0 (x) = f (x − u)¯ ρ 1 (u)du − 1 2 f (x − u) 2 ¯ ρ 0 (u)du + 1 2 f (x − u)f (x − v)¯ ρ 0 (u, v)dudv, (3.29)</trash>
+
+
+				</figure>
+
+				<p>where we have used the first order equation to simplify the result. Using the equation (3.17) to deal with the last term, this loop equation reproduces the equation (3.25) obtained from the cluster expansion upon the identification Y (x) = 2iπ ¯ ρ(x) and (2.46) of the densities. The same argument can be repeated for the two points density. Fixing an integration variable using the operator D(x) in the two-point correlator, we find</p>
+
+				<figure>
+					<trash>D(x)D(y) = δ(x − y)¯ ρ(x) + qQ(x) 2iπ D(y) i K(x − φ i ) , (3.30) where the result has been simplified using the first loop equation (3.26). From the factorization property D(y) i K(x − φ i ) i K(x − φ i ) D(y) + i f (x − φ i )D(y) c , (3.31)</trash>
+
+
+				</figure>
+
+				<p>we recover at subleading order in the equation (3.17) satisfied by the two points density ¯ ρ 0 (x, y).</p>
+
+			</div>
+			<div>
+				<head n="4">Concluding remarks</head>
+
+				<p>In these notes we compared the cluster expansion of a grand canonical model with the standard matrix model treatment of its canonical partition function. At tree level, the grand canonical free energy is given by the minimum of an effective action which is identical to the one provided by the collective field theory approach applied to the canonical model. The correspondence extends to the level of one-loop corrections, where the sum over one-cycle clusters reproduces the expansion of the Fredholm determinant computed from the integration over Gaussian fluctuations in the collective field theory. The matching of free energies can be explained by the discrete Laplace transform relating canonical and grand canonical models. Introducing a source term, we were also able to find the relation satisfied by the one-point and two points densities. We continued with the study of canonical loop equations, and realized that a similar set of equations can be derived from the cluster expansions. Instead of n-point connected densities, these equations involve the generating functions of n-rooted clusters, denoted Y . Using these equations, and the relation between Y -functions and densities derived earlier, we verified that grand canonical densities also obey the canonical loop equations. It implies that the whole loop equation structure is present in the cluster expansion, and takes the form of graphical relations among clusters. Finally, we proposed a method to derive directly this set of loop equations within the grand canonical model. Our study is restricted to the first two orders in the large N and small expansion. The generalization to higher orders still needs to be done, and the general form of loop equations to be worked out. Once the full set of equations identified, it may be possible to apply the topological recursion to the grand canonical model. Another important point that remains is the description of instantons clustering relevant to the instanton partition function of N = 2 SUSY gauge theories. The dual description grand-canonical/canonical may allow a better understanding of this phenomenon. A possible application for this work could be the derivation of the subleading correction in 2 to the partition function, and the investigation of its presumed integrable properties. In this scope, it is tempting to assume that the instanton clustering in SYM is entirely described by the effective action (2.9), and conjecture that the subleading order is given by the associated determinant,</p>
+
+				<figure>
+					<trash>e F (1) NS = 1 det δ(x − y) + (1 − e ρ(x) )G(x − y) e 1 2 dx log(e ρ(x) −1)− 1 2 dx log ρ(x) × exp 1 2 G(0) dx(1 − e ρ(x) ) − 1 4 dxdy(1 − e ρ(x) )(1 − e ρ(y) )G(x − y) 2 . (4.1)</trash>
+
+
+				</figure>
+
+				<p>This proposal is very naive, but it could be tested using the AGT correspondence with the β-ensemble representation of Liouville correlators.</p>
+
+				<p>The grand canonical model we studied has a very specific form of interaction and may not be relevant to statistical systems. It would be interesting to consider more physical models. One may also wonder if the topological reduction employed in this context have a matrix model analogue. Nevertheless, the results presented here are very general and could be relevant for a large spectrum of problems. They have deep connections with integrable models and the TBA equation [32]. They play a role in the computation of light-like Wilson loops at strong coupling in N = 4 SYM [43]. They may also be applied to the study of 3-points function of scalar operators in this theory [44, 45].</p>
+
+			</div>
+			<div>
+				<head>Acknowledgements</head>
+
+				<p>I would like to thank Dima Volin, Yutaka Matsuo and Ivan Kostov for valuable discussions, and in particular Benjamin Basso for sharing his unpublished results. It is also a pleasure to acknowledge the hospitality of Ewha University at the occasion of the workshop &quot; Solving AdS/CFT &quot; , and of CQUeST (Sogang U.) and Tokyo University where parts of this work has been done. I acknowledge the Korea Ministry of Education, Science and Technology (MEST) for the support of the Young Scientist Training Program at the Asia Pacific Center for Theoretical Physics (APCTP).</p>
+
+			</div>
+			<div>
+				<head>A Demonstration of the tree level free energy formula</head>
+
+				<p>In this appendix, we give a demonstration for the formula (2.6) where the sum over tree clusters T l is given by the difference of the two terms,</p>
+
+				<figure>
+					<trash>A = R Y 0 (x) dx 2iπ , and B = 1 2 R 2 dx 2iπ dy 2iπ Y 0 (x)Y 0 (y)f (x − y). (A.1)</trash>
+
+
+				</figure>
+
+				<p>It is easy to see that both terms expand as a sum of tree clusters T l , weighted as in (2.2), but with different symmetry factors. The second term B contains trees with at least one link, associated to the function f present in the integral (A.1), which we call the main link. Such clusters are formed by gluing two trees along this main link. To all the terms in the expansion of A and B correspond a term of the summation (2.2). On the other hand, a single term in (2.2) corresponds to many terms of A and B series, since a tree T l can be rooted from any of its vertices, leading to l terms in A, and has l − 1 links that can be associated to the main link of a B-term. 11 The fact that the formula (2.6) holds has to do with the property that a tree T l has exactly l links for l − 1 vertices. The strategy we follow is to consider the terms in A and B cluster expansions that can be identified with a given cluster T l of the summation (2.2). The corresponding terms in A are obtained by rooting the vertices of the cluster T l . In the same way, terms from the B-expansion are derived from edging the links of the tree T l . We then show that cancellation occurs between terms of A and B expansions due to the coincidence of symmetry factors. The remaining term provides the contribution of T l to the free energy with the correct symmetry factor.</p>
+
+				<figure>
+					<trash>{ { { {</trash>
+
+					<head>Figure 7:</head>
+
+					<figDesc>Rooting a vertex (left) and edging a link (right) of a chain of l vertices. A.1 Example: chain of vertices It is better to understand what is going on over a few examples. Here we focus on linear trees, i.e. chains of vertices, denoted R l . To facilitate the argument, vertices will be numbered according to their order in the chain, from left to right. We further call ith link the edge linking the vertices i and i + 1. These chains appear in the free energy expression (2.2) with a factor σ(R l ) = 2 corresponding to a reflexion symmetry.</figDesc>
+
+				</figure>
+
+				<p>We start with the case of a chain with odd length, l = 2k + 1. In the A-expansion, R l is associated to k + 1 terms, corresponding to rooting the vertex i (or 2k + 1 − i) for i = 1 · · · k and the vertex k + 1. This procedure is depicted in figure 7 (left). The index i runs from one to k since rooting the vertex i or 2k + 1 − i leads to the same tree. The first kth rooted trees obtained in this way have a symmetry factor of one since they are composed of two branches of length i − 1 and 2k + 1 − i joining at the root. The remaining rooted tree, associated to the central vertex, has the symmetry factor 2 since now both branches have the same length and can thus be exchanged. Now, let us turn to the B-expansion. We consider the B term having the ith link of R l as its main link. This B-term corresponds to a rooted chain of i vertices glued to another rooted chain of 2k + 1 − i vertices through the main link. It is represented on figure 7 (right). Its symmetry factor is one since the two trees on both sides of the main link have symmetry factor one and different length. We also have to take into account a &apos;chirality&apos; factor of two counting the possibility of exchanging the two trees. This factor two is canceled by the factor 1/2 in the definition of B. Here again we choose i running only from one to k since we get the same term after exchanging i → 2k + 1 − i. Since the first kth A-terms are canceled by the B-terms, it remains only the contribution from the central vertex. As already mentioned, this contribution is weighted by 1/2, thus providing the correct symmetry factor for the free energy cluster. There is a lesson to learn from this example. As we will see later, it is possible to associate uniquely a link to each vertex but one by a recursive procedure. The corresponding terms in the A-and B-expansions cancel, and only the last vertex contributes. The rooted tree of this vertex has the same symmetry factor than the original cluster. However a subtlety may appear. It is illustrated by our second example, the case of a chain with even length R l=2k . Rooting the tree R l from the vertex i (or 2k − i) with i = 1 · · · k, we obtain a tree with two branches of length i − 1 and 2n − i. These rooted trees have symmetry factor equal to one. Then, we consider the i-th edges with i = 1 · · · k − 1. They give B-terms consisting of two rooted chain, of length i and 2k − i, glued through the main link. The symmetry factor is one, and there is a chirality factor of two, again eliminated by the factor 1/2. On the other hand, the central link, numbered k, is associated to two rooted trees of the same length k, and in such a case there is no chirality since right and left side of the B-terms are the same. We note that the (k − 1)th first A-terms are eliminated by the chiral B-terms, and the last A-term gets subtracted by a half of its value, which corresponds to the B-term having the central edge as its main link. The difference A − B thus reproduces the symmetry factor 2 needed for the free energy. Figure 8: Rooted tree obtained after rooting the vertex x, and its associated link (highlighted). It consists of two rooted subtrees, T 1 by x and T 2 by y, linked by the B-term main edge.</p>
+
+			</div>
+			<div>
+				<head>A.2 General case</head>
+
+				<p>We now consider an arbitrary tree T l and associate recursively to each vertex a unique link, to which it connects directly, using the following procedure. First, the leaves, i.e. the vertices connected to only one other vertex, are naturally associated to the only link that end on them. Then, we remove those leaves in order to obtain a strictly smaller tree to which we repeat the procedure. At the end of the recursion, only two configurations may arise. In the first case, as for the odd chain, only a single vertex remains, all others are uniquely associated to a link. In the second case, typically for the even chain, a set of two vertices connected by a link remains. In this configuration, there is an ambiguity in the choice of the vertex to associate to the remaining link. As a second step, we argue that the A-term of a rooted vertex and the B-term of the cluster edged from the associated link cancel. To do so, we have to show that the rooted tree have the same symmetry factor than the tree with associated edge as main link. Let us take the B-term associated to an edge of the cluster T l which is not the final stage of the previous procedure. It consists of two rooted tree T (1) and T (2) , with symmetry factors σ 1 and σ 2 , such that the total factor is σ 1 σ 2 . We will see that these two composing trees are always different, so there is no symmetry enhancement. This object is chiral, which cancel the factor 1/2 in front of the B integral. It is associated to a rooted tree in the A-series which is displayed in figure 8. By construction, the rooted vertex x is an ending point of the main edge (in yellow on the figure). It is attached to the tree with the smallest deepness, i.e the smallest maximal distance between the leaves and the root. 12 The trees T 1 and T 2 cannot have the same deepness, otherwise the procedure of associating the vertex to an edge would not be unique. The main edge still increases the deepness of the deep tree on the right by one, and no symmetry enhancement can occur. Thus, the symmetry factor for the A-term is also σ 1 σ 2 . This shows the cancellation between A and B terms. It remains to study the final stage of the procedure. The simplest case is when only one vertex remains. Then the symmetry factor of the rooted tree is equal to the one of the cluster T l we started from. Otherwise there would exist an automorphism exchanging the final vertex of T l with another one. But this is not possible as the root has been determined uniquely through the procedure described above. Finally, we consider the case where one edge and two vertices remain at the end of the recursion. This edge connects two trees of a B-term with the same deepness, leaving to possibility of the two tree to be identical. If they are not identical, we can choose any of the two vertices to be the one associated with the remaining edge. Then, we can repeat the previous argument to show that the corresponding A and B terms cancel. No symmetry enhancement happens due to the fact that a node is added to one of the trees, thus incrementing its deepness. The rooted tree associated to the last vertex has again the same symmetry factor than the initial cluster. Otherwise it could be exchanged with the vertex we removed previously, meaning that the two trees where actually the same. The case where the two trees are identical has already been encountered in the example of the even chain. The B-term have symmetry factor 2σ 2 1 where σ 1 = σ 2 is the symmetry factor of the composing trees, and we included the 1/2 prefactor which is no longer canceled by the chirality. The two vertices related to this edge leads to the same rooted tree, which has the symmetry factor σ 2 1 . Taking the difference A − B, we get 1/σ 2 1 − 1/2σ 2 1 = 1/2σ 2 1 which is exactly the symmetry factor of the initial cluster T l , the factor of two taking into account the possibility of reflexion with respect to the final edge.</p>
+
+			</div>
+			<div>
+				<head>B Derivatives of the free energy from Mayer expansion</head>
+
+				<p>In this appendix, we give a proof of the formulas (2.29) and (2.34). First, examine the action of q∂ q on the grand canonical free energy expressed as a sum over clusters as in (</p>
+
+				<figure>
+					<trash>2.1), q∂ q F GC = ∞ l=1 l¯ q l C l 1 σ(C l ) i∈V (C l ) Q(φ i ) dφ i 2iπ &lt;ij&gt;∈E(C l ) f (φ ij ). (B.1)</trash>
+
+					<figDesc>The only effect of this operation is to multiply the cluster integrals by the number of vertices l. This expression should be compared to the cluster expansion of the integral of Y (x). The integral of rooted clusters reproduces the cluster contributions of the free energy expansion, and we should only be concerned about the symmetry factor. To a given cluster C l of the free energy expansion corresponds l rooted clusters C x l obtained by rooting the vertices x ∈ V (C l ). However some of these rooted clusters are identical. To avoid over-counting these terms, we separate the set of vertices into the sets V k (C l ) of vertices producing equivalent rooted clusters,</figDesc>
+					<trash>V (C l ) = k V k (C l ). (B.2)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>As already mentioned, the integral contributions of integrated rooted clusters producing the same cluster C l are equal and can be factorized. Thus, in order to prove (2.29) we just need to establish</figDesc>
+					<trash>l σ(C l ) = k 1 σ(C x k l ) , x k ∈ V k (C l ). (B.3)</trash>
+
+
+				</figure>
+
+				<p>Now, let us discuss the group of automorphisms of the cluster C l , denoted Aut(C l ). Consider one vertex x ∈ C l and the group of automorphism for the rooted cluster C x l . It is obvious that this group Aut(C x l ) is a subgroup of Aut(C l ) consisting of the automorphism of C l that leave the vertex x invariant. Those groups are subgroups of the group of permutations for the set vertices Σ(V (C l )) Σ l and can be decomposed into a product of transpositions. We also need a formal definition of V k (C l ). Two vertices x and y produce an identical rooted cluster if and only if there exists an automorphism of C l mapping one into the other. Suppose we take an element x k ∈ V k (C l ), then this set is the orbit of x k under the group of automorphisms,</p>
+
+				<figure>
+					<figDesc>V k (C l ) = {y ∈ V (C l )/∃g ∈ Aut(C l )/g.y = x k } = {y ∈ V (C l )/∃g ∈ Aut(C l )/y = g.x k }. (B.4)</figDesc>
+
+				</figure>
+
+				<p>Note also that the groups of automorphisms for two vertices from V k (C l ) are isomorphic, Aut(C x l ) Aut(C y l ), although they have a different representation on the cluster C l .</p>
+
+				<p>Let g ∈ Aut(C l ) and x ∈ V (C l ). There is a unique k such that x ∈ V k (C l ). From the definition of V k (C l ), g.x also belongs to V k (C l ) and we denote this element x k . By construction τ xx k g leaves the vertex x invariant since τ xx k is the transposition that exchanges x and x k . Therefore it is an element of Aut(C x l ) that we denote h, and we have g = τ xx k h. It means that given a vertex x, any automorphism g can be decomposed uniquely into its action on x, given by τ xx k and another automorphism that leaves x invariant, namely h.</p>
+
+				<figure>
+					<trash>13 We deduce |Aut(C l )| = |V k (C l )| × |Aut(C x k l )| ∀k, x k ∈ V k (C l ), (B.5) 13 Unicity. Let us suppose that there exists y k ∈ V k (C l ) with y k = y k and h ∈ Aut(C x l ) such that g = τxy k h = τx˜ h. It implies that τx˜xy k = h ˜ h −1 ∈ Aut(C x l ) in contradiction with the fact that τx˜xy k = (x y k ˜ y k ) / ∈ Aut(C x l ). which implies (B.3).</trash>
+
+
+				</figure>
+
+				<p>The demonstration remains valid if we replace the cluster C l by a rooted cluster C x l and the rooted clusters C</p>
+
+				<figure>
+					<trash>x k l with bi-rooted ones C x,x k l , and (B.3) becomes l − 1 σ(C x l ) = k 1 σ(C x,x k l ) , (B.6)</trash>
+
+
+				</figure>
+
+				<p>since we now have only l − 1 unmarked vertices. We deduce the following relation between rooted and bi-rooted generating functions,</p>
+
+				<figure>
+					<trash>q∂ q Y (x) = Y (x, y) dy 2iπ + Y (x), (B.7) which implies (2.34). Similar formulas can be obtained for a higher number of roots, q∂ q Y (x 1 , · · · , x n ) = Y (x 1 , · · · , x n , y) dy 2iπ + nY (x 1 , · · · , x n ). (B.8) By recursion, it implies q n ∂ n q F GC = Y (x 1 , · · · , x n ) n i=1 dx i 2iπ . (B.9)</trash>
+
+
+				</figure>
+
+				<p>C Derivation of the entropic term in the matrix model effective action.</p>
+
+				<p>The Jacobian from the change of variable dφ i to D[ρ] can be obtained using the Faddeev-Poppov approach.</p>
+
+				<figure>
+					<trash>We consider 1 = D[ρ 0 ] x δ ρ 0 (x) − 1 N N i=1 δ(x − φ i ) , (C.1</trash>
+
+					<figDesc>) the product of delta functions can be represented with the help of a ghost field λ(x) and gives</figDesc>
+					<trash>1 = D[ρ 0 , λ]e i dxλ(x)ρ 0 (x) N i=1 e − i N λ(φ i ) , (C.2)</trash>
+
+					<head>where</head>
+
+
+				</figure>
+
+				<p>2π-factors were included in the measure D[λ]. It implies that</p>
+
+				<figure>
+					<trash>N i=1 dφ i = D[ρ 0 , λ]e i dxλ(x)ρ 0 (x) e − i N λ(φ) dφ N . (C.3) Or, introducing an effective action, N i=1 dφ i = D[ρ 0 , λ]e S[ρ 0 ,λ] , S[ρ 0 , λ] = i dxλ(x)ρ 0 (x) + N log e − i N λ(x) dx . (C.4)</trash>
+
+					<figDesc>At leading order, the integral over the ghost field can be evaluated as a saddle point. The equation of motion implies</figDesc>
+					<trash>δS δλ(x) = 0 ⇒ ρ 0 (x) = γe − i N λ(x) , with γ −1 = e − i N λ(x) dx. (C.5)</trash>
+
+
+				</figure>
+
+				<p>After replacing λ(x) in the effective action, we notice that the γ-dependence drops since ρ 0 is normalized to one.</p>
+
+				<p>We end up with the entropic term</p>
+
+				<figure>
+					<trash>N i=1 dφ i = D[ρ 0 , λ]e −N dxρ 0 (x) log ρ 0 (x) . (C.6)</trash>
+
+					<figDesc>The subleading contribution is equal to the inverse of the square root of (minus) the Hessian determinant. The Hessian matrix evaluated at the saddle point gives</figDesc>
+					<trash>δ 2 S δλ(x)δλ(y) = − 1 N ρ 0 (x) [δ(x − y) − ρ 0 (y)] . (C.7)</trash>
+
+
+				</figure>
+
+				<p>The factor of 1/N may be absorbed in the integration measure and will be discarded. The remaining determinant is a Fredholm determinant that can be computed exactly,</p>
+
+				<figure>
+					<trash>det − δ 2 S δλ(x)δλ(y) = e log ρ 0 (x)dx , (C.8)</trash>
+
+
+				</figure>
+
+				<p>In doing so, we removed a zero-mode associated to the unite norm of the density,</p>
+
+				<figure>
+					<trash>det [δ(x − y) − ρ 0 (y)] = 1 − ρ 0 (y)dy. (C.9) Thus, at the second order we have N i=1 dφ i = D[ρ 0 ]e −N dxρ 0 (x) log ρ 0 (x)− 1 2 dx log ρ 0 (x) , (C.10) with factors 1/</trash>
+
+					<figDesc>√ 2πN absorbed in the measure of integration (the factors 1/ √ 2π cancel with the ones coming from the saddle point integration in (2.25)).</figDesc>
+
+				</figure>
+
+			</div>
+
+			<note place="foot" n="1"> Except for the first (planar) equation, which is a Ricatti equation, therefore non-linear. It is equivalent to a Schrö equation, i.e. a linear differential equation of second order. 2 Such a structure should be related to the invariance of Nekrasov partition functions under transformations representing the SHc algebra uncovered in [23] (see also [24, 25]). 3 In the case of real singularities, a prescription should be given to move away the poles from the contour by a small imaginary shift.</note>
+
+			<note place="foot" n="4"> This very useful formula was brought to my knowledge by B. Basso. So far, we were unable to find a proper reference in the previous literature. However, similar considerations were presented in [33].</note>
+
+			<note place="foot" n="5"> In the case of β-ensemble, there is also no cancellation, and these terms are responsible for the presence of the resolvent derivative in the loop equation [37].</note>
+
+			<note place="foot" n="7"> Our model corresponds to the special case β = 0 and ρ = 1 in their notations. For this value of β, and depending on the explicit expression for the kernel, some of the assumptions considered in their paper may not be satisfied. This would have to be checked case by case.</note>
+
+			<note place="foot" n="11"> This is true up to identification of automorphic clusters, which is necessary to avoid over-counting. However, it turns out that this does not play any role in our cancellation argument.</note>
+
+			<note place="foot" n="12"> The couples vertex-link can be labeled by an integer n corresponding to the step of the recurrence at which vertex and link have been associated. Then, in the tree rooted at x, the root is attached to the main edge, and to a tree of deepness n − 1. On the other side of the main edge lies a tree with strictly larger deepness.</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Liouville Correlation Functions from Four-dimensional Gauge Theories</title>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Alday</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Gaiotto</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Tachikawa</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lett. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">91</biblScope>
+			<biblScope unit="page" from="167" to="197" />
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Dijkgraaf</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Vafa</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Toda Theories, Matrix Models, Topological Strings, and N=2 Gauge Systems</title>
+		<imprint>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title level="m" type="main">Genus-one correction to asymptotically free Seiberg-Witten prepo- tential from Dijkgraaf-Vafa matrix model</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Fujita</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Hatsuda</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Ta-Sheng</forename>
+				<surname>Tai</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Conformal blocks as Dotsenko-Fateev Integral Discriminants</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Mironov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Morozov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Sh</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Shakirov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Mod. Phys</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page" from="3173" to="3207" />
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Conformal blocks and generalized Selberg integrals</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Mironov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Al</forename>
+				<surname>Morozov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Morozov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">843</biblScope>
+			<biblScope unit="page" from="534" to="557" />
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Method of Generating q-Expansion Coefficients for Conformal Block and N=2 Nekrasov Function by beta-Deformed Matrix Model</title>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Itoyama</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Oota</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">838</biblScope>
+			<biblScope unit="page" from="298" to="330" />
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Corrected Seiberg-Witten Prepotential Obtained From Half Genus Expansion in beta-Deformed Matrix Model</title>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Itoyama</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Yonezawa</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Mod. Phys</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page" from="3439" to="3467" />
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">β-deformed matrix model and Nekrasov partition function</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Nishinaka</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Rim</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">02</biblScope>
+			<biblScope unit="page">114</biblScope>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Generalized matrix models and AGT correspondence at all genera</title>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Bonelli</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Maruyoshi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Tanzini</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Yagi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="page">055</biblScope>
+			<date type="published" when="1107" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title level="m" type="main">Quantum Hitchin Systems via beta-deformed Matrix Models</title>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Bonelli</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Maruyoshi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Tanzini</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Genus one correction to Seiberg-Witten prepotential from β-deformed matrix model</title>
+		<author>
+			<persName>
+				<forename type="first">Jong-Hyun</forename>
+				<surname>Baek</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">1304120</biblScope>
+			<date type="published" when="2013-03" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Seiberg-Witten prepotential from instanton counting</title>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Nekrasov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Theor. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">831</biblScope>
+			<biblScope unit="page">0306211</biblScope>
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Invariants of algebraic curves and topological expansion</title>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Eynard</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Orantin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun. Num. Theor. Phys</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="347" to="0702045" />
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<title level="m" type="main">Abstract loop equations, topological recursion, and applications</title>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Borot</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Eynard</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Orantin</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+		<title level="m" type="main">Quantization of Integrable Systems and Four Dimensional Gauge Theories</title>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Nekrasov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Shatashvili</surname>
+			</persName>
+		</author>
+		<editor>P. Exner</editor>
+		<imprint>
+			<date type="published" when="2009-08" />
+			<biblScope unit="page" from="265" to="289" />
+			<pubPlace>Prague</pubPlace>
+		</imprint>
+	</monogr>
+	<note>Published. in 16th International Congress on Mathematical Physics</note>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<monogr>
+		<title level="m" type="main">Deforming SW curve</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Poghossian</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="page">033</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<monogr>
+		<title level="m" type="main">Gauge theories on Omega-backgrounds from non commutative Seiberg-Witten curves</title>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Fucito</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">F</forename>
+				<surname>Morales</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Ricci</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Pacifici</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Poghossian</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<monogr>
+		<title level="m" type="main">Deformed Seiberg-Witten Curves for ADE Quivers</title>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Fucito</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">F</forename>
+				<surname>Morales</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D. Ricci</forename>
+				<surname>Pacifici</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Nekrasov prepotential with fundamental matter from the quantum spin chain</title>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Zenkevich</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">701</biblScope>
+			<biblScope unit="page" from="630" to="639" />
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Spectral Duality in Integrable Systems from AGT Conjecture</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Mironov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Morozov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Zenkevich</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Zotov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JETP Lett</title>
+		<imprint>
+			<biblScope unit="volume">07</biblScope>
+			<biblScope unit="page">45</biblScope>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Mironov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Morozov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Runov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Zenkevich</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Zotov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Spectral Duality Between Heisenberg Chain and Gaudin Model</title>
+		<imprint>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<title level="m" type="main">Large N techniques for Nekrasov partition functions and AGT conjecture</title>
+		<author>
+			<persName>
+				<forename type="first">J-E</forename>
+				<surname>Bourgine</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1305" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<monogr>
+		<title level="m" type="main">Extended Conformal Symmetry and Recursion Formulae for Nekrasov Partition Function</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Kanno</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Matsuo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Hong</forename>
+				<surname>Zhang</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">W(1+infinity) algebra as a symmetry behind AGT relation</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Kanno</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Matsuo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Shiba</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">84</biblScope>
+			<biblScope unit="page">026007</biblScope>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Virasoro constraint for Nekrasov instanton partition function</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Kanno</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Matsuo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Zhang</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page">097</biblScope>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Molecular distributions</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Mayer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Montroll</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="2" to="16" />
+			<date type="published" when="1941" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<monogr>
+		<title level="m" type="main">Quantum theory of a massless relativistic surface and a two-dimensional bound state problem</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Hoppe</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1982" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">D-particles</title>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Kazakov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Kostov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Nekrasov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Matrix Integrals and KP hierachy Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="volume">557</biblScope>
+			<biblScope unit="page" from="413" to="442" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Dimensionally Reduced SYM 4 as Solvable Matrix Quantum Me- chanics</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Hoppe</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Kazakov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">K</forename>
+				<surname>Kostov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="page" from="571" to="479" />
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<monogr>
+		<title level="m" type="main">Statistical Mechanics</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Mayer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">G</forename>
+				<surname>Mayer</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1940" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Cluster Methods in Equilibrium Statistical Mechanics of Fluids</title>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Andersen</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Modern Theoretical Chemistry</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="1" to="45" />
+			<date type="published" when="1977" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Basso</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Sever</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Vieira</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>In. preparation</note>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Strong Coupling and Mean Field Methods in Lattice Gauge Theories</title>
+		<author>
+			<persName>
+				<forename type="first">J.-M</forename>
+				<surname>Drouffe</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J.-.</forename>
+				<surname>Zuber</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rept</title>
+		<imprint>
+			<biblScope unit="volume">102</biblScope>
+			<biblScope unit="page">1</biblScope>
+			<date type="published" when="1983" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Statistical theory of the energy levels of complex systems. I</title>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<forename type="middle">J</forename>
+				<surname>Dyson</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="140" to="156" />
+			<date type="published" when="1962" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Collective field approach to the large-N limi: Euclidean field theories</title>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Jevicki</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Sakita</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">185</biblScope>
+			<biblScope unit="page" from="89" to="100" />
+			<date type="published" when="1981" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Semiclassical Approach to Finite-N Matrix Models</title>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Lechtenfeld</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Mod. Phys. A</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="7097" to="7118" />
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<monogr>
+		<title level="m" type="main">Large N limit of beta-ensembles and deformed Seiberg-Witten relations</title>
+		<author>
+			<persName>
+				<forename type="first">J.-E</forename>
+				<surname>Bourgine</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page">046</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<monogr>
+		<title level="m" type="main">Seiberg-Witten theory and random partitions</title>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Nekrasov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Okounkov</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2003" />
+			<biblScope unit="page">0306238</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<monogr>
+		<title level="m" type="main">Seiberg-Witten geometry of four dimensional N=2 quiver gauge theories</title>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Nekrasov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Pestun</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">On a singular Fredholm-type integral equation arising in N=2 super Yang-Mills theories</title>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Ferrari</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Piatek</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">718</biblScope>
+			<biblScope unit="page">1142</biblScope>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Making sense of the Legendre transform</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">K P</forename>
+				<surname>Zia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">F</forename>
+				<surname>Redish</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">R</forename>
+				<surname>Mckay</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">American Journal of Physics</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="614" to="622" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Instantons and recursion relations in N=2 Susy gauge theory</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Matone</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">357</biblScope>
+			<biblScope unit="page" from="342" to="348" />
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<monogr>
+		<title level="m" type="main">Space-time S-matrix and Flux-tube S-matrix at Finite Coupling</title>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Basso</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Sever</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Vieira</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<monogr>
+		<title level="m" type="main">Inner products of Bethe states as partial domain wall partition functions</title>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Kostov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Matsuo</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<monogr>
+		<title level="m" type="main">A tree-level 3-point function in the su(3)-sector of planar N=4 SYM</title>
+		<author>
+			<persName>
+				<forename type="first">Omar</forename>
+				<surname>Foda</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Yunfeng</forename>
+				<surname>Jiang</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Ivan</forename>
+				<surname>Kostov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Didina</forename>
+				<surname>Serban</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

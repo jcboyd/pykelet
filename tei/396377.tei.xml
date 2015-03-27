@@ -1,0 +1,1004 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">A LOCAL AND INTEGRABLE LATTICE REGULARIZATION OF THE MASSIVE THIRRING MODEL</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">C</forename>
+								<surname>Destri</surname>
+							</persName>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">T</forename>
+								<surname>Segalini</surname>
+							</persName>
+						</author>
+						<author>
+							<affiliation>
+								<orgName type="department">Dipartimento di Fisica</orgName>
+								<orgName type="institution">Universit a di Milano</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation>
+								<orgName type="department">Dipartimento di Fisica</orgName>
+								<orgName type="institution">INFN</orgName>
+								<address>
+									<addrLine>Sezione di Milano</addrLine>
+									<postCode>I-20133</postCode>
+									<settlement>Milano</settlement>
+									<country>Italy, Universit</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation>
+								<orgName type="department">di Parma and INFN</orgName>
+								<address>
+									<addrLine>Gruppo Collegato di Parma</addrLine>
+									<postCode>I-43100</postCode>
+									<settlement>Parma</settlement>
+									<country key="IT">Italy</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">A LOCAL AND INTEGRABLE LATTICE REGULARIZATION OF THE MASSIVE THIRRING MODEL</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<note>arXiv:hep-th/9506120v2 5 Sep 1995</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>The light–cone lattice approach to the massive Thirring model is reformulated using a local and integrable lattice Hamiltonian written in terms of discrete fermi fields. Several subtle points concerning boundary conditions, normal–ordering, continuum limit, finite renormaliza-tions and decoupling of fermion doublers are elucidated. The relations connecting the six–vertex anisotropy and the various coupling constants of the continuum are analyzed in detail.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>A very convenient way to non–perturbatively regularize a QFT is to put the dynamical variables of the theory on a regular spacetime lattice (in the functional–integral formulation) or on a regular space lattice (in the hamiltonian framework). This introduces a &quot; natural &quot; cutoff, roughtly equal to the inverse of the lattice spacing, either on both energy and momentum or on momentum alone. Usually this procedure breaks the symmetry properties of the action down to a lower level: Lorentz or Euclidean invariance reduces to invariance under discrete subgroups, scale invariance in massless theory is broken explicitly by the cutoff, and very often also internal symmetries, either global or local, are difficult to keep.</p>
+
+				<p>Therefore it is very interesting to find regularization procedures that preserve as much as possible of the characteristics of the continuum theory. This issue is particularly important in the case of two–dimensional models which are integrable at tree level and are supposed to be so also at the full quantum level. One would like to have a non–perturbative lattice definition of such quantum theories which preserves integrability. A quite general solution to this problem is based on the so–called light–cone approach [5], in which the 2D Minkowski spacetime is discretized in light–cone coordinates. The basic object in this approach is the R–matrix, that is a solution of the Yang–Baxter equations which characterize the factorized scattering of a 2D integrable QFT. This R–matrix is regarded as a collection of quantum amplitudes for the scattering of &quot; bare &quot; objects, which move with the rapidity cutoff Θ, on each vertex of the light–cone lattice, casting the model in question in the form of a vertex model. Then the full machinery based on monodromy and transfer matrices [1][2] [3] can be set up and the algebrized or analityc Bethe ansatz (BA) can be used to completely diagonalize the transfer matrix and, with it, the total momentum, the Hamiltonian and all other conserved charges. The continuum limit may then be explicitly performed by letting Θ go to infinity in a well defined way as the lattice spacing vanishes. A drawback of the standard light–cone approach is the nonlocality of the lattice Hamiltonian.</p>
+
+				<p>While this does not constitute a real problem for the continuum limit, either at the bare or renormalized level, it makes more difficult to properly handle the full excitation spectrum and to study the conformal limit, which allows to identify the integrable model at hand as a perturbed CFT. A sligthly modified version of the light–cone approach without such difficulties was recently put forward in [4]: rather than as logarithm of the unit time evolution operator (or diagonal–to–diagonal transfer matrix), the lattice Hamiltonian is identified as the first of the series of local charges obtained by suitably differentiating the alternating transfer matrix with respect to the spectral parameter. Such identification was made before, whithin a different context, in [14]. The basic property of this modified approach is the locality of the lattice Hamiltonian, which allows to safely regard the time as continuous while the space is still discrete, restricting the UV cutoff only to the space momentum.</p>
+
+				<p>In this work we present a detailed application of the local light–cone approach to the massive</p>
+
+				<p>Thirring model. This is probably the simplest case, being based on the well known, almost paradigmatic six–vertex R–matrix, without any quantum group restriction, and was for such reason the first model studied also in the nonlocal approach [6]. Nonetheless there are some interesting non–trivial points that require a careful examination. First of all one must take into account the Nielsen–Ninomiya theorem [10], since the lattice Hamiltonian is local and chiral–invariant in the Θ → ∞ limit (this is one of the most important differences of the light–cone approach with respect to Lüscher &apos;s regularization based on the XYZ spin chain [13]: the latter is indeed integrable but has neither U (1) invariance nor a local implementation of chiral transformations). As a consequence one finds the &quot; fermion doublers &quot; both in the perturbative spectrum and in the exact Bethe ansatz spectrum. It is then important to check whether these massless doublers indeed decouple from the massive Thirring particles.</p>
+
+				<p>We show the answer to be affirmative even off shell, for the local continuum fields, although the mechanism is quite non–trivial.</p>
+
+				<p>Secondarily, we examine in detail the problem of boundary conditions and their effects on the exact spectrum. In particular, by carefully handling a completely fermionic formulation we are able to show that the excitations over the ground state carry the correct U (1) charge which corresponds to dressed fermions interpolated by the bare fields. This should be compared with the result proper of the periodic spin chain, with excitations carrying half the U (1) charge of the fermions. Another interesting point concerns the structure of the perturbative vacuum on the lattice: while the one–particle spectrum over the emptied Dirac sea (the state killed by the local fermi fields) has a anisotropy–dependent zeroes and no simmetry between positive and negative energies , this simmetry is restored and the anomalous zeroes move to the boundary of the Brillouin zone simply by normal–ordering the U (1) currents in the lattice Hamiltonian. This facts allows to isolate the effects of the interaction, even before the continuum limit, in a cutoff–dependent mass renormalization and in a finite rescaling of the velocity of light. The finite renormalization of the speed of light is one last subtlety that requires a proper treatment. While such renormalization is absent in the nonlocal light–cone approach, where the simmetry between space and time is mantained all along, nothing forbids it in the local formulation, since time may be regarded as already continuous while space is still discrete. We handle this by intruducing a time unit a t which is independent from the lattice spacing a of the space chain. The velocity of light, either bare or renormalized, emerges quite naturally as finite ratio a/a t . This paper is organized as follows. In section 2 we describe the basic framework of vertex models and derive in a purely algebraic way the local lattice Hamiltonian, using first the R– matrix written in spin language. In section 3 we discuss the subleties related to the formulation on the ligh–cone lattice of the system using a fermionic approach. Indeed the translation of the R–matrix in fermionic variable is quick (after taking in account some important changes of sign due to the Fermi statistic), but involves a careful definition of the boundary condition. The explicit form of the hamiltonian and the dispersion laws for the lattice fermions derived in this fermionic setup are shown in section 4, where it is also discussed the normal–ordering prescription we adopt for the U (1) currents over a completely occupied Dirac sea. This corresponds to an antiferromagnetic ground state in spin language. The continuum limit is considered in section 5, where abelian bosonization tricks are used to disentangle the mixed currents terms that arise in the naive continuum limit. In this way we shows that in the continuum Hamiltonian does describe two fermi fields, one massless and one massive. In section 6 the results of the Bethe ansatz are briefly rewieved, showing some novelty regarding the meaning of the hole charge in the framework with antiperiodic boundary conditions and the matching between the dispersion laws perturbatively derived from the lattice Hamiltonian and the exact one based on the Bethe ansatz. Finally, in 7, we study the effects of renormalization and of the trasformation to the decoupled description on the relation between the various coupling constants: for instance, the current–current Thirring coupling and the sine–Gordon coupling constant β are related in the standard one only after a suitable power serie redefinition. Some comments on the results obtained and on possible further developments can be found in 8.</p>
+
+			</div>
+			<div>
+				<head n="2">The basic framework</head>
+
+				<p>It is well known [2] [3] that the 6V model, as well as the XXZ spin chain related to it, may be formulated starting from a collection of two–dimensional vector spaces {V j , j = 1, 2 . . . , N } and local R-matrices R ij acting on the tensorial product V i ⊗ V j of two such spaces. These R ij are written in terms of the Pauli&apos;s matrices σ x j , σ</p>
+
+				<figure>
+					<trash>y j , σ z j , j = 1, 2, . . . , N , as R ij (λ) = 1 + c 2 + 1 − c 2 σ z i σ z j + b σ + i σ − j + σ − i σ + j (2.1) where the σ ± = σ x ± iσ y and the trigonometric Boltzmann weights b, c are parametrized as follows by the spectral parameter λ: b = b(λ) ≡ sinh λ sinh (iγ − λ) c = c(λ) ≡ i sin γ sinh (iγ − λ) (2.2)</trash>
+
+
+				</figure>
+
+				<p>The choice of weights made here guarantees that the R–matrices are unitary for real λ and γ, that is R † jk R jk = 1. It is straightforward to check that this reduces to the identities |b| 2 +|c| 2 = 1 and ¯ bc + b¯ c = 0. As we shall see below, the unitarity property is important in order to interpret the transfer matrix as a temporal evolution operator. The regularity condition of the R-matrix is fulfilled by eq.(2.1) as R jk (0) = 1. Most importantly, the R–matrices satisfy the Yang-Baxter equations (YBE)[7] R ij (λ)R jk (λ + µ)R ij (µ) = R jk (µ)R ij (λ + µ)R jk (λ) (2.3) which ensure the integrability of the 6V model in any framework. The &apos;bare scattering&apos; S–matrices are defined as S ij (λ) = P ij R ij (λ) (2.4) where the permutation operators P ij interchange the vector space V i and V j : P ij V i ⊗V j = V j ⊗V i .</p>
+
+				<p>In terms of the S–matrices the YBE eq.(2.3) can be reformulated as</p>
+
+				<figure>
+					<trash>S jk (λ)S ik (λ + µ)S ij (µ) = S ij (µ)S ik (λ + µ)S jk (λ) (2.5) Let&apos;s now introduce the fully inhomogeneous monodromy matrix T (λ|{θ i }) associated with the auxiliary &quot; horizontal &quot; vector space V 0 T (λ|{θ i }) = S 10 (λ + θ 1 )S 20 (λ + θ 2 ) . . . S N 0 (λ + θ N ) ≡ A B C D (2.6) where the operators A, B, C, D act in the full Hilbert space V 1 ⊗ V 2 . . . ⊗ V N . The monodromy matrix, thanks to the YBE, satisfies the Yang–Baxter algebra (YBA) R(λ − µ) [T (λ| {θ i }) ⊗ T (µ| {θ i })] = [T (µ| {θ i }) ⊗ T (λ| {θ i })] R(λ − µ) . (2.7)</trash>
+
+					<figDesc>These implies a set of commutation rules for A, B, C, D, among which the following play a central rôle in the algebraic Bethe ansatz:</figDesc>
+					<trash>b(µ − λ)A(λ)B(µ) = +B(µ)A(λ) − c(µ − λ)B(λ)A(µ) b(λ − µ)D(λ)B(µ) = +B(µ)D(λ) − c(λ − µ)B(λ)D(µ) (2.8) B(λ)B(µ) = B(µ)B(λ) .</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Taking the trace of the monodromy matrix over the horizontal space we obtain the transfer matrix t(λ|{θ i }) = tr 0 T(λ|{θ i }) (2.9)</figDesc>
+
+				</figure>
+
+				<p>For fixed arbitrary set of vertical inhomogeneities {θ i }, thanks again to the YBE, the transfer matrices form an infinite set of commuting operators. [t(</p>
+
+				<figure>
+					<figDesc>λ|{θ i }) , t(µ|{θ i })] = 0</figDesc>
+
+				</figure>
+
+				<p>Since we are trying to regolarize a relativistic QFT on a light-cone lattice, we choose the vertical inhomogeneities in a particular way, consistent with the propagation of &apos;bare particles&apos; moving along the two diagonal directions with cutoff rapidity ±Θ, respectively:</p>
+
+				<figure>
+					<trash>θ i = (−1) i+1 Θ , i = 1, 2, . . . , 2N . (2.10)</trash>
+
+
+				</figure>
+
+				<p>We have changed N to 2N to ensure periodic boundary conditions.</p>
+
+				<p>Inserting these alternating inhomogeneities in eq.</p>
+
+				<figure>
+					<trash>(2.6) we obtain the alternating monodromy matrix T (λ| Θ) = S 10 (λ + Θ)S 20 (λ − Θ) . . . S 2N 0 (λ − Θ) (2.11) and, taking the trace as in eq.(2.9, the alternating transfer matrix t(λ| Θ) = tr 0 T(λ| Θ). The regularity condition R jk (0) = 1 and the permutation algebra P ij A kn =     </trash>
+
+
+				</figure>
+
+				<p>A kn P ij i, j, k, n all distinct A in P ij j = k; i, j, n all distinct A ki P ij j = n; i, j, k all distinct</p>
+
+				<figure>
+					<trash>, (2.12) which holds for any operator A ij acting nontrivially only on V i ⊗ V j , imply the fundamental relation t(Θ| Θ) = U L , t(−Θ| Θ) = U † R . (2.13)</trash>
+
+
+				</figure>
+
+				<p>Here U R and U L are the right and left diagonal transfer matrices (they move by one lattice spacing in right–upward x + t and left–upward x − t direction respectively) defined as</p>
+
+				<figure>
+					<trash>U L = V R 12 R 34 . . . R 2N −1 2N (2.14) U R = V −1 R 12 R 34 . . . R 2N −1 2N (2.15) where R jk = R jk (2Θ) and V is the left shift operator V = P 1 2N P 2 2N . . . P 2N −1 2N . The derivation of these formulae is purely algebraic; for U L (Θ) we have t(Θ| Θ) = tr 0 N j=1 S 2j−1 0 (2Θ)P 2j 0 = (tr 0 P 2N 0 )   N −1 j=1 S 2j−1 2N (2Θ)P 2j 2N   S 2N −1 2N (2Θ) =   N −1 j=1 P 2j 2N   N j=1 P 2j−1 2j R 2j−1 2j (2Θ) = V N j=1 R 2j−1 2j (2Θ) = U L (2.16)</trash>
+
+					<figDesc>with a similar calculation for U R .</figDesc>
+
+				</figure>
+
+				<p>The unit time evolution operator is U = U R U L : it causes a displacement a t , the lattice spacing in the time direction, upwards on the light-cone lattice, leading to the following definition of the lattice Hamiltonian:</p>
+
+				<p><formula>ˆ H = ia −1 t log U . (2.17)</formula></p>
+
+				<p>Evidently this Hamiltonian is nonlocal. Similarly nonlocal is the lattice momentum operator, naturally defined as P = −ia −1 log V 2 , where a is the lattice spacing in the space direction. On the other hand, from the commuting family of alternating transfer matrices it is possible to obtain a full hierarchy of local charges in involution. It suffices to take the logaritmic derivative of t(λ| Θ) with respect to the spectral parameter at λ = ±Θ:</p>
+
+				<figure>
+					<trash>H ± n = i −1−n ∂ n ∂λ n log t(λ|Θ) λ=±Θ . (2.18)</trash>
+
+					<figDesc>By purely algebraic calculations similar to those of eq.(2.16), one verifies that H ± n (Θ) couples 2n + 1 neighboring sites. Unlike in eq.(2.16), in this derivation it is crucial that the R–matrices satisfy the YBE. Since H ± n (Θ) commutes also with U (Θ), it is a conserved charge. The charges of level 1 read</figDesc>
+					<trash>H + 1 = N j=1 h 2j−1 (2Θ) , H − 1 = N j=1 h 2j (−2Θ) (2.19) in terms of the &apos;Hamiltonian density&apos; h n (λ) = −R n n+1 (λ) −1 ˙ R n n+1 (λ) + ˙ R n−1 n (0)R n n+1 (λ) . (2.20) With them, one can now define the local Hamiltonian H = 1 2a t H + 1 + H − 1 , (2.21)</trash>
+
+
+				</figure>
+
+				<p>which is indeed hermitean thanks to the unitarity of R−matrix. Of course, with this choice of hamiltonian, the evolution operator is U (t) = e −itH , with the time t continuous and a t merely fixing the scale of time or energy.</p>
+
+			</div>
+			<div>
+				<head n="3">Fermionic formulation</head>
+
+				<p>The U (1) invariance of the 6V R−matrix corresponds, in the light–cone framework, to the conservation of bare particles. In fact the ferromagnetic state with all spins up, |+ + . . . +, may be regarded as &apos;bare vacuum state&apos; (the state with no bare particles). Then we can say that a state with r flipped spins located at 1 ≤ j 1 ≤ j 2 . . . ≤ j r ≤ 2N , that is the state</p>
+
+				<figure>
+					<trash>|j 1 , j 2 , . . . , j r = σ − j 1 σ − j 2 . . . σ − jr |+ + . . . + contains</trash>
+
+
+				</figure>
+
+				<p>exactly r bare particles at the same locations. The particle number r is conserved in time, that is along the vertical direction throughout the lattice, thanks to the U (1) invariance of the R−matrix. It is clear that these particles are identical and satisfy the Pauli exclusion principle, since (σ − j ) 2 = 0. On the other hand, since [σ − j , σ − k ] = 0 for j = k, they are of bosonic type. This can be remedied by means of the well known Jordan–Wigner transformation from the spin operators σ</p>
+
+				<figure>
+					<trash>− j and σ + j to lattice fermion fields ψ j = σ + j j−1 n=1 σ z n ψ † j = σ − j j−1 n=1 σ z n (3.1) satisfying the canonical anticommutation rules {ψ j , ψ k } = 0 = {ψ † j , ψ † k } {ψ j , ψ † k } = δ jk . (3.2)</trash>
+
+
+				</figure>
+
+				<p>The string of σ z n in eq.(3.1) has a nontrivial effect only on the boundary conditions. In fact it cancels completely out of all local R−matrices with neighboring indices such R j j+1 (with 1 ≤ j ≤ 2N − 1), which have the fermionic form R j j+1 = 1 + bK j j+1 +</p>
+
+				<figure>
+					<trash>(c − 1)(Q j − Q j+1 ) 2 (3.3) where K ij = ψ † i ψ j + ψ † j ψ i , Q j = ψ † j ψ j = 1 2 (1 − σ z j ) .</trash>
+
+
+				</figure>
+
+				<p>Thus the string of σ z n would also drop out of the evolution operator U and of the local hamiltonian H 1 , if it were not for the periodic boundary conditions. The troblesome object is R 2N 1 (2Θ), which reads in terms of fermion operators</p>
+
+				<figure>
+					<trash>R 2N 1 = 1 − b ψ † 2N ψ 1 (−) F + (−) F ψ † 1 ψ 2N + (c − 1)(Q 1 − Q 2N ) 2 (3.4) where (−) F ≡ 2N j=1 σ z j = e iπQ</trash>
+
+
+				</figure>
+
+				<p>is the longest possible string, that is the fermion signature, and Q = j Q j is the total bare particle number. Similarly, since the left shift operator V acts on the Pauli matrices as</p>
+
+				<figure>
+					<trash>V † σ j V = σ j+1 it cannot shift exactly also the fermion fields. Rather we have V † ψ j V = σ + j+1 j n=2 σ z n = ψ j+1 e iπQ 1 , (3.5) for j = 1, 2, . . . , 2N − 1, and V † ψ 2N V ≡ ψ 2N +1 = −ψ 1 (−) F .</trash>
+
+
+				</figure>
+
+				<p>Together with eq.(3.4), this last relation suggests that PBC on the spin operators become a sort of F-twisted boundary conditions</p>
+
+				<figure>
+					<trash>ψ 2N +1 ≡ −ψ 1 (−) F (3.6)</trash>
+
+
+				</figure>
+
+				<p>on the fermion operators. However, if it is true that this guarantees R 2N 2N +1 = R 2N 1 , eq.(3.5) prevents the identification of V with an exponential of the fermion total momentum. In particular , V 2N is the identity in the full vector space V (2N ) , and hence V −2N ψ j V 2N = ψ j , which shows the conflit between ψ j+2N ≡ V −2N ψ j V 2N and the extension ψ j+2N = −ψ j (−) F of the F-twisted relation (3.6) to all fermion operators. Of course, we could define the true fermion shift operator</p>
+
+				<figure>
+					<trash>V through V † ψ j ˜ V = ψ j+1 for any j, and impose uniform F–twisted boundary conditions via ˜ V −2N ψ j ˜ V 2N = −ψ j (−) F . (3.7)</trash>
+
+
+				</figure>
+
+				<p>Certainly V commutes with U and H 1 but, unlike them, it is not related in any obvious way to the transfer matrix t(λ| Θ), which is the object we are able to actually diagonalize by means of the algebraic BA. Therefore the translation of the light–cone 6V model and its BA solution from its original spin formulation into a fermionic theory, by means of a straightforward application of the Jordan–Wigner transformation, remains unsatisfactory due to boundary effects. Although we expect that these boundary effects will loose importance in the limit N → ∞, it is convenient to look for a purely fermionic formulation, in which all basic objects, like R−matrices and exchange operators, are written from the start in term of fermion fields for any pair of indices. To this end, let us notice that the matrices R j j+1 (λ), whether written in spin (eq.</p>
+
+				<figure>
+					<trash>(2.1)) or fermion language (eq.(3.3)), satisfy the YBE in the restricted form R j−1 j (λ)R j j+1 (λ + µ)R j−1 j (µ) = R j j+1 (µ)R j−1 j (λ + µ)R j j+1 (λ) . But since j − 1, j and j + 1 simply refer to three distinct anticommuting fermions, the matrices ˜ R ij (λ) = 1 + b(λ)K ij + [c(λ) − 1](Q i − Q j ) 2 will fulfill the general form (2.3) of the YBE, providing another solution distinct from R ij (λ). In fact, ˜ R ij (λ) = R ij (λ) for |i − j| &gt; 1. Next we build the fermion permutation operators P ij , defined by the relations ˜ P ij ψ i ˜ P −1 ij = ψ j ˜ P ij = ˜ P −1 ij = ˜ P † ij . They are written in terms of the fields simply as ˜ P ij = 1 − Q i − Q j + K ij . Then we can build the S−matrices S ij = ˜ P ij R ij = 1 − 2Q i Q j + cK ij + (b − 1)(Q i − Q j ) 2 . (3.8)</trash>
+
+					<figDesc>Unlike in the spin framework, now the relation between 6V R− and S−matrix does not reduce simply to the exchange c ⇀ ↽ b, since Fermi statistics requires that S ij must be −1 in the doubly occupied state, rather than 1. This is taken care by the last term in eq.(3.8). The matrices S ij and R ij manifestly commute with the bare particle number Q which generates the symmetry group U (1). To lightens the notation, from now on we drop the˜throughout, reinstating it only when strictly necessary. We have now all the ingredients to build the relevant global objects, which are the fermionic analog of V , U R , U L , T (λ| {θ i }) and t(λ| {θ i }), with all the relations that we found in section (2 valid also for the new objects, since they are based solely on algebraic properties like regularity, YB algebra and permutation algebra. In particular, the alternating monodromy matrix</figDesc>
+					<trash>T = T (λ| {θ i }) = S 10 S 20 . . . S 2N 0 can be written T = A + Bψ 0 + Cψ † 0 + (D − A)ψ † 0 ψ 0 where ψ 0 and ψ † 0</trash>
+
+
+				</figure>
+
+				<p>are new auxiliary fermion operators anticommuting with all the previous ones, and A, B, C, D are global operators in the full fermionic Fock space. Notice that ψ 0 commutes with A and D but anticommutes with B and C. In fact, one easily verifies that A and D have an even fermionic grade (that is they are sums of terms containing an even number of ψ j and ψ † j , j = 1, . . . , 2N ), while B and C have an odd fermionic grade. To write the YB algebra it is convenient to rename ψ 0 into, say, χ 1 , and introduce another pair χ 2 , χ † 2 , anticommuting with all ψ j , j = 1, . . . , 2N as well as with χ 1 . Then we can write</p>
+
+				<figure>
+					<trash>T r = A + Bχ r + Cχ † r + (D − A)χ † r χ r and the YB algebra takes the form of Eq. (2.7) S 12 (λ − µ) T 1 (λ| {θ i }) T 2 (µ| {θ i }) = T 2 (µ| {θ i }) T 1 (λ| {θ i }) S 12 (λ − µ) where (see eq.(3.8)) S 12 = 1 + c[χ † 1 χ 2 + χ † 2 χ 1 ] + (b − 1)(χ † 1 χ 1 + χ † 2 χ 2 ) − 2bχ † 1 χ 1 χ † 2 χ 2</trash>
+
+
+				</figure>
+
+				<p>To obtain the commutation rules for A, B, C, D the algebra is now straightforward: one finds some differences of sign with respect to the rules expressed in eq.</p>
+
+				<figure>
+					<trash>(2.8), namely b(µ − λ)A(λ)B(µ) = +B(µ)A(λ) − c(µ − λ)B(λ)A(µ) b(λ − µ)D(λ)B(µ) = −B(µ)D(λ) + c(λ − µ)B(λ)D(µ) (3.9) B(λ)B(µ) = −B(µ)B(λ) .</trash>
+
+
+				</figure>
+
+				<p>Of course, the anticommuting nature of the &quot; creation operators &quot; B(λ) appears very natural in this fermionic setup. The other changes of sign concern only the commutation rules between D(λ) and B(µ), and could be traced to the fact that S ij = −1 in the doubly occupied state.</p>
+
+				<p>One last subtlety concerns the meaning of the trace operation. In this fermionic setup the correct definition would be t ≡ tr 0 T = 0| T |0 − 1| T |1 = A − D where |0 is the state with no auxiliary fermion and |1 the state with one. Then tr 0 P j0 = 1 for any j and we find the fermionic light–cone version of eqs.</p>
+
+				<figure>
+					<trash>(2.13) in the form t(Θ| Θ) = U L , t(−Θ| Θ) = U † R . (3.10)</trash>
+
+
+				</figure>
+
+				<p>This choice corresponds to periodic boundary conditions on the fermions, that is ψ j+2N ≡ ψ j . On the other hand, we may take as trace what is other contexts is actually called &apos;supertrace&apos;, that is t ′ ≡ str 0 T = 0| T |0 + 1| T |1 = A + D .</p>
+
+				<figure>
+					<trash>Then we find str 0 P j0 = 1 − 2Q j and correspondingly (see eqs.(2.16 and eq.(2.13)) t ′ (Θ| Θ) = (1 − 2Q 2N )U L , t ′ (−Θ| Θ) = U † R (1 − 2Q 1 ) .</trash>
+
+
+				</figure>
+
+				<p>In this case we could take the unit–time evolution operator to be</p>
+
+				<figure>
+					<trash>e −iâ H = t ′ (Θ| Θ)t ′ (−Θ| Θ) † = U ′ L U R where as before U 1 = R 12 R 34 . . . R 2N −1 2N (see eq.(2.14)), while U ′ L = (1 − 2Q 2N )U L (1 − 2Q 1 ) = (1 − 2Q 1 )U 2 (1 − 2Q 2N ) = R 23 R 45 . . . (1 − 2Q 1 )R 2N 1 (1 − 2Q 1 )V . (3.11) Similarly we now define the unit–space traslation as e iaP = t ′ (Θ| Θ)t ′ (−Θ| Θ) = [(1 − 2Q 2N )V ] 2 .</trash>
+
+
+				</figure>
+
+				<p>Since (1 − 2Q j )ψ j (1 − 2Q j ) = ψ j , this choices correspond to antiperiodic b.c. on the fermion fields ψ j+2N ≡ e −iLP ψ j e iLP = −ψ j (3.12) where we have introduced the spatial size of the system L = N a.</p>
+
+				<p>In summary, we see that for both choices of trace, leading to either periodic or antiperiodic fermions, as well as in the case of periodic spins, the nonlocal hamiltonian and total momentum are related to the tranfer matrix as</p>
+
+				<figure>
+					<trash>e −iâ H = t(Θ| Θ)t(−Θ| Θ) † , e iaP = t(Θ| Θ)t(−Θ| Θ) (3.13)</trash>
+
+
+				</figure>
+
+				<p>where we may now drop the ′ for the antiperiodic case, provided we keep in mind the two different ways in which t(λ| Θ) is written in terms of the diagonal elements of the monodromy matrix, either A − D or A + D. It should be clear that identical conclusions about the the b.c. apply in the framework based on the local hamiltonian of Eq. (2.21).</p>
+
+			</div>
+			<div>
+				<head n="4">Explicit form of the local hamiltonian</head>
+
+				<p>We shall now obtain the explicit form of the local hamiltonian H in terms of the fermionic fields ψ j , j = 1</p>
+
+			<note>, 2, . . . , 2N .</note>
+
+				<figure>
+					<figDesc>By means of the Jordan–Wigner transformation one can always revert to the spin formulation, keeping in mind the effects on the boundary conditions. For definiteness we shall choose the antiperiodic b.c. for the fermion fields. When we insert the expression (3.8) for the 6V R− matrix into the formula for the hamiltonian density h(λ) (see eq.(2.19)), we need to perform rather long albeit trivial algebraic manipulations with the fermi fields. In particular we find</figDesc>
+					<trash>R jn (λ) † ˙ R jn (λ) = ( ¯ b ˙ c + ˙ b¯ c)K jn + ( ¯ b ˙ b + ˙ c¯ c)K 2 jn (4.1) R jn (λ) † ˙ R ij (0)R jn (λ) = ˙ b 0 [ψ † i (bψ n + cψ j ) + h.c.] + ˙ c 0 [b¯ cψ j ψ n + h.c.) + Q i + c¯ cQ j + b ¯ bQ n ] + ˙ b 0 [(b + ¯ b)Q j K in + (c − ¯ c)Q n (ψ † j ψ i − ψ † i ψ j )] − 2 ˙ c 0 [b¯ cQ i (ψ † j ψ n − ψ † n ψ j ) + Q i (c¯ cQ j + b ¯ bQ n )] (4.2) where b = b(λ), c = c(λ), ˙ b 0 = b ′ (0) and ˙ c 0</trash>
+
+
+				</figure>
+
+				<p>= c ′ (0). In the derivation of these results the unitarity relations b ¯ b + c¯ c| = 1 and b¯ c + ¯ bc = 0 have been used. To obtain H we must now set (i, j, n) = (j − 1, j, j + 1), then put λ = 2Θ when j is odd and λ = −2Θ when j is even, and finally sum up over j. H is the sum of a piece quadratic in the fields and a piece quartic in them</p>
+
+				<figure>
+					<trash>H = H 2 + H 4 (4.3) H 2 = −a −1 t 2 sin γ N j=1 d ψ † 2j (ψ 2j−1 + ψ 2j+1 ) + ¯ d(ψ † 2j−1 + ψ † 2j+1 )ψ 2j + b(ψ † 2j+1 ψ 2j−1 + ψ † 2j ψ 2j+2 ) + ¯ b(ψ † 2j−1 ψ 2j+1 + ψ † 2j+2 ψ 2j ) + 2(v + cos γ)(Q 2j−1 + Q 2j )] H 4 = −a −1 t 2 sin γ N j=1 −(b + ¯ b)(Q 2j−1 K 2j−2 2j + Q 2j K 2j−1 2j+1 ) + (c − ¯ c) Q 2j (ψ † 2j−1 ψ 2j−2 − ψ † 2j−2 ψ 2j−1 ) + Q 2j+1 (ψ † 2j−1 ψ 2j − ψ † 2j ψ 2j−1 ) + 2iw cos γ Q 2j−2 (ψ † 2j−1 ψ 2j − ψ † 2j ψ 2j−1 ) + Q 2j−1 (ψ † 2j+1 ψ 2j − ψ † 2j ψ 2j+1 ) − 2(v + cos γ ¯ u)Q 2j (Q 2j−1 + Q 2j+1 ) − 2 cos γ b ¯ b(Q 2j−1 Q 2j+1 + Q 2j Q 2j+2 ) where u = i sin γ( ¯ b ˙ c + ˙ b¯ c) v = i( ¯ b ˙ b + ¯ c ˙ c) w = ib¯ c = −i ¯ bc d = u + iw cos γ + c ,</trash>
+
+					<figDesc>The quadratic part H 2 is better analyzed via the following Fourier transformation (recall the</figDesc>
+
+				</figure>
+
+				<p><formula>antiperiodic b.c.) ψ 2j−1 ψ 2j = 1 N −π&lt;q≤π ψ + (q) ˜ ψ − (q) e iqj , q ∈ 2π N Z Z + 1 2 . (4.4)</formula></p>
+
+				<p>In the limit N → ∞ of an infinite chain, the sum over q becomes an integral over q running in the first Brillouin zone (−π, π). Then H 2 takes the form</p>
+
+				<figure>
+					<trash>H 2 = π −π dq ψ(q) † h(q) ˜ ψ(q) where h(q) is the two–by–two matrix h(q) = −a −1 t 2 sin γ be −iq + ¯ be iq + 2(v + cos γ) ¯ d(1 + e −iq ) d(1 + e iq ) be iq + ¯ be −iq + 2(v + cos γ) .</trash>
+
+					<figDesc>The two eigenvalues of h(q) represent the bare energy branches of our lattice model E ± (q) = −a −1 t sin γ 2(v + cos γ) + (b + ¯ b) cos q ± ζ[−(b − ¯ b) 2 sin 2 q + 2d ¯ d(1 + cos q)]</figDesc>
+					<trash>1/2 (4.5)</trash>
+
+
+				</figure>
+
+				<p>where ζ is +1 in the first Brillouin zone and in all the odd ones, while it is −1 in the even zones.</p>
+
+				<p>These dispersion relations are depicted in fig.1</p>
+
+				<p><formula>. -1 -0.5 0 0.5 1 1.5 2 -8 -6 -4 -2 0 2 4 6 8 Fig.1</formula></p>
+
+				<p>: Energy branches for θ = 2 and γ = 6π/10 in units of a −1 t Evidently all negative energy levels, for both branches within the first Brillouin zone, should be filled to obtain the lowest energy state. One must take into account, however, that these bare fermions are interacting and that this might very well change the shape of the dispersion relations themselves. The algebraic Bethe Ansatz will take care of this exactly. At this stage it is enough to assume, as natural, that in the interaction picture there exist an equal amount of positive and negative energy levels, so that the perturbative filled Dirac sea (the perturbative vacuum state of the QFT) is characterized by half–filling, namely Q j = 1/2. This is an antiferromagnetic state in spin language.</p>
+
+				<figure>
+					<figDesc>It giustifies the following normal–ordering prescription Q n =: Q n : + 1 2 (4.6) which has a dramatic effect on the quadratic part of the Hamiltonian, leading to the perturbative one–particle energy spectrum (see fig.2)</figDesc>
+					<trash>E = ± 1 2 ζa −1 t sinh 4Θ sinh 2 2Θ + sin 2 γ sin 2 q + 1 2 (m 0 a t ) 2 (1 + cos q) 1/2 (4.7) where m 0 = 2a −1 t sin γ sinh(2Θ) Θ→∞ ≃ 4a −1 t sin γ e −2Θ (4.8) -8 -6 -4 -2 0 2 4 6 8 -2.5 -2 -1.5 -1 -0.5 0 0.5 1 1.5 2 2.5 Fig.2</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>: Energy branches after normal–ordering for θ = 2 and γ = 6π/10 in units of a −1 t This dispersion relations are manifestly simmetric under reversal of energy, showing the self– consistency of our normal–ordering assumption. Once all negative energies in (4.7) are filled, one obtains a positive spectrum of particles and holes all with the positive energy of eq.(4.7). It is also clear that eq.(4.7) represents a lattice approximation to the relativistic spectrum of massive particles. To see this we set q = pa and let a, a t → 0. Then we obtain</figDesc>
+					<trash>E = c 0 p 2 + m 2 0 c 2 0</trash>
+
+
+				</figure>
+
+				<p>where c 0 = a/a t is the (bare) velocity of light. It appears natural to choose spacetime units so that c 0 = 1. Of course one should expect this choice not to necessarily work in the renormalized limit to be discussed later. The dispersion laws of eq.(4.7) has a peculiarity though: it also describes massless particles at the boundaries of the first Brillouin zone. This is inevitable, since we are working with a local lattice Hamiltonian which for Θ → ∞, that is in the massless limit m 0 → 0, becomes chiral invariant. The Nielsen–Ninomiya theorem [10] then implies the existence of the (in)famous &apos;fermion doublers&apos;. In the model at hand, the left and right modes around q = 0 are massive for finite Θ, while the left and right doubler around q = ±π remain massless. In the limit Θ → ∞ at fixed lattice spacing the model becomes gapless and it corresponds therefore to a regularized Conformal Field Theory. According to the general rules, the neighborood of the critical point Θ = ∞ defines a regularized Perturbed CFT. By letting Θ → ∞ and a → 0 simultanously in a suitable way one recovers the continuum PCFT. The CFT describing the critical point and the perturbing operator will be identified in the next section.</p>
+
+			</div>
+			<div>
+				<head n="5">The continuum limit</head>
+
+				<p>We now consider the continuum limit a → 0 where only the small energy excitations (as compared with a −1 ) of the fields are retained and the massless dispersion relations are linearized around their zeroes [8]. In this limit the bare mass m 0 is kept fixed (the renormalized continuum limit will be considered in the Bethe ansatz framework). Thus we must let Θ → ∞ in such a way that m 0 ≈ 4a −1 sin γ e −2Θ stays finite.</p>
+
+				<p>The observation of the previous section concerning the doublers provides the basis for the following representation of the Fermi fields in the continuum limit</p>
+
+				<figure>
+					<trash>ψ 2j ≃ √ a χ L (ja) + (−) j η R (ja) ψ 2j+1 ≃ √ a χ R (ja) + (−) j η L (ja) (5.1)</trash>
+
+
+				</figure>
+
+				<p>where χ and η are quantum relativistic Dirac fields. The hopping operator K i,i+2 and the local charge operator Q i , e.g. for i even, read</p>
+
+				<figure>
+					<trash>K i,i+2 ≃ 2a : χ † L χ L : − : η † R η R : : Q 2j : ≃ a[: χ † L χ L : + : η † R η R : −(−) j (χ † R η L + η † L χ R )] .</trash>
+
+					<figDesc>The symbol : . . . : on the r.h.s. refers to the usual normal–ordering for continuum fields in the interaction picture.</figDesc>
+
+				</figure>
+
+				<p>This holds because the operators on the l.h.s. have vanishing vacuum expectation value. The complementary cases, namely Q 2j−1 and K 2j−1,2j+1 , can be handled analogously simply by exchanging right and left modes. These are all the calculations needed to obtain the continuum limit of H 4 , since all quartic terms except the first and the last are suppressed as a → 0. As for the quadratic piece H 2 , the typical calculation reads</p>
+
+				<figure>
+					<trash>ψ † 2j ψ 2j+2 ≃ a χ † L (x)χ L (x + a) − η † R (x)η R (x + a) +(−) j η † R (x)χ L (x + a) − χ † L (x)η R (x + a) ,</trash>
+
+
+				</figure>
+
+				<p>so that, dropping the oscillating terms and developping to first order in a we can calculate the non-vanishing terms in the quadratic Hamiltonian as</p>
+
+				<figure>
+					<trash>ψ † 2j ψ 2j+2 − ψ † 2j+2 ψ 2j ≃ 2a(χ † L ∂ x χ L − η † R ∂ x η R ) .</trash>
+
+
+				</figure>
+
+				<p>Thus, taking into account the normal–ordering and dropping as above all fast oscillating terms, the continuum form of the Hamiltonian reads (here Θ → ∞ as a → 0 so that the bare mass m 0 stays fixed)</p>
+
+				<figure>
+					<trash>H −→ H 0 + H m + H int (5.2) where H 0 is the kinetic energy H 0 = −i dx χ † R ∂ x χ R − χ † L ∂ x χ L + η † R ∂ x η R − η † L ∂ x η L , (5.3) H m is the mass term H m = m 0 dx χ † L χ R + χ † R χ L (5.4) and H int the quartic interaction H int = 2g ′ dx (J χ R J χ L − J η R J η L − J η R J χ L − J χ R J η L ) . (5.5) Here g ′ = −2 cot γ and the J&apos;s are free–field normal–ordered U (1) currents: J χ α = : χ † α χ α : , J η α = : η † α η α : , α = R, L .</trash>
+
+
+				</figure>
+
+				<p>The nice feature of this result is that all terms surviving the na¨ve continuum limit are manifestly Lorentz–invariant, unlike those obtained in the analogous treatment of the XXZ spin chain in [8]. It is natural to regard the mass term H m as &apos;bare&apos; perturbation of the CFT defined by H 0 +H int . The troublesome aspect is that η, the field describing the doublers, does not decouples from the putative massive Thirring field χ and prevents a straightforward identification of the CFT.</p>
+
+				<p>In order to find the right decoupled description, we use abelian bosonization:</p>
+
+				<figure>
+					<trash>χ α = µ 1/2 : exp(iα √ 4π u α ) : η α = µ 1/2 : exp(iα √ 4π v α ) : (5.6) where α = ± (+ ≡ R and − ≡ L), µ is a normalization mass scale, and the fields u α (x) = x −∞ dy J χ α (y) , v η α (x) = x −∞ dy J η α (y)</trash>
+
+					<figDesc>can be identified with the chiral components of two free massless Bose fields. The symbols : . . . : in eq.(5.6) now stand for bosonic free–field normal ordering at the mass scale µ, so that the expressions (5.6) are effectively µ-independent.</figDesc>
+
+				</figure>
+
+				<p>With the standard rules of abelian bosonization, the Hamiltonian now takes the form, up to irrelevant constants,</p>
+
+				<figure>
+					<trash>H = dx (∂ x u R ) 2 + (∂ x u L ) 2 + (∂ x v R ) 2 + (∂ x v L ) 2 + g ′ [(∂ x u R )(∂ x u L ) − (∂ x v R )(∂ x v L ) − (∂ x u R )(∂ x v L ) − (∂ x v R )(∂ x u L )] + m 0 µ : cos[ √ 4π(u R + u L )] : (5.7)</trash>
+
+
+				</figure>
+
+				<p>Notice that only one boson field is involved in the sine–Gordon interaction, but the mixed terms in the third line still couple the two boson fields. In order to elimate them we can use the canonical transformations that leave invariant the commmutation rules between left and right components of the boson fields:</p>
+
+				<figure>
+					<trash>u α (x), u α ′ (x ′ ) = i 4 αδ αα ′ ǫ(x − x ′ ) v α (x), v α ′ (x ′ ) = i 4 αδ αα ′ ǫ(x − x ′ ) u α (x), v α ′ (x ′ ) = 0 , (5.8)</trash>
+
+
+				</figure>
+
+				<p>Thus it must be a O(2, 2) trasformation. We find it combining two canonical U (1, 1) transformation and a canonical ortogonal SO(2)× SO(2) transformation acting on right and left sectors separately. We obtain in this way:</p>
+
+				<figure>
+					<trash>      φ R ξ R φ L ξ L       =       r t −s −t t −r t −s −s −t r t t −s t −r             u R v R u L v L       (5.9) with r = cosh 2 ν cosh λ + sinh 2 ν sinh λ √ cosh 2ν s = cosh 2 ν sinh λ + sinh 2 ν cosh λ √ cosh 2ν t = cosh ν sinh ν (cosh λ − sinh λ) √ cosh 2ν and tanh(2λ) = − g ′ 2π , tanh(2ν) = − sinh(2λ) . In terms of the new fields the Hamiltonian reads H = 1 − g ′2 2π 2 1/2 dx (∂ x φ R ) 2 + (∂ x φ L ) 2 + (∂ x ξ R ) 2 + (∂ x ξ L ) 2 + m 0 µ dx : cos[ √ 4π e λ (φ R + φ L )] : (5.10)</trash>
+
+
+				</figure>
+
+				<p>and we see that it correspond to a sine–Gordon model plus a decoupled free massless field. More precisely, in passing to lagrangian form, we should scale the fields φ and ξ so that the kinetic term is properly normalized. In this way one arrives at the Lagrangian:</p>
+
+				<figure>
+					<trash>L = 1 2 (∂ µ φ) 2 + 1 2 (∂ µ ξ) 2 + m 0 µ cos βφ (5.11) where φ = φ L + φ R and ξ = ξ L + ξ R . The relation of Coleman&apos;s coupling constant β with g ′ reads β 2 4π = 1 + g ′ /π 1 − 2(g ′ /π) 2 . (5.12)</trash>
+
+
+				</figure>
+
+				<p>We could now perform the inverse bosonization trick on φ and ξ, according to the standard rules [9], or with canonical transformation analogous to those done above. This yields at the end two decoupled Thirring models, one massive, with Dirac field ψ, and one massless, with field ψ ′ :</p>
+
+				<figure>
+					<trash>L = ¯ ψ(iγ µ ∂ µ − m 0 )ψ + 1 2 g( ¯ ψγ µ ψ) 2 + ¯ ψ ′ (iγ µ ∂ µ )ψ ′ + 1 2 g( ¯ ψ ′ γ µ ψ ′ ) 2 . (5.13)</trash>
+
+
+				</figure>
+
+				<p>We see therefore the fermion doubling, charateristic of any local lattice regularization with local chiral currents, is completely harmless in our case: it only adds a decoupled massless field to the Lagrangian. Our derivation is now complete: we have shown that the fermion Hamiltonian (4.3) provides a local lattice regularization of the massive Thirring model. The important point is that this Hamiltonian is completely integrable, being just the first of an infinite hierarchy of conserved charges in involution. One may regard all terms in the lattice Hamiltonian which are of order a as irrelevant operators needed to preserve the integrability on the lattice. Of course we have performed a &apos;bare&apos; continuum limit which does not take into account renormalization effects. However, the integrability of the model allows to include them exactly through the explicit diagonalization of the lattice Hamiltonian. This is carried through by means of the algebraic Bethe ansatz, or Quantum Inverse Scattering Method, whose main steps will be outlined in the next section. On the basis of such Bethe ansatz, on–shell solution, the simultaneous presence of massive and massless particles in the relativistic QFT describing the continuum limit was already put forward in ref.[4]. Here we have related this fact to the well–known phenomenon of fermion doubling and have in particular clarified its non trivial off–shell extension.</p>
+
+			</div>
+			<div>
+				<head n="6">Main results of the Bethe ansatz</head>
+
+				<p>By definition, the algebraic Bethe ansatz will work in the fermionic formulation just like in the standard spin framework. All changes of sign due to the fermionic commutation rules (3.9) can be easily traced down. Wee need not repeat here any derivation, referring to the various review articles on the subject (see for instance [3]). The eigenvectors of the alternating tranfer matrix are written (see eq.(2.6)) |Ψ = B(λ 1 + iγ/2| Θ)B(λ 2 + iγ/2| Θ) . . . B(λ r + iγ/2| Θ) |Ω (6.1) where |Ω is the bare vacuum state and the parameters λ 1 , λ 2 ,</p>
+
+				<figure>
+					<trash>. . . , λ r satisfy the Bethe ansatz equations (BAE) sinh(λ m + Θ + iγ/2) sinh(λ m + Θ − iγ/2) N sinh(λ m − Θ + iγ/2) sinh(λ m − Θ − iγ/2) N = (−) r+1 r n=1 sinh(λ m − λ n + iγ) sinh(λ m − λ n − iγ) . (6.2) The eigenvalues read Λ = Λ A + Λ D Λ A = r k=1 sinh(iγ/2 + λ − λ k ) sinh(iγ/2 − λ + λ k ) (6.3) Λ D = (−) r b(λ + Θ) N b(λ − Θ) N r k=1 sinh(3iγ/2 − λ + λ k ) sinh(−iγ/2 + λ − λ k ) . (6.4)</trash>
+
+
+				</figure>
+
+				<p>Since one easily verifies that [Q , B] = −B, the BA states (6.1) contain exactly r bare particles. Notice also that eigenvectors and eigenvalues depend on Θ both explicitly and through the dependence forced on the numbers λ k by the BAE. We do not need to consider states with more than N bare particles, since they are obtained by particle–hole symmetry, i.e. ψ j ⇀ ↽ ψ † j , corresponding to spin inversion in spin language, from the states (6.1). As usual, we introduce the so–called counting function [3] Z N (λ) = N [φ(λ + Θ, γ/2) + φ(λ − Θ, γ/2)] − r k=1 φ(λ − λ k , γ) where φ(λ, x) ≡ i log sinh(ix + λ) sinh(ix − λ) has the cut structure chosen so that it is analytic in the strip |ℑλ| ≤ x. The BAE now read Z N (λ j ) = 2πI j , j = 1, 2, . . . , r where the quantum numbers I j are always half–odd–integers (we choose N to be even). This should be compared with the spin formulation where the I j are half–odd–integers for even r and integers for odd r. This appears very natural if we compare the b.c. of antiperiodic fermion fields, eq.(3.12), with those corresponding to periodic spins, eq.(3.7). This difference will play a crucial role in determining the U (1) charge of the physical particles. The energy (both local and nonlocal) and momentum of a given BA state are calculated from eqs.</p>
+
+				<figure>
+					<trash>(2.18), (2.21), (3.13) and (6.3). The momentum reads P = a −1 r j=1 [φ(Θ + λ j , γ/2) − φ(Θ − λ j , γ/2)] (6.5) while the local energy is E = − 1 2 a −1 t r j=1 d dΘ φ(Θ + λ j , γ/2) + d dΘ φ(Θ − λ j , γ/2) . (6.6)</trash>
+
+
+				</figure>
+
+				<p>The physical vacuum state, or filled Dirac sea, is the ground state of the local Hamiltonian H, that is the lowest possible value of E for fixed N . It corresponds to the unique solution of the BAE with N real roots. In the limit N → ∞ at fixed lattice spacing a (hence in the infinite volume limit), this solution is described by a smooth density [3]. The same applies to all particle states characterized by a finite number of holes in the ground state distribution. The energy and momentum of one of this holes (a physical fermion) can be calculated exactly to be</p>
+
+				<figure>
+					<trash>E(ϕ) = 1 2 a −1 t dp(ϕ) dϕ , p(ϕ) = 2 a a t arctan sinh πϕ/γ cosh πΘ/γ (6.7)</trash>
+
+
+				</figure>
+
+				<p>where ϕ is the position of the hole in the Dirac sea. This is all rather standard. The important novelty concerns the U (1) charge of the holes.</p>
+
+				<p>In the usual spin formulation with periodic b.c., to the removal of a single BA root there corresponds the appearence of two holes. Therefore each hole has a renormalized charge Q = −1/2. This is clearly incompatible with the interpretation of such holes as fermions, since they would not be interpolated by the fermi fields ψ n . The sign differences proper of the fermionic framework, and in particular the factor (−1) r in eq.(6.2), exactly remedy this. An accurate analysis of the phase space available for N − 1 BA roots, using the asymptotic value of the counting function Z N (λ), shows that only one hole is present in the Dirac sea. This is the dressed antiparticle of the original fermion and has charge Q = −1. As a matter of fact one can consider also states with N + 1 BA roots, one of which has imaginary part equal to iπ/2: one finds the same energy–momentum spectrum of eq.(6.7), while evidently Q = 1. The dressed particle is obtained by particle–hole symmetry. The states with one particle and one hole are obtained by removing one real BA root and introducing a root with immaginary part equal to π/2.This naturally follows by looking at the dependence of energy and momentum on the &quot; lattice rapidities &quot; λ j in eqs.(6.5) and (6.6): the replacement λ j → λ j + iπ/2 exchanges the two energy branches in eq.(4.5). It is possible to identify the solutions of the BAE corresponding to states with arbitrary many fermions and antifermions as well as with breathers (fermion-antifermion bound states in the attractive regime γ &gt; π/2). A complete and detailed analysis is still lacking in the literature (parts can be found in the early BA approaches to the continuum massive Thirring model [15][16] and in the general study of the BA equations for the XXZ chain [17]), but is outside the scopes of this work. For our purposes, it is enough here to examine the continuum limit of the massive part of the renormalized energy–momentum. As a , a t → 0 and Θ → ∞ we find from eqs.(6.7) the relativistic expressions in terms of the rapidity θ =</p>
+
+				<figure>
+					<head>πϕ γ :</head>
+
+					<figDesc>E = mc 2 cosh θ , p = mc sinh θ (6.8) provided we identify the renormalized velocity of light and mass as:</figDesc>
+					<trash>c = πa 2γa t , mc = 4 a t e −πΘ/γ . (6.9)</trash>
+
+
+				</figure>
+
+				<p>Notice that the velocity of light undergoes a finite renormalization from the bare value c 0 = a/a t found before. Of course, we could set the conventional c = 1 by adjusting a/a t to 2γ/π. Notice also that eliminating ϕ from the two relations in (6.7) one obtains, still on the lattice</p>
+
+				<figure>
+					<trash>E = a −1 c tanh πΘ γ sin 2 pa + 1 2 (mc a t ) 2 (1 + cos pa) 1/2 (6.10)</trash>
+
+
+				</figure>
+
+				<p>with the more precise mass definition mc a t = 2/ sinh(πΘ/γ). This renormalized dispersion relation should be compared with the perturbative one, eq.(4.7): apart from an overall factor which tends to 1 as Θ → ∞, all renormalization effects are concentrated in the rescalings m 0 → m and c 0 → c. In particular the exact spectrum (6.10) has the same fermion doublers of the perturbative one: such doublers are still coupled to the massive modes, as could be checked with the direct calculation of the relevant scattering phase shifts. In the continuum limits the characteristic momenta of the massless and massive modes get separated by a quantity of order a −1 and these scattering phase shifts tend to non–trivial constants. The off–shell decoupling shown in the previous section ensures that a proper additional dressing of the massive and massless particles exists that decouples them altogether.</p>
+
+			</div>
+			<div>
+				<head>7</head>
+
+				<p>On the relation between the coupling costants We may now investigate more in details the connection between the parameters of the lattice Hamiltonian and those of the continuum ones, either bosonic (sine–Gordon) or fermionic (massive Thirring). The standard relation between β in eq.(5.11) and the coupling constant g in eq.(5.13) reads (see e.g. [11][9]</p>
+
+				<figure>
+					<trash>) β 2 4π = 1 1 − g/π (7.1)</trash>
+
+
+				</figure>
+
+				<p>and differs from the relation (5.12) derived above with g ′ . The sine–Gordon coupling constant β is a regularization–independent parameter, since, for β 2 &lt; 8π 2 , the sine–Gordon model can be uniquely defined as a perturbated conformal theory [12]. Hence we may safely take β as a reference parameter to relate g and g ′ :</p>
+
+				<figure>
+					<trash>g = g ′ 1 + 2g ′ /π 1 + g ′ /π = g ′ 1 + g ′ /π 1 + g ′ /π = g ′ 1 + ∞ n=1 (−1) n−1 g ′ π n . (7.2)</trash>
+
+
+				</figure>
+
+				<p>They differ by a formal power series redefinition, as to be expected in the Thirring model, since the current–current coupling in two dimensions is cutoff independent but regularization–scheme dependent. Let us observe, moreover, that the relation (7.2) holds in the interaction picture, since we are applying to the interacting sine–Gordon field theory the bosonization rules proper of the free bose field. We can relate more precisely β to the well–defined lattice parameter γ, and then to g ′ = −2 cot γ (see eq.(5.5)), by using exact scaling arguments as follows. The scaling dimension of cos βφ is β 2 /4π, since it is fixed by the ultraviolet fixed point, namely the free massless bose field. Through bosonisation cos βφ maps into ¯ ψψ, which enters the lagrangian of the massive Thirring model multiplied by m 0 . Hence m 0 has scaling dimension 2 − β 2 /4π. From the exact Bethe ansatz solution one learns that the physical mass scale is proportional to exp(−πΘ/γ) (see eq.(6.9)). On the other hand, eq.(4.8) shows that m 0 scales like exp(−2Θ), so that it has scale dimension 2γ/π. Therefore we must have 2γ/π = 2 − β 2 /4π, which is the exact relation we sought. This argument is quick but rather too sketchy. A more precise derivation goes at follows. The redefinitions of the normalization mass scale µ and those of the the bare mass m 0 are connected by the normal–ordering renormalization group [11], in order to keep m 0 ¯ ψψ = m 0 µ : cos βφ : invariant. This leads to the relation m 0 µ m ′ 0 µ ′ = µ µ ′ ∆ where ∆ = β 2 /4π. On dimensional grounds, the physical mass scale has the form m = m 0 f (β, z) , z = m 0 µ and must be renormalization–group invariant, that is m = m 0 λ ∆+1 f (β, zλ ∆+2 ) , λ = µ µ ′ .</p>
+
+				<p>Hence f is a homogeneous function of z and we obtain</p>
+
+				<figure>
+					<trash>m = m 0 z −y f (β, 1) = m 1−y 0 µ y f (β, 1) (7.3) where y = ∆+1 ∆+2 .</trash>
+
+
+				</figure>
+
+				<p>The exact Bethe ansatz solution of the lattice model provides the following relation for the fermion mass in the continuum limit</p>
+
+				<figure>
+					<trash>m ≃ 4 a t a 2 2γ π e −πΘ/g = 2γ π a t a 2 m 0 sin γ π/2γ a t 4 π/2γ−1</trash>
+
+
+				</figure>
+
+				<p>where eq.(4.8) was used in the second equality. Choosing µ = a −1 t and a/a t = 2γ/π, to enforce c = 1, we obtain, comparing to eq.</p>
+
+				<figure>
+					<trash>(7.3), β 2 8π = 1 − γ π , f (β, 1) = 16π 8π − β 2 4 sin(β 2 /8) 4π/(β 2 −8π)</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>.</head>
+
+				<p>The relation between γ and β is that we found above. In addition we found an expression for f (β, 1). Of course this expression is scheme–dependent.</p>
+
+				<p>Coming back to the Thirring coupling constants g and g ′ , we have the following situation: g is defined through bosonization of the massive Thirring model alone and is given by g = π−4π 2 /β 2 (see eq.(7.1)). Hence we have the exact relation</p>
+
+				<figure>
+					<trash>g = π 2 π − 2γ π − γ . (7.4)</trash>
+
+
+				</figure>
+
+				<p>g ′ may be analogously defined through bosonization of the complete continuum hamiltonian (5.2) (which contains the fermion doublers). This leads to the exact relation (7.2). On the other hand we have the relation g ′ = −2 cot γ (see below eq.(5.5)), which follows from the continuum limit of the lattice hamiltonian in the interaction picture (using free–field normal– ordering), and therefore is only approximate or &quot; bare &quot; .</p>
+
+				<figure>
+					<trash>Combining eqs.(7.2) and (7.4) we obtain the exact relation 2g ′ π 1 + 2g ′ /π 1 + g ′ /π = 1 − 2γ/π 1 − γ/π</trash>
+
+
+				</figure>
+
+				<p>which can be regarded as the renormalization of the bare relation g ′ = −2 cot γ.</p>
+
+			</div>
+			<div>
+				<head n="8">Final comments and outlook</head>
+
+				<p>The local lattice regularization of the massive Thirring model presented here applies equally well to the vast class of integrable models already under control by means of the standard light– cone approach. The local character of the lattice Hamiltonian should help in the field–theoretic understanding of these models, since it allows for a better control of the continuum limit and an easier identification of each model as a perturbed CFT. From this field–theoretic point of view, the most important step remains the proper definition of the local lattice fields in terms of which the R–matrices are to be written. When this is done, the Hamiltonian as well as all other conserved charge, either local or nonlocal, would follow by the standard techniques of vertex models, since only the algebraic properties of the R–matrices and the permutation operators are needed. In the case of the massive Thirring models this program hass been here pursued explicitly starting from the local R–matrices written in terms of canonical lattice fermi fields (eq.3.3) and handling the continuum limit as in section 5.</p>
+
+			</div>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">D</forename>
+				<surname>Faddeev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">A</forename>
+				<surname>Takhtadzhyan</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Russ. Math. Surveys</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<date type="published" when="1979" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<title level="m" type="main">Exactly solved models in Statistical Mechanics</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">J</forename>
+				<surname>Baxter</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1982" />
+			<publisher>Academic Press</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">J</forename>
+				<surname>De Vega</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Mod. Phys</title>
+		<imprint>
+			<biblScope unit="page" from="4" to="735" />
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">N.Yu. Reshetikhin, H. Saleur, Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">419</biblScope>
+			<biblScope unit="issue">519</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Destri</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">J</forename>
+				<surname>De Vega</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. A: Math.Gen</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page">1329</biblScope>
+			<date type="published" when="1989" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Destri</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">J</forename>
+				<surname>De Vega</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">363</biblScope>
+			<biblScope unit="page">290</biblScope>
+			<date type="published" when="1987" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Jimbo</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. Jou. Mod. Phys. A</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="issue">3759</biblScope>
+			<date type="published" when="1989" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<title level="m" type="main">Field theory methods and quantum critical phenomena</title>
+		<author>
+			<persName>
+				<surname>Affleck</surname>
+			</persName>
+		</author>
+		<editor>E.Bré andJ.Zinn-Justin</editor>
+		<imprint>
+			<date type="published" when="1988" />
+			<publisher>North-Holland</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Non-perturbative methods in 2 dimensional quantum field theory</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Abdalla</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">C</forename>
+				<surname>Abdalla</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Rothe</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">World Scientific</title>
+		<imprint>
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">B</forename>
+				<surname>Nielsen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Ninomiya</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page">185</biblScope>
+			<date type="published" when="1981" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Coleman</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="page">11</biblScope>
+			<date type="published" when="1975" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Eguchi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">K</forename>
+				<surname>Yang</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1989" />
+			<biblScope unit="page">224</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Lü</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">117</biblScope>
+			<biblScope unit="page">475</biblScope>
+			<date type="published" when="1976" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">J</forename>
+				<surname>De Vega</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Woynarovich</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys</title>
+		<imprint>
+			<biblScope unit="page" from="25" to="4499" />
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">E</forename>
+				<surname>Korepin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Theor. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">41</biblScope>
+			<biblScope unit="page">953</biblScope>
+			<date type="published" when="1979" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Bergknoff</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">B</forename>
+				<surname>Thacker</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">3666</biblScope>
+			<biblScope unit="page">19</biblScope>
+			<date type="published" when="1979" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Babelon</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">J</forename>
+				<surname>De Vega</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">M</forename>
+				<surname>Viallet</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1983" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

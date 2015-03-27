@@ -1,0 +1,1425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main"></title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="200415-02-19">19 Feb 2004 15 Feburary 2004</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">C</forename>
+								<surname>Meusburger</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Department of Mathematics</orgName>
+								<orgName type="institution">Heriot-Watt University</orgName>
+								<address>
+									<postCode>EH14 4AS</postCode>
+									<settlement>Edinburgh</settlement>
+									<country key="GB">United Kingdom</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">B</forename>
+								<forename type="middle">J</forename>
+								<surname>Schroers</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Department of Mathematics</orgName>
+								<orgName type="institution">Heriot-Watt University</orgName>
+								<address>
+									<postCode>EH14 4AS</postCode>
+									<settlement>Edinburgh</settlement>
+									<country key="GB">United Kingdom</country>
+								</address>
+							</affiliation>
+						</author>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="200415-02-19">19 Feb 2004 15 Feburary 2004</date>
+						</imprint>
+					</monogr>
+					<note>Mapping class group actions in Chern-Simons theory with gauge group G ⋉ g *</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>We study the action of the mapping class group of an oriented genus g surface with n punctures and a disc removed on a Poisson algebra which arises in the combinatorial description of Chern-Simons gauge theory when the gauge group is a semidirect product G ⋉ g *. We prove that the mapping class group acts on this algebra via Poisson isomorphisms and express the action of Dehn twists in terms of an infinitesimally generated G-action. We construct a mapping class group representation on the representation spaces of the associated quantum algebra and show that Dehn twists can be implemented via the ribbon element of the quantum double D(G) and the exchange of punctures via its universal R-matrix.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>This paper investigates a mapping class group action on a certain Poisson algebra and on the representation spaces of the associated quantum algebra. This Poisson algebra, in the following referred to as flower algebra, plays an important role in the combinatorial description of the phase space of Chern-Simons theory with semidirect product gauge groups of the form G ⋉ g * , where G is a Lie group, g * the dual of its Lie algebra and G acts on g * in the coadjoint representation. Its classical structure and quantisation were studied in an earlier paper [23].</p>
+
+				<p>Although mapping class groups and Chern-Simons gauge theories are research topics in their own right, our interest in them is motivated by their relevance to physics. Chern- Simons gauge theory with gauge group G ⋉ g * occurs in the Chern-Simons formulation of (2+1)-dimensional gravity with vanishing cosmological constant [25], where, depending on the signature of the spacetime, the gauge group is the three dimensional Poincaré or Euclidean group. For spacetimes of topology R × S, where S is an oriented surface of arbitrary genus, possibly with punctures and boundary components, large diffeomorphisms of the surface S give rise to Poisson symmetries or canonical transformations on the phase space [22]. There is evidence suggesting that these symmetries play an important role in the physical interpretation of the theory, in particular for the dynamics of gravitationally interacting particles [12, 8].</p>
+
+				<p>The flower algebra emerges in a description of the moduli space of flat connections on a genus g surface S g,n with n punctures, discovered by Fock and Rosly [14] and developed further by Alekseev, Grosse and Schomerus [3, 4, 5]. In this description, the moduli space is given as a quotient of the space of holonomies associated to a set of n + 2g generators of the surface&apos;s fundamental group equipped with a certain Poisson structure. In our case, these holonomies are elements of G ⋉ g * , and one obtains a Poisson structure on the manifold (G ⋉ g * ) n+2g . The flower algebra is the algebra of a particular class of functions on (G ⋉ g * ) n+2g with this Poisson bracket. In [23], we investigated the classical properties of this Poisson algebra and constructed the corresponding quantum algebra and its irreducible Hilbert space representations.</p>
+
+				<p>In this paper, we show that the mapping class group Map(S g,n \D) of the surface S g,n with a disc D removed acts on the flower algebra and determine the associated quantum action.</p>
+
+				<p>We prove that the mapping class group action on the flower algebra is a Poisson action and show that the action of Dehn twists around embedded curves on the surface S g,n \D can be expressed in terms of a G-action that is infinitesimally generated via the Poisson bracket. For the case where the exponential map exp : g → G is surjective, we give explicit Hamiltonians whose flow by one unit is equal to the action of Dehn twists. These flows are special examples of the Hamiltonian &quot; twist flows &quot; studied by Goldman in [16], but the particular Hamiltonians we consider and their relation with Dehn twists appear to be new.</p>
+
+				<p>We then demonstrate how these classical features are mirrored by corresponding structures in the quantum theory. We show that elements of the mapping class group act as algebra automorphisms on the quantised flower algebra and implement this action on its representation spaces. This allows us to relate the quantum action of the mapping class group to different representations of the quantum double D(G) of the group G. We find a canonical way of associating a representation of the quantum double D(G) to each embedded curve, such that the action of the corresponding Dehn twist is given by the ribbon element of D(G). We find an implementation of the exchange of punctures on the surface S g,n \D in terms of the action of the universal R-matrix in the tensor product of two representations of D(G), familiar from the theory of quantum groups.</p>
+
+				<p>The paper is structured as follows: Sect. 2 gives a summary of our results in [23] required for the understanding of this article, which is necessarily rather condensed. In Sect. 3 we discuss the mapping class group action on the classical flower algebra and express the action of Dehn twists in terms of infinitesimally generated group actions as outlined above. Sect. 4 investigates the corresponding quantum action and relates it to representations of the quantum double D(G), followed by a brief outlook in Sect. 5. The appendix lists a set of generators of the mapping class group and their actions on the fundamental group π 1 (S g,n \D).</p>
+
+			</div>
+			<div>
+				<head>2</head>
+
+				<p>The phase space of Chern-Simons gauge theory with gauge group G ⋉ g * and the flower algebra</p>
+
+			</div>
+			<div>
+				<head n="2.1">Notation and conventions</head>
+
+				<p>We consider groups G⋉g * which are the semidirect product of a finite-dimensional, simply connected and connected Lie group G and the dual g * of its Lie algebra g = Lie G, viewed as an abelian group. All Lie algebras are vector spaces over R unless stated otherwise, and Einstein summation convention is used throughout the paper. Following the conventions of [20], we define Ad * (g) to be the algebraic dual of Ad(g), i. e.</p>
+
+				<figure>
+					<trash>Ad * (g)j, ξ = j, Ad(g)ξ ∀j ∈ g * , ξ ∈ g, g ∈ G, (2.1) so that the coadjoint action of g ∈ G is given by Ad * (g −1 ). Writing elements of G ⋉ g * as (u, a) with u ∈ G and a ∈ g * , we have the group multiplication law (u 1 , a 1 ) · (u 2 , a 2 ) = (u 1 · u 2 , a 1 + Ad * (u −1 1 )a 2 ). (2.2) We also use the parametrisation (u, a) = (u, −Ad * (u −1 )j) with</trash>
+
+
+				</figure>
+
+				<p>u ∈ G, a, j ∈ g * , (2.3) where, as explained in [23], the pair (u, j) should be thought of as an element of the dual Poisson-Lie group.</p>
+
+				<p>Let J a , P a , a = 1, . . . , dim G, denote the generators of the Lie algebra Lie (G⋉g * ) = g⊕g * , such that the generators J a form a basis of g = Lie G and the generators P a a basis of g * .</p>
+
+				<p>Then the commutator of the Lie algebra g ⊕ g * is given by [J a</p>
+
+				<figure>
+					<trash>, J b ] = f c ab J c [J a , P b ] = −f b ac P c [P a , P b ] = 0, (2.4) where f c ab are the structure constants of g. We denote by J R a , J L a the left-and rightinvariant vector fields on G associated to the generators J a J R a F (u) := d dt | t=0 F (ue tJa ) J L a F (u) := d dt | t=0 F (e −tJa u) ∀u ∈ G, F ∈ C ∞ (G). (2.5) 2.2 The flower algebra for gauge group G ⋉ g *</trash>
+
+
+				</figure>
+
+				<p>The flower algebra plays an important role in the description of the phase space of Chern- Simons theory with semidirect product gauge groups of type G ⋉ g * . Mathematically, this phase space is the moduli space of flat G ⋉ g * -connections on the surface S g,n , and it can be described as a quotient of the space of holonomies holonomies associated to a set of generators of the surface&apos;s fundamental group. Fock and Rosly [14] and Alekseev, Grosse and Schomerus [3, 4, 5] defined a Poisson structure on the space of holonomies, which, via Poisson reduction, gives rise to the canonical Poisson structure on the moduli space [15, 6]. For Chern-Simons theory with compact, semisimple gauge groups, this Poisson structure on the space of holonomies was investigated by Alekseev, Grosse and Schomerus [3, 4, 5] and quantised via their formalism of combinatorial quantisation of Chern-Simons gauge theories. The case of (non-compact and non-semisimple) semidirect product gauge groups of type G⋉g * was studied in [23], where we discussed the properties of this Poisson structure and developed a quantisation procedure.</p>
+
+				<p>In order to define the flower algebra for Chern-Simons theory with gauge group G ⋉ g * on a punctured surface, we need a set of generators of the surface&apos;s fundamental group. Both the fundamental group π 1 (S g,n ) of a genus g surface S g,n with n punctures and the fundamental group of the associated surface S g,n \D with a disc D removed is generated by the equivalence classes loops m i , i = 1, . . . , n, around the punctures and two curves a j , b j , j = 1, . . . , g, for each handle, shown in Fig. 1. In the case of the surface S g,n \D with a disc removed they generate the fundamental group freely, whereas for the surface S g,n they are subject to the relation [b g , a −1 g ] · . . . · [b 1 , a −1 1 ] · m n · . . . · m 1 = 1, with [b i , a</p>
+
+				<figure>
+					<trash>−1 i ] = b i a −1 i b −1 i a i . (2.6) 0000000000 0000000000 0000000000 0000000000 0000000000 0000000000 0000000000 0000000000 0000000000 0000000000 1111111111 1111111111 1111111111 1111111111 1111111111 1111111111 1111111111 1111111111 1111111111 1111111111</trash>
+
+
+				</figure>
+
+				<p><formula>g j i b a j j b a g 1 m n m 1 g−1 1 2 n−1 n 1 2 m i Fig. 1</formula></p>
+
+				<p>The generators of the fundamental group of the surface S g,n \D</p>
+
+				<p>In the rest of the paper, we do not distinguish notationally between closed curves on S g,n and S g,n \D, and their equivalence classes in the fundamental group π 1 (S g,n ) and π 1 (S g,n \D).</p>
+
+				<p>Whereas the holonomies A j = Hol(a j ), B j = Hol(b j ) associated to each handle are general elements of the group G ⋉ g * , the holonomies M i = Hol(m i ) around the punctures lie in fixed G ⋉ g * -conjugacy classes</p>
+
+				<figure>
+					<trash>C µ i s i = {(v, x) · (g µ i , −s i ) · (v, x) −1 | (v, x) ∈ G ⋉ g * }. (2.7)</trash>
+
+
+				</figure>
+
+				<p>For a geometrical interpretation of the labels µ i and s i we refer the reader to [23].</p>
+
+				<p>By applying the work of Fock and Rosly [14] and Alekseev, Grosse and Schomerus [3, 4, 5] to the case of gauge group G ⋉ g * , one obtains a Poisson structure on (G ⋉ g * ) n+2g .</p>
+
+				<p>However, for gauge groups G ⋉ g * it is more convenient to work with the slightly different formulation used in [23]. We parametrise the holonomies according to (</p>
+
+				<figure>
+					<trash>2.3) as X = Hol(x) = (u X , −Ad * (u −1 X )j X ) for X ∈ {M 1 , . . . , M n , A 1 , B 1 , . . . , A g , B g }, expand the vectors j X as j X = j X b P b and denote by the same symbol the coordinate functions j X a ∈ C ∞ ((G ⋉ g * ) n+2g ) : (M 1 , . . . , M n , A 1 , B 1 , . . . , A g , B g ) → j X a . (2.8) Instead of the algebra C ∞ ((G ⋉ g * ) n+2g</trash>
+
+
+				</figure>
+
+				<p>) we then consider the algebra generated by the functions in C ∞ (G n+2g ) together with these maps j X a with the Poisson structure given below.</p>
+
+				<figure>
+					<head>Definition 2.1 (</head>
+
+					<figDesc>Flower algebra for groups G ⋉ g * )</figDesc>
+
+				</figure>
+
+				<p>The flower algebra F for gauge group G ⋉ g * on a genus g surface S g,n with n punctures is the commutative Poisson algebra</p>
+
+				<figure>
+					<trash>F = S n+2g k=1 g ⊗ C ∞ (G n+2g ), (2.9) where S n+2g k=1 g is the symmetric envelope of the real Lie algebra n+2g k=1 g, i.e. the polynomials with real coefficients on the vector space n+2g l=1 g * . In terms of a fixed basis B = {j M i a , j A k a , j B k a , i=1,. . . ,n, k=1,. . . ,g, a=1,. . . ,dim G}, its Poisson structure is given by {j X a ⊗ 1, j X b ⊗ 1} = −f c ab j X c ⊗ 1 {j X a ⊗ 1, j Y b ⊗ 1} = −f c db j Y c ⊗ (δ d a − Ad * (u X ) d a ) ∀X, Y ∈ {M 1 , . . . , B g }, X &lt; Y {j A i a ⊗ 1, j B i b ⊗ 1} = −f c ab j B i c ⊗ 1 ∀i = 1, . . . , g {j M i a ⊗ 1, 1 ⊗ F } = −1 ⊗ (J R M i a + J L M i a )F − 1 ⊗ (δ b a − Ad * (u M i ) b a ) Y &gt;M i (J R Y b + J L Y b )F {j A i a ⊗ 1, 1 ⊗ F } = −1 ⊗ (J R A i a + J L A i a )F − 1 ⊗ (J R B i a + J L B i a )F − 1 ⊗ Ad * (u −1 B i u A i ) b a J R B i b − 1 ⊗ (δ b a − Ad * (u A i ) b a ) Y &gt;A i (J R Y b + J L Y b )F {j B i a ⊗ 1, 1 ⊗ F } = −1 ⊗ J L A i a F − 1 ⊗ (J R B i a + J L B i a )F − 1 ⊗ (δ b a − Ad * (u B i ) b a ) Y &gt;B i (J R Y b + J L Y b )F , (2.10) where F ∈ C ∞ (G n+2g ), M 1 &lt; . . . &lt; M n &lt; A 1 , B 1 &lt; . . . &lt; A g , B g and J L X a , J R X a</trash>
+
+					<figDesc>denote the right-and left invariant vector fields (2.5) on the different copies of G.</figDesc>
+
+				</figure>
+
+				<p>Note that this definition does not restrict the holonomies M i associated to the punctures to fixed G⋉g * -conjugacy classes C µ i s i . Instead, these conjugacy classes arise as the symplectic leaves of the Poisson structure (2.10) on (G ⋉ g * ) n+2g . Furthermore, we showed in [23] by extending the work of Alekseev and Malkin [2] to groups of type G ⋉ g * that the Poisson structure on the symplectic leaves is given by a symplectic potential Θ on (G ⋉ g * ) n+2g .</p>
+
+				<p>This potential can be expressed in terms of the holonomies as follows</p>
+
+				<figure>
+					<trash>Theorem 2.2 (Symplectic leaves and decoupling) The symplectic leaves of the Poisson manifold (G ⋉ g * ) n+2g with bracket (2.10) are of the form C µ 1 s 1 × . . . × C µnsn × T * (G) 2g , where C µ i s i denote G ⋉ g * -conjugacy classes as in (2.7). Let ω F denote the symplectic form on these symplectic leaves, define a map β : G n+2g → G n+2g β : (v M 1 , . . . , v Mn , u A 1 , . . . , u Bg ) →(v M 1 g µ 1 v −1 M 1 , . . . , v Mn g µn v −1 Mn , u A 1 , . . . , u Bg ) (2.11) =: (β M 1 (v M 1 , . . . , , u Bg ), . . . , β Bg (v M 1 , . . . , u Bg )) and extend it trivially to a map τ : (G ⋉ g * ) n+2g → (G ⋉ g * ) n+2g via τ :(v M 1 , j M 1 , . . . , v Mn , j Mn , u A 1 , j A 1 , . . . , u Bg , j Bg ) → (2.12) (β M 1 (v M 1 , . . . , u Bg ), j M 1 , . . . , β Bg (v M 1 , . . . , u Bg ), j Bg ). Then, the pull-back τ * ω F of ω F with τ coincides with the exterior derivative of the symplectic potential Θ = n i=1 d(u M i−1 · · · u M 1 )(u M i−1 · · · u M 1 ) −1 − dv M i v −1 M i , j M i a P a (2.13) + g i=1 d(u K i−1 · · · u M 1 )(u K i−1 · · · u M 1 ) −1 , j A i a P a − d(u −1 A i u −1 B i u A i u K i−1 · · · u M 1 )(u −1 A i u −1 B i u A i u K i−1 · · · u M 1 ) −1 , j A i a P a + g i=1 d(u −1 A i u −1 B i u A i u K i−1 · · · u M 1 )(u −1 A i u −1 B i u A i u K i−1 · · · u M 1 ) −1 , j B i a P a − d(u −1 B i u A i u K i−1 · · · u M 1 )(u −1 B i u A i u K i−1 · · · u M 1 ) −1 , j B i a P a , where u K i = [u B i , u −1 A i ] = u B i u −1 A i u −1 B i u A i . Proof: This follows from Theorems 2.4., 2.5. in [23]</trash>
+
+
+				</figure>
+
+				<p>by expressing the symplectic form Θ defined there in terms of the the coordinate functions j X a (2.8).</p>
+
+				<p>Under the pull-back τ * the conjugation action on the group elements associated to the punctures gets mapped to left-multiplication. Hence, if we consider the Poisson algebra generated by the maps j</p>
+
+				<figure>
+					<trash>X a in (2.8) and functions in C ∞ (G n+2g ) with the bracket induced by the symplectic potential Θ (2.13) we obtain a modified bracket { , } Θ on S n+2g k=1 g ⊗ C ∞ (G n+2g ) that is given by (2.10) with the exception of {j M i a ⊗ 1, 1 ⊗ F } Θ = − 1 ⊗ J L M i a F − 1 ⊗ (δ b a − Ad * (u M i ) b a ) n j=i+1 J L M j b F (2.14) − 1 ⊗ (δ b a − Ad * (u M i ) b a ) g j=1 (J R A j b + J L A j b + J R B j b + J L B j b )F .</trash>
+
+
+				</figure>
+
+				<p>In</p>
+
+				<p>[23], we made use of this link between the flower algebra Poisson structure (2.10) and the symplectic potential Θ (2.13) to construct the corresponding quantum algebra and to investigate its representation theory. We obtained the following theorem</p>
+
+				<figure>
+					<head>Theorem 2.3 (Quantum flower algebra)</head>
+
+					<figDesc>The quantum algebra for the flower algebra in Def. 2.9 is the associative algebrâ</figDesc>
+					<trash>F = U n+2g k=1 g ⊂ ×C ∞ (G n+2g , C), (2.15) with the multiplication defined by (ξ ⊗ F ) · (η ⊗ K) = ξ · U η ⊗ F K + i η ⊗ F {ξ ⊗ 1, 1 ⊗ K}, (2.16) where ξ, η ∈ n+2g k=1 g, F, K ∈ C ∞ (G n+2g , C) and · U denotes the multiplication in U n+2g k=1 g . The bracket { , } is given by (2.10).</trash>
+
+
+				</figure>
+
+				<p>We found in [23] that the representation theory of this algebra is best investigated in the framework of representation theory of transformation group algebras. As the discussion is quite technical, we summarise only the main result and refer the reader to [23] for further details and some technical assumptions on the group G. Further information about transformation group algebras can be found in [18], which gives a treatment closely related to our situation.</p>
+
+				<figure>
+					<head>Theorem 2.4 (Representations of the quantum flower algebra)</head>
+
+					<figDesc>Under the technical assumptions on the group G in [23]</figDesc>
+
+				</figure>
+
+				<p>, the irreducible representations of the flower algebra are labelled by n G-conjugacy classes C µ i = {gg µ i g −1 |g ∈ G}, i = 1, . . . , n, and irreducible unitary Hilbert space representations Π s i : N µ i → V s i of the stabilisers N µ i = {g ∈ G|gg µ i g −1 = g µ i } of chosen elements g µ 1 , . . . g µn in those conjugacy classes. Consider the space</p>
+
+				<figure>
+					<trash>L 2 µ 1 s 1 ...µnsn = ψ : G n+2g → V s 1 ⊗ . . . ⊗ V sn ) | ψ(v 1 h 1 , . . . , v Mn h n , u A 1 , . . . , u Bg ) = (Π s 1 (h −1 1 ) ⊗ . . . ⊗ Π sn (h −1 n )) ψ(v M 1 , . . . , v Mn , u A 1 , . . . , u Bg ) ∀h i ∈ N µ i and||ψ|| 2 &lt; ∞ , with inner product ψ, φ = G/Nµ 1 ×...×G/Nµ n ×G 2g ( ψ , φ ) (v M 1 , . . . , v Mn , u A 1 , . . . u Bg ) (2.17) dm 1 (v M 1 · N 1 ) · · · dm n (v Mn · N n ) · du A 1 · · · du Bg , where (</trash>
+
+					<figDesc>, ) is the canonical inner product on the tensor product of Hilbert spaces V s 1 ⊗. . .⊗ V sn . Then the representation spaces V µ 1 s 1 ...µnsn are obtained from L 2 µ 1 s 1 ...µnsn by dividing out the zero-norm states. The quantum flower algebra acts on a dense subspace V</figDesc>
+					<trash>∞ µ 1 s 1 ...µnsn of C ∞ -vectors [23]</trash>
+
+
+				</figure>
+
+				<p>according to</p>
+
+				<figure>
+					<trash>Π µ 1 s 1 ...µnsn (X ⊗ F )ψ = −i(F • β) · {X, ψ} Θ (2.18) Π µ 1 s 1 ...µnsn (1 ⊗ F )ψ = (F • β) · ψ where F ∈ C ∞ (G n+2g ), X ∈ g n+2g and β is given by (2.11). 3 The classical action of the mapping class group 3.1</trash>
+
+					<figDesc>Poisson action of the mapping class group</figDesc>
+
+				</figure>
+
+				<p>As a diffeomorphism invariant theory, Chern-Simons theory on R × S g,n is in particular invariant under orientation preserving diffeomorphisms of S g,n which are not connected to the identity. The equivalence classes of such diffeomorphisms constitute the surface&apos;s mapping class group Map(S g,n ) [10]. Therefore, one would expect the mapping class group to act via Poisson isormophisms on the phase space of Chern-Simons theory, the moduli space of flat connections. The moduli space is obtained from the set of holonomies around the curves in Fig. 1 by imposing the relation (2.6) and dividing by conjugation. In the flower algebra, by contrast, the relation (2.6) is not imposed and therefore there is no group action of Map(S g,n ) on the flower algebra. We shall now show that, instead, there is a a group action of the mapping class group Map(S g,n \D) on the flower algebra, and that this action is Poisson.</p>
+
+				<p>The mapping class group Map(S g,n \D) is the group of equivalence classes of orientation preserving diffeomorphisms of S g,n \D which fix the punctures as a set and the boundary of the disc D pointwise; diffeomorphisms are equivalent if they differ by one which is isotopic to the identity. It contains elements that leave the punctures invariant as well as elements that exchange different punctures. The former, by definition, form the pure mapping class group PMap(S g,n \D) related to the mapping class group by the short exact sequence 1 →</p>
+
+				<figure>
+					<trash>PMap(S g,n \D) i − → Map(S g,n \D) π − → S n → 1, (3.1)</trash>
+
+
+				</figure>
+
+				<p>where i is the canonical embedding and π : Map(S g,n \D) → S n the projection onto the symmetric group that assigns to each element of the mapping class group the associated permutation of the punctures. As explained in [9, 10], the pure mapping class group PMap(S g,n \D) is generated by Dehn twists around a set of embedded curves, and a set of generators of the full mapping class group Map(S g,n ) can be obtained by supplementing this set with n − 1 elements which get mapped to the elementary transpositions via π. A set of generators of the pure and full mapping class group and their action on the fundamental group is given in in the appendix.</p>
+
+				<p>The action of the mapping class group on the flower algebra arises in the following way. Elements λ ∈ Map(S g,n \D) act as automorphisms on the fundamental group π 1 (S g,n \D) and give rise to transformations of the holonomies along the generating curves m i , a j , b j , thus inducing a map (</p>
+
+				<figure>
+					<trash>G ⋉ g * ) n+2g → (G ⋉ g * ) n+2g which we denote by Λ. Explicitly, we have Λ : (Hol(m 1 ), . . . , Hol(m n ), Hol(a 1 ), Hol(b 1 ), . . . , Hol(a g ),Hol(b g )) (3.2) → (Hol(λ(m 1 )), . . . , Hol(λ(b g ))). The push-forward with Λ defines a map Λ * : C ∞ ((G ⋉ g * ) n+2g ) → C ∞ ((G ⋉ g * ) n+2g ), which</trash>
+
+					<figDesc>maps the flower algebra into itself. We write Λ G for the restriction of Λ to the Gcomponents of the holonomies and (Λ G ) * for the push-forward F → F • Λ</figDesc>
+					<trash>−1 G of functions F ∈ C ∞ (G n+2g ).</trash>
+
+
+				</figure>
+
+				<p>In view of Theorem 2.2 it is natural to ask if we can lift the mapping class group action λ ∈</p>
+
+				<figure>
+					<trash>Map(S g,n \D) → Λ ∈ Diff((G ⋉ g * ) n+2g ) to an action λ ∈ Map(S g,n \D) → ˜ Λ ∈ Diff((G ⋉ g * ) n+2g ) such that the following diagram commutes (G ⋉ g * ) n+2g Λ − −− → (G ⋉ g * ) n+2g   τ   τ (G ⋉ g * ) n+2g Λ − −− → (G ⋉ g * ) n+2g . (3.3)</trash>
+
+
+				</figure>
+
+				<p>To define Λ note that all generators of the mapping class group, defined by expressions (A.4)-(A.10) and (A.11) in the appendix, either leave the conjugacy classes C µ i s i associated to each puncture invariant or exchange the conjugacy classes of different punctures. Thus we can perform the following construction.</p>
+
+				<figure>
+					<trash>Let E be a group acting on G n+2g via ξ ∈ E → Ξ G ∈ Diff(G n+2g ), such that E acts on the first n copies of G by conjugation and permutation Ξ G :u M i → ξ M i (u M 1 , . . . , u Bg ) · u M σ(i) · ξ −1 M i (u M 1 , . . . , u Bg ) (3.4) u A j → ξ A j (u M 1 , . . . , u Bg ), u B j → ξ B j (u M 1 , . . . , u Bg ), with maps ξ M i , ξ A j , ξ B j : G n+2g → G and a permutation σ ∈ S n . Then ˜ Ξ G :v M i → ξ M i • β(v M 1 , . . . , u Bg ) · v Mσ(i) (3.5) u A j → ξ A j • β(v M 1 , . . . , u Bg ), u B j → ξ B j • β(v M 1 , . . . , u Bg ) defines a group action ξ ∈ E → ˜ Ξ G ∈ Diff(G n+2g ) and the definition (2.11) of the map β implies β • Ξ G = Ξ G • β ∀ξ ∈ E. (3.6) This allows us to lift the action Λ G ∈ Diff(G n+2g ) of elements λ ∈ Map(S g,n \D) to an actioñ Λ G ∈ Diff(G n+2g ) related to Λ G via (3.6). We can extend Λ G to a diffeomorphism Λ on (G ⋉ g * ) n+2g by taking its action on (g * ) n+2g to be the one defined by Λ, which yields a mapping class group action λ ∈ Map(S g,n \D) → ˜ Λ ∈ Diff((G ⋉ g * ) n+2g ) satisfying (3.3).</trash>
+
+
+				</figure>
+
+				<p>We can then use this lift of the mapping class group action on the flower algebra to an action on (G ⋉ g * ) n+2g with symplectic potential (2.13) to prove that the mapping class group action on the flower algebra is a Poisson action:</p>
+
+				<figure>
+					<head>Theorem 3.1 (Poisson action of the mapping class group)</head>
+
+					<figDesc>The symplectic potential Θ (2.13) and the flower algebra Poisson structure (2.10) on (G ⋉ g * ) n+2g are invariant under the mapping class group actions Λ, Λ, respectively.</figDesc>
+
+				</figure>
+
+				<p>Proof: For the symplectic potential Θ in (2.13) the invariance under Λ can be shown by direct calculation using the expressions (A.4)-(A.11) for the action of the generators of Map(S g,n \D) on the curves m i , a j , b j , the parametrisation (2.3) and the lift (3.5). The invariance of the flower algebra Poisson structure under λ then follows from Theorem 2.2 and the commutative diagram (3.3), as we have for all λ ∈</p>
+
+				<figure>
+					<trash>Map(S g,n \D) τ * Λ * ω F = ˜ Λ * τ * ω F = Λ * dΘ = dΘ = τ * ω F . (3.7)</trash>
+
+
+				</figure>
+
+				<p>Hence Λ * ω F = ω F by injectivity of the pullback with the surjective map τ in (2.12). A proof of the invariance of the Poisson bracket { , } by direct calculation is given in [22] for the case of the (2+1)-dimensional Poincaré group and can easily be extended to the case of a general group G ⋉ g * .</p>
+
+			</div>
+			<div>
+				<head n="3.2">Infinitesimal generators for the action of Dehn twists</head>
+
+				<p>After investigating the mapping class group action on the flower algebra and the Poisson manifold (G ⋉ g * ) n+2g with symplectic potential (2.13), we will now demonstrate that the action of Dehn twists can be related to an infinitesimally generated Poisson action of the group G.</p>
+
+				<p>Let γ be an embedded i. e. non self-intersecting curve on the surface S g,n \D and let the same letter stand for the element of the (pure) mapping class group given by the Dehn twist around γ as outlined in the appendix. Denote by Γ ∈</p>
+
+				<figure>
+					<trash>Diff((G ⋉ g * ) n+2g ) and Γ G ∈ Diff(G n+2g ) the actions of this Dehn twist on the groups (G ⋉ g * ) n+2g and G n+2g , respectively, and by Γ ∈ Diff((G ⋉ g * ) n+2g ) and Γ G ∈ Diff(G n+2g ) their lifts according to (3.5) and (3.3). Parametrising the holonomy of the curve γ as Hol(γ) = (u γ , −Ad * (u −1 γ )j γ ) and expressing it as a product of the holonomies M i , A j , B j , we can introduce coordinate maps j γ a analogous to (2.8) j γ a ∈ C ∞ ((G ⋉ g * ) n+2g ) : (M 1 , . . . , M n , A 1 , . . . , B g ) → j γ a , a = 1, . . . , dim G. (3.8) From the brackets (2.10) it follows that the coordinate functions j X a generate a G-action on C ∞ (G n+2g</trash>
+
+
+				</figure>
+
+				<p>) for all generators of the fundamental group. One would like to generalise this statement to any embedded curve γ. This requires one to find G-actions ρ γ : G →</p>
+
+				<figure>
+					<trash>Diff(G n+2g ), ˜ ρ γ : G → Diff(G n+2g ) on G n+2g that are infinitesimally generated by j γ a via these Poisson brackets {j γ a , F } = − d dt | t=0 F • ρ γ (e −tJ a ) ∀F ∈ C ∞ (G n+2g ) (3.9) {j γ a , F } Θ = − d dt | t=0 F • ρ γ (e −tJ a ) ∀F ∈ C ∞ (G n+2g ). (3.10)</trash>
+
+
+				</figure>
+
+				<p>Also, these G-actions should act on the group elements associated to the punctures by conjugation and left-multiplication, respectively, such that for each g ∈ G ρ γ (g), ˜ ρ γ (g) ∈ Diff(G n+2g ) are related by (3.5). If such G-actions exist, they are uniquely defined by (3.9), (3.10), since every element of the group G can be written as a product of elements in the image of the exponential map. Remarkably, it is possible to define such G-actions ρ γ , ˜ ρ γ for each embedded curve γ on S g,n \D, and to relate them to the actions Γ G , ˜ Γ G of the Dehn twist around γ.</p>
+
+				<figure>
+					<trash>Theorem 3.2 (Action of the Dehn twists on G n+2g ) For any embedded curve γ on the surface S g,n \D, Eqs. (3.9) and (3.10) define associated G-actions ρ γ , ˜ ρ γ : G → Diff(G n+2g ) related by (3.5), which conjugate and, respectively, left-multiply the group elements associated to the punctures. In terms of these group actions, the actions Γ G , ˜ Γ G ∈ Diff(G n+2g ) of the Dehn twist around γ on G n+2g can be expressed as Γ G = ˜ ρ γ (P −1 γ • β) Γ G = ρ γ (P −1 γ ), (3.11) where P ±1 γ : G n+2g → G, P ±1 γ : (u M 1 , . . . , u Bg ) → u ±1 γ maps to the (inverse of ) the Gcomponent of Hol(γ) = (u γ , −Ad * (u −1 γ )j γ ) expressed as a product in the G-components u M 1 , . . . , u Mn , u A 1 , . . . , u Bg . Proof:</trash>
+
+
+				</figure>
+
+				<p>Because of identity (3.6) and the commutative diagram (3.3), it is sufficient to prove the existence of such a G-action for the modified Poisson bracket { , } Θ and the actioñ ρ γ . 1. As a first step, we show how a G-actioñ ρ γ associated to an embedded curve γ that satisfies (3.10) and (3.11) gives rise to a corresponding group actioñ ρ ξ for all curves ξ that can be obtained from γ via the action of Map(S g,n \D). Let λ ∈ Map(S g,n \D) be an element of the mapping class group with actions Λ G ,</p>
+
+				<figure>
+					<trash>˜ Λ G ∈ Diff(G n+2g ) on G n+2g . Consider the (embedded) curve ξ obtained from γ by acting with λ, write its holonomy as Hol(ξ) = (u ξ , −Ad * (u −1 ξ )j ξ ) and denote by Ξ G , ˜ Ξ G ∈ Diff(G n+2g</trash>
+
+
+				</figure>
+
+				<p>) the actions of the Dehn twist around ξ on G n+2g . From the geometric definition of Dehn twists in the appendix it follows that the Dehn twists around the curves ξ and γ are related by ξ = λ • γ • λ −1 .</p>
+
+				<figure>
+					<trash>Using (3.2) and the definition (3.5) of the lifts, we deduce that the associated actions Γ G , ˜ Ξ G on G n+2g satisfy Ξ G = ˜ Λ −1 G • Γ G • Λ G . On the other hand, the invariance of the symplectic potential Θ (2.13) under Λ implies {j ξ a , F } Θ = {j γ a , F • Λ −1 G } Θ • Λ G ∀F ∈ C ∞ (G n+2g ), (3.12) since j ξ a = a j γ • Λ, and this allows us to define a G-actioñ ρ ξ : G → Diff(G n+2g ) via ˜ ρ ξ (g) := ˜ Λ −1 G • ρ γ (g) • Λ G ∀g ∈ G. (3.13)</trash>
+
+
+				</figure>
+
+				<p>Using the invariance of the Poisson bracket under the mapping class group and the corresponding identity for γ, we see immediately that ρ ξ satisfies (3.10). Furthermore, since Λ G acts on the group elements associated to the punctures by left-multiplication and permutation , we see that ρ ξ acts on these elements by left-multiplication if the same is true for ρ γ . To prove that ρ ξ satisfies (3.11), we note that the map P</p>
+
+				<figure>
+					<trash>−1 ξ is given by P −1 ξ = P −1 γ @BULLETΛ G and calculate ˜ ρ ξ P −1 ξ • β (v M 1 , . . . u Bg ) = ˜ ρ ξ P −1 ξ • β(v M 1 , . . . u Bg ) (v M 1 , . . . u Bg ) (3.14) = ˜ ρ ξ (P −1 γ • Λ G • β(v M 1 , . . . u Bg ))(v M 1 , . . . u Bg ) = ˜ Λ −1 G • ρ γ (P −1 γ • β) • Λ G (v M 1 , . . . u Bg ) = ˜ Λ −1 G • Γ G • Λ G (v M 1 , . . . u Bg ) = ˜ Ξ G (v M 1 , . . . , u Bg ). 2.</trash>
+
+
+				</figure>
+
+				<p>We therefore only need to prove (3.11) for a set of curves containing one representative for each orbit of the Map(S g,n \D)-action on π 1 (S g,n \D). Such a set of curves can be constructed using results from geometric topology [17]. It has been shown, see for example Lemma 2.3.A. in [17], that the equivalence classes of all non-separating curves γ on the surface S g,n \D, i.e. curves γ such that (S g,n \D) \ γ is connected, are in the same orbit under the action of the mapping class group. This is a consequence of the classification of two-dimensional surfaces via the Euler characteristic. We can apply the same argument to separating curves if we keep in mind that, unlike the handles, the punctures of our surface S g,n \D can be distinguished via the conjugacy classes assigned to them. This allows us to conclude that any two separating curves γ, γ ′ on S g,n \D such that the two components of (S g,n \D) \ γ and (S g,n \D) \ γ ′ contain the same number of handles and the same sets of punctures lie in the same orbit under the action of the mapping class group. It is therefore sufficient to prove (3.11) for one non-separating curve, for example any of the curves in (A.1) except κ ν,µ , and the separating curves γ i 1 ...irj 1 ...js pictured in Fig. 2</p>
+
+				<figure>
+					<figDesc>. γ i 1 ...irj 1 ...js = [b js , a −1 js ]</figDesc>
+
+				</figure>
+
+				<p>· [b j s−1 , a −1 j s−1 ] · · · [</p>
+
+				<p><formula>b j 1 , a −1 j 1 ] · m ir · · · m i 1 (3.15) 1 ≤ j 1 &lt; j 2 &lt; . . . &lt; j s ≤ j s+1 := g, 1 ≤ i 1 &lt; i 2 &lt; . . . &lt; i r ≤ i r+1 := n. γ 1 g n 1 j 2 1 j 0000000000 0000000000 0000000000 0000000000 0000000000 0000000000 0000000000 0000000000 0000000000 0000000000 1111111111 1111111111 1111111111 1111111111 1111111111 1111111111 1111111111 1111111111 1111111111 1111111111 1 i r j j s ... ... 1 j s i 2 i 1 r i i Fig. 2</formula></p>
+
+				<p>Separating curves on the surface S g,n \D 3. For a given curve γ expressed as a product in the generators m i , a j , b j ∈ π 1 (S g,n \D), we can parametrise the holonomy as Hol(γ) = (u γ , −Ad * (u</p>
+
+				<figure>
+					<trash>−1 γ )j</trash>
+
+					<figDesc>γ ) and express it in terms of the holonomies M i , A j , B j , which allows us to calculate the Poisson brackets {j γ a , F } Θ via (2.10), (2.14). For the set of curves (A.1) in the appendix, the holonomies are given by (A.2), (A.3), and we define the corresponding G-actions as ˜ ρ a i (g) :u A i → gu A i g</figDesc>
+					<trash>−1 (3.16) u B i → [g, u A i ]</trash>
+
+
+				</figure>
+
+				<p>u B i g −1 u X → [g, u A i ]u X [g, u A i ] −1 ∀X &gt; A i , B i ˜ ρ δ i (g) :u A i → [g, u δ i ]u A i g</p>
+
+			</div>
+			<div>
+				<head>−1 (3.17)</head>
+
+				<p>u B i → [g, u δ i ]u B i [g, u δ i ] −1 u X → [g, u δ i ]u X [g, u δ i ] −1 ∀X &gt; A i , B i ˜ ρ α i (g) :u A i → [g, u α i ]u A i g</p>
+
+				<figure>
+					<trash>−1 (3.18) u B i → [g, u α i ]u B i [g, u α i ] −1 u A i−1 → gu A i−1 u B i−1 → gu B i−1 g −1 u X → [g, u α i ]u X [g, u α i ] −1 ∀X &gt; A i , B i ˜ ρ ǫ i (g) :u X → gu X g −1 ∀X ∈ {A 1 , . . . , B i−1 } (3.19) u A i → [g, u ǫ i ]</trash>
+
+
+				</figure>
+
+				<p>u A i g −1 u B i → [g, u ǫ i ]u A i [g, u ǫ i ] −1 u X → [g, u ǫ i ]u X [g, u ǫ i ] −1 ∀X ∈ {A i+1 ,</p>
+
+				<figure>
+					<trash>. . . , B g } ˜ ρ κν,µ (g) :v Mν → gv Mν (3.20) v Mτ → [g, u Mν ]v Mτ ∀ν &lt; τ &lt; µ v Mµ → gv Mµ v Mτ → [g, u κν,µ ]</trash>
+
+
+				</figure>
+
+				<p>v Mτ ∀τ &gt; µ u X → [g, u κν,µ ]u X [g, u κν,µ ] −1</p>
+
+				<figure>
+					<trash>∀X ∈ {A 1 , . . . , B g } ˜ ρ κ ν,n+2i−1 (g) :v Mν → gv Mν (3.21) v Mτ → [g, u Mν ]</trash>
+
+
+				</figure>
+
+				<p>v Mτ ∀τ = ν + 1, . . . , n, u X → [g, u Mν ]u X [g, u Mν ] −1 ∀X ∈ {A 1 , . . . , B i−1 } u A i → [g, u κ ν,n+2i−1 ]u A i g −1 u B i → [g, u κ ν,n+2i−1 ]u B i [g, u κ ν,n+2i−1 ] −1 u X → [g, u κ ν,n+2i−1 ]u X [g, u κ ν,n+2i−1 ] −1 ∀X ∈ {A i+1 ,</p>
+
+				<figure>
+					<trash>. . . , B g } ˜ ρ κ ν,n+2i (g) :v Mν → gv Mν (3.22) v Mτ → [g, u Mν ]</trash>
+
+
+				</figure>
+
+				<p>v Mτ ∀τ = ν + 1, . . . , n u X → [g, u Mν ]u X [g, u Mν ] −1 ∀X ∈ {A 1 , . . . , B i−1 } u A i → gu A i [g, u Mν ] −1 u B i → gu B i g −1 u X → [g, u κ ν,n+2i ]u X [g, u κν,n+2i ] −1 ∀X ∈ {A i+1 , . . . , B g }, where [ , ] denotes the group commutator on G as given after (</p>
+
+				<figure>
+					<trash>2.13), M 1 &lt; . . . &lt; M n &lt; A 1 , B 1 &lt; . . . &lt; A g , B g , and (u M 1 , . . . , u Mn , u A 1 , . . . , u Bg ) = β(v M 1 , . . . , v Mn , u A 1 , . . . , u Bg ).</trash>
+
+
+				</figure>
+
+				<p>We listed only those elements u X that transform non-trivially. It can be shown by direct computation that expressions (3.16)-(3.22) define G-actions on G n+2g which satisfy (3.10) and act on the group elements associated to the punctures by left-multiplication. Furthermore, comparing these G-actions with the actioñ Γ G derived from expressions (A.4)-(A.10) in the appendix, we see that they agree if we set g = u −1 γ .</p>
+
+				<p>Similarly, we calculate for the separating curves γ</p>
+
+				<figure>
+					<trash>i 1 ...irj 1 ...js in (3.15) j γ i 1 ...ir j 1 ...js =j M i 1 + Ad * (u M i 1 )j M i 2 + . . . + Ad * (u M ir · · · u M i 1 )j H j 1 + . . . (3.23) + Ad * (u K j s−1 · · · u K j 1 u M ir · · · u M i 1 )j H js with u K j = [u B j , u −1 A j ] = u B j u −1 A j u −1 B j u A j and j H j = (1 − Ad * (u −1 A j u −1 B j u A j ))j A j + (Ad * (u −1 A j u −1 B j u A j ) − Ad * (u −1 B j u A j ) j B j , (3.24) and define for all g ∈ G ˜ ρ γ i 1 ...ir j 1 ...js (g) : v M i l → gv M i l l = 1, . . . , r (3.25) u A j l → gu A j l g −1 , u B j l → gu B j l g −1 l = 1, . . . , s v M i → [g, u M i l · · · u M i 1 ]v M i ∀i l &lt; i &lt; i l+1 , l = 1, . . . , r u A j → [g, u M ir · · · u M i 1 ]u A j [g, u M ir · · · u M i 1 ] −1 ∀1 ≤ j &lt; j 1 u B j → [g, u M ir · · · u M i 1 ]u B j [g, u M ir · · · u M i 1 ] −1 ∀1 ≤ j &lt; j 1</trash>
+
+					<figDesc>u A j → [g, u K j l · · · u K j 1 u M ir · · · u M i 1 ]u A j [g, u K j l · · · u K j 1 u M ir · · · u M i 1 ]</figDesc>
+
+				</figure>
+
+				<p>−1 ∀j l &lt; j &lt; j l+1 , l = 1, . . . , s u B j → [g, u K j l · · · u K j 1 u M ir · · · u M i 1 ]u B j [g, u K j l · · · u K j 1 u M ir · · · u M i 1 ]</p>
+
+				<p>−1 ∀j l &lt; j &lt; j l+1 , l = 1, . . . , s, Again, a straightforward calculation proves that (3.25) defines a G-action on G n+2g which satisfies (3.10) and left-multiplies the group elements associated to the punctures. After determining the action of the Dehn-twists around γ i 1 ...irj 1 ...js on the generators of the fundamental group as described in the appendix, we can derive the associated actions</p>
+
+				<p><formula>Γ i 1 ...irj 1 ...js G ∈ Diff(G n+2g ) ˜ Γ i 1 ...irj 1 ...js G : v M i l → u −1 γ i 1 ...ir j 1 ...js · v M i l l = 1, . . . , r (3.26) u A j l → u −1 γ i 1 ...ir j 1 ...js · u A j l · u −1 γ i 1 ...ir j 1 ...js l = 1, . . . , s u B j l → u −1 γ i 1 ...ir j 1 ...js · u B j l · u γ i 1 ...ir j 1 ...js l = 1, . . . , s v M i → [u −1 γ i 1 ...ir j 1 ...js , u M i l · · · u M i 1 ] · v M i ∀i l &lt; i &lt; i l+1 , l = 1, . . . , r u A j → [u −1 γ i 1 ...ir j 1 ...js , u M ir · · · u M i 1 ] · u A j · [u −1 γ i 1 ...ir j 1 ...js , u M ir · · · u M i 1 ] −1 ∀1 ≤ j &lt; j 1 u B j → [u −1 γ i 1 ...ir j 1 ...js , u M ir · · · u M i 1 ] · u B j · [u −1 γ i 1 ...ir j 1 ...js , u M ir · · · u M i 1 ] −1 ∀1 ≤ j &lt; j 1</formula></p>
+
+				<p>u A j → [u −1 γ i 1 ...ir j 1 ...js , u K j l · · · u M i 1 ] · u A j · [u −1 γ i 1 ...ir j 1 ...js , u K j l · · · u M i 1 ]</p>
+
+				<p>−1 ∀j l &lt; j &lt; j l+1 , l = 1, . . . , s u B j → [u −1 γ i 1 ...ir j 1 ...js , u K j l · · · u M i 1 ] · u B j · [u −1 γ i 1 ...ir j 1 ...js , u K j l · · · u M i 1 ]</p>
+
+				<p>−1 ∀j l &lt; j &lt; j l+1 , l = 1, . . . , s.</p>
+
+				<p>We then see that they agree with (3.25) if we set g = u −1 γ i 1 ...ir j 1 ...js . Therefore, group actions ρ γ : G → Diff(G n+2g ) satisfying (3.10) and acting on the group elements associated to the punctures by left-multiplication exist for all embedded curves γ on S g,n \D and are related to the action of the associated Dehn twist on G n+2g via (3.11), which was to be shown.</p>
+
+				<figure>
+					<head>Theorem 3</head>
+
+					<figDesc>.2 shows how the actions Γ G , ˜ Γ G ∈ Diff(G n+2g ) arising from the action of a Dehn twists on the holonomies M i , A j , B j can be related to an action of the group G that is infinitesimally generated by the element j γ a via the Poisson brackets { , } and { , } Θ . This raises the question if the same can be said for the corresponding actions Γ, ˜ Γ ∈ Diff((G ⋉ g * ) n+2g ). We show that this is the case by using the following lemma.</figDesc>
+
+				</figure>
+
+				<figure>
+					<head>Lemma 3.3</head>
+
+					<figDesc>Let M be a manifold with diffeomorphism group Diff(M) and denote by Vec(M) the space of real vector fields on M. Let L be the infinite-dimensional Lie algebra L = Vec(M) ⋉ C ∞ (M) with Lie bracket</figDesc>
+					<trash>[X, Y ] L = [X, Y ] V ec [X, F ] L = X.F [F, G] L = 0 (3.27) for X, Y ∈ Vec(M), F, G ∈ C ∞ (M), where X.F = d dt | t=0 F (h X t (m)) denotes the action of the vector field X on a function F ∈ C ∞ (M) with flow h X t generated by X. Consider the action of diffeomorphisms φ ∈ Diff(M) on functions F ∈ C ∞ (M) and vector fields X ∈ Vec(M) via push-forward φ * F = F • φ −1 (φ * X)F = d dt | t=0 F (φ • h X t • φ −1 ). (3.28)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Then, the push-forward with φ is a Lie algebra automorphism of L and any Lie algebra isomorphism ϕ : L → L with ϕ(Vect(M)) ⊂ Vect(M) and ϕ| C ∞ (M ) = φ * | C ∞ (M ) for some φ ∈ Diff(M) is equal to the push-forward with φ: ϕ = φ * .</figDesc>
+
+				</figure>
+
+				<p>Proof: The first claim states simply the standard properties of the push-forward, φ * (X.F ) = (φ * X).(φ * F ) and φ * [X, Y ] V ec = [φ * X, φ * Y ] V ec for X, Y ∈ Vec(M), F ∈ C ∞ (M), see [1, 20].</p>
+
+				<figure>
+					<figDesc>The second follows from the fact that a vector field is uniquely determined by its action on functions: (ϕX).(φ * F ) = ϕ(X.F ) = φ * (X.F ) = (φ * X).(φ * F ).</figDesc>
+
+				</figure>
+
+				<p>Recalling the definition of the flower algebra and the modified bracket { , } Θ , we note that the subspace g</p>
+
+				<figure>
+					<trash>n+2g ⊗ C ∞ (G n+2g ) ⊕ C ∞ (G n+2g ) with bracket { , } Θ can be viewed as a Lie algebra of type L in Lemma 3.3. The Poisson brackets of generators j X a and functions F ∈ C ∞ (G n+2g</trash>
+
+
+				</figure>
+
+				<p>) allow us to identify the former with a basis of the space of vector fields Vec(G n+2g ). From the first set of brackets in (2.10) it is then clear that the commutator of two vector fields agrees with the Poisson bracket of the associated elements in g n+2g ⊗ C ∞ (G n+2g ).</p>
+
+				<p>For any embedded curve γ the associated Dehn twist acts on G n+2g via the diffeomorphisms Γ G , ˜ Γ G ∈ Diff(G n+2g ) that map Vec(G n+2g ) to itself and act on functions F ∈ C ∞ (G n+2g ) via the push-forward. We can therefore apply Lemma 3.3 to the mapping class group action on the Lie algebra Vec(G n+2g ) ⋉ C ∞ (G n+2g ) with Lie bracket { , } Θ .</p>
+
+				<p>As the flower algebra is multiplicatively generated by the coordinate functions j X a and functions in C ∞ (G n+2g ), this defines the mapping class group action on the flower algebra with bracket { , } Θ uniquely, and we see that it is given by the push-forward with ρ γ (P −1 γ • β). Since Γ and Γ are related by the commutative diagram (3.3) and ρ γ , ˜ ρ γ by (3.6), the mapping class group action on the flower algebra with bracket { , } is then given by push-forward with ρ γ (P −1 γ ). Recalling from Lemma 3.3 that the push-forwards with ρ γ (g) and ρ γ (g) define a Poisson action of the group G on the flower algebra with bracket { , } and { , } Θ , we obtain the following theorem.</p>
+
+				<figure>
+					<head>Theorem 3.4 (</head>
+
+					<figDesc>Action of the Dehn twists on the flower algebra)</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="1">For any embedded curve</head>
+
+				<p>γ on S g,n \D the push-forward with ρ γ (g), ˜ ρ γ (g) ∈ Diff(G n+2g ) defines a Poisson action of the group G on the flower algebra with bracket { , } and { , } Θ , respectively.</p>
+
+			</div>
+			<div>
+				<head n="2">The actions</head>
+
+				<p>Γ, ˜ Γ of the associated Dehn twist on the flower algebra with bracket { , } and { , } Θ are given by the push-forward with ρ γ (P</p>
+
+				<figure>
+					<trash>−1 γ ) and ρ γ (P −1 γ • β).</trash>
+
+
+				</figure>
+
+				<p>One might ask if it is possible to define Hamiltonians such that the actions Γ, ˜ Γ on the flower algebra are realised as their flow for some value of the flow parameter. In the case where the exponential map exp : g → G is surjective and elements u ∈ G can be parametrised as u = exp(p a J a ) such Hamiltonians can be given explicitly. We can then write the holonomy along the curve γ as</p>
+
+				<figure>
+					<trash>Hol(γ) = (u γ , −Ad * (u −1 γ )j γ ) with u γ = exp(p a γ J a ) and introduce maps p a γ ∈ C ∞ (G n+2g ) : (u M 1 , . . . , u Bg ) → p a γ . (3.29) Considering the algebra element c γ = p a γ j γ a ∈ g n+2g ⊗ C ∞ (G n+2g ). (3.30) and the one-parameter group of transformations φ γ (t), ˜ φ γ (t) of the flower algebra generated by c γ via the Poisson brackets { , } and { , } Θ d dt | t=0 φ γ (t)χ = {c γ , χ} d dt | t=0 φ γ (t)χ = {c γ , χ} Θ (3.31) ∀χ ∈ S n+2g k=1 g ⊗ C ∞ (G n+2g ), we obtain {c γ , F } = −p a γ d dt | t=0 F • ρ γ (e −tJa ) = d dt | t=0 F • ρ γ (e tp a γ Ja ) ∀F ∈ C ∞ (G n+2g ) (3.32) and an analogous expression involving { , } Θ and ρ γ . This implies φ γ (1)F = F • Γ −1 G ˜ φ γ (1)F = F • Γ −1 G . (3.33) Furthermore, it follows from {c γ , j X a } = p b γ {j γ b , j X a } + j γ b {p b γ , j X a } ∀X ∈ {M 1 , . . . , M n , A 1 , . . . , B g } (3.34)</trash>
+
+
+				</figure>
+
+				<p>and the structure of the expression for j γ b in terms of the coordinate functions j Y b , Y ∈ {M 1 , . . . , B g }, associated to the generators of the fundamental group that {c γ , j X a } is a linear combination these coordinate functions j Y b with coefficients in C ∞ (G n+2g ). The identification of the coordinate functions j Y b with vector fields on G n+2g , discussed after Lemma 3.3, then implies that φ γ maps Vec(G n+2g ) to itself.</p>
+
+				<p>Theorem 3.5 The one-parameter groups of transformations φ γ (t), ˜ φ γ (t) act as Poisson isomorphisms on the flower algebra with bracket { , } and { , } Θ , respectively, and agree with the action of the associated Dehn twist at t = 1</p>
+
+				<figure>
+					<trash>φ γ (1) = Γ * ˜ φ γ (1) = ˜ Γ * . (3.35)</trash>
+
+
+				</figure>
+
+				<p>Proof: That the action of φ γ (t), ˜ φ γ (t) is a Poisson action ∀t ∈ R follows from the fact that they are infinitesimally generated via the Poisson brackets { , } and { , } Θ [1, 20]. That they agree with the action of the Dehn twists γ, ˜ γ at t = 1 can be deduced from (3.33), the fact that they are Poisson actions and that they map the space Vec(G n+2g ) to itself by using Lemma 3.3.</p>
+
+			</div>
+			<div>
+				<head n="4">The quantum action of the mapping class group</head>
+
+				<p>In this section we investigate the action of the mapping class group on the quantised flower algebra and its representation spaces defined in Def. 2.3, Def. 2.4. For the case of Chern- Simons theory with compact, semisimple gauge groups the corresponding quantum action of the mapping class group has been studied by Alekseev and Schomerus [5], who claim that elements of the mapping class group act as algebra automorphism on the quantum algebra constructed via their formalism of combinatorial quantisation of Chern-Simons theory 3 . Furthermore, they relate this quantum action of the mapping class group to an action of a quantum group associated to the gauge group of the underlying Chern-Simons theory. In terms of this quantum group action, Dehn twists around embedded curves are given by the action of the ribbon element and the exchange of punctures is implemented via the universal R-matrix.</p>
+
+				<p>We generalise and prove these results for semidirect product gauge groups of type G ⋉ g * .</p>
+
+				<p>Using the fact that elements of the mapping class group act as Poisson isomorphisms on the classical flower algebra and the rather close relation between classical and quantised flower algebra, we prove that the mapping class group acts on the quantised flower algebra via algebra isomorphisms. We show that this mapping class group action on the quantised flower algebra can be implemented as an action on its representation spaces. Finally, we relate the mapping class group action to representations of a quantum group, which in our case is the quantum double D(G) of the group G.</p>
+
+				<p>In the proof of Theorem 4.1. in [23], we demonstrated that any Poisson isomorphism of the flower algebra that maps the subspace g n+2g ⊗ C ∞ (G n+2g ) ⊕ C ∞ (G n+2g ) to itself gives rise to an algebra isomorphism of the quantised flower algebra (2.15). As the quantised flower algebra is multiplicatively generated by elements of C</p>
+
+				<figure>
+					<trash>∞ (G n+2g ) and g n+2g ⊗C ∞ (G n+2g ), this algebra isomorphism is uniquely defined by its action on the subspace g n+2g ⊗C ∞ (G n+2g )⊕ C ∞ (G n+2g ). Furthermore, if we identify the isomorphic subspaces g n+2g ⊗ C ∞ (G n+2g ) ⊕ C ∞ (G n+2g</trash>
+
+
+				</figure>
+
+				<p>) in the classical and quantised flower algebra, the quantum action on this subspace agrees with the classical action. Both the generators (A.4)-(A.10) of the pure mapping class group PMap(S g,n \D) and the generators (A.11) satisfy the condition above, so that the classical action of the mapping class group gives rise to a mapping class group action as algebra automorphisms of the quantised flower algebra. The results in Sect. 3 then allow us to implement this action on the representation spaces in Theorem 2.4. The key observation is that the states ψ ∈ V µ 1 s 1 ...µnsn in the Hilbert spaces defined in Def. 2.4 are vector-valued functions on G n+2g satisfying an equivariance condition. Each component of ψ may thus be viewed as an element of the flower algebra with bracket { , } Θ . This allows us to define a representation of Map(S g,n \D) on the Hilbert spaces V µ 1 s 1 ...µnsn by extending its action on the flower algebra componentwise to ψ ∈ V µ 1 s 1 ...µnsn .</p>
+
+				<figure>
+					<head>Theorem 4.1 (Quantum action of the mapping class group) 1. Elements λ ∈</head>
+
+					<figDesc>Map(S g,n \D) of the mapping class group act as algebra automorphisms Λ : ˆ F → ˆ F on the quantum flower algebra. 2. Let π λ ∈ S n be the permutation associated to λ via the map π in (3.1) and p λ : V s 1 ⊗ . . . ⊗ V sn → V s π λ (1) ⊗ . . . ⊗ V s π λ (n) (4.1) the map which permutes the factors in the tensor product. Then the map L λ : ψ ∈ V µ 1 s 1 ...µnsn → p λ • ψ • Λ</figDesc>
+					<trash>−1 G ∈ V µ π λ (1) s π λ (1) ...µ π λ (n) s π λ (n) , (4.2)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>defines a representation of the mapping class group on the Hilbert spaces V µ 1 s 1 ...µnsn given in Theorem 2.4. On the dense subspace V ∞ µ 1 s 1 ...µnsn carrying the representations of the quantised flower algebra, it satisfies</figDesc>
+					<trash>Π µ 1 s 1 ...µnsn ( ˆ Λχ) = L λ • Π µ 1 s 1 ...µnsn (χ) • L −1 λ ∀χ ∈ ˆ F . (4.3)</trash>
+
+					<head>Proof:</head>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>The first claim follows from the discussion in [23]</figDesc>
+
+				</figure>
+
+				<p>as explained above. That (4.2) defines a representation of the mapping class group is a consequence of the properties of the push-forward. To prove identity (4.3), we use the fact that the action of the mapping class group on the quantum flower algebra is uniquely defined by its action on functions F ∈ C ∞ (G n+2g ) and the generators j X a , on which it agrees with the corresponding classical action. With expression (2.18) for the action of these elements on the representation spaces V µ 1 s 1 .</p>
+
+				<figure>
+					<trash>..µnsn , we obtain Π µ 1 s 1 ...µnsn ( ˆ Λ(1 ⊗ F ))L λ ψ = (((Λ G ) * F ) • β) · L λ ψ = (( ˜ Λ G ) * (F • β)) · L λ ψ = L λ (Π µ 1 s 1 ...µnsn (1 ⊗ F )ψ), (4.4)</trash>
+
+
+				</figure>
+
+				<p>where we used the fact that Λ G and Λ G are related by equation (3.6). Recalling the definition of the actioñ Λ on the classical flower algebra and the fact that this action is a Poisson action by Theorem 3.1, we calculate for the action of elements j</p>
+
+				<figure>
+					<trash>X a ⊗ F ∈ g n+2g ⊗ C ∞ (G n+2g ) Π µ 1 s 1 ...µnsn ( ˆ Λ(j X a ⊗ F ))L λ ψ = −i((Λ G ) * F ) • β · { ˜ Λ * j X a , L λ ψ} Θ (4.5) = −i( ˜ Λ G ) * (F • β) · L λ {j X a , ψ} Θ = L λ (Π µ 1 s 1 ...µnsn (j X a ⊗ F )ψ),</trash>
+
+
+				</figure>
+
+				<p>which together with (4.4) proves the claim.</p>
+
+				<p>We would now like to relate this action of the mapping class group on the Hilbert spaces V µ 1 s 1 ...µnsn to different representations of a quantum group associated to the gauge group G ⋉ g * , generalising the corresponding result for compact, semisimple gauge groups obtained by Alekseev and Schomerus [5]. Whereas the quantum group representations and their relation to elements of the mapping class group are stated rather implicitly there, we find that our formulation admits an explicit constructing relating them to the classical structures discussed in Sect. 3.</p>
+
+				<p>The quantum group relevant to our formulation is the quantum double D(G) of the group G. Using the definition given in [23], we can identify the quantum double as a vector space with the space of continuous functions on G × G with compact support: D(G) = C 0 (G × G, C). In order to exhibit the structure of D(G) as a ribbon-Hopf*-algebra , it is necessary to introduce Dirac delta functions which are not strictly in C 0 (G×G, C) but can be included by simply adjoining them. Thus we define multiplication •, identity 1, co-multiplication ∆, co-unit ǫ, antipode S and involution * via</p>
+
+				<figure>
+					<trash>(F 1 • F 2 )(v, u) := G F 1 (z, u) F 2 (z −1 v, z −1 uz) dz (4.6) 1(v, u) := δ e (v) (∆F )(v 1 , u 1 ; v 2 , u 2 ) := F (v 1 , u 1 u 2 ) δ v 1 (v 2 ) ǫ(F ) := G F (v, e) dv (SF )(v, u) := F (v −1 , v −1 u −1 v) F * (v, u) := F (v −1 , v −1 uv). The universal R-matrix is then given by R(v 1 , u 1 ; v 2 , u 2 ) = δ e (v 1 )δ e (u 1 v −1 2 ) (4.7) and the central ribbon element c by c(v, u) = δ v (u). (4.8)</trash>
+
+
+				</figure>
+
+				<p>We start by considering Dehn twists around embedded curves γ. In order to relate the action of these Dehn twists to the action of the ribbon element in representations of D(G), we need to find a way of associating such representations of D(G) to each of the curves γ. In view of the classical results in Sect. 3, one could expect these representations to involve the G-actioñ ρ γ and the map P γ : G n+2g → G. To pursue this intuition further, we note that, given an action of the group G on a manifold M together with map φ : M → G satisfying a certain compatibility condition, there is a canonical way of constructing representations of the quantum double D(G) on the space L 2 (M):</p>
+
+				<figure>
+					<head>Lemma 4.2</head>
+
+					<figDesc>Let G be a unimodular Lie group with a continuous action ρ : g ∈ G → Diff(M) on a manifold M equipped with a Borel measure dm invariant under the G-action ρ. Let φ : M → G be a continuous map satisfying the equivariance condition</figDesc>
+					<trash>φ(ρ(g)m) = g · φ(m) · g −1 ∀g ∈ G, m ∈ M. (4.9)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Then a unitary representation Π ρ,Φ of the quantum double D(G) on the space L 2 (M) is given by</figDesc>
+					<trash>Π ρ,φ (F )ψ (m) = G F (z, φ(m))ψ • ρ(z −1 )(m)dz, (4.10)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>where dz is the Haar measure on G.</figDesc>
+
+				</figure>
+
+				<p>Proof: That (4.10) defines a unitary representation of D(G) can be shown by direct calculation using the definition (4.6) of the quantum double D(G) and the compatibility condition (4.9).</p>
+
+				<p>In our situation, we have M = G n+2g and consider the G-action ρ = ˜ ρ γ and the map φ = P −1 γ • β. We need to show that they satisfy (4.9). For the set of curves (A.1) in the appendix and the separating curves (3.15), this follows directly from identity (3.6) and expressions (3.16)-(3.22) and (3.25) for the G-actions. Identity (3.13) then allows us to generalise this result to all embedded curves on S g,n \D as follows. If ρ γ and P −1 γ • β satisfy (4.9) for an embedded curve γ and ξ is obtained from γ via the action of an element λ ∈ Map(S g,n \D) of the mapping class group, we have</p>
+
+				<figure>
+					<trash>P −1 ξ • β • ρ ξ (g) = P −1 γ • Λ G • β • Λ −1 G • ρ γ (g) • Λ G (4.11) = P −1 γ • β • ρ γ (g) • Λ G = g · (P −1 γ • β • Λ G ) · g −1 = g · (P −1 γ • Λ G • β) · g −1 = g · (P −1 ξ • β) · g −1 , so that (4.9) holds for ρ ξ and P −1</trash>
+
+
+				</figure>
+
+				<p>ξ • β as well. The curves (A.1) and (3.15) are such that, up to homotopy, every embedded curve on S g,n \D can be obtained by acting on one of them with Map(S g,n \D). Hence the result (4.9) holds for all embedded curves.</p>
+
+				<p>By Lemma 4.2, the G-actioñ ρ γ and the map P −1 γ • β then define a unitary representation of the quantum double D(G) on the Hilbert spaces V µ 1 s 1 ...µnsn . Using expression (4.8) for the ribbon element, we see that its representation on the space V µ 1 s 1 ...µnsn agrees with the action of the corresponding Dehn twist:</p>
+
+				<figure>
+					<head>Theorem 4.3 (Quantum action of Dehn twists) 1.</head>
+
+					<figDesc>For any embedded curve γ on S g,n \D the map</figDesc>
+					<trash>Π γ (F )ψ(v m 1 , . . . , v Mn , u A 1 , . . . , u Bg ) = G F (z, u −1 γ ) ψ • ρ γ (z −1 )(v M 1 , . . . , u Bg )dz = G F z, P −1 γ • β(v M 1 , . . . , u Bg ) ψ • ρ γ (z −1 )(v M 1 , . . . , u Bg )dz (4.12)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>defines a unitary representation of the quantum double D(G) on the Hilbert space V µ 1 s 1 ...µnsn . 2. The action of the central ribbon element c ∈ D(G) (4.8) on V µ 1 s 1 ...µnsn agrees with the mapping class group action defined in Theorem 4.1 Π γ (c)ψ = ( ˜ Γ G ) * ψ ∀ψ ∈ V µ 1 s 1 ...µnsn . (4.13)</figDesc>
+
+				</figure>
+
+				<p>To find the representations associated to the generators (A.11) of the braid group, we use the standard result that representations of a quantum group give rise to representations of the braid group via the universal R-matrix [13]. If we associate a representation of the quantum double D(G) to each puncture of the surface S g,n as in [23], the universal R-matrix of D(G) acts on the tensor product of two such representations. The following theorem generalises results of [7, 19].</p>
+
+				<figure>
+					<head>Theorem 4.4 (Quantum action of the braid group)</head>
+
+					<figDesc>Define representations Π µ i s i : D(G) → Hom(V µ 1 s 1 ...µnsn , V µ 1 s 1 ...µnsn ) of D(G) by</figDesc>
+					<trash>Π µ i s i (F )ψ(v M 1 , . . . , v Mn , u A 1 , . . . , u Bg ) (4.14) = G F (z, v M i g µ i v −1 M i )ψ(v M 1 , . . . , v M i−1 , z −1 v M i , v M i+1 , . . . , u Bg )dz, and let π i : G n+2g → G n+2g be the map that exchanges the i th and (i + 1) th copy of G π i : (v M 1 , . . . , v Mn , u A 1 , . . . , u Bg ) → (v M 1 , . . . , v M i+1 , v M i , . . . v Mn , u A 1 , . . . , u Bg ) (4.15)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Then, the action of the generators (A.11) of the braid group on V µ 1 s 1 ...µnsn is given by</figDesc>
+
+				</figure>
+
+				<p>L σ i ψ = p i ((Π µ i s i ⊗ Π µ i+1 s i+1 )(R)) • π i * ψ ∀ψ ∈ V µ 1 s 1 ...µnsn , (4.16) where p i : V µ 1 s 1 ...µnsn → V s 1 ⊗ . . . ⊗ V s i−1 ⊗ V s i+1 ⊗ V s i ⊗ V s i+2 ⊗ . . . ⊗ V sn exchanges the spaces V s i and V s i+1 in the tensor product.</p>
+
+				<p>Proof: That (4.14) defines a representation of the quantum double D(G) on V µ 1 s 1 ...µnsn can be verified by direct calculation using (4.6). To prove (4.16), we insert the definition (4.7) of the universal R-matrix in (4.14) and obtain p i (Π µ i s i ⊗ Π µ i+1 s i+1 )</p>
+
+				<figure>
+					<trash>(R) π i * Ψ (v M 1 , . . . , u Bg ) (4.17) = p i (Π µ i s i ⊗ Π µ i+1 s i+1 )(R)ψ(v M 1 , . . . , v M i+1 , v M i , . . . , u Bg ) = p i G×G R(z 1 , v M i+1 g µ i+1 v −1 M i+1 , z 2 , v M i g µ i v −1 M i )ψ(v M 1 , . . . , z −1 1 v M i+1 , z −1 2 v M i , . . . , u Bg ) = p i ψ(v M 1 , . . . , v M i−1 , v M i+1 , (v M i+1 g µ i+1 v M i+1 ) −1 · v M i , v M i+2 , . . . , u Bg ).</trash>
+
+
+				</figure>
+
+				<p>Recalling the definition of σ i G via (A.11) and (3.5), we see that this agrees with L σ i ψ.</p>
+
+			</div>
+			<div>
+				<head n="5">Concluding remarks</head>
+
+				<p>In this paper we constructed a Poisson action of the mapping class group Map(S g,n \D) on the flower algebra and on the representation spaces of the associated quantum algebra. We related the classical action of Dehn twists to an infinitesimally generated G-action and, in the case where the exponential map is surjective, to Hamiltonian flows of certain conjugation invariant functions on G ⋉ g * . In the quantum theory, we showed how the mapping class group representation can be expressed in terms of the ribbon element and universal R-matrix of the quantum double D(G). Our results were derived for any connected, simply-connected and unimodular finite-dimensional Lie group G, but the assumptions of connectedness and unimodularity can be dropped at the expense of mild technical complications.</p>
+
+				<p>We feel that the mathematical structure of the flower algebra makes it an object of investigation in its own right. However, it attracted our attention because of its relevance to physics, more precisely, its role in the description of the phase space of (2+1)-dimensional gravity in the Chern-Simons formulation. The phase space of Chern-Simons theory with gauge group G ⋉ g * , the moduli space of flat G ⋉ g * -connections, can be obtained from our set of holonomies M 1 , . . . , M n , A 1 , B 1 , . . . A g , B g by imposing the condition (2.6) and dividing by the G ⋉ g * -action which simultaneously conjugates all holonomies. Formal arguments, based on the analogy with the discussion in [5], suggest that the Poisson action of Map(S g,n \D) on the flower algebra descends to a symplectic action of Map(S g,n ) on the moduli space. A mathematically rigorous implementation of these arguments for the non-compact groups G ⋉ g * considered here would be interesting, particularly for the physically relevant cases where G ⋉ g * is the universal cover of the three-dimensional Euclidean or Poincaré group.</p>
+
+				<p>In the quantum theory, the classical conjugation symmetry is replaced by an action of the quantum double D(G) on the Hilbert spaces V µ 1 s 1 ...µnsn , see [22], in particular Eq. (4.27). The constraint (2.6) is then implemented on these Hilbert spaces by imposing invariance under the action of the quantum double. The action of Map(S g,n \D) on V µ 1 s 1 ...µnsn derived in Sect. 4 of the present paper commutes with this action of the quantum double. Formally, one obtains an action of the mapping class group Map(S g,n ) on the invariant states in V µ 1 s 1 ...µnsn , but there are again technical difficulties related to the non-compactness of G ⋉ g * : the states which are invariant under the D(G)-action are singular and not proper elements of V µ 1 s 1 ...µnsn . For the case of Chern-Simons theory with the non-compact but semisimple gauge group SL(2, C), a mathematically rigorous way of defining invariant states has been derived in [11]. It would be interesting to see if a similar method can be applied to our situation and to investigate the resulting mapping class group action on the reduced Hilbert space, again with particular attention to the three-dimensional Euclidean or Poincaré group.</p>
+
+				<p><formula>1 n a ν,µ α i−1 1 κ κ i i ρ ρ,n+2i−1 ρ, 2 i g i+1 µ ν n+2i κ δ i−1 i−1 ε Fig. 3</formula></p>
+
+				<p>The curves associated to the generators of the (pure) mapping class group PMap(S g,n \D)</p>
+
+				<p>They can be expressed in terms of the generators m 1 , . . . , m n , a 1 , b 1 , . . . , a g , b g of the fundamental group shown in Fig. 1</p>
+
+				<figure>
+					<figDesc>as follows:</figDesc>
+					<trash>a i i = 1, . . . , g (A.1) δ i = a −1 i b −1 i a i i = 1, . . . , g α i = a −1 i b −1 i a i b i−1 i = 2, . . . , g ǫ i = a −1 i b −1 i a i · (b i−1 a −1 i−1 b −1 i−1 a i−1 ) · . . . · (b 1 a −1 1 b −1 1 a 1 ) i = 2, . . . , n κ ν,µ = m µ m ν 1 ≤ ν &lt; µ ≤ n κ ν,n+2i−1 = a −1 i b −1 i a i m ν ν = 1, . . . , n, i = 1, . . . , g κ ν,n+2i = b i m ν ν = 1, . . . , n, i = 1, . . . , g . Parametrising the corresponding holonomies as Hol(γ) = (u γ , −Ad * (u −1 γ )j γ ) and</trash>
+
+
+				</figure>
+
+				<p>ing them in terms of holonomies of the generators m i , a j , b j , we obtain</p>
+
+				<figure>
+					<trash>u a i = u A i (A.2) u δ i = u −1 A i u −1 B i u A i u α i = u −1 A i u −1 B i u A i u B i−1 u ǫ i = u −1 A i u −1 B i u A i u K i−1 · · · u K 1 u κν,µ = u Mµ u Mν u κ ν,n+2i−1 = u −1 A i u −1 B i u A i u Mν u κ ν,n+2i = u B i u Mν j a i = j A i (A.3) j δ i = (1 − Ad * (u −1 A i u −1 B i u A i ))j A i − Ad * (u −1 B i u A i )j B i j α i = j B i−1 + (Ad * (u B i−1 ) − Ad * (u α i ))j A i − Ad * (u −1 B i u A i u B i−1 )j B i j ǫ i = i−1 l=1 Ad * (u K l−1 · · · u K 1 )j H l + ( Ad * (u K i−1 · · · u K 1 ) − Ad * (u −1 A i u −1 B i u A i u K l−1 · · · u K 1 ) )j A i − Ad * (u −1 B i u A i u K l−1 · · · u K 1 ) )j B i j κν,µ = j Mν + Ad * (u Mν )j µ j κ ν,n+2i−1 = j Mν + (Ad * (u Mν ) − Ad * (u κ ν,n+2i−1 ))j A i − Ad * (u A i u κ ν,n+2i−1 )j B i j κ ν,n+2i = j u Mν + Ad * (u Mν )j B i , with u K i = [u B i , u −1 A i ] = u B i u −1 A i u −1 B i u A i and j H i given by (3.24).</trash>
+
+
+				</figure>
+
+				<p>A Dehn twist around an embedded curve γ can be defined by embedding a small annulus around the curve and twisting its ends by an angle of 2π as shown in Fig. 4. It induces an outer automorphism of the fundamental group, affecting only those elements for which all representing curves intersect with γ. If we choose a representing curve that has the smallest possible number of intersections with γ for each of the generators m i , a j , b j of the fundamental group and determine their transformations by drawing the images of these curves as indicated in Fig. 4, we obtain explicit formulae for the action of the pure mapping class group on these generators. We summarise this action in the following table, listing only the generators that do not transform trivially 4 . a i :b i → b i a i</p>
+
+				<figure>
+					<trash>(A.4) δ i :a i → a i δ i = b −1 i a i (A.5) α i :a i → b −1 i a i b i−1 = a i α i (A.6) b i−1 → b −1 i−1 a −1 i b i a i b i−1 a −1 i b −1 i a i b i−1 = α −1 i b i−1 α i a i−1 → b −1 i−1 a −1 i b i a i a i−1 = α −1 i a i−1 ǫ i :a i → b −1 i a i k i−1 . . . k 1 = a i ǫ i (A.7) a k → k −1 1 . . . k −1 i−1 (a −1 i b i a i )a k (a −1 i b −1 i a i )k i−1 . . . k 1 = ǫ −1 i a k ǫ i ∀1 ≤ k &lt; i b k → k −1 1 . . . k −1 i−1 (a −1 i b i a i )b k (a −1 i b −1 i a i )k i−1 . . . k 1 = ǫ −1 i b k ǫ i ∀1 ≤ k &lt; i where k j := b j a −1 j b −1 j a j κ ν,µ :m ν → m −1 ν m −1 µ m ν m µ m ν = κ −1 ν,µ m ν κ ν,µ (A.8) m µ → m −1 ν m µ m ν = κ −1 ν,µ m µ κ ν,µ m κ → m −1 ν m −1 µ m ν m µ m κ m −1 µ m −1 ν m µ m ν ∀ κ ν,n+2i−1 :m ν → m −1 ν a −1 i b i a i m ν a −1 i b −1 i a i m ν = κ −1 ν,n+2i−1 m ν κ ν,n+2i−1 (A.9) a i → b −1 i a i m ν = a i κ ν,n+2i−1 x j → m −1 ν a −1 i b i a i m ν a −1 i b −1 i a i x j a −1 i b i a i m −1 ν a −1 i b −1 i a i m ν = κ −1 ν,n+2i−1 m ν κ ν,n+2i−1 m −1 ν x j m ν κ −1 ν,n+2i−1 m −1 ν κ ν,n+2i−1 , x j ∈ {m ν+1 , . . . , m n , a 1 , . . . , b i−1 } κ ν,n+2i :m ν → m −1 ν b −1 i m ν b i m ν = κ −1 ν,n+2i m ν κ ν,n+2i (A.10) b i → m −1 ν b i m ν = κ −1 ν,n+2i b i κ ν,n+2i a i → m −1 ν b −1 i a i b −1 i m −1 ν b i m ν = κ −1 ν,n+2i a i b −1 i m −1 ν κ ν,n+2i x j → m −1 ν b −1 i m ν b i x j b −1 i m −1 ν b i m ν = κ −1 ν,n+2i m ν b i x j b −1 i m −1 ν κ ν,n+2i , x j ∈ {m ν+1 , . . . , m n , a 1 , . . . b i−1 }. 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 Fig. 4</trash>
+
+
+				</figure>
+
+				<p>The effect of a Dehn twist around an oriented loop (dotted line) on a curve intersecting the loop transversally (full line)</p>
+
+				<p>A set of generators of the full mapping class group of the surface S g,n \D is obtained by supplementing this set of generators with the generators σ i , i = 1, . . . , n of the braid group. The action of these generators on the loops m i around the punctures is shown in Fig. 5. They leave invariant all generators of the fundamental group except m i and m i+1 , on which they act according to σ i :m i → m i+1</p>
+
+				<figure>
+					<trash>(A.11) m i+1 → m i+1 m i m −1 i+1 .</trash>
+
+
+				</figure>
+
+			</div>
+
+			<note place="foot">arXiv:hep-th/0312049v2 19 Feb 2004 HWM-03-32 EMPG-03-23 hep-th/0312049</note>
+
+			<note place="foot" n="1"> cm@ma.hw.ac.uk 2 bernd@ma.hw.ac.uk</note>
+
+			<note place="foot" n="3"> The result was announced in [5] but the proof does not appear to have been published.</note>
+
+			<note place="foot" n="4"> Note that the Dehn twist (A.5) is the inverse of the twist in [22].</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+				<head>Acknowledgements</head>
+				<p>We thank Jim Howie for valuable information concerning the orbits of the mapping class group action on the fundamental groups of surfaces. CM acknowledges financial support by the Engineering and Physical Sciences Research Council and a living stipend from the Studienstiftung des Deutschen Volkes. BJS acknowledges an Advanced Research Fellowship of the Engineering and Physical Sciences Research Council.</p>
+			</div>
+
+		<div type="annex">
+			<div>
+				<head>A The generators of the mapping class group</head>
+
+				<p>For the convenience of the reader we give a set of generators of the mapping class groups Map(S g,n ) and Map(S g,n \D) with explicit formulae for their actions on a set of generators of the fundamental groups π 1 (S g,n ) and π 1 (S g,n \D). Some of the contents of this appendix are taken from our discussion in [22].</p>
+
+				<p>The pure mapping class group PMap(S g,n \D) of the punctured surface S g,n \D is the subgroup of Map(S g,n \D) which leaves each puncture fixed. A set of generators and defining relations has been derived by Birman [9, 10] but for us the set of generators used by Schomerus and Alekseev [5] is more convenient, which was first given in [24], see also [21]. Note that this set also generates PMap(S g,n ), with additional relations.</p>
+
+				<p>The generating set consists of Dehn twists around the curves a i , δ i , α i , ǫ i , κ ν,µ , κ ν,n+2i−1 and κ ν,n+2i pictured in Fig. 3</p>
+
+				<figure>
+					<trash>. 000000000 000000000 000000000 000000000 000000000 000000000 000000000 000000000 000000000 000000000 000000000 000000000 111111111 111111111 111111111 111111111 111111111 111111111 111111111 111111111 111111111 111111111 111111111 111111111 1 g 1 i+1 i−1 000000000 000000000 000000000 000000000 000000000 000000000 000000000 000000000 000000000 000000000 000000000 000000000 111111111 111111111 111111111 111111111 111111111 111111111 111111111 111111111 111111111 111111111 111111111 111111111</trash>
+
+
+				</figure>
+
+				<p>m i+1 m i+1 m i m i+1 −1 Fig. 5 The generators of the braid group on the surface S g,n \D</p>
+
+			</div>
+		</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">Foundations of Mechanics. Cambridge: Perseus Pub- lishing</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Abraham</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">E</forename>
+				<surname>Marsden</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1978" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Symplectic structure of the moduli space of flat connections on a Riemann surface</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">Y</forename>
+				<surname>Alekseev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">Z</forename>
+				<surname>Malkin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">169</biblScope>
+			<biblScope unit="page" from="99" to="119" />
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Combinatorial quantization of the Hamiltonian Chern-Simons Theory</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">Y</forename>
+				<surname>Alekseev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Grosse</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Schomerus</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">172</biblScope>
+			<biblScope unit="page" from="317" to="358" />
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Combinatorial quantization of the Hamiltonian Chern-Simons Theory II</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">Y</forename>
+				<surname>Alekseev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Grosse</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Schomerus</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">174</biblScope>
+			<biblScope unit="page" from="561" to="604" />
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Representation theory of Chern-Simons observables. Duke Math</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">Y</forename>
+				<surname>Alekseev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Schomerus</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal</title>
+		<imprint>
+			<biblScope unit="volume">85</biblScope>
+			<biblScope unit="page" from="447" to="510" />
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Atiyah</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Bott</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Mills equations over Riemann surfaces</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Phil</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Trans. R. Soc. London A</title>
+		<imprint>
+			<biblScope unit="volume">308</biblScope>
+			<biblScope unit="issue">523</biblScope>
+			<date type="published" when="1982" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<forename type="middle">A</forename>
+				<surname>Bais</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Muller</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Topological field theory and the quantum double of SU</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">530</biblScope>
+			<biblScope unit="page" from="349" to="400" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Quantum group symmetry and particle scattering in (2+1)-dimensional quantum gravity</title>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<forename type="middle">A</forename>
+				<surname>Bais</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<forename type="middle">M</forename>
+				<surname>Muller</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">J</forename>
+				<surname>Schroers</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">640</biblScope>
+			<biblScope unit="page" from="3" to="45" />
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Mapping class groups and their relationship to braid groups</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">S</forename>
+				<surname>Birman</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comm. Pure Appl. Math</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="213" to="38" />
+			<date type="published" when="1969" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Braids, links and mapping class groups</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">S</forename>
+				<surname>Birman</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ann. of Math. Studies</title>
+		<imprint>
+			<publisher>Princeton Univ. Press</publisher>
+			<biblScope unit="volume">82</biblScope>
+			<date type="published" when="1975" />
+			<publisher>Princeton Univ. Press</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Hamiltonian Quantization of Chern-Simons theory with SL(2, C) Group</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Buffenoir</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Noui</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Roche</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Class. Quant. Grav</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page" from="4953" to="5016" />
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Exact quantum scattering in (2+1)-dimensional gravity</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Carlip</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">324</biblScope>
+			<biblScope unit="page" from="106" to="22" />
+			<date type="published" when="1989" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+		<title level="m" type="main">Quantum Groups</title>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Chari</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Pressley</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1994" />
+			<publisher>Cambridge Univ. Press</publisher>
+			<pubPlace>Cambridge</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<monogr>
+		<title level="m" type="main">Poisson structures on moduli of flat connections on Riemann surfaces and r-matrices. ITEP preprint</title>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">V</forename>
+				<surname>Fock</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">A</forename>
+				<surname>Rosly</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1992" />
+			<biblScope unit="page" from="72" to="92" />
+		</imprint>
+	</monogr>
+	<note>math. .QA/9802054</note>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">The symplectic nature of fundamental groups of surfaces</title>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">M</forename>
+				<surname>Goldman</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ad- vances in Mathematics</title>
+		<imprint>
+			<biblScope unit="volume">54</biblScope>
+			<biblScope unit="page" from="200" to="225" />
+			<date type="published" when="1984" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Invariant functions on Lie Groups and Hamiltonian flows of surface group representations</title>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">M</forename>
+				<surname>Goldman</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Invent. Math</title>
+		<imprint>
+			<biblScope unit="volume">85</biblScope>
+			<biblScope unit="page" from="263" to="320" />
+			<date type="published" when="1986" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<title level="m" type="main">Mapping Class Groups Handbook of Geometric Topology</title>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<forename type="middle">V</forename>
+				<surname>Ivanov</surname>
+			</persName>
+		</author>
+		<editor>Daverman, R. J., Sher, R. B.</editor>
+		<imprint>
+			<date type="published" when="2002" />
+			<publisher>Elsevier Science</publisher>
+			<pubPlace>Amsterdam</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">The quantum double of a (locally) compact group</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Koornwinder</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<forename type="middle">M</forename>
+				<surname>Muller</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Lie Theory</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="101" to="120" />
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Tensor product representations of the quantum double of a compact group</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Koornwinder</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Muller</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<forename type="middle">A</forename>
+				<surname>Bais</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">198</biblScope>
+			<biblScope unit="page" from="157" to="186" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<title level="m" type="main">Introduction to mechanics and symmetry</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">E</forename>
+				<surname>Marsden</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">S</forename>
+				<surname>Ratiu</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1999" />
+			<publisher>Springer Verlag</publisher>
+			<pubPlace>New York</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">A geometrical presentation of the surface mapping class group and surgery</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Mateev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Polyakov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">160</biblScope>
+			<biblScope unit="page" from="537" to="550" />
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Poisson structure and symmetry in the Chern- Simons formulation of (2+1)-dimensional gravity</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Meusburger</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">J</forename>
+				<surname>Schroers</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Class. Quant. Grav</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="2193" to="2233" />
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<monogr>
+		<title level="m" type="main">The quantisation of Poisson structures arising in Chern-Simons theory with gauge group G ⋉g * , to appear in Advances in Theoretical and Mathematical Physics</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Meusburger</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">J</forename>
+				<surname>Schroers</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="310218" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">A simple presentation of the mapping class group of an orientable surface</title>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Wajnryb</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Israel Journal of Mathematics</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="page" from="157" to="174" />
+			<date type="published" when="1983" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">2+1 dimensional gravity as an exactly soluble system</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Witten</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">311</biblScope>
+			<biblScope unit="page" from="46" to="78" />
+			<date type="published" when="1988" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

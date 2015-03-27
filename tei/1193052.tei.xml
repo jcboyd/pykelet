@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">QCD Phase Diagram with 2-flavor Lattice Fermion Formulations * QCD phase diagram with 2-flavor lattice fermion formulations</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2012-06-24">2012 June 24-29, 2012</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Taro</forename>
+								<surname>Kimura</surname>
+							</persName>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Tatsuhiro</forename>
+								<surname>Misumi</surname>
+							</persName>
+						</author>
+						<author role="corresp">
+							<persName>
+								<forename type="first">Akira</forename>
+								<surname>Ohnishi</surname>
+							</persName>
+							<email>E-mail: ohnishi@yukawa.kyoto-u.ac.jp</email>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Taro</forename>
+								<surname>Kimura</surname>
+							</persName>
+						</author>
+						<author>
+							<affiliation>
+								<orgName type="laboratory">Mathematical Physics Laboratory</orgName>
+								<orgName type="institution">RIKEN Nishina Center</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation>
+								<orgName type="department">Yukawa Institute for Theoretical Physics</orgName>
+								<orgName type="institution" key="instit1">Brookhaven National Laboratory</orgName>
+								<orgName type="institution" key="instit2">Kyoto University</orgName>
+							</affiliation>
+						</author>
+						<title level="a" type="main">QCD Phase Diagram with 2-flavor Lattice Fermion Formulations * QCD phase diagram with 2-flavor lattice fermion formulations</title>
+					</analytic>
+					<monogr>
+						<title level="m">The XXX International Symposium on Lattice Field Theory -Lattice</title>
+						<meeting> <address><addrLine>Cairns, Australia * RIKEN-MP-57 † Speaker</addrLine></address>
+						</meeting>
+						<imprint>
+							<date type="published" when="2012-06-24">2012 June 24-29, 2012</date>
+						</imprint>
+					</monogr>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>We propose a new framework for investigating two-flavor lattice QCD with finite temperature and density by applying the Karsten-Wilczek lattice fermion, in which a species-dependent imaginary chemical potential can reduce the number of species to two without losing chiral symmetry. This lattice discretization is useful for study on finite-(T, µ) QCD since its discrete symmetries are appropriate for the case. To show its applicability, we study strong-coupling lattice QCD with temperature and chemical potential. We derive the effective potential of the scalar meson field and obtain a critical line of the chiral phase transition, which is qualitatively consistent with the phenomenologically expected phase diagram.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>Lattice QCD has played an important role in study of the non-perturbative aspects of QCD. However, its application to the finite density system has not been established due to serious difficulty of the sign problem. In this report we propose a new framework of investigating the 2-flavor QCD with finite temperature and density by using the Karsten-Wilczek (KW) lattice fermion [1], which possesses only two species doublers, i.e. minimally doubled fermion. This lattice formulation lifts degeneracy of 16 species without breaking its chiral symmetry by introducing a speciesdependent imaginary chemical potential, instead of a species-dependent mass term introduced in the Wilson fermion formalism. Because of the chemical potential term, its discrete symmetry is not sufficient to be applied to fully Lorentz symmetric system, i.e. zero temperature and density, but enough to study the in-medium QCD. To show the usefulness of the KW fermion, we study strong-coupling lattice QCD with temperature and density.</p>
+
+			</div>
+			<div>
+				<head n="2">Symmetry of KW-type minimally doubled fermion</head>
+
+				<p>The KW fermion is a kind of minimally doubled fermions, involving only two species doublers by introducing a species-dependent imaginary chemical potential, which we call &quot; flavored chemical potential&quot;. This term preserves its chiral symmetry and ultra-locality [2], but breaks some of discrete spacetime symmetries [3, 4]. We then need three counter terms to take a correct Lorentz symmetric continuum limit: dimension-3, ¯ ψiγ 4 ψ = iψ † ψ, and dimension-4 terms, ¯ ψγ 4 ∂ 4 ψ, F j4 F j4 [5]. The fermionic part of KW fermion action with the counter terms is given by</p>
+
+				<p><formula>S KW = ∑ x 1 2 4 ∑ µ=1 ¯ ψ x γ µ U x,x+ µ ψ x+ µ −U x,x− µ ψ x− µ + i r 2 3 ∑ j=1 ¯ ψ x γ 4 2ψ x −U x,x+ j ψ x+ j −U x,x− j ψ x− j +iµ 3 ¯ ψ x γ 4 ψ x + d 4 2 ¯ ψ x γ 4 U x,x+ 4 ψ x+ 4 −U x,x− 4 ψ x− 4 . (2.1)</formula></p>
+
+				<p>The second term in the first line including iγ 4 is the flavored chemical potential term, which we also call Karsten-Wilczek(KW) term. We here introduce a parameter r in analogy to Wilson fermion. µ 3 and d 4 are parameters for the dimension-3 and dimension-4 counter terms, respectively. The</p>
+
+			</div>
+			<div>
+				<head>corresponding</head>
+
+				<figure>
+					<figDesc>Dirac operator in the momentum space yields</figDesc>
+					<trash>aD KW (p) = i 4 ∑ µ=1 γ µ sin ap µ + irγ 4 3 ∑ j=1 (1 − cos ap µ ) + iµ 3 γ 4 + id 4 γ 4 sin ap 4 , (2.2) which has only two zeros at ¯ p = (0, 0, 0, 1 a arcsin − µ 3 1+d 4 ) when −1 − d 4 &lt; µ 3 &lt; 1 + d 4 with r = 1.</trash>
+
+
+				</figure>
+
+				<p>When we expand the Dirac operator around the zeros, its dispersion relation is not Lorentz symmetric. As shown in Ref.[2], the tuning condition for the correct dispersion relation is given by (1 + d 4 ) 2 = 1 + µ 2 3 at the tree level . Moreover , it is shown that µ 3 has to be tuned to control imaginary chemical potential in O ( 1 / a ) .</p>
+
+				<p>Symmetries of the lattice action ( 2 . 1 ) are chiral symmetry , cubic symmetry corresponding to permutation of spatial three axes , CT QCD phase diagram with 2 - flavor lattice fermion formulations</p>
+
+				<figure>
+					<trash>Taro Kimura 1 . U ( 1 ) chiral symmetry ( γ 5 ⊗ τ 3 [ 6 , 7 , 8 ] ) 2 . Cubic symmetry 3 . CT 4 . P</trash>
+
+
+				</figure>
+
+				<p>It is notable that these symmetries are the same as those of the finite - density lattice QCD : As an example , we look into the naive lattice action with chemical potential , which is given by</p>
+
+				<p><formula>S naive = 1 2 ∑ x 3 ∑ j=1 ¯ ψ x γ j U x , x+ j ψ x+ j −U x , x− j ψ x− j + ¯ ψ x γ 4 e µ U x , x+ 4 ψ x+ 4 − e −µ U x , x− 4 ψ x− 4 . ( 2 . 3 )</formula></p>
+
+				<p>The 4th direction hopping term , involving chemical potential , breaks the hypercubic symmetry into the spatial cubic symmetry , and also C , P , and T into CT and P , which are the same symmetries of ( 2 . 1 ) . It means that , even if we introduce chemical potential as ( 2 . 3 ) to KW fermion , the symmetries are unchanged . The KW fermion with the exponential form chemical potential is given by ,</p>
+
+				<figure>
+					<trash>S KW = ∑ x 1 2 3 ∑ j=1 ¯ ψ x γ j U x , x+ j ψ x+ j −U x , x− j ψ x− j + i r 2 3 ∑ j=1 ¯ ψ x γ 4 2ψ x −U x , x+ j ψ x+ j −U x , x− j ψ x− j + 1 + d 4 2 ¯ ψ x γ 4 e µ U x , x+ 4 ψ x+ 4 − e −µ U x , x− 4 ψ x− 4 + iµ 3 ¯ ψ x γ 4 ψ x . ( 2 . 4 )</trash>
+
+
+				</figure>
+
+				<p>From the viewpoint of the universality class , these two theories , ( 2 . 3 ) and ( 2 . 4 ) , should belong to the same class . Here we remark the way of introducing chemical potential . It was pointed out in [ 9 ] that a naive form of the chemical potential , µψ † ψ = µ ¯ ψγ 4 ψ , violates the Abelian gauge invariance and requires a counter term to make thermodynamical quantities finite . On the other hand , in the KW fermion , the flavored chemical potential term is introduced in this naive form . It leads to necessity of tuning µ 3 to deal with O ( 1 / a ) additive renormalization of chemical potential , as with the mass renormalization in the Wilson fermion . This renormalization effect is relevant to the phase diagram in the ( µ 3 - g 2 ) parameter plane , as discussed in [ 2 ]</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="3">. Strong - coupling lattice QCD</head>
+
+				<p>We study QCD phase diagram in the framework of the strong - coupling lattice QCD with KW - type minimally doubled fermion . We extend the strong - coupling analysis with this lattice fermion [ 10 ] to the finite temperature and density system [ 11 , 12 , 13 ] . The effective potential in terms of the meson field is obtained by performing the 1 - link integral in the strong coupling limit ( g 2 → ∞ ) , and then introducing auxiliary fields to eliminate the 4 - point interactions . In the case with KW fermion , we have to consider both of the scalar σ =</p>
+
+				<figure>
+					<trash>¯ ψψ and vector π 4 = ¯ ψiγ 4 ψ condensates . Identifying ¯ ψγ 4</trash>
+
+					<figDesc>= ψ † , the latter corresponds to the imaginary density iψ † ψ . For</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>QCD phase diagram with 2 - flavor lattice fermion formulations Taro</head>
+
+				<figure>
+					<figDesc>Kimura the case with SU ( N c ) gauge group and d = D + 1 dimensions in the finite temperature and density , we obtain the the following effective potential ,</figDesc>
+					<trash>F eff ( σ , π 4 ; m , T , µ , µ 3 , d 4 ) = N c D 4 ( 1 + r 2 ) σ 2 + ( 1 − r 2 ) π 2 4 −N c log A− T 4 log ∑ n∈Z det ( Q n+i− j ) 1≤i , j≤N c . ( 3 . 1 ) In particular , the determinant part for N c = 3 is given by ∑ n∈Z det ( Q n+i− j ) 1≤i , j≤N c = 8 1 + 12 cosh 2 E T + 8 cosh 4 E T 15 − 60 cosh 2 E T + 160 cosh 4 E T − 32 cosh 6 E T + 64 cosh 8 E T +64 cosh µ B T cosh E T −15 + 40 cosh 2 E T + 96 cosh 4 E T + 320 cosh 8 E T +80 cosh 2µ B T 1 + 6 cosh 2 E T + 24 cosh 4 E T + 80 cosh 6 E T +80 cosh 3µ B T cosh E T −1 + cosh 2 E T + 2 cosh 4µ B T , ( 3 . 2 ) with E = arcsinh ( B / A ) , A 2 = ( 1+d 4 ) 2 + µ 3 + Dr − D 2 ( 1 − r 2 ) π 4 2 , B = m+ D 2 ( 1+r 2 ) σ . ( 3 . 3 )</trash>
+
+
+				</figure>
+
+				<p>Here the baryon chemical potential is defined as µ B = 3µ . Remark that the next - leading order terms in O ( 1 / √ D ) are omitted in the derivation . See [ 14 ] for the detailed calculation .</p>
+
+				<p>In the zero temperature case , we can solve the equilibrium condition analytically . For D = 3 ( d = 4 ) with m = 0 and r = 1 the potential is given by</p>
+
+				<figure>
+					<trash>F eff ( σ ) = 9 2 σ 2 − 3 2 log ( 1 + d 4 ) 2 + ( µ 3 + 3 ) 2 −max 3 arcsinh 3σ ( 1 + d 4 ) 2 + ( µ 3 + 3 ) 2 , µ B . ( 3 . 4 )</trash>
+
+					<figDesc>In this case there are two local minima of the free energy as a function of σ at σ = 0 and σ = σ 0 . This σ 0 can be determined by the gap equation , ∂ F eff / ∂ σ σ =σ 0</figDesc>
+					<trash>= 0 , σ 2 0 = ( 1 + d 4 ) 2 + ( µ 3 + 3 ) 2 18 1 + 36 ( ( 1 + d 4 ) 2 + ( µ 3 + 3 ) 2 ) 2 − 1 . ( 3 . 5 )</trash>
+
+
+				</figure>
+
+				<p>Comparing these two local minima , we can show that the global minimum changes from σ = σ 0 to σ = 0 at the critical chemical potential as</p>
+
+				<figure>
+					<trash>µ critical B ( T = 0 ) = 3 arcsinh 3σ 0 ( 1 + d 4 ) 2 + ( µ 3 + 3 ) 2 − 9 2 σ 2 0 . ( 3 . 6 )</trash>
+
+
+				</figure>
+
+				<p>This chiral phase transition is of 1st order because the order parameter σ changes discontinuously at this critical chemical potential . We can also evaluate the baryon density ρ B = −∂ F eff / ∂ µ B at</p>
+
+			</div>
+			<div>
+				<head>QCD phase diagram with 2 - flavor lattice fermion formulations</head>
+
+				<figure>
+					<trash>Taro Kimura 0 0 . 05 0 . 1 0 . 15 0 . 2 0 . 25 0 . 3 0 . 35 0 . 4 0 0 . 2 0 . 4 0 . 6 0 . 8 1 Temperature Baryon Chemical Potential - 3 - 2 - 1 0 1 2 3 4 5 0 0 . 5 1 1 . 5 2 Baryon Chemical Potential Temperature Figure 1</trash>
+
+
+				</figure>
+
+				<p>: ( Left ) Phase diagram for the chiral transition with r = 1 , µ 3 = −0 . 9 and d 4 = 0 . Green and red lines show 2nd and 1st transition lines , respectively . The transition order is changed from 2nd to 1st at the tricritical point ( µ tri B , T tri ) = ( 0 . 804 , 0 . 234 ) . ( Right ) Three - dimensional chiral phase diagram for T , µ B and µ 3 for m = 0 where µ 3 runs within half of the physical range −3 &lt; µ 3 &lt; 32 / 7 − 3 . Green , red and purple lines show 2nd , 1st order transitions and tricritical point , respectively . T = 0 . It turns out to be empty ρ B = 0 when µ B &lt; µ critical B . On the other hand , when µ B &gt; µ critical B , it is saturated as ρ B = 1 .</p>
+
+				<p>We then discuss the phase diagram with respect to chiral symmetry . We now concentrate on the case with r = 1 for simplicity because the effective potential ( 3 . 1 ) is independent of π 4 in such a case . The 2nd order chiral phase boundary is given by the condition , such that the coefficient of σ 2 in the effective potential ( 3 . 1 ) becomes zero . When the order of the phase transition is changed from 2nd to 1st , the coefficient of σ 4 as well as σ 2 should vanish . The left panel of Fig . 1 shows the phase boundary of the chiral transition with r = 1 , µ 3 = −0 . 9 and m = 0 for d 4 = 0 . The counter term parameter is taken from the physical region − 32 / 7 &lt; µ 3 + 3 &lt; 32 / 7 [ 2 ] . The order of the phase transition is changed from 2nd to 1st at the tricritical point ( µ tri B , T tri ) = ( 0 . 804 , 0 . 234 ) . We also depict σ condensate and the baryon density ρ B = −∂ F eff / ∂ µ B as functions of µ B with several fixed T in Fig . 2 . We find that there are 1st ( T &lt; T tri ) and 2nd ( T &gt; T tri ) order phase transitions for σ , followed by the phase transition of the density ρ B . For m = 0 , we can show that the crossover transition instead appears with the 2nd order critical point . These results are qualitatively consistent with those with strong - coupling lattice QCD with staggered fermions , while there are some quantitative differences . For example , the KW phase diagram is suppressed in T direction compared to that in staggered . We here compare the ratio of the transition baryon chemical potential at T = 0 to the critical temperature at µ B = 0 , R 0 = µ c ( T = 0 ) / T c ( µ B = 0 ) . In staggered fermion , this ratio is R 0 st ≃ 3 × 0 . 56 / ( 5 / 3 ) ∼ 1 [ 12 , 13 ] , while R 0 KW ≃ 0 . 767 / 0 . 356 ∼ 2 . 2 . In the real world , this ratio is larger , R 0 M N / 170 MeV ∼ 5 . 5 . When the finite coupling and Polyakov loop effects are taken into account for staggered fermion , T c ( µ B = 0 ) decreases , µ c ( T = 0 ) stays almost constant , then R 0 value increases [ 15 ] . Larger R 0 with KW fermion in the strong coupling limit may suggest smaller finite coupling corrections in the phase boundary . Another interesting point is the location of the tricritical point . In KW fermion , the ratio is R tri KW = 0 . 804 / 0 . 234 ≃ 3 . 4 , while R tri st = 1 . 73 / 0 . 866 ≃ 2 . 0 for unrooted staggered fermion [ 12 , 13 ] . It would be too brave to discuss this value , but R tri KW is consistent with the recent Monte - Carlo</p>
+
+			</div>
+			<div>
+				<head>QCD phase diagram with 2 - flavor lattice fermion formulations</head>
+
+				<figure>
+					<trash>Taro Kimura 0 0 . 1 0 . 2 0 . 3 0 . 4 0 . 5 0 0 . 5 1 1 . 5 2 0 0 . 2 0 . 4 0 . 6 0 . 8 1 Condensate Density Baryon Chemical Potential 0 0 . 1 0 . 2 0 . 3 0 . 4 0 . 5 0 0 . 5 1 1 . 5 2 0 0 . 2 0 . 4 0 . 6 0 . 8 1 Condensate Density Baryon Chemical Potential 0 0 . 1 0 . 2 0 . 3 0 . 4 0 . 5 0 0 . 5 1 1 . 5 2 0 0 . 2 0 . 4 0 . 6 0 . 8 1 Condensate Density Baryon Chemical Potential 0 0 . 1 0 . 2 0 . 3 0 . 4 0 . 5 0 0 . 5 1 1 . 5 2 0 0 . 2 0 . 4 0 . 6 0 . 8 1 Condensate Density Baryon Chemical Potential</trash>
+
+					<head>Figure 2 :</head>
+
+					<figDesc>Chiral condensate σ and the baryon density ρ B for ( left ) T = 0 . 3 and ( right ) T = 0 . 2 with d 4 = 0 .</figDesc>
+
+				</figure>
+
+				<p>Top and bottom panels show the massless m = 0 and massive m = 0 . 1 cases . There are 1st and 2nd phase transitions for σ . In the case of m = 0 , there appears the crossover behavior instead of the 2nd order transition . simulations ( see references in [ 16 ] ) , which implies that the critical point does not exist in the low baryon chemical potential region , µ B / T 3 . These observations reveal usefulness of KW fermion for research on QCD phase diagram . Apart from the phase transitions , the µ B dependence of σ and ρ B seems to have some charac - teristics in Fig . 2 . At T = 0 . 3 &gt; T tri with m=0 , σ and ρ B undergoes the 2nd - order phase transition at µ B ≃ 0 . 5 , and at a larger µ B ( µ B ≃ 1 . 15 ) , increasing rate of ρ B as a function of µ B becomes higher again . At lower temperature , T = 0 . 2 &lt; T tri , partial restoration of the chiral symmetry is seen before the first order phase transition . Since we have not taken care of the diquark condensate , these continuous changes are not related to the color superconductor . Other types of matter , such as quarkyonic matter [ 17 ] , partial chiral restored matter [ 15 ] , or nuclear matter , may be related to the above characteristics .</p>
+
+				<p>In this report we focus on the case with r = 1 and d 4 = 0 for simplicity . It is shown in [ 14 ] that effects of these parameters are just quantitative .</p>
+
+			</div>
+			<div>
+				<head>QCD phase diagram with 2 - flavor lattice fermion formulations</head>
+
+				<p>Taro Kimura chemical potential . We have obtained the phase diagram with 1st , 2nd - order and crossover critical lines , which is qualitatively in agreement to results from the model study .</p>
+
+			</div>
+
+			<note place="foot" n="3"> at the tree level. Moreover, it is shown that µ 3 has to be tuned to control imaginary chemical potential in O(1/a). Symmetries of the lattice action (2.1) are chiral symmetry, cubic symmetry corresponding to permutation of spatial three axes, CT and P [3]:</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+				<head n="4">Summary</head>
+				<p>We have proposed a new framework for investigating the two-flavor finite-(T ,µ) QCD phase diagram. We have shown that the discrete symmetries of KW fermion strongly suggest its applicability to the in-medium lattice QCD. To support our idea, we study the strong-coupling lattice QCD in the medium and derive the phase diagram of chiral symmetry for finite temperature and</p>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">B104 (1981) 315; F. Wilczek</title>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">H</forename>
+				<surname>Karsten</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="page" from="59" to="2397" />
+			<date type="published" when="1987" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Misumi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Jhep</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">F</forename>
+				<surname>Bedaque</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">I</forename>
+				<surname>Buchoff</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">C</forename>
+				<surname>Tiburzi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Walker-Loud</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">449</biblScope>
+			<biblScope unit="page" from="662" to="78" />
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Kimura</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Misumi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Prog</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Theor. Phys. Prog. Theor. Phys</title>
+		<imprint>
+			<biblScope unit="volume">1243774</biblScope>
+			<biblScope unit="issue">123</biblScope>
+			<biblScope unit="page" from="415" to="432" />
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Capitani</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Weber</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Wittig</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<forename type="middle">S</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Capitani</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Creutz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Weber</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Wittig</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page" from="681" to="091006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Creutz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Kimura</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Misumi</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">C</forename>
+				<surname>Tiburzi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="issue">034511</biblScope>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">022306, arXiv:1101.1061 [hep-lat]</title>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Drissi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Saidi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Bousmina</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Math. Phys. Phys. Rev</title>
+		<editor>L. B. Drissi and E. H. Saidi</editor>
+		<imprint>
+			<biblScope unit="volume">52</biblScope>
+			<biblScope unit="page">84</biblScope>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Hasenfratz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Karsch</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1983" />
+			<biblScope unit="page">125</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Kimura</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Komatsu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Misumi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Noumi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Torii</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Aoki</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="hep" to="lat" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Nishida</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Fukushima</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Hatsuda</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rept</title>
+		<imprint>
+			<biblScope unit="volume">398</biblScope>
+			<biblScope unit="page" from="281" to="300" />
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Fukushima</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Prog</forename>
+				<surname>Theor</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2004" />
+			<biblScope unit="page" from="204" to="219" />
+		</imprint>
+	</monogr>
+	<note>Suppl. hep. -ph]</note>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Nishida</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">69</biblScope>
+			<biblScope unit="issue">094501</biblScope>
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Misumi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Kimura</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Ohnishi</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">074034, arXiv:0907.4245 [hep-lat]</title>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Miura</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">Z</forename>
+				<surname>Nakano</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Ohnishi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Kawamoto ; K</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">Z</forename>
+				<surname>Miura</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Nakano</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Ohnishi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Prog. Theor. Phys. Theor. Phys</title>
+		<imprint>
+			<biblScope unit="volume">1223453</biblScope>
+			<biblScope unit="page" from="80" to="1045" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Ohnishi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Prog</forename>
+				<surname>Theor</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="1" to="10" />
+		</imprint>
+	</monogr>
+	<note>Suppl. . 193. nucl. -th]</note>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Mclerran</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">D</forename>
+				<surname>Pisarski</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys</title>
+		<imprint>
+			<biblScope unit="volume">796</biblScope>
+			<biblScope unit="page" from="83" to="100" />
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+	<note>hep. -ph]</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

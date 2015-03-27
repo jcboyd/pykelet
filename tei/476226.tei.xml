@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">The new definition of lattice gauge fields and the Landau gauge</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName>
+								<forename type="first">Hideo</forename>
+								<surname>Nakajima</surname>
+							</persName>
+							<email>(e-mail nakajima@kinu.infor.utsunomiya-u.ac.jp)</email>
+							<affiliation>
+								<orgName type="department">Department of Information Science</orgName>
+								<orgName type="institution">Utsunomiya University</orgName>
+								<address>
+									<postCode>2753, 321-8585</postCode>
+									<settlement>Ishii, Utsunomiya</settlement>
+									<country key="JP">Japan</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Sadataka</forename>
+								<surname>Furui</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">School of Science and Engineering</orgName>
+								<orgName type="institution">Teikyo University</orgName>
+								<address>
+									<addrLine>1-1 Toyosatodai</addrLine>
+									<postCode>320-8551</postCode>
+									<settlement>Utsunomiya</settlement>
+									<country key="JP">Japan</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">The new definition of lattice gauge fields and the Landau gauge</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<note>arXiv:hep-lat/9809080v1 12 Sep 1998 1</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>The Landau gauge fixing algorithm in the new definition of gauge fields is presented. In this algorithm a new solver of the Poisson equations based on the Green&apos;s function method is used. Its numerical performance of the gauge fixing algorithm is presented. Performance of the smeared gauge fixing in SU(3) is also investigated.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">The</head>
+
+				<p>Landau gauge fixing algorithm in the new definition of gauge fields We define the gauge field[1,2] on links as an element of SU (3) Lie algebra as, e Ax,µ = U x,µ , where A † x,µ = −A x,µ (1)</p>
+
+				<p>Our definition is different from usual conven- tion[6] in U -linear form,</p>
+
+				<figure>
+					<trash>A (1) = 1 2 (U − U † )| traceless part (2)</trash>
+
+
+				</figure>
+
+				<p>and it is more natural as an averaged gauge field on the link in the continuum theory. We use the analytic method of eigenspace projection operator together with Cardano&apos;s eigenvalue solver for transformation between U and A. It is remarkable that the definition (1) of gauge field allows the same type of formulation of the lattice Landau or Coulomb gauge condition as the continuum theory, i.e., minimizing condition of A 2 along the gauge orbits[3,4]. The definion A = log U requires a proper choice of branch for traceless A, and A becomes a nonanalytic function of U , and yet A 2 still remains a continuous function of U . This fact justifies the existence of the global minimum of A g 2 along the gauge orbit (the minimal Landau gauge condition).</p>
+
+				<figure>
+					<trash>The gauge transformation is e A g x,µ = g † x e Ax,µ g x+µ (3) * Presenter of the poster. where g x = e ǫx and ǫ x is a traceless antihermitian matrix. When ǫ is infinitesimal δA x,µ = (Dǫ) x,µ = f (adj Ax,µ )∂ǫ x,µ + [A x,µ , ¯ ǫ x+µ/2 ] where f (x) = x/2 tanh(x/2) , ∂ǫ x,µ = ǫ x+µ − ǫ x , and ¯ ǫ x+µ/2 = 1 2 (ǫ x+µ + ǫ x ) (4)</trash>
+
+
+				</figure>
+
+				<p>Gribov region Ω[5,6] is defined as a set of local minimum points on the gauge orbit F</p>
+
+				<figure>
+					<trash>∆A g 2 = −2∂A|ǫ + ǫ| − ∂D|ǫ + · · · (5) Ω = {A| − ∂D ≥ 0 , ∂A = 0} . (6)</trash>
+
+
+				</figure>
+
+				<p>The minimal Landau gauge condition[5,6] defines the fundamental modular region by the abosolute minimum along the gauge orbit,</p>
+
+				<figure>
+					<trash>Λ = {A|A 2 = Min g A g 2 }, Λ ⊂ Ω . (7) The equation to solve for the Landau gauge fixing is highly nonlinear, ∂A g = 0 where g = e ǫ . (8) Linearizing this equation, we can solve it iteratively by the Newton method with an overrelaxation factor η, ǫ = (−∂D(A)) −1 η ∂A . (9)</trash>
+
+
+				</figure>
+
+				<p>This is a non-Abelian extension of the Fourier acceleration type[7,8]. We make a perturbation expansion with respect to A for the inverse of the</p>
+
+				<figure>
+					<trash>covariant Laplacian, as (−∂D(A)) −1 ∼ = N end n=0 ((−∂ 2 ) −1 ∂ ˜ D) n (−∂ 2 ) −1 (10) where D = D(A) − ∂.</trash>
+
+
+				</figure>
+
+				<p>Performance check for various N end is given be- low.</p>
+
+			</div>
+			<div>
+				<head n="2">The new solver of the Poisson equation</head>
+
+				<p>The inversion of the Laplacian is an important problem in numerical analyses, and performances of various methods have been investigated[8]. Efficiency of the methods depends on types of the problem posed, i.e., balance of accuracy and CPU time. We report a new trial, use of the Green function. While high accuracy being maintained, direct use of the Green function in a single machine computaion requires a work of order V 2 , and is obviously inefficient in larger size V . We devise a method that makes a partial use of the Green function for coarse lattice with a preconditioning for the Poisson equation.</p>
+
+				<p>Let us consider d dimesional Poisson equation,</p>
+
+				<figure>
+					<trash>− ∂ 2 φ = 2d(I − A)φ = ρ, (11) where A stands for an averaging operation on neighboring sites. A preconditioned equaiton is given as 2d(I − A 2 )φ = (I + A)ρ, (12) where (I − A 2</trash>
+
+					<figDesc>) becomes block-diagonal on even(odd)-site. After solving the even-site equation (12), we use (11) for φ on odd-site. The Green function for even(odd)-site equation (11) is defined as</figDesc>
+
+				</figure>
+
+				<p><formula>2d(I − A 2 )G = δ − 1 V /2 . (13)</formula></p>
+
+				<p>we found that a good approximant G of the Green function G can be given by the Green function G c on coarser lattice with volume V</p>
+
+				<figure>
+					<trash>/2 d , as ˜ G = (a 0 + a 1 A 2 + a 2 A 4 )δ − c + bA 6 G c , (14) where a 0 , a 1 , a 2 , b and c are optimized parameters . We can add an extra function ∆G for a higher accuracy correction. For an accuracy, 10</trash>
+
+
+				</figure>
+
+				<p>−4 , of the Green function G on 8 3 × 16 lattice, numbers of sites for supports of G c and ∆G are 256 and 162, respectively, out of 4096 of full evensite . Owing to the high accuracy of the above Green function algorithm, this Poisson equation solver allows the over-relaxation factor η to be a larger value, 1.5 to 1.8 in gauge fixing algorithm (9) and (10) and gives a 30 % faster performance than that in the usual conjugate gradient solver.</p>
+
+				<p>The following Fig. 1</p>
+
+				<figure>
+					<figDesc>shows processs of gauge fixing in use of the Green function method and the conjugate gradient method.</figDesc>
+					<trash>0 50 100 150 200 250 -4 -3.5 -3 -2.5 -2 -1.5 -1 Figure 1</trash>
+
+
+				</figure>
+
+				<p>. A comparison of log 10 Max|∂A| in the conjugate gradient method(dashed) and the Green&apos;s function method(continuous). 3. Numerical performance of the gauge</p>
+
+			</div>
+			<div>
+				<head>ing algorithm</head>
+
+				<p>We compare performance of the gauge fixing algorithm (9) and (10) for various A perturbation orders N end in Fig. 2, which shows that the non- Abelian extension improves efficiency. Relative CPU time ratios over that of N end = 3 case are 1.05 for N end = 4 case and 1.91 for N end = 2 case.</p>
+
+				<figure>
+					<trash>0 100 200 300 400 500 -4 -3.5 -3 -2.5 -2 -1.5 -1 Figure 2</trash>
+
+
+				</figure>
+
+				<p>. The dependence of log 10 Max|∂A| on the inclusion of the 2nd(dashed), 3rd(continuous) and 4th(dash-dotted) order perturbative commutator term in the Green&apos;s function method.</p>
+
+				<p>In general, the Fourier accelaration type of methods accomplish much better performance in ultimate precision over simple norm-minimizing methods, and our method is free of critical slowing down. 4. Smeared gauge fixing in SU(3)</p>
+
+				<p>As is well known, the Landau gauge fixing suffers from the problem of Gribov&apos;s copies, that is, the configuration A g is captured by the plenty of local minima of A g 2 along the gauge orbits.</p>
+
+				<p>In order to avoid noise of those Gribov&apos;s copies when measuring, e.g., the gluon propagators etc., the method of gauge fixing to the global minimum of the A g 2 is necessary. Hetrick and de Forcrand proposed a clever method of smeared gauge fixing[9].</p>
+
+				<figure>
+					<figDesc>They investigated performance of the smeared gauge fixing in case of SU(2), and reported that it works well for large β. Here we report that it works very well also for SU(3) in case of large β. We observed that it works perfectly in gauge fixing to the global minimum of A g 2 , by using 50 configurations generated by random gauge transformation from a sample in</figDesc>
+					<trash>30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 62 2 4 6 8 10 12 14 Figure 3</trash>
+
+
+				</figure>
+
+				<p>. A histogram of the number of Gribov copies obtained after the random gauge transformation . Transformation of the 50 samples to the unique minimum ||A|| 2 = 0.2430 was achieved. β = 5 on 4 3 × 8 lattice, all of which are transformed to the unique minimum.</p>
+
+			</div>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Di</forename>
+				<surname>Renzo</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Suppl.)</title>
+		<meeting>. Suppl.)</meeting>
+		<imprint>
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<title level="m" type="main">talk in YKIS97(1997); idem. talk in Confinement III(1998); idem</title>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Nakajima</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Furui</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>in. this poceedings</note>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Maskawa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Nakajima</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Prog</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Theor</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Prog. Theor. Phys</title>
+		<imprint>
+			<biblScope unit="volume">60</biblScope>
+			<biblScope unit="issue">641</biblScope>
+			<date type="published" when="1978" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">A</forename>
+				<surname>Semenov-Tyan-Shanskii</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">A</forename>
+				<surname>Franke</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Zapiski</forename>
+				<forename type="middle">Nauchnykh</forename>
+				<surname>Seminarov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Instituta im Steklov ANSSSR</title>
+		<imprint>
+			<biblScope unit="volume">120</biblScope>
+			<biblScope unit="issue">159</biblScope>
+			<date type="published" when="1982" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">N</forename>
+				<surname>Gribov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page">139</biblScope>
+			<date type="published" when="1978" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Zwanziger</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">T H</forename>
+				<surname>Davies</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="page">1581</biblScope>
+			<date type="published" when="1988" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Cucchieri</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Mendes</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">57</biblScope>
+			<biblScope unit="page">3822</biblScope>
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">E</forename>
+				<surname>Hetrick</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Ph</forename>
+				<surname>De Forcrand</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B(Proc</title>
+		<imprint>
+			<biblScope unit="volume">63</biblScope>
+			<biblScope unit="issue">838</biblScope>
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+	<note>Suppl</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

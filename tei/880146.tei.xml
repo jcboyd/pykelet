@@ -1,0 +1,2715 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Effective action in a higher-spin background</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2011-02-19">19 Feb 2011</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName>
+								<forename type="first">Xavier</forename>
+								<surname>Bekaert</surname>
+							</persName>
+							<email>E-mail: bekaert@lmpt.univ-tours.fr, euihun.joung@sns.it, mourad@apc.univ-paris7.fr</email>
+							<affiliation>
+								<orgName type="laboratory">Laboratoire de MathématiquesetPhysiqueThéorique</orgName>
+								<orgName type="institution">UniversitéFrançoisRabelais</orgName>
+								<address>
+									<postCode>37200</postCode>
+									<settlement>ParcdeGrandmount, Tours</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Euihun</forename>
+								<surname>Joung</surname>
+							</persName>
+							<affiliation>
+								<orgName type="institution" key="instit1">ScuolaNormaleSuperiore</orgName>
+								<orgName type="institution" key="instit2">INFN</orgName>
+								<address>
+									<addrLine>PiazzadeiCavalieri7</addrLine>
+									<postCode>56126</postCode>
+									<settlement>Pisa</settlement>
+									<country key="IT">Italy</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Jihad</forename>
+								<surname>Mourad</surname>
+							</persName>
+							<affiliation>
+								<orgName type="institution">AstroParticuleetCosmologie</orgName>
+							</affiliation>
+							<affiliation>
+								<orgName type="institution">UniversitéParisVII</orgName>
+								<address>
+									<addrLine>BâtimentCondorcet</addrLine>
+									<postCode>75205</postCode>
+									<settlement>ParisCedex13</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation>
+								<orgName type="department">FédérationdeRecherche</orgName>
+								<orgName type="institution" key="instit1">UnitéMixtedeRecherche</orgName>
+								<orgName type="institution" key="instit2">CNRS</orgName>
+								<address>
+									<postCode>6083, 2964</postCode>
+									<settlement>DenisPoisson</settlement>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation>
+								<orgName type="institution" key="instit1">UnitéMixtedeRecherche</orgName>
+								<orgName type="institution" key="instit2">CNRS</orgName>
+								<address>
+									<postCode>7164</postCode>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Effective action in a higher-spin background</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2011-02-19">19 Feb 2011</date>
+						</imprint>
+					</monogr>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>We consider a free massless scalar field coupled to an infinite tower of background higher-spin gauge fields via minimal coupling to the traceless conserved currents. The set of Abelian gauge transformations is deformed to the non-Abelian group of unitary operators acting on the scalar field. The gauge invariant effective action is computed per-turbatively in the external fields. The structure of the various (divergent or finite) terms is determined. In particular, the quadratic part of the logarithmically divergent (or of the finite) term is expressed in terms of curvatures and related to conformal higher-spin gravity. The generalized higher-spin Weyl anomalies are also determined. The relation with the theory of interacting higher-spin gauge fields on anti de Sitter spacetime via the holographic correspondence is discussed.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+				<figure>
+					<trash>Contents 1 Introduction 1 2 Classical action and symmetries 6 2.1 Traceless conserved currents 7 2.2 Scalar field action in a higher-spin background and its symmetries 8 3 Regularized effective action and its symmetries 11 4 Perturbative calculation of the effective action 13 4.1 Trace of the heat kernel 14 4.2 Heat kernel expansion 16 4.3</trash>
+
+
+				</figure>
+
+				<p>Linear and quadratic part of the heat kernel expansion coefficients 18 4.4 Quadratic part of the renormalized effective action 23 4.5 Correlation functions 25 5 Free scalar fields in the ordinary lower spin fields background</p>
+
+				<figure>
+					<trash>26 5.1 Electromagnetic interaction 27 5.2 Gravitational interaction 27 6 Conclusion 29 A Notations and useful formulas 31 A.1 Generating functions 31 A.2 Higher-spin curvatures 31 A.3 Weyl/Wigner quantization 32 A.4 Special functions 32 B Computational appendices 33 B.1 Inverse map of the projection-like operator 33 B.2 Expression by higher-spin curvature tensors 34 B.3 Finite part of the effective action 35 B.4 Two-point correlation function 35</trash>
+
+
+				</figure>
+
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>Gauge fields with spins greater than two are not needed for the description of the present day experiments and observations. Moreover several no-go theorems suggest that, beyond the free level, consistent higher-spin gauge theories are unusual (see e.g. [1] for an introductory review). On the other hand, the understanding of the theory of higher-spin gauge – 1 – fields is expected to give valuable insights into the symmetries of string theory. Indeed, string theory contains an infinite number of massive higher-spin modes and their presence is responsible to a large extent for the nice ultraviolet properties of string amplitudes. Hence, the tensionless limit may reveal the most symmetric phase of string theory (see e.g. the early work [2] pushing forward this idea). In this limit, an infinite number of higher-spin gauge fields appear and the understanding of consistent higher-spin gauge theories may be very helpful to describe this phase (see e.g. [3] and refs therein for some recent works). A classically consistent theory of interacting higher-spin gauge fields in (anti) de Sitter spacetime ((A)dS) is known (see e.g. [4] for some reviews). A very simple description of this theory was proposed by Klebanov and Polyakov via the AdS/CFT correspondence [5] pursuing earlier insights [6–8] in this direction. This holographic description involves N free massless scalar fields on the boundary and the infinite set of O(N )-singlet Noether currents corresponding to the infinite tower of gauge fields in the bulk. A more precise statement of this correspondence is that the effective action of massless scalar fields in the presence of external higher-spin fields, coupled minimally via the bilinear currents, is given, in the semi-classical regime, by the on-shell action of interacting higher-spin gauge fields expressed in terms of the boundary data. In the present case, the one-loop effective action is actually exact since the path integral is Gaussian (the scalar fields are free and their currents are bilinear). 1 This boundary effective action is the subject of this paper. From the point of view of the conformal field theory (CFT), the effective action is usually interpreted as the generating functional of the connected correlation functions of the Noether currents, in which case the gauge fields are mere auxiliary sources. From another point of view (advocated in [10]), the ultraviolet divergent (perturbatively local) part of the effective action may also be interpreted as an induced conformal gravity action for the gauge fields. Higher-spin conformal gravity theories have been introduced at the quadratic level in the metric-like formulation by Fradkin and Tseytlin [11] in dimension four and generalized for any dimension by Segal [12]. Their relation with the bulk/boundary correspondence has been investigated by Metsaev (see [13] and refs therein). Higher-spin conformal (super)gravity theories have been further studied at the cubic level by Fradkin and Linetsky in the frame-like formulation [14] and a complete interacting theory has been proposed by Segal in [12]. These theories may be thought of as the higher-spin generalization of Weyl gravity. They are defined around flat spacetime and contain higher derivatives, hence they are non-unitary (but this is not an issue here since the gauge fields are not dynamical). From the point of view of the holographic correspondence, the effective action should be equal to the on-shell action for the higher-spin gauge theory around the AdS spacetime. Cubic vertices have been constructed by Fradkin and Vasiliev [15] (see also the more recent works [16]) and full consistent equations of motion have been written by Vasiliev [17, 18]. These theories may be thought as higher-spin generalizations of ordinary gravity. The existence of a conventional variational principle for Vasiliev equations remains a major open question. It is intriguing that all known tests of the Klebanov-Polyakov conjecture circumvented successfully the lack of a variational principle [19–22]. Notice that the case of AdS 3 /CFT 2 is special in this respect [23]. In brief, a detailed analysis of the regularized effective action for free conformal scalars in a higher-spin background is motivated both by the induced gravity program and by the AdS/CFT correspondence. We shall come back to this issue in the conclusion but let us first summarize our results. Consider a free complex massless scalar field, φ , in flat spacetime, described by the action S [0] [φ]</p>
+
+				<figure>
+					<trash>= − d d x φ * ∂ 2 φ = φ | ˆ P 2 | φ . (1.1)</trash>
+
+
+				</figure>
+
+				<p>It has an infinite number of conserved currents given, for instance, via the generating function</p>
+
+				<figure>
+					<trash>J(x, q) = φ * (x + q/2) φ(x − q/2), (1.2)</trash>
+
+
+				</figure>
+
+				<p>where we introduced an auxiliary vector variable q and the currents are the Taylor coefficients of</p>
+
+				<figure>
+					<trash>J(x, q) = ∞ s=0 1 s! J (s) µ 1 ... µs (x) q µ 1 · · · q µs . (1.3) These currents J (s) µ 1 ... µs</trash>
+
+
+				</figure>
+
+				<p>were first introduced in [24]. They are conserved for massive scalar fields as well, but the massless case is special because these currents can be projected onto an infinite number of traceless conserved currents, as explicitly performed below. Various explicit sets of such conformal currents on Minkowski spacetime were provided in [25]. The scalar field can couple to external higher-spin gauge fields, via the Noether cou- pling:</p>
+
+				<figure>
+					<trash>S (s) int J (s) , h (s) = d d x (i ℓ) s−2 s! J (s) µ 1 ... µs (x) h (s) µ 1 ... µs (x) , (1.4)</trash>
+
+
+				</figure>
+
+				<p>where ℓ is a coupling constant with the dimension of a length and the powers of i are such that their product with the currents (imaginary for s odd) is real. The external higher-spin field:</p>
+
+				<figure>
+					<trash>h (s) (x, u) = 1 s! h (s) µ 1 ...µs (x) u µ 1 . . . u µs , (1.5) is characterized by a Fronsdal (like) gauge symmetry [29]</trash>
+
+					<figDesc>:</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>δ [0]</head>
+
+				<figure>
+					<trash>h (s) (x, u) = (u · ∂ x ) ǫ (s−1) (x, u) , (1.6)</trash>
+
+
+				</figure>
+
+				<p>where we introduced again an auxiliary variable u . Under this variation supplemented by a suitable linear transformation δφ of the scalar field, the action S [0]</p>
+
+				<figure>
+					<trash>+ S (s) int is invariant up to terms of order h . We showed in [30]</trash>
+
+
+				</figure>
+
+				<p>that the sum S [0]</p>
+
+				<figure>
+					<trash>+ ∞ s=0 S (s)</trash>
+
+
+				</figure>
+
+				<p>int has an exact symmetry group which reduces to (1.6) at lowest order. This symmetry group is rendered manifest by first rewriting this sum as S [0] [φ] +</p>
+
+				<figure>
+					<trash>∞ s=0 S (s) int [J (s) , h (s) ] = φ | ˆ P 2 − ℓ −2 H | φ , (1.7) – 3 –</trash>
+
+
+				</figure>
+
+				<p>where the Hermitian operator H is given in terms of h(x, u) := ∞ s=0 h (s) (x, u) by ˆ H := d d x d d p (2π) d h(x, ℓ p) δ(x − ˆ X, p − ˆ</p>
+
+				<figure>
+					<trash>P ) , (1.8) with δ( ˆ X, ˆ P ) := d d y d d k (2π) d e i (k· X−y· P ) . (1.9)</trash>
+
+
+				</figure>
+
+				<p>In other words, the generating function h(x, ℓ p) is the Weyl symbol of the operator H.</p>
+
+				<p>The classical action is now manifestly invariant under</p>
+
+				<figure>
+					<trash>δ | φ = i 2 ˆ E | φ , δ ˆ H = i 2 ℓ 2 ˆ P 2 − ˆ H , ˆ E − , (1.10)</trash>
+
+
+				</figure>
+
+				<p>wherê E is an arbitrary infinitesimal Hermitian operator and [ , ] − stands for the commutator . In terms of the Weyl symbols h(x, ℓ p) and ǫ(x, ℓ p) of, respectively, ˆ H and ℓ ˆ E, the invariance reads δ ǫ h(x, u) = (u · ∂ x ) ǫ(x, u) − i 2 ℓ ǫ(x, ℓ p) ⋆ h(x, ℓ p) − h(x, ℓ p) ⋆ ǫ(x, ℓ p) p= u ℓ , (1.11) where ⋆ is the Moyal product (recalled in Appendix A.3). This exact symmetry is thus a deformation of the free gauge transformations to which it reduces at the lowest order in h. It is also an extension of the diffeomorphism and Maxwell gauge symmetries. Actually, the massless classical action has a larger symmetry group since the transfor- mations δ |</p>
+
+				<figure>
+					<trash>φ = 1 2 ˆ A | φ , δ ˆ H = 1 2 ℓ 2 ˆ P 2 − ˆ H , ˆ A + , (1.12) wherê A is an infinitesimal Hermitian operator and [ , ]</trash>
+
+
+				</figure>
+
+				<p>+ stands for the anticommutator, leave the action invariant as well. In terms of symbols it reads δ α h(x, u) =</p>
+
+				<figure>
+					<trash>(u 2 − ℓ 2 4 ∂ 2 x ) α(x, u) − 1 2 α(x, ℓ p) ⋆ h(x, ℓ p) + h(x, ℓ p) ⋆ α(x, ℓ p) p= u ℓ , (1.13)</trash>
+
+
+				</figure>
+
+				<p>and so it represents a deformation of a (generalized) Weyl transformation [12]. 2 In particular , its linearization is a deformation of the Weyl (like) gauge symmetries:</p>
+
+			</div>
+			<div>
+				<head>δ [0]</head>
+
+				<figure>
+					<trash>h (s) (x, u) = u 2 α (s−2) (x, u) , (1.14) mentioned in [11]</trash>
+
+
+				</figure>
+
+				<p>. Consequently, the set of free gauge symmetries (Fronsdal and Weyl like) is deformed to the non-Abelian algebra of differential operators acting on the scalar field, where the Hermitian operators are associated with the deformation of the Fronsdal-like transformations (1.6) while the anti-Hermitian operators are related to the deformation of the Weyl-like transformations (1.14). However, in general only the former classical symmetries are preserved at the quantum level while the latter ones are anomalous (see [12] for an earlier discussion of these symmetries, though from a slightly different perspective).</p>
+
+				<p>Via exponentiation, one may identify the symmetry group of a collection of free massless complex scalar fields in a higher-spin background as being: at classical level, the group of invertible (pseudo)differential operators and, at quantum level, the group of unitary operators (or symmetric operators if the scalar field is real).</p>
+
+				<p>The aim of this article is to calculate perturbatively the quantum effective action of the scalar field in the higher-spin background given by the Hermitian operator H. We introduce an ultraviolet (UV) cutoff Λ to make the effective action W Λ [h] UV-finite. A convenient regularization is the Schwinger proper time regularization where W Λ is given by the heat kernel expansion: W Λ [h]</p>
+
+				<figure>
+					<trash>= − ∞ 1 Λ 2 dt t Tr e −t( ˆ P 2 − ˆ H) . (1.15)</trash>
+
+
+				</figure>
+
+				<p>We shall use perturbation theory in the external fields (encoded in the generating function h) in order to calculate W Λ [h], and get the result in the form: W Λ [h] = W fin [h] + log Λ W log [h] +</p>
+
+				<figure>
+					<trash>∞ n&gt;−d/2 Λ 2n+d W n [h] + O(Λ −2 ) . (1.16)</trash>
+
+
+				</figure>
+
+				<p>Each term in the above sum is invariant under the full gauge transformations (1.11). The series is to be interpreted as an asymptotic series, the first terms giving an approximate expression for small fields. The first term, W fin , is a finite, cut-off independent, non-local gauge-invariant expression. The second term, W log [h], is the coefficient of the logarithmically divergent piece which only appears when the spacetime dimension d is even, and it corresponds to the higher-spin conformal gravity action proposed in [12]. The remaining terms, W n , are the coefficients of the UV divergent pieces, and they are sums of local expressions which one can characterize as follows: each term in W n involves a certain total number p of derivatives and a product of m fields h</p>
+
+				<figure>
+					<trash>(s i ) such that 2n = −p + m i=1 (s i − 2) . (1.17)</trash>
+
+
+				</figure>
+
+				<p>In particular, a term linear (m = 1) in the field of spin s 1 appears in W n for s 1 = 2(n+1) 0. 3 Such linear terms are invariant under the linearized symmetries (1.6) but not under the full ones (1.11). Consequently, inside such a W n the quadratic (m = 2) terms in the fields with two derivatives (p = 2) are not invariant by themselves under the Fronsdal-like gauge transformation (1.6). For these reasons, the quadratic Fronsdal actions [29] are not recovered for higher spins s 3 inside the local UV divergent terms (while the Maxwell and Pauli-Fierz can be recovered via a suitable definition of the scalar h (0) ).</p>
+
+				<p>The finite term W fin , the logarithmically divergent term W log , as well as the divergent terms W n for n &lt; −1 start with quadratic terms in the fields. This implies their invariance under the linearized gauge transformations. We express these quadratic terms in a manifestly invariant way by means of higher-spin curvatures. It turns out that the deformed Weyl-like transformations (1.13) do not leave the whole effective action invariant but, when d is odd, the finite effective action is invariant and, when d is even, the logarithmic term is invariant. The quadratic actions of [11, 12] are reproduced as the quadratic parts of W fin and W log in the corresponding dimensions. As stressed by Segal, the logarithmic term W log reproduces his non-linear action [12] of conformal higher-spin gravity in even dimensions. Interestingly, the finite term W fin may be interpreted as providing a non-local action for conformal higher-spin gravity in odd dimensions. The plan of this paper is as follows. In Section 2 we show that starting from the generating function (1.3) of currents, it is possible to construct another one giving rise to on-shell traceless currents. The advantage of working with such currents is that the linearized Weyl-like gauge transformation is given exactly by the first term in the righthand-side of (1.14) without corrections of order ℓ 2 . The above-mentioned symmetries of the classical action are examined in further details. In Section 3 the regularized oneloop effective action is introduced by making use of the heat kernel where its symmetries are discussed. More precisely, we show that the effective action is not invariant under the transformations (1.13) and we identify the generalized Weyl anomalies. Section 4 is devoted to a thorough analysis of the regularized effective action through a double expansion: first, the heat kernel is expanded as a power series of the external fields, second the trace of the heat kernel is developed as a power series in the UV cutoff. The explicit expressions of all linear and quadratic terms are obtained in terms of special functions. In Section 5, the examples of the effective action for free scalar fields in the ordinary lower spin fields background are revisited in the light of the previous analysis. Section 6 is the conclusion where we discuss potential domain of applications of our results. In Appendix A, we introduce our notations by reviewing several ingredients used in the text such as higherspin curvatures, Weyl-Wigner quantization and various special functions. Some technical details of our computations have been placed in Appendix B.</p>
+
+			</div>
+			<div>
+				<head n="2">Classical action and symmetries</head>
+
+				<p>Consider N free massless complex scalar fields φ a with a = 1, . . . , N , on the conformal boundary of Euclidean AdS d+1 identified with the compactification of R d . The free action of the vector multiplet φ = (φ a ) is the quadratic functional:</p>
+
+			</div>
+			<div>
+				<head>S[φ]</head>
+
+				<figure>
+					<trash>= d d x ∂ µ φ * (x) · ∂ µ φ(x) , (2.1) where φ 1 · φ 2 := N a=1 φ a 1 φ a 2 . (2.2)</trash>
+
+
+				</figure>
+
+				<p>This action is invariant under U (N ) (or O(N ) if the vector multiplet is real) global transformations of the vector multiplet and under the conformal transformations, for example – 6 – under dilatation φ transforms as φ(λ x) = λ ∆ φ φ(x) , ∆ φ = 2 − d 2 . (2.3) The Euler-Lagrange equation is φ(x) ≈ 0. Equalities that are valid only on the mass shell will be denoted by a weak equality symbol ≈ .</p>
+
+			</div>
+			<div>
+				<head n="2.1">Traceless conserved currents</head>
+
+				<p>Since the theory is free, one can find infinitely many conserved currents:</p>
+
+				<figure>
+					<trash>J (s) µ 1 ···µs (x) = 1 2 s s n=0 (−1) n s n ∂ (µ 1 . . . ∂ µn φ(x) · ∂ µ n+1 . . . ∂ µs) φ * (x) . (2.4) From a simple generating function (see Appendix A.1 for conventions): J(x, q) = φ * (x + q/2) · φ(x − q/2) . (2.5)</trash>
+
+
+				</figure>
+
+				<p>The equations of motion of φ and φ * give the conservation condition, (∂ x · ∂ q ) J(x, q) ≈ 0 , as well as another on-shell condition:</p>
+
+				<p><formula>∂ 2 q + 1 4 ∂ 2 x J(x, q) ≈ 0 . (2.6)</formula></p>
+
+				<p>The symmetric conserved current (2.4) of rank s is bilinear in the scalar field and contains exactly s derivatives. The currents of odd rank are purely imaginary, thus if the scalar field is real then they are absent. They were first considered in [24] and obtained from the generating function in [30]. Since the scalar fields are massless, this free theory admits in addition the conformal symmetries. Therefore, one may expect to get infinitely many traceless conserved currents, while the currents (2.4) generated from (A.1) are not traceless, even on-shell: ∂ 2 q J(x, q) ≈ 0 . Nevertheless, thanks to the second on-shell condition (2.6), one can construct a generating function ¯ J(x, q) of conserved currents that are conserved and traceless on-shell:</p>
+
+				<figure>
+					<trash>∂ 2 q ¯ J(x, q) ≈ 0 , (∂ x · ∂ q ) ¯ J (x, q) ≈ 0 , (2.7</trash>
+
+					<figDesc>) by acting with a differential operator Π d (q, ∂ x ) on the generating function of currents : ¯ J (x, q) = Π d (q, ∂ x ) J(x, q) . The conservation of both ¯ J and J requires that Π d commutes with ∂ x · ∂ q on-shell. If we construct Π d as a power series in the operator P (q, ∂ x ) := [(q · ∂ x ) 2 − q 2 ∂ 2 x ]</figDesc>
+
+				</figure>
+
+				<p>/4 , then the conservation condition is satisfied since ∂ x · ∂ q P = P ∂ x · ∂ q .</p>
+
+				<p>The traceless condition, ∂ 2 q Π d (q, ∂ x ) J(x, q) ≈ 0 , remains to be solved and one needs to know how the trace acts on powers of P :</p>
+
+				<figure>
+					<trash>∂ 2 q P n = P n − 4n n − q · ∂ q − d + 1 2 P n−1 ∂ 2 q + + 4n n − q · ∂ q − d + 1 2 P n−1 ∂ 2 q + 1 4 ∂ 2 x + n P n−1 (q · ∂ x )(∂ x · ∂ q ) . (2.8)</trash>
+
+
+				</figure>
+
+				<p>By noting that the second line of the above equation vanishes on-shell (when acting on J), one can construct an operator Π d as a power series in P with coefficients depending on the operator q · ∂ q (counting the rank of the tensor fields it acts on) such that all terms of ∂ 2 q Π d cancel each other on-shell. The operator Π d is determined by these conditions (up to a constant factor):</p>
+
+				<figure>
+					<trash>Π d (q, ∂ x ) := ∞ n=0 1 n! (−q · ∂ q − d−5 2 ) n 1 4 P (q, ∂ x ) n , (2.9) where (a) n = Γ(a + n)/Γ(a) is the Pochhammer symbol. More precisely, the operator Π d obeys the identities: (∂ x · ∂ q ) Π d = Π d+2 (∂ x · ∂ q ) , ∂ 2 q Π d = Π d+4 ∂ 2 q + 1 4 ∂ 2 x − 1 2(d−1)+4 q·∂q Π d+2 (q · ∂ x )(∂ x · ∂ q ) , (2.10)</trash>
+
+
+				</figure>
+
+				<p>so that it indeed fulfills the required properties. It will be useful, for later use, to compute the inverse of the operator Π d , i.e. the operator Π</p>
+
+				<figure>
+					<trash>−1 d such that Π −1 d Π d = Π d Π −1 d = 1. In Appendix B.1 we show that Π −1 d (q, ∂ x ) = ∞ n=0 1 4 P (q, ∂ x ) n 1 n! (q · ∂ q + d−1 2 ) n . (2.11) Finally, the explicit form of the generating function ¯ J (x, q) = Π d (q, ∂ x ) J(x, q) of traceless conserved currents is given by ¯ J(x, q) = ∞ n=0 1 n! (−q · ∂ q − d−5 2 ) n (q · ∂ x ) 2 − q 2 ∂ 2 x 16 n φ * (x + q/2) · φ(x − q/2) , (2.12)</trash>
+
+
+				</figure>
+
+				<p>and by expanding in the variable q µ , one can find the explicit form of the traceless currents.</p>
+
+				<figure>
+					<trash>For instance, the spin 2 traceless current reads ¯ J (2) µν = 1 4(d − 1) (d − 2) (∂ µ ∂ ν φ * · φ + φ * · ∂ µ ∂ ν φ) − d (∂ µ φ * · ∂ ν φ + ∂ ν φ * · ∂ µ φ) + η µν ∂ 2 (φ * · φ) . (2.13)</trash>
+
+
+				</figure>
+
+				<p>Various explicit sets of conformal conserved currents on maximally symmetric spacetimes were also provided in [20, 25–28, 31–33].</p>
+
+			</div>
+			<div>
+				<head n="2.2">Scalar field action in a higher-spin background and its symmetries</head>
+
+				<p>Now we couple each traceless currents ¯ J (s) to a higher-spin gauge field ¯ h (s) and get the boundary action W[ ¯ h] as e −W[ ¯ h] = Dφ exp −S[φ] − S int [</p>
+
+				<figure>
+					<trash>¯ J, ¯ h] , (2.14) where S int is the collection of the Noether interactions (1.4): S int [ ¯ J, ¯ h] := ∞ s=0 S (s) int [ ¯ J (s) , ¯ h (s) ] . (2.15) Since ¯ J(x, q</trash>
+
+
+				</figure>
+
+				<p>) is conserved and traceless, the action S[φ; ¯ h] := S[φ] + S int [ ¯ J , ¯ h] is invariant, when the equation of motion of φ is implemented, under the gauge transformations:</p>
+
+				<figure>
+					<trash>δ ¯ ǫ ¯ h(x, u) = (u · ∂ x ) ¯ ǫ(x, u) , δ ¯ α ¯ h(x, u) = u 2 ¯ α(x, u) , (2.16) with arbitrary generating functions ¯ ǫ and ¯ α.</trash>
+
+
+				</figure>
+
+				<p>In fact, these on-shell symmetries can be deformed to off-shell symmetries when accompanied by a suitable linear transformation of the scalar multiplet φ together with a higher order completion of (2.16). An easy way to see this is to consider a new set of fields h(x, u) := Π d (i ℓ ∂ u , ∂ x ) ¯ h(x, u) . The relations between h and ¯ h can be expressed explicitly in terms of the different components as 4</p>
+
+				<figure>
+					<trash>h (s) (x, u) = ∞ n=0 1 n! (s + d−3 2 + n) n ℓ 2 (∂ u · ∂ x ) 2 − ∂ 2 u ∂ 2 x 16 n ¯ h (s+2n) (x, u) , (2.17) ¯ h (s) (x, u) = ∞ n=0 (−1) n n! (s + d−1 2 ) n ℓ 2 (∂ u · ∂ x ) 2 − ∂ 2 u ∂ 2 x 16 n h (s+2n) (x, u) . (2.18)</trash>
+
+
+				</figure>
+
+				<p>In terms of h, the coupling S int [ ¯ J , ¯ h] becomes S int [J, h] , and the latter can be represented in a suggestive way using the Weyl formalism (see Appendix A.3 for a brief introduction). First, notice that the Weyl symbol of | φ · φ | is given by</p>
+
+				<figure>
+					<trash>ρ(x, p) := d d q φ * (x + q/2) · φ(x − q/2) e i q·p = d d q J(x, q) e i q·p . (2.19) Second, write the interaction with the external higher-spin gauge fields as ℓ −2 d d x d d p (2 π) d ρ(x, p) h(x, ℓ p) . (2.20)</trash>
+
+
+				</figure>
+
+				<p>Finally, apply (A.14) to express the above expression as ℓ −2 Tr | φ · φ | ˆ H = φ | ℓ −2 H | φ , (2.21) wherê H is the Hermitian operator whose Weyl symbol is h(x, ℓ p) and the summation on the vector multiplet indices is understood. Now the classical action S[φ;</p>
+
+				<figure>
+					<trash>¯ h] reads S[φ; ¯ h] = φ | ˆ P 2 − ℓ −2 H | φ . (2.22) Defining G := ˆ P 2 − ℓ −2 H , the classical action (2.22) is manifestly invariant under | φ → ˆ O −1 | φ , ˆ G → ˆ O † ˆ G ˆ O . (2.23) These symmetries are generated by two Hermitian operators A and E : ˆ O = e − 1 2 ( ˆ A+î E) , (2.24) under which H transforms infinitesimally as δ ˆ E ˆ H = i 2 ˆ G , ˆ E − , δ ˆ A ˆ H = 1 2 ˆ G , ˆ A + , (2.25) where [ ˆ A , ˆ B ] ± := ˆ A ˆ B ± ˆ B ˆ A denotes the (anti)commutator, and we hereafter set ℓ = 1 . The latter equations respectively read, in terms of Weyl symbols, δ ǫ h(x, u) = (u · ∂ x ) ǫ(x, u) − i 2 h(x, u) ⋆ , ǫ(x, u) − , (2.26) δ α h(x, u) = u 2 − 1 4 ∂ 2 x α(x, u) − 1 2 h(x, u) ⋆ , α(x, u) + , (2.27) where ǫ(x, p) and α(x, p) are the respective Weyl symbols of E and A , and f (x, u) ⋆ , g(x, u) ± := f (x, u) ⋆ g(x, u) ± g(x, u) ⋆ f (x, u) (2.28) denotes the Moyal (anti</trash>
+
+
+				</figure>
+
+				<p>)commutator. Notice that, in general, even if we start with a single h (s) , the non-linear ǫ (s−1) -transformations will generate h (2s−2) , h (2s−4) , . . . , h (0) . This higher-spin field generation also can be seen from the non-Abelian structure of gauge transformations:</p>
+
+				<figure>
+					<trash>δ ǫ 3 ,α 3 := δ ǫ 1 ,α 1 , δ ǫ 2 ,α 2 − , (2.29) with ǫ 3 (x, u) = i 2 ǫ 1 (x, u) ⋆ , ǫ 2 (x, u) − − i 2 α 1 (x, u) ⋆ , α 2 (x, u) − , α 3 (x, u) = i 2 ǫ 1 (x, u) ⋆ , α 2 (x, u) − − i 2 ǫ 2 (x, u) ⋆ , α 1 (x, u) − . (2.30)</trash>
+
+
+				</figure>
+
+				<p>Even though we start with single spin gauge parameters ǫ (r) and α (q) , they will automatically generate ǫ (2p−1) , ǫ (2p−3) , . . . and α (2p−1) , α (2p−3) , . . . where p = min(r, q) . Thus there are only three consistent spectra of external gauge fields that contain a finite number of them: {h</p>
+
+				<figure>
+					<trash>(1) , h (0) }, {h (2) , h (0) } and {h (2) , h (1) , h (0</trash>
+
+
+				</figure>
+
+				<p>) }, and two theories with an infinite number of fields: one with all even spin fields {h (2n) | n ∈ N} and the other with all fields {h (s) | s ∈ N}. In fact, the three cases with a finite number of fields can be viewed as complex scalar fields in the background of electromagnetic and gravitational fields, when proper redefinition of fields are carried out (in particular the external scalar field h (0) is determined in terms of the other fields). Then the corresponding effective action gives gauge invariants for each order of cut-off, among which one can find in particular the Maxwell action and the Einstein-Hilbert action. We will come back in Section 5 to this point and review some aspects of the ordinary lower spin cases. The gauge parameters (ǫ, α) are given in terms of (¯ ǫ, ¯</p>
+
+				<figure>
+					<trash>α) using (2.16), the h-independent part of (2.26−2.27) and (2.10) as ǫ(x, u) = Π d+2 (i ∂ u , ∂ x ) ¯ ǫ(x, u) + (∂ x · ∂ u ) Π d+2 (i ∂ u , ∂ x ) 1 2(d − 1) + 4 u · ∂ u ¯ α(x, u) , α(x, u) = Π d+4 (i ∂ u , ∂ x ) ¯ α(x, u) . (2.31) – 10 – Thus, (2.26), (2.27</trash>
+
+
+				</figure>
+
+				<p>) and (2.31) define the completion of the free gauge transformation (2.16) of ¯ h with gauge parameters ¯ ǫ and ¯ α . Notice also that the gauge parameters which do not generate any free gauge transformation:</p>
+
+				<figure>
+					<trash>(u · ∂ x ) ¯ ǫ(x, u) + u 2 ¯ α(x, u) = 0 , (2.32)</trash>
+
+
+				</figure>
+
+				<p>define the conformal Killing tensors (see e.g. [34] and refs therein). One can check that for d &gt; 2 the lower spin solutions (¯ ǫ (1) and ¯ α (0) ) are related to the generators of the conformal algebra so(d, 2) (for d = 2, one gets two copies of the Witt algebra, i.e. the Virasoro algebra with vanishing central charge). For the higher-spin case, the space of non-trivial solutions of (2.32) for d &gt; 2 corresponds to the enveloping algebra of so(d, 2) , that is the higherspin algebra identified by Eastwood and Vasiliev [18, 34] (for d = 2, one gets two copies of the W ∞ algebra with zero central charge [35]). The relation between the Eastwood- Vasiliev algebra and the gauge transformations (2.26)-(2.27) should be the higher-spin generalization of the relation between the conformal algebra and the diffeomorphisms and Weyl transformations of the metric. The ¯ ǫ-transformations are different from the Fronsdal&apos;s gauge symmetries in that the gauge parameters are not constrained to be traceless. The ¯ α-transformation is a higherspin generalization of the Weyl transformation. In the next section, we will investigate whether these symmetries extend their validity to the quantum level.</p>
+
+			</div>
+			<div>
+				<head n="3">Regularized effective action and its symmetries</head>
+
+				<p>The path integral representation (2.14) of the effective action can be written formally as</p>
+
+				<figure>
+					<trash>W[ ¯ h] = N Tr log G , ˆ G := ˆ P 2 − ˆ H , (3.1) and the trace, Tr[·]</trash>
+
+
+				</figure>
+
+				<p>= p | · | p d d p/(2π) d , leads to a divergent integral. Thus, one should properly regularize the effective action (3.1). It is crucial that the regularization should preserve the classical gauge symmetries (2.26). In the following, we use the gauge-invariant Schwinger proper time regularization. It consists in replacing in the effective action log z by a regularized integral −</p>
+
+				<figure>
+					<trash>∞ 1/Λ 2 (dt/t) e −t z : W reg [ ¯ h|Λ] := −N Tr ∞ 1 Λ 2 dt t e −t G , (3.2)</trash>
+
+
+				</figure>
+
+				<p>where Λ is a regularization parameter of mass dimension. For the study of gauge symmetries of W reg [ ¯ h|Λ], it will be useful to define the ( ˆ A-inserted) trace of the heat kernel (or simply heat trace): K[g, α|t]</p>
+
+				<figure>
+					<trash>:= Tr e −t G ˆ A [Re(t) &gt; 0] , (3.3) where the generating functions g(x, u) and α(x, u) are again the Weyl symbols of G and A, in particular g(x, p) = p 2</trash>
+
+
+				</figure>
+
+				<p>− h(x, p). Then, the regularized effective action is given as an integral of the heat trace:</p>
+
+				<p><formula>W reg [ ¯ h|Λ] := −N ∞ 1 Λ 2 dt t K[g|t]</formula></p>
+
+				<figure>
+					<trash>, (3.4) – 11 – where K[g|t]</trash>
+
+
+				</figure>
+
+				<p>:= K[g, 1|t] = Tr e −t G . In fact thê A-inserted heat trace can be obtained from the variation of the usual heat trace under δ ˆ</p>
+
+				<figure>
+					<trash>G = ˆ A since δ Tr e −t G = −Tr t 0 dτ e −τ G ˆ A e −(t−τ ) ˆ G = −t K[g, α|t] . (3.5)</trash>
+
+
+				</figure>
+
+				<p>The functional derivative with respect to h is now conveniently defined as δ K[g|t] = α | δ δh K[g|t] , (3.6) where the double bracket f | g means the integral of the contraction between two generating functions f and g (see Appendix A.1 for the precise definition). Finally the relation between K[g, α|t] and K[g|t] can be written as K[g, α|t] = − 1 t α | δ δh K[g|t] . (3.7)</p>
+
+				<p>The heat trace K[g, α|t] can be expanded asymptotically (see Section 4.2) as K[g, α|t] = t − d 2 +∞ n=−∞ t n a n [g, α] , (3.8) where the a n [g, α] are ( ˆ A-inserted) heat kernel expansion (HKE) coefficients, and we will see in the following that the dimensional dependency t −d/2 of the above expansion is essential in the analysis of the gauge symmetries. We can again get thê A-inserted HKE coefficients from the usual HKE coefficients a n [g] := a n [g, 1] as a n [g, α] = − α | δ δh a n+1 [g] . (3.9) Notice that the above equation relates two different kind HKE coefficients, one with A insertion and the other without, but more importantly it relates also different n&apos;s. In fact if we consider the HKE coefficient densities b n [g]</p>
+
+				<figure>
+					<figDesc>(x) : a n [g]</figDesc>
+
+				</figure>
+
+				<p>=: d d x b n [g]</p>
+
+				<figure>
+					<figDesc>(x) , (3.10) then by replacing α by a delta distribution in (3.9), we get b n [g]</figDesc>
+
+				</figure>
+
+				<p>(x) = − δ a n+1 [g]</p>
+
+				<figure>
+					<trash>δ h (0) (x) . (3.11)</trash>
+
+
+				</figure>
+
+				<p>As far as we know, this relation between two neighboring HKE coefficients was not known before, and we can understand why it was difficult to notice in the studies of the lower spin background fields. That is because in those cases h (0) is usually given by a nonlinear function of other external fields. Even in that case, we may keep h (0) as independent, and at the end of computation replace it in terms of other fields. The regularized effective action itself can be expressed using the HKE coefficients as in the expansion (</p>
+
+				<figure>
+					<trash>1.16): W reg [ ¯ h|Λ] = W fin [ ¯ h|µ] − 2 N ln(Λ/µ) a d 2 [g]</trash>
+
+
+				</figure>
+
+				<p>−</p>
+
+				<p><formula>N Λ d +∞ n = d 2 , n=−∞ Λ −2n 1 d 2 − n a n [g] , (3.12) – 12 –</formula></p>
+
+				<p>where µ is a constant of mass dimension, and the coefficient a d/2 [g] is non-vanishing only for even d . The finite part of the effective action W fin [ ¯ h|µ] is not given directly by a HKE coefficient but requires the evaluation of the integral (3.4) and receives contributions from all the coefficients a n [g] with n d/2 . Now we can examine the gauge symmetries of the regularized effective action via K[g|t] . The ǫ-transformation (2.26) corresponds to the adjoint action δ ˆ</p>
+
+				<figure>
+					<trash>E ˆ G = − i 2 [ ˆ G , ˆ E ] − and manifestly</trash>
+
+
+				</figure>
+
+				<p>leaves the trace K[g|t] invariant for all t , so the HKE coefficients a n [g] as well as the finite part of the effective action W fin [ ¯ h|µ] are invariant under this gauge transformation as they should. On the other hand, the variation of K[g|t] under the αtransformation (2.27) does not vanish but gives δ α K[g|t]</p>
+
+				<figure>
+					<trash>= Tr − t e −t G − 1 2 ˆ G , ˆ A + = −t d dt K[g, α|t] , (3.13) or equivalently δ α a n [g]</trash>
+
+
+				</figure>
+
+				<p>= d 2 − n a n [g, α] . (3.14)</p>
+
+				<p>One can see that there is no α-invariant HKE coefficient for odd d , while for even d the only invariant is a d/2 [g] which gives a logarithmically divergent term in W reg [ ¯ h|Λ] . Plugging (3.13) directly to (3.4), we get the gauge variation of the regularized effective action: δ α W reg [ ¯ h|Λ] = −N K[g, α|Λ −2 ] , (3.15) which can be expanded using the HKE coefficients.</p>
+
+				<p>Comparing the expansion of this gauge variation (3.15) with the gauge variation of the expansion (3.12), we get finally δ α W fin [ ¯ h|µ] =: α | A [ ¯ h] = −N a d 2 [g, α] . (3.16) Thus, for odd d the finite part of the effective action is invariant under the α-transformation, but for even d the symmetry is anomalous. When the gauge parameter α is a scalar, that is α = α (0) (x) with no u dependence, the variation of the finite part of the effective action, that is the Weyl anomaly, is given by the Weyl invariant HKE coefficient density:</p>
+
+				<figure>
+					<trash>A (0) [ ¯ h](x) = N δ a d 2 +1 [g] δ h (0) (x) = −N b d 2 [g](x) , (3.17)</trash>
+
+
+				</figure>
+
+				<p>which also corresponds to the logarithmically divergent part of the effective action. If the gauge parameter is generic, say α = α (r) then it is not given by one of HKE coefficient densities but by the generalized Weyl anomaly:</p>
+
+				<figure>
+					<trash>A (r) [ ¯ h](x, u) = N δ δh (r) a d 2 +1 [g] (x, u) . (3.18)</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="4">Perturbative calculation of the effective action</head>
+
+				<p>Up to now, we have considered the free scalar theory on the boundary as the conjectured dual of an interacting higher-spin gauge theory in AdS, and analyzed the gauge symmetries – 13 – of the effective action W[ ¯ h] from the scalar theory with a proper regularization. The finite part of the effective action W fin [ ¯ h|µ], according to the AdS/CFT correspondence should correspond in the semiclassical regime to the on-shell evaluation of the action of the higherspin gauge theory in AdS.</p>
+
+				<p>In this section, we compute the regularized effective action W reg [ ¯ h] via the calculation of the trace of the heat kernel K[g|t]. In Section 4.1 we will reduce the expression for the trace of the heat kernel down to a Gaussian integral, and in Section 4.2, by evaluating this integral, we obtain the HKE coefficients as well-defined multiple integrals. In Section 4.3 we obtain explicit formulae for the linear and quadratic parts of the HKE coefficients. In Section 4.4, by integrating the heat trace, we get the finite part of the effective action, up to quadratic order in fields, composed of a non-local part and, if the dimension is even, also a local part. For d &gt; 2, the non-local part can be rewritten as the generating functional of the connected correlation functions while the local part is not invariant under the generalized Weyl transformation. Finally in Section 4.5 we present an alternative way to compute all the correlation functions .</p>
+
+			</div>
+			<div>
+				<head n="4.1">Trace of the heat kernel</head>
+
+				<p>The trace of the heat kernel K[g|t] can be computed as a perturbation series in h by expanding the heat kernel as</p>
+
+				<figure>
+					<trash>e −t P 2 +t H = e −t P 2 ∞ n=0 t 0 dτ 1 τ 1 0 dτ 2 · · · τ n−1 0 dτ n ˆ H(τ 1 ) · · · ˆ H(τ n ) , (4.1) with H(t) := e t ˆ P 2 ˆ H e −t P 2 .</trash>
+
+
+				</figure>
+
+				<p>Replacing the trace by multiple integrals over p in the cyclicly symmetric way and replacing the matrix elements of H by integrals over x :</p>
+
+				<figure>
+					<trash>p | ˆ H | q = d d x h(x, ∂ u ) e 1 2 u·(p+q)−i (p−q)·x u=0 , (4.2)</trash>
+
+
+				</figure>
+
+				<p>we can express the heat trace as K[g|t]</p>
+
+				<figure>
+					<trash>= ∞ n=0 K (n) (t) | h ⊗n , (4.3) where K (n) (t) is given by K (n) (x 1 , u 1 ; · · · ; x n , u n |t) = = n m=1 d d p m (2π) d e i pm·[x m−1 −xm−i (u m−1 +um)/2] ˜ K (n) (p 1 , · · · , p n |t) , (4.4) with x 0 = x n , u 0 = u n , and K (0) (t) = K (0) (t) = 1 and for n 1 ˜ K (n) (p 1 , · · · , p n |t) = t 0 dτ 1 τ 1 0 dτ 2 · · · τ n−1 0 dτ n 1 n n ℓ=1 × (4.5) × exp (τ 1 − t) p 2 ℓ + · · · + (τ n−ℓ+1 − τ n−ℓ ) p 2 n + + (τ n−ℓ+2 − τ n−ℓ+1 ) p 2 1 + · · · + (τ n − τ n−1 ) p 2 ℓ−1 − τ n p 2 ℓ ) . – 14 –</trash>
+
+
+				</figure>
+
+				<p>The computation of the heat trace is reduced to that of K (n) (t) where, after changing variables to σ m = τ m−1 − τ m with τ 0 = t , the time-ordered integral becomes</p>
+
+				<figure>
+					<trash>t 0 dτ 1 τ 1 0 dτ 2 · · · τ n−1 0 dτ n = ∞ 0 dσ 1 · · · ∞ 0 dσ n Θ(t − σ 1 − · · · − σ n ) = ∞ 0 dσ 0 ∞ 0 dσ 1 · · · ∞ 0 dσ n δ(σ 0 + σ 1 + · · · + σ n − t) = ∞ −∞ dω 2π e i ω t ∞ 0 dσ 0 e −i ω σ 0 · · · ∞ 0 dσ n e −i ω σn , (4.6) then we calculate the integrals over σ : ∞ 0 dσ e −σ(p 2 +iω) = 1 p 2 +i ω , we get ˜ K (n) (p 1 , · · · , p n |t) = ∞ −∞ dω 2π e i ω t 1 n n ℓ=1 1 p 2 ℓ + i ω 1 (p 2 1 + i ω) · · · (p 2 n + i ω) = t n ∞ −∞ dω 2π e i ω t 1 (p 2 1 + i ω) · · · (p 2 n + i ω) = t n n m=1 e −t p 2 m n ℓ=1,ℓ =m (p 2 ℓ − p 2 m ) , (4.7)</trash>
+
+
+				</figure>
+
+				<p>where we used an integration by part and the residue theorem for the evaluation of the integral over ω . As a function of a p 2 ℓ , (4.7) is a sum of n − 1 rational functions with a single pole and an exponential divided by a polynomial with n − 1 zeros. Because of these polynomials, it seems to have many poles arising when other momenta approach to p ℓ , but in fact there are no such poles since they are all compensated by the poles of the rational functions. Therefore, (4.7) is a sum of Gaussian functions of p ℓ multiplied by a series with only non-negative powers of p ℓ . By using (4.4) and (4.7), one can eventually compute K (n) (t), that is the non-local representation of the heat trace. In the following we will concentrate on the local repre- sentation.</p>
+
+				<p>Local functional representation In (4.3), the heat trace is given with K (n) (t)&apos;s which are functions of differences between position variables, x m−1 − x m . If we integrate out all these variables, the heat trace can be represented as a local functional. To do so, let us first focus on the n-th order term:</p>
+
+				<figure>
+					<trash>K (n) (t) | h ⊗n = d d x 1 · · · d d x n d d p 1 (2π) d · · · d d p n (2π) d ˜ K (n) (p 1 , · · · , p n |t) × × exp i n ℓ=1 p ℓ · x ℓ−1 − x ℓ − i 2 (u ℓ−1 + u ℓ ) h(x 1 , u 1 ) · · · h(x n , u n ) . (4.8) By defining new variables x = 1 n (x 1 + · · · + x n ) , y ℓ = x ℓ − x ℓ−1 , (4.9) we can Taylor expand h around the center position x, with y ℓ+n = y ℓ , as h x ℓ (x, {y k }), u ℓ = exp 1 n n m=0 m − n + 1 2 y m+ℓ · ∂ x ℓ h(x ℓ , u ℓ ) x ℓ =x , (4.10) – 15 – and</trash>
+
+
+				</figure>
+
+				<p>replace the integration measure as d d x 1 · · · d d x n = d d x d d y 1 · · · d d y n d d q (2π) d e i q·(y 1 + ···+ yn) . (4.11) Then we can perform the integral over y ℓ and get a delta function which removes the integral over p ℓ with p ℓ (q) = q − i ∂ y ℓ where</p>
+
+				<figure>
+					<trash>∂ y ℓ = 1 n n m=1 m − n + 1 2 ∂ x ℓ−m [x ℓ+n = x ℓ ] . (4.12) Finally we get a local functional representation: K (n) (t) | h ⊗n = d d x V (n) (∂ x 1 , ∂ u 1 ; · · · ; ∂ xn , ∂ un |t) h(x 1 , u 1 ) · · · h(x n , u n ) x ℓ =x u ℓ =0 , (4.13) with V (n) (∂ x 1 , ∂ u 1 ; · · · ; ∂ xn , ∂ un |t) = d d q (2π) d ˜ K (n) (p 1 (q), · · · , p n (q)|t) × × exp p n (q) + p 1 (q) 2 · ∂ u 1 + · · · + p n−1 (q) + p n (q) 2 · ∂ un . (4.14) The n = 0, 1 cases can be immediately computed as V (0) (t) = (4π t) − d 2 , V (1) (∂ x , ∂ u |t) = (4π t) − d 2 t e 1 4t ∂ 2 u . (4.15)</trash>
+
+
+				</figure>
+
+				<p>From the discussion made below (4.7), one can see that V (n2) has a form of a Gaussian integral multiplied by a q-series with only non-negative powers, which can be evaluated order by order in q. Notice also that the order of q in the q-series is equal to the sum of the number of derivatives and the number of total spin. Therefore if we want to compute the heat trace up to a fixed number of derivatives or total spin, then it is sufficient to consider the q-series to that order, and to evaluate the Gaussian integrals. In the next section, we will rather consider the expansion in t than in q, which gives the HKE coefficients as integrals.</p>
+
+			</div>
+			<div>
+				<head n="4.2">Heat kernel expansion</head>
+
+				<p>In the preceding section, we obtained the trace of heat kernel as a Gaussian integral multiplied by a function which can be expanded as a q-series. In the present section, we will evaluate the Gaussian integral, without expanding in q , by noticing that</p>
+
+				<figure>
+					<trash>K (n) (t) (4.7) can be written as an n-ple integral: ˜ K (n) (p 1 , · · · , p n |t) = t n n 1 0 dρ 1 · · · dρ n δ(ρ 1 + · · · + ρ n − 1) e −t(ρ 1 p 2 1 +···+ρn p 2 n ) . (4.16) – 16 –</trash>
+
+
+				</figure>
+
+				<p>By plugging this expression into (4.14) and by changing the order of integrals, one can evaluate the Gaussian integral and get for n 2 V (n) (∂ x 1 , ∂ u 1 ; · · · ; ∂ xn , ∂ un |t) = t n n (4π t)</p>
+
+				<figure>
+					<trash>− d 2 1 0 dρ 1 · · · dρ n δ(ρ 1 + · · · + ρ n − 1) × × exp t ρ 1 ∂ 2 y 1 + · · · + ρ n ∂ 2 yn − (ρ 1 ∂ y 1 + · · · + ρ n ∂ yn ) 2 + 1 4 t ∂ 2 u 1∼n + (4.17) + i (ρ 1 ∂ y 1 + · · · + ρ n ∂ yn ) · ∂ u 1∼n − i ∂ y 1 · ∂ u 1 + ∂ u 2 2 + · · · + ∂ yn · ∂ un + ∂ u 1 2</trash>
+
+					<figDesc>, where we used the notation (4.12) and ∂ u 1∼n := ∂ u 1 + · · · + ∂ un . The second line of (4.17) has the form of the generating function (A.17) of modified Bessel function I m (z), so by expanding in t, we get V (n) for n 2 as an infinite series: V (n) (∂ x 1 , ∂ u 1 ; · · · ; ∂ xn , ∂ un |t) =</figDesc>
+					<trash>= t n n (4π t) − d 2 ∞ m=−∞ t m V (n) m ∂ y 1 , ∂ u 1 + ∂ u 2 2 ; · · · ; ∂ yn , ∂ un + ∂ u 1 2 , (4.18) with V (n) m (∂ y 1 , ∂ u 1 ; · · · ; ∂ yn , ∂ un ) = e −i(∂y 1 ·∂u 1 + ··· + ∂y n ·∂u n ) × × 1 0 dρ 1 · · · dρ n δ(ρ 1 + · · · + ρ n − 1) e i(ρ 1 ∂y 1 + ··· +ρn ∂y n )·∂u 1∼n × (4.19) × 2 f n (ρ 1 , · · · , ρ n ; ∂ y 1 , · · · , ∂ yn ) m U m − 4 f n (ρ 1 , · · · , ρ n ; ∂ y 1 , · · · , ∂ yn ) ∂ 2 u 1∼n , where we used the definition: U ν (z) := ( √ z/2) −ν J ν ( √ z/2) = ∞ n=0 1 n! Γ(ν + n + 1) 2 ν − z 16 n , (4.20) and f n (ρ 1 , · · · , ρ n ; ∂ y 1 , · · · , ∂ yn ) := ρ 1 ∂ 2 y 1 + · · · + ρ n ∂ 2 yn − (ρ 1 ∂ y 1 + · · · + ρ n ∂ yn ) 2 . (4.21)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Since z m U m (z), when expanded in series, has only non-negative powers of z, the integrand is finite and the integral gives a well-defined operator in ∂ x ℓ and ∂ u ℓ . One may similarly expand V (0) (t) and V (1) (t) (4.15) in powers of t, and define the coefficients V</figDesc>
+					<trash>(n) m for n = 0, 1 as V (0) m = δ m,0 , V (1) m (∂ u ) = δ m0 1 4 ∂ 2 u −m . (4.22)</trash>
+
+
+				</figure>
+
+				<p>Comparing this expansion with (3.8), one can finally obtain the HKE coefficients in terms of V</p>
+
+				<figure>
+					<trash>(n) m as a m [g]</trash>
+
+
+				</figure>
+
+				<p><formula>= d d x (4π) d 2 ∞ n=0 1 n V (n) m−n ∂ y 1 , ∂ u 1 + ∂ u 2 2 ; · · · ; ∂ yn , ∂ un + ∂ u 1 2 × × h(x 1 , u 1 ) · · · h(x n , u n ) x 1 =···=xn=x u 1 =···=un=0 . (4.23) – 17 – 4.3</formula></p>
+
+				<p>Linear and quadratic part of the heat kernel expansion coefficients Now we concentrate on the part of K[g|t] containing at most quadratic orders in h˙ : K[g|t] = d d x V (0) (t) + V (1) (∂ x , ∂ u |t) h(x, u)</p>
+
+				<figure>
+					<trash>u=0 + + 1 2 V (2) (∂ x 1 , ∂ u 1 ; ∂ x 2 , ∂ u 2 |t) h(x 1 , u 1 ) h(x 2 , u 2 ) x 1 =x 2 =x u 1 =u 2 =0 + O(h 3 ) . (4.24) The constant and linear parts V (0) , V (1</trash>
+
+					<figDesc>) are given in (4.15), and the quadratic part V (2) is obtained from (4.18) as a series:</figDesc>
+
+				</figure>
+
+				<p><formula>V (2) (∂ x 1 , ∂ u 1 ; ∂ x 2 , ∂ u 2 |t) = (4π t) − d 2 t 2 ∞ m=−∞ t m V (2) m ∂ x 12 2 , ∂ u 12 2 ; − ∂ x 12 2 , ∂ u 12 2 , (4.25) where ∂ x 12 := (∂ x 1 − ∂ x 2 )/2 and ∂ u 12 := ∂ u 1 + ∂ u 2 , and V (2) m is given from (4.19 -4.21) by V (2) m (∂ x , ∂ u ) := V (2) m ∂ x 2 , ∂ u 2 ; − ∂ x 2 , ∂ u 2 = ∂ 2 x ∂ 2 u m 2 1 −1 dρ 2 (1 − ρ 2 ) m 2 I m 1 2 (1 − ρ 2 ) ∂ 2 x ∂ 2 u e i ρ 2 ∂x·∂u . (4.26)</formula></p>
+
+				<p>Even though the entire integrand is finite, (1 − ρ 2 ) m/2 superficially diverges for negative m, so the integral should be treated separately for negative m.</p>
+
+				<figure>
+					<trash>From (4.23) we see that V (2) m</trash>
+
+
+				</figure>
+
+				<p>gives the quadratic part of the HKE coefficient a m+2 . Notice that the case of negative m corresponds to the HKE coefficients a n1 where the linear terms (4.22) appear. Therefore, we will treat the coefficients a n2 and a n1 separately.</p>
+
+			</div>
+			<div>
+				<head>A</head>
+
+				<figure>
+					<figDesc>. a n2 : HKE coefficients without linear term The integral (4.26) for m 0 can be directly evaluated by using an integration formula of Bessel functions recalled in (A.18) as</figDesc>
+
+				</figure>
+
+				<p><formula>V (2) m (∂ x , ∂ u ) = π 2 1 2 ∂ 2 x m U m+ 1 2 (∂ x · ∂ u ) 2 − ∂ 2 x ∂ 2 u [m 0] , (4.27)</formula></p>
+
+				<p>where U ν is defined in (4.20). By using this formula we can obtain the explicit form of the HKE coefficients a n2 up to quadratic term in h as a m+2 [g]</p>
+
+				<figure>
+					<trash>= π 8 d d x (4 π) d 2 1 2 ∂ 2 x 12 m U m+ 1 2 (∂ x 12 · ∂ u 12 ) 2 − ∂ 2 x 12 ∂ 2 u 12 × × h(x 1 , u 1 ) h(x 2 , u 2 ) x 1 =x 2 =x u 1 =u 2 =0 + O(h 3 ) [m 0]</trash>
+
+
+				</figure>
+
+				<p>.(4.28)</p>
+
+				<p>Note that, as expected, they are free from constant or linear terms in h. In other words, these are the lowest h-order part of the HKE coefficients, and as a consequence they should be invariant under the lowest h-order part of ǫ-symmetry (2.26): δ [0] ǫ h(x, u) = (u·∂ x ) ǫ(x, u).</p>
+
+				<p>This gauge invariance can be checked from the identity:</p>
+
+				<p><formula>f (∂ x · ∂ u ) 2 − ∂ 2 x ∂ 2 u u · ∂ x = u · ∂ x f (∂ x · ∂ u ) 2 − ∂ 2 x ∂ 2 u , (4.29) – 18 –</formula></p>
+
+				<p>satisfied by any function f : the gradient u 1 ·∂ x 1 pass though U m+</p>
+
+				<figure>
+					<trash>1 2 (∂ x 12 · ∂ u 12 ) 2 − ∂ 2 x 12 ∂ 2 u 12</trash>
+
+
+				</figure>
+
+				<p>, and the gauge variation vanishes when imposing u 1 = u 2 = 0.</p>
+
+				<p>Since the quadratic part of the HKE coefficients a n2 is invariant under gauge transformations , it should be possible to express it in terms of the higher-spin curvatures (A.7). In the rest of this subsection we show that this is indeed possible and we give the expression.</p>
+
+				<p>First, let us introduce a notation which will be very convenient: when v and w are two vectors we denote by [vw] the antisymmetric matrix with elements [vw]</p>
+
+				<figure>
+					<figDesc>µν = v µ w ν − w µ v ν , and A will be used for the trace of the matrix A. Using this notation we have (v · ∂ x ) (w · ∂ u ) − (w · ∂ x ) (v · ∂ u ) = 1 2 [vw] [∂ u ∂ x ]</figDesc>
+
+				</figure>
+
+				<p>,</p>
+
+				<p><formula>(∂ x · ∂ u ) 2 − ∂ 2 x ∂ 2 u = 1 2 [∂ u ∂ x ] 2 . (4.30)</formula></p>
+
+				<p>Now we make an ansatz for the quadratic part (4.28) of a m+2 :</p>
+
+				<p><formula>π 8 d d x (4 π) d 2</formula></p>
+
+				<p>g m ([∂ v ∂ w ]) R(x, v,</p>
+
+				<p><formula>w) 1 2 ∂ 2 x m R(x, −v, w) v=w=0 = π 8 d d x (4 π) d 2 1 2 ∂ 2 x 12 m</formula></p>
+
+				<p>ˇ g m ([∂ u 12 ∂ x 12 ]) h(x 1 ,</p>
+
+				<p><formula>u 1 ) h(x 2 , u 2 ) x 1 =x 2 =x u 1 =u 2 =0 , (4.31)</formula></p>
+
+				<p>where R(x, v, w) is the generating function of higher-spin curvatures, g m a function which maps an antisymmetric matrix to a real number, and the transformatioň (·) is defined by ˇ f ([xy]) := f ([∂ v ∂ w ]) e 1 2 [vw] [xy] v=w=0 = ∞ 0 dt t e −t f (−t [xy]) . (4.32)</p>
+
+				<p>The derivation of the second equality of the above equation is presented in Appendix B.2. By comparing (4.31) to (4.28), we get g m ([xy]</p>
+
+				<figure>
+					<trash>) = U m+ 1 2 1 2 [xy]</trash>
+
+
+				</figure>
+
+				<p>2 and finally g m ([xy]) =</p>
+
+				<figure>
+					<trash>∞ n=0 (−1) n 2 −(m+n+ 1 2 ) n! (2n + 1)! Γ(m + n + 3 2 ) [xy] 2 16 n . (4.33)</trash>
+
+					<figDesc>Thus, the quadratic part of the coefficient a n2 is expressed in terms of the generating function of higher-spin curvatures. Using this expression for the HKE coefficients, we now explicitly obtain, up to the linear order in h, the Weyl anomaly (3.17) as</figDesc>
+					<trash>A (0) [ ¯ h](x) = − N 2 (16 π) d−1 2 ∞ n=0 1 n! Γ( d+1 2 + n) 2 4n d 2 −1 x R (2n) (x) + O(h 2 ) , (4.34) where R (2n) (x) is the linearized higher-spin scalar curvature, that is the maximal trace of R (2n) (x, v, w) : R (2n) (x) := ∂ 2 x ∂ 2 u − (∂ x · ∂ u ) 2 n h (2n) (x, u) . (4.35)</trash>
+
+
+				</figure>
+
+				<p>Notice that only even higher-spin fields contribute to the result and that the n = 1 term reproduces the linearized Weyl anomaly of gravity. Indeed, the latter is given in d = 2 by the Ricci scalar R , while for d 4 it is given by d/2−1 x R plus other terms which are at – 19 – least quadratic in the fields (see (4.59) for the d = 4 case). We also express the generalized Weyl anomaly (3.18) in terms of higher-spin curvatures as A (r) [ ¯ h]</p>
+
+				<p><formula>(x, u) = − N 2 (16 π) d−1 2 × × ∞ n r 2 (−1) n [∂ v ∂ w ]</formula></p>
+
+				<p>2 n [vw] [u∂ x ] r r! n! (2n + 1)! Γ(</p>
+
+				<figure>
+					<trash>d+1 2 + n) 2 r+5n d 2 −1 x R (2n−r) (x, v, w) + O(h 2 ) , (4.36) and we notice the appearance once again of d 2 −1 x</trash>
+
+
+				</figure>
+
+				<p>, but now it acts on the traces of the linearized higher-spin curvatures which have r free indices. The linearized trace anomaly obtained from the quadratic part of the effective action of a conformally coupled scalar field on AdS 4 in the presence of a single external higher-spin gauge field was considered in [36]. Now we come back to the expression (4.31) and notice that when decomposed in spin components we get couplings between curvatures of different spins. Indeed, the curvatures that we have introduced are associated to h(x, u) and one may wonder whether the HKE coefficients get diagonalized in terms of ¯ h. In order to see that, it will be useful to first express U m+</p>
+
+				<figure>
+					<trash>1 2 1 2 [∂ u 12 ∂ x 12 ]</trash>
+
+
+				</figure>
+
+				<p>2 , by making use of the addition theorem of Bessel functions, as</p>
+
+				<figure>
+					<trash>U m+ 1 2 1 2 [∂ u 12 ∂ x 12 ] 2 = 2 m+ 1 2 Γ m + 1 2 × × ∞ s=0 s + m + 1 2 [∂ u 1 ∂ x 12 ] 2 [∂ u 2 ∂ x 12 ] 2 s C m+ 1 2 s [∂ u 1 ∂ x 12 ][∂ u 2 ∂ x 12 ] [∂ u 1 ∂ x 12 ] 2 [∂ u 2 ∂ x 12 ] 2 × × U s+m+ 1 2 1 2 [∂ u 1 ∂ x 12 ] 2 U s+m+ 1 2 1 2 [∂ u 2 ∂ x 12 ] 2 , (4.37) where C λ s</trash>
+
+
+				</figure>
+
+				<p>(z) is the Gegenbauer polynomial. Since ω s C λ s (z/ω) is a polynomial of order s in z and ω, when contracting the above with h and integrating by part, we will pick the homogeneous term of order s in U s+m+</p>
+
+				<figure>
+					<trash>1 2 1 2 [∂ u ∂ x ] 2 h(x, u) in the summation: U s+m+ 1 2 1 2 [∂ u ∂ x ] 2 h (s) (x, u) = 2 −(s+m+ 1 2 ) Γ(s + m + 3 2 ) Π −1 2m+4 (i ∂ u , ∂ x ) h (s) (x, u) , (4.38)</trash>
+
+					<figDesc>where we have used (2.11). Finally the quadratic part of a m+2 can be written as</figDesc>
+					<trash>π 8 d d x (4 π) d 2 1 2 ∂ 2 x 12 m G m [∂ u 1 ∂ x 1 ][∂ u 2 ∂ x 2 ] , [∂ u 1 ∂ x 1 ] 2 [∂ u 2 ∂ x 2 ] 2 × × Π −1 2m+4 (i ∂ u 1 , ∂ x 1 ) Π d (i ∂ u 1 , ∂ x 1 ) ¯ h(x 1 , u 1 ) Π −1 2m+4 (i ∂ u 2 , ∂ x 2 ) Π d (i ∂ u 2 , ∂ x 2 ) ¯ h(x 2 , u 2 ) x 1 =x 2 =x u 1 =u 2 =0 , with G m (z</trash>
+
+
+				</figure>
+
+				<p><formula>, ω) = ∞ s=0 2 −(2s+m+ 1 2 ) Γ(m + 1 2 ) Γ(s + m + 1 2 ) Γ(s + m + 3 2 ) ω s 2 C m+ 1 2 s z √ ω . (4.39) – 20 –</formula></p>
+
+				<p>Here one can see that when m = (d − 4)/2, the HKE coefficient is diagonalized in terms of ¯ h, but in general it is not the case. One might consider new current generator J m (x, q) := Π 2m+4 (q, ∂ x ) J(x, q) and couple them to new external higher-spin fields h m (x, u), then the quadratic part of HKE coefficient a m+2 will be diagonal in h m (x, u) and is given by π 8 d d x</p>
+
+				<figure>
+					<trash>(4 π) d 2 1 2 ∂ 2 x 12 m F m [∂ v 1 ∂ w 1 ][∂ v 2 ∂ w 2 ] , [∂ v 1 ∂ w 1 ] 2 [∂ v 2 ∂ w 2 ] 2 × × R m (x 1 , v 1 , w 1 ) R m (x 2 , v 2 , w 2 ) x 1 =x 2 =x v 1 =v 2 =w 1 =w 2 =0 , (4.40)</trash>
+
+
+				</figure>
+
+				<p>where R m is the higher-spin curvature associated to h m , and F m can be obtained again by using (4.32) as</p>
+
+				<figure>
+					<trash>F m (z, ω) = ∞ s=0 2 −(2s+m+ 1 2 ) Γ(m + 1 2 ) Γ 2 (s + 2) Γ(s + m + 1 2 ) Γ(s + m + 3 2 ) ω s 2 C m+ 1 2 s z √ ω , (4.41)</trash>
+
+
+				</figure>
+
+				<p>but all the other HKE coefficients will remain un-diagonalized.</p>
+
+				<p>B. a d/2 : Weyl invariant HKE coefficient</p>
+
+				<p>Among all the HKE coefficients, of particular interest is a d/2 which exists only for even dimension and admits the higher-spin Weyl symmetry (2.27) . For d 4, the quadratic part of a d/2 is given by</p>
+
+				<figure>
+					<trash>a d 2 [ ¯ h] = π 8 d d x (4 π) d 2 G d−4 2 [∂ u 1 ∂ x 1 ][∂ u 2 ∂ x 2 ] , [∂ u 1 ∂ x 1 ] 2 [∂ u 2 ∂ x 2 ] 2 × × 1 2 ∂ 2 x 12 d−4 2 ¯ h(x 1 , u 1 ) ¯ h(x 2 , u 2 ) x 1 =x 2 =x u 1 =u 2 =0 + O( ¯ h 3 ) , (4.42)</trash>
+
+
+				</figure>
+
+				<p>and it coincides with the result found in [12]. Its expression in terms of curvatures of ¯ h is obtained from (4.40) by replacing R m with ¯ R and m with (d − 4)/2. The quadratic part of a d/2 is invariant under the Abelian part of the generalized Weyl transformation: δ [0] ¯ α ¯ h(x, u) = u 2 ¯ α(x, u). This can be checked by computing</p>
+
+				<figure>
+					<trash>G m [∂ u 1 ∂ x 1 ][∂ u 2 ∂ x 2 ] , [∂ u 1 ∂ x 1 ] 2 [∂ u 2 ∂ x 2 ] 2 u 2 1 ¯ α(x 1 , u 1 ) u 1 =0 , (4.43)</trash>
+
+
+				</figure>
+
+				<p>which is simplified for m = (d − 4)/2 thanks to the differential equation (A.22) of the Gegenbauer polynomial. The latter allows to factor out in the above expression the operator [∂ u 2 ∂ x 2 ] [∂ x 2 ∂ x 1 ] [∂ x 1 ∂ u 2 ] , (4.44) which gives a total derivative term. In fact, the generalized Weyl invariance can be more easily checked with the undiagonalized formula (</p>
+
+				<figure>
+					<trash>4.28). By using U m+ 1 2 (∂ x · ∂ u ) 2 − ∂ 2 x ∂ 2 u u 2 − 1 4 ∂ 2 x = u 2 U m+ 1 2 (∂ x · ∂ u ) 2 − ∂ 2 x ∂ 2 u + + 1 2 u · ∂ u + d − 4 2 − m − (u · ∂ x ) (∂ x · ∂ u ) ∂ 2 x U m+ 3 2 (∂ x · ∂ u ) 2 − ∂ 2 x ∂ 2 u , (4.45) – 21 –</trash>
+
+
+				</figure>
+
+				<p>with m = (d − 4)/2, the invariance of (4.28) under δ [0] α h(x, u) = (u 2 − ∂ 2 x /4) α(x, u) is easily shown. The higher-spin Weyl invariance of the above quadratic term together with the number of derivatives involved implies that it can be simply expressed in terms of the higher-spin Weyl tensor. The latter is the traceless part of the curvature tensor and belongs to the same Young tableau representation. Since the unique Fronsdal and Weyl (like) invariant expression with 2s derivatives is the square of the higher-spin Weyl tensor, we conclude that the HKE coefficient density b d/2 is proportional to the sum over all spins of the squares of the corresponding higher-spin Weyl tensors, up to a total derivative term. This is the free action considered by Fradkin, Tseytlin and Segal [11, 12].</p>
+
+				<figure>
+					<figDesc>C. a n1 : HKE coefficients with linear terms</figDesc>
+
+				</figure>
+
+				<p>Finally we compute the HKE coefficients a n1 up to quadratic order in the fields and get a 1−m [g] = d d x</p>
+
+				<figure>
+					<trash>(4 π) d 2 δ m,1 + 1 4 ∂ 2 u m h(x, u) u=0 + + 1 2 V (2) −(m+1) (∂ x 12 , ∂ u 12 ) h(x 1 , u 1 ) h(x 2 , u 2 ) x 1 =x 2 =x u 1 =u 2 =0 + O(h 3 ) [m 0] , (4.46) where the integral (4.26) for V (2) −(m+1) can be evaluated by expanding the Bessel function and we get V (2) −(m+1) (∂ x , ∂ u ) = π 2 1 4 ∂ 2 u m+1 ∞ k=0 1 8 ∂ 2 x ∂ 2 u k Γ(k + m + 2) ∂ x · ∂ u 2 −k− 1 2 J k+ 1 2 ∂ x · ∂ u 2 . (4.47) Since z −ν J ν (z) has an expansion with only non-negative integer powers of z 2 , V (2) −(m+1)</trash>
+
+
+				</figure>
+
+				<p>is a well defined operator containing at least the (m + 1)-th power of ∂ 2 u . Due to these traces, V</p>
+
+			</div>
+			<div>
+				<head>(2)</head>
+
+				<p>−(m+1) does not commute with u · ∂ x and the coefficient is not invariant under the free gauge transformation. This is expected from the presence of the linear term: the linear variation of the quadratic part must be cancelled by the quadratic variation of linear part. One may wonder whether there exists a natural decomposition of V</p>
+
+				<figure>
+					<trash>(2)</trash>
+
+					<figDesc>−(m+1) into a gauge invariant part and a gauge non-invariant part which compensates the variation of the linear part. In order to do so we use the Lommel expansion (A.19) to evaluate the infinite series sum by adding m + 1 terms as</figDesc>
+					<trash>V (2) −(m+1) (∂ x , ∂ u ) = π 2 1 2 ∂ 2 x −m−1 × × U −m− 1 2 (∂ x · ∂ u ) 2 − ∂ 2 x ∂ 2 u − m k=0 1 8 ∂ 2 x ∂ 2 u k k! ∂ x · ∂ u 2 −(k−m− 1 2 ) J k−m− 1 2 ∂ x · ∂ u 2 . (4.48)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Notice that the first part of second line coincides with the expression (4.27) for V</figDesc>
+					<trash>(2)</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>n0 with</head>
+
+				<p>n = −m − 1 and thus is gauge invariant, while the second part, that is the finite series with m + 1 terms, is not gauge invariant. The price to pay for separating V</p>
+
+				<figure>
+					<trash>(2) −(m+1) in this – 22 –</trash>
+
+
+				</figure>
+
+				<p>way is the locality: the initial expression (4.47) is local but if we rewrite it as (4.48) then each gauge invariant or gauge non-invariant part becomes non-local, or in other words the non-local terms of each part cancel out.</p>
+
+			</div>
+			<div>
+				<head n="4.4">Quadratic part of the renormalized effective action</head>
+
+				<p>The regularized effective action W reg [ ¯ h|Λ] has an expansion (3.12) in Λ. All the terms except the finite part W fin [ ¯ h|µ] are directly given by the HKE coefficients. In this section we will compute the remaining term W fin [ ¯ h] up to the quadratic order in h. It can be obtained as W fin [ ¯ h] = lim Λ→∞ W reg [ ¯ h|Λ] − W div [ ¯ h|Λ] , (4.49) where W div [ ¯ h|Λ] is the divergent part of the effective action. From equations (3.4) and (3.12) we see that the finite part of the effective action receives contributions only from non-negative powers of t in K[g|t]</p>
+
+				<figure>
+					<figDesc>:</figDesc>
+
+				</figure>
+
+				<p><formula>t − d 2 ∞ n d 2</formula></p>
+
+				<p>t n a n [g] , (4.50) that is, from the HKE coefficients a n [g] with n d/2 .</p>
+
+				<p>In fact, for d &gt; 2, it is more convenient to first replace K[g|t] in (3.4) by K 2 [g|t]</p>
+
+				<figure>
+					<trash>= t 2− d 2 ∞ m=0 t m a m+2 [g]</trash>
+
+
+				</figure>
+
+				<p>, (4.51) because, as we will see below, the above expression can be exactly resummed at the quadratic order in h. Next we calculate the integral over t and then subtract the divergent terms. Indeed, using the expression of the quadratic part of a n [g]</p>
+
+				<figure>
+					<trash>(4.28) we get K 2 [g|t] = d d p (2π) d V (2) 2 (p, ∂ u 12 |t) ˜ h(−p, u 1 ) ˜ h(p, u 2 ) u 1 =u 2 =0 + O(h 3 ) , (4.52) with ∂ u 12 := ∂ u 1 + ∂ u 2 and V (2) 2 (p, ∂ u |t) := (4π t) − d 2 ∞ m=0 π 8 − p 2 2 t m U m+ 1 2 p 2 ∂ 2 u − (p · ∂ u ) 2 . (4.53)</trash>
+
+					<figDesc>The expansion in powers of t is not convenient because positive powers of t are not integrable separately. As we mentioned before we can resum (4.53) in t by using the series representation of Bessel functions to get</figDesc>
+					<trash>V (2) 2 (p, ∂ u |t) = (4π t) − d 2 t 2 ∞ m=0 (p · ∂ u ) 2 − p 2 ∂ 2 u m (2m + 1)! 2 2m 1 F 1 1; m + 3 2 ; − p 2 4 t . (4.54)</trash>
+
+
+				</figure>
+
+				<p>We then integrate the hypergeometric function and subtract the divergent parts as explained in Appendix B.3, and finally we obtain the finite part of the effective action. For odd d , it is given by W fin [ ¯ h]</p>
+
+				<figure>
+					<trash>= N (−1) d−1 2 π (2π) − d−1 2 8 d d p (2π) d p 2 4 d−4 2 × × U d−3 2 p 2 (∂ u 1 + ∂ u 2 ) 2 − [p · (∂ u 1 + ∂ u 2 )] 2 ˜ h(−p, u 1 ) ˜ h(p, u 2 ) u ℓ =0 + O(h 3 ) , (4.55) and for even d &gt; 2, by W fin [ ¯ h|µ] = N (−1) d 2 (2π) − d−1 2 8 d d p (2π) d p 2 4 d−4 2 × × ln p 2 µ 2 U d−3 2 p 2 (∂ u 1 + ∂ u 2 ) 2 − [p · (∂ u 1 + ∂ u 2 )] 2 + + ˙ U d−3 2 p 2 (∂ u 1 + ∂ u 2 ) 2 − [p · (∂ u 1 + ∂ u 2 )] 2 ˜ h(−p, u 1 ) ˜ h(p, u 2 ) u ℓ =0 + O(h 3 ) , (4.56) where ˙ U ν (z) := (∂/∂ν) U ν (z</trash>
+
+
+				</figure>
+
+				<p>) and we introduced a mass scale µ in order to make the argument of ln dimensionless. The d = 2 case requires two additional considerations. First one should take a 1 into account, and second the integral over t (3.4) should also be regularized in the infrared. A convenient regulator is provided by inserting (ν 2 t) −ξ with 0 &lt; ξ ≪ 1 into the integration (3.4) over t. A constant ν with mass dimension is introduced in order to make the regulator dimensionless. The contribution of the a n2 terms can be calculated as before and results in an expression which is given by the right hand side of of (4.56) with d = 2 and where the ultraviolet regularization ambiguity µ is replaced by the infrared regularization ambiguity ν . This expression will be denoted W 2 [ ¯ h|ν]. The a 1 contribution is both UV and IR divergent, and its regularization yields 2 N ln(ν/µ) a 1 . Finally the finite part of the effective action for d = 2 is given by W fin [ ¯ h|µ, ν] = W 2 [ ¯ h|ν] + 2 N ln(ν/µ) a 1 [g]</p>
+
+				<figure>
+					<trash>+ O(h 3 ) . (4.57)</trash>
+
+					<figDesc>Several remarks are in order.</figDesc>
+
+				</figure>
+
+				<p>• As is shown in (4.45), the terms expressed in terms of U (d−3)/2 are invariant under the linearized higher-spin Weyl transformation. For odd d we can see that the finite part (which is nonlocal due to the half integer power of p 2 ) of the regularized effective action is not anomalous, while for even d the variation of W fin [ ¯ h|µ]</p>
+
+				<figure>
+					<figDesc>does not vanish due to the terms expressed in terms of the function ˙ U (d−3)/2 . • The anomaly-free term expressed in terms of U (d−3)/2 is diagonalized when expressed in terms of ¯ h while the anomalous term with ˙ U (d−3)/2 cannot be diagonalized and so results in couplings of different spin fields at the quadratic level.</figDesc>
+
+				</figure>
+
+				<p>• The quadratic anomalous term with ˙ U (d−3)/2 in even d can be expressed, by applying (4.31), in terms of the linearized higher-spin curvatures as W A fin [ ¯ h] = N d d x f [∂ v ∂ w ] 2 R(x, v, −w)</p>
+
+				<figure>
+					<trash>d−4 2 x R(x, v, w) v=w=0 + O(h 3 ) , (4.58) – 24 –</trash>
+
+
+				</figure>
+
+				<p>where the function f is given by the transformation (4.32) of ˙ U (d−3)/2 . While the part of the renormalized effective action which is invariant under higher-spin Weyl transformations always contains a non-local term, the quadratic anomalous term in even d is local, except for d = 2 where the power of x becomes negative. In d &gt; 2, the anomalous term may be compensated by a local counter-term (as all divergent parts of the effective action). The exceptional d = 2 anomaly source term cannot be compensated by a local counter-term.</p>
+
+				<p>• Let us compare our results on higher-spins with standard gravity, i.e. a complex scalar field in a curved spacetime background. The Weyl anomaly is not present for odd d. For d equal to 2 or 4, it is given by [37] A (0) [g µν ] ∝ R [d = 2]</p>
+
+				<figure>
+					<trash>x R + R 2 µν − 1 3 R 2 + C 2 µνρσ [d = 4]</trash>
+
+
+				</figure>
+
+				<p>, (4.59) where R µν , R and C µνρσ are respectively the Ricci tensor, the Ricci scalar and the Weyl tensor. The d = 2 Weyl anomaly is reproduced by varying [38] W A fin [g µν ] ∝ d 2 x √ g R −1 x R [d = 2] , (4.60) which is analogous to our finite part of the effective action (4.58) with d = 2. The x R contribution to the four dimensional anomaly can be compensated by the local counter-term : W</p>
+
+				<figure>
+					<trash>A&amp;local fin [g µν ] ∝ d d x √ g R 2 [d = 4] , (4.61)</trash>
+
+
+				</figure>
+
+				<p>which is also present in (4.58) with d = 4. The quadratic terms in the anomaly can be obtained by varying terms of order h 3 in the effective action which we have not explicitly calculated.</p>
+
+				<p>• Finally, the terms inside the kinetic operators of (4.55) and (4.56) expressed via U (d−3)/2 are accompanied with either a half-integer power of p 2 (for odd d) or the log of p 2 (for even d) which are non-local operators. For d &gt; 2, both of them are the Fourier transform of the Hadamard finite part of 1/(x 2 ) d−2 given by</p>
+
+				<figure>
+					<trash>− π d 2 p 2 4 d−4 2 Γ(d − 2) Γ( d−2 2 )    (−1) d−1 2 π [ d ∈ 2 N + 1 ] (−1) d 2 ln p 2 µ 2 [ d ∈ 2 N + 2 ]</trash>
+
+
+				</figure>
+
+				<p>. (4.62)</p>
+
+				<p>In the next section, we will see that this corresponds in fact to the two-point correlation function of the conserved current generator J(x, q).</p>
+
+			</div>
+			<div>
+				<head n="4.5">Correlation functions</head>
+
+				<p>The correlation functions of the currents can be obtained from the effective action by calculating the functional derivatives with respect to the external higher-spin fields. A simpler method is to consider the correlation function of the generating function:</p>
+
+				<p><formula>C n (x 1 , q 1 ; · · · ; x n , q n ) = J(x 1 , q 1 ) · · · J(x n , q n ) connected , (4.63) – 25 –</formula></p>
+
+				<p>and calculate it using the two-point function: ∆(x 1 − x 2 ) = φ(x 1 ) * φ(x 2 ) = d d p (2π) d e i p·[x 1 −x 2 ] p</p>
+
+				<p><formula>2 = 2 −2 π − d 2 Γ( d−2 2 ) [(x 1 − x 2 ) 2 ]</formula></p>
+
+				<p>d−2 2 [d &gt; 2] . (4.64)</p>
+
+				<p>Wick&apos;s theorem and an expansion in the auxiliary variables allow to get the correlation functions of the currents. The n-point function of the generating function is thus given by C n (x 1 , q 1 ; · · · ; x n , q n ) := J(x 1 , q 1 ) · · · J(x n , q n ) connected =</p>
+
+				<p><formula>(4.65) = N n n! σ∈Sn ∆ x σ 1 − x σ 2 + qσ 1 +qσ 2 2 ∆ x σ 2 − x σ 3 + qσ 2 +qσ 3 2 · · · ∆ x σn − x σ 1 + qσ n +qσ 1 2 ,</formula></p>
+
+				<p>where S n is the symmetric group of order n. Let us illustrate this with the simplest example of the two-point functions: C 2 (x 1 , q 1 ; x 2 , q 2 ) = J(x 1 , q 1 ) J(x 2 , q 2 ) connected =</p>
+
+				<figure>
+					<trash>= N 2 −5 π −d Γ( d−2 2 ) 2 (x 1 − x 2 ) 2 + ( q 1 +q 2 2 ) 2 2 − (x 1 − x 2 ) · (q 1 + q 2 ) 2 d−2 2 . (4.66)</trash>
+
+
+				</figure>
+
+				<p>When expanded in q, C 2 reproduces the non-local part of (4.55) and (4.56) thanks to the following identity:</p>
+
+				<figure>
+					<trash>1 [(x 2 + q 2 ) 2 − 4 (x · q) 2 ] d−2 2 = U d−3 2 −(q · ∂ x ) 2 + q 2 ∂ 2 x 2 d−3 2 Γ d−1 2 (x 2 ) d−2 , (4.67)</trash>
+
+
+				</figure>
+
+				<p>whose derivation is presented in Appendix B.4.</p>
+
+			</div>
+			<div>
+				<head>5</head>
+
+				<figure>
+					<figDesc>Free scalar fields in the ordinary lower spin fields background</figDesc>
+
+				</figure>
+
+				<p>In the previous sections, we have considered the effective action of scalar fields coupled to higher-spin fields contained in the generating function h(x, u), where the couplings are always linear in the external fields. In fact, more generally, h(x, u) can also be considered as composites of some other external fields ϕ(x, u). Such an example was briefly mentioned in the introduction, it consists in replacing the scalar field in h(x, u) by the solution to W −1 [h] = 0 (or a 1 [g] = 0). So the most general quadratic action of a (complex) scalar field χ in the background of external fields ϕ can be written as S [χ; ϕ] := φ χ,ϕ | ˆ</p>
+
+				<figure>
+					<trash>P 2 − ˆ H ϕ + m 2 | φ χ,ϕ , (5.1)</trash>
+
+
+				</figure>
+
+				<p>with some proper redefinitions of fields φ χ,ϕ (x) = f [ϕ](x) χ(x) and h ϕ (x, u) = h ϕ [ϕ](x, u). Since the above has essentially the same form as (2.22), its effective action can be also regularized and computed in the same way as W [ϕ|Λ] :</p>
+
+				<p><formula>= − ∞ 1 Λ 2 dt t e −t m 2 K[ p 2 − h ϕ (x, p) | t ] , (5.2) – 26 –</formula></p>
+
+				<p>where K[ p 2 − h ϕ (x, p) | t ] is the trace of the heat kernel which was defined in (3.3).</p>
+
+				<p>In the present section, we consider the ordinary lower spin fields interactions, that is, the electromagnetic and the gravitational interactions, and compute the corresponding HKE coefficients with which the effective action can be obtained. It is well-known that their effective actions provide infinitely many gauge invariant actions at each order of the cut-off scale. Among them, one can find in particular the Maxwell action and the Hilbert- Einstein action. In other words, the heat kernel of the Laplace equation properly dressed in A µ or g µν give, as its expansion coefficients, infinitely many gauge invariants of these fields. In the followings, we show how to obtain the gauge invariants of A µ and g µν by applying the results of this letter.</p>
+
+			</div>
+			<div>
+				<head n="5.1">Electromagnetic interaction</head>
+
+				<p>The free complex scalar field action in the electromagnetic background: d d x (∂ µ + i A µ ) χ * (∂ µ − i A µ ) χ + m 2 χ * χ , (5.3) can be written as (5.1) with φ χ,Aµ = χ and ˆ H Aµ = −A µ ( ˆ</p>
+
+				<figure>
+					<trash>X) A µ ( ˆ X) − A µ ( ˆ X) ˆ P µ + ˆ P µ A µ ( ˆ X) . (5.4)</trash>
+
+
+				</figure>
+
+				<p>By using the Wigner map, we identify the components of h Aµ (x, u) as h (0)</p>
+
+				<figure>
+					<trash>Aµ (x) = −A µ (x) A µ (x) , h (1) Aµ (x, u) = −2 u µ A µ (x) , h (n2) Aµ (x, u) = 0 . (5.5)</trash>
+
+
+				</figure>
+
+				<p>Notice that the non-linear gauge symmetry (2.26) of h Aµ defines the usual linear gauge symmetry of the Maxwell fields. Notice also that h</p>
+
+				<figure>
+					<trash>(0) Aµ and h (1)</trash>
+
+
+				</figure>
+
+				<p>Aµ are of different orders in A µ .</p>
+
+				<p>The HKE coefficients a n2 can be obtained up to the quadratic order in A µ from (</p>
+
+				<figure>
+					<trash>4.28) as a m+2 [A µ ] = − 1 2 d d x (4 π) d 2 F µν 1 2 ∂ 2 x m (2m + 3)!! F µν + O(A 3 ) [m 0]</trash>
+
+
+				</figure>
+
+				<p>, (5.6) where gauge invariance is manifest. The other coefficients a n1 can be also obtained from (4.46), but they are all vanishing except a 0 which gives a constant. In particular one can see for a 1 a cancellation between the linear part h</p>
+
+				<figure>
+					<head>(0)</head>
+
+					<figDesc>Aµ and the quadratic part (h</figDesc>
+					<trash>(1) Aµ ) ν (h (1) Aµ ) ν /4 . 5.2 Gravitational interaction</trash>
+
+
+				</figure>
+
+				<p>We consider the action of a scalar field χ in a curved space g µν with a scalar curvature coupling:</p>
+
+				<p><formula>1 2 d d x √ g g µν ∂ µ χ ∂ ν χ + ξ R χ 2 + m 2 χ 2 . (5.7)</formula></p>
+
+				<p>In order to rewrite the above as (5.1), we should first redefine the scalar field as φ χ,gµν = g 1 4 χ/2 with (φ χ,gµν ) * = φ χ,gµν , then the action can be written with</p>
+
+				<p><formula>ˆ H gµν = − ˆ P µ − i ∂ µ g( ˆ X) 4 g( ˆ X) g µν ( ˆ X) ˆ P ν + i ∂ ν g( ˆ X) 4 g( ˆ X) − ξ R( ˆ X) . (5.8) – 27 –</formula></p>
+
+				<p>Again from the Wigner map, we identify the components of h gµν (x, u). First the spin 2 part is given by the perturbation of the inverse metric tensor κ µν : h (2) gµν (x, u) = u 2 − u µ u ν g µν =: u µ u ν κ µν (x) ,</p>
+
+				<figure>
+					<trash>(5.9) and the components h (1) gµν and h (n3) gµν vanish while the scalar part h (0) gµν is given by h (0) gµν (x) = −ξ R(x) − g µν (x) ∂ µ g(x) ∂ ν g(x) 16 g 2 (x</trash>
+
+
+				</figure>
+
+				<p><formula>) − 1 4 ∂ µ ∂ ν g µν (x) − ∂ µ g µν (x) ∂ ν g(x) 4 g(x) = −ξ R(x) + 1 4 ∂ µ ∂ ν κ µν − ∂ 2 κ ′ − 1 16 ∂ µ κ ′ ∂ µ κ ′ + 1 4 ∂ µ (κ µν + η µν κ ′ )∂ ν κ ′ − 1 2 ∂ 2 κ µν κ µν + (κ ′ ) 2 + O(κ 3 ) . (5.10)</formula></p>
+
+				<p>The non-linear ǫ-transformation (2.26) defines the general coordinate transformation, and the non-linear α-transformation (2.27) for massless (m = 0) and conformally coupled (ξ = ξ conf ) case gives a Weyl transformation.</p>
+
+				<p>The HKE coefficients a n2 can be obtained up to the quadratic order in κ µν from (4.28) as a m+2 [g µν ] = 1 8 d d x</p>
+
+				<figure>
+					<trash>(4π) d 2 R µνρσ ( 1 2 ∂ 2 x ) m (2m + 5)!! R µνρσ + c(m, ξ) 2 R ( 1 2 ∂ 2 x ) m (2m + 5)!! R + O(κ 3 ) , (5.11)</trash>
+
+
+				</figure>
+
+				<p>where c(m, ξ) is a constant depending on the HKE coefficient index and the parameter ξ :</p>
+
+				<figure>
+					<trash>c(m, ξ) = (2m + 3)(2m + 5)(4ξ − 1) 2 + 2(2m + 5)(4ξ − 1) + 1 , (5.12) and R µνρσ is the linearized Riemann tensor: R µνρσ = 1 2</trash>
+
+					<figDesc>(∂ µ ∂ σ κ ρν + ∂ ρ ∂ ν κ µσ − ∂ µ ∂ ρ κ νσ − ∂ ν ∂ σ κ µρ ) , (5.13) and R µν := η ρσ R µρνσ and R := η µν R µν are respectively the linearized Ricci tensor and the linearized Ricci scalar. The expression (5.11) was chosen by using the following (Gauss- Bonet like) identity: R µνρσ m R µνρσ − 4 R µν m R µν + R m R = (total derivative) , (5.14) in such a way that the linearized Ricci tensor does not appear.</figDesc>
+
+				</figure>
+
+				<p>Notice that when ξ = ξ conf , the anomaly term a d/2 is given by the square of the Weyl tensor. From (4.46), one can check that a n with negative n again vanish, and the non-vanishing coefficients a 1 and a 0 are given up to quadratic order in κ µν by a 1 [g µν ] = d d x</p>
+
+				<figure>
+					<trash>(4 π) d 2 − ξ 1 + 1 2 κ ′ R + + 1 6 1 4 (∂ u κ ′ ) 2 − 1 4 (∂ ρ κ µν ) 2 + 1 2 (∂ ν κ µν ) 2 − 1 2 ∂ µ κ ′ ∂ ν κ µν + O(κ 3 ) , a 0 [g µν ]</trash>
+
+
+				</figure>
+
+				<p>=</p>
+
+				<p><formula>d d x (4 π) d 2 1 + 1 2 κ ′ + 1 8 κ ′ κ ′ + 1 4 κ µν κ µν + O(κ 3 ) . (5.15) – 28 –</formula></p>
+
+				<p>From the linearized expressions of the Hilbert-Einstein action and Cosmological constant:</p>
+
+				<figure>
+					<trash>√ g R = 1 4 (∂ u κ ′ ) 2 − 1 4 (∂ ρ κ µν ) 2 + 1 2 (∂ ν κ µν ) 2 + (total derivative) + O(κ 3 ) , √ g = 1 + 1 2 κ ′ + 1 8 κ ′ κ ′ + 1 4 κ µν κ µν + O(κ 3 ) , (5.16)</trash>
+
+
+				</figure>
+
+				<p>we can see that a 1 and a 0 coincide with a 1 [g µν ] =</p>
+
+				<p><formula>d d x (4 π) d 2 1 6 − ξ √ g R , a 0 [g µν ] = d d x (4 π) d 2 √ g , (5.17)</formula></p>
+
+				<p>computed using different methods.</p>
+
+			</div>
+			<div>
+				<head n="6">Conclusion</head>
+
+				<p>In this work, we considered the most general quadratic action for a scalar field. We argued that it describes the interaction of the scalar field with a background of symmetric tensor fields of arbitrary rank. We gave the perturbative expansion of the quantum effective action in powers of the ultraviolet cut-off and of the external fields.</p>
+
+				<p>Following the induced gravity idea of Sakharov (see e.g. [39, 40] for a review), one may consider the cut-off dependent local terms as providing the dynamics of the tensor fields. This interpretation, if consistent, would result in an interacting higher-spin gravity theory . To prove the consistency one has to overcome several obstacles. The first one is that Fronsdal&apos;s free action is not recovered. As noted in the introduction, this can be traced to the presence of linear terms in the effective action and to their mixing with quadratic terms in the fields and their derivatives. This raises the questions of the existence of a stable vacuum and of the spectrum of the theory around flat spacetime. In fact, here the gauge fields and parameters are not subject to any trace constraint and thus do not fit into Fronsdal&apos;s formulation [29] so the naive counting of modes can be misleading. Moreover, imposing from the beginning trace constraints on the higher-spin fields would break the non-Abelian symmetry group of unitary operators. The unconstrained formulation [41] and the triplets [42] both rely on unconstrained higher-spin tensors but the local actions involve additional fields as well; the elimination of the latter typically leads to non-local actions. Once the issue of the spectrum is understood, another problem is the infinite number of divergent terms which appear in the effective action in contrast to the gravitational case where only a finite number of terms is present. A resummation of these terms may be necessary. We hope to come back to this tantalizing induced higher-spin gravity interpretation of the effective action in the near future.</p>
+
+				<p>Another important target of applications from our results is the AdS/CFT correspondence . The operator H represents the boundary data for the higher-spin gauge fields on AdS d+1 . The matching of the physical degrees of freedom obtained from the rank-s external field ¯ h (s) with local symmetries (2.16) with an on-shell spin-s gauge field in AdS d+1 can be seen as follows. 5 A Fronsdal spin-s gauge field on AdS d+1 is described by an O(d,</p>
+
+			</div>
+			<div>
+				<head>5</head>
+
+				<p>In the literature, this matching is usually performed for the boundary currents and the gauge-fixed bulk fields, see e.g. [7].</p>
+
+			</div>
+			<div>
+				<head>– 29 –</head>
+
+				<p>covariant rank-s tensor which is doubly-traceless [43], thus it can be decomposed under the boundary O(d, 1) into four symmetric tensors of rank s, s − 1, s − 2 and s − 3. In the same way, the corresponding Fronsdal gauge parameter is an O(d, 2)-covariant rank-(s − 1) tensor which can be decomposed into two boundary symmetric tensors of rank s − 1 and s − 2. Let d r denote 6 the number of components of a boundary symmetric tensor of rank r.</p>
+
+				<p>The number of physical degrees of freedom of the spin-s on-shell bulk gauge field is equal to (d s + d s−1 + d s−2 + d s−3 ) − 2 (d s−1 + d s−2 ) , (6.1) where we removed twice the number of components of the gauge parameters since the field is on-shell. This matches the number of physical degrees of freedom of a spin-s off-shell boundary field ¯ h (s) with gauge symmetries (2.16) : d s − (d s−1 + d s−2 − d s−3 ) , (6.2) where d s−3 corresponds to the number of overlapping degrees of freedom between ¯ ǫ (s−1) and ¯ α (s−2) . The number of independent gauge parameters were removed just once since we are considering an off-shell counting.</p>
+
+				<p>This simple counting argument should be extended to a non-trivial match between the Lorentz-covariant quadratic terms in the effective action computed here and the on-shell bulk Fronsdal actions with appropriate boundary counter-terms. This computation would be also of interest in order to compare directly the gauge symmetries on the bulk/boundary sides, as well the anomalies arising from the IR/UV regularizations. Indeed, the full symmetry group of the boundary data at quantum level has been identified with the group of unitary operators. Comparison with the Vasiliev gauge group is not straightforward because our gauge fields are metric-like and not frame-like. We leave all these issues for a future work.</p>
+
+			</div>
+			<div>
+				<head>A Notations and useful formulas</head>
+
+				<figure>
+					<trash>A.1 Generating functions Symmetric tensors f (s)</trash>
+
+					<figDesc>µ 1 ···µs of different rank s are contracted with auxiliary variable u µ to form a generating function f (x, u) of these tensors:</figDesc>
+					<trash>f (x, u) := ∞ s=0 f (s) (x, u) , f (s) (x, u) := 1 s! f (s) µ 1 ···µs (x) u µ 1 · · · u µs , (A.1)</trash>
+
+
+				</figure>
+
+				<p>where the s-th order term u is written with the superscript (s). The contraction f (x) | g(x) of two generating functions f and g is defined by the sum of the contractions of all of their tensors:</p>
+
+				<figure>
+					<trash>f (x) | g(x) := ∞ s=0 1 s! f (s) µ 1 ···µs (x) g (s) µ 1 ···µs (x) , (A.2) and we define in addition a scalar product by f | g := d d x f (x) | g(x) . (A.3) A.2 Higher-spin curvatures The spin-s curvature of Weinberg [44]</trash>
+
+
+				</figure>
+
+				<p>is a mixed-symmetry tensor in the antisymmetric convention (generalizing thereby the linearized Riemann tensor of s = 2) and is defined with the aid of the curl operator π µν :</p>
+
+				<figure>
+					<trash>π µν = ∂ ∂x µ ∂ ∂u ν − ∂ ∂x ν ∂ ∂u µ , (A.4) as R (s) µ 1 ν 1 ···µsνs (x) := π µ 1 ν 1 · · · π µsνs h (s) (x, u) = ∂ [µs · · · ∂ [µ 1 h (s) ν 1 ]···νs] (x) , (A.5) such that R (s</trash>
+
+
+				</figure>
+
+				<p>) is invariant under the gauge transformation, δ h µ 1 ···µs = ∂ (µs ε µ 1 ···µ s−1 ) . In the text, we have used the spin-s curvature of deWit and Freedman [45] which is a mixedsymmetry tensor in the symmetric convention (generalizing thereby the linearized Jacobi tensor of s = 2) defined via two auxiliary variables as</p>
+
+				<figure>
+					<trash>R (s) (x, v, w) := 1 s! R (s) µ 1 ν 1 ···µsνs (x) v µ 1 · · · v µs w ν 1 · · · w νs = 1 s! v · ∂ x w · ∂ u − w · ∂ x v · ∂ u s h (s) (x, u) , (A.6) R(x, v, w) := ∞ s=0 R (s) (x, v, w) = e v·∂x w·∂u−w·∂x v·∂u h(x, u) u=0 . (A.7) It enjoys the following properties: R (s) (x, w, v) = (−1) s R (s) (x, v, w) , w · ∂ v R(x, v, w) = v · ∂ w R(x, v, w) = 0 . (A.8) – 31 – A.3 Weyl/Wigner quantization The Weyl/Wigner quantization [46]</trash>
+
+
+				</figure>
+
+				<p>is a method for systematically associating a (pseudo)differential operator with a distribution in phase space. It offers a classical-like formulation of quantum mechanics using real functions on phase space as observables and the Wigner function as an analogue of the Liouville density function.</p>
+
+				<p>The Weyl map associates to a distribution f a</p>
+
+				<figure>
+					<trash>Weyl(i.e. symmetric)-ordered operator F defined by ˆ F = d d k d d y (2 π) d F(k, y) e i (k· X−y· P ) , (A.9)</trash>
+
+
+				</figure>
+
+				<p>where F is the Fourier transform of f over the whole phase space: F(k, y) = d d x d d p (2π) d f (x, p) e −i (k·x−y· p) , (A.10) and the function f (x, p) is called the Weyl symbol of the operator F . The inverse of the Weyl map is called the Wigner map: f (x, p) = d d y x − y/2 | ˆ F | x + y/2 e i y·p . (A.11)</p>
+
+				<p>A nice property of the these maps is that it relates the complex conjugation * of symbols to the Hermitian conjugation † of operators. Consequently, the image of a real function is a Hermitian operator. The Moyal product ⋆ is the pull-back of the composition product in the algebra of quantum observables with respect to the Weyl map, such that the latter becomes an isomorphism of associative algebras. The Wigner map (A.11) allows to check that the following explicit expression of the Moyal product:</p>
+
+				<figure>
+					<trash>f (x, p) ⋆ g(x, p) = e i 2 (∂x 1 · ∂p 2 −∂x 2 · ∂p 1 ) f (x 1 , p 1 ) g(x 2 , p 2 ) x 1 =x 2 =x p 1 =p 2 =p . (A.12)</trash>
+
+					<figDesc>The trace of an operator is given by integral of its Weyl symbol over phase space: Tr[ ˆ F ] = d d x d d p (2 π) d f (x, p) , (A.13) and the trace formula for a product of operators leads to</figDesc>
+					<trash>Tr[ ˆ F ˆ G ] = d d x d d p (2 π) d f (x, p) ⋆ g(x, p) = d d x d d p (2 π) d f (x, p) g(x, p) . (A.14) A.4 Special functions</trash>
+
+
+				</figure>
+
+				<p>Several useful definitions and formulas for Bessel function are collected here in order to be self-contained. The Bessel function of first kind can be defined as a series by</p>
+
+				<figure>
+					<trash>J ν (z) := ∞ m=0 (−1) m m! Γ(ν + m + 1) z 2 2m+ν , (A.15) – 32 –</trash>
+
+
+				</figure>
+
+				<p>and is related to the modified Bessel function I ν by I ν (z) := i −ν J ν (i z) . (A.16)</p>
+
+				<p>For integer order ν = n, J n and I n can be generated as</p>
+
+				<figure>
+					<trash>e z 2 (t− 1 t ) = ∞ n=−∞ J n (z) t n , e z 2 (t+ 1 t ) = ∞ n=−∞ I n (z) t n . (A.17) The Bessel function J ν admits also the following integration identity: π 2 0 dθ sin µ+1 θ J µ (z 1 sin θ) cos(z 2 cos θ) = = π 2 z µ 1 z 2 1 + z 2 2 −(µ+ 1 2 ) J µ+ 1 2 z 2 1 + z 2 2 [Re(µ) &gt; −1] . (A.18) The Lommel&apos;s expansion of the Bessel function is given by (z + ω) − ν 2 J ν ( √ z + ω) = k=0 (− 1 2 ω) k k! z − µ+k 2 J ν+k ( √ z) , (A.19) and the addition theorem gives Z −ν J ν (Z) = 2 ν Γ(ν) ∞ m=0 (ν + m) z −ν 1 J ν+m (z 1 ) z −ν 2 J ν+m (z 2 ) C ν m (cos θ) , (A.20) where Z 2 = z 2 1 + z 2 2 + 2 z 1 z 2 cos θ and C ν m is the Gegenbauer polynomial defined by C ν m (z) = [ m 2 ] k=0 (−1) k (ν) m−k m! (m − 2k)! (2 z) m−2k [ν &gt; − 1 2 , ν = 0] . (A.21) The Gegenbauer polynomial satisfies the following differential equation: 1 − z 2 d 2 dz 2 − (2 ν + 1) z d dz + m(m + 2 ν) C ν m (z) = 0 . (A.22) B Computational appendices B.1 Inverse map of the projection-like operator To check whether Π −1 d (q, ∂ x ) (2.11) is really the inverse of Π d (q, ∂ x ) (2.9), we compute directly Π −1 d (q, ∂ x ) Π d (q, ∂ x ) : Π −1 d (q, ∂ x ) Π d (q, ∂ x ) = ∞ m,n=0 1 (q · ∂ q + d−1 2 − 2m) m (−q · ∂ q − d−5 2 + 2m) n 1 4 P (q, ∂ x ) m+n m! n! = ∞ N =0 c N (q · ∂ q + d−3 2 ) N ! 1 4 P (q, ∂ x ) N , (B.1) – 33 – and Π d (q, ∂ x ) Π −1 d (q, ∂ x ) : Π d (q, ∂ x ) Π −1 d (q, ∂ x ) = ∞ m,n=0 1 (−q · ∂ q − d−5 2 ) m (q · ∂ q + d−1 2 − 2N ) n 1 4 P (q, ∂ x ) m+n m! n! = ∞ N =0 d N (q · ∂ q + d−3 2 ) N ! 1 4 P (q, ∂ x ) N , (B.2</trash>
+
+					<figDesc>) where we collected terms of the same order in P with coefficients c N (x) and d N (x) as series:</figDesc>
+					<trash>c N (x) = N n=0 N n 1 (x − 2n + 1) n (−x + 2n + 1) N −n , d N (x) = N n=0 N n 1 (x + 1) n (−x + 2N + 1) N −n . (B.3)</trash>
+
+
+				</figure>
+
+				<p>Finally one can show with a help of Mathematica that c N (x) = d N (x) = δ N,0 . (B.4) B.2 Expression by higher-spin curvature tensors</p>
+
+				<p>Here we prove the equation f ([∂ v ∂ w ]) e 1 2 [vw] [xy] v=w=0 = ∞ 0 dt t e −t f (−t [xy]) , (B.5) which was used in equation (4.32). First write f ([∂ v ∂ w ]) as f ([∂ v ∂ w ]) =</p>
+
+				<figure>
+					<trash>dµ(A) ˜ f (A) e i 2</trash>
+
+					<figDesc>A [∂v∂w]</figDesc>
+
+				</figure>
+
+				<p>. (B.6)</p>
+
+				<p>Then use the notation V := v ⊕ w and define the two 2d × 2d matrices:</p>
+
+				<figure>
+					<trash>B = i 0 A −A 0 , S = 0 [xy]</trash>
+
+
+				</figure>
+
+				<p>−[xy]</p>
+
+				<figure>
+					<trash>0 , (B.7) so that i A [∂ v ∂ w ]</trash>
+
+
+				</figure>
+
+				<p>= ∂ V t B ∂ V , [vw] [xy]</p>
+
+				<figure>
+					<figDesc>= V t S V . (B.8)</figDesc>
+
+				</figure>
+
+				<p>Next, we express the above expression using a Gaussian integral as e i 2 A [∂v∂w]</p>
+
+				<figure>
+					<trash>e 1 2 [vw] [xy] v=w=0 = e 1 2 ∂ V t B ∂ V e 1 2 V t S V V =0 = (det B) − 1 2 d 2d X π d e − 1 2 X t B −1 X+X·∂ V (det S) − 1 2 d 2d Y π d e − 1 2 Y t S −1 Y +Y ·V = det(1 − S B) − 1 2 = det(1 + i [xy]</trash>
+
+
+				</figure>
+
+				<p>A) −1 = e − ln(1+i A [xy] ) .</p>
+
+				<figure>
+					<trash>(B.9) By making use of (A [xy] ) n = 2 1 2 A [xy] n , (B.10) we get e i 2 A [∂v∂w] e 1 2 [vw] [xy] v=w=0 = 1 1 + i 2 A [xy] 2 = ∞ 0 dt t e −t(1+ i 2</trash>
+
+
+				</figure>
+
+				<p>A</p>
+
+				<p>[xy]</p>
+
+				<figure>
+					<figDesc>) , (B.11) and finally we obtain the the desired relation (B.5). – 34 – B.3 Finite part of the effective action</figDesc>
+
+				</figure>
+
+				<p>To compute the effective action, we now need to evaluate the following definite integral of hypergeometric function:</p>
+
+				<figure>
+					<trash>∞ ε 2 dt t − d−4 2 −1 1 F 1 1; m + 3 2 ; − p 2 4 t . (B.12)</trash>
+
+
+				</figure>
+
+				<p>To do so, let us first consider the indefinite integral:</p>
+
+				<figure>
+					<trash>dt t −ν−1 1 F 1 1; m + 3 2 ; − p 2 4 t = ∞ n=0 (− p 2 4 ) n (m + 3 2 ) n t −ν+n −ν + n = − t −ν ν 2 F 2 1, −ν; m + 3 2 , 1 − ν; − p 2 4 t [ ν / ∈ N ] , (B.13)</trash>
+
+
+				</figure>
+
+				<p>where we evaluated the integral by using the series representation of hypergeometric function 1 F 1 and re-expressed the result by another hypergeometric function 2 F 2 . To compute the definite integral (B.12), we need to determine the integration constant which is given by lim t→∞</p>
+
+				<figure>
+					<trash>− t −ν ν 2 F 2 1, −ν; m + 3 2 , 1 − ν; − p 2 4 t = = − π sin(π ν) Γ(m + 3 2 ) Γ(m + 3 2 + ν) p 2 4 ν [ p 2 0, ν &gt; −1, ν / ∈ N ] . (B.14) For odd d, we obtain (B.12) as π i − p 2 4 d−4 2 (m + 3 2 ) d−4 2 + ε −d+4 ∞ n=0 − p 2 4 ε 2 n (m + 3 2 ) n ( d−4 2 − n) . (B.15)</trash>
+
+					<figDesc>For even d, we consider ν = (d − 4)/2 + ξ and take ξ → 0 limit. The pole ξ −1 from the indefinite integral (B.13) cancels out the pole from the integration constant (B.14), and we can take the limit smoothly and obtain (B.12) as</figDesc>
+					<trash>− − p 2 4 d−4 2 (m + 3 2 ) d−4 2 ψ m + d − 1 2 + ln p 2 4 ε 2 + ε −d+4 ∞ n = d−4 2 ,n=0 − p 2 4 ε 2 n (m + 3 2 ) n ( d−4 2 − n) . (B.16) B.4 Two-point correlation function The generating function of two-point function can be expanded by using successively the Newton&apos;s binomial series as 1 [(x 2 + q 2 ) 2 − 4 (x · q) 2 ] d−2 2 = 1 (x 2 + q 2 ) d−2 ∞ m=0 m + d−4 2 m 4 (x · q) 2 (x 2 + q 2 ) 2 m = 1 (x 2 ) d−2 ∞ m=0 − (x · q) 2 x 2 q 2 m ∞ n=m − q 2 x 2 n b m,n , (B.17) – 35 – with b m,n = 4 m m + d−4 2 m n + m + d − 3 n − m . (B.18)</trash>
+
+
+				</figure>
+
+				<p>On the other hand, one can show, by induction, how P (q, ∂ x ) := [(q</p>
+
+				<figure>
+					<trash>· ∂ x ) 2 − q 2 ∂ 2 x ]/4 acts on (x 2 ) −d+2 : P n (q, ∂ x ) 1 (x 2 ) d−2 = n m=0 n m (d − 2) n+m d − 1 2 + m n−m (x · q) 2m −q 2 n−m (x 2 ) d−2+n+m . (B.19) Then an arbitrary series of P (q, ∂ x ) acts on (x 2 ) −d+2 as ∞ n=0 a n P n (q, ∂ x ) 1 (x 2 ) d−2 = 1 (x 2 ) d−2 ∞ m=0 − (x · q) 2 x 2 q 2 m ∞ n=m − q 2 x 2 n × × a n n m (d − 2) n+m d − 1 2 + m n−m , (B.20)</trash>
+
+
+				</figure>
+
+				<p>and this series coincides to (B.17) with the choice of a n as</p>
+
+				<figure>
+					<trash>a n = 1 n! ( d−1 2 ) n . (B.21)</trash>
+
+
+				</figure>
+
+				<p>In fact, this coefficient a n gives the Bessel function and we obtain (4.67).</p>
+
+			</div>
+
+			<note place="foot" n="1"> Unité Mixte de Recherche 6083 du CNRS, Fédé de Recherche 2964 Denis Poisson</note>
+
+			<note place="foot" n="1"> Through the holographic dictionary, the translation of this property (somewhat unremarkable for a free theory) becomes rather striking: the dual interacting higher-spin theory should not receive any quantum correction! For unbroken higher-spin gauge symmetries, this is plausible since the group of symmetries may be big enough to eliminate any non-trivial counter-term (as advocated a while ago by Fradkin [9]). – 2 –</note>
+
+			<note place="foot" n="2"> Such a deformation was analysed in AdS [31] but only at lowest order and for external gauge fields of even spin. – 4 –</note>
+
+			<note place="foot" n="3"> Notice that imposing the condition W−1 = 0 would determine, in a gauge invariant manner, the external scalar h (0) without derivative (p = 0) in terms of the other fields h (s&gt;0) . This is the case for free scalars fields in the presence of lower spins (1 s 2). – 5 –</note>
+
+			<note place="foot" n="4"> Note that (2.18) is similar to the dressing map of [12] and (2.17) is another expression of the reconstruction map of the same article. – 9 –</note>
+
+			<note place="foot">– 23 –</note>
+
+			<note place="foot" n="6"> Although the precise value of this number is not necessary in the present argument, we remind the reader that dr = (d + r − 1)!/r!(d − 1)! – 30 –</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+				<head>Acknowledgments</head>
+				<p>We are grateful to N. Boulanger, A. Campoleoni, D. Francia, C. Iazeolla, D. Nesterov, F. Nitti, R. Rahman, A. Sagnotti, S. Solodukhin, P. Sundell and M. Taronna for many helpful discussions, and to APC-Paris VII and Scuola Normale Superiore for the kind hospitality extended to one or more of us.</p>
+				<p>The present research was supported in part by Scuola Normale Superiore, by INFN and by the ERC Advanced Investigator Grant no. 226455 &quot; Supersymmetry, Quantum Gravity and Gauge Fields &quot; (SUPERFIELDS).</p>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">How higher-spin gravity surpasses the spin two barrier: no-go theorems versus yes-go examples</title>
+		<author>
+			<persName>
+				<forename type="first">X</forename>
+				<surname>Bekaert</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Boulanger</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Sundell</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">High-energy symmetries of string theory</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">J</forename>
+				<surname>Gross</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">60</biblScope>
+			<biblScope unit="page">1229</biblScope>
+			<date type="published" when="1988" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title level="m" type="main">String Lessons for Higher-Spin Interactions, arXiv:1006.5242; A. Fotopoulos and M. Tsulaia, On the Tensionless Limit of String theory, Off -Shell Higher Spin Interaction Vertices and BCFW Recursion Relations</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Sagnotti</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">M</forename>
+				<surname>Taronna</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Porrati</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Rahman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Sagnotti</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>String. Theory and The Velo-Zwanziger Problem</note>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Higher spin gauge theories in any dimensionhep-th/0409260]; Higher spin gauge theories in various dimensions</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Vasiliev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Bekaert, S. Cnockaert, C. Iazeolla, and M. Vasiliev, Nonlinear higher spin theories in various dimensions</title>
+		<imprint>
+			<date type="published" when="2004" />
+			<biblScope unit="page" from="1101" to="1109" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">AdS dual of the critical O(N) vector model</title>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Klebanov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Polyakov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">550</biblScope>
+			<biblScope unit="page" from="213" to="219" />
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Stringy gravity, interacting tensionless strings and massless higher spins</title>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Sundborg</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Nucl. Phys. Proc. Suppl talk at &apos;J.H. Schwarz 60-th Birthday Conference&apos; (CalTech</title>
+		<meeting><address><addrLine>Witten, Spacetime Reconstruction</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2001-11" />
+			<biblScope unit="page" from="113" to="119" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title level="m" type="main">Notes on higher spin symmetries</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Mikhailov</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page">0201019</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<title/>
+		<imprint>
+			<biblScope unit="page">36</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Massless higher spins and holography</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Sezgin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Sundell</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">644</biblScope>
+			<biblScope unit="page" from="303" to="370" />
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title level="m" type="main">The problem of unification of all interactions and self-consistency, . Preprint Lebedev 90-0193, talk at &apos;Dirac Medal for</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">S</forename>
+				<surname>Fradkin</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1988-04" />
+			<pubPlace>Trieste</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Liu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">A</forename>
+				<surname>Tseytlin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">D=5 gauged supergravity, and D=4 conformal supergravity, Nucl. Phys. B533</title>
+		<imprint>
+			<date type="published" when="1998" />
+			<biblScope unit="page" from="88" to="108" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">S</forename>
+				<surname>Fradkin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">A</forename>
+				<surname>Tseytlin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Conformal</forename>
+				<surname>Supergravity</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rept</title>
+		<imprint>
+			<biblScope unit="volume">119</biblScope>
+			<biblScope unit="page" from="233" to="362" />
+			<date type="published" when="1985" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="m">Segal, Conformal higher spin theory</title>
+		<imprint>
+			<date type="published" when="2003" />
+			<biblScope unit="page" from="59" to="130" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Gauge invariant two-point vertices of shadow fields</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Metsaev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">106002</biblScope>
+			<biblScope unit="page">81</biblScope>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">A superconformal theory of massless higher spin fields in D = A4 (1989) 731; Cubic interaction in conformal theory of integer higher spin fields in four-dimensional space-time, Phys. Lett. B231 (1989) 97; Conformal superalgebras of higher spins</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Fradkin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Linetsky</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Mod. Phys. Lett</title>
+		<imprint>
+			<date type="published" when="1989" />
+			<biblScope unit="page" from="2363" to="2375" />
+		</imprint>
+	</monogr>
+	<note>Superconformal. higher spin theory in the cubic approximation</note>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Cubic Interaction in Extended Theories of Massless Higher Spin Fields, Nucl. Phys. B291 (1987) 141; On the Gravitational Interaction of Massless Higher Spin Fields</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Fradkin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">A</forename>
+				<surname>Vasiliev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett</title>
+		<imprint>
+			<biblScope unit="page" from="189" to="89" />
+			<date type="published" when="1987" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Cubic interactions of bosonic higher spin gauge fields in AdS 5 ) Alkalaev and M. A. Vasiliev, N = 1 supersymmetric theory of higher spin gauge fields in AdS 5 at the cubic level</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">A</forename>
+				<surname>Vasiliev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Alkalaev, FV-type action for AdS 5 mixed-symmetry fields</title>
+		<imprint>
+			<date type="published" when="2001" />
+			<biblScope unit="page" from="106" to="162" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Consistent equation for interacting gauge fields of all spins in (3+1)-dimensions, Phys. Lett. B243 (1990) 378–382; More on equations of motion for interacting massless fields of all spins in (3+1)-dimensions</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">A</forename>
+				<surname>Vasiliev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett</title>
+		<imprint>
+			<biblScope unit="page" from="285" to="225" />
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Nonlinear equations for symmetric massless higher spin fields in (A)dS d</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Vasiliev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">567</biblScope>
+			<biblScope unit="page" from="139" to="151" />
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<monogr>
+		<title level="m" type="main">Evaluating the AdS dual of the critical O(N) vector model, JHEP 0303 (2003) 049, [hep-th/0302063]; E. Sezgin and P. Sundell, Holography in 4D (super) higher spin theories and a test via cubic scalar couplings</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">C</forename>
+				<surname>Petkou</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2005" />
+			<biblScope unit="page" from="0507" to="044" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Higher Spin Gauge Theory and Holography: The Three-Point Functions</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Giombi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">X</forename>
+				<surname>Yin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Higher Spins in AdS and Twistorial Holography</title>
+		<imprint>
+			<date type="published" when="1009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<title level="m" type="main">AdS 4 /CFT 3 Construction from Collective Fields</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">D M</forename>
+				<surname>Koch</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Jevicki</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Jin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">P</forename>
+				<surname>Rodrigues</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<monogr>
+		<title level="m" type="main">Holographic dual of free field theory</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">R</forename>
+				<surname>Douglas</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Mazzucato</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">S</forename>
+				<surname>Razamat</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<monogr>
+		<title/>
+		<imprint>
+			<biblScope unit="page">37</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<monogr>
+		<title level="m" type="main">Asymptotic symmetries of three-dimensional gravity coupled to higher-spin fields, JHEP 1011 (2010) 007, [arXiv:1008.4744]; M. Henneaux and S.-J. Rey, Nonlinear W ∞ as Asymptotic Symmetry of Three-Dimensional Higher Spin Anti-de Sitter Gravity, arXiv:1008.4579 An AdS 3 Dual for Minimal Model CFTs</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Campoleoni</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Fredenhagen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Pfenninger</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Theisen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">R</forename>
+				<surname>Gaberdiel</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Gopakumar</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Saha</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">R</forename>
+				<surname>Gaberdiel</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Gopakumar</surname>
+			</persName>
+		</author>
+		<editor>A. Castro, A. Lepage-Jutier, and A. Maloney</editor>
+		<imprint/>
+	</monogr>
+	<note>Higher. Spin Theories in AdS 3 and a Gravitational Exclusion Principle</note>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Explicit construction of conserved currents for massless fields of arbitrary spin</title>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<forename type="middle">A</forename>
+				<surname>Berends</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Burgers</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Van Dam</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="page" from="271" to="429" />
+			<date type="published" when="1986" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Higher spin current multiplets in operator product expansions</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Anselmi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Class. Quant. Grav</title>
+		<imprint>
+			<biblScope unit="volume">179906167</biblScope>
+			<biblScope unit="page" from="1383" to="1400" />
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<monogr>
+		<title level="m" type="main">Higher spin gauge theories: Star product and AdS space, hep-th/9910096. Contributed article to Golfand&apos;s Memorial</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">A</forename>
+				<surname>Vasiliev</surname>
+			</persName>
+		</author>
+		<imprint>
+			<publisher>World Scientific</publisher>
+		</imprint>
+	</monogr>
+	<note>Shifman. ed.</note>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Conformal higher spin currents in any dimension and AdS/CFT correspondence</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Konstein</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Vasiliev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Zaikin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">0012</biblScope>
+			<biblScope unit="page">018</biblScope>
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Higher spin conformal currents in Minkowski space</title>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Gelfond</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Skvortsov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Vasiliev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Theor. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">154</biblScope>
+			<biblScope unit="page" from="294" to="302" />
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Massless Fields with Integer Spin</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">3624</biblScope>
+			<biblScope unit="page">18</biblScope>
+			<date type="published" when="1978" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<monogr>
+		<title level="m" type="main">On higher spin interactions with matter</title>
+		<author>
+			<persName>
+				<forename type="first">X</forename>
+				<surname>Bekaert</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Joung</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Mourad</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Conformal coupling of higher spin gauge fields to a scalar field in AdS 4 and generalized Weyl invariance, Phys. Lett Conformal invariant interaction of a scalar field with the higher spin field in AdS D , Mod</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Manvelyan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Ruhl</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Manvelyan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Mkrtchyan</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett</title>
+		<imprint>
+			<biblScope unit="page" from="593" to="253" />
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+	<note>hep. -th]]</note>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Theory of higher spin tensor currents and central charges</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Anselmi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">9808004</biblScope>
+			<biblScope unit="page" from="541" to="323" />
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<monogr>
+		<title level="m" type="main">Coupling of higher spin gauge fields to a scalar field in AdS d+1 and their holographic images in the d-dimensional sigma model</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Leonhardt</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Manvelyan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Ruhl</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="401240" />
+			<biblScope unit="page" from="hep" to="th" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Higher symmetries of the Laplacian</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">G</forename>
+				<surname>Eastwood</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Annals Math</title>
+		<imprint>
+			<biblScope unit="volume">161</biblScope>
+			<biblScope unit="page" from="1645" to="1665" />
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Higher spin algebras as higher symmetries</title>
+		<author>
+			<persName>
+				<forename type="first">X</forename>
+				<surname>Bekaert</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physics AUC</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="issue">58</biblScope>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">The quantum one loop trace anomaly of the higher spin conformal conserved currents in the bulk of AdS 104–122 [arXiv:hep-th/0506185]; The structure of the trace anomaly of higher spin conformal currents in the bulk of</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Manvelyan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Ruhl</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Nucl. Phys. B733 Nucl. Phys. B751 Generalized Curvature and Ricci Tensors for a Higher Spin Potential and the Trace Anomaly – 38 – in External Higher Spin Fields in AdS 4 Space, Nucl. Phys</title>
+		<imprint>
+			<date type="published" when="2006" />
+			<biblScope unit="page" from="285" to="303" />
+		</imprint>
+	</monogr>
+	<note>hep. -th]]</note>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Quantum Fields In Curved Space</title>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<forename type="middle">D</forename>
+				<surname>Birrell</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">C W</forename>
+				<surname>Davies</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Univ. Pr</title>
+		<imprint>
+			<biblScope unit="page">340</biblScope>
+			<date type="published" when="1982" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Quantum Geometry of Bosonic Strings</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">M</forename>
+				<surname>Polyakov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">103</biblScope>
+			<biblScope unit="page" from="207" to="210" />
+			<date type="published" when="1981" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Vacuum quantum fluctuations in curved space and the theory of gravitation</title>
+		<author>
+			<persName>
+				<forename type="first">]</forename>
+				<forename type="middle">A D</forename>
+				<surname>Sakharov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sov. Phys. Dokl</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="1040" to="1041" />
+			<date type="published" when="1968" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Sakharov&apos;s induced gravity: A modern perspective</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Visser</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mod. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="977" to="992" />
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Free geometric equations for higher spins 303–310, [hep-th/0207002]; Minimal local Lagrangians for higher-spin geometry</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Francia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Sagnottid</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Bekaert and N. Boulanger, Tensor gauge fields in arbitrary representations of GL</title>
+		<imprint>
+			<date type="published" when="2002" />
+			<biblScope unit="page" from="93" to="104" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Francia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Mourad</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">A</forename>
+				<surname>Sagnotti</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Campoleoni</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Francia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Mourad</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Sagnotti</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">II. Quadratic actions, Commun. Math. Phys. 271 Current Exchanges and Unconstrained Higher Spins, Nucl. Phys. B773 Unconstrained Higher Spins of Mixed Symmetry. I. Bose Fields Unconstrained Higher Spins of Mixed Symmetry. II. Fermi Fields Francia, On the relation between local and geometric Lagrangians for higher spins</title>
+		<imprint>
+			<date type="published" when="2007" />
+			<biblScope unit="page" from="723" to="773" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<monogr>
+		<title level="m" type="main">Ser. 222 (2010) 012002, [arXiv:1001</title>
+		<author>
+			<persName>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Conf</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">On higher spins and the tensionless limit of string theory, Nucl. Phys. B682 (2004) 83–116, [hep-th/0311257]; D. Francia and A. Sagnotti, Higher-spin geometry and string theory Lagrangian formulation of higher spin theories on AdS space Quartet unconstrained formulation for massless higher spin fields</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Francia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">A</forename>
+				<surname>Sagnotti</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Sagnotti</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="middle">A</forename>
+				<surname>Tsulaia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">L</forename>
+				<surname>Fotopoulos</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Panigrahi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="middle">I</forename>
+				<surname>Tsulaia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Buchbinder</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Galajinsky</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Krykhtin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Francia, String theory triplets and higher-spin curvatures</title>
+		<imprint>
+			<date type="published" when="2003" />
+			<biblScope unit="page" from="473" to="486" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Singletons and Massless, Integral Spin Fields on de Sitter Space (Elementary Particles in a Curved Space</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="20" to="848" />
+			<date type="published" when="1979" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Photons and Gravitons in s Matrix Theory: Derivation of Charge Conservation and Equality of Gravitational and Inertial Mass</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Weinberg</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">135</biblScope>
+			<biblScope unit="page" from="1049" to="1056" />
+			<date type="published" when="1964" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Systematics of Higher Spin Gauge Fields</title>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>De Wit</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">Z</forename>
+				<surname>Freedman</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">358</biblScope>
+			<biblScope unit="page">21</biblScope>
+			<date type="published" when="1980" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Quantum mechanics and group theory, Z. Phys. 46 (1927) 1; E. P. Wigner, On the quantum correction for thermodynamic equilibrium</title>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="page" from="40" to="749" />
+			<date type="published" when="1932" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Quantum mechanics as a statistical theory</title>
+		<author>
+			<persName>
+				<surname>Moyal</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Cambridge Phil</title>
+		<meeting>. Cambridge Phil</meeting>
+		<imprint>
+			<date type="published" when="1949" />
+			<biblScope unit="page" from="39" to="99" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<monogr>
+		<title level="m" type="main">– 40 –</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

@@ -1,0 +1,2282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Understanding correlated electron systems by a classification of Mott insulators</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2003-01-16">16 Jan 2003</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Subir</forename>
+								<surname>Sachdev</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Department of Physics</orgName>
+								<orgName type="institution">Yale University</orgName>
+								<address>
+									<postBox>P.O. Box 208120</postBox>
+									<postCode>06520-8120</postCode>
+									<settlement>New Haven</settlement>
+									<region>CT</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Understanding correlated electron systems by a classification of Mott insulators</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2003-01-16">16 Jan 2003</date>
+						</imprint>
+					</monogr>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>This article surveys the physics of systems proximate to Mott insulators, and presents a classification using conventional and topological order parameters. This classification offers a valuable perspective on a variety of conducting correlated electron systems, from the cuprate superconductors to the heavy fermion compounds. Connections are drawn, and distinctions made, between collinear/non-collinear magnetic order, bond order, neutral spin 1/2 excitations in insulators, electron Fermi surfaces which violate Luttinger&apos;s theorem, fractionalization of the electron, and the fraction-alization of bosonic collective modes. Two distinct categories of Z 2 gauge theories are used to describe the interplay of these orders. Experimental implications for the cuprates are briefly noted, but these appear in more detail in a companion review article (S. Sachdev, cond-mat/0211005).</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>The foundations of solid state physics reside on a few simple paradigms of electron behavior which have been successfully applied and extended in a wide variety of physical contexts. The paradigms include the independent electron theory of Bloch, its more sophisticated formulation in Landau&apos;s Fermi liquid theory, and the Bardeen-Cooper-Schrieffer (BCS) theory of electron pairing by an instability of the Fermi surface under attractive interactions between the electrons.</p>
+
+				<p>In the past decade, it has become increasingly clear that these paradigms are not particularly useful in understanding correlated electron systems such Email address: subir.sachdev@yale.edu (Subir Sachdev). URL: http://pantheon.yale.edu/~subir (Subir Sachdev). as the cuprate superconductors and the &quot; heavy fermion &quot; compounds. Many electrical and magnetic properties of these materials are rather far removed from those of the Fermi liquid, and remain poorly understood despite much theoretical work. The strong correlations between the electrons clearly makes the Fermi liquid an inappropriate starting point for a physical understanding of the many electron ground state.</p>
+
+				<p>One approach to the strong correlation problem, advocated here, is to begin at the point where the breakdown of the Bloch theory is complete: in the Mott insulator. These are materials in which Bloch theory predicts metallic behavior due to the presence of partially filled bands. However, the strong Coulomb repulsion between the electrons leads to dramatically different insulating behavior, often with a very large activation energy towards conduction. A key ingredient in our discussion here will be a classification of such Mott insulators: we will characterize the ground states of Mott insulators with a variety of &quot; order parameters &quot; . Some of these orders will have a conventional association with a symmetry of the Hamiltonian which is broken in the ground state, but others are linked to a more subtle &apos;topological&apos; order [1].</p>
+
+				<p>An implicit assumption in our approach is that these same order parameters, or their closely related extensions, can also be used fruitfully in a description of other correlated systems, which may be either metallic or superconducting.</p>
+
+				<p>In the latter systems, it is sometimes the case that the true long-range order characterizes only a proximate Mott insulator, and the order parameter &apos;fluctuates&apos; at intermediate scales. In such a situation, the ground state and its elementary excitations are adiabatically connected to the Bloch/BCS states, but the order of the proximate Mott insulator is nevertheless important in understanding experiments, and especially those that explore correlations at mesoscopic scales. The theory of quantum phase transitions offers a powerful method for controlled predictions for such experiments: identify a quantum critical point associated with the onset of long-range order, and use it to expand back into the region with fluctuating order. The reader is referred to Ref. [2] for the application of such an approach to recent experiments in the cuprates.</p>
+
+				<p>With this motivation, let us turn to the central problem of the classification of Mott insulators. Newcomers to the Mott insulator problem should consult Section III of Ref. [2] at this point for an elementary introduction to the microscopic physics. The most important degrees of freedom in Mott insulators are the quantum spins S α (r), α = x, y, z, which resides on the sites, r, of some lattice. The states on each site transform under the spin S representation of SU(2) (we are usually interested in S = 1/2), and the sites are coupled together with the Hamiltonian</p>
+
+				<figure>
+					<trash>H = r&lt;r ′ J(r, r ′ )S α (r)S α (r ′ ) + . . . , (1)</trash>
+
+
+				</figure>
+
+				<p>where J(r, r ′ ) are short-range exchange interactions (usually all positive, realizing antiferromagnetic exchange), and the ellipses represent possible multiple spin couplings, all of which preserve full SU(2) spin rotation invariance. Here, and henceforth, there is an implied summation over repeated spin indices.</p>
+
+				<p>At the outset, it useful to distinguish Mott insulators by whether their ground states break the SU(2) spin rotation invariance of the Hamiltonian or not. The paramagnetic states have S α (r) = 0 and preserve SU(2) spin rotation invariance , while the magnetically ordered states we consider break spin rotation invariance in the following simple manner</p>
+
+				<figure>
+					<trash>S α (r) = Re Φ α e iK·r ; (2)</trash>
+
+
+				</figure>
+
+				<p>here K is the ordering wavevector, while Φ α is a three-component complex order parameter; this order parameter transforms as a vector under spin rotations , while Φ α → e −iK·a Φ α under translations by a Bravais lattice vector a. For simplicity we only consider systems with a single ordering wavevector, although the generalization to multiple wavevectors is not difficult.</p>
+
+				<p>The quantum theory of the magnetically ordered states has been well established for a long time: one considers slowly varying quantum fluctuations of the field Φ α in spacetime, and so obtains the Goldstone spin-wave excitations . Here, we wish to push the logic of this approach further: what happens when the quantum spin-wave fluctuations become strong enough to destroy the magnetic order in the ground state, and we reach a paramagnetic state with Φ α = 0 ? We can think of this paramagnetic state as one with a &apos;fluctuating&apos; Φ α order: does this tell us anything about the physical properties of the paramagnetic state ? We argue here that a surprising amount of information can gleaned from this seemingly naive approach, and it ultimately shows the way to a classification of both the magnetically ordered and the paramagnetic states.</p>
+
+			</div>
+			<div>
+				<head n="1.1">Landau theory</head>
+
+				<p>We begin with the simple canonical procedure of considering the effective potential for Φ α fluctuations; our procedure here is general enough that it applies equally to both quantum and thermal fluctuations in insulators, metals, and superconductors. The structure of this effective potential is constrained by spin-rotation invariance and Bravais lattice translational symmetries, and the following low order terms are always allowed:</p>
+
+				<figure>
+					<trash>V (Φ α ) = sΦ * α Φ α + u 2 Φ * α Φ * β Φ α Φ β + v 2 Φ * α Φ * α Φ β Φ β (3)</trash>
+
+
+				</figure>
+
+				<p>here s, u, v are phenomenological Landau parameters (u &gt; 0, v &gt; −u). If the value of K is commensurate with a reciprocal lattice vector, then additional low order terms can appear in the effective potential, but we defer considerations of such terms to later in this subsection.</p>
+
+				<p>As is usual, we begin with a minimization of V over the values of the 3 complex numbers Φ α . For s &gt; 0, we obtain the optimum value Φ α = 0, which obviously corresponds to the paramagnet. For s &lt; 0, we obtain two distinct classes of minima, which are not related to each other by any symmetry of the Hamiltonian. They are (A) Non-collinear spins, v &gt; 0 : Φ α = n 1α + in 2α with n 1,2α real, n 1α n 2α = 0 and n</p>
+
+				<figure>
+					<trash>2 1α = n 2 2α = −s 2u . (B) Collinear spins, − u &lt; v &lt; 0 : Φ α = e iθ n α with n α real and n 2 α = −s u + v . (4)</trash>
+
+
+				</figure>
+
+				<p>From (2) we can see easily that in case (B) the average values of the spins at all r are either parallel or antiparallel to each other, while in (A) the average spins values map out a circular spiral.</p>
+
+				<p>All the solutions in (A) or (B) represent physically distinct magnetically ordered ground states, but the states within a category are degenerate and can be transformed to each other by symmetries of the Hamiltonian. It is useful to more carefully specify the manifold of degenerate magnetically ordered ground states. For (A), the ground state manifold is easier to decipher by a different parameterization of n 1,2α which solves the constraints in (4): n 1α + in 2α = ǫ ac z c σ α ab z b , (5) where a, b extend over ↑, ↓, σ α are the Pauli matrices, ǫ ab is the antisymmetric tensor, and z a is a two-component complex field with |z ↑ | 2 + |z ↓ | 2 = −s/2u; note that z α transforms like a S = 1/2 spinor under spin rotations, while z a → e −iK·a/2 z a , (6) under translation by a Bravais lattice vector a. It is easy to check that (5) is in fact the most general solution of the constraints for case (A) in (4), but with a two-fold redundancy: z a and −z a correspond to the same noncollinear ground state. The two complex numbers z a are equivalent to four real numbers, and hence the manifold of ground states is S 3 /Z 2 , where S 3 is the three-dimensional surface of a sphere in four dimensions. Turning to (B), n α maps out the surface of an ordinary sphere, S 2 , while the phase factor e iθ is U(1) ∼ = S 1 , a circle. However the factorization of Φ α into n α and e iθ is redundant because we can map n α → −n α and θ → θ + π without changing Φ α ; hence the manifold of ground states for (II) is (</p>
+
+				<figure>
+					<trash>S 2 × S 1 )/Z 2 . Summarizing, we have (A) Non-collinear spins, ground state manifold = S 3 /Z 2 ; (B) Collinear spins, ground state manifold = (S 2 × S 1 )/Z 2 . (7)</trash>
+
+
+				</figure>
+
+				<p>This is a good point to mention additional restrictions that are placed on the ground state manifold at special commensurate values of K. These arise for K such that 2pK equals a reciprocal lattice vector, where p is an integer. Then from the transformation of Φ α under Bravais lattice translations we observe that the effective potential can contain the additional term</p>
+
+				<figure>
+					<trash>V comm = −w (Φ α Φ α ) p + c.c. (8)</trash>
+
+
+				</figure>
+
+				<p>For case (B) it is easy to see from (4) and (8) that V comm acts only on the angular field θ, and selects 2p values of θ in the ground state. So the order parameter manifold is now reduced to (S 2 × Z 2p )/Z 2 : this change in the manifold has important consequences for p = 1, but is not of particular importance at larger values of p. For case (A), it follows from (4) and (8) that V comm has no influence on the ground state energy, and that the order parameter manifold remains S 3 /Z 2 .</p>
+
+				<p>Having laid the ground work, and now are ready to extend this simple understanding of magnetically ordered states to paramagnetic phases, where the order parameter Φ α , constrained as in (4), is fluctuating. As we will see, global aspects of the order parameter manifold in (7) will play a crucial role. We will consider case (A) with non-collinear spins in Section 2, while case (B) with collinear spins will be discussed in Section 3. In both cases we will attempt to understand a variety of phases, including insulators, metals, and superconductors . The evidence so far indicates that the cuprate superconductors are in category (B), and this is discussed at some length in Ref. [2]. Some of the more exotic phases appear in category (A), and we anticipate these will find realizations in heavy-fermion compounds, and particularly in those in which the magnetic moments reside on frustrated lattices such as the pyrochlore or the triangular.</p>
+
+			</div>
+			<div>
+				<head n="2">Noncollinear spins</head>
+
+				<p>An understanding of Φ α fluctuations in the paramagnetic phase requires that we proceed beyond the simple effective potential in (3), and consider spacetime dependent fluctuations using a suitable effective action. We assume that the non-collinearity of the spin correlations is imposed at some short scale, and so at longer scales we wish to impose the constraints under (A) in (4) at the outset in our effective action. This is most conveniently done using the parameterization in (5). We discretize spacetime on some regular lattice of sites j on which we have the spinors z ja : note that this lattice may have little to do with the lattice of sites on which the underlying spins reside, and that we are working here on a coarse-grained scale. Any effective action on this coarsegrained lattice must be invariant under global spin rotations, and also under the global lattice transformation (6). However, most importantly, we note from (5) that it must also be invariant under the Z 2 gauge transformation z ja → ε j z ja (9) where ε j = ±1 is a spacetime dependent field which generates the gauge transformation. This transformation is permitted because the local physics can only depend upon the order parameter Φ α , which is invariant under (9).</p>
+
+				<p>We begin in Section 2.1 by considering a very simple model of z ja fluctuations. This model is surely an oversimplification for the complex quantum systems of interest here, but it will at least allow us to obtain an initial understanding of possible phases and the global structure of the phase diagram. We will discuss applications to realistic physical systems in Section 2.2.</p>
+
+			</div>
+			<div>
+				<head n="2.1">Simple effective action</head>
+
+				<p>Our model here omits long-range interactions and mobile excitations that can carry charge, which implies that it could apply directly only to insulators. We also neglect all Berry phases associated with the underlying spins. This will allow us to at least obtain a first understanding of the possible phases and the global structure of the possible phase diagrams. More careful considerations , described partly in Section 3.1 below, show that the Berry phases are crucial for realizing that &apos;bond order&apos; is present in the &apos;confining&apos; phase to be discussed shortly, but that they can be safely neglected in the other phases.</p>
+
+				<p>The presentation below is based upon results contained in Refs. [3,4,5,6].</p>
+
+				<p>With the above caveats, we initially introduce the following simple partition function:</p>
+
+				<figure>
+					<trash>Z z = j dz ja dz * ja δ |z ja | 2 − 1 exp (−S z ) S z = − J 1 ij z * ia z ib z * jb z ja − J 2 ij (z * ia z * ib z ja z jb + c.c.) + . . . , (10)</trash>
+
+
+				</figure>
+
+				<p>where we have rescaled the z ja fields so that they obey the unit length constraint on every site j, and ij represents nearest neighbors. The terms shown in (10) constitute the most general coupling between two sites consistent with the symmetries discussed above. Note that at this order the discrete symmetry (6) has effectively restricted us to terms which are also invariant under the U(1) symmetry z ja → e iϕ z ja with ϕ arbitrary: so the model S z has a global SU(2)×U(1) symmetry.</p>
+
+				<p>While it is possible to proceed with (10), the full spectrum of possible phases is seen more easily by a representation which makes the Z 2 gauge invariance more explicit. For this, we must introduce a Z 2 gauge field σ ij = ±1, which resides on the links of the lattice, and which obeys the mapping σ ij → ε i σ ij ε j (11) under the gauge transformation in (9). We can loosely view σ ij as arising from a Hubbard-Stratonovich decoupling of the quartic terms in (10). With σ ij in hand, we can now propose the alternative action as Z 2 gauge theory</p>
+
+				<figure>
+					<trash>Z noncoll = j dz ja dz * ja δ |z ja | 2 − 1 {σ ij =±1} exp (−S noncoll ) S noncoll = −J 1 ij z * ia σ ij z ja + c.c. − K ✷ ij∈✷ σ ij − J 2 ij z * ia z ib z * jb z ja . (12)</trash>
+
+
+				</figure>
+
+				<p>The second term is the sum of the products of σ ij over all elementary plaquettes of the lattice—it is the standard Maxwell term for a Z 2 gauge field. The first term proportional to J 1 is easily seen to have a global O(4) symmetry of rotations on the order parameter manifold S 3 . This symmetry is not present in the underlying spin model, and so we have added the last term proportional to J 2 which reduces the symmetry down to the required SU(2)×U(1). For K = 0, we can freely sum over the σ ij independently on each link, and the resulting action is easily seen to have a structure identical to S z in (10). For large K, the action (12) will allow us to easily access states which would have been harder to extract from (10).</p>
+
+				<p>What is the physical significance of the flux in the Z 2 gauge field which is controlled by the coupling K in (12) ? It is a measure of the location of defects associated with the homotopy group π 1 (S 3 /Z 2 ) = Z 2 , now often called &apos;visons&apos; [7]. Upon encircling a vison in a closed loop, the values of z a change</p>
+
+				<figure>
+					<trash>(A) (B) (B) (A) S 3 Fig. 1</trash>
+
+
+				</figure>
+
+				<p>. A vison defect associated with π 1 (S 3 /Z 2 ) = Z 2 . The left hand side represents a two-dimensional section of spacetime, while the right hand side is the space of points z a which reside on S 3 . Polar opposite points on S 3 are represented by A and B. The Z 2 gauge field σ ij = 1 along the loop, but σ ij = −1 on the link directly connecting A and B. There is a Z 2 gauge flux at the center of the vison, and this flux allows identification of the vison defect even when the z a are fluctuating, and there is no magnetic order. smoothly along the loop, but the initial and final values of z a reside on polar opposite points on S 3 ; all physical energies are independent of this sign change, and so there is no practical significance to this cut (see Fig 1). From (12) we see that the action will be minimized by σ ij = 1 along the loop, but we prefer σ ij = −1 across the cut between the initial and final points . Measuring the Z 2 flux associated with this configuration of σ ij , we conclude that the flux resides in a small region at the center of the vison.</p>
+
+				<p>We can now sketch a phase diagram of S noncoll in the J 1 , K plane in 2+1 spacetime dimensions (related considerations apply to higher spacetime dimensions ). Many important features follow immediately by an analogy with a simpler problem considered by Lammert et al. [8,9] in the entirely different context of liquid crystals: they examined a problem with an order parameter belonging to the space S 2 /Z 2 (in contrast to the S 3 /Z 2 order parameter of interest here), which also permits an effective action in a Z 2 gauge theory very similar to S noncoll . Using their results, and those of the earlier work of Refs. [10,11], we obtain the phase diagram for 2+1 spacetime dimensions shown in Fig 2. Consider first the physics near the line K = 0. Here we can simply sum over the σ ij , and work instead with the original action S z in (10). At large J 1 we have a conventional non-collinear magnetically ordered phase with z a = 0, and hence Φ α = 0. With decreasing J 1 , there is a phase transition to a paramagetic phase. The key to understanding the nature of this paramagnetic phase, and of the quantum phase transition, is the observation that S z contains only gauge-invariant bilinears in z ja on each site, and so we should be able to describe the physics in terms of the bilinear fields n 1,2α in (5). Alternatively stated, the strong Z 2 gauge fluctuations (and the accompanying proliferation</p>
+
+				<figure>
+					<trash>K J 1 0 0 M A B C Non-collinear magnetic order Confining paramagnet, S=1 excitations Paramagnet with visons suppressed, S=1/2 excitations Fig. 2</trash>
+
+
+				</figure>
+
+				<p>. Schematic phase diagram of the model S noncoll in (12) as a function of J 1 and K in 2+1 spacetime dimensions. We assume that J 2 takes a small positive value. The model S noncoll describes some of the physics of Mott insulators with non-collinear spin correations. However it omits Berry phase terms which impose the Heisenberg commutation relations of the spins in (1). These Berry phases play an important role in the small K region of the phase diagram: they induce bond order in the confining paramagnet, along with additional intermediate phases. The influence of the Berry phases is studied in Section 3.1 and in Ref. [12]. The suppression of visons in the deconfined state at large K is interpreted as a &apos;topological&apos; order. of visons) has confined the z a quanta, and the elementary excitations of the paramagnetic state are the n 1,2α quanta. Notice that these fields carry spin S = 1, and so the paramagnetic phase is a confining state with only integer spin excitations. The quantum transition between the magnetically ordered state and this confining state, along the line AM in Fig 2 can be addressed by continuum models expressed directly in terms of the n 1,2α . This has been done by Kawamura [13], Pelissetto et al. [14,15], and Calabrese et al. [16] in the context of classical phase transitions in stacked triangular lattices, and they obtained a continuous phase transition in the &quot; chiral &quot; universality class in 2+1 spacetime dimensions. The global symmetry at this &quot; chiral &quot; fixed point remains SU(2)×U(1).</p>
+
+				<p>Let us turn now to the physics near the line J 1 = 0 in Fig 2. Here, the z a fluctuate strongly and can be integrated out, leading to a pure Z 2 gauge theory in the σ ij . In 2+1 spacetime dimensions, this gauge theory is well known [10,11] to have a confinement-deconfinement transition at some critical K near the point C: the large K region is the deconfined state where vison fluxes are suppressed. Consequently, in this deconfined state, we can use a simple physical picture in which we choose a gauge with all σ ij = 1: the z a quanta in (12) are then free to propagate through the system. The large K, small J 1 region is therefore a paramagnetic state with neutral S = 1/2 &apos;spinon&apos; excitations. The suppression of visons in this state is interpreted as the presence of &apos;topological order&apos;; this is similar to the topological order below the Kosterlitz-Thouless transition in the two-dimensional classical XY model, where point vortices are suppressed [1].</p>
+
+				<p>Finally, to complete our picture of the phase diagram, we look at the region of large K. Here, visons are suppressed, and so we can freeze σ ij = 1, and we are left with a simple model of interacting z α quanta, with a global SU(2)×U(1) symmetry. Such a theory has been studied in its continuum limit, and yields a description of the magnetic ordering transition along the line BM: the critical point has a large O(4) symmetry in 2+1 spacetime dimensions, and the critical exponents are those of the 4-component ϕ 4 field theory [17,5]</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="2.2">Physical Applications</head>
+
+				<p>The results of Section 2.1 for large K apply directly to Mott insulators with non-collinear spin correlations. The mapping of the magnetically ordered phase is evident, while we identify the paramagnet with visons suppressed with the resonating valence bond (RVB) state of Refs [18,19,20,21,22,23]. The latter identification follows from the full preservation of symmetries of the Hamiltonian , the presence of neutral S = 1/2 spinon excitations, and from the topological order implied by the suppression of visons [3,22,7]. Experimentally , we note that the evidence for a RVB state in Cs 2 CuCl 4 [24] is in a system with non-collinear spin correlations, consistent with our theoretical picture. At small K, and smaller J 1 , the proliferation of visons requires more care, as the quantum mechanics of the underlying spins contributes a Berry phase to each vison [25,7]. These phases induce bond order in the confining paramagnet, and can also lead to additional intermediate states [7,12]: we will not discuss this further here, but will illustrate the influence of Berry phases in the simpler context of collinear spins in Section 3.1.</p>
+
+				<p>Let us finally move away from the Mott insulator, and introduce mobile charge carriers into the RVB state just discussed, by doping in holes. A scenario which has been intensively discussed in the literature [20,21,7] is that hole fractionalizes into independent quasiparticle excitations: a neutral S = 1/2 &apos;spinon&apos; and a spinless, charge e holon. The spinon here is, of course, that just discussed above here in the proximate Mott insulator. We can express this fractionlization of the injected hole by the following schematic operator relation for the electron annihilation operator c a :</p>
+
+				<figure>
+					<trash>c a = f † (λ 1 z a + λ 2 ǫ ab z * b ) , (13)</trash>
+
+
+				</figure>
+
+				<p>where z a is the bosonic neutral spinon operator from Section 2.1, f † is a fermionic operator that creates a spinless hole, and λ 1,2 are constants that depend upon the details of the microscopic physics. It is possible for the fermionic statistics to pass from the hole to the spinon by binding between quasiparticles and visons, as has been discussed in some detail in Refs. [26,27,28]. Then the relationship (13) would be replaced by</p>
+
+				<figure>
+					<trash>c a = b † λ 3 f a + λ 4 ǫ ab f † b , (14)</trash>
+
+
+				</figure>
+
+				<p>where f a is a neutral, S = 1/2, fermionic spinon, b is charge e bosonic holon, and λ 3,4 are constants. In this scenario, the Bose condensation of the holon leads to a BCS superconductor with vestiges of the topological order of the RVB Mott insulator: experimental probes of this &apos;fluctuating&apos; topological order have been proposed [29,30,31,2], but no positive signal has been observed so far in the cuprates [32,33]</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="2.2.1">Fractionalized Fermi liquids</head>
+
+				<p>It has been argued recently [34,35] that a different possibility is more likely for the doped RVB Mott insulator in d ≥ 2 spatial dimensions. The doped electrons (or holes), instead of fractionalizing into spinless charged particles and neutral S = 1/2 spinons, retain their integrity in the ground state, and their spin and charge remain bound to each other. At the same time, the neutral S = 1/2 spinons of the RVB Mott insulator survive in the doped system, and are only renormalized slightly by the mobile carriers. So, alternatively stated, the added electrons form a Fermi-liquid-like state which is approximately decoupled from the spinons. The resulting metallic state has a Fermi surface with S = 1/2, charge −e quasiparticle excitations, along with a separate set of neutral spinon excitations which continue from the RVB Mott insulator. Moreover, the volume enclosed by the Fermi surface is &apos;small&apos; i.e. it is determined solely by the density of doped electrons, and does not include the spins of the Mott insulator. In this situation, the volume of the Fermi surface becomes a direct experimental signal of the topological order in the RVB state. Heavy fermion compounds on frustrated lattices with weak or absent magnetic order are likely candidates for realizing this state.</p>
+
+				<p>The fractionalized Fermi liquid defined above violates the standard Luttinger theorem, and it is useful to express this violation in its most general terms. Consider a correlated electron system on a periodic lattice in d spatial dimensions , whose ground state preserves time-reversal and spin rotation invariance, and has unit cell volume v 0 . Let n T be the total density of electrons per volume v 0 ; n T includes all the electrons in the system, including e.g. the core 1s electrons. Luttinger&apos;s theorem states that in a conventional Fermi liquid state</p>
+
+				<figure>
+					<trash>2 × v 0 (2π) d × (Volume enclosed by Fermi surface) = n T (mod 2). (15)</trash>
+
+					<figDesc>The leading factor of 2 on the left hand side comes from spin degeneracy, while modulus 2 on the right hand side allows fully filled bands to not contribute to the Fermi surface volume. The fractionalized Fermi liquid being discussed here violates (15), but instead obeys a modified relation 2 × v 0 (2π) d × (Volume enclosed by Fermi surface) = (n T − 1)(mod 2).(16)</figDesc>
+
+				</figure>
+
+				<p>So exactly one electron per unit cell has dropped out from the Fermi volume.</p>
+
+				<p>This can only happen in a topologically ordered state which possesses neutral S = 1/2 spinon excitations, in addition to the electron-like quasiparticle excitations on the small Fermi surface.</p>
+
+			</div>
+			<div>
+				<head n="3">Collinear spins</head>
+
+				<p>We turn here to the second broad category of correlated electron systems introduced in Section 1: the collinear spin case (B) in (4). We will find that the paramagnetic states with fluctuating collinear spin order are entirely different from those present for non-collinear spins in Section 2.2. The order parameter manifold, from (7) is now (S 2 × S 1 )/Z 2 , and the appearance of a Z 2 quotient means that the physics can again be described in a generalized phase diagram of a Z 2 gauge theory [36]. However, the Z 2 flux now identifies a new type of defect which we will discuss in Section 3.2. The Z 2 gauge theory also has a deconfined phase, but this Z 2 fractionalization does not lead to neutral S = 1/2 excitations; instead, as we will see in Section 3.2 it is the spin and charge collective modes which &apos;fractionalize&apos; apart from each other.</p>
+
+				<p>A separate crucial property of Mott insulators with collinear spin correlations in spatial dimension d = 2 is the ubiquity of confining states with only integer spin excitations [37]. Moreover, except for certain special values of the spin S per unit cell, these confining states break lattice space group symmetries by the appearance of spontaneous &apos;bond order&apos; in the ground state. This bond order also often survives in proximate conducting states obtained by doping the Mott insulator [4,38]. Let us define bond order more precisely here: most generally, bond order implies a modulation in observables invariant under spin rotation and time reversal which break a space group symmetry of the Hamiltonian.</p>
+
+				<p>The simplest such observable in states proximate to Mott insulators is simply the spin exchange energy: so we can introduce the bond order parameter Q a (r) = S α (r)S α (r + a), (17) where a is usually a vector connecting near neighbors. Note that for a = 0, Q 0 (r) is a measure of the charge density on site r, and so (if permitted by the symmetry of the state) there is usually also a modulation of the site charge density in a bond-ordered state. However, we expect the long-range Coulomb interactions to suppress modulations at a = 0, while those with a = 0 should be significantly larger.</p>
+
+				<p>We will begin our discussion in Section 3.1.1 by a detailed discussion of the simplest, and most common, Mott insulator with collinear spin correlations: that on a d-dimensional cubic lattice with ordering wavevector K = (π, π, . . .). This order is commensurate with p = 1, in the notation of (8). We will explicitly evaluate the quantum spin Berry phases for this case, show their intimate connection to bond order. Section 3.1.2 will also include extensions of the study of bond order to doped systems with mobile carriers.</p>
+
+				<p>States at other wavevectors and in metals and superconductors, and the Z 2 gauge theory of the fractionalization of their excitations will be discussed in Section 3.2.</p>
+
+			</div>
+			<div>
+				<head n="3.1">Berry phases and bond order 3.1.1 Mott insulators</head>
+
+				<p>Consider the insulating antiferromagnetic (1) on a d-dimensional cubic lattice with predominant nearest-neighbor exchange interactions. This should have collinear spin correlations with K = (π, π, . . .), which allows the term with p = 1 in (8). Inserting Φ α = e iθ n α (obtained from (4)) into (8) we observe that we can always choose the origin of co-ordinates so that the values θ = 0, π are preferred. These do not lead to new values of Φ α , and so in this case we have simply Φ α = n α , a real three-component vector.</p>
+
+				<p>Now express the coherent state path integral of (1) using the values of the field n α on a d + 1 dimensional hypercubic lattice discretization of spacetime.</p>
+
+				<p>The derivation of this path integral is reviewed in Chapter 13 of Ref. [39], and leads to the following partition function</p>
+
+				<figure>
+					<trash>Z n = j dn jα δ(n 2 jα − 1) exp   − 1 2g ij n iα n jα − iS j η j A jτ   , (18)</trash>
+
+
+				</figure>
+
+				<p>where i, j are sites of the d + 1 dimensional hypercubic lattice (the symbol i = √ −1 in the prefactor of the second term, and the context should prevent confusion on its meaning), and we have rescaled all the n jα to make them unit length. The first term in the action above is the analog of the terms in (10), and imposes a cost in the action for deviations from the perfectly ordered state; we expect a magnetically ordered state n α = 0 for small values of the coupling g, and a paramagnetic state with n α = 0 for large g. The second term in (18) is the all important Berry phase: here η j = e iK·r j = ±1 is a fixed field identifying the spatial sublattice of the site j (note that η j is independent of the imaginary time co-ordinate, τ ). Finally A jµ , with µ = τ, x, y, . . . taking d + 1 dimensional possible values, is defined by A jµ ≡ oriented area enclosed by the spherical triangle with vertices n jα , n j+ând any fixed reference N 0α , (19) where j + ˆ µ is the nearest site to j in the µ direction. It is customary to choose N 0α = (0, 0, 1), the north pole, but it is not difficult to see that the partition function Z n is independent of the value of N 0α . Indeed, elementary geometric considerations of spherical triangles show [12] that a choice of a different N ′ 0α leads to A ′ jµ which is related to A jµ by a &apos;gauge transformation&apos; A ′ jµ = A jµ − ∆ µ φ j (20) where ∆ µ is the discrete lattice derivative in the µ direction, and φ j is the area of the spherical triangle formed by n jα , N 0α and N ′ 0α . It should also be noted here that the area of a spherical triangle is uncertain modulo 4π, and so is the value of A jµ , but the partition function Z n is insensitive to this uncertainty because e i4πS = 1.</p>
+
+				<p>For small g in Z n , fluctuations of n α are suppressed, and in dimensions d &gt; 1, we are in the conventional Néel ordered ground state with n α = 0. As an aside, we note the small g behavior for d = 1. In d = 1 we can continue to assume that n α varies smoothly from site-to-site for small g, and hence take the naive continuum limit of (18). This yields the O(3) non-linear sigma model in 1+1 dimensions, along with a topological θ-term with co-efficient θ = 2πS, as reviewed in Ref. [39]. For integer S this exhibits the Haldane gap state, while for half-odd-integer S a gapless critical state as in the Bethe&apos;s solution of the nearest neighbor antiferromagnetic chain can appear.</p>
+
+				<p>Our interest here is primarily in the larger g regime of Z n , where there are significant fluctuations of n α , and we are in a paramagnet with n α = 0. There are large fluctuations here in the value of the A jµ also, and so the Berry phase term requires careful evaluation. An explicit evaluation of this term is essentially impossible, but considerable progress has been made in the &apos;easy-plane&apos; case, where spin-anisotropies reduce fluctuations to the equator in spin space with n jα = (cos θ j , sin θ j , 0) [12]. Here we follow a simple &apos;handwaving&apos; argument [40] whose results are known to be consistent with all cases in which more sophisticated methods are possible; the paragraph below is partly reproduced from the review in Ref. [40], to which we will also refer the reader for additional details.</p>
+
+				<p>The main idea for the larger g regime is to change variables from the order parameter n jα to the field A jµ which naturally represents the Berry phase.</p>
+
+				<p>Formally, this can be done by introducing new &apos;dummy&apos; variables A jµ and rewriting (18) by introducing delta-function factors which integrate to unity on each link; this leads to</p>
+
+				<figure>
+					<trash>Z n = jµ dA jµ exp   −i2S j η j A jτ   j dn jα δ(n 2 jα − 1)δ(A jµ /2 − A jµ ) × exp   − 1 2g ij n iα n jα   = jµ dA jµ exp   −S A (A jµ ) − i2S j η j A jτ   . (21)</trash>
+
+
+				</figure>
+
+				<p>In the first expression, if the integral over the A jµ is performed first, we trivially return to (18); however in the second expression we perform the integral over the n jα variables first at the cost of introducing an unknown effective action S A for the A jµ .</p>
+
+				<p>In principle, evaluation of S A may be performed order-byorder in a &quot; high temperature &quot; expansion in 1/g: we match correlators of the A jµ flux with those of the A jµ flux evaluated in the integral over the n jα with positive weights determined only by the 1/g term in (18). Rather than undertaking this laborious calculation, we can guess essential features of the effective action S A from some general constraints. First, correlations in the n jα decay exponentially rapidly for large g (with a correlation length ∼ 1/ ln(g)), and so S A should be local. Second, (20) implies that S A should be invariant under the gauge transformation A ′ jµ = A jµ − ∆ µ φ j /2. (22)</p>
+
+				<p>Finally, uncertainity of A jµ modulo 4π implies that S A should also be invariant under A jµ → A jµ + 2π. (23)</p>
+
+				<p>The simplest local action which is invariant under (22) and (23) is that of compact U(1) quantum &apos;electrodynamics&apos; and so we propose that for larger values of g, Z n ≈ Z A with</p>
+
+				<figure>
+					<trash>Z A = jµ dA jµ exp   1 e 2 ✷ cos (∆ µ A jν − ∆ ν A jµ ) − i2S j η j A jτ   ; (24)</trash>
+
+
+				</figure>
+
+				<p>comparison with the large g expansion shows that the coupling e 2 ∼ g 2 . This is one of the central results of this subsection [37,41,42,12]: the paramagnetic state of a Mott insulator with two-sublattice collinear spin correlations in d spatial dimensions is described by a compact U(1) gauge theory in d+1 spacetime dimensions 1 , accompanied by a Berry phase term as specified in (24).</p>
+
+				<p>In the gauge theory/particle physics language, the Berry phase corresponds to static &apos;matter&apos; fields of charge ±2S residing on the two spatial sublattices of the d-dimensional lattice.</p>
+
+				<p>We are now faced with the technical problem of evaluating the partition function of compact QED in d + 1 spacetime dimensions in the presence of static background matter fields, as written in (24). There is a good understanding of the phases of this theory in d = 1, 2, and the reader is referred to another review [40] for further details—here we will summarize the main conclusions. The structure in d = 3 is not yet fully understood, and this remains an important avenue for future research. All of these previous analyses rely on a duality mapping of (24); the mapping proceeds in a canonical manner, beginning with a rewriting of the cosine term in (24) in the Villain periodic Gaussian form, followed by the evaluation of the integral over the A jµ , which results in a partition function of &apos;dual&apos; fields. The advantage of this duality mapping is that the Berry phases are exactly accounted for at the outset, and the partition function in the dual representation has only positive weights—this makes it amenable to standard analyses of statistical field theory. A discussion of the results in various spatial dimensions, d, follows.</p>
+
+				<p>In d = 1, the duality mapping of the Villain form of Z A leads to a simple partition function that can be evaluated exactly [40,12]. There is a gap to all excitations, and for half-odd-integer S a two-fold degenerate ground state and a broken translational symmetry associated with the appearance of bond order, as illustrated in Fig 3. In d = 2, the duality mapping of (24) leads to interface models (also called 1 Some readers may find the following alternative interpretation of the compact U(1) gauge theory useful. Express n jα = w * ja σ α ab w jb where w ja is a two-component complex spinor. This parameterization has a U(1) gauge redundancy corresponding to w ja → e iφ w ja (contrast this with the Z 2 gauge redundancy associated with (5)).</p>
+
+				<p>Expressed in terms of the w ja , the theory is a lattice discretization of the CP 1 model [43,44,12], with A jµ its compact U(1) gauge field. Integrating out the w ja in the paramagnetic phase leads to (24). Fig. 3. Schematic representation of the ground state of Z A for half-odd-integer S in d = 1. The state is identified with the different values of Q a (r) in (17) with a a nearest neighbor vector: the links with ellipses have values of Q a (r) distinct from those without. The reader can also view this picture as caricature of the wavefunction—a simple trial state for S = 1/2 is a product of singlet valence bonds between sites linked by an ellipse height or solid-on-solid models) in 2+1 dimensions [37,42,12] (remarkably, the same interface models are also obtained by a duality mapping [41,45] on quantum dimer models [46] of the paramagnetic state). In statistical mechanics, these interface models would describe the growth of a three-dimensional interface of a four-dimensional crystal. The Berry phases in (24) lead to offsets in the allowed configurations of the interface model. A fundamental property of interface models in 2+1 dimensions is that their configurations are smooth for all couplings. In the smooth state, the symmetry of uniform translations of the interface by a constant is broken, and the interface has some fixed average height. When combined with the offsets produced by the Berry phases, the smooth interface is seen to imply a broken lattice space group symmetry because of the appearance of bond order (except for certain special values of S which depend upon the lattice structure—for the square lattice, there is no bond order for even integer S). The fluctuations of the smooth interface are gapped, and these correspond to a gapped singlet excitation mode of the quantum antiferromagnet. In the QED langauge, the gauge-field excitations are gapped, and the compact U(1) gauge theory is in a confining state. The spinful excitations of the antiferromagnet consist of a gapped S = 1 mode associated with the fluctuations of n α —there are no neutral excitations which carry S = 1/2.</p>
+
+				<p>A full analysis of the situation in d = 3 has not been carried out. However, it is clear that a new state can appear in the phase diagram–the compact QED theory has a gapless Coulomb phase with a &apos;photon&apos; excitation [47,48,49,50]. In the quantum antiferromagnet, this photon corresponds to a collective spinless excitation with a gapless linear dispersion. It is likely that this Coulomb phase is insensitive to the Berry phases, has no bond order, and allows neutral S = 1/2 spinon excitations. The analog of the bond-ordered states of d = 2 should also be present.</p>
+
+				<p>Large scale numerical studies of S = 1/2 quantum antiferromagnets on the square lattice which allow for the destruction of magnetic order in the ground state have only just become possible. Two studies have appeared recently [51,52], and both present unambiguous evidence of bond order as shown in Fig 4. (a) (b) Fig. 4. Sketch of the two simplest possible states with bond order for S = 1/2 on the square lattice: (a) the columnar spin-Peierls states, and (b) plaquette state. The different values of Q a (r), defined in (17), on the links are encoded by the different line styles. Both states are 4-fold degenerate; an 8-fold degenerate state, with superposition of the above orders, also appears as a possible ground state of the generalized interface model.</p>
+
+			</div>
+			<div>
+				<head n="3.1.2">Mobile charge carriers</head>
+
+				<p>The fate of the d = 2 bond-ordered paramagnet upon doping with mobile charge carriers has been investigated in a number of studies [4,38,53,54,55]. As stated earlier, the bond order survives for a finite range of doping concentrations . Moreover, the ground state also acquires d-wave-like superconducting order which co-exists with bond order, a state first predicted in Ref. [4]. Loosely speaking, this superconductivity can be understood as a consequence of the mobility of the singlet valence bonds in Fig 3: the mobile pairs of electrons behave as Cooper pairs, and their Bose-Einstein condensation leads to superconductivity. The configuration and period of the bond order can also evolve with increasing density of carriers [38,53,55], especially if the parameters are such that the physics of frustrated phase separation is important [56]. The reader is referred to Ref. [2] for a recent review of this work, along with implication for a number of recent experiments on the cuprate superconductors . These experiments include a possible observation in STM of a state with co-existing bond order and d-wave superconductivity [57,58,59,55,60].</p>
+
+			</div>
+			<div>
+				<head n="3.2">Collective mode fractionalization</head>
+
+				<p>We now consider magnetically ordered and paramagnetic states with collinear spin correlations at wavevectors other than K = (π, π, . . .). For these cases the field e iθ , in the decomposition Φ α = e iθ n α in (4), cannot be disposed at the outset, and needs to be retained as an additional degree of freedom.</p>
+
+				<p>The physical significance of this additional field is readily apparent from a comparison of the definitions (2) and (17) of the magnetic order parameters; a factorization of the expectation values in (17) implies that there is contribution [61,62]:</p>
+
+				<p><formula>Q a (r) = Re e 2iθ e iK·(2r+a) + . . . (25)</formula></p>
+
+				<p>where we have assumed, as in Section 3.1.1, that n α has been rescaled so that n 2 α = 1. So a collinear magnetically ordered state at wavevector K automatically has co-existing bond order modulations at wavevector 2K, and e 2iθ is the bond order parameter.</p>
+
+				<p>We can now combine this observation with the results of Section 3.1.1 to obtain a simple, and quite general, theory of the loss of magnetic order for the values of K under consideration here. As bond order co-exists with magnetic order, it is natural consider the possibility that the loss of magnetic order occurs in a &apos;background&apos; of bond order, and the latter is present on both sides of the transition. In other words, we consider a transition from a magnetically ordered state with Φ α = 0 (and so necessarily e 2iθ = 0), to a paramagnetic state with bond order which has Φ α = 0 but still e 2iθ = 0. We can assume that the background bond order is quenched, and hence need only consider a theory of n α fluctuations in this environment.</p>
+
+				<p>For insulating systems, this theory will have essentially the same structure as that in Section 3.1.1, with the difference that the coupling constants will now acquire a modulation induced by the background bond order. The Berry phases will again attempt to induce bond order in the regime with strong fluctuations of n α , but this may be a redundant effort–the bond order is already present in the underlying Hamiltonian for the spins. As long as the underlying bond order has an even number of spins per unit cell, the upshot is that we can safely neglect the Berry phases, and the theory is simply that of a n α field undergoing a &apos;quantum disordering&apos; transition in a partition function with positive weights and short-range interactions: the critical theory for this is the O(3) ϕ 4 field theory in 2+1 spacetime dimensions.</p>
+
+				<p>For systems with mobile charge carriers, we have to consider possible longrange couplings induced by other gapless excitations. These effects are quite strong and relevant in metals, but are relatively unimportant in the superconducting states considered in Section 3.1.2: superconductors have low energy fermionic excitations at only select points in the Brillouin zone, and these usually couple quite weakly to the critical spin fluctuations [53].</p>
+
+				<p>Having disposed of this simple possibility for the loss of collinear magnetic order, let us now explore more fully the possible phases that are allowed in a general interplay of collinear magnetic and bond order parameters. The list of Fig. 5. A stripe dislocation: gray scale plot of the bond order Q a (r) ∼ cos(K x · (2r + a) + 2θ x ) (see (25), (2) and (4)) with θ x = π/2 + (1/2) tan −1 (y/x) containing a half vortex. The collective mode fractionalization transition is between phases with and without suppression of these defects. Both phases have neither magnetic or bond order. possibilities is very large, but interplay with experiments should help narrow the range of possibilities [36,63,64]. As in Section 2.1 a global view of the phase diagram is obtained most easily by constructing an effective action for a Z 2 gauge theory. The gauge theory must now be formulated for an order parameter on the manifold (S 2 × S 1 )/Z 2 , rather than S 3 /Z 2 , but the strategy is quite similar to that of Section 2.1. We take the physical field Φ α , and split it apart into its n α and e iθ constituents; the overall sign for the constituents involves a Z 2 gauge choice which can be made differently at distinct points in spacetime. We can compensate for this ambiguity by introducing a Z 2 gauge field, σ ij (note that the physical interpretation of this σ ij is entirely different from that in Section 2.1), and so obtain the effective partition function [36]:</p>
+
+				<figure>
+					<trash>Z coll = j dθ j dn jα δ n 2 jα − 1 {σ ij =±1} exp (−S coll ) S coll = −J 3 ij σ ij n iα n jα − J 4 ij σ ij cos(θ i − θ j ) − K ✷ ij∈✷ σ ij . (26)</trash>
+
+
+				</figure>
+
+				<p>For commensurate values of K there will be an additional on-site anisotropy field arising from V comm in (8) ∼ −w j cos(2pθ j ).</p>
+
+				<p>What is the interpretation of a Z 2 gauge flux now ? It locates the position of defects often called &quot; stripe dislocations &quot; , sketched in Fig 5. To see this, consider, as in Section 2.1, the defects associated with π 1 ((S 2 × S 1 )/Z 2 ) [36].</p>
+
+				<p>These include ordinary vortices in the field θ, under which θ winds by an integer multiple of 2π upon encircling the vortex. However, an additional class of half-vortices are also allowed for which the Z 2 quotient plays a crucial role: in these, θ winds by an half-odd-integer multiple of 2π. At the same time, there is a corresponding trajectory for n α which connects polar opposite points on S 2 ; this ensures that the physical field Φ α is single-valued everywhere. In the context of (26), we observe that, as in Section 2.1 and Fig 1, we will have σ ij = −1 only between the initial and final points of the loop, to eliminate the branch cuts in e iθ and n α . Hence each such half vortex carries a Z 2 gauge flux.</p>
+
+				<p>The phase diagram of S coll in the three-dimensional J 3,4 , K space is quite complex, but many of its features can be understood by analyses of various two-dimensional sections, most of which bear some formal similarity to the model analyzed in Section 2.1. We do not want to run through the plethora of possibilities here, and will merely focus on a particular phase transition [63,36] which has some intriguing experimental implications.</p>
+
+				<p>Consider the region of small J 3,4 where Φ α = 0 and e 2iθ = 0, and so there is no magnetic or bond order. Let us first take a small value of K—in the cuprates, we would imagine this is in the overdoped region; then the field σ ij will fluctuate strongly, and the stripe dislocations will proliferate. Such a state has no vestiges of either magnetic or bond order, and is therefore an ordinary superconductor or Fermi liquid. The strong σ ij fluctuations also &apos;bind&apos; the n α and e iθ fields to each other in the Φ α field, and the latter constitutes a collective elementary excitation which carries both spin and bond correlations; indeed, Φ α is simply an ordinary collective particle-hole excitation which can be described by a time-dependent Hartree-Fock theory; in a superconductor, this excitation could also avoid damping from the particle-hole continuum, and so become a sharp quasiparticle. This collective mode has 6 real components, corresponding to the 3 complex numbers required to define Φ α [65].</p>
+
+				<p>Now increase the value of K; in the cuprates, this would correspond to moving towards the underdoped region. This will suppress the stripe dislocations until eventually there is a Z 2 gauge theory transition to a deconfined phase; this transition is the analog of the transition across the line MC in Fig 2. The deconfined phase has dislocations suppressed, and unbound quanta of n α and e iθ . However it is still true that Φ α = 0 and e 2iθ = 0, and so there is no magnetic or bond order. So this is a fractionalized phase in which quanta of Φ α have separated into 3 real quanta of n α and 2 real quanta of e iθ i.e. the collective mode has fractionalized. Note that unlike the fractionalized phase of Section 2.1, there are no neutral S = 1/2 excitations, and the electron always retains its bare quantum numbers.</p>
+
+				<p>Why is this Z 2 gauge fractionalization transition interesting ? First, unlike that in Section 2, it is based on correlations (collinear magnetic and bond) that are actually observed in the lightly doped cuprates. While long-range order with Φ α = 0 and e 2iθ = 0 is observed at low doping in some of the cuprates, it is quite clear that all such conventional order has essentially disappeared by the time we reach optimal doping. However, remnants of such order may still be present in that the stripe dislocations of Fig 5 have</p>
+
+				<figure>
+					<figDesc>not yet proliferated.</figDesc>
+
+				</figure>
+
+				<p>This then opens up the possibility [36,63] of a quantum critical point near optimal doping [66,67], associated with the proliferation of stripe dislocation with increasing doping, which is in the universality class of the 2+1 dimensional Z 2 gauge theory. As an added bonus, it has been recently argued [68] that this gauge theory remains strongly coupled even in the presence of Fermi surface damping, and so is an attractive candidate for anomalous behavior at higher temperatures.</p>
+
+			</div>
+			<div>
+				<head n="4">Conclusions</head>
+
+				<p>This article has given a broad overview of phases of strongly interacting electrons , going beyond those found in the conventional Bloch-BCS theory of solid state physics. A plethora of exotic and conventional states have been proposed in the literature, and we attempted to bring some &apos;order&apos; into the subject, by presenting a classification based on the physics of Mott insulators, and by making connections between the correlations in different states.</p>
+
+				<p>Some of the states considered here have conventional order parameters, and could, in principle, also be obtained from a weak-coupling instability of the Hartree-Fock/BCS theory of the Fermi liquid or superconductor. These include the states with collinear or non-collinear magnetic order, and with bond order. We have chosen here, instead, to motivate them from the states of the Mott insulator. Our approach properly accounts for the strongest energy scales at the outset (the local repulsion between nearby electrons), and so has a better handle on the energy scales of various excitations. The Hartree-Fock/BCS theory could obtain states with the same overall symmetry, but would give very different estimates of the relative stability and energies of various excitations.</p>
+
+				<p>The selection of the wavevector, K, would also be based upon the Fermi surface geometry. In contrast, the Mott-insulator-based approach used here, selects wavevectors from very different criteria: e.g. in the bond ordered states, it is the spin Berry phases and the resonance and alignment of singlet valence bonds which selects the state, and leads to predictions for the values of K [4,38] which have little to do with the Fermi surface geormetry. These latter values appear to be consistent with observations [69].</p>
+
+				<p>Another value in starting with the Mott insulator is that it also allows a systematic classification of states with more exotic order parameters, which cannot be expressed in terms of local correlation functions. They appeared here as &apos;quantum disordered&apos; states of different types of magnetic order; these &apos;disordered&apos; states however possessed a topological order associated with the suppression of certain defects which were classified by the global topology of the magnetically ordered state. We also found a description of the dynamics of this topological order in two distinct Z 2 gauge theories, in systems with non-collinear and collinear spin correlations respectively.</p>
+
+				<p>With some understanding of global features of the phase diagram at hand, we can proceed with a study of possible quantum critical points, and their influence on crossovers at finite temperatures [39]. For the cuprates, these issues have been reviewed in Ref. [2]; the &apos;stripe fractionalization&apos; transition of Section 3.2 is only poorly understood, and much additional work is required to understand its observable consequences. The most intensive investigation of quantum criticality has so far occurred in the heavy fermion compounds, and most observations do not agree with the weak-coupling spin density wave picture. Here, we think that the small Fermi surface state of Section 2.2.1 offers the prospect of leading to many interesting related states, and of nontrivial quantum critical points between them—this is an exciting avenue for further research.</p>
+
+			</div>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+				<head>Acknowledgements</head>
+				<p>I thank Eugene Demler, T. Senthil, and Matthias Vojta for recent collaborations upon which this review is based. This research was supported by US NSF Grant DMR 0098226.</p>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">J</forename>
+				<surname>Thouless</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Topological Quantum Notes in Nonrelativistic Physics World Scientific</title>
+		<imprint>
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sachdev</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="211005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Read</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sachdev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">66</biblScope>
+			<biblScope unit="page">1773</biblScope>
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sachdev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Read</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Mod. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="issue">219</biblScope>
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">V</forename>
+				<surname>Chubukov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Senthil</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sachdev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">72</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">V</forename>
+				<surname>Chubukov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Senthil</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sachdev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">426</biblScope>
+			<biblScope unit="issue">601</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Senthil</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">P A</forename>
+				<surname>Fisher</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">62</biblScope>
+			<biblScope unit="page">7850</biblScope>
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">E</forename>
+				<surname>Lammert</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">S</forename>
+				<surname>Rokhsar</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Toner</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">70</biblScope>
+			<biblScope unit="page">1650</biblScope>
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">E</forename>
+				<surname>Lammert</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">S</forename>
+				<surname>Rokhsar</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Toner</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. E</title>
+		<imprint>
+			<biblScope unit="volume">52</biblScope>
+			<biblScope unit="page">1778</biblScope>
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Wegner</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<date type="published" when="1971" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Fradkin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">H</forename>
+				<surname>Shenker</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="issue">3682</biblScope>
+			<date type="published" when="1979" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title level="m" type="main">Annals of Phys</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sachdev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Park</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Kawamura</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="issue">4916</biblScope>
+			<date type="published" when="1988" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">]</forename>
+				<forename type="middle">A</forename>
+				<surname>Pelissetto</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Rossi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Vicari</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B Nucl. Phys. B</title>
+		<editor>020403. [15] A. Pelissetto, P. Rossi, E. Vicari</editor>
+		<imprint>
+			<biblScope unit="volume">65</biblScope>
+			<biblScope unit="issue">607</biblScope>
+			<biblScope unit="page">605</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Calabrese</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Parruccini</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">I</forename>
+				<surname>Sokolov</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="205046" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Azaria</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Delamotte</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Jolicoeur</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="page">3175</biblScope>
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Pauling</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Roy. Soc</title>
+		<meeting>. Roy. Soc<address><addrLine>London, A</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1949" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Fazekas</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">W</forename>
+				<surname>Anderson</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Philos. Mag</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="issue">23</biblScope>
+			<date type="published" when="1974" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">W</forename>
+				<surname>Anderson</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">235</biblScope>
+			<biblScope unit="page">1196</biblScope>
+			<date type="published" when="1987" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">A</forename>
+				<surname>Kivelson</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">S</forename>
+				<surname>Rokhsar</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">P</forename>
+				<surname>Sethna</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B Phys. Rev. B</title>
+		<imprint>
+			<publisher>Wen</publisher>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="issue">44</biblScope>
+			<biblScope unit="page">2664</biblScope>
+			<date type="published" when="1987" />
+			<publisher>Wen</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Moessner</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">L</forename>
+				<surname>Sondhi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="page">1881</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Coldea</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">A</forename>
+				<surname>Tennant</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">M</forename>
+				<surname>Tsvelik</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+				<surname>Tylczynski</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="page">1335</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Jalabert</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sachdev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="issue">686</biblScope>
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Kivelson</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="issue">259</biblScope>
+			<date type="published" when="1989" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Read</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Chakraborty</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="page">7133</biblScope>
+			<date type="published" when="1989" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Demler</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Nayak</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H.-Y</forename>
+				<surname>Kee</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y.-B</forename>
+				<surname>Kim</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Senthil</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">65</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sachdev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="issue">389</biblScope>
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Nagaosa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">A</forename>
+				<surname>Lee</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="page">966</biblScope>
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Senthil</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">P A</forename>
+				<surname>Fisher</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="issue">292</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">C</forename>
+				<surname>Wynn</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">A</forename>
+				<surname>Bonn</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">W</forename>
+				<surname>Gardner</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y.-J</forename>
+				<surname>Lin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Liang</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">N</forename>
+				<surname>Hardy</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">R</forename>
+				<surname>Kirtley</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">A</forename>
+				<surname>Moler</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">87</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">A</forename>
+				<surname>Bonn</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">C</forename>
+				<surname>Wynn</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">W</forename>
+				<surname>Gardner</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y.-J</forename>
+				<surname>Lin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Liang</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">N</forename>
+				<surname>Hardy</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">R</forename>
+				<surname>Kirtley</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">A</forename>
+				<surname>Moler</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">414</biblScope>
+			<biblScope unit="issue">887</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Senthil</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sachdev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Vojta</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="209144" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Burdin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">R</forename>
+				<surname>Grempel</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Georges</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B Phys. Rev. B</title>
+		<editor>045111. [36] Y. Zhang, E. Demler, S. Sachdev</editor>
+		<imprint>
+			<biblScope unit="volume">66</biblScope>
+			<biblScope unit="issue">66</biblScope>
+			<biblScope unit="page">094501</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Read</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sachdev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">62</biblScope>
+			<biblScope unit="page">1694</biblScope>
+			<date type="published" when="1989" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Vojta</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sachdev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">83</biblScope>
+			<biblScope unit="issue">3916</biblScope>
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<monogr>
+		<title level="m" type="main">Quantum Phase Transitions</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sachdev</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1999" />
+			<publisher>Cambridge University Press</publisher>
+			<pubPlace>Cambridge</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sachdev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physica A</title>
+		<imprint>
+			<biblScope unit="volume">313</biblScope>
+			<biblScope unit="issue">252</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Fradkin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">A</forename>
+				<surname>Kivelson</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mod. Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="issue">225</biblScope>
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sachdev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Jalabert</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mod. Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<date type="published" when="1043" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">]</forename>
+				<forename type="middle">A D</forename>
+				<surname>Adda</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">D</forename>
+				<surname>Vecchia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Luscher</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">146</biblScope>
+			<biblScope unit="issue">63</biblScope>
+			<date type="published" when="1978" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Witten</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">149</biblScope>
+			<biblScope unit="issue">285</biblScope>
+			<date type="published" when="1979" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Read</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sachdev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="page">4568</biblScope>
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">S</forename>
+				<surname>Rokhsar</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">A</forename>
+				<surname>Kivelson</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="page" from="61" to="2376" />
+			<date type="published" when="1988" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Banks</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Kogut</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Myerson</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">129</biblScope>
+			<biblScope unit="issue">493</biblScope>
+			<date type="published" when="1977" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Fradkin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Susskind</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<date type="published" when="1978" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">X.-G</forename>
+				<surname>Wen</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">88</biblScope>
+			<biblScope unit="page">011602</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<forename type="middle">I</forename>
+				<surname>Motrunich</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Senthil</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="205170" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">W</forename>
+				<surname>Sandvik</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Daul</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">R P</forename>
+				<surname>Singh</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">J</forename>
+				<surname>Scalapino</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">89</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Harada</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Kawashima</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Troyer</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="210080" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Vojta</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Zhang</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sachdev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">62</biblScope>
+			<biblScope unit="page">6721</biblScope>
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Park</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sachdev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Vojta</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">66</biblScope>
+			<biblScope unit="page">104505</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">J</forename>
+				<surname>Emery</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">A</forename>
+				<surname>Kivelson</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">Q</forename>
+				<surname>Lin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="page" from="64" to="475" />
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Howald</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Eisaki</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Kaneko</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Kapitulnik</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="201546" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<monogr>
+		<title level="m" type="main">Kapitulnik cond-mat/0208442</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Howald</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Eisaki</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Kaneko</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Greven</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">D</forename>
+				<surname>Podolsky</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Demler</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Damle</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">I</forename>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="210386" />
+		</imprint>
+	</monogr>
+	<note>Halperin. cond-mat/0204011. [60] D. Zhang cond-mat</note>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Zachar</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">A</forename>
+				<surname>Kivelson</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">J</forename>
+				<surname>Emery</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">57</biblScope>
+			<biblScope unit="page">1422</biblScope>
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Polkovnikov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sachdev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Vojta</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 23rd International Conference on Low Temperature Physics</title>
+		<meeting>the 23rd International Conference on Low Temperature Physics</meeting>
+		<imprint>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Zaanen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<forename type="middle">Y</forename>
+				<surname>Osman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">V</forename>
+				<surname>Kruis</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Z. Nussinov, J. Tworzydlo, Phil. Mag. B</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="page">1485</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Zaanen</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="209441" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Polkovnikov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sachdev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Vojta</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Demler</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of Physical Phenomena at High Magnetic Fields-IV</title>
+		<editor>G. Boebinger, Z. Fisk, L. P. Gor&apos;kov, A. Lacerda, J. R. Schieffer</editor>
+		<meeting>Physical Phenomena at High Magnetic Fields-IV<address><addrLine>Singapore</addrLine></address></meeting>
+		<imprint>
+			<publisher>World Scientific</publisher>
+			<date type="published" when="2001" />
+			<biblScope unit="page" from="cond" to="mat" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">V</forename>
+				<surname>Valla</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">D</forename>
+				<surname>Fedorov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">O</forename>
+				<surname>Johnson</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">L</forename>
+				<surname>Wells</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Q</forename>
+				<surname>Hulbert</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">D</forename>
+				<surname>Li</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Gu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Koshizuka</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">285</biblScope>
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">L</forename>
+				<surname>Tallon</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">W</forename>
+				<surname>Loram</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physica C</title>
+		<imprint>
+			<biblScope unit="volume">349</biblScope>
+			<biblScope unit="issue">53</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sachdev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Morinari</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="207167" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<monogr>
+		<title/>
+		<imprint>
+			<date type="published" when="203363" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

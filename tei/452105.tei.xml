@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Single massless Majorana fermion in the domain-wall formalism</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Tomohiro</forename>
+								<surname>Hotta</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department" key="dep1">Institute of Physics</orgName>
+								<orgName type="department" key="dep2">Institute of Physics</orgName>
+								<orgName type="institution">University of Tokyo</orgName>
+								<address>
+									<addrLine>Meguro-ku</addrLine>
+									<postCode>153</postCode>
+									<settlement>Komaba, Tokyo</settlement>
+									<country key="JP">Japan</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Taku</forename>
+								<surname>Izubuchi</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Department of Physics</orgName>
+								<orgName type="institution">University of Tsukuba</orgName>
+								<address>
+									<postCode>305</postCode>
+									<settlement>Tsukuba</settlement>
+									<region>Ibaraki</region>
+									<country key="JP">Japan</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Jun</forename>
+								<surname>Nishimura</surname>
+							</persName>
+							<affiliation>
+								<orgName type="institution">Nagoya University</orgName>
+								<address>
+									<addrLine>Chikusa-ku</addrLine>
+									<postCode>464-01</postCode>
+									<settlement>Nagoya</settlement>
+									<country key="JP">Japan</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Single massless Majorana fermion in the domain-wall formalism</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<note>arXiv:hep-lat/9712009v1 9 Dec 1997</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>lattice gauge theory</term>
+					<term>supersymmetry 
+ PACS: 1130Pb</term>
+					<term>1260Jv</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>We study the domain-wall formalism with additional Majorana mass term for the unwanted zero mode, which has recently been proposed for lattice construction of 4D N = 1 super Yang-Mills theory without fine-tuning. Switching off the gauge field, we study the dispersion relation of the energy eigenstates numerically, and find that the method works for reasonable values of Majorana mass. We point out, however, that a problem arises for too large Majorana mass, which can be understood in terms of the seesaw mechanism.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>There has been a remarkable progress in understanding non-perturbative aspects of supersymmetric gauge theories recently. The exact results for 4D N = 1 and N = 2 supersymmetric gauge theories have been obtained using peculiar properties of those theories such as the non-renormalization theorem, the exact β functions and so on. The analytic progress is, however, naturally restricted to the aspects of the theories which are strongly constrained by the supersymmetry, and the properties of the non-BPS states, for example, are not understood at all. From this point of view, lattice study of these theories would complement the recent progress and would provide us with a new insight into their nonperturbative dynamics.</p>
+
+				<p>Unfortunately supersymmetry is difficult to realize on the lattice. This is not so surprising since the lattice regularization breaks the translational invariance , which forms a subgroup of the supersymmetry. As the translational invariance is restored in the continuum limit, we can restore supersymmetry in the continuum limit. But the price we have to pay for the latter is that we need fine-tuning in general. For 4D N = 1 supersymmetric Yang-Mills theory, one can use the Wilson-Majorana fermion for the gaugino and recover supersymmetry in the continuum limit by fine-tuning the hopping parameter to the chiral limit [1]. Some numerical works have been started along this line [2]. Fine-tuning is a hard task, however, as is known in the numerical studies of the chiral limit in QCD, and a method without fine-tuning is highly desired.</p>
+
+				<p>The overlap formalism [3] can be used for this purpose, since it preserves exact chiral symmetry on the lattice. The problem here is that the formalism is not suitable for numerical simulation as it stands. A practical proposal 1 made by Ref. [5] is to use the domain-wall formalism [6,7], and to decouple the unwanted zero mode by adding Majorana mass term for it. We examine whether this approach really works when the gauge field is switched off as a first step. We study the dispersion relation for various values of the Majorana mass, and examine whether the model gives the desired spectrum. We confirm that the model is fine for moderate values of the Majorana mass, while for too large Majorana mass, an extra almost massless mode appears, which we must be careful of in future study of this model in a more realistic situation with dynamical gauge field.</p>
+
+				<p>The paper is organized as follows. In Sec. 2 we define our model and review the idea to obtain single massless Majorana fermion without fine-tuning. In Sec. 3 we give the explicit form of the Hamiltonian of the system. We diagonalize it numerically to study the dispersion relation of the energy eigenstates for various values of the additional Majorana mass. In Sec. 4 we interpret the appearance of the extra massless mode for too large Majorana mass in terms of the seesaw mechanism. Section 5 is devoted to summary and discussions.</p>
+
+				<p>Four-dimensional N = 1 super Yang-Mills theory contains the gauge boson and the gaugino. The gaugino is Majorana fermion, which is equivalent to Weyl fermion in four dimensions.</p>
+
+				<p>In order to avoid fine-tuning, we need to impose the chiral symmetry on the lattice. This can be done by the domain-wall formalism [7]. Here we have two Weyl fermions with opposite handedness, which couple to the gauge field in the vector-like way.</p>
+
+				<p>The idea of Ref. [5] is to apply this formalism to 4D super Yang-Mills theory, by decoupling one of the Weyl fermions by giving it mass of the order of the cutoff through the additional Majorana mass term for it. It should be noted that this can be done without violating the gauge invariance, since the fermion is in the adjoint representation, which is a real representation, for which the Majorana mass term in 4D is gauge invariant. As a first step, we examine this model by switching off the gauge field.</p>
+
+				<p>The action of the model consists of two parts:</p>
+
+				<figure>
+					<trash>S = S 0 + S mass . (1) S 0 is given by S 0 = ¯ ξσ µ ∂ µ ξ + ¯ η¯ σ µ ∂ µ η + ¯ ξMη + ¯ ηM † ξ, (2) where M = ∂ s + M + 1 2 △. (3)</trash>
+
+
+				</figure>
+
+				<p>ξ(x µ , s) and η(x µ , s) are right-handed and left-handed Weyl fermions respectively in the four-dimensional space-time, which is latticized as {x µ ∈ Z; µ = 1, 2, 3, 4}. The s denotes the coordinate in the fifth direction, which runs over 1, · · · , N s . The boundary condition is taken to be free in the fifth direction, and to be periodic in the four space-time directions. Summation over the five-dimensional coordinates (x µ , s) is suppressed in Eq. (2) and similar abbreviations are used in the rest of this paper. △ is the five-dimensional lattice Laplacian. ∂ should be understood as the lattice derivative. σ µ and ¯ σ µ are defined by σ µ = (1, iσ i ) and ¯ σ µ = (1, −iσ i ), where σ i (i = 1, 2, 3) are the Pauli matrices. M is a mass parameter, which is fixed at some value within 0 &lt; M &lt; 1, when one takes the continuum limit.</p>
+
+				<p>With the action S 0 , one obtains a right-handed Weyl fermion and a left-handed one localized at the boundaries of the fifth direction s = 1, N s , respectively. In the N s → ∞ limit, the chiral symmetry is exact and we end up with one massless Dirac fermion [7]. For finite N s , the chiral symmetry is violated, but the violation vanishes exponentially with increasing N s [4,8].</p>
+
+				<p>Let us identify the zero mode in ξ as the massless Majorana fermion we want, namely the gaugino. In order to decouple the unwanted zero mode in η, we introduce the additional term S mass in the action. There is a variety of choice for the S mass . We can, for example, take the Majorana mass term given by [5].</p>
+
+				<figure>
+					<trash>S mass = m η T s σ 2 η s + ¯ η s σ 2 ¯ η T s s=Ns . (4)</trash>
+
+
+				</figure>
+
+				<p>m is the parameter which we refer to as the Majorana mass. It should be kept fixed, when one takes the continuum limit, in order to give mass of the order of the cutoff to the unwanted zero mode.</p>
+
+			</div>
+			<div>
+				<head n="3">The dispersion relation</head>
+
+				<p>We examine the dispersion relation to see if we get the desired spectrum. This analysis has been done for the domain-wall formalism without the extra Majorana mass term in Ref. [9].</p>
+
+				<figure>
+					<figDesc>The Hamiltonian of the system can be obtained from the action (1) as</figDesc>
+					<trash>H = −iξ † σ i ∂ i ξ + iη † σ i ∂ i η + ξ † ∂ s η − η † ∂ s ξ − M(ξ † η + η † ξ) − 1 2 (ξ † △ 4 η + η † △ 4 ξ) − m η T σ 2 η + ¯ ησ 2 ¯ η T s=Ns , (5) where △ 4</trash>
+
+
+				</figure>
+
+				<p>represents the lattice Laplacian in the (x, y, z, s) directions. Since we have switched off the gauge field, the system is translationally invariant in the (x, y, z) directions, and therefore we can partially diagonalize the Hamiltonian by working in the momentum basis.</p>
+
+				<p>The Hamiltonian for each three-dimensional momentum p can be given as</p>
+
+				<figure>
+					<trash>H(p) = ξ † (p)σ i sin p i ξ(p) − η † (p)σ i sin p i η(p) +ξ † (p) ∂ s − 1 2 △ s − M − (cos p i − 1) η(p) +η † (p) −∂ s − 1 2 △ s − M − (cos p i − 1) ξ(p) +[p ↔ −p] −2m η T (−p)σ 2 η(p) + η † (p)σ 2 η * (−p) s=Ns , (6)</trash>
+
+
+				</figure>
+
+				<p>where △ s is the lattice Laplacian in the s direction. We note that the Majorana mass term mixes the fields with the momentum p and those with −p.</p>
+
+				<p>We calculate numerically the eigenvalues of the above Hamiltonian for each three-dimensional momentum p for various values of the Majorana mass term.</p>
+
+				<p>The only difference from the analysis in Ref. [9] is that since the fermion number is not conserved due to the Majorana mass term, we have to make a Bogoliubov transformation to diagonalize the</p>
+
+				<p><formula>Hamiltonian. 0.0 1.0 2.0 3.0 4.0 p x 0.0 0.5 1.0 1.5 energy ξ η Fig. 1</formula></p>
+
+				<p>. The dispersion relation of ξ and η for m = 0.2.</p>
+
+				<p>For moderate Majorana mass we have one massless Weyl fermion localized at s = 1 as expected. Figure 1 shows the energy of ξ and η as a function of p x with p y = p z = 0 when the Majorana mass is 0.2. Here and henceforth, we take N s = 20 and M = 0.9. One can see that the ξ has a linear dispersion relation near the origin p x = 0, while the η has a mass gap of order one. The doublers of ξ and η are removed as in the case without the Majorana mass term.</p>
+
+				<p>One might think that larger Majorana mass only results in larger mass for η without any problem, but this is not the case. Figure 2 shows the dispersion relation for large Majorana mass m = 1000. One can see that although the ξ remains massless and the η massive, the doublers of ξ become very light.</p>
+
+				<p>In</p>
+
+				<p>Fig. 3 we plot the mass of the next lightest mode at p = 0 as well as that of the doublers of ξ as a function of the Majorana mass. The doublers have mass of the order of the cutoff for m &lt; 1.0, while for m &gt; 1.0, the mass decreases with increasing Majorana mass as ∼ 1/m. The doublers with many π&apos;s in the momentum components are heavier than those with less π&apos;s. The mass of the</p>
+
+				<figure>
+					<trash>0.0 1.0 2.0 3.0 4.0 p x 0.0 0.5 1.0 1.5 energy ξ η Fig. 2</trash>
+
+					<figDesc>. The dispersion relation of ξ and η for m = 1000.</figDesc>
+					<trash>1e−02 1e−01 1e+00 1e+01 1e+02 1e+03 1e+04 1e+05 Majorana mass 1e−06 1e−05 1e−04 1e−03 1e−02 1e−01 1e+00 1e+01 1e+02 mass</trash>
+
+
+				</figure>
+
+				<p>next lightest at the origin (π,0,0) (π,π,0) (π,π,π) Fig. 3. The mass of the next lightest mode at p = 0 as well as that of the doublers of ξ as a function of the Majorana mass.</p>
+
+				<p>next lightest mode at p = 0 grows linearly as the Majorana mass increases, but saturates for m &gt; 0.5.</p>
+
+				<p>The results in this section lead us to the conclusion that there is an appropriate range of the Majorana mass to obtain single Majorana fermion. Note, however, that this does not mean the need for fine-tuning of the parameter since we have quite a large allowed range for the Majorana mass.</p>
+
+			</div>
+			<div>
+				<head n="4">Interpretation of the result for the large Majorana mass</head>
+
+				<p>We first confirm the behavior of the doubler mass in the large Majorana mass case by looking at the poles of the propagator, which give the masses of the intermediate states. The propagator of the fermions in the domain-wall formalism with the Majorana-type coupling has been calculated in Ref. [10]. The one for η can be written as</p>
+
+				<figure>
+					<trash>&lt; η s ¯ η t &gt;= −σ µ ∂ µ A R e −α(s+t) + A m L e α(s+t−2Ns) + Be −α|s−t| , (7) where A R , A m</trash>
+
+
+				</figure>
+
+				<p>L and B are functions of the external momentum p. α is a positive constant determined by the parameters in the action. In Ref. [10], they examined A R , A m L and B in the p → 0 limit and showed that there exists no pole at p 2 = 0 when the Majorana mass is non-zero, which means that the η has been made heavy successfully.</p>
+
+				<p>Similarly we can see the existence of very light doublers for the large m, by looking at the behavior of the propagator of ξ when p is near one of the corners of the Brillouin zone. We extract the masses of the almost massless doublers from the singular part of the propagator of ξ as m doubler ∼ (2n − M + 2)(2n − M) m , (8) for m ≫ 1, where n is the number of π&apos;s in the momentum components of the doubler. We have checked that the masses of the doublers extracted from the Hamiltonian diagonalization as in the previous section fit exactly to this formula.</p>
+
+				<p>We note that the behavior of the doublers for large Majorana mass seen above can be understood intuitively in terms of the seesaw mechanism, which was originally proposed to explain the lightness of neutrino. A typical example of the mechanism is given by the case in which Dirac and Majorana mass terms coexist. When we diagonalize the mass matrix of the fermion, a very small eigenvalue appears when the Majorana mass is much larger than the Dirac mass.</p>
+
+				<p>In fact, the doublers have the two types of mass term in our model. The Dirac mass term comes from the Wilson term in (2) and can be written as</p>
+
+				<figure>
+					<trash>S Dirac = 2n( ¯ ξη + ¯ ηξ), (9)</trash>
+
+
+				</figure>
+
+				<p>where n is the number of π&apos;s in the momentum components of the doubler as before. Together with the Majorana mass term which comes from (4), we have the following mass matrix for the doublers in the basis of the two-component</p>
+
+				<p><formula>Weyl fermion.    0 2n 2n m    . (10)</formula></p>
+
+				<p>The eigenvalues λ of this matrix for m ≫ n are given by</p>
+
+				<figure>
+					<trash>λ ≃ m, 4n 2 m . (11)</trash>
+
+
+				</figure>
+
+				<p>The second one reproduces the large m behavior of the masses of the doublers.</p>
+
+			</div>
+			<div>
+				<head n="5">Summary and Discussion</head>
+
+				<p>We examined whether the proposal for decoupling the unwanted zero-mode in the domain-wall approach by adding the Majorana mass term for it works when the gauge field is switched off. Above all, we clarified what values we should take for the Majorana mass to be added. We observed the desired dispersion relation for moderate values of the Majorana mass, which means that the approach is promising. We pointed out, however, that for too large Majorana mass, the doublers of the desired Majorana fermion become very light. We gave a natural explanation of this phenomenon in terms of the seesaw mechanism. We also confirmed our conclusion by the analysis of the fermion propagator.</p>
+
+				<p>There are various types of additional Majorana mass term S mass that can be used instead of the particular one we used above. We checked that the following alternatives can be used successfully to give η mass of the order of the cutoff, while keeping ξ massless. (1) Majorana mass term for both ξ and η localized at s = N s . (2) Majorana mass term for η in some finite region near s = N s . One can even extend the region to cover the whole extent of the fifth direction. (3) Majorana mass term for both ξ and η in some finite region near s = N s .</p>
+
+				<p>Unlike the case (ii), one cannot extend the region to cover the whole extent of the fifth direction in this case.</p>
+
+				<p>In either case, unwanted light modes appear when we take the Majorana mass too large.</p>
+
+				<p>Our next task is of course to switch on the gauge field. We also have to introduce additional boson fields to subtract the heavy modes in the bulk as in Ref. [4,8]. We hope this approach will finally enable us to understand general nonperturbative phenomena in the super Yang-Mills theory, including the ones related to the vacuum structure such as gaugino condensation.</p>
+
+			</div>
+
+			<note place="foot">arXiv:hep-lat/9712009v1 9 Dec 1997</note>
+
+			<note place="foot" n="1"> While this work was being completed, a preprint [4] appeared which includes an alternative proposal in this direction.</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+				<head>Acknowledgements</head>
+				<p>The authors would like to thank S. Aoki, K. Nagai and S.V. Zenkin for discussions . T.H. and T.I. are JSPS Research Fellow.</p>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Curci</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Veneziano</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">292</biblScope>
+			<biblScope unit="issue">555</biblScope>
+			<date type="published" when="1987" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Montvay</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett</title>
+		<editor>259</editor>
+		<editor>A. Donini and M. Guagnelli</editor>
+		<imprint>
+			<biblScope unit="volume">301</biblScope>
+			<biblScope unit="page" from="466" to="383" />
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Narayanan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Neuberger</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">443</biblScope>
+			<biblScope unit="issue">305</biblScope>
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Neuberger</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="9710089" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Nishimura</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1997" />
+			<biblScope unit="page">406</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Kaplan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1992" />
+			<biblScope unit="page">288</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Furman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Shamir</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">439</biblScope>
+			<biblScope unit="issue">54</biblScope>
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Vranas</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page">9709119</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Jansen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1992" />
+			<biblScope unit="page">288</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Aoki</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Nagai</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">V</forename>
+				<surname>Zenkin</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page">9705001</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

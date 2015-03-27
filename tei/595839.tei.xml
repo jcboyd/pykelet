@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">On the price of light quarks * qq+q Collaboration</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2002-09-26">26 Sep 2002</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">F</forename>
+								<surname>Farchioni</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">InstitutfürTheoretischePhysik</orgName>
+								<orgName type="institution">WestfälischeWilhelms-UniversitätMünster</orgName>
+								<address>
+									<addrLine>Wilhelm-Klemm-Strasse9</addrLine>
+									<postCode>D-48149</postCode>
+									<settlement>Münster</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">C</forename>
+								<surname>Gebert</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">DeutschesElektronen-SynchrotronDESY</orgName>
+								<address>
+									<addrLine>Notkestr.85</addrLine>
+									<postCode>D-22603</postCode>
+									<settlement>Hamburg</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">I</forename>
+								<surname>Montvay</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">DeutschesElektronen-SynchrotronDESY</orgName>
+								<address>
+									<addrLine>Notkestr.85</addrLine>
+									<postCode>D-22603</postCode>
+									<settlement>Hamburg</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">L</forename>
+								<surname>Scorzato</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">DeutschesElektronen-SynchrotronDESY</orgName>
+								<address>
+									<addrLine>Notkestr.85</addrLine>
+									<postCode>D-22603</postCode>
+									<settlement>Hamburg</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">On the price of light quarks * qq+q Collaboration</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2002-09-26">26 Sep 2002</date>
+						</imprint>
+					</monogr>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>The computational cost of numerical simulations of QCD with light dynamical Wilson-quarks is estimated. The qualitative behaviour of the pion mass and coupling at small quark masses is discussed.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>The eightfold way of hadron spectra is the consequence of the SU(3) flavour symmetry in QCD which follows from the existence of three light quarks (u, d and s). Numerical simulations of QCD have to take into account this basic fact. The &quot; quenched approximation &quot; , which corresponds to the limit of infinitely heavy virtual quarks, is not reliable because of its unknown systematic errors (see, for instance, [1, 2]). Chiral perturbation theory (ChPT) [3] is very useful for extrapolating the results of numerical simulations to the small u-and d-quark masses but, of course, it has a finite range of applicability. In practice this means that one has to stay in a region where the one-loop ChPT formulas give a good approximation. For investigating the masses and couplings of pseudoscalar mesons one should reach the quark mass range below about one quarter of the strange quark mass (m ud ≤ 1 4 m s ) [4, 5]. Present large scale QCD simulations – especially with Wilson-type quark actions – are not yet at small enough quark masses for the applicability of chiral perturbation theory. This is clearly displayed, for instance, by the absence of curvature ( &quot; no chiral logs &quot; ) in the present data about the dependence of m 2 π and f π versus the quark mass m q (see, for instance, [6, 7, 8, 9]). Going to light quark masses in unquenched QCD simulations is a great challenge for computations because known algorithms have a substantial slowing down towards small quark masses. The present status has been summarized by the contributors to the panel discussion at the Berlin lattice conference [10]. In these contributions the computational costs were established at relatively large quark masses and extrapolated into the interesting range of small quark masses. Recent developments show, however, that at small quark masses new difficulties appear which might invalidate this extrapolation [11, 12]. This was the motivation of our collaboration to investigate in a series of algorithmic studies the computational cost of numerical simulations down to about one fifth of the strange quark mass (m ud ≤ 1 5 m s ) [13, 14]. In our tests we used the two-step multi-boson algorithm [15]</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="2">Cost estimates</head>
+
+				<p>The computational cost of obtaining a new, independent gauge configuration in an updating sequence with dynamical quarks can be parametrized, for instance, as</p>
+
+				<figure>
+					<trash>C = F (r 0 m π ) −zπ L a z L r 0 a za . (1)</trash>
+
+
+				</figure>
+
+				<p>Here r 0 is the Sommer scale parameter, m π the pion mass, L the lattice extension and a the lattice spacing. The powers z π,L,a and the overall constant F are empirically determined.</p>
+
+				<p>In order to limit the necessary computer time our collaboration first performed high statistics simulations with N f = 2 degenerate quark flavours on coarse lattices (8 3 · 16) with a lattice spacing a ≃ 0.27 fm. (a is determined by r 0 ≃ 0.5 fm from the mesured value of r 0 /a.) This gives for the</p>
+
+				<figure>
+					<trash>0.1 1 10 100 1 10 τ int M r = (r 0 m π ) 2 Quark mass dependence of plaquette autocorrelations c = 7.92(68) z = -2.02(10) χ 2 /ndf = 1.8 fit: c*x z</trash>
+
+					<head>Figure 1:</head>
+
+					<figDesc>Power fit of the plaquette autocorrelation given in units of 10 6 · MVM as a function of the dimensionless quark mass parameter M r . The best fit of the form cM</figDesc>
+					<trash>z r is at c = 7.92(68), z = −2.02(10). extension L ≃ 2.2 fm</trash>
+
+
+				</figure>
+
+				<p>, which is sufficient for keeping finite volume effects tolerable, for instance, for m π and f π . For the definition of the quark mass the dimensionless quantity</p>
+
+				<figure>
+					<trash>M r ≡ (r 0 m π ) 2 (2)</trash>
+
+
+				</figure>
+
+				<p>has been used, which already appears in (1). In this variable the strange quark mass can be defined as M r,strange ≡ 3.1.</p>
+
+				<p>Our results for the integrated autocorrelations of different physical quantities (τ int ) have been described in detail in [13]. For illustration see figures 1 and 2 where the quark mass dependence of τ plaquette int and τ mπ int are shown, together with power fits. The units for the costs are 10 6 fermion-matrixvector-multiplications (MVMs). Comparing the two figures one sees that the &quot; cost &quot; for m π is substantially less than the one for the average plaquette. The fitted powers of the quark mass are also different. In the notation of the</p>
+
+				<figure>
+					<trash>0.1 1 10 1 10 τ int M r = (r 0 m π ) 2 Quark mass dependence of pion mass autocorrelations c = 1.99(16) z = -1.47(16) χ 2 /ndf = 1.7 fit: c*x z</trash>
+
+					<head>Figure 2:</head>
+
+					<figDesc>Power fit of the autocorrelation of the pion mass given in units of 10 6 · MVM as a function of the dimensionless quark mass parameter M r . The best fit of the form cM</figDesc>
+					<trash>z r is at c = 1.99(16), z = −1.47(16). formula in (1) τ plaquette int gives z π ≃ 4, whereas τ mπ</trash>
+
+
+				</figure>
+
+				<p>int is consistent with z π ≃ 3. The pion coupling constant f π , which is related to the constant in front of the pion contribution in the pseudoscalar propagator, has even shorter autocorrelations than m π . This is obviously rather advantageous for obtaining physical information from the quark mass dependence of the pion mass and coupling (see [4]). Our collaboration also studied the volume dependence of the cost by choosing a few 8 3 ·16 runs and repeating them on either 16 4 or 12 3 ·24 lattices, without changing other parameters [14]. The parameters of the chosen points are collected in table 1 and some results are shown in table 2. The error analysis and integrated autocorrelations in the runs on the larger lattices have been obtained using the linearization method of the ALPHA collaboration [16]. The conclusion from these tests is that the cost increase with the lattice volume is quite acceptable because it is close to the trivial volume factor. In</p>
+
+				<figure>
+					<head>Table 1:</head>
+
+					<figDesc>Runs for comparing the simulations costs at different volumes. For the definition of algorithmic parameters see [13]</figDesc>
+
+				</figure>
+
+				<p>.</p>
+
+				<figure>
+					<trash>run lattice β κ n 1 n 2 n 3 λ ǫ · 10 4 (e) 8 3 · 16 4.76 0.190 44 360 380 3.6 2.7 (e16) 16 4 4.76 0.190 72 350 440 3.6 2.7 (f) 8 3 · 16 4.80 0.190 44 360 380 3.6 2.7 (f12) 12 3 · 24 4.80 0.190 72 500 560 3.4 1.36 (h) 8 3 · 16 4.68 0.195 66 900 1200 3.6 0.36 (h16) 16 4 4.68 0.195 96 860 1100 3.6 0.36</trash>
+
+
+				</figure>
+
+				<p>case of the autocorrelation of the pion mass the observed increase turns out to be even smaller. This is partly due to the intrinsic fluctuation present in the pion propagator which is originated from the freedom of randomly choosing the position of the source.</p>
+
+			</div>
+			<div>
+				<head n="3">Chiral logs?</head>
+
+				<p>The behaviour of physical quantities, as for instance the pseudoscalar meson ( &quot; pion &quot; ) mass m π or pseudoscalar decay constant f π as a function of the quark mass are characterized by the appearance of chiral logarithms. These chiral logs, which are due to virtual pseudoscalar meson loops, have a nonanalytic behaviour near zero quark mass of a generic form m q log m q . They imply relatively fast changes of certain quantities near zero quark mass which are not seen in present data [6, 7, 8, 9, 12].</p>
+
+				<p>In our range of quark masses (m q ≃</p>
+
+				<figure>
+					<head>1 5</head>
+
+					<figDesc>m s ) the logarithmic curvature due to chiral logs has to appear, at least in the continuum limit. Although we have rather coarse lattices (a ≃ 0.27 fm) and, in addition, up to now we are working with unrenormalized quantities – without the Z-factors of multiplicative renormalization – it is interesting to see whether the effects of chiral logs can already be seen in our data. Let us recall the one-loop ChPT formulas for m</figDesc>
+					<trash>2 π : M r 2µ r = Br 0 − M r Br 0 16π 2 (f r 0 ) 2 log (Λ 3 r 0 ) 2 M r + O(M 2 r ) , (3)</trash>
+
+
+				</figure>
+
+				<figure>
+					<head>Table 2:</head>
+
+					<figDesc>Results from the runs with parameters shown in table 1. The lattice extension L is obtained from the value of r 0 /a. M r is the quark mass parameter defined in (1). The cost of an update cycle C uc and the integrated autocorrelations of the average plaquette and of the pion mass are given, respectively, in 10 3 MVMs and flops.</figDesc>
+
+				</figure>
+
+				<p>run L [fm] M r C uc [kMVM] τ plaq int [flop] τ mπ int [flop]</p>
+
+				<figure>
+					<trash>(e) 2.31(6) 1.473(88) 8.50 4.59(37) ·10 13 1.94(31) ·10 13 (e16) 4.57(9) 1.401(79) 12.4 7.5(1.3) ·10 14 5.02(55) ·10 13 (f) 2.25(4) 1.026(51) 8.48 7.47(84) ·10 13 1.76(59) ·10 13 (f12) 3.02(9) 1.37(9) 12.3 2.40(41) ·10 14 4.52(82) ·10 13 (h) 2.27(5) 0.806(50) 16.2 1.7(6) ·10 14 3.3(7) ·10 13 (h16) 4.1(3) 0.93(19) 23.7 1.10(17) ·10 15 8.3(8) ·10 13 and for f π : f π r 0 = f r 0 + M r 8π 2 f r 0 log (Λ 4 r 0 ) 2 M r + O(M 2 r ) . (4)</trash>
+
+
+				</figure>
+
+				<p>These are deduced from the formulas in ref. [17, 5], with our convention f physical π ≃ 131 MeV. Besides M r defined in (1), the quark mass defined by the PCAC relation m</p>
+
+				<figure>
+					<trash>P CAC q also appears in the dimensionless combination µ r ≡ m P CAC q r 0 . (5) (For the definition of m P CAC q</trash>
+
+
+				</figure>
+
+				<p>see, for instance, the equations (20)-(23) in our paper [13].) The dimensionless parameters Br 0 , f r 0 and Λ 3 r 0 in (3) and f r 0 and Λ 4 r 0 in (4) have to be fitted to the data. The data from table 3 of ref. [13] and the one-loop ChPT fits are shown in figures 3 and 4. (The runs with label (c) and (d), which have low statistics and hence large statistical errors, are omitted here.) In both figures two fits are shown: one taking into account all points and another one where the points above M r = 2 are omitted. As the figures show, the data in the small quark mass range clearly show the expected qualitative behaviour with chiral logs. The fit parameters have reasonable values, similar to the ones deduced in [5] from previous lattice data at larger quark masses [6, 7]. For instance, the fits with all points correspond to the parameters: Br 0 = 8.2, f r 0 = 0.27, Λ 3 r 0 = 3.5 in formula (3) and f r 0 = 0.60, Λ 4 r 0 = 4.3 in formula (4).</p>
+
+				<figure>
+					<trash>0 1 2 3 4 5 6 M r 5 6 7 8 M r /(2µ r ) fit to all points skipped two heaviest points Test of χPT logarithms on 8 3</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>×16</head>
+
+				<p>Figure 3: Fits of the pseudoscalar meson mass-squared with the one-loop ChPT formula.</p>
+
+				<p>The fact that our data in the small quark mass range</p>
+
+				<figure>
+					<trash>1 5 m s ≤ m q ≤ 2 3</trash>
+
+
+				</figure>
+
+				<p>m s show the expected logarithmic behaviour of chiral perturbation theory is quite satisfactory. However, since we are far from the continuum limit and we did not yet take into account the Z-factors of multiplicative renormalization , further work is needed to finally deduce the physical values of the fit parameters.</p>
+
+			</div>
+			<div>
+				<head n="4">Eigenvalue spectra</head>
+
+				<p>The eigenvalue spectrum of the Wilson-Dirac matrix is interesting both physically and from the point of view of simulation algorithms. From the algorithmic point of view the knowledge of low-lying eigenvalues is crucial for the optimization of polynomial approximations in TSMB. An interesting</p>
+
+				<figure>
+					<trash>0 1 2 3 4 5 6 M r 0.6 0.7 0.8 f π r 0 fit to all points skipped two heaviest points Test of χPT logarithms on 8 3</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>×16</head>
+
+				<p>Figure 4: Fits of the pseudoscalar meson decay constant with the one-loop ChPT formula. tion is whether there is a statistically significant presence of configurations with negative determinant, i. e. with an odd number of negative eigenvalues of the Wilson-Dirac matrix. A significant number of configurations with negative determinant would be a serious obstacle for performing numerical simulations with and odd number of flavours – as it occurs with u-, d-and s-quarks in nature. The results of our collaboration show [13, 14] that in the investigated range of quark masses no sign problem occurs because the statistical weight of configurations with negative determinant is negligible even at our smallest quark masses.</p>
+
+			</div>
+			<div>
+				<head n="5">Conclusion and outlook</head>
+
+				<p>Our cost estimates for numerical simulations of QCD with light dynamical Wilson-quarks – as a function of the quark mass and volume – allow a reasonably precise prediction of the computational costs for future simulations. Up to now we did not yet perform a systematic investigation of the slowing down with decreasing lattice spacing, expressed by the power z a in (1), but previous experience in the supersymmetric Yang-Mills theory [18, 19] at small lattice spacings a ≃ 0.06 fm and our preliminary results in QCD near a ≃ 0.17 fm are consistent with the expected behaviour z a = 2 [10]. Assuming z a = 2 and starting from the results of runs (h) and (h16) in table 2 one can deduce the following estimates for obtaining 100 independent gauge configurations: • On a 24 3 · 48 lattice with lattice spacing a = 0.125 fm at quark mass parameter M r = 0.8 corresponding to m ud ≃ 1 4 m s and physical extension characterized by Lm π ≃ 6 the cost would be C ≃ 9 · 10 16 − 3 · 10 18 flop, depending on whether one considers τ mπ int or τ plaq int as relevant. • Similarly, on a 32 3 · 64 lattice with lattice spacing a = 0.06 fm at the same quark mass and Lm π ≃ 4 the cost would be C ≃ 6 · 10 17 − 4 · 10 19 flop.</p>
+
+				<p>Compared to most of the estimates in [10] these numbers are lower. Note that the costs for parameter tuning and equilibration – which are not negligible – are not included in these estimates. Nevertheless, the necessary order of magnitude of CPU times for these kinds of calculations is expected to be available for the lattice community in forthcoming years.</p>
+
+			</div>
+
+			<note place="foot">arXiv:hep-lat/0209142v2 26 Sep 2002</note>
+
+			<note place="foot">* Contribution by I. Montvay to QUARKS&apos;2002, Novgorod, Russia, June 2002</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Golterman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Pallante</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="208069" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">J D</forename>
+				<surname>Lin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Martinelli</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Pallante</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">T</forename>
+				<surname>Sachrajda</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Villadoro</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page">0209107</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Gasser</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Leutwyler</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Annals Phys</title>
+		<imprint>
+			<biblScope unit="volume">158</biblScope>
+			<biblScope unit="issue">142</biblScope>
+			<date type="published" when="1984" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">D62 (2000) 094503; hep- lat/0006017</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">R</forename>
+				<surname>Sharpe</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Shoresh</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<date type="published" when="208051" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Cp-Pacs</forename>
+				<surname>Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Ali-Khan</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">65</biblScope>
+			<biblScope unit="issue">054505</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">R</forename>
+				<surname>Ukqcd Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Allton</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">65</biblScope>
+			<biblScope unit="issue">054502</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Jlqcd</forename>
+				<surname>Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Aoki</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. Proc</title>
+		<imprint>
+			<biblScope unit="volume">106</biblScope>
+			<biblScope unit="issue">224</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+	<note>Suppl</note>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Jlqcd</forename>
+				<surname>Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Hashimoto</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page">0209091</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<forename type="middle">H</forename>
+				<surname>Contributions</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Christ</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Gottlieb</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Jansen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Th</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Lippert</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Ukawa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Wittig</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. Proc</title>
+		<imprint>
+			<biblScope unit="page">106</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+	<note>Suppl</note>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Ukqcd Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Joo</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. Proc</title>
+		<imprint>
+			<biblScope unit="volume">106</biblScope>
+			<date type="published" when="1073" />
+		</imprint>
+	</monogr>
+	<note>Suppl</note>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title level="m" type="main">hep-lat/0209073. [13] qq+q Collaboration, F. Farchioni, C. Gebert, I. Montvay and L. Scorzato</title>
+		<author>
+			<persName>
+				<forename type="first">Cp-Pacs</forename>
+				<surname>Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Namekawa</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="206008" />
+			<biblScope unit="page" from="hep" to="lat" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Farchioni</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Gebert</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Montvay</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Scorzato</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="209038" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Montvay</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">466</biblScope>
+			<biblScope unit="issue">259</biblScope>
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Alpha</forename>
+				<surname>Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Frezzotti</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Hasenbusch</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">U</forename>
+				<surname>Wolff</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Heit-Ger</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Jansen</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Phys. Commun</title>
+		<imprint>
+			<biblScope unit="volume">136</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page">0009027</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">108; hep-ph/0011049. [18] I. Montvay A17 (2002) 2377; hep-lat/0112007</title>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Leutwyler</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Proc. Int. J. Mod. Phys</title>
+		<editor>R. Peetz, F. Farchioni, C. Gebert, G. Mü</editor>
+		<imprint>
+			<biblScope unit="page" from="hep" to="lat" />
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+	<note>Suppl. . 94</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

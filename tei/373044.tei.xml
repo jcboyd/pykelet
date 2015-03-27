@@ -1,0 +1,1012 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Counting Strings and Phase Transitions in 2D QCD *</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2013-08-10">August 10, 2013</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Washington</forename>
+								<surname>Taylor</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Department of Physics Massachusetts Institute of Technology Cambridge</orgName>
+								<orgName type="laboratory">Center for Theoretical Physics Laboratory for Nuclear Science</orgName>
+								<address>
+									<postCode>02139</postCode>
+									<region>Massachusetts</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Counting Strings and Phase Transitions in 2D QCD *</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2013-08-10">August 10, 2013</date>
+						</imprint>
+					</monogr>
+					<note>arXiv:hep-th/9404175v2 3 May 1994 hep-th/9404175 * This work was supported in part by funds provided by the U.S. Department of Energy (D. O. E.) under contract DE-AC02-76ER03069, and in part by the divisions of Applied Mathematics of the U.S. Department of Energy under contracts DE-FG02-88ER25065 and DE-FG02-88ER25066. † wati@mit.edu 1</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>Several string theories related to QCD in two dimensions are studied. For each of these theories the large N free energy on a (target) sphere of area A is calculated. By considering theories with different subsets of the geometrical structures involved in the full QCD 2 string theory, the different contributions of these structures to the string free energy are calculated using both analytic and numerical methods. The equivalence between the leading terms in the SU (N) and U (N) free energies is simply demonstrated from the string formulation. It is shown that when Ω-points are removed from the theory, the free energy is convergent for small and large values of A but divergent in an intermediate range. Numerical results indicate that the free energy for the full QCD 2 string fails to converge at the Douglas-Kazakov phase transition point. Similar results for a single chiral sector of the theory, such as has recently been studied by Cordes, Moore, and Ramgoolam, indicate that there are three distinct phases in that theory. These results indicate that from the point of view of the strong coupling phase, the phase transition in the full QCD 2 string arises from the entropy of branch-point singularities.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>In the last year, there has been a resurgence of interest in 2D gauge theories. The Yang- Mills theories on an arbitrary compact 2-manifold M of genus G and dimensionless area A, with gauge groups SU(N), U(N), Sp(N), and SO(N), have been shown to have partition functions with asymptotic expansions in 1/N which are precisely equal to the partition functions of simple string theories [1-6]. These string partition functions are expressed as sums over covering maps ν : N → M, (1.1) from 2-manifolds N of arbitrary genus g onto M, where the covering maps have a finite number of singular points of various types whose geometry depends upon the choice of genus G and the gauge group. An expectation value of a Wilson loop in such a 2D gauge theory can also be expressed in terms of the string picture as a sum over open string maps where the boundary of the string world sheet is mapped to the Wilson loop. For a review of this work, see [7].</p>
+
+				<p>One of the primary goals of working on a string description for 2D QCD is to find a formulation of the theory which can be extended to higher dimensions, so that we might develop a string picture of 4D QCD which would allow us to calculate nonperturbative results in the physical theory. In order to extrapolate the QCD 2 string theory to higher dimensions, it seems that it will be necessary to develop a world sheet action formalism for this theory; recently, a great deal of progress has been made in this direction by Cordes, Moore, and Ramgoolam [8] (henceforth CMR), and by Horava [9].</p>
+
+				<p>Even if a good string description can be found for the asymptotic 1/N expansion of the 4D theory, however, it is still a nontrivial task to relate this asymptotic expansion to the theory for finite values of N. One example of a difficulty which may arise in finding such a relation is the possible existence of large N phase transitions. It has long been known that in the lattice formulation, the large N description of QCD can suffer a phase transition between the strong and weak coupling regimes [10]. One possible way to avoid this difficulty is to directly formulate a string theory for the finite N gauge theory, as was done in [11] for the QCD 2 string. However, it seems unlikely that this approach will lead to a reasonable</p>
+
+				<p>string picture in four dimensions. Thus, it is important to understand in what cases phase transitions arise in the two dimensional theory, and what the implications of such phase transitions are for the physical four dimensional theory.</p>
+
+				<p>Last year, Douglas and Kazakov (DK) addressed this problem by considering the leading term F (A)N 2 in the free energy of the U(N) gauge theory on the two dimensional sphere [12]. Whereas the leading terms of the free energy on higher genus surfaces are easily seen to be well-behaved, an infinite number of terms can contribute to the quantity F (A), and there is the potential for a large N phase transition to arise. Indeed, DK were able to show, by finding the saddle point of the matrix model corresponding to the exact expression for the QCD 2 partition function, that at the point A = π 2 there is a phase transition. In the large area phase F (A) is correctly described by the string expansion, whereas in the small area phase this free energy becomes trivial. It was subsequently pointed out by Minahan and Polychronakos [13] that the analysis of DK relied upon an Ansatz which essentially restricted the theory to the sector with U(1) charge Q = 0. For a full treatment of the free energy in the U(N) theory, they showed that it is necessary to sum over a range of values of Q, for each of which there is a distinct saddle point. More recently, the DK phase transition was studied from the point of view of the weak coupling phase by Gross and Matytsin, and it was shown that the phase transition is induced by instantons [14]. In that work it was also argued that in four dimensions no analogous phase transition should occur. The description of the 2D Yang-Mills partition function in terms of instantons was originally discussed by Witten [15], and the role of these instantons in the DK phase transition was suggested in [16].</p>
+
+				<p>The work presented in this paper is in a sense complementary to that of [14], in that here the QCD 2 theory is studied from the point of view of the strong coupling phase. The goal is to attain a deeper understanding of how the large N phase transition in F (A) arises from the string point of view. As a step towards this goal, we wish to ascertain which structures in the string theory are responsible for the finite radius of convergence of the string expansion. We consider a general class of string theories of the type of the QCD 2 string. In the string theories associated with U(N) and SU(N) gauge theories, there are several types of singularities allowed in the string maps. The most basic singularities are simple branch-points which connect a pair of sheets of the covering space at a point in the target. In addition, the SU(N) theory allows infinitesimal tubes which connect pairs of sheets which can be either of identical or opposite orientation, and also entire world sheet handles which are mapped to single points in the target space. Finally, when G = 1, there are additional singularities allowed at special twist points called Ω-points and Ω −1 -points; these last singularities seemed originally somewhat complicated from the string perspective, but have recently been understood as simply arising from orbifold Euler characters of the relevant spaces of branched covering maps [8]. In this work, we consider string theories in which different subsets of these singularity types are allowed; we also consider some theories in which string maps are constrained to be orientation-preserving (this corresponds to taking a single &quot; chiral &quot; sector of the full theory in which maps can be locally orientation-preserving or -reversing).</p>
+
+				<p>The results of the investigations carried out in this paper are that the convergence of the string expansion depends strongly upon what singularity types are allowed in the string theory, and that the radii of convergence of these expansions are apparently related to phase transition points in the associated theories. When branch-points are neglected, and all singularities are taken to arise from Ω-points, the string expansion of the free energy F (A) converges to a smooth function for all A &gt; 0 and hence the theory has no phase transitions; this theory is closely related to the topological string which formed a starting point in [8].</p>
+
+				<p>If we neglect Ω-points, on the other hand, and only include branch-point type singularities in the string theory, we find that the free energy converges for small and large values of A, but diverges in an intermediate region. We also consider the chiral theory containing both Ω-points and branch-point singularities. Although it is difficult to describe this theory analytically, we carry out partial summations of the string expansion and graph the results.</p>
+
+				<p>We find that as in the theory with only branch points, in the regions of small and large area the free energy is convergent, while in an intermediate region the expansion fails to converge.</p>
+
+				<p>Similar numerical analysis of the full QCD 2 string theory shows a convergence of the string expansion above the DK critical point A = π 2 and a divergence below this point. This result suggests that the strong coupling string expansion contains nonperturbative information which describes the phase transition point of the theory. If the chiral string theory behaves similarly, we would expect to see 3 distinct phases in that theory. The behavior of the theory without Ω-points indicates that it is the entropy factor associated with branch-point singularities which is ultimately responsible for the failure of the string expansion to converge at the phase transition point.</p>
+
+				<p>Another result which follows naturally from the string picture is the observation that when both orientation-preserving and orientation-reversing tubes are included in the string theory, the contributions from these objects to the leading term in the free energy exactly cancel. Thus, we have a simple geometrical demonstration of the result that the free energy F (A) in the SU(N) theory is precisely the same as the free energy in the Q = 0 sector of the U(N) theory in the large area phase, and thus that the DK phase transition describes correctly the complete SU(N) theory.</p>
+
+				<p>In Section 2, we review briefly the rules for counting covering maps in the QCD 2 string theory, and we define a set of simplified QCD 2 -type string theories. In Section 3, several combinatorial problems are discussed which are related to calculating the free energy of QCD 2 -type strings. In Section 4 we perform the central calculations in the paper, describing the free energy in the string theories of interest using both analytic and numerical techniques.</p>
+
+				<p>The convergence properties of these string sums are described and the consequences for the phase structure of the theories are discussed. In this section we also prove the equivalence of the SU(N) and U(N) free energies. Finally, in Section 5 we conclude with a discussion of the implications of this work and related open questions.</p>
+
+			</div>
+			<div>
+				<head n="2">QCD Strings</head>
+
+				<p>We review here the essential features of the sum over covering maps describing the QCD 2</p>
+
+				<p>string theory. The results, which are stated here without proof, are proven in [3, 4].</p>
+
+				<p>The partition function for the 2D Yang-Mills theory on a manifold M of genus G and area A is given by [17, 18] Z(G, A, N) = [DA µ ]e</p>
+
+				<figure>
+					<trash>− 1 4g 2 M Tr(F ∧⋆F ) = R (dim R) 2−2G e − A 2N C 2 (R) , (2.1)</trash>
+
+
+				</figure>
+
+				<p>where the sum is taken over all irreducible representations of the gauge group, with dim R and C 2 (R) being the dimension and quadratic Casimir of the representation R. We absorb the coupling constant λ = g 2 N into the dimensionless area A for notational convenience.</p>
+
+				<p>The partition function can be rewritten in the form</p>
+
+				<figure>
+					<trash>Z(G, A, N) = Σ(M) dν W (ν), (2.2) where Σ(M</trash>
+
+
+				</figure>
+
+				<p>) is a set of branched covering maps of M by oriented 2-manifolds N of arbitrary genus g. The weight of each map in the partition function is given by</p>
+
+				<figure>
+					<trash>W (ν) = ± N 2−2g |S ν | e − nA 2 , (2.3)</trash>
+
+					<head>Figure 1:</head>
+
+					<figDesc>Schematic representation of a branch-point</figDesc>
+
+				</figure>
+
+				<p>where n is the degree of the map ν and |S ν | is the symmetry factor of the map (the number of diffeomorphisms π of N which satisfy νπ = ν). The sign of the weight depends upon the set of singular points in the map ν. Each map ν describes a covering of M by a number of orientation-preserving sheets and a number of orientation-reversing sheets. We refer to these two types of sheets as belonging to two chiral sectors of the theory.</p>
+
+				<p>The maps in Σ(M) may include the following types of singular points: • simple branch-points: These points are topologically equivalent to the branch-points</p>
+
+				<p>occurring in the map z → z 2 from the Riemann sphere S 2 to itself. Given a closed path γ around a simple branch-point on the target space, and a labeling of the sheets of the cover at a point p ∈ γ, the lift of γ to the covering space (string world sheet) induces a permutation on the sheet labels which contains a single cycle of length 2 and n − 2 cycles of length 1.</p>
+
+				<p>Branch-points carry a factor of −1 in the string map weight. Furthermore, a branch-point may occur anywhere on the target space, so the positions of these singularities form a set of modular parameters for branched covers which must be integrated with a measure locally proportional to the area measure on the target manifold. A schematic representation for a simple branch-point is shown in Figure 1. • Infinitesimal tubes: An infinitesimal tube is a singularity which occurs when a nontrivial loop in the string world sheet is mapped to a single point in the target space.</p>
+
+				<p>Such a tube can connect two sheets of either the same or opposite orientation, in which case it is referred to as an orientation-preserving or -reversing tube respectively. The lift of a target space curve around a tube gives the identity permutation on the sheets of a cover.</p>
+
+				<p>Infinitesimal tubes can occur at any point on the target manifold; thus, the positions of tubes are an additional set of modular parameters for the space of covers, again carrying a measure locally proportional to the target space area measure. Furthermore, orientationreversing tubes carry a factor of −1. A schematic representation of both types of tubes is given in figure 2; in this figure, as in the remainder of this paper, we denote</p>
+
+				<figure>
+					<head>Figure 2:</head>
+
+					<figDesc>Schematic representation of infinitesimal tubes preserving sheets of a covering space with a solid line, and orientation-reversing sheets with a dashed line.</figDesc>
+
+				</figure>
+
+				<p>• Infinitesimal handles: Just as infinitesimal tubes are singularities where a circle in the world sheet goes to a point in the target space, an infinitesimal handle occurs when an entire handle of a string world sheet is mapped to a single point in the target space. Again, the positions of such singularities must be integrated over the target space. Because in this paper we are essentially only concerned with maps from S 2 → S 2 , this type of singularity will not play a role in the calculations performed here.</p>
+
+				<p>• Ω-points: An additional type of singularity can occur when the target space is a sphere.</p>
+
+				<p>An Ω-point is a fixed point on the target space at which the string maps can have a singularity structure combining multiple branch-point singularities with orientation-reversing tubes. In a single chiral sector of the theory, the singularity at an Ω-point is a multiple branch-point singularity which is described by an arbitrary permutation on the sheets of the covering space when following the lift of a closed target space curve γ around the Ω-point. In the coupled theory, an Ω-point allows the same types of multiple branch-point singularities in each chiral sector; in addition, each connected cycle of sheets may be connected by an orientation-reversing tube to a cycle of the same length in the opposite sector. Each such orientation-reversing tube contributes a factor of −1 to the weight of the map. Because the Ω-points are fixed on the target space, their positions are not integrated over and do not give rise to factors of the area. The geometrical structure of example Ω-point singularities in 1 and 2 sectors are shown schematically in figure 3; note that we do not bother to include in this schematic picture information about the precise permutation at the Ω-point, simply which sheets are connected by cycles. When the target space is a sphere, there are two points with Ω-point singularities. • Ω −1 -points: When the genus of the target space is greater than 1, fixed singularity structures similar to Ω-points occur, which are essentially inverses of those objects. At</p>
+
+			</div>
+			<div>
+				<head>single sector two sectors</head>
+
+				<figure>
+					<head>Figure 3:</head>
+
+					<figDesc>Ω-point singularities in 1 and 2 sectors an Ω −1 -point singularity, there can be an arbitrary number of Ω-point type singularities contracted to a single point, each carrying a factor of −1. Because we will only be interested in results on the sphere in this paper, we will not discuss Ω −1 -points further here.</figDesc>
+
+				</figure>
+
+				<p>This completes the list of singularity types which may appear in the string formulation of the gauge theories with gauge groups U(N) and SU(N). There are additional types of singularities which must be considered for the gauge groups SO(N) and Sp(N) [5, 6]; in addition, a formulation of the finite N gauge theory in terms of strings necessitates the introduction of a &quot; projection &quot; point singularity, similar to the Ω-point singularity [11].</p>
+
+				<p>Although we only have a gauge theoretic description of the string theories with certain combinations of singular points allowed in the space of maps Σ(M), it is possible to define a string theory with an arbitrary combination of allowed singularity types. We will also find it interesting to discuss &quot; chiral &quot; string theories in which the maps in Σ are restricted to be orientation-preserving. Thus, we define a string partition function Z αi (G, A, N), where α ⊆ {B, H, O, T, ˜ T }, i ∈ {1, 2} to be a string theory where the indicated set α of singularity types is allowed (branch-points, handles, Ω-points, orientation-preserving tubes, orientationreversing tubes), and with i sectors. For example, Z BO1 is the string partition function for a theory with a single sector and branch-point and Ω-point singularities but no handles or</p>
+
+				<figure>
+					<head>tubes.</head>
+
+					<figDesc>The specific results for the gauge groups SU(N) and U(N) are that</figDesc>
+					<trash>Z SU (N ) = Z BHOT T 2 Z U (N ) Q=0 = Z BO2 . (2.4)</trash>
+
+
+				</figure>
+
+				<p>The chiral SU(N) and U(N) theories Z BHOT 1 and Z BO1 are also of particular interest, as the large N gauge theories almost factorize into two copies of the chiral theories. These theories are used to construct the string formulation of finite N theories [11], and also arise naturally in a topological field theory approach to the QCD 2 string [8]</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="3">Combinatorial Problems</head>
+
+				<p>In this section we will briefly describe two simple combinatorial problems and their solutions, which will be of assistance in calculating the string summations in the free energies of the theories Z αi . These problems can each be stated either in a geometric or combinatorial fashion. Problem 1a: What is the number H n of inequivalent holomorphic maps of degree n going from S 2 → S 2 with n − 1 simple branch-points whose images are fixed points z 1 , . . . , z n−1 , and with a branch-point of multiplicity n − 1 whose image is at ∞? (we consider two maps ν, µ to be equivalent when there exists an SL(2, C) transformation ζ with ν = µζ.)</p>
+
+			</div>
+			<div>
+				<head>The combinatorial version of this problem is</head>
+
+				<p>Problem 1b: What is the number C n of connected graphs which can be formed with n labeled vertices and n − 1 edges? That these are in fact equivalent questions can be seen through the following construction.</p>
+
+				<p>Given a map which satisfies the conditions of Problem 1a, we can introduce a labeling of the sheets of the cover at a fixed (unbranched) point in the target. From this point we can choose a set of canonical paths in the target homotopic to loops around the points z i .</p>
+
+				<p>Each of these paths can then be associated with a permutation of two labeled sheets, say s and t, and thus with an edge in a graph connecting vertices labeled s, t. The graph resulting from this construction must be connected since the product of the permutations is a cyclic permutation on n elements. This gives us a map from the set of solutions to the first problem with labeled sheets, to the set of solutions to the second problem with labeled edges. The construction can easily be inverted to show that the map is 1-1, using the fact that every topological type of branched cover of a Riemann surface with fixed branch-points has precisely one holomorphic representative. Since the number of possible labels on sheets is n! and the number of possible labelings of edges is (n − 1)!, we find that H n = C n /n.</p>
+
+				<p>The solution to Problem 1b was found in 1889 by Cayley [19]</p>
+
+				<figure>
+					<figDesc>in the course of an investigation of hypothetical chemical structures, and is given by</figDesc>
+					<trash>C n = n n−2 . (3.1)</trash>
+
+					<head>Problem 2a:</head>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>What is the number G n of inequivalent holomorphic maps of degree n going from S 2 → S 2 with 2n − 2 simple branch-points whose images are fixed points z 1 , . . . , z 2n−2 ? Note that when n = 2, the single holomorphic map contributing to G n has a symmetry factor of 2, so that G 2 = 1/2; for all other values of n, the symmetry factors of all maps are 1. The combinatorial version of this problem is</figDesc>
+					<head>Problem 2b:</head>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>What is the number P n of sequences a 1 , . . . , a 2n−2 of elementary transposition permutations in S n which satisfy a 1 · · · a 2n−2 = 1 and which generate the full permutation</figDesc>
+					<head>group?</head>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>The solutions of these two versions of the problem are related by P n = G n n!, as can be shown by an argument similar to that relating the two versions of Problem 1.</figDesc>
+
+				</figure>
+
+				<p>The answer to problem 2 is given by</p>
+
+				<figure>
+					<trash>P n = n n−3 (2n − 2)!. (3.2)</trash>
+
+
+				</figure>
+
+				<p>This result, which to the best knowledge of the author, is not known in the mathematical literature, was conjectured on the basis of a numerical calculation of G n for small values of n by D. Gross and the author. The result can be proven using a matrix model for chiral 2D QCD, and will be presented in a separate publication [20].</p>
+
+				<p>The essential conclusions of the present work do not in fact rely upon the exact formula (3.2), but rather upon its asymptotic properties as n → ∞. Thus, for the purposes of this paper it will be sufficient to prove a simple set of bounds on P n which determine its asymptotic form. We now show that</p>
+
+				<figure>
+					<trash>n 2n−4 (n − 1)! ≤ P n ≤ n 2n−4 (2n − 2)!/(n − 1)!. (3.3)</trash>
+
+
+				</figure>
+
+				<p>These inequalities follow using the result (3.1), which is equivalent to the statement that the number of sequences a 1 , . . . , a n−1 of elementary transpositions whose product a 1 · · · a n−1 is a given cyclic permutation on n elements is precisely n n−2 . We can now enumerate the subset of solutions of Problem 2b which have the property that the first n−1 of the 2n−2 permutations generate the group. Any set of n − 1 elementary transpositions which generate the group have a product which is a cyclic permutation on n elements; thus, we can characterize each solution in the subset by a cyclic permutation π, of which there are (n − 1)!, and two sets of n−1 permutations (a 1 , . . . , a n−1 and a n , . . . a 2n−2 ) each of whose product is π. There are thus n 2n−4 (n − 1)! solutions which satisfy this condition, so we have the first inequality in (3.3).</p>
+
+				<p>The second inequality can similarly be proven by noting that for any solution of Problem 2b, there is at least one subset a i 1 , . . . , a i n−1 of n − 1 elementary transpositions which generate the full group. Since there are (2n − 2)!/(n − 1)! 2 possible such subsets, and for each subset one can consider the same decomposition as for the lower bound, the number of solutions has an upper bound given by the second inequality in (3.3).</p>
+
+			</div>
+			<div>
+				<head n="4">Free Energies of String Theories</head>
+
+				<p>We will now analyze the convergence properties of the free energies of a variety of the string theories defined in Section 2. The quantity we will be interested in is the leading term in the free energy on the sphere,</p>
+
+				<figure>
+					<trash>F (A) = lim N →∞ ln Z(0, A, N) N 2 . (4.1)</trash>
+
+					<figDesc>The full partition function of the string theory includes maps with a disconnected world sheet. By taking the logarithm, we get a sum over all maps with a connected world sheet, as is standard in quantum field theories. The leading term in the free energy is of order N 2 , and is given by a sum over maps from S 2 → S 2 ; it is this term F (A) which we expect will show the interesting phase structure which we will study by analyzing the convergence properties of the string sum. We will now proceed to calculate this function explicitly as a string sum for a variety of choices of types of allowed singularities.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>F O1</head>
+
+				<p>We begin by considering the simplest possible nontrivial theory, in which we only permit orientation-preserving maps (1 sector), and we only allow Ω-point type singularities. This extremely simple theory is closely related to the topological field theory used as a starting point in [8] to derive a world sheet formulation for QCD 2 . For a fixed degree n, we can easily</p>
+
+			</div>
+			<div>
+				<head>n</head>
+
+				<figure>
+					<head>Figure 4:</head>
+
+					<figDesc>String of degree n contributing to F O1</figDesc>
+
+				</figure>
+
+				<p>count the number of string maps. Assuming that the 2 Ω-points are at the poles of the sphere, we can describe each map by the permutation on sheets associated with the equator.</p>
+
+				<p>This permutation must be precisely the permutation given at each Ω-point, and furthermore must be a cyclic permutation on n sheets, or the string world sheet would be disconnected.</p>
+
+				<p>Thus, for each n there is a single string map, with a symmetry factor of n corresponding to the cyclic rotation of the sheets (a schematic picture of such a map is given in Figure 4</p>
+
+				<figure>
+					<figDesc>; in the schematic representations of string maps we will always assume that the ends of the sheets on the left and right are connected). We have then an exact expression for the free energy</figDesc>
+					<trash>F O1 (A) = ∞ n=1 1 n e − nA 2 = − ln(1 − e − A 2 ). (4.2)</trash>
+
+
+				</figure>
+
+				<p>This free energy is finite and smooth away from A = 0; thus, a theory with 1 sector in which only Ω-point singularities occur has no phase transitions.</p>
+
+				<p>It is amusing to note that the free energy of this theory is the same as that of the trivial (complex) matrix model with a partition function given by</p>
+
+				<figure>
+					<trash>Z = 1 Z 0 DMe −Tr (M M † )+gTr (M M † ) , (4.3) where g = exp(−A/2).</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>F O2</head>
+
+				<p>We now consider the theory with only Ω-point singularities but with both sectors of maps allowed. Now, we find that for fixed n, there are 2 distinct string maps for each k|n. Each such map has a symmetry factor of 1/k and carries a sign (−1) n/k−1 . An example of such a k n</p>
+
+				<figure>
+					<head>Figure 5:</head>
+
+					<figDesc>String of degree n contributing to F O2</figDesc>
+
+				</figure>
+
+				<p>map is shown schematically in Figure 5. The free energy for this theory is then given by</p>
+
+				<figure>
+					<trash>F O2 (A) = −2 ∞ n=1 k|n (−1) n/k 1 k e − nA 2 = 2 ∞ m=1 (−1) m ln(1 − e − mA 2 ). (4.4)</trash>
+
+
+				</figure>
+
+				<p>Again, the free energy converges to a finite value and is smooth away from A = 0, so there is only a single phase to this string theory. It seems, then, that Ω-point singularities alone are not responsible for a phase transition in the full theory. This result was also derived by Douglas in [21] using a description of QCD 2 in terms of bosonic fields.</p>
+
+			</div>
+			<div>
+				<head>F Bi</head>
+
+				<p>Now let us drop the Ω-point singularities and consider a theory with only branch-points, and a single sector. For each value of n, the number of maps of degree n is precisely G n .</p>
+
+				<p>Thus, using the exact answer to Problem 2, we have</p>
+
+				<figure>
+					<trash>F B1 (A) = ∞ n=1 G n (2n − 2)! A 2n−2 e − nA 2 = ∞ n=1 n n−3 n! A 2n−2 e − nA 2 . (4.5)</trash>
+
+					<figDesc>To study the convergence properties of this free energy, we use the Stirling approximation for large n</figDesc>
+
+				</figure>
+
+				<p><formula>n! ∼ √ 2πn n n e −n . (4.6)</formula></p>
+
+				<figure>
+					<figDesc>The free energy will thus behave for large n like the series</figDesc>
+					<trash>F B1 (A) ∼ ∞ n=1 [g(A)] n n 7/2 , (4.7) where g(A) = A 2 exp(1 − A/2). (4.8)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>This series is convergent when g(A) ≤ 1, which holds for A ≤ A 0 and A ≥ A 1 with A 0 ∼ 0.73, A 1 ∼ 11.9. Thus, we have a free energy which diverges for</figDesc>
+					<trash>A 0 &lt; A &lt; A 1 (4.9)</trash>
+
+
+				</figure>
+
+				<p>and converges outside this range. Note that although we have used the exact result (3.2), the bounds (3.3) are sufficient to prove this result qualitatively; these bounds translate into upper and lower bounds on the points A 0 , A 1 such that the upper bound on A 0 is much less than the lower bound on A 1 .</p>
+
+				<p>Thus, we find that simply including branch-point singularities into the string theory is sufficient to drive a divergence of the string sum. Moreover, the theory with only branchpoint singularities seems to divide into 3 distinct regions, with the large A and small A regions both being described by a convergent string expansion.</p>
+
+				<p>One might also wish to consider the theory with branch-points and two sectors. However , because branch-point singularities by themselves cannot connect sheets of opposite orientation, we have the rather trivial result that</p>
+
+				<figure>
+					<trash>F B2 (A) = 2F B1 (A). (4.10)</trash>
+
+
+				</figure>
+
+				<p>Thus, adding in both chiral sectors does not have a significant effect on the free energy of this theory.</p>
+
+			</div>
+			<div>
+				<head>Tubes</head>
+
+				<p>Let us now consider the effects of allowing infinitesimal tube singularities. First, consider the theory F T 1 with only a single sector and orientation-preserving tubes. For a degree n map to have a genus 0 world sheet, there must be precisely n−1 tubes, connecting the sheets in a configuration corresponding to a connected graph (see Figure 6</p>
+
+				<figure>
+					<figDesc>). Thus, for a fixed set of n − 1 tube singularity positions on the target space (corresponding to a labeling of the</figDesc>
+
+				</figure>
+
+				<p>edges of the associated graph), there are precisely C n /n = n n−3 distinct string maps. Since the positions of the tubes are distinct for all but a set of configurations of measure 0, the symmetry factor is 1 for all maps, and the associated free energy is given by</p>
+
+				<figure>
+					<trash>F T1 (A) = ∞ n=1 n n−3 (n − 1)! A n−1 e − nA 2 . (4.11)</trash>
+
+					<head>Figure 6:</head>
+
+					<figDesc>Graph corresponding to string with tubes If we include both sectors, the number of maps simply doubles, and we have</figDesc>
+					<trash>F T2 (A) = 2F T1 (A) (4.12)</trash>
+
+
+				</figure>
+
+				<p>As n → ∞, these expansions behave in an analogous fashion to the free energy F B1 in (4.5).</p>
+
+				<p>Here, however, the expansion diverges when</p>
+
+				<figure>
+					<trash>A exp(1 − A/2) &gt; 1, (4.13) which occurs in the approximate range 0.46 &lt; A &lt; 5.36 (4.14)</trash>
+
+
+				</figure>
+
+				<p>Thus, this theory is also well-defined for small and large A but diverges for intermediate areas.</p>
+
+				<p>Now, let us consider the effects of orientation-reversing tubes. Of course, we need both sectors of the theory for this type of singularity to exist, so the simplest theory containing these objects is the theory F ˜ T 2 . The set of maps with only orientation-reversing tube singularities is in a 1-1 correspondence with maps having orientation-preserving tubes; however, now each tube carries a factor of −1, so the free energy is given by</p>
+
+				<figure>
+					<trash>F ˜ T2 (A) = 2 ∞ n=1 n n−3 (n − 1)! (−A) n−1 e − nA 2 . (4.15)</trash>
+
+
+				</figure>
+
+				<p>This series has a radius of convergence identical to that of (4.12); however, note that now the consecutive terms in the series alternate in sign.</p>
+
+				<p>We now consider a theory in which both orientation-preserving and orientation-reversing tubes are present. In the simplest such theory, where no other singularities exist, it is easy to see that the 1-1 correspondence between the sets of maps containing only tubes of a single type gives rise to a cancellation between all maps with tubes. Specifically, if we have</p>
+
+				<figure>
+					<trash>weight -1 t weight +1 t</trash>
+
+					<head>Figure 7:</head>
+
+					<figDesc>Canceling strings with opposite orientation tubes t</figDesc>
+
+				</figure>
+
+				<p>a map of degree n, with a particular tube t which is orientation-preserving, there exists a complementary map with an orientation-reversing tube at t, and with all sheets on one side of the tube reversed in orientation. These maps have opposite weights and therefore cancel. An example of such a canceling pair of maps is shown in Figure 7. As a result of this cancellation, we have</p>
+
+				<figure>
+					<trash>F T ˜ T2 = 2e −A/2 , (4.16)</trash>
+
+
+				</figure>
+
+				<p>with the only contribution arising from the two maps without tubes.</p>
+
+				<p>It is important to note that the cancellation described here does not hold to all orders of the 1/N expansion. If we consider terms corresponding to a toroidal world sheet, for instance, there are contributions from maps where the set of tubes form a closed loop on the set of world sheets. In this case, the number of tubes in the loop must be even, and a single tube cannot be reversed in orientation since the relative orientation of the sheets it is connected to is determined independently by the remaining tubes in the loop. Thus, the cancellation of tubes is only an effect at highest order.</p>
+
+				<p>What if we allow other singularity types as well as the two types of tubes in our theory?</p>
+
+				<p>In fact, it is fairly easy to see that the cancellation described here still holds regardless of the other singularity types allowed, since all sheets on one side of a tube can be reversed without affecting the weight of the string map. Thus, we find that in any theory with both orientation-preserving and orientation-reversing tubes, the tubes have absolutely no effect on the leading order free energy term F (A). A particularly interesting example of this calculation relates the full SU(N) free energy to the Q = 0 sector of the full U(N) theory,</p>
+
+				<figure>
+					<trash>F SU (N ) = F BHOT T 2 = F BO2 = F U (N ) Q=0 . (4.17)</trash>
+
+
+				</figure>
+
+				<p>This important result indicates that the DK analysis of the Q = 0 sector of the U(N) theory applies directly to the complete SU(N) theory. An argument for this equivalence was also given by Minahan and Polychronakos in the matrix model formulation [13]; however, their argument, which states that the n 2 /N term in the quadratic Casimir is negligible for large N, does not deal carefully with the fact that when n ∼ N 2 , which is true at the saddle point, this term is of the same order as the term giving rise to branch-points. One may consider the proof given here as a precise restatement of their argument in the string language. This result should not be too surprising, since we expect the U(1) effects in SU(N) to be of order 1/N relative to the U(N) effects; nonetheless, it is gratifying to have such a simple proof of this equivalence in the string language.</p>
+
+			</div>
+			<div>
+				<head>Chiral theory</head>
+
+				<p>We will now turn our attention to the more complicated chiral theory with free energy F BO1 . This theory contains all the singularity types of the U(N) theory, and is of particular interest because the full U(N) theory essentially factorizes into two copies of this theory, connected only by the orientation-reversing tubes at Ω-points. An analytic calculation of all terms in the free energy of this theory using techniques such as those above is quite difficult, so we use numerical methods here to study the convergence properties of this series. An analytic expression for the free energy of this theory can be calculated using a matrix model, and will be given in [20].</p>
+
+				<p>We can write the free energy for the chiral theory in the form</p>
+
+				<figure>
+					<trash>F BO1 (A) = ∞ n=1 φ n (A)e − nA 2 , (4.18)</trash>
+
+
+				</figure>
+
+				<p>where the functions φ n (A) are polynomials of degree 2n − 2 in A. For the first few values of n, these polynomials are given by</p>
+
+				<figure>
+					<trash>φ 2 (A) = 1 2 − A + 1 4 A 2 φ 3 (A) = 1 3 − 2A + 3A 2 − 4 3 A 3 + 1 6 A 4 φ 4 (A) = 1 4 − 3A + 21 2 A 2 − 43 3 A 3 + 33 4 A 4 − 2A 5 + 1 6 A 6 φ 5 (A) = 1 5 − 4A + 25A 2 − 202 3 A 3 + 529 6 A 4 − 883 15 A 5 + 121 6 A 6 − 10 3 A 7 + 5 24 A 8 (4.19) φ 6 (A) = 1 6 − 5A + 195 4 A 2 − 647 3 A 3 + 1489 3 A 4 − 3178 5 A 5 + 1871 4 A 6 − 598 3 A 7 +48A 8 − 6A 9 + 3 10 A 10 φ 7 (A) = 1 7 − 6A + 84A 2 − 1652 3 A 3 + 1953A 4 − 20228 5 A 5 + 460013 90 A 6 − 141083 35 A 7 + 47983 24 A 8 − 22211 36 A 9 + 4557 40 A 10 − 343 30 A 11 + 343 720 A 12</trash>
+
+
+				</figure>
+
+				<p>Note that the leading coefficient in φ n is n n−3 /n!, and the constant term is 1/n, since these terms correspond to maps containing only branch-point and Ω-point singularities,</p>
+
+			</div>
+			<div>
+				<head>respectively.</head>
+
+				<p>We can write the partial summations of the string series for the free energy as</p>
+
+				<figure>
+					<trash>f n (A) = n m=1 φ m (A)e − mA 2 (4.20)</trash>
+
+
+				</figure>
+
+				<p>To investigate the convergence properties of the string series, we have calculated the polynomials φ n for n ≤ 20, and looked at the convergence properties of the sequence f n (A). In Figure 8, the partial string summations are graphed for n = 5, 10, 15, 20. It is clear from this graph that just as for the theory without Ω-points, the string summation seems to converge for large A and small A, and to have an increasing amplitude of oscillation for intermediate areas. A more careful examination of the functions f n in the small and large area regions indicates that the oscillations increase in amplitude for areas larger than approximately 0.5 and below approximately 10. The oscillatory behavior of these partial summations is precisely analogous to that which occurred in the theory with only orientation-reversing tubes, and seems to indicate that in this chiral U(N) theory, there are again 3 distinct regions, with the small and large area regions being described by a convergent string summation.</p>
+
+			</div>
+			<div>
+				<head>Full SU(N) theory</head>
+
+				<p>We can use the same technique of computing partial summations of the string series to analyze the free energy F BO2 , which by (4.17) is the complete leading term in the free energy of the SU(N) theory, and which is precisely the theory analyzed by DK using matrix models.</p>
+
+				<p>Graphing the first few partial sums, we have Figure 9. From this figure, we might conclude that the string expansion is only valid in the large A phase, and that the partial summations have oscillations of increasing amplitude for small areas. Further numerical analysis of the partial summations indicates that the series ceases to converge around A = 10. It is difficult to show that this occurs precisely at the DK phase transition point; however, this result indicates that the strong coupling string expansion may contain sufficient information to determine the phase transition point at A = π 2 . For this theory only a small number of terms need to be considered to see the qualitative behavior of</p>
+
+				<figure>
+					<trash>-1 -0.5 0 0.5 1 1.5 2 2.5 3 3.5 4 0 1 2 3 4 5 6 7 8 9 Free energy A = dimensionless area (A) f 5 (A) f 10 (A) f 15 (A) f 20</trash>
+
+					<head>Figure 8:</head>
+
+					<figDesc>Partial sums of chiral free energy</figDesc>
+					<trash>0 0.5 1 1.5 2 2.5 3 3.5 0 2 4 6 8 10 Free energy A = dimensionless area (A) f 3 (A) f 4 (A) f 5 (A) f 6 (A) f 7</trash>
+
+
+				</figure>
+
+				<figure>
+					<head>Figure 9:</head>
+
+					<figDesc>Partial sums of full SU (N ) free energy</figDesc>
+
+				</figure>
+
+				<p>two phases. The observation that the convergence radius of the string expansion is related to the phase transition point of the QCD 2 theory leads us to conjecture that a similar relationship holds for the chiral theory described above. In this theory we would therefore expect to find a phase transition near A = 10, and possibly also to find a third phase of the theory for small A. Recent work using a matrix model for chiral QCD 2 indicates that these conclusions are correct [20].</p>
+
+				<p>Assuming that the radius of convergence of the string expansion is indeed given by the phase transition point, it is now possible to characterize the phase transitions in this theory as being due to the same mechanism that causes the divergence of the string expansion in the theory F B1 . This divergence is driven by the competing factors associated with the entropy of branch-points, which asymptotically looks like Ae 1/2 for each branch-point, and the action, which gives a factor of e −A/4 for each branch-point. When the area is sufficiently large, the factor associated with the action becomes sufficiently small to damp the large branchpoint entropy, and when the area is very small, the entropy factor becomes small while the action term approaches unity, making the string expansion convergent in both these regimes. However, in the intermediate regime, the the sum diverges because the entropy of the branch-points overwhelms the suppression due to the action factor. It is tempting to conclude that this mechanism is essentially responsible for the phase transition found in the full 2D QCD theory.</p>
+
+			</div>
+			<div>
+				<head n="5">Conclusions</head>
+
+				<p>In this paper we have examined a variety of simple string theories which include the string descriptions of the 2D U(N) and SU(N) gauge theories. For the simpler string theories containing only Ω-point or branch-point types of singularities, we have given an analytic expression for the leading term in the free energy, and we have found that while Ω-points alone do not affect the convergence of the string series, the entropy of branch-points can be sufficient to cause a divergence of the string free energy. We have proven that the leading term in the free energy for the SU(N) theory is identical to that of the Q = 0 sector of the U(N) theory studied by Douglas and Kazakov using a matrix model formulation and more recently analyzed by Gross and Matytsin in the small area phase. We have numerically performed partial summations of the string series for the full and chiral U(N) free energy.</p>
+
+				<p>These results indicate that for the full theory the string expansion converges in the large area phase and fails to converge in the small area phase. For the chiral theory, the string expansion also converges for very small areas, indicating the possible existence of 3 phases in that theory.</p>
+
+				<p>The apparent coincidence between the radius of convergence of the strong coupling string expansion and the phase transition point is in some sense a surprising result. Because a phase transition is essentially a non-analytic event, we do not expect to be able to predict a transition point from a perturbative expansion around a point in one phase. However, the</p>
+
+				<p>string expansions are not simple perturbative expansions; they are double expansions in the quantities A and e −A which contain some nonperturbative information. In fact, it seems that these expansions actually do carry information about the phase transition points. At this time, however, it is not clear how this association might be proven; only the numerical evidence given here indicates the correspondence of the phase transition point with the string radius of convergence. This is certainly an interesting question deserving further study.</p>
+
+				<p>Perhaps the most interesting of the results given here is the prediction of two distinct phase transition points for the chiral theory. The chiral theory itself is quite an interesting and rather mysterious object. It arises naturally when we look at the large N SU(N) or U(N) theory, where the string partition function factorizes almost exactly into two copies of the chiral theory, with small corrections. The chiral theory also appears naturally in the formalism of CMR as a topological field theory augmented with a Nambu action [8]. It is furthermore possible to use the chiral theory to describe a string theory for finite N QCD by the insertion of a simple projection operator [11].</p>
+
+				<figure>
+					<figDesc>However, as yet we do not really have an intrinsic definition of the chiral theory as a field theory on the target space; it should be possible to find a factorization of a large N gauge theory into two copies of a target space version of the chiral theory, but so far such a decomposition has proven elusive. A better understand of this chiral theory may eventually be of assistance in formulating and understanding a string description of 4D QCD. The observations made here about the phase structure of this theory are a first step in that direction. An investigation of the chiral theory using a matrix model formulation has recently been carried out by M. Crescimanno and the author; this work also indicates the existence of 3 phases in the chiral theory, and will be reported separately [20]</figDesc>
+
+				</figure>
+
+				<p>.</p>
+
+				<p>This work may also contribute some relevant insights to a better physical understanding of the QCD 2 phase transition. In the work of Gross and Matytsin [14] it was shown that when viewed from the small area phase of the 2D gauge theory, the DK phase transition is driven by instantons. The results here indicate that when one approaches the phase transition point from the other side, that is from the large area phase, the phase transition is driven by the entropy of branch-point singularities, which dominates over the Boltzmann weight of these objects. This result, in combination with the results of Gross and Matytsin, indicates that it may be possible to find a direct connection between the branched coverings of the string picture and instantons in the gauge theory picture. Such a connection, if made rigorous, would greatly strengthen our understanding of string formulations of gauge theories, and is a promising direction for future work.</p>
+
+				<p>It is hoped that the work in this paper will make it clear that there are simple and important observations which can be made from the string approach to QCD which are not as transparent using other methods. In order to develop a useful string formulation of QCD in 4 dimensions, it is important not only to work on a formal description of gauge theories as strings, but also to develop the computational tools necessary to allow us to compute phenomena from the string point of view which might be inaccessible from a pure gauge theory perspective. The work here represents a modest step in that direction.</p>
+
+			</div>
+
+			<note place="foot">arXiv:hep-th/9404175v2 3 May 1994</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+				<head>Acknowledgements</head>
+				<p>The author would like to thank M. Douglas, D. Gross, I. Singer, and C. Waldman for helpful discussions and correspondence. Particular thanks to M. Crescimanno for suggesting several improvements in this manuscript and for interesting and useful discussions.</p>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Gross</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">J. Minahan, Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">47</biblScope>
+			<biblScope unit="issue">3430</biblScope>
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Gross</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Taylor</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">400</biblScope>
+			<biblScope unit="page">181</biblScope>
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Gross</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Taylor</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Nucl. Phys. B403</title>
+		<imprint>
+			<date type="published" when="1993" />
+			<biblScope unit="page">395</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">G</forename>
+				<surname>Naculich</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">A</forename>
+				<surname>Riggs</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Schnitzer Mod. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page">2223</biblScope>
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title level="m" type="main">Comment on two-dimensional O(N) and Sp(N) Yang-Mills theories as string theories, preprint YCTP-P16-93, hep-th</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Ramgoolam</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1993-07" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Two-dimensional QCD and strings, preprint MIT-CTP- 2250,PUPT-1431 hep-th/9311072</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Gross</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Taylor</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of Strings &apos;93 conference</title>
+		<meeting>Strings &apos;93 conference<address><addrLine>Berkeley</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1993-03" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<title level="m" type="main">Large N 2D Yang-Mills Theory and Topo- logical String Theory, preprint YCTP-P23-93, hep-th/9402107</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Cordes</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Moore</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Ramgoolam</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1994-02" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<title level="m" type="main">Topological Strings and QCD in Two Dimensions, preprint EFI-93-66, hep- th/9311156</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Horava</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1993-11" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Gross</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Witten</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page">446</biblScope>
+			<date type="published" when="1980" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title level="m" type="main">Strings and Two-dimensional QCD for Finite N, preprint MIT- CTP-2265, hep-th/9401041</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Baez</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Taylor</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1994-01" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title level="m" type="main">Large N phase transition in continuum QCD 2 , preprint LPTENS-93</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Douglas</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Kazakov</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1993-03" />
+			<biblScope unit="page">93</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title level="m" type="main">Classical solutions for two dimensional QCD on the sphere, preprint CERN-TH-7016</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">A</forename>
+				<surname>Minahan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">P</forename>
+				<surname>Polychronakos</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1993" />
+			<pubPlace>UVA-HET-93-08 ; Septem- ber</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<title level="m" type="main">Instanton induced large N phase transitions in two and four dimensional QCD, preprint PUPT-1459, hep-th/9404004</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Gross</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Matytsin</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1994-04" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Witten</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Geom</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Two Dimensional QCD on the Sphere and on the Cylinder, preprint DFTT-50</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Caselle</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">D</forename>
+				<surname>Adda</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Magnea</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Panzeri</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Zh. Eksp. Teor. Fiz</title>
+		<editor>17] A. Migdal</editor>
+		<imprint>
+			<biblScope unit="volume">93</biblScope>
+			<biblScope unit="issue">69</biblScope>
+			<biblScope unit="page">810</biblScope>
+			<date type="published" when="1975" />
+		</imprint>
+	</monogr>
+	<note>Sov. . Phys. JETP. 42 413</note>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Rusakov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Mod</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lett</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page">693</biblScope>
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">A. Cayley, Quart. Jnl. Pure Appl. Math</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="376" to="378" />
+			<date type="published" when="1889" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Crescimanno</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Taylor</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page">2303</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<monogr>
+		<title level="m" type="main">Conformal Field Theory Techniques in Large N Yang-Mills Theory, preprint RU-93-57, hep-th/9311130</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Douglas</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1993-11" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

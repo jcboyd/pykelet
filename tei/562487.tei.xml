@@ -1,0 +1,2076 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Computation of gravitational waves from inspiraling binary neutron stars in quasiequilibrium circular orbits : Formulation and calibration</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2001-09-07">7 Sep 2001</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Masaru</forename>
+								<surname>Shibata</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Graduate School of Arts and Sciences</orgName>
+								<orgName type="institution">University of Tokyo</orgName>
+								<address>
+									<postCode>153-8902</postCode>
+									<settlement>Komaba</settlement>
+									<region>Meguro, Tokyo</region>
+									<country key="JP">Japan</country>
+								</address>
+							</affiliation>
+							<affiliation>
+								<orgName type="department">Department of Physics</orgName>
+								<orgName type="institution">University of Wisconsin-Milwaukee</orgName>
+								<address>
+									<postBox>P.O. Box 413</postBox>
+									<postCode>WI53201</postCode>
+									<settlement>Milwaukee</settlement>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">K¯</forename>
+								<surname>Oji Ury¯</surname>
+							</persName>
+						</author>
+						<title level="a" type="main">Computation of gravitational waves from inspiraling binary neutron stars in quasiequilibrium circular orbits : Formulation and calibration</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2001-09-07">7 Sep 2001</date>
+						</imprint>
+					</monogr>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>Gravitational waves from binary neutron stars in quasiequilibrium circular orbits are computed using an approximate method which we propose in this paper. In the first step of this method, we prepare general relativistic irrotational binary neutron stars in a quasiequilibrium circular orbit , neglecting gravitational waves. We adopt the so-called conformal flatness approximation for a three-metric to obtain the quasiequilibrium states in this paper. In the second step, we compute gravitational waves, solving linear perturbation equations in the background spacetime of the quasiequilibrium states. Comparing numerical results with post Newtonian waveforms and luminos-ity of gravitational waves from two point masses in circular orbits, we demonstrate that this method can produce accurate waveforms and luminosity of gravitational waves. It is shown that the effects of tidal deformation of neutron stars and strong general relativistic gravity modify the post New-tonian results for compact binary neutron stars in close orbits. We indicate that the magnitude of a systematic error in quasiequilibrium states associated with the conformal flatness approximation is fairly large for close and compact binary neutron stars. Several formulations for improving the accuracy of quasiequilibrium states are proposed.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+				<p>Gravitational waves from binary neutron stars in quasiequilibrium circular orbits are computed using an approximate method which we propose in this paper. In the first step of this method, we prepare general relativistic irrotational binary neutron stars in a quasiequilibrium circular orbit , neglecting gravitational waves. We adopt the so-called conformal flatness approximation for a three-metric to obtain the quasiequilibrium states in this paper. In the second step, we compute gravitational waves, solving linear perturbation equations in the background spacetime of the quasiequilibrium states.</p>
+
+				<p>Comparing numerical results with post Newtonian waveforms and luminosity of gravitational waves from two point masses in circular orbits, we demonstrate that this method can produce accurate waveforms and luminosity of gravitational waves. It is shown that the effects of tidal deformation of neutron stars and strong general relativistic gravity modify the post Newtonian results for compact binary neutron stars in close orbits. We indicate that the magnitude of a systematic error in quasiequilibrium states associated with the conformal flatness approximation is fairly large for close and compact binary neutron stars. Several formulations for improving the accuracy of quasiequilibrium states are proposed. 04.25.Dm, 04.25.Nx, 04.30.-w, 04.40.Dg</p>
+
+			<div>
+				<head>I. INTRODUCTION</head>
+
+				<p>The last stage of inspiraling binary neutron stars toward merger, which emits gravitational waves of frequency between ∼ 10 and ∼ 1000Hz, is one of the most promising sources of kilometer-size interferometric gravitational wave detectors such as LIGO [1]. Detection of gravitational waves from the inspiraling binaries will be achieved using a matched filtering technique in the data analysis, for which it is necessary to prepare theoretical templates of gravitational waves. This fact has urged the community of general relativistic astrophysics to derive highly accurate waveforms and luminosity of gravitational waves from compact binaries.</p>
+
+				<p>For an early inspiraling stage in which the orbital separation r o is &gt; ∼ 4R where R denotes neutron star radius and in which the orbital velocity v is much smaller than the speed of light c, tidal effects from companion stars and general relativistic effects between two stars are weak enough to neglect the finite-size effect of neutron stars as well as to allow us to adopt a post Newtonian approximation . For this reason, post Newtonian studies jointly using point particle approximations for compact objects have been carried out by several groups, producing a wide variety of successful results (e.g., [2–7]). However, for closer orbits such as for r o &lt; ∼ 4R and v &gt; ∼ c/3, the tidal effect is likely to become important, resulting in deformation of neutron stars and in the modification of the amplitude and luminosity of gravitational waves. Furthermore, general relativistic effects between two stars are so significant that convergence of post Newtonian expansion becomes very slow [8]. These facts imply that, for preparing theoretical templates for close orbits, fully general relativistic and hydrodynamic treatments for the computation of binary orbits and gravitational waves emission are necessary.</p>
+
+				<p>Using the quadrupole formula of gravitational wave luminosity dE/dt and the Newtonian formula for the binding energy between two point masses, E p , the ratio of coalescence timescale due to emission of gravitational waves E p /(4dE/dt) [9] to the orbital period for binaries of equal mass in circular orbits is approximately written as</p>
+
+				<figure>
+					<trash>∼ 1.1 r o c 2 6GM t 5/2 ≃ 1.1 c 2 6v 2 5/2 , (1.1)</trash>
+
+
+				</figure>
+
+				<p>where M t is the total mass and G gravitational constant. The effects of general relativity and tidal deformation can shorten the coalescence timescale by a factor of several (see Sec. V), but for most of close orbits, the emission timescale is still longer than the orbital period. This implies that binary orbits may be approximated by a quasiequilibrium circular orbit, which we here define as the orbit for which the coalescence timescale is longer than the orbital period.</p>
+
+				<p>Several approximate methods with regard to the computation of the quasiequilibrium states and associated gravitational waves have been recently presented by several groups [10–12]. All these methods require one to solve the Einstein equation by direct time integration and hence require to perform a large-scale numerical simulation . In [10,11], new formalisms have been proposed to compute the late inspiraling stage of binary black holes, for which it is likely to be necessary to perform numerical time integration for obtaining a realistic quasiequilibrium sequence. On the other hand, the purpose for the authors of [12] is to compute gravitational waves from a fixed background spacetime of a computable quasiequilibrium state such as that of binary neutron stars. However, so far, the two formalisms have not been applied yet [10,11], and the other method has not succeeded in an accurate computation of gravitational waveforms because of restricted computational resources [12]. To adopt these methods in accurately computing gravitational waves, it is necessary to develop robust computational techniques as well as to prepare sufficient computational resources for a large-scale simulation. The purpose of this paper is to compute gravitational waves from binary neutron stars in quasiequilibrium states. A quasiequilibrium sequence of binary neutron stars can be constructed characterizing the sequence in terms of conserved quantities such as baryon rest mass and vorticity. In addition, some approximate formulations and numerical techniques have been already developed for the computation of such quasiequilibrium solutions [13–17]. These facts imply that we may avoid performing direct time evolution of the Einstein and hydrodynamic equations for obtaining binary neutron stars in quasiequilibrium. Only in computing gravitational waves do we need to integrate the Einstein equation using the quasiequilibrium solution as a source. From these reasons , we follow an idea of [12], but we propose a more systematic approximate formalism in which it is possible to compute waveforms and luminosity of gravitational waves with better accuracy using well-known computational techniques and cheap computational costs. Our method is in a sense similar to the standard post Newtonian method for the computation of gravitational waves from binaries of two-point masses in circular orbits [3,4]. Thus, before proceeding, let us briefly review an outline of the post Newtonian method. In the post Newtonian calculation, the procedure is divided into two steps: In the first step, the quasiequilibrium circular orbits of binaries are determined using post Newtonian equations of motion for two point masses, neglecting radiation reaction terms of gravitational waves. Neglect of the radiation reaction is justified for most of orbits for which the radiation reaction timescale is longer than the orbital period as shown in Eq. (1.1). After the binary orbits are determined, gravitational waves are calculated in a post-processing; one integrates the post Newtonian wave equations for gravitational waves, substituting the matter field and associated gravitational field of quasiequilibrium states as the source terms. After the computation of the gravitational wave luminosity, one can compute the radiation reaction to a quasiequilibrium circular orbit to determine a new orbit. By repeating this procedure, one can determine an evolution of a binary orbit due to radiation reaction of gravitational waves and associated gravitational wave train. As in the post Newtonian method, in our formalism, quasiequilibrium states are computed in the first procedure assuming that gravitational waves are absent. As a first step of the development of our new scheme, we adopt the so-called conformal flatness approximation for computation of the quasiequilibria in this paper. After computation of the quasiequilibrium states, we integrate the wave equation for gravitational waves (derived from the Einstein equation in Sec. IV), inputting the gravitational and matter fields of the quasiequilibrium states as the source terms. The difference between the post Newtonian method and ours is that we fully take into account general relativistic effects (under the adopted approximate formulation) and hydrodynamic, tidal deformation effects. As is shown later, these two effects play important roles for compact binary neutron stars in close orbits. A word of caution is appropriate here: We choose the conformal flatness approximation for the quasiequilibrium solutions simply because of a pragmatic reason that we currently adopt this approximation in numerical computation. It would be possible to extend this work modifying the formalism for the gravitational field of the quasiequilibrium background solutions (see discussion in Sec. VI). The purpose in this paper is to illustrate the robustness of our new framework. The organization of this paper is as follows. In Sec. II, we describe the Einstein equation in the presence of a helical (helicoidal) Killing vector [cf. Eq. (2.1)]. In deriving the equations, we do not consider any approximation and assumption except for the helical symmetry.</p>
+
+				<p>We will clarify the structure of the Einstein equation in the presence of the helical symmetry. In Sec. III, we briefly describe the gauge conditions which are suited for computing gravitational waves from binary neutron stars in quasiequilibrium orbits. In Sec. IV, after brief review of the conformal flatness approximation and hydrostatic equations for a solution of quasiequilibrium states, we introduce a linear approximation and derive the equations for computation of gravitational waves from the quasiequilibrium states. In Sec. V, we numerically compute gravitational waves from irrotational binary neutron stars in quasiequilibrium circular orbits. First, we calibrate our method by comparing the numerical results with post Newtonian formulas for gravitational waves from two point masses [2,8], adopting weakly gravitating binary neutron stars. We will demonstrate that our results agree well with post Newtonian analytic formulas [3]. Then, gravitational waves from more compact binaries are computed to point out the importance of tidal deformation and strong general relativistic effects on gravitational waves for close binaries. Section VI is devoted to a summary and discussion.</p>
+
+				<p>In the following, we use geometrical units in which G = c = 1. We adopt spherical polar coordinates; Latin indices i, j, k, . . . and Greek indices µ, ν, . . . take r, θ, ϕ and t, r, θ, ϕ, respectively. We use the following symbols for a symmetric tensor, A (ij) = (A ij + A ji )/2 and the Kronecker&apos;s delta δ ij .</p>
+
+			</div>
+			<div>
+				<head>II. BASIC EQUATIONS</head>
+
+				<p>We are going to compute gravitational waves from binary neutron stars in quasiequilibrium circular orbits using an approximate framework of the Einstein equation. Before deriving the basic equations for the approximation , we describe the full sets of the Einstein equation in the presence of a helical Killing vector as</p>
+
+				<figure>
+					<trash>ξ µ = ∂ ∂t µ + Ω ∂ ∂ϕ µ ≡ (1, ℓ i ), (2.1)</trash>
+
+
+				</figure>
+
+				<p>where Ω denotes the orbital angular velocity and ℓ i = Ω(∂/∂ϕ) i . The purpose in this section is to clarify the structure of the Einstein equation in the helical symmetric spacetimes.</p>
+
+			</div>
+			<div>
+				<head>A. 3+1 formalism for the Einstein equation</head>
+
+				<p>We adopt the 3+1 formalism for the Einstein equation [18] in which the spacetime metric is written as</p>
+
+				<figure>
+					<trash>ds 2 = g µν dx µ dx ν = (−α 2 + β j β j )dt 2 + 2β j dx j dt + γ ij dx i dx j , (2.2)</trash>
+
+
+				</figure>
+
+				<p>where g µν , α, β j (β i = γ ij β j ), and γ ij are the 4D metric , lapse function, shift vector, and 3D spatial metric, respectively. Using the unit normal to the 3D spatial hypersurface Σ t ,</p>
+
+				<figure>
+					<trash>n µ = 1 α , − β i α and n µ = (−α, 0, 0, 0), (2.3)</trash>
+
+
+				</figure>
+
+				<p>γ ij and the extrinsic curvature K ij are written as γ ij = g ij + n i n j , (2.4) K ij = −γ k i γ l j ∇ k n l , (2.5) where ∇ k is the covariant derivative with respect to g µν . For the following calculation, we define the quantities as γ = det(γ ij )</p>
+
+				<figure>
+					<trash>, (2.6) ˜ γ ij = ψ −4 γ ij , (2.7) ˜ A ij = ψ −4 K ij − 1 3 γ ij K , (2.8)</trash>
+
+
+				</figure>
+
+				<p>where ψ is a conformal factor and K ≡ K ij γ ij .</p>
+
+				<p>In contrast to the formalism which we use in 3+1 numerical simulations [19], we do not a priori impose the conditioñ γ ≡ det(˜ γ ij ) = det(η ij ) ≡ η where η ij is the metric in the flat space and η = r 4 sin 2 θ. In the following, the indices of variables with a tilde such as A ij , ˜ A ij , ˜ β i , and β i (= β i ) are raised and lowered in terms of γ ij and γ ij . Here, D i , ˜ D i , and (0) D i are defined as the covariant derivative with respect to γ ij , ˜ γ ij , and η ij , respectively. The Einstein equation is split into the constraint and evolution equations. The Hamiltonian and momentum constraint equations are</p>
+
+				<figure>
+					<trash>R − K ij K ij + K 2 = 16πE, (2.9) D i K i j − D j K = 8πJ j (2.10) or ˜ ∆ψ = ψ 8 ˜ R − 2πEψ 5 − ψ 5 8 ˜ A ij A ij − 2 3 K 2 , (2.11) ˜ D i (ψ 6 ˜ A i j ) − 2 3 ψ 6 ˜ D j K = 8πJ j ψ 6 , (2.12) where E and J i are defined from the energy-momentum tensor T µν as E = T µν n µ n ν , (2.13) J i = −T µν n µ γ ν i . (2.14)</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>R and</head>
+
+				<p>R are the scalar curvatures with respect to γ ij and γ ij , and ∆ = ˜ D k ˜ D k . The elliptic-type equation (2.11) will be used for determining ψ. The evolution equations for the geometry are ∂ t γ ij = −2αK ij + D i β j + D j β i ,</p>
+
+				<figure>
+					<trash>(2.15) ∂ t K ij = αR ij − D i D j α + α(KK ij − 2K ik K k j ) + (D j β l )K li + (D i β l )K lj + (D l K ij )β l − 8πα S ij + 1 2 γ ij E − S k k , (2.16) where R ij is the Ricci tensor with respect to γ ij and S ij = γ k i γ l j T kl . (2.17) By operating γ ij in Eqs. (2.15) and (2.16), we also have ∂ t ψ= ψ 6 −αK + D k β k − ψ 12 ∂ t ˜ γ ˜ γ , (2.18) ∂ t K= αK ij K ij − ∆α + 4πα(E + S k k ) + β j ∂ j K, (2.19) where ∆ = D k D k . To write the evolution equation of K in the form of Eq. (2.19), we use the Hamiltonian constraint equation (2.9). Using Eqs. (2.15) and (2.18), the evolution equation for γ ij is described as ∂ t ˜ γ ij − 1 3˜ γ)˜ γ ij = −2α A ij + ˜ D i ˜ β j + ˜ D j ˜ β i − 2 3 ˜ γ ij D k ˜ β k . (2.20) B. Einstein equation in helical symmetric spacetime</trash>
+
+
+				</figure>
+
+				<p>In the presence of the helical Killing vector ξ µ , γ ij and K ij satisfy L − ξ γ ij = 0 = L − ξ K ij where L − ξ denotes the Lie derivative with respect to ξ µ . In spherical polar coordinates, the relations are explicitly written as ∂ t γ ij = −ℓ k ∂ k γ ij , ∂ t K ij = −ℓ k ∂ k K ij .</p>
+
+				<figure>
+					<trash>(2.21) Using Eqs. (2.21), Eqs. (2.15), (2.16), (2.18), and (2.19) are rewritten as 2αK ij = D i ω j + D j ω i , (2.22) 0= αR ij − D i D j α + α(KK ij − 2K ik K k j ) + (D j ω l )K li + (D i ω l )K lj + ω l D l K ij − 8πα S ij + 1 2 γ ij E − S k k , (2.23) αK= D i ω i , (2.24) −ω k ∂ k K= αK ij K ij − ∆α + 4πα(E + S k k ), (2.25) where ω k ≡ β k + ℓ k . (2.26) Equation (2.20) is also rewritten in the form 2α A ij = ˜ D i ˜ ω j + ˜ D j ˜ ω i − 2 3 ˜ γ ij D k ˜ ω k = ˜ D i ˜ β j + ˜ D j ˜ β i − 2 3 ˜ γ ij D k ˜ β k +ℓ k ∂ k ˜ γ ij − 1 3˜ γ)˜ γ ij , (2.27) where ω i = ˜ γ ij ω j (˜ ω i = ω i ), and we have used relation ∂ t ˜ γ ij = −ℓ k ∂ k ˜ γ ij . Substituting Eq. (2.27) into Eq. (2.12), we obtain equations for ω i and β i as ˜ ∆˜ D j ˜ D k ˜ ω k + ˜ R jk ω k + ˜ D i ln ψ 6 α ˜ D i ˜ ω j + ˜ D j ˜ ω i − 2 3 ˜ γ ij D k ˜ ω k − 4 3 α ˜ D j K = 16παJ j (2.28) and ˜ ∆ ˜ β j + 1 3 ˜ D j ˜ D k ˜ β k + ˜ R jk β k + ˜ γ jk ∆ℓ k + 1 3 ˜ D j ˜ D k ˜ ℓ k + ˜ R k l ℓ l + ˜ D i ln ψ 6 α ˜ D i ˜ β j + ˜ D j ˜ β i − 2 3 ˜ γ ij D k ˜ β k + ℓ k ∂ k ˜ γ ij − 1 3˜ γ)˜ γ ij − 4 3 αD j K = 16παJ j . (2.29) Equation (2.29</trash>
+
+
+				</figure>
+
+				<p>) is solved to determine β i , after we appropriately specify the spatial gauge condition for γ ij .</p>
+
+				<p>In handling Eq. (2.29), the following relation is useful to evaluate the sum of the fourth and sixth terms in Eq.</p>
+
+				<figure>
+					<trash>(2.29): L l ≡ ˜ ∆ℓ l + ˜ R l k ℓ k = ℓ k (∂ k ˜ Γ l ij )˜ γ ij . (2.30) Here, ˜ Γ k ij is the Christoffel symbol with respect tõ γ ij . The equation for γ ij is derived from Eq. (2.23). For the derivation, we first rewrite R ij as R ij = ˜ R ij + R ψ ij , (2.31) where R ij is the Ricci tensor with respect tõ γ ij and R ψ ij = − 2 ψ ˜ D i ˜ D j ψ − 2 ψ ˜ γ ij ∆ψ + 6 ψ 2 ˜ D i ψ ˜ D j ψ − 2 ψ 2 ˜ γ ij D k ψ ˜ D k ψ. (2.32) Using (0) D k , ˜ R ij is written as ˜ R ij = 1 2 −∆ flat h ij + (0) D j (0) D k h ki + (0) D i(0) D k h kj − 2 (0) D i C k kj + 2 (0) D k (f kl C l,ij ) − 2C l kj C k il + 2C l ij C k kl , (2.33) where ∆ flat = (0) D k(0) D k , and we split γ ij and γ ij as η ij + h ij and η ij + f ij , respectively. C k ij and C k,ij are defined as C k ij ≡ ˜ γ kl 2 (0) D i h jl + (0) D j h il − (0) D l h ij , C l,ij ≡ 1 2 (0) D i h jl + (0) D j h il − (0) D l h ij . (2.34) We note that Γ i ij = ∂ j {ln( √ ˜ γ)} and C i ij = ∂ j {ln( ˜ γ/η)}. It is also worthy to note that in the linear approximation in h ij , L i = ˜ γ ij L j reduces to L i = ℓ k ∂ k (0) D l h li − 1 2 ∂ i (h kl η kl ) + O[(h ij ) 2 ]. (2.35) The second line in Eq. (2.23) is written as (D j ω k )K ki + (D i ω k )K kj + ω k D k K ij = (D j β k )K ki + (D i β k )K kj + β k D k K ij + 1 3 Kℓ k ∂ k γ ij + γ ij ℓ k ∂ k K + ℓ k ∂ k (ψ 4 ˜ A ij ). (2.36) Substituting Eq. (2.27) into the last term, we find the presence of a term as 1 2 ℓ k ∂ k ψ 4 α (ℓ l ∂ l h ij ) . (2.37) Recalling the presence of a term −∆ flat h ij /2 iñ R ij , it is found that Eq. (2.23) constitutes a Helmholtz-type equation for the nonaxisymmetric wave parts of h ij as α∆ flat − (ℓ k ∂ k ) ψ 4 α (ℓ l ∂ l ) h ij = (source) ij . (2.38)</trash>
+
+
+				</figure>
+
+				<p>In the axisymmetric case, the equation for h ij changes to an elliptic-type equation. This is natural because in stationary, axisymmetric spacetime, there do not exist gravitational waves. In the nonaxisymmetric case, also, the axisymmetric part of h ij obeys an elliptic-type equation , and hence it is regarded as a nonwave component [20]. As a consequence of the calculations in this section, it appears that ψ and β i obey elliptic-type equations and hence they seem to be nonwave components. However, it is not always true. If we would not carefully choose gauge conditions, these variables could contain a wave component even in the wave zone. To extract gravitational waves simply from nonaxisymmetric parts of h ij , it is preferable to suppress wave components in these variables with an appropriate choice of gauge conditions. In the next section, we propose a gauge condition which meets the above demand.</p>
+
+			</div>
+			<div>
+				<head>III. GAUGE CONDITIONS</head>
+
+				<p>In this section, we propose gauge conditions which are suited for the computation of gravitational waves emitted from quasiequilibrium states. As the time slicing, we adopt the maximal slicing condition as</p>
+
+				<figure>
+					<trash>K = 0 = ∂ t K. (3.1)</trash>
+
+
+				</figure>
+
+				<p>Then, an elliptic-type equation for α is obtained; ∆α = 4πα(E + S k k ) + α ˜ A ij A ij . (3.2) This equation may be written as ˜ ∆(αψ) = 2παψ 5 (E + 2S k k ) + 7 8 αψ 5 ˜</p>
+
+				<figure>
+					<trash>A ij A ij + αψ 8 ˜ R. (3.3) Note that in the case K = 0, it is found from Eq. (2.24) that the condition D k ω k = 0 (3.4) must be guaranteed in solving Eq. (2.28) [or (2.29)]</trash>
+
+
+				</figure>
+
+				<p>.</p>
+
+				<p>Namely, the solution of Eq. (2.28) in the condition K = 0 has to satisfy the relation D k ω k = 0. It is easy to show that the condition is really guaranteed if Eq. (2.19), the Hamiltonian constraint, and the Bianchi identity are satisfied. We propose spatial gauge conditions for h ij in which η ij h ij = O[(h ij ) 2 ], and</p>
+
+				<figure>
+					<trash>(0) D k h ki + (0) D k ln ψ 6 α h ki = O[(h ij ) 2 ], (3.5</trash>
+
+					<figDesc>) where on the right-hand side of these equations, we allow adding certain nonlinear terms of h ij . For simplicity, we consider here the case in which they are vanishing. Namely, we adopt a transverse and tracefree condition for ψ 6 h ij /α. In this case,</figDesc>
+					<trash>˜ γ = η{1 + O[(h ij ) 2 ]}. (3.6)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>There are two merits in choosing this gauge condition. The first one is that using Eq. (2.35), we can derive a relation in this gauge as</figDesc>
+					<trash>L j + ˜ D i ln ψ 6 α ℓ k ∂ k ˜ γ ij = −ℓ k ∂ k (0) D j ln ψ 6 α + O[(h ij ) 2 ]. (3.7) Thus, the equation for determining β i [Eq. (2.29)]</trash>
+
+
+				</figure>
+
+				<p>does not contain linear terms of h ij except for coupling terms betweeñ β i and h ij and between ∂ ϕ [∂ i ln(ψ 6 /α)] and h ij .</p>
+
+				<p>Since the magnitude of these coupling terms and nonlinear terms of h ij is much smaller than that of leading order terms such as ∆ flat β i and 16παJ i , we can consider that effects due to h ij are insignificant in the solution of β i . If information on gravitational waves is mainly carried by h ij , not by other metric components, the solution of the equation for β i is not contaminated much by the wave components and it is mainly composed of a nonwave component in the wave zone. As a result of this fact, it is allowed to regard β k in the wave zone as a nonwave component.</p>
+
+				<p>In the maximal slicing condition K = 0, the following relation holds:</p>
+
+				<figure>
+					<trash>− (ℓ k + β k )∂ k ln ψ 6 = 1 √ ˜ γ ∂ k [ ˜ γ(ℓ k + β k )]. (3.8)</trash>
+
+
+				</figure>
+
+				<p>Since the right-hand side of this equation is weakly dependent on h ij and mainly composed of nonwave components , we may also regard ψ in the wave zone as a nonwave component.</p>
+
+				<p>The second merit appears in the equation for h ij , which is written as</p>
+
+				<figure>
+					<trash>∆ flat − 1 α (ℓ k ∂ k ) ψ 4 α (ℓ l ∂ l ) h ij + 2 (0) D (i h j)k (0) D k ln ψ 6 α = 2 − (0) D i C k kj + (0) D k (f kl C l,ij ) − C l kj C k il + C l ij C k kl + R ψ ij − 2 α D i D j α − 4ψ 4 ˜ A ik A k j + 2 α 2ψ 4 ˜ A k(i ˜ D j) ˜ β k + ˜ β k ˜ D k (ψ 4 ˜ A ij ) + 1 α ℓ k ∂ k ψ 4 α ˜ D i ˜ β j + ˜ D j ˜ β i − 2 3 ˜ γ ij D n ˜ β n − ˜ γ ij 3ñ ∂ n ˜ γ − 8π[2S ij + γ ij (E − S k k )], (3.9)</trash>
+
+
+				</figure>
+
+				<p>where we use the condition K = 0. Osn the left-hand side, only linear terms in h ij are collected, and on the right-hand side, the nonlinear terms are located. (Note that C k ij = O(h ij ) and C i ij = O[(h ij ) 2 ].) In the linear order in h ij , Eq. (3.9) is regarded as a Helmholtztype equation in a curved spacetime for nonaxisymmetric parts of h ij . As a result, we can clarify that the nonaxisymmetric parts of h ij are wave components in the wave zone. This fact is helpful in specifying the boundary condition in the wave zone. Since both wave and nonwave components are included , it is not trivial how to impose outer boundary conditions for h ij . A solution to this problem is to use a spectrum decomposition method in which we expand h ij as</p>
+
+				<figure>
+					<trash>h ij = m h (m) ij exp(imϕ), (3.10) and solve each m mode separately. As already clarified, h (0) ij is a nonwave component and h (m) ij (m = 0) is a wave component. Thus, we can impose the outer boundary condition for both components correctly. Before closing this section, the following fact should be pointed out. For computation of quasiequilibrium states in the presence of the helical Killing vector, the minimal distortion gauge [21]</trash>
+
+
+				</figure>
+
+				<p>in which</p>
+
+				<figure>
+					<trash>D i (ψ 4 ˜ γ 1/3 ∂ t ˜ γ ij ) = 0 (3.11)</trash>
+
+					<figDesc>is not available. In this gauge, we fix the gauge condition for ∂ t ˜ γ ij , but do not specify any gauge condition for γ ij ; i.e., an initial gauge condition at t = 0 is not specified.</figDesc>
+
+				</figure>
+
+				<p>To obtain a quasiequilibrium state, on the other hand, we have to fix the gauge condition initially, and as a result, throughout the whole evolution, the gauge condition is fixed because of the presence of the helical Killing vector . This is the reason that we cannot use the minimal distortion gauge in the helical symmetric spacetimes.</p>
+
+			</div>
+			<div>
+				<head>IV</head>
+
+				<figure>
+					<figDesc>. FORMULATION FOR COMPUTATION OF GRAVITATIONAL WAVES A. Equations for background quasiequilibrium neutron stars Instead of solving the full equations derived above, in this paper, we adopt an approximate method for the computation of gravitational waves from binary neutron stars in quasiequilibrium states. First, we compute the quasiequilibrium states of binary neutron stars in the framework of the so-called conformal flatness approximation neglecting h ij [22,16,17]</figDesc>
+
+				</figure>
+
+				<p>. Then the basic equations for the gravitational field are</p>
+
+				<figure>
+					<trash>∆ flat (αψ) = 2παψ 5 (E + 2S k k ) + 7 8 αψ 5 ˜ A ij A ij , (4.1) ∆ flat ψ = −2πEψ 5 − ψ 5 8 ˜ A ij A ij , (4.2) ∆ flat β j + 1 3 (0) D j (0) D k ˜ β k + (0) D i ln ψ 6 α (Lβ) ij = 16παJ j , (4.3) where (Lβ) ij = (0) D i ˜ β j + (0) D j ˜ β i − 2 3 η ij (0) D k ˜ β k , (4.4) ˜ A ij = 1 2α (Lβ) ij , (4.5)</trash>
+
+
+				</figure>
+
+				<p>and we set K = 0. The spatial gauge condition (3.5) is automatically satisfied since we assume h ij = 0. In the far zone, these gravitational fields behave as</p>
+
+				<figure>
+					<trash>α = 1 − M r + l≥2,m α lm (r)Y lm , (4.6) ψ = 1 + M 2r + l≥2,m ψ lm (r)Y lm , (4.7) ˜ β i = l≥1,m a lm (r)(Y lm , 0, 0) +b lm (r)(0, ∂ θ Y lm , ∂ ϕ Y lm ) +c lm (r)(0, ∂ ϕ Y lm / sin θ, −∂ θ Y lm sin θ) , (4.8)</trash>
+
+
+				</figure>
+
+				<p>where M denotes the Arnowitt-Deser-Misner (ADM) mass of the system, and Y lm (θ, ϕ) is the spherical harmonic function. We implicitly assume that the real part of Y lm is taken. The asymptotic behaviors of α lm , ψ lm , a lm , b lm , and c lm at r → ∞ are</p>
+
+				<figure>
+					<trash>α lm → r −l−1 , ψ lm → r −l−1 , a lm → r −l , b lm → r −l−1 , c lm → r −l−2 . (4.9)</trash>
+
+
+				</figure>
+
+				<p>The coefficient of the monopole part of α should be −M for quasiequilibrium states in the conformal flatness approximation [23]. This relation is equivalent to the scalar virial relation so that it can be used for checking numerical accuracy [see Eq. (5.7)].</p>
+
+				<p>We adopt the energy-momentum tensor for the perfect fluid in the form T µν = (ρ + ρε + P )u µ u ν + P g µν , (4.10) where ρ, ε, P , and u µ denote the rest mass density, specific internal energy, pressure, and four-velocity, respectively . We adopt polytropic equations of state as</p>
+
+				<figure>
+					<trash>P = κρ Γ , (4.11)</trash>
+
+
+				</figure>
+
+				<p>where κ is a polytropic constant, Γ = 1 + 1/n, and n a polytropic index. Using the first law of thermodynamics with Eq. (4.11), ε is written as nP/ρ. The assumption that κ is constant during the late inspiraling phase is reasonable because the timescale of orbital evolution for binary neutron stars due to the radiation reaction of gravitational waves is much shorter than the heating and cooling timescales of neutron stars.</p>
+
+				<p>In this paper, we adopt n = 1 as a reasonable qualitative approximation to a moderately stiff, nuclear equation of state. Since the timescale of viscous angular momentum transfer in the neutron star is much longer than the evolution timescale associated with gravitational radiation, the vorticity of the system conserves in the late inspiraling phase of binary neutron stars [24]. Furthermore, the orbital period just before the merger is about 2 ms which is much shorter than the spin period of most of neutron stars. These imply that even if the spin of neutron stars would exist at a distant orbit and would conserve throughout the subsequent evolution, it is negligible at close orbits for most of neutron stars of the spin rotational period longer than ∼ 10 ms. Thus, it is reasonable to assume that the velocity field of neutron stars in binary just before the merger is irrotational.</p>
+
+				<p>In the irrotational fluid, the spatial component of u µ is written as</p>
+
+				<figure>
+					<trash>u k = 1 h ∂ k Φ, (4.12) where h = 1</trash>
+
+
+				</figure>
+
+				<p>+ ε + P/ρ and Φ denotes the velocity potential . Then, the continuity equation is rewritten to an elliptic-type equation for Φ as</p>
+
+				<figure>
+					<trash>D i (ραh −1 D i Φ) − D i [ραu t (ℓ i + β i )] = 0. (4.13)</trash>
+
+
+				</figure>
+
+				<p>In the presence of the helical Killing vector, the relativistic Euler equation for irrotational fluids can be integrated to give a first integral of the Euler equation as [25]</p>
+
+				<figure>
+					<trash>h u t + hu k V k = const, (4.14) where V k = u k /u t − ℓ k . Thus, Eqs. (4.13) and (4.14) constitute the basic equations for hydrostatics. B. Equation for hij After we obtain the quasiequilibrium states solving the coupled equations of Eqs. (4.1)–(4.3), (4.13), and (4.14), the wave equation for h ij [Eq. (3.9</trash>
+
+
+				</figure>
+
+				<p>)] is solved up to linear order in h ij in the background spacetime of the quasiequilibrium states. Without linearization, nonlinear terms of h ij cause a problem in integrating the equation for h ij in the wave zone because standing gravitational waves exist in the wave zone in the helical symmetric spacetimes and as a result the nonlinear terms of h ij fall off slowly as r −2 .</p>
+
+				<p>In a real spacetime, the helical symmetry is violated because of the existence of a radiation reaction to the orbits. This implies that the existence of the standing wave and the associated problem are unphysical. Thus, we could mention that linearization is a prescription to exclude an unphysical pathology associated with the existence of the standing wave.</p>
+
+				<p>In the absence of nonlinear terms of gravitational waves, we cannot take into account the nonlinear memory effect [26]. However, as shown in [26], this effect builds up over a long-term inspiraling timescale, and as a result, it only slightly modifies the wave amplitude and luminosity of gravitational waves at a given moment. Thus, it is unlikely that its neglect significantly affects the following results.</p>
+
+				<p>In addition to a linear approximation with respect to h ij , we carry out a further approximation, neglecting terms of tiny contributions such as coupling terms between β k and h ij and between T µν and h ij . We have found that the magnitude of these terms is much smaller than the leading order terms and its contribution to the amplitude of gravitational waves appears to be much smaller than the typical numerical error in this paper of ∼ 1%. We only include coupling terms between h ij and spherical parts of α and ψ since they yield the tail effect for gravitational waves which significantly modifies the amplitudes of gravitational waves [27]. We also neglect the perturbed terms of ψ, α, and β i associated with h ij since they do not contain information of gravitational waves in the wave zone under the gauge conditions adopted in this paper [28]. With these simplifications, the numerical procedure for a solution of h ij is greatly simplified. As a consequence of the above approximation, we obtain the wave equation of h ij as</p>
+
+				<figure>
+					<trash>∆ flat − ψ 4 0 α 2 0 (ℓ k ∂ k ) 2 h ij + 2 (0) D (i h j)k (0) D k ln ψ 6 0 α 0 = 2R ψ ij − 2 α D i D j α − 4ψ 4 ˜ A ik A k j + 2 α 2ψ 4 ˜ A k(i(0) D j) ˜ β k + ˜ β k (0) D k (ψ 4 ˜ A ij ) + 1 α ℓ k ∂ k ψ 4 α (Lβ) ij − 8π[2S ij + ψ 4 η ij (E − S k k )] QE + 2 δR ψ ij − δ D i D j α α , (4.15) where [· · ·]</trash>
+
+
+				</figure>
+
+				<p>QE is calculated by substituting the geometric and matter variables of quasiequilibrium states: In the following, we denote it as S QE ij . Here δR ψ ij and δ(D i D j α/α) denote coupling terms between linear terms of h ij and ψ 0 or α 0 in R ψ ij and D i D j α/α, and ψ 0 and α 0 denote the spherical part of ψ and α which are computed by performing the surface integral over a sphere of fixed radial coordinates as</p>
+
+				<figure>
+					<trash>Q 0 (r) = 1 4π r=const. QdS, (4.16) where dS = sin θdθdϕ. Note that in the present formulation , the spatial gauge condition is η ij h ij = 0 and (0) D k h ki + (0) D k ln ψ 6 0 α 0 h ki = 0. (4.17)</trash>
+
+
+				</figure>
+
+				<p>We neglect coupling terms of h ij with α and ψ except for with α 0 and ψ 0 since their order of magnitude is as small as that of coupling terms between h ij and β i .</p>
+
+				<figure>
+					<trash>In Eqs. (4.15) and (4.17), ψ 6 0 /α 0 and ψ 4 0 /α 2 0 are different from the spherical part of ψ 6 /α and ψ 4 /α 2</trash>
+
+
+				</figure>
+
+				<p>in the near zone, although in the wave zone they are almost identical. This implies that in deriving Eqs. (4.15) and (4.17), certain ambiguity remains. However, in numerical computations, we have found that the difference of the numerical results between two formulations is much smaller than the typical numerical error. For this reason, we fix the formulation and gauge condition in the form of Eqs. (4.15) and (4.17). As mentioned in Sec. I, the procedure for the computation of gravitational waves adopted here is quite similar to that for obtaining gravitational waves in the post Newtonian approximation [3,4]: In the post Newtonian work, one first determines an equilibrium circular orbit from post Newtonian equations of motion, neglecting the dissipation terms due to gravitational radiation. Then, one substitutes the spacetime metric and matter fields into the source term for a wave equation of gravitational waves. In this case, no term with regard to gravitational waves and the radiation reaction metric is involved in the source term of the wave equation. We may explain that we here follow this procedure. The main difference between our present method and post Newtonian calculations is that we fully include a general relativistic effect in ψ, α, and β k for quasiequilibrium states without any approximation, and that we take into account the effect of tidal deformation of each neutron star. In the post Newtonian approximation, h ij is present from second post Newtonian (2PN) order [30,31]. This implies that quasiequilibrium states obtained in the conformal flatness approximation and gravitational waves computed in their background spacetimes contain an error of 2PN order from the viewpoint of the post Newtonian approximation. To obtain quasiequilibrium states and associated gravitational waveforms for better post Newtonian accuracy, it is necessary to take into account h ij . Here, we emphasize that our method does not restrict the zeroth-order solution of the three-metric in conformally flat form. Even if quasiequilibrium states are constructed in a formalism with h ij , we can compute gravitational waves in the same framework. In this paper , we adopt the conformal flatness approximation simply because of a pragmatic reason as mentioned in Sec. I. With a modified formalism and a new numerical code taking into account h ij , it would be possible to improve the accuracy of quasiequilibrium states appropriately in the present framework (see discussion in Sec. VI).</p>
+
+				<figure>
+					<trash>Since h ij in Eq. (4.15) couples only with functions of r, we decompose it using the spherical harmonic function Y lm (θ, ϕ) as h ij = l,m A lm   Y lm 0 0 * −r 2 Y lm /2 0 * * −r 2 sin 2 θY lm /2   + l,m B lm   0 ∂ θ Y lm ∂ ϕ Y lm * 0 0 * * 0   + l,m r 2 F lm   0 0 0 * W lm X lm * * − sin 2 θW lm   + l,m C lm   0 ∂ ϕ Y lm / sin θ −∂ θ Y lm sin θ * 0 0 * * 0   + l,m r 2 D lm   0 0 0 * −X lm / sin θ W lm sin θ * * sin θX lm   , (4.18)</trash>
+
+
+				</figure>
+
+				<p>where * denotes the relations of symmetry. Note that the trace-free condition for h ij is used in defining Eq</p>
+
+				<figure>
+					<trash>. (4.18). Here, A lm , B lm , C lm , D lm , and F lm are functions of r, and W lm = (∂ θ ) 2 − cot θ∂ θ − 1 sin 2 θ (∂ ϕ ) 2 Y lm , (4.19) X lm = 2∂ ϕ ∂ θ − cot θ Y lm . (4.20) Using Eq. (4.18), the equations of the spatial gauge condition are explicitly written as dA lm dr + 3 r A lm − λ l B lm r 2 + A lm d dr ln ψ 6 0 α 0 = 0, (4.21) dB lm dr + 2 r B lm − A lm 2 − ¯ λ l F lm +B lm d dr ln ψ 6 0 α 0 = 0, (4.22) dC lm dr + 2 r C lm + ¯ λ l D lm + C lm d dr ln ψ 6 0 α 0 = 0, (4.23) where λ l = l(l+1) and ¯ λ l = λ l −2. From these equations, we find that the following relations have to be satisfied in this gauge condition: (1) for l = 0, A lm ∝ α 0 /r 3 ψ 6 0 with B lm = F lm = C lm = D lm = 0; (2) for l = 1, A lm ∝ α 0 /r 2 ψ 6 0 (B lm ∝ α 0 /rψ 6 0 ) or A lm ∝ α 0 /r 4 ψ 6 0 (B lm ∝ α 0 /r 3 ψ 6 0 ) with F lm = 0; (3) for l = 1, C lm ∝ α 0 /r 2 ψ 6 0</trash>
+
+
+				</figure>
+
+				<p>with D lm = 0. The behavior of A lm , B lm , and C lm for l = 0 and 1 is regular for r → ∞, but not for r → 0. This implies that they should vanish for l = 0 and 1, and modes only of l ≥ 2 should be nonzero. Thus, nonwave components in h ij of l ≤ 1 can be erased in the present gauge condition. For l ≥ 2, B lm , F lm , and D lm can be calculated from A lm and C lm because of our choice of the spatial gauge condition. This implies that we only need to solve the equations for A lm and C lm , which are derived as (cf.</p>
+
+				<figure>
+					<trash>Appendix A) d 2 dr 2 + 6 r + 2 d dr ln ψ 6 0 α 0 d dr − λ l − 6 r 2 + ψ 4 0 α 2 0 m 2 Ω 2 + 4 r d dr ln ψ 6 0 α 0 + 2 d 2 dr 2 ln ψ 6 0 α 0 A lm − d ln α 0 dr dA lm dr − 2 d ln ψ 0 dr × dA lm dr − 6A lm r − 2A lm d dr ln ψ 6 0 α 0 = r=const. dSS QE rr Y * lm ≡ S A lm (4.24) d 2 dr 2 + 2 r + d dr ln ψ 6 0 α 0 d dr − λ l r 2 + ψ 4 0 α 2 0 m 2 Ω 2 + d 2 dr 2 ln ψ 6 0 α 0 C lm + 2 r d dr ln(α 0 ψ 2 0 ) + 4 d dr ln ψ 0 2 +4 d dr ln ψ 0 d dr ln α 0 C lm = 1 λ l r=const. dS S QE rθ ∂ ϕ Y * lm sin θ − S QE rϕ ∂ θ Y * lm sin θ ≡ S C lm , (4.25) where Y * lm denotes the complex conjugate of Y lm , and Eqs. (4.21) and (4.23</trash>
+
+
+				</figure>
+
+				<p>) are used to erase B lm , F lm and D lm in these equations. For the case m = 0, these equations are elliptic-type equations for A lm and C lm , implying that they are not gravitational waves.</p>
+
+				<p>In this paper, we consider the binaries of two identical neutron stars. Then, the system has π-rotation symmetry . In this case, A lm of even l and even m and C lm of odd l and even m are nonzero, and other components are zero. S A lm and S C lm of m = 0 behave as O(l −l−1 ) for r → ∞ because of the presence of a term [cf.</p>
+
+				<figure>
+					<trash>Eq. (4.9)] 1 α ℓ k ∂ k ψ 4 α (Lβ) ij . (4.26)</trash>
+
+
+				</figure>
+
+				<p>For l = 2 and 3, the falloff of this term is so slow that it could become a source of numerical errors in integrating Eqs. (4.24) and (4.25) for the computation of gravitational waves in the wave zone. Furthermore, Eq. (4.26) gives a main contribution for solutions of A lm and C lm in the wave zone; namely, we need to carefully estimate the contribution from this term for an accurate computation of gravitational waves. To resolve this problem, we transform the variables from A lm and C lm to new variables as</p>
+
+				<figure>
+					<trash>ˆ A lm = A lm + 1 imΩ r=const. dS(Lβ) rr Y * lm , (4.27) ˆ C lm = C lm + 1 imΩλ l r=const. dS (Lβ) rθ ∂ ϕ Y * lm sin θ −(Lβ) rϕ ∂ θ Y * lm sin θ , (4.28) and rewrite Eqs. (4.24) and (4.25) in terms of</trash>
+
+
+				</figure>
+
+				<p>A lm and C lm . With this procedure, the source terms of the wave equations for A lm and C lm fall off as O(r −l−3 ), so that it becomes feasible to accurately integrate the wave equations without technical difficulty.</p>
+
+				<figure>
+					<trash>D. Boundary conditions Ordinary differential wave equations for A lm and C lm with 2 ≤ l ≤ 6 and 2 ≤ |m| ≤ 6 are solved, imposing boundary conditions at r = 0 as d ˆ A lm dr = d ˆ C lm dr = 0 (4.29) and at a sufficiently large radius r = r max ≫ λ ≡ 2π(mΩ) −1 as d(r 3 ˆ A lm ) dr * = imΩr 3 A lm , (4.30) d(r ˆ C lm ) dr * = imΩrC lm , (4.31) where r * denotes a tortoise coordinate defined by r * = dr ψ 2 0 α 0 . (4.32) Here, we assume the asymptotic behaviors ˆ A lm → C A exp(imΩr * ) r 3 , (4.33) ˆ C lm → C C exp(imΩr * ) r , (4.34) where C A and C C are constants.</trash>
+
+
+				</figure>
+
+				<p>Note that for obtaining an &quot; equilibrium &quot; state in which no energy is lost from the system, we should adopt the ingoing-outgoing wave boundary condition for keeping an orbit. However, the purpose here is to compute realistic , outgoing gravitational waves, so that we adopt Eqs. (4.33) and (4.34) as the outer boundary conditions. For m = 0, the falloff of the term (4.26) is not very slow, so that we do not have to change variables. Elliptictype ordinary differential equations (ODEs) for A lm and C lm are solved, imposing the boundary conditions at r =</p>
+
+				<figure>
+					<trash>0 as d(A lm /r l−2 ) dr = 0, (4.35) d(C lm /r l ) dr = 0 (4.36) and the outer boundary conditions as A lm → r −l−2 , (4.37) C lm → r −l−1 . (4.38)</trash>
+
+
+				</figure>
+
+				<p>Note that these outer boundary conditions are determined from the asymptotic behavior of their source terms [cf.</p>
+
+				<figure>
+					<trash>S QE ij and Eq. (4.9)].</trash>
+
+
+				</figure>
+
+				<p>Since the wave equations are ODEs, it is easy to take a sufficiently large number of grid points up to a distant wave zone in current computational resources. If the outer boundary conditions are imposed in the distant wave zone, the above simple boundary conditions, without including higher order terms in 1/r, are acceptable . Also, ODEs can be solved with a very high accuracy in current computational resources. Thus, the numerical accuracy for gravitational waveforms computed below is limited by the accuracy of quasiequilibrium states obtained in the first step (i.e., the source terms of the wave equations limit the accuracy).</p>
+
+			</div>
+			<div>
+				<head>E. Formulas for gravitational wave amplitude and luminosity</head>
+
+				<p>In the distant wave zone, + and × modes of gravitational waves, h + and h × , are defined as [29]</p>
+
+				<figure>
+					<trash>h + ≡ 1 2r 2 h θθ − h ϕϕ sin 2 θ , (4.39) h × ≡ 1 r 2 sin θ h θϕ (4.40) and, thus, h + = 2≤l≤6 m =0 F lm W lm − D lm X lm sin θ , (4.41) h × = 2≤l≤6 m =0 F lm X lm sin θ + D lm W lm . (4.42) In the distant wave zone, F lm and D lm can be obtained from A lm and C lm as F lm = − (mΩ) 2 ˆ A lm r 2 λ l ¯ λ l , (4.43) D lm = − imΩ C lm ¯ λ l . (4.44) For the latter, we write h + in the wave zone as h + = 1 D ˆ H 22 (1 + u 2 ) cos(2Ψ) + ˆ H 32 (2u 2 − 1) cos(2Ψ) + ˆ H 42 (7u 4 − 6u 2 + 1) cos(2Ψ) + ˆ H 44 (1 − u 4 ) cos(4Ψ) + ˆ H 52 (12u 4 − 11u 2 + 1) cos(2Ψ) + ˆ H 54 (4u 2 − 1)(1 − u 2 ) cos(4Ψ) + ˆ H 62 (495u 6 − 735u 4 + 289u 2 − 17) cos(2Ψ) + ˆ H 64 (33u 4 − 10u 2 + 1)(1 − u 2 ) cos(4Ψ) + ˆ H 66 (u 2 + 1)(1 − u 2 ) 2 cos(6Ψ) , (4.45)</trash>
+
+
+				</figure>
+
+				<p>where Ψ = ϕ − Ωt, D is the distance from a source to an observer, and H lm denotes the amplitude for each multipole component (l, m). Here, we assume that the mass centers for two stars are located along x-axis at t = 0. The gravitational wave luminosity is computed from [29]</p>
+
+				<figure>
+					<trash>dE dt = D 2 16π r→∞ dS( ˙ h 2 + + ˙ h 2 × ) = D 2 λ l ¯ λ l 16π 2≤l≤6 m =0 (mΩ) 2 (|F lm | 2 + |D lm | 2 ), (4.46) where ˙ h +,× = ∂h +,× /∂t. V. NUMERICAL COMPUTATION A. Numerical method and definition of quantities 1.</trash>
+
+					<figDesc>Computation of zeroth-order solutions : Quasiequilibrium sequence of binary neutron stars</figDesc>
+
+				</figure>
+
+				<p>Following previous works [16,17], we define the coordinate length of semimajor axis R 0 and half of orbital separation d for a binary of identical neutron stars as</p>
+
+				<figure>
+					<trash>R 0 = R out − R in 2 , (5.1) d = R out + R in 2 , (5.2) where R in and R out denote coordinate distances from the mass center of the system (origin) to the inner and outer edges of the stars along the major axis. To specify a model along a quasiequilibrium sequence, we in addition define a nondimensional separation as = d R 0 . (5.3) At d = 1</trash>
+
+
+				</figure>
+
+				<p>, the surfaces of two stars contact and at d → ∞, the separation of two stars is infinite. In the case n = 1, the sequences of binaries terminate at d = ˆ d min ≃ 1.25 for which the cusps (i.e., Lagrangian points) appear at the inner edges of neutron stars [17]. Also it is found that for d &gt; ∼ 2, the tidal effect is not very important. Thus, we perform a computation for 1.25 ≤ ˆ d ≤ 3.</p>
+
+				<p>In using the polytropic equations of state (with the geometrical units c = G = 1), all quantities can be normalized using κ as nondimensional as</p>
+
+				<figure>
+					<trash>¯ M = M κ n/2 , ¯ J = Jκ n , ¯ R c = R c κ n/2 , ¯ Ω = Ωκ −n/2 , (5.4)</trash>
+
+					<figDesc>where M , J, and R denote the total ADM mass, total angular momentum, and a circumferential radius. Hence, in the following, we use the unit with κ = 1. For later convenience, we also define several masses as follows: M 0 : the rest mass of a spherical star in isolation, M g : the ADM mass of a spherical star in isolation, M t = 2 M g , M : the total ADM mass of a binary system. Here M is obtained by computing the volume integral of the right-hand side of Eq. (4.2). Note that M is not equal to M t in the presence of the binding energy between two stars. The binding energy of one star in isolation and the total binding energy of the system is defined as</figDesc>
+					<trash>E b = M g − M 0 , (5.5) E t = M − 2M 0 . (5.6)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>The energy and angular momentum are monotonically decreasing functions of d(≥ ˆ d min ) for n = 1 [17]</figDesc>
+
+				</figure>
+
+				<p>irrespective of the compactness of each star. Quasiequilibrium states in the framework of the conformal flatness approximation are computed using the method developed by Ury¯ u and Eriguchi [16]. We adopt a spherical polar coordinate (r, θ, ϕ) in solving basic equations for gravitational fields [cf. Eqs. (4.1)–(4.3)]. Here, the coordinate origin is located at the mass center of the binary. Since we consider binaries of identical stars, the equations are numerically solved for an octant region as 0 ≤ r ≤ 100R 0 and 0 ≤ θ, ϕ ≤ π/2. We typically take uniform grids of 51 grid points for θ and ϕ. For the radial direction, we adopt a nonuniform grid and the typical grid setting is as follows: For 0 ≤ r ≤ 5R 0 , we take 201 grid points uniformly (i.e., grid spacing ∆r = 0.025R 0 ). On the other hand, for 5R 0 ≤ r ≤ 100R 0 , we take 240 nonuniform grids, i.e., in total 441 grid points for r. A fourth-order accurate method is used for finite differencing of θ and ϕ directions and a second-order accurate one is used for r direction. Hydrostatic equations are solved using the so-called body-fitted coordinates (r ′ , θ ′ , ϕ ′ ) [16] which cover the neutron star interior as 0 ≤ r ′ ≤ R 0 , 0 ≤ θ ′ ≤ π/2, and 0 ≤ ϕ ′ ≤ π, respectively. We adopt a uniform grid spacing for these coordinates with typical grid sizes of 41 for r ′ , 33 for θ ′ , and 21–25 for ϕ ′ . A second-order accurate finite differencing is applied for solving the hydrostatic equations.</p>
+
+				<p>Using this numerical scheme, we compute several sequences , fixing the rest mass M 0 and changing the binary separation d. Such sequences are considered to be evolution sequences of binary neutron stars as a result of gravitational wave emission. We characterize each sequence by the compactness which is defined as the ratio of the gravitational mass M g to the circumferential radius R c of one star at infinite separation. Hereafter, we denote it as (M/R) ∞ [cf. Table I</p>
+
+				<figure>
+					<figDesc>for relations between ¯ M g , ¯ M 0 , and (M/R) ∞ ]. Computations are performed for small compactness (M/R) ∞ = 0.05 for calibration as well as for realistic compactness as (M/R) ∞ = 0.14 and 0.19. Relevant quantities of each sequence are tabulated in Tables II and III. Convergence of a numerical solution with increasing grid numbers has been checked to be well achieved. Some of the results are shown in [16]</figDesc>
+
+				</figure>
+
+				<p>so that we do not touch on this subject in this paper. In addition to the convergence test, we also check whether a virial relation is satisfied in numerical solutions: In the framework of the conformal flatness approximation, the virial relation can be written in the form [23] V</p>
+
+				<p><formula>E = 2αψ 6 S k k + 3 8π αψ 6 K j i K i j + 1 π δ ij ∂ i ψ∂ j (αψ) d 3 x = 0. (5.7)</formula></p>
+
+				<figure>
+					<figDesc>As mentioned above, this relation is equivalent to that where the monopole part of α is equal to −M . Since this identity is not trivially satisfied in numerical solutions , violation of this relation can be used to estimate the magnitude of numerical error. The nondimensional quantity V E/M is tabulated in Tables II and III, which are typically of O(10 −5</figDesc>
+
+				</figure>
+
+				<p>). We consider that this is satisfactorily small so that the quasiequilibrium states can be used as zeroth-order solutions for the computation of gravitational waves.</p>
+
+				<p>The computations in this paper can be carried out even without supercomputers. We use modern workstations in which the typical memory and computational speed are 1 Gbyte and several 100 Mflops. Numerical solutions of quasiequilibrium states are obtained after 350 – 650 iteration processes. For one iteration, it takes about 50 sec for a single Dec Alpha 667MHz processor so that about 7–10 hours are taken for computation of one model. With these computational resources, the computation in this paper has been done in one month.</p>
+
+			</div>
+			<div>
+				<head n="2">Computation of ODEs for hij</head>
+
+				<p>For solving one-dimensional wave equations for A lm and C lm a uniform grid with the grid spacing ∆r and 10 5 grid points is used. The outer boundary is located in the distant wave zone as ∼ 80 d −3/2 λ in this setting. This makes the simple outgoing boundary conditions (4.30) and (4.31) appropriate (see discussion below). To obtain S A lm (r) and S C lm (r) in every grid point, appropriate interpolation and extrapolation are used. The extrapolation for r &gt; 100R 0 is performed taking into account the asymptotic behavior for α, β k , and ψ shown in Eq. (4.9). The equations for A lm and C lm are solved by a second-order finite-differencing scheme jointly used with a matrix inversion for a tridiagonal matrix [32]. Onedimensional elliptic-type equations for A l0 and C l0 are solved in the same grid setting, only changing the outer boundary conditions. These numerical computations can be performed in a few minutes using the same workstation described above.</p>
+
+			</div>
+			<div>
+				<head>B. Calibration of gravitational wave amplitude and luminosity 1. Convergence test</head>
+
+				<p>Convergence tests for the gravitational wave amplitude have been performed, changing the resolution for the computation of quasiequilibrium states for every compactness . As mentioned above, the error associated with the method for integrating the one-dimensional wave equation is negligible. Since the source terms of the wave equation are composed of quasiequilibrium solutions, the resolution for the quasiequilibrium affects the numerical results on gravitational waves. To find the magnitude of the numerical error, the grid size is varied from 51 to 41 and 61 for θ and ϕ and from 441 to 221 and 331 for r. It is found that varying the angular grid resolution very weakly affects the numerical results within this range; the convergence of the wave amplitude is achieved within ∼ 0.1% error. The effect of the varying radial grid size is relatively large, but we find that with a typical grid size of 441, the numerical error for the wave amplitude is &lt; ∼ 1% for (l, m) = (2, 2) and &lt; ∼ 2% for (3,2), (4,2), and (4,4). Since the amplitude of the (2,2) mode is underestimated by &lt; ∼ 1%, in the following, the total amplitude and luminosity of gravitational waves are likely to be underestimated by &lt; ∼ 1% and &lt; ∼ 2%, respectively.</p>
+
+			</div>
+			<div>
+				<head n="2">Comparison between numerical results and post Newtonian formulas for a weakly gravitating binary</head>
+
+				<figure>
+					<figDesc>Before a detailed analysis on gravitational waves from compact binary neutron stars, we carry out a calibration of our method and our numerical code by comparing the numerical results with the post Newtonian formulas for a binary of small compactness (M/R) ∞ . For calibration here, we adopt (M/R) ∞ = 0.05 (cf. Table I for ¯ M g and ¯ M 0 , and Table II for the quasiequilibrium sequence). We compare the numerical results with post Newtonian formulas of gravitational waveforms for a binary of two point masses in circular orbits. Defining an orbital velocity as v ≡ (M t Ω) 1/3 , the post Newtonian waveform from the two point masses orbiting in the equatorial plane is decomposed in the form [2,33]</figDesc>
+					<trash>h + = 2ηM v 2 D H 22 (1 + u 2 ) cos(2Ψ) + H 32 (2u 2 − 1) cos(2Ψ) + H 42 (7u 4 − 6u 2 + 1) cos(2Ψ) + H 44 (1 − u 4 ) cos(4Ψ) + H 52 (12u 4 − 11u 2 + 1) cos(2Ψ) + H 54 (4u 2 − 1)(1 − u 2 ) cos(4Ψ) + H 62 (495u 6 − 735u 4 + 289u 2 − 17) cos(2Ψ) + H 64 (33u 4 − 10u 2 + 1)(1 − u 2 ) cos(4Ψ) + H 66 (u 2 + 1)(1 − u 2 ) 2 cos(6Ψ) , (5.8)</trash>
+
+
+				</figure>
+
+				<p>where u = cos θ, η denotes the ratio of the reduced mass to M t which is 1/4 for equal-mass binaries, and</p>
+
+				<figure>
+					<trash>H 22 = − 1 − 107 − 55η 42 v 2 + 2πv 3 − 2173 + 7483η − 2047η 2 1512 v 4 − 107 − 55η 21 πv 5 , H 32 = − 2 3 (1 − 3η)v 2 − 193 − 725η + 365η 2 90 v 4 +2π(1 − 3η)v 5 , H 42 = − 1 21 (1 − 3η)v 2 − 1311 − 4025η + 285η 2 330 v 4 +2π(1 − 3η)v 5 , H 44 = 4 3 (1 − 3η)v 2 − 1779 − 6365η + 2625η 2 330 v 4 +4π(1 − 3η)v 5 , H 52 = − 2 135 (1 − 5η + 5η 2 )v 4 , H 54 = 32 45 (1 − 5η + 5η 2 )v 4 , H 62 = − 1 11880 (1 − 5η + 5η 2 )v 4 , H 64 = 16 495 (1 − 5η + 5η 2 )v 4 , H 66 = − 81 40 (1 − 5η + 5η 2 )v 4 . (5.9)</trash>
+
+
+				</figure>
+
+				<p>Here the post Newtonian order of the modes with l ≥ 7 is higher than the third post Newtonian order, and such modes have not been published [7]. We note that in H 22 , H 32 , H 42 , and H 44 , we include the effect of their tail terms of second and half post Newtonian (2.5PN) order which could give a non-negligible contribution to the wave amplitudes. These terms have not been explicitly presented in any papers such as [2,3], but those for H 32 , H 42 , and H 44 may be guessed from black hole perturbation theory [8] and that for H 22 are computed with help of the 2.5PN gravitational wave luminosity [see Eq. (5.10)] and Eq. (4.46). The × mode can be written in the same way in terms of H lm , simply changing the dependence of the angular functions. Hence, we hereafter pay attention only to H lm in comparison.</p>
+
+				<p>We also compare the numerical gravitational wave luminosity with the 2.5PN formula [3,34] dE</p>
+
+				<p><formula>dt = 32 5 η 2 v 10 1 − 1247 336 + 35 12 η v 2 + 4πv 3 + − 44711 9072 + 9271 504 η + 65 18 η 2 v 4 − 8191 672 + 535 24 η πv 5 . (5.10)</formula></p>
+
+				<p>For η = 1/4, the first post Newtonian (1PN), 2PN, and 2.5PN coefficients are −373/84, −59/567 and −373π/21, respectively. Since the 2PN coefficient is by chance much smaller than others, the 2PN formula is not different from 1.5PN formula very much for equal-mass binaries.</p>
+
+				<figure>
+					<figDesc>Before we perform the comparison between numerical results and post Newtonian gravitational waves, we summarize possible sources of the discrepancy between two results. One is associated with the conformal flatness approximation adopted in obtaining quasiequilibrium states. In this approximation, we discard some terms which are as large as a 2PN term from viewpoint of the post Newtonian approximation. As a result, the magnitude of the difference between two results could be of O(v 4 ). The second source is purely a numerical error associated with the finite differencing. The magnitude of this error will be assessed in the next subsection. The third one is associated with the post Newtonian formulas in which higher order corrections are neglected. This could be significant for binaries of large compactness. In the following, we will often refer to these sources of dis- crepancy.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>Calibration for the gravitational wave amplitude</head>
+
+				<p>In</p>
+
+				<p>Fig. 1, we show the relative difference of H lm to 2ηM v 2 H lm as a function of v 2 . Here, the relative difference is defined as</p>
+
+				<figure>
+					<trash>RE ≡ ˆ H lm 2ηM v 2 H lm − 1. (5.11) The data points are taken at d = 1.3, 1.4, 1.6, 1.8, 2.0, 2.2, 2.6, and 3.0, and v 2 is roughly equal to (R/M ) ∞ / ˆ d.</trash>
+
+
+				</figure>
+
+				<p>We do not consider (5, 2) and (6, 2) modes because their magnitude is much smaller than that of the (2, 2) mode.</p>
+
+				<p>We plot three curves for the (2, 2) mode; one curve (dotted line) is plotted using the 2PN formula of H 22 shown in Eq. (5.9), the second one (solid line) using the 1.5PN formula neglecting the 2PN and 2.5PN terms, and the third one (thin solid line) is using the Newtonian formula [labeled by (2.2)N ]. By comparing the relative errors for (2, 2) modes with three post Newtonian formulas , it is found that the post Newtonian corrections up to 1.5PN order give a certain contribution by ∼ 3% of the leading order Newtonian term even at d ≃ 3 (v 2 ≃ 0.017) but that 2PN effects are not very important for small compactness (M/R) ∞ = 0.05. It is reasonable to expect that post Newtonian correction terms higher than 2PN order beyond the leading terms are also unimportant for other modes with this compactness. This indicates that H lm in Eq. (5.9) contains sufficient correction terms for l = 2, 3, and 4. On the other hand, the absence of post Newtonian correction terms beyond the leading term in H lm for l = 5 and 6 would cause an error of a certain magnitude (see below).</p>
+
+				<p>The result presented here also indicates that systematic error associated with the conformal flatness approximation for background binary solutions, in which we neglect h ij of 2PN order, is likely to be irrelevant for (M/R) ∞ = 0.05. For l = 2, 3, and 4 modes at sufficiently large separation as d ∼ 3 (v 2 ∼ 0.017) in which post Newtonian corrections and tidal deformation effects become unimportant , the relative errors converge to constants as shown in Fig. 1. These constants can be regarded as a numerical error because they should be zero for sufficiently distant orbits. Thus, we can estimate that the magnitude of the numerical error is &lt; ∼ 1% for (l, m) = (2, 2), ∼ 3% for (3,2), and ∼ 1 − 2% for l = 4. These results are consistent with those for convergence tests. For l = 5 and 6, the post Newtonian formulas we use in this paper are not good enough as a theoretical prediction . Observing the results for l = m = 2 in Fig. 1</p>
+
+				<figure>
+					<figDesc>, the post Newtonian formulas for l = 5 and 6 in Eq. (5.9) overestimate the true value of the wave amplitude by ∼ 3% at d ∼ 3 (v 2 ∼ 0.017) because of the lack of correction terms of O(v 2 ) and O(v 3 ) to the leading term.</figDesc>
+
+				</figure>
+
+				<p>Taking into account this correction, we may expect that the numerical errors are ∼ 4% for l = 5 and ∼ 2% for l = 6. These results indicate that our method can yield fairly accurate waveforms of gravitational waves even for higher multipole modes. With decreasing the orbital separation, the ratio of the numerical to post Newtonian amplitude becomes higher and higher irrespective of (l, m). This amplification is due to the tidal deformation of each star [36]. For the (2, 2) mode, the amplification factor is not very large, i.e., ∼ 2%, even at d = 1.3 (v 2 ∼ 0.035). However, for higher multipole modes, the amplification factor is larger. At d = 1.3, it is ∼ 8% for (3,2), (4,2), and (4,4) and ∼ 15% for (5,4) and (6,6). This result is qualitatively and even quantitatively in good agreement with a result in an analytic result presented in Appendix B.</p>
+
+			</div>
+			<div>
+				<head>Calibration for the gravitational wave luminosity</head>
+
+				<p>In</p>
+
+				<p>Fig. 2, we show the gravitational wave luminosity as a function of v 2 . We plot the numerical results (solid circles), 2.5PN formula (solid line), 2PN formula (dashed line), 1.5PN formula (dotted line), and 1PN formula (dotdashed line). Since v 2 is small in this case, the 2PN and 2.5PN formulas almost coincide, and the gravitational wave luminosity is mostly determined by (2, 2) mode. As in the case of the wave amplitude, numerical results agree with 2PN and 2.5PN formulas within a small underestimation by ∼ 1.5% for distant orbits. As explained above, this error is of numerical origin. For close orbits, the tidal effects slightly increase the magnitude beyond the post Newtonian formulas, but the amplification is not very large (by ∼ 5% at d = 1.3). Although the effect of the tidal deformation is significant for higher multipole components of gravitational waves, their contribution to the total luminosity and wave amplitude is very small, because the magnitude of the (2,2) mode is much larger than others. The amplification factor in the gravitational wave amplitude and luminosity due to tidal deformation is expected to depend strongly on d but weakly on the compactness. Thus, even for binaries of large compactness, we expect that the amplification is ∼ 2% for the amplitude and ∼ 5% for the luminosity at the innermost binary orbit, ˆ d ∼ 1.3.</p>
+
+			</div>
+			<div>
+				<head n="3">Effect of location of outer boundary in extracting gravitational waves</head>
+
+				<p>As a final calibration, we investigate the effect of outer boundary conditions on gravitational wave amplitudes, because the outer boundaries are imposed at a finite radius . In Fig. 3, we plot the wave amplitude for the (2,2) mode as a function of r/λ in the casê d = 1.3 (v 2 ∼ 0.035). We plot two curves. One (solid line) is | ˆ H 22 (r)|/| ˆ H 22 (r = r max )| which is obtained by imposing the outer boundary condition at r = r max = 55λ. The other is the result for the following experiment; we impose the outer boundary condition for a wide range of the radius as 0.1λ ≤ r max ≤ 55λ and compute | ˆ H 22 (r = r max )|. In this case, we plot | ˆ H 22 (r = r max )|/ ˆ H 22 (r = r max = 55λ)|. We find that (1) if we impose the outer boundary condition at r &gt; ∼ 5λ (10λ), the wave amplitude can be computed within 0.3% (0.1%) error, (2) if we want to compute the wave amplitude within 5% error, it is necessary to choose the outer radius as r max &gt; ∼ 1.5λ, and (3) even if we impose the boundary condition at r max ∼ 0.6λ, the wave amplitude can be estimated within 15% error.</p>
+
+				<p>In the computation of this paper, we always impose the boundary condition at r &gt; 15λ, implying that the numerical error of the wave amplitude associated with the location of the outer boundaries is negligible (much smaller than other numerical errors). An interesting finding is that even if we imposed the boundary condition in the local wave zone (or in the distant near zone) at r max ∼ λ, the wave amplitude could be estimated only with a ∼ 10% error. In our recent simulation on the merger of binary neutron stars, the outer boundaries are located in a distant near zone or in a local wave zone [r ∼ (0.6 − 2)λ depending on the stage of the merger] [35].</p>
+
+				<p>The present results indicate that even with this approximate treatment of the outer boundary conditions, the gravitational wave amplitude could be computed within about a 10% error.</p>
+
+			</div>
+			<div>
+				<head>C. Gravitational waves from compact binaries</head>
+
+				<p>Next, we perform a numerical computation, adopting more compact neutron stars. According to models of spherical neutron stars, the circumferential radius of realistic neutron stars of mass M g = 1.4M ⊙ where M ⊙ denotes the solar mass is in the range between ∼ 10km and ∼ 15km. This implies that the compactness (M/R) ∞ is in the range between ∼ 0.14 and ∼ 0.21. Thus, we choose (M/R) ∞ = 0.14 and 0.19 as examples (cf. Table I</p>
+
+				<figure>
+					<figDesc>for ¯ M g and ¯ M 0 and Table III for the relevant quantities of the quasiequilibrium sequences).</figDesc>
+
+				</figure>
+
+				<p>In Figs. 4–7, we plot the total energy E t and the angular momentum J as a function of v 2 for (M/R) ∞ = 0.14 and 0.19. They are normalized by M 0 and 4M 2 0 to be nondimensional. For comparison, we also plot the energy and angular momentum for binaries of nonspinning stars derived in the 2PN approximation [3]</p>
+
+				<figure>
+					<figDesc>as</figDesc>
+					<trash>E 2PN = −ηM g v 2 1 − 9 + η 12 v 2 − 81 − 57η + η 2 3 v 4 +2E b , (5.12) J 2PN = ηM g v 2 Ω 2 + 9 + η 3 v 2 + 2(81 − 57η + η 2 ) 3 v 4 , (5.13)</trash>
+
+
+				</figure>
+
+				<p>where E b has to be added in the energy in comparison because in E t not only the binding energy between two stars but also the binding energy of individual stars is included. In [3], J 2PN is not shown but it is easily computed from the relation dE = ΩdJ for the point mass case. Figures 4 and 5 show that for distant orbits and for (M/R) ∞ = 0.14, the numerical results are fitted well with 2PN formulas except for a possible small systematic, numerical error. This indicates that for mildly relativistic orbits, higher post Newtonian terms as well as h ij for quasiequilibrium binary solutions which we do not take into account in this paper are not very important. For close orbits as d &lt; ∼ 1.6, the deviation of numerical results from the 2PN formula becomes noticeable. This deviation seems to be due to the tidal effects because the deviation increases rather quickly with increasing v 2 . (If post Newtonian corrections are relevant, the deviation should be proportional to a low power of v 2 . On the other hand, if tidal effects are relevant, the deviation is proportional tô d −6 ∝ v 12 [36].) For (M/R) ∞ = 0.19 and v 2 &gt; ∼ 0.1, the coincidence between numerical and 2PN results becomes worse even for distant orbits, in particular for J. This indicates that effects of third and higher post Newtonian corrections could not be negligible for such compact binaries. Also, the effects of h ij for solutions of quasiequilibrium binary neutron stars might not be negligible.</p>
+
+				<p>In Figs. 8–11, we show the wave amplitude for the (2,2) mode, ˆ H 22 , and the gravitational wave luminosity as a function of v 2 for (M/R) ∞ = 0.14 and 0.19. The amplitude and luminosity are normalized by the quadrupole formulas M g v 2 and (2/5)v 10 , respectively. For comparison , we show the 1PN, 1.5PN, 2PN, and 2.5PN formulas. v 2 in these sequences of compact binaries is in the range between 0.05 and 0.155. The frequency of gravitational waves can be written as</p>
+
+				<figure>
+					<trash>f GW ≡ Ω π ≃ 960Hz v 2 0.12 3/2 M t 2.8M ⊙ −1 . (5.14)</trash>
+
+
+				</figure>
+
+				<p>Thus, if we assume that the total mass of the binary is 2.8M ⊙ , f GW for binaries presented here is in the range between 250Hz and 1350Hz.</p>
+
+				<p>Since convergence of the post Newtonian expansion is very slow for v 2 &gt; ∼ 0.05, no post Newtonian formulas fit well with numerical results for the whole range of v 2 from 0.05 to 0.15. For distant orbits, the numerical results agree relatively better with the 2.5PN formulas than with lower post Newtonian formulas both for the (2,2) mode wave amplitude and for the luminosity. For close orbits, on the other hand, the numerical results deviate highly from 2.5PN formulas as well as from other formulas. This deviation is due either to the tidal effect or to the higher post Newtonian corrections. As we show in the small compactness case, the tidal effect could amplify the gravitational wave amplitude and luminosity by several percent. Therefore, it certainly contributes to this deviation. However, the difference between numerical results and 2.5PN formulas for v 2 &gt; ∼ 0.1 is too large to be explained only by the tidal effect. Thus, we conclude that higher post Newtonian corrections affect this difference significantly. To explain the behavior of numerical curves, third or higher post Newtonian formulas are obviously necessary [7]. The magnitude of the error associated with the neglect of h ij will be estimated in Sec. V E.</p>
+
+			</div>
+			<div>
+				<head>D. Validity of assumption for quasiequilibrium</head>
+
+				<p>In this paper, we have assumed that the orbits are in quasiequilibrium. As we define in Sec. I, the assumption is valid only in the case when the coalescence timescale is longer than the orbital period. Here, we assess whether the assumption holds for close orbits. To estimate the coalescence timescale, we compute</p>
+
+				<figure>
+					<trash>t coal = v 2 0 v 2 1 (−dE/dt) dE t d(v 2 ) d(v 2 ), (5.15) where v 0 denotes v at an innermost stable orbit. v 2 0</trash>
+
+
+				</figure>
+
+				<p>should be taken as v 2 at the innermost stable circular orbit (ISCO, i.e., the minima for E t and J as a function of v or Ω) of binaries. However, for irrotational binary neutron stars of identical mass with n = 1, the ISCO does not exist. As we discussed in [17], two neutron stars could start mass transfer from their inner edges for d &lt; 1.25, resulting possibly in a dumbbell-like structure of two cores. Even if the shape varies, however, the energy and angular momentum are likely to continuously decrease with decreasing separation between two cores for d &lt; ∼ 1.25, and their quasiequilibrium states are mainly determined under the influence of general relativistic gravity and the tidal interaction between the two cores. Thus, we use an extrapolation for the computation of E t and dE/dt for d &lt; 1.25 using data points for d ≥ 1.25. A fitting formula for E t is constructed using the data points at</p>
+
+				<figure>
+					<trash>d = 1.25, 1.3, 1.4, 1.5, 1.6, and 1.8 as E t = a 0 + a 1 v 2 + a 2 v 4 + a 3 v 6 + a 6 v 12 , (5.16)</trash>
+
+
+				</figure>
+
+				<p>where the last term denotes the effect of a tidal deformation [36]. For the fitting, we use the least squares method.</p>
+
+				<p>In Figs. 12 and 13, we show E t in the fitting formula as a function of v 2 for (M/R) ∞ = 0.14 and 0.19. It is found that the energy curves around the innermost binary orbit (at d = 1.25) are well fitted by this method and that the minimum of the energy appears. We define v 2 0 as the value at the minimum. This minimum is induced by the last term of Eq. (5.16) for the case of moderately large compactness as (M/R) ∞ = 0.14. For large compactness as (M/R) ∞ = 0.19, the minimum appears even without the term associated with the tidal interaction, and with the tidal term, v 2 at the minimum becomes smaller than that without the tidal term. This indicates that not only the tidal term but also general relativistic gravity plays a role for determining the minimum for such compact binaries. From Figs. 10 and 11, the gravitational wave luminosity near the innermost binary orbit at</p>
+
+				<figure>
+					<trash>d ∼ 1.25 [v 2 ∼ 0.11 for (M/R) ∞ = 0.14 and v 2 ∼ 0.15 for (M/R) ∞ = 0.19]</trash>
+
+
+				</figure>
+
+				<p>may be approximated by (2/5)Cv 10 where C is a constant , ∼ 0.85 for (M/R) ∞ = 0.14, and ∼ 0.80 for (M/R) ∞ = 0.19. Hence, we use this simple formula for the luminosity instead of detailed extrapolation for d &lt; 1.25. One may think that this procedure is too rough. However, it would be acceptable because the evolution timescale from the innermost binary orbit at d = 1.25 to the minimum found from the fitting formula is ∼ 1/3 and ∼ 1/10 of the orbital period at d = 1.25 for (M/R) ∞ = 0.14 and 0.19, respectively. Thus, this rough estimation does not cause any serious numerical error. (In other words, the orbit at d = 1.25 is close to the ISCO for both compactnesses.) In Fig. 14, we show t coal as a function of v 2 for (M/R) ∞ = 0.14 (solid circles) and 0.19 (solid squares). For comparison, we plot the orbital period (solid lines) and coalescence time for the Newtonian binary of two point masses (i.e., 5M t /(64v 8 ); see [9]). All the quantities are plotted in units of M t = 2M g . The coalescence time becomes equal to the orbital period at</p>
+
+				<figure>
+					<trash>d = ˆ d crit ∼ 1.4 and v 2 ∼ 0.10 for (M/R) ∞ = 0.14 and at d = ˆ d crit ∼ 1.7 and v 2 ∼ 0.125 for (M/R) ∞ = 0.19. As mentioned in Sec. I, assuming</trash>
+
+
+				</figure>
+
+				<p>the quasiequilibrium state for binary neutron stars is appropriate only for distant orbits as d &gt; ˆ d crit . At d ∼ ˆ d crit , it is likely that an adiabatic circular orbit gradually changes to a plunging noncircular orbit. This implies that the quasiequilibrium treatment for close binary neutron stars can introduce a certain systematic error, although it seems still to be an adequate approximation as long as the radial approaching velocity is much smaller than the orbital velocity (see below). The coalescence time we derived here is much shorter than the Newtonian coalescence time of two point masses for close orbits, although the two results are in better agreement for v → 0. The main reason for the disagreement is that the variation of the curve for E t becomes very slow due to tidal effects for close orbits. [Recall that the coalescence time depends strongly on dE t /d(v 2 ).]</p>
+
+				<p>In the absence of the tidal effect, the shape of the curve for E t would be similar to that for a binary of point masses, so that variation of the energy near the innermost binary orbit would not be very slow, and consequently the coalescence time would not be as short as the above numerical results. In Fig. 15, we show the ratio of an average, relative radial velocity between two stars [defined as v</p>
+
+				<figure>
+					<trash>r ave ≡ 2R 0 d( ˆ d)/dt] to an orbital velocity v as 2R 0 v d( ˆ d) dt ≡ 1 v − dE dt dE t d( ˆ d) −1 . (5.17)</trash>
+
+
+				</figure>
+
+				<p>The solid and dashed lines denote the numerical results for (M/R) ∞ = 0.19 and 0.14. The dotted line denotes the Newtonian result for two point masses (i.e., 16v 5 /5; see [9]). Figure 15 shows that at d = ˆ d crit , the radial velocity is still ∼ 2% of the orbital velocity, but it becomes ∼ 10% of the orbital velocity near d = 1.25. It is also found that the Newtonian formula underestimates the radial velocity by several 10% for orbits at d = ˆ d crit .</p>
+
+				<p>For (M/R) ∞ = 0.14, the factor of this underestimation is rather large, because in this case, the tidal effect which increases the radial velocity is significant at d = ˆ d crit . It is appropriate to give the following word of caution. Since assuming quasiequilibrium states for binary neutron stars is not very good for d &lt; ˆ d crit , the velocity ratio derived for such close orbits might not be a good indicator. For d &lt; ˆ d crit , the orbits of a binary could deviate from the equilibrium sequence derived in this paper. The radial velocity computed in this paper depends strongly on [dE t /d( ˆ d)] −1 which becomes very large around d ∼ 1.25. For a real evolution of binary neutron stars, the time evolution of E t could be fairly different from the curve for the quasiequilibrium sequence. To derive the radial velocity appropriately, numerical simulation with an initial condition at d ∼ ˆ d crit may be a unique method for this final phase.</p>
+
+			</div>
+			<div>
+				<head>E. hij in the near zone</head>
+
+				<p>In this paper, we have computed quasiequilibrium states assuming that the three-metric is conformally flat. For the computation of gravitational waves, we also adopt a linear approximation in h ij , assuming that the magnitude of h ij is much smaller than unity. In this section , we investigate whether these assumptions are indeed acceptable even for close and compact binaries of neutron stars. In the following, we compute the nearzone metric of (2,0) and (2,2) modes because they are the dominant terms.</p>
+
+				<p>In Figs. 16 and 17, we show h rr and h ϕϕ computed from (2,0) and (2,2) modes along the axis which connects the mass centers of two stars for (M/R) ∞ = 0.14 and 0.19 and for d = 1.3. For comparison, we also show ψ 0 − 1.</p>
+
+				<p>The centers of the two stars are located at r ∼ 0.05λ. It is found that the magnitude of each mode is &lt; ∼ 0.1 and sufficiently smaller than ψ 4 0 − 1, which denotes the deviation from flat space in the conformal part of the three-metric. Second post Newtonian studies [30,31] indicate that h ij is a quantity of O(v 4 ) and of O(v 2 ) smaller than 4(ψ 0 − 1), and the numerical results here agree approximately with the post Newtonian results. Since the magnitude of h ij is smaller than 0.1 even for strongly relativistic cases, neglecting the nonlinear terms of h ij appears to be acceptable as long as we allow an error of &lt; ∼ 1%. However, the magnitude of h ij is not small enough to neglect the linear term. Thus, quasiequilibrium states computed in the conformal flatness approximation likely contain a systematic error of certain magnitude. From a simple order estimate using basic equations for computation of quasiequilibrium states, several quantities could be modified in the presence of h ij as</p>
+
+				<figure>
+					<trash>δΩ Ω = O(h ij ), (5.18) δρ ρ = O(v 2 h ij ), (5.19) δψ ψ = O(v 2 h ij ), (5.20) δM M = O(v 2 h ij ), (5.21) δJ J = O(h ij ), (5.22)</trash>
+
+
+				</figure>
+
+				<p>where quantities with δ denote the deviation due to the presence of h ij .</p>
+
+				<p>For (M/R) ∞ = 0.19 and for close orbits as d = 1.3, the absolute magnitude of h ij at the location of stars is typically ∼ 0.05. This implies that neglecting h ij might induce a systematic error of O(10 −2 ) for Ω and J and of O(10 −3 ) for ρ, ψ, and M for close and compact binaries. These systematic errors might also induce a systematic error for the frequency and amplitude of the gravitational radiation of O(10 −2 ). Obviously, h ij cannot be neglected for close and compact binaries if we require an accuracy within a 1% error. For (M/R) ∞ = 0.14 and d = 1.3, the magnitude of h ij is about half of that for (M/R) ∞ = 0.19, i.e., ∼ 0.02 at the location of stars. This is reasonable because h ij is of O(v 4 ). Thus, for smaller (M/R) ∞ , the conformal flatness approximation becomes more acceptable. However, even for (M/R) ∞ = 0.14, the magnitude of the systematic error due to the neglect of h ij could be larger than 1% for close orbits, implying that it seems to be still necessary even for neutron stars of mildly large compactness to take into account h ij to guarantee an accuracy within a 1% error. Finally, we carry out an experiment: In solving equations for the nonaxisymmetric part of h ij , we have imposed an outgoing wave boundary condition since it obeys wave equations. This boundary condition is necessary to compute gravitational waves in the wave zone. However, to compute the near-zone metric for r ≪ λ, the term (ℓ k ∂ k ) 2 h ij in the wave equation is not very important because its magnitude ∼ h ij /λ 2 is much smaller than that of ∆h ij ∼ h ij /d 2 or h ij /R 2 0 . This implies that solving an elliptic type-equation, neglecting the term (ℓ k ∂ k ) 2 h ij , could yield an approximate solution for h ij in the near zone. In this experiment, thus, we solve the elliptic-type equation for A 22 as an example and compare the results with that obtained from the wave equation to demonstrate that this method is indeed acceptable for computation of the near-zone metric. The elliptic-type equation for A 22 is solved under the boundary conditions</p>
+
+				<figure>
+					<trash>dA 22 dr = 0, (5.23) at r = 0, and A 22 → 1 r , (5.24)</trash>
+
+
+				</figure>
+
+				<p>at r ≫ λ. The outer boundary condition is determined from the asymptotic behavior of the source term.</p>
+
+				<p>In</p>
+
+				<p>Fig. 18, we show h rr and h ϕϕ /r 2 computed from two different equations of different asymptotic behaviors in the case when (M/R) ∞ = 0.19, ˆ d = 1.3, and v 2 ≃ 0.15 (i.e., in the highly relativistic case). Note that the centers of stars are located at r ≃ 0.052λ and the stellar radius is 0.040λ. It is found that the two results agree fairly well for r &lt; ∼ 0.1λ where the stars are located. The typical magnitude of the difference between the two results is of O(10 −3 ). According to a post Newtonian theory in the 3+1 formalism [37,31], the difference between the two results denotes a radiation reaction potential of 2.5PN order. In our present gauge condition, the 2.5PN radiation reaction potential is written as [37]</p>
+
+				<figure>
+					<trash>h R ij = − 4 5 d 3 I − ij dt 3 , (5.25) where I − ij</trash>
+
+
+				</figure>
+
+				<p>denotes the trace-free quadrupole moment. For Newtonian binaries of two point masses in circular orbits in the equatorial plane, we find</p>
+
+				<figure>
+					<trash>h R xx = −h R yy = − 4 5 v 5 sin Ψ, h R xy = 4 5 v 5 cos Ψ, (5.26)</trash>
+
+
+				</figure>
+
+				<p>where other components are vanishing. Equation (5.26) indicates that the magnitude of h R ij is of O(10 −3 ) even for v 2 ∼ 0.1. Therefore, the results shown in Fig. 18 are consistent with the post Newtonian analysis. As mentioned above, the configuration of binary neutron stars and the orbital velocity are determined by quantities in the near zone. Thus, for obtaining a realistic binary configuration and orbital velocity taking into account h ij , solving modified elliptic-type equations instead of the wave equations for h ij may be a promising approach.</p>
+
+			</div>
+			<div>
+				<head>VI. SUMMARY AND DISCUSSION</head>
+
+				<p>We present an approximate method for the computation of gravitational waves from close binary neutron stars in quasiequilibrium circular orbits. In this method, we divide the procedure into two steps. In the first step, we compute binary neutron stars in quasiequilibrium circular orbits, adopting a modified formalism for the Einstein equation in which gravitational waves are neglected. In the next step, gravitational waves are computed solving linear equations for h ij in the background spacetimes of quasiequilibria obtained in the first step.</p>
+
+				<p>In this framework, gravitational waves are computed by simply solving ODEs. The numerical analysis in this paper demonstrates that this method can yield an accurate approximate solution for the waveforms and luminosity of gravitational waves even for close orbits just before merger in which the tidal deformation and general relativistic effects are likely to be important. From numerical results, we find that tidal and general relativistic effects are important for gravitational waves from close binary neutron stars with d &lt; ∼ 1.5 and v 2 &gt; ∼ 0.1. As a result of tidal deformation effects, the amplitude and luminosity of gravitational waves seem to be increased by a factor of several percent. It is also indicated that convergence of the post Newtonian expansion is so slow that even the 2.5PN formula for the luminosity of gravitational waves is not accurate enough for close binary neutron stars of v 2 &gt; ∼ 0.1.</p>
+
+				<p>In Sec. V E., we indicate that the magnitude of a systematic error in quasiequilibrium states associated with the conformal flatness approximation with h ij = 0 is fairly large for close and compact binary neutron stars.</p>
+
+				<p>To investigate the quasiequilibrium states and associated gravitational waves more accurately, we obviously need to improve the formulation for gravitational fields of quasiequilibrium states. Thus, in the rest of this section , we discuss possible new formulations in which an accurate computation will be feasible. Although a few strategies have been already proposed [10,11], there seem to be many other possibilities, as we here propose some different methods in the case when we assume the presence of the helical Killing vector. The most rigorous direction is to solve the full set of equations derived in Sec. II. However, to adopt this, we have to resolve several problems. One of the most serious problems is that the total ADM mass diverges because of the presence of standing gravitational waves in the whole spacetimes. This implies that the spacetime is not asymptotically flat, and it appears that we have to impose certain outer boundary conditions in the local wave zone just outside the near zone (i.e., at r ∼ λ). In this case, it is not clear at all what the appropriate boundary condition is for geometric variables. As we indicated in Sec. IV, if we impose an inappropriate outgoing wave boundary condition in the local wave zone, the error in the gravitational wave amplitude could be rather large. Thus, for adopting this strategy, we need to develop appropriate outer boundary conditions for the gravitation fields. We emphasize that numerical computation with rough boundary conditions leads to a fairly inaccurate numerical result in this strategy. One of strategies for escaping this &quot; standing wave problem &quot; is to adopt a linear approximation with respect to ∂ t h ij . Note that the divergence of the ADM mass and related problems for imposing outer boundary conditions are caused by the terms A ij A ij in the equations for α and ψ and by the term A ik A k j in the equation for h ij which contain the quadratic terms of ∂ t h ij and hence behave as O(r −2 ) in the wave zone. Thus, if we neglect the nonlinear terms of ∂ t h ij in the equations of α, ψ, and h ij , there is no problem in solving these equations with asymptotically flat outer boundary conditions in the distant wave zone. As we indicated in Sec. V E, nonlinear terms of h ij are small in the near zone, so that neglect of them would not cause any serious systematic error. The neglect is significant in the wave zone because it changes the spacetime structure drastically. However, as mentioned in Sec. IV, this linearization may be considered as a prescription to exclude the unphysical pathology associated with the existence of the standing wave. One concern in this procedure is that the solutions derived in this formalism do not satisfy the Hamiltonian constraint equation, because we modify it, neglecting the nonlinear terms of ∂ t h ij . However, as long as the magnitude of the violation is smaller than an acceptable numerical error, say, ∼ 0.1%, this method would be acceptable. Even simpler method is to change the wave equation for h ij to an elliptic-type equation, neglecting the term (ℓ k ∂ k ) 2 h ij . By this treatment, we can exclude the problem associated with the existence of standing waves. In this case, we do not have to neglect nonlinear terms of h ij because they do not cause any serious problems in the distant zone. As shown in Sec. V E, even if we solve the elliptic-type equation for h ij , the solution in the near zone likely coincides well with the solution obtained from the wave equations. This indicates that this treatment could yield an accurate approximate solution for the near-zone gravitational field and matter configuration of binary neutron stars. In this case, gravitational waves cannot be simultaneously computed. However, as we have shown in this paper, we can compute gravitational waves in a post-processing. The method we should choose depends strongly on our purpose. If one would want to obtain an &quot; exact &quot; solution in the presence of the helical Killing vector, we should choose the first one, even though it may be an unphysical solution. However, if we would want to obtain a reasonably accurate, physical solution or to obtain theoretical templates of reasonable accuracy, say, within 0.1% error, some approximate methods such as second and third ones may be adopted. We think that our purpose is not to obtain the unphysical, exact solution but to obtain a reasonably accurate physical solution which can be used as theoretical templates. In using second and third methods, we do not need new computational techniques or large-scale simulations. Furthermore, computational costs will be cheap. For these reasons, we consider that the second and third methods are promis- ing.</p>
+
+			</div>
+			<div>
+				<head>ACKNOWLEDGMENTS</head>
+
+				<p>We thank T. Baumgarte and S. Shapiro for helpful conversations . In conversation with them, we thought of the method for the computation of gravitational waves developed in this paper. We are also grateful to J. Friedman for valuable discussions. This research was supported in part by NSF Grant No. PHY00-71044.</p>
+
+			</div>
+			<div>
+				<head>APPENDIX A: SOME FUNDAMENTAL CALCULATIONS</head>
+
+				<p>With the expansion of h ij in terms of tensor harmonics functions such as Eq. (4.18), the components of the Laplacian of h ij are written as ∆h rr =</p>
+
+				<figure>
+					<trash>l,m A ′′ lm + 2 r A ′ lm − λ l + 6 r 2 A lm + 4λ l r 3 B lm Y lm ≡ l,m H a lm Y lm , ∆h rθ = l,m B ′′ lm − λ l + 4 r 2 B lm + 3 r A lm + 2 ¯ λ l r F lm ∂ θ Y lm + l,m C ′′ lm − λ l + 4 r 2 C lm + −2 ¯ λ l r D lm ∂ ϕ Y lm sin θ ≡ l,m H b lm ∂ θ Y lm + H c lm ∂ ϕ Y lm sin θ , ∆h rϕ = l,m (H b lm ∂ ϕ Y lm − H c lm sin θ∂ θ Y lm ), ∆h θϕ r 2 = l,m F ′′ lm + 2 r F ′ lm − ¯ λ l r 2 F lm + 2 r 3 B lm X lm + l,m D ′′ lm + 2 r D ′ lm − ¯ λ l r 2 D lm − 2 r 3 C lm sin θW lm ≡ l,m (H f lm X lm + H d lm sin θW lm ), ∆h θθ r 2 = l,m − 1 2 H a lm Y lm + H f lm W lm − H d lm X lm sin θ , ∆h ϕϕ r 2 sin 2 θ = l,m − 1 2 H a lm Y lm − H f lm W lm + H d lm X lm sin θ . (A1)</trash>
+
+					<figDesc>APPENDIX B: POST NEWTONIAN WAVEFORMS OF GRAVITATIONAL WAVES FROM A BINARY OF TWO ELLIPSOIDAL STARS</figDesc>
+
+				</figure>
+
+				<p>The leading terms (up to first post Newtonian order) in the wave zone expansion of the gravitational waveform are decomposed in terms of radiative multipoles as [38]</p>
+
+				<figure>
+					<trash>h ij = 2 D P ijkl (2) I kl + 1 3 N m (3) I mkl + 4 3 ǫ mn(k (2) J l)m N n + 1 12 N m N n (4) I mnkl + 1 2 ǫ mn(k (3) J l)mp N n N p , (B1)</trash>
+
+
+				</figure>
+
+				<p>where D is a distance from a source to an observer, (n) I(t) ≡ d n I/dt n , X (kl) = (X kl + X lk )/2, N k = x k /r, ǫ ijk is a completely antisymmetric tensor, and P ijkl = (δ ik − N i N k )(δ jl − N j N l ) − 1 2 (δ ij − N i N j )(δ kl − N k N l ). (B2) I ij , I ijk , I ijkl , J ij , and J ijk in Newtonian order are written in the form</p>
+
+				<figure>
+					<trash>I ij = Q ij − 1 3 δ ij Q kk , (B3) I ijk = Q ijk − 1 5 δ ij Q kll + δ ik Q jll + δ jk Q ill , (B4) I ijkl = Q ijkl − 1 7</trash>
+
+
+				</figure>
+
+				<p>δ ij Q klnn + δ ik Q jlnn + δ il Q jknn + δ jk Q ilnn + δ jl Q iknn + δ kl Q ijnn + 1 35 δ ij δ kl + δ ik δ jl + δ il δ jk Q mmnn ,</p>
+
+				<figure>
+					<trash>(B5) J ij = 1 2 S ij + S ji − 1 3 δ ij S kk , (B6) J ijk = 1 3 S ijk + S jki + S kij − 1 15 δ ij (2S kll + S llk ) + δ ik (2S jll + S llj ) + δ jk (2S ill + S lli ) , (B7) where Q ij··· = ρx i x j · · · d 3 x, (B8) S ij···k = ρx i x j · · · ǫ kln x l v n d 3 x. (B9)</trash>
+
+
+				</figure>
+
+				<p>Here, we consider irrotational binary neutron stars of equal mass in equilibrium circular orbits with angular velocity Ω in Newtonian gravity for the computation of the above multipole moments. For simplicity, we assume that the shape of each star is ellipsoidal and, in a rotating frame, the stars are located along the x axis which coincides with the semimajor axis. Defining the coordinates in the rotating frame as (X, Y, Z) and denoting the separation between centers of two stars as 2d, we have the following nonzero components for Q ij··· :</p>
+
+				<figure>
+					<trash>Q XX = 2(M N d 2 + Q 1 ), Q Y Y = 2Q 2 , Q ZZ = 2Q 3 , Q XXXX = 2(M N d 4 + 6Q 1 d 2 + Q 11 ), Q XXY Y = 2(Q 2 d 2 + Q 12 ), Q XXZZ = 2(Q 3 d 2 + Q 13 ), Q Y Y Y Y = 2Q 22 , Q Y Y ZZ = 2Q 23 , Q ZZZZ = 2Q 33 , (B10)</trash>
+
+
+				</figure>
+
+				<p>where M N is the Newtonian mass of one star, and Q k and Q kl denote the quadrupole moments and 2 4 -pole moments of each star (1, 2, and 3 denote xx, yy, and zz, respectively). In the inertial frame, the nonzero components of Q ij are written as</p>
+
+				<figure>
+					<trash>Q xx = c 2 Q XX + s 2 Q Y Y , Q yy = s 2 Q XX + c 2 Q Y Y , Q xy = sc(Q XX − Q Y Y ), Q zz = Q ZZ , Q xxxx = c 4 Q XXXX + s 4 Q Y Y Y Y + 6c 2 s 2 Q XXY Y , Q yyyy = s 4 Q XXXX + c 4 Q Y Y Y Y + 6c 2 s 2 Q XXY Y , Q xxyy = c 2 s 2 (Q XXXX + Q Y Y Y Y ) + (c 4 + s 4 − 6c 2 s 2 )Q XXY Y , Q xxxy = c 3 sQ XXXX + cs 3 Q Y Y Y Y − 3cs(c 2 − s 2 )Q XXY Y , Q xyyy = cs 3 Q XXXX + c 3 sQ Y Y Y Y + 3cs(c 2 − s 2 )Q XXY Y , Q xxzz = c 2 Q XXZZ + s 2 Q Y Y ZZ , Q yyzz = s 2 Q XXZZ + c 2 Q Y Y ZZ , Q xyzz = cs(Q XXZZ − Q Y Y ZZ ), Q zzzz = Q ZZZZ , (B11)</trash>
+
+
+				</figure>
+
+				<p>where c ≡ cos(Ωt) and s ≡ sin(Ωt).</p>
+
+				<p>To compute S ij···k , we need the velocity which is formally obtained after we solve the hydrostatic equations. For simplicity, we here assume the following form in the rotating frame :</p>
+
+				<figure>
+					<trash>  V X V Y V Z   =   q 1 Y Ωd(X/|X|) + q 2 (X − d) 0   , (B12)</trash>
+
+
+				</figure>
+
+				<p>where q 1 and q 2 are constants which depend on the orbital separation 2d. In the case of incompressible fluid, this becomes a highly accurate approximate solution [39]. Thus, for a star of a stiff equation of state such as neutron stars, this assumption would be acceptable. In this velocity field, all components for S ij are zero, and we have the following nonzero components for S ijk ;</p>
+
+				<figure>
+					<trash>S xxz = V (c 2 Q |X|XX + s 2 Q |X|Y Y ) − q 1 (c 2 Q XXY Y + s 2 Q Y Y Y Y ) + q 2 (c 2 Q XXXX + s 2 Q XXY Y ), S xyz = cs{V (Q |X|XX − Q |X|Y Y ) − q 1 (Q XXY Y − Q Y Y Y Y ) + q 2 (Q XXXX − Q XXY Y )}, S xzx = −c 2 V Q |X|ZZ + s 2 q 1 Q Y Y ZZ − c 2 q 2 Q XXZZ , S xzy = −cs{V Q |X|ZZ + q 1 Q Y Y ZZ + q 2 Q XXZZ }, S yyz = V (s 2 Q |X|XX + c 2 Q |X|Y Y ) − q 1 (s 2 Q XXY Y + c 2 Q Y Y Y Y ) + q 2 (s 2 Q XXXX + c 2 Q XXY Y ), S yzx = −cs{V Q |X|ZZ + q 1 Q Y Y ZZ + q 2 Q XXZZ }, S yzy = −s 2 V Q |X|ZZ + c 2 q 1 Q Y Y ZZ − s 2 q 2 Q XXZZ , S zzz = V Q |X|ZZ − q 1 Q Y Y ZZ + q 2 Q XXZZ , (B13) where V = (Ω − q 2 )d, and Q |X|XX = 2(M N d 3 + dQ 1 ), Q |X|Y Y = 2dQ 2 , Q |X|ZZ = 2dQ 3 . (B14)</trash>
+
+
+				</figure>
+
+				<p>Using these multipole moments, we can compute the waveforms and luminosity of gravitational waves as</p>
+
+				<figure>
+					<trash>Dh + = M N −(1 + u 2 ) cos(2Ψ)v 2 f 22 + 1 3 (1 − u 4 ) cos(4Ψ)v 4 f 44 − 1 84 (7u 4 − 6u 2 + 1) cos(2Ψ)v 4 f 42 − 1 6 (2u 2 − 1) cos(2Ψ)v 4 f 32 , (B15) Dh × = M N 2u sin(2Ψ)v 2 f 22 − 2 3 u(1 − u 2 ) sin(4Ψ)v 4 f 44 + 1 84 u(7u 2 − 5) sin(2Ψ)v 4 f 42 + 1 12 (3u 2 − 1)u sin(2Ψ)v 4 f 32 , (B16) dE dt = 2 5 M N d 2 v 6 f 2 22 + v 2 4 5 63 f 2 32 + 5 3969 f 2 42 + 1280 567 f 2 44 , (B17) where v ≡ 2Ωd, and f 22 = (Q XX − Q Y Y )/(M N d 2 ), (B18) f 44 = (Q XXXX + Q Y Y Y Y − 6Q XXY Y )/(M N d 4 ), (B19) f 42 = [Q XXXX − Q Y Y Y Y − 6(Q XXZZ − Q Y Y ZZ )]/(M N d 4 ), (B20) f 32 = [V (Q |X|XX − Q |X|Y Y − 2Q|X|ZZ) + q 1 (−Q XXY Y + Q Y Y Y Y − 2Q Y Y ZZ ) + q 2 (Q XXXX − Q XXY Y − 2Q XXZZ )] /(M N Ωd 4 ). (B21)</trash>
+
+
+				</figure>
+
+				<p>We note that the subscript of f lm indicates the component in the expansion by tensor spherical harmonic functions as in Eq. (4.18). Other modes of nonzero m besides the above modes are vanishing due to π-rotational symmetry and plane symmetry with respect to the equatorial plane of the system. f lm indicates the amplification factor of the gravitational wave amplitude due to tidal deformation. For l = m = 2, it can be written as</p>
+
+				<figure>
+					<trash>f 22 = 1 + Q 1 − Q 2 M N d 2 , (B22)</trash>
+
+
+				</figure>
+
+				<p>where the second term denotes the correction due to the tidal deformation. Following [36], we write Q k as</p>
+
+				<figure>
+					<trash>Q k = κ n 5 M N a 2 k , (B23)</trash>
+
+
+				</figure>
+
+				<p>where a k is the length of semi axes and κ n is a constant depending on equations of state. For incompressible fluid, κ n = 1, and κ n is smaller for softer equations of state (in the Newtonian case, κ n ≃ 0.65 for n = 1 [36]). Thus, the amplitude of quadrupole gravitational waves is increased by the tidal deformation by a factor 0.2κ n (a</p>
+
+				<figure>
+					<trash>2 1 − a 2 2 )/d 2</trash>
+
+
+				</figure>
+
+				<p>. Since d has to be larger than a 1 and κ n ≤ 1, the amplification rate is at most 0.2. (According to [36], it is at most ∼ 0.14 because a 2 /a 1 &gt;</p>
+
+				<figure>
+					<trash>∼ 0.5 for a 1 = d.) We note that a 2 1 − a 2</trash>
+
+					<figDesc>2 is proportional to d −5 so that the amplification factor rapidly increases with decreasing orbital separation. The amplification factors for higher multipoles are found to be</figDesc>
+					<trash>f 44 = 1 + 6 Q 1 − Q 2 M N d 2 + Q 11 + Q 22 − 6Q 12 M N d 4 , (B24) f 42 = 1 + 6 Q 1 − Q 3 M N d 2 + Q 11 − Q 22 − 6(Q 12 − Q 13 ) M N d 4 , (B25) f 32 = 1 + 3Q 1 − Q 2 − 2Q 3 M N d 2 + 3q 2 Q 1 − q 1 Q 2 M N Ωd 2 + q 1 −Q 12 + Q 22 − 2Q 23 M N Ωd 4 + q 2 Q 11 − Q 12 − 2Q 13 M N Ωd 4 . (B26)</trash>
+
+
+				</figure>
+
+				<p>Thus, it is obviously found that the magnitude of the tidal effect for f 44 and f 42 is about 6 times larger than that for f 22 . (Q 3 is slightly larger than but roughly equal to Q 2 for binary of incompressible fluid [36].) &quot; 6 times &quot; implies that the amplitude of gravitational waves for these multipoles can be several 10% larger than that without the tidal deformation. For a rough estimation of f 32 , we use the relations for incompressible fluid. In this case, both q 1 /Ω and q 2 /Ω are written as (a</p>
+
+				<figure>
+					<trash>2 1 − a 2 2 )/(a 2 1 + a 2 2 ) [36]. Thus, the amplification factor becomes f 32 = 1 + 1 M N d 2 3Q 1 − Q 2 − 2Q 3 +(3Q 1 − Q 2 ) Q 1 − Q 2 Q 1 + Q 2 + O(d −4 ), (B27)</trash>
+
+
+				</figure>
+
+				<p>indicating that the magnitude of the tidal effect on f 32 could be about 4–5 times as large as that of f 22 .</p>
+
+				<p>All these results demonstrate that the effect of tidal deformation on the gravitational wave amplitude is more important for higher multipole gravitational waves and qualitatively agree with the numerical results in Sec. V.</p>
+
+				<p>In more higher multipole modes such as the l = m = 6 mode, a term such as Q XXXXXX will contribute. It is evaluated as M N d 6 + 15Q XX d 4 + O(d 2 ), and the amplification factor due to the tidal deformation will be about 15 times larger than that for the l = m = 2 mode. Thus, the effect of tidal deformation for close binary neutron stars will be even more significant.</p>
+
+				<figure>
+					<trash>(M/R)∞ ¯ M0 ¯ Mg 0.050 0.059613 0.058124 0.140 0.14614 0.13623 0.190 0.17506 0.16000</trash>
+
+					<figDesc>TABLE I. Compactness, baryon rest mass, and gravitational mass for spherical stars in isolation for Γ = 2. Note that for a maximum mass star, (M/R)∞ ≃</figDesc>
+					<trash>0.214, ¯ M0 ≃ 0.180, and ¯ Mg = 0.164. v 2 M J V E/M 1.3 3.5243×10 −2 1.1576×10 −1 1.9303×10 −2 -1.6581×10 −5 1.4 3.3823×10 −2 1.1578×10 −1 1.9590×10 −2 -1.3037×10 −5 1.6 3.0737×10 −2 1.1582×10 −1 2.0347×10 −2 -1.2236×10 −5 1.8 2.7884×10 −2 1.1585×10 −1 2.1212×10 −2 -1.3417×10 −5 2.0 2.5406×10 −2 1.1589×10 −1 2.2108×10 −2 -1.3912×10 −5 2.2 2.3288×10 −2 1.1592×10 −1 2.3012×10 −2 -1.3769×10 −5 2.4 2.1441×10 −2 1.1594×10 −1 2.3861×10 −2 -1.3810×10 −5 2.6 1.9890×10 −2 1.1596×10 −1 2.4754×10 −2 -1.4485×10 −5 2.8 1.8488×10 −2 1.1598×10 −1 2.5533×10 −2 -1.1064×10 −5 3.0 1.7345×10 −2 1.1600×10 −1 2.6449×10 −2 -1.2734×10 −5 TABLE II. A sequence of irrotational binary neutron stars in quasiequilibrium circular orbits with small compactness (M/R)∞ = 0.05. ˆ d v 2 M J Et/M0 V E/M 1.25 1.073×10 −1 2.693×10 −1 6.831×10 −2 -1.573×10 −1 -4.732×10 −5 1.3 1.060×10 −1 2.693×10 −1 6.850×10 −2 -1.571×10 −1 -4.731×10 −5 1.4 1.023×10 −1 2.694×10 −1 6.910×10 −2 -1.566×10 −1 -4.161×10 −5 1.5 9.798×10 −2 2.695×10 −1 6.994×10 −2 -1.559×10 −1 -4.982×10 −5 1.6 9.353×10 −2 2.696×10 −1 7.092×10 −2 -1.552×10 −1 -4.833×10 −5 1.8 8.510×10 −2 2.698×10 −1 7.314×10 −2 -1.537×10 −1 -5.756×10 −5 2.0 7.768×10 −2 2.700×10 −1 7.553×10 −2 -1.524×10 −1 -6.715×10 −5 2.2 7.129×10 −2 2.702×10 −1 7.798×10 −2 -1.511×10 −1 -7.482×10 −5 2.4 6.573×10 −2 2.704×10 −1 8.034×10 −2 -1.500×10 −1 -7.465×10 −5 2.6 6.101×10 −2 2.705×10 −1 8.283×10 −2 -1.491×10 −1 -8.097×10 −5 2.8 5.679×10 −2 2.706×10 −1 8.506×10 −2 -1.482×10 −1 -7.376×10 −5 3.0 5.327×10 −2 2.707×10 −1 8.763×10 −2 -1.475×10 −1 -7.453×10 −5 1.25 1.508×10 −1 3.151×10 −1 8.555×10 −2 -1.998×10 −1 -4.702×10 −5 1.3 1.495×10 −1 3.152×10 −1 8.567×10 −2 -1.997×10 −1 -4.143×10 −5 1.4 1.453×10 −1 3.152×10 −1 8.610×10 −2 -1.993×10 −1 -3.315×10 −5 1.5 1.397×10 −1 3.153×10 −1 8.678×10 −2 -1.987×10 −1 -4.445×10 −5 1.6 1.337×10 −1 3.155×10 −1 8.765×10 −2 -1.979×10 −1 -4.121×10 −5 1.8 1.220×10 −1 3.158×10 −1 8.972×10 −2 -1.962×10 −1 -5.387×10 −5 2.0 1.115×10 −1 3.161×10 −1 9.205×10 −2 -1.946×10 −1 -7.191×10 −5 2.2 1.024×10 −1 3.163×10 −1 9.452×10 −2 -1.931×10 −1 -8.056×10 −5 2.4 9.454×10 −2 3.166×10 −1 9.695×10 −2 -1.917×10 −1 -8.982×10 −5 2.6 8.778×10 −2 3.168×10 −1 9.953×10 −2 -1.904×10 −1 -9.684×10 −5 2.8 8.178×10 −2 3.170×10 −1 1.019×10 −1 -1.893×10 −1 -7.780×10 −5 3.0 7.668×10 −2 3.172×10 −1 1.046×10 −1 -1.883×10 −1 -8.335×10 −5 TABLE III. The same as Table II but for (M/R)∞ = 0.14 (upper) and 0.19 (lower). -0.08 -0.04 0 0.04 0.08 0.016 0.02 0.024 0.028 0.032 0.036 RE v 2 (2,2) (2,2)N (3,2) (4,4) (4,2) (6,6) (5,4)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>FIG. 1. Relative difference between the numerical results and post Newtonian analytic results as a function of v 2 for several modes of the gravitational wave amplitude for (M/R)∞ = 0.05.</figDesc>
+					<trash>0.86 0.88 0.9 0.92 0.94 0.96 0.98 1 0.02 0.024 0.028 0.032 (dE/dt)/(2v 10 /5) v 2 1.5PN, 2PN 1PN 2.5PN FIG. 2.</trash>
+
+
+				</figure>
+
+				<p>The gravitational wave luminosity normalized by the quadrupole formula 0.4v 10 as a function of v 2 for (M/R)∞ = 0.05. The numerical results (solid circles), and 1PN (dot-dashed line), 1.5PN (dotted line), 2PN (dashed line), and 2.5PN (solid line) formulas are shown. The 1.5PN formula is very close to the 2PN formula.</p>
+
+				<figure>
+					<trash>0.8 0.85 0.9 0.95 1 1.05 1.1 1.15 1.2 1 2 3 4 5 6 7 8 |Amp|/Exact r/λ FIG. 3. | ˆ H22(r)/ ˆ H22(rmax</trash>
+
+
+				</figure>
+
+				<p>)| as a function of r for for the case we impose boundary conditions at rmax = 55λ (solid line) and | ˆ H22(rmax)/ ˆ H22(rmax = 55λ)| in an experiment of varying rmax from 0.1λ to rmax = 55λ (dashed line) for (M/R)∞ = 0.05 and d = 1.3.</p>
+
+				<figure>
+					<trash>-0.158 -0.156 -0.154 -0.152 -0.15 -0.148 0.05 0.06 0.07 0.08 0.09 0.1 0.11 E/M 0 v 2</trash>
+
+
+				</figure>
+
+				<p>FIG. 4. The total binding energy Et in units of M0 as a function of v 2 for (M/R)∞ = 0.14 (solid circles). For comparison , we plot a curve derived from the 2PN formula (dashed line).</p>
+
+				<figure>
+					<trash>0.8 0.85 0.9 0.95 1 0.05 0.06 0.07 0.08 0.09 0.1 0.11 J/(2M 0 ) 2 v 2 FIG. 5. The same as Fig. 4</trash>
+
+
+				</figure>
+
+				<p>but for the total angular momentum divided by (2M0) 2 .</p>
+
+				<figure>
+					<trash>-0.2 -0.198 -0.196 -0.194 -0.192 -0.19 -0.188 0.08 0.1 0.12 0.14 E/M 0 v 2 FIG. 6. The same as Fig. 4 but for (M/R)∞ = 0.19. 0.7 0.72 0.74 0.76 0.78 0.8 0.82 0.84 0.86 0.08 0.1 0.12 0.14 J/(2M 0 ) 2 v 2 FIG. 7. The same as Fig. 5 but for (M/R)∞ = 0.19. 0.8 0.85 0.9 0.95 1 0.06 0.08 0.1 hatH 22 /(M g v 2 ) v 2 1PN 1.5PN 2PN 2.5PN FIG. 8. Amplitude of gravitational waves for the (2,2) mode ( ˆ H22) normalized by Mgv 2 as a function of v 2 for (M/R)∞ = 0</trash>
+
+
+				</figure>
+
+				<p>.14 (solid circles). For comparison, we plot the results for the 1PN (dot-dashed line), 1.5PN (dotted line), 2PN (dashed line), and 2.5PN (solid line) formulas.</p>
+
+				<figure>
+					<trash>0.7 0.75 0.8 0.85 0.9 0.95 1 0.08 0.1 0.12 0.14 hatH 22 /(M g v 2 ) v 2 1PN 1.5PN 2PN 2.5PN FIG. 9. The same as Fig. 8 but for (M/R)∞ = 0.19. 0.55 0.6 0.65 0.7 0.75 0.8 0.85 0.9 0.95 1 0.06 0.08 0.1 (dE/dt)/(2v 10 /5) v 2 1.5PN, 2PN 1PN 2.5PN FIG. 10. The same as Fig. 2 but for (M/R)∞ = 0.14. 0.4 0.5 0.6 0.7 0.8 0.9 1 0.08 0.1 0.12 0.14 (dE/dt)/(2v 10 /5) v 2 1.5PN, 2PN 1PN 2.5PN FIG. 11. The same Fig. 10</trash>
+
+
+				</figure>
+
+				<p>but for (M/R)∞ = 0.19. Even for this highly compact case, the 1.5PN formula (dotted line) is very close to the 2PN (dashed line) formula.</p>
+
+				<figure>
+					<trash>-0.159 -0.158 -0.157 -0.156 -0.155 -0.154 -0.153 0.09 0.1 0.11 0.12 E/M 0 v 2</trash>
+
+					<figDesc>FIG. 12. Fitting formula for Et/M0 around the innermost binary orbit (at d = 1.25) for (M/R)∞ = 0.14 (solid line). The 2PN formula (dashed line) and numerical data points are also plotted.</figDesc>
+					<trash>-0.201 -0.2 -0.199 -0.198 -0.197 -0.196 0.12 0.13 0.14 0.15 0.16 0.17 E/M 0 v 2 FIG. 13. The same as Fig. 12 but for (M/R)∞ = 0.19. 10 100 1000 10000 0.06 0.08 0.1 0.12 0.14 t coal /M t v 2</trash>
+
+
+				</figure>
+
+				<p>FIG. 14. The coalescence time t coal as a function of v 2 for (M/R)∞ = 0.14 (solid circles) and for (M/R)∞ = 0.19 (solid squares). In comparison, the orbital period and coalescence time in the Newtonian point mass case (t coal = 5Mt/(64v 8 )) are plotted by the solid and thin dotted lines. The time is shown in units of Mt(= 2Mg).</p>
+
+				<figure>
+					<trash>0.01 0.1 0.08 0.1 0.12 0.14 v r ave /v v 2</trash>
+
+
+				</figure>
+
+				<p>FIG. 15. The ratio of an average, relative radial velocity to an orbital velocity [see Eq. (5.17)] as a function of v 2 for (M/R)∞ = 0.14 (dashed line) and 0.19 (solid line). The thin dotted line denotes the Newtonian formula for two point masses (v</p>
+
+				<figure>
+					<trash>r ave = 16v 6 /5). -0.05 0 0.05 0.1 0.15 0.01 0.1 1 h ij x/λ ψ 0 −1 h ϕϕ (2,0) /r 2 h ϕϕ (2,2) /r 2 h rr (2,2) h rr (2,0) FIG. 16. Behavior of some of metric components in the near zone for (M/R)∞ = 0.14 and d = 1.3. v 2 ≃ 0.106 in this case. -0.1 -0.05 0 0.05 0.1 0.15 0.2 0.01 0.1 1 h ij x/λ ψ 0 −1 h ϕϕ (2,0) /r 2 h ϕϕ (2,2) /r 2 h rr (2,2) h rr (2,0) FIG. 17. The same as Fig. 16 but for (M/R)∞ = 0.19 and d = 1.3. v 2 ≃ 0.150 in this case. -0.1 -0.05 0 0.05 0.1 0.01 0.1 1 h ij (2,2) x/λ h ϕϕ /r 2 h rr FIG. 18. (2,2</trash>
+
+					<figDesc>) modes of hij in the near zone for (M/R)∞ = 0.19 and d = 1.3. Dotted lines are results obtained using a nonwave-type outer boundary condition and solid lines are results using an outgoing wave boundary condition . The centers of stars are located at r ≃ 0.052λ and radius of stars is ≃ 0.040λ in this case.</figDesc>
+
+				</figure>
+
+			</div>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">S</forename>
+				<surname>Thorne</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceeding of Snowmass 94 Summer Study on Particle and Nuclear Astrophysics and Cosmol- ogy</title>
+		<editor>E. W. Kolb and R. Peccei</editor>
+		<meeting>eeding of Snowmass 94 Summer Study on Particle and Nuclear Astrophysics and Cosmol- ogy<address><addrLine>Singapore</addrLine></address></meeting>
+		<imprint>
+			<publisher>World Scientific</publisher>
+			<date type="published" when="1995" />
+			<biblScope unit="page">398</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Blanchet</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">R</forename>
+				<surname>Iyer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">M</forename>
+				<surname>Will</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">G</forename>
+				<surname>Wiseman</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Class. Quant. Grav</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page">575</biblScope>
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="middle">G L</forename>
+				<surname>Blanchet</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Relativistic Gravitation and Grav- itational Radiation</title>
+		<editor>J.-P. Lasota and J.-A. Marck</editor>
+		<imprint>
+			<publisher>Cambridge University Press Prog</publisher>
+			<date type="published" when="1997" />
+			<biblScope unit="page">146</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">M</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">proceedings eighth Nishinomiya-Yukawa Memorial Symposium on Relativistic Cosmology</title>
+		<editor>M. Sasaki</editor>
+		<meeting>eighth Nishinomiya-Yukawa Memorial Symposium on Relativistic Cosmology<address><addrLine>Tokyo</addrLine></address></meeting>
+		<imprint>
+			<publisher>University Academy Press Prog</publisher>
+			<date type="published" when="1994" />
+			<biblScope unit="page">158</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Tagoshi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Ohashi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Owen</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">63</biblScope>
+			<biblScope unit="page">044006</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Itoh</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Futamase</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Asada</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<editor>T. Futamase</editor>
+		<imprint>
+			<biblScope unit="volume">63</biblScope>
+			<biblScope unit="page">064038</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+	<note>private. communication</note>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">gr- qc/0105098 &amp; 0105099: They have almost succeeded in deriving the third and half post Newtonian (3.5PN) for- mula of the gravitational wave luminosity, but there still remain two unknown parameters at 3PN order which are associated with the regularization of the singular terms in the post Newtnonian equations: See also</title>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Blanchet</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Faye</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">R</forename>
+				<surname>Iyer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Joguet</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">and references cited therein</title>
+		<editor>T. Damour, P. Jaranowski and G. Schä</editor>
+		<imprint>
+			<date type="published" when="2000" />
+			<biblScope unit="page">084011</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Tagoshi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Sasaki</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Prog</forename>
+				<surname>Theor</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Prog. Theor. Phys. Supple</title>
+		<editor>M. Sasaki, M. Shibata, H. Tagoshi and T. Tanaka</editor>
+		<imprint>
+			<biblScope unit="volume">92</biblScope>
+			<biblScope unit="issue">128</biblScope>
+			<biblScope unit="page" from="745" to="1" />
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<title level="m" type="main">Black Holes, White Dwarfs, and Neutron Stars</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">L</forename>
+				<surname>Shapiro</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">A</forename>
+				<surname>Teukolsky</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1983" />
+			<publisher>Wiley Interscience</publisher>
+			<pubPlace>New York</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">R</forename>
+				<surname>Brady</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">D E</forename>
+				<surname>Creighton</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">S</forename>
+				<surname>Thorne</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">58</biblScope>
+			<biblScope unit="page">061501</biblScope>
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Laguna</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">60</biblScope>
+			<biblScope unit="page">084012</biblScope>
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">D</forename>
+				<surname>Duez</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">W</forename>
+				<surname>Baumgarte</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">L</forename>
+				<surname>Shapiro</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page">0009064</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Bonazzola</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">A</forename>
+				<surname>Marck</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Gourgoulhon</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="page">892</biblScope>
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Gourgoulhon</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Grandclement</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Taniguchi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Marck</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Bonazzola</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">63</biblScope>
+			<biblScope unit="page">064029</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Marronetti</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">A</forename>
+				<surname>Mathews</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">R</forename>
+				<surname>Wilson</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">60</biblScope>
+			<biblScope unit="page">087301</biblScope>
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Ury¯</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Eriguchi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">61</biblScope>
+			<biblScope unit="page">124023</biblScope>
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Ury¯ U</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Shibata</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Eriguchi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">62</biblScope>
+			<biblScope unit="page">104015</biblScope>
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Arnowitt</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Deser</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">W L</forename>
+				<surname>Misner</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Witten</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Gravitation: An Introduction to Current Research Sources of Grav- itational Radiation</title>
+		<editor>J. W. York, Jr L. L. Smarr</editor>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>WileyCambridge University Press</publisher>
+			<date type="published" when="1962" />
+			<biblScope unit="page">83</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Shibata</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">M</forename>
+				<surname>Nakamura</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Prog</forename>
+				<surname>Shibata</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Theor. Phys. 101</title>
+		<editor>M. Shibata M. Shibata, T. W. Baumgarte and S. L. Shapiro M. Shibata and K. Ury¯ u</editor>
+		<imprint>
+			<date type="published" when="1995" />
+			<biblScope unit="page" from="1199" to="104052" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<title level="m" type="main">It is worthy to note that even if the effect of gravita- tional wave emission is sufficiently small to be negligible, we cannot ignore hij because an axisymmetric, nonwave contribution is contained in hij . This implies that in the conformal flatness approximation with hij = 0, not only the contribution of gravitational waves, but also an ax- isymmetric, nonwave contribution is neglected. This is the reason that a solution in the conformal flatness ap- proximation involves an error for highly nonspherical ob- jects even if they are axisymmetric</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Smarr</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">W</forename>
+				<surname>York</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<date type="published" when="1945" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">But equations in this pa- per have been found to be partly incorrect. For correct equations, see</title>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D Phys. Rev. D</title>
+		<editor>J. R. Wilson, G. A. Mathews, and P. Marronetti e.g., T. W. Baumgarte, G. B. Cook, M. A. Scheel, S. L. Shapiro, and S. A. Teukolsky</editor>
+		<imprint>
+			<biblScope unit="volume">5414</biblScope>
+			<biblScope unit="issue">57</biblScope>
+			<biblScope unit="page" from="1317" to="7299" />
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">F</forename>
+				<surname>Friedman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Ury¯</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Shibata</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>submitted. to PRD (gr-qc/0108070</note>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">S</forename>
+				<surname>Kochanek</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Astrophys. J. Astrophys. J</title>
+		<editor>L. Bild- sten and C. Cutler</editor>
+		<imprint>
+			<biblScope unit="volume">398</biblScope>
+			<biblScope unit="issue">400</biblScope>
+			<biblScope unit="page">175</biblScope>
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Shibata</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D Astrophys. J. Phys. Rev. D Phys. Rev. D</title>
+		<editor>S. A. Teukolsky See also, S. Bonazzola, E. Gourgoulhon and J.-A. Marck H. Asada</editor>
+		<imprint>
+			<biblScope unit="volume">58</biblScope>
+			<biblScope unit="issue">57</biblScope>
+			<biblScope unit="page" from="024012" to="7292" />
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">G</forename>
+				<surname>Wiseman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">M</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D Phys. Rev. D Phys. Rev. D</title>
+		<editor>K. S. Thorne D. Kennefick</editor>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="issue">50</biblScope>
+			<biblScope unit="page" from="2945" to="3587" />
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Poisson</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D Phys. Rev. D Phys. Rev. D</title>
+		<editor>A. G. Wise- man L. Blanchet</editor>
+		<imprint>
+			<biblScope unit="volume">47</biblScope>
+			<biblScope unit="issue">51</biblScope>
+			<biblScope unit="page" from="1497" to="2559" />
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<monogr>
+		<title level="m" type="main">It should be noted that perturbed metric of α, ψ, and β i contributes to radiation reaction in the strong field zone where binary neutron stars are located. In evaluat- ing radiation reaction force, they have to be taken into account</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">W</forename>
+				<surname>Misner</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">S</forename>
+				<surname>Thorne</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">A</forename>
+				<surname>Wheeler</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Gravita- tion</title>
+		<imprint>
+			<publisher>Freeman and Company</publisher>
+			<date type="published" when="1973" />
+			<publisher>Freeman and Company</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Chandrasekhar</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Nutku</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Astrophys. J</title>
+		<imprint>
+			<biblScope unit="volume">158</biblScope>
+			<biblScope unit="page">55</biblScope>
+			<date type="published" when="1969" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Asada</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Shibata</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Futamase</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1996" />
+			<biblScope unit="page">81</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">H</forename>
+				<surname>Press</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">P</forename>
+				<surname>Flannery</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">A</forename>
+				<surname>Teukolsky</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">T</forename>
+				<surname>Vetterling</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Numerical Recipes</title>
+		<imprint>
+			<publisher>Cambridge University Press</publisher>
+			<date type="published" when="1989" />
+			<publisher>Cambridge University Press</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<monogr>
+		<title level="m" type="main">We point out that it is impossible to determine the sec- ond post Newtonian term of H22, first post Newtonian terms of H32 and H42, and leading terms of H52 and H62 only from Ref. [2]. To derive these terms, we first have to determine the leading terms of H52 and H62 us- ing multipole expansion as we performed in Appendix B. Subsequently, we can determine the rest of the terms from the waveforms presented in</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Blanchet</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<editor>L. Blanchet</editor>
+		<imprint>
+			<biblScope unit="volume">54</biblScope>
+			<biblScope unit="page" from="1417" to="0004012" />
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<monogr>
+		<title level="m" type="main">Ury¯ u, in proceedings of 20th Texas symposium on relativistic astrophysics</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Shibata</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+			</persName>
+		</author>
+		<editor>J. C. Wheeler and H. Martel</editor>
+		<imprint/>
+	</monogr>
+	<note>to. be published (astro- ph/0104409</note>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Lai</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Rasio</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">L</forename>
+				<surname>Shapiro</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Astrophys. J</title>
+		<imprint>
+			<biblScope unit="volume">420</biblScope>
+			<biblScope unit="issue">423</biblScope>
+			<biblScope unit="page">344</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Blanchet</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Damour</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Schä</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mon. Not. R. astr. Soc. Prog. Theor. Phys</title>
+		<editor>H. Asada, M. Shibata, and T. Futamase</editor>
+		<imprint>
+			<biblScope unit="volume">242</biblScope>
+			<biblScope unit="issue">96</biblScope>
+			<biblScope unit="page" from="289" to="81" />
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">S</forename>
+				<surname>Thorne</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Rev. Mod. Phys. Philos. Trans. R. Soc. London</title>
+		<editor>L. Blanchet and T. Damour</editor>
+		<imprint>
+			<biblScope unit="volume">52</biblScope>
+			<biblScope unit="issue">320</biblScope>
+			<biblScope unit="page" from="299" to="379" />
+			<date type="published" when="1980" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Ury¯</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Eriguchi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mon. Not. R. astr. Soc</title>
+		<imprint>
+			<biblScope unit="volume">299</biblScope>
+			<biblScope unit="page">575</biblScope>
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Kley</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Schä</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">60</biblScope>
+			<biblScope unit="page">027501</biblScope>
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

@@ -1,0 +1,2083 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Light Dark Matter Anomalies After LUX</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2013-11-27">27 Nov 2013</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Moira</forename>
+								<forename type="middle">I</forename>
+								<surname>Gresham</surname>
+							</persName>
+							<affiliation>
+								<orgName type="institution">Whitman College</orgName>
+								<address>
+									<postCode>99362</postCode>
+									<settlement>Walla Walla</settlement>
+									<region>WA</region>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Kathryn</forename>
+								<forename type="middle">M</forename>
+								<surname>Zurek</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Michigan Center for Theoretical Physics</orgName>
+								<orgName type="institution">University of Michigan</orgName>
+								<address>
+									<postCode>48109</postCode>
+									<settlement>Ann Arbor</settlement>
+									<region>MI</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Light Dark Matter Anomalies After LUX</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2013-11-27">27 Nov 2013</date>
+						</imprint>
+					</monogr>
+					<note>1 CONTENTS</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>We examine the consistency of light dark matter (DM) elastic scattering in CoGeNT, DAMA, and CDMS-Silicon in light of constraints from XENON, CDMS, LUX, PICASSO and COUPP. We consider a variety of operators that have been employed to reconcile anomalies with constraints, including anapole, magnetic dipole, momentum-dependent, and isospin-violating DM. We find that elastic scattering through these alternative operators does not substantially reduce the tension between the signals and the null constraints for operators where at least two of the three purported signals map onto a common space in the DM mass–scattering cross-section plane. Taking a choice of the scintillation efficiency that lies at the −1σ region of the Manzur et al measurement relieves tension between signals and the LUX constraint—in particular for a magnetic dipole interaction and a xenophobic interaction (though for the latter the signal regions do not substantially overlap). We also find that modest changes in the halo model does not alter this result. We conclude that, even relaxing the assumption about the type of elastic scattering interaction and taking a conservative choice for the scintillation efficiency, LUX and the results from other null experiments remain in tension with a light DM elastic scattering explanation of direct detection anomalies.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head>I. INTRODUCTION</head>
+
+				<p>Low mass dark matter (DM) anomalies have, to this point, shown remarkable resilience to experimental constraints. Old anomalies have remained and new ones appeared, all while new constraints have continued to close the allowed parameter space for an elastically</p>
+
+				<p>scattering light DM particle in the 7-12 GeV mass window that can explain the signals.</p>
+
+				<p>The first anomaly appeared from DAMA, which reported a high significance modulation consistent with light DM recoiling off Sodium Iodide crystals [1, 2]. The CoGeNT experiment subsequently reported an excess of events at low energy consistent with light DM scattering off Germanium [3]; later it was found that approximately half of these events were from surface contamination [4].</p>
+
+				<p>These anomalies became the target for searches of light DM, and the null results from XENON10, XENON100, PICASSO, COUPP, CDMS germanium low energy and CDMSLite constrained the region [5–10]. The strongest constraints are derived from XENON in the spin-independent case, though the robustness of these limits is subject to nuclear recoil energy calibration uncertainties near threshold, encapsulated in the L eff and Q y parameters (see, for example, [11, 12] for a discussion) which made their constraints controversial. In the end, however, these constraints appeared to be so strong that even non-standard models of WIMP DM scattering (e.g. [13–20]) did not evade the constraints. Implementing different velocity distributions also did not relieve the tension [14, 17, 21, 22].</p>
+
+				<p>Interest revived, however, when CDMS reported an excess of three events in Silicon data at threshold consistent with a light DM candidate [23]. The preferred region is also naively consistent with the CoGeNT excess, though again marginally in conflict with the XENON constraint. Since the targets in DAMA, CoGeNT, and CDMS are different than in XENON, the constraints may not be compared in a model-independent fashion. For example, an effort to tune away the XENON constraint via isospin violation, which reduces the DM scattering cross-section off of Xenon, can successfully reduce the tension (though the tension with the CDMS germanium and CDMSLite results remains) [24].</p>
+
+				<p>Most recently, LUX has weighed in on the light DM fray with a low nuclear recoil energy constraint, their result [25] reaching to a nuclear recoil threshold of 3 keV. For an interpretation of the CDMS three events with spin-independent scattering, with equal DM coupling to the proton and neutron, at a cross-section 2×10 −41 cm 2 , LUX would see approximately 1500 events. Given the presence of few electron recoil events leaking into the nuclear recoil band, LUX is able to put a strong constraint on the entire preferred region of the CDMS-Silicon three events.</p>
+
+				<p>The purpose of the present paper is to project the LUX, as well as XENON10, XENON100, CDMS germanium low energy, CDMSLite, COUPP and PICASSO constraints onto the space for scattering through standard and non-standard types of interactions, looking beyond the usual spin-independent and -dependent scattering operators. In many models of DM, the leading interactions may be momentum (or velocity) dependent [13, 26–33]. The simplest cases to consider are interactions through the DM anapole and dipole operators [14], or through pseudoscalars. In particular, the operators we consider are</p>
+
+				<figure>
+					<trash>O a = ¯ χγ µ γ 5 χA µ (1) O d = ¯ χσ µν χF ( ) µν (2) O φ = ¯ χ(a + bγ 5 )χφ. (3)</trash>
+
+
+				</figure>
+
+				<p>The first two operators are the anapole and dipole, respectively. The gauge field may or may not be the Standard Model (SM) U (1) in the dipole case. One attractive scenario arises when a dark gauge field (A ) mixes with hypercharge. The anapole is attractive because it is the leading operator through which Majorana DM can couple to the nucleus through a vector interaction. The dipole couples the DM spin to the field strength, and naturally arises in some models of composite DM [26, 30]. Given an effective nucleon interaction of the form φ ¯ N (c + dγ 5 )N , the following effective operators are generated when φ is integrated out:</p>
+
+				<figure>
+					<trash>O 1 = ¯ χγ 5 χ ¯ N N (4) O 2 = ¯ χχ ¯ N γ 5 N (5) O 3 = ¯ χγ 5 χ ¯ N γ 5 N (6)</trash>
+
+
+				</figure>
+
+				<p>in addition to the standard spin-independent operator ¯ χχ ¯ N N . If a = 0 and/or c = 0, say, for symmetry reasons, then the standard spin-independent operator is absent. The operators of Eqs. (4)-(6) were highlighted in [13] as leading to WIMP-nucleus interactions with leading q 2 dependence. O 1 leads to a q 2 -suppressed, spin-independent interaction; O 2 to a q 2 -suppressed, spin-dependent interaction; and O 3 to a q 4 -suppressed, spin-dependent interaction.</p>
+
+				<p>On the other hand, the momentum and velocity dependence for the anapole and magnetic dipole operators are more subtle, and depend on the way in which the gauge field A µ couples to the nucleus. In particular when the field coupling to the nucleus is the photon, via kinetic mixing with a dark photon, the anapole and dipole operators give rise to an effective interaction of the form</p>
+
+			</div>
+			<div>
+				<head>L</head>
+
+				<figure>
+					<trash>Anapole int = f a M 2 − q 2 ¯ χγ µ γ 5 χ N =n,p ¯ N F N 1 γ µ + F N 2 iσ µν q ν 2m N N (7) L Magnetic Dipole int = f d M 2 − q 2 ¯ χ iσ µν q ν Λ χ N =n,p ¯ N F N 1 γ µ + F N 2 iσ µρ q ρ 2m N N (8) where F N i</trash>
+
+
+				</figure>
+
+				<p>are the appropriate electromagnetic form factors, M is the mediator mass and q is four-momentum transfer (2). 1 The magnetic dipole operator in particular was shown in previous work to alleviate the tension between the constraints from the XENON100 experiment and the putative signals [14]</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>1</head>
+
+				<p>Note that the effective higher-dimension operator ¯ χγ µ γ 5 χ∂ ν F µν , which is sometimes also referred to as &quot; the anapole operator &quot; , may also be generated [34].</p>
+
+				<p>The goal of the present paper is to re-examine the parameter space for light elastically scattering DM in light of the recent results from LUX, and the earlier constraints released from XENON100, XENON10 S2 only, CDMS Ge Low-Energy, COUPP, and PICASSO. We overlay CDMSlite bounds for the standard spin-independent case for reference. CDMSlite data is not yet available to responsibly adopt their constraints to the operators considered in this paper. We do not include constraints from experiments such as Edelweiss [35] and TEXONO [36] whose limits are comparable to or surpassed in the low-mass region we consider by other experiments with the same nuclear target and similar low-energy thresholds (the Ge-target CDMS II low-energy analysis for these examples). We also consider the constraints on isospin violating models [13, 24], which modify the relative couplings to neutrons and protons to tune away the coupling to Xenon. We limit our attention to elastic scattering of WIMPs off of nuclei; analysis of models with inelastic scattering is beyond the scope of this paper.</p>
+
+				<p>We find that, unsurprisingly, LUX rules out the CDMS Silicon and CoGeNT regions of interest for all of the underlying WIMP-nucleon interactions we consider. If a more conservative choice for the nuclear recoil energy conversion is taken for the Xenon experiments, we find that small portions of the CDMS Silicon and CoGeNT regions of interest can survive the Xenon constraints, though typically in those regions other constraints enter that close the window. Under a more conservative assumption on nuclear recoil energy calibration, XENON100 and LUX constraints can be shifted up by 1-2 GeV in the m DM ∼ 6-10 GeV range. Of the models we consider, Anapole and Magnetic Dipole interactions do the best job of bringing the DAMA (assuming scattering primarily off of Sodium with quenching factor Q Na = 0.3), CoGeNT, and CDMS Silicon regions of interest into alignment: the three regions significantly overlap for anapole interactions and come close for the dipole. Even with the conservative assumption about nuclear recoil energy calibration, LUX still rules out the region where all three overlap for the Anapole interaction; PICASSO, XENON10 S2 and CDMS Ge low-energy are also competitive in this range. In addition to considering alternative energy calibration assumptions, we consider alternative halo models. The alternative assumptions we consider do little to weaken the LUX constraint relative to the CDMS Si and CoGeNT regions of interest.</p>
+
+				<p>The outline of this paper is as follows. In §II we specify nuclear scattering cross-sections for models we consider. Then in §III we extract constraints for these models in parallel with the light DM CDMS Si, CoGeNT, and DAMA regions of interest. For the Xenon target experiments, we discuss and implement a very conservative alternative extrapolation of nuclear recoil energies. In §IV, we briefly discuss the effect of the halo model on our results. We conclude in §V.</p>
+
+			</div>
+			<div>
+				<head>II. RATES AND CONVENTIONS FOR LIGHT MOMENTUM DEPENDENT DARK MATTER</head>
+
+				<p>We briefly review scattering rates to define our conventions. The details of how we have derived the constraint or preferred region for each experiment are given in the appendix.</p>
+
+				<figure>
+					<trash>The rate for scattering is dR dE R = N T ρ DM m DM | v|&gt;v min d 3 vvf ( v, v e ) dσ dE R , (9) where v min = √ 2m N E R 2µ N and µ</trash>
+
+
+				</figure>
+
+				<p>N is the DM-nucleus reduced mass. To calculate rates we model the DM velocity distribution as a truncated Maxwellian distribution,</p>
+
+				<figure>
+					<trash>f ( v) ∝ e −( v+ ve) 2 /v 2 0 − e −v 2 esc /v 2 0 Θ(v 2 esc − ( v + v e ) 2 ), (10)</trash>
+
+
+				</figure>
+
+				<p>where Earth&apos;s speed relative to the galactic halo is v e = v + v orb cos γ cos[ω(t − t 0 )], v 0 is mean WIMP speed relative to the galaxy, and v esc is the galactic escape velocity. We also use a standard value for DM density, ρ DM . Specifically, we take v 0 = 220 km/s, v = 232 km/s, v esc = 544 km/s, v orb = 30 km/s, ρ DM = 0.3 GeV/c 2 /cm 3 , cos γ = 0.51, though as noted in [14], modifying these parameters shifts the regions somewhat but does not alter the conclusions. In the next section we consider in particular the effect of modifying the escape velocity on the constraints.</p>
+
+				<p>The differential rate is related to the scattering cross section off of a nucleus via</p>
+
+				<figure>
+					<trash>dσ dE R = m N σ N 2µ 2 N v 2 . (11)</trash>
+
+
+				</figure>
+
+				<p>For the standard spin-independent case, this is related to the scattering off protons σ p via</p>
+
+				<figure>
+					<trash>σ SI N = σ p µ 2 N µ 2 n [f p Z + f n (A − Z)] 2 f 2 p F 2 (E R ), (12)</trash>
+
+
+				</figure>
+
+				<p>where µ n , µ N are the nucleon-WIMP and nucleus-WIMP reduced masses, f p , f n are the proton and neutron couplings, Z and A are the atomic number and weight of the target nucleus, and we take the form factor F (E R ) to be the Helm form factor. For the standard spin-dependent case, we take</p>
+
+				<figure>
+					<trash>σ SD N = σ µ 2 N µ 2 n 4 3 J + 1 J (a p S p + a n S n ) 2 (|a p | + |a n |) 2 (13) where σ = ( √ σ p + √ σ n ) 2</trash>
+
+
+				</figure>
+
+				<p>, with σ p,n the scattering cross-sections off protons and neutrons.</p>
+
+				<p>For S p,n we take the values as in Table 1 of [37]. Here we are justified in neglecting the momentum-dependence of the spin-dependent nuclear form factor because we are specializing to the case of light (m DM 20GeV) DM where only small | q|b, where b is nuclear size, is relevant. For the anapole and dipole cases, WIMPs couple to the electromagnetic current and lead to spin-independent, orbital-angular-momentum-and spin-dependent couplings.</p>
+
+				<figure>
+					<trash>2 The nuclear scattering cross-sections are σ a N = f 2 a µ 2 N πM 4 Z 2 F 2 (A; q 2 ) v 2 − q 2 4µ 2 N + J + 1 3J b 2 N b 2 n A 2 q 2 2m 2 N (14) σ d N = f 2 d µ 2 N πM 4 q 2 Λ 2 Z 2 F 2 (A; q 2 ) v 2 − q 2 4µ 2 N + q 2 4m 2 DM + J + 1 3J b 2 N b 2 n A 2 q 2 2m 2 N , (15)</trash>
+
+
+				</figure>
+
+				<p>where J is the spin of the nucleus, b N is the nucleus magnetic moment and b n = e/2m p is the nuclear magneton. When reporting cross-sections, we use the conventioñ</p>
+
+				<figure>
+					<trash>σ = f 2 a µ 2 n /πM 4 for the anapole and σ = f 2 d µ 2 n /πM 4 , Λ = 1</trash>
+
+
+				</figure>
+
+				<p>GeV for the magnetic dipole. In addition, while recent work has suggested that the inclusion of proper nuclear responses may be important [39, 40], we have explicitly checked that, for the low momentum transfer relevant for light DM scattering, their momentum dependence is negligible. Hence we proceed with only the usual spin-independent form factor. For the q 2 and q 4 momentum dependent operators O 1 − O 3 , as done in [13] we will take the standard spin-independent scattering cross-section in (12) (for O 1 ) or the spin-dependent scattering cross-section in (13) (for O 2 , O 3 ) and rescale it by a reference momentum-dependent factor, ( q 2 / q 2 ref ) n , where n = 1, 2. By default we take | q ref | = 1 GeV. If the mediator mass is comparable to the momentum transfer, other important effects could occur, which we neglect here.</p>
+
+			</div>
+			<div>
+				<head>III. LIGHT MOMENTUM DEPENDENT DARK MATTER VERSUS XENON CONSTRAINTS</head>
+
+				<p>Our results are shown in Figs. 2-4 for spin-independent, anapole, dipole, spin-dependent, isospin-violating, and momentum-dependent DM. We include fits to the CoGeNT [4], CDMS</p>
+
+			</div>
+			<div>
+				<head>Silicon [23]</head>
+
+				<p>, and DAMA results [2], and constraints from the CDMS germanium low-energy analysis [9], the XENON10 S2 only analysis [5], XENON100 [6], COUPP [8] and PICASSO [7]. The CDMSlite constraint of [10] is shown on the spin-independent plot; we did not rescale the CDMSlite constraints for other forms of interactions because the collaboration has not yet released their data, and the shift in the constraint should mirror the shift in the CDMS germanium constraint.</p>
+
+				<p>As is well known, the Xenon-target detector results are particularly sensitive to threshold effects and energy calibration issues, which we describe in more detail in the appendix. Uncertainties in L eff have been included in the constraint curves corresponding to XENON100 and LUX. In the plots the dark blue and black curves correspond to the L eff used by the XENON100 [6] and LUX [25] collaborations, respectively, while the light blue and black curves correspond to a linear extrapolation of the average expected number of photoelectrons ν(E R ) =</p>
+
+			</div>
+			<div>
+				<head>Snr See</head>
+
+				<p>L y E R L eff (E R ) for the −1σ boundaries of the L eff measurement made by Manzur et al. [41]. We effectively assume L eff drops to zero at the lowest data point (4 keV). We show in Fig. 7 in the appendix the L eff s we have used. For the S2 only XENON10 analysis, the dark red curve corresponds to the Lindhard model ionization yield Q y used by the collaboration in their analysis, and the light red curve corresponds to a variation of Q y as follows: We extrapolated from the −1 σ boundaries of the ionization yield data points with E R &gt; 10keVnr from the measurement by Manzur at E d = 1 kV/cm [41]. We do a linear interpolation of {LogE R , Q y } including the point Q y (0) = 0. 3 We believe this is an appropriately conservative case to consider given that (1) the Lindhard model is suspected to be a crude approximation at low energies for liquid Xenon, (2) there is significant disagreement between different measurements below about 10 keV, and (3) generic theoretical expectations are that the ionization yield should fall off at low energies. For DAMA we have taken a quenching factor Q Na = 0.3 for the most optimistic agreement with CoGeNT and CDMS-Si, though [42] suggests a lower Q Na ≈ 0.15, which would shift the DAMA region 3 More precisely, we set Q y (10 −3 keV) = 10 −3 e − /keV for the log extrapolation. to the right. For COUPP, we draw constraints under the two different assumptions about Fluorine efficiency adopted by the collaboration, as detailed in the appendix. Fig. 1 establishes a baseline, showing all of the constraints we consider in the σ-m DM plane for isospin-conserving spin-independent and -dependent interactions. All constraints except for CDMSlite are derived independently, following the procedures laid out in the appendix. In subsequent plots we will show only an appropriately representative subset of constraints. Fig. 2 shows constraints and regions of interest for DM interacting via the anapole (14) and magnetic dipole (15) interactions, in the σ-m DM plane. Since both the anapole and dipole have spin-and orbital-angular-momentum-dependent scattering components, we include the constraint from PICASSO as well, and we checked that the COUPP constraint is weaker than the PICASSO+XENON bound throughout the region. Both the anapole and dipole interactions bring the three regions of interest into good or marginal agreement, but the Xenon bounds do not loosen for the anapole in the region of interest relative to the spin-independent case. For the magnetic dipole, more of the CoGeNT preferred region is consistent with the LUX bounds, while remaining constrained by XENON10 S2 only. Fig. 3 shows constraints and regions of interest for other spin-independent interactions, including momentum-suppressed interactions arising from Eq. (4) and isospin-violating interactions (see [24, 43]), Eq. (12) with f n = f p . Even given the &quot; xenophobic &quot; choice, f n /f p = −0.7, which minimizes DM coupling to Xenon, LUX still rules out all of the DAMA and most of the CoGeNT regions of interest, and much of the CDMS Silicon region of interest . Furthermore, while older studies emphasized that the xenophobic isospin choice brings the CoGeNT and DAMA regions of interest into &quot; agreement &quot; , we can see that the 99% C.L. regions for CoGeNT and DAMA are much closer than in the isospin-conserving case, but do not overlap with each other or with the CDMS Silicon region of interest. For the momentum-suppressed spin-independent interaction, the regions of interest shift towards lower masses to compensate for the momentum suppression, while XENON100 and LUX constraints shift relatively less since the larger target mass implies a larger momentum transfer in the scattering at a given nuclear recoil energy. This shift is not enough, however, to</p>
+
+				<p>bring LUX into agreement with even the 99% C.L. boundary of the CoGeNT region. Taking the very conservative choice for L eff that we discuss opens up a corner of an overlapping CDMS/CoGeNT region of interest.</p>
+
+				<figure>
+					<trash>6 8 10 12 14 10 42 10 41 10 40 m DM GeVc 2 Σ p SI cm 2 SpinIndependent 6 8 10 12 14 10 37 10 36 10 35 10 34 m DM GeVc 2 Σ SD cm 2 SpinDependent a p a n CoGeNT 90,99 CDMS Si 68,90 DAMA 90,99 CDMS Ge LE XENON10 S2 XENON10 S2, alt Q y XENON100 XENON100, alt L eff LUX LUX, alt L eff PICASSO COUPP Η,Α CDMSlite FIG. 1.</trash>
+
+
+				</figure>
+
+				<p>Regions of interest and exclusion curves for experiments and parameters as listed in Table I, assuming a standard, spin-independent (12) or -dependent (13), isospin-conserving Nucleon- WIMP interaction. A standard Maxwellian distribution is assumed, as explained in the text. All constraint curves are 90% C.L. as explained in the appendix. We overlay the CDMSlite bound for reference; all other curves were generated as described in the appendix. We show both a weak and strong COUPP bound, as described in the appendix, and the choice of alternative L eff for the Xenon experiments is shown in Fig. 7 in the appendix. Fig. 4 includes constraints for spin-dependent interactions (13), including the most extreme momentum-suppressed interactions arising from (6) and a couple of different choices for relative DM coupling to neutrons and protons. The LUX and XENON100 bounds are very constraining even for spin-dependent interactions, regardless of whether the interactions</p>
+
+				<figure>
+					<trash>6 8 10 12 14 10 35 10 34 10 33 m DM GeVc 2 Σ cm 2 Anapole 6 8 10 12 14 10 32 10 31 10 30 m DM GeVc 2 Σ cm 2 Magnetic Dipole FIG. 2. Regions of interest and exclusion curves for relevant experiments and parameters as listed in Table I</trash>
+
+
+				</figure>
+
+				<p>, assuming an anapole (14) or magnetic dipole (15) Nucleon-WIMP interaction. We checked that the strong COUPP bound is weaker than the combination of LUX + PICASSO.</p>
+
+				<p>Refer to Fig. 1. are momentum-suppressed. We find a similar shifting of bounds and regions of interest in the momentum-suppressed cases as in [13]. The spin-dependent bound from PICASSO 2012 is obviously very strong; it shifts relative to DAMA in the momentum-suppressed case, but not enough to bring the results into agreement.</p>
+
+				<p>To summarize, using the rather conservative assumption for L eff discussed above and in the appendix significantly loosens the XENON100 bound in all cases—enough to open up significant portions of the CDMS and CoGeNT (and in some cases, the DAMA) regions of interest. The LUX bound is also loosened, yet still strongly constrains most of the CDMS and CoGeNT regions of interest (and all of the DAMA region of interest except in the case of a n = 0 spin-dependent interactions) in all of the cases we consider. Unless L eff or another aspect of deducing expected rates at LUX is severely misunderstood, and/or some alternative astrophysics is playing a dramatic role, a light DM elastic scattering explanation for the DAMA, CoGeNT and CDMS-Si anomalies appears to be substantially obstructed.</p>
+
+				<p>In all cases one should keep in mind that the quenching factor Q Na = 0.3 we used for setting the DAMA regions has recently been claimed to bee too high especially for very low-energy recoils [42]. As noted above, lowering the quenching factor moves the preferred DAMA regions to higher masses—into worse agreement with CoGeNT and CDMS Si regions of interest.</p>
+
+				<figure>
+					<trash>6 8 10 12 14 10 42 10 41 10 40 m DM GeVc 2 Σ p SI cm 2 SpinIndependent CoGeNT 90,99 CDMS Si 68,90 DAMA 90,99 CDMS Ge LE XENON10 S2 XENON10 S2, alt Q y XENON100 XENON100, alt L eff LUX LUX, alt L eff CDMSlite 6 8 10 12 14 10 38 10 37 m DM GeVc 2 Σ p SI cm 2 q 2 q ref 2 SpinIndependent 6 8 10 12 14 10 39 10 38 10 37 m DM GeVc 2 Σ p SI cm 2 SpinIndependent, f n f p 0.7 Xephobic 6 8 10 12 14 10 41 10 40 10 39 10 38 m DM GeVc 2 Σ p SI cm 2 SpinIndependent, f n f p 0.5 Xephobic 6 8 10 12 14 10 41 10 40 10 39 m DM GeVc 2 Σ p SI cm 2 SpinIndependent, f n 0 photonic FIG. 3</trash>
+
+
+				</figure>
+
+				<p>. Regions of interest and exclusion curves for relevant experiments and parameters as listed in Table I, assuming spin-independent Nucleon-WIMP interactions. We include constraints for a momentum-suppressed interaction (with q ref = 1 GeV) arising from scalar exchange as well as for some Xenonphobic isospin benchmarks in addition to the &quot; standard &quot; isospin-conserving case.</p>
+
+			</div>
+			<div>
+				<head>IV. ASTROPHYSICAL DEPENDENCE OF LIGHT MOMENTUM DEPENDENT DARK MATTER PARAMETER SPACE</head>
+
+				<p>To conclude our discussion about a light DM elastic scattering explanation for anomalies, we consider the effects of modest changes in the assumptions of the standard halo model. Fig. 5 indicates how the high-velocity tail of the assumed velocity distribution can</p>
+
+				<figure>
+					<trash>6 8 10 12 14 10 37 10 36 10 35 10 34 m DM GeVc 2 Σ SD cm 2 SpinDependent a p a n 6 8 10 12 14 10 37 10 36 10 35 10 34 10 33 10 32 10 31 m DM GeVc 2 Σ p SD cm 2 SpinDependent a n 0 6 8 10 12 14 10 29 10 28 10 27 m DM GeVc 2 Σ SD cm 2 q 4 q ref 4 SpinDependent a p a n CoGeNT 90,99 CDMS Si 68,90 DAMA 90,99 CDMS Ge LE XENON100 XENON100, alt L eff LUX LUX, alt L eff</trash>
+
+					<figDesc>PICASSO FIG. 4. Regions of interest and exclusion curves for relevant experiments and parameters as listed in Table I, assuming momentum-suppressed spin-dependent Nucleon-WIMP interaction arising from scalar exchange. We checked that the strong COUPP bound is weaker than the combination of LUX + PICASSO. icantly affect light DM. The figure shows the velocity moment g(v min ) =</figDesc>
+
+				</figure>
+
+				<p><formula>∞ v min 1 v 2 vf ( v)d 3 v</formula></p>
+
+				<p>given a standard distribution as in Eq. (10) with standard choices of velocity parameters as described in the text, alongside the fractional difference for g assuming several other velocity distributions: given a smaller galactic escape velocity, an additional &quot; stream &quot; component modeled on the Sagittarius stream discussed in [44], a stream designed to increase the modulation amplitude for DAMA, and the non-Maxwellian distribution of [45]. Except in the case of leading velocity dependence in σ N for, e.g., the anapole and magnetic dipole inter- actions, 4 the differential rate as a function of recoil energy is proportional to g(v min (E R )), which contains all of the astrophysics dependence in the rate [21, 22]. For order 10 GeV DM, v min at the lowest recoil energies probed by LUX and XENON100 sits at the tail of 4 These interactions depend also on the moment, h(v min ) = ∞ vmin vf ( v)d 3 v due to the leading velocity dependence in the interactions. g, as indicated on the figure. Thus the predicted rates for XENON100 and LUX for light DM depend highly on the high-velocity tail of the velocity distribution. It stands to reason that cutting the tail off at lower v min —e.g. by lowering v esc —could weaken the LUX and XENON100 constraints for light DM.</p>
+
+				<p>It has been noted that alternative halo distributions can affect modulation amplitudes quite dramatically while changing absolute rates very little [44]. This is because the modulation amplitude is sensitive to a different quantity: the change in g at two opposite times of year. In Fig. 5 we show this annual modulation difference assuming the alternate halo models discussed above. A stream with small dispersion can contribute a substantial peak even with modest density (in our examples, 5%ρ DM ). Our &quot; designer stream &quot; is modeled as an untruncated Maxwellian distribution with v = 510km/s, v 0 = 25m/s, and is in phase with the primary distribution. The DAMA modulation data points assuming m DM = 8</p>
+
+				<p>GeV (in order to convert to v min ) are overlaid on the ∆g plot to show that one can shift the DAMA preferred region towards a particular mass (in our example, 8 GeV) by tuning the velocity parameters of the stream. The light orange points show the spectrum for 10 GeV dark matter. Fig. 6 shows that the preferred DAMA regions shift much more dramatically (toward 8 GeV) than the Xenon constraint curves given our designer stream.</p>
+
+				<p>We find that while reducing v esc to the marginally plausible value v esc = 490 km/s (see [46]) does weaken LUX and XENON100 bounds, it also moves the regions of interest so that increased agreement is not obtained. This is shown in Fig. 6. The cut-off of the high-velocity tail at lower velocity shifts the preferred regions towards higher masses at the same time that it weakens the Xenon constraint at a given mass. Since the Xenon bounds are nearly vertical in the relevant mass region, the weakening of the Xenon bounds does not win over the region-of-interest shift towards higher masses.</p>
+
+			</div>
+			<div>
+				<head>V. CONCLUSIONS</head>
+
+				<p>We examined the parameter space for an elastically scattering light DM candidate to explain the DAMA, CoGeNT and CDMS-Si anomalies, through standard spin-independent and -dependent interactions, as well as anapole, dipole, and other momentum-dependent interactions. In all cases, elastic scattering is in strong tension with the LUX results. The tension is relaxed with a choice for the scintillation yield L eff which is in the −1σ range as</p>
+
+				<figure>
+					<trash>XENON10S2 CoGeNT DAMA CDMSsi LUX XENON100 0 100 200 300 400 500 600 0.5 0.0 0.5 v min kms v 0 g SHM and Ρ gΡ SHM g SHM 1 100 200 300 400 500 600 700 800 0.04 0.02 0.00 0.02 0.04 v min kms Modulation Amplitude SHM lower v esc nonMaxwellian designer stream Sagittarius stream FIG. 5</trash>
+
+
+				</figure>
+
+				<p>. Left: velocity moment, g SHM (v min ), for our standard halo model alongside the fractional difference g non-standard g SHM − 1 for the &quot; non-standard &quot; distributions we consider, as indicated by the legend. Also shown is a dotted line at v min = 2m N E min R /2µ N for m DM = 10GeV where E min R is equal to the average expectation for nuclear recoil energy at the low end of the signal range for a given experiment. In other words, the dotted lines sit at the approximate minimum v min probed for m DM = 10 GeV. For smaller (larger) m DM , the lines shift right (left). Right: Annual modulation difference, g| June 2 −g| Dec 1 relevant for modulation amplitudes for several different halo models as indicated by the legend. Each stream is assumed to have density 5% of the standard halo distribution. The &quot; designer stream &quot; is assumed to be in phase with the SHM and has characteristic velocities chosen to match the DAMA spectrum for m DM = 8 GeV. Overlaid is the spectrum of modulated DAMA events as a function of v min assuming m DM = 8 GeV. The lighter points indicate the spectrum assuming m DM = 10 GeV. measured by Manzur et al [41], though most of the parameter space is still constrained. In particular, the anapole operator effectively brings all three anomaly-preferred regions into agreement, while not easing the constraints from the Xenon experiments; the dipole operator is most effective at reducing the tension with the Xenon constraints though not bringing the preferred regions of the anomalies into agreement.</p>
+
+				<p>We conclude that, absent a severe misunderstanding of experimental constraints at low recoil energy, the elastic DM scattering explanation of these anomalies is obstructed, and if a new physics explanation is to be found, more exotic types of scenarios should be sought. At the same time, DM with mass below 10 GeV remains theoretically well-motivated (e.g. from</p>
+
+				<figure>
+					<trash>6 8 10 12 14 10 42 10 41 10 40 m DM GeVc 2 Σ p SI cm 2 SpinIndependent DAMA 99 CDMS Si 90 LUX 6 8 10 12 14 10 35 10 34 10 33 m DM GeVc 2 Σ cm 2 Anapole 6 8 10 12 14 10 32 10 31 10 30 m DM GeVc 2 Σ cm 2 Magnetic Dipole FIG. 6</trash>
+
+
+				</figure>
+
+				<p>. LUX bounds alongside regions of interest for CDMS Si and DAMA given (thin, darker) the standard truncated Maxwellian distribution with v esc = 544km/s, (thicker, lighter) a truncated</p>
+
+				<p>Maxellian distribution with v esc = 0.9 × 544 km/s, with v 0 = 220km/s and v e = 232 m/s fixed, and (thick, light, dotted) including a designer stream as in Fig. 5, modeled as an untruncated Maxwellian distribution with v = 510km/s, v 0 = 25m/s, in phase with the primary distribution.</p>
+
+				<p>We truncate the dotted designer stream LUX bound lines in two of the plots in order to reveal the overlap between the designer stream and SHM bounds for LUX.</p>
+
+			</div>
+			<div>
+				<head>models of</head>
+
+				<p>Asymmetric DM and hidden sector models) and under-constrained in comparison to a 100 GeV DM candidate. Thus further experimental investigation pushing to lower masses and smaller cross-sections continues to be warranted and compelling.</p>
+
+			</div>
+			<div>
+				<head>ACKNOWLEDGMENTS</head>
+
+				<p>The work of KZ is supported by NASA astrophysics theory grant NNX11AI17G and by NSF CAREER award PHY 1049896.</p>
+
+			</div>
+			<div>
+				<head>Appendix A: Details for Event Rates and Experimental Constraints</head>
+
+				<p>In this appendix we detail the analyses used in deriving bounds from various experiments.</p>
+
+				<p>To translate from observed signal to a bound or region of interest, one must specify the expected number of events, event rate, or modulation amplitude in a given signal range, accounting for the resolution and cut efficiency of the experiment. In general, the number of events expected in a given experiment signal range [s 1 , s 2 ] is</p>
+
+				<figure>
+					<trash>N [s 1 ,s 2 ] = Ex s 2 s 1 (s) ∞ 0 dR dE R P(E R , s)dE R ds (A1)</trash>
+
+
+				</figure>
+
+				<p>where Ex is the exposure, is the efficiency, and P(E R , s) is the probability per unit signal of observing signal s given an actual recoil energy E R . For example, given perfect energy resolution and a mapping ν(E R ) = s from E R to s,</p>
+
+				<figure>
+					<trash>P(E R , s) = δ (s − ν(E R )) so that N [s 1 ,s 2 ] = Ex s 2 s 1 (s) dR dE R / dν dE R ds. (A2)</trash>
+
+
+				</figure>
+
+				<p>Depending on the experiment, the signal could be e.g. electron equivalent energy (E ee ), ionization electrons ( &quot; S2 &quot; ), or scintillation photo-electrons ( &quot; S1 &quot; ).</p>
+
+				<p>The type of target, exposure, statistical method used in deriving bounds or regions of interest , reported signal type, analysis signal range, and total number of candidate events in the signal range are summarized for each experiment in Table I. Below, we provide further analysis details. All constraint and region-of-interest curves using the procedures described below match well with those in the primary literature for spin-independent, isospin-conserving WIMP interactions.</p>
+
+			</div>
+			<div>
+				<head>a. CDMS Si</head>
+
+				<p>We digitized the efficiency as a function of recoil energy shown in Fig. 1 of [23]. We approximated the resolution as being perfect. We maximized the log of the Likelihood function (ln L) over DM mass and interaction strength, given the three candidate event energies and assuming zero background. Contours satisfying ln L = ln L max − CDF −1 (ChiSq[2], C.L.)/2 were drawn for C.L.=68% and 90%, where CDF −1 (ChiSq[2]</p>
+
+				<figure>
+					<figDesc>, C.L.) is the χ 2 value at which the cumulative distribution function of a χ 2 distribution for two degrees of freedom equals C.L.. b. DAMA We take the modulation amplitude to be</figDesc>
+					<trash>A(E R ) = 1 2 dR dE R ve=v +v orb cos γ − dR dE R ve=v −v orb cos γ (A3) T Ex Stat. Method Ref. Signal &amp; keVnr Range N events CDMS Si Si 140.2 kg-days Max. Likelihood [23] E R 7-100 3 DAMA Na, I 1.17 ton-yr ∆χ 2 [2] E ee 2-20 keVee a 6.7-67 b CoGeNT Ge 266 kg-days ∆χ 2 [4] E ee 0.5-3 keVee 2.3-11 2272 c CDMS Ge L-E Ge 35 kg-days d Yellin&apos;s p max [9] E R 2-100 38 Xenon10 S2 Xe 15 kg-days Yellin&apos;s p max [5] S2 5-43 e − s 1.4-10 23 XENON100 Xe 7636 kg-days Max. Gap [6] S1 3-20 PEs 6.6-30.5 2 LUX Xe 10065 kg-days Max. Gap [25] S1 2-30 PEs 3.6-24.8 1 PICASSO F 114.3 kg-days χ 2 [7]</trash>
+
+
+				</figure>
+
+				<p>thresholds from: 1.7-55 COUPP F,I 437.4 kg-days e Likelihood Ratio [8] thresholds from: 7.8-15.5 a We used only data up to 14 keVee in our analysis.</p>
+
+			</div>
+			<div>
+				<head>b</head>
+
+				<figure>
+					<figDesc>For sodium, assuming a quenching factor Q Na = 0.3. c Number after correcting for efficiency. Expected background ∼ 1640. d Used only data from detector T1Z5, which is the most constraining. e After cuts. TABLE I. Experiments/analyses considered in this work. We also include the target (T ), total</figDesc>
+
+				</figure>
+
+				<p>exposure (before cuts), statistical method used in setting bounds or regions of interest, the primary reference, the signal type reported (E R is recoil energy), signal range, recoil energy range (in keVnr), and total number of candidate events passing all cuts. The nuclear recoil energy range quoted is the average expected energy corresponding to the signal range boundaries, so, generally speaking, energies on tails of distributions beyond this range are probed (though note the DM velocity distribution further limits the energy range probed). with v orb = 30 km/s and cos γ = 0.51. The expected modulation amplitude in energy bin [E 1 , E 2 ] is thus</p>
+
+				<figure>
+					<trash>S m,[E 1 ,E 2 ] = 1 E 2 − E 1 T =Na,I c T E 2 /Q T E 1 /Q T A T (E R )dE R (A4)</trash>
+
+
+				</figure>
+
+				<p>where c T is the mass fraction of the target, and Q T is the quenching factor for the target, which we take to be 0.3 for Sodium and 0.09 for Iodine. A lower quenching factor for Sodium, as suggested by [42], would worsen the agreement between DAMA and the results of CoGeNT and CDMS-Silicon in most cases.</p>
+
+				<p>We use the data in Fig. 6 of [2]. We calculate χ 2 using the first 24 bins (bin widths are 0.5keV) which corresponds to energies from 2 keV to 14 keV. The displayed 90% and 99% C.L. region of interest contours satisfy χ 2 = Min(χ 2 ) + CDF −1 (ChiSq[2]</p>
+
+				<figure>
+					<figDesc>, C.L.).</figDesc>
+
+				</figure>
+
+				<p>In some cases a DM focusing effect can be important for annual modulation experiments [47], though for light DM scattering of Sodium, the effect is unimportant and we neglect it.</p>
+
+			</div>
+			<div>
+				<head>c. CoGeNT</head>
+
+				<p>We use the data in Fig. 23 of [4], which has been corrected for efficiency (i.e. bin counts have been scaled to reflect the number of events expected based on those observed and the deduced efficiency). We do a χ 2 scan over cross-section, DM mass, and a constant background component, using as errors those indicated by the error bars in the figure. Since correlations are not reported we are assuming that the bin-to-bin correlations are negligible. We then profile over the background. The region-of-interest curves correspond to the 90% and 99% C.L. regions. More specifically, the contours are given by χ 2 = Min(χ 2 )+ CDF −1 (ChiSq[3], C.L.). Our understanding is that this is close to the procedure used by the collaboration.</p>
+
+				<p>The energy resolution below 10 keV is taken to be that reported by CoGeNT, namely</p>
+
+				<figure>
+					<trash>σ 2 = σ 2 n + 2.35 2</trash>
+
+
+				</figure>
+
+				<p>EηF where σ n = 69.4 eV is the intrinsic electronic noise, E is the energy in eV, η = 2.96 eV is the average energy required to create an electron-hole pair in Ge at ∼ 80 K, and F = 0.29 is the Fano factor. The number of expected events in a given range is taken to be</p>
+
+				<figure>
+					<trash>N [E 1 ,E 2 ] = Ex ∞ 0 dR dE R res(E 1 , E 2 ; E R ) dE R + b [E 1 ,E 2 ] (A5) where b is the flat, floating background and where 2 res(E 1 , E 2 ; E R ) = Erf (E 1 − E R )/( √ 2σ) − Erf (E 2 − E R )/( √ 2σ) .</trash>
+
+
+				</figure>
+
+				<p>d. CDMS Ge Low-Energy We used only the data from detector T1Z5, which contains the only events in the most constraining energy interval for 5-8 GeV DM [9]. The event energies and acceptance efficiencies for all detectors are provided as auxiliary files on the arXiv posting; we used the data in the file for detector T1Z5 for both the event energies and to extrapolate the efficiency. We assumed perfect resolution. 90% C.L. limits were set using Yellin&apos;s p max method [48], which is very similar to Yellin&apos;s optimum interval method that was used in the CDMS analysis.</p>
+
+			</div>
+			<div>
+				<head>e. Xenon10 S2</head>
+
+				<p>only We use as input the highlighted candidate events shown in Fig. 2 of [5]. An electron yield Q y = n e /E r as shown in Fig. 1 and given in Eq. 1 of [5] 5 was used by the collaboration. 6 We analyze the data using both this electron yield and an alternate electron yield as follows: we extrapolated from the −1 σ boundaries of the ionization yield data points with E R &gt; 10keVnr from the measurement by Manzur at E d = 1 kV/cm [41].</p>
+
+				<p>We do a linear interpolation of {LogE R , Q y } including the point Q y (0) = 0. 7 We believe this is an appropriately conservative case to consider given the reasons explained in the text. A flat efficiency of 94% was assumed. We also assumed an energy resolution σ =</p>
+
+				<figure>
+					<trash>E R / E R Q y so that N [E 1 ,E 2 ] = Ex ∞ 0 dR dE R res(E 1 , E 2 ; E R ) dE R . (A6)</trash>
+
+
+				</figure>
+
+				<p>We use the p max method of Yellin [48] to set 90% C.L. exclusion curves.</p>
+
+			</div>
+			<div>
+				<head>f. XENON100</head>
+
+				<p>We digitize the efficiencies shown in Fig. 1 of [6], including the hard discrimination cut efficiency used for the maximum gap method analysis. The S2 threshold cut efficiency, S2 , is applied &quot; before taking into account the S1 resolution &quot; [6]. In addition to the red S2 threshold cut efficiency curve, the other efficiency curves from Fig. 1 (dotted green and blue) are digitized as functions of photo-electron (PE) counts and are multiplied together to get . Following [52], the number of events expected in signal range S1∈ [s 1 , s 2 ] is taken to be N [s 1 ,s 2 ] = Ex</p>
+
+				<figure>
+					<trash>s 2 s 1 ∞ n=1 (S1)Gauss(S1|n, √ nσ PMT ) ∞ 0 Poiss (n|ν(E R )) S2 (E R ) dR dE R dE R dS1 (A7) where ν(E R ) =</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>Snr See</head>
+
+				<p>L y E R L eff (E R ) is the average expected number of photo-electrons if the nuclear recoil energy is E R . Note that the S2 efficiency is set to zero below 1PE, corresponding to 3 keVnr, which is equivalent to setting L eff to zero below 3 keVnr. We use an interpolation of a digitization of the scale on Fig. 1 of [6] for our default ν(E R ). 8 We use σ PMT = 0.5PE. To get an idea of the sensitivity of the XENON100 results on the energy calibration used, we also use a linear extrapolation of ν from the −1σ boundaries of the measurement of L eff by Manzur [41], as shown in Fig. 7. To convert from L eff to ν(E) we use the same values as XENON100: S ee = 0.58, S nr = 0.95, and L y = 2.28. We read off the S2 cut efficiency as a function of S1 and take S2 (E R ) = S2 (ν(E R )); given the alternative L eff , 1PE corresponds to about 5.9 keVnr, meaning the alternative L eff for XENON100 is 6 Like the collaboration, we assume a sharp cutoff at n e = 5: Q y (E R &lt; E R | ne=5 ) = 0. 7 More precisely, we set Q y (10 −3 keV) = 10 −3 e − /keV for the log extrapolation.</p>
+
+			</div>
+			<div>
+				<head>8</head>
+
+				<p>We also use the central values of the L eff curve measured by the collaboration to check that we get similar</p>
+
+				<figure>
+					<trash>ν(E R ). 1 2 5 10 20 50 0.00 0.05 0.10 0.15 0.20 0.25 0.30 E R keV relative scintillation efficiency XENON100 LUX LUX &amp; XENON100 alt L eff Manzur 2010 Plante 2011</trash>
+
+
+				</figure>
+
+				<p>FIG. 7. Relative scintillation efficiencies, L eff , used in this analysis. The &quot; alt L eff &quot; curve is based on the −1σ boundaries of the measurement by Manzur et al [41]. The main expected S1 function, ν(E R ) used in this analysis (blue for XENON100, black for LUX) was deduced directly from the scale on Fig. 1 of [6] and Fig. 4 of [25] for XENON100 and LUX, respectively.</p>
+
+				<p>effectively set to zero below 5.9 keVnr. We use the maximum gap method [48] for the signal range S1 = 3PE to S1 = 20PE in order to set limits. Two events passed all acceptance cuts in this range.</p>
+
+			</div>
+			<div>
+				<head>g. LUX</head>
+
+				<p>Instead of using a profile likelihood ratio test statistic like the collaboration, which also includes an expected background model and signal models in S1 and S2 from full simulations at each WIMP mass, and takes into account expected radius, depth, S1 and S2 of each event in a signal region that includes regions with primarily electron recoils, we perform a simple maximum gap analysis much like the cross-check analysis used by XENON100. We consider only events near or below the mean of the gaussian fit to simulated WIMP nuclear recoil (NR) data in slices of S1, in the S1-vs-log(S2 b /S1) plane (the solid red curve of Fig. 4 of [25]). We take the acceptance of this hard cut as a function of S1 to be 50%. It is clear from Fig. 3 of [25] that this cut removes most electron recoil events. Only one event at {S1, log(S2 b /S1)} = {3.2, 1.75} marginally makes the hard cut at the mean. We then set 90% C.L. contours using a maximum gap analysis for the signal region of 2 to 30 PEs.</p>
+
+				<p>The LUX collaboration estimated the systematic uncertainty in the location of the NR band &quot; by averaging the difference between the centroids of simulated and observed AmBe data in log(S2 b /S1) &quot; , which yielded an uncertainty of 0.044 in the centroid. If the centroid were moved up by 5% in log(S2 b /S1), the cut at the mean would still include only the same one event as if the centroid is as depicted in Fig. 4. If the centroid were lower, the one event should not make the cut.</p>
+
+				<p>Underlying particle-and astro-physics determines how signal events would be distributed as a function of energy. Since contours of constant NR energy are not vertical in the S1- log(S2 b /S1) plane, the 50% acceptance contour in the S1-log(S2 b /S1) plane can slightly shift given different underlying WIMP physics. We note that for low NR energies relevant for light WIMP scattering, the constant energy contours are not far from vertical, so 50% should remain a reasonable estimate of the acceptance for light WIMPs given a cut at the centroid of the LUX simulated NR band. And again: given the actual distribution of events observed by LUX, a 5% or so shift of the 50% acceptance contour upwards (for any S1) does not affect the number of events making the cut. Below about 8 keV (note the recoil energy of xenon perturbed by 10 GeV DM moving at the galactic escape velocity is only 4.6 keV), even a shift of the 50% acceptance contour all the way up to the +1.28σ LUX NR contour would not add any events below 4.6 keV. In other words, for light dark matter our procedure is robust to substantial shifts in the 50% acceptance contour. Shifts downward would lead to our procedure being overly conservative.</p>
+
+				<p>We take expected events to be as in (A7); to do this we need ν(E R ), the mean expected S1 as a function of E R . Since the collaboration models recoil energy as a function of both S1 and S2 (following [51]), we cannot directly follow the same procedure as LUX in converting to NR energy. However, for most NR events (in particular events falling within the NR band, within which energy does not vary much as a function of S1 over the relevant S2 range), energy can be reasonably reconstructed from just S1 [12]. We read ν(E R ) off of Fig. 4</p>
+
+				<figure>
+					<figDesc>of [25]</figDesc>
+
+				</figure>
+
+				<p>by digitizing {S1, E R } values along the (red) centroid NR curve. We also deduce ν(E R ) along the bottom of the NR band (−1.28σ) to get a feel for possible error introduced in making this choice. Taking ν(E R ) along the centroid is the more conservative choice (see Fig. 8). We interpolate the efficiency before the maximum gap cut from the NR simulation points (purple triangles) of Fig. 1 of [25]. The net efficiency is given by the efficiency from Fig. 1 of [25] times the 50% for the maximum gap analysis cut. The collaboration models no signal below 3 keVnr. We follow suit by taking S2 = Θ(E R − 3keV) in (A7). Fig. 8 shows that the bounds we get using the method described above are slightly weaker than, though close to, the bounds reported by LUX for spin-independent WIMPs, showing that our procedure is reasonable, and that our bounds are conservative compared to LUX&apos;s</p>
+
+				<figure>
+					<trash>6 8 10 12 14 10 44 10 43 10 42 10 41 10 40 m DM GeVc 2 Σ p cm 2 LUX SpinIndependent Limits MaxGap wo event centroid Ν 1.28Σ Ν MaxGap w event centroid Ν 1.28Σ Ν digitized from LUX plot FIG. 8</trash>
+
+
+				</figure>
+
+				<p>. Comparison of LUX bounds from maximum gap method described above. Red curves include the marginal event at {S1, log 10 (S2/S1)} = {3.2, 1.75} while the blue curves do not.</p>
+
+				<p>Dotted blue and red curves are drawn using ν(E R ) at the bottom of the NR band (−1.28σ) while solid use ν(E R ) from the centroid of the NR band. See the text for discussion. The black curve is digitized from [25]</p>
+
+				<figure>
+					<figDesc>. bounds. To get a feel for how much the bound can shift by adding (or subtracting) one observed event, we show curves generated assuming the one event at the NR band centroid does (red) and does not (blue) make the 50% cut. Constraint curves drawn in all other figures in this paper were generated assuming the one event makes the cut. The dotted curves are drawn using ν(E R ) along the bottom (-1.28σ) boundary of the NR band of Fig. 4</figDesc>
+
+				</figure>
+
+				<p>. As expected, the constraint is not affected much by this small shift in ν(E R ).</p>
+
+				<p>In order to more boldly estimate uncertainty due to the signal-energy conversion, as we did for XENON100, we use the alternative L eff based on -1σ boundaries of the Manzur measurement. We take an even more conservative line and cut L eff off at the lowest measured point: 4keV, as shown in Fig. 7. We deduced</p>
+
+			</div>
+			<div>
+				<head>Snr See</head>
+
+				<p>L y for LUX by comparing the ν read directly off of the LUX plots as discussed above to the L eff function used by LUX [54]. Again, see Fig. 7. Though our procedure for drawing LUX bounds is necessarily less optimal than the procedure used by the LUX collaboration itself, we think it strikes a good balance between simplicity and sensible conservatism. h. PICASSO PICASSO probes event rate as a function of recoil energy by relying on the fact that increasing the temperature of their liquid C 4 F 10 target decreases the energy thresholds at which WIMP recoils can be detected. Therefore PICASSO is sensitive to integrated rates from a temperature-dependent threshold energy and above. Our PICASSO constraints are set by performing a simple χ 2 fit to the integrated rates in Fig. 5 of [7]; we read the eight rates and errors off of this plot. We take the expected rate as in Eq. 3, taking the resolution parameter to be a = 5. Contours are set at χ 2 = CDF −1 (ChiSq[8], 90%). We emphasize that these constraint curves should only be expected to loosely correspond to a 90% C.L. limit. Our limit in the spin-dependent case is close to but slightly weaker than the limit shown in [7]. i. COUPP Like PICASSO, COUPP is sensitive to integrated rates above energy thresholds determined by the operating temperature of the bubble chamber liquid, CF 3 I.</p>
+
+				<p>We draw constraints based on their three different data sets, corresponding to three different bubble nucleation thresholds. We consider the events and expected backgrounds given the 530-sec time isolation cut that they discuss (last column of Table II) as we found this leads to better agreement with the curve in Fig. 6 (as did [55]); we assume that the acceptance for nuclear recoils above threshold is affected negligibly by this additional cut; we account for the overall 79.1% efficiency to detect single bubble recoils after all of the other analysis cuts.</p>
+
+				<p>We consider scattering off of both Iodine and Fluorine. We use two different assumptions for the efficiency of scattering off of Fluorine, like the collaboration: (a) that the efficiency turns on gradually, again following Eq. 3 of [7] but with the best-fit value of a = 0.15 and (b) that the scattering turns on abruptly at the threshold energy, but with 49% efficiency. The efficiency for scattering off of Iodine is assumed to be 100% above threshold. Assumption (b) leads to much stronger bounds on spin-dependent dark matter at low dark matter masses than assumption (a). We use a log likelihood ratio statistic to draw 90% C.L. contours according to i −2 ln λ i = CDF −1 (ChiSq[1]</p>
+
+				<figure>
+					<trash>), where ln λ i = N obs i ln N expected i (σ, m) + N bkgd i N bkgd i − N expected i (σ, m)</trash>
+
+
+				</figure>
+
+				<p>and i denotes the energy threshold bin.</p>
+
+			</div>
+
+			<note place="foot" n="2"> See e.g. the appendix of [38].</note>
+
+			<note place="foot" n="5"> Note that f n = kg(E R )/(1 + kg(E R ) where g is the Lindhard function. We use the parameterization of g found in e.g. [49] or [50]. See also [51].</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Bernabei</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">DAMA Collaboration) Eur.Phys.J</title>
+		<imprint>
+			<biblScope unit="volume">56</biblScope>
+			<biblScope unit="issue">333</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+	<note>astro. -ph]</note>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">DAMA Collaboration, LIBRA Collaboration), Eur.Phys</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Bernabei</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J</title>
+		<imprint>
+			<biblScope unit="volume">67</biblScope>
+			<biblScope unit="issue">39</biblScope>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+	<note>astro. -ph.GA]</note>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">CoGeNT collaboration)</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Aalseth</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev.Lett</title>
+		<imprint>
+			<publisher>CO</publisher>
+			<biblScope unit="volume">106</biblScope>
+			<biblScope unit="page">131301</biblScope>
+			<date type="published" when="2011" />
+			<publisher>CO</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<monogr>
+		<title level="m" type="main">CoGeNT Collaboration), (2012), arXiv:1208.5737 [astro-ph</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Aalseth</surname>
+			</persName>
+		</author>
+		<imprint>
+			<publisher>CO]</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Angle</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">XENON10 Collaboration) Phys.Rev.Lett</title>
+		<imprint>
+			<publisher>CO</publisher>
+			<biblScope unit="volume">107</biblScope>
+			<biblScope unit="page">051301</biblScope>
+			<date type="published" when="2011" />
+			<publisher>CO</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<surname>Aprile</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">XENON100 Collaboration)</title>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page">181301</biblScope>
+		</imprint>
+	</monogr>
+	<note>astro. -ph.CO]</note>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Archambault</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PICASSO Collaboration) Phys.Lett</title>
+		<imprint>
+			<biblScope unit="volume">711</biblScope>
+			<biblScope unit="issue">153</biblScope>
+			<biblScope unit="page" from="hep" to="ex" />
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Behnke</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">COUPP Collaboration) Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="page">052001</biblScope>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+	<note>astro. -ph.CO]</note>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">CDMS-II Collaboration)</title>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+				<surname>Ahmed</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev.Lett</title>
+		<imprint>
+			<publisher>CO</publisher>
+			<biblScope unit="volume">106</biblScope>
+			<biblScope unit="page">131302</biblScope>
+			<date type="published" when="2011" />
+			<publisher>CO</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Agnese</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Anderson</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Asai</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Balakishiyeva</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">B</forename>
+				<surname>Thakur</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+	<note>physics. .ins-det]</note>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Sorensen</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2010" />
+			<biblScope unit="page">033</biblScope>
+		</imprint>
+	</monogr>
+	<note>astro. -ph.IM]</note>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Sorensen</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="issue">101301</biblScope>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Chang</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Pierce</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Weiner</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2010" />
+			<biblScope unit="page">006</biblScope>
+		</imprint>
+	</monogr>
+	<note>hep. -ph]</note>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">L</forename>
+				<surname>Fitzpatrick</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">M</forename>
+				<surname>Zurek</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="page">075004</biblScope>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+	<note>hep. -ph]</note>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Kopp</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Schwetz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Zupan</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page">001</biblScope>
+		</imprint>
+	</monogr>
+	<note>hep. -ph]</note>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Nobile</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Kouvaris</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Panci</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Sannino</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Virkajarvi</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page">010</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Nobile</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">B</forename>
+				<surname>Gelmini</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Gondolo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J.-H</forename>
+				<surname>Huh</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="hep" to="ph" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Boehm</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">S B</forename>
+				<surname>Dev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Mazumdar</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Pukartas</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="hep" to="ph" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">R</forename>
+				<surname>Buckley</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">H</forename>
+				<surname>Lippincott</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">T</forename>
+				<surname>Frandsen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Kahlhoefer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Mccabe</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sarkar</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Schmidt-Hoberg</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="hep" to="ph" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">J</forename>
+				<surname>Fox</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Liu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Weiner</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<editor>hep-ph]. [22] P. Gondolo and G. B. Gelmini</editor>
+		<imprint>
+			<biblScope unit="volume">83</biblScope>
+			<biblScope unit="issue">1212</biblScope>
+			<biblScope unit="page" from="103514" to="01512026359" />
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">arXiv:1304.4279 [hep-ex]</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Agnese</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">CDMS Collaboration) Phys.Rev.Lett</title>
+		<imprint>
+			<biblScope unit="volume">703</biblScope>
+			<biblScope unit="page">124</biblScope>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<monogr>
+		<title level="m" type="main">LUX Collaboration), (2013), arXiv:1310</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Akerib</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Bagnasco</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Dine</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">D</forename>
+				<surname>Thomas</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1994" />
+			<biblScope unit="page">99</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Sigurdson</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Doran</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Kurylov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">R</forename>
+				<surname>Caldwell</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Kamionkowski</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">70</biblScope>
+			<biblScope unit="page">083501</biblScope>
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+	<note>astro. -ph]</note>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Feldstein</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">L</forename>
+				<surname>Fitzpatrick</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Katz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Tweedie</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">JCAP 1003</title>
+		<imprint>
+			<date type="published" when="2010" />
+			<biblScope unit="page">029</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Feldstein</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">L</forename>
+				<surname>Fitzpatrick</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Katz</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2010" />
+			<biblScope unit="page">020</biblScope>
+		</imprint>
+	</monogr>
+	<note>hep. - ph]</note>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Banks</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J.-F</forename>
+				<surname>Fortin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Thomas</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+	<note>hep. -ph]</note>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>An</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S.-L</forename>
+				<surname>Chen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">N</forename>
+				<surname>Mohapatra</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Nussinov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Zhang</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="page">023533</biblScope>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Barger</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W.-Y</forename>
+				<surname>Keung</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Marfatia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="page" from="hep" to="ph" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Belanger</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Goudelis</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">C</forename>
+				<surname>Park</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Pukhov</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+	<note>hep. -ph]</note>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">M</forename>
+				<surname>Ho</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">J</forename>
+				<surname>Scherrer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page">341</biblScope>
+		</imprint>
+	</monogr>
+	<note>hep. -ph]</note>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Armengaud</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">EDELWEISS Collaboration) Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="page">051701</biblScope>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+	<note>astro. -ph.CO]</note>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Li</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">TEXONO Collaboration) Phys.Rev.Lett</title>
+		<imprint>
+			<biblScope unit="volume">110</biblScope>
+			<biblScope unit="page">261301</biblScope>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Cannoni</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">87</biblScope>
+			<biblScope unit="page">075014</biblScope>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">L</forename>
+				<surname>Fitzpatrick</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Haxton</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Katz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Lubbers</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Xu</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="hep" to="ph" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">L</forename>
+				<surname>Fitzpatrick</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Haxton</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Katz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Lubbers</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Xu</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page">004</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Anand</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">L</forename>
+				<surname>Fitzpatrick</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Haxton</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+	<note>hep. -ph]</note>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Manzur</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Curioni</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Kastens</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">N</forename>
+				<surname>Mckinsey</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Ni</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Wongjirad</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">C</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="page">025808</biblScope>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">J. Collar, Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">88</biblScope>
+			<biblScope unit="page">035806</biblScope>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+	<note>physics. .ins-det]</note>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">L</forename>
+				<surname>Feng</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Kumar</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Marfatia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Sanford</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+	<note>hep. -ph]</note>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Savage</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Freese</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Gondolo</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">74</biblScope>
+			<biblScope unit="page">043531</biblScope>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+	<note>astro. -ph]</note>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Bhattacharjee</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Chaudhury</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Kundu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Majumdar</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">87</biblScope>
+			<biblScope unit="page">083525</biblScope>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+	<note>astro. -ph.GA]</note>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">C</forename>
+				<surname>Smith</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Ruchti</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Helmi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Wyse</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Fulbright</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mon.Not.Roy.Astron.Soc</title>
+		<imprint>
+			<biblScope unit="volume">379</biblScope>
+			<biblScope unit="issue">755</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+	<note>astro. -ph]</note>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">K</forename>
+				<surname>Lee</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Lisanti</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">H G</forename>
+				<surname>Peter</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">R</forename>
+				<surname>Safdi</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+			<publisher>CO</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Yellin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">66</biblScope>
+			<biblScope unit="page">032005</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Lewin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Smith</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Astropart.Phys</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">87</biblScope>
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Manzur</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Curioni</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Kastens</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">N</forename>
+				<surname>Mckinsey</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Ni</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Wongjirad</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">arXiv:0909.1063 [physics.ins-det</title>
+	</analytic>
+	<monogr>
+		<title level="j">C</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="page">025808</biblScope>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">arXiv:1101</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Sorensen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">E</forename>
+				<surname>Dahl</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev. D83XENON100 Collaboration)</title>
+		<editor>ph.IM]. [52] E. Aprile et al.</editor>
+		<imprint>
+			<publisher>IM</publisher>
+			<biblScope unit="volume">6080</biblScope>
+			<biblScope unit="page">06350112073458</biblScope>
+			<date type="published" when="2011" />
+			<publisher>IM</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Aprile</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">XENON100 Collaboration)</title>
+		<imprint>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+	<note>astro. -ph.IM]</note>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<monogr>
+		<title level="m" type="main">First results from the lux dark matter search at surf, &quot; Pg. 25 of talk delivered</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Gaitskell</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Mckinsey</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013-10-30" />
+		</imprint>
+	</monogr>
+	<note>see. luxdarkmatter.org</note>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Del</forename>
+				<surname>Nobile</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Cirelli</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Panci</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

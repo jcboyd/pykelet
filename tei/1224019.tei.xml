@@ -1,0 +1,1760 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Super-A-polynomial</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2013-03-15">15 Mar 2013</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Hiroyuki</forename>
+								<surname>Fuji</surname>
+							</persName>
+							<affiliation>
+								<orgName type="institution">California Institute of Technology</orgName>
+								<address>
+									<postCode>91125</postCode>
+									<settlement>Pasadena</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+							<affiliation>
+								<orgName type="department" key="dep1">Dept. of Physics</orgName>
+								<orgName type="department" key="dep2">Graduate School of Science</orgName>
+								<orgName type="institution">Nagoya University</orgName>
+								<address>
+									<addrLine>Furo-cho, Chikusa-ku</addrLine>
+									<postCode>464-8602</postCode>
+									<settlement>Nagoya</settlement>
+									<country key="JP">Japan</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Piotr</forename>
+								<surname>Suu Lkowski</surname>
+							</persName>
+							<affiliation>
+								<orgName type="institution">California Institute of Technology</orgName>
+								<address>
+									<postCode>91125</postCode>
+									<settlement>Pasadena</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+							<affiliation>
+								<orgName type="department">Faculty of Physics</orgName>
+								<orgName type="institution">University of Warsaw</orgName>
+								<address>
+									<addrLine>ul. Ho˙ za 69</addrLine>
+									<postCode>00-681</postCode>
+									<settlement>Warsaw</settlement>
+									<country key="PL">Poland</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Super-A-polynomial</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2013-03-15">15 Mar 2013</date>
+						</imprint>
+					</monogr>
+					<note>Preprint typeset in JHEP style -HYPER VERSION Contents</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>We review a construction of a new class of algebraic curves, called super-A-polynomials, and their quantum generalizations. The super-A-polynomial is a two-parameter deformation of the A-polynomial known from knot theory or Chern-Simons theory with SL(2, C) gauge group. The two parameters of the super-A-polynomial encode, respectively, the t-deformation which leads to the &quot; refined A-polynomial &quot; , and the Q-deformation which leads to the augmentation polynomial of knot contact homology. For a given knot, the super-A-polynomial encodes the asymptotics of the corresponding S r-colored HOMFLY homology for large r, while the quantum super-A-polynomial provides recursion relations for such homology theories for each r. The super-A-polynomial also admits a simple physical interpretation as the defining equation for the space of SUSY vacua in a circle compactification of the effective 3d N = 2 theory associated to a given knot (complement). We discuss properties of super-A-polynomials and illustrate them in many examples.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+				<figure>
+					<trash>Contents 1. Introduction 1 2. Volume conjectures 2 2.1 Generalized volume conjecture 2 2.2 Quantum volume conjecture 3 3. New volume conjectures and the super-A-polynomial 4 4. Essential ingredients: colored superpolynomials 7 4.1 Refined Chern-Simons theory 7 4.2 Differentials in knot homologies 9 5. Examples 9 5.1 Unknot 10 5.2 Figure-eight knot 12 5.3 Trefoil knot 15 5.4 (2, 2p + 1) torus knots 18 6. Quantizability 20 7. Interpretation in 3d, N = 2 theories 23</trash>
+
+
+				</figure>
+
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>In past two decades remarkable relations between quantum field theory, string theory and knot theory have been found, following the seminal work by Witten [1]. Among the others, such important mathematical developments as polynomial knot invariants, volume conjectures, Apolynomials , homological knot invariants, and more, have been interpreted from the perspective of high energy physics. In this note we summarize a construction of a new object in this line of research, the so-called super-A-polynomial, introduced in [2]. The super-A-polynomial can be regarded as a two-parameter generalization of an ordinary A-polynomial [3–5]. One of these parameters encodes information about the t-deformation of knot invariants arising upon categorification. The one-parameter generalization of an A-polynomial, depending only on t, has been introduced in [6] as the so-called &quot; refined A-polynomial &quot; . This parameter is related to the categorification of knot invariants and knot homologies, such as Khovanov homology [7], Khovanov-Rozansky homology [8], or HOMFLY homology [9]; more precisely, in this – 1 – paper t appears upon taking the Poincaré characteristis of the (conjectural) colored HOMFLY homology [10]. The second parameter, denoted by a in this note, is related to Chern-Simons theory with SU (N ) gauge group. It also corresponds to the so-called Q-deformation of the A-polynomial introduced in [11], as well as the augmentation polynomial of knot contact homology [12]. The super-A-polynomial captures information about both a and t at once, and, among the others, it encodes the asymptotics of the corresponding S r -colored HOMFLY homologies for large r. In addition, its quantum deformation, the so-called quantum super-Apolynomial , provides recursion relations for HOMFLY homology theories for each r. Further examples and properties of super-A-polynomials have been analyzed in [13, 14].</p>
+
+				<p>In this note we summarize the construction of the super-A-polynomial and illustrate it in several examples, following (mostly) [2, 6]. We start by recalling the original volume conjectures in section 2.</p>
+
+				<p>In section 3 we generalize these conjectures in a way which leads to the super-A-polynomial and the quantum super-A-polynomial. Essential ingredients which make these new conjectures work are colored superpolynomials, introduced in section 4; we stress that developments of tools and techniques which enable to derive an explicit form of such colored superpolynomials is an important, independent result of the work reported here.</p>
+
+				<p>In section 6 we discuss quantizability properties of super-A-polynomials, and in section 7 we present their interpretation in 3d, N = 2 SUSY gauge theories.</p>
+
+			</div>
+			<div>
+				<head n="2">Volume conjectures</head>
+
+				<p>Originally the &quot; volume conjecture &quot; referred to the observation [15] that the so-called Kashaev invariant of a knot K defined at the n-th root of unity q = e 2πi/n in the classical limit has a nice asymptotic behavior determined by the hyperbolic volume Vol(M ) of the knot complement M = S 3 \ K. Shortly after, it was realized [16] that the Kashaev invariant is equal to the n-colored Jones polynomial of a knot K evaluated at q = e 2πi/n , so that the volume conjecture could be stated simply as lim n→∞ 2π log |J n (K; q = e 2πi/n )| n = Vol(M ) . (2.1)</p>
+
+				<p>The physical interpretation of the volume conjecture was proposed in [5]. Besides explaining the original observation (2.1) it immediately led to a number of generalizations, in which the right-hand side is replaced by a function of various parameters (see [17] for a review).</p>
+
+			</div>
+			<div>
+				<head n="2.1">Generalized volume conjecture</head>
+
+				<p>Once the volume conjecture is put in the context of analytically continued Chern-Simons theory, it becomes clear that the right-hand side is simply the value of the classical SL(2, C) Chern-Simons action functional on a knot complement M . Since classical solutions in Chern- Simons theory (i.e. flat connections on M ) come in families, parametrized by the holonomy of the gauge connection on a small loop around the knot, this physical interpretation immediately – 2 – leads to a &quot; family version &quot; of the volume conjecture [5]:</p>
+
+				<p><formula>J n (K; q = e ) n→∞ →0 ∼ exp 1 S 0 (u) + . . . (2.2)</formula></p>
+
+				<p>parametrized by a complex variable u. Here, the limit on the left-hand side is slightly more interesting than in (2.1) and, in particular, also depends on the value of the parameter u:</p>
+
+				<p><formula>q = e → 1 , n → ∞ , q n = e u ≡ x (fixed) (2.3)</formula></p>
+
+				<p>In fact, Chern-Simons theory predicts all of the subleading terms in the -expansion denoted by ellipsis in (2.2). These terms are the familiar perturbative coefficients of the SL(2, C) Chern-Simons partition function on M .</p>
+
+			</div>
+			<div>
+				<head n="2.2">Quantum volume conjecture</head>
+
+				<p>Classical solutions in Chern-Simons theory (i.e. flat connections on M ) are labeled by the holonomy eigenvalue x = e u or, to be more precise, by a point on the algebraic curve C : (x, y) ∈ C * × C * A(x, y) = 0 , (2.4) defined by the zero locus of the A-polynomial, a certain classical invariant of a knot. In quantum theory, A(x, y) becomes an operator A( x, y; q) and the classical condition (2.4) turns into a statement that the Chern-Simons partition function is annihilated by A( x, y; q). This statement applies equally well to Chern-Simons theory with the compact gauge group SU (2) that computes the colored Jones polynomial J n (K; q) as well as to its analytic continuation that localizes on SL(2, C) flat connections. In the former case, one arrives at the &quot; quantum version &quot; of the volume conjecture [5]:</p>
+
+				<figure>
+					<trash>A J * (K; q) ≃ 0 , (2.5)</trash>
+
+
+				</figure>
+
+				<p>which in the mathematical literature was independently proposed around the same time [4] and is known as the AJ-conjecture. The action of the operators x and y follows from quantization of Chern-Simons theory, and one finds that x acts as a multiplication by q n , whereas y shifts the value of n:</p>
+
+				<p><formula>xJ n = q n J n (2.6) yJ n = J n+1</formula></p>
+
+				<p>In particular, one can easily verify that these operations obey the commutation relation y x = q x y (2.7) that follows from the symplectic structure on the phase space of Chern-Simons theory. Therefore , upon quantization a classical polynomial relation of the form (2.4) becomes a q-difference equation for the colored Jones polynomial or Chern-Simons partition function. Further details , generalizations, and references can be found in [17]</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="3">New volume conjectures and the super-A-polynomial</head>
+
+				<p>Besides the &quot; non-commutative &quot; deformation (2.5), the A-polynomial also admits two commutative deformations that in a similar way encode the &quot; color behavior &quot; of two natural generalizations of the colored Jones polynomial: the t-deformation that corresponds to the categorification of colored Jones invariants [6] and Q-deformation that corresponds to extending J n (K; q) to higher rank knot polynomials [2, 11]. Our task in what follows is to combine these two deformations into a single unifying structure. In particular, this leads to a new unifying knot invariant. We call this invariant the super-A-polynomial since it describes how the S n−1 -colored superpolynomials P n (a, q, t) depend on color, i.e. on the representation R = S n−1 , much in the same way as A-polynomial does it for the colored Jones polynomial.</p>
+
+				<p>We recall that, in the context of BPS states, the superpolynomial is defined as a generating function of refined open BPS invariants on a rigid Calabi-Yau 3-fold X in the presence of a Lagrangian brane supported on L ⊂ X:</p>
+
+				<figure>
+					<trash>P(a, q, t) := Tr H ref BPS a β q P t F , β ∈ H 2 (X, L) (3.1)</trash>
+
+
+				</figure>
+
+				<p>and, in application to knots, the superpolynomial P(K; a, q, t) is defined as a Poincaré polynomial of the triply-graded homology theory H(K) that categorifies the HOMFLY polynomial P (K; a, q), see [9] for details. According to the conjecture of [18], these two definitions give the same result when X is the total space of the O(−1) ⊕ O(−1) bundle over CP 1 and L is the Lagrangian submanifold determined by the knot K ⊂ S 3 , cf. [19–21]. Lagrangian branes of multiplicity r = n − 1 yield the so-called &quot; n-colored &quot; version of the superpolynomial which, in the context of knot homologies, was recently introduced in [10],</p>
+
+				<figure>
+					<trash>P n (K; a, q, t) := i,j,k a i q j t k dim H S n−1 i,j,k (K) , (3.2) as a Poincaré polynomial</trash>
+
+
+				</figure>
+
+				<p>of a triply-graded homology theory categorifying the S r -colored HOMFLY polynomial (see also [6, 22, 23]). For t = −1 the above expression reduces to the Euler characteristic and reproduces normalized (i.e. such that P n (</p>
+
+				<figure>
+					<trash>; a, q) = 1 for the unknot ) colored HOMFLY polynomial P n (K; a, q): P n (K; a, q) = P n (K; a, q, −1) = i,j,k a i q j (−1) k dim H S n−1 i,j,k (K) . (3.3)</trash>
+
+
+				</figure>
+
+				<p>Our main goal is to explain that S n−1 -colored superpolynomials P n (K; a, q, t) depend on color (i.e. on the representation R = S n−1 ) in a simple and controllable way, governed by the super-A-polynomial A super (x, y; a, t) and by its quantization A super ( x, y; a, q, t). Specifically, based on the physics arguments and the study of examples, we propose the following analog of the generalized volume conjecture [5] or its refined version [6]:</p>
+
+				<figure>
+					<head>Conjecture 1:</head>
+
+					<figDesc>In the limit</figDesc>
+					<trash>q = e → 1 , a = fixed , t = fixed , x = q n = fixed (3.4) – 4 – ref A (x,y;t) A (x,y;a,t) super A (x,y;a) Q−def A(x,y) a = 1 a = 1 t = − 1 t = − 1</trash>
+
+
+				</figure>
+
+				<figure>
+					<head>Figure 1:</head>
+
+					<figDesc>Various specializations of the super-A-polynomial.</figDesc>
+
+				</figure>
+
+				<p>the n-colored superpolynomials P n (K; a, q, t) exhibit the following &quot; large color &quot; behavior:</p>
+
+				<p><formula>P n (K; a, q, t) n→∞ →0 ∼ exp 1 log y dx x + . . . (3.5)</formula></p>
+
+				<p>where ellipsis stand for regular terms (as → 0) and the leading term is given by the integral on the zero locus of the super-A-polynomial, cf. (2.4): A super (x, y; a, t) = 0 . (3.6)</p>
+
+				<p>Moreover, just like the ordinary A-polynomial has its quantum analog (2.5), the super- A-polynomial is a characteristic polynomial of a quantum operator A super ( x, y; a, q, t) that combines commutative t-and a-deformations with the non-commutative q-deformation (2.7).</p>
+
+				<p>We call this operator the quantum super-A-polynomial.</p>
+
+				<p>Conjecture 2: For a given knot K, the colored superpolynomial P n (K; a, q, t) satisfies a recurrence relation of the form (2.5): a k P n+k (K; a, q, t) + . . . + a 1 P n+1 (K; a, q, t) + a 0 P n (K; a, q, t) = 0 (3.7) where x and y act on P n (K; a, q, t) as in (2.6), and where the rational functions a i ≡ a i ( x, a, q, t) are the coefficients of the &quot; quantum super-A-polynomial &quot; A super (</p>
+
+				<figure>
+					<trash>x, y; a, q, t) = i a i ( x, a, q, t) y i , (3.8) whose characteristic polynomial is A super (x, y; a, t). As in (2.5), sometimes we informally write (3.7) in the compact form A super P * (K; a, q, t) = 0 , (3.9) which is a quantum version of the classical curve (3.6). – 5 – Quantum operator provides recursion for classical limit A super ( x, y; a, q, t) colored superpolynomial A super (x, y; a, t) A ref ( x, y; q, t) colored sl(2) homology A ref (x, y; t) A Q-def ( x, y; a, q) colored HOMFLY A Q-def (x, y; a) A( x, y; q) colored Jones A(x, y)</trash>
+
+					<head>Table 1:</head>
+
+					<figDesc>Quantum super-A-polynomial and its specializations lead to recursion relations for various S n -colored knot invariants.</figDesc>
+
+				</figure>
+
+				<p>The superpolynomial unifies many polynomial and homological invariants of knots that can be obtained from it via various specializations, applying differentials, etc. For example, for H-thin knots the specialization to a = q 2 yields the Poincaré polynomial of the colored sl(2) knot homology. Therefore, if K is a thin knot (e.g. if K is a two-bridge knot), in the limit a = q 2 we expect (3.5) and (3.7) to reproduce the corresponding versions of the refined volume conjectures proposed in [6]. In particular,</p>
+
+				<figure>
+					<trash>A super ( x, y; a = q 2 , q, t) = A ref ( x, y; q, t) , (3.10) and, via further specialization to the classical limit q = 1, A super (x, y; a = 1, t) = A ref (x, y; t) . (3.11)</trash>
+
+
+				</figure>
+
+				<p>Similarly, the specialization of the superpolynomial P n (K; a, q, t) to t = −1 yields the HOMFLY polynomial or, in the problem at hand, the colored HOMFLY polynomial [10]. Therefore, at t = −1 the recursion relation (3.7) should reduce to the recursion relation for the S n−1 -colored HOMFLY polynomial, whose characteristic variety — called the Q-deformed A-polynomial in [11] — must be contained in A super (x, y; a, t = −1) as a factor. To avoid clutter, we include possible extra factors inherited from A super (x, y; a, t) in the definition of the Q-deformed A-polynomial, so that A super (x, y; a, t = −1) = A Q-def (x, y; a) . (3.12)</p>
+
+				<p>Moreover, the authors of [11] proposed an important conjecture that offers a new way of looking at this polynomial (that, in our Figure 1, occupies the right corner) and identifies it with the augmentation polynomial of knot contact homology [12]. In what follows we use the names &quot; Q-deformed A-polynomial &quot; and &quot; augmentation polynomial &quot; interchangeably. In fact, one justification for this comes from the fact (see [12, Proposition 5.9] for a proof) that the classical augmentation polynomial, when specialized further to a = 1, reduces to the ordinary A-polynomial, possibly with some extra factors, which altogether we denote simply by A</p>
+
+				<figure>
+					<trash>(x, y): A super (x, y; a = 1, t = −1) = A Q-def (x, y; a = 1) = A(x, y) , (3.13) – 6 –</trash>
+
+
+				</figure>
+
+				<p>as it should in order to fit perfectly in the diagram in Figure 1. Therefore, our super-A-polynomial A super (x, y; a, t) can be viewed, on one hand, as a &quot; refinement &quot; of the augmentation polynomial A Q-def (x, y; a) and, on the other hand, as a &quot; Qdeformation &quot; of the refined A-polynomial A ref (x, y; t), see Figure 1. For important examples of super-A-polynomials (to be discussed in more detail in what follows) see table 2. Other interesting specializations of super-A-polynomials, e.g. involving setting x = 1 or q = 1, are discussed in [2, 13].</p>
+
+				<figure>
+					<trash>Knot A super (x, y; a, t) Unknot, (−a −1 t −3 ) 1/2 (1 + at 3 x) − (1 − x)y a 2 t 5 (x − 1) 2 x 2 + at 2 x 2 (1 + at 3 x) 2 y 3 + Figure-eight, 4 1 +at(x − 1)(1</trash>
+
+
+				</figure>
+
+				<p>+ t(1 − t)x + 2at 3 (t + 1)x 2 − 2at 4 (t + 1)x 3 + a 2 t 6 (1 − t)x 4 − a 2 t 8 x 5 )y −(1 + at 3 x)(1 + at(1 − t)x + 2at 2 (t + 1)x 2 + 2a 2 t 4 (t + 1)x 3 + a 2 t 5 (t −</p>
+
+				<figure>
+					<trash>1)x 4 + a 3 t 7 x 5 )y 2 Trefoil, 3 1 a 2 t 4 (x − 1)x 3 − a 1 − t 2 x + 2t 2 (1 + at)x 2 + at 5 x 3 + a 2 t 6 x 4 y + (1 + at 3 x)y 2 (2, 2p+1) torus knot eliminate z 0 in    1 = (z 0 −x)(t 2 z 0 −1)(1+at 3 xz 0 ) t 2+2p z 1+2p 0 (z 0 −1)(atx+z 0 )(t 2 xz 0 −1) y = a p t 2+2p (x−1)x 1+2p (atx+z 0 )(1+at 3 xz 0 ) (1+at 3 x)(x−z 0 )(t 2 xz 0 −1) see table 5</trash>
+
+					<head>Table 2:</head>
+
+					<figDesc>Super-A-polynomials for simple knots.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="4">Essential ingredients: colored superpolynomials</head>
+
+				<p>The (quantum) super-A-polynomial arising from the conjectures presented in section 3 is intimately related to the colored superpolynomials introduced in (3.2). Indeed, the knowledge of S n−1 -colored superpolynomials P n (K; a, q, t) for general n allows to determine the (quantum) super-A-polynomial, and this is how super-A-polynomials will be derived in all examples in what follows. Nonetheless, determining S n−1 -colored superpolynomials is itself a hard task, and these objects are not even defined mathematically in a rigorous and computable way. However it turns out that physics offers two possible ways to obtain (or, at least, to conjecture ) the form of colored superpolynomials: either using the so-called refined Chern-Simons theory, or taking advantage of the structure of differentials in homological theories. For some knots both of these methods can be used, and then they lead to remarkable identities, which confirm validity of the physics approach. We need to get acquainted with these methods before we present the construction and examples of super-A-polynomials.</p>
+
+			</div>
+			<div>
+				<head n="4.1">Refined Chern-Simons theory</head>
+
+				<p>As is well known [1], knot invariants (more precisely – quantum group invariants associated to a given knot) are simply related to expectation values of Wilson loop operators W R (K)[A] := Tr R P exp K A , supported on a knot K and decorated by a representation R, in</p>
+
+				<figure>
+					<trash>Chern– 7 – Simons theory Z CS G (M, K R ; q) = [dA]</trash>
+
+
+				</figure>
+
+				<p>W R (K)[A] e ikS CS [A;M ] , (4.1) where the Chern-Simons action on a 3-manifold M reads</p>
+
+				<figure>
+					<trash>S CS [A; M ] = 1 4π M Tr adj A ∧ dA + 2 3 A ∧ A ∧ A . (4.2)</trash>
+
+
+				</figure>
+
+				<p>The quantum group invariants are reproduced as the above expectation values normalized by that of the unknot (which we often denote as ), and remarkably such expressions are simply polynomials in q = e 2πi k+h with integer coefficients (at least when M</p>
+
+				<figure>
+					<trash>= S 3 ) J g,R (K; q) = Z CS G (S 3 , K R ; q) Z CS G (S 3 , R ; q) . (4.3)</trash>
+
+
+				</figure>
+
+				<p>In particular, for g = sl(N ) a dependence on N is very simple and J sl(N ),R (K; q) turn out to be polynomials in q and a = q N which reproduce (normalized) colored HOMFLY polynomials J sl(N ),R (K; q) = P R (K; a = q N , q). For R = S n−1 they are denoted P n (K; a, q), and they already appeared above in (3.3). Therefore our task is to introduce, from the perspective of the Chern-Simons theory, a dependence on the Poincaré variable t into the colored HOMFLY polynomial, so that Chern- Simons amplitudes given in (4.3) would be extended to t-dependent quantities, which should be identified with (3.2). Such a generalization has been introduced in [24] and is often referred to as refined Chern-Simons theory. More precisely, the fundamental formulation (in terms of a t-dependent action) of refined Chern-Simons theory is still not known. Nonetheless, the authors of [24] argued how a dependence on t should be introduced in a consistent manner in various quantities arising in the quantization of the original Chern-Simons theory. In particular they proposed a refined version of modular matrices S and T which satisfy the Verlinde formula. Similarly other objects in Chern-Simons theory become functions of q and t, or equivalently (as often arising in various calculations) q 1 and q 2 (such that q =</p>
+
+				<figure>
+					<trash>1 q 2 , t = − q 2 q 1</trash>
+
+					<figDesc>). For example, Schur polynomials that arise in original Chern-Simons theory (in particular as expectation values of the unknot) are replaced by Macdonald polynomials, and so on: CS gauge theory refined invariants</figDesc>
+					<trash>Z CS SU (N ) (S 3 , K R ; q) Z ref SU (N ) (S 3 , K R ; q 1 , q 2 ) dim q R = s R (q ̺ ) M R (q ̺ 2 ; q 1 , q 2 ) q C 2 (R) q 1 2 ||R|| 2 1 q − 1 2 ||R t || 2 2 q N 2 |R| 2 q − 1 2N |R| 2 1 (4.4) . . .</trash>
+
+
+				</figure>
+
+				<p>Refined Chern-Simons theory is still quite mysterious; in particular explicit computations are possible only for some particular knots, and they involve various subtleties, related e.g. to – 8 – the appearance of the so-called γ-factors (which are irrelevant for t = −1). Nonetheless, we are able to predict an explicit form of superpolynomials using refined Chern-Simons theory in various examples, such as the (unnormalized) unknot (see (5.1)), or (2, 2p + 1) torus knots (for arbitrary p, see (5.30)). Various aspects of refined Chern-Simons theory are discussed in detail in [6, 24, 25].</p>
+
+			</div>
+			<div>
+				<head n="4.2">Differentials in knot homologies</head>
+
+				<p>Even though combinatorial definition of colored knot homologies (3.2) is, in general, not known, it turns out that various physics arguments predict how the action of various differentials in knot homologies should look like. Such differentials endow knot homologies with a very rich structure, which turns out to be very elegant and often so constraining that one can even compute colored superpolynomials P n (K; a, q, t) based on this structure alone, with a minimal input. In particular, this is how nice formulas like (5.11), (5.21), or (5.31) can be produced.</p>
+
+				<p>Referring the reader to [10, 13] for further details, here we merely state a simple rule of thumb: the factors of the form (1 + a i q j t k ) that we often see e.g. in (5.3), (5.11), (5.21), and (5.30) come from differentials of (a, q, t)-degree (i, j, k), cf. [</p>
+
+				<figure>
+					<trash>6, eq. (3.54)]: differentials factors (a, q, t) grading d N &gt;0 1 + aq −N t (−1, N, −1) d N &lt;0 1 + aq −N t 3 (−1, N, −3) d colored 1 + q (0, 1, 0) 1 + at (−1, 0, −1) . . . (4.5)</trash>
+
+
+				</figure>
+
+				<p>For example, notice that all terms with k &gt; 0 in the expression (5.11) for the colored superpolynomial of the figure-eight knot manifestly contain a factor (1 + aq n−1 t 3 ). Hence, the S n−1 -colored superpolynomial of the figure-eight knot has the following structure</p>
+
+				<figure>
+					<trash>P n (4 1 ; a, q, t) = 1 + (1 + aq n−1 t 3 )Q n (a, q, t) , (4.6)</trash>
+
+
+				</figure>
+
+				<p>which means that, when evaluated at a = −q 1−n t −3 , the sum (5.11) collapses to a single k = 0 term, P n (4 1 ; a = −q 1−n t −3 , q, t) = 1. A proper interpretation of this fact is that a specialization to N = 1 − n of the triply-graded S n−1 -colored HOMFLY homology, carried out by the action of the differential d 1−n , is trivial. In other words, the differential d N with N = 1 − n is canceling in a theory with R = S n−1 . A systematic implementation of such observations fully determines the form of colored superpolynomials – at least for some knots – as we will see in the examples in the next section.</p>
+
+			</div>
+			<div>
+				<head n="5">Examples</head>
+
+				<p>In this section we illustrate ideas presented above in explicit examples of various knots. We start with the simplest example of the unknot, and then discuss a non-trivial example of a – 9 – hyperbolic knot, i.e. the figure-eight knot, and the entire family of (2, 2p + 1) torus knots, with a special emphasis on the trefoil. In each case we start our considerations by providing explicit and general formulas for S n−1 -colored superpolynomials P n (a, q, t), illustrating the power of two approaches described in section 4. Taking advantage of these representations, subsequently we derive classical and quantum super-A-polynomials for these knots and discuss their properties. For other examples of superpolynomials and super-A-polynomials see [13,14].</p>
+
+			</div>
+			<div>
+				<head n="5.1">Unknot</head>
+
+				<p>Let us start with the simplest example of the unknot. Despite its simplicity, this is still an interesting and important example; as we will see, some objects associated to the unknot, which are trivial in the non-refined and non-super case, become rather non-trivial when t-or a-dependence is turned on. We recall than in the unknot case we must consider unreduced (or &quot; unnormalized &quot; ) knot polynomials – in particular, unreduced colored superpolynomial P n (a, q, t) – since, by definition , reduced polynomials are normalized by the value of the unknot, so that P n ( ; a, q, t) = 1. From the viewpoint of the (refined) Chern-Simons theory the unreduced colored superpolynomial is defined as the ratio of partition functions on S 3 in the presence and absence of a knot. In case of the unknot this ratio is given by the Macdonald polynomial, and after the change of variables q =</p>
+
+				<figure>
+					<trash>1 q 2 , t = − q 2 q 1 , we find that the S n−1 -colored superpolynomial reads P n ( ; a, q, t) = Z ref SU (N ) (S 3 , Λ n−1 ; q 1 , q 2 ) Z ref SU (N ) (S 3 ; q 1 , q 2 ) = M Λ n−1 (q ̺ 2 ; q 1 , q 2 ) = (−1) n−1 2 a − n−1 2 q n−1 2 t − 3(n−1) 2 (−at 3 ; q) n−1 (q; q) n−1 . (5.1)</trash>
+
+
+				</figure>
+
+				<p>We also recall that the q-Pochhammer symbol (x, q) k , defined by a product formula, has the following asymptotics</p>
+
+				<figure>
+					<trash>(x, q) k ≡ k−1 i=0 (1 − xq i ) ∼ e 1 (Li2(x)−Li2(xq k )) . (5.2)</trash>
+
+					<figDesc>Once the general expression for the colored superpolynomial is determined, we can find a recursion relation it satisfies. In particular, as the homological unknot invariant (5.1) has a product form, we can immediately write down the recursion relation it satisfies:</figDesc>
+					<trash>P n+1 ( ; a, q, t) = (−a −1 t −3 q) 1/2 1 + at 3 q n−1 1 − q n P n ( ; q, t) . (5.3) This means that the quantum super-A-polynomial for the unknot reads A super ( x, y; a, q, t) = (−a −1 t −3 q) 1/2 (1 + at 3 q −1 x) − (1 − x) y . (5.4) In the classical limit q → 1 this operator reduces to the classical super-A-polynomial A super (x, y; a, t) = (−a −1 t −3 ) 1/2 (1 + at 3 x) − (1 − x)y . (5.5) – 10 –</trash>
+
+
+				</figure>
+
+				<p>The Newton polygon as well as the coefficients of monomials of this polynomial are shown in figure 2. In the unrefined limit t = −1 the relation (5.4) takes the form A Q-def ( x, y; a, q) = (a</p>
+
+				<figure>
+					<trash>−1 q) 1/2 (1 − aq −1 x) − (1 − x) y , (5.6) and specializing further to q = 1 we get the augmentation polynomial A Q-def (x, y; a) = a −1/2 (1 − ax) − (1 − x)y . (5.7)</trash>
+
+
+				</figure>
+
+				<p>Interestingly, this polynomial does not factorize, and only in the limit of ordinary A-polynomial a → 1 do we get a factorized form with y − 1 factor representing the abelian connection</p>
+
+				<figure>
+					<trash>A(x, y) = (1 − x)(1 − y) . (5.8) + + + + x y 1 1 1 t 3 2 1 t 3 2 1 - - - 1 1 ( at ) 1/2 ( at ) -1/2 - 3 3 - Figure 2</trash>
+
+
+				</figure>
+
+				<p>: Newton polygon for the super-A-polynomial of the unknot (left). Red circles denote monomials of the super-A-polynomial, and smaller yellow crosses denote monomials of its a = −t = 1 specialization. In this example both Newton polygons look the same, so that positions of all circles and crosses overlap. The coefficients of the super-A-polynomial are also shown in the matrix on the right. The role of rows and columns is exchanged in these two presentations: a monomial a i,j x i y j corresponds to a circle (resp. cross) at position (i, j) in the Newton polygon, while in the matrix on the right it is shown as the entry a i,j in the (i+1) th row and in the (j +1) th column. These conventions are the same as in [2, 6, 13].</p>
+
+				<p>It is instructive to show that the super-A-polynomial (5.5) can be also derived from the asymptotic analysis of (</p>
+
+				<figure>
+					<trash>5.1). Indeed, using the asymptotics (5.2), in the limit (3.4) we can approximate (5.1) as P n ( ; a, q, t) = exp 1 log x log(−a −1 t −3 ) 1/2 +Li 2 (x)−Li 2 (−at 3 x)+Li 2 (−at 3 )− π 2 6 +O() , from which identify the potential W = log y dx x in (3.5) as W = log x log(−a −1 t −3 ) 1/2 + Li 2 (x) − Li 2 (−at 3 x) + Li 2 (−at 3 ) − π 2 6 . (5.9) Differentiating it with respect to x, we now obtain y = e x∂x W = (−a −1 t −3 ) 1/2 1 + at 3 x 1 − x , (5.10) – 11 – which</trash>
+
+
+				</figure>
+
+				<p>reproduces the defining equation of the super-A-polynomial given in (5.5). We also note that for a = −t = 1 the potential W vanishes, which is related to the factorization occurring in (5.8) and can be attributed to the fact that the only SL(2, C) flat connections on a solid torus (= complement of the unknot) are abelian flat connections. When a = 1 or t = −1, the potential W is nonzero and presumably can be interpreted as a contribution of &quot; deformed &quot; abelian flat connections.</p>
+
+			</div>
+			<div>
+				<head n="5.2">Figure-eight knot</head>
+
+				<p>In this section we consider the figure-eight knot, also denoted 4 1 . This is a hyperbolic knot, and we stress that it provides a highly non-trivial example, for which many simplifications common in the realm of torus knots (to be discussed in the following sections) do not occur.</p>
+
+				<p>The colored superpolynomial (3.1) for figure-eight knot can be found using the highly constraining structure of differentials. This strategy has been employed in [13] and the resulting superpolynomial reads P n (4 1 ; a, q, t) = ∞ k=0 (−1) k a −k t −2k q −k(k−3)/2 (−atq −1 , q) k (q, q) k (q 1−n , q) k (−at 3 q n−1 , q) k . (5.11)</p>
+
+				<p>An independent, though not entirely unrelated derivation that gives the same result has been proposed in [23]. Explicit values of P n (4 1 ; a, q, t) for low values of n are given in table 3; note that they are all polynomials with positive coefficients, as necessarily expected from (3.2). We stress that (5.11) is in itself a very strong result, which illustrates the power of physics methods; to appreciate this fact and to confirm the validity of the above result we note that: • for a = q 2 and t = −1, the formula (5.11) reduces to the familiar expression for the colored Jones polynomial studied e.g. in [4, 26]:</p>
+
+				<figure>
+					<trash>J n (4 1 ; q) = P n (4 1 ; q 2 , q, −1) = n−1 k=0 q nk (q −n−1 , q −1 ) k (q −n+1 , q) k</trash>
+
+					<figDesc>• for t = −1, (5.11) agrees with the colored HOMFLY polynomial given in the unpublished work [27]</figDesc>
+
+				</figure>
+
+				<p>, which was also used in the analysis of [11] (for precise relation see [2]); • for n = 2 the superpolynomial (5.11) agrees with the known result given e.g. in [9] (to match conventions we need to replace a and q in [9] respectively by a 1/2 and q 1/2 ); • for n = 3 and n = 4 the expression (5.11) reproduces results given in [10]; • for a = −q j t k the expression (5.11) correctly reproduces specializations predicted from the colored / canceling differentials with (a, q, t)-grading (−1, j, k), see [10].</p>
+
+				<p>Recursion relations satisfied by (5.11) can be found using the Mathematica package qZeil.m developed by [28]. In the notation of (3.8) these recursions take form</p>
+
+				<p><formula>A super ( x, y; a, q, t) = a 0 + a 1 y + a 2 y 2 + a 3 y 3 , (5.12) – 12 – n P n (4 1 ; a, q, t) 1 1 2</formula></p>
+
+				<p>a −1 t −2 + t −1 q −1 + 1 + qt + at 2 3 a −2 q −2 t −4 + (a −1 q −3 + a −1 q −2 )t −3 + (q −3 + a −1 q −1 + a −1 )t −2 + +(q −2 + q −1 + a −1 + a −1 q)t −1 + (q −1 + 3 + q) + (q 2 + q + a + aq −1 )t+ +(q 3 + aq + a)t 2 + (aq 3 + aq 2 )t 3 + a 2 q 2 t 4 4 1 + (1 + a −1 qt −1 )(1 + a −1 t −1 )(1 + a −1 q −1 t −1 )× ×(1 + a −1 q −3 t −3 )(1 + a −1 q −4 t −3 )(1 + a −1 q −5 t −3 )a 3 q 6 t 6 + +(1 + q + q 2 )(1 + a −1 qt −1 )(1 + a −1 q −3 t −3 )at 2 + +(1 + q + q 2 )(1 + a −1 qt −1 )(1 + a −1 t −1 )(1 + a −1 q −3 t −3 )(1 + a −1 q −4 t −3 )a 2 q 2 t 4 Table 3: The colored superpolynomial of the 4 1 knot for n = 1, 2, 3, 4.</p>
+
+				<figure>
+					<trash>where a 0 = at 3 (1 − x)(1 − q x)(1 + at 3 q 2 x 2 )(1 + at 3 q 3 x 2 ) q 3 (1 + at 3 x)(1 + at 3 x 2 )(1 + at 3 q x)(1 + at 3 q −1 x 2 ) a 1 = − (1 − q x)(1 + at 3 q 3 x 2 ) tq 3 x 2 (1 + at 3 x)(1 + at 3 q x)(1 + at 3 q −1 x 2 ) × 1 − t(t − 1)q x + at 3 q −1 (1 + q 3 + qt + q 2 t) x 2 −at 4 (q + q 2 + t + q 3 t) x 3 − a 2 (t − 1)t 6 q x 4 − a 2 t 8 q 2 x 5 a 2 = − (1 + at 3 q 2 x 2 ) at 2 q 2 x 2 (1 + at 3 x 2 )(1 + at 3 q x) × 1 − at(t − 1) x + at 2 (q + q 2 + t + q 3 t) x 2 +a 2 t 4 (1 + q 3 + qt + q 2 t) x 3 + a 2 (t − 1)t 5 q 3 x 4 + a 3 t 7 q 3 x 5 a 3 = 1</trash>
+
+					<figDesc>Taking the classical limit q → 1 (and clearing the denominators), we find the following classical super-A-polynomial</figDesc>
+					<trash>A super (x, y; a, t) = a 2 t 5 (x − 1) 2 x 2 + at 2 x 2 (1 + at 3 x) 2 y 3 + (5.13) +at(x − 1)(1 + t(1 − t)x + 2at 3 (t + 1)x 2 − 2at 4 (t + 1)x 3 + a 2 t 6 (1 − t)x 4 − a 2 t 8 x 5 )y −(1 + at 3 x)(1 + at(1 − t)x + 2at 2 (t + 1)x 2 + 2a</trash>
+
+
+				</figure>
+
+				<p><formula>2 t 4 (t + 1)x 3 + a 2 t 5 (t − 1)x 4 + a 3 t 7 x 5 )y 2 .</formula></p>
+
+				<p>The coefficients of the monomials in this polynomial are assembled into a matrix form presented in figure 3, and the corresponding Newton polygon is given in figure 4.</p>
+
+				<figure>
+					<trash>– 13 – a t 1 0 0 a t a t 2 a t 3 a t a t 2 a t 3 0 a 2 t 5 a t 2 a t 3 2 a 2 t 4 2 a 2 t 5 2 a t 2 2 a t 3 a 2 t 4 a 2 t 5 a t 2 2 a 2 t 5 2 a 2 t 4 4 a 2 t 5 2 a 2 t 6 2 a 2 t 4 4 a 2 t 5 2 a 2 t 6 2 a 2 t 5 a 2 t 5 2 a 2 t 5 2 a 2 t 6 a 3 t 7 a 3 t 8 a 2 t 5 a 2 t 6 2 a 3 t 7 2 a 3 t 8 a 3 t 8 0 a 3 t 7 a 3 t 8 a 3 t 9 a 3 t 7 a 3 t 8 a 3 t 9 0 0 a 3 t 9 a 4 t 10 0</trash>
+
+					<head>Figure 3:</head>
+
+					<figDesc>Matrix form of the super-A-polynomial for the figure-eight knot. The conventions are the same as in the unknot example in figure 2.</figDesc>
+
+				</figure>
+
+				<p>According to the Conjecture 1, we should be able to reproduce the same polynomial from the asymptotic behavior of the colored superpolynomial (5.11). This is indeed the case. To show this, we introduce the variable z = e k . Then, in the limit (3.4) with z = const the sum over k in (5.11) can be approximated by the integral</p>
+
+				<figure>
+					<trash>P n (4 1 ; a, q, t) ∼ dz e 1 ( W(4 1 ;z,x)+O()) . (5.14) The potential W(4 1 ; z, x) can be determined from the asymptotics (5.2): W(4 1 ; z, x) = πi log z − π 2 6 − (log a + 2 log t) log z − 1 2 (log z) 2 (5.15) +Li 2 (x −1 ) − Li 2 (x −1 z) + Li 2 (−at) − Li 2 (−atz) + Li 2 (−axt 3 ) − Li 2 (−axt 3 z) − Li 2 (z) . At the saddle point ∂ W(4 1 ; z, x) ∂z z=z 0 = 0 (5.16)</trash>
+
+					<figDesc>it determines the leading asymptotic behavior (3.5), which at the same time is also computed by the integral along the curve (3.6), implying the key identity</figDesc>
+					<trash>y = exp x ∂ W(4 1 ; z 0 , x) ∂x . (5.17)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Plugging the expression (5.15) to the above two equations we obtain the following system 1 =</figDesc>
+					<trash>(x−z 0 )(1+atz 0 )(1+at 3 xz 0 ) at 2 xz 0 (z 0 −1) y = (x−1)(1+at 3 xz 0 ) (1+at 3 x)(x−z 0 ) (5.18) Eliminating z 0 from these two equations we indeed reproduce the super-A-polynomial (5.13). Overall, the above statements verify the validity of the Conjecture 1 and Conjecture 2 for the figure-eight knot. Note that for t = −1 and a = 1, the expression (5.13) reduces to A(x, y) = (x − 1) 2 (y − 1) x 2 (y 2 + 1) − (1 − x − 2x 2 − x 3 + x 4 )y , (5.19) – 14 – + + + + + + + + + + + + + + + + + + x y 2 3 1 6 4 2</trash>
+
+					<head>Figure 4:</head>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Newton polygon of the super-A-polynomial for the figure-eight knot and its a = −t = 1 limit. The conventions are the same as in figure 2.</figDesc>
+
+				</figure>
+
+				<p>which, apart from the (x − 1) 2 factor, reproduces the A-polynomial of the 4 1 knot, including the (y − 1) factor representing the contribution of abelian flat connections. We stress that both the factorization and the explicit form of this abelian branch is seen only in the limit a = −t = 1 and is completely &quot; mixed &quot; with the other branches otherwise. In general the super-A-polynomial (5.13) does not factorize, as is also the case for the unknot and torus knots that will be discussed next. More generally, after a simple change of variables</p>
+
+				<figure>
+					<trash>Q = a, β = x, α = y 1 − βQ Q(1 − β) , (5.20) and for t = −1 we find that (5.13) becomes A Q-def (α, β, Q) = Q 2 (1 − β) 2 βQ − 1 (β 2 − Qβ 3 ) + (2β − 2Q 2 β 4 + Q 2 β 5 − 1)α + +(1 − 2Qβ + 2Q 2 β 4 − Q 3 β 5 )α 2 + Q 2 (β − 1)β 2 α 3 .</trash>
+
+
+				</figure>
+
+				<p>Up to the first fraction, the expression in the big bracket reproduces the Q-deformed Apolynomial given in [11]. A related change of variables (for details see [2]) reveals the relation to the augmentation polynomial of [12]</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="5.3">Trefoil knot</head>
+
+				<p>In this section, we derive the classical and quantum super-A-polynomial for the trefoil knot (i.e. (2, 3) torus knot, also denoted T (2,3) or 3 1 ) and verify the validity of the Conjecture 1 and 2 for this knot. The analysis follows the same lines as in previous sections, and its starting point is the expression for the colored superpolynomial. We can provide such an expression from two sources. First, the colored superpolynomial for general (2, 2p + 1) torus knot was – 15 – derived in [6] from the perspective of the refined Chern-Simons theory. This superpolynomial is given in (5.30), as we will need it for the analysis of general torus knots in the next section. Even though in this section we only need p = 1 specialization of (5.30), this is still quite an intricate expression. On the other hand, the analysis of constraints arising from the action of various differentials leads to the following expression</p>
+
+				<figure>
+					<trash>P n (3 1 ; a, q, t) = n−1 k=0 a n−1 t 2k q n(k−1)+1 (q n−1 , q −1 ) k (−atq −1 , q) k (q, q) k , (5.21)</trash>
+
+
+				</figure>
+
+				<p>and one can verify that this is equal to p = 1 specialization of (5.30). Explicit values of P n (3 1 ; a, q, t) following from (5.21) for low values of n are given in table 4. Again, note that they are polynomials with positive coefficients, as expected from (3.2). n P n (3 1 ; a, q, t) 1 1 2 aq −1 + aqt 2 + a 2 t 3 3 a 2 q −2 + a 2 q(1 + q)t 2 + a 3 (1 + q)t 3 + a 2 q 4 t 4 + a 3 q 3 (1 + q)t 5 + a 4 q 3 t 6 4 a 3 q −3 + a 3 q(1 + q +</p>
+
+				<figure>
+					<trash>q 2 )t 2 + a 4 (1 + q + q 2 )t 3 + a 3 q 5 (1 + q + q 2 )t 4 + +a 4 q 4 (1 + q)(1 + q + q 2 )t 5 + a 3 q 4 (a 2 + a 2 q + a 2 q 2 + q 5 )t 6 + +a 4 q 8 (1 + q + q 2 )t 7 + a 5 q 8 (1 + q + q 2 )t 8 + a 6 q 9 t 9</trash>
+
+					<head>Table 4:</head>
+
+					<figDesc>Colored superpolynomial of the 3 1 knot for n = 1, 2, 3, 4.</figDesc>
+
+				</figure>
+
+				<p>From the explicit form of the colored superpolynomial (5.21) we find the recursion relation it satisfies by using the Mathematica package qZeil.m, see [28]. This recursion relation takes form A super ( x, y; a, q, t) =</p>
+
+				<figure>
+					<trash>a 0 + a 1 y + a 2 y 2 , (5.22) where a 0 = a 2 t 4 ( x − 1) x 3 (1 + aqt 3 x 2 ) q(1 + at 3 x)(1 + at 3 q −1 x 2 ) a 1 = − a(1 + at 3 x 2 ) q − q 2 t 2 x + t 2 (q 2 + q 3 + at + aq 2 t) x 2 + aq 2 t 5 x 3 + a 2 qt 6 x 4 q 2 (1 + at 3 x)(1 + at 3 q −1 x 2 ) a 2 = 1 The classical super-A-polynomial for trefoil knot follows from the q → 1 limit of A super and reads A super (x, y; a, t) = a 2 t 4 (x − 1)x 3 + (1 + at 3 x)y 2 + (5.23) −a 1 − t 2 x + 2t 2 (1 + at)x 2 + at 5 x 3 + a 2 t 6 x 4 y . – 16 –</trash>
+
+
+				</figure>
+
+				<p>Matrix form of this polynomial is presented in figure 5, and its Newton polygon is shown in figure 6.</p>
+
+				<figure>
+					<trash>0 a 1 0 a t 2 a t 3 0 2 a t 2 2 a 2 t 3 0 a 2 t 4 a 2 t 5 0 a 2 t 4 a 3 t 6 0</trash>
+
+					<head>Figure 5:</head>
+
+					<figDesc>Matrix form of the super-A-polynomial for the trefoil knot. The conventions are the same as in figure 2.</figDesc>
+
+				</figure>
+
+				<p>The same polynomial can be derived from the asymptotic behavior of the colored</p>
+
+				<figure>
+					<trash>polynomial (5.21). Using integral representation as in (5.14), P n (3 1 ; a, q, t) ∼ dz e 1 ( W(3 1 ;z,x)+O()) , (5.24) with the potential W(3 1 ; z, x) = − π 2 6 + log z + log a log x + 2(log t)(log z) (5.25) +Li 2 (xz −1</trash>
+
+
+				</figure>
+
+				<p>) − Li 2 (x) + Li 2 (−at) − Li 2 (−atz) + Li 2 (z) , and in the limit (3.4) with z = e k = const, we find that equations (</p>
+
+				<figure>
+					<trash>5.16) and (5.17) take form    1 = t 2 x(x−z 0 )(1+atz 0 ) z 0 (z 0 −1) y = az 2 0 (x−1) (x−z 0 ) (5.26)</trash>
+
+
+				</figure>
+
+				<p>Eliminating z 0 from these two equations we reproduce the super-A-polynomial (5.23). We conclude that both Conjecture 1 and Conjecture 2 hold true for the trefoil knot.</p>
+
+				<p>We also note that for t = −1 and a = 1 the super-A-polynomial (5.23) reduces to</p>
+
+				<figure>
+					<trash>A(x, y) = −(x − 1)(y − 1)(y + x 3 ) , (5.27)</trash>
+
+
+				</figure>
+
+				<p>which reproduces the well known A-polynomial for the trefoil knot, including the (y − 1) factor associated with abelian flat connections (and the overall immaterial factor x − 1). More generally, under a change of variables</p>
+
+				<figure>
+					<trash>Q = a, β = x, α = yQ −1 β −6 1 − Qβ 1 − β , (5.28) and in t = −1 limit, (5.23) reduces (up to an overall factor) to A(α, β, Q) = (1 − Qβ) + (β 3 − β 4 + 2β 5 − 2Qβ 5 − Qβ 6 + Q 2 β 7 )α + (−β 9 + β 10 )α 2 , (5.29)</trash>
+
+
+				</figure>
+
+				<p>which reproduces the Q-deformed or augmentation polynomial for the trefoil knot found in [11,12]. Relations between super-A-polynomial, Q-deformed A-polynomial and augmentation polynomial for torus knots are discussed in much more detail in [2].</p>
+
+				<p><formula>– 17 – x y + 3 1 2 1 2 4 x y + + + + + + + + Figure 6</formula></p>
+
+				<p>: Newton polygon of the super-A-polynomial for the trefoil knot and its a = −t = 1 limit.</p>
+
+				<p>The conventions are the same as in the unknot case in figure 2.</p>
+
+				<figure>
+					<trash>5.4 (2, 2p + 1) torus knots</trash>
+
+
+				</figure>
+
+				<p>As the last class of examples we discuss the entire family of (2, 2p + 1) torus knots, which are also denoted T (2,2p+1) . The S r -colored superpolynomials for this family can be found both from refined Chern-Simons theory, as well as from analysis of differentials. The former approach is described in detail in [6] and it leads (after taking into account appropriate γfactors and other subtleties) to the expression for the reduced colored superpolynomial as the ratio of (refined) Chern-Simons partition functions in S 3 in presence of a given knot and the unknot P S r (T (2,2p+1) ; a, q, t) = (−1)</p>
+
+				<figure>
+					<trash>pr q 1 q 2 pr 2 Z ref SU (N ) (S 3 , T (2,2p+1) Λ r ; q 1 , q 2 ) Z ref SU (N ) (S 3 , Λ r ; q 1 , q 2 ) (5.30) = r ℓ=0 (qt 2 ; q) ℓ (−at 3 ; q) r+ℓ (−aq −1 t; q) r−ℓ (q; q) r (q; q) ℓ (q 2 t 2 ; q) r+ℓ (q; q) r−ℓ (−at 3 ; q) r (1 − q 2ℓ+1 t 2 ) (1 − qt 2 ) ×(−1) n−1 a − r 2 q 3(n−1) 2 −ℓ t −(n−1)p−ℓ+ r 2 (−1) ℓ a r 2 q r 2 −ℓ(ℓ+1) 2 t 3r 2 −ℓ 2p+1 .</trash>
+
+
+				</figure>
+
+				<p>The second approach, based on analysis of differentials, has been employed in [13] and results in the following form of the superpolynomial</p>
+
+				<figure>
+					<trash>P S r (T 2,2p+1 ; a, q, t) = a pr q −pr 0≤kp≤...≤k 2 ≤k 1 ≤r r k 1 k 1 k 2 · · · k p−1 k p × (5.31) × q (2r+1)(k 1 +k 2 +...+kp)− p i=1 k i−1 k i t 2(k 1 +k 2 +...+kp) k 1 i=1 (1 + aq i−2 t), where k 0 = r. One can check that (5.30) and (5.31</trash>
+
+
+				</figure>
+
+				<p>) agree up to relatively high values of r; it would be nice to find an analytic proof valid for all r. We are however convinced that both expressions are equal, and various consequences of this fact – in particular dualities between – 18 – different UV descriptions of the corresponding N = 2, 3d SUSY theory (see section 7) – were presented in [13]. For the purpose of this presentation we will focus on the expression the colored superpolynomial in the form (5.30). In the asymptotic limit → 0 limit we find</p>
+
+				<figure>
+					<trash>P S r (T (2,2p+1) ; a, q, t) ∼ dz e 1 ( W(T (2,2p+1) ;z,x)+O()) , (5.32) with the potential W(T (2,2p+1) ; z, x) = p log(a) · log x − p log(−t) · log x + (p + 1)πi log x + log(x 1 2 z −1 ) · log t +(2p + 1) πi log z + 1 2 (log x) 2 − (log z) 2 + log(x 3 2 z −1 ) · log t +Li 2 (z) − Li 2 (x) − Li 2 (t 2 z) + Li 2 (−at 3 x) + Li 2 (t 2 xz) −Li 2 (−at 3 xz) + Li 2 (xz −1</trash>
+
+
+				</figure>
+
+				<p>) − Li 2 (−atxz −1 ) + Li 2 (−at) − Li 2 (1), (5.33) where z = q ℓ .</p>
+
+				<p>For the above potential W(T (2,2p+1) ; z, x), the critical point condition can simply be</p>
+
+				<figure>
+					<trash>expressed as 1 = exp z∂ W/∂z | z=z 0 : 1 = − t −2−2p (x − z 0 )z −1−2p 0 (−1 + t 2 z 0 )(1 + at 3 xz 0 ) (−1 + z 0 )(atx + z 0 )(−1 + t 2 xz 0 ) . (5.34) and y(x, t, a) = exp x ∂ W(T (2,2p+1</trash>
+
+
+				</figure>
+
+				<p>) ; z 0 , x) ∂x = a p t 2+2p (−1 + x)x 1+2p (atx + z 0 )(1 + at 3 xz 0 ) (1 + at 3 x)(x − z 0 )(−1 + t 2 xz 0 ) . (5.35)</p>
+
+				<p>Eliminating z 0 from the above equations, we find the super-A-polynomial A super (x, y; a, t) for any (2, 2p + 1) torus knot. For small values of p, the resulting super-A-polynomials are listed in table 5 (where we omitted the extra factors which appear in the elimination, and picked up the factor that includes the non-abelian branch of the SL(2) character variety). In particular, for p = 1, we obtain (up to an inessential overall factor) the same super-A-polynomial for the trefoil (5.23), which was derived in the previous section starting from another expression for colored superpolynomials (5.21). For a = 1 the above super-A-polynomials reduce to the refined A-polynomials of [6]. On the other hand, for t = −1 we find the Q-deformed A-polynomial of [11] if the following identification of parameters is performed</p>
+
+				<figure>
+					<trash>Q = a, β = x, α = yQ −p β −4p−2 1 − Qβ 1 − β , (5.36) – 19 – super K (x, y; a, t) T (2,3) y 2 + 1 1+at 3 x a(−1 + t 2 x − 2t 2 x 2 − 2at 3 x 2 − at 5 x 3 − a 2 t 6 x 4 )y+ (x−1)a 2 t 4 x 3 1+at 3 x T (2,5) y 3 − a 2 1+at 3 x (1 − t 2 x + 2t 2 x 2 + 2at 3 x 2 − 2t 4 x 3 − 2at 5 x 3 + 3t 4 x 4 + 4at 5 x 4 + a 2 t 6 x 4 + at 7 x 5 −a 2 t 8 x 5 + 2a 2 t 8 x 6 )y 2 + a 4 t 6 (−1+x)x 5 (1+at 3 x) 2 (2 − t 2 x + at 3 x + 3t 2 x 2 + 4at 3 x 2 + a 2 t 4 x 2 + 2at 5 x 3 + 2a 2 t 6 x 3 + 2a 2 t 6 x 4 +2a 3 t 7 x 4 + a 3 t 9 x 5 + a 4 t 10 x 6 )y − a 6 t 12 (−1+x) 2 x 10 (1+at 3 x) 2 T (2,7) y 4 − a 3 1+at 3 x (1 − t 2 x + 2t 2 x 2 + 2at 3 x 2 − 2t 4 x 3 − 2at 5 x 3 + 3t 4 x 4 + 4at 5 x 4 + a 2 t 6 x 4 − 3t 6 x 5 −4at 7 x 5 − a 2 t 8 x 5 + 4t 6 x 6 + 6at 7 x 6 + 2a 2 t 8 x 6 + at 9 x 7 − 2a 2 t 10 x 7 + 3a 2 t 10 x 8 )y 3 + a 6 t 8 (−1+x)x 7 (1+at 3 x) 2 (3 − 2t 2 x + at 3 x + 6t 2 x 2 + 8at 3 x 2 + 2a 2 t 4 x 2 − 3t 4 x 3 − 2at 5 x 3 + a 2 t 6 x 3 + 6t 4 x 4 +12at 5 x 4 + 10a 2 t 6 x 4 + 4a 3 t 7 x 4 + 3at 7 x 5 + 2a 2 t 8 x 5 − a 3 t 9 x 5 + 6a 2 t 8 x 6 + 8a 3 t 9 x 6 + 2a 4 t 10 x 6 +2a 3 t 11 x 7 − a 4 t 12 x 7 + 3a 4 t 12 x 8 )y 2 − a 9 t 16 (−1+x) 2 x 14 (1+at 3 x) 3 (3 − t 2 x + 2at 3 x + 4t 2 x 2 + 6at 3 x 2 + 2a 2 t 4 x 2 + 3at 5 x 3 + 4a 2 t 6 x 3 + a 3 t 7 x 3 +3a 2 t 6 x 4 + 4a 3 t 7 x 4 + a 4 t 8 x 4 + 2a 3 t 9 x 5 + 2a 4 t 10 x 5 + 2a 4 t 10 x 6 + 2a 5 t 11 x 6 + a 5 t 13 x 7 + a 6 t 14 x 8 )y + a 12 t 24 (−1+x) 3 x 21 (1+t 3 x) 3</trash>
+
+					<head>Table 5:</head>
+
+
+				</figure>
+
+				<p>Super-A-polynomials for (2, 2p + 1) torus knots with p = 1, 2, 3. and a related transformation reveals the form of the augmentation polynomial of [12]. Precise derivation of the above variable change, as well as explicit relations between super-Apolynomial , the augmentation polynomial and Q-deformed A-polynomial, are discussed in detail in [2]</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="6">Quantizability</head>
+
+				<p>In this section we discuss the super-A-polynomials that we found from the viewpoint of quantizability, by which we mean the following. For the Conjecture 1 to be formulated in a consistent way, we must ensure that the leading term log y dx x in the integral (3.5) is welldefined , i.e. does not depend on the choice of the integration path on the algebraic curve (3.6). As explained in [5, 29], this requirement imposes the following constraints on the periods of the imaginary and real parts of log y</p>
+
+				<figure>
+					<trash>dx x , respectively, γ log |x|d(arg y) − log |y|d(arg x) = 0 , (6.1) 1 4π 2 γ log |x|d log |y| + (arg y)d(arg x) ∈ Q , (6.2) – 20 –</trash>
+
+
+				</figure>
+
+				<p>for all closed paths γ on the curve (3.6). It turns out that these conditions can be further reformulated and interpreted in a variety of ways. On one hand, it is amusing to observe that the integrand η(x, y) = log |x|d(arg y) − log |y|d(arg x) in (6.1) is the image of the symbol {x, y} ∈ K 2 (C) under so-called regulator map, thereby constituting an immediate link to algebraic K-theory [30–32]. As discussed in [29], from this K-theory viewpoint the condition that the curve is quantizable can be rephrased simply as the requirement that {x, y} ∈ K 2 (C(C)) is a torsion class. On the other hand, this more abstract condition also translates to the down-to-earth statement that quantizability of the curve requires its defining polynomial to be tempered. By definition, a polynomial A(x, y) is tempered if all roots of all face polynomials of its Newton polygon are roots of unity. Face polynomials are constructed as follows: we need to construct a Newton polygon corresponding to A(x, y) = i,j a i,j x i y j , and to each point (i, j) of this polygon we associate the coefficient a i,j . We label consecutive points along each face of the polygon by integers k = 1, 2, . . . and, for a given face, rename monomial coefficients associated to these points as a k . Then, the face polynomial associated to a given face is defined to be f (z) = k a k z k . Therefore, the quantizability condition requires that all roots of f (z) constructed for all faces of the Newton polygon must be roots of unity. In what follows we are going to examine super-A-polynomials which we found in examples in section 5 from this perspective. Ordinary A-polynomials have numerical, integer coefficients [3], and therefore the above quantization condition imposes certain constraints on values of these coefficients. For example , the ordinary A-polynomial of the figure-eight knot given in (5.19) satisfies these constraints , while its close cousin with only slightly different coefficients, discussed e.g. in [5,29], does not. Meeting these tight constraints might seem much less trivial in the case of t-or a-deformed curve, when coefficients of the defining polynomial depend on these extra parameters . Nonetheless, this is indeed possible and the outcome is very simple: the quantization condition implies that both a and t must be roots of unity. Therefore, even though such a and t cannot be completely arbitrary, they still take values in a dense set of points (on a unit circle). Below we verify that indeed all super-A-polynomials discussed in section 5 are tempered (and therefore quantizable) as long as both a and t are roots of unity. This condition very nicely fits with the fact that in specialization from colored superpolynomial or HOMFLY polynomial to sl(N ) quantum group invariant we substitute a = q N and in Chern-Simons theory with SU (N ) gauge group q is required to be a root of unity, so that a = q N is automatically a root of unity as well. Let us now illustrate the above claim in the examples of various knots discussed in section 5. For each of those knots we construct a Newton polygon and face polynomials of the corresponding super-A-polynomials. In order to construct face polynomials it is convenient to write down a matrix representation of the super-A-polynomials. For instance, for the unknot the Newton polygon and the corresponding matrix representation are shown in figure 2. In this case, it is clear that roots of face polynomials are all roots of unity if a and t are roots of unity. In fact, the unknot is so simple that even a weaker condition is sufficient to hold,</p>
+
+				<figure>
+					<trash>– 21 – face face polynomial N z + at NE z + at 2 E at 2 (z + at 3 ) 2 SE a 3 t 8 (z − at 2 ) S a 3 t 9 (z + at) SW a 2 t 5 (z − at 4 ) W a 2 t 5 (z − 1) 2 NW at(z − at 4 )</trash>
+
+					<head>Table 6:</head>
+
+
+				</figure>
+
+				<p>Face polynomials for the figure-eight knot, corresponding to faces of the octagonal shape formed by non-zero entries of the coefficient matrix in figure 3. Faces are labeled by compass directions (with N standing for North, etc.), with the first row (0, −at, −1, 0) of the matrix in figure 3 located in the North. namely that the combination at 3 is a root of unity.</p>
+
+				<p>The matrix coefficients and the Newton polygon for figure-eight knot are given, respectively , in figures 3 and 4, and the corresponding face polynomials are presented in table 6.</p>
+
+				<p>The face polynomials are manifestly written as products of linear factors, and being tempered requires that both a and t are roots of unity. An analogous condition holds also for (2, 2p + 1) torus knots whose Newton polygons have hexagonal shape, and the corresponding face polynomials are given in table 7. Quantizability conditions are also met for other knots, as verified in [13]. To sum up, from all these examples we conclude that super-A-polynomials are quantizable if both a and t are roots of unity; we conjecture that this is the case for all knots.</p>
+
+				<figure>
+					<trash>face face polynomial first column −(at 2 ) p(p+1) (z − 1) p last column (−1) p (z + at 3 ) p first row za p − 1 last row −(at 2 ) p(p+1) z − (at 2 ) p lower diagonal (−1) p at 3 ) p (z − a p+1 t 2p+1 p upper diagonal (−1) p+1 a p z + a p t 2p+2 p</trash>
+
+					<head>Table 7:</head>
+
+
+				</figure>
+
+				<p>Face polynomials for (2, 2p + 1) torus knots, corresponding to faces of the hexagonal shape formed by non-zero entries of the coefficient matrices for (2, 2p + 1) torus knots, such as the matrix for the trefoil in figure 3. 7. Interpretation in 3d, N = 2 theories The objects we have considered so far, such as super-A-polynomials and colored superpolynomials , also have an interesting interpretation in 3d, N = 2 SUSY gauge theories. We have already recalled that knot invariants can be described in terms of three-dimensional Chern-Simons theory, and from physics perspective the connection between these two classes of theories arises as a 3d-3d duality associated to complementary compactifications of M5- brane along appropriate three dimensions of its 3 + 3 dimensional world-volume [33–36]. In particular, important properties of both three-dimensional theories (i.e. Chern-Simons and N = 2 gauge theory) are encoded in the same algebraic curve. From the perspective of N = 2 theories this curve plays a role to some extent analogous to the Seiberg-Witten curves of fourdimensional gauge theories [37, 38]. In what follows we explain that the 3d-3d duality can be extended to incorporate dependence on a and t. On Chern-Simons side this corresponds to considering refined Chern-Simons theory with SL(N ) gauge group, and on N = 2 side these parameters can be interpreted as twisted mass parameters for certain global symmetries U (1) Q and U (1) F . In this context, the algebraic curve mentioned above is precisely the super-A-polynomial, and so it carries important information about N = 2 theories with those symmetries.</p>
+
+				<p>To start with, we recall that the parameter t, responsible for the &quot; refinement &quot; or &quot; categorification &quot; , can be interpreted [6]</p>
+
+				<figure>
+					<figDesc>as a twisted mass parameter for the global symmetry U (1) F in the effective three-dimensional N = 2 theory T M associated to the knot complement M = S 3 \ K: M T M . (7.1)</figDesc>
+
+				</figure>
+
+				<p>Moreover, generically, every charged chiral multiplet in a theory T M contributes to the effective twisted chiral superpotential a dilogarithm term:</p>
+
+				<figure>
+					<trash>chiral field φ ←→ twisted superpotential ∆ W( x; t) = Li 2 (−t) n F i (x i ) n i (7.2)</trash>
+
+					<figDesc>where n F is the charge of the chiral multiplet under the global R-symmetry U (1) F and {n i } is our (temporary) collective notation for all other charges of φ under symmetries U (1) i ,</figDesc>
+
+				</figure>
+
+				<p>some of which may be global flavor symmetries and some of which may be dynamical gauge symmetries, depending on the problem at hand. 1 In particular, in the former case, the vev of the corresponding twisted chiral multiplet is usually called the twisted mass parameter m i = log x i , of which m F = log(−t) is a prominent example. The second commutative deformation parameter a also admits a similar interpretation as a twisted mass parameter for a global symmetry that we denote U</p>
+
+				<figure>
+					<trash>(1) Q : log a = ˜ m Q . (7.3) 1</trash>
+
+					<figDesc>Below we shall return to the different role of gauge and global symmetries, but for now we wish to point out a simple rule of thumb that one can read off the matter content of the theory TM by counting dilogarithm terms in the function W( x; t).</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>– 23 –</head>
+
+				<p>In fact, in the case of the a-deformation this interpretation is even more obvious and can be easily seen in the brane picture, where it corresponds to one of the Kähler moduli of the underlying Calabi-Yau geometry X. For example, the effective low-energy theory on a toric brane in the conifold geometry has two chiral multiplets that come from two open BPS states shown in blue and red in figure 7. Figure 7: A toric Lagrangian brane in the conifold bounds two holomorphic disks (shown by red and blue intervals in the base of the toric geometry).</p>
+
+				<p>In this example, the symmetry U (1) Q responsible for the a-deformation comes from the 2-cycle in the conifold geometry X. (The corresponding gauge field A µ comes from the Kaluza-Klein reduction of the RR 3-form field, C ∼ A ∧ ω, and becomes the starting point for the geometric engineering of N = 2 gauge theories in four dimensions [39].) In a basis of refined open BPS states shown in figure 7, one state is charged under the symmetry U (1) Q , while the other state is neutral. Therefore, the effective twisted superpotential W(x; a, t) of the corresponding model has two dilogarithm terms, one of which depends on a and the other does not.</p>
+
+				<p>Returning to the general theory T M , now we are ready to explain the connection between the twisted superpotential in this theory and the algebraic curve (3.6) defined as the zero locus of the super-A-polynomial. Roughly speaking, the curve (3.6) describes the SUSY vacua in the N = 2 theory T M . To make this more precise, we need to recall that among the parameters x i in (7.2) some correspond to vevs of dynamical fields (and, therefore, need to be integrated out) and some are twisted masses for global flavor symmetries. To make the distinction clearer, let us denote the former by z i (instead of x i ), so that the vevs of dynamical twisted chiral superfields are σ i = log z i . Then, in order to find SUSY vacua of the theory T M we need to extremize W with respect to these dynamical fields,</p>
+
+				<figure>
+					<trash>∂ W ∂z i = 0 . (7.4)</trash>
+
+
+				</figure>
+
+				<p>This is exactly what we did e.g. in (5.16) when we extremized the potential function (5.15) for the figure-eight knot (cf. also (5.25) and (5.34) for the case of (2, 2p + 1) torus knots). Solving these equations for z i and substituting the resulting values back into W gives the effective twisted superpotential, W eff , that depends only on twisted mass parameters associated with global symmetries of the N = 2 theory T M .</p>
+
+			</div>
+			<div>
+				<head>– 24 –</head>
+
+				<p>Besides the symmetries U (1) F and U (1) Q which are responsible for t-and a-deformations, respectively, our N = 2 theories T M come with additional global flavor symmetries, one for each component of the link K (or, more generally, one for every torus boundary of M ). In particular, if K is a knot — which is what we assume throughout the present paper — then, in addition to U (1) F and U (1) Q , there is only one extra global symmetry U (1) L with the corresponding twisted mass parameter that we simply denote m; it is x = e ˜ m that shortly will be identified with the variable by the same name in the super-A-polynomial. In the brane model, space-time:</p>
+
+				<p><formula>R 4 × X ∪ ∪ D4-brane: R 2 × L (7.5)</formula></p>
+
+				<p>this symmetry U (1) L can be identified with the gauge symmetry on the D4-brane supported on the Lagrangian submanifold L ⊂ X. The corresponding gauge field is dynamical when L has finite volume, while for non-compact L (of infinite volume) the symmetry U (1) L is a global symmetry. Moreover, the other global symmetry U (1) F that plays an important role in our discussion also can be identified in the brane setup (7.5): it corresponds to the rotation symmetry of the normal bundle of R 2 ⊂ R 4 .</p>
+
+				<p>To summarize our discussion so far, we can incorporate U (1) Q and U (1) L charges in (7.2) and write the contribution of a chiral multiplet φ ∈ T M to the twisted superpotential as</p>
+
+				<figure>
+					<trash>chiral field φ ←→ twisted superpotential ∆ W(x, z i ; a, t) = Li 2 a n Q (−t) n F x n L i (z i ) n i (7.6) Using this dictionary and dilogarithm identities, such as the inversion formula Li 2 (x) = −Li 2 1 x − π 2 6 − 1 2 [log(−x)]</trash>
+
+
+				</figure>
+
+				<p>2 , from (5.15) and (5.25) it is easy to read off the spectrum of the theory T M for the trefoil knot and for the figure-eight knot:</p>
+
+				<figure>
+					<trash>trefoil knot φ 1 φ 2 φ 3 φ 4 φ 5 parameter U (1) gauge −1 0 0 −1 1 z U (1) F 0 0 1 −1 0 −t U (1) Q 0 0 1 −1 0 a U (1) L 1 −1 0 0 0 x figure-eight knot φ 1 φ 2 φ 3 φ 4 φ 5 φ 6 φ 7 U (1) gauge 0 −1 0 −1 0 −1 −1 U (1) F 0 0 1 −1 3 −3 0 U (1) Q 0 0 1 −1 1 −1 0 U (1) L −1 1 0 0 1 −1 0</trash>
+
+					<head>Table 8:</head>
+
+					<figDesc>Spectrum of the N = 2 theory T M for the trefoil and figure-eight knots.</figDesc>
+
+				</figure>
+
+				<p>The terms of lower transcendentality degree, i.e. products of ordinary logarithms, also admit a simple interpretation in three-dimensional N = 2 gauge theory T M . Notice that, in the collective notations {x i } for global and gauge symmetries U (1) i used in (7.2), the dependence of the twisted superpotential W on log x i is always quadratic, see e.g.</p>
+
+				<figure>
+					<trash>(5.15) and (5.25). – 25 –</trash>
+
+
+				</figure>
+
+				<p>Such terms correspond to supersymmetric Chern-Simons couplings for U (1) gauge (resp. background flavor) fields: k ij 4π A i ∧ dA j + . . .</p>
+
+				<figure>
+					<trash>←→ twisted superpotential ∆ W( x; a, t) = k ij 2 log x i · log x j (7.7)</trash>
+
+
+				</figure>
+
+				<p>At this point, we should remind the reader that a given N = 2 theory T M may admit many dual UV descriptions, with different number of gauge groups and charged matter fields [35]. However, all of these dual descriptions lead to the same space of supersymmetric moduli (twisted mass parameters) once all dynamical multiplets are integrated out, i.e. once the twisted superpotential is extremized (7.4) with respect to all z i .</p>
+
+				<p>The resulting &quot; effective &quot; twisted superpotential W eff (x; a, t) depends only on the twisted mass parameters associated with the global symmetries U (1) L , U (1) Q , and U (1) F . Then, the algebraic curve (3.6) defined as the zero locus of the super-A-polynomial is simply a graph of the function x ∂ W eff ∂x , which in a circle compactification of the theory T M is interpreted as the effective FI parameter:</p>
+
+				<figure>
+					<trash>M SUSY : A super (x, y; a, t) = 0 ⇔ log y = x∂ x W eff (x; a, t) (7.8)</trash>
+
+
+				</figure>
+
+				<p>We note that an amusing example of dualities between various UV descriptions of the same N = 2 theory, associated to arbitrary (2, 2p+1) torus knot, has been analyzed in detail in [13].</p>
+
+				<figure>
+					<figDesc>In this case two distinct UV descriptions arise from two different of colored superpolynomials given in (5.30) and (5.31).</figDesc>
+
+				</figure>
+
+			</div>
+
+			<note place="foot">– 22 –</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+				<head>Acknowledgments</head>
+				<p>We thank Sergei Gukov for a very nice and fruitful collaboration that led to the discovery of the super-A-polynomial and other results reviewed in this note. We also thank Hidetoshi Awata, Satashi Nawata and Marko Stoši´or collaborations on these and related topics. The work of H.F. is supported by the Grant-in-Aid for Young Scientists (B) [# 21740179] from the Japan Ministry of Education, Culture, Sports, Science and Technology, and the Grant-in- Aid for Nagoya University Global COE Program, &quot; Quest for Fundamental Principles in the Universe: from Particles to the Solar System and the Cosmos. &quot; The work of P.S. is supported by the Foundation for Polish Science.</p>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Quantum Field Theory and the Jones Polynomial</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Witten</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">121</biblScope>
+			<biblScope unit="page">351</biblScope>
+			<date type="published" when="1989" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Super-A-polynomial for knots and BPS states</title>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Fuji</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Gukov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Su</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">867</biblScope>
+			<biblScope unit="issue">506</biblScope>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title/>
+		<imprint>
+			<biblScope unit="page">26</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Plane curves associated to character varieties of 3-manifolds</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Cooper</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Culler</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Gillet</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Long</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">B</forename>
+				<surname>Shalen</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Invent. Math</title>
+		<imprint>
+			<biblScope unit="volume">118</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="47" to="84" />
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">On the characteristic and deformation varieties of a knot</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Garoufalidis</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Geometry and Topology Monographs</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="291" to="304" />
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Three-Dimensional Quantum Gravity, Chern-Simons Theory, and the A-Polynomial</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Gukov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">255</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="577" to="627" />
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title level="m" type="main">Volume Conjecture: Refined and Categorified (with an appendix by Hidetoshi Awata)</title>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Fuji</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Gukov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Su</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">A categorification of the Jones polynomial, Duke Math</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Khovanov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J</title>
+		<imprint>
+			<biblScope unit="volume">101</biblScope>
+			<biblScope unit="issue">359426</biblScope>
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<title level="m" type="main">Matrix factorizations and link homology, math</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Khovanov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Rozansky</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="401268" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title level="m" type="main">The Superpolynomial for knot homologies</title>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<forename type="middle">M</forename>
+				<surname>Dunfield</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Gukov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Rasmussen</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page">0505662</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title level="m" type="main">Homological algebra of knots and BPS states</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Gukov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Stosic</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title level="m" type="main">Mirror Symmetry, and a Q-deformed A-polynomial for Knots</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Aganagic</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Vafa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Large</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Duality</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Framed knot contact homology, Duke Math</title>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Ng</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J</title>
+		<imprint>
+			<biblScope unit="volume">141</biblScope>
+			<biblScope unit="page" from="365" to="406" />
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Fuji</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Gukov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Su</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Stosic</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+	<note>3d. analogs of Argyres-Douglas theories and knot homologies</note>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+		<title level="m" type="main">Super-A-polynomials for Twist Knots</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Nawata</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Ramadevi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">X</forename>
+				<surname>Zodinmawia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Sun</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">The hyperbolic volume of knots from quantum dilogarithm</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">M</forename>
+				<surname>Kashaev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lett. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="page" from="269" to="265" />
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">The colored Jones polynomials and the simplicial volume of a knot</title>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Murakami</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Murakami</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Acta Math</title>
+		<imprint>
+			<biblScope unit="volume">1869905075</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="85" to="104" />
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Quantum Field Theory and the Volume Conjecture</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Dimofte</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Gukov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Contemp. Math</title>
+		<imprint>
+			<biblScope unit="volume">541</biblScope>
+			<biblScope unit="page" from="41" to="67" />
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Gukov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Schwarz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Vafa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Khovanov-Rozansky</forename>
+				<surname>Homology</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Topological</forename>
+				<surname>Strings</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lett. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">74</biblScope>
+			<biblScope unit="page" from="53" to="74" />
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Knot invariants and topological strings</title>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Ooguri</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Vafa</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="volume">577</biblScope>
+			<biblScope unit="page" from="419" to="438" />
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Lagrangians for the Gopakumar-Vafa conjecture</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">H</forename>
+				<surname>Taubes</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv.Theor.Math.Phys</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="139" to="163" />
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<title level="m" type="main">Conormal bundles to knots and the Gopakumar-Vafa conjecture, math/0503248 Interplay between MacDonald and Hall-Littlewood expansions of extended torus superpolynomials</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Koshkin</surname>
+			</persName>
+		</author>
+		<editor>22] A. Mironov, A. Morozov, S. Shakirov, and A. Sleptsov</editor>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<monogr>
+		<title level="m" type="main">HOMFLY and superpolynomials for figure eight knot in all symmetric and antisymmetric representations</title>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Itoyama</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Mironov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Morozov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Morozov</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="1203" to="5978" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<monogr>
+		<title level="m" type="main">Knot Homology from Refined Chern-Simons Theory</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Aganagic</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Shakirov</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<monogr>
+		<title level="m" type="main">Superpolynomials for toric knots from evolution induced by cut-and-join operators</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Dunin-Barkowski</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Mironov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Morozov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Sleptsov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Smirnov</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">On the quantum sl 2 invariants of knots and integral homology spheres</title>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Habiro</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Geometry &amp; Topology Monographs</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="55" to="68" />
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<monogr>
+		<title/>
+		<imprint>
+			<pubPlace>Kawagoe, unpublished work</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Riese</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Combinatorics</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Gukov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Su</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Quantization</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">1202</biblScope>
+			<biblScope unit="issue">070</biblScope>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Higher regulators and values of L-functions of curves</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Beilinson</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Funktsional. Anal. i Prilozhen</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="46" to="47" />
+			<date type="published" when="1980" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<monogr>
+		<title level="m" type="main">The Dilogarithm and Extensions of Lie Algebras, in Algebraic K-theory</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Bloch</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1980" />
+			<publisher>Springer</publisher>
+			<biblScope unit="page" from="1" to="23" />
+			<pubPlace>Evanston ; Berlin, Heidelberg, New York</pubPlace>
+		</imprint>
+	</monogr>
+	<note>of. Lecture Notes in Mathematics</note>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Boyd</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Rodriguez-Villegas</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Dunfield</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Mahler&apos;s Measure and the Dilogarithm (II)</title>
+		<imprint>
+			<biblScope unit="page">0308041</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<monogr>
+		<title level="m" type="main">Vortex Counting and Lagrangian 3-manifolds</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Dimofte</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Gukov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Hollands</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<monogr>
+		<title level="m" type="main">Semiclassical Analysis of the 3d/3d Relation</title>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Terashima</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Yamazaki</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<monogr>
+		<title level="m" type="main">Gauge Theories Labelled by Three-Manifolds</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Dimofte</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Gaiotto</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Gukov</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Cecotti</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Cordova</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Vafa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Braids</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Mirrors</forename>
+				<surname>Walls</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Electric-Magnetic Duality</title>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Seiberg</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Witten</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Monopole Condensation, and Confinement In N=2 Supersymmetric Yang-Mills Theory</title>
+		<imprint>
+			<date type="published" when="1994" />
+			<biblScope unit="page" from="19" to="52" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Seiberg</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Witten</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD, Nucl. Phys. B431</title>
+		<imprint>
+			<date type="published" when="1994" />
+			<biblScope unit="page" from="484" to="550" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Geometric Engineering of Quantum Field Theories</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Katz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Klemm</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Vafa</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">4979609239</biblScope>
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<monogr>
+		<title/>
+		<imprint>
+			<biblScope unit="page">28</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

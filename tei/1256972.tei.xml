@@ -1,0 +1,2093 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Singularity Confinement and Projective Resolution of Triangulated Category</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2013-10-04">4 Oct 2013</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Satoru</forename>
+								<surname>Saito</surname>
+							</persName>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Tsukasa</forename>
+								<surname>Yumibayashi</surname>
+							</persName>
+							<affiliation>
+								<address>
+									<addrLine>‡ 1 Hakusan 4-19-10</addrLine>
+									<postCode>226-0006</postCode>
+									<settlement>Midoriku</settlement>
+									<region>Yokohama</region>
+									<country key="JP">Japan</country>
+								</address>
+							</affiliation>
+							<affiliation>
+								<orgName type="department">Department of Physics</orgName>
+								<orgName type="institution">Tokyo Metropolitan University</orgName>
+								<address>
+									<postCode>192-0397</postCode>
+									<settlement>Tokyo</settlement>
+									<country key="JP">Japan</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Yuki</forename>
+								<surname>Wakimoto</surname>
+							</persName>
+						</author>
+						<title level="a" type="main">Singularity Confinement and Projective Resolution of Triangulated Category</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2013-10-04">4 Oct 2013</date>
+						</imprint>
+					</monogr>
+					<note>1</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>We proposed, in our previous paper, to characterize the Hirota-Miwa equation by means of the theory of triangulated category. We extend our argument in this paper to support the idea. In particular we show in detail how the singularity confinement, a phenomenon which was proposed to characterize integrable maps, can be associated with the projective resolution of the triangulated category.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>Let us consider a dynamical system in which a rule is fixed to change the state of an object, say X, at every step. We call such a system deterministic. If we can predict the state of X at any time, when an initial state of X is given arbitrary, we say the system integrable. The Kepler motion is an integrable system such that an orbit is determined entirely if initial position and initial velocity are given. Such an integrable system is, however, quite unusual, because the probability we encounter an integrable system is almost zero when a deterministic system is given arbitrary.</p>
+
+				<p>We are interested in finding a way to discriminate integrable systems from nonintegrable ones. From the view of category theory in mathematics [1] an integrable system is a category in which objects are the states of X and the morphism is the change of the states.</p>
+
+				<p>In our previous paper [2] we discussed this problem and proposed that the triangulated category might characterize the Hirota-Miwa equation (HM eq), a completely integrable difference equation from which infinitely many soliton equations of the KP hierarchy can be derived [3, 4].</p>
+
+				<p>We would like to extend our previous argument in this paper. In particular we discuss in detail how the singularity confinement, a phenomenon which was proposed to characterize integrable maps [5, 6], can be associated with the projective resolution of the triangulated category.</p>
+
+				<p>The plan of this paper is as follows. In §2 we discuss geometrical feature of the HM eq. It is convenient to describe the HM eq by means of the discrete geometry on a lattice space, such that the notion of distinguished triangles becomes manifest. This idea was already explained briefly in our previous paper [2] but we extend the idea much more in detail in this paper. Based on this geometrical structure we fix in §3 the deterministic rule of information transfer from one place to another on the lattice space. It will be shown in §4 that all these rules can be described in terms of the triangulated category.</p>
+
+				<p>We have proposed in [2] a possible interpretation of the singularity confinement as a projective resolution of the triangulated category. Our main subject of this paper is an investigation of this conjecture in detail, which will be presented in §5.</p>
+
+			</div>
+			<div>
+				<head>2</head>
+
+				<p>Geometrical feature of the HM eq.</p>
+
+				<p>Before starting our argument it will be worthwhile to review briefly some features of the HM eq. [3, 4]. We consider the following formula throughout this paper:</p>
+
+				<figure>
+					<trash>a 14 a 23 τ 14 (p)τ 23 (p) − a 24 a 13 τ 24 (p)τ 13 (p) + a 34 a 12 τ 34 (p)τ 12 (p) = 0, (1) τ (p) ∈ C, p = (p 1 , p 2 , p 3 , p 4 ) ∈ C 4 , a ij = −a ji ∈ C.</trash>
+
+
+				</figure>
+
+				<p>In above and hereafter we use the abbreviations, such as τ j (p) := D j τ (p) = τ (p + δ j ), τ ij (p) := D i D j τ (</p>
+
+				<figure>
+					<trash>p) = τ (p + δ i + δ j ), (2) δ j := (δ 1j , δ 2j , δ 3j , δ 4j ) with the Kronecker symbol δ ij . 1) This is the simplest, but nontrivial Plücker relation identically satisfied by determi- nants. 2) If we substitute τ (p) = i,j E(z i , z j ) z i − z j p i p j θ ζ + j p j w(z j ) , a ij = z i − z j (3) into (1</trash>
+
+
+				</figure>
+
+				<p>), we obtain an identity, called Fay&apos;s trisecant formula, for the hyperelliptic function θ and the prime form E(z i , z j ) defined on a Riemann surface of arbitrary genus [7, 8]. 3) This formula characterizes the Jacobi varieties among the Abel varieties [9, 10]. 4) From this single equation all soliton equations in the KP hierarchy can be derived corresponding to various continuous limits of independent variables [3, 4]. 5) The solutions of (1) were identified with the points of universal Grassmannian by Sato and known as the τ functions [11]</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="2.1">Nature of τ functions</head>
+
+				<p>It was shown in [12] that the τ functions can be represented by means of tachyon correlation functions of the string theory. Since it provides the most convenient formulation in our argument we will use the notion of string theory in what follows. The 4 point string (tachyon) correlation function is given by</p>
+
+				<figure>
+					<trash>Φ(p, z; G) = 0|V (p 1 , z 1 )V (p 2 , z 2 )V (p 3 , z 3 )V (p 4 , z 4 )|G, (4) where z = (z 1 , z 2 , z 3 , z 4 ) ∈ Z 4</trash>
+
+
+				</figure>
+
+				<p>is a set of parameters determined by a ij &apos;s of the equation (1). Here V (p j , z j ) =: exp(ip j X(z j )) : is the vertex operator of momentum p j of a string attached at z j of the string world sheet specified by the state vector |G. The string coordinate X(z) is an operator which acts on the state |·, while the symbol :: means the normal order product. It was proved in [12] that the substitution of the ratio</p>
+
+				<figure>
+					<trash>τ (p) = Φ(p, z; G) Φ(p, z; 0) (5) into (1) yields exactly Fay&apos;s formula associated with the Riemann surface Fig.1</trash>
+
+
+				</figure>
+
+				<p>corresponding to the world sheet |G. Hence the point z j on the world sheet is a puncture of the Riemann surface. Notice that, since we do not integrate over z j &apos;s, thus has no problem of divergence, we define the vertex operator V (p, z) with no ghost field c.</p>
+
+				<figure>
+					<trash>z 1 z 2 z 3 z 4 |G p 1 p 2 p 4 p 3 z</trash>
+
+					<head>Figure 1:</head>
+
+					<figDesc>Riemann surface</figDesc>
+
+				</figure>
+
+				<p>Although every solution of (1) is obtained by specifying the state |G of the general solution (5), we do not discuss explicit forms of |G in this paper. Therefore we simply write Φ(p, z; G) as Φ(p, z) unless it is necessary. On the other hand the main property of τ functions is determined by the nature of the vertex operators as we will see now. Since they satisfy</p>
+
+				<figure>
+					<trash>V (p, z)V (p ′ , z ′ ) = (−1) pp ′ V (p ′ , z ′ )V (p, z), (6) we see immediately that the fields ψ ± (z) := V (±1, z) have the properties ψ ± (z)ψ ± (z ′ ) = −ψ ± (z ′ )ψ ± (z), ψ ± (z)ψ ∓ (z ′ ) = −ψ ∓ (z ′ )ψ ± (z), (7) and, in particular, the following holds: ψ + (z)ψ + (z) = 0, ψ − (z)ψ − (z) = 0. (8) Hence ψ ± (z) are Grassmann fields. By taking this property into account we define operators D ±1 s by D ±1 s Φ(p, z) := 0|V (p 1 , z 1 )V (p 2 , z 2 )V (p 3 , z 3 )V (p 4 , z 4 )ψ ± (z s )|G (9)</trash>
+
+
+				</figure>
+
+				<p>to describe the insertion of ψ ± (z s ) into Φ(p, z) of (4). When z s of ψ ± (z s ) coincides with one of z = (z 1 , z 2 , z 3 , z 4 ) in (9), say s = j, the insertion of ψ ± (z s ) is equivalent to change p j to p j ± 1, up to a phase factor which comes from the exchange of order of ψ ± (z j ) with vertex operators. If we use the notations such as</p>
+
+				<figure>
+					<trash>Φ j (p, z) = ˆ D j Φ(p, z), Φ ij (p, z) = ˆ D i ˆ D j Φ(p, z), i, j = 1, 2, 3, 4, in these particular cases, we obtain Φ ij (p, z) = −Φ ji (p, z), i, j = 1, 2, 3, 4, hence Φ ii (p, z) = 0, i = 1, 2, 3, 4. (10)</trash>
+
+
+				</figure>
+
+				<p>This is an expression of (8). Thus we have found that the zero of Φ(p, z) is associated with a coincidence of two punctures on the Riemann surface.</p>
+
+				<p>In the theory of KP hierarchy [13, 14, 15] the operators exp ψ ± (z j ) = 1 + ψ ± (z j ) are known as elements of the symmetry group GL(∞) which act on the state |G. Correspondingly we calî D j = e ˆ D j − 1 a &apos;difference&apos; operator, in analogy with the differential operator ∂ j .</p>
+
+				<p>Despite of this odd behavior of the correlation function Φ under the operation of D ± j , the solutions (5) of the HM eq behave regularly. It owes to the fact that both Φ(p, z; G) and Φ(p, z; 0) are shifted by D j simultaneously in τ (p). The extra phase factors arising from the exchange of order of vertex operators and ψ ± (z j ) in (9) cancel exactly. As a result we find D j τ (p) = D j τ (p) := τ (p + δ j ) =: τ j (p), in agreement with our previous notation (2). Nevertheless it is important to notice that the zero point of Φ function (10) is an indeterminate point of τ (p). This fact will play a central role in our analysis of the singularity confinement in §5.</p>
+
+			</div>
+			<div>
+				<head n="2.2">Difference geometry on lattice spaces</head>
+
+				<p>Although the variable p of the τ function is on C 4 , the solutions of the HM eq are on a lattice space Z 4 embedded in C 4 , which is fixed once an &apos;initial point&apos; p 0 ∈ C 4 of τ is fixed. Let us call this lattice space</p>
+
+				<figure>
+					<trash>Ξ 4 (p 0 ) := p ∈ C 4 p − p 0 ∈ Z 4 .</trash>
+
+
+				</figure>
+
+				<p>Since, however, the &apos;initial point&apos; p 0 does not appear explicitly in our discussion, we simply write Ξ 4 (p 0 ) as Ξ 4 . Moreover we often write p − p 0 as p ∈ Ξ 4 unless there is a confusion.</p>
+
+				<p>In order to study the HM eq. within the framework of the theory of category, it will be useful to study its geometrical feature on the lattice space Ξ 4 . For this purpose we introduce a notion of &apos;difference form&apos; on the lattice space in this subsection.</p>
+
+				<figure>
+					<trash>2.2.1 4 dimensional &apos;difference&apos; forms Let us define [2]</trash>
+
+
+				</figure>
+
+				<p>an exterior &apos;difference&apos; operator d B by</p>
+
+				<figure>
+					<trash>d B ω(p) := 4 j=1 D j ω(p) ∧ dp j , ∀ ω(p) : Ξ 4 → C. (11)</trash>
+
+
+				</figure>
+
+				<p>We must emphasize that the form D j ω(p) is on Ξ 4 if p ∈ Ξ 4 , but, in contrast to the differential form, it is not at the same point p but is at p + δ j .</p>
+
+				<p>In particular, the operation of d B to ω(p) increases the value of the sum p 1 + p 2 + p 3 + p 4 of the components of p by 1. To describe the situation more precisely we define a subspace of Ξ 4 by</p>
+
+				<figure>
+					<trash>Ξ (n) 4 := p ∈ Ξ 4 p 1 + p 2 + p 3 + p 4 = n ∈ Z , so that n∈Z Ξ (n) 4 = Ξ 4 . We notice that Ξ (n) 4 is a lattice hyperplane in Ξ 4 . In particular Ξ (1) 4 is the hyperplane which includes the four points {δ 1 , δ 2 , δ 3 , δ 4 }. All other hyperplanes are parallel to Ξ (1) 4 .</trash>
+
+
+				</figure>
+
+				<p>Each hyperplane is embedded in a three dimensional lattice space Z 3 . In fact the points of Ξ</p>
+
+				<figure>
+					<trash>(n) 4</trash>
+
+
+				</figure>
+
+				<p>occupy all corners of octahedra which fill Z 3 together with tetrahedra, as it is illustrated in Fig.2.</p>
+
+				<figure>
+					<head>Figure 2: Ξ</head>
+
+					<trash>(n) 4 If p ∈ Ξ (n) 4 , the forms D j ω(p) = ω j (p) are on Ξ (n+1) 4 for all j, hence D : Ξ (n) 4 → Ξ (n+1) 4 , with D = (D 1 , D 2 , D 3 , D 4 ). Since all functions in the HM eq.(1) are of the form τ ij (p) = D i D j τ (p), they are on Ξ (n+2) 4 if p ∈ Ξ (n) 4 .</trash>
+
+
+				</figure>
+
+				<p>Moreover the six functions τ ij (p) in (1) are at the six corners of the octahedron whose center is at p. Hence the HM eq. determines relations among functions on Ξ</p>
+
+				<figure>
+					<trash>(n+2) 4</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>.</head>
+
+				<p>In other words solutions of the HM eq. are different if they are on different hyperplanes. We mention that this is a result of the fact that the HM eq. is a Plücker relation.</p>
+
+				<figure>
+					<trash>Let us define ω (n) by ω (n) (p) : Ξ (n) 4 → C, n ∈ Z when p ∈ Ξ (n) 4 . We then naturally obtain a graded algebra n∈Z C ω (n) (12) on which d B acts by d (n) B : ω (n) → ω (n+1) . (13) 2.2.2 3 dimensional &apos;difference&apos; forms From Fig.2</trash>
+
+
+				</figure>
+
+				<p>we can see that the lattice space Ξ</p>
+
+				<figure>
+					<trash>(n+2) 4</trash>
+
+
+				</figure>
+
+				<p>consists of parallel planes, each filled by triangles of octahedra, as illustrated in Fig.3. If we fix the direction of the planes parallel to the direction of −p 4 , we can specify them by the values of t := p 1 + p 2 + p 3 .</p>
+
+				<p>Such a plane is defined by</p>
+
+				<figure>
+					<trash>Ξ (t,n+2) 3 := (p 1 , p 2 , p 3 ) ∈ Z 3 p 1 + p 2 + p 3 = t ∈ Z, (p 1 , p 2 , p 3 , p 4 ) ∈ Ξ (n+2) 4 , t∈Z Ξ (t,n+2) 3 = Ξ (n+2) 4</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>.</head>
+
+				<p>Since n + 2 (= p 1 + p 2 + p 3 + p 4 ) = t + p 4 is fixed, the planes are perpendicular to the direction of −p 4 . Figure 3: Ξ which we call the shift operator. Since, similar to the 4 dimensional case, ω(p) and D a ω(p) are on different planes, we define graded forms of degree t by ω[t] when p ∈ Ξ</p>
+
+				<figure>
+					<trash>(t,n+2) 3 . The graded algebra t∈Z Cω[t]</trash>
+
+
+				</figure>
+
+				<p>is generated by d [t] T : ω[t] → ω[t + 1]. (14)</p>
+
+			</div>
+			<div>
+				<head>3</head>
+
+				<p>Dynamical feature of the HM eq.</p>
+
+				<p>Based on the geometrical structure of the HM eq. we studied in the previous section, we discuss dynamical feature of the HM eq. in this section.</p>
+
+			</div>
+			<div>
+				<head n="3.1">Linear Bäcklund transformation</head>
+
+				<p>In order to study dynamical feature of the HM eq. we consider a pair of 4 dimensional &apos;difference&apos; 2-forms [2]</p>
+
+				<figure>
+					<trash>F := 4 i,j=1 F ij dp i ∧ dp j , F ij (p) = a ij τ ij (p), (15) ˜ F := 4 i,j=1 F ij dp i ∧ dp j , ˜ F ij (p) = * a ij τ ij (p) (16) with * a ij = kl</trash>
+
+
+				</figure>
+
+				<p>ǫ ijkl a kl , where ǫ ijkl is the Levi-Civita symbol. We can easily check that each of the followings [16] det F ij = 0, det F ij = 0 (17) is equivalent to the HM eq. (1). By this reason we call F of (15) the HM 2-form in this paper. Let us consider, for any τ (p) and σ(p), the following forms ˜ F ∧ d B σ = j,k,l * a kl τ kl σ j dp k ∧ dp l ∧ dp j =</p>
+
+				<figure>
+					<trash>i,j ˜ F ij σ j * dp i , d B ( ˜ F ∧ d B σ) = i,j a ij * τ j σ ij dp i ∧ * dp i =: i,j G ij * τ j δ i ,</trash>
+
+
+				</figure>
+
+				<p>where we used the notation * dp i := ǫ ijkl dp j ∧ dp k ∧ dp l and kl ǫ ijkl * a kl τ ikl = a ij * τ j . If we require F ∧ d B σ = 0, it is compatible iff d B ( ˜</p>
+
+				<figure>
+					<trash>F ∧ d B σ) = 0, or equivalently j ˜ F ij σ j = 0, i = 1, 2, 3, 4 (18) j G ij * τ j = 0, i = 1, 2, 3, 4. (19)</trash>
+
+
+				</figure>
+
+				<p>Now suppose τ (0) (p) is a solution of the HM eq. (1). If it is substituted tõ F in (18), we can solve the linear equation for σ, because F satisfies (17). Let us denote by τ (1) (p) the solution of (18) which is just obtained dependent on τ (0) . Then we can substitute τ (1) into G of (19). Because (18) and (19) are the same equation, the equation (19) for τ has certainly solution. This means det G must vanish, so that, by (17) again, τ (1) (p) is a solution of the HM eq.. As τ (1) (p) is substituted the linear equation (19) has solutions other than τ (0) in general. Let τ (2) be one of them which is independent from τ (0) . τ (2) is again a solution of the HM eq., so that we can substitute it to (18) to find τ (3) , and so on. Here we must mention that if the initial function τ (0) (p) is on Ξ</p>
+
+				<figure>
+					<trash>(n) 4 , the solution τ (1) (p) is on Ξ (n+1) 4</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>.</head>
+
+				<p>We can repeat this procedure and obtain a sequence of the Bäcklund transformation [17]</p>
+
+				<figure>
+					<trash>τ (0) d (0) B − −− → τ (1) d (1) B − −− → τ (2) d (2) B − −− → τ (3) d (3) B − −− → · · · (20)</trash>
+
+
+				</figure>
+
+				<p>If we choose another solution of the HM eq. for the initial function τ (0) , we should have different series of solutions. In fact, in the string theory, we can add loops of closed strings so that the world sheet increases holes as is depicted in the Fig.1. There is also a vertex operator which substitutes a D-brane, so that the world sheet is attached to a boundary [18]. All such variations change the topology of the state |G, and corresponds to different initial solution τ (0) of the HM eq.. If we denote the complex (20) by BT G corresponding to the state |G, we will find a family of complexes of the Bäcklund transformation.</p>
+
+			</div>
+			<div>
+				<head n="3.2">Dynamical evolution</head>
+
+				<p>In this subsection we fix the hyperplane Ξ</p>
+
+				<figure>
+					<trash>(n+2) 4 , hence we simply denote Ξ (t,n+2) 3 by Ξ [t]</trash>
+
+					<figDesc>3 , and study behavior of a particular solution of the HM eq. For this purpose we rewrite the HM 2-form by using the operator d T of (14) as</figDesc>
+					<trash>F = 4 i,j=1 F ij dp i ∧ dp j = d T F 4 (p)dp 4 + 3 b=1 F b (p)dp b and see that the six components F ij split into two parts d T F 4 (p) = 3 a=1 F a4 (p)dp a , (21) d T 3 b=1 F b (p)dp b = 3 b,c=1 F bc (p)dp b ∧ dp c , (22)</trash>
+
+
+				</figure>
+
+				<p>corresponding to 3 dimensional 1-form and 2-form, respectively. Let us denote by S j and S j the triangles in an octahedron which are perpendicular to p j and parallel each other. Then we can see that {F a4 } and {F bc } form triangles</p>
+
+				<figure>
+					<trash>˜ S 4 := τ 14 , τ 24 , τ 34 , S 4 := τ 23 , τ 31 , τ 12 ,</trash>
+
+
+				</figure>
+
+				<p>which are perpendicular to p 4 . We denote the octahedron, which consists of these triangles , by O = ( ˜ S 4 , S 4 ), as illustrated in Fig.4</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+					<trash>d T S 4 τ 14 τ 12 τ 34 τ 24 τ 31 τ 23 S 1 S 2 S 3 O ˜ S 4</trash>
+
+					<head>Figure 4:</head>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>From Fig.3</figDesc>
+
+				</figure>
+
+				<p>we see that every octahedron is put between two nearest planes, such that two parallel triangles are on each plane. In fact the triangle S 4 is on Ξ [t+1] 3 and S 4 is on Ξ [t+2] 3 if τ (p) is on Ξ [t] 3 . Define O[t] = ( ˜ S 4 [t + 1], S 4 [t + 2]) with ˜ S 4 [t + 1] = τ 14 [t + 1], τ 24 [t + 1], τ 34 [t + 1] , S 4 [t + 2] = τ 23 [t + 2], τ 31 [t + 2], τ 12 [t + 2] and let {O}[t] be all set of octahedra put between Ξ [t+1]</p>
+
+				<figure>
+					<trash>3 and Ξ (t+2) 3</trash>
+
+
+				</figure>
+
+				<p>. Then the procedure to solve initial value problem is to determine the following sequence {O} d T −→ {O}[1] d T −→ {O}[2] d T −→ {O}[3]</p>
+
+				<figure>
+					<trash>d T −→ · · · (23)</trash>
+
+
+				</figure>
+
+				<p>when information {O} at initial time t = 0 is given.</p>
+
+			</div>
+			<div>
+				<head n="3.3">Deterministic rule for the flow of information</head>
+
+				<p>We want to know how information on {O} transfers to other octahedra as t increases. The HM eq determines a relation betweeñ S 4 and S 4 . But it does not tell us how the information of S 4 transfers to S 4 [1]. In order to solve an initial value problem we must know some deterministic rules which decide uniquely the local flow of information. In this subsection we set up a rule for the flow of information in an octahedron. Let us consider two lattice points p and p ′ on Ξ 4 which are separated by p ′ − p = m ∈ Z 4 .</p>
+
+				<p>If they are on the same hyperplane Ξ</p>
+
+				<figure>
+					<trash>(n) 4 , the separation m must satisfy m 1 + m 2 + m 3 + m 4 = 0. (24) If p and p ′ are neighbor of an octahedron, m = δ i − δ j , i = j (25)</trash>
+
+
+				</figure>
+
+				<p>corresponding to the edge parallel to the vector p i − p j . There will be many possible routs along which information can transfer between two points p and p ′ fixed arbitrary. Since an addition of a path of the type (25) does not change the condition (24), any routs can connect p and p ′ as long as they are connected by edges of octahedra.</p>
+
+				<p>When we decide the rule of transfer of information we must keep in mind the following items: • Information at p + δ i + δ j is transfered properly to p ′ + δ k + δ l if all operators corresponding to all possible routs {r} change τ ij (p) to τ kl (p</p>
+
+				<figure>
+					<trash>′ ) uniquely. D r (ij, kl) p,p ′ : τ ij (p) r −→ τ kl (p ′ ), ∀r.</trash>
+
+
+				</figure>
+
+				<p>• Our system is deterministic if a rule of transfer of information is fixed along edges of an octahedron, and is the same for all octahedra. • The system is integrable if this rule is sufficient to predict the values of τ on Ξ [t] 3 for all t when the values on Ξ</p>
+
+				<figure>
+					<trash>(0) 3 are given arbitrary.</trash>
+
+
+				</figure>
+
+				<p>There are 12 edges in an octahedron O. Every object τ ij at a corner has connections to its four neighbors but no direct connection to its diagonal one. Since we are interested in a flow of information from one corner to another of O, we must decide direction (hence a rule) of the flow. In other words we fix the order of points in O. A natural way is the cyclic ordering of suffixes, i.e.,</p>
+
+				<figure>
+					<trash>1 &lt; 2 &lt; 3 &lt; 4 &lt; 1 &lt; 2 &lt; 3. (26)</trash>
+
+					<figDesc>We notice in Fig. 4</figDesc>
+
+				</figure>
+
+				<p>that every pair of corners connected by an edge have a common suffix, like (τ 14 , τ 12 ). Therefore we define the direction of transfer by</p>
+
+				<figure>
+					<trash>D(ij, ik) : τ ij −→ τ ik , iff k &lt; i &lt; j. (27) For example, D(34, 24) is possible because 3 &lt; 4 &lt; 2, but D(24, 12) is not possible because 4 &lt; 2 &lt; 1 is not compatible with (26), etc.</trash>
+
+
+				</figure>
+
+				<p>In this way we can define uniquely the directions which are necessary to connect all objects in O. In Fig.5</p>
+
+				<figure>
+					<figDesc>(a) the directions allowed by this rule (27) are shown by arrows. If we project the diagram along p 3 we have Fig.5</figDesc>
+					<trash>(b). τ 14 τ 34 τ 24 p 3 − p 1 p 3 − p 2 p 4 − p 3 τ 23 τ 12 τ 13 τ 13 τ 12 τ 34 τ 24 τ 14 τ 23 S 3 S 1 S 2 S 4 S 3 projection (a) (b) ˜ S 4</trash>
+
+					<head>Figure 5:</head>
+
+
+				</figure>
+
+				<p>The action of D(kl, ij) is to remove punctures at z i and z j from |G and insert other punctures at z k and z l . It will be convenient to represent this action explicitly by means of the operators:</p>
+
+				<figure>
+					<trash>D(ij, kl) = D k D l D −1 j D −1 i . (28) We can easily check the rule of product, D(ij, kl) • D(kl, mn) = D(ij, mn). From D(ij, kl) • D(kl, ij) = D(ij, ij) = id we see</trash>
+
+					<figDesc>that D(ij, kl) is an isomorphism. Since corners connected by an edge have a common suffix, (28) simplifies</figDesc>
+					<trash>D(ij, ik) = D k D −1 j</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>whereas the morphism connecting the diagonals of an octahedron can be obtained by a product of morphisms, for instance, like</figDesc>
+					<trash>D(23, 24) • D(24, 14) = D(23, 14) = D 2 D 3 D −1 4 D −1 1 . 3.4 Transfer of information along a chain of octahedra</trash>
+
+
+				</figure>
+
+				<p>In this subsection we want to see how information flows along a chain of octahedra. Let us denote by O(p) = ( ˜ S 4 (p), S 4 (p)) the octahedron whose center is at p ∈ Ξ (n) 4 . There are three octahedra which share three edges of the triangle S 4 (p). Since these three neighbors are on the same hyperplane Ξ</p>
+
+				<figure>
+					<trash>(n+2) 4 their centers must be at p+δ 1 −δ 4 , p+δ 2 −δ 4 , p+δ 3 −δ 4 , respectively. Let O(p)[1]</trash>
+
+
+				</figure>
+
+				<p>be one of them, say O(p + δ 3 − δ 4 ). Then these octahedra are connected as illustrated in Fig.6, where we use the abbreviations:</p>
+
+				<figure>
+					<trash>˜ S 4 = (X, Y, Z) = τ 14 , τ 24 , τ 34 , S 4 = (X ′ , Y ′ , Z ′ ) = τ 23 , τ 31 , τ 12 . d T S 4 X Z ′ Z Y Y ′ X ′ [1]</trash>
+
+
+				</figure>
+
+				<p>Z[1] X ′ Z ′ [1]</p>
+
+				<figure>
+					<trash>S 1 S 2 S 3 O O[1] ˜ S 4 S 4 [1]</trash>
+
+
+				</figure>
+
+				<p>˜ S 4 [1]</p>
+
+				<figure>
+					<trash>(a) (b) X Y Z Y ′ X ′ Y ′ [1]</trash>
+
+
+				</figure>
+
+				<p>X ′ [1] Z ′ [1]</p>
+
+				<figure>
+					<trash>Z ′ d T projection along p 3</trash>
+
+					<head>Figure 6:</head>
+
+					<figDesc>For the information of O to transfer to its neighbor O[1]</figDesc>
+
+				</figure>
+
+				<p>properly, we must impose the following conditions: τ 14 [1] = τ 13 , τ 24 [1] = τ 23 .</p>
+
+			</div>
+			<div>
+				<head>(29)</head>
+
+				<p>Repeating this procedure we can define a chain of octahedra by O(p)[t]</p>
+
+				<figure>
+					<trash>= O(p + tδ 3 − tδ 4 ), t ∈ Z. (30) We recall that S 4 (p) is on Ξ [t+1] 3 and S 4 (p) is on Ξ (t+2) 3 , if p 1 + p 2 + p 3 = t. Because d T transfers information on Ξ [t]</trash>
+
+
+				</figure>
+
+				<p>3 to Ξ [t+1]</p>
+
+				<figure>
+					<figDesc>3 we see that the information on O can be transfered along the chain of octahedra</figDesc>
+					<trash>O d T − −− →O[1]</trash>
+
+
+				</figure>
+
+				<p>d T − −− →O[2] d T − −− →O[3]</p>
+
+				<figure>
+					<trash>d T − −− → · · · . (31)</trash>
+
+
+				</figure>
+
+				<p>if the connection conditions (29) are satisfied at every site of connection. This is certainly compatible with (23), and explains the local flow of information.</p>
+
+			</div>
+			<div>
+				<head n="4">View from the theory of category</head>
+
+				<p>We are now ready to summarize our result in the previous section in terms of the category theory.</p>
+
+			</div>
+			<div>
+				<head n="4.1">Triangulated category</head>
+
+				<p>We have pointed out in our previous paper [2] a possible explanation of the flow of information by means of the triangulated category. In order to see this correspondence more in detail let us first recall the axioms of triangulated category [19, 20]. Definition Let D be an additive category, X, Y, Z, X ′ , Y ′ , Z ′ be objects and u, v, w be morphisms of D. The structure of a triangulated category on D is defined by the shift functor T and the class of distinguished triangles satisfying the following axioms:</p>
+
+				<figure>
+					<trash>Tr1 (1)Any triangle of the form X id −→ X −→ 0 −→ T (X) is in the class of distinguished triangles. (2) Any triangle isomorphic to a distinguished triangle is distinguished. (3) Any morphism u : X → Y can be completed to a distinguished triangle X u −→ Y −→ C(u) −→ T (X) by the object C(u) obtained by morphism u. Tr2 The triangle X u −→ Y v −→ Z w −→ T (X) is a distinguished triangle if and only if Y v −→ Z w −→ T (X) −T (u) −→ T (Y ) is a distinguished triangle. Tr3 Suppose there exists a commutative diagram of distinguished triangles, X −→ Y −→ Z −→ T (X) u ↓ v ↓ ↓ T (u) X ′ −→ Y ′ −→ Z ′ −→ T (X ′ ).</trash>
+
+					<figDesc>Then this diagram can be completed to a commutative diagram by a (not necessarily unique) morphism w : Z → Z ′ .</figDesc>
+					<trash>Tr4 (the octahedron axiom) Let X u −→ Y v</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>−→ Z be a triangle. Then the following commutative diagram holds:</figDesc>
+					<trash>X T −1 (X ′ ) Y Z ′ T (X) Z Y ′ X ′ T (Y ) T (Z) (32)</trash>
+
+
+				</figure>
+
+				<p>Comparing this set of axioms Tr1 ∼ Tr4 with our arguments in §3.3 and §3.4, we naturally find the following correspondence:</p>
+
+			</div>
+			<div>
+				<head>objects</head>
+
+				<figure>
+					<figDesc>←→ τ f unctions, morphism ←→ D(ij, ik), T : A → T (A) ←→ d T : A → A[1]</figDesc>
+
+				</figure>
+
+				<p>, octahedron axiom ←→ f low diagram F ig.6.</p>
+
+			</div>
+			<div>
+				<head>(33)</head>
+
+				<p>For example there are flows of information which start from A ∈ (X, Y, Z) and then end at A[1] ∈ X[1], Y [1], Z[1] as X → Y → Z → X[1], X → Y → Z ′ → X[1],</p>
+
+				<figure>
+					<trash>X → Z → Y ′ id → X[1], Y → Z → X ′ id → Y [1]</trash>
+
+
+				</figure>
+
+				<p>, Z → Y ′ → X ′ → Z[1].</p>
+
+			</div>
+			<div>
+				<head>(34)</head>
+
+				<p>They are all compatible with the axioms as we can check easily. Here id&apos;s in (34) owe to the condition (29). Via these routs information in O can transfer to O[1]. Let us denote the triangulated category (33) as HM</p>
+
+			</div>
+			<div>
+				<head>(n)</head>
+
+				<p>G in this paper. The suffix (n) is to remind that a solution of the HM eq is given separately for each lattice space Ξ (n) 4 , while the suffix G is to remind that the solution is dependent on the initial state |G.</p>
+
+			</div>
+			<div>
+				<head n="4.2">The category theory of global behavior</head>
+
+				<p>From above arguments we see that the objects of the category HM</p>
+
+				<figure>
+					<trash>(n) G Ob(HM (n) G ) = {τ (n) ij (p) p ∈ Ξ (n) 4</trash>
+
+					<figDesc>} are nothing but a solution of the HM eq (1), which we denote as</figDesc>
+
+				</figure>
+
+				<p><formula>HM (n) G ≃ τ (n) G (35)</formula></p>
+
+				<p>when |G is given. On the other hand we learned in §3.1 that a series of the Bäcklund transformations forms a complex BT G of solutions of the HM eq associated to the state |G, i.</p>
+
+				<p><formula>e., d B : τ (n) G → τ (n+1) G .</formula></p>
+
+				<p>If we combine this with the result (35) we obtain</p>
+
+				<p><formula>BT G = {HM (n) G } n∈Z , d B .</formula></p>
+
+				<p>Therefore BT G is a category of categories and d B is a functor.</p>
+
+				<figure>
+					<figDesc>Moreover, as we mentioned in §3.1, the change of the state |G |G → |G ′ = F |G. will generate a different complex BT G ′ of the Bäcklund transformations. Therefore we obtain another functor F : BT G → BT G ′ .</figDesc>
+
+				</figure>
+
+				<p>We have thus found various type of categories which are related from each other.</p>
+
+				<p>Among others our interpretation of the information flow of the HM eq. by means of the triangulated category is the most fundamental. However the correspondence of the flow with the triangulated category seems not quite right by two reasons. 1. An addition of objects is no longer an object in general, because our objects are solutions of a nonlinear equation. Although most of studies of triangulated category have been based on additive categories in mathematics, the above axioms themselves do not use the notion of additivity. Therefore nonadditive nature of our theory will not cause any problem.</p>
+
+			</div>
+			<div>
+				<head>2.</head>
+
+				<p>Second reason is that we have not yet defined null object 0, which appears in the first axiom Tr1. This is the main subject of this paper which we are going to discuss in the following section.</p>
+
+			</div>
+			<div>
+				<head n="5">Localization and singularity confinement</head>
+
+				<p>It is well known that a localization of a triangulated category is also a triangulated category. We show in this section that the singularity confinement of a rational map obtained from the τ function of the HM eq. can be described in terms of the localization of the triangulated category.</p>
+
+			</div>
+			<div>
+				<head n="5.1">Reduction of the lattice space</head>
+
+				<p>We have studied difference geometry of 4 and 3 dimensions in §2. Our concern in this section is a 2 dimensional lattice space. If we fix n = p 1 + p 2 + p 3 + p 4 − 2 and t = p 1 + p 2 + p 3 we are left with 2 dimensional lattice space, which we parameterize by q = p 1 + p 2 , j := p 2 − p 1 .</p>
+
+				<p>Like the higher dimensional lattice cases we define 2 dimensional lattice space</p>
+
+			</div>
+			<div>
+				<head>Ξ</head>
+
+				<figure>
+					<trash>(q,t,n+2) 2 := (p 1 , p 2 ) ∈ Z 2 p 1 + p 2 = q ∈ Z, (p 1 , p 2 , p 3 ) ∈ Ξ (t,n+2) 3 , q∈Z Ξ (q,t,n+2) 2 = Ξ (t,n+2) 3 and the exterior difference operator d Q by d Q τ (p) = D 1 τ (p)dp 1 + D 2 τ (p)dp 2 , which displaces the lattice space D : Ξ (q,t,n+2) 2 → Ξ (q+1,t,n+2) 2</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>.</head>
+
+				<p>Because t = q + p 3 , we can fix p 3 instead of t. In this frame of coordinate, the change of t is exactly the same with the change of q. We recall that the diagram Fig.6 (b) was the projection Fig.6 (a) along p 3 . Since j = p 2 − p 1 ∈ Z is still free we denote τ [t] j := τ (p) and consider the lattice space</p>
+
+				<p><formula>(j, t) ∈ Z 2 ∆t = ∆q, p 2 − p 1 = j ∈ Z, (p 1 , p 2 ) ∈ Ξ (q,t,n+2) 2 .</formula></p>
+
+				<p>In our previous section we discussed the transfer of information along the chain of octahedra. We now extend the study to consider a transfer of information of many octahedra linked along a line in the j direction.</p>
+
+				<p>We have to mention that the connection condition (29) is already taken into account in this expression. Moreover the projection along p 3 enforces degeneration of Z ′ [t] in O[t] and Z[t + 2] in O[t + 2]. Therefore the shift operation d T brings S 4 directly tõ S 4 [1], so that τ [t] j is determined uniquely for all t and j as we can see in the Fig.7. In the theory of KP hierarchy it is known that we can either truncate the function τ [t] j , or impose periodicity in the direction of j at any value, with no violation of integrability. For example we can impose τ [t] j+d = τ [t] j (36) to obtain a reduced map of d dimension. In this case it is more convenient to consider τ [t] = (τ [t] 0 , τ [t] 1 , τ [t] 2 , τ [t] 3 , ..., τ [t] d−1 ), instead of a triangle S 4 of each octahedron separately. When d = 3, the chain of Fig.7 becomes a chain of triangles.</p>
+
+			</div>
+			<div>
+				<head>τ [0]</head>
+
+				<figure>
+					<figDesc>0</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>τ [0]</head>
+
+				<figure>
+					<trash>1 p 3 − p 1 p 3 − p 2 p 4 − p 3 τ [1]</trash>
+
+					<figDesc>0</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>τ [2]</head>
+
+				<figure>
+					<trash>0 d T j = p 2 − p 1 τ [0]</trash>
+
+					<figDesc>2</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>τ [0]</head>
+
+				<figure>
+					<figDesc>3</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>τ [0]</head>
+
+				<figure>
+					<figDesc>4</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>τ [1]</head>
+
+				<figure>
+					<figDesc>1</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>τ [1]</head>
+
+				<figure>
+					<figDesc>2</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>τ [1]</head>
+
+				<figure>
+					<figDesc>3</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>τ [1]</head>
+
+				<figure>
+					<figDesc>4</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>τ [2]</head>
+
+				<figure>
+					<figDesc>4</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>τ [3]</head>
+
+				<figure>
+					<figDesc>4</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>τ [3]</head>
+
+				<figure>
+					<figDesc>0</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>τ [2]</head>
+
+				<figure>
+					<figDesc>1</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>τ [3]</head>
+
+				<figure>
+					<figDesc>1</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>τ [2]</head>
+
+				<figure>
+					<figDesc>2</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>τ [3]</head>
+
+				<figure>
+					<figDesc>2</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>τ [2]</head>
+
+				<figure>
+					<figDesc>3</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>τ [3]</head>
+
+				<p>3 Figure 7</p>
+
+				<figure>
+					<figDesc>:</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="5.2">Localization of a triangulated category</head>
+
+				<p>The theory of triangulated category tells us that, if there is a null system, the theory can be localized such that the localized theory again satisfies the axioms of triangulated category [19, 21]. A null system N ⊂ T of the triangulated category T is a set of objects defined by 1. 0 ∈ N . 2. Z ∈ N if X, Y ∈ N and X → Y → Z → X[1] is a distinguished triangle. 3. X[1] ∈ N iff X ∈ N .</p>
+
+				<figure>
+					<figDesc>For any triangulated category T and a null system N ⊂ T , we define a multiplicative system by S(N ) := {g|X g → Y → Z → X[1]</figDesc>
+
+				</figure>
+
+				<p>, X, Y ∈ T , Z ∈ N }.</p>
+
+				<p>Then the localization is defined by the functor T → T /S(N ). The following theorem is known in the theory of triangulated category: Theorem T /S(N ) is again a triangulated category whose null object is 0 itself.</p>
+
+				<p>Therefore, in order to discuss the localization of our system we must know a null system of our triangulated category. Our objects are solutions {τ ij } of the HM eq. which are assigned at corners of each octahedron. They are generically finite, because the τ functions are defined by the ratios (5) of correlation functions such that the zeros of correlation functions cancel from each other.</p>
+
+				<p>As we explained in §2.1 the correlation functions {Φ ij } vanish by themselves when two punctures encounter on the Riemann surface. It is, however, important to notice that, when the correlation functions Φ(p, z; G) and Φ(p, z; 0) vanish simultaneously, the cancellation of their zeros does not mean the value of their ratio being definite. Let λ(p) be the ratio of the correlation functions at the point where they vanish, i.e.</p>
+
+				<figure>
+					<trash>λ(p) := Φ(p, z; G) Φ(p, z; 0) Φ(p, z; G) = Φ(p, z; 0) = 0 , (37)</trash>
+
+
+				</figure>
+
+				<p>then λ(p) is indeterminate in general, hence can take any value. Since zero is not excluded in (37) we call the zero of λ(p) the null object and denote by 0, i.e., 0 ∈ λ(p).</p>
+
+				<p>We now focus our attention to this subtle object in the following discussion and show how the localization of triangulated category resolves the subtlety.</p>
+
+				<p>The localization of our system will be introduced by considering rational maps of the τ functions. To be specific we consider some reduced flow diagrams of Fig.7 which satisfy the condition (36). In particular we study in detail rational maps defined by the following variables:</p>
+
+			</div>
+			<div>
+				<head>x [t]</head>
+
+				<figure>
+					<trash>j =                τ [t]</trash>
+
+
+				</figure>
+
+				<p>j+ǫ+1 τ [t+1] j−ǫ τ [t] j+1 τ [t+1]</p>
+
+				<figure>
+					<trash>j , j, ǫ = 1, 2, 3, ..., d, LV, τ [t]</trash>
+
+
+				</figure>
+
+				<p>j+1 τ [t+1] j−ǫ τ [t] j τ [t+1]</p>
+
+				<figure>
+					<trash>j+1−ǫ , j, ǫ = 1, 2, 3, ..., d, KdV. (38)</trash>
+
+
+				</figure>
+
+				<p>The maps which are obtained by the new variables LV and KdV are called the Lotka- Volterra map and the Korteweg-de Vries map, respectively [22, 23]. An important feature of the variables (38) is that they are invariant under the local gauge transformation of τ [t] j g : τ [t]</p>
+
+				<figure>
+					<trash>j → exp t ν(t ′ , j)dt ′ + j µ(t, j ′ )dj ′ τ [t]</trash>
+
+
+				</figure>
+
+				<p>j , (39) where ν(t, j) and µ(t, j) are arbitrary functions. For example, we can write the right hand side of (38) as x [t]</p>
+
+				<figure>
+					<trash>j =                Φ [t]</trash>
+
+
+				</figure>
+
+				<p>j+ǫ+1 (p, z)Φ [t+1] j−ǫ (p, z) Φ [t] j+1 (p, z)Φ [t+1]</p>
+
+				<figure>
+					<trash>j (p, z) , j, ǫ = 1, 2, 3, ..., d, LV, Φ [t]</trash>
+
+
+				</figure>
+
+				<p>j+1 (p, z)Φ [t+1] j−ǫ (p, z) Φ [t] j (p, z)Φ [t+1]</p>
+
+				<figure>
+					<trash>j+1−ǫ (p, z) , j, ǫ = 1, 2, 3, ..., d, KdV. (40)</trash>
+
+
+				</figure>
+
+				<p>This follows from the fact that the denominator of τ [t+u] j+k (p) is given by Φ [t+u]</p>
+
+				<figure>
+					<trash>j+k (p, z, 0) = (z 1 − z 2 ) (p 1 −k)(p 2 +k) (z 3 − z 4 ) (p 3 +u)(p 4 −u)</trash>
+
+
+				</figure>
+
+				<p>so that all denominators of τ functions in (38) are eliminated exactly from the expression. We notice that we can not distinguish a change of λ(p) in (37) with the gauge trans- formation g : λ(p) −→ λ ′ (p). (41) This means that, if Λ(∞) is the set of all possible λ(p), i.e.,</p>
+
+				<figure>
+					<trash>Λ(∞) := λ(p) p ∈ Ξ (n+2) 4 . (42)</trash>
+
+
+				</figure>
+
+				<p>Λ(∞) is invariant under the gauge transformation.</p>
+
+				<p>Now suppose that τ [t+1] j (or τ [t+1] j+1−ǫ in the KdV case) in the denominator of x [t] j in (38) is the null object, hence takes the value zero. Then x [t] j and also x [t+1] j−1 diverge while all components of x [t+u] with u ≥ 2 are finite, as far as other τ functions are finite. This owes to the fact that the same τ function does not propagate beyond two steps. There is no way to determine the values of τ [t+1] &apos;s because the null object is invariant under the gauge (41), i.e., g : 0 −→ g0 = 0.</p>
+
+				<p>In other words the null object is transfered to an indeterminate object, d T : 0 −→ λ(p). (43) which is an element of Λ(∞). It should be emphasized that Λ(∞) does not appear in the localized theory, because the localized variables x [t] j &apos;s are gauge invariant. Thus we are strongly suggested to identify Λ(∞) with the null system N of our map</p>
+
+				<figure>
+					<trash>N ∼ Λ(∞). (44)</trash>
+
+
+				</figure>
+
+				<p>Our argument in the rest of this paper will be devoted to support this conjecture.</p>
+
+			</div>
+			<div>
+				<head n="5.3">Singularity confinement</head>
+
+				<p>To proceed our argument further we consider the case d = 3 and ǫ = 1 in (38) for simplicity. Then the HM eq. becomes the following rational maps,</p>
+
+			</div>
+			<div>
+				<head>LV map</head>
+
+				<figure>
+					<trash>                   x [t+1]</trash>
+
+					<figDesc>1 = x [t] 1 1 − x [t]</figDesc>
+
+				</figure>
+
+				<p>2 + x [t] 2 x [t]</p>
+
+				<figure>
+					<figDesc>3 1 − x [t]</figDesc>
+
+				</figure>
+
+				<p>3 + x [t] 3 x [t] 1 , x [t+1]</p>
+
+				<figure>
+					<figDesc>2 = x [t] 2 1 − x [t]</figDesc>
+
+				</figure>
+
+				<p>3 + x [t] 3 x [t]</p>
+
+				<figure>
+					<figDesc>1 1 − x [t]</figDesc>
+
+				</figure>
+
+				<p>1 + x [t] 1 x [t] 2 , x [t+1] 3 = x [t]</p>
+
+				<figure>
+					<figDesc>3 1 − x [t]</figDesc>
+
+				</figure>
+
+				<p>1 + x [t] 1 x [t]</p>
+
+				<figure>
+					<figDesc>2 1 − x [t]</figDesc>
+
+				</figure>
+
+				<p>2 + x [t] 2 x [t]</p>
+
+				<figure>
+					<trash>3 , (45) KdV map                    x [t+1]</trash>
+
+					<figDesc>1 = x [t] 1 1 + x [t]</figDesc>
+
+				</figure>
+
+				<p>1 x [t] 3 + x [t] 1 x [t] 2 (x [t]</p>
+
+				<figure>
+					<trash>3 ) 2 1 + x [t]</trash>
+
+
+				</figure>
+
+				<p>1 x [t] 2 + (x [t] 1 ) 2 x [t] 2 x [t] 3 , x [t+1]</p>
+
+				<figure>
+					<figDesc>2 = x [t] 2 1 + x [t]</figDesc>
+
+				</figure>
+
+				<p>1 x [t] 2 + (x [t] 1 ) 2 x [t] 2 x [t]</p>
+
+				<figure>
+					<figDesc>3 1 + x [t]</figDesc>
+
+				</figure>
+
+				<p>2 x [t] 3 + x [t] 1 (x [t] 2 ) 2 x [t] 3 , x [t+1] 3 = x [t]</p>
+
+				<figure>
+					<figDesc>3 1 + x [t]</figDesc>
+
+				</figure>
+
+				<p>2 x [t] 3 + x [t] 1 (x [t] 2 ) 2 x [t]</p>
+
+				<figure>
+					<figDesc>3 1 + x [t]</figDesc>
+
+				</figure>
+
+				<p>1 x [t] 3 + x [t] 1 x [t] 2 (x [t] 3 ) 2</p>
+
+			</div>
+			<div>
+				<head>. (46)</head>
+
+				<p>These maps have two invariants. If x = (x 1 , x 2 , x 3 ) denotes the initial value x [0] , the invariants are given by</p>
+
+				<figure>
+					<trash>LV map r = x 1 x 2 x 3 , s = (1 − x 1 )(1 − x 2 )(1 − x 3 ), (47) KdV map r = x 1 x 2 x 3 , s = (1 + x 1 x 2 )(1 + x 2 x 3 )(1 + x 3 x 1 ), (48) respectively.</trash>
+
+
+				</figure>
+
+				<p>We can solve the initial value problem of the HM eq following to the algorithm: A1 Fix initial values τ [0] = (τ [0] 0 , τ [0] 1 , τ [0] 2 ) and τ [1] = (τ [1] 0 , τ [1] 1 , τ [1] 2 ) by hand to determine x = (x 1 , x 1 , x 3 ). A2 x [t] := (x [t] 1 , x [t] 2 , x [t] 3 ), t ≥ 1 are obtained as functions of x iteratively by the maps (45) or (46). A3 τ [t+1] = (τ [t+1] 0 , τ [t+1] 1 , τ [t+1]</p>
+
+				<figure>
+					<figDesc>2</figDesc>
+
+				</figure>
+
+				<p>), t ≥ 1 are determined by (38) from τ [t] and x [t] .</p>
+
+				<p>Needless to say this procedure of solving the HM eq. (1) is compatible with the flow of information through the chain of octahedra, since the rational maps (45) and (46) are derived from the HM eq. by the transformation of dependent variables (38). The algorithm is certainly deterministic, since values of τ [t] for all t ≥ 2 are determined if the initial values τ [0] and τ [1] are fixed. As we will show in the following, however, it becomes not clear how the null object appears during the procedure.</p>
+
+				<p>The singularity confinement of the LV map (45) and KdV map (46) have been studied in detail [24, 25, 26]. To see what happens we review this problem from the view point of the theory of category. Since we are interested in studying the singularity confinement we fix the initial conditions such that x [1] is divergent. Without loss of generality this condition is satisfied by requiring for the denominator of x [1] 1 to vanish. Let us solve the 3 dimensional LV map case following to our algorithm. A1 We fix the initial values τ [1]</p>
+
+				<figure>
+					<figDesc>at</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>τ [1]</head>
+
+				<p>= (λ 0 , λ 1 , λ 2 ) and, instead of fixing τ [0] by hand, we require (a) denominator of x [1]</p>
+
+				<figure>
+					<trash>1 vanishes: 1 − x 3 + x 3 x 1 = 0 (b) invariants r, s are fixed by r = x 1 x 2 x 3 , s = (1 − x 1 )(1 − x 2 )(1 − x 3 ), from which we obtain x := r − s r + 1 , r s + 1 r − s , r + 1 s + 1 , (49) and τ [0]</trash>
+
+
+				</figure>
+
+				<p>= (r − s)λ 1 , (s + 1)λ 2 , (r + 1)λ 0 . A2 Iteration of the map (45) yields the sequence of singularity confinement, x → (∞, 0, 1) → (1, 0, ∞) → x [3] → x [4] → · · · (50) where x [3]</p>
+
+				<figure>
+					<trash>= α (2) γ (2) , r γ (2) β (2) , β (2) α (2) , x [4] = α (2) α (3) β (2) γ (3) , r γ (2) γ (3) β (2) β (3) , β (2) β (3) γ (2) α (3) , α (2) = r + 1, β (2) = r − s, γ (2) = s + 1, (51) α (3) := r 2 − 3rs − s − rs 2 , β (3) := sr 2 + 3rs − s 2 + r, γ (3) := r 2 + s 2 + r + s − rs + 1. (52) A3 (a) From x [1]</trash>
+
+
+				</figure>
+
+				<p>= (∞, 0, 1), we find τ [2] 1 = 0 and τ [2] 2 λ 2 = τ (2) 0 λ 1 . Since an overall factor is irrelevant we obtain τ [2] = (λ 2 , 0, λ 1 ). (b) From x [2] = (1, 0, ∞) we find τ [3] 0 λ 2 = τ [3] 1 λ 1 , but τ [3] 2 is undetermined. (c) Since x [t] &apos;s are finite for all t ≥ 3, the rest of τ [t+1] are determined for all t ≥ 3, thus we obtain, up to overall factors,</p>
+
+			</div>
+			<div>
+				<head>τ [0]</head>
+
+				<figure>
+					<trash>→ (λ 0 , λ 1 , λ 2 ) → (λ 2 , 0, λ 1 ) → (λ ′ 0 , λ ′ 1 , λ ′ 2 ) → λ ′ 2 α (2) , λ ′ 0 γ (2) , λ ′ 1 β (2) → λ ′ 1 α (3) , λ ′ 2 γ (3) , λ ′ 0 β (3) → · · · (53) Here we defined new functions (λ ′ 0 , λ ′ 1 , λ ′ 2 ) := (τ [3]</trash>
+
+
+				</figure>
+
+				<p>0 , τ [3] 1 , τ [3]</p>
+
+				<figure>
+					<figDesc>2 ), which are free as far as λ</figDesc>
+					<trash>′ 0 λ 2 = λ ′ 1 λ 1 (54) is satisfied.</trash>
+
+
+				</figure>
+
+				<p>From this result it is clear how the singularity confinement undergoes. The singularities of x [1] and x [2] in (50) come from τ [2] 1 = 0. This null object is the source of the singularities. This information, however, can transfer only to its neighbor since τ [2] 1 does not appear beyond x [2] . Hence it does not transfer directly to remote objects.</p>
+
+				<p>We can extend the sequence of (53) to the left, if we apply the inverse map of (45) to x. We find, with λ t+3 := λ t , λ</p>
+
+				<figure>
+					<trash>′ t+3 := λ ′ t , τ [t+2] =                λ ′ 1−t α (t) , λ ′ 2−t γ [t] , λ ′ −t β (t) , t ≥ 2, (λ ′ 0 , λ ′ 1 , λ ′ 2 ), t = 1, (λ 2 , 0, λ 1 ), t = 0, (λ 0 , λ 1 , λ 2 ), t = −1, λ 2−t β (−t) , λ −t γ [−t]</trash>
+
+
+				</figure>
+
+				<p>, λ 1−t α</p>
+
+				<figure>
+					<trash>(−t) , t ≤ −2. (55)</trash>
+
+
+				</figure>
+
+				<p>Here we denote by γ [t] the product γ [t] := {ν} γ (ν) and {ν} means the set of all prime numbers which divides t. Explicit forms of α (t) , β (t) , γ (t) are given in Appendix and (59). We can summarize our result of this subsection by the diagram in Fig.8</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+					<trash>d T d T d T d T d T d T γ (2) λ γ (2) λ γ (3) λ 0 λ 1 λ ′ 1 γ (3) λ λ ′ 1 λ ′ 0 α (2) λ β (2) λ λ ′ 2 λ ′ 0 λ 2 α (2) λ α (3) λ λ 0 β (2) λ β (3) λ ˜ S 4 ˜ S 4 [1]</trash>
+
+
+				</figure>
+
+				<p>˜ S 4 [−1] Figure 8: τ [t] , t ∈ Z Here we used the notations α</p>
+
+				<figure>
+					<trash>(t) λ , β (t) λ and γ [t]</trash>
+
+
+				</figure>
+
+				<p>λ to represent the elements of τ in (55). From this analysis we learned that the existence of a null object introduces free</p>
+
+				<p><formula>tions (λ ′ 0 , λ ′ 1 , λ ′ 2</formula></p>
+
+				<p>) in addition to the initial values (λ 0 , λ 1 , λ 2 ). Since it is constrained by (54) and the overall factor is irrelevant there is only one degree of freedom. As we have seen it comes from the gauge invariance of the null object g0 ∼ 0.</p>
+
+			</div>
+			<div>
+				<head n="5.4">Projective resolution</head>
+
+				<p>We are now ready to apply the localization theorem of the category theory discussed in §5.2. The diagram of Fig.8 shows how the effect of this gauge freedom propagates as t increases. It is important to notice that all objects in three triangles S 4 [−1], ˜ S 4 , ˜ S 4 [1] are indeterminate. In other words ˜ S 4 [−1], ˜ S 4 , ˜ S 4 [1] ⊂ Λ(∞).</p>
+
+				<p>If we accept the conjecture (44) to identify N ∼ Λ(∞), we naturally define our multiplicative system by the set of gauge transformations S(N ) := { g | g : λ(p) → λ ′ (p), 0 → g0 = 0}, so that our local theory is obtained simply by gauge fixing all λ j &apos;s and λ</p>
+
+				<figure>
+					<trash>′ j &apos;s at 1. d T d T d T d T γ (2) γ (2) γ (3) 0 γ (3) α (2) β (2) α (2) α (3) β (2) β (3) 1 1 d T d T Fig. 9</trash>
+
+
+				</figure>
+
+				<p>Let us consider a subchain of Fig.8</p>
+
+				<p><formula>, 0 λ ′ 1 λ ′ 0 γ [k]</formula></p>
+
+				<p>λ γ [2k] λ γ [3k]</p>
+
+				<figure>
+					<trash>λ · · · β (3k) λ β (2k) λ β (k) λ α (3k) λ α (2k) λ α (k) λ Fig. 10</trash>
+
+
+				</figure>
+
+				<p>which can be obtained by iteration of the map x [t] → x [t+k] . Especially in the diagram λ ′ 0 0 u π γ [k] λ λ ′ 1 Fig. 11 the morphism u : γ [k] λ → λ ′ 0 passes the epimorphism π : λ ′ 1 → λ ′ 0 . Hence the object γ [k] λ is a projective object for all k, and the exact sequence P := · · · → γ [4] λ → γ [3] λ → γ [2]</p>
+
+				<figure>
+					<trash>λ → λ 1 → λ ′ 0 → 0 (56) is a projective resolution of λ ′ 0 .</trash>
+
+
+				</figure>
+
+				<p>This is a result of the theory of triangulated category in mathematics[21]. It tells us that infinitely many projections by γ [t] λ &apos;s constitute the object λ ′ 0 . But it is certainly unclear at this moment if it has something to do with integrability of the map. To explain their relation we must recall some results of our previous works.</p>
+
+			</div>
+			<div>
+				<head>5.5</head>
+
+				<p>Invariant varieties of periodic points (IVPP)</p>
+
+			</div>
+			<div>
+				<head n="5.5.1">Generation of IVPPs</head>
+
+				<p>Let us consider a d dimensional rational map whose initial point is at x = (x 1 , x 2 , ..., x d ).</p>
+
+				<p>The period t condition of the map is a set of d equations x [t] (x) − x = 0. (57)</p>
+
+				<p>Then it was proved in our papers [24, 25, 26] the following theorem:</p>
+
+			</div>
+			<div>
+				<head>IVPP theorem</head>
+
+				<p>All periodic points of the map form a variety for each period if the map has invariants more than d/2 and there is no Julia set.</p>
+
+				<p>The varieties are called invariant varieties of periodic points (IVPPs) because they are algebraic varieties which are determined by the invariants alone. Namely if we denote the variety by v [t] = x γ (t) = 0 , (58) the functions γ (t) &apos;s are polynomial functions of the invariants. They can be derived from (57) directly by means of the method of Gröbner bases, although it is not easy.</p>
+
+				<p>In our recent papers [26, 27] we have shown, however, that, if we use the method of singularity confinement, we can derive them quite easily. In fact we have already encountered γ (2) in (51) and γ (3) in (52) for the 3dLV map in the previous subsection,</p>
+
+				<figure>
+					<trash>γ (2) = s + 1, γ (3) = r 2 + s 2 + r + s − rs + 1. If we continue the map we will find γ (4) = (r − s) 3 − s(r + 1) 3 γ (5) = −(r − s) 6 + (r − 2)(r + 1)(s + 1)(r − s) 4 +(2s + r)(r + 1) 2 (s + 1) 2 (r − s) 2 − s 2 (r + 1) 3 (s + 1) 3 γ (6) = −3(r − s) 4 − (r + 1)(s + 1) (r + 1)(s + 1) − 3 (r − s) 2 −3(r + 1)(s + 1)(r 3 + s 3 − r 2 s 2 − 2r 2 s − 2rs 2 − r 2 − s 2 ) etc.. (59)</trash>
+
+
+				</figure>
+
+				<p>This can be understood as follows. Since τ [2] 1 = 0, a point satisfying τ [t+2] 1 = 0 must include periodic points of period t. On the other hand τ [t+2]</p>
+
+				<figure>
+					<figDesc>1 ∝ γ [t]</figDesc>
+
+				</figure>
+
+				<p>holds as we can see from (55). Hence the points on v [t] of (58) are periodic points of period t. If we repeat the procedure explained in the previous subsections we derive a sequence of polynomial functions of the invariants. Thus we have found an important fact:</p>
+
+				<p>P of (56) is a chain of polynomial functions whose zero sets are IVPPs.</p>
+
+			</div>
+			<div>
+				<head n="5.5.2">Degeneration of IVPPs</head>
+
+				<p>Now we must call attention to another remarkable feature of IVPPs. In [25, 26] we have found that IVPPs of all periods intersect on a variety which we called a variety of singular points (VSP). It is a variety of singular points by two reasons. 1. Every point on VSP is singular because it is a point which is occupied by periodic points of all periods simultaneously. 2. It is an indeterminate point of the map. Namely VSP is a set of points on which the denominators and the numerators of the rational map vanish simultaneously.</p>
+
+				<p>In order to explore this odd behavior on VSP we studied deformation of integrable maps by introducing a parameter, say a, by hand. When a = 0, periodic points form sets of discrete points for each period, including the Julia set. We have shown that as a becomes small some of these isolated points approach IVPPs, while a large part of them approach VSP and crash there altogether in the a = 0 limit [25, 26]. Moreover in our recent paper [28] we have shown, by studying a simple map of 2 dimension, how the Julia set approach to VSP. We have found that the periodic points move along an algebraic curve for each period as a changes its value. As a becomes zero the points approach a singular locus of the curve for each period. This locus is common to all curves of different periods. Hence periodic points of all periods degenerate at this point.</p>
+
+				<p>In all cases the VSP itself is a variety of fixed points when a = 0, while it turns to a set of indeterminate points as a becomes zero. Therefore, from these observations, we learn that a large part of periodic points of a generic map approach to a set of fixed points as the map becomes integrable and the fixed points turn to VSP.</p>
+
+				<p>Now we can translate information of VSP into the language of τ functions using the formula (38). In the case of LV map (45) the points x [1] = (∞, 0, 1) and x [2] = (1, 0, ∞) are on VSP. From the algorithm of §5.3 they correspond exactly to the three triangles S 4 [−1], ˜ S 4 , ˜ S 4 [1] of the chain in Fig.8. The latter belongs to Λ(∞), which is a set of indeterminate points again, but of the τ functions instead of the map functions.</p>
+
+				<p>The correspondence of VSP with Λ(∞) is clear because the indeterminacy of both functions comes from the same source, i.e., the zero set of correlation functions Φ(p, z; G).</p>
+
+				<p>Moreover from this correspondence we see that λ ′ 0 and λ 1 in P of (56) must be objects in which all IVPPs are degenerate. In other words the null set is a source from which IVPPs are generated. This will provide us an interpretation of the projective resolution.</p>
+
+			</div>
+			<div>
+				<head n="6">Conclusion</head>
+
+				<p>Before we close this paper we would like to discuss briefly about the characterization of integrability. The Julia set is the closure of the set of unstable periodic points of iterations of a map [29]. If there is a Julia set the map is nonintegrable, because the map has some chaotic orbits whose behavior no one can predict. The existence of the Julia set is not necessary but sufficient for a map being nonintegrable.</p>
+
+				<p>The IVPP theorem, which we explained in §5.5.1, tells us that a Julia set and an IVPP of any period can not exist in one map simultaneously. This, however does not mean that the existence of an IVPP is sufficient to guarantee integrability of a rational map in general , because the theorem was proved only for maps with sufficient number of invariants. Nevertheless it will be worthwhile to study conditions for IVPPs being generated from the null object, in order to clarify the notion of integrability.</p>
+
+				<p>The rational maps, which we studied in this paper, belong to the KP hierarchy. The dynamical variables of these maps are related to the τ functions of the HM eq. by the formulas (38) of the form x [t] j =</p>
+
+			</div>
+			<div>
+				<head>τ [t]</head>
+
+				<p>a τ [t+1] b τ [t] c τ [t+1]</p>
+
+				<figure>
+					<figDesc>d . (60)</figDesc>
+
+				</figure>
+
+				<p>This particular form of the transformation is the key of all our arguments.</p>
+
+				<p>In order to explain what this means, let us consider an arbitrary rational map x → f (x). As we repeat the map t times, we will obtain a rational function f [t] (x) whose degree increases exponentially as t increases, unless cancellations of factors in the numerator and the denominator happen to take place. If an initial condition was such that one of the factors of the denominators vanishes the map will diverge. This particular factor appears in the map repeatedly since it has no chance to be canceled. In other words the singularity confinement does not take place in general.</p>
+
+				<p>In the case of the map of the KP hierarchy, on the other hand, the function f [t] (x) is always factorized in the form (60). This fact guarantees that the same factor is not transferred beyond two steps, hence the singularity confinement becomes possible. We can understand this phenomenon from the very construction of the τ functions. Namely the zero of a τ function does not forces its neighbor to vanish, because of the Grassmann nature of the correlation function Φ(p, z; G). Now we want to rephrase this phenomenon in terms of the category theory. The IVPPs are generated from the null set of the triangulated category as the resolution of an object. This is a natural consequence of the localization of the τ functions. The localization itself is supported by the axioms of the triangulated category as far as there exists a null object. Therefore the integrability of the KP hierarchy is guaranteed by the axioms of distinguished triangles.</p>
+
+				<figure>
+					<trash>A α (t) and β (t) α (2) = r + 1 α (3) = −rs 2 + r 2 − 3rs − s α (4) = r 4 s + 3r 3 s + r 2 s 3 + 6r 2 s + r 2 − r 3 s 2 − s 4 r − 6rs 2 − 3rs 3 − s 2 α (5) = −s 6 r − 3rs 5 + 3r 2 s 5 − 6s 4 r − 6r 3 s 4 + 3s 4 r 2 + r 2 s 3 − r 3 s 3 + 10r 4 s 3 −10rs 3 − s 3 + s 3 r 5 + 21r 2 s 2 + 21r 4 s 2 + 27r 3 s 2 + 6r 2 s + 3r 3 s − 3r 4 s −6r 5 s + r 5 + r 2 + r 4 + r 3 + r 6 β (2) = r − s β (3) = 3rs + r − s 2 + r 2 s β (4) = r 4 − 3r 3 s + r 2 s 3 + 6r 2 s 2 + r 2 + r 3 + 3rs + 6rs 2 + r − s 3 β (5) = −s 6 r 2 + s 5 − 6r 2 s 5 + s 5 r 3 − 21s 4 r 2 − s 4 r 4 + 3r 3 s 4 − 10s 4 r + 3r 4 s 3 −r 2 s 3 − 6rs 3 + 27r 3 s 3 + s 3 r 5 − 3r 2 s 2 − 3rs 2 − 21r 4 s 2 − r 3 s 2 − 6r 5 s 2 −r 6 s 2 − rs − 3r 2 s − 6r 3 s − 10r 4 s + r 5 , etc..</trash>
+
+
+				</figure>
+
+			</div>
+
+			<note place="foot">arXiv:1310.1358v1 [math-ph] 4 Oct 2013</note>
+
+			<note place="foot" n="1"> A part of this work was reported by one of the authors (S.S) in the conference on &quot; Nonlinear Mathematical Physics: Twenty Years of JNMP &quot; , held at Nordfjordeid, Norway, from June 4 to June 14, 2013.</note>
+
+			<note place="foot">(t,n+2) 3 We denote a point on Ξ (t,n+2) 3 by p = (p 1 , p 2 , p 3 ) ∈ Z 3 . Corresponding to d B of (13) we define the 3 dimensional exterior &apos;difference&apos; operator d T by d T ω(p) = 3 a=1 D a ω(p) ∧ dp a , ∀ ω(p) : Ξ (t,n+2) 3 → C,</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">Categories for the working mathematician, Graduate texts in mathematics 5</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Maclane</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1998" />
+			<publisher>Springer-Verlag</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Saito</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Nonlinear Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page">1250032</biblScope>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Hirota</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Soc. Jpn</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="page">3787</biblScope>
+			<date type="published" when="1981" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Miwa</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Japan Acad. 58A 9</title>
+		<meeting>. Japan Acad. 58A 9</meeting>
+		<imprint>
+			<date type="published" when="1982" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Grammaticos</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Ramani</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Papageogiou</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">67</biblScope>
+			<biblScope unit="page">1825</biblScope>
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Ramani</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Grammaticos</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Hietarinta</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">67</biblScope>
+			<biblScope unit="page">1829</biblScope>
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">D</forename>
+				<surname>Fay</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Theta Functions on Riemann Surfaces</title>
+		<editor>A. Dold and B.Eckmann</editor>
+		<meeting><address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer-Verlag</publisher>
+			<date type="published" when="1973" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">M</forename>
+				<surname>Krichever</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Russ. Math. Surv</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="page">185</biblScope>
+			<date type="published" when="1977" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Mulase</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Geom</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1984" />
+			<biblScope unit="page">403</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Shiota</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Invent. Math</title>
+		<imprint>
+			<biblScope unit="volume">83</biblScope>
+			<biblScope unit="page">333</biblScope>
+			<date type="published" when="1986" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Sato</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Sato</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Research Institute of Mathematical Studies Report</title>
+		<imprint>
+			<biblScope unit="volume">388</biblScope>
+			<biblScope unit="issue">414</biblScope>
+			<biblScope unit="page">181</biblScope>
+			<date type="published" when="1980" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Saito</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">59</biblScope>
+			<biblScope unit="page">1798</biblScope>
+			<date type="published" when="1987" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Kashiwara</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Miwa</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Jpn. Acad. 57A</title>
+		<meeting>. Jpn. Acad. 57A</meeting>
+		<imprint>
+			<date type="published" when="1981" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Date</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Kashiwara</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Miwa</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Jpn. Acad. 57A</title>
+		<meeting>. Jpn. Acad. 57A</meeting>
+		<imprint>
+			<date type="published" when="1981" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Date</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Jimbo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Kashiwara</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Miwa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Soc. Jpn</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="issue">3806</biblScope>
+			<biblScope unit="page">3813</biblScope>
+			<date type="published" when="1981" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Shinzawa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Saito</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. A: Math. Gen</title>
+		<imprint>
+			<biblScope unit="page" from="31" to="4533" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Saito</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Saitoh</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J.Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="page">1052</biblScope>
+			<date type="published" when="1987" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">High Energy Phys</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Sato</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Saito</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">047</biblScope>
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<title level="m" type="main">Sheaves on manifolds</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Kashiwara</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Schapira</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1990" />
+			<publisher>Springer</publisher>
+			<pubPlace>Berlin</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Gelfand</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Yu</forename>
+				<surname>Manin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Methods of Homological Algebra</title>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="1996" />
+			<publisher>Springer</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<title level="m" type="main">Derived categories, resolutions, and Brown representability</title>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Krause</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<title level="m" type="main">Difference Scheme of Soliton Equations, in Future Di- rections of Nonlinear Dynamics in Physical and Biological Systems</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Hirota</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Tsujimoto</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Imai</surname>
+			</persName>
+		</author>
+		<editor>P.L.Christiansen at al.</editor>
+		<imprint>
+			<date type="published" when="1993" />
+			<publisher>Plenum Press</publisher>
+			<biblScope unit="page">7</biblScope>
+			<pubPlace>New York</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Hirota</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Tsujimoto</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Soc.Jpn</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="page">3125</biblScope>
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Saito</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Saitoh</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Soc. Jpn</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page">024006</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<monogr>
+		<title level="m" type="main">Invariant varieties of periodic points, Mathematical Physics Re- search Developments</title>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Saito</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Saitoh</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2008" />
+			<publisher>Nova Science Publishers, Inc</publisher>
+			<biblScope unit="page" from="85" to="139" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Saito</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Saitoh</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">51</biblScope>
+			<biblScope unit="page">063501</biblScope>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Yumibayashi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Saito</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Wakimoto</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>submitted</note>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Saito</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Saitoh</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Harada</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Yumibayashi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Wakimoto</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Aip</forename>
+				<surname>Advances</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Aip</forename>
+				<surname>Id</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page">003306</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<monogr>
+		<title level="m" type="main">An Introduction to Chaotic Dynamical Systems</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">L</forename>
+				<surname>Devaney</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1989" />
+			<publisher>Addison- Wesley</publisher>
+			<pubPlace>London</pubPlace>
+		</imprint>
+	</monogr>
+	<note>2nd. edn</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

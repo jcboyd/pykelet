@@ -1,0 +1,2453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Dissolving D0-brane into D2-brane with background B-field</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName>
+								<forename type="first">Yoshinao</forename>
+								<surname>Sato</surname>
+							</persName>
+							<email>E-mail: ysato@hep1.c.u-tokyo.ac.jp</email>
+							<affiliation>
+								<orgName type="department">Institute of Physics</orgName>
+								<orgName type="institution">University of Tokyo Komaba</orgName>
+								<address>
+									<addrLine>Meguro-ku</addrLine>
+									<postCode>153-8902</postCode>
+									<settlement>Tokyo</settlement>
+									<country key="JP">Japan</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Dissolving D0-brane into D2-brane with background B-field</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<note>arXiv:hep-th/0505045v3 5 Sep 2005 Preprint typeset in JHEP style -HYPER VERSION UT-Komaba/05-4</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>D0-branes on a D2-brane with a constant background B-field are unstable due to the presence of a tachyonic mode and expected to dissolve into the D2-brane to formulate a constant D0-charge density. In this paper we study such a dissolution process in terms of a noncommutative gauge theory. Our results show that the localized D0-brane spreads out over all of space on the D2-brane as the tachyon rolls down into a stable vacuum. D0-branes on a D2-brane can be described as unstable solitons in a noncommutative gauge theory in 2+1 dimensions in the Seiberg-Witten limit. In contrast to the case of annihilation of a non-BPS D-brane, we are free from difficulty of disappearance of DOF, since there exist open strings after the tachyon condensation. We solve an equation of motion of the gauge field numerically, and our results show that the localized soliton smears over all of noncommutative space. In addition, we evaluate distributions of D-brane charge, F-string charge, and energy density via formulas derived in Matrix theory. Our results show that the initial singularities of D0-charge and energy density are resolved by turning on the tachyon, and they disperse over the whole space on the D2-brane during the tachyon condensation process.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+				<figure>
+					<trash>Contents 1. Introduction 1 2. Noncommutative gauge field theory 3 3. Rolling tachyon and dispersion of supergravity charge 8 3.1 Numerical calculation of time evolution 10 3.2 Supergravity charge distribution 13 3.2.1 Prescription to calculate charge distribution formulas 14 3.2.2 D0-charge 18 3.2.3 D2-charge 21 3.2.4 F-charge 22 3.2.5 Energy density 22 4. Conclusions and future directions 25</trash>
+
+
+				</figure>
+
+				<p>A. D-brane interpretation of noncommutative soliton 27 B. Proof of equations in prescription for charge distribution formulas 28 C. Details of charge density calculations 30 D. T-duality between D0/D2-brane and intersecting D1-strings 38</p>
+
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>Recently the study of a decay process of non-BPS D-branes have made considerable developments and revealed a new aspect of the relation between open and closed degrees of freedom (DOF) [44, 45, 46, 47, 48, 49, 50, 51, 52]. In oder to understand a role of open and closed string DOF in D-brane dynamics more precisely, it is meaningful to study a time-dependent process of a D-brane system in which an effective theory description is valid during the whole time, and disappearance of open string DOF does not happen.</p>
+
+				<p>In this paper we study a tachyon condensation in a D0/D2-brane system, or a process in which a D0-brane dissolves into a D2-brane with a constant background B-field, in terms of a noncommutative gauge theory. Decay of a non-BPS D-brane was studied in terms of tachyonic effective field theories of several types in addition to a boundary CFT analysis. These effective theories, however, do not necessarily have a rigorous justification from the viewpoint of string theories. We would not naively expect a low energy effective theory since the tachyon has mass squared of the – 1 – order 1/α ′ . In addition, there is no S-matrix to check the validity of an effective theory at a stable vacuum without any brane. On the other hand, D0-branes on a D2-brane with a constant background B-field [1, 2] can be described as noncommutative gauge solitons in 2+1 dimensions [6, 8, 9] in the Seiberg-Witten limit [5]. Such D0-branes are unstable because of a tachyonic mode 1 and is expected to dissolve into the D2-brane. Mass squared of the tachyon is not of order 1/α ′ and it survives in the Seiberg-Witten limit. Since we have a D2-brane with a dissolved D0-brane as remnant after the tachyon condensation, we do not suffer from the difficulty of death of open strings. In the tachyon condensation process, 0-0 and 0-2 open string modes does not disappear, but metamorphose to 2-2 open string modes.</p>
+
+				<p>In a D0/D2-brane system there exist an infinite number of massless and massive modes which survive in the Seiberg-Witten limit in addition to a tachyon mode 2 . Then we cannot concentrate on dynamics of the tachyon, but need to consider all other modes in order to study a tachyon condensation process in this system. However we can truncate the number of DOF in a way which has a physical interpretation in contrast to the level truncation in a string field theory. A D0/D2-brane system can be described by using a matrix-valued configuration of infinitely many D0-branes. As is seen easily in such a viewpoint, we have infinitely many modes associated to an infinite number of matrix components. Since it is difficult to deal with infinitely many modes, we truncate the matrix to a finite size. Such matrix truncation has a physical interpretation that the noncommutative space on the D2-brane is &quot; cut off &quot; . Taking the limit of matrix size to infinity, the whole worldvolume is recovered. In other words we treat only a finite number of modes to get results which are reliable within a corresponding distance from the initial position of the D0-brane on the D2-brane.</p>
+
+				<p>In this paper we restrict ourselves to the rotationally symmetric case which is natural to understand the physics of this system. We numerically solve an equation of motion with a Gauss law constraint for the gauge field to study the time evolution of the unstable soliton. Our results show that the localized soliton disperses or smears over the whole space on the D2-brane. At earlier time the tachyoin mode and lower number state modes of the gauge field, which we define in section 2 (see also footnote 10 in section 3), roll down to the potential bottom. As time goes higher number state modes sequentially approach the stable vacuum, and then sudden disturbance happens. Considering that higher/lower number state modes correspond to more dispersed/localized configurations of the gauge field, this is a process in which a configuration of the gauge field disperses in the noncommutative space. When the dissolved D0-brane expands beyond the &quot; cut off &quot; domain, a phenomenon to say &quot; reflection &quot; to inside happens. In the limit of infinite matrix size, we expect that no &quot; reflection &quot; or sudden disturbance happens and the configuration of the gauge field disperses forever. 1 Stability of D0-Dp systems was studied in [2]. Scattering of D0-branes was also investigated [55].</p>
+
+				<p>Different kinds of Dp-Dq-brane systems and noncommutative solitons have been studies in [58, 59, 60, 61]. 2 Since we take the Seiberg-Witten limit, a stringy massive tower of energy scale 1/α ′ is eliminated. We can say that we treat infinitely many light modes with a fine splitting structure due to the presence of magnetic flux.</p>
+
+			</div>
+			<div>
+				<head>– 2 –</head>
+
+				<p>Furthermore we evaluate supergravity charge distribution via formulas derived in Matrix theory [14, 15, 16, 17] in order to understand this process geometrically. In a noncommutative gauge theory there do not exist local and gauge invariant observables since we cannot distinguish between gauge transformations and translations in noncommutative directions. We can, however, extract gauge invariant observables from a matrix-valued configuration by using these formulas [18, 19]. Our results of evaluation show that the initial singularities of D0-charge and energy density are resolved by turning of the tachyon and they disperse over all of space on the D2-brane as the system rolls down to the stable vacuum. Contributions of the tachyon to D0-charge and energy density distributions include a negative infinity at the D0-brane position, and this negative divergence is expected to cancel out the initial delta function singularity. All other modes cause polynomials with Gaussian factors of the distance from the initial position of the D0-brane, and high number state modes correspond to charge distributions at far distance. Thus the region in which D0-charge and energy density have non-zero value always enlarges as the D0-brane dissolves. A D2-charge distribution does not change for any configuration and F-charge density formulates a non-zero distribution with no divergence. We can verify that during the whole process the total charges and energy are conserved. To evaluate these charges we need to compute a symmetrized trace of operators which include exponential of an infinite size matrix. We provide prescriptions to calculate such formulas in expansion with respect to small fluctuations around the soliton. Our study is related particularly to papers cited below. Noncommutative gauge theories describing a D0/D2-brane system and a D1/D3-brane system were studied in detail in [6, 7, 8, 9, 10]. In a T-dual language, dissolution of D0-brane corresponds to reconnection or recombination of intersecting D1-strings, which was studied in terms of the SU (2) Yang-Mills theory in 1+1 dimensions in [25, 27]. Charge distributions of various noncommutative solitons were calculated in [11] via the same formulas used in this paper. Tachyon condensation in D0/D4-brane system is studied in [13]. Rolling tachyon in other noncommutative field theories was studied in [53, 54].</p>
+
+				<p>In section 2, we briefly review a noncommutative gauge theory on a D2-brane with a background B-field, and specify the tachyon condensation process to be studied. Time evolution of tachyon rolling and distribution of supergravity charge density are studied in section 3. We also provide prescriptions to calculate charge density formulas in section 3.</p>
+
+				<p>Finally we conclude our study in this paper and discuss future directions in section 4. In appendix A we review spectrum matching between a noncommutative gauge theory and a D0/D2-brane system. Some of equations which are used to evaluate charge density are proven in appendix B, and detailed calculations of charge density are presented in appendix C. In appendix D we see a relation between a D0/D2-brane and intersecting D1-strings [25, 26, 27] in the Seiberg-Witten limit.</p>
+
+			</div>
+			<div>
+				<head n="2">Noncommutative gauge field theory</head>
+
+				<p>In this section we briefly review a noncommutative gauge theory [39, 40, 41, 42, 43] and – 3 – prepare our setup 3 . Open strings on a D2-brane with background B-field are described in the Seiberg-Witten limit by a U (1) noncommutative gauge theory in 2+1 dimensions [6, 7, 8, 9, 10]. We denote noncommutative coordinates as x i (i = 1, 2) and a noncommutative parameter as θ ij = θǫ ij which satisfy [ˆ x i , ˆ x j ] = iθ ij where ǫ is the antisymmetric tensor with ǫ 12 = 1 and θ &gt; 0.</p>
+
+				<figure>
+					<trash>We introduce covariant coordinates X i = ˆ x i + θ ij A j (ˆ x) and connection operators C = 1 √ 2θ (X 1 − iX 2 ) ¯ C = 1 √ 2θ (X 1 + iX 2 ). It is convenient to introduce creation and annihilation operators a † = 1 √ 2θ (ˆ x 1 − iâ = 1 √ 2θ (ˆ x 1 + iˆ</trash>
+
+
+				</figure>
+
+				<p>Here a † and C are defined as dimensionless operators. Functions of noncommutative coordinates can be identified with operators, called Weyl symbols, acting on Fock space H generated by the creation operator from the vacuum: H = C{|n | n = 0, 1, 2, · · · } |n = (a † ) n √ n! |0 a † a|n = n|n a|0 = 0.</p>
+
+				<p>Thus the physics of this system is described by operators acting on H. The function of which Weyl symbol becomes |nm| is computed as [41]</p>
+
+				<figure>
+					<trash>f nm (ˆ x 1 , ˆ x 2 ) = (−1) n 2 n! m! e −ˆˆ−n 2 e i ˆ ϕ(m−n) L m−n n (2ˆ wherê x 1 + iˆ re i ˆ ϕ</trash>
+
+
+				</figure>
+
+				<p>and L k n is the associated Laguerre polynomial, which is a n-th order polynomial. An action of U(1) noncommutative Yang-Mills theory in temporal gauge A 0 = 0 is written as 4</p>
+
+				<figure>
+					<trash>S = 2π g 2 YM θ dt |G| Tr 1 2 (∂ t X i ) 2 − 1 4θ 2 (i[X i , X j ] + θ ij ) 2 = 2π g 2 YM dtTr ∂ t ¯ C∂ t C − 1 2Gθ ([C, ¯ C] + 1) 2 . (2.2)</trash>
+
+
+				</figure>
+
+				<p>In order to consider correspondence with a string theory, the open string metric G defined as G µν = Gδ µν is not set to 1. Extension of the gauge group to U(N ) by tensoring Fock space N times corresponds to coincident N D2-branes in a string theory interpretation.</p>
+
+				<figure>
+					<trash>The equation of motion for C becomes ∂ 2 t C = 1 Gθ [C, [C, ¯ C]]. (2.3)</trash>
+
+
+				</figure>
+
+				<p>The temporal gauge imposes a Gauss law constraint written as [</p>
+
+				<p><formula>¯ C, ∂ t C] + [C, ∂ t ¯ C] = 0. (2.4)</formula></p>
+
+				<p>A solution C = a † represents a stable vacuum with vanishing gauge field, or no D0-brane as seen below. A series of static solutions of (2.3) labeled by a positive integer m, which can be interpreted as m D0-branes, is given by the form</p>
+
+				<figure>
+					<trash>C = U a † U † + m−1 i=0 µ i |ii|.</trash>
+
+
+				</figure>
+
+				<p>Here µ i is a complex parameter relating to a position of D-branes, and U, U † are shift operators defined as U = ∞ k=0 |kk+m|, U † = ∞ k=m |kk−m|. Note that shift operators satisfy equations</p>
+
+				<figure>
+					<trash>U U † = 1 − m−1 k=0 |kk|, U † U = 1. These localized solutions have an energy E = mπ g 2 YM Gθ .</trash>
+
+
+				</figure>
+
+				<p>These solitons are unstable because of a tachyonic mode, and so expected to decay into the stable vacuum to formulate smeared solutions. Before we investigate such a process of tachyon condensation, we calculate a mass spectrum around the unstable soliton and the potential of this system. In the remaining of this paper, we focus on the case of m = 1, or a single D0-brane.</p>
+
+				<p>In the number operator representation, the soliton solution is written as</p>
+
+				<figure>
+					<trash>C 0 = µ 0 0 a † a † = i √ i + 1|i + 1i|.</trash>
+
+
+				</figure>
+
+				<p>We denote fluctuations around this solution, using submatrices A, W, T † , D of which components correspond to respectively 0-0, 0-2, 2-0, 2-2 strings, as</p>
+
+				<figure>
+					<trash>δC = A W T † D W = (w 0 w 1 · · · ), T † =    t 0 t 1 . . .    , D =    d 00 d 01 d 10 d 11 · · · . . .    . – 5 –</trash>
+
+
+				</figure>
+
+				<p>Then the whole operator C is given by C = µ + A W T † a † + D .</p>
+
+				<p>Here the size of the submatrix A is set to m × m. Particularly in our case of m = 1, A is just a complex number, which shifts a position of the single D0-brane. As a consequence of the Gauss law constraint, all of theses fluctuations are not necessarily independent.</p>
+
+				<p>In this paper we restrict ourselves to the rotationally symmetric case. In what follows we find which DOF survives in this restriction and calculate the potential. For noncommutative coordinates, derivative operators are formally written as ∂ i = −iθ ij x j where θ ij is the inverse of θ ij , namely θ ij θ jk = δ k i . Thus rotation in the Fock space is generated by</p>
+
+				<figure>
+					<trash>ˆ x 1 ˆ ∂ 2 − ˆ x 2 ˆ ∂ 1 = −î x 2 θ = −2i a † a + 1 2 , so that ˆ O → R ˆ OR †</trash>
+
+
+				</figure>
+
+				<p>R = exp(−iφa † a), denoting an operator in Fock space as O. Notice that the number operator a † a and an operator x 2 =</p>
+
+				<figure>
+					<trash>(ˆ x 1 ) 2 + (ˆ x 2 ) 2 obeys a relation x 2 2θ = a † a + 1 2 .</trash>
+
+
+				</figure>
+
+				<p>We can seê x i is rotated by the angle φ under the rotation operator R as</p>
+
+				<figure>
+					<trash>Rî R † = T i j ˆ x j T i j = cos φ sin φ − sin φ cos φ</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>or equivalently</head>
+
+				<p>Ra † R † = e −iφ a † . We can see that the unstable soliton C = U a † U † + µ|00| is rotationally symmetric only when µ = 0 or the D0-brane is located at the original point x i = 0. Next we consider which component in C = a † − iθA z must be zero in the rotationally symmetric case. Assuming gauge field configurations to be rotationally symmetric, A i should be rotated as RA i R † = T j i A j , or equivalently RA z R † = e −iφ . Hence C must be rotated as RCR † = e −iφ C. (2.5) in the rotationally symmetric case. Decompose a Fock space operator as O = ij O i,j |ij|, then the rotation operator acts on O as</p>
+
+				<figure>
+					<trash>R ˆ OR † = l e −ilφ i O i+l,i |i + li| .</trash>
+
+
+				</figure>
+
+				<p>From this equation we can say that an operator of the form O l = i O i+l,i |i + li| is rotated to have a phase factor e −ilφ 5 . Thus (2.5) requires that δC ij = 0 unless i − j = 1 if we want to turn on the tachyon. Then the operator C can be written as</p>
+
+				<figure>
+					<trash>C =         0 0 0 0 t 0 0 0 0 · · · 0 1 + d 0 0 0 0 0 √ 2 + d 1 0 . . .         . (2.6)</trash>
+
+
+				</figure>
+
+				<p>where we have defined d i−1 = d i,i−1 . Pay attention that we call d i high number state modes when i is sufficiently large, and low number state modes when i is sufficiently small, although this terminology is not strict. After all the potential in the rotationally symmetric case is given by</p>
+
+				<figure>
+					<trash>V = 1 2Gθ {(|t 0 | 2 − 1) 2 + (|t 0 | 2 − |d 0 + 1| 2 + 1) 2 + i=1 (|d i−1 + √ i| 2 − |d i + √ i + 1| 2 + 1) 2 }.</trash>
+
+
+				</figure>
+
+				<p>It can be easily seen that the potential is positive definite and C = a † , or t 0 = 1, d i = √ i + 2 − √ i + 1, is the stable vacuum. In addition we can read off that mass squared of t 0</p>
+
+				<figure>
+					<trash>is 6 m 2 = − 1 Gθ .</trash>
+
+
+				</figure>
+
+				<p>In this paper we analyze a process of the tachyon condensation from an unstable soliton to the stable vacuum</p>
+
+				<figure>
+					<trash>C = U a † U † → C = a † t 0 = 0, d i = 0 t 0 = 1, d i = √ i + 2 − √ i + 1.</trash>
+
+
+				</figure>
+
+				<p>We can see that fluctuations around the potential top t 0 , d 0 , d 1 , · · · metamorphose to fluctuations which correspond to d 0 , d 1 , d 2 , · · · around the potential bottom. Thus mass spectrum around the solution C 0 = a † is same as the one around the localized solution C 0 = U a † U † except the tachyon.</p>
+
+				<p>In the remaining of this section we briefly review the Seiberg-Witten limit. The Seiberg-Witten limit is a zero slope limit α ′ → 0 keeping open string parameters G, θ. When we denote a zero slope limit as α ′ → ǫ 1/2 the Seiberg-Witten limit can be written as</p>
+
+				<figure>
+					<trash>α ′ → ǫ 1/2 , g → ǫ, g s → ǫ 3/4 (2.7) θ = 1 B , G = (2πα ′ B) 2 g , 1 g 2 YM = g g s 2πα ′ 1/2 B : fixed (2.8)</trash>
+
+					<figDesc>where g is the closed string metric, g s is the string coupling and B is strength of a background B-field on the D2-brane. This is the limit so that a noncommutivity is considerably larger than the string scale:</figDesc>
+					<trash>Θ 2 = θ µν θ αβ G µα G νβ = 32π 4 α ′ 4 B 2 g 2 ≫ α ′ 2 . 6</trash>
+
+
+				</figure>
+
+				<p>Considering C = a † corresponds to Az(x) = 0, di can be identified as massless modes of the gauge field [6, 13]. To diagonalize quadratic terms of di in the potential with matrix truncation is complicated.</p>
+
+			</div>
+			<div>
+				<head>– 7 –</head>
+
+				<p>Therefore fields which have mass squared of order 1/α ′ disappear, while those which have mass squared of order 1 Gθ = g (2πα ′ ) 2 B</p>
+
+				<p>survive in the Seiberg-Witten limit. −1/Gθ is noting but mass squared of the tachyon in our system. This is the reason why we can describe a dissolving D0-brane by using a noncommutative gauge theory in the Seiberg-Witten limit.</p>
+
+			</div>
+			<div>
+				<head n="3">Rolling tachyon and dispersion of supergravity charge</head>
+
+				<p>In this section we study a process in which a D0-brane dissolves into a D2-brane by solving an equation of motion of the gauge field numerically, and evaluating supergravity charge distributions. At a glance one may think that time evolution of this system causes oscillation of gauge field modes around the potential bottom, rather than everlasting rolling toward it. Our results, however, indicate that the localized D0-brane disperses over all of the space on the D2-brane and the region in which the D0-brane disperses expands forever 7 .</p>
+
+				<p>This behavior seems natural from the viewpoint of dispersion of localized charge without any effect to confine it. We numerically solve equations of motion with the Gauss low constraints of components of the operator C. Since it is difficult to deal with an infinite number of DOF we truncate the matrix to a finite size (N +1)×(N +1) for N = 100, 1000, 10000. Our results show that gauge field modes roll down to the potential bottom, and then sudden disturbance happens 7 Everlasting rolling toward a stable vacuum without oscillation around it can happen with infinitely many DOF which contribute to a tachyon condensation process. When a tachyon has a run-away potential, everlasting rolling can happen with a finite number of DOF, however there may exist singular behavior around the stable vacuum.</p>
+
+				<figure>
+					<trash>D2-brane D0-charge Figure 1: Dissolving D0-brane – 8 –</trash>
+
+
+				</figure>
+
+				<p>at a certain time. This disturbance happens since we adopt matrix size truncation. Matrix size truncation has a geometrical interpretation that the space on the D2-brane is &quot; cut off &quot; . Recall that a function on the noncommutative plane corresponding to an operator |nm| is given by f nm in (2.1) which is a polynomial of (n + m)-th order of r with a Gaussian factor e −ˆhis means that higher number state modes correspond to more smeared configurations of the gauge field in the noncommutative space. In fact we can write a fluctuation of the gauge field in terms of functions on the noncommutative space as 8 (see Figure 2</p>
+
+				<figure>
+					<figDesc>)</figDesc>
+					<trash>−iθδA z = ∞ n=1 d n−2 (−1) n 2 √ ne −ˆˆ1 /2 e −î ϕ L −1 n (2ˆ</trash>
+
+
+				</figure>
+
+				<p>Hence matrix size truncation can be interpreted as restriction of the space on the D2-brane to a finite size. Taking N → ∞ limit the full plane is recovered (see Figure 3). Therefore when the dispersed configuration of the gauge field expand beyond the &quot; cut off &quot; region, disturbance or a phenomenon to say &quot; reflection &quot; happens. In the limit the matrix size goes to infinity, we expect no &quot; reflection &quot; happens, and gauge field configuration disperses forever in the noncommutative space.</p>
+
+				<figure>
+					<trash>1 2 3 4 5 6 -1 -0.5 0.5 1 (−1) n 2 √ ne −r 2 (2r 2 ) −1/2 L −1 n (2r 2 ) n = 1, t 0 n = 2, d 0 n = 12, d 10 r</trash>
+
+					<head>Figure 2:</head>
+
+					<figDesc>Mode expansion of noncommutative function</figDesc>
+
+				</figure>
+
+				<p>Furthermore in this section we evaluate geometric distributions of D-brane charge, Fstring charge, and energy density via formulas derived in Matrix theory. Gauge invariant observables can be extracted from a noncommutative gauge theory by using a matrixvalued configuration via these formulas. First we give prescriptions to calculate these formulas, and then we calculate charge distributions explicitly. Our results show that the initial localized D0-charge spreads out by turning on the tachyon mode, and disperses over the whole space on the D2-brane during the tachyon condensation process. The tachyon causes a negative infinity at the initial position of the D0-brane, and other mode gives 8 Take care that r and ϕ are defined as operators which satisfy [ˆ r 2 , ˆ ϕ] = i. Figure 2 should be considered just as an intuitive one because it is not justified to ignore the factor e − ˆ ϕ .</p>
+
+				<p>In general it is difficult to draw a graph of functions on the noncommutative plane since they are represented in terms of operators.</p>
+
+				<figure>
+					<trash>– 9 – cut off large N limit</trash>
+
+					<head>Figure 3:</head>
+
+					<figDesc>Geometrical interpretation of matrix truncation</figDesc>
+
+				</figure>
+
+				<p>a polynomial with a Gaussian factor of r to D0-charge and energy density distributions. This negative divergence is expected to cancel out the initial singularity of D0-charge and energy density. D2-charge is not affected by any fluctuations, and a non-zero distribution of F-charge density without a singularity arises. We can verify that the charge conservation is satisfied kinematically [19]</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="3.1">Numerical calculation of time evolution</head>
+
+				<p>In this subsection we numerically solve equations of motion with Gauss law constraints of components of C. Since it is difficult to deal with an infinite number of DOF, we truncate the matrix to a finite size (N + 1) × (N + 1). Then we have t 0 , d i (i = 0, 1, · · · , N − 2) as modes to be considered. Substituting (2.6) to (2.3) and (2.4), equations to be solved can be written as</p>
+
+				<figure>
+					<trash>∂ 2 t t 0 = −2t 0 |t 0 | 2 + t 0 |1 + d 0 | 2 ∂ 2 t d 0 = −2(1 + d 0 )|1 + d 0 | 2 + (1 + d 0 )(|t 0 | 2 + | √ 2 + d 1 | 2 ) . . . ∂ 2 t d N−2 =−2( √ N −1+d N−2 )| √ N −1+d N−2 | 2 +( √ N −1+d N−2 )(| √ N −2+d N−3 | 2 +| √ N +∆ N−1 | 2 ) − ˙ t * 0 t 0 + t * 0 ˙ t = 0 ˙ t * 0 t 0 − t * 0 ˙ t − ˙ d * 0 (1 + d 0 ) + (1 + d * 0 ) ˙ d 0 = 0 . . . ˙ d * N−3 ( √ N −2+d N−3 )−( √ N −2+d * N−3 ) ˙ d N−3 − ˙ d * N−2 ( √ N −1+d N−2 )+( √ N −1+d * N−2 ) ˙ d N−2 = 0</trash>
+
+
+				</figure>
+
+				<p>where t has been re-defined as t/ √ Gθ to become dimensionless. ∆ N −1 is not a dynamical variable but a constant parameter which specifies the way of truncation, or we consider the time evolution in the section of d N −1 = ∆ N −1 . It seems natural to chose ∆ N −1 = 0, √ N + 1− √ N to make d N −1 stay at the potential top/bottom. Note that we treat Gauss law constraints to full order of fluctuations δC since we are interested in time evolution – 10 – beyond the region in which δC is infinitesimal. Gauss low constraints can be rewritten as Imt 0 (t) = αRet 0 (t)</p>
+
+				<p>Imd i (t) = β i ( √ i + 1 + Red i (t)) i = 0, 1, · · · , N − 2 where α, β i are time independent constants which are determined uniquely by an initial condition. Thus we can concentrate on real parts of equations of motion. In what follows we consider the case of Imt 0 = 0, Imd 0 = 0, · · · . In this case t 0 , d i remains real.</p>
+
+				<p>We set an initial condition as t 0 = 1.0 × 10 −6 , d i = 1.0 × 10 −6 (i = 0, · · · , N − 2) and solve equations of motion numerically by using the embedded Runge-Kutta Prince- Dormand (8,9) method keeping absolute error less than 1 × 10 −6 or relative error less than</p>
+
+				<figure>
+					<trash>1 × 10 −3 for N=100,1000,10000 and ∆ N −1 = 0, √ N + 1 − √ N 9 .</trash>
+
+
+				</figure>
+
+				<p>Our results are plotted in Figure 4,5,6 for ∆ N −1 = 0 and 7,8,9,10,11 for ∆ N −1 = √ N + 1 − √ N respectively. These results figure out that at earlier time tachyon and lower number state modes 10 approach the potential bottom t 0 = 1, d i = √ i + 2 − √ i + 1, and as time goes higher number state modes sequentially roll down towards it.</p>
+
+				<p>Considering that higher/lower number state modes correspond to more spread/localized configurations of the gauge field, we can interpret this as the process in which the gauge field configuration smears on the noncommutative plane. When the D0-brane disperses beyond the region on the D2- brane which is restricted to finite size because of matrix truncation, sudden disturbance or a phenomenon to say &quot; reflection &quot; happens. Since we have excluded distributions outside the domain except a Gaussian factor, propagation of the dissolving D0-brane over the &quot; boundary &quot; has no way other than &quot; reflection &quot; to inside.</p>
+
+				<p>First we consider the case of ∆ N −1 = 0. If we deal with d N −1 as a dynamical variable, the system continues to roll down towards the stable vacuum, after it approaches a point t 0 = 1, d i = √ i + 2 − √ i + 1 (i ≤ N − 2), since V (d N −2 &gt; 0, d N −1 = 0, d N = 0) has a negative derivative with respect to d N −1 . However, since we have fixed d N −1 = ∆ N −1 = 0, there is no way other than &quot; reflection &quot; after the system approaches the point t 0 =, d i = √ i + 2 − √ i + 1 (i ≤ N − 2). Note that a potential minimum within the cross section of d N −1 = 0 is a point t 0 =</p>
+
+				<figure>
+					<trash>N 3 N +1 − (N − 1)N , d i = (N −i−1)N 2 N +1 − (N − i − 2)N − √ N + 1 (i ≤ N − 2) of a potential height V = 1 2Gθ(N +1) , but the point t 0 = 1, d i = √ i + 2 − √ i + 1 (i ≤ N − 2) of a potential height V = 1 2Gθ .</trash>
+
+
+				</figure>
+
+				<p>On the other hand in the case of ∆ N −1 = √ N + 1− √ N , d N −2 feels a driving force and begins to roll down at t = 0. Consequently d N −2 , d N −3 , d N −4 , · · · roll down to the potential minimum in sequence and then rapidly oscillate around it (see Figure 10,11). This means that a wave of gauge field configuration propagating from the &quot; boundary &quot; to inside arises.</p>
+
+			</div>
+			<div>
+				<head>9</head>
+
+				<p>In the limit of infinite matrix size, it is not clear whether a given initial condition corresponds a configuration which belongs to the same topological sector as the unstable soliton. From this viewpoint it may seem good to turn on only the tachyon at t = 0. We perform numerical calculations also for the initial condition t0 = 0.01, di = 0. Then qualitative behavior makes no difference between these two initial conditions. 10 As is defined in section 2, we refer to t0 in 2.6 as tachyon, di of small i as low number state modes, and di of large i as high number state modes. Note that di&apos;s are not massive excited modes but massless ones of the gauge field.</p>
+
+			</div>
+			<div>
+				<head>– 11 –</head>
+
+				<p>When two waves, one from the original point to outside caused by the tachyon and one from the &quot; boundary &quot; to inside, collide each other, a sudden disturbance happens. In this case it may be more precise to call this phenomenon &quot; collision &quot; rather than &quot; reflection &quot; .</p>
+
+				<p>If N is sufficiently large, the wave from the &quot; boundary &quot; becomes negligible and we do not need to distinguish &quot; reflection &quot; and &quot; collision &quot; , or ∆ N −1 = 0 and ∆ N −1 = √ N + 1 − √ N . We can say that these results of numerical calculations are reliable until the disturbance happens. As N becomes larger, size of the domain enlarges and thus occurrence of &quot; reflection &quot; delays. We expect that no &quot; reflection &quot; happens and the system causes everlasting rolling towards the stable vacuum in N → ∞ limit. This process can be interpreted that the localized D0-brane disperses over the whole space on the D2-brane forever.</p>
+
+				<figure>
+					<trash>-0.2 0 0.2 0.4 0.6 0.8 1 1.2 0 5 10 15 20 25 30 35 40 t t0 d10 d20 d30 d40 d50 d60 d70 d80 d90 d98 -0.2 0 0.2 0.4 0.6 0.8 1 1.2 0 10 20 30 40 50 60 70 80 t t0 d100 d200 d300 d400 d500 d600 d700 d800 d900 d998 Figure 4: Results for N = 100, ∆ N −1 = 0 Figure 5: Results for N = 1000, ∆ N −1 = 0 -0.2 0 0.2 0.4 0.6 0.8 1 1.2 0 20 40 60 80 100 120 140 160 180 200 t t0 d1000 d2000 d3000 d4000 d5000 d6000 d7000 d8000 d9000 d9998 Figure 6: Results for N = 10000, ∆ N −1 = 0 – 12 – -0.2 0 0.2 0.4 0.6 0.8 1 1.2 0 5 10 15 20 25 30 35 40 t t0 d0 d1 d2 d3 d4 -0.04 -0.02 0 0.02 0.04 0.06 0.08 0.1 0.12 0.14 0 5 10 15 20 25 30 35 40 t d(n-6) d(n-5) d(n-4) d(n-3) d(n-2)</trash>
+
+					<head>Figure 7:</head>
+
+					<trash>Results for N = 100, ∆ N −1 = √ N + 1 − √ N 0 0.2 0.4 0.6 0.8 1 1.2 0 10 20 30 40 50 60 70 80 t t0 d0 d1 d2 d3 d4 0 0.002 0.004 0.006 0.008 0.01 0.012 0.014 0.016 0.018 0.02 0 10 20 30 40 50 60 70 80 t d(n-2)</trash>
+
+
+				</figure>
+
+				<figure>
+					<head>Figure 8:</head>
+
+					<trash>Results for N = 1000, ∆ N −1 = √ N + 1 − √ N 0 0.2 0.4 0.6 0.8 1 1.2 0 20 40 60 80 100 120 140 160 180 200 t t0 d0 d1 d2 d3 d4 0 0.001 0.002 0.003 0.004 0.005 0.006 0 20 40 60 80 100 120 140 160 180 200 t d(n-2)</trash>
+
+
+				</figure>
+
+				<figure>
+					<head>Figure 9:</head>
+
+					<trash>Results for N = 10000, ∆ N −1 = √ N + 1 − √ N 3.2 Supergravity charge distribution</trash>
+
+
+				</figure>
+
+				<p>In oder to interpret the dissolving process geometrically, we calculate distributions of supergravity charge density. Formulas derived in Matrix theory [14, 15, 16, 17] are given in – 13 – 0.01572 0.01574 0.01576 0.01578 0.0158 0.01582 0.01584 0.01586 0.01588</p>
+
+				<figure>
+					<trash>0.5 0.6 0.7 0.8 0.9 1 t d(n-2) 0.00498 0.004985 0.00499 0.004995 0.005 0.005005 0.00501 0.005015 0.00502 0.005025 0.2 0.25 0.3 0.35 0.4 t d(n-2) Figure 10: Rapid oscillation for N = 1000, ∆ N −1 = √ N + 1 − √ N Figure 11: Rapid oscillation for N = 10000, ∆ N −1 = √ N + 1 − √ N the momentum representation by ˜ J 0 (k) = T D0 Str e ikX J 2 (k) = T D0 2πα ′ Str −i X 1 , X 2 e ikX I i (k) = T D0 2πα ′ Str X i , X j ˙ X j e ikX T (k) = T D0 Str 1 2 ( ˙ X i ) 2 + 1 4(2πα ′ ) 2 i X i , X j + θ ij 2 + 1 − θ ij 2 4(2πα ′ ) 2 e ikX where J 0 is D-charge, ˜ J 2 is D2-charge, ˜ I i is F-charge, ˜ T is energy density, and T D0 is tension of D0-brane. ˜ J(k) = 1 (2π) 2 d 2 xJ(x)e</trash>
+
+
+				</figure>
+
+				<p>ikx means the Fourier transform of J(x) 11 . Str is a symmetrized trace with the unit of symmetrization X i , ˙ X i , [X i , X j ], k i X i12 . Validity of the formula for energy-momentum tensor was checked from the viewpoint of string scattering amplitudes [16, 19]. A relation of Ramond-Ramond potentials to the Seiberg-Witten map was also investigated in [19]. Our results show that initial singularities of localized D0- charge and energy density are resolved by turning on the tachyon. Contributions of all other modes give polynomials with Gaussian factor of the distance from the original D0-brane position.</p>
+
+			</div>
+			<div>
+				<head n="3.2.1">Prescription to calculate charge distribution formulas</head>
+
+				<p>Before explicit computations we give prescriptions to calculate charge density formulas. First we need to know how to take a symmetrized trace. Denoting operators which belong to the unit of symmetrization as A 1 , A 2 , · · · , a symmetrized trace of the form StrA 1 · · · A n e ikX 11 We denote noncommutative coordinates as x i and commutative coordinates as x i . 12 Possibilities of commutator correction was also studies in the case of finite size matrix, or finite number D0-brane for various noncommutative geometry [12]. In our case there is no such correction since size of representation matrices is infinite</p>
+
+				<figure>
+					<trash>– 14 –</trash>
+
+					<head>Figure 12:</head>
+
+					<figDesc>Resolution of charge density localization can be calculated [17, 19]</figDesc>
+
+				</figure>
+
+				<p>by using equations</p>
+
+				<figure>
+					<trash>StrA 1 e ikX = trA 1 e ikx StrA 1 A 2 e ikX = tr 1 0 ds A 1 e iskX A 2 e i(1−s)kX StrA 1 A 2 A 3 e ikX = tr 1 0 ds 1 1−s 1 0 ds 2 A 1 e is 1 kX A 2 e is 2 kX A 3 e i(1−s 1 −s 2 )kX + (A 2 ↔ A 3 ).</trash>
+
+
+				</figure>
+
+				<p>When an operator includes only one A, the symmetrized trace becomes the ordinary trace of it due to the cyclic property of a trace. Otherwise we can symmetrize operator ordering by using parameter integrals. Proofs of these equations are shown in (B.1),(B.2).</p>
+
+				<p>In order to perform calculations further, we want to expand the operator e ikX in small fluctuations δX i . Take care that [X i 0 , δX j ] = 0 and e ik(X 0 +δX) = e ikX 0 e ikδX in general. We can expand e ik(X 0 +δX) with respect to an infinitesimal deviation δX i as</p>
+
+				<figure>
+					<trash>e ik(X 0 +δX) = e ikX 0 + 1 0 dτ e ikτ X 0 ikδXe i(1−τ )kX 0 + 1 0 dτ 1 1−τ 1 0 dτ 2 e ikτ 1 kX 0 ikδXe iτ 2 kX 0 ikδXe i(1−τ 1 −τ 2 )kX 0 + · · · . Taking the trace of this we get tre ikX 0 +ikδX = tre ikX 0 + tre ikX 0 ikδX + 1 2 tr 1 0 dτ e iτ kX 0 ikδXe i(1−τ )kX 0 ikδX + · · · .</trash>
+
+					<figDesc>Proof of these relations is give in (B.3),(B.4). In this paper we consider a small fluctuation around the unstable soliton X i 0 = U ˆ x i U † . Thus we should know matrix components of an operator e U ikˆU † in the number operator representation. Considering an equation</figDesc>
+					<trash>e U ikˆU † = 1 + ∞ n=0 1 n! U ( ikê ikˆ00| , it is sufficient to know matrix components of e ikˆhese components can be computed by making use of a coherent state |λ = e − |λ| 2 2 e λa † |0 where λ is a complex number. A – 15 – coherent state has properties a|λ = λ|λ m|λ = e − |λ| 2 2 λ m √ m! 1 = 1 π d 2 λ |λλ| where d 2</trash>
+
+
+				</figure>
+
+				<p>λ is an integral over the real and imaginary parts of λ. Note that coherent states are not orthonormal, but satisfy</p>
+
+				<figure>
+					<trash>λ ′ |λ = e − |λ ′ | 2 2 − |λ| 2 2 +λ ′ * λ . Then m|e ikˆn is calculated as m|e ikˆn = 1 π d 2 λ e θ 4 k 2 m|e i θ 2 (k 1 −ik 2 )a |λλ|e i θ 2 (k 1 +ik 2 )a † |n = e θ 4 k 2 π √ m!n! d 2 λ λ m λ * n e −|λ| 2 +i θ 2 (k 1 −ik 2 )λ+i θ 2 (k 1 +ik 2 )λ * = e − θ 4 k 2 π √ m!n! dλ 1 dλ 2 (λ 1 + iλ 2 ) m (λ 1 − iλ 2 ) n e − λ 1 −i θ 2 k 1 2 − λ 2 −i θ 2 k 2 2 , (3.1) where we have used the Baker-Campbell-Hausdorff formula e X+Y = e X e Y e − 1 2</trash>
+
+					<figDesc>[X,Y ] for</figDesc>
+
+				</figure>
+
+				<p>X, Y which are commutable with [X, Y ]. We can see that the trace of e ikˆecomes a delta function as is expected:</p>
+
+				<figure>
+					<trash>tre ikˆ=0 1 n! dλ 1 dλ 2 |λ| 2n e −|λ| 2 +i √ 2θ(k 1 λ 1 +k 2 λ 2 )+ θ 4 k 2 = 2π θ δ 2 (k).</trash>
+
+					<figDesc>The numerical factor 2π/θ is consistent with the identification of a trace of an operator tr O with an integral over noncommutative coordinates</figDesc>
+					<trash>d 2 ˆ x 2πθ O(ˆ x 1 , ˆ x 2 ). m|e ikˆn can be expressed also in the form of summation as m|e ikˆn = Min(m,n) l=0 √ m!n! (n − l)!(m − l)!l! i θ 2 n+m−2l (k x + ik y ) n−l (k x − ik y ) m−l e − θ 4 k 2 . For given m, n we can carry out an integral in (3.1). Results for several different values of – 16 – m, n are shown below. (e ikˆ0 = e − θ 4 k 2 (e ikˆ0 = e − θ 4 k 2 i θ 2 (k 1 + ik 2 ) (e ikˆ0 = e − θ 4 k 2 − θ 2 (k 1 +ik 2 ) 2 √ 2 (e ikˆ0 = e − θ 4 k 2 −i( θ 2 ) 3/2 (k 1 +ik 2 ) 3 √ 6 (e ikˆ1 = e − θ 4 k 2 1 − θ 2 k 2 (e ikˆ1 = e − θ 4 k 2 −i θ 2 (k 1 +ik 2 )(−2+ θ 2 k 2 ) √ 2 (e ikˆ1 = e − θ 4 k 2 θ 2 (k 1 +ik 2 ) 2 (−3+ θ 2 k 2 ) √ 6 (e ikˆ2 = e − θ 4 k 2 1 2 2 − θ 2 4k 2 + θ 2 4 k 4 (e ikˆ2 = e − θ 4 k 2 i θ 2 (k 1 +ik 2 ) 6− θ 2 6k 2 + θ 2 4 k 4 2 √ 3 (e ikˆ3 = e − θ 4 k 2 1 6 6 − θ 2 18k 2 + θ 2 4 9k 4 − θ 3 8 k 6 . . .. Note also that a relation (e ikˆm = (e i(−k)ˆ x ) mn * is satisfied.</trash>
+
+
+				</figure>
+
+				<p>In this paper we concentrate on the rotationally symmetric fluctuation (2.6). Furthermore we set d i = 0 for i ≥ N − 1 by hand to make δC a trace class operator 13 . Take care that this is not matrix truncation we have used in numerical calculations, but we just ignore modes of high number state or equivalently configurations of the gauge field at far distance. Hence δX i , δ ˙ X i , δ[X i , X j ], ikδX are effectively finite size, or have non-zero components only inside the submatrix of a finite size (N + 1) × (N + 1). Now we are interested in a trace of the form tr [O ′ 1 A ′ 1 · · · O ′ n A ′ n ], where A ′ ∈ { ˙ X i , ikδX, [X 1 , X 2 ]} and O ′ ∈ {e U ikâ xU † }. We have to pay attention to treatment of the operator [X 1 0 , X 2 0 ] = iθU U † since it has nonzero components outside the finite size submatrix of (N + 1) × (N + 1) in contrast to A ∈ {δX i , δ ˙ X i , δ[X i , X j ], ikδX}. To avoid difficulty of infinite size matrices, O ′ 1 [X 1 0 , X 2 0 ]O ′ 2 should be preliminary computed algebraically. By using properties of shift 13 Note that C = U a † U † and C = a † have different magnetic flux, or belong to different topological sectors. A soliton number is invariant under variations of a gauge field which are continuous and does not change asymptotic behavior at far distance. However the definition of &quot; continuous and falling off &quot; variation in terms of operators is not clear. It seems natural to impose bounded and trace class operators for such variations considering that tr[C, ¯ C] should be treated as a topological quantity, and δCnm for large n, m corresponds to a variation of the gauge field at far distance. Here we impose a variation matrices δC to be effectively finite size, or δCnm = 0 for n, m ≥ N + 1. Otherwise it may change asymptotics at infinity of the gauge field and break topology of the soliton. Concerning topology in noncommutative field theories see also [42, 36, 37, 38].</p>
+
+				<figure>
+					<trash>– 17 – operators we have e U ik 1 ˆ xU † U U † e U ik 2 ˆ xU † = U e i(k 1 +k 2 )ˆ x U † . e iskX U U † e i(1−s)kX also can be simplified by using this relation as shown in (B.6). After all tr [O ′ 1 A ′ 1 · · · O ′ n A ′ n ] can be reduced to a trace of the form tr [O 1 A 1 · · · O m A m ] where O ∈ {e U ikxU † , U e ik ′ x U † } A ∈ { ˙ X i , δ[X i , X j ]</trash>
+
+
+				</figure>
+
+				<p>, ikδX}.</p>
+
+				<p>Since we can regard an operator of type A as an effectively finite size matrix, it is sufficient to know components of O inside the finite size submatrix in oder to compute tr [O 1 A 1 · · · O m A m ]. Put it all together we are able to compute charge distributions with our prescriptions. Take care that A i should be a trace class operator. Then we evaluate distribution of D0-charge, D2-charge, F-charge and energy density.</p>
+
+				<p>In this section we concentrate on a contribution of the tachyon mode which includes divergence . Contributions of other modes give only polynomials with Gaussian factors of the distance from the original point as shown in C. Detailed calculations are presented in appendix C.</p>
+
+				<figure>
+					<trash>3.2.2 D0-charge D0-charge distribution is given by 14 J 0 (k) = T D0 tr e ikX .</trash>
+
+
+				</figure>
+
+				<p>In what follows in this subsection we evaluate a distribution of D0-charge density for the unstable soliton X i = U x i U † with a fluctuation around it. At the potential top X i = U x i U † D0-charge is computed as</p>
+
+				<figure>
+					<trash>˜ J 0 (k) = T D0 tr e U ikˆU † = T D0 tr U e ikˆ00| = T D0 1 + 2π θ δ 2 (k) . The Fourier transform J 0 (x) = d 2 k (2π) 2 ˜ J 0 (k)e ikx gives J 0 (x) = T D0 δ 2 (x) + T D0 2πθ , namely a localized D0-brane at x i = 0 and smeared D0-charge density T D0 2πθ bounded on a D2-brane [25]</trash>
+
+
+				</figure>
+
+				<p>. Therefore we can interpreted the unstable soliton as a single D0-brane on a 14 The Seiberg-Witten map in two noncommutative dimensions is given by</p>
+
+				<p><formula>F12(k) + 1 2πθ δ 2 (k) = tre ikX</formula></p>
+
+				<p>where F12 is field strength in commutative variables. Thus we can read off field strength in the commutative representation from our results in this subsection.</p>
+
+			</div>
+			<div>
+				<head>– 18 –</head>
+
+				<p>D2-brane in terms of charge density distribution. Strictly speaking what we have called a D2-brane so far is a bound state of smeared D0-branes of constant density and a D2-brane, however we abbreviate it by D2-brane. Turning on a fluctuation around the unstable soliton, we expect that the localized D0- brane spreads out and dissolves into the D2-brane to formulate constant D0-charge density. Expanding the D0-charge formula in a small fluctuation around X i = U x i U † , we have</p>
+
+				<p><formula>T D0 tr e U ikˆU † +ikδX = T D0 1 + 2π θ δ 2 (k) + T D0 tr ikδXe U ikˆU † + 1 2 1 0 dτ ikδXe U iτ kˆU † ikδXe U i(1−τ ) kˆU † + · · · .</formula></p>
+
+				<p>In this subsection we concentrate on a contribution of the tachyon to D0-charge distribution . All other modes give polynomials with Gaussian factors of the distance from the initial D0-brane position with integrals over parameters as shown in (C.1),(C.2). After calculations the contribution of the tachyoñ J 0 (k) t 0 becomes</p>
+
+				<figure>
+					<trash>˜ J 0 (k) t 0 = T D0 2 1 0 dτ e − θ 4 k 2 τ 2 −θk 2 t 2 0</trash>
+
+					<figDesc>up to the second order of t 0 . The Fourier transform of this gives</figDesc>
+					<trash>J 0 (x) t 0 = T D0 1 0 dτ 4(x 2 − θτ 2 ) πθ 2 τ 6 e − x 2 θτ 2 t 2 0 =    T D0 1 θ 1−Erf(r) 2 √ πr 3 + 1+2r 2 πr 2 e −r 2 t 2 0 r = 0 −∞ · t 2 0 r = 0 r = (x 1 ) 2 + (x 2 ) 2 θ where Erf is the error function defined as Erf(x) = 2 √ π x 0 e −t 2 dt, of which asymptotic behavior is given by Erf(r) =    2 √ π e −r 2 r 1 + 2r 2 3 + · · · r ≪ 1 1 − e −r 2 √ πr 1 − 1 2r 2 + · · · r ≫ 1. Therefore we can express D0-charge density as J(x) = T D0 δ 2 (x) + J ( x) t 0 = T D0 ∂ 2 ∂x 2 1 2π log(r) + 1 − Erf(r) 2 √ πr t 2 0 where we omit constant density T D0 /2πθ. Around the original point and at far distance J 0 (x) t 0 acts like J 0 (x) t 0 ≃    T D0 1 2θ √ πr 3 t 2 0</trash>
+
+
+				</figure>
+
+				<p><formula>r ≪ 1 T D0 2 θπ e −r 2 t 2 0 r ≫ 1 .</formula></p>
+
+				<p>We can see that the D0-charge density distribution acts like the Gaussian distribution at far distance and diverges to positive infinity around the original point.</p>
+
+				<figure>
+					<trash>The discontinuous – 19 – initial D0-brane tachyon contribution δ 2 (x) J 0 (x) −∞ J 0 (x) t 0 x x</trash>
+
+					<head>Figure 13:</head>
+
+					<figDesc>Resolution of D0-charge localization</figDesc>
+
+				</figure>
+
+				<p><formula>-2 -1 0 1 2 -2 -1 0 1 2 -2 -1 0 1 x 1 / √ θ x 1 / √ θ x 2 / √ θ Figure 14</formula></p>
+
+				<p>: Smeared D0-charge around the original point behavior at x = 0 can be also understood from the fact that an integral of J 0 (x) t 0 over x vanishes:</p>
+
+				<p><formula>1 0 dτ d 2 x 2(x 2 − θτ 2 ) πθ 2 τ 6 e − x 2 θτ 2 = 0.</formula></p>
+
+				<p>This negative infinity at the original point is expected to cancel out the initial delta function singularity of D0-charge (see Figure 13). Behavior of J 0 (x) t 0 /(T D0 t 2 0 ) around the original point is drawn in Figure 14. Take care that in this figure the divergence around the original point is cut off. In order to see such resolution more precisely we should know contributions of the tachyon mode to all order. We can calculate such distributions up to a given order by following our prescriptions, however it is difficult to sum up all those terms to get a delta function which cancels out the initial delta function. We do not discuss this problem anymore in this paper. Next we verify the D0-charge conservation. Split the D0-charge density formula into an unstable soliton part and a fluctuation part as</p>
+
+				<p><formula>J 0 (k) = ˜ J (0) 0 (k) + ˜ J ′ 0 (k), then the total – 20 – charge conservation requires d 2 x J ′ (x) = d 2 x d 2 k (2π) 2 ˜ J ′ 0 e ikx = ˜ J ′ 0 (k = 0) = 0.</formula></p>
+
+				<p>This condition is satisfied from (C.1). Thus total D0-charge is conserved during the dissolution process. Note that the conservation is satisfied kinematically [18]</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="3.2.3">D2-charge</head>
+
+				<p>D2-charge distribution can be written in the momentum representation as</p>
+
+				<p><formula>˜ J 2 (k) = T D0 2πα ′ tr −i [X 1 , X 2 ] e ikX .</formula></p>
+
+				<p>For the unstable soliton this formula gives</p>
+
+				<p><formula>˜ J 2 (k) = T D0 θ 2πα ′ tr U U † U e ikˆ00| = T D0 α ′ δ 2 (k)</formula></p>
+
+				<p>and consequently D2-charge distribution is given by</p>
+
+				<p><formula>J 2 (x) = d 2 x (2π) 2 T D0 α ′ δ 2 (k) = T D2 .</formula></p>
+
+				<p>Here T D2 = T D0 /4π 2 α ′ is the D2-brane tension. This means the existence of a flat D2-brane in the 2+1 dimensional worldvolume as is expected. Next we evaluate a contribution of a fluctuation of the tachyon mode around the unstable soliton to the D2-charge distribution.</p>
+
+				<p>After calculations presented in Appendix C a contribution of the tachyon to D2-charge distribution in the momentum representation becomes</p>
+
+				<figure>
+					<trash>˜ J 2 (k) t 0 = T D0 θ 2πα ′ (1 − e − θ 4 k 2 ) − 1 0 dτ e − θ 4 (τ 2 +(1−τ 2 ))k 2 θ 2 k 2 1 − k 2 4 (1 − 2τ ) 2 t 2 0</trash>
+
+					<figDesc>.</figDesc>
+
+				</figure>
+
+				<p>We can see that conservation of D2-charge J ′ 2 (k = 0) = 0 is satisfied from (C.3). The Fourier transform of this gives D2-charge distribution as</p>
+
+				<figure>
+					<trash>J 2 (x) t 0 = T D0 θ 2πα ′    δ 2 (x) − e − x 2 θ πθ + e − x 2 θ πθ − δ 2 (x)    t 2 0 = 0. Here we have used an relation − 1 0 dτ 1 1−τ 1 0 dτ 2 e − θ 4 (1−τ 2 ) 2 k 2 θ 2 k 2 e ikx = e − x 2 θ πθ − δ 2 (k).</trash>
+
+
+				</figure>
+
+				<p>We can say that there is a delta function in addition to the Gaussian distribution from the following equations:</p>
+
+				<p><formula>− 1 0 dτ 1 1−τ 1 0 dτ 2 e − θ 4 (1−τ 2 ) 2 k 2 θ 2 k 2 e ikx =    e − x 2 θ πθ x = 0 −∞ x = 0 , d 2 x 1 0 dτ 1 1−τ 1 0 dτ 2 e − θ 4 (1−τ 2 ) 2 k 2 θ 2 k 2 e ikx = 0. – 21 –</formula></p>
+
+				<p>After all the tachyon mode has no effect on the D2-charge distribution. Contributions of other modes also vanish as shown in (C.4). Therefore the D2-charge distribution kinematically remains J 2 (x) = T D2 .</p>
+
+				<figure>
+					<trash>3.2.4 F-charge F-charge distribution is given by ˜ I 1 (k) = T D0 g 2πα ′ Str i[X 1 , X 2 ]X 2 ˙ X 2 ˜ I 2 (k) = T D0 g 2πα ′ Str i[X 2 , X 1 ]X 1 ˙ X 1</trash>
+
+
+				</figure>
+
+				<p>in the momentum representation. As is easily seen F-charge vanishes for the static solution . During the tachyon condensation process F-charge has a non-trivial distribution. A contribution of the tachyon to F-charge density becomes</p>
+
+				<p><formula>˜ I 1 (k) t 0 = T D0 g 2πα ′ 1 0 ds 1 0 dτ e − θ 4 θ 2 (1−sτ ) 2 k 2 (−ik 2 )st 0 ˙ t 0 ˜ I 2 (k) t 0 = T D0 g 2πα ′ 1 0 ds 1 0 dτ e − θ 4 θ 2 (1−sτ ) 2 k 2 ik 1 st 0 ˙ t 0</formula></p>
+
+				<p>after calculations presented in appendix C. We can see that total F-charge vanishes during the whole process since I i (k = 0) = 0 is satisfied from (</p>
+
+				<figure>
+					<trash>C.5),(C.6). Take care that I takes the form of f (k 2 ) −ik 2 ik 1 . The Fourier transform of I gives F-charge distribution on the D2-brane as I 1 (x) = T D0 g 2πα ′ 1 0 ds 1 0 dτ e − r 2 (−1+sτ ) 2 2 π sx 2 (−1 + sτ ) 4 t 0 ˙ t 0 I 2 (x) = T D0 g 2πα ′ 1 0 ds 1 0 dτ e − r 2 (−1+sτ ) 2 2 π s(−x 1 ) (−1 + sτ ) 4 t 0 ˙ t 0</trash>
+
+					<figDesc>. F-charge density I(x) takes the form of f (r 2 ) x 2 −x 1 , so it points the angular direction.</figDesc>
+
+				</figure>
+
+				<p>We can see that I i (x = 0) = 0 and there is no divergence at the original point. Behavior of I 1 (x) t 0 /(T D0 gt 0 ˙ t 0 ) and I 2 (x) t 0 /(T D0 gt 0 ˙ t 0 ) around the original point are plotted in Figure 15 and 16. After all F-charge density formulates a non-trivial distribution without any divergence as shown in (C.7),(C.8), and the total F-charge remains zero during the tachyon condensation.</p>
+
+				<figure>
+					<trash>3.2.5 Energy density Energy density distribution is given by ˜ T (k) = T D0 Str g 2 ( ˙ X 1</trash>
+
+
+				</figure>
+
+				<p><formula>) 2 + g 2 ( ˙ X 2 ) 2 + 1 + igθ (2πα ′ ) 2 − g 2 2(2πα ′ ) 2 X 1 , X 2 2 e ikX . – 22 – -10 -5 0 5 10 -10 -5 0 5 10 -10 -5 0 5 1 (2 x 1 / √ θ x 1 / √ θ x 2 / √ θ -10 -5 0 5 10 -10 -5 0 5 10 -10 -5 0 5 x 1 / √ θ x 1 / √ θ x 2 / √ θ</formula></p>
+
+				<figure>
+					<head>Figure 15:</head>
+
+					<figDesc>Behavior of I 1 (x) t0</figDesc>
+
+				</figure>
+
+				<figure>
+					<head>Figure 16:</head>
+
+					<figDesc>Behavior of I 2 (x) t0</figDesc>
+
+				</figure>
+
+				<p>This formula is different from the energy which is expected by the action (</p>
+
+				<p><formula>2.2) E = 2π θg 2 YM tr 1 2 ( ˙ X 1 ) 2 + 1 2 ( ˙ X 2 ) 2 + 1 2G + i Gθ [X 1 , X 2 ]</formula></p>
+
+				<p>− 1 2Gθ 2 [X 1 , X 2 ] 2 by a constant shift T D0 1 − g 2 2(2πα ′ B) 2 , which is identical to the energy of a D2-brane with constant magnetic field B removing constant D0-charge density [8]. Recall the parameter correspondence in the Seiberg-Witten limit (2.8):</p>
+
+				<p><formula>2π θg 2 YM = gT D0 1 2Gθ 2 = g 2(2πα ′ ) 2 .</formula></p>
+
+				<p>The conservation of the total energy d dt T (k = 0) = 0 is satisfied by using the equation motion. Take care that since we start from a point which deviates from the unstable soliton, T ′ (k = 0) is not a criterion of the energy conservation. In other words the total energy is conserved dynamically but not kinematically. For the unstable soliton we have</p>
+
+				<figure>
+					<trash>˜ T (k) =T D0 tr e U ikˆU † + iθg 2 (2πα) 2 U U † e U ikˆU † + θ 2 g 2 2(2πα ′ ) 2 1 0 ds U U † e U iskˆU † U U † e U i(1−s) kˆU † =T D0 1 + 2π θ δ 2 (k) 1 − θ 2 g 2 2(2πα ′ ) 2 . Then energy density is computed as T (x) = T D0 δ 2 (x) + T D0 2πθ 1 − θ 2 g 2 2(2πα ′ ) 2 .</trash>
+
+
+				</figure>
+
+				<p>This is nothing but the energy of a localized D0-brane and D2-brane with constant D0- charge density. Next we turn on a fluctuation of the tachyon around the unstable soliton.</p>
+
+				<p>After calculations presented in C a contribution of the tachyon to the distribution of energy density becomes</p>
+
+				<figure>
+					<trash>T (x) t 0 = T D0 − 2 πθ g 2 θ 2 2(2πα ′ ) 2 e −r 2 + 1 0 dτ e − r 2 (1−τ ) 2 2(r 2 − (1 − τ ) 2 ) πθ + g 2 θ 2 2(2πα ′ ) 2 1 0 dτ 1 1−τ 1 0 dτ 2 1 0 ds e − r 2 (1−sτ 2 ) 2 4s 2 (r 2 − (1 − sτ 2 ) 2 ) πθ(1 − sτ 2 ) 6 t 2 0 + T D0 g 2 1 0 ds e − r 2 (1−s) 2 1 π(1 − s) 2 ˙ t 2 0 . + · · · as shown in (C.9),(C.10).</trash>
+
+
+				</figure>
+
+				<p>In this equation the first term is a Gaussian distribution and the second term is same as the one which appears in D0-charge density. We write down some equations in calculations of D0-charge density again:</p>
+
+				<figure>
+					<trash>1 0 dτ e − r 2 τ 2 2(r 2 − τ 2 ) πθτ 6 =        −∞ r = 0 1 θ 1 4r 3 √ π + 1+2r 2 2πr 2 e −r 2 − Erf(r) 4 √ πr 3 =    1 4θ √ πr r ≪ 1 4 θπ e −r 2 r ≫ 1 .</trash>
+
+
+				</figure>
+
+				<p>The integrals in the third term is difficult to perform. The last term which includes ˙ t 2 0 is computed as below.</p>
+
+				<figure>
+					<trash>1 0 ds e − r 2 s 2 1 πs 2 = 1 − Erf(r) 2 √ πr =    1 2 √ πr r ≪ 1 e −r 2 2πr 2 r ≫ 1 . Behavior around the original point of the second term 1 0 dτ e − r 2 (1−τ ) 2 2(r 2 −(1−τ ) 2 ) π , the third term 1 0 dτ 1 1−τ 1 0 dτ 2 1 0 ds e − r 2 (1−sτ 2 ) 2 4s 2 (r 2 −(1−sτ 2 ) 2 ) πθ(1−sτ 2 ) 6 and the last term 1 0 ds e − r 2 (1−s) 2 1 π(1−s) 2 is plotted in Figure 17, 18, 19.</trash>
+
+					<figDesc>Take care that in Figure 17 the negative infinity at the original point is not plotted. Adding these terms all, the initial singularity of the energy density is expected to be resolved. After all our results show that localized energy density spread out by turning of the tachyon.</figDesc>
+
+				</figure>
+
+				<p>As in the case of D0-charge, it is needed to calculate contributions of the tachyon to all order and sum up them all to study such resolution more precisely, however we do not discuss this problem anymore in this paper.</p>
+
+				<figure>
+					<trash>1 2 3 4 5 20 40 60 80 100 r 1 2 3 4 5 -0.1 -0.075 -0.05 -0.025 0.025 0.05 0.075 r Figure 17: The second term Figure 18: The third term – 24 – 0.2 0.4 0.6 0.8 1 10 20 30 40 50 60 ne − r</trash>
+
+					<head>Figure 19:</head>
+
+					<figDesc>The last term</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>Charge distribution around the potential bottom</head>
+
+				<p>In the remaining of this section we consider charge distributions around the potential bottom. When a fluctuation around the unstable soliton becomes large, it is not valid to evaluate charge distributions in expansion with respect to the fluctuation. Around the potential bottom we have t 0 = 1, d 0 = 0.41 · · · , d 1 = 0.31 · · · , d 2 = 0.26 · · · , · · · . Thus we cannot ignore higher order terms of the tachyon in charge distributions. We can, however, evaluate charge distributions in expansion with respect to deviations from the potential bottom. Recall that t 0 , d 0 , d 1 , · · · around the potential top metamorphose to fluctuations which correspond to d 0 , d 1 , d 2 , · · · at the potential bottom. Hence our results of charge distributions around the potential top can be considered as those around the potential bottom except the tachyon mode and the localized soliton. This means that the tachyon condensation can be considered as the process in which D0-charge and energy density disperse on the D2-brane.</p>
+
+			</div>
+			<div>
+				<head n="4">Conclusions and future directions</head>
+
+				<p>We have studied a dissolving D0-brane into a D2-brane with a constant B-field in the Seiberg-Witten limit. In this limit D0-branes on a D2-brane can be described as unstable solitons and its decay corresponds to a tachyon condensation towards a stable vacuum. In the rotationally symmetric case we have numerically solved the equation of motion with the Gauss law constraint of the gauge field. Our results indicate that the system rolls down asymptotically towards the stable vacuum. This can be interpreted as a process in which the localized soliton spreads out and disperses over all of noncommutative space on the D2-brane. Furthermore we have evaluated D0-charge, D2-charge, F-charge and energy density distribution on the D2-brane via formula derived in Matrix theory. We have provided prescriptions to calculate these formulas and evaluated them by following our prescriptions. Our results show that the initial singularities of D-charge and energy density are resolved by non-zero tachyon mode, and the region in which D0-brane disperses expands forever.</p>
+
+			</div>
+			<div>
+				<head>– 25 –</head>
+
+				<p>Finally we discuss future directions of this work. Relaxing the rotational symmetry and turning on transverse scalars can be done straightforwardly. Taking account of fermionic fields is needed to study restoration of the supersymmetry. A quantum analysis of this system is also an important problem.</p>
+
+				<p>One of the most interesting problem relating to this paper is about closed string emissions from a dissolving D0-brane. In the case of annihilation of a non-BPS D-brane, the initial energy is expected to be converted completely into a collection of closed strings [50]. Then what is the remnant after D0-brane dissolution? It seems that we cannot deal with emissions of the energy to massive closed string modes in the zero slope limit. Even in the zero slope limit it is not easy to study the closed string emission from a time dependent D-brane and its backreaction. An answer to this problem will give an insight to the role of open and closed DOF in D-brane dynamics.</p>
+
+				<p>Another interesting problem is to construct a dissolving D0-brane boundary state. It is shown that a higher dimensional D-brane can be constructed out of infinitely many D0-branes and anti-D0-branes in terms of boundary states. In particular a D2-brane is constructed out of infinitely many D0-branes [21]. Recently explicit map from a D-brane with magnetic flux to a matrix configuration of D0-brane has been provided in a boundary state picture [20]. We have studied in this paper a D0-brane which dissolves into a D2-brane from the viewpoint of a matrix-valued position of infinitely many D0-branes. Considering these all it seems possible to construct explicitly a boundary state which describes D0- brane dissolution. This idea suggests a method to study dynamics of some types of D-brane system. First interpret a configuration of higher dimensional D-branes as a collection of D0- branes. Then analyze dynamics of a matrix-valued configuration of such D0-branes. Finally re-interpret time evolution of the collection of D0-branes in terms of higher dimensional Dbranes 1516 . A boundary state describing time evolution of this system can be constructed in terms of the collection of D0-branes, and a closed string emission can be evaluated by using the boundary state. Surely such an idea cannot be applicable to all D-brane dynamics, however, it will be a useful method to study some types of D-brane dynamics.</p>
+
+			</div>
+			<div>
+				<head>A. D-brane interpretation of noncommutative soliton</head>
+
+				<p>In this appendix we review spectrum matching between a noncommutative gauge theory in 2+1 dimensions and open strings in a D0/D2-brane system [8, 10]. To the first order of a fluctuations δC the Gauss law constraint (</p>
+
+				<figure>
+					<trash>2.4) gives [ ¯ C 0 , δC] + [C 0 , δ ¯ C] = 0, or equivalently in terms of matrix components − j − 1δC i,j−1 + √ i − 1δC * j,i−1 + √ iδC i+1,j − jδC * j+1,i = 0.</trash>
+
+
+				</figure>
+
+				<p>These constraints can be grouped with respect to k = |i − j|. A group of k = 0 gives ImδC i+1,i = 0 i = 1, 2, · · · .</p>
+
+			</div>
+			<div>
+				<head>(A.1a)</head>
+
+				<p>Each one equation from the other groups requires components of W, T † to satisfy</p>
+
+				<figure>
+					<trash>√ k − 1w k−2 + √ kt k = 0 k = 1, 2, · · · . (A.1b) (A.1a</trash>
+
+
+				</figure>
+
+				<p>) means that δC i+1,i = d i,i−1 should be real, but δC 10 = t 0 remains complex.</p>
+
+				<p>Quadratic terms in the potential of the action (2.3) is</p>
+
+				<figure>
+					<trash>V 2 = quadratic term in 1 2Gθ tr [C, ¯ C] + 1 2 = 1 Gθ tr 1 2 [a † , D † ] + [a, D] 2 + (W W † − T T † ) + (W a − T a † )(a † W † − aT ) = 1 Gθ ∞ k=0 | √ kw k−1 − √ k + 1t k+1 | 2 − ∞ k=0 (|w k | 2 − |t k | 2 ) + tr [a † , D † ] + [a, D] 2 .</trash>
+
+
+				</figure>
+
+				<p>The complex number A does not appear in the quadratic part of the potential and so we have two massless modes, which are identified to transverse scalars on a D0-brane. Components of the submatrix D realize massless fluctuations of the gauge field on a D2- brane [6, 13]. Then we calculate a mass spectrum of W, T † . Relevant terms to matrix components w k , t k can be regrouped as</p>
+
+				<figure>
+					<trash>1 Gθ −|t 0 | 2 + ∞ k=1 |Y k | 2 + ∞ k=0 |Z k | 2 Y k = 1 √ 2k + 1 ( √ k + 1w k−1 − √ kt k+1 ) k = 1, 2, · · · Z k = 1 √ 2k + 1 ( √ kw k−1 + √ k + 1t k+1 ) k = 0, 1, 2, · · · . Considering Z k is not dynamical due to Gauss law constraints (A.1b), Y k consists a mass spectrum m 2 k = 2k + 1 Gθ k = 1, 2, · · · – 27 –</trash>
+
+
+				</figure>
+
+				<p>and t 0 turns out to be a complex tachyon with mass squared m 2 = − 1 Gθ .</p>
+
+				<p>This mass spectrum is same as the one of open strings stretched between a D0-brane and a D2-brane with a constant B-field in the Seiberg-Witten limit derived in terms of CFT [3, 4]</p>
+
+				<figure>
+					<trash>m 2 k = g(2k + 1) (2πα ′ ) 2 B k = −1, 1, 2, · · · with the parameter correspondence in the Seiberg-Witten limit 1 Gθ = g (2πα ′ ) 2 B .</trash>
+
+
+				</figure>
+
+				<p>After all we can identify the unstable soliton in the noncommutative gauge field theory as a D0- branes on a D2-brane with a constant background B-field from the viewpoint of spectrum matching. More rigorous derivation of the noncommutative gauge theory as an effective theory of this system based on CFT calculations was studied in [4].</p>
+
+			</div>
+			<div>
+				<head>B. Proof of equations in prescription for charge distribution formulas</head>
+
+				<p>In this appendix we give proofs of some equations in our prescription to calculate charge density formulas. First we consider how to take a symmetrized trace [17, 19] of operators of the form A 1 · · · A n e ikX , denoting operators which belong to the unit of symmetrization as A i . From the cyclic property of trace StrAe ikX becomes an ordinary trace trAe ikX , otherwise we need to symmetrize explicitly. We consider a symmetrized trace of the form StrABe ikX , then we have</p>
+
+				<figure>
+					<trash>StrA 1 A 2 e ikX = tr ∞ n=0 1 n! n! (n + 2)! 0≤i+j≤n i,j (ikX) i A 1 (ikX) j A 2 (ikx) n−i−j + (ikX) i A 2 (ikX) j A 1 (ikx) n−i−j = tr ∞ n=0 1 (n + 2)! n j=0 (n − j + 1)A 1 (ikx) j A 2 (ikX) n−j + (n − j + 1)A 1 (ikx) j A 2 (ikX) n−j = tr p,q p!q! (p + q + 1)! A 1 (ikX) p p! A 2 (ikX) q q! = tr 1 0 ds A 1 e iskX A 2 e i(1−s)kX (B.1) where we use an relation p!q! (p + q + 1)! = 1 0 ds s p (1 − s) q .</trash>
+
+
+				</figure>
+
+				<p>In a similar way we can rewrite a symmetrized trace of the form</p>
+
+				<figure>
+					<trash>StrA 1 A 2 A 3 e i kX as StrA 1 A 2 A 3 e ikX = tr 1 0 ds 1 1−s 1 0 ds 2 A 1 e is 1 kX A 2 e is 2 kX A 3 e i(1−s 1 −s 2 )kX + (A 2 ↔ A 3 ) (B.2) – 28 – where we use a relation p!q!r! (p + q + r + 2)! = 1 0 ds 1 1−s 1 0 ds 2 s p 1 s q 2 (1 − s 1 − s 2 ) r .</trash>
+
+
+				</figure>
+
+				<p>After all a symmetrized trace can be reduced to an ordinary trace with parameter integrals to symmetrize.</p>
+
+				<p>Next we expand e ikX with respect to δX i . We can expand e A+B in B as</p>
+
+				<figure>
+					<trash>e A+B = e A + ∞ n=0 1 (n + 1)! n i=0 A i BA n−i + ∞ n=0 1 (n + 2)! A i BA j A n−i−j + · · · = e A + p,q p!q! (p + q + 1)! A p p! B A q q! + p,q,r p!q!r! (p + q + r + 2)! A p p! B A q q! B A r r! + · · · = e A + 1 0 dτ e τ A Be (1−τ )A + 1 0 dτ 1 1−τ 1 0 dτ 2 e τ 1 A Be τ 2 A Be (1−τ 1 −τ 2 )A + · · · . (B.3) Here parameter integrals appear again. Taking the trace of this equation we have tre A+B = tre A + tre A B + 1 2 tr 1 0 dτ e τ A Be (1−τ )A B + · · · . (B.4) Here we use a relation 1 0 dτ 1 1−τ 1 0 dτ 2 tre (1−τ 2 )A Be τ 2 A B = 1 0 dτ ′ 1 1 1−τ ′ 1 dτ ′ 2 tre τ ′ 2 A Be (1−τ ′ 2 )A B with τ ′ 1 = 1 − τ 1 , τ ′ 2 = 1</trash>
+
+					<figDesc>− τ 2 . By using these relations we can expand e ikX in a fluctuation δX.</figDesc>
+
+				</figure>
+
+				<p>Furthermore we need to know matrix components of e U ikˆU † in number operator representation in order to calculate charge density formulas for the unstable soliton X i 0 = U a † U † with small fluctuations. m|e ikˆn can be calculated by performing an integral in the</p>
+
+				<figure>
+					<trash>tion m|e ikˆn = e − θ 4 k 2 π √ m!n! dλ 1 dλ 2 (λ 1 + iλ 2 ) m (λ 1 − iλ 2 ) n e − λ 1 −i θ 2 k 1 2 − λ 2 −i θ 2 k 2 2</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>.</head>
+
+				<p>Since U U † in charge density formulas is infinite size, it should be calculated algebraically by using relations</p>
+
+				<figure>
+					<trash>e U ik 1 ˆ xU † U U † e U ik 2 ˆ xU † = U e i(k 1 +k 2 )ˆ x U † . (B.5) – 29 – and e iskX U U † e i(1−s)kX = U e ikˆτ e U iτ skˆU † iskδXU e i((1−τ )s+(1−s))kˆ 0 dτ U e i(s+τ (1−s)) kî (1 − s)kδXe U i(1−τ )(1−s) kˆU † + 1 0 dτ 1 1 0 dτ ′ e U iτ skˆU † iskδXU e i((1−τ )s+τ ′ (1−s)) kî (1 − s)kδXe U i(1−τ ′ )(1−s) kˆU † + 1 0 dτ 1 1−τ 1 0 dτ 2 e U iτ 1 skˆU † iskδXe U iτ 2 skˆU † iskδXU e i((1−τ 1 −τ 2 )s+(1−s))kˆ 0 dτ 1 1−τ 1 0 dτ 2 U e i(s+τ 1 (1−s)) kî (1 − s)kδXe U iτ 2 (1−s) kˆU † i(1 − s)kδXe U i((1−τ 1 −τ 2 )(1−s) kˆU † . (B.6)</trash>
+
+
+				</figure>
+
+				<p>Now we have prescriptions to take a symmetrized trace, expand e ikX in δX i , write down matrix component of m|e ikX 0 |n for given m, n and deal with an infinite size matrix U U † . Put it all together we can calculate charge density formulas.</p>
+
+			</div>
+			<div>
+				<head>C. Details of charge density calculations</head>
+
+				<p>In this appendix we show detailed calculations of charge density distribution including contributions of mode d i .</p>
+
+				<figure>
+					<trash>D0-charge The D0-charge formula ˜ J 0 (k) = T D0 tr e ikX is expanded as T D0 tr e U ikˆU † +ikδX = T D0 1 + 2π θ δ 2 (k) + T D0 tr ikδXe U ikˆU † + 1 2 1 0 dτ ikδXe U iτ kˆU † ikδXe U i(1−τ ) kˆU † + · · · .</trash>
+
+
+				</figure>
+
+				<p>For the D0-charge formula there is no need to symmetrize because of cyclic property of</p>
+
+				<figure>
+					<trash>– 30 – trace. Substituting matrix components we have ˜ J 0 (k) = T D0 1 + 2π θ δ 2 (k) + T D0 e − θ 4 k 2 −θk 2 d 0 + −4 + θk 2 2 √ 2 θk 2 d 1 − √ 3 24 (24 − 12θk 2 + θ 2 k 4 )d 2 + · · · + T D0 1 2 1 0 dτ e − θ 4 k 2 τ 2 −θk 2 t 2 0 + 1 2 1 0 dτ e − θ 4 k 2 (τ 2 +(1−τ ) 2 ) −θk 2 + θ 4 k 4 d 2 0 + −θk 2 + θ 2 4 k 4 (2τ 2 − 2τ + 3) − θ 3 16 k 6 (1 + 2τ 2 − 4τ 3 + 2τ 4 ) + θ 4 32 k 8 (τ 2 − 2τ 3 + τ 4 ) d 2 1 + √ 2 4 θk 2 (1 + 2τ − 2τ 2 ) − √ 2 8 θ 2 k 4 (τ − τ 2 ) d 0 d 1 + · · · + · · · . (C.1) The Fourier transform of this gives D0-charge distribution as J 0 (x) = T D0 δ 2 (x) + 1 2πθ + T D0 4 πθ e −r 2 (r 2 − 1)d 0 + (r 4 − 3r 2 + 1)d 1 + 1 √ 3 (2r 6 − 12x 4 + 15r 2 − 3)d 2 + · · · + T D0 2 πθ 1 0 dτ e − r 2 (1−τ ) 2 r 2 − (1 − τ ) 2 (1 − τ ) 6 t 2 0 1 0 dτ e − r 2 τ 2 +(1−τ ) 2 r 4 + (−3 + 4τ − 8τ 3 + 4τ 4 )r 2 − (−1 − 2τ + 2τ 2 )(1 − 2τ + 2τ 2 ) (1 − 2τ + 2τ 2 ) 5 d 2 0 + · · · + · · · . (C.2) D2-charge The D2-charge formula ˜ J 2 (k) = T D0 tr −i[X 1 , X 2 ]e ikX – 31 – is expanded as −itr[X 1 , X 2 ]e ikX =θtrU U † e U ikˆU † + θtr 1 0 dτ U U † e U iτ kˆU † ikδXe U i(1−τ ) kˆU † + θtr 1 0 dτ 1 1−τ 1 0 dτ 2 U U † e U iτ 1 kˆU † ikδXe U iτ 2 kˆU † ikδXe U i(1−τ 1 −τ 2 ) kˆU † − itrδ[X 1 , X 2 ]e U ikˆU † − itr 1 0 dτ δ[X 1 , X 2 ]e U iτ kˆU † ikδXe U i(1−τ ) kˆU † =2πδ 2 (k) + θtrU e ikîkδX + 1 2 θtr 1 0 dτ U e i(1−τ ) kîkδXU e iτ kîkδX + θ 1 0 dτ 1 1 0 dτ 2 0|ikδXU e i(1−τ 2 ) kîkδX|0</trash>
+
+
+				</figure>
+
+				<p>− itrδ[X 1 , X 2 ]e U ikˆU † − itr 1 0 dτ δ[X 1 , X 2 ]e U iτ kˆU † ikδXe U i(1−τ ) kˆU † .</p>
+
+				<p>After component calculations we have</p>
+
+				<figure>
+					<trash>˜ J 2 (k) = T D0 θ 2πα ′ 2π θ δ 2 (k) + (1 − e − θ 4 k 2 ) − 1 0 dτ 1 1−τ 1 0 dτ 2 e − θ 4 (1−τ 2 ) 2 k 2 θ 2 k 2 t 2 0 + e − θ 4 k 2 θ 2 k 2 − 1 0 dτ e − θ 4 (τ 2 +(1−τ ) 2 ) θ 8 k 2 4 − θk 2 (1 − 2τ ) 2 d 2 0 + e − θ 8 k 2 θ 2 k 2 4 − θk 2 − 1 0 dτ e − θ 4 (τ 2 +(1−τ ) 2 ) θ 2 k 2 1 − θ 4 k 2 (3 − 10τ + 10τ 2 ) + 1 16 θ 2 k 4 (1 − 8τ + 26τ 2 − 36τ 3 + 18τ 4 ) − 1 32 θ 3 k 6 τ 2 (1 − 3τ + 2τ 2 ) 2 d 2 1 − 1 0 dτ e − θ 4 (τ 2 +(1−τ ) 2 ) θ 2 k 4 4 √ 2 (1 − 6τ + 6τ 2 ) + θk 2 2 (τ − 5τ 2 + 8τ 3 − 4τ 4 ) d 0 d 1 + · · · . (C.3) – 32 –</trash>
+
+
+				</figure>
+
+				<p>We can see that all of these terms vanish by using equations below.</p>
+
+				<figure>
+					<trash>1 0 dτ 1 1−τ 1 0 dτ 2 e − θ 4 (1−τ 2 ) 2 k 2 θ 2 k 2 = (1 − e − θ 4 k 2 ) 1 0 dτ e − θ 4 (τ 2 +(1−τ ) 2 ) θ 8 k 2 4 − θk 2 (1 − 2τ ) 2 = e − θ 4 k 2 θ 2 k 2 1 0 dτ e − θ 4 (τ 2 +(1−τ ) 2 ) θ 2 k 2 1 − θ 4 k 2 (3 − 10τ + 10τ 2 ) + 1 16 θ 2 k 4 (1 − 8τ + 26τ 2 − 36τ 3 + 18τ 4 ) − 1 32 θ 3 k 6 τ 2 (1 − 3τ + 2τ 2 ) 2 = e − θ 4 k 2 θ 8 k 2 4 − θ 2 1 0 dτ e − θ 4 (τ 2 +(1−τ ) 2 ) θ 2 k 4 4 √ 2 (1 − 6τ + 6τ 2 ) + θk 2 2 (τ − 5τ 2 + 8τ 3 − 4τ 4 ) = 0 . . .. (C.4) F-charge F-charge formulas can be expanded as ˜ I 1 (k) = T D0 g 2πα ′ Stri[X 1 , X 2 ] ˙ X 2 = T D0 g 2πα ′ itr 1 0 ds [X 1 , X 2 ]e i(1−s)kX ˙ X 2 e iskX = − T D0 g 2πα ′ θtr 1 0 ds U U † e i(1−s)kX ˙ X 2 e iskX + T D 0 2πα ′ itr 1 0 ds δ[X 1 , X 2 ]e i(1−s)kX ˙ X 2 e iskX = − T D0 g 2πα ′ θ 1 0 ds U e ikˆ0 g 2πα ′ θ 1 0 ds 1 0 dτ e U iτ skˆU † iskδXU e i((1−τ )s+(1−s)) kˆ0 g 2πα ′ θ 1 0 ds 1 0 dτ U e i(s+τ (1−s)) kî (1 − s)kδXe U i(1−τ )(1−s)U † ˙ X 2 + T D0 g 2πα ′ itr 1 0 ds δ[X 1 , X 2 ]U e i(1−s) kê U iskˆU † + · · · and similar for I 2 (k). Here we use (B.5) to deal with U U † . Substituting matrix components – 33 – to this equation we have ˜ I 1 (k) = T D0 g 2πα ′ e − θ 4 k 2 (−ik 2 )θ 2 ( ˙ d 0 − √ 4 2 (−4 + θk 2 ) ˙ d 1 + 1 √ 3 (24 − 12θk 2 + θ 2 k 4 ) ˙ d 2 + · · · ) + T D0 g 2πα ′ 1 0 ds 1 0 dτ e − θ 4 θ 2 (1−sτ ) 2 k 2 (−ik 2 )st 0 ˙ t 0 + 1 0 dse − θ 4 (s 2 +(1−s) 2 ) 1 4 ik 2 θ 3 k 2 (−1 + s)s + 1 0 ds 1 0 dτ e − θ 4 (1−2τ s+2τ 2 s 2 ) 1 2 ik 2 θ 2 (−4 + θk 2 )s d 0 ˙ d 0 + · · ·</trash>
+
+					<figDesc>+ (terms which vanish after integration over s, τ ) + · · · .</figDesc>
+					<trash>(C.5) In similar way I 2 (k) is given by ˜ I 2 (k) = T D0 g 2πα ′ e − θ 4 k 2 ik 1 θ 2 ( ˙ d 0 − √ 4 2 (−4 + θk 2 ) ˙ d 1 + 1 √ 3 (24 − 12θk 2 + θ 2 k 4 ) ˙ d 2 + · · · ) + T D0 g 2πα ′ 1 0 ds 1 0 dτ e − θ 4 θ 2 (1−sτ ) 2 k 2 ik 1 st 0 ˙ t 0 + 1 0 dse − θ 4 (s 2 +(1−s) 2 ) 1 4 (−ik 1 )θ 3 k 2 (−1 + s)s + 1 0 ds 1 0 dτ e − θ 4 (1−2τ s+2τ 2 s 2 ) 1 2 (−ik 1 )θ 2 (−4 + θk 2 )s d 0 ˙ d 0 + · · ·</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>+ (terms which vanish after integration over s, τ ) + · · · . (C.6)</figDesc>
+
+				</figure>
+
+				<p>Here some terms cancel out each other by transforming integral variables as s → 1 − s and τ → 1 − τ . We can see that the disappearance of total F-charge I i (k = 0) = 0 is satisfied. F-charge distribution on the D2-brane is given by</p>
+
+				<figure>
+					<trash>I 1 (x) = T D0 g 2πα ′ e −r 2 π 2 x 2 ( ˙ d 0 + √ 2(−1 + r 2 ) ˙ d 1 + 1 √ 3 (3 − 6r 2 + 2r 4 )) ˙ d 2 + · · · + T D0 g 2πα ′ 1 0 ds 1 0 dτ e − r 2 (−1+sτ ) 2 2 π sx 2 (−1 + sτ ) 4 t 0 ˙ t 0 + 1 0 ds e − r 2 (s 2 +(1−s) 2 ) 16πx 2 (−1 + s)s r 2 − 2(1 − 2s + 2s 2 ) (1 − s) 2 + s 2 + 1 0 ds 1 0 dτ e − r 2 (1−sτ ) 2 +s 2 τ 2 16πx 2 s r 2 + (−1 + 4s 2 τ 2 − 8s 3 τ 3 + 4s 4 τ 4 ) (1 − sτ ) 2 + s 2 τ 2 d 0 ˙ d 0 + · · · + · · · (C.7) – 34 – and I 2 (x) = T D0 g 2πα ′ e −r 2 π 2 (−x 1 )( ˙ d 0 + √ 2(−1 + r 2 ) ˙ d 1 + 1 √ 3 (3 − 6r 2 + 2r 4 )) ˙ d 2 + · · · + T D0 g 2πα ′ 1 0 ds 1 0 dτ e − r 2 (−1+sτ ) 2 2 π s(−x 1 ) (−1 + sτ ) 4 t 0 ˙ t 0 + 1 0 ds e − r 2 (s 2 +(1−s) 2 ) 16π(−x 1 )(−1 + s)s r 2 − 2(1 − 2s + 2s 2 ) (1 − s) 2 + s 2 + 1 0 ds 1 0 dτ e − r 2</trash>
+
+
+				</figure>
+
+				<p>(1−sτ ) 2 +s 2 τ 2 16π(−x 1 )s r 2 + (−1 + 4s 2 τ 2 − 8s 3 τ 3 + 4s 4 τ 4 ) (1 − sτ ) 2 + s 2 τ 2 d 0 ˙ d 0 + · · · + · · · . (C.8)</p>
+
+				<p>We can see that I(x) takes the form of f (r 2 ) x 2 −x 1 .</p>
+
+			</div>
+			<div>
+				<head>Energy density</head>
+
+				<p>In this appendix we calculate energy density distribution. First we divide the energy density formula into four parts as</p>
+
+				<figure>
+					<trash>˜ T 1 (k) = T D0 g 2 Str(( ˙ X 1 ) 2 + ( ˙ X 2 ) 2 )e ikX T 2 (k) = T D0 tre ikX T 3 (k) = T D0 igθ (2πα ′ ) 2 tr[X 1 , X 2 ]e ikX T 4 (k) = T D0 g 2 2(2πα ′ ) 2 Str[X 1 , X 2 ]</trash>
+
+
+				</figure>
+
+				<p>2 e ikX .</p>
+
+				<p>Turning on fluctuations around the unstable solitoñ</p>
+
+				<figure>
+					<trash>T 1 (k), ˜ T 2 (k), ˜ T (k) 3 can be expanded as ˜ T 1 (k) = T D0 g 2 1 0 ds tr ˙ X i e U iskˆU † ˙ X i e U i(1−s) kˆU † + T D0 g 2 1 0 ds 1 0 dτ ˙ X i e U iskˆU † ˙ X i e U i(1−s) kˆU † i(1 − s)kδXe U i(1−s)(1−τ ) kˆU † + T D0 g 2 1 0 ds 1 0 dτ ˙ X i e U isτ kˆU † iskδXe U is(1−τ ) kˆU † ˙ X i e U i(1−s) kˆU † + · · · and ˜ T 2 (k) = T D0 e U ikˆU † + trikδXe U ikˆU † + 1 2 1 0 dτ trikδXe U iτ kˆU † ikδXe U i(1−τ ) kˆU † + · · · – 35 – and T 3 (k) = T D0 igθ (2πα ′ ) 2 −θtrU U † e ikX + itrδ[X 1 , X 2 ]e ikX = T D0 igθ (2πα ′ ) 2 −θtrU e ikˆtrU e ikîkδX − θtr 1 0 dτ U e i(1−τ ) kîkδXU e iτ kîkδX − 1 0 dτ 1 1−τ 1 0 dτ 2 0|ikδXU e i(1−τ 2 ) kîkδX|0 +itrδ[X 1 , X 2 ]e U ikδxU † + itr 1 0 dτ e U iτ kˆU † e U i(1−τ ) kˆU † + · · · . Before expanding T 4</trash>
+
+					<figDesc>(k) in fluctuations we perform some calculations which is needed later. Operating U U † from the left to (B.6) we have</figDesc>
+					<trash>1 0 ds trU U † e iskX U U † e i(1−s)kX = tre ikˆrikδXU e ikˆ 0 dτ 1 0 dτ ′ 1 0 ds triskδXU e i((1−τ )s+τ ′ (1−s)) kî (1 − s)kδXU e i((1−τ ′ )(1−s)+τ s)kˆ 0 dτ 1 1−τ 1 0 dτ 2 1 0 ds triskδXe U iτ 2 kîskδXU e i(1−τ 2 s) kˆy using this equation we can expand T 4 (k) as ˜ T 4 (k) = −T D0 g 2 2(2πα ′ ) 2 θ 2 1 0 ds trU U † e iskX U U † e i(1−s)kX + T D0 g 2 2(2πα ′ ) 2 iθ 1 0 dstrU U † e iskX δ[X 1 , X 2 ]e i(1−s)kX + iθ 1 0 ds trδ[X 1 , X 2 ]e iskX U U † e i(1−s)kX + T D0 g 2 2(2πα ′ ) 2 1 0 ds trδ[X 1 , X 2 ]e iskX δ[X 1 , X 2 ]e i(1−s)kX = − T D0 g 2 2(2πα ′ ) 2 θ 2 tre ikˆrikδXU e ikˆ 0 dτ 1 0 dτ ′ ds triskδXU e i(1−τ s+τ ′ (1−s)) kî (1 − s)kδXU e i((1−τ ′ )(1−s)+τ s) U † +2 1 0 dτ 1 1−τ 1 0 dτ 2 1 0 ds triskδXe U iτ 2 skU † iskδXU e i(1−τ 2 s)ks U † + T D0 g 2 2(2πα ′ ) 2 2iθ trδ[X 1 , X 2 ]U e ikˆ 0 dτ 1 0 ds trδ[X 1 , X 2 ]e U iτ skˆU † iskδXU e i((1−τ )s+(1−s)) U † + 1 0 dτ 1 0 ds trδ[X 1 , X 2 ]U e i(s+τ (1−s)) kî (1 − s)kδXU e i(1−τ 2 s) kˆ0 g 2 2(2πα ′ ) 2 + 1 0 ds trδ[X 1 , X 2 ]e iskê i(1−s) kˆ6 Substituting matrix components T 2 + ˜ T 3 − ˜ T 4 (k) becomes ˜ T 2 (k) + ˜ T 3 − ˜ T 4 (k) = T D0 1 + 2π θ δ 2 (k) 1 − θ 2 g 2 2(2πα ′ ) 2 + T D0 1 − g 2 θ 2 2(2πα ′ ) 2 e − θ 4 k 2 θk 2 −d 0 + −4 + θk 2 2 √ 2 d 1 − √ 3 24 (24 − 12θk 2 + θ 2 k 4 )d 2 + · · · + T D0 −2 g 2 θ 2 2(2πα ′ ) 2 e − θ 4 k 2 − 1 2 1 0 dτ e − θ 4 (1−τ ) 2 k 2 θk 2 − g 2 θ 2 2(2πα ′ ) 2 1 0 dτ 1 1−τ 1 0 dτ 2 1 0 ds e − θ 4 (1−sτ 2 ) 2 k 2 s 2 θk 2 t 2 0 + 1 8 1 − 2 θ 2 g 2 2(2πα ′ ) 2 1 0 dτ e − θ 4 (τ 2 +(1−τ ) 2 )k 2 θk 2 (−4 + θk 2 ) − 1 4 g 2 θ 2 2(2πα ′ ) 2 1 0 dτ 1 0 dτ ′ 1 0 ds e − θ 4 ak 2 s(−1 + s)θk 2 (−4 + θk 2 ) + 1 2 g 2 θ 2 2(2πα ′ ) 2 1 0 dτ 1 1 0 dτ 2 1 0 ds e − θ 4 (1−2sτ 2 +2s 2 τ 2 2 )k 2 s 2 θk 2 (−4 + θk 2 ) d 2 0 + · · · + · · · , and T 1 (k) becomes ˜ T 1 (k) = T D0 g 2 1 0 ds e − θ 4 (1−s) 2 k 2 θ ˙ t 2 0 − 1 2 1 0 ds e − θ 4 (s 2 +(1−s) 2 )k 2 (−4 + (s 2 + (1 − s) 2 )θk 2 )θ ˙ d 2 0 + · · · + T D0 g 2 1 0 dτ 1 0 ds e − θ 4 (1+2s+s 2 (1+τ 2 ))k 2 s(−1 + s)θk 2 t 0 θ ˙ t 0 ˙ d 0 + 1 2 √ 2 1 0 dτ 1 0 ds e − θ 4 (1−2s+s 2 (1+τ ) 2 )k 2 (1 − s) 2 s 2 τ θ 2 k 4 t 0 θ ˙ t 0 ˙ d 1 + · · · + · · · . where a = ((1 − τ )s + τ ′ (1 − s)) 2 + ((1 − τ ′ )(1 − s) + τ s) 2 . The Fourier transform of this gives energy density T 2 (x) + T 3 (x) − T 4 (x) as T 2 (x) + T 3 (x) − T 4 (x)| 0th = T D0 δ 2 (x) + 1 2πθ 1 − θ 2 g 2 2(2πα ′ ) 2 T 2 (x)+T 3 (x)−T 4 (x)| 1st = T D0 4 πθ 1 − g 2 θ 2 2(2πα ′ ) 2 e −r 2 (r 2 − 1)d 0 + √ 2(r 4 − 3r 2 + 1)d 1 + · · · T 2 (x) + T 3 (x) − T 4 (x)| t 2 0 = T D0 − 2 πθ g 2 θ 2 2(2πα ′ ) 2 e −r 2 + 1 0 dτ e − r 2 (1−τ ) 2 2(r 2 − (1 − τ ) 2 ) πθ(1 − τ ) 6 + g 2 θ 2 2(2πα ′ ) 2 1 0 dτ 1 1−τ 1 0 dτ 2 1 0 ds e − r 2 (1−sτ 2 ) 2 4s 2 (r 2 − (1 − sτ 2 ) 2 ) πθ(1 − sτ 2 ) 6 t 2 0 (C.9) – 37 – T 2 (x) + T 3 (x) − T 4 (x)| d 2 0 =T D0 1 − 2 θ 2 g 2 2(2πα ′ ) 2 1 0 dτ e − r 2 (τ 2 +(1−τ ) 2 ) 2(r 4 + r 2 (−3 + 4τ − 8τ 3 + 4τ 4 ) − (−1 − 2τ + 2τ 2 )((1 − τ 2 ) + τ 2 )) πθ(τ 2 + (1 − τ 2 )) − θ 2 g 2 2(2πα ′ ) 2 1 0 dτ 1 0 dτ ′ 1 0 ds e − r 2 a 4s(1 − s)(r 4 − 4ar 2 + a 2 (r 2 + 2) − a 3 ) πθa 5 − g 2 θ 2 2(2πα ′ ) 2 1 0 dτ 1 1−τ 1 0 dτ 2 1 0 ds e − r 2 (1−2sτ 2 +2s 2 τ 2 2 ) 8s 2 −r 4 + r 2 (3 − 4sτ 2 + 8s 3 τ 3 2 − 4s 4 τ 4 2 ) + (−1 − 2sτ 2 + 2s 2 τ 2 2 )(1 − 2sτ 2 + 2s 2 τ 2 2 ) πθ(1 − 2sτ 2 + 2s 2 τ 2 2 ) 5 d 2 0</trash>
+
+
+				</figure>
+
+				<p>where a = (1 − 2τ ′ + 2τ ′ 2 + 2s 2 (−1 + τ + τ ′ ) 2 − 2s(−1 + τ + τ ′ )(−1 + 2τ ′ )). The Fourier transform of T (k) 1 gives T 1 (x) as</p>
+
+				<figure>
+					<trash>T 1 (x) = T D0 g 2 1 0 ds e − r 2 (1−s) 2 1 π(1 − s) 2 ˙ t 2 0 − e − r 2 (s 2 +(1−s) 2 ) 2r 2 π((s 2 + (1 − s) 2 ) 2 ) ˙ d 2 0 + · · · + T D0 g 2 1 0 dτ 1 0 ds e − r 2 1+2s+s 2 (1+τ 2 ) s(−1 + s)(−r 2 + (1 + 2s + s 2 (1 + τ 2 ))) π(1 + 2s + s 2 (1 + τ 2 )) 3 t 0 ˙ t 0 ˙ d 0 · · · + · · · . (C.10)</trash>
+
+
+				</figure>
+
+				<p>D. T-duality between D0/D2-brane and intersecting D1-strings</p>
+
+				<p>In this appendix we consider the T-duality between a D0/D2-brane and intersecting D1- strings. Intersecting D1-strings are unstable due to existence of a localized tachyon around the intersecting point and their recombination or reconnection 17 is realized by the tachyon condensation. Such a phenomenon called recombination or reconnection corresponds to dissolution of a D0-brane into a D2-brane in a T-dual language. In the Seiberg-Witten limit dissolution can be described by U (1) noncommutative gauge theory, and reconnection can be described by SU (2) Yang-Mills theory. A D0/D2-brane with a background B-field is T-dual to intersecting D1-strings at a finite angle ψ relating to the strength of the magnetic field B as</p>
+
+				<figure>
+					<trash>tan ψ = 1 b , b = 2πα ′ B g . (D.1)</trash>
+
+
+				</figure>
+
+				<p>According to CFT calculations [3, 4] mass spectra of bosonic excitations of 0-2 strings in a D0/D2-brane system and 1-1&apos; strings in a D1-string system are respectively</p>
+
+				<figure>
+					<trash>m 2 i(D0/D2) = (2i + 1)ν 2α ′ i = −1, 1, 2, · · · m 2 j(D1/D1) = (2j + 1)ψ 2πα ′ j = −1, 1, 2, · · · except those of order 1/α ′ . Here ν is defined as e 2πiν = −1 + ib 1 + ib ,</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>17</head>
+
+				<p>Brane recombination have been discussed also in context of string phenomenology, for example in [56, 57].</p>
+
+				<figure>
+					<trash>– 38 – D2-brane D0-brane D1-brane T-dual T-dual 1,</trash>
+
+					<head>Figure</head>
+
+
+				</figure>
+
+				<p>20: T-duality between a D0/D2-brane and intersecting D1-strings and is related to the intersecting angle as ψ = πν.</p>
+
+				<p>Thus mass spectra in these two systems are identical. In the Seiberg-Witten limit b goes to infinity as b → ǫ −1/2 and ν acts like 1 πb . Thus the T-dual relation (D.1) indicates that in the Seiberg-Witten limit the intersecting angle ψ should go to zero as ψ → ǫ 1/2 . This is nothing but the parallel limit of intersecting D1-strings. In the parallel limit recombination or reconnection of D1-strings can be described by the 1+1 dimensional SU (2) Yang-Mills theory [25, 27]. We can say that these studies are T-dual versions of our study in this paper.</p>
+
+			</div>
+
+			<note place="foot" n="3"> Concerning noncommutative instantons and solitons see also [28, 29, 30, 31, 32, 33, 34, 35]. 4 At a glance θ ij seems to lead only an infinite constant shift of the action. However one would have a mistake assuming tr[C, ¯ C] = 0 for infinite size matrices. Actually tr[C, ¯ C] should be considered as a topological quantity. Thus we cannot drop θ ij in the action [42]. – 4 –</note>
+
+			<note place="foot" n="5"> This result can be understood also from the equation (2.1). – 6 –</note>
+
+			<note place="foot">– 23 –</note>
+
+			<note place="foot" n="15"> This viewpoint is similar to the concept of K-matrix theory [22, 23, 24]. 16 Cocerning tachyon condensation in D0/D4-brane, see [13]. – 26 –</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+				<head>Acknowledgments</head>
+				<p>I would like to thank to M. Kato and K. Hashimoto for useful discussions and comments.</p>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">On the bound states of p-and (p+2)-branes</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Gava</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">S</forename>
+				<surname>Narain</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">H</forename>
+				<surname>Sarmadi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">5049704006</biblScope>
+			<biblScope unit="issue">214</biblScope>
+			<biblScope unit="page" from="hep" to="th" />
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Supersymmetry, spectrum and fate of D0-Dp systems with B-field</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Fujii</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Imaizumi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Ohta</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">615</biblScope>
+			<biblScope unit="page">61</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">p p&apos; system with B field, branes at angles and noncommutative geometry</title>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Chen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Itoyama</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Matsuo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Murakami</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">576</biblScope>
+			<biblScope unit="issue">177</biblScope>
+			<biblScope unit="page" from="hep" to="th" />
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Worldsheet and spacetime properties of p -p&apos; system with B field and noncommutative geometry</title>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Chen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Itoyama</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Matsuo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Murakami</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">593</biblScope>
+			<biblScope unit="page">505</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<monogr>
+		<title level="m" type="main">String theory and noncommutative geometry</title>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Seiberg</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Witten</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1999" />
+			<biblScope unit="page">032</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Dynamics of strings in noncommutative gauge theory</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">J</forename>
+				<surname>Gross</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<forename type="middle">A</forename>
+				<surname>Nekrasov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP 0010</title>
+		<imprint>
+			<biblScope unit="page">021</biblScope>
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Exact multi-vortex solutions in noncommutative Abelian-Higgs theory</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Bak</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">495</biblScope>
+			<biblScope unit="issue">251</biblScope>
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<title/>
+		<imprint>
+			<biblScope unit="page">39</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<title level="m" type="main">Unstable solitons in noncommutative gauge theory</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Aganagic</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Gopakumar</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Minwalla</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Strominger</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2001" />
+			<biblScope unit="page">001</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Solitons in noncommutative gauge theory</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">J</forename>
+				<surname>Gross</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<forename type="middle">A</forename>
+				<surname>Nekrasov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">JHEP 0103</title>
+		<imprint>
+			<date type="published" when="2001" />
+			<biblScope unit="page">044</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Noncommutative vortex solitons</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Bak</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">M</forename>
+				<surname>Lee</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">H</forename>
+				<surname>Park</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">63</biblScope>
+			<biblScope unit="page">125010</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Seiberg-Witten transforms of noncommutative solitons</title>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Hashimoto</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Ooguri</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="page">106005</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title level="m" type="main">The shape of non-Abelian D-branes</title>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Hashimoto</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2004" />
+			<biblScope unit="page">004</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">D0-D4 brane tachyon condensation to a BPS state and its excitation spectrum in noncommutative super Yang-Mills theory</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Wimmer</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">JHEP 0505</title>
+		<imprint>
+			<date type="published" when="2005" />
+			<biblScope unit="page">022</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Linearized supergravity from matrix theory</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Kabat</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">I</forename>
+				<surname>Taylor</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">426</biblScope>
+			<biblScope unit="issue">297</biblScope>
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<monogr>
+		<title level="m" type="main">Supergravity currents and linearized interactions for matrix theory configurations with fermionic backgrounds</title>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">I</forename>
+				<surname>Taylor</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">Van</forename>
+				<surname>Raamsdonk</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1999" />
+			<biblScope unit="page">013</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">How noncommutative gauge theories couple to gravity</title>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Okawa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Ooguri</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">599</biblScope>
+			<biblScope unit="issue">55</biblScope>
+			<biblScope unit="page" from="hep" to="th" />
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<monogr>
+		<title level="m" type="main">Energy-momentum tensors in matrix theory and in noncommutative gauge theories</title>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Okawa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Ooguri</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Observables of non-commutative gauge theories</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">J</forename>
+				<surname>Gross</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Hashimoto</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Itzhaki</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Theor. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="issue">893</biblScope>
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">An exact solution to Seiberg-Witten equation of noncommutative gauge theory</title>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Okawa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Ooguri</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="page">046009</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<title level="m" type="main">Relating branes and matrices</title>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Ellwood</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">p-branes from (p-2)-branes in the bosonic string theory</title>
+		<author>
+			<persName>
+				<surname>Ishibashi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">5399804163</biblScope>
+			<biblScope unit="issue">107</biblScope>
+			<biblScope unit="page" from="hep" to="th" />
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">A construction of commutative D-branes from lower dimensional non-BPS D-branes</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Terashima</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">JHEP 0105</title>
+		<imprint>
+			<date type="published" when="2001" />
+			<biblScope unit="page">059</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">D-branes, matrix theory and K-homology</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Asakawa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sugimoto</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Terashima</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">JHEP 0203</title>
+		<imprint>
+			<date type="published" when="2002" />
+			<biblScope unit="page">034</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<monogr>
+		<title level="m" type="main">Exact description of D-branes via tachyon condensation</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Asakawa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sugimoto</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Terashima</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2003" />
+			<biblScope unit="page">011</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<title level="m" type="main">Recombination of intersecting D-branes by local tachyon condensation</title>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Hashimoto</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Nagaoka</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2003" />
+			<biblScope unit="page">034</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Recombination of intersecting D-branes in tachyon field theory</title>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">H</forename>
+				<surname>Huang</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">564</biblScope>
+			<biblScope unit="issue">155</biblScope>
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<monogr>
+		<title level="m" type="main">– 40 –</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">A quantum analysis on recombination process and dynamics of D-p-branes at one angle</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Sato</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">682</biblScope>
+			<biblScope unit="issue">117</biblScope>
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Instantons on noncommutative R**4 and (2,0) superconformal six dimensional theory</title>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Nekrasov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Schwarz</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">198</biblScope>
+			<biblScope unit="issue">689</biblScope>
+			<biblScope unit="page" from="hep" to="th" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Noncommutative solitons</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Gopakumar</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Minwalla</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Strominger</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">JHEP 0005</title>
+		<imprint>
+			<date type="published" when="2000" />
+			<biblScope unit="page">020</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<monogr>
+		<title level="m" type="main">D-branes and strings as non-commutative solitons</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">A</forename>
+				<surname>Harvey</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Kraus</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Larsen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">J</forename>
+				<surname>Martinec</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2000" />
+			<biblScope unit="page">042</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<monogr>
+		<title level="m" type="main">Monopoles and strings in noncommutative gauge theory</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">J</forename>
+				<surname>Gross</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<forename type="middle">A</forename>
+				<surname>Nekrasov</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2000" />
+			<biblScope unit="page">034</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Flux tube solutions in noncommutative gauge theories</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">P</forename>
+				<surname>Polychronakos</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">495</biblScope>
+			<biblScope unit="issue">407</biblScope>
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<monogr>
+		<title level="m" type="main">Noncommutative tachyonic solitons: Interaction with gauge field</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Sochichiu</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2000" />
+			<biblScope unit="page">026</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<monogr>
+		<title level="m" type="main">Symmetry restoration and tachyon condensation in open string theory</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Gopakumar</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Minwalla</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Strominger</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2001" />
+			<biblScope unit="page">018</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<monogr>
+		<title level="m" type="main">Exact noncommutative solitons</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">A</forename>
+				<surname>Harvey</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Kraus</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Larsen</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2000" />
+			<biblScope unit="page">024</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<monogr>
+		<title level="m" type="main">Topological charge of U(1) instantons on noncommutative R**4</title>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Furuuchi</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Noncommutative instantons: A new approach</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Schwarz</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">221</biblScope>
+			<biblScope unit="issue">433</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<monogr>
+		<title level="m" type="main">Topology of the gauge group in noncommutative gauge theory</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">A</forename>
+				<surname>Harvey</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<monogr>
+		<title level="m" type="main">An introduction to noncommutative spaces and their geometry</title>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Landi</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<monogr>
+		<title level="m" type="main">Trieste lectures on solitons in noncommutative gauge theories</title>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<forename type="middle">A</forename>
+				<surname>Nekrasov</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<monogr>
+		<title level="m" type="main">Komaba lectures on noncommutative solitons and D-branes</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">A</forename>
+				<surname>Harvey</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Noncommutative field theory</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">R</forename>
+				<surname>Douglas</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<forename type="middle">A</forename>
+				<surname>Nekrasov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Rev. Mod. Phys</title>
+		<imprint>
+			<biblScope unit="volume">73</biblScope>
+			<biblScope unit="issue">977</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Quantum field theory on noncommutative spaces</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">J</forename>
+				<surname>Szabo</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rept</title>
+		<imprint>
+			<biblScope unit="volume">378</biblScope>
+			<biblScope unit="issue">207</biblScope>
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<monogr>
+		<title level="m" type="main">Rolling tachyon</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Sen</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2002" />
+			<biblScope unit="page">048</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<monogr>
+		<title level="m" type="main">Tachyon matter</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Sen</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2002" />
+			<biblScope unit="page">065</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Field theory of tachyon matter</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Sen</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mod. Phys. Lett. A</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page">1797</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<monogr>
+		<title level="m" type="main">Tachyon matter in boundary string field theory</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sugimoto</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Terashima</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<monogr>
+		<title/>
+		<imprint>
+			<biblScope unit="page">41</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Rolling the tachyon in super BSFT</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">A</forename>
+				<surname>Minahan</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP 0207</title>
+		<imprint>
+			<biblScope unit="page">030</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">Tachyon condensates, Carrollian contraction of Lorentz group, and fundamental strings</title>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Gibbons</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Hashimoto</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Yi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP 0209</title>
+		<imprint>
+			<biblScope unit="page">061</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<monogr>
+		<title level="m" type="main">Closed strings from decaying D-branes</title>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Lambert</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Liu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Maldacena</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Open-closed duality at tree level</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Sen</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">91</biblScope>
+			<biblScope unit="page">181601</biblScope>
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<monogr>
+		<title level="m" type="main">Tachyon dynamics in open string theory</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Sen</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">The decay of unstable noncommutative solitons</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Chen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Frohlich</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Walcher</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">237</biblScope>
+			<biblScope unit="issue">243</biblScope>
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<monogr>
+		<title level="m" type="main">Exact rolling tachyon in noncommutative field theory</title>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Kim</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<forename type="middle">K</forename>
+				<surname>Kwon</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">Moduli space and scattering of D0-branes in noncommutative super Yang-Mills theory</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Hamanaka</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Imaizumi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Ohta</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">529</biblScope>
+			<biblScope unit="issue">163</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<monogr>
+		<title level="m" type="main">Intersecting brane models of particle physics and the Higgs mechanism</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Cremades</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">E</forename>
+				<surname>Ibanez</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Marchesano</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2002" />
+			<biblScope unit="page">022</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<monogr>
+		<title level="m" type="main">Exact standard model structures from intersecting D5-branes</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Kokorelis</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<monogr>
+		<title level="m" type="main">Noncommutative solitons in open N = 2 string theory</title>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Lechtenfeld</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">D</forename>
+				<surname>Popov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Spendig</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2001" />
+			<biblScope unit="page">011</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<monogr>
+		<title level="m" type="main">Noncommutative multi-solitons in 2+1 dimensions</title>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Lechtenfeld</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">D</forename>
+				<surname>Popov</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2001" />
+			<biblScope unit="page">040</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<monogr>
+		<title level="m" type="main">Noncommutative instantons in higher dimensions, vortices and topological K-cycles</title>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Lechtenfeld</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">D</forename>
+				<surname>Popov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">J</forename>
+				<surname>Szabo</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2003" />
+			<biblScope unit="page">022</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<monogr>
+		<title level="m" type="main">Quiver gauge theory of nonabelian vortices and noncommutative instantons in higher dimensions</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">D</forename>
+				<surname>Popov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">J</forename>
+				<surname>Szabo</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<monogr>
+		<title/>
+		<imprint>
+			<biblScope unit="page">42</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

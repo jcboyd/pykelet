@@ -1,0 +1,3486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">New Physics Contributions to the Muon Anomalous Magnetic Moment: A Numerical Code</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2014-03-05">5 May 2014</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Farinaldo</forename>
+								<forename type="middle">S</forename>
+								<surname>Queiroz</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department" key="dep1">Department of Physics</orgName>
+								<orgName type="department" key="dep2">Santa Cruz Institute for Particle Physics</orgName>
+								<orgName type="institution">University of California</orgName>
+								<address>
+									<postCode>95064</postCode>
+									<settlement>Santa Cruz</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">William</forename>
+								<surname>Shepherd</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department" key="dep1">Department of Physics</orgName>
+								<orgName type="department" key="dep2">Santa Cruz Institute for Particle Physics</orgName>
+								<orgName type="institution">University of California</orgName>
+								<address>
+									<postCode>95064</postCode>
+									<settlement>Santa Cruz</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">New Physics Contributions to the Muon Anomalous Magnetic Moment: A Numerical Code</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2014-03-05">5 May 2014</date>
+						</imprint>
+					</monogr>
+					<note>2</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>We consider the contributions of individual new particles to the anomalous magnetic moment of the muon, utilizing the generic framework of simplified models. We also present analytic results for all possible one-loop contributions, allowing easy application of these results for more complete models which predict more than one particle capable of correcting the muon magnetic moment. Additionally, we provide a Mathematica code to allow the reader straightforwardly compute any 1-loop contribution. Furthermore, we derive bounds on each new particle considered, assuming either the absence of other significant contributions to a µ or that the anomaly has been resolved by some other mechanism. The simplified models we consider are constructed without the requirement of SU (2) L invariance, but appropriate chiral coupling choices are also considered. In summary, we found the following particles capable of explaining the current discrepancy, assuming unit couplings: 2 TeV (0.3 TeV) neutral scalar with pure scalar (chiral) couplings, 4 TeV doubly charged scalar with pure pseudoscalar coupling, 0.3 − 1 TeV neutral vector boson depending on what couplings are used (vector, axial, or mixed), 0.5−1 TeV singly-charged vector boson depending on which couplings are chosen, and 3 TeV doubly-charged vector-coupled bosons. We also derive the following 1σ lower bounds on new particle masses assuming unit couplings and that the experimental anomaly has been otherwise resolved: a doubly charged pseudo-scalar must be heavier than 7 TeV, a neutral scalar than 3 TeV, a vector-coupled new neutral bo-son 600 GeV, an axial-coupled neutral boson 1.5 TeV, a singly-charged vector-coupled W 1 TeV, a doubly-charged vector-coupled boson 5 TeV, scalar leptoquarks 10 TeV, and vector leptoquarks 10 TeV. We emphasize that the quoted numbers apply within simplified models, but the reader can easily use our Mathemata code to calculate the contribution of their own model of new physics.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head>I. INTRODUCTION</head>
+
+				<p>The muon anomalous magnetic moment, measured to amazing precision, is currently one of the most compelling inconsistencies between data and the Standard Model (SM) predictions in all of particle physics. With current data the discrepancy is at the 3.6σ level [1], and efforts are underway on both the experimental [2] and theoretical fronts [3–9] to improve the precision of both the measured value and the SM prediction. This deviation from the expectations of the SM has been used as motivation for many models of new physics [10–17], and has been used to constrain or motivate parameter values for many others, notably supersymmetric models [18–22].</p>
+
+				<p>The literature on this topic has been somewhat scattershot, with many authors focusing solely on their preferred model to explain (or be constrained by) this data. Here, we aim to provide a more complete and reusable lexicon for the use of the community. We proceed using the generic framework of simplified models [24–29], assuming the existence of a minimal number of particles that could have the phenomenological impact we are interested in. We do not enforce SU (2) L invariance in the simplified models we construct, as the CP basis is more relevant to the calculation of low energy phenomena and gives linearly independent &apos;basis element&apos; contributions in a way that chiral couplings do not. There are, naturally, a very large number of such simplified models which contribute to the muon anomalous magnetic moment, but we consider a basis sufficient to parametrize the contribution of any new particle with spin s ≤ 1.</p>
+
+				<p>We provide bounds on the couplings and masses of each of our &apos;basis element&apos; models by</p>
+
+				<p>quiring sufficient consistency with the experimental value of a µ . Naturally, a model which is some combination of our basis elements will be subject to slightly different bounds, and as those models are not intrinsically less interesting than our basis models alone, we provide the needed analytic formulae to allow the derivation of the appropriate bounds on any model which can contribute at one-loop order to the magnetic moment. We note that this will provide the ability to consider not only different coupling structures but also models in which multiple particles can individually contribute. While analytic results have been provided previously, there are some disagreements in the literature. Also, we will present for the first time results which include all effects due to the finite muon mass. These results have also been provided in the form of a Mathematica notebook, which calculates the exact contribution to a µ from any one-loop new physics diagram.</p>
+
+				<p>This paper is organized as follows: in the next section we state the rules we use to select a basis of simplified models that contribute to ∆a µ and present the models themselves. In section III we calculate the contribution of each model to the muon magnetic moment and present analytic formulae for those contributions, as well as bounds on each simplified model based on our Public Mathematica code. Finally, in section IV we conclude. Analytic formulae derived without taking limits relating to the masses of new particles are presented in appendix V.</p>
+
+			</div>
+			<div>
+				<head>II. SIMPLIFIED MODELS OF ∆a µ</head>
+
+				<p>We construct our main set of simplified models by requiring that they contribute at one-loop order to the muon anomalous magnetic moment, and that they do so with only one new particle.</p>
+
+				<p>While contributions which involve two new particles are certainly possible and interesting, their contributions can be calculated from the same master integrals we provide as these. We further restrict ourselves to consider only particles of spin s ≤ 1, in the interest of concreteness. Finally, we neglect any interactions which violate lepton flavor when the new particle is not itself a new lepton. Any flavor-violating interactions have effects which are similar to the flavor-conserving interactions we consider here [30, 31].</p>
+
+				<p>We can further categorize the contributions in terms of the charges of the new particle. Subject to the above constraints, a colorless new particle can only contribute to a µ if it is neutral or has unit or double-unit charge. In this way, we have identified nine different classes of possible colorless contributors to the muon anomalous magnetic moment. A colored particle can contribute as a leptoquark, but only if it is a boson. In the leptoquark case the possible charges are 1 ⁄3, 2 ⁄3, 4 ⁄3, or 5 ⁄3. There are thus eight leptoquarks we must consider. The only remaining choices to be made are regarding the structure of the couplings of these particles to the SM fields. As we are interested in the least suppressed contributions, we will consider only renormalizable couplings. We will explore the possible couplings of each candidate class of new particles in turn. As the simplified models we consider are not expected to be complete we will not enforce various SM symmetries on the couplings. In particular, we will not require the conservation of lepton number, and we will not enforce SU (2) L invariance in the couplings, as the particles could, at least in principle, result as the mixture of different multiplets of SU (2) L in a more complete theory. A simple example would be the consideration of possible left-right mixing in the sleptons, giving a state which is not fully singlet or doublet under SU (2) L . Note that it is straightfoward to return to an SU (2) L invariant coupling structure within any given simplified model by choosing a chiral combination of either scalar and pseudoscalar or vector and axial couplings; we consider these combinations as well as the basis elements alone when we interpret the contributions below. Finally, we consider as an example two simple cases of two-particle contributions to a µ . While far from a complete exploration of all possible two-particle contributions, they will suffice to make clear how the calculations from the one-particle cases are easily generalized to allow for two-particle contributions. These two cases are also calculated in detail in the Mathematica code, allowing the reader to generalize them to their own cases of interest.</p>
+
+			</div>
+			<div>
+				<head>A. New Colorless Scalars</head>
+
+				<p>For any new scalar that is to contribute at first order to a µ the only couplings of interest are those to the SM leptons. There are, of course, many possible such couplings. We can sort the couplings of interest by the charge of the new scalar.</p>
+
+				<p>Considering first neutral scalars, we find that the possible interactions of interest are L ⊃ g s1 φ¯ µµ + ig p1 φ¯ µγ 5 µ, (1) where h is the new scalar of interest and g i are the couplings of each operator. Any neutral scalar can only contribute to the magnetic moment through the Feynman graph shown in Figure 1(b).</p>
+
+				<p>If we instead consider scalars of unit charge, we find that the relevant interactions are now</p>
+
+				<figure>
+					<trash>L ⊃ g s2 φ + ¯ νµ + ig p2 φ + ¯ νγ 5 µ + g s3 φ + ¯ ν c µ + ig p3 φ + ¯ ν c γ 5 µ + h.c., (2)</trash>
+
+
+				</figure>
+
+				<p>where ψ c is a charge-conjugated fermion field. These candidates can only contribute through the graph shown in Figure 1(a). The possibility of lepton number violation implied by the charge conjugation in the latter two operators, while interesting, does not affect the contribution to a µ .</p>
+
+				<p>Therefore, we will present only one result for the charged scalars, valid for both classes of</p>
+
+			</div>
+			<div>
+				<head>tors.</head>
+
+				<p>Finally, we come to consider a scalar of twice-unit charge. This candidate&apos;s interactions are L ⊃ g s4 φ ++ ¯ µ c µ + g p4 φ ++ ¯ µ c γ 5 µ + h.c.. (3)</p>
+
+				<p>Uniquely, these candidates contribute through both types of diagrams for scalar particles (Figures 1(a)-1(b)). Now we will turn our attention to possible new leptons.</p>
+
+			</div>
+			<div>
+				<head>B. New Leptons</head>
+
+				<p>New leptons will contribute only through interaction terms which couple one new lepton to a muon and a SM boson. As a fourth generation of chiral fermions is forbidden by the observed couplings of the Higgs boson, particularly that to gluons, these leptons will necessarily be vectorlike . Any coupling, therefore, of the type above will result only from the mixing of the new, vectorlike lepton with the SM leptons. These mixings can be bounded by other flavor observables, but our focus here is on their contribution to the magnetic moment of the muon.</p>
+
+				<p>We will categorize the contributions of new leptons by their charge, which must again be either zero, unit, or twice-unit. For the neutral new lepton, which we will denote as N , the possible interactions of interest are</p>
+
+				<figure>
+					<trash>L ⊃ g v5 W + µ ¯ N γ µ µ + g a5 W + µ ¯ N γ µ γ 5 µ + h.c.. (4)</trash>
+
+
+				</figure>
+
+				<p>We note that these interactions have been organized in terms of vector and axial rather than leftand right-chiral couplings. This is in keeping with our previous comment that we would not be enforcing SU (2) L on our interactions, and utilizes couplings in the CP basis, which are of most relevance for the calculation of this observable, as we will discuss below. This candidate contributes through the Feynman graph shown in Figure 1(c).</p>
+
+				<p>The next possibility is a new lepton with unit charge, which we denote as E.</p>
+
+				<figure>
+					<trash>Its possible interactions are L ⊃ g v6 Z µ ¯ µγ µ E + g a6 Z µ ¯ µγ µ γ 5 E + g s7 h¯ µE + ig p7 h¯ µγ 5 E + h.c.. (5)</trash>
+
+
+				</figure>
+
+				<p>This candidate contributes through the graphs shown in Figures 1(b) and 1(d), depending on which interaction is considered. Once again, the possibility of lepton number violation, while independently interesting, does not affect the results for a µ .</p>
+
+				<p>The final new lepton candidate has charge -2, and we will denote it as ψ.</p>
+
+				<figure>
+					<trash>Its interactions of interest are L ⊃ g v8 W + µ ¯ µγ µ ψ + g a8 W + µ ¯ µγ µ γ 5 ψ + h.c., (6)</trash>
+
+
+				</figure>
+
+				<p>and as was the case for a doubly-charged scalar, it contributes through two diagrams as well, those shown in Figures 1(c) and 1(d).</p>
+
+				<p>Much like contributions due to scalar particles, new vector particles can only contribute to the interaction through their coupling to the SM leptons. With the customary sorting by the charge of the vector boson, we begin with a new neutral vector boson, which we denote as Z . The relevant interactions, ignoring flavor changing couplings as discussed previously, are</p>
+
+				<figure>
+					<trash>L ⊃ g v9 Z µ ¯ µγ µ µ + g a9 Z µ ¯ µγ µ γ 5 µ. (7)</trash>
+
+
+				</figure>
+
+				<p>These contribute through the feynman graph shown in Figure 1(d).</p>
+
+				<p>Moving on to charged vector bosons, which we name W + , we have</p>
+
+				<figure>
+					<trash>L ⊃ g v10 W + µ ¯ νγ µ µ + g a10 W + µ ¯ νγ µ γ 5 µ + g v11 W + µ ¯ ν c γ µ µ + g a11 W + µ ¯ ν c γ µ γ 5 µ + h.c.. (8)</trash>
+
+
+				</figure>
+
+				<p>This candidate contributes only through the graph shown in Figure 1(c), and once more the charge conjugation matrices are irrelevant from the point of view of the magnetic moment.</p>
+
+				<p>The final vector candidate is a doubly-charged one, denoted here as U ++ .</p>
+
+				<figure>
+					<trash>Its interactions of interest are L ⊃ g v12 U ++ µ ¯ µ c γ µ µ + g a12 U ++ µ ¯ µ c γ µ γ 5 µ + h.c.. (9)</trash>
+
+
+				</figure>
+
+				<p>As has been the case for every other doubly-charged candidate, this vector boson contributes through two diagrams, those in Figures 1(c) and 1(d).</p>
+
+			</div>
+			<div>
+				<head>D. Scalar Leptoquarks</head>
+
+				<p>Scalar leptoquarks which contribute at one loop to the anomalous moment can have charges ranging from 1 ⁄3 to 5 ⁄3. We will discuss each in turn, distinguishing them by charge and denoting them as Φ q , with color indices suppressed. We will write our interaction terms such that the leptoquark is always a color fundamental. All scalar leptoquark candidates contribute through the diagrams shown in Figures 1(a) and 1(b).</p>
+
+				<p>First we consider the case of charge 1 ⁄3 leptoquarks. The relevant interactions are</p>
+
+				<figure>
+					<trash>L ⊃ g s13 Φ − 1 /3 ¯ µu c + g p13 Φ − 1 /3 ¯ µγ 5 u c + h.c., (10)</trash>
+
+
+				</figure>
+
+				<p>where u is an up-type quark field of (at this point) arbitrary flavor. Note that we are working with 4-component spinors here, and u is not constrained to be only the SU (2) L singlet it is often used to denote in other contexts. The flavor dependence of the contribution will be explored in section III.</p>
+
+				<p>If we instead postulate a charge 2 ⁄3 leptoquark, the interactions of interest are</p>
+
+				<figure>
+					<trash>L ⊃ g s14 Φ 2 /3 ¯ dµ + g p14 Φ 2 /3 ¯ dγ 5 µ + h.c., (11)</trash>
+
+
+				</figure>
+
+				<p>where d is a down-type quark of indeterminate flavor, and the same caveat regarding spinor usage applies from above.</p>
+
+				<p>The case of charge 4 ⁄3 has interactions</p>
+
+				<figure>
+					<trash>L ⊃ g s15 Φ − 4 /3 ¯ µd c + g p15 Φ − 4 /3 ¯ µγ 5 d c + h.c., (12) and the final candate with charge 5 ⁄3 interacts through L ⊃ g s16 Φ 5 /3 ¯ uµ + g p16 Φ 5 /3 ¯ uγ 5 µ + h.c.. (13)</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>E. Vector Leptoquarks</head>
+
+				<p>Vector leptoquarks are expected to be associated with a new gauge symmetry such as a GUT, but in principle may also arise from other new physics, for instance as composite particles resulting from some new strongly-coupled interaction. They are subject to all the same constraints we required of the scalar leptoquarks, and we will adopt a similar notation for them, writing a vector leptoquark as V q , with color index suppressed, always a fundamental rather than anti-fundamental.</p>
+
+				<p>For a vector leptoquark of charge 1 ⁄3, the interactions of interest are</p>
+
+				<figure>
+					<trash>L ⊃ g v17 V − 1 /3 µ ¯ µγ µ u c + g a17 V − 1 /3 µ ¯ µγ µ γ 5 u c + h.c.. (14)</trash>
+
+
+				</figure>
+
+				<p>This candidate, like all vector leptoquarks, contributes to the anomalous moment through both graphs in Figures 1(c) and 1(d).</p>
+
+				<figure>
+					<head>Moving on to leptoquarks of charge 2 ⁄3, we find interactions of the form</head>
+
+					<trash>L ⊃ g v18 V 2 /3 µ ¯ dγ µ µ + g a18 V 2 /3 µ ¯ dγ µ γ 5 µ + h.c.. (15) Candidates of charge 4 ⁄3 interact through L ⊃ g v19 V − 4 /3 µ ¯ µγ µ d c + g a19 V − 4 /3 µ ¯ µγ µ γ 5 d c + h.c., (16) and the interactions of leptoquarks with charge 5 ⁄3 are given by L ⊃ g v20 V 5 /3 µ ¯ uγ µ µ + g a20 V 5 /3 µ ¯ uγ µ γ 5 µ + h.c.. (17) (a) (b) (c) (d) FIG. 1</trash>
+
+
+				</figure>
+
+				<p>. Feynman graphs of one-loop contributions to a µ .</p>
+
+			</div>
+			<div>
+				<head>F. Two-Particle Contributions</head>
+
+				<p>To consider the new physics contributions which are due to two particles running in the loop we address two simplified models inspired by supersymmetric models, though other choices are certainly possible. We consider first the case of a charged scalar and new neutral fermion, contributing through Fig.1(a), with interactions L ⊃ g s21 φ + ¯ N µ + g a21 φ + ¯ N γ 5 µ. (18)</p>
+
+				<p>Secondly, we consider interactions of a model with a new neutral scalar and a charged fermion, contributing through Fig.1</p>
+
+				<figure>
+					<figDesc>(b), interacting as</figDesc>
+					<trash>L ⊃ g s22 φ¯ µE + g a22 φ¯ µγ 5 E. (19)</trash>
+
+
+				</figure>
+
+				<p>We have maintained the notation described above as though the new fermions carried lepton number , but it should be perfectly clear that the usual SUSY case of neutralinos, charginos, sleptons, and sneutrinos are equivalent. The reader will find that these, as well as all other, two-particle contributions can be derived from the master integrals we will present below.</p>
+
+			</div>
+			<div>
+				<head>III. CONTRIBUTIONS TO ∆a µ AND CONSTRAINTS</head>
+
+				<p>We have discussed general Lagrangians with the presence of new scalars, vectors, and leptoquarks which can give contributions to the (g − 2) µ . Now we present the contribution due to each of those simplified models. The results in this section will be calculated in the limit of small muon mass, but exact formulae can be found in appendix V. We also provide a Mathematica notebook as supplementary material for the reader&apos;s use which calculates each of these contributions.</p>
+
+			</div>
+			<div>
+				<head>Neutral Scalar</head>
+
+				<p>Neutral scalars give rise to contributions through the diagram shown in Fig. 1</p>
+
+				<figure>
+					<figDesc>(b). Higgs-like scalars produce negligible corrections to (g − 2) µ due to their suppressed couplings to leptons, but additional neutral scalars may have stronger couplings and induce sizeable corrections to (g − 2) µ .</figDesc>
+
+				</figure>
+
+				<p>From Eq.1 we notice scalar and pseudo-scalar couplings which shift (</p>
+
+				<figure>
+					<trash>g − 2) µ by ∆a µ (h) = 1 4π 2 m 2 µ M 2 φ 1 0 dx g 2 s1 P s1 (x) + g 2 p1 P p1 (x) (1 − x)(1 − λ 2 x) + λ 2 x (20) where λ = m µ /M φ and, P s1 (x) = x 2 (2 − x), P p1 (x) = −x 3 , (21) which gives us, ∆a µ (φ) = 1 4π 2 m 2 µ M 2 φ g 2 s1 ln M φ m µ − 7 12 + g 2 p1 − ln M φ m µ + 11 12 (22)</trash>
+
+
+				</figure>
+
+				<p>The result in Eq.22 is for general neutral scalars with scalar and pseudo-scalar couplings in the regime M φ m µ . The contribution coming from only either of the pure scalar or pseudo-scalar might be easily derived from Eq.22 by setting either couplings g p1 or g p1 to zero respectively. As we mentioned earlier we are not taking into account flavour mixing throughout this work because they give negligible corrections. Notice from Eq.22 that the pure neutral scalar and pseudo-scalar setups give positive and negative contributions to (g − 2) µ . In Figs.2(a)-2(c) we shown the contribution coming from neutral scalars in three different settings. In Fig.2(a) we have set g s 1 = 1 and g p1 = 0. In this setup 2 TeV neutral scalars can explain the muon anomaly. However, considering a pure pseudo-scalar coupling, i.e g s 1 = 0 and g p1 = 1 the contribution is negative so it cannot address the anomaly, whereas taking g s 1 2 = 1 and g 2 p1 = 1 a ∼ 300 GeV neutral scalar is a well motivated candidate to explain the (g − 2) µ anomaly. We emphasize that the relative sign between the scalar and pseudoscalar couplings is irrelevant to the anomalous moment, a well-known result [29] that has been overlooked in some of the literature in the past [27]. A purely chiral coupling of this type is what is naively expected of simple new physics (it is the only SU (2) L invariant coupling possible), but due to the fact that the scalar and pseudoscalar couplings are separable in the a µ calculation we have chosen that basis for our investigations. This remains true for all other calculations below. Note that neutral scalars are also bounded by LEP searcghes for four-lepton contact interactions . For M φ &gt; √ s these bounds require g/M φ &lt; 2.5 × 10 −4 GeV −1 [84].</p>
+
+			</div>
+			<div>
+				<head>Singly Charged Scalar</head>
+
+				<p>Singly charged scalars are predicted in a large collection of particle physics models. In Eq.2 we presented a general Lagrangian involving singly charged scalars with scalar (g s1 ) and pseudoscalar (g p1 ) couplings which gives rise to the g − 2 µ correction according to Fig.1</p>
+
+				<figure>
+					<figDesc>(a),</figDesc>
+					<trash>∆a µ (φ + ) = 1 8π 2 m 2 µ M 2 φ + 1 0 dx g 2 s2 P s2 (x) + g 2 p2 P p2 (x) 2 λ 2 (1 − x)(1 − −2 x) + x (23) where P s2 (x) = −x(1 − x)(x + ) P p2 (x) = −x(1 − x)(x − ) (24) with = m ν /m µ and λ = m µ /M φ + , which results in, ∆a µ (φ + ) = 1 4π 2 m 2 µ M 2 φ + g 2 s2 − m ν 4m µ − 1 12 + g 2 p2 m ν 4m µ − 1 12 (25)</trash>
+
+
+				</figure>
+
+				<p>Eq.25 holds true for the last two term of Eq.2, which has a charge conjugation matrix. Therefore Eq.25 is a result which can be applied to any model with a charged scalar therein. We have shown the results for g s2 = 1, g p2 = 0 in Fig.2(a), g s2 = 0, g p2 = 1 in Fig.2(b) and g s2 = 1, g p2 = 1</p>
+
+			</div>
+			<div>
+				<head>in Fig.2</head>
+
+				<p>(c). We can easily conclude from those results that a singly charged scalar is not a good candidate for the (g − 2) µ anomaly because it either gives a negative contribution or a suppressed one.</p>
+
+				<p>There are collider bounds on mass of these singly charged scalars that lie in the ∼ 100 − 200 GeV range [32]. In specified UV models, stronger bounds might apply as well [84].</p>
+
+			</div>
+			<div>
+				<head>Doubly Charged Scalar</head>
+
+				<p>In Eq.3 we have written a general Lagrangian for the doubly charged scalar including scalar (g s3 ) and pseudo-scalar (g p3 ) couplings. Doubly-charged scalars are typically invoked in models with triplet of scalars [33–42] and there are two diagrams contributing to the (g − 2) µ as shown in Fig.1(a)-1(b). The contribution from each diagram is given respectively by [29]</p>
+
+				<figure>
+					<figDesc>,</figDesc>
+					<trash>∆a µ (φ ±± ) = (4) × −q H 8π 2 m µ M φ ±± 2 1 0 dx g 2 s4 P s (x) + g 2 p4 P p (x) λ 2 x 2 + (1 − 2λ 2 )x + λ 2 + (4) × −q f 8π 2 m µ M φ ±± 2 1 0 dx g 2 s4 P s (x) + g 2 p4 P p (x) λ 2 x 2 + (1 − x) (26) where P s4 (x) = x 3 − x ; P s = 2x 2 − x 3 P p4 (x) = x 3 − 2x 2 + x ; P p = −x 3 (27)</trash>
+
+
+				</figure>
+
+				<p>and λ = m µ /M φ ++ , q H = −2 is the electric charge of the doubly charged scalar running in the loop, and q f = 1 is the electric charge of the muon in the loop. The factor of four in Eq.(26) is a symmetry factor due to the presence of two identical fields in the interaction term. This expression simplifies to,</p>
+
+				<figure>
+					<trash>∆a µ (φ ++ ) = −2 3 g 2 s4 m µ πM φ ±± 2 (28)</trash>
+
+
+				</figure>
+
+				<p>when g p4 = ±g s4 and M φ ±± m µ . In the setup where either of both conditions above fail the integral in Eq.26 is most easily solved numerically. We have shown the results for g s2 = 1, g p2 = 0</p>
+
+			</div>
+			<div>
+				<head>in Fig.2</head>
+
+				<p>(a), g s2 = 0, g p2 = 1 in Fig.2(b) and g s2 = 1, g p2 = 1 in Fig.2(c). In the first and last cases a negative contribution is found, whereas in the scenario where g s2 = 0 a sizeable and positive one is obtained, showing that a 4 TeV doubly charged scalar with pure pseudo-scalar couplings (or suppressed scalar couplings) can accommodate the muon anomaly.</p>
+
+				<p>Collider searches for doubly charged scalars have been explored in multiple specified models [43], particularly including a similar simplified model approach [12].</p>
+
+			</div>
+			<div>
+				<head>Neutral Lepton</head>
+
+				<p>New neutral leptons are predicted in many particle physics models [44, 45, 47–49]. They also might give rise to sizeable contributions to the muon anomalous magnetic moment according to,</p>
+
+				<figure>
+					<trash>∆a µ (N ) = 1 8π 2 m 2 µ M 2 N 1 0 dx g 2 v5 P v5 (x) + g 2 a5 P a5 (x) 2 λ 2 (1 − x)(1 − −2 x) + x (29) where P v5 (x) = 2x 2 (1 + x − 2) + λ 2 (1 − ) 2 x(1 − x)(x + ) P a5 (x) = 2x 2 (1 + x + 2) + λ 2 (1 + ) 2 x(1 − x)(x − ) (30) 100 200 500 1000 2000 5000 1 10 4 10 11 10 10 10 9 10 8 10 7 10 6 10 5 MGeV a Μ Spin 0 with gs1 gp0 Leptoquark Doubly Charged x 1 Neutral Singly Charged x 1 a Μ Current a Μ Projected 1Σ Bound Current 1Σ Bound Projected (a) 100 200 500 1000 2000 5000 1 10 4 10 11 10 10 10 9 10 8 10 7 10 6 MGeV a Μ Spin 0 with gs0 gp1 Leptoquark Doubly Charged Neutral x 1 Singly Charged x 1 a Μ Current a Μ Projected 1Σ Bound Current 1Σ Bound Projected (b) 100 200 500 1000 2000 5000 1 10 4 10 11 10 10 10 9 10 8 10 7 10 6 10 5 MGeV a Μ Spin 0 with gs1 gp1 Leptoquark Doubly Charged x 1 Neutral Singly Charged x 10 9 a Μ Current a Μ Projected 1Σ Bound Current 1Σ Bound Projected (c) FIG. 2. Contributions of Spin 0</trash>
+
+
+				</figure>
+
+				<p>particles to (g − 2) µ under three assumptions about the coupling, either pure scalar, pure pseudoscalar, or pure chiral. Keep in mind that the first two are not SU (2) L invariant without more theoretical structure, while the third is. The curves correspond as labelled in each legend to the contribution of a leptoquark, doubly-charged scalar, neutral scalar, and a singly-charged scalar. The green solid (dashed) horizontal lines are the current (projected) experimental values for ∆a µ . The horizontal solid (dashed) red lines towards the bottom are the current (projected) 1σ bounds, in case the (g − 2) µ anomaly is resolved in a different way otherwise. Note that some of these contributions are negative or strongly suppressed; the appropriate scaling factor for each contribution is indicated in the legend of each plot. with = M N /m µ and λ = m µ /M N which results in,</p>
+
+				<figure>
+					<trash>∆a µ (N ) = 1 4π 2 m 2 µ M 2 N g 2 v5 − M N m µ + 5 6 + g 2 a5 M N m µ + 5 6 , (31)</trash>
+
+					<figDesc>in the M W M N limit. More general results are presented in Eq.(77) in the Appendix, and can</figDesc>
+
+				</figure>
+
+				<p>be calculated using the supplementary Mathematica notebook available online. It is important to note, however, that a neutral lepton can give either a negative or positive contribution to (g − 2) µ .</p>
+
+				<p>Additionally their contribution increases with their mass when they are significantly heavier than the W , as seen in Figs.3(a)-3(c). Usually such neutral leptons couple to muons through the another heavy particle such as a charged Higgs, which suppresses contributions to a µ due to the presence of a heavy boson in the loop. Couplings to the W boson are generically suppressed by mixings with SM leptons which generically get smaller with increasing mass, countering the increasing contribution we see here when we have assumed a fixed coupling. We emphasize again that these results are presented mainly to allow simple recasting to cover any model of the reader&apos;s interest, which has motivated our choice of constant couplings. Neutral lepton searches have been performed using LEP data imposing M N &gt; 40 GeV [32]. In the case where the new neutral fermion has interactions identical to those of the standard model neutrinos the bounds reach 2.4TeV [32]. Complementary bounds have been found in Ref.[84].</p>
+
+			</div>
+			<div>
+				<head>Charged Lepton</head>
+
+				<p>Multiple models [50–54] predict the existence of new charged leptons that give sizeable contributions to the (g − 2) µ through Z and Higgs couplings discussed in Eq.5. Here we present the results for these two possibilities separately.</p>
+
+			</div>
+			<div>
+				<head>• Z-Mediated</head>
+
+				<p>This process is exhibited in Fig.1</p>
+
+				<figure>
+					<figDesc>(c). The corresponding integral is given by,</figDesc>
+					<trash>∆a µ (E) = 1 8π 2 m 2 µ M 2 Z 1 0 dx g 2 v6 P v6 (x) + g 2 a6 P a6 (x) (1 − x)(1 − λ 2 x) + 2 λ 2 x (32) where P v6 (x) = 2x(1 − x)(x − 2(1 − )) + λ 2 (1 − ) 2 x 2 (1 + − x) P a6 (x) = 2x 2 (1 + x + 2) + λ 2 (1 + ) 2 x(1 − x)(x − ) (33) with = M E /m</trash>
+
+
+				</figure>
+
+				<p>µ and λ = m µ /M Z . Therefore the contribution of a generic singly charged lepton Z-mediated to the muon anomalous magnetic moment is given by,</p>
+
+				<figure>
+					<trash>∆a µ (E) = 1 4π 2 m 2 µ M 2 Z g 2 v6 M E m µ − 2 3 + g 2 a6 − M E m µ − 2 3 , (34) in the M Z M E limit, otherwise one should either solve Eq.(32) numerically using our</trash>
+
+
+				</figure>
+
+				<p>Mathematica notebook or use the full analytical expression given in Eq.(74) in the Appendix . Of course, there is no particular requirement that the Z boson mediate this process.</p>
+
+				<p>As the Z mass and couplings are free parameters in our computation, one can easily replace them by any other neutral boson mass and couplings. In other words, the integral in Eq.(32) can be straightforwardly applied to processes where a new Z boson is the mediator of the charged lepton contribution to the muon anomalous magnetic moment.</p>
+
+				<p>The results for the charged lepton can be found in Figs.3(a)-3(c). As for the neutral lepton case, the contribution increases with the mass of the lepton in agreement with Ref[27].</p>
+
+			</div>
+			<div>
+				<head>From Fig.3</head>
+
+				<p>(a) we conclude that pure vector couplings with unit strength of the Z boson to muons and the new lepton induce too large a positive contribution to the muon magnetic moment, prohibiting such strong interactions. Interactions of this type with strength g v6 = 0.1 rather than 1 give an approximately correct result for 100 GeV new leptons, and the coupling must be smaller yet as the mass of the new lepton increases. Furthermore, negative contributions are found in the pure vector-axial case, as shown in Fig.3(b). For g v6 = g a6 negative corrections are obtained, as exhibited in Fig.3</p>
+
+				<figure>
+					<figDesc>(c).</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>• Higgs-mediated</head>
+
+				<p>A neutral scalar boson can also mediate the charged lepton contribution to (g − 2) µ through the diagram shown in Fig.1</p>
+
+				<figure>
+					<figDesc>(b). The contribution is determined by,</figDesc>
+					<trash>∆a µ (E) = 1 8π 2 m 2 µ M 2 h 1 0 dx g 2 s7 P s7 (x) + g 2 p7 P p7 (x) (1 − x)(1 − λ 2 x) + 2 λ 2 x (35) where P s7 (x) = x 2 (1 + − x) P p7 (x) = x 2 (1 − − x) (36)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>with = M E /m µ and λ = m µ /M h . In the limit M h M E it simplifies to,</figDesc>
+
+				</figure>
+
+				<p><formula>∆a µ (E) = 1 4π 2 m 2 µ M 2 h g 2 s7 M E m µ ln M E m µ − 3 4 + 1 6 + g 2 p7 − M E m µ ln M E m µ − 3 4 + 1 6 (37)</formula></p>
+
+				<p>The result for any coupling and mass regime can be found either using the full analytical formula given by Eq.72 or numerically using our Mathematica code. We have shown the results for g s7 = 1, g p7 = 0 in Fig.3(a), g s7 = 0, g p7 = 1 in Fig.3(b) and g s7 = 1, g p7 = 1</p>
+
+			</div>
+			<div>
+				<head>in Fig.3</head>
+
+				<p>(c).From Figs.3(a)-3(c) it is clear that only the pure scalar coupling scenario is able to address the muon anomaly, and that requires 4 TeV charged lepton. We have used M h = 125 GeV in this result. We will investigate the regime where a heavy Higgs replaces the SM</p>
+
+			</div>
+			<div>
+				<head>Higgs further below.</head>
+
+				<p>Note that the L3 Collaboration has placed a limit M E &gt; 100 GeV for a fourth generation of leptons [55]. Other existing bound on charged lepton can be found in Ref.[56].</p>
+
+			</div>
+			<div>
+				<head>Doubly Charged Lepton</head>
+
+				<p>There are many models where new multiplets of leptons are predicted, and these can include exotic doubly charged leptons [57–59]. The contribution to the muon anomalous magnetic moment of these exotic leptons, which are exhibited in Figs</p>
+
+				<figure>
+					<trash>.1(c)-1(d) is ∆a µ (ψ) = 1 8π 2 m 2 µ M 2 ψ 1 0 dx g 2 v8 P v8 (x) + g 2 a8 P a8 (x) 2 λ 2 (1 − x)(1 − −2 x) + x + 1 8π 2 Q ψ m 2 µ M 2 ψ 1 0 dx g 2 v8 P v8 (x) + g 2 a8 P a8 (x) (1 − x)(1 − λ 2 x) + 2 λ 2 x , (38) where P v8 (x) = 2x 2 (1 + x − 2) + λ 2 (1 − ) 2 x(1 − x)(x + ) P a8 (x) = 2x 2 (1 + x + 2) + λ 2 (1 + ) 2 x(1 − x)(x − ) P v8 (x) = 2x(1 − x) (x − 2(1 − )) + λ 2 (1 − ) 2 x 2 (1 + − x) P a8 (x) = 2x(1 − x) (x − 2(1 + )) + λ 2 (1 + ) 2 x 2 (1 − − x) , (39)</trash>
+
+
+				</figure>
+
+				<p>with Q ψ = −2, = M ψ /m µ and λ = m µ /M W , which in the limit M ψ m µ , M Z gives</p>
+
+				<p><formula>∆a µ (ψ) = 1 4π 2 m 2 µ M 2 ψ g 2 v8 − M ψ m µ + 5 6 + g 2 a8 M ψ m µ + 5 6 + Q ψ m 2 µ 4π 2 M 2 W g 2 v8 3 − 5g 2 a8 3 . (40)</formula></p>
+
+				<p>As for the result for any mass regime, the reader can make use of Eq.74 and Eq.77 and find full analytical expressions or evaluate the integral numerically. Doubly Charged leptons give uniformly negative contributions to the muon magnetic moment and hence they cannot accommodate the anomaly.</p>
+
+				<p>Collider search ounds on such doubly charged leptons can be found in Refs.[60] and they are in the ∼ 100 GeV range.</p>
+
+			</div>
+			<div>
+				<head>Neutral Vector</head>
+
+				<p>Now let us consider the contribution of the new neutral gauge boson, which we denote as Z .</p>
+
+				<p>The only diagram which appears with this particle is exhibited in Figure 1(d). The result is given by [27] to be</p>
+
+				<figure>
+					<trash>∆a µ (Z ) = m 2 µ 8π 2 M 2 Z 1 0 dx g 2 v9 P v9 (x) + g 2 a9 P a9 (x) (1 − x)(1 − λ 2 x) + λ 2 x , (41) , where λ = m µ /M Z and P v9 (x) = 2x 2 (1 − x) P a9 (x) = 2x(1 − x) · (x − 4) − 4λ 2 · x 3 . (42) These integrals simplify to give a contribution of ∆a µ (Z ) = m 2 µ 4π 2 M 2 Z 1 3 g 2 v9 − 5 3 g 2 a9 (43)</trash>
+
+
+				</figure>
+
+				<p>in the limit M Z m µ . This is the contribution of the Z to the muon anomaly magnetic moment.</p>
+
+				<p>Notice that, depending on the values of the vector and axial couplings, the contribution can be either positive or negative. From Figs.4(a)-4(c) we conclude that pure vector or axial neutral vectors with M Z &lt; 10 TeV and order one couplings are excluded. However, when both couplings are unit strength, a ∼ 1 TeV Z naturally addresses the anomaly.</p>
+
+				<p>From LEP measurements a 95% C.L upper bound might apply for g v9 = g a9 and M</p>
+
+				<figure>
+					<trash>Z &gt; √ s that reads g v9 /M Z &lt; 2.2 × 10 −4 GeV −1 , ruling</trash>
+
+
+				</figure>
+
+				<p>out the possibility of a single Z boson to explain the anomaly in agreement with [84]. Additional bounds are present in the literature [32, 84].</p>
+
+				<figure>
+					<trash>100 200 500 1000 2000 5000 1 10 4 10 10 10 9 10 8 10 7 10 6 10 5 MGeV a Μ Spin 12 with gv0.1 ga0 Neutral Singly ChargedZ Singly Chargedh Doubly Charged x 1 a Μ Current a Μ Projected 1Σ Bound Current 1Σ Bound Projected (a) 100 200 500 1000 2000 5000 1 10 4 10 10 10 9 10 8 10 7 10 6 10 5 MGeV a Μ Spin 12 with gv0 ga0.1 Neutral x 1 Singly ChargedZ x 1 Singly Chargedhx 1 Doubly Charged x 1 a Μ Current a Μ Projected 1Σ Bound Current 1Σ Bound Projected (b) 100 200 500 1000 2000 5000 1 10 4 10 11 10 10 10 9 10 8 10 7 MGeV a Μ Spin 12 with gv0.1 ga0.1 Doubly Charged x 1 Neutral x 1 Singly ChargedZ x 1 Singly Chargedh a Μ Current a Μ Projected 1Σ Bound Current 1Σ Bound Projected (c)</trash>
+
+					<figDesc>FIG. 3. Contributions of Spin 1/2 particles to the muon anomalous magnetic moment assuming either a pure vector, pure axial, or pure chiral coupling. Again note that only pure chiral couplings are, without further theoretical structure, SU (2) L invariant. The curves give the contributions due to a new neutral lepton, new charged lepton coupled to the Z boson and Higgs boson, and a doubly charged lepton, as indicated in the figure legends. The green solid (dashed) horizontal lines are the current (projected) experimental values for ∆a µ . The horizontal solid (dashed) red lines towards the bottom are the current (projected) 1σ bounds, assuming the (g − 2) µ anomaly is resolved without this new physics. Note that some contributions are negative, and the appropriate scaling factors are given in the plot legends.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>Singly Charged Vector</head>
+
+				<p>Singly charged vectors are predicted in many extended gauge theories [61–64]. Their contributions to (g − 2) µ show up in the form of Fig.1</p>
+
+				<figure>
+					<figDesc>(c) and it is determined by Eq.(44) as follows,</figDesc>
+					<trash>∆a µ (W ) = 1 8π 2 m 2 µ M 2 V + 1 0 dx g 2 v10 P v10 (x) + g 2 a10 P a10 (x) 2 λ 2 (1 − x)(1 − −2 x) + x , (44) where P v10 (x) = 2x 2 (1 + x − 2) + λ 2 (1 − ) 2 x(1 − x)(x + ) P a10 (x) = 2x 2 (1 + x + 2) + λ 2 (1 + ) 2 x(1 − x)(x − ), (45) with = m ν /m µ and λ = m µ /M W . This simplifies to ∆a µ (W ) = 1 4π 2 m 2 µ M 2 W g 2 v10 5 6 − m ν m µ + g 2 a10 5 6 + m ν m µ (46)</trash>
+
+
+				</figure>
+
+				<p>in the regime M W m µ . One can clearly see that a singly charged vector boson rises as a natural candidate to explain the (g − 2) µ anomaly because it gives always positive contributions and for couplings of order one as we expect from gauge couplings, singly charged vector with masses of ∼ 1 TeV might account for the anomaly. These contributions are plotted in Figs.4(a)-4(c).</p>
+
+				<p>Searches in the regime where this new charged boson interacts only with right handed neutrinos, i.e when g a10 = −g v10 give a 95% C.L bound from LEP using effective operators which reads g v10 /M W &lt; 4.8 × 10 −3 GeV −1 [84].</p>
+
+			</div>
+			<div>
+				<head>Doubly Charged Vector</head>
+
+				<p>The doubly-charged vector boson, similarly to the doubly-charged scalar, gives rise to two diagrams that contribute to the (g − 2) µ . The first one, shown in Fig. 1(c), is similar to the singlycharged gauge boson, with two differences: a multiplying factor of 4 due to the symmetry factors arising from identical fields in the interaction term, and an additional factor of 2 arising from the larger charge of the boson [29]. The second diagram, shown in Fig. 1(d), is similar to the Z one, but we once again have a factor of 4 due to the identical fields, and we also have a relative negative sign due to the opposite charge of the muon running in the loop. Hence we find,</p>
+
+				<figure>
+					<trash>∆a µ (U ±± )= 8 × 1 8π 2 m µ M U ±± 2 1 0 dx g 2 v11 P v11 (x) + g 2 a11 P a11 (x) λ 2 (1 − x) 2 + x (−4) × 1 8π 2 m µ M U ±± 2 1 0 dx g 2 v12 P v12 (x) + g 2 a12 P a12 (x) (1 − x)(1 − λ 2 x) + λ 2 x , (47) where λ = m µ /M U ±± , and P v12 (x) = 2x 2 (x − 1) P a12 (x) = 2x 2 (x + 3) + 4λ 2 · x(1 − x)(x − 1), P v12 (x) = 2x(1 − x) · x P a12 (x) = 2x(1 − x) · (x − 4) − 4λ 2 · x 3 . (48)</trash>
+
+
+				</figure>
+
+				<p>Hence the total doubly-charged vector contribution is given by,</p>
+
+				<figure>
+					<trash>∆a µ (U ±± ) = m 2 µ π 2 M 2 U ±± −2 3 g 2 v12 + 16 3 g 2 a12 (49)</trash>
+
+
+				</figure>
+
+				<p>Notice that purely-vector doubly charged bosons give negative contributions to g −2 µ , whereas the purely-axial ones are positive. Furthermore, for unit axial couplings, 1 − 2 TeV doubly-charged bosons are natural candidates to explain the g−2 µ anomaly as can be easily noted in Figs.4(a)-4(c).</p>
+
+			</div>
+			<div>
+				<head>Scalar Leptoquarks</head>
+
+				<p>Scalar leptoquarks are predicted in a variety of particle physics models [73–77]. They contribute to the muon anomalous magnetic moment through the diagrams shown in Figs.1(a) and 1(b). We have listed in Eqs.10-13 possible interactions involving scalar leptoquarks that give rise to corrections to (g − 2) µ [78]. Here we calculate all their contributions simultaneously, finding</p>
+
+				<figure>
+					<trash>∆a µ (Φ) = 1 8π 2 N c Q q m 2 µ M 2 Φ 1 0 dx g 2 s13 P s13 (x) + g 2 p13 P p13 (x) (1 − x)(1 − λ 2 x) + 2 λ 2 x + 1 8π 2 N c Q Φ m 2 µ M 2 Φ 1 0 dx g 2 s13 P s13 (x) + g 2 p13 P p13 (x) 2 λ 2 (1 − x)(1 − −2 x) + x (50)</trash>
+
+
+				</figure>
+
+				<p>where = m q /m µ and λ = m µ /M Φ , m q (Q q ) is the mass (electric charge) of the quark running in the loop, and</p>
+
+				<figure>
+					<trash>P s13 (x) = x 2 (1 + − x), P p13 (x) = x 2 (1 + − x), P s13 (x) = −x(1 − x)(x + ), P p13 (x) = −x(1 − x)(x − ) (51) After algebra this integral simplifies to, ∆a µ (Φ) = − N c m µ 8π 2 M 2 Φ m q (g 2 s13 − g 2 a13 ) (Q Φ f 1 + Q q f 2 ) + 2m µ (g 2 s13 + g 2 a13 ) (Q Φ f 3 + Q q f 4 ) , (52) 100 200 500 1000 2000 5000 1 10 4 10 10 10 9 10 8 10 7 10 6 MGeV a Μ Spin 1 with gv1 ga0 Vector Leptoquark Doubly Charged x 1 Singly Charged Neutral a Μ Current a Μ Projected 1Σ Bound Current 1Σ Bound Projected (a) 100 200 500 1000 2000 5000 1 10 4 10 10 10 9 10 8 10 7 10 6 MGeV a Μ Spin 1 with gv0 ga1 Neutral Singly Charged Doubly Charged Vector Leptoquark x 1 a Μ Current a Μ Projected 1Σ Bound Current 1Σ Bound Projected (b) 100 200 500 1000 2000 5000 1 10 4 1 10 10 5 10 10 1 10 9 5 10 9 1 10 8 5 10 8 1 10 7 MGeV a Μ Spin 1 with gv1 ga1 Neutral Doubly Charged Singly Charged Vector Leptoquark x 1</trash>
+
+					<figDesc>(c) FIG. 4</figDesc>
+
+				</figure>
+
+				<p>. Contributions of spin 1 particles to a µ . Keep in mind that the purely vector and purely axial coupling cases are not consistent with SU (2) L without additional theoretical structure. The curves correspond to neutral, charged, doubly-charged, and leptoquark vector bosons, as indicated in the plot legends. The green solid (dashed) horizontal lines are the current (projected) experimental values for ∆a µ . The horizontal solid (dashed) red lines towards the bottom are the current (projected) 1σ bounds, in case the (g − 2) µ anomaly is resolved in a different way otherwise. Note that some contributions are negative, and the appropriate where Q Φ and Q q are the electric charge of the leptoquark and the quark respectively, and f i are</p>
+
+				<figure>
+					<trash>f 1 = 1 2(1 − x) 3 1 − x 2 + 2x ln x f 2 = 1 2(1 − x) 3 3 − 4x + x 2 + 2 ln x f 3 = 1 12(1 − x) 4 −1 + 6x − 3x 2 − 2x 3 + 6x 2 ln x f 4 = 1 2(1 − x) 3 2 + 3x − 6x 2 + x 3 + 6x ln x . (53)</trash>
+
+
+				</figure>
+
+				<p>For instance, when the quark in consideration is the top quark, Q q = 2/3. One can clearly see in Figs.2(a)-2(c) that a ∼ 1 TeV scalar Leptoquark with scalar and pseudo-scalar couplings are natural candidates for the (g −2) µ anomaly. Additionally we can exclude pure order one scalar and pseudo-scalar couplings for Leptoquarks lighter than 10 TeV. Suppressed couplings are required in these cases to resolve the (g − 2) µ discrepancy.</p>
+
+				<p>We would like to point out that in addition to the g − 2 µ anomaly there are additional bounds on leptoquark states obtained both directly and indirectly. Direct limits arise from their production cross sections at colliders, while indirect limits are calculated from the bounds on the leptoquarkinduced four-fermion interactions which are obtained from low-energy experiments or from collider experiments below threshold. Based on the scalar leptoquarks pair production CMS has reported a stringent constraint on scalar leptoquarks requiring M P hi &gt; 1070 GeV for scalar leptoquarks of second generation decaying with 100% branching ratio into µq [85].</p>
+
+			</div>
+			<div>
+				<head>Vector Leptoquarks</head>
+
+				<p>Vector Leptoquarks arise in a large collection of extensions of the Standard Model (SM) such as composite models [79], Grand Unied Theories [80, 81] and E6 models [82, 83]. Their contributions to the (g − 2) µ comes from the diagrams in Figs.1(c) and 1(d), and are found to be</p>
+
+				<figure>
+					<trash>∆a µ (V ) = m 2 µ N c Q q 8π 2 M 2 V 1 0 dx g 2 v P v (x) + g 2 a P a (x) (1 − x)(1 − λ 2 x) + 2 λ 2 x + m 2 µ N c Q V 8π 2 M 2 V 1 0 dx g 2 v P v (x) + g 2 a P a (x) 2 λ 2 (1 − x)(1 − −2 x) + x , (54) with = m q /m µ , λ = m µ /M V and P v (x) = 2x(1 − x) (x − 2(1 − )) + λ 2 (1 − ) 2 x 2 (1 + − x), P a (x) = 2x(1 − x) (x − 2(1 + )) + λ 2 (1 + ) 2 x 2 (1 − − x), P v (x) = 2x 2 (1 + x − 2) − λ 2 (1 − 2 ) (−x(1 − x)(x + )) , P a (x) = 2x 2 (1 + x + 2) − λ 2 (1 + 2 ) (−x(1 − x)(x − )) . (55) These integrals simplify to, ∆a µ (V ) = m 2 µ N c Q q 8π 2 M 2 V g 2 v −4 3 + 2 + g 2 a −4 3 − 2 + m 2 µ N c Q V 8π 2 M 2 V g 2 v 5 3 − 2 + g 2 a 5 3 + 2 (56)</trash>
+
+
+				</figure>
+
+				<p>in the limit m q , M V m µ . The full result for any mass regime can be found using either our full analytic expression given in Eq.75 or using our Mathematica code. From Figs.4(a)-4(c) we conclude that ∼ TeV vector leptoquarks with unit couplings are not good candidates to explain the (g − 2) µ anomaly. If somewhat suppressed couplings (of order of 10 −1 − 10 −2 ) are used, TeV pure vector Leptoquarks can accommodate the anomaly. In the setup where purely-chiral couplings or purely-axial couplings are presumed to be of order one the contributions are negative. Besides the g − 2 µ anomaly bound discussed here, constraints coming from pair production searches at D0 require M V 220 GeV [86].</p>
+
+			</div>
+			<div>
+				<head>Two-Particle Contributions Neutron Lepton and Charged Higgs</head>
+
+				<p>We first present the master integral when we have a charged scalar and a new neutral fermion.</p>
+
+				<p>First, we recognize that this scenario is equivalent to the charged scalar setup studied discussed in Section III, with the only difference being that the neutrino mass must be replaced by by the new neutral fermion&apos;s mass. While we continue to use the notation of a charged higgs and neutral lepton, it is also important to note that, from the point of view of this process, this scenario is exactly equivalent to a neutralino and slepton of the MSSM.</p>
+
+				<p>Recalling the result for a charged higgs, and making the appropriate mass replacement, we find that the contribution to the muon magnetic moment is</p>
+
+				<figure>
+					<trash>∆a µ (N, φ + ) = 1 8π 2 m 2 µ M 2 φ + 1 0 dx g 2 s2 P s2 (x) + g 2 p2 P p2 (x) 2 λ 2 (1 − x)(1 − −2 x) + x , (57) where P s2 (x) = −x(1 − x)(x + ) P p2 (x) = −x(1 − x)(x − ), (58) with = M N /m µ and λ = m µ /M φ + . This contribution reduces to ∆a µ (N, φ + ) = 1 4π 2 m 2 µ M 2 φ + g 2 s2 − M N 4m µ − 1 12 + g 2 p2 M N 4m µ − 1 12 , (59) assuming M + φ</trash>
+
+
+				</figure>
+
+				<p>m µ , M N . Our result agrees with Ref.[27]. In the regime M N , M</p>
+
+				<figure>
+					<trash>+ φ m µ we find, ∆a µ (N, φ + ) = g 2 s 4π 2 m 2 µ M 2 φ + 1 6(α − 1) 4 −2α 3 − 3α 2 + 6α − 1 + 6α 2 Log[α] , (60) with g p2 = ±g s2 and α = M 2 E /M 2</trash>
+
+
+				</figure>
+
+				<p>φ + , which disagrees by a factor of four with the result of Ref.[84]. We show in Fig.5 that our result agrees well the the numerical solution.</p>
+
+				<figure>
+					<trash>Numerical x1 Analytical x1 1 10 100 1000 10 4 1 10 13 2 10 13 5 10 13 1 10 12 2 10 12 5 10 12 1 10 11 M N GeV a Μ Charged Higgs Neutral Lepton MΦ 10TeV</trash>
+
+
+				</figure>
+
+				<p>FIG. 5. Result for the charged higgs plus Neutral Lepton as a function of the heavy lepton mass with M φ + = 10 TeV.</p>
+
+				<p>The general result can be found either numerically or applying the exact expression shown in Eq.75 by using Mathematica code provided. We note that processes of exactly this type have been considered previously in the context of SUSY, and in at least one place in previous literature [27] have been misrepresented as being dependent on the chirality of the process, when in fact left-and right-handed interactions give identical results, as has been previously known [13, 29].</p>
+
+			</div>
+			<div>
+				<head>Heavy Higgs and Charged Lepton</head>
+
+				<p>One more example is the scenario where we have a heavy neutral scalar and the singly charged lepton (E), which is also equivalent to the MSSM case of a sneutrino and chargino. As before we can use the master integral for the neutral scalar case discussed in Section III by correcting = 1 for that case to = M E /m µ instead as follows:</p>
+
+				<figure>
+					<trash>∆a µ (φ, E) = 1 4π 2 m 2 µ M 2 φ 1 0 dx g 2 s P s (x) + g 2 p P p (x) (1 − x)(1 − λ 2 x) + 2 λ 2 x (61) where λ = m µ /M φ and P s (x) = x 2 (1 − − x) P p (x) = x 2 (1 + − x). (62)</trash>
+
+
+				</figure>
+
+				<p>In the limit M E , M φ m µ we find,</p>
+
+				<figure>
+					<trash>∆a µ (φ, E) = g 2 s 4π 2 m 2 µ M 2 φ 1 6(α − 1) 4 α 3 − 6α 2 + 3α + 2 + 6αLog[α] , (63) with g p = ±g s and α = M 2 E /M 2</trash>
+
+
+				</figure>
+
+				<p>φ , which again is off by a factor of four compared to Ref.[84]. In Fig.6 one can clearly see that our result offers a good agreement the numerical one.</p>
+
+				<figure>
+					<trash>Numerical Analytical 1 10 100 1000 10 4 10 15 10 13 10 11 10 9 Charged Lepton Heavy Higgs MΦ10TeV</trash>
+
+
+				</figure>
+
+				<p>FIG. 6. Result for the combined contribution of the charged lepton and a heavy higgs as a function of the charged lepton mass with M Φ = 10 TeV.</p>
+
+				<p>More complex setups (corresponding to more complete models of new physics) beyond the ones discussed here can be easily explored by making simple changes in the definition of the parameters and λ in the integrals that we have discussed and adding together the contribution of all independent graphs. In most cases the analytic formulae provided in this section are sufficient to give the correct result, but for cases where the limits on masses considered here do not apply there are exact analytic results in the Appendix, and a Mathematica notebook is available as supplemental material to this publication (arXiv:1403.2309) which calculates the appropriate contributions numerically.</p>
+
+			</div>
+			<div>
+				<head>IV. CONCLUSIONS</head>
+
+				<p>We have considered all possible models which can affect the anomalous magnetic moment of the muon at one loop with one new particle, and considered examples of cases involving multiple new particles. Analytic results have been presented for each case in relevant regions of parameter space, with exact analytic results available in the appendix. This work provides a natural reference point for understanding the implications of any new physics model for the muon magnetic moment, and corrects some misunderstandings or confusions in the previous literature.</p>
+
+				<p>We also provide, as supplementary material to this article, a Mathematica notebook which can be used to find the contribution of any new physics model to the muon magnetic moment. Explicit calculations are present for the models considered within this paper, and any more complete model should require only minor changes to reflect the different particle masses and charges involved.</p>
+
+				<p>We present in this appendix the analytic results for each one-loop Feynman parameter integral which contributes to the anomalous magnetic moment of the muon. The integrals in question are defined as,</p>
+
+				<figure>
+					<trash>∆a µ (Neutral Scalar) = Q f 8π 2 m 2 µ M 2 Φ 1 0 dx g 2 s P s (x) + g 2 p P p (x) (1 − x)(1 − λ 2 x) + 2 λ 2 x , (64) according to Fig.1</trash>
+
+
+				</figure>
+
+				<p>(b), with = m F /m µ , where m F being the mass of the fermion running in the loop, λ = m µ /M Φ where M Φ is the mass of the boson and,</p>
+
+				<figure>
+					<trash>P s (x) = x 2 (1 + − x), P p (x) = x 2 (1 − − x). (65) ∆a µ (Charged Scalar) = Q S 8π 2 m 2 µ M 2 Φ + 1 0 dx g 2 s P s (x) + g 2 p P p (x) 2 λ 2 (1 − x)(1 − −2 x) + x , (66) according to Fig.1(a) where P s (x) = −x(1 − x)(x + ) P p (x) = −x(1 − x)(x − ), (67) ∆a µ (Neutral Vector) = Q f 8π 2 m 2 µ M 2 Φ 1 0 dx g 2 v P v (x) + g 2 a P a (x) (1 − x)(1 − λ 2 x) + 2 λ 2 x , (68) according to Fig.1(d) where, P v (x) = 2x(1 − x)(x − 2(1 − )) + λ 2 (1 − ) 2 x 2 (1 + − x), P a (x) = 2x(1 − x)(x − 2(1 + )) + λ 2 (1 + ) 2 x 2 (1 − − x). (69) ∆a µ (Charged Vector) = Q V 8π 2 m 2 µ M 2 Φ + 1 0 dx g 2 v P v (x) + g 2 a P a (x) 2 λ 2 (1 − x)(1 − −2 x) + x , (70) according to Fig.1(c) where, P v (x) = 2x 2 (1 + x − 2) + λ 2 (1 − ) 2 x(1 − x)(x + ), P a (x) = 2x 2 (1 + x + 2) + λ 2 (1 + ) 2 x(1 − x)(x − ). (71) The above Eqs.(64),(66),(68),(70</trash>
+
+
+				</figure>
+
+				<p>), refer to the &quot; neutral scalar &quot; , &quot; charged scalar &quot; , &quot; neutral vector &quot; , and &quot; charged vector &quot; graphs, respectively. Note of course that it is necessary to combine the &quot; neutral &quot; and &quot; charged &quot; graphs whenever neither particle in the loop is electrically neutral.</p>
+
+				<p>We refer to the scalar or vector running in the loop as Φ throughout this appendix, and utilize the definitions of λ =</p>
+
+				<figure>
+					<trash>mµ M Φ , = m F mµ</trash>
+
+
+				</figure>
+
+				<p>, consistent with those used throughout the paper, where F is the fermion running in the loop.</p>
+
+				<p>The scalar coupling analytic result for &quot; neutral scalar &quot; graph with a fermion of charge -1 is</p>
+
+				<figure>
+					<trash>∆a µ = g 2 S m 2 µ 16π 2 m 2 φ λ 6 − 2λ 2 + λ 4 (2( + 1) − 1) + λ 2 λ 2 (−( − 1))( + 1) 2 + 2 + 1 − 1 log λ 2 2 + λ 2 λ 4 ( − 1) 2 ( + 1) 3 − λ 2 ( + 1)(3 − 1) + 3 + 1 + 1 − 1 F N λ 2 , 2 (72) where F N λ 2 , 2 = 2 4λ 2 − (λ 2 ( 2 − 1) − 1) 2 cot −1   λ 2 ( 2 − 1) + 1 4λ 2 − (λ 2 ( 2 − 1) − 1) 2   . (73)</trash>
+
+
+				</figure>
+
+				<p>The pseudoscalar coupling result is given by transforming the scalar coupling result by → −.</p>
+
+				<p>Note that this has no effect on F N . Naturally, either result must be scaled by the ratio of the charge of the fermion in question to the charge of -1 for a muon.</p>
+
+				<p>The vector coupling result for the &quot; neutral vector &quot; graph, again with a fermion of charge -1, is</p>
+
+				<figure>
+					<trash>∆a µ = g 2 V m 2 µ 16π 2 m 2 φ λ 6 −4λ 2 + λ 4 2 2 + 2 + λ 6 2 4 − 6 3 + 5 2 − 1 + λ 2 3 2 + + 1 + λ 4 −4 3 + 4 2 + 2 − 2 log λ 2 2 + λ 6 − 6 + 3 5 − 2 4 − 2 3 + 3 2 − − 2 log λ 2 2 + λ 2 5 2 + + 3 + λ 4 −3 4 − 5 3 + 4 2 + − 3 − 2 F N λ 2 , 2 + λ 6 − 6 + 7 5 − 8 4 − 2 3 + 3 2 + 3 − 2 F N λ 2 , 2 + λ 8 8 − 3 7 + 6 + 5 5 − 5 4 − 3 + 3 2 − F N λ 2 , 2 , (74)</trash>
+
+
+				</figure>
+
+				<p>and the axial vector result is once more obtained by taking → −.</p>
+
+				<p>The &quot; charged scalar &quot; graph, for a scalar with unit charge, gives</p>
+
+				<figure>
+					<trash>∆a µ = g 2 S m 2 µ 16π 2 m 2 φ λ 6 λ 4 2 2 + 2 + 1 − 2λ 2 + λ 2 2 2 + + 1 + λ 4 − 4 − 3 − 1 log λ 2 2 λ 2 3 2 + + 2 + λ 4 −3 4 − 2 3 − 2 − − 1 + λ 6 6 + 5 − 4 − 3 − 1 F C λ 2 , 2 , (75) where F C λ 2 , 2 = 2 λ 4 − ( 2 − 1) 2 + 2λ 2 ( 2 + 1) − 1 cot −1   λ 2 ( 2 − 1) + 1 λ 4 − ( 2 − 1) 2 + 2λ 2 ( 2 + 1) − 1   . (76)</trash>
+
+
+				</figure>
+
+				<p>As usual, the pseudoscalar case is identical to the scalar case with → −, and F C is invariant under this change. This result will need to be scaled by the ratio of the scalar&apos;s charge to 1.</p>
+
+				<p>The final graph is the &quot; charged vector &quot; case, which gives</p>
+
+				<figure>
+					<trash>∆a µ = g 2 V m 2 µ 16π 2 m 2 φ λ 6 −2 + 7 − 6 + 5 2 λ 2 + −5 + 5 − 5 2 + 7 3 − 4 4 λ 4 log λ 2 2 + − 2 2 + 3 λ 5 + − 2 2 + 2 3 − 4 − 5 + 6 λ 6 log λ 2 2 − 2 + −9 + 6 − 7 2 λ 2 + 12 − 11 + 13 2 − 13 3 + 9 4 λ 4 F C λ 2 , 2 − − + 2 2 − 3 λ 5 + −5 + 4 + 2 2 − 2 3 − 2 4 + 8 5 − 5 6 λ 6 F C λ 2 , 2 − − 2 2 + 2 3 − 2 4 + 5 λ 7 + − 2 2 + 3 − 4 + 3 5 − 2 6 − 7 + 8 λ 8 F C λ 2 , 2 − 4λ 2 + 12 − 12 + 6 2 λ 4 + −1 + 2 + 2 3 − 2 4 λ 6 (77)</trash>
+
+
+				</figure>
+
+				<p>Once again, the axial vector case is equivalent with → −. All of these results are available for use in a Mathematica notebook file which is online as supplementary material to this paper available on arXiv:1403.2309. Note that these analytic expressions have very large cancellations in terms, and therefore high numerical precision is needed to achieve the correct result.</p>
+
+			</div>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+				<head>ACKNOWLEDGEMENTS</head>
+				<p>FQ is partly supported by the Brazilian National Counsel for Technological and Scientic</p>
+				<figure>
+					<head>velopment (</head>
+					<figDesc>CNPq) and U.S. Department of Energy Award SC0010107. WS is partly supported by the U.S. Department of Energy Award SC0010107. The authors are indebted to Patrick Draper for great discussions and Prof. Michael Spira for shedding light on the calculations regarding vector leptoquarks.</figDesc>
+				</figure>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">ADDED While this article was in final preparation we noted [84], which works in a similar vein, with a strong focus on LHC sensitivity to the various models which could explain the discrepancy in a µ</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Beringer</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Particle Data Group) PRD</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="page">010001</biblScope>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title level="m" type="main">FERMILAB-PROPOSAL-0989</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">M</forename>
+				<surname>Carey</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">R</forename>
+				<surname>Lynch</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">P</forename>
+				<surname>Miller</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">L</forename>
+				<surname>Roberts</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">M</forename>
+				<surname>Morse</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<forename type="middle">K</forename>
+				<surname>Semertzides</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">P</forename>
+				<surname>Druzhinin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">I</forename>
+				<surname>Khazin</surname>
+			</persName>
+		</author>
+		<imprint>
+			<publisher>Andreas S. Kronfeld et al</publisher>
+			<biblScope unit="page">1306</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Aubin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Blum</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Golterman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Peris</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="issue">054509</biblScope>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Aubin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Blum</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Golterman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Peris</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">D88 (2013) 074505</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Aubin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Blum</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Golterman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Maltman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Peris</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Blum</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Denig</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Logashenko</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>De Rafael</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Lee Roberts</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Teubner</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Venanzoni</surname>
+			</persName>
+		</author>
+		<imprint>
+			<pubPlace>Golterman, K. Maltman, S. Peris</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Fred</forename>
+				<surname>Jegerlehner</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Acta</forename>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Polon</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<biblScope unit="page" from="2257" to="2266" />
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Andreas</forename>
+				<surname>Nyffeler</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Matthias Steinhauser</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Ajaib</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Gogoladze</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Q</forename>
+				<surname>Shafi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Salih Un</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Hooman</forename>
+				<surname>Davoudiasl</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Hye-Sung</forename>
+				<surname>Lee</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">William</forename>
+				<forename type="middle">J</forename>
+				<surname>Marciano</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Rentala</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">William</forename>
+				<surname>Shepherd</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Shufang</forename>
+				<surname>Su</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">035004</biblScope>
+			<biblScope unit="page">84</biblScope>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Chris</forename>
+				<surname>Kelso</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">R D</forename>
+				<surname>Pinheiro</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Farinaldo</forename>
+				<forename type="middle">S</forename>
+				<surname>Queiroz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">William</forename>
+				<surname>Shepherd</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Ky</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">N</forename>
+				<surname>Long</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">Van</forename>
+				<surname>Soa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2000" />
+			<biblScope unit="page" from="486" to="140" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Ky</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">N</forename>
+				<surname>Long</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">Van</forename>
+				<surname>Soa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2000" />
+			<biblScope unit="page" from="486" to="140" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">A</forename>
+				<surname>De</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Pires</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">S</forename>
+				<surname>Rodrigues</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Silva</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Agrawal</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+				<surname>Chacko</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">B</forename>
+				<surname>Verhaaren</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Motoi</forename>
+				<surname>Endo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Koichi</forename>
+				<surname>Hamaguchi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Teppei</forename>
+				<surname>Kitahara</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Takahiro</forename>
+				<surname>Yoshinaga</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1311" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Masahiro</forename>
+				<surname>Ibe</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Tsutomu</forename>
+				<forename type="middle">T</forename>
+				<surname>Yanagida</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Norimi</forename>
+				<surname>Yokozaki</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">1308</biblScope>
+			<biblScope unit="issue">067</biblScope>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Lisa</forename>
+				<forename type="middle">L</forename>
+				<surname>Everett</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Gordon</forename>
+				<forename type="middle">L</forename>
+				<surname>Kane</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Stefano</forename>
+				<surname>Rigolin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Lian-Tao</forename>
+				<surname>Wang</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev.Lett</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="page" from="3484" to="3487" />
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Richard</forename>
+				<forename type="middle">L</forename>
+				<surname>Arnowitt</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Bhaskar</forename>
+				<surname>Dutta</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Hu</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Stephen</forename>
+				<forename type="middle">P</forename>
+				<surname>Martin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">James</forename>
+				<forename type="middle">D</forename>
+				<surname>Wells</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="page" from="67" to="015002" />
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Jackiw</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Steven</forename>
+				<surname>Weinberg</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="2396" to="2398" />
+			<date type="published" when="1972" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Jackiw</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Steven</forename>
+				<surname>Weinberg</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="2396" to="2398" />
+			<date type="published" when="1972" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Chakraverty</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Choudhury</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Datta</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">506</biblScope>
+			<biblScope unit="issue">103</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Cheung</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="page">033001</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Jegerlehner</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Nyffeler</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Rept</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">David</forename>
+				<surname>Mckeen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Annals</forename>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="page" from="1501" to="1514" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">R</forename>
+				<surname>Moore</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Whisnant</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Bing-Lin</forename>
+				<surname>Young</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">105</biblScope>
+			<biblScope unit="page">31</biblScope>
+			<date type="published" when="1985" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Diaz Rodolfo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Martinez</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">A</forename>
+				<surname>Rodriguez</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="page">033004</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Z. -z. Xing, Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="page">017304</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Beringer</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Particle Data Group) Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="page">010001</biblScope>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Queiroz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">A</forename>
+				<surname>De</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Pires</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">S</forename>
+				<surname>Rodrigues</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Silva</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="issue">065018</biblScope>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Alves</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Ramirez</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">G</forename>
+				<surname>Barreto</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">A</forename>
+				<surname>Dias</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>De</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<forename type="middle">S</forename>
+				<surname>Pires</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">S</forename>
+				<surname>Queiroz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Rodrigues</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Silva</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eur. Phys. J. C</title>
+		<imprint>
+			<biblScope unit="volume">73</biblScope>
+			<biblScope unit="page">2288</biblScope>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Caetano</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">A</forename>
+				<surname>De</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Pires</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">S</forename>
+				<surname>Rodrigues</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Silva</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<forename type="middle">S</forename>
+				<surname>Cogollo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Queiroz</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eur. Phys. J. C</title>
+		<imprint>
+			<biblScope unit="volume">73</biblScope>
+			<biblScope unit="page">2607</biblScope>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Cogollo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<forename type="middle">S</forename>
+				<surname>Queiroz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Vasconcelos</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">V</forename>
+				<surname>Dong</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">N</forename>
+				<surname>Long</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">H</forename>
+				<surname>Nam</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">V</forename>
+				<surname>Vien</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">85</biblScope>
+			<biblScope unit="page">053001</biblScope>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">V</forename>
+				<surname>Dong</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">N</forename>
+				<surname>Long</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">V</forename>
+				<surname>Soa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">V</forename>
+				<surname>Vien</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eur. Phys. J. C</title>
+		<imprint>
+			<biblScope unit="volume">71</biblScope>
+			<biblScope unit="page">1544</biblScope>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">015020 (2014) [arXiv:1309</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Ma</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Zhang</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Cacciapaglia</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<editor>A. Chaudhuri, W. Grimus and B. Mukhopadhyaya</editor>
+		<imprint>
+			<biblScope unit="volume">897396</biblScope>
+			<biblScope unit="issue">1402</biblScope>
+			<biblScope unit="page">060</biblScope>
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Cogollo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Diniz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">A</forename>
+				<surname>De</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Pires</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>hep. -ph]</note>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Cogollo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Diniz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">A</forename>
+				<surname>De</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Pires</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">687</biblScope>
+			<biblScope unit="issue">400</biblScope>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Han</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Mukhopadhyaya</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+				<surname>Si</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Wang</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="page">075013</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Aguila</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Chala</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">JHEP 1403</title>
+		<imprint>
+			<date type="published" when="2014" />
+			<biblScope unit="page">027</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">V</forename>
+				<surname>Vien</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">N</forename>
+				<surname>Long</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<monogr>
+		<title/>
+		<editor>J. D. Ruiz-Alvarez, C. A. de S.Pires, F. S. Queiroz, D. Restrepo and P. S. Rodrigues da Silva</editor>
+		<imprint>
+			<pubPlace>Phys</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<monogr>
+		<title/>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page">075011</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">V</forename>
+				<surname>Vien</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">N</forename>
+				<surname>Long</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Mod. Phys. A</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="page">1350159</biblScope>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">K</forename>
+				<surname>Mizukoshi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">A</forename>
+				<surname>De</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Pires</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<forename type="middle">S</forename>
+				<surname>Queiroz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">S</forename>
+				<surname>Rodrigues</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Silva</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">83</biblScope>
+			<biblScope unit="page">065024</biblScope>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Gorbunov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Shaposhnikov</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2007" />
+			<biblScope unit="page" from="015" to="101" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<monogr>
+		<title/>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Profumo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<forename type="middle">S</forename>
+				<surname>Queiroz</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">M</forename>
+				<surname>Cabarcas</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Duarte</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J.-A</forename>
+				<surname>Rodriguez</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>hep. -ph]</note>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Ari</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Akir</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Kuday</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Liu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Yang</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="page">093009</biblScope>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>De</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Pree</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Sher</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Turan</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="page">093001</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">A</forename>
+				<surname>Ponce</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Giraldo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">A</forename>
+				<surname>Sanchez</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page">0201133</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<surname>L3 Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2001" />
+			<biblScope unit="page" from="517" to="75" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Ari</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Akir</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Kuday</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Liu and S. Yang</title>
+		<editor>De Pree, M. Sher and I. Turan</editor>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="1309" to="093001" />
+		</imprint>
+	</monogr>
+	<note>hep. -ph]]</note>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">A</forename>
+				<surname>Stephan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Fargion</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Khlopov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">A</forename>
+				<surname>Stephan</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Class. Quant. Grav</title>
+		<editor>S. Biondini, O. Panella, G. Pancheri, Y. Srivastava and L. Fan</editor>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page">730513126610</biblScope>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">R</forename>
+				<surname>Clark</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">J</forename>
+				<surname>Johnson</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">T</forename>
+				<surname>Kerth</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">C</forename>
+				<surname>Loken</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">W</forename>
+				<surname>Markiewicz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">D</forename>
+				<surname>Meyers</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">H</forename>
+				<surname>Smith</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Strovink</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page">299</biblScope>
+			<date type="published" when="1981" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Biondini</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Panella</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Pancheri</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<forename type="middle">N</forename>
+				<surname>Srivastava</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Fano</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">85</biblScope>
+			<biblScope unit="page">095018</biblScope>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Ma</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Zhang</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Cacciapaglia</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Cogollo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Vital</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<forename type="middle">S</forename>
+				<surname>Andrade</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Queiroz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Eur</forename>
+				<surname>Teles</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.J</title>
+		<imprint>
+			<biblScope unit="volume">72</biblScope>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Q.-H</forename>
+				<surname>Cao</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+				<surname>Li</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J.-H</forename>
+				<surname>Yu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">P</forename>
+				<surname>Yuan</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="page">095010</biblScope>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">V</forename>
+				<surname>Dong</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">P</forename>
+				<surname>Nguyen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">V</forename>
+				<surname>Soa</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">88</biblScope>
+			<biblScope unit="page">095014</biblScope>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b67">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">V</forename>
+				<surname>Dong</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">T</forename>
+				<surname>Hung</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">D</forename>
+				<surname>Tham</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D Phys. Lett. B</title>
+		<editor>65] E. J. Chun and P. Sharma</editor>
+		<imprint>
+			<biblScope unit="volume">87</biblScope>
+			<biblScope unit="issue">256</biblScope>
+			<biblScope unit="page">115003</biblScope>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b68">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">R</forename>
+				<surname>Barreto</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<forename type="middle">A</forename>
+				<surname>Coutinho</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Sborges</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">88</biblScope>
+			<biblScope unit="page">035016</biblScope>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b69">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E. Ramirez</forename>
+				<surname>Barreto</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<forename type="middle">A</forename>
+				<surname>Coutinho</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J. Sa</forename>
+				<surname>Borges</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">810</biblScope>
+			<biblScope unit="issue">210</biblScope>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b70">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">J</forename>
+				<surname>Chun</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Sharma</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">728</biblScope>
+			<biblScope unit="issue">256</biblScope>
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b71">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Meirose</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">A</forename>
+				<surname>Nepomuceno</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">84</biblScope>
+			<biblScope unit="page">055002</biblScope>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b72">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">J</forename>
+				<surname>Chun</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Sharma</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">728</biblScope>
+			<biblScope unit="issue">256</biblScope>
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b73">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">R</forename>
+				<surname>Barreto</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<forename type="middle">A</forename>
+				<surname>Coutinho</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Sborges</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">88</biblScope>
+			<biblScope unit="page">035016</biblScope>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b74">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E. Ramirez</forename>
+				<surname>Barreto</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<forename type="middle">A</forename>
+				<surname>Coutinho</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J. Sa</forename>
+				<surname>Borges</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">810</biblScope>
+			<biblScope unit="issue">210</biblScope>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b75">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Dorsner</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="issue">055009</biblScope>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b76">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">F</forename>
+				<surname>Gunion</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Ma</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">195</biblScope>
+			<biblScope unit="issue">257</biblScope>
+			<date type="published" when="1987" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b77">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">D</forename>
+				<surname>Smirnov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">531</biblScope>
+			<biblScope unit="issue">237</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b78">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">S</forename>
+				<surname>Kim</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Lee</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Namgung</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">59</biblScope>
+			<biblScope unit="page">114006</biblScope>
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b79">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Poulose</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">D</forename>
+				<surname>Rindani</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pramana</title>
+		<imprint>
+			<biblScope unit="volume">519708332</biblScope>
+			<biblScope unit="issue">387</biblScope>
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b80">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Chakraverty</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Choudhury</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Datta</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">506</biblScope>
+			<biblScope unit="issue">103</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b81">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Schrempp</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Schrempp</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1985" />
+			<biblScope unit="page">153</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b82">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Georgi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">L</forename>
+				<surname>Glashow</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="page">438</biblScope>
+			<date type="published" when="1974" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b83">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Dimopoulos</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Susskind</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="page" from="155" to="237" />
+			<date type="published" when="1979" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b84">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Green</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Schwarz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1984" />
+			<biblScope unit="page">149</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b85">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Witten</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">258</biblScope>
+			<biblScope unit="page">75</biblScope>
+			<date type="published" when="1985" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b86">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Freitas</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Lykken</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Kell</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Westhoff</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b87">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Chatrchyan</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="12" to="042" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b88">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Alikhanov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">717</biblScope>
+			<biblScope unit="issue">425</biblScope>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b89">
+	<monogr>
+		<title level="m" type="main">Muon Reconstruction and the Search for Leptoquarks at</title>
+		<author>
+			<persName>
+				<forename type="first">Benjamin</forename>
+				<surname>Ruckert</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

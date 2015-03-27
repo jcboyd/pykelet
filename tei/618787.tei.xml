@@ -1,0 +1,3029 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">QCD Saturation in the Semi-classical Approach</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2003-07-24">24 Jul 2003 July 22, 2013</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">S</forename>
+								<surname>Bondarenko</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">HEP Department School of Physics and Astronomy Raymond and Beverly Sackler Faculty of Exact Science</orgName>
+								<orgName type="institution">Tel Aviv University</orgName>
+								<address>
+									<postCode>69978</postCode>
+									<settlement>Tel Aviv</settlement>
+									<country key="IL">Israel</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">M</forename>
+								<surname>Kozlov</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">HEP Department School of Physics and Astronomy Raymond and Beverly Sackler Faculty of Exact Science</orgName>
+								<orgName type="institution">Tel Aviv University</orgName>
+								<address>
+									<postCode>69978</postCode>
+									<settlement>Tel Aviv</settlement>
+									<country key="IL">Israel</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">E</forename>
+								<surname>Levin</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">HEP Department School of Physics and Astronomy Raymond and Beverly Sackler Faculty of Exact Science</orgName>
+								<orgName type="institution">Tel Aviv University</orgName>
+								<address>
+									<postCode>69978</postCode>
+									<settlement>Tel Aviv</settlement>
+									<country key="IL">Israel</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">QCD Saturation in the Semi-classical Approach</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2003-07-24">24 Jul 2003 July 22, 2013</date>
+						</imprint>
+					</monogr>
+					<note>* 1</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>In this paper the semi-classical approach to the solution of non-linear evolution equation is developed. We found the solution in the entire kinematic region to the non-linear evolution equation that governs the dynamics in the high parton density QCD. The large impact parameter (b t) behavior of the solution is discussed as well as the way how to include the non-perturbative QCD corrections in this region of b t. The geometrical scaling behavior and other properties of the solution in the saturation (Color Glass Condensate) kinematic domain are analyzed. We obtain the asymptotic behavior for the physical observables and found the unitarity bounds for them.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>High density QCD [1, 2, 3] which is dealing with the parton systems where the gluon occupation numbers are large, has entered a new phase of it&apos;s development: a direct comparison with the experimental data. A considerable success [4, 6, 7, 8, 9, 10, 11] has been reached in description of new precise data on deep inelastic scattering [12] as well as in understanding of general features of hadron production in ion-ion collision [13]. The intensive theoretical [14, 15, 16] work lead to effective theory in the high parton density region with non-linear evolution equation for dipoledipole amplitude that governs the dynamics in this region [17]. The practical application of the high density QCD approach to a comparison with the experimental data is based on analytic [18, 19, 20] and numerical [5, 8, 19, 21, 22] solution to the non-linear equation. In spite of understanding of the main qualitative and, partly, quantative properties of the non-linear dynamics, this equation has not been solved at arbitrary values of the impact parameters (b t ) and a number of &quot; ad hoc &quot; ansatzs were used for b t -dependence.</p>
+
+				<p>It turns out that b t -dependence is a challenging problem since the non-perturbative corrections are important in the large b t kinematic region. There are two different ideas on the market how to include the non-perturbative large b t behavior into high density QCD dynamics. The first one [23, 24, 25] claims that the non-perturbative corrections could be taken into account only in initial condition for the non-linear evolution equation, while the other idea demands the change of the kernel in the equation [26].</p>
+
+				<p>The objective of this paper is to find the semi-classical solution to the non-linear evolution equation with a special attention to the large b t behavior of the solution. The semi-classical approach has several advantages[1, 14, 15]. Firstly, it gives simple, transparent and analytic solution to the non-linear equation. Secondly, this solution has a good theoretical accuracy in the most interesting kinematic region: at low x and small sizes of interacting dipoles. Thirdly, this approach leads to a natural definition of the new saturation scale which is the principle dimensional parameter that governs dynamics at high density QCD region [1, 2, 3]. It appears in the semi-classical approach as a critical line which divides the whole set of trajectories in two parts: inside and outside of the saturation region. In other words, this critical line is a separation line between two phase: color gluon condensate (CGC) and the gluon liquid and the saturation scale is the order parameter for this phase transition.</p>
+
+				<p>The shortcoming of the semi-classical approach is the fact that the experimental data are not in the kinematic region where this approach has a good theoretical accuracy. However, we believe, that we can develop the reasonable method for the numerical solution of the non-linear equation only after studying the property of the semi-classical approach.</p>
+
+				<p>In the next two sections we discuss the semi-classical approach for the dipole sizes smaller than the saturation scale (r t &lt; 1/Q s (x) where Q s (x) is the saturation momentum). We review the semi-classical solution which has been investigated in this region (see Refs. [1, 14, 15]) concentrating mostly on large b t -behavior of this solution.</p>
+
+				<p>Section 4 is devoted to the semi-classical approach inside of the saturation region (r t &gt; 1/Q s (x)). We suggest a semi-classical solution which describes the behavior of the dipoledipole amplitude deeply inside of this domain and discuss the matching of this solution with the semi-classical solution at small dipole sizes. It turns out that this matching occurs on the special trajectory of the non-linear equation which defines the saturation scale for dipole-dipole rescattering.</p>
+
+				<p>In section 5 we discuss the unitarity bound as well as energy behavior of the gluon structure function and the γ * − γ * total cross section.</p>
+
+				<p>Section 6 gives the estimates of the accuracy of our approach. We calculate the first enhanced diagram as well as corrections to the non-linear equation that we neglected in our solution.</p>
+
+				<p>In the last section we summarize our results and discuss the possible practical applications.</p>
+
+				<figure>
+					<trash>2 General Approach 2.1 The non-linear evolution equation</trash>
+
+
+				</figure>
+
+				<p>The non-linear equation that governs the dynamics in the high parton density QCD domain can be written in the following form given by Balitsky and Kovchegov [17]:</p>
+
+				<figure>
+					<trash>∂N(x 01 , y; b t ) ∂ y = − 2 C F α S π ln x 2 01 ρ 2 N(x 01 , y; b t ) + 2 C F α S π × (2.1) ρ d 2 x 2 x 2 01 x 2 02 x 2 12 2 N(x 02 , y; b t − 1 2 x 12 ) − N(x 02 , y; b t − 1 2 x 12 )N(x 12 , y; b t − 1 2 x 02 ) The meaning of Eq. (2.1) is very simple and can be seen in Fig. 1 and Fig. 2</trash>
+
+
+				</figure>
+
+				<p>. It describes the process of dipole interaction as two stages process. The first stage is decay of the initial dipole with size x 01 into two dipole with sizes x 12 and x 02 with probability</p>
+
+				<figure>
+					<trash>|Ψ(x 01 → x 02 + x 12 )| 2 = x 2 01 x 2 02 x 2 12</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>.</head>
+
+				<p>In the second stage two produced dipoles interact with the target. The non-linear part of Eq. (2.1) takes into account the Glauber corrections for such an interaction ( see Fig. 1 ). The first term in Eq. (2.1) stands for possibility for the initial dipole to interact with the target without decaying into two dipoles.</p>
+
+				<p>The equation is written in the coordinate representation which has a certain advantage since N(x 01 , y; b t ) = Im a(x 01 , y; b t ) where a is the dipole amplitude. Directly from the unitarity constraint follows that N ≤ 1 giving the natural asymptotic behavior for N, namely N tends to unity at high energies. On the other hand the non-linear term in Eq. (2.1) contains the integration over sizes of produced dipoles. It means that we cannot conclude that the nonlinear term is small even when the sizes of the initial dipoles are very small.</p>
+
+				<figure>
+					<trash>x 1 x 0 x 1 x 0 x 2 N N ( x ) ( x 12 ) N ( x 02 ) 01 Linear colour dipole evolution equation − Non N ( x 12 ) . N ( x 02 ) Figure 1: The non-linear evolution equation. AÉÜ ¼½ Ø Ýµ Ý ¾ « Ë ÐÒ Ü ¾ ¼½ ¾ AÉÜ Ø Ýµ · ¾ « Ë ¾ Ü ¾ Ü ¾ ¼½ Ü ¾ ¼¾ Ü ¾ ½¾ ¡ AÉÜ ¼¾ Ø Ýµ ÛÛÛÖÖ AÉÜ ¼½ Ø Ýµ ÁÑ ÔÓÐÐÜ ¼½ Ø Ýµ ß ÌÝÔ××Ø Ý ÓÓÐÌ ß ½ dipole −&gt; 2 dipole decay Gluon Reggeization in momentum representation Emission term in momentum representation s Probability for )</trash>
+
+					<head>Figure 2:</head>
+
+					<figDesc>The linear (BFKL) equation.</figDesc>
+
+				</figure>
+
+				<p>It turns out to be useful to consider Eq. (2.1) in a mixed representation, fixing b t but introducing transverse momenta as conjugated variables to dipole sizes. The relation between these two representations are given by the following equations (see also Fig. 2</p>
+
+				<figure>
+					<trash>) 1 : N(x, y; b t ) = x 2 ∞ 0 k dk J 0 (kx) ˜ N(k, y; b t ) ; (2.2) ˜ N (k, y; b t ) = ∞ 0 dx x J 0 (kx) N(x, y; b t ) . (2.3)</trash>
+
+
+				</figure>
+
+				<p>In momentum representation the nonlinear term in Eq. (2.1), being the convolution in the coordinate representation, transforms to the product of two amplitudes, (N), at the same value of the initial transverse momentum (k). Therefore, the large value of the initial transverse momentum guarantees the smallness of the non-linear corrections. One can actually see that the non-linear term in Eq. (2.1) is a convolution only at large value of the impact parameter b t .</p>
+
+				<p>Indeed, let us rewrite the non-linear term in Eq. (2.1) in the momentum representation going also to momentum transfer instead of b t .</p>
+
+				<p>In this case</p>
+
+				<figure>
+					<trash>N(k, y; Q) = d 2 b t (2 π) 2 e −i Q· bt N(k, y; b t ) . (2.4) The non-linear term reduces to the form ρ d 2 x 2 x 2 01 x 2 02 x 2 12 N(x 02 , y; b t − 1 2 x 12 )N(x 12 , y; b t − 1 2 x 02 ) −→ d 2 Q d 2 Q ′ δ( k − k ′ + 1 2 Q − 1 2 Q ′ ) ˜ N(k, y; Q) ˜ N(k ′ , y; Q ′ ) e Q· bt e Q ′ · bt . (2.5) At large values of b t ≫ 1/k and 1/k ′ both Q and Q ′ are small and of the order of 1/b t . Neglecting terms 1 2 Q and 1 2</trash>
+
+
+				</figure>
+
+				<p>Q ′ in δ-function in Eq. (2.5) we can reduce this equation to the product of N(k, y; b t ) · ˜ N (k, y; b t ).</p>
+
+				<p>However, one can see that there is a region of integration over Q , namely, Q+ Q ′ ≈ 1/b t ≪ k or/and k ′ , while Q − Q ′ &gt; k or/and k ′ . In the coordinate representation (see Eq. (2.1)) this region of integration corresponds to x 12 ≈ x 02 ≈ 2 b t ≫ x 01 .</p>
+
+				<p>In this region the non-linear term can be reduced to</p>
+
+				<figure>
+					<trash>ρ d 2 x 2 x 2 01 b 4 t N 2 (2b t , y; ∆b t ) (2.6) with ∆ b t = b t − 1 2 x 02 .</trash>
+
+
+				</figure>
+
+				<p>In the region of large b t ≫ r 2 &gt; x 01 = r 1 (see Fig. 3 for all notations) the dipole amplitude in Eq. (2.6) describes the interaction of the dipole with the size which is much larger than the size of the lower dipole in Fig. 3. Such interaction cannot be described by Eq. (2.1). Indeed, the non-linear equation is proven only in the case when r 1 = x 01 ≪ r 2 since only in such conditions we can restrict ourselves by consideration of the &quot; fan &quot; diagrams (see Fig. 4-a) and only in the case of the running QCD coupling [1]. Eq. (2.1) is also valid for deep inelastic processes with nuclei [17] but we will not consider this process here since in this case the dipole amplitude does not depend on b t for b t ≤ R A where R A is the nucleus radius 2 . Therefore, we should consider this region of integration as a correction to the non-linear equation together with the enhanced diagrams of Fig. 4</p>
+
+				<p><formula>-b. N b k&apos; k * * γ γ 1 (r , r , b) 2 (r , r , b) (r , r , b) r r 1 2 2 1 Figure 3</formula></p>
+
+				<p>: The picture of interaction of two photons with virtualities larger than a &quot; soft &quot; scale. k and k ′ are transverse momenta of quarks.</p>
+
+				<p>Our strategy will be the following: we will solve the non-linear equation assuming that Q ′ and Q ≈ 1/b t ≪ k and k ′ and, using this solution, we will come back to Eq. (2.1) and we will discuss the contribution of the region where Q + Q ′ ≈ 1/b t ≪ k or/and k ′ ., while Q ′ ≈ Q ≈ k or k ′ .</p>
+
+				<p>Finally, Eq. (2.1) can be written in the form (see Ref. [19] for details )</p>
+
+				<figure>
+					<trash>∂ ˜ N (k, y; b t ) ∂ y = ¯ α S ˆ χ(ˆ γ(k)) ˜ N(k, y; b t ) − ˜ N 2 (k, y; b t ) ; (2.7) wherê γ(k</trash>
+
+
+				</figure>
+
+				<p>) is an operator corresponding to the anomalous dimension of the gluon structure function and it is equal to</p>
+
+				<figure>
+					<trash>ˆ γ(k) = 1 + ∂ ∂ ξ (2.8)</trash>
+
+
+				</figure>
+
+				<p>The form of the first term on the r.h.s. of Eq. (2.7) as well as definition of the variable ξ, we will discuss in the next section. Here, we would like only to draw your attention to the fact that the emission of the gluons in the BFKL equation is described by the first tern in the r.h.s. of Eq. (2.1) (see Fig. 2) which enters at the same value of the impact parameter as the l.h.s. of the equation.</p>
+
+				<p>Function χ(γ) is an eigen value of the BFKL equation [27]</p>
+
+				<figure>
+					<trash>χ(γ) = 2 ψ(1) − ψ(1 − γ) − ψ(γ) . (2.9) Eq. (2.7</trash>
+
+
+				</figure>
+
+				<p>) we will solve in the semi-classical approach.</p>
+
+			</div>
+			<div>
+				<head>2.2</head>
+
+				<p>The solution to the BFKL equation at large b t This solution has been discussed (see Refs. [29, 30, 31, 32, 25] ) and at large b t it has a form:</p>
+
+				<figure>
+					<trash>˜ N(k, k ′ , y; b t ) = dγ 2 π i φ in (k ′ , γ; b t ) e ¯ α S χ(γ) y − (1 − γ) ξ (2.10) where ξ = ln(b 4 t k 2 k</trash>
+
+
+				</figure>
+
+				<p>′2 ) and φ in is determined by the initial conditions.</p>
+
+				<p>It is easy to see that Eq. (2.10) is a solution to the Eq. (2.1) without the non-linear term. Since the form of solution given by Eq. (2.10) is very important both for a derivation of the linear part of Eq. (2.1) and for understanding the value of the typical dipole sizes in the nonlinear part of the equation we will discuss this solution in some details follow Refs. [30, 31, 32].</p>
+
+				<p>The general solution to the BFKL equation in the coordinate representation was derived in Ref.[32], namely (see Fig. 5</p>
+
+				<figure>
+					<trash>), N(r 1 , r 2 ; y, b t ) = (2.11) dγ 2 π i φ in (γ; r 1 ) d 2 R 1 d 2 R 2 δ( R 1 − R 2 − b t ) e ω(γ) y V (r 1 , R 1 ; γ) V (r 2 , R 2 ; 1 − γ) with ω(γ) = ¯ α S χ(γ) (2.12) and V (r i , R i ; γ) =   r 2 i ( R i + 1 2 r i ) 2 ( R i − 1 2 r i ) 2   1−γ . (2.13) The integration over R 1 in Eq. (2.11) was performed in Refs. [30, 31]</trash>
+
+
+				</figure>
+
+				<p>with the result:</p>
+
+				<figure>
+					<trash>d 2 R 1 V (r 1 , R 1 ; γ) V (r 1 , | R 1 − b t |; 1 − γ) = (γ − 1 2 ) 2 (γ(1 − γ)) 2 ( c 1 x γ x * γ F (γ, γ, 2γ, x) F (γ, γ, 2γ, x * ) + + c 2 x 1−γ x * 1−γ F (1 − γ, 1 − γ, 2 − 2γ, x) F (1 − γ, 1 − γ, 2 − 2γ, x * ) ) , (2.14) where F is hypergeometric function [28]</trash>
+
+
+				</figure>
+
+				<p>and x x * is equal to [30, 31]</p>
+
+				<figure>
+					<trash>x x * = r 2 1,t r 2 2,t ( b − z 1 r 1,t − ¯ z 2 r 2,t ) 2 ( b − ¯ z 1 r 1,t − z 2 r 2,t ) 2 (2.15) and c 1 and c 2 are function of γ. At large values of b t ≫ r 1 and r 2 the argument x x * is small, namely x x * = r 2 1 r 2 2 b 4 t (2.16)</trash>
+
+					<figDesc>It is interesting to notice that x x * turns out to be small and simple also for b t &lt; r 2 with r 1 &lt; r 2 . Indeed, for such values of b t</figDesc>
+					<trash>x x * = r 2 1 z 2 2 ¯ z 2 2 r 2 2 (2.17) Expanding Eq. (2.14) and rewriting the answer in the transverse momentum representation given by Eq. (2.2) and Eq. (2.3) we reduce the general solution of Eq. (2.14) to Eq. (2.10). Using Eq. (2.10</trash>
+
+
+				</figure>
+
+				<p>) one can see that the linear part of Eq. (2.7) indeed gives the BFKL equation. Since all derivative in Eq. (2.7) are taken with respect to ξ we can consider φ in in Eq. (2.7) as an arbitrary function of b t .</p>
+
+				<p>The exact form of the initial condition depends on the particular reaction. We choose as an instructive example the virtual photon-photon scattering (see Fig. 3). 000000000000000000000000000 000000000000000000000000000 000000000000000000000000000 000000000000000000000000000 000000000000000000000000000 000000000000000000000000000 000000000000000000000000000 111111111111111111111111111 111111111111111111111111111 111111111111111111111111111 111111111111111111111111111 111111111111111111111111111 111111111111111111111111111 111111111111111111111111111 000000000000000 000000000000000 000000000000000 000000000000000 000000000000000 111111111111111 111111111111111 111111111111111 111111111111111 111111111111111 000000000000000 000000000000000 000000000000000 000000000000000 111111111111111 111111111111111 111111111111111 111111111111111 000000000000000000000000000000000000000 111111111111111111111111111111111111111 γ * γ * 000000000000000000000000000 000000000000000000000000000 000000000000000000000000000 000000000000000000000000000 000000000000000000000000000 000000000000000000000000000 111111111111111111111111111 111111111111111111111111111 111111111111111111111111111 111111111111111111111111111 111111111111111111111111111 111111111111111111111111111 000000000000000000000000000 000000000000000000000000000 000000000000000000000000000 000000000000000000000000000 000000000000000000000000000 000000000000000000000000000 000000000000000000000000000 111111111111111111111111111 111111111111111111111111111 111111111111111111111111111 111111111111111111111111111 111111111111111111111111111 111111111111111111111111111 111111111111111111111111111</p>
+
+				<p><formula>γ * γ * y 2 2 k 1 1 k y k y 0 0 b b b 1 2 3 γ γ * * Fig. 4</formula></p>
+
+				<figure>
+					<figDesc>-a Fig. 4-b Fig. 4-c Figure 4</figDesc>
+
+				</figure>
+
+				<p>: &quot; Fan &quot; diagrams (Fig. 4 -a ), the first enhanced diagram (Fig. 4 -b ) and the first correction to &quot; fan &quot; diagrams (Fig. 4</p>
+
+				<figure>
+					<figDesc>-c ) for γ * − γ * interaction. The thick lines in Fig. 4</figDesc>
+
+				</figure>
+
+				<p>-c denote the BFKL Pomeron .</p>
+
+				<p>The advantage of this process is the fact that we know the initial condition which is under control of pQCD except large b t behavior. The problem of large b t behavior of the Born amplitude is addressed in Ref. [25] and it is shown that φ in can be chosen in the form</p>
+
+				<figure>
+					<trash>φ in (k ′ , y; b t ) = πα 2 S N 2 c − 1 3 N 2 c (m π b t ) 4 K 4 (2 m π b t ) 1 γ (2.18) to satisfy both the 1/b 4 t of Born approximation in perturbative QCD, namely, φ in (k ′ , y; b t ) = πα 2 S N 2 c − 1 48 N 2 c 1 γ (2.19) and the non-perturbative e − 2 mπ bt behavior at large b t ≫ 1/(2 m π b t ). = V(r 1 , R 1 V(r 2 , R 2 ; ; e ) N(r 1 r , 2 ; b , ) y ) y ω(γ) γ 1−γ</trash>
+
+					<head>Figure 5:</head>
+
+					<figDesc>The BFKL Pomeron contribution at fixed b t .</figDesc>
+
+				</figure>
+
+				<p>2.3 Semi-classical approach In semi-classical approach we are looking for a solution in the form: N(k, k ′ , y; b t ) = e ω(ξ,y,bt) y − ( 1 − γ(ξ,y,bt) ) ξ + β(k ′ ,bt) (2.20) where ω(ξ, y, b t ) and γ(ξ, y, b t ) are smooth functions of y and ξ: dω(ξ, y, b t )/dy ≪ ω 2 (ξ, y, b t ), dω(ξ, y, b t )/dξ ≪ ω(ξ, y, b t ) (1 − γ(ξ, y, b t )), dγ(ξ, y, b t )/dξ ≪ ( 1 − γ ) 2 (ξ, y, b t ) and dγ(ξ, y, b t )/dy ≪ ω(ξ, y, b t ) (1 − γ(ξ, y, b t )) 3 .</p>
+
+				<p>Assuming Eq. (2.20) we can use the method of characteristic (see, for example, Ref. [33]) to solve the non-linear equation. For equation in the form</p>
+
+				<figure>
+					<trash>F (y, ξ, S, γ, ω) = 0 (2.21)</trash>
+
+					<figDesc>where S = ω y + γξ + β, we can introduce the set of characteristic lines on which ξ(t), y(t), S(t), ω(t), γ(t) are functions of variable t (artificial time), which satisfy the following equations:</figDesc>
+					<trash>(1.) d ξ d t = F γ , (2.) d y d t = F ω , (3.) d S d t = γ F γ + ω F ω , (4.) d γ d t = −( F ξ + γ F S ) , (5.) d ω d t = − ( F y + ω F S ) , (2.22) where F y = ∂F (y,ξ,S,γ,ω) ∂y etc. We can reduce the master equation (see Eq. (2.1) ) in semi-classical approach to the form of Eq. (2.21), namely, ω − ¯ α S χ(γ) + ¯ α S e S = 0 . (2.23) Using Eq. (2.20) and Eq. (2.23) we can write the set of equations (see Eq. (2.22)) in the form: (1.) d ξ d t = − ¯ α S d χ(γ) d γ , (2.) d y d t = 1 , (3.) d S d t = ¯ α S (1 − γ) d χ(γ) d γ + ω , (4.) d γ d t = ¯ α S ( 1 − γ ) e S , (5.) d ω d t = − ¯ α S ω e S , (2.24)</trash>
+
+
+				</figure>
+
+				<p>We will solve these equations in the next section, but before doing this we are going to illustrate the method of characteristic solving the linear equation neglecting the non-linear tern in Eq. (2.1). In semi-classical approach the linear equation has a form:</p>
+
+				<figure>
+					<trash>ω = ¯ α S χ(γ) . (2.25) For linear equation the set of Eq. (2.24) reduces to two equations: d ξ d y = − ¯ α S d χ(γ) d γ , d S d y = ¯ α S (1 − γ) d χ(γ) d γ + ω , (2.26)</trash>
+
+
+				</figure>
+
+				<p>with both γ and ω being constant as function of y.</p>
+
+				<p>The solution is very simple, namely,</p>
+
+				<figure>
+					<trash>S = χ(γ S ) (y − y 0 ) − (1 − γ S ) (ξ − ξ 0 ) + β(b t ) (2.27) with γ S given by ξ − ξ 0 = − ¯ α S d χ(γ) d γ | γ=γ S (y − y 0 ) (2.28) Comparing Eq. (2.27) and Eq. (2.28</trash>
+
+
+				</figure>
+
+				<p>) with the solution to the BFKL equation of Eq. (2.10) one can see that the semi-classical approach is the exact solution of the linear (BFKL) equation in which the contour integral over γ is taken by the steepest decent method. Eq. (2.28) is the equation for the saddle point value of γ = γ S . The accuracy of the semi-classical approach is even worse than one for the steepest decent method since we cannot guarantee the preexponential factor in the semi-classical calculation which appears in the steepest decent method. However, the semi-classical approach has a great advantage since it allows us to treat the nonlinear equation within the same framework as the linear one without major complications.</p>
+
+				<p>To solve Eq. (2.24) we need to find out the initial conditions for this set of equations, which we derive from the Glauber-Mueller formula for γ * − γ * scattering ( see Ref. [25] ), namely:</p>
+
+				<figure>
+					<trash>N(x, y = y 0 , ; b t ) = 1 − e − N BA (x,y=y 0 ,bt) (2.29) where N</trash>
+
+					<figDesc>BA is the dipole amplitude in the Born approximation. It has been calculated in Ref. [25]</figDesc>
+					<trash>N BA (x, y = y 0 , b t ) = π α 2 S N 2 c − 1 3 N 2 c (m π b t ) 4 K 4 (2 m π b t ) e ˜ ξ ≡ 1 4 ˜ τ (y = y 0 ; b t ) e ˜ ξ , (2.30) where the variable ξ is defined as ˜ ξ = ln r 2 t,1 r 2 2,t (b 2 t + 1 4 r 2 2,t ) 2 . (2.31) Comparing Eq. (2.31) with Eq. (2.16) and Eq. (2.17) we notice that ξ = ln(x x * ) with z 2 = −¯ z 2 = 1 2</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>.</head>
+
+				<p>We put these values of z 2 just for the sake of simplicity.</p>
+
+				<p>One can see that ξ in the coordinate representation can be replaced by −ξ + 4 ln 2 with ξ</p>
+
+				<figure>
+					<trash>ξ = ln k 2 ( k ′2 b 2 t + 1 ) 2 k ′2 . (2.32)</trash>
+
+
+				</figure>
+
+				<p>At large value of b t we have the same definition of ξ that has been used but Eq. (2.32) gives us a generalization which allows us to treat the case of b t = 0.</p>
+
+				<figure>
+					<trash>Using Eq. (2.2) and Eq. (2.3) we can find the initial condition in the momentum represen- tation: ˜ N 0 (ξ, y = y 0 ; b t ) = 1 2 Γ 0 τ (ξ; b t ) = 4 e −ξ τ (y = y 0 ; b t ) (2.33) where Γ 0 is incomplete Euler gamma function [28]</trash>
+
+
+				</figure>
+
+				<p>of zeroth order. The argument τ (ξ; b t )</p>
+
+				<figure>
+					<trash>in Eq. (2.33) can be rewritten as τ (ξ; b t ) = Q 2 s (y = y 0 , k ′2 ; b t ) k 2 τ 0,cr , (2.34) with Q 2 s (y = y 0 , k ′2 ; b t ) = 4 ˜ τ τ −1 0,cr k ′2 ( k ′2 b 2 t + 1) −2 (2.35) bt &gt; 1/k ′ −→ 1 k ′2 b 4 t τ 0,cr π α 2 S N 2 c − 1 3 N 2 c (2m π b t ) 4 K 4 (2 m π b t )</trash>
+
+
+				</figure>
+
+				<p>where we define τ 0,cr as a value of τ at y = y 0 on the critical trajectory for ξ = ξ cr (γ cr ), see next section. The behavior of N 0 and γ 0 − 1 = S ξ at y = y 0 which follow from Eq. (2.33) is shown by Fig. 6</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+					<trash>γ 0 N 0 τ Initial conditions 0 0.25 0.5 0.75 1 1.25 1.5 1.75 2 0 0.2 0.4 0.6 0.8 1 Figure 6</trash>
+
+
+				</figure>
+
+				<p>: Initial conditions for dipole-dipole amplitude N 0 and anomalous dimension γ 0 at fixed y = y 0 as function of τ from Glauber-Mueller formula for γ * − γ * scattering [25] .</p>
+
+				<figure>
+					<figDesc>As one will see below we need also to know a ratio</figDesc>
+					<trash>B 0 = χ(γ 0 ) − N 0 ¯ α S 1 − γ 0 (2.36)</trash>
+
+
+				</figure>
+
+				<p>for finding the solution. This ratio is shown in Fig. 7</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+					<trash>γ 0 |B 0 | Initial conditions 5 10 15 20 25 30 0.1 0.2 0.3 0.4 0.5 0.6 0.7 Figure 7: Initial conditions for B 0 given by Eq. (2.36) . 3 Solution at ξ &gt; ξ sat 3.1 Fixed QCD coupling 3.1.1 Solution As has been discussed, see [1, 14, 15]</trash>
+
+
+				</figure>
+
+				<p>, in this kinematic region we can safely use the semiclassical approach for sufficiently large values of ξ. In this section we will find this semi-classical solution and will show, that the main qualitative feature of it, is the existence of special, critical trajectory which determines the saturation scale.</p>
+
+				<figure>
+					<trash>From equations 4 and 5 of Eq. (2.24) one can see that dω dγ = − ω 1 − γ (3.37) Eq. (3.37</trash>
+
+
+				</figure>
+
+				<p>) has a very transparent physics since it means that the phase and group velocity of wave package, defined by Eq. (2.20), are equal.</p>
+
+				<figure>
+					<trash>Eq. (3.37) has an obvious solution ω = −α S B 0 ( 1 − γ ) (3.38) where B 0</trash>
+
+
+				</figure>
+
+				<p>is a constant which has to be determined from the initial condition (see Fig. 7</p>
+
+				<figure>
+					<trash>and Eq. (2.36)). Using Eq. (3.38), Eq. (2.23) and Eq. (2.24)-4 we obtain that d γ d y = α S ( 1 − γ ) ( B 0 ( 1 − γ ) + χ(γ) ) (3.39) However, before solving Eq. (3.39</trash>
+
+
+				</figure>
+
+				<p>), we would like to draw your attention to the fact that Eq. (3.37) has itself a very interesting solution if we assume that non-linear corrections in Eq. (2.23) are small but they are valuable in Eq. (2.24)-4 and Eq. (2.24)-5. In other words, the non-linear term in the master equation is small in comparison with the linear one on this special trajectory but the non-linear contributions is essential in the equations for S ξ and S y dependence on y.</p>
+
+				<figure>
+					<trash>In this case Eq. (3.37) reduces to d χ(γ) d γ = − χ(γ) 1 − γ . (3.40)</trash>
+
+
+				</figure>
+
+				<p>The solution to this equation is γ = γ cr ≈ 0.37 4 .</p>
+
+				<p>The form of the trajectory is clear from Eq</p>
+
+				<figure>
+					<trash>. (2.24)-1, namely ξ cr = − α S d χ(γ cr ) d γ cr (y − y 0 ) + ξ 0 (b t ). (3.41) The value of the dipole amplitude N we can find using Eq. (2.24)-3 which can be reduced to dS dy = −α S e S , (3.42) which has the solution N = N 0 N 0 α S (y − y 0 ) + 1 (3.43)</trash>
+
+
+				</figure>
+
+				<p>Since this solution falls down at large y all our assumptions are self-consistent at least at α S (y − y 0 ) ≫ 1. The trajectory at small values of α S (y − y 0 ) should be found from Eq. (3.39).</p>
+
+			</div>
+			<div>
+				<head n="3.1.2">Numerical solution</head>
+
+				<p>To find the solution to the master equation we need to solve Eq. (3.39) and obtain γ(y) as a function of y, substitute this function into Eq. (2.23) and find out N(y) .These two functions γ(y) and N(y) will determine the solution on the trajectory that is given by Eq. (2.24)-1.</p>
+
+				<p>One can see from Fig. 8 that we can divide all possible trajectories in two part with initial γ 0 larger or smaller than γ 0 = γ 0,cr . From γ 0 = γ 0,cr starts the critical trajectory on which γ(y) → γ cr at large y. The trajectories to the right of the critical one are close to the straight lines which are the trajectories of the linear equation. The trajectories to the left of the critical line differs significally from the trajectories of the linear equation. In this domain the nonlinear corrections, induces by partons interaction in the parton cascade, are large and change considerably the physics of the QCD evolution traditionally related to the linear evolution equation.</p>
+
+				<p>The same physical picture we can see in Fig. 9 which shows the quite different behaviour of the anomalous dimension γ along trajectories. For the trajectories to the right of the critical line γ(y) very rapidly reaches a constant value as it should be for the linear evolution. On the critical line γ(y) approaches γ cr (see Eq. (3.40) ) but very slowly. For the trajectories to the left of the critical line we have a different behaviour and γ(y) becomes larger than unity which is, of course, an indication that we cannot use a semi-classical approach, at least in the present form. Fig. 10 shows the behavior of function S(y) (N = e S ) versus y = ln(1/x). One can see that the dipole amplitude N is decreasing slowly on the critical trajectory while it is rapidly falling down on the trajectories to the right of the critical line. It is worthwhile mentioning that at small y (y = 0 ÷ 15) the y-dependence stems mostly from the dependence of γ(y) on y ( see Fig. 9 ). We see the manifestation of the slow decrease of Eq. (3.43) only at y ≥ 15.</p>
+
+				<figure>
+					<trash>Trajectories ξ y=ln(1/x) γ 0 0.25 0.248 0.196 0.154 0.099 C r i t i c a l l i n e 0 5 10 15 20 25 30 35 40 45 50 0 10 20 30 40 50 60 70 Figure 8: Trajectories for the non-linear evolution equation ( see Eq. (2.1)) in semi-classical approach at b t = 0. . 3.1.3 A general solution</trash>
+
+
+				</figure>
+
+				<p>Since trajectories cannot cross each other we see (i) that the domain to the left of the critical line does not know anything about the domain to the right of the critical line; and (ii) that the solution to the right of the critical line is very close to the solution of the linear evolution equation. Therefore, the semi-classical approach to the non-linear evolution equation leads to an idea[1] to solve the problem considering only the linear evolution equation but with initial condition not at fixed value of ξ = ξ 0 but on the critical line with N is defined by Eq. (3.43). For fixed QCD coupling it is easy to find such a solution.</p>
+
+				<figure>
+					<trash>γ(y) y γ 0 0.25 0.248 0.196 0.154 0.099 γ cr 0 0.2 0.4 0.6 0.8 1 1.2 1.4 0 5 10 15 20 25 30 35 40 45 50</trash>
+
+					<head>Figure 9:</head>
+
+					<figDesc>The anomalous dimension γ(y) on the trajectories for the non-linear evolution equation.</figDesc>
+					<trash>-S(y) y γ 0 0.099 0.154 0.196 0.248 Critical line</trash>
+
+
+				</figure>
+
+				<figure>
+					<head>Figure 10:</head>
+
+					<figDesc>The value of −S(y) on the trajectories for the non-linear evolution equation at b t = 0. The dipole amplitude is defined as N = e S(y) .</figDesc>
+
+				</figure>
+
+				<p>Indeed, the general solution to the linear equation has a form of Eq. (2.10) where φ in should be defined from the initial condition.</p>
+
+				<figure>
+					<trash>Using Eq. (3.43) and Eq. (3.41) we obtain that φ in = ¯ α S ( dχ(γ) dγ − dχ(γ cr ) dγ cr ) e −(1−γcr ) ξ 0 e − 1 N 0 { α S χ(γ) −χ(γcr) 1 − γ 1 − γcr } . (3.44) Eq. (2.10) with</trash>
+
+
+				</figure>
+
+				<p>this φ in gives the solution to the linear equation with the initial condition on the critical line.</p>
+
+			</div>
+			<div>
+				<head n="3.1.4">Impact parameter dependence</head>
+
+				<p>Eq. (2.24) does not explicitly depend on b t . The entire b t dependence is hidden in initial condition (see Eq. (2.29)) both the initial dipole amplitude N 0 and the anomalous dimension γ 0 depend actually on the variable τ as one can see from Eq. (2.29)), namely,N 0 = N(τ 0 ) and γ 0 = τ 0 dN(τ 0 )/dτ 0 . For example, the critical line corresponds to τ 0,cr = 0.254 and γ 0 = 0.248.</p>
+
+				<p>However, when we solve Eq. (2.24)-1 for the trajectories, we need to know the initial value of ξ not only of τ . Indeed, the equation for the trajectories can be solved as</p>
+
+				<figure>
+					<trash>ξ = −α S y y 0 d y ′ d χ(γ(y ′ )) dγ + ξ 0 (b t ) . (3.45) It is obvious from Eq. (2.33) that ξ 0 (b t ) = ln ¯ τ (y = y 0 , b t ) − ln(τ 0,cr (y = y 0 )) . (3.46)</trash>
+
+
+				</figure>
+
+				<p>It should be stressed that the b t dependence also enters the definition of ξ =</p>
+
+				<figure>
+					<trash>ln(k 2 k ′2 b 4 t ). Substituting Eq. (3.46) into the equation for the critical line (see Eq. (3.41) ) one obtains the b t dependence of the saturation scale: Q 2 s (y, k ′2 ; b t ) = Q 2 s (y = y 0 , k ′2 ; b t ) e α S χ(γcr ) 1 − γcr (y−y 0 ) (3.47)</trash>
+
+					<figDesc>This equation we can rewrite at large b t using the exact expression for Q</figDesc>
+					<trash>2 s (y = y 0 , k ′2 ; b t ) (see Eq. (2.30)). It has the form Q 2 s (y, k ′2 ; b t ) = 1 k ′2 b 4 t τ 0,cr π α 2 S N 2 c − 1 3 N 2 c (2 m π b t ) 4 K 4 (2 m π b t ) e α S χ(γcr 1 − γcr (y−y 0 ) (3.48) In pQCD region Eq. (3.48) leads to Q 2 s (y, k ′2 ; b t ) = 1 k ′2 b 4 t τ 0,cr π α 2 S (N 2 c − 1) 3 N 2 c e α S χ(γcr 1 − γcr (y−y 0 ) . (3.49)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>As we will see below this expression for Q s leads to the typical radius of interaction which increases as a power of energy, namely,</figDesc>
+					<trash>R 2 (y) ∝ e 1 2 χ(γcr ) 1 − γcr (y−y 0 ) (3.50) in a</trash>
+
+
+				</figure>
+
+				<p>full agreement with the analysis given in Ref. [26]. It gives the power-like increase of the total dipole cross section, namely</p>
+
+				<figure>
+					<trash>σ tot (dipole) = 2 π R 2 ∝ e 1 2 χ(γcr ) 1 − γcr (y−y 0 )</trash>
+
+
+				</figure>
+
+				<p>in an explicit violation of the Froissart theorem [45].</p>
+
+				<p>However, the non-perturbative contributions in the initial condition modify Eq. (3.49) at large values of b t and Eq. (3.48) leads to Q 2 s ∝ e −2 mπ bt for large b t ≥ 1/2 m π . It is worthwhile mentioning that the b t of the saturation scale is the only way how the b t dependence could affect the solution in the saturation domain ( to the left of the critical line in Fig. 8 ). We will see below that Q 2 s ∝ e −2 mπ bt generates σ tot (dipole) ∝ ln 2 (1/x) in accordance with the Froissart theorem [45]</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+					<trash>3.2 Running α S 3.2.1 A general discussion</trash>
+
+
+				</figure>
+
+				<p>In this section we are looking for the semi-classical solution to our master equation (see</p>
+
+				<figure>
+					<trash>Eq. (2.1)) considering running QCD coupling, namely, α S in Eq. (2.1) is equal to α S = 4π b ln(1/(x 2 01 Λ 2 ))</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>.</head>
+
+				<p>The main uncertainty in taking into account the running QCD coupling is the fact that we do not know what is correct way to incorporate running α S into the linear BFKL equation [37, 38, 39]. However, it was proven, see [1], that we can safely use Eq. (2.1) with running α S in semi-classical approach.</p>
+
+				<p>It turns out that it is useful to search the semi-classical solution in the form</p>
+
+				<figure>
+					<trash>N(k, k ′ , y; b t ) = ¯ α S (ξ) e S = ¯ α S (ξ) e ω(ξ,y,bt) y − ( 1 − γ(ξ,y,bt) ) ξ + β(k ′ ,bt) , (3.51)</trash>
+
+
+				</figure>
+
+				<p>where ω and γ are smooth function of y and ξ.</p>
+
+				<p>In this case the master equation has a form:</p>
+
+				<figure>
+					<trash>ω − ¯ α S (ξ) χ(γ) + ¯ α 2 S (ξ) e S = 0 . (3.52) Using Eq. (2.21), Eq. (2.22) and the explicit form of α S , namely ¯ α S (ξ) = 4 π b ( ξ − ln(k ′2 b 4 t Λ 2 ) ) = 4 π b ξ − ¯ ξ(k ′ , b t ) (3.53) we can derive the following set of equation. (1.) d ξ d t = F γ = − ¯ α S (ξ) d χ(γ) d γ ; (2.) d y d t = F ω = 1 ; (3.) d S d t = γ F γ + ω F ω = ¯ α S (ξ) (1 − γ) d χ(γ) d γ + ω ; (4.) d γ d t = − (F ξ + γ F S ) = ¯ α 2 S (ξ) ( 1 − γ ) e S − ¯ α 2 S (ξ) b 4 π χ(γ) + ¯ α 3 S (ξ) b 2π e S ; (5.) d ω d t = − (F y + ω F S ) = − ¯ α 2 S (ξ) ω e S ; (3.54) 3.2.2 Critical trajectory</trash>
+
+
+				</figure>
+
+				<p>There exists a critical trajectory in this case as well as in the case of fixed α S . To see it let us assume that e S ≈ 1 and α S ≪ 1. For such S we can neglect the non-linear term in Eq</p>
+
+				<figure>
+					<trash>. (3.52) and Eq. (3.54)-3 has a form: dS dy = ¯ α S χ(γ) + (1 − γ) dχ(γ) dγ . (3.55)</trash>
+
+
+				</figure>
+
+				<p>One sees from Eq. (3.55) that there is a trajectory with the same equation for the anomalous dimension (γ = γ cr ) as in the case of constant α S (see Eq. (3.40)) on which S is constant. Eq. (3.54)-4 allows us to determine this constant. Indeed, we can see from Eq. (3.54)-4 that γ on this trajectory would be constant if [1]</p>
+
+				<figure>
+					<trash>e Scr = b 4 π χ(γ cr ) 1 − γ cr (3.56) The form of this critical trajectory is given by Eq. (3.54)-1, namely dξ cr (y) dy = −¯ α S (ξ) dχ(γ cr ) dγ cr , (3.57) which leads to ( ξ − ¯ ξ(k ′ , b t ) ) 2 − ( ξ 0 (b t ) − ¯ ξ(k ′ , b t ) ) 2 = 8 π b | dχ(γ cr ) dγ cr | (y − y 0 ) , (3.58)</trash>
+
+
+				</figure>
+
+				<p>where ξ 0 (b t ) and y 0 are determined by the initial conditions.</p>
+
+				<p>Therefore, we have constant S cr and γ cr on the critical trajectory of Eq. (3.58). One can see from Eq. (3.54)-5 that ω is also approximately constant on this line , namely,</p>
+
+				<figure>
+					<trash>ω ∝ e − 4 π b 1 | dχ(γcr ) dγcr | ln(ξ) . (3.59) 3.2</trash>
+
+					<figDesc>.3 b t -dependence of the saturation scale</figDesc>
+
+				</figure>
+
+				<p>The saturation scale, which is the value of the typical virtuality k 2 on the critical line, can be determined resolving Eq. (3.58) with respect to k 2 . It is easy to see that</p>
+
+				<figure>
+					<trash>Q 2 s (y, b t ) = Λ 2 e √ ( ξ 0 (bt) − ¯ ξ(k ′ ,bt) ) 2 + 8 π b |χ ′ γcr (γcr)| (y − y 0 ) , (3.60) where ξ 0 (b t ) − ¯ ξ(k ′ , b t ) = ln k ′2 m 4 π K 4 (2 m π b t ) τ 0,cr</trash>
+
+
+				</figure>
+
+				<p>−→ | bt ≫ 1/2mπ − 2m π b t , for the initial conditions given by Eq. (2.29). However, we will discuss below that we cannot solve the non-linear evolution equation with running QCD coupling with this initial condition.</p>
+
+				<figure>
+					<figDesc>We need to evolve first the dipole amplitude with the linear BFKL equation to some value of y = y in = ln(1/x in ) and only at y = y in we can use the expression of Eq. (2.29) for the initial condition. It leads to substitution N BF KL (x, y = y in ; b t ) instead of N BA (x, y = y 0 ; b t ) in Eq. (2.29). For the solution to the BFKL equation we use Eq. (2.10) which give us the following equation for N BF KL (x, y = y in ; b t ) : N BF KL (x, y = y in ; b t ) =</figDesc>
+
+				</figure>
+
+				<p><formula>1 2 ˜ τ e ω L (y in −y 0 ) e 1 2 ξ . (3.61) e 1 2</formula></p>
+
+				<p>ξ reflects the fact that the BFKL anomalous dimension is equal to</p>
+
+				<figure>
+					<trash>1 2 and ω L = ¯ α S χ( 1 2</trash>
+
+
+				</figure>
+
+				<p>)</p>
+
+				<p>[27].</p>
+
+				<figure>
+					<figDesc>Eq. (3.61) leads to the following expression for the saturation scale at y = y in :</figDesc>
+					<trash>Q 2 s (y = y in , k ′2 ; b t ) = (4 ˜ τ ) 2 e 2 ω L (y in −y 0 ) k ′2 (τ 0,cr ( k ′2 b 2 t + 1)) −2 (3.62) −→ | bt &gt; 1/k ′ 1 k ′2 b 4 t τ 2 0,cr (2m π b t ) 4 K 4 (2 m π b t ) e ω L (y in −y 0 ) 2 Eq. (3.62) translates in ξ 0 (b t ) − ¯ ξ(k ′ , b t ) = ln(Q 2 s (y = y in , k ′2 ; b t )/Λ 2 ) =          − ln(b 4 t k ′2 Λ 2 ) for (1/2 m π ) ≫ b t ≫ 1/k ′ −4m π b t for b t ≫ (1/2 m π ) (3.63) Eq. (3.60) shows</trash>
+
+
+				</figure>
+
+				<p>that the saturation scale does not depend on b t for b t ≤ b 0 (y) with b 0 which is the solution of the following equation</p>
+
+				<figure>
+					<trash>ln(Q 2 s (y = y in , k ′2 ; b 0 )/k 2 ) = 8 π b |χ ′ γcr | (γ cr ) (y − y 0 ). (3.64) From Eq. (3.63) one can see that b 0 ∝ exp 1 2 8 π b |χ ′ γcr (γ cr )| (y − y 0 ) at 1/2 m π ≫ b 0 ≫ 1/k ′ and b 0 = (1/4m π ) 8 π b |χ ′ γcr (γ cr )| (y − y 0 ) for b 0 ≫ 1/2m π . In other words, Q 2 s → 1/b 4</trash>
+
+
+				</figure>
+
+				<p>t for b t &gt; b 0 if 1/k ′ &lt; b 0 &lt; 1/2 m π and the saturation scale Q 2 s → e −4 mπ bt for b 0 &gt; 1/2 m π . Fig. 11 illustrates such a behaviour of the saturation scale. It should be stressed that we have a different large b t behaviour for the running α S due to different initial conditions.</p>
+
+				<figure>
+					<trash>b t -dependence of Q s y=ln(1/x) ξ b t 0 1fm 2fm 0 2.5 5 7.5 10 12.5 15 17.5 20 22.5 25 0 5 10 15 20 25 30 35 40 45 50</trash>
+
+					<head>Figure 11:</head>
+
+					<figDesc>The behavior of the saturation scale as function of y at different values of the impact parameters (b t ). As one can see at large values of y the saturation scale does not depend on b t in a striking difference with the case of frozen QCD coupling.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="3.2.4">Numerical solution</head>
+
+				<p>Our above discussion we support by numerical solution of Eq. (3.54). We simplify a bit this set of equations neglecting ¯</p>
+
+				<figure>
+					<trash>α 2 S contribution in Eq. (3.52) and ¯ α 3 S term in Eq. (3.54)-4. Fig. 12</trash>
+
+
+				</figure>
+
+				<p>shows that the trajectories for the running QCD coupling have the same pattern as for frozen α S :</p>
+
+			</div>
+			<div>
+				<head>•</head>
+
+				<figure>
+					<figDesc>They can be divided in two parts by the critical line which has the form of Eq. (3.58) starting from ξ ≥ 5. The anomalous dimension on this line rapidly reaches the value of γ cr ( see Eq. (3.40) and Fig. 13</figDesc>
+
+				</figure>
+
+				<p>) while S(y) is constant at large y (see Fig. 14); • All trajectories to the left of critical line in Fig. 12 go to the negative values of ξ with unreasonable values of the anomalous dimension γ(y) → 1.62 (see Fig. 13) and with very fast increase of e S(y) shown in Fig. 14. Such a behaviour reflects the fact that we cannot apply the semi-classical method for the solution inside of the saturation (CGC) region at least when the trajectories go far away from the critical line. Comparing Fig. 9 and Fig. 8 with Fig. 13 and Fig. 12</p>
+
+				<figure>
+					<figDesc>we conclude that solutions for both frozen and running QCD coupling have the same qualitative features; • Among all trajectories to the right of the critical line we can conditionally separate two groups. The trajectories of the first group envelope the critical line and only at some value of y they go apart. For the large values of y ≥ y cr they coincide with the trajectories of the linear evolution equation. Therefore we can find the dipole amplitude on such trajectories just solving the linear evolution equation with the initial condition N = ¯ α S e Scr at y = y cr with e Scr given by Eq. (3.56). The trajectories which do not touch the critical line belong to the second group. They are the same as trajectories for the linear equation.</figDesc>
+
+				</figure>
+
+				<p>• The trajectory which separate these two groups of trajectories to the right of critical line is denoted by dotted line in Fig. 12 and it touches the critical line in the only one point. The equation of this tangent line was found in Ref.[1] and it reads:</p>
+
+				<figure>
+					<trash>y − ˆ y(ξ, y) = 1 2 4π bα S ( ˆ ξ(ξ, y)) 2 ln ξ , (3.65) wherê y(ξ, y) and ξ(ξ, y</trash>
+
+					<figDesc>)) are the coordinates of the point where the tangent line ( dotted line in Fig. 12</figDesc>
+
+				</figure>
+
+				<p>), passing through the point (ξ, y), touches the critical line.</p>
+
+				<figure>
+					<trash>Trajectories ξ y=ln(1/x) γ 0 0.362 0.348 0.3463 0.346 0.33 0.254 0.182 C r it ic a l li n e</trash>
+
+					<head>Figure 12:</head>
+
+					<figDesc>Trajectories for the non-linear evolution equation ( see Eq. (3.54)) in semi-classical approach at b t = 0 for running QCD coupling.he dotted line corresponds to the trajectory which is tangent to the critical line.</figDesc>
+
+				</figure>
+
+				<p>The essential difference between frozen and running QCD coupling occurs in the initial condition for the non-linear equation. For the frozen α S we used the initial conditions given by Eq. (2.29) and Eq. (2.30). However, we found out the the non-linear equation with running α S cannot be solved with the same initial condition. It turns out that we need to evolve our parton cascade using the BFKL equation (see Eq. (2.10)) for y less than y 0 (x ≥ x 0 ) and use Eq. (2.29) as the initial condition at y = y 0 (x = x 0 ) with N BF KL instead N BA . In our numerical calculation we use Eq. (2.10) and Eq. (2.18) with x 0 = 10 −1 to obtain the solution that has been discussed.</p>
+
+				<figure>
+					<trash>γ(y) y γ 0 0.362 0.348 0.3463 0.3462 0.33 0.254 0.182 γ cr 0 0.2 0.4 0.6 0.8 1 1.2 1.4 1.6 0 5 10 15 20 25 30 35 40 45 50</trash>
+
+					<head>Figure 13:</head>
+
+					<figDesc>The anomalous dimension γ(y) on the trajectories for the nonlinear evolution equation (see Eq. (3.54)). The dotted line corresponds to γ = γ cr .</figDesc>
+					<trash>e S(y) y γ 0 0.362 0.348 0.3463 Critical line 0.346 0.33 0.254 0.182 0 1 2 3 4 5 6 0 5 10 15 20 25 30 35 40 45 50</trash>
+
+
+				</figure>
+
+				<figure>
+					<head>Figure 14:</head>
+
+					<figDesc>The value of e S(y)</figDesc>
+
+				</figure>
+
+				<p>on the trajectories of the non-linear evolution equation (see Eq. (3.54)) at b t = 0. The dipole amplitude is defined as N = α S e S(y) .</p>
+
+				<figure>
+					<trash>4 Semi-classical Approach in Saturation (Colour Glass Condensate ) Domain 4.1</trash>
+
+
+				</figure>
+
+				<p>Reduction of the non-linear equation to the semi-classical form</p>
+
+				<p>As have been discussed we cannot expect to solve the master equation in the saturation (CGC) domain considering the dipole amplitude N = e S such as S being smooth functions of y and ξ. Therefore, the fist question, which we have to answer, is for what function we are going to use the semi-classical approximation. We follow the idea of Ref. [19] and introduce the new function Φ as</p>
+
+				<p><formula>N(y, ξ; b t ) = 1 2 ξ dξ ′ 1 − e −Φ(y,ξ ′ ;bt) . (4.66)</formula></p>
+
+				<p>We consider Φ as a smooth function such that Φ ξξ ≪ Φ ξ Φ ξ , Φ yy ≪ Φ y Φ y as well as Φ ξy ≪ Φ ξ Φ y .</p>
+
+				<figure>
+					<trash>Therefore, ∂ n (∂ξ) n e −Φ = (−Φ ξ ) n e −Φ . (4.67) Substituting Eq. (4.67) in Eq. (2.7</trash>
+
+					<figDesc>) we reduce it to the following equation for function Φ:</figDesc>
+
+				</figure>
+
+				<p><formula>− ∂ 2 Φ(y, ξ; b t ) ∂y ∂ξ = ¯ α S 1 − e −Φ(y,ξ;bt) + ¯ α S dL(−Φ ξ ) dΦ ξ ∂ 2 Φ(y, ξ; b t ) ∂ξ ∂ξ , (4.68) where L(f ) = (f χ(1 − f ) − 1)/f .</formula></p>
+
+				<p>In double log approximation of pQCD which was discussed in Ref.[19] function L is equal to zero since χ(1 − f ) = 1/f . For the derivation of Eq. (4.68) one needs to take into account that the series for L(f ) starts with f 2 term.</p>
+
+				<p>In this section we will solve Eq. (4.68) using the powerful idea of the geometrical scaling behaviour which will allow us to simplify this equation.</p>
+
+			</div>
+			<div>
+				<head n="4.2">Geometrical scaling</head>
+
+				<p>Inside of the saturation domain we expect so called geometrical scaling behaviour of the dipole amplitude, namely, this amplitude depends on one variable τ = Q 2 s (x; b t )/k 2 instead of three: x, k 2 and b t . The physics of such behaviour has been discussed for long time starting from the first papers where the saturation scale was introduced [1, 2, 3]. Recently, it has been found that the HERA data supports this idea in the wide range of low x ( x ≤ 10 −1 ) (see Ref. [40] for details) as well as the numerical solutions of the non-linear evolution equation show this scaling behaviour [22, 21, 41]. However, the theoretical proof [19, 20, 34] of this scaling behaviour is still in a very embryonic state. The only result, that has been proven so far, is that in the semi-classical approach the master non-linear equation has a geometrical scale solution both in the saturation (CGC) region [34] as well as for [20, 1]</p>
+
+				<p><formula>5 (Q 4 s /Λ 2 ) &gt; Q 2 &gt; Q 2 s .</formula></p>
+
+				<p>In this paper we will find the semi-classical solution to Eq. (2.7) inside of the saturation (CGC) region.</p>
+
+				<p>We start with the general arguments why the semi-classical leads to the geometrical scale behaviour of the dipole amplitude given in Ref. [34].</p>
+
+				<p>The solution to the linear equation can be written through the moments of the dipole amplitude, namely,</p>
+
+				<figure>
+					<trash>˜ N (k, k ′ , y; b t ) = dω 2 π i φ(k ′ , ω; b t ) e ω y − (1 − γ(ω)) ξ (4.69) where γ(ω) is a solution to the following equation: ¯ α S χ(γ(ω)) = ω . (4.70) In ω representation Eq. (2.7) has a form ( ω − ¯ α S χ(γ(ω)) ) N(ω, ξ; b t ), = − ¯ α S dω ′ 2 π i N(ω ′ , ξ; b t ) N(ω − ω ′ , ξ; b t ) . (4.71)</trash>
+
+
+				</figure>
+
+				<p>In the semi-classical approach we can use the steepest decent method to take the integral over ω ′ in Eq. (4.71) and the saddle point in this integration is equal to ω</p>
+
+				<figure>
+					<trash>′ S = ω/2. After doing this we obtain: ( ω − ¯ α S χ(γ(ω)) ) φ(k ′ , ω; b t ) e −(1 − γ(ω)) ξ = (4.72) − ¯ α S φ(k ′ , ω 2 ; b t ) 1 2 √ 2π γ ωω ξ e −2(1 − γ( ω 2 )) ξ In Eq. (4.72</trash>
+
+					<figDesc>) one can see two different regions in ω: 1. ω ≫ ω crit . Here we can neglect the r.h.s. in Eq. (4.72) and anomalous dimension γ(ω) can be calculated from Eq. (4.70). 2. ω ≪ ω crit . The r.h.s. of Eq. (4.72) is not small and at the fist requirement for the solution we need to have</figDesc>
+					<trash>(1 − γ(ω)| ω ≪ ω crit ) = 2 (1 − γ( ω 2 )| ω ≪ ω crit ) . (4.73)</trash>
+
+
+				</figure>
+
+				<p>This equation has a simple solution [34]</p>
+
+				<figure>
+					<trash>(1 − γ(ω)| ω ≪ ω crit ) = C ω . (4.74) 3. Both solutions should match at a certain value ω = ω crit . Therefore, we have (1 − γ(ω))| ω ≫ ω crit = (1 − γ(ω))| ω ≪ ω crit ; (4.75) dγ(ω) dω | ω ≫ ω crit = γ(ω) dω | ω ≪ ω crit ; (4.76) − γ(ω) dω | ω ≪ ω crit = 1 − γ(ω) dω | ω ≪ ω crit ; (4.77) C = 1 − γ cr ¯ α S χ(γ cr ) . (4.78)</trash>
+
+					<figDesc>One can see that Eq. (4.77) is the same as Eq. (3.40) with γ(ω crit ) ≡ γ cr .</figDesc>
+
+				</figure>
+
+				<p>Of course, we can see that (1 − γ) = Cω directly from Eq. (2.24) but we consider the above discussion (see Ref. [34] for more details) as more general since we use the very general properties of the semi-classical approach but not the method of characteristics.</p>
+
+				<p>The fact that (1 − γ ∝ ω in the saturation(CGC) domain means that the dipole amplitude is actually a function of one variable</p>
+
+				<figure>
+					<trash>z = ¯ α S χ(γ cr ) (1 − γ cr ) y − ξ + β(k ′ , b t ) . (4.79) One can derive this directly from Eq. (4.69) substituting Eq. (4.78</trash>
+
+
+				</figure>
+
+				<p>) and changing the integration variable from ω to ω ′ = ¯ α S χ(γ cr ) ω.</p>
+
+			</div>
+			<div>
+				<head n="4.3">Solution</head>
+
+				<p>Looking for the function of the new variable z given by Eq</p>
+
+				<figure>
+					<trash>. (4.79) we reduce Eq. (4.66) and Eq. (4.68) to the form: ˜ N(z) = 1 2 z z 0 dz ′ 1 − e −Φ(z ′ ) ; (4.80) ¯ α S χ(γ cr ) 1 − γ cr d 2 Φ(z) (d z) 2 = ¯ α S 1 − e −Φ(z) − ¯ α S dL(Φ z ) dΦ z d 2 Φ(z) (d z) 2 . (4.81) We can rewrite Eq. (4.81) as a set of equations: d Φ(z) dz = D(z) ; (4.82) χ(γ cr ) 1 − γ cr + d L(D(Φ)) dD(Φ) D(Φ) d D(Φ) dΦ = 1 − e −Φ ; (4.83)</trash>
+
+
+				</figure>
+
+				<p>which can be easily solved. It should be stressed that Eq. (4.83) does not depend on parameters and, therefore, it could be solved numerically without loosing any generality.</p>
+
+				<figure>
+					<trash>Integrating Eq. (4.83) over D and Φ and introducing a new variable γ cr = 1 − γ cr we obtain: χ(˜ γ cr ) ˜ γ cr D 2 − D 2 0 2 + χ(D) D − χ(˜ γ cr ) ˜ γ cr − D ˜ γcr χ(D ′ ) dD ′ + ln D D 0 = (4.84) Φ + e −Φ − Φ 0 − e −Φ 0 , where D 0 = D(z 0</trash>
+
+
+				</figure>
+
+				<p>) and Φ 0 = Φ(z 0 ) are initial values for D(z) and Φ(z).</p>
+
+				<p>We can see two distinct regions of Φ where we can obtain an analytic solutions to Eq</p>
+
+				<figure>
+					<trash>. (4.82) and Eq. (4.83).</trash>
+
+
+				</figure>
+
+				<p>• z ≫ z 0 where z 0 is the value of z for the critical line as has been discussed. In this case D is approaching the singularity D = 1 in the r.</p>
+
+				<figure>
+					<trash>h.s. of Eq. (4.84). Therefore this equation is reduced to 1 1 − D = Φ , (4.85) or D = 1 − 1/Φ. Solving Eq. (4.82) we obtain Φ = z − ln z. Therefore, Eq. (4.85) leads to the following dipole amplitude for large z ˜ N(z) = 1 2 z z 0 1 − z ′ e −z ′ d z ′ . (4.86)</trash>
+
+
+				</figure>
+
+				<p>Therefore, we see that at large values of z our function Φ is also large and we can safely use the semi-classical approach. • z → z 0 . For such z we cannot use the semi-classical approach for function Φ. As we have discussed we can use here rather the semi-classical approach for the dipole amplitude N, which is equal tõ</p>
+
+				<figure>
+					<trash>N (z)| z→z 0 = N(z 0 )e ˜ γcr z (4.87)</trash>
+
+
+				</figure>
+
+				<p>near to the critical line.</p>
+
+				<p>However, if Φ 0 = Φ(z 0 ) turns out to be so small that we can expand Eq</p>
+
+				<figure>
+					<trash>. (4.66) we can obtain from Eq. (4.87) that Φ(z)| z→z 0 = 2 ˜ γ cr N(z 0 ) e ˜ γcr z (4.88)</trash>
+
+
+				</figure>
+
+				<p>In this region we can re-derive Eq. (4.68) replacing Φ ξ by (ln Φ)</p>
+
+			</div>
+			<div>
+				<head>′ ξ .</head>
+
+				<p>In</p>
+
+				<p>Fig. 15 we presented the numerical solution to Eq. (4.82) and Eq. (4.83). We use N 0 = 0.32 as the initial condition which comes from the solution to the right of the critical line for running QCD coupling.</p>
+
+				<p>One can see that the exact solution can be well approximated by the asymptotic formula Φ = z − ln(z) starting from z = 1. It should be stressed that this formula leads to a quite different asymptotic behavior than it occurs in the so called double log approximation of pQCD (DLA) (see Ref. [19]). In DLA it turns out that Φ ∝ z 2 deeply in the saturation (CGC) region.</p>
+
+				<p>For lower value of z we can use Eq. (4.88) as seen from Fig. 15 . 4.4 Saturation for running α s As has been discussed it is not theoretically clear how to include the running QCD coupling in the non-linear evolution equation (see Eq. (2.1)). In Ref. [1] it was shown that we can safely consider α S as a function of the initial dipole x 01 for the kinematic region to the right of the critical line. However inside the saturation region we certainly cannot do this. We decided to consider the running α S in Eq. (2.1) to be frozen on the critical line 6 . We cannot prove this</p>
+
+				<figure>
+					<trash>φ ( z ) N ( z ) z Saturation region φ(z)= φ 0 e z(1 -γ cr ) φ(z) = z -ln z N(z) = 0.5 z 0 5 10 15 20 25 30 35 40 45 50 0 5 10 15 20 25 30 35 40 45 50</trash>
+
+					<head>Figure 15:</head>
+
+					<figDesc>The semiclassical solution to the non-linear equation as a function of the geometrical scaling variable z = ln(Q</figDesc>
+					<trash>2 s (x; b t )/k 2 ).</trash>
+
+
+				</figure>
+
+				<p>assumption but it looks natural from the point of view that physics of saturation is determined by one scale: the saturation momentum.</p>
+
+				<p>In framework of this approach we obtain the same set of equations (see Eq. (4.82) and Eq. (4.83) ) as for fixed as. The only difference is the new definition of the variable z.</p>
+
+				<figure>
+					<trash>Instead of Eq. (4.79) we have z = 2 ¯ α S (Q 2 s ) χ(γ cr ) (1 − γ cr ) y − ξ + β(k ′ , b t ) . (4.89) Using Eq. (3.60) we can rewrite Eq. (4.89) in the form: z = ln(Q 2 s (y; b t )/k 2 ) . (4.90)</trash>
+
+
+				</figure>
+
+				<p>However, the statement that Eq. (4.90) as well as the fact that we have the same set of equations, is correct only for high energy ( large values of y )</p>
+
+				<figure>
+					<trash>for which 8 π b |χ ′ γcr (γ cr )| (y − y 0 ) ≫ (ξ 0 (b t ) − ¯ ξ(k ′ , b t ) ) 2</trash>
+
+					<figDesc>.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="5">Unitarity Bound</head>
+
+				<p>The solution of the previous section allows us to calculate a high energy behavior of the ob- servables. xG(Q 2 ,x). The dipole amplitude in momentum representation, that has been calculated, is closely related to the gluon structure function, namely:</p>
+
+				<figure>
+					<trash>xG(Q 2 , x) = 2 N c α S π 2 Q 2 0 dk 2 d 2 b t ˜ N (y, ξ, b t ) . (5.91)</trash>
+
+
+				</figure>
+
+				<p>The simplest way to understand Eq. (5.91) is to notice that at short distances the dipole amplitude in the coordinate space is directly related to the gluon structure function. Indeed, the dipole total cross section is equal to [42]</p>
+
+				<figure>
+					<trash>σ dipole (x, r 2 t ) = α S ( 4 r 2 t ) N c π 2 r 2 t xG( 4 r 2 t , x) = (5.92) 2 N(x, y; b t ) = 2 r 2 t ∞ 0 k dk d 2 b t J 0 (kr t ) ˜ N(k, y; b t ) . The last relation is Eq. (2.2</trash>
+
+					<figDesc>) in which we use a new notation for the dipole size (r t ). Using moment representation for both xG and</figDesc>
+					<trash>N in Eq. (5.92), namely xG(Q 2 , x) = 1 2π i dω g(ω) x −ω e γ(ω) ln Q 2 , (5.93)</trash>
+
+
+				</figure>
+
+				<p>we can find the relation of Eq. (5.91) repeating simple calculation given in Ref.[43].</p>
+
+				<figure>
+					<trash>R= xG(x,Q 2 )/xG asymp (x,Q 2 ) y = ln(1/x) Q 2 = 16 GeV 2 Q 2 = 8 GeV 2 Q 2 = 4 GeV 2 1 1.5 2 2.5 3 3.5 4 4.5 5 5 10 15 20 25 30 35 40 45</trash>
+
+					<head>Figure 16:</head>
+
+					<figDesc>The ratio of the gluon structure function in the saturation (CGC) region to it&apos;s asymptotic value given by Eq</figDesc>
+					<trash>. (5.95) as a function of energy (y = ln(1/x)) at different values of Q 2 . Using asymptotic expression for N = 1 2</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>z (see Fig. 15</figDesc>
+
+				</figure>
+
+				<p>) one can calculate xG asymp using Eq. (5.91). We can take all integrals analytically if we assume a simplified version of Eq</p>
+
+				<figure>
+					<trash>. (3.48), namely, Q 2 s (y; b t ) = Q 2 s (y; b t = 0) Exp(−2m π b t ) or z = ¯ α S χ(γ cr ) 1 − γ cr y − ln k 2 − 2 m π b t − z 0 = ln(Q 2 s (y)/k 2 ) − 2 m π b t − z 0 . (5.94) Integrating over b t in the saturation region (z &gt; 0 or Q 2 &lt; Q 2 s (y, b t = 0)) we obtain xG asymp (Q 2 , x) = 2 π α S Q 2 4m 2 π ln 3 (Q 2 s (y)/Q 2 ) . (5.95) Fig. 16</trash>
+
+
+				</figure>
+
+				<p>shows the ratio of xG calculated directly from Eq. (5.91) using the numerical solution which we have discussed in the previous section to the asymptotic expression of Eq. (5.95).</p>
+
+				<p>Actually only to find out this difference we developed the method of solving for the master equation since the asymptotic behavior is clear from the general properties of the dipole scattering amplitude, namely, from the fact that N(r 2 t , y, b t ) ≤ 1 due to the unitarity constraint.</p>
+
+				<p>In Eq. (5.95) we consider so high energy that the upper limit in b t integration which is equal to b t = b 0 =</p>
+
+				<figure>
+					<trash>1 2 mπ ln(Q 2 s (y)/k 2</trash>
+
+
+				</figure>
+
+				<p>) is larger than 1/2m π . In the region where b 0 &lt; 1/2m π we can use the pure pQCD expression for the saturation momentum given by Eq. (3.49). The value of b 0 is equal to</p>
+
+				<figure>
+					<trash>b 4 0 = 1 k ′2 k 2 π α 2 S (N 2 c − 1) 6 N 2 c e α S χ(γcr 1 − γcr (y−y 0 ) . (5.96) Using Eq. (5.96) and Eq. (5.91) we have xG asymp (Q 2 , x) = (5.97) 1 π α S Q 2 0 d k 2 2 b 2 0 0 d b 2 ln(b 2 0 /b 2 ) = 4 (N 2 c − 1) 6 N 2 c π Q k ′ e α S 1 2 χ(γcr 1 − γcr (y−y 0 ) .</trash>
+
+
+				</figure>
+
+				<p>Therefore, the gluon structure function shows a power-like increase for y smaller y a given by equation b 0 (y a ) = 1/2 m π with b 0 taken from Eq. (5.96).</p>
+
+				<p>For running α S we have to resolve Eq. (3.64) to find b 0 (y) and substitute it to Eq. (5.97). It is easy to see that in the pQCD region</p>
+
+				<figure>
+					<trash>b 2 0 = 1 k k ′ ¯ τ s e ω L (y in −y 0 ) e √ 8 π b χ ′ γcr (γcr ) (y − y 0 ) . (5.98) However, at y = y a b 0 from Eq. (5.98) reaches the value b 0 = 1 2 mπ and for y &gt; y a the value of b 0 is equal to b 0 = 1 2 m π 8 π b χ ′ γcr (γ cr ) (y − y 0 ). (5.99) σ(dipole). This cross section is equal to σ(dipole) = 2 d 2 b t N(r t , y; b t ) . (5.100) We use Eq. (2.2</trash>
+
+
+				</figure>
+
+				<p>) to calculate N(r t , y; b t ) and it is easy to do for the asymptotic formula for N (k, y; b t ) =</p>
+
+			</div>
+			<div>
+				<head n="1">2</head>
+
+				<p>z = ln(Q s (y; b t )/k) = K 0 (k/Q s (y, b t )). Here, we replace log contribution by McDonald function which reproduces this log at small value of the argument and leads to an exponential decrease at k ≥ Q s . For such large k we cannot trust our simple formula and have to replace it by the perturbative QCD expression which will give a small contribution in the total cross section due to the fast decrease at large b t . The integral over k in Eq. (2.2) give N(r t , y; b t ) = 1. Integration over b t we can take using z from Eq. (5.94) with changing k → 2/r t . Therefore the asymptotic behavior for σ(dipole) is</p>
+
+				<figure>
+					<trash>σ(dipole) = 2π 4 m 2 π ln 2 (r 2 t Q 2 s (y, b t = 0)) . (5.101)</trash>
+
+
+				</figure>
+
+				<p>For y ≤ y a the upper limit in b t integration should be taken from Eq</p>
+
+				<figure>
+					<trash>. (5.96) and σ(dipole) = 2πb 2 0 (y) = 1 2 π r 1 r 2 α S π (N 2 c − 1) 6 N 2 c e 1 2 α S χ(γcr 1 − γcr (y−y 0 ) . (5.102) γ * −γ * cross section.</trash>
+
+
+				</figure>
+
+				<p>The total cross section for γ * − γ * interaction can be written as follows (see Fig. 3):</p>
+
+				<figure>
+					<trash>σ(Q 1 , Q 2 , W ) = (5.103) 1 0 dz 1 1 0 dz 2 d 2 r 2 1,t d 2 r 2,t |Ψ(Q 1 ; z 1 , r 1,t )| 2 |Ψ(Q 2 ; z 2 , r 2,t )| 2 σ(dipole)</trash>
+
+
+				</figure>
+
+				<p>where σ(dipole) is given by Eq. (5.100) while the wave functions of virtual photons are well known [44].</p>
+
+				<p>The asymptotic expression using Eq. (5.101) has been written and discussed in Ref. [25]. Here, we can add to discussions in this paper the fact that the asymptotic behavior starts rather early as one can see from Fig. 15, namely, at y ≥ 2 ÷ 2.5.</p>
+
+				<p>All above estimates were done for the frozen QCD coupling because only in this case we obtained the semi-classical solution in entire kinematic region. For running α S we have not solved the master equation since (i) we could not prove the geometrical scaling behavior in the saturation (CGC) domain; and (ii) we do not know what is a correct way to take into account the running QCD coupling for the BFKL emission. However, all asymptotic formulae have so transparent physical meaning that we can write them for running QCD coupling as well.</p>
+
+				<p>Indeed, Eq. (5.95) has three logs: • One comes actually from the fact that the dipole amplitude in the coordinate space should approach unity at high energies. This is a direct consequence of the unitarity constraint and, because of this, will be the same for any solution to the master equation; • Two logs are originated from the impact parameter integration. The limit for this integration stems from the kinematics of the saturation (CGC) domain, namely, from the fact that k 2 ≤ Q 2 s (y, b t ) in this region. This relation leads to the b t &lt;</p>
+
+				<figure>
+					<trash>1 2mπ ln(Q 2 s /k 2 ) as we found in Eq. (3.60).</trash>
+
+
+				</figure>
+
+				<p>Therefore, we expect the same form of the asymptotic behaviors for running α S as for frozen QCD coupling in terms of the saturation scale and the size of scattering dipoles. However, the energy behavior of the unitarity bounds will be quite different since the saturation scale is proportional to Q 2 s ∝ ln(1/x) for the running QCD coupling while it increases as ln(1/x) for constant α S .</p>
+
+			</div>
+			<div>
+				<head n="6">Accuracy of the approach</head>
+
+				<p>As we have discussed we neglected the contributions to the non-linear term in Eq. (2.1) from the region of integration x 12 ≈ x 02 ≈ 2b t ≫ r 2 . To estimate the accuracy of our approach we have to calculate the term that we neglected using the solution to the non-linear equation that we found in this paper.</p>
+
+				<p>We need to calculate the diagram of Fig. 17 which is equal (see Eq. (2.6) and discussion around this equation )</p>
+
+				<figure>
+					<trash>α S (x 01 ) d 2 ∆b t x 2 01 (b t + ∆b t ) 4 N 2 (2(b t + ∆b t ), y, ∆b t ) . (6.104)</trash>
+
+
+				</figure>
+
+				<p>For b t ≫ b 0 (y) where b 0 (y) is the radius of interaction that stems from our solution, it is easy to see that Eq. (6.104) leads to the contribution which is of the order of</p>
+
+				<figure>
+					<trash>∆N ≈ α S (x 01 ) x 2 01 b 2 0 (y) b 4 t</trash>
+
+
+				</figure>
+
+				<p>since the dipole amplitude N is of the order of unity for b t &lt; b 0 . One can see that ∆N ≪ N and we can safely neglect this contribution.</p>
+
+				<figure>
+					<trash>For r 2 ≪ b t ≪ b 0 (y) Eq. (6.104) gives ∆N ≈ α S (x 01 ) x 2 01 b 2 0 (y)</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>.</head>
+
+				<p>Since x 01 ≪ b 0 (y) and b 0 (y) increases at least logarithmically with energy ∆N is very small.</p>
+
+				<p>To the right of the critical line the non-linear term of the evolution equation is small and the diagram of Fig. 17 has an additional smallness which is proportional to α S (x</p>
+
+				<p><formula>01 ) x 2 01 r 2 2 b 4 t for b t &gt; r 2 .</formula></p>
+
+				<p>It is interesting to notice that we can repeat the same estimates for the linear term in Eq. (2.1) replacing N 2 in Eq. (6.104) by 2N. These estimates would lead to the same result. It</p>
+
+				<figure>
+					<trash>1 0 2 1 0 2 N 2 ( 2b t , y , b t ) ∆ x r 2 01 = r 1 Figure 17</trash>
+
+
+				</figure>
+
+				<p>: Corrections to the non-linear equation due to interaction of two large dipoles (x 12 ≈ x 02 ≈ 2b t ≫ r 2 ). means that the large b t dependence of the linear term (see, for example, Eq. (3.49) ) stems from the dipole sizes smaller than the size of the target. This is a transparent explanation why the first linear term in Eq. (2.1) has the form given by Eq. (2.7) without any additional assumption about the size of the dipoles in the non-linear equation 7 .</p>
+
+				<p>The most important restriction of the applicability of Eq. (2.1) stems from enhanced diagram of Fig. 4</p>
+
+				<figure>
+					<figDesc>-c. Estimating these enhanced diagrams we should distinguish two different kinematic regions :</figDesc>
+
+				</figure>
+
+				<p><formula>k 2 &gt; Q 2 s and k 2 &lt; Q 2 s .</formula></p>
+
+				<p>In the first one the integration over y 2 in Fig. 4-b converges at y 2 ∝ 1/ ¯ α S ≪ y and, therefore, the enhanced diagram reduces to the diagrams of Fig. 4-a ( see Refs. [1, 2, 15, 16, 17] for details). In this region the nuclear target has an advantage that the &apos;fan&apos; diagram originated from the enhanced diagram has an additional suppression with respect to parameter α S A 1 3 [17, 48]. However, the most interesting region is the second one (k 2 &lt; Q 2 s ). In this region there is no reason to expect that the integral over y 2 will be concentrated at y 2 ≪ y and the enhanced diagrams will lead to the dominant contribution. The nuclear target has no advantages in this region since the solution here does not depend on the initial conditions. As one can see directly from Eq. (2.1) the particular properties of target enters only in the initial conditions. We are concentrated our efforts on dealing with this kinematic region in this section.</p>
+
+				<p>The expression for the first correction due to enhanced diagram to &quot; fan &quot; diagrams presented in Fig. 4-c is the following [1, 17]:</p>
+
+				<figure>
+					<trash>d 2 b 3 ∆N enhance = ¯ α 2 S N 2 c d 2 b 3 y 0 dy 1 d 2 k 1 d 2 b 1 y 1 0 dy 2 d 2 k 2 d 2 b 2 (6.105) ˜ N (k, k 1 , y − y 1 , b 1 ) ˜ N 2 (k 1 , k 2 , y 1 − y 2 , b 2 ) ˜ N(k 1 , k ′ , y 2 , b 3 )</trash>
+
+
+				</figure>
+
+				<p>All notations are clear from Fig. 4</p>
+
+				<figure>
+					<figDesc>-b and Fig. 4</figDesc>
+
+				</figure>
+
+				<p>-c. It should be stressed that all amplitudes in Eq. (6.105) except the last one( ˜ N (k 1 , k ′ , y 2 , b 3 )) are different from the solution of the nonlinear equation (see Fig. 4-c). They actually satisfy a different equation which it is easy to write. Indeed, the slight glance at Fig. 4-c shows that the equation for N(k, k 1 , y − y 1 , b 1 ) can be written in the form:</p>
+
+				<figure>
+					<trash>∂ ˜ N (k, k 1 , y − y 1 ; b t ) ∂ y = (6.106) ¯ α S ˆ χ(ˆ γ(k)) ˜ N(k, k 1 , y − y 1 ; b t ) − ˜ N (k, k 1 , y − y 1 ; b t ) ˜ N(k, k ′ , y; b t ) ; where N(k, k</trash>
+
+
+				</figure>
+
+				<p>′ , y; b t ) is a solution of Eq. (2.7). Since the solution to this equation is a function of one variable z and at y 1 = 0 it should coincide with the solution to Eq. (2.7) one can find that N (k, k 1 , y − y 1 ; b t ) = ˜ N (z − z 1 ) while N (k, k ′ , y; b t ) = ˜ N (z) where N(z) is defined in Eq. (4.80). We can rewrite the argument of N(k, k 1 , y − y 1 ; b t ) in more convenient form using</p>
+
+				<figure>
+					<trash>Eq. (3.64) and Eq. (5.98), namely ˜ N (k, k 1 , y − y 1 ; b t ) = ˜ N F (y − y 1 ) S(b t ) k 2 k 2 1 b 4 t (6.107)</trash>
+
+
+				</figure>
+
+				<p>where F (y − y 1 ) is a function of rapidity. This function is different for frozen and running α S , namely F (y) ∝ e λr y for constant α S and F (y) ∝ e λr √ y for running QCD coupling (see Eq. (3.64) and Eq. (5.98)). S(b t ) is a non-perturbative profile function for which we assume that S(b t ) → e −2mπ bt at large b t (b t ≥ 1/2 m π ). Using Eq. (6.107) we can evaluate all integrals in Eq. (6.105). One can see that in pQCD region for not very high energies where we can consider that S(b t ) = 1 we have</p>
+
+				<figure>
+					<trash>d 2 b 3 ∆N enhance ∝ ¯ α 2 S 2 N 2 c ln 2 (k 2 /k ′2 ) k k ′ y 0 dy 1 y 1 0 dy 2 F (y − y 1 ) F (y 1 − y 2 ) F (y 2 ) (6.108)</trash>
+
+					<figDesc>Calculating the ration of ∆N to N to characterize the scale of corrections we obtain:</figDesc>
+					<trash>d 2 b 3 ∆N d 2 b t N ∝ ¯ α 2 S N 2 c y 0 dy 1 y 1 0 dy 2 F (y − y 1 ) F (y 1 − y 2 ) F (y 2 ) F (y) . (6.109)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>For frozen α S this ratio is of the order of</figDesc>
+					<trash>¯ α S N 2 c y 2 8</trash>
+
+
+				</figure>
+
+				<p>which means that we can neglect the enhanced diagrams only in limited range of energies. However for running α S this ratio is proportional to</p>
+
+				<figure>
+					<trash>¯ α S N 2 c e λr( √ 3−1)</trash>
+
+
+				</figure>
+
+				<p>√ y and the range of energy (rapidity) where we can still neglect the enhanced diagrams shrinks even more than for constant α S .</p>
+
+				<p>At first sight the above discussion is in the direct contradiction with the paper of Mueller and Patel [47] where was shown that (i) the enhanced diagram of Fig. 4-b has no extra N c suppression with respect to &apos;fan&apos; diagrams of Fig. 4-a; and (ii) the normalization of N could be chosen in a such way that extra factor 1/N 2 c will not appear in the calculation.</p>
+
+				<p>To clarify our calculations we will repeat them in a toy-model: &apos;fan&apos; diagrams for Pomeron exchanges with α ′ P = 0 and intercept α P (0) = 1 + ∆. For the nuclear target such model correspond to Schwimmer resumation [48] and describes the hadron -nucleus interaction at high energy. In this model the dipole-dipole interaction is given by sum of &apos;fan&apos; diagrams of Fig. 4</p>
+
+				<figure>
+					<trash>-a, namely, ˜ N(y) = g 1 g 2 e ∆y 1 + g 2 G 3P ∆ ( e ∆y − 1) y≫1 −→ g 1 ∆ G 3p = 1 (6.110) where g 1 and g 2 are vertices of Pomeron interaction with dipoles 1 and 2 (r 1 ≪ r 2 ).Actually, g 2 contains an extra factor 1/N 2</trash>
+
+					<figDesc>c as one can see from Eq. (2.18). In Eq. (6.110) we assumed that N(y) → 1 at y → ∞ as it follows from Eq. (2.1). The subset of &apos;fan&apos; diagrams that starts from the Pomeron and finishes at dipole 2 (target) leads to the answer</figDesc>
+					<trash>˜ N (y ′ − 0) = G 3P g 2 e ∆(y ′ −0) 1 + g 2 G 3P ∆ ( e ∆y − 1) y≫1 −→ ∆Θ(y ′ − 0) , (6.111) where Θ(y</trash>
+
+
+				</figure>
+
+				<p>) is equal to 1 for y &gt; 0 being zero for negative y.</p>
+
+				<figure>
+					<trash>One can see that N (y 1 − y 2 ) starts with one Pomeron exchange e ∆(y 1 −y 2 ) . Summing all &apos;fan&apos; diagrams attached to this Pomeron we have ˜ N(y 1 − y 2 ) = e ∆(y 1 −y 2 ) n=0 (−1) n n! (∆ (y 1 − y 2 )) n = 1 ; (6.112) while N(y − y 1 ) = g 1 e ∆(y−y 1 ) n=0 (−1) n n! (∆ (y − y 1 )) n = g 1 ; (6.113) and N (y 2 − 0) = g 2 e ∆y 2 1 + g 2 G 3P ∆ ( e ∆y 2 − 1) y≫1 −→ ∆ G 3p . (6.114) Collecting Eq. (6.111) -Eq. (6.114) we obtain for Eq. (6.105) and taking into account that g 1 ∆ G 3p = 1 we obtain ∆N enhance = G 3P N 2 c dy 1 dy 2 ∝ ¯ α 2 S 2 N 2 c y 2 (6.115) which coincide with Eq. (6.109).</trash>
+
+
+				</figure>
+
+				<p>Formally speaking the enhanced diagrams is suppressed by factor 1/N 2 c and have not been included in the non-linear equation as well as a large number of other diagrams of the order of 1/N 2 c . Therefore, our estimates show that 1/N c corrections could be rather large. Actually, we know how to calculate such kind of corrections ( see paper of Balitsky in Ref. [17] and paper of Wiegert in Ref.[16]</p>
+
+				<figure>
+					<figDesc>)</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="7">Discussion and Conclusions</head>
+
+				<p>In this paper we discussed the semi-classical approach to the solution of the non-linear equation which has been suggested and developed before [1, 14, 15, 19]. The new domain which we explored in the semi-classical approach is the saturation (CGC) region which was out of reach by this method before. The new result is also related to the impact parameter dependence which has not been considered in Refs.[1, 14, 15] and has been approach only in the simplified case of double log approximation of pQCD in Ref. [19].</p>
+
+				<p>We hope that we demonstrated the main advantages of the semi-classical approach, namely • The natural appearance of the new saturation scale as the momentum of the critical line which divides the set of trajectories in two parts: the first group is trajectories which approach the trajectories of the linear equation at large value of ξ = ln(k 2 k ′2 b 4 t ) (see Fig. 3 for notations); and the second group is trajectories that go apart from the trajectories of the linear equation; • The solution in the saturation (CGC) domain reproduces the geometrical scaling behavior , namely, σ dipole (r t , x; b t ) turns out to be a function of one variable τ = r</p>
+
+				<figure>
+					<trash>2 t Q 2 s (x; b t );</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>•</head>
+
+				<p>The impact parameter dependence of the saturation scale stems from the initial condition (Born approximation) as has been discussed in Refs. [23, 24] but not from the kernel of the linear evolution equation (BFKL kernel)) as was suggested in Ref.[26]. The large b t behavior of the saturation scale should be determined by non-perturbative contribution to the Born amplitude which has been considered in Ref. [25].</p>
+
+				<p>We found asymptotic behavior both for the dipole amplitude N and function Φ (see Eq. (4.66)).</p>
+
+				<p>It should be stressed that the behavior of function Φ at the large values of the argument z is quite different from the double log approximation case discussed in Ref.[19]. It should be stressed that we found that the exact solution could be approached by asymptotic one starting with y = ln(1/x) ≈ 2 ÷ 2.5.</p>
+
+				<p>We also found the unitarity bound for the gluon structure function and for the dipole cross section, given by Eq. (5.95) and Eq. (5.101), which depends on the energy dependence of the saturation scale. The fact that high energy behavior of the dipole cross section depends on ln (Q 2 s (x; b t = 0) r 2 t ) differs our analysis from the considerations discussed before [23, 24, 26]. It should be stressed that our formulae lead to quite different dependence on energy for the high energy asymptotic behavior. Even for the frozen QCD coupling our results are different from the estimates in Refs. [23, 24]. For example, we predict that</p>
+
+				<figure>
+					<trash>σ(dipole) ≤ 2π 4 m 2 π α S χ(γ cr ) 1 − γ cr ln(1/x) 2 (7.116) instead of σ(dipole) ≤ 2π 4 m 2 π α S χ( 1 2 ) ln(1/x) 2 (7.117) N 1 b 0 (y) y α S x 01 π b 2 0 (y) y b 2</trash>
+
+					<head>Figure 18:</head>
+
+					<figDesc>The dipole amplitude as a function of the impact parameter b as it emerges from discussion in section 6 (see Eq. (6.104) ). The dotted line shows the correction term evaluated using Eq. (6.104) .</figDesc>
+
+				</figure>
+
+				<p>as was obtained in Refs.[23, 24]. It is worthwhile mentioning that γ cr ≈ 0.37 (see Eq. (3.40)) is not related to the running QCD coupling. It stems from the full BFKL kernel while γ cr =</p>
+
+			</div>
+			<div>
+				<head n="1">2</head>
+
+				<p>arises only if we approximate the full BFKL kernel by the double log formula χ(γ) = 1/γ.</p>
+
+				<p>In the case of running α S the difference is even more remarkable since our formulae lead to a different energy behavior. Indeed, we have</p>
+
+				<figure>
+					<trash>σ(dipole) ≤ 2π 16 m 2 π 4 π b χ(γ cr ) 1 − γ cr ln(1/x) (7.118)</trash>
+
+
+				</figure>
+
+				<p>as one can see from Eq. (3.60). Notice that extra factor 4 in the dominator stems from the different initial conditions that we used in the case of running α S .</p>
+
+				<p>Actually, the discussion about corrections to the non-linear master equation given in section 6 can be summarize in the picture shown in Fig. 18. The corrections from the dipole which sizes larger than the size of the target lead to a large b tail but it starts at very low value and it could not contribute to the energy behaviour of the total cross section. The entire picture is the same in the main features as it was suggested in Ref. [24] We started this paper having in mind two questions to answer. The practical one: to find the analytical solution which everyone can check and which includes the impact parameter dependence. We firmly believe that only after finding such a solution we could develop the numerical methods of solving our master non-linear equation (see Eq. (2.1)). Since the semiclassical approach is valid for the large values of y = ln(1/x) ≫ ln Q 2 we can use this solution as a guiding one for the numerical attempts to solve the non-linear equation.</p>
+
+				<p>Our second motivation was to reach a theoretical understand how to incorporate the nonperturbative QCD corrections in the nonlinear equation. These corrections have to be essential at large values of the impact parameters where they will change the power-like decrease in pQCD to the exponential one as follows from the spectrum of the observed hadron [45]. We believe that we answered this question by demonstrating that we should take the non-perturbative correction only in initial conditions (in Born amplitude). How to take into account these nonperturbative corrections in the Born amplitude was considered in our previous publications [25].</p>
+
+				<p>How to incorporate the non-perturbative corrections in initial conditions or in the kernel actually crucially depends on the strategy of the approach. If you consider first the solution of the linear equation you have to include the non-perturbative corrections at large b t in the BFKL kernel as was discussed in Ref. [26]. We believe that the correct strategy is to solve the non-linear equation. As has been discussed for long time [1, 23, 46, 5] the non-linear dynamics leads to a suppression at low x of the density of partons with low transverse momenta (p t ). Since due to the uncertainty principle ∆b t p t ≈ 1 only partons in the beginning of evolution (at x ≈ 1) could have large values of b t . In other words only parton distribution in initial parton cascade is relevant for the large b t behavior.</p>
+
+				<p>The above statement sounds strange because we claim that in the BFKL ladder we need to take into account the non-perturbative QCD correction only for two t-channel gluons attached to the larger dipole. Indeed, the large b t behavior stems from the exchange the lightest particles [45]( gluon in our case) somewhere in the middle of the &apos;ladder&apos; (see Fig. 19 ). Since in the middle of the ladder we have massless gluons the large b t behavior is determined by the diagram of Fig. 19. It has a form</p>
+
+				<figure>
+					<trash>N (k, k ′ , y; b t ) = (7.119) 1 b 2 t d 2 q y 0 dy 1 d 2 (b t − b 1t ) ˜ N (k, q, y − y 1 ; b t − b 1t ) y 1 0 dy 2 d 2 (b t − b 1t ) ˜ N (k, q, y 2 ; b 2t )</trash>
+
+
+				</figure>
+
+				<p>where we consider the b t is much larger than typical impact parameters in the integration over (b t −b 1t ) and b 2t . Using Eq. (6.107) we can take integrals over impact parameters in Eq. (7.119). For the upper amplitude we have to consider S(b t ) = 1 in Eq. (6.107) since we do not introduce non-perturbative corrections, while for the lower amplitude we substitute our solution at large b t for which S(b t ) → e −2mπ bt .</p>
+
+				<figure>
+					<trash>Finally, we have ˜ N(k, k ′ , y; b t ) → 1 b 2 t (2m π ) 2 y 0 dy 1 F (y − y 1 ) y 1 0 dy 2 y 2 2 . (7.120)</trash>
+
+
+				</figure>
+
+				<p>Since F (y − y 1 ) behaves as an exponent the integral chooses small y 2 . Therefore, actually the cell with large b t is the closest one to the largest dipole. This simple estimates show that our statement that the large b t behavior of the solution to the non-linear equation is determined by the initial condition is self-consistent .</p>
+
+				<p>The great advantage of the semi-classical approach is that we clearly see all phases of high parton density QCD (see Fig. 20). The critical line separates the phase with high parton densities. To the left of critical line we have a phase in which we have both saturation and the geometrical scaling behavior for the gluon density. This phase L.McLerran and his team suggested to call &quot; Color Glass Condensate &quot; (CGC) since the condensed system of color dipoles behaves as glass : a disordered system which evolves very slowly relative to a natural time scale (see more and better in a new review of this approach written by Iancu and Venogapalan in Ref. [15]).To the right of the critical line the parton system is still rather dense but it is far away from saturation while still has a geometrical scaling behavior [20]. This system be can call Color Dipole Liquid (CDL). The order parameter for CGC → CDL transition is the saturation scale given by the critical line. The trajectory which is tangent to the critical line, separates the CDL phase from the phase with low density of color dipoles for which we can use</p>
+
+				<figure>
+					<trash>k y y 1 y 2 b − t b 1t b 1t − 2t b b 2 t k &apos; 0 q</trash>
+
+					<head>Figure 19:</head>
+
+					<figDesc>The diagram which describes the large b t behavior of the dipole amplitude.Two gluons are close to the mass shell.</figDesc>
+
+				</figure>
+
+				<p>the linear evolution equations: the BFKL or DGLAP ones. The natural name for this phase is Color Dipole Gas.</p>
+
+				<figure>
+					<trash>Colour Glass Condensate: Saturation Geometrical Scaling Colour Dipole Liquid: Geometrical Scaling Colour Dipole Gas ξ y=ln(1/x) C r i t i c a l l i n e T a n g e n t t r a j e c t o r y BFKL DGLAP 0 5 10 15 20 25 30 35 40 0 5 10 15 20 25 30 35 40</trash>
+
+					<head>Figure 20:</head>
+
+					<figDesc>The phase map of high parton density QCD.</figDesc>
+
+				</figure>
+
+				<p>Rev. D60 (1999) 114023 [arXiv:hep-ph/9903358]; Phys. Rev. D 59 (1999) 014017 [arXiv:hep-ph/9807513];</p>
+
+			</div>
+
+			<note place="foot">arXiv:hep-ph/0305150v2 24 Jul 2003</note>
+
+			<note place="foot" n="1"> The extra factor x 2 in Eq. (2.2) makes N dimensionless.</note>
+
+			<note place="foot" n="2"> These two cases when we can trust the non-linear equation (see Eq. (2.1)) were discussed in the review talk of M. Ryskin at DIS&apos;03 conference. We refer to this talk for more details.</note>
+
+			<note place="foot" n="3"> The form of Eq. (2.20) is obtained from the solution of the linear BFKL equation, that has been discussed above.</note>
+
+			<note place="foot" n="4"> Eq. (3.40) has been derived in Ref.[1] and has been discussed in detail in Refs. [34, 35, 36]. 1 − γ cr is called k 0 in Ref.[1], ˜ γ crit in Ref. [34], λ 0 in Refs.[35, 36] and γ 0 in Ref. [25].</note>
+
+			<note place="foot" n="5"> It is interesting to mention that the semi-classical solution in Ref. [1] shows the geometrical scale behaviour, but it was found out only after an explanation given in Ref. [20].</note>
+
+			<note place="foot" n="6"> In other words we take ¯ α S = ¯ α S (Q 2 s (y)) inside of the saturation region.</note>
+
+			<note place="foot" n="7"> We thank our referee who pointed out this transparent illustration of the form of Eq. (2.7).</note>
+
+			<note place="foot" n="8"> We do not consider ln(k 2 /k ′2 ) here as a large factor, since in the saturation region this factor should not be specially large.</note>
+
+			<note place="foot" n="9"> We thank Heribert Weigert for discussion of 1/N c corrections. He shared with us his first attempts to calculate numerically these corrections.</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+				<head n="8">Acknowledgments</head>
+				<p>We thank M. Braun, E. Gotsman, U. Maor and A. Mueller for fruitful discussions on the subject of this paper. E.L. is indebted to the Alexander-von-Humboldt Foundation for the award that gave him a possibility to work on low x physics during the last year.</p>
+				<p>This research was supported in part by the GIF grant # I-620-22.14/1999, and by the Israel Science Foundation, founded by the Israeli Academy of Science and Humanities.</p>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">V</forename>
+				<surname>Gribov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">M</forename>
+				<surname>Levin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">G</forename>
+				<surname>Ryskin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rep</title>
+		<imprint>
+			<biblScope unit="volume">100</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<date type="published" when="1983" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">H</forename>
+				<surname>Mueller</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Qiu</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">268</biblScope>
+			<biblScope unit="issue">427</biblScope>
+			<date type="published" when="1986" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Mclerran</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Venugopalan</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">49</biblScope>
+			<biblScope unit="issue">458</biblScope>
+			<biblScope unit="page" from="59" to="09400" />
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">B33 (2002) 2771 [arXiv:hep-ph/0207188</title>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Golec-Biernat</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Acta</forename>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Polon. Phys. Rev. D</title>
+		<editor>tels, K. Golec-Biernat and H. Kowalski, Acta Phys. Polon. B33</editor>
+		<imprint>
+			<biblScope unit="volume">66</biblScope>
+			<biblScope unit="page" from="2853" to="014001" />
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Diffractive parton distributions and the saturation model, &quot; arXiv:hep-ph/0105333</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Wusthoff</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Wusthoff, Eur. Phys. J</title>
+		<imprint>
+			<publisher>Phys</publisher>
+			<biblScope unit="page" from="20" to="313" />
+			<date type="published" when="2001" />
+			<publisher>Phys</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Golec-Biernat</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Motyka</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">M</forename>
+				<surname>Stasto</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">65</biblScope>
+			<biblScope unit="page">074037</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Kwiecinski</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">M</forename>
+				<surname>Stasto</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="page" from="66" to="014013" />
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Stasto</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Golec-Biernat</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Kwiecinski</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="issue">596</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Gotsman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Levin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Lublinsky</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">U</forename>
+				<surname>Maor</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Naftali</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Tuchin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="page">2297</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title level="m" type="main">Towards a new global QCD analysis: Low x DIS data from non-linear evolution</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Gotsman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Levin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Lublinsky</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">U</forename>
+				<surname>Maor</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title level="m" type="main">Non- linear corrections to the DGLAP equations: Looking for the saturation limits Nonlinear corrections to the DGLAP equations in view of the HERA data</title>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">J</forename>
+				<surname>Eskola</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Honkanen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">J</forename>
+				<surname>Kolhinen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">W</forename>
+				<surname>Qiu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">A</forename>
+				<surname>Salgado</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title level="m" type="main">Parton saturation and N(part) scaling of semi- hard processes in QCD</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Kharzeev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Levin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Mclerran</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">The onset of classical QCD dynamics in relativistic heavy ion collisions, &quot; arXiv:hep-ph/0111315 D</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Kharzeev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Levin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Nardi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Kharzeev and E. Levin, Phys. Lett. Kharzeev and M. Nardi, Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">523</biblScope>
+			<biblScope unit="page" from="79" to="507" />
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">B487 (2000) 53; Eur</title>
+		<author>
+			<persName>
+				<forename type="first">Zeus</forename>
+				<surname>Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">:</forename>
+				<forename type="middle">J</forename>
+				<surname>Breitweg</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. Phys. J. Eur. Phys. J. Eur. Phys. J. Phys. Lett</title>
+		<editor>C. Adloff et al. I. G. Bearden</editor>
+		<imprint>
+			<publisher>BRAHMS Collaboration Phys. Rev</publisher>
+			<biblScope unit="volume">713</biblScope>
+			<biblScope unit="issue">183</biblScope>
+			<biblScope unit="page">21</biblScope>
+			<date type="published" when="1999" />
+			<publisher>BRAHMS Collaboration Phys. Rev</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">202301, [arXiv:nucl-ex/0112001]; Phys</title>
+		<author>
+			<persName>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lett</title>
+		<imprint>
+			<publisher>PHENIX Collaboration: S. Mioduszewski T</publisher>
+			<biblScope unit="volume">88</biblScope>
+			<biblScope unit="issue">227</biblScope>
+			<date type="published" when="2001" />
+			<publisher>PHENIX Collaboration: S. Mioduszewski T</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Sakaguci</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="middle">A</forename>
+				<surname>Bazilevsky</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Milov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. Phys. Rev. Lett</title>
+		<imprint>
+			<publisher>PHOBOS Collaboration: M. Baker B. B</publisher>
+			<biblScope unit="volume">698</biblScope>
+			<biblScope unit="issue">3500</biblScope>
+			<date type="published" when="2001" />
+			<publisher>PHOBOS Collaboration: M. Baker B. B</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">) 022302 , [arXiv:nucl-ex/0108009]; Phys. Rev. C65 (2002) 061901 , [arXiv:nucl-ex/0201005], 031901, [arXiv:nucl-ex</title>
+		<author>
+			<persName>
+				<surname>Back</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett. J. C. Dunlop, Nucl. Phys. Phys. Rev. Lett</title>
+		<editor>Z.b b. Xu</editor>
+		<imprint>
+			<biblScope unit="volume">85</biblScope>
+			<biblScope unit="issue">87</biblScope>
+			<biblScope unit="page">112303</biblScope>
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">C</forename>
+				<surname>Collins</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">J</forename>
+				<surname>Kwiecinski</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Bartels</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Blumlein</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Shuler</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B Z. Phys. C</title>
+		<imprint>
+			<biblScope unit="volume">335</biblScope>
+			<biblScope unit="issue">50</biblScope>
+			<biblScope unit="page">91</biblScope>
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">207 [arXiv:hep-ph/9503381]</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Laenen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Levin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ann. Rev. Nucl. Part. Sci</title>
+		<editor>199</editor>
+		<editor>A. L. Ayala, M. B. Gay Ducati, and E. M.</editor>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="page">451</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. B Phys. Rev. D Nucl. Phys. B Nucl. Phys. B Nucl. Phys. A</title>
+		<editor>074018</editor>
+		<editor>A. H. Mueller Yu. V. Kovchegov, A. H. Mueller E. Iancu, A. Leonidov, and L. McLerran</editor>
+		<imprint>
+			<biblScope unit="volume">493</biblScope>
+			<biblScope unit="issue">692</biblScope>
+			<biblScope unit="page" from="510" to="61" />
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<title level="m" type="main">Leonidov and L. McLer- ran, Nucl. Phys. A703 (2002) 489; [arXiv:hep-ph/0109115 The colour glass condensate</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">J E</forename>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Iancu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">D</forename>
+				<surname>Leonidov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Mclerran</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="middle">E</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Ferreiro</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">E</forename>
+				<surname>Iancu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Iancu</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2000" />
+			<biblScope unit="page">510</biblScope>
+		</imprint>
+	</monogr>
+	<note>E. . Iancu and R. Venugopalan, &apos;The color glass condensate and high energy scattering in QCD</note>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Jalilian-Marian</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Kovner</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Mclerran</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Weigert</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Jalilian-Marian</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Kovner</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Weigert</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">) 099903; A. Kovner, J.Guilherme Milhano, and H. Weigert</title>
+		<editor>J. Jalilian-Marian, A. Kovner, A. Leonidov, and H. Weigert</editor>
+		<meeting><address><addrLine>Erratum-ibid</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<surname>Ia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Balitsky</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">463</biblScope>
+			<biblScope unit="issue">60</biblScope>
+			<biblScope unit="page">034008</biblScope>
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">D60 (1999) 034008 [arXiv:hep-ph/9901281]</title>
+		<author>
+			<persName>
+				<forename type="first">Yu</forename>
+				<forename type="middle">V</forename>
+				<surname>Kovchegov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">9905214</biblScope>
+			<biblScope unit="page" from="61" to="074018" />
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">[arXiv:hep-ph</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Levin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Tuchin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys</title>
+		<imprint>
+			<biblScope unit="volume">8339908317</biblScope>
+			<biblScope unit="page" from="779" to="693" />
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">A Gaussian effective theory for gluon saturation, &quot; arXiv:hep-ph/0212123</title>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Iancu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Itakura</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Mclerran</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. A</title>
+		<imprint>
+			<biblScope unit="volume">708</biblScope>
+			<biblScope unit="page">327</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Armesto</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">A</forename>
+				<surname>Braun</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Eur</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. J. Phys. J</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="issue">20</biblScope>
+			<biblScope unit="page">517</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">851 [arXiv:hep-ph</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Lublinsky</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Gotsman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Levin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">U</forename>
+				<surname>Maor</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. Levin and M. Lublinsky, Nucl. Phys. Phys. J</title>
+		<imprint>
+			<publisher>Phys</publisher>
+			<biblScope unit="volume">833</biblScope>
+			<biblScope unit="page" from="696" to="696" />
+			<date type="published" when="2001" />
+			<publisher>Phys</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="middle">M</forename>
+				<surname>B521</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Lublinsky</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eur. Phys. J. C</title>
+		<imprint>
+			<biblScope unit="volume">233</biblScope>
+			<biblScope unit="issue">21</biblScope>
+			<biblScope unit="page">513</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">M</forename>
+				<surname>Levin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">G</forename>
+				<surname>Ryskin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rept</title>
+		<imprint>
+			<biblScope unit="volume">267</biblScope>
+			<biblScope unit="page">189</biblScope>
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Ferreiro</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Iancu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Itakura</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Mclerran</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. A</title>
+		<imprint>
+			<biblScope unit="volume">710</biblScope>
+			<biblScope unit="issue">373</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">QCD saturation and γ * γ * scattering, &quot; arXiv:hep-ph/0211348 Saturation and Unitarization in the BFKL Approach</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Kozlov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">S</forename>
+				<surname>Levin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Bondarenko</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Kozlov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">*</forename>
+				<forename type="middle">−</forename>
+				<surname>Levin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">*</forename>
+				<surname>Scattering</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eur. Phys. J. C ( in press)</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Taming the BFKL Intercept via Gluon Satura- tion, &quot; hep-ph/0208265; Phys</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Kovner</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">U</forename>
+				<forename type="middle">A</forename>
+				<surname>Wiedemann</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lett. Phys. Rev. Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">551</biblScope>
+			<biblScope unit="issue">66</biblScope>
+			<biblScope unit="page" from="311" to="034031" />
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<monogr>
+		<title level="m" type="main">arXiv:hep-ph/0112140</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">A</forename>
+				<surname>Kuraev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">N</forename>
+				<surname>Lipatov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">S</forename>
+				<surname>Fadin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Sov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JETP Ia.Ia. Balitsky and L.N. Lipatov, Sov. J. Nucl. Phys. L.N. Lipatov, Sov. Phys. JETP</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="issue">63</biblScope>
+			<biblScope unit="page">904</biblScope>
+			<date type="published" when="1977" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Tables of Series, Products, and Integrals</title>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Gradstein</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Ryzhik</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Verlag MIR</title>
+		<imprint>
+			<date type="published" when="1981" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Bartels</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">R</forename>
+				<surname>Forshaw</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Lotter</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">N</forename>
+				<surname>Lipatov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">G</forename>
+				<surname>Ryskin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Wusthoff</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">348</biblScope>
+			<biblScope unit="page">589</biblScope>
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">B634 (2002) 291 [arXiv:hep-ph/0201285]</title>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Navelet</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Peschanski</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett. Phys</title>
+		<imprint>
+			<biblScope unit="volume">8298094749703238</biblScope>
+			<biblScope unit="issue">353</biblScope>
+			<biblScope unit="page">507</biblScope>
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">N</forename>
+				<surname>Lipatov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Rept</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">N</forename>
+				<surname>Lipatov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Sov</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. JETP</title>
+		<imprint>
+			<biblScope unit="volume">63</biblScope>
+			<biblScope unit="issue">904</biblScope>
+			<date type="published" when="1986" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<monogr>
+		<title level="m" type="main">Elements of partial differential equations</title>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">N</forename>
+				<surname>Sneddon</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1957" />
+			<publisher>Mc-Graw-Hill</publisher>
+			<pubPlace>New York</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Bartels</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Levin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">387</biblScope>
+			<biblScope unit="page">617</biblScope>
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">H</forename>
+				<surname>Mueller</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">N</forename>
+				<surname>Triantafyllopoulos</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="page" from="640" to="331" />
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<monogr>
+		<title level="m" type="main">arXiv:hep-ph/0205167</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">N</forename>
+				<surname>Triantafyllopoulos</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">648</biblScope>
+			<biblScope unit="issue">293</biblScope>
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Levin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">453</biblScope>
+			<biblScope unit="page">303</biblScope>
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">A</forename>
+				<surname>Braun</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1995" />
+			<biblScope unit="page">348</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">D</forename>
+				<surname>Anderson</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">A</forename>
+				<surname>Ross</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">G</forename>
+				<surname>Sotiropoulos</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">5159705466</biblScope>
+			<biblScope unit="page">249</biblScope>
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Acta Phys. Polon. B33 (2002) 3439; Phys. Rev. D66 (2002) 014013 [arXiv:hep-ph</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Kwiecinski</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">M</forename>
+				<surname>Stasto</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<editor>M. Stasto, K. Golec-Biernat and J. Kwiecinski</editor>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="page">596</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Golec-Biernat</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Motyka</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">M</forename>
+				<surname>Stasto</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">65</biblScope>
+			<biblScope unit="issue">074037</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">M</forename>
+				<surname>Levin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">G</forename>
+				<surname>Ryskin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Sov</forename>
+				<forename type="middle">J B</forename>
+				<surname>Nucl</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Blä</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Nucl. Phys.Phys. Rev. Lett</title>
+		<editor>150</editor>
+		<editor>A. H. Mueller</editor>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="issue">896</biblScope>
+			<biblScope unit="page" from="335" to="71" />
+			<date type="published" when="1987" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Gotsman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Levin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">U</forename>
+				<surname>Maor</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="page" from="464" to="251" />
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">H</forename>
+				<surname>Mueller</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<forename type="middle">N</forename>
+				<surname>Nikolaev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">G</forename>
+				<surname>Zakharov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. Z. Phys</title>
+		<editor>607</editor>
+		<editor>E.M. Levin, A.D. Martin, M.G. Ryskin and T. Teubner, Z. Phys. C74</editor>
+		<imprint>
+			<biblScope unit="page" from="335" to="49" />
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Scattering Theory: Unitarity, Analitysity and Crossing</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">A</forename>
+				<surname>Froissart</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Martin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lecture Notes in Physics</title>
+		<imprint>
+			<publisher>Springer-Verlag</publisher>
+			<biblScope unit="volume">123</biblScope>
+			<date type="published" when="1053" />
+			<publisher>Springer-Verlag</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Bartels</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J.Phys</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page">1611</biblScope>
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">H</forename>
+				<surname>Mueller</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Patel</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">9403256</biblScope>
+			<biblScope unit="page" from="425" to="471" />
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Schwimmer</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">94</biblScope>
+			<biblScope unit="page">445</biblScope>
+			<date type="published" when="1975" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

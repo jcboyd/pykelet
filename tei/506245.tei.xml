@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Some effects of the anisotropy in a simple lattice gauge model at finite temperature</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="1999-08">Aug 1999</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">L</forename>
+								<forename type="middle">A</forename>
+								<surname>Averchenkova</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Bogolyubov Institute for Theoretical Physics</orgName>
+								<orgName type="institution">National Academy of Sciences of Ukraine</orgName>
+								<address>
+									<addrLine>Kiev 143</addrLine>
+									<country key="UA">UKRAINE</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">V</forename>
+								<forename type="middle">K</forename>
+								<surname>Petrov</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Bogolyubov Institute for Theoretical Physics</orgName>
+								<orgName type="institution">National Academy of Sciences of Ukraine</orgName>
+								<address>
+									<addrLine>Kiev 143</addrLine>
+									<country key="UA">UKRAINE</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Some effects of the anisotropy in a simple lattice gauge model at finite temperature</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="1999-08">Aug 1999</date>
+						</imprint>
+					</monogr>
+					<note>1</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>Monte Carlo simulations are carried out on the (3 + 1)-dimensional Z(2) anisotropic lattice model, and a new method to simulate extremely anisotropic lattice systems with discrete symmetries is proposed. Dependence of the temporal and spatial average plaquette, Wilson loops on the anisotropy parameter is presented.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>In our previous paper [1], the phase structure for Z(N) pure gauge theory with the lattice anisotropy ξ ≡ a σ /a τ 1 [a σ (a τ ) is the spatial (temporal) spacing] has been studied analytically.</p>
+
+				<p>It has been particularly indicated there that arbitrarily chosen trajectories in anisotropy parameter and gauge coupling space can cross phase transition lines, and give rise to discontinuities in thermodynamic quantities along those trajecto- ries. The Z(N) gauge theory in four dimensions was first analyzed numerically for the Wilson action in a classical paper by Creutz, Jacobs and Rebbi [2]. Numerous Monte Carlo studies concern various aspects of Z(N) gauge theories, i.e. order of phase transitions both in pure gauge theories [2] and in Z(N) gauge–Higgs models [3–5], dependence of the phase picture on d [3] and on N [2,4,6], elaboration of improved algorithms to simulate such systems with metastable states [6,7]. Our paper is aimed at clarifying the role of the lattice anisotropy ξ in the phase structure description of the finite temperature 4d Z(2) gauge theory by using Monte Carlo technique. Here, we check the analytic results of [1] and picture the phase plane [κ τ ; κ σ ] in the area we cannot investigate analyt- ically.</p>
+
+			</div>
+			<div>
+				<head n="1">The bare anisotropy</head>
+
+				<p>ξ ≡ κτ /κσ, κσ(κτ ) denoting the spatial (temporal) gauge couplings, is often considered as a proper lattice anisotropy parameter instead of ξ.</p>
+
+			</div>
+			<div>
+				<head n="2">Algorithm</head>
+
+				<p>The partition function is a sum over all configurations of the system</p>
+
+				<figure>
+					<trash>Z = {σx;ν } exp(−κ νµ S); (1) S = − x;ν,µ Re(σ x;ν σ x+ν;µ σ * x+µ;ν σ * x;µ ); σ x;ν = exp (2πiq x;ν /N ) ∈ Z(N ); q x;ν = 0, · · · , N − 1.</trash>
+
+					<figDesc>Although this is a finite sum, the number of configurations {σ x;ν } is so large even for lattices which are only a few sites on a side that an evaluation of the expectation value of a quantity O O = {σx;ν } O exp(−κ νµ S) {σx;ν } exp(−κ νµ S) (2) cannot be performed directly. The Monte Carlo method replaces direct evaluation by generation of a sequence of configurations which simulates an ensemble of states in thermal equilibrium at inverse temperature κ νµ .</figDesc>
+
+				</figure>
+
+				<p>We have used a heat bath algorithm which creates a Markovian process as follows: a new value σ ′ x;ν for the link variable is selected independently on the previous value of σ x;ν in a stochastic manner with the probability</p>
+
+				<figure>
+					<trash>W(q x;ν → q ′ x;ν ) ∼ exp(−κ νµ S 0 (q ′ x;ν )), (3) S 0 (q ′ x;ν ) = −Re   σ ′ x;ν |µ| =|ν| κ νµ σ x;νµ   , (4) σ x;νµ ≡ σ x+ν;µ σ * x+µ;ν σ * x;µ (5) = exp (2πi(q x+ν;µ − q x+µ;ν − q x;µ )/N ) . The transition matrix W(q x;ν → q ′ x;ν ) obeys an equation of detailed balance W(q x;ν → q ′ x;ν ) W(q ′ x;ν → q x;ν ) = e {−κνµ(S0(q ′ x;ν )−S0(qx;ν ))} , (6)</trash>
+
+
+				</figure>
+
+				<p>which is a sufficient condition for final distribution to be the Boltzmann one. A complete cycle through all the link variables of the lattice when the sites are chosen in a some way (in our case, in a random way) is called as a Monte Carlo sweep. The detailed balance (6) leads to that the probability to find a configuration {σ} after n →</p>
+
+				<figure>
+					<trash>∞ sweeps P(σ ′ x;ν = σ) ∼ e − |µ| =|ν| κνµRe exp(σ+ σx;νµ) , q=0,···,N −1 P(σ ′ x;ν = σ) = 1. For the Z(2) gauge group P(σ ′ x;ν = 1) = c · exp   − |µ| =|ν| κ νµ σ x;νµ   ; P(σ ′ x;ν = −1) = c · exp   |µ| =|ν| κ νµ σ x;νµ   .</trash>
+
+					<figDesc>Since the Z(2) gauge group is a discrete group, −6 ≤ |µ| =|ν| σ x;νµ ≤ 6, the sums σ σ x;nm and τ σ x;nτ take the finite number of values, thereby can play the role of an index in some matrix</figDesc>
+					<trash>T Σσ ,Στ ≡ exp −κ σ σ σ x;nm − κ τ τ σ x;nτ (7) P(σ ′ x;ν = 1) ∼ T Σσ ,Στ , (8) P(σ ′ x;ν = −1) ∼ T −Σσ ,−Στ . (9)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Neither exponents nor products (expensive computing operations) are calculated in the course of sweep, they are computed beforehand. Actually we calculate only the sums σ and τ and pick out the corresponding preliminary calculated exponent in the table (7) as the probability to find</figDesc>
+
+				</figure>
+
+				<p>a configuration {σ}. This algorithm is applied to every link of the lattice, giving us a next in turn configuration from the Boltzmann distribution set. This procedure is repeated many times, and an estimation of O is obtained. There are, however, many problems – both standard and specific for the discrete groups – in applying the above algorithm. Due to a discretity of the Z(2) gauge group, metastable states appear, and the system will then remain there for many sweeps if the tunneling probability between states is small, especially at large κ σ,τ . This problem can be hardly solved by increasing the number of sweeps, and in some area of parameters a new algorithm is required. We have also written the procedure where new and previous states differ in the value of all link variables which adjoin the selected link σ x;ν . The correlation between successive configurations then is supposed to be weaker. Here, we present the results obtained by using a standard heat bath algorithm. Any procedure gives O with statistical errors. The measurements cannot be considered as independent , of course, because they are obtained on the basis of a sequence of highly correlated configurations . By taking into account a strong correlation between the measurements (which is an inevitable consequence of a &quot; microscopic &quot; nature of the algorithm – one link changes at one time), the statistical error is computed as</p>
+
+				<figure>
+					<trash>ε = χ 2 (1 + r)/(1 − r), (10) χ 2 = i O i − ¯ O 2 /(n − 1)n, r = i O i − ¯ O O i−1 − ¯ O i O i − ¯ O 2</trash>
+
+					<figDesc>,</figDesc>
+
+				</figure>
+
+				<p>where n is the number of samples in the average . For discrete groups, especially at large κ νµ , the problem of correlations becomes to be very sharp, because we can stick at one configuration, the correlation becomes then practically infinite and the measured average is questionable.</p>
+
+			</div>
+			<div>
+				<head n="3">Results</head>
+
+				<p>We have performed the simulations on the lattice of N ber of sweeps is equal to 500000 × 2, we start from a completely disordered configuration, two thousands sweeps were used for thermalization. Various quantities such as the space–like (time– like) average plaquette P σ (P τ ), Wilson loops W (I, J) σ,τ , the Creutz ratio χ(I, J)[I = J = 2, 3, 4] have been estimated as functions of β ≡ √ κ σ κ τ = 4/g 2 and ξ.</p>
+
+				<p>The temporal W (2, 2) τ (crosses in Figs) and spatial W (2, 2) σ (circles in Figs) Wilson loops at different ξ are plotted here. When increasing β, the Wilson loop becomes nonzero first in the temporal direction and next in the spatial directions – which is not surprising because ξ enhances the time-like plaquettes and suppresses the space-like plaquettes. As is well-known, at high temperature (this corresponds to the high anisotropy ξ ≫ 1) the time-like Wilson lines acquire nonzero expectation values, while the space-like Wilson lines do not. Data for the Wilson loops W σ,τ (I × J) ≃ exp{−α σ,τ β, ξ (I × J)} can be roughly fitted by</p>
+
+				<figure>
+					<trash>α σ,τ β, ξ ≃ 2 (1 + ε σ,τ ) · β c σ,τ − β θ β c σ,τ − β } with 0 &lt; ε σ,τ &lt; 1; β c σ,τ = 6 ξ vσ,τ</trash>
+
+
+				</figure>
+
+				<p>; v σ ∼ 0.5, v τ ∼ −0.5 -which does not agree with the condition obtained for W σ,τ in [8] for SU(N) gauge group.</p>
+
+				<p>In particular, W σ,τ cannot be fitted by the</p>
+
+				<figure>
+					<trash>versal function f β, ξ = α σ β, ξ = ξ β, ξ · α τ β, ξ . 0 0.2 0.4 0.6 0.8 1 0.2 0.4 0.6 0.8 1 beta Iljxuh 4= ( !=!&amp; 0 0.2 0.4 0.6 0.8 1 0.2 0.4 0.6 0.8 1 beta Iljxuh 5= ( &quot; 0 0.2 0.4 0.6 0.8 0.2 0.4 0.6 0.8 1 beta Iljxuh 6= ( &quot;!</trash>
+
+
+				</figure>
+
+			</div>
+
+			<note place="foot" n="3"> σ × N τ (12 3 × 4) size, the total</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Averchenkova</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">V</forename>
+				<surname>Petrov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">K</forename>
+				<surname>Petrov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">M</forename>
+				<surname>Zinovjev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">112</biblScope>
+			<biblScope unit="page">57</biblScope>
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Creutz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Jacobs</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Rebbi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="42" to="1390" />
+			<date type="published" when="1915" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">A</forename>
+				<surname>Jongeward</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">D</forename>
+				<surname>Stack</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Jayapra- kash. Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">3360</biblScope>
+			<biblScope unit="page">21</biblScope>
+			<date type="published" when="1980" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">A</forename>
+				<surname>Fernandez</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">M</forename>
+				<surname>Sudupe</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">J</forename>
+				<surname>Ruiz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Lorenzo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Tarancon</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett</title>
+		<imprint>
+			<biblScope unit="page" from="312" to="305" />
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">V</forename>
+				<surname>Gavai</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Karsch</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett</title>
+		<imprint>
+			<biblScope unit="page" from="125" to="406" />
+			<date type="published" when="1983" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Bhanot</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Bitar</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Black</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Carter</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Salvador</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett</title>
+		<imprint>
+			<biblScope unit="page" from="187" to="381" />
+			<date type="published" when="1987" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Marinari</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Parisi</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="9205018" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Burgers</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Karsch</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Nakamura</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">O</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Stamatescu. Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">587</biblScope>
+			<biblScope unit="page">304</biblScope>
+			<date type="published" when="1988" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

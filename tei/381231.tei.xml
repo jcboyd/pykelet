@@ -1,0 +1,2459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">LATTICE QCD</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Aida</forename>
+								<forename type="middle">X</forename>
+								<surname>El-Khadra</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Physics Department</orgName>
+								<orgName type="institution">Ohio State University</orgName>
+								<address>
+									<addrLine>174 W 18th Ave</addrLine>
+									<postCode>43210</postCode>
+									<settlement>Columbus</settlement>
+									<region>OH</region>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">LATTICE QCD</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<note>hep-ph/9412279 31 Dec 1994 Invited talk presented at the International Symposium Physics in Collisions &apos;94, Tallahassee, Florida, June 15-17, 1994.</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>The status of Lattice QCD is reviewed with respect to results that are relevant to Standard Model phenomenology. I argue that in a few simple cases all (or almost all) systematic errors from the lattice calculation are under control. Lattice QCD calculations of quarkonia (b b and c c) have yielded precise determinations of the strong coupling, s , and the heavy quark masses. Recent work on the kaon B parameter has also led to a signiicant reduction in systematic errors, resulting in a precise determination of this hadronic matrix element. I discuss recent progress in other calculations of potential phenomenological signiicance, as well as problems and prospects.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">Introduction and Motivation</head>
+
+				<p>Since this appears to be the rst review of lattice QCD in this series, I would like to give a general perspective before I start the discussion of this speciic review. By now, we have accumulated a large body of circumstantial evidence that QCD is the correct theory of the strong interactions. What is sorely missing is a rst-principles understanding of the non-perturbative eeects QCD gives rise to, the most dramatic of them being the observed hadron spectrum. On the practical side, this lack of understanding limits the extraction of Standard Model parameters from experimental measurements. Lattice eld theory ooers a systematic rst principles approach to solving QCD. Calculations in lattice QCD can be performed using Monte Carlo methods. Beyond QCD, lattice eld theory has been used to study many other interesting topics, such as electroweak symmetry breaking, chiral gauge theories, quantum gravity, and statistical systems, none of which I will discuss in this review. I will limit the discussion in this review to calculations directly relevant to the extraction of Standard Model parameters. Needless to say, the eld of lattice QCD is much richer than my limited discussion would indicate.</p>
+
+				<p>Most of the work of phenomenological relevance is done in what is generally referred to as the \quenched&quot; (and sometimes as the \valence&quot;) approximation. In this approximation (see section 2.1) gluons are not allowed to split into quark -anti-quark pairs (sea quarks). The obvious question from the non-expert is why such an arbitrary approximation is used at all in lattice QCD calculations, if the purported goal is a rst-principles understanding of QCD ? The answer comes in two parts. Perturbative arguments suggest that most of the eeect of sea quarks can be absorbed into the coupling constant. Of course, non-perturbative eeects need not be so benign, and there certainly are physical quantities for which they are not. However, recent calculations of the light hadron spectrum (see section 4) indicate that after taking the continuum limit, quenched QCD can give us an acceptable phenomenology. The second part of the answer is calculational convenience. Calculations in the quenched approximation are simple enough to allow the study and control of other systematic errors that arise in lattice QCD calculations as detailed in section 2. They include, but are not limited to, nite lattice spacing, nite volume, and the extrapolation to physical light-quark masses. Algorithmic progress in reducing the computational expense of including sea quarks together with the obvious increases in computing power (of which a signiicant part has been dedicated to this problem) is producing a few calculations that partially include sea quarks, with some phenomenological impact, as discussed in sections 3 and 5.1. Two limits of QCD exist where the theory becomes simple enough to be tackled with analytic methods. These are the chiral and the heavy-quark limits. Both limits can be studied in lattice QCD. In particular, the eeect of sea quarks can be analyzed using techniques developed in the continuum: chiral perturbation theory and non-relativistic potential models. I would like to emphasize that lattice QCD is not a model. With all systematic errors under control, a lattice QCD result becomes a prediction of QCD. The rest of this review proceeds as follows: Section 2 gives a brief introduction to lattice QCD methods without going into technical details, since a number of pedagogical introductions and reviews already exist in the literature 1]. Attention is focused on the sources of systematic errors that enter lattice QCD calculations with the aim to enable the non-expert to judge the reliability of a lattice QCD result of interest to her/him. The following sections 3-5 discuss physics results by topic. Section 6 nally concludes with some remarks about future prospects. 2 A Lattice QCD \Primer&quot;</p>
+
+				<p>Starting with the Feynman path integral formulation in Euclidean space, the discretization of space-time (with lattice spacing a) regulates the integral at short distances or in the ultraviolet . A nite volume (of length L) is necessary for numerical techniques and also introduces an infrared cut-oo or momentum-space discretization. The vacuum expectation of a Greens function, G, which is a product of gauge and fermion elds, is deened as:</p>
+
+			<note>hGi = lim L!1 lim a!0 hGi L;a ; hGi L;a = Z 1 L;a Z DD DU G e S : (1) Z L;</note>
+
+				<p>a normalizes the expectation value. I have omitted spin and color indices for compactness. The gauge degrees of freedom are written as (path ordered) exponentials of the gauge eld, A :</p>
+
+				<p><formula>U (x) = e i R x+a x dx 0 A(x 0 ) &apos; e iaA(x) ; (2)</formula></p>
+
+				<p>which makes it easy to maintain gauge invariance. The link elds, U, are SU(3) matrices.</p>
+
+				<figure>
+					<trash>The (Euclidean) QCD action, S = S g + S f ; S g = 1 4g 2 Z d 4 x F F ; S f = Z d 4 x (x)(D = + m)(x) : (3)</trash>
+
+
+				</figure>
+
+				<p>is discretized, such that Eq. (3) is recovered in the the continuum (a ! 0) limit: S lat = S + O(a n ) ; n 1 :</p>
+
+				<p><formula>(4) I will not go into the explicit formulations of S lat here, but instead refer the reader to Ref. 1]. The most common form for the gauge action is Wilson&apos;s 2]</formula></p>
+
+				<p>, written in terms of plaquettes { products of U elds around the smallest closed loop on a lattice. For fermions the situation is more complicated. The discretization of M D = + m ; (5) is a sparse, nite dimensional matrix. Two diierent approaches are in use. In Wilson&apos;s formulation 3] chiral invariance is explicitly broken, but restored in the continuum limit. The pay-oo is a solution of the so-called fermion doubling problem. Staggered fermions 4] keep a U(1) chiral symmetry at the expense of dealing with 4 degenerate avors of fermions. Eq. (1) emphasizes that QCD is a limit of lattice QCD. However, in numerical calculations these limits cannot be taken explicitly, only by extrapolation. This is feasible, because theoretical guidance for both limits is available. The zero-lattice-spacing limit is guided by asymptotic freedom, since the lattice spacing is related to the gauge coupling by the renormalization group. Quantum eld theories in large but nite volumes have also been analyzed theoretically 5].</p>
+
+				<p>In a numerical calculation the limits are taken by considering a series of lattices, as illustrated in Figure 1. While keeping the physical volume (or L) xed, the lattice spacing is successively reduced; then, keeping the lattice spacing xed the volume is increased. The calculation is in the continuum (innnite volume) limit once the hadron spectrum or matrix elements of interest become independent of the lattice spacing (volume). In practice, however, limitations in computational resources do not permit the ideal lattice QCD calculation just described. In particular, the computational cost of reducing the lattice spacing naively scales like (L=a) 4 . (The computational cost is really higher, because of numerical problems at smaller lattice spacings.) Eq. (4) illustrates an alternative. By improving the discretization errors in the lattice action (and operators), the continuum limit can be reached</p>
+
+				<figure>
+					<trash>0 a 6 V ! 1 6 - L (fm) a (fm) Figure 1</trash>
+
+
+				</figure>
+
+				<p>: Illustration of the continuum and innnite-volume limits. at coarser lattice spacings than before. Simulations with improved actions can come at only a slightly higher computational price. The ideas underlying improvement were developed some time ago 6, 7, 8], and have since been revitalized 9, 10, 11, 12]. If the quark mass is large compared to the typical QCD scale, QCD , eeective theories are most adequate in describing the physics 13]. In that case, the lattice spacing cannot be taken to zero. Lattice-Spacing errors can, however, be systematically reduced by improvement 14]. Typical lattice QCD calculations have lattice spacings in the range 0:05 fm &lt; a &lt; 0:2fm, and nite volumes with spatial lengths in the range 1:0 fm &lt; L &lt; 3:0 fm.</p>
+
+				<p>Now that the problem is (more or less) set up, I will brieey go through the organization of a typical lattice QCD calculation in the next 3 subsections.</p>
+
+			</div>
+			<div>
+				<head n="2.1">Gauge Conngurations</head>
+
+				<p>The Euclidean path integral has a formal analogy to statistical mechanics. This analogy has been exploited in adapting tools, originally developed for statistical mechanics systems, to lattice QCD. Because the fermion elds anti-commute (they belong to a Grassman Algebra), their integration can be done analytically, leaving only the integral over the gauge elds to be done numerically. For example, the normalization Z, becomes</p>
+
+				<figure>
+					<trash>Z L;a = Z DU det MU] e SgU] : (6)</trash>
+
+
+				</figure>
+
+				<p>The only viable numerical technique for the evaluation of such a high-dimensional integral is the Monte Carlo method. New gauge elds are sampled with probability DU det MU] e SgU] using importance sampling. A gauge connguration is a lattice ensemble of such gauge elds. Approximating the integral over gauge elds in Eq. (1) with a nite sum over the gauge conngurations introduces a statistical error.</p>
+
+				<p>Rather than going into details about algorithms, let me just note that the presence of the determinant, det M, complicates the process of choosing new gauge conngurations. The quenched approximation 15] sets det M = 1 in Eq. (6), which reduces the computational eeort by several orders of magnitude at the expense of neglecting vacuum polarization. In perturbation theory this can be compensated by a shift in the coupling constant. The interaction of valence quarks with gluons is, however, still treated correctly.</p>
+
+				<figure>
+					<trash>2.2 Quark Propagators Calculating a quark propagator h (x) (y) i L;a = Z 1 L;a Z DU det MU] M 1 xy U] e SgU] (7)</trash>
+
+
+				</figure>
+
+				<p>reduces to the computational problem of calculating the inverse of the matrix M. M is singular for massless quarks, and the inversion becomes diicult (if not impossible) for small quark masses, depending on the volume, lattice spacing and sophistication of the algorithm used.</p>
+
+				<p>In practice this has restricted calculations involving light quarks to masses m q &gt; m s =3, making extrapolations to the physical m u;d quark masses necessary. In some cases, this extrapolation can be guided by chiral perturbation theory. However, if the quark-mass dependence is not known a priori, control of this systematic error is possible only if the observed mass dependence is weak.</p>
+
+			</div>
+			<div>
+				<head n="2.3">Hadron Propagators</head>
+
+				<p>Hadron masses are usually extracted 15] from 2 -point functions of the form:</p>
+
+				<p><formula>h G (x; y) i = h (x) y (y) i ; (8)</formula></p>
+
+				<p>where the interpolating eld, (x), has the quantum numbers of the hadron in question. A simple choice for, say, a pion eld is (x) = (x) 5 (x). It is easily shown that the hadron propagator in Eq. (8) is a product of quark propagators in the background of the gauge elds:</p>
+
+				<figure>
+					<trash>h G (x; y) i = Z 1 L;a Z DU det MU] M 1 yx U] 5 M 1 xy U] 5 e SgU] (9)</trash>
+
+
+				</figure>
+
+				<p>Projecting out a speciic 3 -momentum, p, it can be shown that the hadron 2 -point function is a sum over all states (labeled n) with the same quantum numbers as, in this case, the pion:</p>
+
+				<p><formula>G (p; t) = X x e ipx h G (x; 0) i = X n C 2 n e Ent ; C n = h0j jni : (10)</formula></p>
+
+				<p>The lowest exponential, E 1 E , dominates at large Euclidean times, allowing the extraction of the pion mass from the exponential fall-oo of G (p = 0; t) at large times. The coeecients, C n , describe the overlap of the operators with the diierent states n.</p>
+
+				<p>The presence of excited states in Eq. (10) introduces a systematic error into the hadron mass determination, which has to be controlled. A smart choice of minimizes the contributions of unwanted excited states to the sum in eq. (10), and thus allows for better control of this systematic error and the extraction of the ground-state mass at small time slices. For some mesons, the statistical errors (from the Monte Carlo integration) grow with Euclidean time, which makes the ground-state extraction diicult. Examples include mesons with nite momentum , orbitally excited states, and mesons with one innnitely heavy (static) quark. In such cases, it becomes necessary to carefully project out excited state contributions by constructing a matrix of hadron operators. Such techniques can also yield radially excited state masses. The coeecients C n become matrix elements if one of the operators is substituted with a current. Taking, for example, the axial current, A (x) = (x) 5 (x), would leave h0jA ji in the ground-state contribution in Eq. (10), allowing the extraction of the pion decay constant. Three -point functions are needed in order to calculate matrix elements that are relevant for K K mixing, semi-leptonic decays, etc., in a straightforward generalization of the above discussion. Let us consider the transition B ! A, governed by hAjJ jBi:</p>
+
+				<figure>
+					<trash>G AJ B (p A ; p J ; t A ; t J ) = X x A ;x B e ip A x A e ip J x J h A (x A )J (x J ) y B (0) i (11) t A ;t B !1</trash>
+
+
+				</figure>
+
+				<p>! e E A (t A t J ) e E B t J h0j A jAi hAjJ jBi hBj y B j0i (12) EEcient techniques 16] have been developed to deal with the more complicated products of quark propagators that appear in the corresponding path integral (analogous to Eq. (9)). The calculational eeort is about twice of that necessary for hadron masses and decay constants per momentum combination p A , p J .</p>
+
+			</div>
+			<div>
+				<head n="2.4">Perturbation Theory</head>
+
+				<p>Lattice QCD calculations use perturbation theory in several places:</p>
+
+				<p>It guides the approach to the continuum limit. Short-Distance quantities can be calculated non-perturbatively and compared to their perturbative expansions. Ref. 17] showed that indeed, 1-loop perturbation theory describes most quantities considered to 3 5%, if a renormalized coupling like MS (rather than the bare lattice coupling) is used and the lattice spacing a &lt; 0:2 fm. Matrix elements calculated with a lattice regulator have to be matched to their continuum counterpart by perturbation theory.</p>
+
+				<p>Because quarks are connned into hadrons, quark masses are always scheme dependent.</p>
+
+				<p>Perturbation theory is used to convert non perturbatively determined lattice quark masses to the perturbative continuum masses such as the pole or MS masses. Similarly, the gauge coupling can be determined non-perturbatively using lattice QCD and converted to the MS scheme at large momenta (see also section 3). The lattice regulator breaks Lorentz (or Euclidean) invariance, which complicates perturbative calculations relative to those performed with Lorentz (or Euclidean) invariant regulators , such as dimensional regularization. This has prompted the development of computational techniques for higher loop perturbative calculations 18]. (Numerical) techniques for non-perturbative calculations of renormalization constants have also been developed 19, 20]. Such techniques are very promising, because every time a new action or new operators are considered, not only must the programs be changed but also the perturbation theory has to be redone.</p>
+
+			</div>
+			<div>
+				<head n="3">Quarkonium Spectroscopy</head>
+
+				<p>Quarkonia, mesons containing a heavy quark and anti-quark, are at present the best understood hadronic systems. Both, the charm and bottom quark masses are large compared to the typical QCD scale, QCD . The b b and c c bound states are therefore governed by non-relativistic dynamics . While the QCD potential was not known from rst principles, relatively simple guesses for phenomenological potentials have proven quite successful in describing the experimentally measured bound state spectra of quarkonia 21]. As has been argued by Lepage 22], quarkonia are also the easiest systems to study with lattice QCD, and systematic errors can be analyzed using potential models. For example, nite-volume errors are much easier to control for quarkonia than for light hadrons; they are negligible if volumes with L &gt; 1:5 fm are used. Lattice-Spacing errors, on the other hand, can be larger for quarkonia and need to be considered. However, the size of lattice-spacing errors in a numerical simulation of quarkonia can be anticipated by calculating expectation values of the corresponding operators using potential model wave functions. Control over systematic errors in turn allows the extraction of Standard Model parameters from the quarkonia spectra.</p>
+
+				<p>Two formulations have been used in calculations of these spectra. In the non-relativistic limit the QCD action can written as an expansion in powers of v 2 (or 1=m), where v is the velocity of the heavy quark inside the boundstate 13], which I henceforth shall refer to as NRQCD. Lepage and collaborators 14] have adapted this formalism to the lattice regulator . Two groups have performed numerical calculations of quarkonia in this approach. In refs. 23, 24] the NRQCD action is used to calculate the b b and c c spectra, including terms up to O(mv 4 ) and O(a 2 ). In addition to calculations in the quenched approximation, this group is also using gauge conngurations that include 2 avors of sea quarks with mass m q 1 2 m s to calculate the b b spectrum 25, 26]. The leading order NRQCD action is used in Ref. 27] for a calculation of the b b spectrum in the quenched approximation. The Fermilab group 10] developed a generalization of previous approaches, which encompasses the non-relativistic limit for heavy quarks as well as Wilson&apos;s relativistic action for light quarks. Lattice-Spacing artifacts are analyzed for quarks with arbitrary mass. Ref. 28] uses this approach to calculate the b b and c c spectra in the quenched approximation . They considered the eeect of reducing lattice-spacing errors from O(a) to O(a 2 ). The results for the b b and c c spectra from all groups are summarized in Figures 2 and 3. The agreement between the experimentally-observed spectrum and lattice QCD calculations is impressive. As indicated in the preceding paragraphs, the lattice artifacts are diierent for all groups. Figures 2 and 3 therefore emphasize the level of control over systematic errors.</p>
+
+				<p>All groups use gauge conngurations generated with the Wilson action leaving O(a 2 ) lattice-spacing errors in the results. Since the heavy-quark actions have been 23], or can be improved through O(a 2 ), an improved gauge action 6] should also be used, eeectively reducing lattice-spacing errors to a negligible level. The rst results with 2 avors of degenerate sea quarks have appeared 26, 29] with latticespacing and nite-volume errors similar to the quenched calculations, signiicantly reducing this systematic error. However, several systematic eeects associated with the inclusion of sea quarks still have to be studied. They include the dependence on the quarkonium spectrum of the number of avors of sea quarks and the sea-quark action (staggered vs. Wilson). The inclusion of sea quarks with realistic light-quark masses is very diicult. However, quarkonia are expected to depend only very mildly on the masses of the light quarks. This systematic error has not been included yet and should be checked numerically. Quarkonia were, upon their discovery, called the hydrogen atoms of particle physics. Their non-relativistic nature justiied the use of potential models, which gave a nice, phenomenological Figure 2: A comparison of lattice QCD results for the b b spectrum (statistical errors only).</p>
+
+				<figure>
+					<trash>-: Experiment; 2: FNAL 28]; : NRQCD (n f = 0) 23]; : NRQCD (n f = 2) 25]; 3: UK(NR)QCD 27].</trash>
+
+					<head>understanding of these systems. This phenomenology is at present useful to control systematic errors in lattice QCD calculations of b b and c c spectra.</head>
+
+					<figDesc>However, we are quickly moving towards truly rst-principles calculations of quarkonia using lattice QCD, thereby testing QCD nonperturbatively . In this sense, quarkonia are still the hydrogen atoms of particle physics. Precise determinations of the Standard Model parameters s , m b , m c , are by-products of this work. They are discussed in the following two subsections.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="3.1">The Strong Coupling from Quarkonia</head>
+
+				<p>At present, the QCD coupling, s , is determined from many diierent experiments, performed at energies ranging from a few to 90 GeV 30]. In most cases perturbation theory is used to extract s from the experimental information. Experimental and theoretical progress over the last few years has made these determinations increasingly precise. However, all determinations, including those based on lattice QCD, rely on phenomenologically-estimated corrections and uncertainties from non-perturbative eeects. These eeects will eventually (or already do) limit the accuracy of the coupling constant determination. When lattice QCD is used the limiting uncertainty comes from the (total or partial) omission of sea quarks in numerical simulations. The determination of the strong coupling, s , proceeds in three steps: 1. The experimental input to the strong coupling determination is a mass or mass splitting , from which by comparison with the corresponding lattice quantity the scale, a 1 , is determined in physical units. For this purpose, one should identify quantities that are insensitive to lattice errors. In quarkonia, spin-averaged splittings are good candidates. The experimentally observed 1P-1S and 2S-1S splittings depend only mildly on the quark mass (for masses between bottom and charm). Higher-Order lattice-spacing errors for these splittings are estimated in Refs. 26, 28] to be small. In Ref. 28] the calculation was performed at 3 diierent lattice spacings. Figure 3: A comparison of lattice QCD results for the c c spectrum (statistical errors only). -: Experiment; 2: FNAL 28]; : NRQCD (n f = 0) 24] 2. Within the framework of lattice QCD the conversion from the bare to a renormalized coupling can, in principle, be made non-perturbatively. In the deenition of a renormalized coupling, systematic uncertainties should be controllable, and at short distances, its (perturbative) relation to other conventional deenitions calculable. For example, a renormalized coupling can be deened from the non-perturbatively computed heavy-quark potential 31]. In Ref. 32] a renormalized coupling is deened non-perturbatively through the Schrr odinger functional. The authors compute the evolution of the coupling nonperturbatively using a nite size scaling technique, which allows them to vary the momentum scales by an order of magnitude. The strong coupling can also be computed from the three-gluon vertex, suitably deened on the lattice 33]. An alternative is to deene a renormalized coupling through short distance lattice quantities , like small Wilson loops or Creutz ratios. For example, the coupling deened from the plaquette, P = 3 ln hTr U P i=4, can be expressed in terms of V (</p>
+
+				<figure>
+					<trash>or MS ) by 17]: P = V (q))1 1:19 V (q) + O( 2 V )] (13) at q = 3:41=a, close to the ultraviolet cut-oo. V is related to the more commonly used MS coupling by MS (Q) = V (e 5=6 Q)(1 + 2</trash>
+
+					<figDesc>V + : : :) : (14) The size of higher-order corrections associated with the above deened coupling constants can be tested by comparing perturbative predictions for short-distance lattice quantities with non-perturbative results 17]. Ref. 28]</figDesc>
+
+				</figure>
+
+				<p>takes a 5% uncertainty associated with perturbation theory from this analysis.</p>
+
+				<p>The comparison of the non-perturbative coupling from Ref. 32] to perturbative predictions for this coupling using Eq. (13) is consistent with this error estimate. In Ref. 26] the next-to-next-to-leading order corrections to Eq. (13) have been calculated numerically from the observed deviations (from 1-loop perturbation theory) in small Wilson loops and Creutz ratios (up to size 3) at several very small lattice spacings. The dominant perturbative error then comes from the conversion to the MS coupling, which is only known to 1-loop. The relation of the plaquette coupling in Eq. (13) to the MS coupling will very soon be known to 2-loops 34], signiicantly reducing the uncertainty due to the use of perturbation theory. 3. Calculations that properly include all sea-quark eeects do not yet exist. If we want to make contact with the \real world&quot;, these eeects have to be estimated phenomenologically or extrapolated away. The phenomenological correction necessary to account for the sea-quark eeects omitted in calculations of quarkonia that use the quenched approximation have been discussed in detail in Refs. 35, 36]; it is the dominant systematic error in this calculation. Similar ideas were used to correct for sea-quark eeects in early calculations of quarkonia spectra from the heavy-quark potential calculated in quenched lattice QCD 37]. By demanding that, say, the spin-averaged 1P-1S splitting calculated on the lattice reproduce the experimentally observed one (which sets the lattice spacing, a 1 , in physical units), the eeective coupling of the quenched potential is in eeect matched to the coupling of the eeective 3 avor potential at the typical momentum scale of the quarkonium states in question. The diierence in the evolution of the zero avor and 3,4 avor couplings from the eeective low-energy scale to the ultraviolet cut-oo, where s is determined, is the perturbative estimate of the correction. For comparison with other determinations of s , the MS coupling can be evolved to the Z mass scale. An average 30] of refs. 35, 36] yields for s from calculations in the quenched approximation:</p>
+
+				<p><formula>(5) MS (m Z ) = 0:110 0:006 : (15)</formula></p>
+
+				<p>The phenomenological correction described in the previous paragraph has been tested from rst principles in Ref. 29]. The 2-loop evolution of n f = 0 and n f = 2 MS couplings { extracted from calculations of the c c spectrum using the Wilson action in the quenched approximation and with 2 avors of sea quarks respectively { to the low-energy scale gives consistent results. After correcting the 2 avor result to n f = 3 in the same manner as before and evolving MS to the Z mass,</p>
+
+				<p><formula>Ref. 29] nds (5) MS (m Z ) = 0:111 0:005 (16)</formula></p>
+
+				<p>in good agreement with the previous result in Eq. (15). The total error is now dominated by the rather large statistical errors and the perturbative uncertainty. Ref. 26] used results for s from the b b spectrum with 0 and 2 avors of sea quarks to extrapolate the inverse coupling to the physical 3 avor case directly at the ultra violet momentum, q = 3:41=a. They obtain a result consistent with the old procedure, but with smaller errors:</p>
+
+				<figure>
+					<trash>(3) V (8:2 GeV) = 0:196 0:003 :</trash>
+
+					<figDesc>(17) The error is dominated by the (small) statistical errors, not the extrapolation (in n f ) errors. The conversion to MS and evolution to the Z mass then gives:</figDesc>
+					<trash>(5) MS (m Z ) = 0:115 0:002 ; (18)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>with an error now dominated by the unknown higher orders in eq. (14). The claimed result in Eq. (17) (or Eq. (18)) is the most accurate determination of the strong coupling constant to date. In order to connrm this result, it is desirable that the b b and c c spectra be calculated with heavy-quark actions based on 10] with the same level of statistical precision and care with respect to systematic errors as was done in Ref. 26]. Apart from this, the systematic errors associated with the inclusion of sea quarks into the simulation have to be checked, as outlined in section 3. Phenomenological corrections are a necessary evil that enter most coupling constant determinations . In contrast, lattice QCD calculations with complete control over systematic errors will yield truly rst-principles determinations of s from the experimentally observed hadron spectrum. At present, determinations of s from quarkonia using lattice QCD are comparable in reliability and accuracy to other determinations based on perturbative QCD from high energy experiments. They are therefore part of the 1994 world average for s 30]. The phenomenological corrections for the most important sources of systematic errors in lattice QCD calculations of quarkonia are now being replaced by rst-principles, which will signiicantly increase the accuracy of s determinations from quarkonia. In a few years time, the world average for the strong coupling will be dominated by determinations of s using lattice QCD.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="3.2">The Heavy Quark Masses</head>
+
+				<p>Because of connnement, the quark masses cannot be measured directly, but have to be inferred from experimental measurements of hadron masses, and depend on the calculational scheme employed.</p>
+
+				<p>In lattice QCD quark masses are determined non-perturbatively, by tuning the bare lattice quark mass (m lat Q ) so that, for example, the experimentally observed J== (or ) mass is reproduced by the calculation. For phenomenology useful quark masses are the perturbatively deened pole and MS masses, which the bare lattice mass can be related to by (1-loop) perturbation theory:</p>
+
+				<p><formula>m pole Q = Z pole m m lat Q ; m MS Q (m Q ) = Z MS m m lat Q : (19)</formula></p>
+
+				<p>The heavy-quark pole mass can be determined alternatively from a calculation of the binding energy, E bind . The ground-state energy need not equal the mass of a non-relativistic system.</p>
+
+				<p>The binding energy can be obtained by subtracting the perturbatively calculable heavy-quark rest energy from the ground-state energy. The pole mass is then:</p>
+
+				<p><formula>m pole Q = 1 2 (M exp Q Q E bind ) (20)</formula></p>
+
+				<p>This method is insensitive to errors in tuning the bare mass, because the binding energy depends only mildly on the quark mass. Of course, as always, all systematic errors arising from the lattice QCD calculation need to be under control for a phenomenologically interesting result; in particular, the systematic error introduced by the (partial) omission of sea quarks has to be removed. The short-distance corrections that introduced the dominant uncertainty to the s determination from quarkonia are absent for the pole mass determination, because this eeective mass does not run for momenta below it&apos;s mass. Ref. 25] used both methods described above for a determination of the b quark pole mass from a lattice QCD calculation of the b b spectrum. As expected, a comparison of their results with zero and 2 avors of sea quarks nds compatible results for the pole mass:</p>
+
+				<p><formula>m pole b = (5:0 0:2) GeV (21)</formula></p>
+
+				<p>For the MS mass, Ref. 25] quotes m MS b (m b ) = 4:0(1) GeV. The error in both results is dominated by perturbation theory. A similar analysis is being performed in Ref. 38] for the charm quark mass from the charmonium spectrum. A preliminary result is m pole c = 1:5(2) GeV.</p>
+
+				<p>The MS mass for the charm quark has also been determined from a compilation of D meson calculations in the quenched approximation 39], with m MS c (2 GeV) = 1:47(28) GeV.</p>
+
+				<p>The error includes statistical errors from the original calculations and the perturbative error. However sea-quark eeects cannot, in this case, be estimated phenomenologically, leaving this systematic error uncontrolled.</p>
+
+			</div>
+			<div>
+				<head n="4">Light Hadron Spectrum</head>
+
+				<p>The calculation of, say, the proton mass from rst principles is one of the original problems lattice methods hoped to solve. Unfortunately, the systematic errors in the lattice calculations do not yet allow for rst-principles calculations of the light hadron spectrum. Consequently, while a rst-principles understanding of the (low lying) b b and c c spectra lies just around the corner, as I argued in the previous section, the light hadron spectrum is one of the hardest problems, most likely to be solved later.</p>
+
+				<figure>
+					<trash>K * φ N Ξ+Σ-N ∆ Σ * Ξ * Ω 10f π 10f K f K/π 1 1.5 2 2.5 M X / M ρ GF11 experiment</trash>
+
+					<head>Figure 4:</head>
+
+					<figDesc>The results from Ref. 41] in comparison with experiment Nevertheless, I would like to discuss some of the progress of the last few years 40], because it has been signiicant. The results of a systematic calculation of the light hadron spectrum in the quenched approximation 41] are shown in Figure 4</figDesc>
+
+				</figure>
+
+				<p>. The inverse lattice spacing was determined from the mass of the , the pion and kaon masses were used to set the quark masses. All the predicted hadron masses in Figure 4 are written in units of the mass. Three sources of systematic error were corrected by extrapolations in m q (to m u;d ), to zero lattice spacing, and to innnite volume. The comparison of the results of this calculation with the experimentally observed spectrum indicates that quenched QCD might not be a bad approximation to QCD.</p>
+
+				<p>However, some of the assumptions used in the extrapolations still need to be checked. Lattice- Spacing errors can be reduced with little eeort by considering an improved action instead of the Wilson action which was used. A similar analysis with the staggered fermion action is in progress 42]. Calculations that include sea quarks have been improved signiicantly over the last few years. However, with the exception of nite-volume eeects 43], systematic errors (a ! 0, m q ! m u;d ) have not been extrapolated away yet. On the other hand, the gauge conngurations generated with sea quarks are useful for quarkonium physics, because lattice-spacing errors can be controlled and light-quark mass eeects are most likely mild.</p>
+
+				<p>The eeects of the quenched approximation have also been studied in chiral perturbation theory 44]. This serves to guide our expectations about the limitations of the quenched approximation and to identify physical quantities that are insensitive to sea-quark eeects.</p>
+
+				<p>In principle, numerical calculations of the light hadron spectrum together with perturbation theory can lead to determinations of the light-quark masses. While this should be very interesting in the future, since the light-quark masses are very poorly known, the systematic errors at present make such determinations unreliable 45].</p>
+
+			</div>
+			<div>
+				<head n="5">The CKM matrix</head>
+
+				<p>The CKM matrix is a window to new physics, because it is linked to the unknown fermion mass generation mechanism. An overconstrained CKM matrix can give us hints about the physics beyond the Standard Model such as the existence of a fourth generation of quarks and leptons or sources of CP violation inconsistent with the one allowed phase in the unitary matrix.</p>
+
+				<p>Information about CKM matrix elements can, in principle, be extracted from experimental measurements of exclusive weak processes, such as neutral meson mixing, semi-leptonic and leptonic decays, and avor-changing radiative decays. However, these processes also receive QCD corrections, the long distance part of which is parametrized into a weak matrix element (see section 2.3, Eq. (11)). With the exception of a few special cases, these matrix elements cannot be calculated from rst principles using analytic methods. Lattice QCD can therefore play an important role for this phenomenology (see also recent reviews 46]).</p>
+
+				<figure>
+					<trash>5.1 K K Mixing In the Standard Model K K mixing proceeds through the exchange of two W bosons 47]: &quot; Im(V td )jV cb j(f 3 (m t ) 3 1 y c )jV cd j + 2 y t f 2 (m t )Re(V td )] 3 8 m 2 K f 2 K B K ; (22) B K = 3 h KjO S=2 jKi 8m 2 K f 2 K : (23)</trash>
+
+
+				</figure>
+
+				<p>The f i , y i are known functions of the (charm and top) quark masses and i are perturbative QCD corrections. Using three-generation unitarity, the dependence of &quot; on the CKM angles can be reduced to the CP violating phase and jV ub =V cb j. B K is for a variety of reasons one of the simplest quantities to study in lattice QCD. Because it is the ratio of two very similar matrix elements, many systematic errors are expected to cancel. The chiral symmetry of staggered fermions makes them the method of choice for B K 48].</p>
+
+				<p>Most systematic eeects have been studied for this quantity. While all groups see a sizable lattice-spacing dependence in their results 49, 50], this error has recently been shown to be O(a 2 ) on theoretical grounds 51], leading to a signiicant reduction of the extrapolation errors. The expectation that errors associated with the quenched approximation cancel has been checked at somewhat coarse lattice spacings with sea quarks of mass m q &apos; m s =2 50, 52].</p>
+
+				<p>The perturbative corrections to several diierent operators have been calculated 53, 54]. Their inclusion yields consistency between those operators after extrapolation to zero lattice spacing 50, 51]. The nal result in the naive dimensional reduction scheme is 51]:</p>
+
+				<figure>
+					<trash>B K (NDR; 2 GeV) = 0:616 0:020 0:017 ; (24)</trash>
+
+
+				</figure>
+
+				<p>which can, of course, be converted to the more customary scale independent parameter by ^ B K = 6=25 s B K (NDR; 2 GeV). The rst error in Eq. (24) is statistical, the second is the sum of all systematic errors considered. Still to be checked is the lattice-spacing dependence of calculations with n f 6 = 0, which need not equal the n f = 0 case. While sea quarks with non-degenerate masses, m q 6 = m s , still need to be incorporated into numerical simulations, they have been estimated 44] in chiral perturbation theory to aaect B K at the less than 5% level. In summary, Eq. (24) is the result of a careful analysis, with most errors under control. It already surpasses all other (model dependent) determinations of this quantity in accuracy. Once the last bit of \hand waving&quot; with respect to sea-quark eeects is checked directly, this result will signiicantly reduce the uncertainty in the Wolfenstein parameters and .</p>
+
+			</div>
+			<div>
+				<head n="5.2">B B Mixing</head>
+
+				<p>This case is very similar to K K mixing. The amplitude is written in the form:</p>
+
+				<p><formula>x d jV td V tb j 2 f(m t ) 8 3 m 2 B f 2 B B B : (25)</formula></p>
+
+				<p>The major uncertainty in extracting the CKM angles from the experimental measurement of x d comes from the unknown decay constant f B . B B is expected to be close to the vacuum saturation value, B B &apos; 1 55].</p>
+
+				<p>Heavy meson decay constants have been studied in various limits by a large number of groups. A lot of the simplifying features that allowed easy control over systematic errors for B K are absent here. Hand waving arguments about cancellations of systematic errors can only be made for ratios of decay constants, f B =f D , f Bs =f B , f Ds =f D , which have also been considered. The B meson in the static limit 56] is an example of a quantity where (for well understood reasons) the extraction of the ground-state signal from the correlator is diicult. This systematic error has been the focus of two groups 57, 58]. They use sophisticated techniques of removing excited states by constructing a matrix of hadron propagators over several diierent operators. Attention has also been paid to nite-volume and lattice spacing eeects 57, 59, 60]. The results for f B in the static limit are summarized in Figure 5. Some of the disagreement follows from the diiculty of extracting the ground-state signal, which has not been addressed by all groups in the same detail. The lattice-spacing dependence in Figure 5 is rather strong and needs to be better understood or reduced, before the a ! 0 extrapolation becomes reliable. This dependence will be somewhat softened by the inclusion of perturbative corrections 61], which have been left out for the purpose of comparison. Also, using an improved action instead of the Wilson action for the light quarks should reduce the lattice-spacing errors.</p>
+
+				<p>The decay D s ! has been measured in several experiments 62], yielding determinations of f Ds (assuming V cs ). Lattice calculations of this quantity can then be used to calibrate</p>
+
+				<figure>
+					<trash>0.2 0.4 0.6 0.8 1.0 a (GeV -1 ) 0.3 0.4 0.5 0.6 0.7 0.8 f ~ B a -3/2 (GeV 3/2 ) ACPMAPS PSI-Wuppertal Rome-Southampton APE BLS Kentucky</trash>
+
+					<head>Figure 5:</head>
+
+					<figDesc>Lattice QCD results for f stat B in comparison. : 57]; 2: 60]; 3: 64]; 4: 63]; 5: 59]; : 58].</figDesc>
+
+				</figure>
+
+				<p>the quenched approximation once all other systematic errors have been removed and the experimental results become more precise. Figure 6 shows a comparison of lattice and experimental results. Systematic errors were considered to varying degrees and are not yet completely controlled (even within the quenched approximation). One group 66] has partially included sea-quark eeects. For the B meson decay constant, results for mesons containing one heavy quark of order the charm quark (or heavier) mass have traditionally been combined with the static limit, and interpolated to the B meson mass. In the heavy-quark limit the combination = f p m becomes independent of the heavy-quark mass 68] (up to renormalization group logarithms), with corrections that vanish as powers of 1=m:</p>
+
+				<p><formula>= 1 (1 + c 1 m + c 2 m 2</formula></p>
+
+				<figure>
+					<figDesc>+ : : :) (26) An example of this interpolation from Ref. 59] is shown in Figure 7; similar results were obtained by all groups. In particular, large deviations from the static limit as shown in Figure 7</figDesc>
+
+				</figure>
+
+				<p>were seen by all groups. However, lattice-spacing errors in the heavy-quark action (and current) also contribute 1=m terms. Even though they are probably small, they should be removed by using improved heavy-quark actions and currents 10, 14]. Improved heavy-quark methods can also obviate the (expensive) need to use ever smaller lattice spacings for weak matrix elements evaluated directly at the B meson mass. I conclude this section with a summary of the current state of knowledge of heavy meson decay constants in Table 1. I would like to emphasize again that, while attention has been paid to systematic errors, they are not yet under complete control in the quenched approximation.</p>
+
+				<p>However, there are no technical obstacles to calculations of heavy meson decay constants in the continuum limit of quenched lattice QCD. While the inclusion of sea-quark eeects will be more diicult to control, ratios of decay constants may prove to be as insensitive to these and other systematic errors as B K has been shown to be. Figure 6</p>
+
+				<figure>
+					<figDesc>: A Comparison of lattice QCD and experimental results for f Ds . The second error is the groups estimate of the systematic errors they considered. : Experiment 62]; 2: BLS 59]; : ELC 64]; 3: APE 63]; : UKQCD 65]; : HEMCGC 66].</figDesc>
+					<trash>group f D (MeV) f Ds =f D f B (MeV) f Bs =f B BLS 59] 208 9 37 1:11 0:02 0:05 187 10 37 1:11 0:02 0:05 UKQCD 65] 185 4 3 42 7 1:18 0:02 160 6 53 19 1:22 4 3 PWCD 60] 170 30 1:09 0:02 0:05 180 50 1:11 0:02 0:05 APE 63] 218 9 1:11 0:01 ELC 64] 210 15 1:08 0:02 205 40 1:08 0:06 HEMCGC 66] 215 9 53 FNAL 57] 188 23 34 21 1:216 0:041 0:016 (static) SH 67] 171 22 19 45</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>(non-rel.) Table 1</figDesc>
+
+				</figure>
+
+				<p>: Lattice QCD results for heavy mesons decay constants in comparison. The second error is the groups estimate of the systematic errors they considered.</p>
+
+			</div>
+			<div>
+				<head n="5.3">Semi-Leptonic Decays</head>
+
+				<p>Semi-leptonic decays have traditionally been used to determine CKM matrix elements. The two classic examples are nuclear -decay for V ud and K l3 for V us . In both cases, (SU(2) or SU(3)) chiral symmetry together with current conservation was used to calculate the hadronic matrix element. Semi-leptonic decays of charm or bottom mesons have no such advantage (with the exception of decays like B ! D () l, see section 5.4.1). Hence, in all but this one case exclusive semi-leptonic decays of D and B mesons have failed to provide accurate determinations of the corresponding CKM matrix elements, even though a wealth of experimental information has been accumulated in recent years 69].</p>
+
+				<p>The matrix element for, say, D ! K () l can be parametrized in terms of form factors.</p>
+
+				<figure>
+					<trash>Common parametrizations are: hKjJ jDi = f + (q 2 ) &quot; (p D + p K ) m 2 D m 2 K q 2 (p D p K ) # + f 0 (q 2 ) m 2 D m 2 K q 2 (p D p K ) (27) Figure 7: vs. 1=m from Ref. 59]. and hK ; jJ jDi = () 2 m D + m K V (q 2 ) p D p K A 1 (q 2 )(m D + m K ) (28) + A 2 (q 2 ) 1</trash>
+
+
+				</figure>
+
+				<p>m D + m K (p D + p K ) p D A(q 2 ) 2m K q 2 (p D p K ) p D # with momentum transfer q 2 = (p D p K () ) 2 .</p>
+
+				<p>In the rest frame of the D meson, zero recoil (p K () = 0) corresponds to maximum momentum transfer, q 2 max = (m D m K () ) 2 . Maximum recoil is at q 2 = m 2 l 0. Knowledge of the form factors yields CKM matrix elements from measurements of, for example, the diierential decay rate:</p>
+
+				<p><formula>d(D ! Kl) dq 2 = jV cs j 2 G 2 F 3=2 192 3 m 3 D jf + (q 2 )j 2 ; (29) or d(D ! K l) dq 2 = jV cs j 2 G 2 F 1=2 q 2 64 3 m 3 D (m D + m K ) 2 jA 1 (q 2 )j 2 + O( 3=2 ) (30) where (m D ; m K () ; q 2 ) = m 2 D m 2 K () q 2 ] 2 4m 2 K () q 2 .</formula></p>
+
+				<p>It is evident from Eqs. (29) and (30) that the rate vanishes at zero recoil, because of the kinematic factor 1=2 2m D p K () .</p>
+
+				<p>It is therefore necessary to consider the form factors as functions of the recoil momentum (or q 2 ). However, momenta are discretized by the nite volume, and lattice artifacts increase as ap 1. Finite-Volume errors should also be expected to change relative to the zero momentum case. Mesons with nite momentum have similar problems with the time dependence of statistical errors as mesons containing a static quark (see section 5.2) or orbitally excited states, which makes the ground-state extraction diicult. The overall increase in statistical errors relative to the zero momentum case obfuscates systematic error analyses.</p>
+
+				<p>All groups limit themselves to momenta with jpj 2p min (p min = 2 L ). The form factors are calculated at the corresponding discrete values of q 2 . Smart choices of initial and nal state momentum combinations can still cover a signiicant range of momentum transfers. The CKM angle V cs is known from three-generation unitary of the CKM matrix. The decay D ! K () l can therefore be used to test lattice methods and calibrate the quenched</p>
+
+				<figure>
+					<trash>group f + (q 2 max ) A 1 (q 2 max ) A 2 =A 1 (q 2 max ) V=A 1 (q 2 max ) Exp 69] 1:31 0:05 0:66 0:05 0:73 0:15 2:04 0:27 ELC 71] 1:13 0:31 0:62 0:09 0:70 0:40 1:62 0:30 APE 72] 1:36 0:14 0:79 0:13 0:70 0:40 1:73 0:32 UKQCD 73] 1:17 0:12 0:14 0:83 0:07 0:12 0:90 0:20 1:50 0:50 0:20 LANL 74] 1:27 0:10 0:78 0:04 0:72 0:22 2:03 0:13 BKS 70]</trash>
+
+
+				</figure>
+
+				<p>1:64 0:36 0:36 1:23 0:2 0:31 0:70 0:16 0:20 0:15 2:15 0:24 0:33 0:38 Table 2: Lattice QCD results for D ! K () l in comparison with experiment. The second error is the groups estimate of the systematic errors they considered. approximation. A comparison is shown in Table 2. As pointed out in Ref. 70], another nice calibration mode is the semi-leptonic decay K ! l, because precise measurements of both form factors, f + and f 0 , as functions of q 2 exist. For historical reasons, experimentalists and (lattice) theorists alike have quoted the form factors at q 2 = 0 (which is usually coupled with parametrizing the q 2 dependence by pole dominance), even though this kinematic point is not particularly convenient for either group. Eqs. (29) and (30) emphasize that experimental measurements of diierential decay rates and lattice determinations of form factors at the same recoil momenta can be used to extract the CKM angles without model assumptions about the q 2 dependence. If such assumptions have to be made because of the experimental set-up, I suggest to quote the form factors at q 2 = q 2 max for comparison with theory. To emphasize this point, I have changed the standard comparison of form factors at q 2 = 0 to q 2 = q 2 max in Table 2. The experimental results were simply rescaled by the appropriate factor ((1 q 2 max =m 2 pole ] 1 ); for the lattice QCD results I took the form factors as quoted at q 2 max where available, otherwise they were rescaled in the same fashion as the experimental results. A study of lattice-spacing, nite-volume, and other systematic errors in Ref. 70] was very limited by large statistical uncertainties. While several groups have presented calculations since 71, 72, 73, 74], no systematic investigation of nite-volume and nite lattice-spacing eeects has appeared yet. Most groups 70, 71, 72] have also considered other charm decays, like D ! ()l, and D s ! ()l, where possible contributions from non-spectator diagrams were neglected. Ref. 71, 72] extrapolated their results for charm decays to B ! ()l assuming heavy quark symmetry. An analysis of B meson semi-leptonic decays at realistic b quark masses has not been carried out yet.</p>
+
+				<p>In summary, the need to consider mesons with nonzero momentum complicates lattice QCD calculations of semi-leptonic decays relative to calculations of decay constants. So far, lattice calculations of semi-leptonic charm decays have been less systematic than those of heavy meson decay constants. However, no serious obstacles exist, to obtaining deenitive results in the quenched approximation at least over a limited range of recoil momenta.</p>
+
+			</div>
+			<div>
+				<head n="5.4">Other Weak Matrix Elements</head>
+
+				<p>In the following two subsections I discuss the status of calculations of the Isgur-Wise function (relevant for experimental measurements of B ! D () l) and of the exclusive radiative decay B ! K .</p>
+
+				<p>In both cases the rst numerical lattice QCD results appeared only very recently. The lattice techniques are, of course, very similar to those established for the study of semi-leptonic charm decays.</p>
+
+				<figure>
+					<trash>5.4.1 The Isgur-Wise Function</trash>
+
+
+				</figure>
+
+				<p>Experimental measurements of the diierential decay rates for the exclusive decays B ! D l near zero recoil depend with only small corrections on the Isgur-Wise (IW) function. Using Heavy Quark EEective Theory (HQET) it has been shown that the corrections to the symmetry limit are small for this mode, yielding a model-independent determination of V cb 68, 69]. For present day lattice calculations this mode is useful as a calibration of the quenched approximation . Two diierent approaches to lattice QCD calculations of the IW function 75] have been employed, in analogy to the B meson decay constant. The discretization of the Heavy Quark Effective Theory allows for the direct computation of the IW function 76] from the corresponding matrix elements. The IW function can be extracted from matrix elements which are related to the above process by HQET. In particular, the corrections to heavy quark symmetry for the form factors extracted from matrix elements of the form hDj c cjDi, which were the focus of the initial lattice QCD calculations 77, 78], are similarly suppressed. Ref. 78] also considered the processes \B&quot;! D () l using heavy quark masses around charm. Figure 8 shows as an example a comparison of the results of Ref. 78] with experimental data from CLEO 79].</p>
+
+				<figure>
+					<head>Figure 8:</head>
+
+					<figDesc>The IW function from Ref. 73] in comparison with CLEO II data.</figDesc>
+
+				</figure>
+
+				<p>The knowledge of systematic errors is similar to the case of semi-leptonic charm decays. No serious analysis of nite volume, nite lattice spacing and (heavy and light) quark mass eeects exists yet. The error on V cb can, in principle, be reduced beyond the current knowledge, once lattice QCD calculations of the form factors at recoil momenta where the diierential decay rate is measured are at least as accurate as the current theoretical estimate at zero recoil, because the at present necessary extrapolation of experimental results to zero recoil can then be avoided. 5.4.2 B ! K Lattice calculations of the radiative decay, B ! K , have also recently begun 80, 81], where, as before, heavy quark masses of order the charm quark were used. The exclusive decay rate is calculated with the hadronic matrix element hK j ss q b R jBi, which is again parametrized in terms of form factors, T 1 and T 2 . The physical two-body decay takes place at momentum transfer q 2 = 0. Extrapolations to m B using HQET and to q 2 = 0 using pole dominance are therefore necessary. Some consistency checks are possible by interchanging the order of the extrapolations.</p>
+
+				<figure>
+					<trash>The ratio R K = (B ! K ) (b ! ss) = 44m B =m b ] 3 1 m 2 K m 2 B ]jT 1 (0)j 2 (31)</trash>
+
+
+				</figure>
+
+				<p>has been measured 82] to R K = (19 8) %. Lattice QCD predictions of this ratio 80, 81] are in the range R K = 6 9 % with an uncertainty of about 50 %. Given the exploratory nature of the lattice QCD calculations and the large experimental errors, this is pretty fair agreement. These results should be followed up by calculations directly at the B meson mass, together with a systematic study of lattice-spacing artifacts at large recoil.</p>
+
+			</div>
+			<div>
+				<head n="6">Conclusions</head>
+
+				<p>Lattice QCD is becoming a reliable tool for Standard Model phenomenology, even though we are far from being done yet. With present day technology, it will be challenging to reach the level of control over systematic errors in calculations that include sea-quark eeects that is possible in calculations that use the quenched approximation. This approximation will therefore be with us for some time. Deenitive calculations of the light hadron spectrum, heavy meson decay constants and other simple weak matrix elements in the continuum and innnite-volume limit of quenched lattice QCD are possible. We will continue to see such results in the coming years. The comparison with the experimentally measured light hadron spectrum and weak decays (where the corresponding CKM matrix elements are known) can give us a calibration of quenched QCD. While the nal judgement on whether quenched QCD can give us a useful phenomenology is still pending, most results in quenched QCD so far indicate that it will.</p>
+
+				<figure>
+					<figDesc>In the meantime, progress will continue to be made in calculations including sea-quark eeects, leading to phenomenologically interesting results and in due course to better knowledge of an increasing number of Standard Model parameters. The search for better lattice actions (with very small discretization errors at, say, lattice spacings of a 0:5 fm) and better algorithms (for the inclusion of sea quarks) is a very active area of research { I invite the reader to take a look at the proceedings of the 1994 meeting on Lattice Field Theory 83]</figDesc>
+
+				</figure>
+
+				<p>. This has, of course, the possibility of revolutionizing the eld, making possible deenitive results sooner than we anticipate.</p>
+
+				<p>In some special cases, like quarkonium spectroscopy and B K , such calculations are already possible with current technology and with control over systematic errors. A rst-principles understanding of these (and hopefully other) simple physical systems should be possible within the next few years.</p>
+
+			</div>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+				<head>Acknowledgements</head>
+				<p>I thank the organizers for an enjoyable conference and the authors of the work reviewed here for correspondence while preparing this talk. Discussions with C. Bernard, C. Davies, E. Eichten, S. Gottlieb, A. Kronfeld, P. Lepage, P. Mackenzie, and J. Shigemitsu are also gratefully acknowledged.</p>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">For pedagogical introductions to Lattice Field Theory, see, for example: M. Creutz, Quarks, Gluons and Lattices</title>
+		<imprint>
+			<date type="published" when="1985" />
+			<publisher>Cambridge University Press A. Hasenfratz and P</publisher>
+			<pubPlace>New York</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">;</forename>
+				<forename type="middle">A</forename>
+				<surname>Hasenfratz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Kronfeld</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Perspectives in the Standard Model</title>
+		<editor>R. Ellis, C. Hill and J. Lykken A. Kronfeld and P. Mackenzie</editor>
+		<meeting><address><addrLine>Singapore</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1985" />
+			<biblScope unit="page">43</biblScope>
+		</imprint>
+	</monogr>
+	<note>for. an introductory review of lattice QCD</note>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Wilson</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page">2445</biblScope>
+			<date type="published" when="1974" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Wilson</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">New Phenomena in Subnuclear Physics</title>
+		<editor>A. Zichichi (ed.) (Plenum</editor>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1977" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">T</forename>
+				<surname>Susskind</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Banks</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Kogut</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Susskind</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">3031</biblScope>
+			<biblScope unit="page" from="16" to="13" />
+			<date type="published" when="1043" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">L</forename>
+				<surname>Uscher</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comm. Math. Phys. Comm. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">104</biblScope>
+			<biblScope unit="issue">153</biblScope>
+			<date type="published" when="1986" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">See</forename>
+				<surname>For Example</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Bell</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Wilson</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">) 3431; K. Symanzik, Nucl. Phys</title>
+		<imprint>
+			<date type="published" when="1975" />
+			<biblScope unit="page" from="226" to="187" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Weisz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">L</forename>
+				<surname>Uscher</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Weisz</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. Nucl. Phys. Comm. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">349</biblScope>
+			<biblScope unit="issue">97</biblScope>
+			<biblScope unit="page" from="212" to="212" />
+			<date type="published" when="1983" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Sheikholeslami</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Wohlert</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys</title>
+		<imprint>
+			<biblScope unit="volume">259</biblScope>
+			<biblScope unit="issue">572</biblScope>
+			<date type="published" when="1985" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Heatlie</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">352</biblScope>
+			<biblScope unit="issue">266</biblScope>
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>El-Khadra</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Kronfeld</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Mackenzie</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">) 3; P. Hasenfratz and F. Niedermayer, Nucl</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Hasenfratz</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Suppl.)</title>
+		<meeting>. Suppl.)</meeting>
+		<imprint>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+	<note>Suppl</note>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title level="m" type="main">TASI&apos;93, SUSSP&apos;93, hep-lat</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Lepage</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="9403018" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Eichten</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Feinberg</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Phys. Lett</title>
+		<editor>2724</editor>
+		<editor>W. Caswell and P. Lepage</editor>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="167" to="437" />
+			<date type="published" when="1981" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Lepage</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">P</forename>
+				<surname>Thacker</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Lepage</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">43</biblScope>
+			<biblScope unit="page" from="46" to="4052" />
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Hamber</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Parisi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<editor>1792</editor>
+		<editor>E. Marinari, G. Parisi and C</editor>
+		<imprint>
+			<biblScope unit="volume">47</biblScope>
+			<date type="published" when="1981" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<surname>Rebbi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett. Lett</title>
+		<imprint>
+			<biblScope unit="volume">47</biblScope>
+			<biblScope unit="issue">57</biblScope>
+			<biblScope unit="page">109</biblScope>
+			<date type="published" when="1795" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">134B (1984) 346; C. Bernard in Gauge Theory on a Lattice: 1984, C. Zachos, et al. (eds.) (National Information Service</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Gottlieb</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Mackenzie</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Thacker</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Weingarten</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<forename type="middle">R</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Gupta</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Lattice Gauge Theory: A Challenge in Large Scale Computing</title>
+		<editor>B. Bunk, K. M utter and K. Schilling</editor>
+		<meeting><address><addrLine>Springgeld, VA ; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Plenum</publisher>
+			<date type="published" when="1984" />
+			<biblScope unit="page" from="55" to="2770" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Lepage</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Mackenzie</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">48</biblScope>
+			<biblScope unit="page">2250</biblScope>
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>All</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. Nucl. Phys. Nucl. Phys. B (Proc</title>
+		<imprint>
+			<biblScope unit="volume">324</biblScope>
+			<biblScope unit="issue">501</biblScope>
+			<biblScope unit="page" from="413" to="34" />
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+	<note>Suppl</note>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>All</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Suppl.)</title>
+		<meeting>. Suppl.)</meeting>
+		<imprint>
+			<date type="published" when="1989" />
+			<biblScope unit="page">232</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Martinelli</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B (Proc</title>
+		<imprint>
+			<publisher>CERN-TH</publisher>
+			<biblScope unit="volume">34734294</biblScope>
+			<biblScope unit="issue">507</biblScope>
+			<biblScope unit="page" from="hep" to="lat" />
+			<date type="published" when="1994" />
+			<publisher>CERN-TH</publisher>
+		</imprint>
+	</monogr>
+	<note>Suppl</note>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Kwong</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Rosner</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Quigg</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Annu. Rev. Nucl. Part. Sci</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="page">325</biblScope>
+			<date type="published" when="1987" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Lepage</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Suppl.)</title>
+		<editor>45</editor>
+		<editor>B. Thacker and P. Lepage P. Lepage and B. Thacker</editor>
+		<meeting>. Suppl.)</meeting>
+		<imprint>
+			<date type="published" when="0199" />
+		</imprint>
+	</monogr>
+	<note>Suppl</note>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Davies</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page">9406017</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Davies</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Hornbostel</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Lepage</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Lidsey</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Shigemitsu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Sloan</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>in. preparation; J. Shigemitsu, private communication</note>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">hep-lat/9404012 (revised), to appear in Phys</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Davies</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Rev. Lett</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Davies</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page">9408328</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">B300 (1993) 393; Phys</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Catterall</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. Lett</title>
+		<imprint>
+			<biblScope unit="page" from="321" to="246" />
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>El-Khadra</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Hockney</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Kronfeld</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Mackenzie</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Onogi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Simone</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page">94091</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Aoki</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page">9407015</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">For recent reviews on the status of s determinations, see, for example: S. Kuhlmann, this volume; B. Webber, ICHEP&apos;94; I. Hinchliie, DPF&apos;94 and Phys</title>
+	</analytic>
+	<monogr>
+		<title level="j">Rev</title>
+		<imprint>
+			<biblScope unit="page" from="50" to="1173" />
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">For a review of s from the heavy-quark potential, see</title>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Schilling</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Bali</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B (Proc</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="issue">147</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+	<note>Suppl</note>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>L Uscher</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Sommer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Weisz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">U</forename>
+				<surname>Woll</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>De Divitiis</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="volume">413744794</biblScope>
+			<biblScope unit="page" from="hep" to="lat" />
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Bernard</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Parrinello</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Soni</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="page" from="49" to="1585" />
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<monogr>
+		<title level="m" type="main">Two-Loop Computation of a Running Coupling, to appear</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Narayanan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">U</forename>
+				<surname>Woll</surname>
+			</persName>
+		</author>
+		<editor>M. L uscher, A. van de Ven and P. Weisz</editor>
+		<imprint/>
+	</monogr>
+	<note>work. in progress</note>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>El-Khadra</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Hockney</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Kronfeld</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Mackenzie</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett. Nucl. Phys. B (Proc</title>
+		<imprint>
+			<biblScope unit="volume">69</biblScope>
+			<biblScope unit="page" from="34" to="141" />
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+	<note>729. ; A. El-Khadra. Suppl</note>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="m">The NRQCD Collaboration</title>
+		<imprint>
+			<date type="published" when="1994" />
+			<biblScope unit="page">417</biblScope>
+		</imprint>
+	</monogr>
+	<note>Suppl. .</note>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">D30 (1984) 2201; M. Campostrini, Phys</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Barkai</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Moriarty</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Rebbi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Allton</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page">9406263</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<surname>See</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Example</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B (Proc. Nucl. Phys. B (Proc</title>
+		<editor>A. Ukawa</editor>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="issue">29</biblScope>
+			<biblScope unit="page">34</biblScope>
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+	<note>Suppl. 3. ; D. Weingarten. Suppl</note>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Butler</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett. Nucl. Phys. Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="volume">709308010</biblScope>
+			<biblScope unit="issue">179</biblScope>
+			<biblScope unit="page">421</biblScope>
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Gottlieb</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>private. communication</note>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Fukugita</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett. Phys. Rev. Phys. Rev. Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">68</biblScope>
+			<biblScope unit="issue">4419</biblScope>
+			<biblScope unit="page">48</biblScope>
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Bernard</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">S</forename>
+				<surname>Goltermann</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Sharpe</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="issue">853</biblScope>
+			<biblScope unit="page" from="46" to="3146" />
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Ukawa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Ref</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B (Proc</title>
+		<imprint>
+			<publisher>Mackenzie</publisher>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="issue">34</biblScope>
+			<biblScope unit="page">400</biblScope>
+			<date type="published" when="1994" />
+			<publisher>Mackenzie</publisher>
+		</imprint>
+	</monogr>
+	<note>Suppl</note>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">For a review of weak matrix elements in lattice QCD, see C</title>
+	</analytic>
+	<monogr>
+		<title level="j">Bernard, Nucl. Phys. B (Proc</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page">47</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+	<note>Suppl</note>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Buras</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Qcd</forename>
+				<surname>Aachen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Workshop</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1992" />
+			<biblScope unit="page">591</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Kilcup</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sharpe</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Gupta</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Patel</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="page">25</biblScope>
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sharpe</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Gupta</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Kilcup</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B (Proc</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="issue">197</biblScope>
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+	<note>Suppl</note>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Ishizuka</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">71</biblScope>
+			<biblScope unit="issue">24</biblScope>
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sharpe</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B (Proc</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="issue">403</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+	<note>Suppl. .</note>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Kilcup</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">71</biblScope>
+			<biblScope unit="page">1677</biblScope>
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">B395 (1993) 701; Nucl</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Patel</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sharpe</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys</title>
+		<imprint>
+			<biblScope unit="volume">307</biblScope>
+			<biblScope unit="page">417</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Ishizuka</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Shizawa</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">49</biblScope>
+			<biblScope unit="issue">3519</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Bernard</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Nucl. Phys</title>
+		<editor>3540</editor>
+		<editor>A. Abada, et al.</editor>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="issue">172</biblScope>
+			<biblScope unit="page">376</biblScope>
+			<date type="published" when="1988" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Eichten</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B (Proc. Phys. Lett</title>
+		<editor>E. Eichten and B. Hill</editor>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="issue">170</biblScope>
+			<biblScope unit="page" from="234" to="511" />
+			<date type="published" when="1988" />
+		</imprint>
+	</monogr>
+	<note>Suppl</note>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Duncan</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Draper</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Mcneile</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B (Proc</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page">453</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+	<note>Suppl</note>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Bernard</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Labrenz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Soni</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="page" from="49" to="2536" />
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Alexandrou</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. Z. Phys</title>
+		<imprint>
+			<biblScope unit="volume">414</biblScope>
+			<biblScope unit="issue">815</biblScope>
+			<biblScope unit="page" from="62" to="659" />
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Hernandez</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Hill</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="page">495</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Acosta</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Phys. Rev. D49 DPF&apos;94</title>
+		<imprint>
+			<date type="published" when="1993" />
+			<biblScope unit="page">131</biblScope>
+		</imprint>
+	</monogr>
+	<note>WA75. collaboration. BES. collaboration</note>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Allton</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">295</biblScope>
+			<biblScope unit="issue">461</biblScope>
+			<biblScope unit="page">326</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Abada</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">376</biblScope>
+			<biblScope unit="issue">172</biblScope>
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Baxter</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">49</biblScope>
+			<biblScope unit="page">1594</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Bitar</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">67] S. Hashimoto, HUPD-9403</title>
+		<imprint>
+			<date type="published" when="1994" />
+			<biblScope unit="page">9403028</biblScope>
+		</imprint>
+	</monogr>
+	<note>Suppl</note>
+</biblStruct>
+
+<biblStruct xml:id="b67">
+	<analytic>
+		<title level="a" type="main">) 259; M. Wise, l&apos;93; W. Roberts, this volume</title>
+	</analytic>
+	<monogr>
+		<title level="m">For reviews of Heavy Quark Symmetry, see for example, M. Neubert</title>
+		<imprint>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b68">
+	<analytic>
+		<title level="a" type="main">For reviews of charm (and bottom) decays, see for example, M. Witherell, l&apos;93; H. Al- brecht, this volume; PDG&apos;94</title>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="page" from="50" to="11743" />
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b69">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Bernard</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>El-Khadra</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Soni</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Phys. Rev. Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">43</biblScope>
+			<biblScope unit="issue">869</biblScope>
+			<biblScope unit="page" from="47" to="998" />
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b70">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<surname>Crisafulli</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">) 301; Phys. Lett. B274 (1992) 415. A. Abada et al</title>
+		<imprint>
+			<date type="published" when="1989" />
+			<biblScope unit="page" from="223" to="416" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b71">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Stella</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Suppl.)</title>
+		<meeting>. Suppl.)</meeting>
+		<imprint>
+			<date type="published" when="1994" />
+			<biblScope unit="page" from="hep" to="lat" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b72">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Richards</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Suppl.)</title>
+		<meeting>. Suppl.)<address><addrLine>Edinburgh- 94</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1994" />
+			<biblScope unit="page">9410012</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b73">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Bhattacharya</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Gupta</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B (Proc</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="issue">341</biblScope>
+			<biblScope unit="page">94</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+	<note>Suppl</note>
+</biblStruct>
+
+<biblStruct xml:id="b74">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Kenway</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B (Proc</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="issue">153</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+	<note>Suppl. .</note>
+</biblStruct>
+
+<biblStruct xml:id="b75">
+	<analytic>
+		<title level="a" type="main">26 (1992) 459; Phys. Rev. D45 (1992) R2183; hep-lat/9408006</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Mandula</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Ogilvie</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B (Proc. Nucl. Phys. Phys. Lett</title>
+		<editor>U. Aglietti, Phys. Lett. B301</editor>
+		<imprint>
+			<biblScope unit="volume">393</biblScope>
+			<biblScope unit="issue">85</biblScope>
+			<biblScope unit="page" from="421" to="324" />
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+	<note>Suppl. .</note>
+</biblStruct>
+
+<biblStruct xml:id="b76">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Bernard</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Shen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Soni</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1993" />
+			<biblScope unit="page">317</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b77">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Bowler</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">UKQCD collaboration) Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">72548</biblScope>
+			<biblScope unit="issue">462</biblScope>
+			<biblScope unit="page" from="hep" to="lat" />
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b78">
+	<analytic>
+		<title level="a" type="main">CLNS-94/1285 hep-ex/9406005; ICHEP&apos;94</title>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Barish</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">CLEO collaboration)ARGUS collaboration) Z. Phys</title>
+		<imprint>
+			<biblScope unit="volume">533</biblScope>
+			<biblScope unit="page">57</biblScope>
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b79">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Bernard</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Hsieh</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Soni</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">72</biblScope>
+			<biblScope unit="page">1402</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b80">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Bowler</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">UKQCD collaboration) Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">72</biblScope>
+			<biblScope unit="page">94</biblScope>
+			<date type="published" when="1398" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b81">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Ammar</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">CLEO collaboration) Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">72</biblScope>
+			<biblScope unit="page">94</biblScope>
+			<date type="published" when="1402" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b82">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of Lattice &apos;94</title>
+		<meeting>Lattice &apos;94<address><addrLine>Bielefeld, Germany</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1994-10-01" />
+		</imprint>
+	</monogr>
+	<note>Suppl. .</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

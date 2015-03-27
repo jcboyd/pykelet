@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Min-Bias and the Underlying Event at the LHC</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2011-10-25">25 Oct 2011</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Rick</forename>
+								<surname>Field</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Department of Physics</orgName>
+								<orgName type="institution">University of Florida</orgName>
+								<address>
+									<postCode>32611</postCode>
+									<settlement>Gainesville, Florida</settlement>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Min-Bias and the Underlying Event at the LHC</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2011-10-25">25 Oct 2011</date>
+						</imprint>
+					</monogr>
+					<note>(Dated: October 1, 2011)</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>In a very short time the experiments at the LHC have collected a large amount of data that can be used to study minimum bias (MB) collisions and the underlying event (UE) in great detail. The CDF PYTHIA 6.2 Tune DW predictions for the LHC UE data at 900 GeV and 7 TeV are examined in detail. The behavior of the UE at the LHC is roughly what we expected. The LHC PYTHIA 6.4 Tune Z1 does an excellent job describing the LHC UE data. The modeling of MB (i.e., the overall inelastic cross section) is more complicated because one must include a model of diffraction. The ability of PYTHIA Tune DW and Tune Z1 to simultaneously describe both the UE in a hard scattering process and MB collisions are studied. No model describes perfectly all the features of MB collisions at the LHC.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+				<p>accompany a hard scattering such as the beam-beam remnants (BBR) and the particles that arise from multiple parton interactions (MPI) . The UE is an unavoidable background to hard-scattering collider events. MB and UE are not the same object! The majority of MB collisions are soft while the UE is studied in events in which a hard-scattering has occurred. One uses the &quot; jet &quot; structure of the hard hadron-hadron collision to experimentally study the UE [1]. As shown in Fig. 1, on an event-by-event bases, the leading charged particle, PTmax, or the leading charged particle jet, chgjet#1, can be used to isolate regions of η-φ space that are very sensitive to the modeling of the UE. The pseudorapidity is defined by η = − log(tan(θ cm /2)), where θ cm is the center-of-mass polar scattering angle and φ is the azimuthal angle of outgoing charged particles. In particular, the &quot; transverse &quot; region defined by 60 • &lt; |∆φ| &lt; 120 • , where ∆φ = φ − φ 1 , where φ 1 is the azimuthal angle of PTmax (or chgjet#1) and φ is the azimuthal angle of a charged particle is roughly perpendicular to the plane of the hard 2-to-2 parton-parton scattering and is therefore very sensitive to the UE. QCD Monte-Carlo generators such as PYTHIA [2] have parameters which may be adjusted to control the behavior of their event modeling. A specified set of these parameters that has been adjusted to better fit some aspects of the data is referred to as a tune [3]. In Section 2, I will review briefly the CDF PYTHIA 6.2 tunes. PYTHIA Tune DW does a very nice job in describing the CDF Run 2 underlying event data. In Section 3, we will take a close look at how well PYTHIA Tune DW did at predicting the behavior of the UE at 900 GeV and 7 TeV at the LHC. We will see that Tune DW does a fairly good job in describing the LHC UE data. However, Tune DW does not reproduce perfectly all the features of the data and after seeing the data one can construct improved LHC UE tunes. The first ATLAS LHC tune was Tune AMBT1 [4] and CMS has Tune Z1 and Tune Z2 which I will discuss in Section 4. MB and the UE are not the same object, however, in PYTHIA the modeling of the UE in a hard scattering process and the modeling of the inelastic non-diffractive cross section are related. In Section 5, I will examine how well the PYTHIA tunes fit the LHC MB data. The summary and conclusions are in Section 6. FIG. 3: CDF Run 1 data from Ref. [1] at 1.8 TeV on the density of charged particles (p T &gt; 0.5 GeV/c, |η| &lt; 1) in the &quot; transverse &quot; region as defined by the leading charged particle jet, chgjet#1, as a function of P T (chgjet#1). The data are compared with PYTHIA 6.206 with MPI (top) using the PYTHIA default parameters with p T (hard)≥ 0 with the CTEQ3L, CTEQ4L, and CTEQ5L parton distribution functions. (bottom) Two CDF PYTHIA 6.2 tunes, Tune A and Tune B. Tune A was adjusted to fit the CDF Run 1 data with PARP(67) = 4.0 and Tune B was adjusted to fit the same data but with PARP(67) = 1.0.</p>
+
+			<div>
+				<head>II. STUDYING THE UE AT CDF Figure 2</head>
+
+				<p>shows some of the first comparisons to come from the CDF UE studies [1]. The CDF Run 1 data at 1.8 TeV on the density of charged particles in the &quot; transverse &quot; region as defined by the leading charged particle jet, chgjet#1, are compared with ISAJET 7.32 [5] (without MPI) and HERWIG 6.4 [6] (without MPI) using the ISAJET and HERWIG default parameters with p T (hard)&gt; 3 GeV/c. The Monte-Carlo predictions are divided into two categories: charged particles that arise from the break-up of the beam and target (beam-beam remnants); and charged particles that arise from the outgoing jets plus initial and final-state radiation (hard scattering component). HERWIG 6.4 has improved modeling of the parton-showers (modified leading-log), whereas ISAJET simply uses the leading-log approximation. The modified leading-log takes into account the angle-ordering of the shower that is indicated by higher order corrections. Clearly, the hard-scattering component of HERWIG does a much better job in describing the data than does the hard-scattering component of ISAJET. However, it became clear that the beam-beam remnants of HERWIG were too soft to describe the CDF Run 1 UE data. To describe the data one needs to include MPI. Figure 3 shows the first attempts to tune the parameters of PYTHIA 6.2 to fit the CDF Run 1 UE data and Table 1 give the value of the parameters for the some of the CDF tunes. The perturbative 2-to-2 parton-parton differential cross section diverges like 1/ˆ p 4 T , wherê p T is the transverse momentum of the outgoing parton in the parton-parton center-of-mass frame. PYTHIA regulates this cross section by including a smooth cut-off p T 0 as follows:</p>
+
+				<p><formula>1/ˆ p 4 T → 1/(ˆ p 2 T + p 2 T 0 ) 2 .</formula></p>
+
+				<p>This approaches the perturbative result for large scales and is finite as p T → 0. The primary hard scattering processes and the MPI are regulated in the same way with the one parameter p T 0 = PARP(82). This parameter governs the amount of MPI in the event. Smaller values of p T 0 results in more MPI due to a larger MPI cross-section. PARP(67) sets the high p T scale for initial-state radiation in PYTHIA 6.2. It determines the maximal parton virtuality allowed in time-like showers. The larger the value of PARP(67) the more initial-state radiation in the event. Tune A has more initial-state radiation and less MPI and Tune B has less initial-state radiation and slightly more MPI. However, as can be seen in Fig. 3 one cannot discriminate between them by simply looking at the activity in the &quot; transverse &quot; region. FIG. 4: (top) PYTHIA Tune A predictions at 630 GeV for the charged PTsum density (p T &gt; 0.4 GeV/c, |η| &lt; 1) in the &quot; transverse &quot; region as defined by the leading charged particle jet, chgjet#1, as a function of P T (chgjet#1) with ǫ = PARP(90) = 0.0, 0.16 (default), and 0.25. The CDF Run 1 data at 630 GeV from Ref. [7] indicated a value of the PTsum density of around 0.54 GeV/c at P T (chgjet#1)≈ 50 GeV/c (red line) which favors the PARP(90) = 0.25 curve. (bottom) Shows the 2-to-2 hard scattering cut-off, p T 0 , versus center-of-mass energy from PYTHIA Tune A with the default value PARP(90) = 0.16 and the Tune A value of PARP(90) = 0.25.</p>
+
+				<p>FIG. 5: The CDF Run 1 data from Ref. [8] on the Z-boson p T distribution (&lt; p T (</p>
+
+				<figure>
+					<trash>Z) &gt;≈ 11.5 GeV/c) compared with (top) PYTHIA Tune A (&lt; p T (Z) &gt;= 9.7 GeV/c) and PYTHIA Tune AW (&lt; p T (Z) &gt;= 11.7 GeV/c) and compared with (bottom) PYTHIA Tune DW and HERWIG 6.4 (without MPI).</trash>
+
+
+				</figure>
+
+				<p>FIG. 6: Shows the charged particle density in the &quot; transverse &quot; region as defined by the leading charged particle, PTmax, as function of PTmax for charged particles with p T &gt; 0.5 GeV/c and |η| &lt; 1 at 0.2 TeV and 14 TeV from PYTHIA Tune DW and Tune DWT at the particle level. The STAR data from RHIC [10] favor the energy dependence of Tune DW.</p>
+
+				<p>TABLE I: Parameters for several PYTHIA 6.2 tunes. Tune A and Tune B are CDF Run 1 UE tunes. Tune DW, D6, and DWT are CDF Run 2 tunes which fit the Run 2 UE data and fit the Run 1 Z-boson p T distribution. Tune DW and Tune DWT are identical at 1.96 TeV but have a different energy dependence. Tune D6 is similar to Tune DW but uses CTEQ6L.</p>
+
+				<figure>
+					<trash>Parameter Tune A Tune B Tune DW Tune D6 Tune DWT PDF CTEQ5L CTEQ5L CTEQ5L CTEQ6L CTEQ5L MSTP(81) 1 1 1 1 1 MSTP(82) 4 4 4 4 4 PARP(82) 2.0 1.9 1.9 1.8 1.9409 PARP(83) 0.5 0.5 0.5 0.5 0.5 PARP(84) 0.4 0.4 0.4 0.4 0.4 PARP(85) 0.9 0.9 1.0 1.0 1.0 PARP(86) 0.95 0.95 1.0 1.0 1.0 PARP(89) 1800 1800 1800 1800 1960 PARP(90) 0.25 0.25 0.25 0.25 0.16 PARP(62) 1.0 1.0 1.25 1.25 1.25 PARP(64) 1.0 1.0 0.2 0.2 0.2 PARP(67) 4.0 1.0 2.5 2.5 2.5 MSTP(91) 1 1 1 1 1 PARP(91) 1.0 1.0 2.1 2.1 2.1 PARP(93) 5.0 5.0 15.0 15.0 15.0</trash>
+
+
+				</figure>
+
+				<p>The CDF studies indicated that p T 0 is around 2 GeV/c at 1.96 TeV. However, this cut-off is expected depend on the center-of-mass energy of the hadron-hadron collision, E cm . PYTHIA parameterizes this energy dependence as follows: p T 0 (E cm ) = (E cm /E 0 ) ǫ , where E 0 = PARP(89) is the reference energy and the parameter ǫ = PARP(90) determines the energy dependence. Fig. 4 shows how the PARP(90) parameter for Tune A was determined. I determined the value of ǫ = 0.25 by comparing the UE activity in the CDF data at 1.8 TeV and 630 GeV [7]. Figure 5 shows that Tune A does not fit the CDF Run 1 Z-boson p T distribution very well [8]. PYTHIA Tune AW was adjusted to fit the Z-boson p T distribution as well as the underlying event at the Tevatron. The UE activity of Tune A and Tune AW are nearly identical. PYTHIA Tune DW is very similar to Tune AW except Tune DW FIG. 7: (top) Shows the predictions at the particle level of PYTHIA Tune DW for the charged particle density in the &quot; transverse &quot; region as defined by the leading charged particle, PTmax, as a function of PTmax for charged particles (p T &gt;</p>
+
+				<figure>
+					<trash>0.5 GeV/c, |η| &lt; 1) at 0.2 TeV, 1.96 TeV and 14 TeV. (bottom)</trash>
+
+
+				</figure>
+
+				<p>Shows the extrapolations of PYTHIA Tune A, Tune DW, Tune DWT, Tune S320, Tune P329, and pyATLAS to the LHC at 14 TeV.</p>
+
+				<p>FIG. 8: Shows the charged particle density in the &quot; transverse &quot; region for charged particles (p T &gt; 0.5 GeV/c, |η| &lt; 1) at 7 TeV as defined by PTmax, P T (chgjet#1), and P T (muon-pair) predicted from PYTHIA Tune DW at the particle level. For muon-pair production the two muons are excluded from the charged particle density. Charged particle jets are constructed using the Anti-KT algorithm with d = 0.5. has PARP(67) = 2.5, which is the preferred value determined by the DØ Collaboration in fitting their dijet ∆φ distribution [9]. The MPI tune depends on the choice of parton distribution function (PDF). One must choose a PDF and then tune to fit the UE. Tune A, B, AW, and DW use CTEQ5L. Tune D6 is similar to tune DW except it uses CTEQ6L as the PDF. Note that in changing from CTEQ5L to CTEQ6L, p T 0 = PARP(82) decreased by a factor of 1.8/1.9 ≈ 0.95 in order to get the same UE activity. PYTHIA Tune A, AW, DW, and D6 use ǫ = PARP(90) = 0.25, which is much different than the PYTHIA 6.2 default value of 0.16. Tune DWT uses the default value of 0.16. Tune DW and Tune DWT are identical at 1.96 TeV, but Tune DW and DWT extrapolate to other energies differently. Tune DWT produces more activity in the UE at energies above the Tevatron than does Tune DW, but predicts less activity than Tune DW in the UE at energies FIG. 9</p>
+
+				<figure>
+					<figDesc>: (top) Shows the charged particle density in the &quot; transverse &quot; region as defined by the leading charged particle, PTmax, a function</figDesc>
+					<trash>of PTmax for charged particles (p T &gt; 0.5 GeV/c, |η| &lt; 1) at 0.2 TeV, 0.9 TeV, 1.96 TeV, 7 TeV, 10 TeV, and 14 TeV as</trash>
+
+
+				</figure>
+
+				<p>predicted by PYTHIA Tune DW at the particle level. Also, shows the charged particle density in the &quot; transverse &quot; region as defined by the leading charged particle, PTmax, at PTmax = 5.25 GeV/c for charged particles (p T &gt; 0.5 GeV/c, |η| &lt; 1) as a function of the center-of-mass energy on a linear plot (middle) and a logarithmic plot (bottom). below the Tevatron as shown in Fig. 6. The data from the STAR Collaboration at 0.2 TeV at RHIC data [10] favor the energy dependence of Tune DW and rule out the energy dependence of Tune DWT. Fig. 7 shows the extrapolations of PYTHIA Tune A, Tune DW, Tune DWT, Tune S320, Tune P329, and pyATLAS to the LHC (14 TeV). Tune pyATLAS is the original ATLAS tune that used the default parameter of PARP(90) = 0.16. Both Tune DWT and the old pyATLAS tune are ruled out by the RHIC UE data [10]. Tune S320 is the original Perugia0 tune from Peter Skands [3] and Tune P329 is a &quot; professor &quot; tune from Hendrik Hoeth. In November of 2009 Tune DW, Tune S320, and Tune P329 seemed to be converging on the same predictions for the LHC. I began to feel that we could make accurate LHC predictions with some confidence. Fig. 8 shows the charged particle density in the &quot; transverse &quot; region at 7 TeV as defined by PTmax, chgjet#1, and the muon-pair in Drell-Yan production as predicted from PYTHIA Tune DW. The density of charged particles in the &quot; transverse &quot; region goes to zero as PTmax or P T (chgjet#1) go to zero due to kinematics. If PTmax is equal to zero then there are no charged particles anywhere in the η region considered. Similarly for P T (chgjet#1). However, if the P T (muon-pair) goes to zero there is still the hard scale of the mass of the muon-pair and, hence, the charge particle density is not zero at P T (muon-pair) = 0. Figure 9 show the center-of-mass energy dependence of the charged particle density in the &quot; transverse &quot; region predicted by PYTHIA Tune DW. The height of the &quot; plateau &quot; in the &quot; transverse &quot; region does not increase linearly with the center-of-mass energy. For energies above the Tevatron it increases more like a straight line on a log plot (or a small power of E cm ). The UE activity is predicted by PYTHIA Tune DW to increase by about a factor of two in going from 900 GeV to 7 TeV and then to increase by only about 20% in going from 7 TeV to 14 TeV.</p>
+
+			</div>
+			<div>
+				<head>III</head>
+
+				<figure>
+					<figDesc>. PYTHIA 6.2 TUNE DW AND THE LHC UE DATA The left column of Figure 10 shows two plots that I presented at the MB&amp;UE CMS Workshop at CERN on November 6, 2009 before we had LHC data. The plots show generator level predictions of PYTHIA Tune DW at 900 GeV for the transverse charged particle density and the transverse charged PTsum density as defined by the leading charged FIG. 10: (left column) Fake data at 900 GeV on the transverse charged particle density (top left) and the transverse charged PTsum density (bottom left) as defined by the leading charged particle (PTmax) and the leading charged particle jet (P T (chgjet#1)) for charged</figDesc>
+
+				</figure>
+
+				<p>particles with p T &gt; 0.5 GeV/cand |η| &lt; 2. The fake data (from PYTHIA Tune DW) are generated at the particle level assuming 0.5 M min-bias events at 900 GeV (361, 595 events in the plot). (right column) Early CMS data [11] at 900 GeV on the transverse charged particle density (top right) and the transverse charged PTsum density (bottom right) as defined by the leading charged particle (PTmax) and the leading charged particle jet (P T (chgjet#1)) for charged particles with p T &gt; 0.5 GeV/cand |η| &lt; 2. The data are uncorrected and compared with PYTHIA Tune DW after detector simulation (216, 215 events in the plot).</p>
+
+				<figure>
+					<trash>FIG. 11: (left column) Early CMS data at 900 GeV and 7 TeV [12]</trash>
+
+
+				</figure>
+
+				<p>on the transverse charged particle density (top left) and the transverse charged PTsum density (bottom left) as defined by the leading charged particle jet (chgjet#1) for charged particles with p T &gt; 0.5 GeV/cand |η| &lt; 2. The data are uncorrected and compared with PYTHIA Tune DW after detector simulation. (right column) Early ATLAS data [13] at 900 GeV and 7 TeV on the transverse charged particle density (top right) and the transverse charged PTsum density (bottom right) as defined by the leading charged particle (PTmax) for charged particles with p T &gt; 0.5 GeV/cand |η| &lt; 2.5. The data are corrected and compared with PYTHIA Tune DW at the generator level. particle (PTmax) and the leading charged particle jet (P T (chgjet#1)) for charged particles with p T &gt; 0.5 GeV/c and |η| &lt; 2. The plots also show fake data at 900 GeV generated from PYTHIA Tune DW assuming 500, 000 MB events (361, 595 events in the plot). The fake data agree perfectly with Tune DW since it was generated from Tune DW! This is what I expected the data to look like if CMS received 500, 000 MB triggers at 900 GeV. The right column of Figure 10 shows the data CMS collected at the LHC during the commissioning period of December 2009 [11]. The data are uncorrected and compared with PYTHIA Tune DW after detector simulation (216, 215 events in the plot). CMS did not quite get 500, 000 MB triggers, but we got enough to get a first look at the underlying event activity at 900 GeV. PYTHIA Tune DW did a fairly good job in describing the features of this data, but it does not fit the</p>
+
+				<figure>
+					<trash>FIG. 12: (left column) Early CMS data on the ratio of 7 TeV and 900 GeV (7 TeV divided by 900 GeV from Fig. 11</trash>
+
+					<figDesc>) for the transverse charged particle density (top left) and the transverse charged PTsum density (bottom left) as defined by the leading charged particle jet (chgjet#1) for charged particles with p T &gt; 0.5 GeV/cand |η| &lt; 2. The data are uncorrected and compared with PYTHIA Tune DW after detector simulation. (right column) ATLAS data on the ratio of 7 TeV and 900 GeV from Fig. 11 for the transverse charged particle density (top right) and the transverse charged PTsum density (bottom right) as defined by the leading charged particle (PTmax) for charged particles with p T &gt; 0.5 GeV/cand |η| &lt; 2.5. The data are corrected and compared with PYTHIA Tune DW at the generator level. data perfectly. It does not fit the real data quite as well as it fits the fake data! However, we saw roughly what we expected to see. Figure 11</figDesc>
+
+				</figure>
+
+				<p>shows early CMS [12] and ATLAS [13] data at 900 GeV and 7 TeV on the transverse charged particle density and the transverse charged PTsum density compared with the predictions of PYTHIA Tune DW. Here CMS useed the leading charged particle jet (chgjet#1) to define the transverse region and ATLAS used the leading charged particle, PTmax. The ATLAS data are corrected to the particle level and compared with Tune DW at the generator level. The CMS data are uncorrected and compared with Tune DW after detector simulation. Tune DW predicted about the right amount of activity in the &quot; plateau &quot; , but does not fit the low p T rise very well. Figure 12 shows early CMS and ATLAS data on the ratio between 7 TeV and 900 GeV (7 TeV divided by 900 GeV) for the transverse charged particle density and the transverse charged PTsum density compared with PYTHIA Tune DW. Tune DW predicted that the transverse charged particle density would increase by about a factor of two in going from 900 GeV to 7 TeV and that the transverse PTsum density would have a slightly larger increase. Both these predictions are seen in the data, although Tune DW does not fit very well the energy dependence of the low p T approach to the &quot; plateau &quot; . Figure 13 shows the CDF data at 1.96 TeV [14] on the charged particle density in the &quot; transverse &quot; region as defined by the leading calorimeter jet, jet#1, as a function of P T (jet#1) together with the recent CMS data [15] at 900 GeV and 7 TeV on the charged particle density in the &quot; transverse &quot; region as defined by the leading charged particle jet, chgjet#1, as a function of P T (chgjet#1) compared with PYTHIA Tune DW. I would say that the agreement at all three energies is fairly good. Tune DW, however, is not a perfect fit to the LHC UE data. It does not fit the Tevatron data perfectly either! We expect a lot from the QCD Monte-Carlo models. We want them to fit perfectly which is, of course, not always possible.</p>
+
+			</div>
+			<div>
+				<head>IV. PYTHIA 6.4 CMS UE TUNE Z1 AND TUNE Z2</head>
+
+				<p>Tune DW is a PYTHIA 6.2 tune (Q 2 -ordered parton showers, old MPI model) designed by me to fit the CDF underlying event data at 1.96 TeV. Now that we have LHC data at 900 GeV and 7 TeV both ATLAS and CMS have LHC tunes. The ATLAS Tune AMBT1 [4] is a PYTHIA 6.4 tune (p T -ordered parton showers, new MPI model) designed to fit the ATLAS LHC MB data for Nchg ≥ 6 and p T &gt; 0.5 GeV/c (i.e., &quot; diffraction suppressed MB &quot; ). They also included their underlying event data for PTmax &gt; 5 GeV/c, but the errors on the data are large in this region and hence their UE data did not have much influence on the resulting tune. The ATLAS AMBT1 tune does significantly better at fitting the LHC &quot; diffraction suppressed MB &quot; data, but does not do so well at fitting the LHC underlying event data. I started with the ATLAS Tune AMBT1 and varied a few of the parameter to improve the fit to the CMS underlying event data at 900 GeV and 7 TeV. The parameters of the ATLAS Tune AMBT1 and the FIG. 13: (top) CDF data at 1.96 TeV from Ref. [14] on the charged particle density (p T &gt; 0.5 GeV/c, |η| &lt; 1) in the &quot; transverse &quot; region as defined by the leading calorimeter jet, jet#1, as a function of P T (jet#1) compared with PYTHIA Tune DW. Also compares the CDF data at 1.96 TeV with the recent CMS data [15] at 900 GeV and 7 TeV (bottom) on the &quot; transverse &quot; charged particle density (p T &gt; 0.5 GeV/c, |η| &lt; 2) in the &quot; transverse &quot; region as defined by the leading charged particle jet, chgjet#1, as a function of P T (chgjet#1). The data are corrected to the particle level and compared with PYTHIA Tune DW at the generator level.</p>
+
+				<p>TABLE II: PYTHIA 6.4 parameters for the ATLAS Tune AMBT1 and the CMS UE Tune Z1 and Z2. Parameters not shown are set to their defuult value.</p>
+
+				<figure>
+					<trash>Parameter Tune Z1 Tune Z2 AMBT1 PDF -Parton Distribution Function CTEQ5L CTEQ6L LO* PARP(82) -MPI Cut-off 1.932 1.832 2.292 PARP(89) -Reference energy, E 0 1800 1800 1800 PARP(90) -MPI Energy Extrapolation 0.275 0.275 0.25 PARP(77) -CR Suppression 1.016 1.016 1.016 PARP(78) -CR Strength 0.538 0.538 0.538 PARP(80) -Probability colored parton from BBR 0.1 0.1 0.1 PARP(83) -Matter fraction in core 0.356 0.356 0.356 PARP(84) -Core of matter overlap 0.651 0.651 0.651 PARP(62) -ISR Cut-off 1.025 1.025 1.025 PARP(93) -primordial kT-max 10.0 10.0 10.0 MSTP(81) -MPI, ISR, FSR, BBR model 21 21 21 MSTP(82) -Double gaussion matter distribution 4 4 4 MSTP(91) -Gaussian primordial kT 1 1 1 MSTP(95) -strategy for color reconnection 6 6 6</trash>
+
+
+				</figure>
+
+				<p>CMS UE Tune Z1 are shown in Table 2.</p>
+
+				<p>Tune Z1 is a PYTHIA 6.4 tune that uses the CTEQ5L PDF. CDF wanted also a PYTHIA 6.4 tune that uses the CTEQ6L PDF. I know from my experience with Tune DW and Tune D6 (Table 1) that in going from CTEQ5L to CTEQ6L that I would have to decrease the value of p T 0 = PARP(82), so I decreased it by a factor of 0.95 (which is precisely the Tune D6 to Tune DW ratio) and produced Tune Z2. The parameters of Tune Z2 are also shown in Table 2.</p>
+
+				<p>In my haste, I set ǫ = PARP(90) = 0.275 for Tune Z2 which is the same value that I deermined for Tune Z1. Figure 14 shows the more recent CMS data at 900 GeV and 7 TeV [15] on the transverse charged particle density FIG. 14: (left column) CMS data at 900 GeV and 7 TeV [15] on the transverse charged particle density (top left) and the transverse charged PTsum density (bottom left) as defined by the leading charged particle jet (chgjet#1) for charged particles with p T &gt; 0.5 GeV/cand |η| &lt; 2. The data are corrected to the particle level and compared and with PYTHIA Tune Z1 at the generator level. (right column) CMS preliminary data at 900 GeV and 7 TeV on the transverse charged particle density (top left) and the transverse charged PTsum density (bottom left) as defined by the leading charged particle jet (chgjet#1) for charged particles with p T &gt; 0.5 GeV/cand |η| &lt; 2. The data are corrected to the particle level and compared and with PYTHIA Tune Z2 at the generator level.</p>
+
+				<p>FIG. 15: CMS data on the ratio of 7 TeV and 900 GeV (7 TeV divided by 900 GeV from Fig. 14) for the transverse charged particle density (top) and the transverse charged PTsum density (bottom) as defined by the leading charged particle jet (chgjet#1) for charged particles with p T &gt; 0.5 GeV/cand |η| &lt; 2. The data are corrected to the particle level and compared and with PYTHIA Tune Z1, Tune Z2, and PYTHIA 8 Tune 4C [16] at the generator level. and the transverse charged PTsum density as defined by the leading charged particle jet, chgjet#1. This data are corrected to the particle level and compared and with PYTHIA Tune Z1 and Tune Z2. Tune Z1 does a much better job in describing the low p T rise to the plateau than Tune DW. Tune Z2 does not describe the CMS UE data quite as well as Tune Z1. Figure 15 shows CMS data on the ratio of 7 TeV and 900 GeV (7 TeV divided by 900 GeV) for the transverse charged particle density and the transverse charged PTsum density compared with PYTHIA Tune Z1, Tune Z2, and the PYTHIA 8 Tune 4C from Corke and Sjöstrand [16]. Tune Z1 and Tune Z2 have the same value of PARP(90) = 0.275, however, Tune Z1 fits the energy dependence quite nicely while Tune Z2 does not. In constructing Tune Z2, FIG. 16: ATLAS data at 900 GeV and 7 TeV [17] on the transverse charged particle density (top) and the transverse charged PTsum density (bottom) as defined by the leading charged particle, PTmax, as a function of PTmax for charged particles with p T &gt; 0.5 GeV/cand |η| &lt; 2.5. The data are corrected to the particle level and compared with PYTHIA Tune Z1 at the generator level.</p>
+
+				<p>FIG. 17: CMS data from Fig. 14 on the charged particle density in the &quot; transverse &quot; region as defined by the leading charged particle jet, chgjet#1, versus P T (chgjet#1) up to 30 GeV/c (top) and up to 100 GeV/c (middle) compared with the ATLAS data from Fig. 16 on the charged particle density in the &quot; transverse &quot; region as defined by the leading charged particle, PTmax, versus PTmax. The data are corrected to the particle level and compared with PYTHIA Tune Z1 at the generator level. (bottom) Dependence of the transverse charged particle density on the charged particle jet radius as predicted by PYTHIA Tune Z1. Charged particle jets are constructed using the Anti-KT algorithm with d = 0.2, 0.5, and 1.0. The charged particles have p T &gt; 0.5 GeV/cand |η| &lt; 2.5 and the leading charged particle jet is restricted to be in the region |η(chgjet#1)| &lt; 1.5. FIG. 20: (top) Shows the PYTHIA Tune Z1 2-to-2 hard scattering cut-off, p T 0 , at 900 GeV and 7 TeV as determined by fitting the CMS UE data in Fig. 14 together with PYTHIAs functional form of p T 0 (Wcm) = p T 0 (Wcm/W 0 ) ǫ with p T 0 = PARP(82) = 1.932 GeV/c, ǫ = PARP(90) = 0.275 and W 0 = 1.8 TeV. Also, shows the value of p T 0 at 1.96 TeV that would fit better the CDF data in Fig. 19. The PYTHIA functional form predicts a smaller cut-off at 1.96 TeV resulting in a more active UE than observed in the CDF leading jet data in Fig. 19. (bottom) Same as the top plot, but with an arbitrary functional form that extrapolates through the three energy points.</p>
+
+				<p>I forgot that the PDF also affects the energy dependence. When I changed from CTEQ5L (Tune Z1) to CTEQ6L (Tune Z2) I should have also changed ǫ = PARP(90) as well as PARP(82). The PYTHIA 8 Tune 4C uses CTEQ6L but has ǫ = 0.19 and fits the energy dependence very nicely. However, Tune 4C does not fit the LHC UE data at 900 GeV and 7 TeV as well as Tune Z1 does. Figure 16 shows the latest ATLAS data [17] at 900 GeV and 7 TeV on the transverse charged particle density and the transverse charged PTsum density as defined by the leading charged particle, PTmax, for charged particles with p T &gt; 0.5 GeV/c and |η| &lt; 2.5. The data are corrected to the particle level and compared with PYTHIA Tune Z1. Tune Z1 describes very well both the CMS and ATLAS UE data. Fig. 17 compares the CMS data using chgjet#1 with the ATLAS data which uses PTmax approach. Tune Z1 describes the differences between the CMS chgjet#1 and the ATLAS PTmax approach very well. It is interesting that the activity in the &quot; plateau &quot; of the &quot; transverse &quot; region is larger for the chgjet#1 approach than it is for the PTmax analysis. Could it be that when one requires a charged particle jet with a certain value of P T (chgjet#1) that you bias the UE to be more active, because a more active UE can contribute some p T to the leading charged particle jet? In an attempt to understand this, in Fig. 17 I looked at the dependence of the transverse charged particle density on the charged particle jet size (i.e., radius) as predicted by PYTHIA Tune Z1. I constructed charged particle jets using the Anti-KT algorithm with d = 0.2, 0.5, and 1.0. The charged particles have p T &gt; 0.5 GeV/c and |η| &lt; 2.5 and the leading charged particle jet is restricted to be in the region |η(chgjet#1)| &lt; 1.5. For very narrow jets the UE &quot; plateau &quot; is nearly the same as in the PTmax approach. As the jets become larger in radius the UE &quot; plateau &quot; becomes more active! The object that is being used to define the &quot; transverse &quot; region can bias the UE to be more active. Amazing! Figure 18 shows the recent ATLAS data at 7 TeV [17] on the transverse charged particle density and the transverse charged PTsum density as defined by the leading charged particle, PTmax, for charged particles with p T &gt; 0.1 GeV/c and |η| &lt; 2.5 compared with PYTHIA Tune Z1. Fig. 18 also shows the ratio of the ATLAS data with p T &gt; 0.1 GeV/c and p T &gt; 0.5 GeV/c compared with PYTHIA Tune Z1. All of the CDF UE measurements involved charged particles with p T &gt; 0.5 GeV/c. This is the first look at the UE in the region below 500 MeV/c and there are a lot of soft particles! The transverse charged particle density increases by about a factor of 2 in going from p T &gt; 0.5 GeV/c to p T &gt; 0.1 GeV/c. Tune Z1 describes this increase better than Tune DW, however, Tune Z1 still does not have quite enough soft particles. Figure 19 shows the CDF data at 1.96 TeV on the charged particle density in the &quot; transverse &quot; region as defined by the leading calorimeter jet, jet#1, as a function of P T (jet#1) together with the CMS data at 900 GeV and 7 TeV on the charged particle density in the transverse region as defined by the leading charged particle jet, chgjet#1, as a function of P T (chgjet#1) compared with PYTHIA Tune Z1. Fig. 19 shows the CMS PYTHIA 6.4 Tune Z1 and Fig. 13 shows the CDF PYTHIA 6.2 Tune DW. Neither of the tunes describe perfectly all three energies. Tune Z1 is in very good agreement with the UE data at 900 GeV and 7 TeV but is a little high at 1.96 TeV. One can see this in Fig. 20 which shows the PYTHIA Tune Z1 2-to-2 hard scattering cut-off, p T 0 , at 900 GeV and 7 TeV as determined by fitting the CMS UE data in Fig. 14 together with functional form of PYTHIA, p T 0 (W cm ) = (W cm /W 0 ) ǫ , with P T 0 = PARP(82) = 1.932 GeV, ǫ = PARP(90) = 0.275, and W 0 = 1.8 TeV. Here W cm = E cm is the hadron-hadron center-of-mass energy. Fig. 20 also shows the value of p T 0 at 1.96 TeV that would fit better the CDF data in Fig. 19. The PYTHIA functional form predicts a smaller cut-off at 1.96 TeV resulting in a more active UE than observed in the CDF &quot; leading jet &quot; data in Fig. 19 [18]. I believe it is premature to consider other functional forms for P T 0 (W cm ). I believe that we will find a PYTHIA tune that simultaneously describes 900 GeV, 1.96 TeV, and 7 TeV. Remember the energy dependence of the UE depends not only on ǫ = PARP(90), but also on the choice of PDF! FIG. 21: (top) The inelastic (INEL) data from ALICE and UA5 at 900 GeV [19] on the charged particle density, dN/dη (all p T ) compared with PYTHIA Tune DW and Tune S320. (bottom) Same as the top plot except the Monte-Carlo model predictions have been multiplied by a factor of 1.11.</p>
+
+			</div>
+			<div>
+				<head>V. PYTHIA TUNES AND THE LHC MB DATA</head>
+
+				<p>Since PYTHIA regulates both the primary hard scattering and the MPI with the same cut-off, p T 0 , with PYTHIA one can model the overall non-diffractive (ND) cross section by simply letting the transverse momentum of the primary hard scattering go to zero. The non-diffractive cross section then consists of BBR plus soft MPI with one of the MPI occasionally being hard. In this simple approach the UE in a hard-scattering process is related to MB collisions, but they are not the same. Of course, to model MB collisions one must also add a model of single (SD) and double diffraction (DD). This makes the modeling of MB much more complicated than the modeling of the UE. One cannot trust the PYTHIA 6.2 modeling of SD and DD. Figure 21 shows the inelastic (INEL) data from ALICE and UA5 at 900 GeV [19] on the charged particle density, dN/dη (all p T ) compared with PYTHIA Tune DW and Tune S320 [3]. Both these tunes are about 11% below the data. The INEL cross section is the sum of ND + SD + DD. Fig. 22 shows the non-single diffraction (NSD) data from CMS 7 TeV [20] on the charged particle density, dN/dη (all p T ) compared with PYTHIA Tune DW. The solid curve is NSD and the dashed curve is inelastic non-diffraction (ND) component. The NSD cross section is the sum of ND + DD. Fig. 22 also shows the INEL data from ALICE at 900 GeV [21] on the charged particle density, dN/dη, with p T &gt; PTcut and with at lease one charged particle with p T &gt; PTcut and |η| &lt; 0.8 for PTcut = 0.15 GeV/c, 0.5 GeV/c, and 1.0 GeV/c compared with PYTHIA Tune DW. Tune DW was tuned to fit the Tevatron data with p T &gt; 0.5 GeV/c. Two things change when we extrapolate from the Tevatron to the LHC. Of course the center-of-mass energy changes, but also we have started looking at softer particles (i.e., p T &lt; 500 MeV/c). Fig. 22 shows that Tune DW does okay for p T &gt; 0.5 GeV/c, but does not produce enough soft particles below 500 MeV/c. One can also see that, at least in PYTHIA 6.2, the modeling of SD and DD is more important at the lower p T values. FIG. 22: (top) The non-single diffraction (NSD) data from CMS at 7 TeV [20] on the charged particle density, dN/dη (all p T ) compared with PYTHIA Tune DW. The solid curve is NSD and the dashed curve is inelastic non-diffraction (ND) component. (bottom) The inelastic (INEL) data from ALICE [21] at 900 GeV on the charged particle density, dN/dη, with p T &gt; PTcut and at lease one charged particle with p T &gt; PTcut and |η| &lt; 0.8 for PTcut = 0.15 GeV/c, 0.5 GeV/c, and 1.0 GeV/c compared with PYTHIA Tune DW. The solid curve is the INEL and the dashed curve is inelastic non-diffraction (ND) component. Figure 23 compares the CMS and ALICE charged particle densities, dN/dη, with PYTHIA 6.4 Tune Z1. Tune Z1 does a better job at fitting the MB data than does Tune DW and it produced more soft particles below 500 MeV/c than does Tune DW. However, Tune Z1 does not fit the MB data perfectly. Figure 24</p>
+
+				<figure>
+					<figDesc>compares the activity in the UE of a hard scattering process with an average MB collision. The activity in the UE of a hard scattering process at 7 TeV is roughly a factor of two greater than it is for an average MB collision</figDesc>
+
+				</figure>
+
+				<p>and Tune Z1 describes this difference fairly well. In PYTHIA this difference comes from the fact that there are more MPI in a hard scattering process than in a typical MB collision. By demanding a hard scattering you force the collision to be more central (i.e., smaller impact parameter), which increases the chance of MPI. Figure 25 shows the data from CMS at 900 GeV and 7 TeV [22] on the charged particle multiplicity distribution (|η| &lt; 2, all p T ) compared with PYTHIA Tune Z1 and the data from CMS at 900 GeV and 7 TeV on the charged particle multiplicity distribution in the &quot; transverse &quot; region as defined by the leading charged particle jet, chgjet#1, for P T (chgjet#1)&gt; 3.0 GeV/c compared with PYTHIA Tune Z1. You are asking a lot of the QCD Monte-Carlo model when you expect it to simultaneously describe both MB and the UE in a hard scattering process. I think it is amazing that Tune Z1 does as well as it does in describing both!</p>
+
+			</div>
+			<div>
+				<head>VI. SUMMARY AND CONCLUSIONS</head>
+
+				<p>The PYTHIA 6.2 Tune DW which was created from CDF UE studies at the Tevatron did a fairly good job in predicting the LHC UE data 900 GeV and 7 TeV. The behavior of the UE at the LHC is roughly what we expected.</p>
+
+				<p>Remember this is &quot; soft &quot; QCD! The LHC PYTHIA 6.4 Tune Z1 does a very nice job describing the UE data at 900 GeV and 7 TeV. The UE is part of a hard scattering process. MB collisions quite often contain no hard scattering and are therefore more difficult to model. Since PYTHIA regulates both the primary hard scattering and the MPI with the same cut-off, p T 0 , with PYTHIA one can model the overall non-diffractive (ND) cross section by simply letting the transverse momentum of the primary hard scattering go to zero.</p>
+
+				<p>In this approach the UE in a hard-scattering process is related to MB collisions, but they are not the same. Of course, to model MB collisions one must also add a model of single (SD) and double diffraction (DD). Tune Z1 does a fairly good job of simultaneously describing both MB and the UE in a hard scattering process. I think it is amazing that it does as well on MB as it does! FIG. 23: (top) The inelastic (INEL) data from ALICE [19] at 900 GeV [19] on the charged particle density, dN/dη (all p T ) compared with PYTHIA Tune Z1. The solid curve is the INEL and the dashed curve is non-single diffraction (NSD) component. (middle) The inelastic (INEL) data from ALICE [21] at 900 GeV on the charged particle density, dN/dη, with p T &gt; PTcut and at lease one charged particle with p T &gt; PTcut and |η| &lt; 0.8 for PTcut = 0.15 GeV/c, 0.5 GeV/c, and 1.0 GeV/c compared with PYTHIA Tune Z1. (bottom) The non-single diffraction (NSD) data from CMS [20] at 7 TeV on the charged particle density, dN/dη (all p T ) compared with PYTHIA Tune Z1. The solid curve is NSD and the dashed curve is inelastic non-diffraction (ND) component.</p>
+
+				<p>FIG. 24: (right) The non-single diffraction (NSD) data from CMS 7 TeV [20] on the charged particle density, dN/dηdφ (all p T ) compared with PYTHIA Tune Z1. The data and theory on dN/dη in Fig. 23 has been divided by 2π to construct the number of particles per unit η-φ. (left) ATLAS data from Fig. 18 at 7 TeV on the charged particle density in the &quot; transverse &quot; region as defined by the leading charged particle, PTmax, as a function of PTmax for charged particles with p T &gt; 0.1 GeV/c and |η| &lt; 2.5 compared with PYTHIA Tune Z1. The activity in the UE of a hard scattering process (left) is a factor of two greater than in an average MB collision (right).</p>
+
+				<p>There are a lot of factors of two floating around. The charged particle density in the &quot; transverse &quot; region increases by about a factor of two in going from 900 GeV and 7 TeV (Fig. 15). At 7 TeV the charged particle density in the &quot; transverse &quot; region increases by about a factor of two in going from p T &gt; 500 MeV/c to p T &gt; 100 MeV/c (Fig. 18).</p>
+
+				<p>The charged particle density in the &quot; transverse &quot; region is about a factor of two larger than the density of particles in a typical MB collision (Fig. 24). All of these factors of two are described fairly well by PYTHIA Tune Z1. PYTHIA 8 [23] also does a fairly good job on many of the MB observables, but so far it does not fit the LHC UE data as well as Tune Z1.</p>
+
+				<p>In order to describe the bulk of the LHC MB data one must include a model of diffraction. Experimentally, it is</p>
+
+			</div>
+
+			<note place="foot">arXiv:1110.5530v1 [hep-ph] 25 Oct 2011</note>
+
+			<note place="foot">* Lectures presented at the 51 st Cracow School of Theoretical Physics: The Soft Side of the LHC.</note>
+		</body>
+		<back>
+		<div type="annex">
+				<p>FIG. 18: ATLAS data at 7 TeV [17] on the transverse charged particle density (top) and the transverse charged PTsum density (middle) as defined by the leading charged particle, PTmax, as a function of PTmax for charged particles with p T &gt; 0.5 GeV/cand |η| &lt; 2.5 and for charged particles with p T &gt; 0.1 GeV/c and |η| &lt; 2.5. The data are corrected to the particle level and compared with PYTHIA Tune Z1 at the generator level. (bottom) Ratio of the ATLAS data with p T &gt; 0.1 GeV/c and p T &gt; 0.5 GeV/c (100 MeV/c cut divided by 500 MeV/c cut) for the transverse charged particle density and the charged PTsum density as defined by the leading charged particle, PTmax, as a function of PTmax compared with PYTHIA Tune Z1. FIG. 19: (top) CDF data at 1.96 TeV from Ref. [14] on the charged particle density (p T &gt; 0.5 GeV/c, |η| &lt; 1) in the &quot; transverse &quot; region as defined by the leading calorimeter jet, jet#1, as a function of P T (jet#1) compared with PYTHIA Tune Z1. Also compares the CDF data at 1.96 TeV with the CMS data [15] at 900 GeV and 7 TeV (bottom) on the &quot; transverse &quot; charged particle density (p T &gt; 0.5 GeV/c, |η| &lt; 2) in the &quot; transverse &quot; region as defined by the leading charged particle jet, chgjet#1, as a function of P T (chgjet#1). The data are corrected to the particle level and compared with PYTHIA Tune Z1 at the generator level.</p>
+
+		</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">T ) compared with PYTHIA Tune Z1. (bottom) Data from CMS at 900 GeV and 7 TeV [15] on the charged particle multiplicity distribution5 GeV/c) in the &quot; transverse &quot; region as defined by the leading charged particle jet, chgjet#1, for P T (chgjet#1)&gt; 3.0 GeV/c compared with PYTHIA Tune Z1. The data have been corrected to the particle level and compared with Tune Z1 at the generator level. not possible to uniquely separate diffractive from non-diffractive collisions. However, one can construct samples of &quot; diffraction enhanced MB &quot; and &quot; diffraction suppressed MB &quot; events and compare with the models. The &quot; diffraction enhanced MB &quot; samples are selected by requiring some type of rapidity gap [24, 25]. We have learned that PYTHIA 6 does a poor job of modeling of diffraction. PHOJET [26] and PYTHIA 8 do a better job with diffraction. In a very short time the experiments at the LHC have collected a large amount of data that can be used to study MB collisions and the UE in great detail. This data can be compared with the Tevatron MB and UE data to further constrain and improve the QCD Monte-Carlo models we use to simulate hadron-hadron collision</title>
+	</analytic>
+	<monogr>
+		<title level="m">FIG. 25: (top) The non-single diffraction (NSD) data from CMS at 900 GeV and 7 TeV</title>
+		<imprint/>
+	</monogr>
+	<note>At. present none of the tunes describe perfectly the UE data at both the Tevatron and the LHC. However, I believe the tunes will continue to improve. We are just getting started! The future will include more comparisons with PYTHIA 8, HERWIG++ [27], and SHERPA</note>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Charged Jet Evolution and the Underlying Event in Proton-Antiproton Collisions at 1.8 TeV, The CDF Collaboration</title>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D65</title>
+		<imprint>
+			<biblScope unit="page">092002</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Sjö</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<forename type="middle">M</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Bengtsson</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">Van</forename>
+				<surname>Sjö</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Zijl</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Z. Phys</title>
+		<imprint>
+			<publisher>T</publisher>
+			<biblScope unit="volume">157</biblScope>
+			<biblScope unit="issue">32</biblScope>
+			<biblScope unit="page" from="321" to="67" />
+			<date type="published" when="1985" />
+			<publisher>T</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">Van</forename>
+				<surname>Sjö</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Zijl</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Sjö</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Eden</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Friberg</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Lonnblad</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Miu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Mrenna</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Norrbin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="issue">135</biblScope>
+			<biblScope unit="page" from="2019" to="238" />
+			<date type="published" when="1987" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="m">The Perugia Tunes, P. Skands</title>
+		<imprint>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title level="m" type="main">Charged Particle Multiplicities in pp Interactions at 0.9 and 7 TeV in a Diffractive Limited Phase-Space Measured with the ATLAS Detector at the LHC and New PYTHIA 6 Tune, The ATLAS Collaboration</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Paige</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Protopopescu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Bnl38034</forename>
+				<surname>Report</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1986" />
+		</imprint>
+	</monogr>
+	<note>unpublished. ), version 7.32</note>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Marchesini</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">R</forename>
+				<surname>Webber</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">G S</forename>
+				<surname>Knowles</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Catani</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">R</forename>
+				<surname>Marchesini</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Webber</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">310</biblScope>
+			<biblScope unit="page" from="461" to="571" />
+			<date type="published" when="1988" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<title level="m" type="main">The Underlying Event in Hard Interactions at the Tevatron Proton-Antiproton Collider, The CDF Collaboration</title>
+		<imprint>
+			<pubPlace>Phys</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Rev</title>
+		<imprint>
+			<biblScope unit="volume">70</biblScope>
+			<biblScope unit="page">072002</biblScope>
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">PT Distribution in Proton-Antiproton Collisions at at 1.8 TeV, The CDF Collaboration</title>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">67</biblScope>
+			<biblScope unit="page" from="2937" to="2941" />
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">94</biblScope>
+			<biblScope unit="page">221801</biblScope>
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title level="m" type="main">Underlying Event Studies at RHIC, Helen Caines</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">First Measurement of the Underlying Event Activity at the LHC with 0.9 TeV, The CMS Collaboration</title>
+	</analytic>
+	<monogr>
+		<title level="j">Eur. Phys. J</title>
+		<imprint>
+			<biblScope unit="volume">70</biblScope>
+			<biblScope unit="page" from="555" to="572" />
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="m">Measurement of the Underlying Event Activity at the LHC at 7 TeV and Comparison with 0.9 TeV, CMS Physics Analysis Summary, CMS-PAS-QCD-10-010, CERN</title>
+		<imprint>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<monogr>
+		<title level="m" type="main">Track-Based Underlying Event Measurements in pp Collisions at 900 GeV and 7 TeV with the ATLAS Detector at the LHC, The ATLAS Collaboration</title>
+		<imprint>
+			<biblScope unit="page" from="2010" to="029" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Studying the Underlying Event in Drell-Yan and High Transverse Momentum Jet Production at the Tevatron, The CDF Collaboration</title>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="page">034001</biblScope>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Measurement of the Underlying Event Activity at the LHC at 7 TeV and Comparison with 0.9 TeV, The CMS Collaboration</title>
+	</analytic>
+	<monogr>
+		<title level="j">J. High Energy Phys</title>
+		<imprint>
+			<biblScope unit="volume">09</biblScope>
+			<biblScope unit="issue">109</biblScope>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Interleaved Parton</forename>
+				<surname>Showers</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Tuning</forename>
+				<surname>Prospects</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Richard</forename>
+				<surname>Corke</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Torbjö</forename>
+				<surname>Sjö</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">1103</biblScope>
+			<biblScope unit="page">032</biblScope>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+	<note>hep. -ph]</note>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Measurement of Underlying Event Characteristics using Charged Particles in collisions 900 GeV and 7 TeV with the ATLAS Detector, The ATLAS Collaboration</title>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">83</biblScope>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<title level="m" type="main">Energy Scaling of Minimum-Bias Tunes, Holger Schulz and Peter Skands, arXiv:1103</title>
+		<author>
+			<persName>
+				<surname>See</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="3649" to="1" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">First Proton-Proton Collisions at the LHC as Observed with the ALICE Detector: Measurement of the Charged Particle Pseudorapidity Density at 900 GeV, The ALICE Collaboration</title>
+	</analytic>
+	<monogr>
+		<title level="j">Eur. Phys. J</title>
+		<imprint>
+			<biblScope unit="volume">65</biblScope>
+			<biblScope unit="page">111</biblScope>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Pseudorapidity Distributions of Charged Hadrons in Collisions at 7 TeV, The CMS Collabo- ration</title>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">105</biblScope>
+			<biblScope unit="page">02200</biblScope>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="m">Charged Particle Multiplicities in pp Interactions at 0.9, 2.36, and 7 TeV</title>
+		<editor>C. Zampolli at the LPCC MB&amp;UE Working Group Meeting, CERN</editor>
+		<imprint>
+			<date type="published" when="2010-06-09" />
+			<biblScope unit="page">079</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Sjö</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Mrenna</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Skands</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Phys. Commun</title>
+		<imprint>
+			<biblScope unit="volume">178</biblScope>
+			<biblScope unit="page">852867</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+	<note>A Brief Introduction to PYTHIA 8.1,</note>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<title level="m" type="main">Observation of Diffraction in Proton-Proton Collisions at 900 and 2360 GeV Centre-of-Mass Wnergies at the LHC, The CMS Collaboration</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<monogr>
+		<title level="m" type="main">Studies of Diffractive Enhanced Minimum Bias Events in ATLAS, The ATLAS Collaboration</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<forename type="middle">W</forename>
+				<surname>Bopp</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Engel</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Ranft</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<editor>9803437. R. Engel, J. Ranft and S. Roesler</editor>
+		<imprint>
+			<biblScope unit="volume">52</biblScope>
+			<biblScope unit="page">1459</biblScope>
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Bahr</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Bahr et al., Herwig++ 2.3 Release Note</title>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="page">58</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Gleisberg</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">0402</biblScope>
+			<biblScope unit="issue">007</biblScope>
+			<biblScope unit="page" from="hep" to="ph" />
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

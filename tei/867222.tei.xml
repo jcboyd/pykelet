@@ -1,0 +1,1156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Particle Production near an AdS Crunch</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2010-09-07">September 7, 2010</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Lorenzo</forename>
+								<surname>Battarra</surname>
+							</persName>
+							<affiliation>
+								<orgName type="institution" key="instit1">APC (CNRS</orgName>
+								<orgName type="institution" key="instit2">Université Paris-Diderot)</orgName>
+								<address>
+									<addrLine>10 rue Alice Domon et LéonieDuquet</addrLine>
+									<postCode>75205</postCode>
+									<settlement>ParisCedex13</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Thomas</forename>
+								<surname>Hertog</surname>
+							</persName>
+							<affiliation>
+								<orgName type="institution" key="instit1">APC (CNRS</orgName>
+								<orgName type="institution" key="instit2">Université Paris-Diderot)</orgName>
+								<address>
+									<addrLine>10 rue Alice Domon et LéonieDuquet</addrLine>
+									<postCode>75205</postCode>
+									<settlement>ParisCedex13</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Particle Production near an AdS Crunch</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2010-09-07">September 7, 2010</date>
+						</imprint>
+					</monogr>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>We numerically study the dual field theory evolution of five-dimensional asymp-totically anti-de Sitter solutions of supergravity that develop cosmological singu-larities. The dual theory is an unstable deformation of the N = 4 gauge theory on R × S 3 , and the big crunch singularity in the bulk occurs when a boundary scalar field runs to infinity. Consistent quantum evolution requires one imposes boundary conditions at infinity. Modeling these by a steep regularization of the scalar potential, we find that when an initially nearly homogeneous wavepacket rolls down the potential, most of the potential energy of the initial configuration is converted into gradient energy during the first oscillation of the field. This indicates there is no transition from a big crunch to a big bang in the bulk for dual boundary conditions of this kind.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>One of the main goals of quantum gravity is to advance our understanding of the nature of the big bang. A particularly important issue is whether the big bang represents the beginning of the universe, or whether semiclassical evolution essentially continues further back in time, possibly involving a transition from a big crunch to a big bang [1, 2].</p>
+
+				<p>In recent years this problem has been studied in the context of the AdS/CFT correspondence [3], which allows one to map toy model cosmologies with anti-de Sitter (AdS) boundary conditions to a dual quantum field theory living on the boundary of spacetime. Explicit examples of collapsing AdS-cosmologies were constructed in N = 8 supergravity in four [4, 5] and five [6] dimensions, using well-defined generalizations of the usual boundary conditions on some of the negative mass squared scalars which allow smooth, asymptotically AdS initial data to evolve into a spacelike singularity that reaches the spacetime boundary in finite time. The properties of these solutions and their duals were further explored in [7, 8, 9, 10]. However, a clear understanding of the quantum nature of cosmological singularities is still lacking.</p>
+
+				<p>The dual description of the AdS-cosmologies found in [4, 5, 6] involves field theories with scalar potentials which are unbounded below that drive certain boundary scalars to infinity in finite time. Here we concentrate on the five-dimensional solutions, where the dual field theory is a deformation of N = 4 Super-Yang-Mills (SYM) theory on R × S 3 by an unbounded double trace potential −f O 2 /2, with O a trace operator quadratic in the adjoint Higgs scalars. This deformation is renormalizable and the coupling f that governs the instability is asymptotically free [6].</p>
+
+				<p>The big crunch singularity in the bulk occurs when the boundary scalar O diverges. Consistent quantum evolution requires that one imposes boundary conditions at infinite scalar field, i.e. a self-adjoint extension of the system. With a self-adjoint extension the boundary evolution is unitary and predicts a perfectly homogeneous wave packet rolls down the negative potential and bounces back. In the bulk this behavior would correspond to a quantum transition from a big crunch to a big bang, as envisioned e.g. in ekpyrotic cosmology. However, it has been argued [4] that the full field theory evolution is likely to be very different. This is because when a homogeneous wave packet rolls down, the negative effective mass term in the potential amplifies long wavelength quantum fluctuations hereby converting the potential energy of the initial configuration into gradient energy.</p>
+
+				<p>In order for the boundary theory to predict a transition from a collapsing phase in the bulk to an approximately homogeneous, semiclassical expanding cosmology after the singularity there must be a parameter regime where O returns close to its original value after one oscillation. However, this requires the backreaction of the inhomogeneities on the evolution of the homogeneous wave packet to be sufficiently small. Here we quantify the tachyonic amplification of fluctuations by numerically evolving the field theory on a lattice. To study the question of a possible big crunch big bang transition, one is interested in the dynamics on rather short timescales and in particular in the first oscillation of the field. Since the occupation numbers of the relevant perturbation modes become rapidly very large, the system behaves classically during these first stages of the evolution. The scalar potential is unbounded below, but the self-adjoint extension essentially acts as a brick wall at infinity. We therefore model this by adding a steep regularization term to the unbounded potential and considering the limit in which the UV regulator γ introduced this way is taken to be very small. We find that in the γ → 0 + limit, the tachyonic amplification of perturbations is a very efficient mechanism to produce particles and prevents the homogeneous mode from rolling back up the potential. We conclude, therefore, that for &apos;brick-wall&apos; boundary conditions at infinity and for the class of models considered here, the dual description predicts no transition from a big crunch to a big bang in the bulk. At the same time, however, our simulations provide some insight in what kind of models might exhibit a different behavior near the singularity. We discuss this briefly at the end of this paper.</p>
+
+			</div>
+			<div>
+				<head n="2">AdS Cosmology and its Dual Description 2.1 AdS Cosmology</head>
+
+				<p>Our starting point is N = 8 gauged supergravity in five dimensions, which is thought to be a consistent truncation of ten-dimensional type IIB supergravity on S 5 . This admits a consistent truncation to gravity coupled to a single SO(5)-invariant scalar ϕ. The action then reduces to</p>
+
+				<figure>
+					<trash>S = d 5 x √ −g 1 2 R (2) − 1 2 (∂ϕ) 2 + 1 4R 2 AdS 15e</trash>
+
+
+				</figure>
+
+				<p>2γϕ + 10e −4γϕ − e −10γϕ (1) where γ ≡ 2/15 and where we have chosen units in which the five-dimensional Planck mass is unity. The maximum of the potential at ϕ = 0 corresponds to the AdS 5 vacuum solution. Small fluctuations around this have m 2 = −4/R</p>
+
+			</div>
+			<div>
+				<head>2</head>
+
+				<p>AdS , which saturates the Breitenlohner-Freedman (BF) bound in five dimensions.</p>
+
+				<p>In all asymptotically AdS solutions, the scalar field ϕ decays at large radial coordinate r as</p>
+
+				<figure>
+					<trash>ϕ ∼ α(t, Ω) ln r r 2 + β(t, Ω) r 2 (2) where (t, Ω) are</trash>
+
+
+				</figure>
+
+				<p>the time and angular coordinates of the boundary R × S 3 of the AdS cylinder. To define the theory one ought to specify boundary conditions at r = ∞ on the metric and scalar field. This amounts to specifying a relation between α and β in (2). The usual boundary conditions correspond to taking α = 0, and leaving β unspecified. Alternatively, one can adopt boundary conditions of the form [11] α = − δW δβ , (3) where W (β) is an essentially arbitrary real, smooth function. Boundary conditions of the form (3) are invariant under global time translations. The conserved energy associated with this depends on W , but is well-defined and finite.</p>
+
+				<p>In this paper we adopt scalar field boundary conditions of the form α = f β, with f an arbitrary constant. The corresponding asymptotic form of the metric and the expression of the conserved mass can be found in [12, 13].</p>
+
+				<p>For small, positive values of f , solutions were found [4] in which smooth, spherically symmetric initial data of approximately zero mass evolve into a big crunch – a spacelike singularity that reaches the boundary of AdS in finite global time. These solutions can be viewed as a five-dimensional version of open FLRW universes in which ϕ rolls down the negative potential, causing the scale factor a(t) to vanish in finite time. In terms of global time t it was found that β ∼ β(t = 0)/(cos t/R AdS ) 2 . Hence β → ∞ as t/R AdS → π/2, which is when the singularity hits the boundary [4]</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="2.2">Dual CFT description Classical Evolution</head>
+
+				<p>With the usual α = 0 boundary conditions, the dual field theory is N = 4 super Yang- Mills theory. The bulk scalars that saturate the BF bound in AdS correspond in the gauge theory to the operators</p>
+
+				<figure>
+					<trash>1 N Tr[Φ i Φ j − (1/6)δ ij Φ 2 ], where Φ i are the six scalars in N = 4 super Yang-Mills. The SO(5)-invariant bulk scalar ϕ that we have kept in (1) couples to the operator O = 1 N Tr Φ 2 1 − 1 5 6 i=2 Φ 2 i . (4)</trash>
+
+
+				</figure>
+
+				<p>In general, imposing nontrivial boundary conditions α(β) in the bulk corresponds to adding a multi-trace interaction W (O) to the CFT action [14, 15], such that after formally replacing O by its expectation value β one obtains (3). Hence the boundary conditions α = f β that we have adopted correspond to adding a double trace term to the field theory action</p>
+
+				<figure>
+					<trash>S = S 0 − W (O) = S 0 + f 2 O 2 . (5)</trash>
+
+
+				</figure>
+
+				<p>The operator O has dimension two, so the extra term is marginal and preserves conformal invariance, at least classically. We have taken the constant f to be small and positive in the bulk. The term we have added to the CFT action, therefore, corresponds to a negative potential. Hence it is plausible that the dual field theory admits negative energy states and has a spectrum that is unbounded below. This would mean that the usual vacuum must be unstable, and that there are (non-gravitational) instantons which describe its decay. After the tunneling, the field rolls down the potential and becomes infinite in finite time. This corresponds to the big crunch singularity in the bulk and provides a qualitative dual explanation for the fact that the function β of the asymptotic bulk solution (2) diverges as t/R → π/2, when the big crunch singularity hits the boundary. Indeed, β is interpreted as the expectation value of O in the dual CFT, and the bulk analysis predicts that to leading order in 1/N , O diverges in finite time.</p>
+
+				<p>For our purposes it suffices to concentrate on the steepest negative direction of the potential. Fluctuations in orthogonal directions in field space acquire a positive mass and are suppressed. For the SO(5)-invariant operator we consider, the most unstable direction comes from the −Φ 4 1 term in (5). From now on we focus on the dynamics of Φ 1 as it rolls along a fixed direction in SU (N ), i.e. Φ 1 (x) = φ(x)U , with U a constant Hermitian matrix satisfying Tr U 2 = 1, so that φ is a canonically normalized scalar field. The action for this scalar is then given by</p>
+
+				<figure>
+					<trash>S = R×S 3 d 4 x √ −g − 1 2 (∂φ) 2 − 1 12 R (2) φ 2 + 1 4 λφ 4 (6) where λ = f /N 2 , R (2) = 6/R 2</trash>
+
+
+				</figure>
+
+				<p>is the Ricci scalar of the 3-sphere, and the coefficient of the φ 2 term is fixed by the conformal symmetry.</p>
+
+				<p>Although this is clearly a huge simplification of the field theory, at the classical level it captures the bulk behavior in a surprisingly quantitative way. In particular, it admits the following exact homogeneous classical solution</p>
+
+				<figure>
+					<trash>φ(t) = (2/R 2 λ) 1/2 cos(t/R) . (7)</trash>
+
+
+				</figure>
+
+				<p>which is analogous to the background evolution of the AdS cosmology considered in [4]. Indeed, since φ 2 is identified with β on the bulk side, the time dependence of this solution agrees with the supergravity prediction 1 , including the fact that the field diverges at t/R → π/2. Although conformal invariance is broken quantum mechanically, it has been shown that quantum corrections do not turn around the potential [6].</p>
+
+			</div>
+			<div>
+				<head>Quantum Evolution</head>
+
+				<p>We have seen that evolution ends in finite time in the classical description of a simplified version of the dual field theory, in agreement with the supergravity result. It has been noted, however, that this conclusion changes dramatically if one considers the quantum mechanics of the dual model (6). That is, one again concentrates on the homogeneous mode φ(t) = x(t) only, but one now treats this quantum mechanically.</p>
+
+				<p>In quantum mechanics, to ensure unitarity one constructs a self-adjoint extension of the Hamiltonian. This is done by carefully specifying its domain [16, 17]. One finds the center of a wave packet follows essentially the classical trajectory and still reaches infinity in finite time, but it bounces off infinity and reappears as a left-moving wave packet [17]. Hence a quantum mechanical treatment of the homogeneous mode of the dual model appears to suggest that there is an immediate transition from a big crunch to a big bang in the bulk.</p>
+
+				<p>However, it has been argued [4] that the full field theory evolution is likely to be very different. Indeed, a quantum mechanical analysis obviously neglects the possibility of particle production. Calculations in similar scalar field theories indicate that this significantly affects the evolution of the homogeneous mode. In particular, in many theories where the scalar field rolls down from the top of its effective potential, particles are produced in great numbers while the field is rolling down. This phenomenon is often called tachyonic preheating [18, 19]. It happens essentially because the negative effective mass term in the potential amplifies long wavelength quantum fluctuations. Tachyonic preheating is so efficient that in some theories most of the initial potential energy density is converted into gradient energy well before the field reaches the true minimum. In theories of this kind a prolonged stage of oscillations of the homogeneous component of the scalar field around the true minimum of the potential does not exist in spontaneous symmetry breaking. One expects that the tachyonic amplification of fluctuations similarly affects the evolution of the dual field theory description of the AdS cosmologies, in which the supergravity initial data correspond to a homogeneous field theory configuration high up the potential. In this case the scalar potential does not have a global minimum. However, the quantum mechanical self-adjoint extension – assuming for now it can be implemented in field theory – essentially acts as a brick wall at infinity. From a cosmological perspective, one is interested in the dynamics at intermediate times, namely whether a wave packet rolling down the potential bounces back one or several times before the system settles down. To answer this one must quantify the effect of the tachyonic instability, and the non-linear growth of fluctuations that comes with it, on the background evolution. This is the subject of the remainder of this paper.</p>
+
+				<figure>
+					<trash>3 Dual Model 3.1 &apos;Brick Wall&apos; Regularization</trash>
+
+
+				</figure>
+
+				<p>We have seen that a self-adjoint extension in a quantum mechanical treatment of (6) acts as a brick wall at infinity. Perhaps the simplest way to try to implement this at the field theory level is to add a steep regularization term to the potential 2 ,</p>
+
+				<figure>
+					<trash>V (φ) = 1 2 φ 2 − 1 4 λφ 4 + φ 6 (8)</trash>
+
+
+				</figure>
+
+				<p>and to consider the dynamics in the limit → 0 + . It is useful to introduce the parameter γ ≡ 32/λ 2 , which can be thought of as the square of a UV regularization length. In terms of γ the potential (8) can be written as</p>
+
+				<figure>
+					<trash>V (φ) = 1 2 φ 2 − 1 4 λφ 4 + 1 32 λ 2 γφ 6 ≡ λ −1 V 1 ( √ λφ)</trash>
+
+
+				</figure>
+
+				<p>where V 1 is defined as V with λ = 1. For γ ≤ 1, the potential has two positive roots φ ± (see Fig 1). The global minimum of V on the positive axis is located at φ m , and we will write V m ≡ V (φ m ). For γ → 0 + , to which we will refer as the scaling limit, φ − is insensitive to the regularization and tends to 2/λ. On the contrary, the large φ parameters φ m , φ + and V m follow the scaling given by γ:</p>
+
+				<figure>
+					<trash>λφ 2 + 8γ −1 , λφ 2 m 16 3 γ −1 , λV m − 64 27 γ −2 . (9) Φ - Φ m Φ + 4 2 2 4 Φ 8 6 4 2 2 4 V</trash>
+
+					<head>Figure 1:</head>
+
+					<figDesc>Regularized scalar potential in the boundary model with λ = 1 and γ = 0.4.</figDesc>
+
+				</figure>
+
+				<p>In order to model the background evolution of the AdS cosmologies we consider homogeneous field theory solutions ¯ φ(t) that start at rest at ¯ φ = φ − . If one neglects fluctuations, the homogeneous field oscillates back and forward between the positive roots of the potential, just as in the quantum mechanical treatment of the unbounded potential discussed above. The period T of the homogenous field oscillations is independent of the potential parameters and given by</p>
+
+				<figure>
+					<trash>T = √ 2 φ + φ − dφ −V (φ) = π (10)</trash>
+
+
+				</figure>
+
+				<p>Hence in the limit γ → 0 + the field reaches infinity exactly at t = π/2, which corresponds to the time at which the big crunch singularity in the bulk reaches the boundary. This suggests that for small γ the φ 6 regularization acts very much as a brick wall. Indeed, the interval of time T + during which ¯ φ ≥ φ m in one oscillation scales as</p>
+
+				<figure>
+					<trash>√ γ, T + = √ 2 φ + φm dφ −V (φ) γ→0 γ 2 . (11)</trash>
+
+
+				</figure>
+
+				<p>However, the regularization of the boundary potential affects the evolution in the bulk, because it changes the bulk boundary conditions on the timelike boundary. According to the general prescription (3) these now read</p>
+
+				<figure>
+					<trash>α = λβ − 3β 2 . (12)</trash>
+
+
+				</figure>
+
+				<p>For small this can only significantly affect the evolution near where the singularity hits the boundary, where β is large. Nevertheless this suffices to turn the cosmological singularity into a large, stable black hole with scalar hair [5], where the bulk scalar field turned on is dual to the operator (4) in the boundary theory. These hairy black holes, which do not exist for α = λβ boundary conditions, have been interpreted in the dual theory as thermal excitations about the global negative minimum V m [5]. Hence they are the natural end state of evolution in the bulk corresponding to wave packets rolling down a regularized potential (8). In the limit → 0 where the global minimum goes to minus infinity the hairy black holes become infinitely large and one recovers the original cosmological solutions [5]. Hence in the black hole context there is convincing evidence that the dual system will eventually thermalize. However here we are more interested in the dynamics at intermediate times. Indeed, whether the dual theory predicts a transition from a big crunch to a big bang depends on whether the backreaction of the inhomogeneities prevents an initially homogeneous wave packet rolling down the potential from returning close to its original value after the first oscillation.</p>
+
+			</div>
+			<div>
+				<head n="3.2">Initial Conditions of Perturbations Following [18, 20]</head>
+
+				<p>we set the fluctuations initially in their instantaneous adiabatic vacuum , specified by</p>
+
+				<figure>
+					<trash>δφ( k) δφ( k ) ≡ (2π) 3 2 ω 0 (k) δ 3 ( k + k ) δ ˙ φ( k) = ±i ω 0 (k)δφ( k) (13) Because of the unstable −φ 4 term in the potential, one has m 2 0 ≡ V ,φφ (φ − ) &lt; 0. We therefore set ω 0 (k) 2 = k 2 k &lt; |m 0 | k 2 + m 2 0 k ≥ |m 0 | (14)</trash>
+
+
+				</figure>
+
+				<p>to avoid that ω 0 (k) is imaginary for k &lt; |m 0 |. The initialization of the frequency (14) for the modes with k &lt; |m 0 | is to some extent arbitrary. However, in the limit γ → 0 these modes, which are tachyonic at t = 0, constitute only a small part of the ensemble of modes that become tachyonic at some point during the evolution. As part of our numerical study, we have verified that changing the initialization of the k &lt; |m 0 | modes does not significantly affect the evolution. We are initializing random classical fluctuations to reproduce the quantum vacuum fluctuations. The consistency of this approach relies on the fact that, as we will show, in the subsequent evolution the occupation numbers become rapidly very large so that the quantum evolution behaves classically, at least during the first stages of the evolution. Finally we note that for fixed γ, changing λ is equivalent to rescaling the width of the initial wavepacket. Indeed, defining χ ≡ √ λφ, the field equation for χ is given by</p>
+
+				<p><formula>¨ χ − ∆χ + dV 1 dχ = 0 (15)</formula></p>
+
+				<p>which is the field equation for φ with λ = 1. The homogeneous mode ¯ χ(t) also takes the correct initial value, since V 1 ( √ λφ − ) = 0. By contrast the amplitude of the fluctuations δχ is rescaled by a factor √ λ with respect to the λ = 1 model (with = c = 1):</p>
+
+				<p><formula>δχ( k) δχ( k ) = λ (2π) 3 2 ω 0 (k) δ 3 ( k + k ). (16)</formula></p>
+
+				<p>Hence to study the evolution for a range of values of λ one can equivalently change the width of the initial wavepacket, and then go back to the physical variable φ.</p>
+
+			</div>
+			<div>
+				<head n="3.3">Tachyonic instability</head>
+
+				<p>The effective mass m 2 = V (φ) of φ is negative in a range of field values of width ∆φ ∼ 1/ √ λγ, extending roughly from φ = φ − 2/λ to φ 3/λγ. The lowest value of m 2 is</p>
+
+				<p><formula>m 2 min = 1 − 12 5γ γ1 − 12 5γ . (17)</formula></p>
+
+				<p>This value is λ-independent, as can be simply deduced from the fact that V ,φφ = V 1,χχ .</p>
+
+				<figure>
+					<trash>Modes with momenta k 2 between 0 and k 2 T ≡ −m 2</trash>
+
+					<figDesc>min have an imaginary frequency at some point during the evolution and hence are tachyonic. Decreasing γ not only widens the tachyonic band but also amplifies more strongly the modes within the tachyonic range x ≡ k/k T &lt; 1. This provides a mechanism for converting potential energy into particles, acting as a friction term for the motion of the homogeneous component of the scalar field. Eq.(17) shows that γ acts as a UV regularization length squared. Indeed, the tachyonic instability produces particles with momenta</figDesc>
+					<trash>k k T ∼ γ −1/2</trash>
+
+
+				</figure>
+
+				<p>irrespective of the value of λ. However, the details of the spectrum will generally be λ dependent at times sufficiently large for the non-linearities to play a significant role. Systems of this kind have been examined in the context of cosmological preheating and dynamical symmetry breaking [18, 20, 19]. The general conclusion is that the tachyonic amplification is a very efficient mechanism to convert potential energy into particles so that it typically takes only a few oscillations before the homogeneous mode stabilizes around the global minimum. A sample evolution of the homogeneous field in our regularized model (8) of the dual theory is given in Fig 2, for λ/4 = 10 −6 and γ = 0.3. One sees that with these parameter values the field returns twice to close its original value before backreaction suddenly kicks in and dramatically changes the evolution. Once the homogeneous mode, which is obtained by averaging the field value over the lattice sites, has settled around the global minimum the system thermalizes on a much longer timescale through the gradual transfer of energy into higher harmonic modes. The central question we wish to address here is whether the first oscillation survives in the γ → 0 + limit.</p>
+
+				<p>To answer this one needs to take in account the evolution of the fluctuations at the non-linear level. This can be seen as follows. The linearized perturbation equation reads</p>
+
+				<figure>
+					<trash>¨ φ k + (k 2 + m 2 (t))φ k = 0 (18) where m 2 (t) ≡ V ,φφ ( ¯ φ(t)).</trash>
+
+
+				</figure>
+
+				<p>In the absence of the regularization term, one finds that m 2 (t) −6/τ 2 where τ ≡ π/2 − t is the time away from the singularity. Hence for τ 1/k,</p>
+
+				<figure>
+					<trash>Eq.(18) becomes φ k − 6 τ 2 φ k = 0 (19) which is solved by |φ k (τ )| |φ k (t = 0)| (kτ ) 2 . (20)</trash>
+
+					<figDesc>The IR divergence in (20) obviously comes from using the near-singularity behaviour of the classical solution and has no physical meaning. It can be dealt with by imposing an IR cutoff k IR which mimics the actual solution. At a given τ , one has</figDesc>
+					<trash>δφ 2 (τ ) 4π 1/τ k IR dk k 2 |φ k (t = 0)| 2 (kτ ) 4 ∼ τ −4 ∼ λ 2 ¯ φ 4 (21)</trash>
+
+
+				</figure>
+
+				<p>where we have restricted the range of integration to the modes that are tachyonic at time τ . This indicates that while the field rolls down, non-linearities become important when ¯</p>
+
+				<p><formula>φ ∼ 1/λ. 0 5 10 15 20 t 1 2 3 4 5 Χ</formula></p>
+
+				<figure>
+					<head>Figure 2:</head>
+
+					<figDesc>Evolution of the homogeneous component ¯ χ(t), calculated by averaging the field value over the lattice sites, for λ/4 = 10 −6 and γ = 0.3, taking in account the growth of fluctuations δχ. The colored band represents the ¯ χ ± δχ 2 zone.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="4">Lattice Evolution</head>
+
+				<p>To study the dynamics in the presence of the brick wall regularization, we have developed a numerical code that solves the non-linear Klein–Gordon equation (15) on a 3–dimensional cubical lattice with periodic boundary conditions. We employ the same second order algorithm used in [21]. Significant improvements in the numerical performance were made with respect to previous codes. In this section we first describe the numerical setup in more detail and then discuss our results for the classical evolution on the lattice.</p>
+
+			</div>
+			<div>
+				<head n="4.1">Numerical Setup IR cutoff</head>
+
+				<p>The scalar theory (6) is defined on R × S 3 . The conformal coupling to the curvature of the 3–sphere is crucial to determine the initial conditions for the evolution. On the other hand, in the scaling regime, the tachyonic scale l 2 T = k −2 T ∝ γ becomes much smaller than R. Hence one expects the IR cutoff given by the radius of the sphere to be unimportant in the γ → 0 limit, so that one can safely work on a toroidal lattice.</p>
+
+				<p>To verify this is indeed the case we have compared the evolution with the lattice size adjusted so that the momentum gap between the homogeneous mode and the lowest k-mode is the same as on the sphere, to the evolution on a very large lattice. It was found that in the scaling regime, the finite volume of the 3–sphere has no effect 3 .</p>
+
+				<p>Finally we have verified that, again in the scaling regime, the statistical dependence on the (pseudo–)random initial conditions is negligible if one considers averaged quantities . This provides a consistency check for the semi–classical approach we employ.</p>
+
+			</div>
+			<div>
+				<head>UV convergence</head>
+
+				<p>We are particularly interested in the early stages of the evolution, such as the dependence of the first oscillation of the field on the parameter values. It turns out that, as expected, in this regime only tachyonic modes with x 1 are important. This is illustrated in Fig 4 (right panel) where we plot the mode occupation number as a function of x after one oscillation. One sees the occupation numbers fall sharply for x ≥ 1. Hence one expects that a lattice cutoff at x U V 2 should be sufficient to ensure the UV convergence of the lattice evolution. This turns out to be the case: in Fig 3 we show that the homogeneous field displacement after one oscillation becomes cutoff independent for x 2. When the first oscillation ends, the spectrum is essentially cut at x 1. However at later times, when the field relaxes around the minimum, the gradient energy is transferred to higher x modes. This is also shown in Fig 4, right panel. This is a slow process of which only the first stages are given by classical evolution. However, whereas this is important to understand the ultimate equilibrium state of the field theory, it is not relevant for the &apos;cosmological&apos; question whether there is a bounce in the γ → 0 limit. For this, the field displacement ∆ ¯ χ, shown in Fig 4 (left panel), turns out to be a useful variable.</p>
+
+				<figure>
+					<trash>0.0 0.5 1.0 1.5 2.0 x cutoff 0.5 1.0 1.5 2.0 2.5 Χ</trash>
+
+					<head>Figure 3:</head>
+
+					<figDesc>The &apos;homogeneous&apos; field displacement after the first oscillation, as a</figDesc>
+
+				</figure>
+
+				<p>function of the lattice UV cutoff, for λ = 4 · 10 −3 , γ = 10 −3 .</p>
+
+			</div>
+			<div>
+				<head n="4.2">Numerical results</head>
+
+				<p>To evaluate the particle production and in particular its backreaction, we adopt as an indicator the field displacement ∆ ¯ φ ≡ ¯ φ (1) − φ − between the homogeneous field value</p>
+
+				<figure>
+					<trash>Χ 0.5 1.0 1.5 2.0 t 50 100 150 200 250 Χ 0.1 0.2 0.5 1.0 2.0 5.0 x 10 100 1000 10 4 10 5 10 6 n x</trash>
+
+					<head>Figure 4:</head>
+
+					<figDesc>The homogeneous component ¯</figDesc>
+
+				</figure>
+
+				<p>χ as a function of time (left), and the mode occupation numbers as a function of x ≡ k/k T , at t 1.6 when the first oscillation is completed (dashed) and at t = 2 (solid). Here λ/4 = 10 −4 , γ = 10 −4 .</p>
+
+				<p>after the first oscillation, ¯ φ (1) , and its initial value φ − (see Fig 4). By homogenous field we mean the average of the field value over the lattice sites. The growth of inhomogeneities can be quantified by evaluating the energy density ρ g injected in spatial gradients after a single oscillation. These two quantities should naturally be compared to (φ m − φ − ) and |V m |, which determine their upper bounds in the presence of the regularization. To compare theories with different values of λ it is useful to work with the rescaled quantities ∆ ¯ χ = √ λ ∆ ¯ φ and ρ χ = λρ g . The advantage of these variables is that the reference quantities (χ m − χ − ) and V m,1 are λ–independent. Our study covers a wide range of parameters, namely from λ 10 −1 to λ 10 −10 , and from γ 10 −1 to γ 10 −6 . The lower bounds are imposed by numerical limitations: small values of λ require a higher numerical precision to resolve the fluctuations, whereas smaller values of γ lead to a more violent and &quot; tachyonic &quot; first oscillation that requires a better discretization.</p>
+
+				<p>AdS crunch limit: γ dependence For large values of γ near 1, simulations have shown that a few oscillations occur before the homogeneous field reaches its equilibrium value around the true minimum of the potential (see Fig 2). At first the fluctuations are in the linear regime, in which their amplitude is essentially multiplied by a constant (which depends on the wavenumber) at each oscillation. However, since the growth of perturbations is exponential, at some point the backreaction becomes important, rapidly dampening the oscillation amplitude. When one decreases γ, the potential becomes steeper and deeper. This means that more modes become tachyonic during the first stages of the evolution, and further that the low k modes grow faster. We find the energy converted in particles is not restored back in the homogeneous modes when the field rolls up again. As a consequence the</p>
+
+				<figure>
+					<trash>Χ Χ m - 1 10 100 1000 10 4 10 5 1 Γ 0.01 0.1 1 10 100 1000 Χ V m,1 1 10 100 1000 10 4 10 5 1 Γ 1 100 10 4 10 6 10 8 Ρ Χ</trash>
+
+					<head>Figure 5:</head>
+
+					<figDesc>Homogeneous field displacement (left) and amount of gradient energy density</figDesc>
+
+				</figure>
+
+				<p>(right) after one oscillation, as functions of γ −1 . The black solid lines represent respectively (χ m − χ − ) and V m,1 . From top to bottom, λ/4 = 10 −1 , 10 −2 , 10 −3 , 10 −4 , 10 −6 .</p>
+
+				<p>displacement of the homogeneous field after one oscillation increases when γ decreases. Since for sufficiently small values of γ the only relevant scale in the problem is set by φ m , one expects that ∆ ¯ φ ∝ φ m and ρ g ∝ V m . This is confirmed by the numerical simulations, as shown in Fig 5. Hence ∆ ¯ φ as well as ρ g follow essentially the scaling that is imposed by the brick wall. The scaling limit is manifest for ∆ ¯ φ φ − . In this regime one has</p>
+
+				<p><formula>∆ ¯ φ ∝ γ − 1 2 , ρ g ∝ γ −2 (22)</formula></p>
+
+				<p>The proportionality constants in (22) depend on λ and will be discussed below. The subsequent evolution depends on the details of the model. For intermediate values of γ it takes some time for ¯ φ to stabilize around φ m . This process involves a slow cascading effect whereby the energy is transferred from the tachyonic band to a wider band of modes extending up to wavenumbers of a few times k T .</p>
+
+				<p>However for small values of γ the evolution proceeds in a much more turbulent manner. In this regime the non-linearities are important and even at times t ≤ T /2 we find patches with φ φ m form. The inhomogeneities behave in a local manner till t ∼ T /2, in line with the findings in [6], but for t ≥ T /2 the evolution proceeds via the expansion and collision of approximately homogeneous bubbles (see also [8]). This produces a violent backreaction on ¯ φ which transfers energy rapidly to high k modes. Consequently, no further large oscillations in ¯ φ occur. The bubble dynamics for t ≥ T /2 is heavily dependent on the regularization, and therefore on the kind of boundary conditions we impose at infinity. The simulations have also shown that, in the small γ regime, a certain amount of tunneling takes place to the true minimum of the potential located at negative φ. In fact, for small γ the potential barrier is small compared to the scale of the true minimum of the potential, so the potential is essentially flat around φ = 0. It is therefore not</p>
+
+				<figure>
+					<trash>10 9 10 7 10 5 0.001 Λ 10 100 1000 10 4 10 5 10 6 Φ 10 9 10 7 10 5 0.001 Λ 10 6 10 8 10 10 10 12 10 14 Ρ g</trash>
+
+					<head>Figure 6:</head>
+
+					<figDesc>Homogeneous field displacement (left) and amount of gradient energy</figDesc>
+
+				</figure>
+
+				<p>sity injected (right) after one oscillation, as functions of λ. From top to bottom, γ = 10 −6 , 10 −5 , 10 −4 , 10 −3 , 10 −2 , 5 · 10 −2 . The curves with the two largest values of γ exhibit the linear regime for small λ. The straight dashed lines are, respectively, the √ λ and constant fits to the linear analysis discussed in the text. For smaller values of γ the backreaction is always large and one obtains the scaling given in Eq (25).</p>
+
+				<p>surprising that local energy overdensities let bubbles where the field is negative form.</p>
+
+				<p>We have checked carefully that this phenomenon is not due to numerical violations of energy conservation. As a matter of fact, this feature of the evolution does not seem crucial for our study. Indeed, an infinite potential barrier at φ = 0 does not significantly modify the scaling behavior of (22).</p>
+
+				<p>Non–linearities: λ dependence For λ γ and fixed γ &lt; 1, the fluctuations are small compared to ¯ φ and behave linearly at least during the first oscillation 4 . At the linear order, both the initial conditions and the evolution of the φ inhomogeneities are λ -independent. Consequently we expect no λ–dependence for ρ g in this regime. One should also have</p>
+
+				<p><formula>∆ ¯ φ ρ g V ,φ (φ − ) ∝ √ λ. (23)</formula></p>
+
+				<p>By contrast, for larger values of λ the first oscillation may already involve significant backreaction, with ∆ ¯ φ φ − . The homogeneous field displacement is then related to ρ g as ρ g ∼ λ(∆ ¯</p>
+
+				<figure>
+					<trash>φ) 4 . (24)</trash>
+
+
+				</figure>
+
+				<p>Numerical simulations have confirmed this qualitative behavior. In Fig 6 we show that for λ γ the gradient energy ρ g becomes independent of λ and ∆ ¯ φ scales as √ λ, as expected from the linear analysis (23). For larger ratios of λ/γ both the homogeneous field displacement and the energy density in fluctuations follow a rather precise scaling with λ which appears to be universal for sufficiently small γ. The equal spacing between the data sets in Fig 6 corresponds, of course, to the scaling with γ given in (22).</p>
+
+				<p>To summarize, in the scaling limit γ → 0 + and well beyond the linear regime, the quantities of interest behave as</p>
+
+				<p><formula>∆ ¯ φ ∝ λ α γ 1 2 , ρ g ∝ λ β γ 2 (25)</formula></p>
+
+				<p>with α β −0.33, which agrees with (24) to a good accuracy. These exponents are non–trivial and the result of a highly non–linear evolution involving an interplay between tachyonic growth of individual modes and interactions.</p>
+
+				<p>The &apos;cosmological&apos; limit corresponds to taking γ → 0 + for fixed λ. In this limit, it follows from (25) that ∆φ (1) and ρ g both diverge. Consequently, there is no meaningful first oscillation back to a finite value of the field, and therefore no evidence in our dual model for a transition in the bulk from a big crunch to a big bang.</p>
+
+			</div>
+			<div>
+				<head>Potential renormalization</head>
+
+				<p>A one-loop computation shows that the coupling λ of the unstable −φ 4 potential runs logarithmically. For large field values the Coleman-Weinberg potential is given by</p>
+
+				<figure>
+					<trash>V r ∼ − λ 4 log φ M φ 4 (26)</trash>
+
+					<figDesc>where M is the renormalization scale. The logarithmic running effectively decreases the parametric divergence of the tachyonic scale with γ. At leading order in the logarithmic corrections one finds</figDesc>
+
+				</figure>
+
+				<p><formula>k 2 T ∝ γ −1 log 2 γ . (27)</formula></p>
+
+				<p>Modeling the self-adjoint extension again by the addition of a φ 6 regularization term we obtain, as a toy model,</p>
+
+				<figure>
+					<trash>V (φ) = 1 2 φ 2 − λ 2 log φ 2 +φ 2 0 M 2 φ 4 + 1 32 λ 2 γφ 6 (28)</trash>
+
+
+				</figure>
+
+				<p>where φ 0 is added to produce an essentially constant λ for small values of φ.</p>
+
+				<p>Intuitively, one expects that the running of λ leads to logarithmic corrections to the scalings given in (25). A numerical study of (28) confirms this: the effect of the logarithmic running appears to add only finite γ corrections to the scalings. This means the energy in particles is still determined by the tachyonic scale, and therefore our conclusions remain unchanged.</p>
+
+			</div>
+			<div>
+				<head n="5">Conclusion</head>
+
+				<p>Using the AdS/CFT correspondence, the approach to a big crunch singularity in fivedimensional asymptotically anti-de Sitter spacetimes can be described in a dual field theory by an initially nearly homogeneous wave packet that rolls down an unbounded potential direction of a double trace deformation −f O 2 /2 of N = 4 Super-Yang-Mills (SYM) theory on R × S 3 , with O a trace operator quadratic in the adjoint Higgs scalars.</p>
+
+				<p>The big crunch singularity in the bulk occurs when the boundary scalar runs to infinity in finite time.</p>
+
+				<p>Concentrating on the steepest negative direction of the potential, we have numerically solved for the dual evolution. Consistent quantum evolution requires that one considers a self-adjoint extension of the system. Since this essentially acts as a brick wall at infinity, we have modeled this by adding a steep regularization term to the unbounded potential. This introduces a UV regulator γ, and the cosmological limit in the bulk corresponds to taking γ → 0 + .</p>
+
+				<p>While the wave packet rolls down the potential, the negative effective mass of the potential amplifies quantum perturbations which therefore behave classically, at least during the first stages of the evolution. We find that for small γ this converts most of the potential energy of the initial configuration into gradient energy during the first oscillation of the wave packet. In particular, for small γ the system tends to a universal &apos;scaling limit&apos; in which the mean field displacement ∆ ¯ φ and the gradient energy ρ g after one oscillation scale as (an appropriate power of) the UV regulator itself. This means that, in the cosmological γ → 0 + limit, the boundary scalar does not return close to its original value after the first oscillation. Instead the gradient energy diverges, indicating there is no transition in the bulk from a big crunch to a big bang in the models considered here. In the boundary theory, our simulations show a sudden phase of bubble formation at large field, when some regions of space bounce back while others are still going down. A different way to implement self-adjoint boundary conditions in field theory, based on an extension of the domain of the scalars involved, has been explored in [6] and more recently in [23]. There is some evidence [24] this allows for a smoother dynamical evolution across the singularity and in particular that this avoids the breakdown of the local behavior of the perturbations near the singularity. Hence a violent phase of bubble dynamics like what we observed in our simulations may not occur with boundary conditions of this kind. We note, however, that in the models we have considered we find that, in the scaling regime, perturbations are in the non-linear regime already while the wave packet rolls down. It seems plausible that this is largely independent of the nature of the boundary conditions at infinity. One will therefore have to take in account nonlinearities in order to determine conclusively whether the boundary scalar can return close to its original value after the first oscillation with different boundary conditions at infinity. A possible exception are models where the coupling λ governing the potential instability is significantly smaller than the UV regularization scale γ for large field values.</p>
+
+				<p>In this case our simulations indicate that the perturbations remain in the linear regime during the entire first oscillation. The backreaction of particle production can then be limited, at least in a certain range of parameter values. In the models discussed here, we have seen it is not possible to maintain λ &lt; γ in the cosmological regime involving small γ. Indeed, although the coupling of the unstable double trace deformation runs logarithmically and is asymptotically free, we find that in order to limit the backreaction λ would have to go to zero in the UV faster than this. Whether this can be realized in a quantum treatment of the three-dimensional models discussed in [25] remains to be seen. Even though in the regularized models, the expectation value of O rapidly stabilizes around the global minimum of the potential, the spectrum of produced particles at early times is essentially limited to the low tachyonic band of momenta. Subsequently the system thermalizes, due to the self-interaction of the field. However this takes place on much longer time scales and cannot be described by the classical simulations discussed here. The approach to a thermal final state in the boundary theory nevertheless provides an interesting testing ground of the AdS/CFT correspondence in the presence of multitrace deformations. Some aspects of this will be discussed elsewhere [26].</p>
+
+			</div>
+
+			<note place="foot">* lorenzo.battarra@apc.univ-paris7.fr † hertog@apc.univ-paris7.fr</note>
+
+			<note place="foot">arXiv:1009.0992v1 [hep-th] 6 Sep 2010</note>
+
+			<note place="foot" n="1"> It follows from Fig 14 (b) in [6] that for sufficiently small values of f the supergravity analysis predicts β ∼ 1/λ. The field theory solution (7) reproduces this scaling.</note>
+
+			<note place="foot" n="2"> From here onwards we set the AdS radius equal to one, so that the dual field theory lives on S 3 × R where the sphere also has unit radius.</note>
+
+			<note place="foot" n="3"> We have also verified that the energy density correlation length (see [22]) is much smaller than the IR cutoff.</note>
+
+			<note place="foot" n="4"> We emphasize that, since the tachyonic instability is an extremely efficient mechanism to produce particles, this regime typically corresponds to values of λ that are very small compared to (an appropriate power of) γ. For this reason the regime in which the perturbations behave linearly for the entire duration of the first oscillation has turned out to be numerically inaccessible for γ 10 −3 .</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+				<head>Acknowledgments</head>
+				<p>TH thanks Ben Craps and Neil Turok for stimulating discussions and collaboration on related problems. We also thank Ben Craps for helpful comments on a draft of this paper. This work is supported in part by the ANR (France) under grant ANR-09-BLAN-0157.</p>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Pre -big bang in string cosmology</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Gasperini</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Veneziano</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Astropart. Phys</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="317" to="339" />
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">From big crunch to big bang</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Khoury</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">A</forename>
+				<surname>Ovrut</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Seiberg</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">J</forename>
+				<surname>Steinhardt</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Turok</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">086007</biblScope>
+			<biblScope unit="page">65</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">The large N limit of superconformal field theories and supergravity</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">M</forename>
+				<surname>Maldacena</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Theor. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="231" to="252" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<monogr>
+		<title level="m" type="main">Towards a big crunch dual</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Hertog</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">T</forename>
+				<surname>Horowitz</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2004" />
+			<biblScope unit="page">07</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<monogr>
+		<title level="m" type="main">Holographic description of AdS cosmologies</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Hertog</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">T</forename>
+				<surname>Horowitz</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2005" />
+			<biblScope unit="page">04</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title level="m" type="main">Quantum Resolution of Cosmological Singularities using AdS/CFT</title>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Craps</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Hertog</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Turok</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="hep" to="th" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title level="m" type="main">Multitrace deformations of vector and adjoint theories and their holographic duals</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Elitzur</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Giveon</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Porrati</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Rabinovici</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<title level="m" type="main">Holography of AdS vacuum bubbles</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">L F</forename>
+				<surname>Barbon</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Rabinovici</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2010" />
+			<biblScope unit="page">04</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<title level="m" type="main">D-Brane Potentials from Multi-Trace Deformations in AdS/CFT</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Bernamonti</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Craps</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page">08</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title level="m" type="main">On rolling, tunneling and decaying in some large N vector models</title>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Asnin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Rabinovici</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Smolkin</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page" from="hep" to="th" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Designer gravity and field theory effective potentials</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Hertog</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">T</forename>
+				<surname>Horowitz</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">94</biblScope>
+			<biblScope unit="page">0412169</biblScope>
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title level="m" type="main">Black holes with scalar hair and asymptotics in N = 8 supergravity</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Hertog</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Maeda</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2004" />
+			<biblScope unit="page">0404261</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Asymptotically anti-de Sitter spacetimes and scalar fields with a logarithmic branch</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Henneaux</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Martinez</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Troncoso</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Zanelli</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">70</biblScope>
+			<biblScope unit="issue">044034</biblScope>
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<title level="m" type="main">Multi-trace operators, boundary conditions, and AdS/CFT correspondence</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Witten</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+		<title level="m" type="main">Double-trace deformations, boundary conditions and spacetime singularities</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Berkooz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Sever</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Shomer</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2002" />
+			<biblScope unit="page" from="05" to="0112264" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<monogr>
+		<title level="m" type="main">Methods of Modern Mathematical Physics. 2. Fourier Analysis, Selfadjointness</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Reed</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Simon</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1975" />
+			<biblScope unit="page">361</biblScope>
+			<pubPlace>New York</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">The Functional Integral for Quantum Systems with Hamiltonians Unbounded from Below</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Carreau</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Farhi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Gutmann</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">F</forename>
+				<surname>Mende</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ann. Phys</title>
+		<imprint>
+			<biblScope unit="page" from="204" to="186" />
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<monogr>
+		<title level="m" type="main">Tachyonic preheating</title>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Kofman</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Tachyonic instability and dynamics of spontaneous symmetry breaking</title>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">N</forename>
+				<surname>Felder</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Kofman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">D</forename>
+				<surname>Linde</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="issue">123517</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Preheating in new inflation</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Desroche</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">N</forename>
+				<surname>Felder</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">M</forename>
+				<surname>Kratochvil</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">D</forename>
+				<surname>Linde</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">71</biblScope>
+			<biblScope unit="issue">103516</biblScope>
+			<biblScope unit="page" from="hep" to="th" />
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">LATTICEEASY: A program for lattice simulations of scalar fields in an expanding universe</title>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">N</forename>
+				<surname>Felder</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Tkachev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Phys. Commun</title>
+		<imprint>
+			<biblScope unit="volume">178</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<title level="m" type="main">DEFROST: A New Code for Simulating Preheating after Inflation</title>
+		<author>
+			<persName>
+				<forename type="first">]</forename>
+				<forename type="middle">A V</forename>
+				<surname>Frolov</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="hep" to="ph" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<monogr>
+		<title level="m" type="main">Holographic Singularity Resolution</title>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Turok</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="10060026" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<monogr>
+		<title level="m" type="main">Self-adjoint extensions in field theory</title>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Craps</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Hertog</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Turok</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>unpublished. manuscript</note>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">A multitrace deformation of ABJM theory</title>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Craps</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Hertog</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Turok</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">80</biblScope>
+			<biblScope unit="issue">086007</biblScope>
+			<biblScope unit="page" from="hep" to="th" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<title level="m" type="main">Battarra and T. Hertog in preparation</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

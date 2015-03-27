@@ -1,0 +1,2812 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">FUSION OF SYMMETRIC D-BRANES AND VERLINDE RINGS</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Alan</forename>
+								<forename type="middle">L</forename>
+								<surname>Carey</surname>
+							</persName>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Bai-Ling</forename>
+								<surname>Wang</surname>
+							</persName>
+						</author>
+						<title level="a" type="main">FUSION OF SYMMETRIC D-BRANES AND VERLINDE RINGS</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<note>arXiv:math-ph/0505040v2 22 May 2005</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>We explain how multiplicative bundle gerbes over a compact, connected and simple Lie group G lead to a certain fusion category of equivariant bundle gerbe modules given by pre-quantizable Hamiltonian LG-manifolds arising from Alekseev-Malkin-Meinrenken&apos;s quasi-Hamiltonian G-spaces. The motivation comes from string theory namely, by generalising the notion of D-branes in G to allow subsets of G that are the image of a G-valued moment map we can define a &apos;fusion of D-branes&apos; and a map to the Verlinde ring of the loop group of G which preserves the product structure. The idea is suggested by the theorem of Freed-Hopkins-Teleman. The case where G is not simply connected is studied carefully in terms of equivariant bundle gerbe modules for multiplicative bundle gerbes.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head>1</head>
+
+				<p>. Introduction 2 1.1. Some physics background 2 1.2. Mathematical summary 4 2. Bundle gerbe D-branes 6 2.1. Equivariant bundle gerbe D-branes 8 3. Bundle gerbe D-branes from group-valued moment maps 10 3.1. Equivariant bundle gerbes over G 11 3.2. Quasi-Hamiltonian G-spaces and Hamiltonian LG-spaces 11 3.3. Equivariant bundle gerbe modules 13 4. Moduli spaces of flat connections on Riemann surfaces 15 4.1. Relationship with Chern-Simons. 17 4.2. Recasting the Segal-Witten reciprocity law 19 4.3. The multiplicative structure of G k 21 5. Spin c quantization and fusion of D-branes 21 6. The non-simply connected case 26 6.1. Some background about the center of G and the loop group LG 27 6.2. Multiplicative bundle gerbes 31 6.3. G-equivariant bundle gerbe modules 32 6.4. The fusion category of bundle gerbe modules 35 6.5. An example for G =</p>
+
+				<figure>
+					<trash>SO(3) 38 6.6. An example for G = SU (3)/Z 3 40 References 41</trash>
+
+
+				</figure>
+
+				<p>to any Riemann surface Σ with analytically parametrised boundaries divided into m incoming boundaries and n outgoing boundaries , such that the operators Z k ( Σ) satisfy certain gluing formulae under composition of surfaces ( See [ 48 ] and the references therein ). We call such Riemann surfaces &apos; extended &apos; . With primary fields , determined by a dominant weight of level k , inserted at each boundary of Σ the space of correlations or conformal blocks is given by the multiplicity space of the modular functor from the category of extended Riemann surfaces with conformal structure to the category of positive energy irreducible projective representations of the loop group LG at level k :</p>
+
+				<figure>
+					<trash>H Σ = − → λ in , − → λ out V k Σ( * − → λ in, − → λ out) ⊗ H * − → λ in ⊗ H− → λ out . The space of conformal blocks V k Σ ( * − → λ in , − → λ out</trash>
+
+
+				</figure>
+
+				<p>) also satisfies certain gluing formulae , the well - known Verlinde factorization formulae . Varying the conformal structure on Σ , the space of con - formal blocks forms a holomorphic vector bundle over the moduli space of conformal structure , equipped with a canonical projective flat connection ( the Knizhinik - Zamolodchikove connec - tion ) . For Σ 0 , 3 , the genus 0 surface with 3 boundary components , two incoming boundary circles labelled by the weight λ , µ and the third outgoing boundary circle labelled by the weight ν , the dimension of the space of conformal blocks</p>
+
+				<figure>
+					<trash>N ν λ , µ = dimV k Σ0 , 3 ( * λ , * µ , ν ) ( 1 . 1 ) is given by the Verlinde fusion coefficient ( [ 51 ]</trash>
+
+
+				</figure>
+
+				<p>) . Another definition of Verlinde coefficients N ν λµ is given by ( Cf . [ 8 ] ) :</p>
+
+				<figure>
+					<trash>N ν λ , µ = dim{u ∈ Hom G ( V λ ⊗ V µ , V ν ) |u V ( p ) λ ⊗ V ( q ) µ ⊆ p+q+r≤k V ( r ) ν }</trash>
+
+
+				</figure>
+
+				<p>where V λ , V µ and V ν denote the representation of G with highest weight λ , µ and ν respectively . The highest root ϑ determines a copy of SU ( 2 ) with respect to which V λ admits a decomposition</p>
+
+				<figure>
+					<trash>V λ = k / 2 i=0 V ( i ) λ where V ( i ) λ ( i = 0 , 1 / 2 , 1 , · · · , k / 2</trash>
+
+
+				</figure>
+
+				<p>) are the spin i isotypic components .</p>
+
+				<p>In boundary conformal field theory , the D - brane is described by a boundary state in the closed string Hilbert space , which is a linear combination of the so called Ishibashi states . The coefficients should satisfy the Cardy condition and some sewing relations ( Cf . [ 14 ] ) . For the Wess - Zumino - Witten model of conformal field theory , the stringy geometry can be studied via bundle gerbes ( [ 31 ] [ 32 ] ) and embedded submanifolds Q of G , the D - branes . For the boundary Wess - Zumino - Witten theory on a simply connected group manifold G ( Cf . [ 32 ] ) , symmetry preserving boundary conditions are labelled by λ ∈ Λ * k and the open string Hilbert space labelled by λ 1 and λ 2 admits the following decomposition</p>
+
+				<figure>
+					<trash>H open λ1 , λ2 ∼ = µ∈Λ * k W λ2 λ1µ ⊗ H µ . A . L . CAREY AND BAI - LING WANG</trash>
+
+
+				</figure>
+
+				<p>In order to get a consistent quantum conformal field theory , the multiplicity space W λ2 λ1µ is identified with the space of conformal blocks V k Σ0 , 3 ( * λ 1 , * µ , λ 2 ) . In particular , the dimension of the multiplicity space dim W λ2 λ1µ = N λ2 λ1 , µ . is also given by the Verlinde fusion coefficients . For general boundary conditions , the consistency condition implies that µ → ( dim W λ2 λ1µ ) realises a representation of the Verlinde algebra . See also [ 2 ] [ 11 ] [ 22 ] [ 27 ] [ 29 ] for some earlier discussion of D - branes on group manifolds . Geometrically , for a simply - connected Lie group G , D - branes on G are classified into symmetric D - branes :</p>
+
+				<figure>
+					<trash>C λ = {g · exp ( 2πiλ k ) ) · g −1 |g ∈ G} for λ ∈ Λ * k ; twisted D - branes C λ = {g · exp ( 2πiλ k ) ) · ̟ G ( g ) −1 |g ∈ G}</trash>
+
+
+				</figure>
+
+				<p>where ̟ G is an outer automorphism of G , and λ ∈ Λ * k is a fixed point of ̟ G , and the coset D - branes such as D - brane s in N = 2 coset models in [ 35 ] [ 36 ] [ 45 ] [ 46 ] .</p>
+
+				<p>In this paper , we will study these symmetric D - branes from the equivariant bundle gerbe module viewpoint . 1 . 2 . Mathematical summary . We now look at the mathematical content of this paper . We introduce a new notion , &apos; generalized rank n bundle gerbe D - branes &apos; for a bundle gerbe G over G . These are smooth manifolds Q with a smooth map µ : Q → G such that the pull - back bundle gerbe µ * ( G ) admits a rank n bundle gerbe module ( Definition 2 . 2 ) . There is also a corresponding notion for G - equivariant bundle gerbes G over a G - manifold M . When the compact simple Lie group G is simply - connected then we can construct a G - equivariant bundle gerbe G k over G whose Dixmier - Douady class is represented by a multiple by a positive integer k of the canonical bi - invariant 3 - form on G ( see Proposition 3 . 1 in Section 3 ) . A particularly interesting example of a generalized G - equivariant bundle gerbe D - brane is pro - vided by a quasi - Hamiltonian manifold ( M , ω , µ ) ( see Definition 3 . 2 ) where M is a G - manifold , ω is an invariant 2 - form and µ : M → G is a group - valued moment map . Quasi - hamiltonian manifolds are extensively studied by Alekseev - Malkin - Meinrenken in [ 1 ] whose results are re - viewed in Section 3 . We focus on the correspondence between quasi - Hamiltonian manifolds and Hamiltonian LG - manifolds at level k as illustrated by the following diagram :</p>
+
+				<figure>
+					<trash>ˆ M π ˆ µ / / Lg * Hol M µ / / G , ( 1 . 2 ) wherê µ : ˆ M → Lg *</trash>
+
+
+				</figure>
+
+				<p>is the moment map for the Hamiltonian LG - action at level k and the vertical arrows define ΩG - principal bundles . The quasi - Hamiltonian manifold , when &quot; pre - quantizable &quot; , is naturally a generalized rank 1 bundle gerbe D - brane ( Cf . Theorem 3 . 5 ) of the bundle gerbe over G . When G is semisimple and simply connected , any bundle gerbe G k is multiplicative [ 15 ] and so in Section 4 , applying Theorem 3 . 5 to the moduli spaces of flat connections on Riemann surfaces , we relate these generalized bundle gerbe D - branes to the Chern - Simons bundle 2 - gerbe of [ 15 ] over the classifying space BG . A corollary is that the Segal - Witten reciprocity law is explained in the set - up of multiplicative bundle gerbes and their generalized bundle gerbe D - branes .</p>
+
+				<p>In Section 5 , we define the fusion category of generalized bundle gerbe D - branes of G k to be the category of pre - quantizable quasi - Hamiltonian manifolds with fusion product</p>
+
+				<figure>
+					<trash>( M 1 , ω 1 , µ 1 ) ⊠ ( M 2 , ω 2 , µ 2 ) = ( M 1 × M 2 , ω 1 + ω 2 + k 2 &lt; µ * 1 θ , µ * 2</trash>
+
+
+				</figure>
+
+				<p>¯ θ &gt; , µ 1 · µ 2 ) , where the G - action on M 1 × M 2 is via the diagonal embedding G → G × G , θ , ¯ θ are the left and right Maurer - Cartan forms on G , and µ 1 · µ 2 ( x 1 , x 2 ) = µ 1 ( x 1 ) · µ 2 ( x 2 ) . This fusion product and the corresponding fusion product on Hamiltonian LG - manifolds were studied in [ 40 ] . Denote by ( Q G , k , ⊠ ) the fusion category of bundle gerbe D - branes of G k .</p>
+
+				<p>Let R k ( LG ) be the free group over Z generated by the isomorphism classes of positive energy , irreducible , projective representations of LG at level k . The central extension of LG at level k we write as LG . The positive energy representation labelled by λ ∈ Λ * k acts on H λ and the Kac - Peterson character of H λ is χ k , λ ( τ ) = T r H λ e</p>
+
+				<figure>
+					<trash>2πiτ ( L0− c 24 ) , ( 1 . 3 ) where τ ∈ C with Im ( τ ) &gt; 0</trash>
+
+
+				</figure>
+
+				<p>, L 0 is the energy operator on H λ ( Cf . [ 43 ] ) , and c = kdimG k + h ∨ is the Virasoro central charge . We mention that e 2πiτ ( L0− c 24 ) is a trace class operator ( Cf . Theorem 6 . 1 in [ 33 ] and Lemma 2 . 3 in [ 21 ] ) for τ ∈ C with Im ( τ ) &gt; 0 . Equipped with the fusion ring structure : χ λ , k * χ µ , k = ν∈Λ * k N ν λ , µ χ ν , k , where N ν λ , µ is the Verlinde fusion coefficient ( 1 . 1 ) , we obtain ( R k ( LG ) , * ) , the Verlinde ring . Motivated by Guillemin - Sternberg &apos; s &quot; quantization commutes with reduction &quot; philosophy , we define a quantization functor on the fusion category of generalized bundle gerbe D - branes of G k using Spin c quantization of the reduced spaces ( see Definition 5 . 2 ) : χ k , G : Q G , k −→ R k ( LG ) .</p>
+
+				<p>Note that for a quasi - Hamiltonian manifold M obtained from a pre - quantizable Hamiltonian G - manifold , χ k , G ( M ) is the equivariant index of the Spin c Dirac operator twisted by the pre - quantization line bundle .</p>
+
+				<figure>
+					<trash>Main Theorem : The quantization functor χ k , G : ( Q G , k , ⊠ ) −→ ( R k ( LG ) , * ) satisfies χ k , G ( M 1 ⊠ M 2 ) = χ k , G ( M 1 ) * χ k , G ( M 2 ) ,</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>where the product</head>
+
+				<p>* on the right hand side denotes the fusion ring structure on the Verlinde ring ( R k ( G ) , * ) .</p>
+
+				<p>The fusion product on Hamiltonian LG - manifolds at level k involves the moduli space of flat connections on a canonical pre - quantization line bundle over the &apos; trousers &apos; Σ 0 , 3 . The multiplica - tive property of the bundle gerbe G k over G is essential for this part of the construction .</p>
+
+				<p>In section 6 , we discuss various subtle issues concerning the non - simply connected case . Given a compact , connected , non - simply connected simple Lie group G = ˜ G / Z for a subgroup Z in the center Z ( ˜ G ) of the universal cover G , we construct a G - equivariant bundle gerbe G ( k , χ ) , G associated to a multiplicative level k and a character χ ∈ Hom ( Z , U ( 1 ) ) , where the so - called level lies in H 4 ( B ˜ G , Z ) and k is the multiplicative if it is transgressed from H 4 ( BG , Z ) to H 4 ( B ˜ G , Z ) . The G - equivariant bundle gerbe G ( k , χ ) , G is obtained from the central extension of LG in [ 50 ] , 1 → U ( 1 ) −→ LG χ −→ LG → 1 , associated to ( k , χ ) . We classify all irreducible positive energy representations of LG χ following the work of Toledano Laredo in [ 50 ] .</p>
+
+				<p>Let R k , χ ( LG ) be the Abelian group generated by the positive energy , irreducible representa - tions of LG χ . We define the category Q ( k , χ ) , G of G - equivariant bundle gerbe modules of G ( k , χ ) . G .</p>
+
+				<p>The quantization functor χ ( k , χ ) , G : Q ( k , χ ) , G −→ R k , χ ( LG ) can also be established ( See Definition 6 . 13 ) . When k is multiplicative and χ is the trivial homomorphism 1 , then Q ( k , 1 ) , G admits a natural fusion product structure whose resulting category is denoted by ( Q ( k , 1 ) , G , ⊠ ) . Then χ ( k , 1 ) , G induces a ring structure on R k , 1 ( LG ) ( Cf . Theorem 6 . 16 ) . 2 . Bundle gerbe D - branes It is now known that the &quot; B - fields &quot; on a manifold M can be described by a bundle gerbe with connection and curving , and topologically classified by the degree 2 Deligne cohomology H 2 ( M , D 2 ) . ( This was understood in [ 10 ] using [ 28 ] ) . Explicitly , choose a good covering {U i } of M . Denote double intersections U i ∩ U j by U ij and extend this notation in the obvious way to n - intersections . Then a degree 2 Deligne cohomology class is given by an equivalence class of triples ( g ijk , A ij ,</p>
+
+				<figure>
+					<trash>B i ) where g ijk ∈ C ∞ ( U ijk , U ( 1 ) ) , A ij ∈ Ω 1 ( U ij , iR ) and B i ∈ Ω 2 ( U i , iR ) satisfy the following cocycle condition g ijk g −1 ijl g ikl g −1 jkl = 1 , on U ijkl A ij + A jk + A ki = g −1 ijk dg ijk , on U ijk B i − B j = dA ij on U ij .</trash>
+
+
+				</figure>
+
+				<p>The equivalence relation is given by adding a coboundary term ( h ij h jk h ki , A j − A i − h −1 ij dh ij , 0 ) for h ij ∈ C ∞ ( U ij , U ( 1 ) ) and A i ∈ Ω 1 ( U i , iR ) . Differential geometrically , a degree 2 Deligne cohomology class can be realized by a bundle gerbe with connection and curving over M [ 42 ] . A bundle gerbe G over M consists of a quadruple ( G , m ; Y , M ) where Y is a smooth manifold with a surjective submersion π : Y → M , and a principal U ( 1 ) - bundle ( also denoted by G ) over the fibre product Y [ 2 ] = Y × π Y together with a groupoid multiplication m on G , which is compatible with the natural groupoid multiplication on Y [ 2 ] . We represent a bundle gerbe G = ( G , m ; Y , M ) by the following diagram G Y [ 2 ]</p>
+
+				<figure>
+					<trash>π1 / / π2 / / Y M ( 2 . 1 ) with the bundle gerbe product m given by an isomorphism m : p * 1 G ⊗ p * 3 G → p * 2 G ( 2 . 2 ) of principal U ( 1 ) - bundles over Y [ 3 ]</trash>
+
+
+				</figure>
+
+				<p>= Y × π Y × π Y , and p i , i = 1 , 2 , 3 are the three natural projections from Y [ 3 ] to Y [ 2 ] obtained by omitting the entry in position i for p i . The maps π j , j = 1 , 2 are the projections onto the first and second factors in Y [ 2 ] .</p>
+
+				<p>A bundle gerbe with connection and curving G over M is given by ( 2 . 1 ) , together with a U ( 1 ) - connection A on the principal U ( 1 ) - bundle G over Y [ 2 ] which is compatible with the bundle gerbe product m :</p>
+
+				<figure>
+					<trash>m * ( p * 2 A ) = p * 1 A + p * 3 A , and a 2 - form B on Y , such that the curvature F A of A , satisfies the relation F A = π * 1 ( B ) − π * 2 ( B ) .</trash>
+
+
+				</figure>
+
+				<p>The connection A is called a bundle gerbe connection and B is called the curving of A . Then there exists a closed 3 - form H called the bundle gerbe curvature of ( G , A ) , such that dB = π * H . ( The notation is chosen to match with the corresponding objects in the Deligne point of view . ) The characteristic class of the Deligne class [ ( g ijk , A ij , B i ) ] is given by the class of thě Cech cocycle {g ijk }</p>
+
+				<figure>
+					<trash>, in H 2 ( M , U ( 1 ) ) ∼ = H 3 ( M , Z ) .</trash>
+
+
+				</figure>
+
+				<p>The corresponding class in H 3 ( M , Z ) for any realizing bundle gerbe G is called the Dixmier - Douady class of G . In [ 10 ] , bundle gerbe modules are defined to study twisted K - theory . Given a bundle gerbe G = ( G , m ; Y , M ) over M , a rank n bundle gerbe module of G is a rank n Hermitian vector bundle E over Y , associated to a U ( n ) - principal bundle P over Y for which there is an isomorphism of principal bundles over Y [ 2 ]</p>
+
+				<figure>
+					<trash>ρ : G ⊗ π * 2 P ∼ = π * 1 P ( 2 . 3 )</trash>
+
+
+				</figure>
+
+				<p>which is compatible with the bundle gerbe product : ρ • ( m ⊗ id ) = ρ • ( id ⊗ ρ ) .</p>
+
+				<p>Note that a bundle gerbe G admits a rank n bundle gerbe module ( E , ρ ) if and only if the Dixmier - Douady class of G is a torsion class in H 3 ( M , Z ) .</p>
+
+				<p>Remark 2 . 1 . The next definition is motivated by the following stringy considerations . In Type II superstring theory with non - trivial B - field on a 10 - dimensional oriented , spin manifold M , a D - brane Q , as defined in [ 28 ] [ 54 ] , is given by a smooth oriented submanifold ι : Q → M such that ι * z B + W 3 ( Q ) = 0 , where z B ∈ H 3 ( M , Z ) is the characteristic class of the B - field , and W 3 ( Q ) is the third integral Stieffel - Whitney class , the obstruction to the existence of a Spin c structure on Q . Now there is a torsion bundle gerbe G W3 ( with the Dixmier - Douady class W 3 ( Q ) ) called the lifting bundle gerbe . It arises [ 42 ] from the central extension 1 → U ( 1 ) −→ Spin c −→ SO → 1 . Denote by G B the bundle gerbe determined by the B - field on M . Now if W 3 ( Q ) = 0 ( that is , Q is a Spin c manifold ) , then ι * z B = 0 so that ι * G B admits a trivialization .</p>
+
+				<figure>
+					<head>Definition 2 . 2 .</head>
+
+
+				</figure>
+
+				<p>Let G be a bundle gerbe over a manifold M equipped with a bundle gerbe connection and curving . ( 1 ) A rank 1 bundle gerbe D - brane of a bundle gerbe G over M is a smooth oriented submanifold ι : Q → M such that ι * G admits a trivialization . Given a bundle gerbe connection and curving on G , a twisted gauge field on the D - brane is a trivialization of the corresponding Deligne class . ( 2 ) A rank n bundle gerbe D - brane of a bundle gerbe G over M is a smooth oriented submanifold ι : Q → M such that ι * G admits a rank n bundle gerbe module . A twisted gauge field on the D - brane is a bundle gerbe module connection on the bundle gerbe module . ( 3 ) A generalized rank n bundle gerbe D - brane is a smooth manifold Q with a smooth map µ : Q → M such that µ * G admits a rank n bundle gerbe module . A twisted gauge field on the D - brane is a bundle gerbe module connection on the bundle gerbe module . 2 . 1 . Equivariant bundle gerbe D - branes . Now we recall the definition of an equivariant bundle gerbe from [ 38 ] ( see also [ 37 ] ) . Let M be a smooth G - manifold , acted on by G from the left . A G - equivariant bundle gerbe over a G - manifold M is a bundle gerbe ( G , m ; Y , M ) where Y is a smooth G - manifold with a G - equivariant surjective submersion π : Y → M , and a G - equivariant principal U ( 1 ) - bundle ( also denoted by G ) over the fibre product Y [ 2 ] = Y × π Y together with a G - equivariant groupoid multiplication m on G . Note that the diagonal embedding of G into G p defines an action of G on Y [ p ]</p>
+
+				<figure>
+					<trash>= Y × M Y × M · · · × M Y p times . A G - equivariant bundle gerbe G defines a bundle gerbe ( EG × G G , m , EG × G Y , EG × G M ) over EG × G M whose Dixmier - Douady class defines an element in H 3 G ( M , Z ) = H 3 ( EG × G M , Z ) , called the equivariant Dixmier - Douady class of G . Conversely , given an element of H 3 G ( M , Z ) , Section 6 of [ 5 ]</trash>
+
+
+				</figure>
+
+				<p>associates to it a G - equivariant stable projective bundle over M whose structure group is PU ( H ) with the norm topology ( or the compact - open topology ) , satisfying some mild local conditions . That is , there is a bundle of projective spaces P with G - action , mapping P x to P g·x by a projective isomorphism for any x ∈ M and g ∈ G , and satisfying ( 1 ) P is stable , i . e . , P ∼ = P ⊗ L 2 ( G ) ; ( 2 ) each point x ∈ M with isotropy group G x has a G x - invariant neighbourhood U x such that there is an isomorphism of bundles with G x - action P | Ux ∼ = U x × P ( H x )</p>
+
+				<p>for some projective Hilbert space P ( H x ) with G x - action ; ( 3 ) the transition functions between two trivializations are given by maps U x ∩ U y −→ Isom ( H x , H y ) which are continuous in the compact - open topology .</p>
+
+				<p>As shown in [ 37 ] , given such a G - equivariant stable projective bundle P over M , the lifting bundle gerbe ( [ 42 ] ) associated to the corresponding principal bundle and the central extension 1 → U ( 1 ) −→ U ( H ) −→ PU ( H ) → 0 , is a G - equivariant bundle gerbe . The following construc - tion is , in a sense , a special case of this more general approach . With LG being the smooth loop group C ∞ ( S 1 , G ) and ΩG the based loop group we have LG = G × ΩG . There is a G - action on ΩG given by conjugation .</p>
+
+				<figure>
+					<head>Proposition 2 . 3 .</head>
+
+					<figDesc>Given an LG - manifold M with a free ΩG - action such that the quotient map π : ˆ M → M : = ˆ M / ΩG</figDesc>
+
+				</figure>
+
+				<p>defines a locally trivial principal ΩG - bundle , then the lifting bundle gerbe over M arising from a central extension 1 → U ( 1 ) −→ ΩG −→ ΩG → 1 is a G - equivariant bundle gerbe over M .</p>
+
+				<p>Proof . It is easy to see that the quotient map π : ˆ M → M is a G - equivariant surjective submer - sion . The lifting bundle gerbe is represented by the diagram ˆ g * ΩG M [ 2 ]</p>
+
+				<figure>
+					<trash>π1 / / π2 / / ˆ M M wherê g : ˆ M [ 2 ]</trash>
+
+
+				</figure>
+
+				<p>→ ΩG is determined by x 2 = ˆ g ( x 1 , x 2 ) · x 1 for ( x 1 , x 2 ) ∈ ˆ M [ 2 ]</p>
+
+				<figure>
+					<trash>, and satisfies ˆ g ( x 2 , x 3 ) · ˆ g ( x 1 , x 2 ) = ˆ g ( x 1 , x 3 ) for ( x 1 , x 2 , x 3 ) ∈ ˆ M [ 3 ]</trash>
+
+
+				</figure>
+
+				<p>. The bundle gerbe product is given by</p>
+
+				<figure>
+					<trash>m : ˆ g * ΩG ( x1 , x2 ) × ˆ g * ΩG ( x2 , x3 ) → ˆ g * ΩG ( x1 , x3 ) which maps x 1 , x 2 , ˆ γ 1 , x 2 , x 3 , ˆ γ 2 → x 1 , x 3 , ˆ γ 1 · ˆ γ 2 for γ 1 ∈ ( ΩG ) ˆ g ( x1 , x2 ) and γ 2 ∈ ( ΩG ) ˆ g ( x2 , x2</trash>
+
+
+				</figure>
+
+				<p>) . Under the conjugation action of G on ΩG , we see that the central extension 1 → U ( 1 ) −→ ΩG −→ ΩG → 1 is G - equivariant . This implies that g * ΩG is G - equivariant . It remains to show that the bundle gerbe product m is G - equivariant .</p>
+
+				<p>Using the fact that the ΩG - action on M is free and a direct calculation from the definition of g , we obtain , for g ∈</p>
+
+				<figure>
+					<trash>G ˆ g ( g · x 1 , g · x 2 ) = g · ˆ g ( x 1 , x 2 ) · g −1 . From this equation we deduce the following commutative diagram x 1 , x 2 , ˆ γ 1 , x 2 , x 3 , ˆ γ 2 m / / _ g x 1 , x 3 , ˆ γ 1 ˆ γ 2 _ g gx 1 , gx 2 , Ad g ( ˆ γ 1 ) , gx 2 , gx 3 , Ad g ( ˆ γ 2 ) / / gx 1 , gx 3 , Ad g ( ˆ γ 1 ˆ γ 2 ) . i . e</trash>
+
+
+				</figure>
+
+				<p>. , m is G - equivariant . Hence the lifting bundlê g * ΩG over M is a G - equivariant bundle gerbe .</p>
+
+				<p>Given any positive energy projective representation of ΩG acting on H of level determined by the central extension of ΩG , we see that ˆ M × ΩG P ( H ) −→ M is a G - equivariant stable projective bundle over M whose invariant ( Cf . [ 5 ] ) in H 3 G ( M , Z ) agrees with the equivariant Dixmier - Douady class of the lifting bundle gerbe defined in Proposition 2 . 3 . Given a G - equivariant bundle gerbe G = ( G , m ; Y , M ) over M , a rank n G - equivariant bundle gerbe module of G is a bundle gerbe module ( E , ρ ) , such that E is a G - equivariant Hermitian vector bundle over Y , and the bundle gerbe action ρ in ( 2 . 3 ) is G - equivariant .</p>
+
+				<figure>
+					<trash>A . L . CAREY AND BAI - LING WANG</trash>
+
+					<head>Definition 2 . 4 .</head>
+
+
+				</figure>
+
+				<p>We call a generalized rank n bundle gerbe D - brane ( Q , µ ) of a G - equivariant bundle gerbe G equivariant if Q is a G - manifold and µ is G - equivariant with respect to the conjugate action of G on itself such that µ * ( G ) admits a rank n G - equivariant bundle gerbe module .</p>
+
+			</div>
+			<div>
+				<head>Following [ 32 ]</head>
+
+				<p>for the Wess - Zumino - Witten model on a group manifold G , the conjugacy classes of G give so - called symmetric D - branes . We will see that they provide many examples of rank 1 G - equivariant bundle gerbe D - branes in G and in fact that any quasi - Hamiltonian G - manifold corresponding to a pre - quantizable Hamiltonian LG - manifold at level k is a generalized rank 1 G - equivariant bundle gerbe D - brane . 3 . Bundle gerbe D - branes from group - valued moment maps Until the end of Section 5 , G will denote a compact , connected and simply - connected simple Lie group with Lie algebra g . We fix a smooth infinite dimensional model of BG by embedding G into U ( N ) and letting EG be the Stiefel manifold of N orthonormal vectors in a separable complex Hilbert space . Let &lt; · , · &gt; be the normalized invariant inner product on g such that the highest co - root with respect to a basis of the root system for a fixed maximal torus in G has norm 2 .</p>
+
+				<figure>
+					<trash>Then k &lt; · , · &gt; defines an element in H 4 ( BG , Z ) ∼ = H 3 ( G , Z ) ∼ = Z ,</trash>
+
+
+				</figure>
+
+				<p>which in turn determines a central extension of LG at level k ( [ 43 ] ) :</p>
+
+				<p><formula>1 → U ( 1 ) −→ LG −→ LG → 1 .</formula></p>
+
+				<p>There is a technical issue , namely we need to complete the smooth loop loop group LG in an appropriate Sobolev norm for the ensuing discussion . None of the constructions in the previous Section are changed by using this completion . Thus in the above exact sequence we let LG consist of maps of a fixed Sobolev class L 2 p ( p &gt; 3 / 2 ) . The based loop groups will continue to be denoted by ΩG . The Lie algebra of LG is the space of maps</p>
+
+				<figure>
+					<trash>Lg = M ap ( S 1 , g ) of Sobolev class L 2 p−1 . Denote by Lg * = Ω 1 ( S 1 , g ) whose elements are of Sobolev class p − 1 . Note that Lg * ⊂ ( Lg ) * , via the natural pairing of Lg * and Lg ( a , ξ ) = S 1 &lt; a , ξ &gt; . We can view Lg * = Ω 1 ( S 1 , g ) as the affine space of L 2 p−1 - connections on the trivial bundle S 1 × G , with an LG - action by gauge transformations ( the affine coadjoint action at level k ) : γ · A = Ad γ A − kγ * ¯ θ . ( 3 . 1 ) Then there is a well - defined holonomy map Hol = Hol 1 : Lg * −→ G defined by solving the differential equation Hol s ( a ) −1 ∂ ∂t Hol s ( a ) = k −1 a , Hol 0 ( a ) = e</trash>
+
+
+				</figure>
+
+				<p>where s is the coordinate of R , and S 1 = R / Z . The holonomy map Hol is equivariant with respect to the evaluation homomorphism LG → G , γ → γ ( 1 ) , and the conjugate action of G on itself .</p>
+
+				<p>We remark that the holonomy map Hol : Lg * −→ G also defines the universal ΩG - principal bundle over G , and for a ∈ Lg * = Ω 1 ( S 1 , g ) , the stabilizer of a for the LG - action , denoted by ( LG ) a , is diffeomorphic to G Hol ( a ) , the centralizer of Hol ( a ) in G .</p>
+
+			</div>
+			<div>
+				<head n="3">. 1 .</head>
+
+				<p>Equivariant bundle gerbes over G . Denote by θ , ¯ θ ∈ Ω 1 ( G , g ) the left - and right - invariant Maurer - Cartan forms . In a faithful matrix representation ρ of G , θ = ρ −1 dρ and ¯ θ = dρρ −1 . Let Θ k ∈ Ω 3 ( G ) be the canonical closed bi - invariant 3 - form on G :</p>
+
+				<figure>
+					<trash>Θ k = k 12 &lt; θ , [ θ , θ ] &gt;= k 12 &lt; ¯ θ , [ ¯ θ , ¯ θ ] &gt; . Then Θ k represents an integral de Rham cohomology class of G in H 3 ( G , R ) defined by k ∈ H 4 ( BG , Z ) ∼ = Z .</trash>
+
+
+				</figure>
+
+				<p>The lifting bundle gerbe construction of [ 42 ] starts from the universal ΩG - principal bundle</p>
+
+				<figure>
+					<trash>Hol : Lg * −→ G and the central extension 1 → U ( 1 ) −→ ΩG −→ ΩG → 1 determined by the element k ∈ H 4 ( BG , Z ) ∼ = Z . Then set G k = ˆ g * ΩG wherê g : ( Lg * ) [ 2 ] → ΩG is defined by ξ 2 = ˆ g ( ξ 1 , ξ 2 ) · ξ 1 for ( ξ 1 , ξ 2 ) ∈ ( Lg * ) [ 2 ]</trash>
+
+
+				</figure>
+
+				<p>.</p>
+
+				<figure>
+					<head>Proposition 3 . 1 .</head>
+
+
+				</figure>
+
+				<p>The lifting bundle gerbe G k is a G - equivariant bundle gerbe over G , whose equivariant Dixmier - Douady class is the class in H</p>
+
+				<figure>
+					<trash>3 G ( G , Z ) ∼ = Z represented by Θ k . Proof . Under the identification Lg * ∼ = Ω 1 ( S 1 , g ) determined by k ∈ H 4 ( BG , Z ) ∼ = Z , the LG - action on Lg * makes the holonomy map Hol : Lg * −→ Lg * / ΩG ∼ = G a G</trash>
+
+
+				</figure>
+
+				<p>equivariant principal ΩG - bundle with the conjugation action of G on ΩG . Then from Proposition 2 . 3 and the discussion after the proof of Proposition 2 . 3 , we see that G k is a G - equivariant bundle gerbe over G , and the Dixmier - Douady class agrees with the non - equivariant Dixmier - Douady class of G k under the isomorphisms</p>
+
+				<figure>
+					<trash>H 3 G ( G , Z ) ∼ = Z ∼ = H 3 ( G , Z ) , for any</trash>
+
+
+				</figure>
+
+				<p>connected , compact , simply - connected simple Lie group G . 3 . 2 . Quasi - Hamiltonian G - spaces and Hamiltonian LG - spaces . We begin with a review from [ 1 ] of the definition of a group - valued moment map for a quasi - Hamiltonian G - space .</p>
+
+				<figure>
+					<trash>Definition 3 . 2 . A quasi - Hamiltonian G - space is a G - manifold with an invariant 2 - form ω ∈ Ω 2 ( M ) G and an equivariant map µ ∈ C ∞ ( M , G ) G such that ( 1 ) The differential of ω satisfies dω = µ * Θ k . ( 2 ) The map µ satisfies ι ( v ξ ) = k 2 µ * &lt; θ + ¯ θ , ξ</trash>
+
+
+				</figure>
+
+				<p>&gt; , where v ξ is the fundamental vector field on M generated by ξ ∈ g . ( 3 ) At each x ∈ M , the kernel of ω x is given by kerω x = {v ξ | ξ ∈ ker ( Ad µ ( x ) +1 ) } .</p>
+
+				<p>The map µ is called the Lie group valued moment map of the quasi - Hamiltonian G - space M .</p>
+
+				<p>Basic examples of quasi - Hamiltonian G - spaces are provided by conjugacy classes C ⊂ G as in [ 1 ] , where the one - to - one correspondence between Hamiltonian loop group manifolds with proper moment map and quasi - Hamiltonian G - manifold is established .</p>
+
+				<figure>
+					<trash>Definition 3 . 3 . A Hamiltonian LG - manifold at level k is a triple ( ˆ M , ˆ ω , ˆ µ ) , consisting of a Banach manifold M with a smooth LG - action , an invariant weakly symplectic ( that is , closed and weakly nondegenerate ) 2 - form ω and an equivariant moment map µ : ˆ M → Lg * : ι ( v ξ ) ˆ ω = d S 1 k &lt; ˆ µ , ξ &gt; . Remark 3 . 4 . It will be important later to observe that a Hamiltonian LG - manifold at level k is a Hamiltonian LG - manifold M with an LG - equivariant moment map ˆ µ : ˆ M −→ Lg * = Lg * × {k} ֒→ Lg * ⊕ R , where LG acts on Lg * × {k}</trash>
+
+
+				</figure>
+
+				<p>by the conjugation action . This conjugation action defines an affine coadjoint action of LG at level k . A Hamiltonian LG - manifold ( ˆ M , ˆ ω , ˆ µ ) at level k is pre - quantizable if M has an LG - equivariant Hermitian line bundle L → ˆ M , with an invariant connection ∇ whose curvature is given by −2πiând 2πki &lt; ˆ µ , ξ &gt;= V ert ( ξ L ) .</p>
+
+				<p>Here ξ L denotes the fundamental vector field on L and V ert : T L → T L is the vertical projection defined by the connection ∇ . We call ( L , ∇ ) the pre - quantisation line bundle for ( ˆ M , ˆ ω , ˆ µ ) . Given a Hamiltonian LG - manifold ( ˆ M , ˆ ω , ˆ µ ) at level k with a proper moment map , then the ΩG - action on M is free and the quotient spacê M / ΩG is a compact , smooth manifold of finite dimension . We define the holonomy manifold of</p>
+
+				<figure>
+					<trash>M as M = ˆ M / ΩG , then the following diagram commutes ˆ M π ˆ µ / / Lg * Hol M µ / / G . ( 3 . 2 )</trash>
+
+
+				</figure>
+
+				<p>There exists a unique invariant 2 - form ω such that ( M , ω , µ ) is a quasi - Hamiltonian G - manifold with Lie group valued moment map µ .</p>
+
+				<p>Conversely , given a quasi - Hamiltonian G - manifold ( M , ω , µ ) , there exists a unique Hamilton - ian LG - manifold ( ˆ M , ˆ ω , ˆ µ ) at level k such that M = ˆ M / ΩG , and the commutative diagram ( 3 . 2 ) holds . In fact , ˆ M = M × G Lg * is a principal ΩG - bundle over M and the LG - invariant weakly symplectic 2 - form is given by</p>
+
+				<figure>
+					<trash>ˆ ω = π * ω + ˆ µ * ̟ where ̟ is the following 2 - form on Lg * ̟ = 1 2 S 1 ds &lt; Hol * s ( ¯ θ ) , ∂ ∂s Hol * s ( ¯ θ ) &gt; , satisfying Hol * Θ k = −d̟ ( For details , see Theorem 8 . 3 in [ 1 ]</trash>
+
+
+				</figure>
+
+				<p>) .</p>
+
+				<figure>
+					<trash>Example 3 . 1 . ( Cf . Proposition 3 . 1 in [ 1 ]</trash>
+
+
+				</figure>
+
+				<p>) Choose a maximal torus T in G with its Lie algebra t .</p>
+
+				<p>The integral lattice Λ ∨ r ⊂ t ( the co - root lattice ) is the kernel of the exponential map exp : t → T . Let R and R ∨ be the root system and the co - root system of G . The root and co - root lattices Λ r ⊂ t * and Λ ∨ r ⊂ t are the lattices spanned by R and R ∨ with their Z - basis given by simple roots and simple co - roots</p>
+
+				<figure>
+					<trash>∆ = {α 1 , · · · , α n } , and ∆ ∨ = {α ∨ 1 , · · · , α ∨ n }</trash>
+
+
+				</figure>
+
+				<p>FUSION OF SYMMETRIC D - BRANES AND VERLINDE RINGS respectively , where α ∨ = 2α &lt; α , α &gt; . The weight and co - weight lattices Λ w ⊂ t * and Λ ∨ w ⊂ t are the lattices dual to Λ ∨ r and Λ r . Then affine coadjoint LG - orbits at level k are labelled by U k = {λ ∈ t * | &lt; λ , α ∨ j &gt;≥ 0 for any simple co - root α j , &lt; λ , ϑ &gt;≤ k} where ϑ is the highest root in R with respect to ∆ . We denote by O λ the affine coadjoint LG - orbit at level k through λ ∈ U k . The conjugacy classes in G are labelled by elements</p>
+
+				<figure>
+					<trash>exp ( 2πiλ k ) under g ∼ = g * defined by k &lt; · , · &gt; . A conjugacy class C λ ( for λ ∈ U k ) in G {g = g 0 · exp ( 2πiλ k ) · g −1 0 |g 0 ∈ G} has a canonical 2 - form ω ( g ) = k 2 &lt; θ , ( 1 − Ad g ) −1 ( θ ) &gt;</trash>
+
+
+				</figure>
+
+				<p>such that dω = Θ k | C λ and ( C , ω ) is a quasi - Hamiltonian G - manifold with moment map the embedding C ֒→ G . The corresponding Hamiltonian LG - manifold at level k is given by the affine coadjoint LG - orbit O λ . Then O λ as a Hamiltonian LG - manifold at level k is pre - quantizable if and only if λ ∈ Λ * k : = Λ w ∩ U k , whose elements are called the dominant weights at level k . The pre - quantization line bundle over O λ is given by LG ×</p>
+
+				<figure>
+					<trash>LGλ C ( * λ , 1 )</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>where</head>
+
+				<p>LG λ acts on C ( * λ , 1 ) with weight ( * λ , 1 ) , * λ is the dominant weight of the irreducible representation of G complex conjugate to the one with weight λ . . The geometric quantization on O λ by the Borel - Weil construction as in [ 43 ] gives rise to the irreducible positive energy representation of LG with the highest weight ( λ , k ) . 3 . 3 . Equivariant bundle gerbe modules . Our main theorem in this Section is the following existence result for generalized G - equivariant bundle gerbe modules in terms of pre - quantizable Hamiltonian LG - manifolds at level k .</p>
+
+				<p>Theorem 3 . 5 . Given a quasi - Hamiltonian G - manifold ( M , ω , µ ) such that the corresponding Hamiltonian LG - manifold ( ˆ M , ˆ ω , ˆ µ ) at level k is pre - quantizable and the moment map µ is proper , then the pull - back of the bundle gerbe G k over G</p>
+
+				<figure>
+					<trash>, µ * G k , admits a canonical G - equivariant trivialization µ * G k ∼ = δ ( L ˆ M ) ˆ M [ 2 ] π1 / / π2 / / ˆ M M where L ˆ M is the pre - quantization line bundle over M , and δ ( L ˆ M ) = π * 2 L ˆ M ⊗ π * 1 L −1 M . A . L . CAREY AND BAI - LING WANG</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>Proof .</head>
+
+				<p>The pull - back of the bundle gerbe G k is determined by the following diagram :</p>
+
+				<p><formula>µ * G k ˆ M [ 2 ]</formula></p>
+
+				<figure>
+					<trash>π1 / / π2 / / ˆ M M Specifically µ * G k is the pullback tô M [ 2 ]</trash>
+
+					<figDesc>of the U ( 1 ) bundle determined by the central extension U ( 1 ) → ΩG → ΩG corresponding to Θ k under the map g M : ˆ M [ 2 ]</figDesc>
+					<trash>→ ΩG defined by x 2 = ˆ g M ( x 1 , x 2 ) · x 1 for ( x 1 , x 2 ) ∈ ˆ M [ 2 ] . For a pre - quantizable Hamiltonian LG - manifold ( ˆ M , ˆ ω , ˆ µ ) at level k , the pre - quantization line bundle L ˆ M carries an ΩG - action such that the following diagram commutes : ΩG × L ˆ M / / L ˆ M ΩG × ˆ M / / ˆ M . This implies that , for ( x 1 , x 2 ) ∈ ˆ M [ 2 ] ( µ * G k ) ( x1 , x2 ) ⊗ ( L ˆ M ) x1 ∼ = ( L ˆ M ) x2 . The associativity of the ΩG - action ensures that L ˆ M is a rank one bundle gerbe module of µ * G k . As a rank one bundle gerbe module of µ * G k , we know that µ * G k ∼ = π * 2 L ˆ M ⊗ π * 1 L −1 M</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>.</head>
+
+				<p>As the pre - quantization line bundle L ˆ M is actually an LG - equivariant line bundle , we imme - diately know that the rank one bundle gerbe module ( L ˆ M , ˆ M ) is G - equivariant in the sense that L ˆ M is a G - equivariant line bundle over M and the bundle gerbe action</p>
+
+				<figure>
+					<trash>µ * G k ⊗ π * 1 L ˆ M ∼ = π * 2 L ˆ M is G - equivariant . Remark 3 . 6 .</trash>
+
+
+				</figure>
+
+				<p>In the set - up of differentiable stacks and their presenting Lie groupoids , a more general moment map theory is developed in [ 56 ] . Results analogous to Theorem 3 . 5 in terms of pre - quantizations of quasi - symplectic groupoids and the compatible pre - quantizations of their quasi - Hamiltonian spaces are also discussed in [ 34 ] for non - equivariant cases .</p>
+
+				<p>From this theorem , we can deduce easily the following existence result for equivariant bundle gerbe D - branes of the bundle gerbe G k over G .</p>
+
+				<figure>
+					<trash>Corollary 3 . 1 . Given a quasi - Hamiltonian G - manifold ( M , ω , µ ) such that the corresponding Hamiltonian LG - manifold ( ˆ M , ˆ ω , ˆ µ ) at level</trash>
+
+
+				</figure>
+
+				<p>k is pre - quantizable and proper , then ( M , ω , µ ) is a generalized rank one G - equivariant bundle gerbe D - brane of G k .</p>
+
+				<p>For the quasi - Hamiltonian G - manifolds from conjugacy classes C λ in G , we obtain the cor - responding symmetric D - brane in G , which is pre - quantizable if and only if λ is a dominant weight at level k .</p>
+
+				<figure>
+					<trash>Remark 3 . 7 . Relax the pre - quantizable condition in Corollary 3 . 1 on ( ˆ M , ˆ ω , ˆ µ ) to allow M to have an LG - equivariant</trash>
+
+
+				</figure>
+
+				<p>Hermitian vector bundle E → ˆ M of rank n , with an invariant connection ∇ whose curvature is given by −2πiˆd . Then the same proof implies that there exists a G - equivariant bundle gerbe action µ * G k ⊗ π * 1 E −→ π * 2 E , that is to say , ( M , ω , µ ) is a generalized G - equivariant bundle gerbe D - brane of rank n .</p>
+
+			</div>
+			<div>
+				<head n="4">. Moduli spaces of flat connections on Riemann surfaces</head>
+
+				<p>In this section , we recall a particular class of quasi - Hamiltonian G - manifolds , given by the moduli spaces of flat connections on Riemann surfaces with boundaries . Denote by A S 1 the space of L 2 p G - connections on the trivial principal G - bundle over S 1 .</p>
+
+				<p>The holonomy map Hol : A S 1 −→ G defines a principal ΩG - bundle over G , where ΩG is the based loop group , identified with the based gauge transformation group under a choice of parametrization of S 1 . With a fixed trivial connection , we can identify A</p>
+
+				<figure>
+					<trash>S 1 with Ω 1 ( S 1 , g ) . Using the isomorphism g ∼ = g * defined by &lt; , &gt; , we have A S 1 ∼ = Lg * . We know that Hol : A S 1 → G agrees with</trash>
+
+
+				</figure>
+
+				<p>the universal ΩG - bundle over G constructed in proposition 3 . 2 . The bundle gerbe G k over G is the lifting bundle gerbe ( Cf . [ 42 ] ) associated to the principal ΩG - bundle A</p>
+
+				<figure>
+					<trash>S 1 → G : G k A [ 2 ] S 1 π1 / / π2 / / A S 1 G ( 4 . 1 ) such that G k = ˆ g * ΩG , where ΩG is the central extension U ( 1 ) → ΩG → ΩG determined by φ ∈ H 4 ( BG , Z ) ( Cf . [ 43 ]</trash>
+
+
+				</figure>
+
+				<p>) , and g : A [ 2 ]</p>
+
+				<figure>
+					<trash>S 1 → ΩG is defined by A 2 = A 1 · ˆ g ( A 1 , A 2 ) for ( A 1 , A 2 ) ∈ A [ 2 ]</trash>
+
+
+				</figure>
+
+				<p>S 1 . The full gauge group ( identified with LG ) action and Proposition 2 . 3 tell us that G k is a G - equivariant bundle gerbe over G with equivariant Dixmier - Douady class k ∈ Z ∼ = H 3 G ( G , Z ) . The classifying map for the universal ΩG - bundle over G , a homotopy equivalence between Ω ( BG ) and B ( ΩG ) and the evaluation map from S 1 × Ω ( BG ) to BG define a homotopy class of maps , formally denoted by [ ev ]</p>
+
+				<figure>
+					<figDesc>: [ ev ]</figDesc>
+					<trash>: S 1 × G ∼ S 1 × BΩG ∼ S 1 × Ω ( BG ) → BG ,</trash>
+
+
+				</figure>
+
+				<p>such that the Dixmier - Douady class of G k is given by the cohomology class [ ω k ] = S 1 • [ ev ] ( φ ) , where φ ∈ H 4 ( BG , Z ) is defined by &lt; , &gt; . Now , given a Riemann surface with one boundary component which is pointed by fixing a base point on the boundary , denote by M Σ</p>
+
+				<figure>
+					<trash>{flat L 2 p− 1 2 G - connections on Σ × G} {g : L 2 p+ 1 2 ( Σ , G ) |g ( base point ) = Id ∈ G} ,</trash>
+
+
+				</figure>
+
+				<p>the based moduli space of flat G - connections on Σ ( that is , the space of flat G - connections on Σ × G modulo gauge transformations which are the identity at the base point ) . Note that the based moduli space M Σ is a finite dimensional smooth manifold and the boundary holonomy map defines a group valued moment map ( Cf . [ 1 ]</p>
+
+				<figure>
+					<figDesc>) µ Σ : M Σ −→ G . There is a canonical principal G - bundle with connection over Σ × M Σ given by choosing a classifying map</figDesc>
+					<trash>Ev : Σ × M Σ −→ BG , ( 4 . 2 ) such that ev , the restriction of Ev to ∂Σ × M Σ = S 1 × M Σ , represents a map in the homotopy class of maps : S 1 × M Σ Id×µΣ / / S 1 × G [ ev ]</trash>
+
+
+				</figure>
+
+				<p>/ / BG .</p>
+
+				<p>Now we can represent φ by a differential form Φ ( i 2π F A ) on BG , where Φ is the corresponding G - invariant degree two polynomial on the Lie algebra g of G , determined by the inner product &lt; · , · , &gt; on g . Then from direct calculation , we see that</p>
+
+				<figure>
+					<trash>d ( Σ Ev * Φ ( i 2π F A ) ) = µ * Σ S 1 ev * Φ ( i 2π F A ) .</trash>
+
+					<head>Hence µ *</head>
+
+					<figDesc>Σ ω k is exact so the Dixmier - Douady class of the pullback bundle gerbe µ * Σ G k over M Σ is trivial .</figDesc>
+					<trash>Proposition 4 . 1 . The quasi - Hamiltonian G - space ( M Σ , µ Σ ) determines a unique Hamiltonian LG - space at level k which is diffeomorphic to µ * Σ A S 1 = M Σ × G A S 1 ∼ = ˆ M Σ , with</trash>
+
+
+				</figure>
+
+				<p>M Σ is the moduli space of flat connections modulo gauge transformations which are the identity on the boundary . Moreover the Hamiltonian LG - manifold M Σ is pre - quantizable and admits a proper moment map , hence ( M Σ , µ Σ ) is a generalized rank 1 G - equivariant bundle gerbe D - brane of G k .</p>
+
+				<p>Proof . By results in [ 4 ] and [ 20 ]</p>
+
+				<figure>
+					<figDesc>, ˆ M Σ is an infinite dimensional symplectic manifold admitting a residual Hamiltonian action of LG at level k , whose moment map is given by the pullback of connections to the boundary µ Σ : ˆ M Σ −→ A S 1 ∼ = Lg * .</figDesc>
+
+				</figure>
+
+				<p>The induced ΩG - action is free on M Σ such that the quotient map M Σ → M Σ is the induced principal ΩG - bundle and the following diagram is commutative :</p>
+
+				<figure>
+					<trash>ˆ M Σ π ˆ µΣ / / Lg * Hol M Σ µΣ / / G . ( 4 . 3 ) which confirms µ * Σ A S 1 ∼ = ˆ M Σ , and</trash>
+
+
+				</figure>
+
+				<p>the moment map µ Σ is proper . Now we give a construction of a pre - quantization line bundle following [ 39 ] and [ 4 ] . Denote by A f lat Σ the space of flat G - connections on Σ×G , and denote by G 0 ( Σ ) and G 0 ( ∂Σ ) the based gauge transformation groups on Σ and ∂Σ respectively . Let G ( Σ , ∂Σ ) be the kernel of the restriction map to the boundary</p>
+
+				<figure>
+					<trash>∂ : G 0 ( Σ ) −→ G 0 ( ∂Σ ) ∼ = ΩG ( 4 . 4 ) then G ( Σ , ∂Σ ) consists of</trash>
+
+
+				</figure>
+
+				<p>those gauge transformations which are the identity on the whole boundary . Since G is simply connected , we have the following exact sequence and the principal ΩG - bundlê M Σ −→ M Σ is induced by the residual action of the gauge group G 0 ( Σ ) . The pullback of the central extension 1 →</p>
+
+				<figure>
+					<trash>U ( 1 ) −→ ΩG −→ ΩG → 1 under the map ∂ ( 4 . 4 ) defines a central extension G 0 ( Σ ) of G 0 ( Σ ) whose 2 - cocycle is given by c ( g 1 , g 2 ) = exp 2πi Σ &lt; g −1 1 dg 1 , dg 2 g −1 2 &gt; , ( 4 . 5 ) It is known that this extension has a canonical trivialisation over G ( Σ , ∂Σ ) ⊂ G 0 ( Σ ) . The pre - quantization line bundle over A f lat Σ is given by the trivial line bundle A f lat Σ × C with connection 1 - form θ A : T A A f lat Σ ∼ = {α ∈ Ω 1 ( Σ , g ) |dα = 0} → R α → Σ &lt; α , A &gt; . ( 4 . 6 ) Here Ω 1 ( Σ , g ) is the space of Lie algebra g valued 1 - form on Σ . This pre - quantization line bundle admits a connection - preserving action of G 0 ( Σ ) via the local action ( g , z ) · ( A , w ) = ( g · A , exp −2πi Σ &lt; g −1 dg , A &gt; zw ) , whose quotient under the G ( Σ , ∂Σ ) - action L Σ = ( A f lat Σ × C ) / G ( Σ , ∂Σ ) is the pre - quantization line bundle over M Σ . We claim that µ Σ : M Σ → G is a generalized rank 1 bundle gerbe D - brane , with the canonical trivialisation of µ * Σ G k given by µ * Σ G k ∼ = δ ( L Σ ) ˆ M [ 2 ] Σ π1 / / π2 / / ˆ M Σ M Σ ( 4 . 7 )</trash>
+
+
+				</figure>
+
+				<p>where L Σ is the pre - quantization line bundle over M Σ in [ 39 ] [ 53 ] . As L Σ carries an action of LG , it is straight forward to show that L Σ is a G - equivariant bundle gerbe module of µ</p>
+
+				<figure>
+					<trash>* Σ G k ( see the proof of Theorem 3 . 5 ) , therefore , we have shown that µ * Σ G k ∼ = δ ( L Σ ) as in ( 4 . 7 ) . The connection θ ( 4 . 6 ) on A f lat Σ</trash>
+
+
+				</figure>
+
+				<p>× C descends to a bundle gerbe module connection on L Σ . Hence , ( M Σ , µ Σ ) is a generalized rank 1 G - equivariant bundle gerbe D - brane of G k . 4 . 1 . Relationship with Chern - Simons . In this subsection we summarise some observations about the present situation which may be deduced from [ 15 ] . In that paper the universal Chern - Simons bundle 2 - gerbe Q φ associated to φ ∈ H 4 ( BG , Z ) is defined to be a bundle 2 - gerbe ( Q φ , EG [ 2 ] ; EG , BG ) with connection illustrated by the following diagram :</p>
+
+				<figure>
+					<trash>G τ ( φ ) Q φ G EG [ 2 ] ˆ g ; ; w w w w w w w w w w π1 / / π2 / / EG π BG ( 4 . 8 )</trash>
+
+
+				</figure>
+
+				<p>The way to read this diagram is that Q φ is obtained as the pull - back of a multiplicative bundle gerbe G τ ( φ ) over G , with connection and curving , whose bundle gerbe curvature τ ( φ ) ∈ H 3 ( G , Z ) is determined by φ and where τ : H 4 ( BG , Z ) → H 3 ( G , Z ) is the usual transgression map . The technicalities in [ 15 ] are handled by recognising that transformations between stable isomorphisms of bundle 1 - gerbes provide 2 - morphisms making the category BGrb M of bundle 1 - gerbes over a manifold M and stable isomorphisms between bundle 1 - gerbes into a bi - category . The space of 2 - morphisms between two stable isomorphisms is in one - to - one correspondence with the space of line bundles over M . We also recall from [ 15 ]</p>
+
+				<figure>
+					<figDesc>the definition of a multiplicative bundle gerbe on a compact semi - simple Lie group G . Let BG • be the following simplicial manifold</figDesc>
+					<trash>BG • = {BG n = G × · · · × G ( n copies ) } ( where n = 0 , 1 , 2 , · · · ) , endowed with face operators π i : G n+1 → G n , ( i = 0 , 1 , · · · , n + 1 ) π i ( g 0 , . . . , g n ) =      ( g 1 , . . . , g n ) , i = 0 , ( g 1 , . . . , g i−1 g i , g i+1 , . . . , g n ) , 1 ≤ i ≤ n , ( g 0 , . . . , g n−1 ) , i = n + 1 . In particular , the face operators from G × G → G consist of π 0 ( g 1 , g 2 ) = g 2 , π 1 ( g 1 , g 2 ) = g 1 g 2 and π 2 ( g 1 , g 2 ) = g 1 for ( g 1 , g 2 ) ∈ G × G . The face operator π i : G n+1 → G n defines a bi - functor π * i : BGrb G n −→ BGrb G n+1</trash>
+
+
+				</figure>
+
+				<p>sending objects , stable isomorphisms and 2 - morphisms to the pull - backs by π i .</p>
+
+				<p>Definition 4 . 2 . ( Cf . [ 15 ] ) A multiplicative bundle gerbe on G is a bundle gerbe G over G together with a stable isomorphism m : π</p>
+
+				<p>The main result of [ 15 ] is that a bundle gerbe G over G is multiplicative if and only if the corresponding Dixmier - Douady class lies in the image of the transgression map τ : H 4 ( BG , Z ) → H 3 ( G , Z ) . The relation between the Chern - Simons bundle gerbe and the moduli space of flat G - connections is given by the following proposition .</p>
+
+				<figure>
+					<head>Proposition 4 . 3 .</head>
+
+
+				</figure>
+
+				<p>The transgression of our universal Chern - Simons bundle 2 - gerbe Q φ to the moduli space of flat G - connections on a closed Riemann surface is the Chern - Simons line bundle over the moduli space .</p>
+
+				<p>Proof . Given a closed Riemann surface Σ with a base point we cut Σ along a separating simple curve through the base point so that Σ = Σ 1 ∪ S 1 Σ 2 and Σ i is a Riemann surface with one pointed boundary . It is easy to see that the based moduli space of flat G - connections on Σ × G is given by the fiber product of the group valued moment maps for M Σ1 and M Σ2</p>
+
+				<figure>
+					<trash>M Σ ∼ = M Σ1 × G M Σ2 ∼ = ˆ M Σ1 × ˆ M Σ2 / / ΩG ∼ = ˆ M Σ1 × A S 1 ˆ M Σ2 / ΩG , ( 4 . 9 )</trash>
+
+
+				</figure>
+
+				<p>with the induced map µ Σ : M Σ → G . Here we use the notation &quot; / / &quot; for the symplectic reduction by the diagonal ΩG - action with respect to the moment map µ Σ1 − ˆ µ Σ2 , as 0 is a regular value ( [ 4 ]</p>
+
+				<figure>
+					<trash>) , ( ˆ µ Σ1 − ˆ µ Σ2 ) −1 ( 0 ) = ˆ M Σ1 × A S 1 ˆ M Σ2 , and the action of ΩG is free . The pull - back bundle gerbe µ * Σ G k</trash>
+
+
+				</figure>
+
+				<p>over M Σ from G k over G now has two trivialisations from the canonical trivialisations of the pull - back bundle gerbes over M Σ1 and M Σ2 ( see Proposition 4 . 1 ) . These two trivialisations give a line bundle L Σ over M Σ which we refer to as the transgression of Q φ . In [ 15 ] , there is a natural bundle 2 - gerbe connection on Q φ . The Chern - Simons bundle 2 - gerbe connection induces canonical bundle gerbe module connections on the bundle gerbe modules L Σ1 and L Σ2 . These bundle gerbe module connections define a canonical connection on the line bundle L Σ . The curvature of this canonical connection is given by</p>
+
+			</div>
+			<div>
+				<head>Σ1</head>
+
+				<figure>
+					<trash>Ev * 1 Φ ( i 2π F A1 ) − −Σ2 Ev * 2 Φ ( i 2π F A2 ) = Σ Ev * Φ ( i 2π F A ) , where Ev is the classifying map for the canonical G - bundle over Σ × M Σ with connection Ev * A , and</trash>
+
+
+				</figure>
+
+				<p>Φ is the corresponding G - invariant degree two polynomial on the Lie algebra g of G . This agrees with the curvature formula in [ 4 ] [ 44 ] for the Chern - Simons line bundle over M Σ . 4 . 2 . Recasting the Segal - Witten reciprocity law . We now interpret the Segal - Witten reci - procity law ( Cf . [ 12 ] ) from the viewpoint of bundle gerbes over G and their bundle gerbe D - branes . Let G C be the complexification of a connected , compact and semi - simple Lie group ( not necessarily simply - connected ) G . Let LG C denote the smooth loop group .</p>
+
+				<figure>
+					<trash>A central extension of LG C by C * 1 → C * −→ LG C −→ LG C → 1</trash>
+
+					<figDesc>has the reciprocity property if , for an extended Riemann surface Σ whose boundary ∂Σ is a disjoint union of parametrized circles , the extension of C ∞ ( ∂Σ , G C ) induced by the Baer product of the extension of boundary components</figDesc>
+					<trash>1 → C * −→ C ∞ ( ∂Σ , G C ) −→ C ∞ ( ∂Σ , G C ) → 1 splits canonically over the subgroup of holomorphic maps ( denoted by Hol ( Σ , G C ) ) from Σ to G C . We use s Σ : Hol ( Σ , G C ) → Hol ( Σ , G C ) to denote the canonical section of the splitting of the induced extension 1 → C * −→ Hol ( Σ , G C ) −→ Hol ( Σ , G C ) → 1 .</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Given a central extension LG C with the reciprocity property , LG C satisfies the glueing prop - erty if whenever an extended Riemann surface is obtained by glueing two extended Riemann surfaces Σ 1 and Σ 2 along some boundary components with the obvious restriction maps</figDesc>
+					<trash>ρ i : Hol ( Σ , G C ) −→ Hol ( Σ i , G C ) , then there is a canonical isomorphism between Hol ( Σ , G C ) and ρ * 1 Hol ( Σ 1 , G C ) ⊗ ρ * 2 Hol ( Σ 2 , G C ) carrying the section s Σ to ρ * 1 s Σ1 ⊗ ρ * 2 s Σ2 . The Segal</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Witten reciprocity law claims that an extension Hol ( Σ , G C ) satisfies the reciprocity and glueing properties if the characteristic class of the extension lies in the image of the trans - gression map τ : H 4 ( BG , Z ) −→ H 3 ( G , Z ) . In [ 12 ]</figDesc>
+
+				</figure>
+
+				<p>, the converse of the Segal - Witten reciprocity law is established : any extension of LG C satisfying the reciprocity and glueing properties must lie in the image of τ . In the light of the properties of multiplicative bundle gerbes , their bundle gerbe modules and their relationship with the Chern - Simons bundle 2 - gerbes , we can recast the Segal - Witten reciprocity law as in the following proposition for a simply - connected simple Lie group G .</p>
+
+				<figure>
+					<head>Proposition 4 . 4 .</head>
+
+					<figDesc>For an extended Riemann surface Σ = Σ g , n of genus g with n pointed and parametrized boundary components , the transgression of the Chern - Simons bundle 2 - gerbe Q φ ( 4 . 8 ) provides a canonical G - equivariant trivialization of the pull - back equivariant bundle gerbe associated to the group - valued moment map µ Σ : M Σ −→ G n . Proof . Given Riemann surface Σ = Σ g , n of genus g with n pointed boundary components n i=1 S i , the boundary holonomy map defines the group valued moment map for the based moduli space M Σ , µ Σ : M Σ −→ G n . We can identify as before µ * Σ ( A n S 1 ) with ˆ M Σ = {flat G - connections on Σ × G} {g : Σ → G| g| ∂Σ = Id ∈ G} , which is a infinite dimensional symplectic manifold carrying a Hamiltonian action of ( LG ) n . The corresponding moment map is given by the restriction map to the boundary components µ Σ : ˆ M Σ −→ ( Lg * ) n defining the following commutative diagram analogous to ( 4 . 3 ) :</figDesc>
+					<trash>ˆ M Σ π ˆ µΣ / / ( Lg * ) n Hol M Σ µΣ / / G n . ( 4 . 10 ) Therefore , the pull - back bundle gerbe µ * Σ ( ⊗ n i=1 p * i G k ) over</trash>
+
+
+				</figure>
+
+				<p>M Σ , where p i : G n → G is the projection on its i - th factor , has a canonical trivialisation given by the pre - quantization line bundle L Σ over M Σ by a construction analogous to that in the proof of Proposition 4 . 1 . Hence , ( M Σ , µ Σ ) gives rise to a generalized equivariant bundle gerbe D - brane in G n .</p>
+
+				<p>FUSION OF SYMMETRIC D - BRANES AND VERLINDE RINGS Remark 4 . 5 . To see precisely the relationship between the Segal - Witten reciprocity law and our Proposition 4 . 4 , we remind the reader of the following two observations . ( 1 ) Proposition 4 . 4 holds for all Sobolev classes L</p>
+
+			</div>
+			<div>
+				<head>2</head>
+
+				<figure>
+					<figDesc>p and the corresponding moduli spacê M Σ contains a dense set C ∞ ( ∂Σ , G C ) / Hol ( Σ , G C ) which is a Frechet manifold . ( 2 ) The pre - quantization line bundle L Σ is given by the extension of C ∞ ( ∂Σ , G C ) / Hol ( Σ , G C ) × C * C where the canonical splitting over Hol ( Σ , G C ) enters naturally .</figDesc>
+
+				</figure>
+
+				<p>It is not hard to see that these canonical trivialisations obtained from the transgression of our universal Chern - Simons bundle 2 - gerbe Q φ satisfy natural glueing properties under cutting and pasting of Riemann surfaces .</p>
+
+			</div>
+			<div>
+				<head n="4">. 3 .</head>
+
+				<p>The multiplicative structure of G k . We assume that the classifying map for the prin - cipal G - bundle over Σ 0 , n is given by a smooth map Σ 0 , k → BG such that base points on the boundary components are mapped to a base point in BG . Then the based moduli space of flat G - connections on Σ 0 , n , still denoted by M Σ0 , n , satisfies M Σ0 , n ∼ = { ( g 1 , · · · , g n ) ∈ G n | n i=1 g i = 1} .</p>
+
+				<p>For a sphere with three holes Σ 0 , 3 , the pull - back bundle gerbe over M Σ0 , 3 is isomorphic to the bundle gerbe</p>
+
+				<figure>
+					<trash>δ ( G k ) = p * 0 ( G k ) ⊗ p * 1 ( G * k ) ⊗ p * 2 ( G k ) over G × G , where π i : G × G → G is given by π 0 ( g 1 , g 2 ) = g 2 , π 1 ( g 1 , g 2 ) = g 1 g 2 and π 2 ( g 1 , g 2 ) = g 1 for ( g 1 , g 2 ) ∈ G .</trash>
+
+
+				</figure>
+
+				<p>Then the induced canonical trivialisation of δ ( G k ) defines the multiplicative structure on G k ( see [ 15 ]</p>
+
+				<figure>
+					<figDesc>) . The associator for the multiplicative structure is given by the canonical trivialisation of the pull - back bundle gerbe over the based moduli space M Σ0 , 4 ∼ = G × G × G of flat G - connections on a sphere with four holes , Σ 0 , 4 , and the induced trivialisations from two ways of decomposing the four holed sphere into three holed spheres . The cocycle condition for the associator is given by the canonical trivialisation of the pull - back bundle gerbe over the based moduli space M Σ0 , 5 ∼ = G × G × G × G of flat G - connections on a sphere with five holes , Σ 0 , 5 , and various ways of decomposing the 5 - holed sphere . 5 . Spin c quantization and fusion of D - branes</figDesc>
+
+				</figure>
+
+				<p>Fix a quasi - Hamiltonian G - manifold ( M , ω , µ ) with corresponding pre - quantizable Hamilton - ian LG - manifold ( ˆ M , ˆ ω , ˆ µ ) at level k , as illustrated in the following diagram</p>
+
+				<figure>
+					<trash>( ˆ M , ˆ ω ) π ˆ µ / / Lg * Hol ( M , ω ) µ / / ( G , Θ k ) . ( 5 . 1 ) From Theorem 3 . 5</trash>
+
+
+				</figure>
+
+				<p>, we know that M , together with the pre - quantization line bundle L = L ˆ M , defines a generalized rank one G - equivariant bundle gerbe module of G k over G . Equivalently , ( M , ω , µ ) is a generalized G - equivariant bundle gerbe D - brane of G k .</p>
+
+				<p>In this section , we will define a quantization procedure which gives rise to an element in R k ( LG ) for any pre - quantizable Hamiltonian LG - manifold ( ˆ M , ˆ ω , ˆ µ ) at level k . We will apply the fusion product defined in [ 40 ] for pre - quantizable Hamiltonian LG - manifolds at level k to show that our quantization functor from the category of generalized G - equivariant bundle gerbe modules of G k to R k ( LG ) commutes with these fusion products . Suppose that λ is a quasi - regular value of µ . The Hamiltonian reduction at the dominant weight λ of level k , given by M λ : = ˆ µ −1 ( λ ) / ( LG ) λ ∼ = ˆ µ −1 ( O λ ) / LG , is a symplectic orbifold with the reduced symplectic form ω λ and a pre - quantization line bundle with a connection ∇ λ L λ :</p>
+
+				<p><formula>= L| µ −1 ( λ ) × ( LG ) λ C ( * λ , 1 ) ,</formula></p>
+
+				<p>where * λ is the dominant weight of the irreducible representation of G dual to the one with weight λ , ( LG ) λ acts on C ( * λ , 1 ) with weight ( * λ , 1 ) ( Cf . [ 3 ] and [ 55 ] ) . Choose an almost complex structure J , compatible with ω λ , which defines a canonical Spin c structure S : = S ± J . Twisted by the pre - quantization line bundle L λ , a Hermitian connection on T M λ defines a Spin</p>
+
+				<figure>
+					<trash>c Dirac operator / ∂ λ : Γ L 2 k ( S + ⊗ L λ ) −→ Γ L 2 k−1 ( S − ⊗ L λ ) .</trash>
+
+					<figDesc>The index of / ∂ λ , denoted by Index ( / ∂ λ , M λ ) , is independent of the choice of the almost complex structure and the Hermitian connection . The symplectic invariant defined as the index of / ∂ λ , Ind ( / ∂ λ ) , is a rational number in general ( an integer if M λ is a smooth symplectic manifold ) .</figDesc>
+					<trash>Remark 5 . 1 . ( 1 ) If M λ is Kähler and ( L λ , ∇ λ ) is holomorphic , then the canonical Spin c bundle and the Spin c Dirac operator are given by S ± = Λ 0 , even / odd ( T * M λ ) , / ∂ λ = √ 2 ( ¯ ∂ ∇ λ + ¯ ∂ * ∇ λ ) . Hence , we have Index ( / ∂ λ , M λ ) = χ ( M λ , L λ ) , the Euler characteristic for the sheaf of holomorphic sections of L λ . ( 2 ) Let M Σ0 , 3 ( * λ , * µ , ν ) be the Hamiltonian reduction of M Σ0 , 3 at ( * λ , * µ , ν ) ∈ ( Λ * k ) 3 , then the index of the Spin c Dirac operator on M Σ0 , 3 ( * λ , * µ , ν ) , see [ 8 ] [ 39 ]</trash>
+
+
+				</figure>
+
+				<p>Index ( / ∂ , ˆ M Σ0 , 3 ( * λ , * µ , ν ) ) = N ν λ , µ , the fusion coefficient determined by the Verlinde factorization formula ( [ 51 ] ) . The van - ishing theorems for higher cohomology groups in [ 49 ] imply that N ν λ , µ agrees with the dimension of the space of holomorphic sections of the pre - quantization line bundle over the reduced spacê M Σ0 , 3 ( * λ , * µ , ν ) .</p>
+
+				<figure>
+					<head>Definition 5 . 2 .</head>
+
+					<figDesc>The quantization of a pre - quantizable quasi - Hamiltonian G - manifold ( M , ω , µ ) at level k is defined to be χ k , G ( M ) : = χ k , G ( ˆ M ) = λ∈Λ *</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>k</head>
+
+				<p>Index ( / ∂ λ , M λ ) · χ λ , k ∈ R k ( LG ) where χ λ , k is the character of the irreducible representation of LG with highest weight ( λ , k ) , and R k ( LG ) is the Abelian group generated by the isomorphism classes of irreducible positive energy representations of LG at level k . Equipped with the fusion product χ λ , k * χ µ , k = ν∈Λ * k N ν λ , µ χ ν , k .</p>
+
+				<p>FUSION OF SYMMETRIC D - BRANES AND VERLINDE RINGS ( R k ( LG ) , * ) becomes the Verlinde ring .</p>
+
+				<p>It was shown in [ 25 ] that ( R k ( G ) , * ) can be identified with the G - equivariant twisted K - group K dimG G , h ∨ ( G ) for the conjugacy action of G on itself , where h ∨ is the dual Coxeter number . This motivates the following definition .</p>
+
+				<figure>
+					<head>Definition 5 . 3 .</head>
+
+
+				</figure>
+
+				<p>The category of equivariant bundle gerbe D - branes of the equivariant bundle gerbe G k over G is given by the category of pre - quantizable quasi - Hamiltonian G - manifolds whose objects are ( M , ω , µ ) and the morphism between ( M 1 , ω 1 , µ 1 ) and ( M 2 , ω 2 , µ 2 ) is given by a G - equivariant map f : M 1 → M 2 such that ω 1 = f * ω 2 , µ 1 = µ 2 • f .</p>
+
+				<p>Equivalently , we say that the category of equivariant bundle gerbe modules of G k is given by the category of pre - quantizable Hamiltonian LG - manifolds at level k with proper moment maps .</p>
+
+				<p>We denote this category by Q G , k .</p>
+
+				<p>On the category of pre - quantizable Hamiltonian LG - manifolds at level k with proper moment maps , there is a product structure , called the fusion product of Hamiltonian LG - manifolds in [ 40 ] . Recall from Section 4 that M Σ0 , 3 is the based moduli space of flat G - connections on Σ 0 , 3 ( the genus 0 surface with 3 pointed boundary components ) . Note that M Σ0 , 3 is a quasi - Hamiltonian ( G × G × G ) - manifold , and the corresponding Hamiltonian ( LG ) 3 - manifold at level k is denoted by</p>
+
+				<figure>
+					<trash>M Σ0 , 3 : ˆ M Σ0 , 3 π ˆ µΣ 0 , 3 / / ( Lg * ) 3 Hol M Σ0 , 3 µ / / G 3 . Given a Hamiltonian LG × LG - manifold M at level k , ˆ M ˆ µ / / Lg * ⊕ Lg * Hol M Σ0 , 3 µ / / G × G then M × ˆ M Σ0 , 3 is a Hamiltonian ( LG ) 5</trash>
+
+					<figDesc>- manifold at level k . The diagonal embedding LG × LG −→ ( LG × LG ) × ( LG × LG × LG ) , mapping ( γ 1 , γ 2 ) → ( γ 1 , γ 2 ) × ( ¯ γ 1 , ¯ γ 2 , e ) ( where ¯ γ i ( θ ) = γ i ( −θ ) : R / Z → G ) , defines a Hamilton - ian LG × LG action on</figDesc>
+					<trash>M × ˆ M Σ0 , 3 with moment map ˆ µ diag : ˆ M × ˆ M Σ0 , 3 −→ Lg * ⊕ Lg * ( x , [ A ] ) → ˆ µ ( x ) − pr 12 • µ Σ0 , 3 ( [ A ] ) where pr 12 denotes the projection from Lg * ⊕ Lg * ⊕ Lg * to the first two factors . As 0 is a regular value of pr 12 • µ Σ0 , 3 , we can define the Hamiltonian quotient , denoted by ˆ M × ˆ M Σ0 , 3 / / diag ( LG ) 2 , as the symplectic reduction µ −1 diag ( 0 ) / ( LG × LG ) . A . L . CAREY AND BAI - LING WANG Note that µ −1 diag ( 0 ) / ( LG × LG ) ∼ = ˆ M × Lg * ⊕Lg * ˆ M Σ0 , 3 / ( LG × LG ) , which is an LG × LG quotient of the fiber product of µ : ˆ M → Lg * ⊕ Lg * and pr 12 • µ Σ0 , 3 : ˆ M Σ0 , 3 → Lg * ⊕ Lg * . The remaining LG - action on M Σ0 , 3 descends to a Hamiltonian LG - action on M × ˆ M Σ0 , 3 / / diag ( LG ) 2 , with the natural moment map induced from the map pr 3 • µ Σ0 , 3 ˆ M × ˆ M Σ0 , 3 −→ Lg * ⊕ Lg * ( x , [ A ]</trash>
+
+
+				</figure>
+
+				<p>) → pr 3 • µ Σ0 , 3 ( [ A ] ) where pr 3 is the projection from Lg * ⊕ Lg * ⊕ Lg * to the third factor . As any λ ∈ Lg * is a regular value of pr 3 • µ Σ0 , 3 , we can define the symplectic reduction of</p>
+
+				<figure>
+					<trash>M × ˆ M Σ0 , 3 / / diag ( LG ) 2 at λ as ( pr 3 • µ Σ0 , 3 ) −1 ( 0 ) / ( LG ) λ ∼ = ˆ M × ˆ M Σ0 , 3 ( · , · , λ ) / diag ( LG ) 2 , wherê M Σ0 , 3</trash>
+
+
+				</figure>
+
+				<p>( · , · , λ ) is given by the subset of M Σ0 , 3 with holonomy around the outgoing boundary component in the conjugacy class C λ of G through exp ( 2πiλ / k ) .</p>
+
+				<figure>
+					<head>Definition 5 . 4 .</head>
+
+					<figDesc>The fusion product on the category Q G , k is defined as follows : given two pre - quantizable Hamiltonian LG - manifolds ( ˆ</figDesc>
+					<trash>M 1 , ˆ ω 1 , ˆ µ 1 ) and ( ˆ M 2 , ˆ ω 2 , ˆ µ 2 ) at level k with proper moment maps , the fusion of product M 1 ⊠ ˆ M 2 is the Hamiltonian LG - manifold at level k obtained as the Hamiltonian quotient ˆ M 1 ⊠ ˆ M 2 : = ( ˆ M 1 × ˆ M 2 ) × ˆ M Σ0 , 3 / / diag ( LG ) 2 , with the resulting moment map denoted by µ 1 ⋆ ˆ µ 2 . For two pre - quantizable quasi - Hamiltonian G - manifolds ( M 1 , ω 1 , µ 1 ) and ( M 2 , ω 2 , µ 2 ) , the corresponding fusion product is given by M 1 ⊠ M 2 = ( M 1 × M 2 , ω 1 + ω 2 + k 2 &lt; µ * 1 θ , µ * 2 ¯ θ &gt; , µ 1 · µ 2 ) .</trash>
+
+
+				</figure>
+
+				<p>Remark 5 . 5 . By direct calculation , it is shown in [ 40 ]</p>
+
+				<figure>
+					<trash>that ˆ M Σg 1 , n 1 ⊠ ˆ M Σg 2 , n 2 = ˆ M Σg 1 +g 2 , n 1 +n 2 −1 , and , for three level k dominant weights λ , µ and ν in Λ * k , ( O λ ⊠ O µ ) ν = ˆ M Σ0 , 3 ( * λ , * µ , ν ) , where O λ</trash>
+
+
+				</figure>
+
+				<p>denotes the coadjoint orbit of the affine LG action on Lg * at level k with the corre - sponding quasi - Hamiltonian G - manifold given by C λ = {g · exp ( 2πiλ k ) · g −1 |g ∈ G} .</p>
+
+				<p>The fusion product on Q G , k is well - defined in the sense that given two pre - quantizable quasi - Hamiltonian G - manifolds ( M 1 , ω 1 , µ 1 ) and ( M 2 , ω 2 , µ 2 ) whose Hamiltonian LG - manifolds at level k are denoted by M 1 and M 2 , then the corresponding Hamiltonian LG - manifold at level k for M 1 ⊠ M 2 is given by M 1 ⊠ M 2 = ˆ M 1 ⊠ ˆ M 2 , which is also pre - quantizable . See [ 1 ] for a proof of this claim . Moreover , modulo LG - equivariant symplectomorphisms , Q G , k is a monoidal tensor category : ( 1 ) For any Hamiltonian LG - manifold M at level k , there is an LG - equivariant symplecto - morphism M ⊠ ΩG ∼ = ˆ M , that is , ΩG is the unit object .</p>
+
+				<figure>
+					<trash>( 2 ) Let M 1 , ˆ M 2 , ˆ M 3 be Hamiltonian LG - manifolds at level k with proper moment maps . There exist LG - equivariant symplectomorphisms ˆ M 1 ⊠ ˆ M 2 ∼ = ˆ M 2 ⊠ ˆ M 1 , ( ˆ M 1 ⊠ ˆ M 2 ) ⊠ ˆ M 3 ∼ = ˆ M 1 ⊠ ( ˆ M 2 ⊠ ˆ M 3 ) .</trash>
+
+
+				</figure>
+
+				<p>The category Q G , k together with the fusion product is called the fusion category of equivariant bundle gerbe D - branes ( Q G , k , ⊠ ) . Our main theorem about the structure of the category Q G , k is the following result on &quot; quantization commutes with fusion &quot; , which gives a geometric way to think of the ring structure on equivariant twisted K - theory ( cf [ 25 ] ) .</p>
+
+				<figure>
+					<head>Theorem 5 . 6 .</head>
+
+					<figDesc>The quantization functor defined by the Spin c quantization as in Definition 5 . 2 χ k , G : ( Q G , k , ⊠ ) −→ ( R k ( LG ) , * ) satisfies</figDesc>
+					<trash>χ k , G ( ˆ M 1 ⊠ ˆ M 2 ) = χ k , G ( ˆ M 1 ) * χ k , G ( ˆ M 2 ) , ( 5 . 2</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>) where the product * on the right hand side denotes the fusion ring structure on the Verlinde ring R k ( G ) .</figDesc>
+					<trash>Proof . By definition , we see that χ k , G ( ˆ M 1 ⊠ ˆ M 2 ) = ν∈Λ * k Index / ∂ ν , ( ˆ M 1 ⊠ ˆ M 2 ) ν · χ ν , k , and χ k , G ( ˆ M 1 ) * χ k , G ( ˆ M 2 ) = λ , µ , ν∈Λ * k Index / ∂ λ , ( ˆ M 1 ) λ · Index / ∂ µ , ( ˆ M 2 ) µ · N ν λ , µ · χ ν , k . Note that for ν ∈ Λ * k ( ˆ M 1 ⊠ ˆ M 2 ) ν = ( ˆ M 1 × ˆ M 2 ) × ˆ M Σ0 , 3 ( ν ) / / diag ( LG ) 2 . Applying Theorem 2 . 1 in [ 39 ]</trash>
+
+
+				</figure>
+
+				<p>to the Hamiltonian L ( G × G × G × G ) - manifold at level k</p>
+
+				<figure>
+					<trash>( ˆ M 1 × ˆ M 2 ) × ˆ M Σ0 , 3 ( ν ) , we obtain Index / ∂ ν , ( ˆ M 1 ⊠ ˆ M 2 ) ν = λ , µ∈Λ * k Index / ∂ , ( ( ˆ M 1 × ˆ M 2 ) × ˆ M Σ0 , 3 ( ν ) ) λ , µ , * λ , * µ = λ , µ∈Λ * k Index / ∂ , ( ˆ M 1 × ˆ M 2 ) λ , µ × ˆ M Σ0 , 3 ( * λ , * µ , ν ) = λ , µ∈Λ * k Index / ∂ λ , ( ˆ M 1 ) λ · Index / ∂ µ , ( ˆ M 2 ) µ · Index / ∂ , ˆ M Σ0 , 3 ( * λ , * µ , ν ) = λ , µ∈Λ * k N ν λ , µ · Index / ∂ λ , ( ˆ M 1 ) λ · Index / ∂ µ , ( ˆ M 2 ) µ , which leads to ( 5 . 2 ) by direct calculation .</trash>
+
+
+				</figure>
+
+				<p>For a dominant weight λ of level k in Λ * k , the pre - quantizable quasi - Hamiltonian G - manifold given by the conjugacy class C λ defines an object in Q k , G . Then it is easy to see that χ k , G ( C λ ) = χ k , G ( O λ ) = χ λ , k ∈ R k ( LG ) .</p>
+
+				<p>Hence , the quantization functor χ k , G : Q k , G → R k ( LG ) is surjective . 6 . The non - simply connected case For a compact , connected , non - simply connected simple Lie group G , there are a few subtleties in the construction of the fusion category of bundle gerbe modules . These issues also surface in the ring structure on the equivariant twisted K - theory of G , see for example [ 18 ] .</p>
+
+				<figure>
+					<figDesc>Let G be the universal cover of G , G = ˜ G / Z , where Z is a subgroup of the center Z ( ˜ G ) of G , 1 → Z −→ G −→ G → 1 .</figDesc>
+
+				</figure>
+
+				<p>and the covering map π : ˜ G → G identifies Z with the fundamental group π 1 ( G ) . For a compact , connected and simply connected simple Lie group with non - trivial center , ˜ G is one of the Cartan series SU ( n + 1 ) , Spin ( 2n + 1 ) , Sp ( n ) , Spin ( 4n ) , Spin ( 4n + 2 ) , E 6 and E 7 with the center given by Z n+1 , Z 2 , Z 2 , Z 2 × Z 2 , Z 4 , Z 3 and Z 2 respectively . The first subtlety comes from the non - connectness of the loop group LG , in fact its connected components are given by the fundamental group π 1 ( G ) . Let L 0 G be the identity component of LG , and Ω 0 G the identity component of ΩG , then we have the following exact sequences : 1 → L 0 G −→ LG −→ Z → 1 , 1 → Ω 0 G −→ ΩG −→ Z → 1 .</p>
+
+				<p>We now note the following difficulties : ( 1 ) The central extension of LG , 1 → U ( 1 ) −→ LG −→ LG → 1 , is not uniquely determined by a class σ ∈ H 3 ( G , Z ) , rather by a class in H 3 ( G , Z ) ⊕ Hom ( Z , U ( 1 ) ) ( [ 43 ] and [ 50 ] ) . ( 2 ) The fusion object for the category of bundle gerbe modules for a non - simply connected G , as a moduli space of flat connections on Σ 0 , 3 modulo those gauge transformations which are trivial on boundary components , is actually a Hamiltonian L 0 G × L 0 G × L 0 G - manifold at level k , not a Hamiltonian LG × LG × LG manifold . ( 3 ) The pre - quantization condition for Hamiltonian L 0 G - manifolds at level k , such as those from the moduli spaces of flat connections on a Riemann surface , only holds when the level k is transgressive for G .</p>
+
+				<p>The second subtlety comes from the fact that we have to restrict to bundle gerbes P σ whose Dixmier - Douady class σ lies in the image of τ : H 4 ( BG , Z ) → H 3 ( G , Z ) in order that P σ is multiplicative .</p>
+
+				<figure>
+					<trash>Remark 6 . 1 . ( 1 ) For G = SO ( 3 ) , a Dixmier - Douady class σ is transgressive if it is an even class in H 3 ( SO ( 3 ) , Z ) , equivalently , a multiple of 4 under the map H 3 ( SO ( 3 ) , Z ) −→ H 3 ( SU ( 2 ) , Z ) ∼ = Z . ( 2 ) For a general compact , connected , simple Lie group G , we have the following commuta - tive diagram : H 4 ( BG , Z ) / / H 3 ( G , Z ) H 4 ( B ˜ G , Z ) ∼ = / / H 3 ( ˜ G , Z ) , ( 6 . 1 ) where H 4 ( B ˜ G , Z ) ∼ = H 3 ( ˜ G , Z ) ∼ = Z and</trash>
+
+
+				</figure>
+
+				<p>the generator is determined by the basic inner product &lt; · , · &gt; on g uniquely specified by requiring that the highest co - root of G has norm 2 . Then each element in H 4 ( B ˜ G , Z ) is specified by its &quot; level &quot; k coming from identifying the induced inner product on g as being given by k &lt; · , · &gt; .</p>
+
+			</div>
+			<div>
+				<head n="6">. 1 .</head>
+
+				<p>Some background about the center of G and the loop group LG . We first re - view some basic properties about the center of the universal cover G of G following [ 50 ] where irreducible positive energy projective representations of LG are classified . The center Z ( ˜ G ) can be characterized as follows : choose a maximal torus T of G with Lie algebra t , let R and R ∨ be the root system and the co - root system of G . The root and co - root lattices Λ r ⊂ t * and Λ ∨ r ⊂ t are the lattices spanned by R and R ∨ with their Z - basis given by</p>
+
+				<figure>
+					<trash>∆ = {α 1 , · · · , α n } , and ∆ ∨ = {α ∨ 1 , · · · , α ∨ n } respectively , where α ∨ = 2α</trash>
+
+
+				</figure>
+
+				<p>&lt; α , α &gt; . The weight and co - weight lattices Λ w ⊂ t * and Λ ∨ w ⊂ t are the lattices dual to Λ ∨ r and Λ r with their Z - basis given by the fundamental weights λ i and the fundamental co - weights λ ∨ i such that &lt; λ i , α ∨ j &gt;=&lt; λ ∨ i , α j &gt;= δ ij .</p>
+
+				<p>Under the identification t ∼ = t * defined by the basic inner product ,</p>
+
+				<figure>
+					<trash>Λ r ⊂ Λ w ⊂ t * ∪ ∪ Λ ∨ r ⊂ Λ ∨ w ⊂ t , from which we know that ( 1 ) The map h ∨ → exp T ( 2πih ∨ ) induces an isomorphism Λ ∨ w / Λ ∨ r ∼ = Z ( ˜ G ) , where exp T denotes the exponential map for T . ( 2 ) The map sends µ ∈ Λ w to the pairing µ ( exp T ( 2πh ∨ ) ) = e 2πi&lt;µ , h ∨ &gt; induces an isomor - phism Λ w / Λ r ∼ = Hom ( Z ( ˜ G ) , U ( 1 ) ) .</trash>
+
+
+				</figure>
+
+				<p>There is another characterisation of Z ( ˜ G ) in terms of special roots ( Cf . Lemma 2 . 3 in [ 50 ] ) : non - trivial elements in Z ( ˜ G ) correspond one - to - one to the special fundamental co - weights {λ i ( z ) } z∈Z ( ˜</p>
+
+			</div>
+			<div>
+				<head>G )</head>
+
+				<p>such that the corresponding α i ( z ) ∈ ∆ carries the coefficient 1 in the expression for the high - est root ϑ . For each special root α i ( z ) , there exists a unique Weyl group element ω i ( z ) ( Cf . Proposition 4 . 1 . 2 in [ 50 ] ) which preserves ∆ ∪ {−ϑ} and sends −ϑ to α i ( z ) , such that</p>
+
+				<figure>
+					<trash>ω i ( z1 ) ω i ( z2 ) = ω i ( z1·z2 ) , where z 1 · z 2 denotes the group multiplication in Z ( ˜ G ) . The dominant weight of G at level k is given by Λ * k = {λ ∈ Λ w | &lt; λ , α ∨ &gt;≥ 0 , &lt; λ , θ &gt;≤ k} ( 6 . 2</trash>
+
+					<figDesc>) which is non - empty only if k is a positive integer . Note that Z ( ˜ G ) is isomorphic to the group of automorphisms of the extended Dynkin diagram of G which induces an action of Z ( ˜ G ) on Λ * k as given by Proposition 4 . 1 . 4 in [ 50 ]</figDesc>
+
+				</figure>
+
+				<p>, where the explicit action for all classical groups is explained .</p>
+
+				<p>Geometrically , this action of Z ( ˜ G ) is given by the affine Weyl group element ( [ 50 ]</p>
+
+				<figure>
+					<figDesc>)</figDesc>
+					<trash>z → τ ( kλ ∨ i ( z ) ) ω i ( z ) , ( 6 . 3 ) where τ ( kλ ∨ i ( z ) ) denotes the translation by kλ ∨ i ( z ) in the affine Weyl group . Given a subgroup Z ⊂ Z ( ˜ G ) , the integral lattice of G = ˜ G / Z , Λ ∨ Z = Hom ( U ( 1 ) , ˜ T / Z ) , then Λ ∨ r ⊂ Λ ∨ Z ⊂ Λ ∨ w , and Λ ∨ Z / Λ ∨ r</trash>
+
+
+				</figure>
+
+				<p>∼ = Z . The basic level ℓ b of G is the smallest integer k such that the restriction of k &lt; · , · &gt; to Λ ∨ Z is integral . Introduce the group of &apos; discontinuous loops &apos; L Z ˜ G = {γ ∈ C ∞ ( R , ˜ G ) |γ ( t + 2π ) γ ( t ) −1 ∈ Z} .</p>
+
+				<p>Then we have the following commutative diagram with all rows and columns being exact : 1 1 Z ∼ =</p>
+
+				<figure>
+					<trash>/ / Z 1 / / L ˜ G / / L Z ˜ G / / Z / / ∼ = 1 1 / / L 0 G / / LG / / Z / / 1 1 1 ( 6 . 4 ) As Z ∼ = Λ ∨ Z / Λ ∨ r , we can associate to µ ∨ ∈ Λ ∨ Z , the discontinuous loop ζ µ ∨ ( t ) = exp T ( 2πitµ ∨ ) ∈ L Z ( ˜ G ) . ( 6 . 5 ) Notice that if µ ∨ ∈ Λ ∨</trash>
+
+					<figDesc>r , then ζ µ ∨ ( t ) ∈ L ˜ T . In particular , for each z ∈ Z , fix a representative w z ∈ ˜ G for the unique Weyl group element ω i ( z ) , then</figDesc>
+					<trash>z → ζ z : = ζ λ ∨ i ( z ) w z ( 6 . 6 )</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>assigns a discontinuous loop in L Z ( ˜ G ) to each z , we call ζ z the distinguished discontinuous loop associated to z . According to Theorem 4 . 3 . 3 in [ 50 ] , the conjugation action of ζ z on L ˜ G induces an action of Z on Λ * k which agrees with the induced action of Z ⊂ Z ( ˜ G ) on Λ * k as from ( 6 . 3 ) . We denote by z · λ the action of z ∈ Z on λ ∈ Λ * k .</figDesc>
+					<head>Definition 6 . 2 .</head>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>The basic level ℓ b of G = ˜ G / Z is the smallest positive integer ℓ such that the restriction of ℓ &lt; · , · &gt; to Λ ∨ Z is integral . It was shown in Proposition 3 . 5 . 1 of [ 50 ]</figDesc>
+
+				</figure>
+
+				<p>, the level for which LG admits a central extension is a multiple of the basic level ℓ b . Now we review the construction of the central extension of LG from [ 50 ] .</p>
+
+				<p>Given a level k ∈ ℓ b Z , there is a canonical central extension</p>
+
+				<figure>
+					<trash>L Z ˜ G of L Z ˜ G ( see Proposition 3 . 5 . 1 and Theorem 3 . 2 . 1 in [ 50 ]</trash>
+
+
+				</figure>
+
+				<p>) at level k and the trivial extension of Λ</p>
+
+				<figure>
+					<trash>∨ Z where we regard Λ ∨ Z as a subgroup of L Z ˜ G through the discontinuous loop ζ µ ∨ given by ( 6 . 5 ) for µ ∨ ∈ Λ ∨ Z . The central extension of Λ ∨ Z is classified by its commutator map defined by ω ( λ ∨ , µ ∨ ) = ˜ ζ λ ∨ ˜ ζ µ ∨ ˜ ζ −1 λ ∨ ˜ ζ −1 µ ∨ ( 6 . 7 ) where ζ λ ∨ , ˜ ζ µ ∨ ∈ L Z ˜ G are arbitrary lifts of ζ λ ∨ , ˜ ζ µ ∨ . Note that there is a necessary and sufficient compatibility condition ( Cf . Proposition 3 . 3 . 1 ) ω ( λ ∨ , µ ∨ ) = ( −1 ) k&lt;λ ∨ , µ ∨ &gt; for the existence of L Z ˜ G , whenever λ ∨ ∈ Λ ∨ r .</trash>
+
+
+				</figure>
+
+				<p>As G is simple and simply - connected , the restriction of L Z ˜ G tõ G , is canonically trivial , hence , restricted to Z , Z admits a canonical section s : Z → Z . Given a character χ : Z → U ( 1 ) , following [ 50 ] , we can construct a canonical central extension of LG associated to a level k ∈ ℓ b Z and χ ∈</p>
+
+				<figure>
+					<trash>Hom ( Z , U ( 1 ) ) , defined by LG χ : = L Z ˜ G / {s ( γ ) χ −1 ( γ ) |γ ∈ Z} . ( 6 . 8 ) We denote this central extension of LG by 1 → U ( 1 ) −→ LG χ −→ LG → 1 . ( 6 . 9 ) Remark 6 . 3 . For all compact , connected simple Lie groups G except P SO ( 4n ) = Spin ( 4n ) Z 2 × Z 2 , we have H 3 ( G , Z ) ∼ = Z . Then from ( 6 . 8 ) we obtain all central extensions of LG labelled by ( k , χ ) . For G = Spin ( 4n ) / Z with Z = Z 2 × Z 2 , H 3 ( G , Z ) ∼ = Z ⊕ Z 2 ,</trash>
+
+
+				</figure>
+
+				<p>where Z 2 corresponds to two inequivalent central extensions of L Z ˜ G : the canonical one for LG χ and the other one with the commutator ω ( 6 . 7 ) defined by the pull - back of the non - trivial , skew - symmetric form on Z 2 × Z 2 . We denote the corresponding central extension of LG with respect to this non - trivial commutator ω by</p>
+
+				<figure>
+					<trash>1 → U ( 1 ) −→ LG χ , − −→ LG → 1 .</trash>
+
+					<figDesc>The following discussion for LG χ can be extended to the case of LG χ , − for G = P SO ( 4n ) with some minor modifications , we shall point out the difference for this latter case . We are now able to classify all irreducible positive energy representations of LG χ . We assume from now on that the level k ∈ ℓ b Z . The induced central extensions of L 0 G and L ˜ G from LG χ and L Z ˜ G are denoted by L 0 G χ and L ˜ G respectively . Then we have the following commutative diagrams relating various exact sequences and their central extensions :</figDesc>
+					<trash>1 / / L 0 G χ / / LG χ / / Z ∼ = / / 1 1 / / L 0 G / / LG / / Z / / 1 , ( 6 . 10 ) 1 / / Z / / L ˜ G / / L 0 G χ / / 1 1 / / Z / / L ˜ G / / L 0 G / / 1 , ( 6 . 11 ) and 1 / / Z / / L Z ˜ G / / LG χ / / 1 1 / / Z / / L Z ˜ G / / LG / / 1 . ( 6 . 12 )</trash>
+
+
+				</figure>
+
+				<p>The key observation is the following proposition which characterizes irreducible positive en - ergy representation of LG χ and Theorem 4 . 3 . 3 of [ 50 ] . The proof of Proposition 6 . 4 follows directly from the definition of LG χ in ( 6 . 8 ) .</p>
+
+				<figure>
+					<head>Proposition 6 . 4 .</head>
+
+
+				</figure>
+
+				<p>For any irreducible positive energy representation of LG χ , the pull - back rep - resentation to L Z ˜ G is an irreducible positive energy representation of L Z ˜ G ( as classified in [ 50 ] ) such that the center Z , as a subset of L Z ˜ G under the canonical section s : Z → ˆ Z , acts as multiplication by the character χ .</p>
+
+				<figure>
+					<trash>Proposition 6 . 5 . ( Theorem 4 . 3 . 3 of [ 50 ]</trash>
+
+
+				</figure>
+
+				<p>) Let ( H λ , π ) be an irreducible positive energy repre</p>
+
+			</div>
+			<div>
+				<head>sentation of</head>
+
+				<p>L ˜ G of level k and highest weight λ ∈ Λ * k . For the distinguished discontinuous loop ζ z associated to z ∈ Z , the conjugated representation γ → π ( ζ −1 z γζ z ) of L ˜ G on H λ is an irreducible positive energy representation of L ˜ G of level k and the highest weight z · λ ∈ Λ * k , where z · λ denotes Z ⊂ Z ( ˜ G ) - action as in ( 6 . 3 ) .</p>
+
+				<p>Given a distinguished discontinuous loop ζ z ∈ L Z ˜ G associated to z ∈ Z , from Proposition 6 . 5 , we know that the conjugated representation of ( H λ , π ) by ζ z , denoted by ( ζ z ) * H λ , is equivalent to the irreducible positive energy module H z·λ of</p>
+
+				<figure>
+					<trash>L ˜ G . There is a character map Λ * k −→ Hom ( Z , U ( 1 ) ) given by λ → e 2πi&lt;λ , ·&gt; , ( 6 . 13 ) where e 2πi&lt;λ , ·&gt; is the character on Z : h ∨ → e 2πi&lt;λ , h ∨ &gt; for h ∨ ∈ Λ ∨ Z . Lemma 6 . 6 . ( Cf . Lemma 7 . 1 in [ 50 ]</trash>
+
+
+				</figure>
+
+				<p>) For any positive energy irreducible representation H λ of L ˜ G at level k , the unique lift of Z ⊂ ˜ G acts on H λ by the character</p>
+
+				<figure>
+					<trash>h ∨ → e 2πi&lt;λ , h ∨ &gt; for [ h ∨ ] ∈ Λ ∨ Z / Λ ∨ r ∼ = Z .</trash>
+
+
+				</figure>
+
+				<p>Denote by Λ * k , χ the pre - image of χ ∈ Hom ( Z , U ( 1 ) ) for the character map ( 6 . 13 ) . Then Λ * k is partitioned into different sectors labelled by χ ∈ Hom ( Z , U ( 1 ) ) :</p>
+
+				<p><formula>Λ * k = χ∈Hom ( Z , U ( 1 ) ) Λ * k , χ .</formula></p>
+
+				<p>Note that the character map ( 6 . 13 ) factors through Λ * k / Z , the orbit space of the Z - action on Λ * k ( this follows from Lemma 7 . 2 and the proof of Corollary 7 . 3 in [ 50 ] ) . We fix a choice of a representative λ for each Z - orbit Z · λ . The irreducible positive energy representations of LG χ are labelled by elements in the space of orbits for Λ * k , χ / Z ( Cf . Theorem 6 . 1 and Corollary 7 . 3 in [ 50 ] ) , together with a character ρ ∈ Hom ( Z λ , U ( 1 ) ) for an orbit Z · λ with a non - trivial stabilizer Z λ = {z ∈ Z|z · λ = λ} .</p>
+
+				<figure>
+					<trash>Given an orbit Z · λ ∈ Λ * k , χ / Z , and ρ ∈ Hom ( Z λ , U ( 1 ) ) , denote by H ρ Z·λ the irreducible positive energy module of LG χ . The pull - back representation , as a L ˜ G - module , through the compositions of maps L ˜ G / / L Z ˜ G L 0 G χ / / LG χ admits the following decomposition H ρ Z·λ ∼ = λ ′ ∈Z·λ H λ ′ ⊗ C m λ ′ , ( 6 . 14 )</trash>
+
+
+				</figure>
+
+				<p>where H λ ′ is the irreducible positive energy modules of L ˜ G at level k with highest weight λ ′ and m λ ′ = 1 except for L ( P SO ( 4n ) ) χ , − ( Cf . Remark 6 . 3 ) with Z · λ = {λ} , k is even in which case m λ = 2 . Moreover , the group of discontinuous loops corresponding to elements in Z λ acts on H ρ Z·λ via the character ρ . Note that , if Z λ is non - trivial , H ρ Z·λ ( ρ ∈ Hom ( Z λ , U ( 1 ) ) ) have the same Virasoro character λ ′ ∈Z·λ χ k , λ ′ ( τ ) .</p>
+
+				<p>The appearance of the character ρ ∈ Hom ( Z λ , U ( 1 ) ) in the representation of LG χ should be understood in terms of the Borel - Weil theory for loop groups ( Cf . [ 43 ] ) . Denote by R k , χ ( LG ) the Abelian group generated by the irreducible positive energy represen - tations of LG χ . Denote by χ ρ k , Zλ the Kac - Peterson character corresponding to the irreducible positive energy representation H</p>
+
+			</div>
+			<div>
+				<head>ρ</head>
+
+				<p>Z·λ of LG χ for Z · λ ∈ Λ * k , χ , and ρ ∈ Hom ( Z λ , U ( 1 ) ) . Then R k , χ ( LG ) is an Abelian group generated by those χ ρ k , Zλ . 6 . 2 . Multiplicative bundle gerbes . Multiplicative bundle gerbes on G have transgressive Dixmier - Douady class ( [ 15 ] ) . For a compact , connected and simple Lie group G , H 4 ( BG , Z ) ∼ = Z , in terms of the generators of H 4 ( BG , Z ) and H 4 ( B ˜ G , Z ) , a level k ∈ Z ∼ = H 4 ( B ˜ G , Z ) is transgressive for G = ˜ G / Z , if and only if ( Cf . [ 19 ] and [ 41 ] ) k 2 &lt; λ i ( z ) , λ i ( z ) &gt;∈ Z , ( 6 . 15 ) where {λ i ( z ) } z∈Z are those special fundamental co - weights corresponding to elements in Z . Let ℓ m be the smallest positive integer such that all transgressive levels for G = ˜ G / Z is a multiple of ℓ m . We call ℓ m the multiplicative level of G . We let ℓ f be the smallest positive integer lying in the image of H 3 ( G , Z ) → H 3 ( ˜ G , Z ) , it is called the fundamental level of G in [ 50 ] , see also [ 24 ] . Note that the fundamental level for SO ( 3 ) is 2 , and the multiplicative level of SO ( 3 ) is 4 . We need to construct a G - equivariant bundle gerbe over G for a multiplicative level k ∈ ℓ m Z . Note that the multiplicative level ℓ m is always a multiple of the basic level ℓ b . Given k ∈ ℓ m Z and χ ∈ Hom ( Z , U ( 1 ) ) , there exists a canonical central extension of LG given by ( 6 . 8 ) . Let PG be the space of smooth maps f : R → G such that θ → f ( θ + 2π ) f ( θ ) −1 is constant . The map PG → G given by f → f ( 2π ) f ( 0 ) −1 defines a principal LG - bundle over G . Then we can follow the construction in the proof of Proposition 2 . 3 to define a G - equivariant bundle gerbe over G .</p>
+
+				<p>Proposition 6 . 7 . Given a level k ∈ ℓ b Z and χ ∈ Hom ( Z , U ( 1 ) ) , the lifting bundle gerbe associated to the central extension LG χ as in ( 6 . 9 ) and the principal LG - bundle PG over G is a G - equivariant bundle gerbe over G , denoted by G ( k , χ ) , G , whose equivariant Dixmier - Douady class is determined by ( k , χ ) .</p>
+
+				<p>Proof . It is easy to show that the lifting bundle gerbe associated to the central extension LG χ as in ( 6 . 9 ) and the principal LG - bundle PG over G is a G - equivariant bundle gerbe . Pull - back LG χ to L Z ˜ G , we get a central extension of L Z ˜ G which is classified by the level k , and a cocycle in H 2 ( Z , U ( 1 ) ) . From the exact sequence ,</p>
+
+				<figure>
+					<trash>0 → Ext ( G , U ( 1 ) ) −→ H 3 G ( G , Z ) −→ H 3 ( G , Z ) , A . L . CAREY AND BAI - LING WANG</trash>
+
+
+				</figure>
+
+				<p>we know that the equivariant Dixmier - Douady class of G ( k , χ ) , G , as a class in H 3 G ( G , Z ) , is canonically determined by ( k , χ ) .</p>
+
+				<p>We keep the notation G k = G k , ˜ G for the bundle gerbe of level k on the simply connected Lie group G whose equivariant Dixmier - Douady class is k times the generator in H</p>
+
+				<p><formula>3 ˜ G ( ˜ G , Z ) .</formula></p>
+
+				<p>6 . 3 . G - equivariant bundle gerbe modules . Let Θ k be the closed bi - invariant 3 - form on G , Θ k = k 12 &lt; θ , [ θ , θ ] &gt;= k 12 &lt; ¯ θ , [ ¯ θ , ¯ θ ] &gt; , where θ , ¯ θ ∈ Ω 1 ( G , g ) the left - and right - invariant Maurer - Cartan forms . Note that k has to be a multiple of the fundamental level ℓ f in order that Θ k defines an integral cohomology class in H 3 ( G , Z ) . Here we require that k is a multiple of the basic level ℓ b , note that ℓ b is a multiple of ℓ f ( Cf . [ 50 ] ) . Group - valued moment maps for quasi - Hamiltonian G - manifolds and the corresponding Hamil - tonian LG - manifolds at level k have been studied also for compact , semi - simple , non - simply connected Lie groups ( [ 1 ] ) . A quasi - Hamiltonian manifold ( M , ω , µ ) and its Hamiltonian LG - manifold ( ˆ M , ˆ ω , ˆ µ ) at level k give rise to the following diagram</p>
+
+				<figure>
+					<trash>ˆ M π ˆ µ / / Lg * Hol M µ / / G , ( 6 . 16 ) wherê µ : ˆ M → Lg * is the moment map for the Hamiltonian LG - action . To be precise , ( ˆ M , ˆ ω , ˆ µ ) is actually a Hamiltonian LG χ - manifold with LG χ - equivariant moment map ˆ µ : ˆ M −→ Lg * = Lg * × {k} ֒→ Lg * ⊕ R ,</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>and</head>
+
+				<p>Lg * is again identified as the L 2 p - connections on the principal G - bundle over S 1 .</p>
+
+				<p>The proof of the following proposition is straightforward , see the proof of Theorem 3 . 5 .</p>
+
+				<figure>
+					<head>Proposition 6 . 8 .</head>
+
+
+				</figure>
+
+				<p>Given a level k ∈ ℓ b Z and χ ∈ Hom ( Z , U ( 1 ) ) , an LG χ - equivariant vector bundle E over a Hamiltonian LG - manifold M defines a G - equivariant bundle gerbe module of the G - equivariant bundle gerbe G ( k , χ ) , G . That means , the corresponding quasi - Hamiltonian G - manifold is a generalized equivariant bundle gerbe D - brane of G ( k , χ ) , G .</p>
+
+				<p>Let Q ( k , χ ) , G be the category of G - equivariant bundle gerbe modules of G ( k , χ ) , G . Then the quantization functor defined as in Definition 5 . 2 can be carried over to Q ( k , χ ) , G . The coadjoint orbits of the affine LG - action on Lg * through λ ∈ Λ * k , χ provide examples in Q ( k , χ ) , G .</p>
+
+				<p>Remark 6 . 9 . Given a Riemann surface Σ g , 1 of genus g with only one boundary component ( which is pointed by fixing a base point on the boundary ) , the moduli spacê M Σg , 1 of flat connections on Σ g , 1 × G modulo those gauge transformations which are trivial on the boundary is only a Hamiltonian L 0 G - manifold at level k , for a transgressive level k . The holonomy map ˆ M Σg , 1 / Ω 0 G defines a quasi - Hamiltonian G manifold . But M Σg , 1 does not admit a LG - action .</p>
+
+				<p>Given a Hamiltonian L 0 G - manifold M at level k with a free Ω 0 G - action such that M / Ω 0 G is a quasi - Hamiltonian G - manifold , we need to construct in a canonical way a Hamiltonian</p>
+
+			</div>
+			<div>
+				<head>LG</head>
+
+				<figure>
+					<figDesc>- manifold M # at level k , and an associated principal ΩG - bundle over M , i . e . fill in the diagram ,</figDesc>
+					<trash>ˆ M # ΩG µ # / / Lg * ΩG M µ / / G .</trash>
+
+					<head>Lemma 6 . 10 .</head>
+
+
+				</figure>
+
+				<p>Given a Hamiltonian L 0 G - manifold M at level k with its quasi - Hamiltonian G - manifold µ : M → G , then the fiber product M = M × G ˜ G is a quasi - Hamiltoniañ G - manifold with the corresponding Hamiltonian L ˜ G - manifold M # is also a Hamiltonian LG - manifold .</p>
+
+				<figure>
+					<trash>Proof . Define G - action on M × G ˜ G via ˜ g · ( m , ˜ g 1 ) = ( π ( ˜ g ) · m , ˜ g ˜ g 1 ˜ g −1 ) ,</trash>
+
+					<figDesc>where π : ˜ G → G is the covering map . Then the projectioñ µ : ˜ M = M × G ˜</figDesc>
+
+				</figure>
+
+				<p>G → ˜ G is a ˜ G - equivariant map . M is a quasi - Hamiltonian G - manifold , it is easy to see that ( ˜ M , ˜ µ ) is a quasi - Hamiltoniañ G - manifold and the following diagram commutes :</p>
+
+				<p><formula>˜ M ˜ µ / / ˜ G π M µ / / G . ( 6 . 17 )</formula></p>
+
+				<p>As G is simply - connected , the corresponding Hamiltonian L ˜ G - manifold is given by the fiber product M # = ˜</p>
+
+				<figure>
+					<trash>M × ˜ G Lg * : ˆ M # ˆ µ # / / Lg * Hol M ˜ µ / / ˜ G , ( 6 . 18 ) where Hol : Lg * → ˜ G is a universal Ω ˜ G - bundle over G . Composing Diagram ( 6 . 17 ) and Diagram ( 6 . 18 ) , we see that M # = ˜ M × ˜ G Lg *</trash>
+
+
+				</figure>
+
+				<p>is a Hamiltonian LG - manifold with LG - action given by the affine coadjoint action of LG on Lg * at level k :</p>
+
+				<p><formula>ˆ M # ΩG µ # / / Lg * ΩG M µ / / G . Remark 6 . 11 . ( 1 )</formula></p>
+
+				<p>Note that the center Z ⊂ ˜ G acts trivially oñ M , and Z ⊂ L ˜ G , as constant loops , acts trivially on M # . Using the surjection L ˜ G → L 0 G , a Hamiltonian LG - manifold M # at level k admits a Hamiltonian L ˜ G - action at level k . ( 2 ) Supposê M # is pre - quantizable as a Hamiltonian LG - manifold with a LG χ - equivariant pre - quantization line L ˆ M # , then M # is also pre - quantizable as a Hamiltonian L ˜ G - manifold and the L ˜ G - equivariant line bundle L ˆ M # on which the center Z ⊂ L ˜ G acts via the character χ . This defines a natural map π D k , χ : Q ( k , χ ) , G −→ Q k , ˜ G . ( 6 . 19 )</p>
+
+				<p>Notice that the coadjoint orbit of the affine coadjoint LG - action on Lg * consists of {ζ z |z ∈ Z} - orbit , where the distinguished discontinuous loops {ζ z } become smooth loops in LG , the affine coadjoint action of these smooth loops on Lg * is exactly the Z - action defined by ( 6 . 3 ) . We fix a representative λ in each Z - orbit Z · λ ⊂ Λ * k .</p>
+
+				<p>Given a Hamiltonian LG - manifold ( ˆ M # , ˆ µ # ) at level k with a LG χ - equivariant pre - quantization line L ˆ M # , from Lemma 6 . 10 and Remark 6 . 11 , we know that a Hamiltonian LG - manifold ( ˆ M # , ˆ µ # ) at level k is also a Hamiltonian L ˜ G - manifold at level k and its pre - quantization line bundle L ˆ M # is L ˜ G - equivariant .</p>
+
+				<figure>
+					<trash>The Hamiltonian L ˜ G - reduction at λ ˆ M # λ , ˜ G : = ( ˆ µ # ) −1 ( L ˜ G · λ ) / L ˜ G ∼ = ( ˆ µ # ) −1 ( λ ) / ( L ˜ G ) λ , ( 6 . 20 ) with its pre - quantization line bundle is given by L λ , ˜ G : = L ˆ M # | ( ˆ µ # ) −1 ( λ ) × ( L ˜ G ) λ C ( * λ , 1 ) ,</trash>
+
+
+				</figure>
+
+				<p>where the action of L ˜ G λ on C ( * λ , 1 ) ∼ = C is given by the weight ( λ , 1 ) , notice that for λ ∈ Λ * k , χ , the weight ( +λ , 1 ) agrees with the character χ when restricted to Z ⊂</p>
+
+				<figure>
+					<trash>L ˜ G λ . The Hamiltonian LG - reduction at λ ∈ Λ * k , χ , ˆ M # λ , G : = ( ˆ µ # ) −1 ( LG · λ ) / LG ∼ = ( ˆ µ # ) −1 ( λ ) / ( LG ) λ ,</trash>
+
+
+				</figure>
+
+				<p>doesn &apos; t depend on the choice of λ in its Z - orbit . Here ( LG ) λ denotes the isotropic group of LG - action at λ . The pre - quantization line bundle over M # λ depends on a choice of a character ρ ∈ Hom ( Z λ , U ( 1 ) ) if Z λ = {z ∈ Z|z · λ = λ} is non - trivial . For each character ρ ∈ Hom ( Z λ , U ( 1 ) ) , the corresponding pre - quantization line bundle over M</p>
+
+				<figure>
+					<trash># λ , G is given by L ρ λ , G : = L ˆ M # | ( ˆ µ # ) −1 ( λ ) × ( LG ) λ C ( * λ , ρ −1 , 1 ) ,</trash>
+
+
+				</figure>
+
+				<p>where * λ is the dominant weight of the irreducible representation of G dual to the one with weight λ , the action of LG λ on C ( * λ , ρ −1 , 1 ) ∼ = C is determined by the action of ( L 0 G ) λ on C via the weight ( * λ , 1 ) and the character ρ −1 through the exact sequence 1 → ( L 0 G ) λ −→ ( LG ) λ −→ Z λ → 1 , where the quotient group LG λ / L 0 G λ is identified with the group of distinguished loops defined by ( 6 . 6 ) corresponding to elements in the stabilizer Z λ . We denote by / ∂ ρ λ , G the Spin c Dirac operator associated to the line bundle L ρ λ . It is understood that when Z λ is trivial , then</p>
+
+				<p><formula>L ρ λ , G = L 1 λ , G and / ∂ ρ λ , G = / ∂ 1 λ , G .</formula></p>
+
+				<p>The following proposition identifies the spaces of sections of the line bundles L ρ λ , G and L λ , ˜ G , denoted by Γ ( L ρ λ , G ) and Γ ( L λ , ˜ G ) respectively .</p>
+
+				<figure>
+					<head>Proposition 6 . 12 .</head>
+
+					<figDesc>Given λ ∈ Λ * k , χ , the space of sections of the line bundle L ρ λ , G consists of sections for the line bundle L ˆ M # | ( ˆ µ # ) −1 ( λ ) over ( ˆ µ # ) −1 ( λ ) with weight ( λ , ρ , 1 ) for the action of ( LG ) λ ; and the space of sections of the line bundle L λ , ˜ G consists of sections of the line bundle L ˆ M # | ( ˆ µ # ) −1 ( λ ) over ( ˆ µ # ) −1 ( λ ) with weight ( λ , 1 ) for the action of (</figDesc>
+					<trash>L ˜ G ) λ . Moverover , Γ ( L λ , ˜ G ) ∼ = ρ∈Hom ( Z λ , U ( 1 ) ) Γ ( L ρ λ , G ) . Proof . We know that M # λ , ˜ G</trash>
+
+
+				</figure>
+
+				<p>has |Z λ | - components , on which Z λ acts transitively via the group of distinguished discontinuous loops . Each component of</p>
+
+				<p><formula>M # λ , ˜ G is diffeomorphic tô M # λ , G .</formula></p>
+
+				<p>The line bundle L ˆ M # | ( ˆ µ # ) −1 ( λ ) is ( LG ) λ - equivariant and ( L ˜ G ) λ - equivariant . From the defi - nition of L λ , ˜ G , we can see that the space of sections of the line bundle L λ , ˜ G consists of sections of the line bundle L ˆ M # | ( ˆ µ # ) −1 ( λ ) over ( ˆ µ # ) −1 ( λ ) with weight ( λ , 1 ) for the action of ( L ˜ G ) λ ; and similarly the space of sections of the line bundle L ρ λ , G consists of sections for the line bundle L ˆ M # | ( ˆ µ # ) −1 ( λ ) over ( ˆ µ # ) −1 ( λ ) with weight ( λ , ρ , 1 ) for the action of ( LG ) λ . There is a Z λ - covering map</p>
+
+				<figure>
+					<trash>π : ˆ M # λ , ˜ G −→ M # λ , G , and there is a bundle isomorphism between L λ , ˜ G and π * L ρ λ , G . For a section s ∈ Γ ( L ρ λ , G ) , the linear map s → π * s identifies Γ ( L ρ λ , G ) with a subspace of Γ ( L λ , ˜ G ) such that Γ ( L λ , ˜ G ) ∼ = ρ∈Hom ( Z λ , U ( 1 ) ) Γ ( L ρ λ , G ) .</trash>
+
+					<head>Definition 6 . 13 .</head>
+
+					<figDesc>Given a G - equivariant bundle gerbe module ( ˆ M # , E ) ∈ Q ( k , χ ) , G , we define the quantization of ( ˆ M # , E ) to be to be</figDesc>
+					<trash>χ ( k , χ ) , G ( ˆ M , E ) = Z·λ∈Λ * k , χ / Z ρ∈Hom ( Z λ , U ( 1 ) ) Index ( / ∂ ρ λ , G ⊗ E , ˆ M # λ , G ) χ ρ k , Z·λ ∈ R k , χ ( LG ) .</trash>
+
+
+				</figure>
+
+				<p>This gives rise to a quantization functor χ ( k , χ ) , G : Q ( k , χ ) , G → R k , χ ( LG ) . 6 . 4 . The fusion category of bundle gerbe modules . Now recall that our fusion product in the simply connected case uses a pre - quantizable line bundle over the moduli spacê M Σ0 , 3 . For a non - simply connected Lie group , the moduli spacê M Σ0 , 3 is quantizable for any transgressive level k .</p>
+
+				<p>Proposition 6 . 14 . The G - equivariant bundle gerbe G ( k , χ ) , G over G is a G - equivariant multi - plicative bundle gerbe if k is transgressive and χ is the trivial homomorphism .</p>
+
+				<p>Proof . The first statement holds from the main result of [ 15 ] . To be G - equivariant and multi - plicative , the central extension LG χ of LG has to be G - equivariant as a principal U ( 1 ) - bundle over LG = G×ΩG with G - action on ΩG given by conjugation , and under the face operators from π i : G × G → G where π 0 ( g 1 , g 2 ) = g 2 , π 1 ( g 1 , g 2 ) = g 1 g 2 and π 2 ( g 1 , g 2 ) = g 1 for ( g 1 , g 2 ) ∈ G × G , there is a G - equivariant stable isomorphism π * 0 G ( k , χ ) , G ⊗ π * 2 G ( k , χ ) , G −→ π * 1 G ( k , χ ) , G .</p>
+
+				<p>These conditions hold if χ ∈ Hom ( Z , U ( 1 ) ) is the trivial homomorphism .</p>
+
+				<p>This proposition determines the conditions under which we may obtain the fusion category of bundle gerbe modules in this non - simply connected situation . From now on in this subsection , we assume that the level k is multiplicative for G , i . e . , k ∈ ℓ m Z , this excludes the case of Q ( k , χ , − ) , G for G = P SO ( 4n ) , as χ has to be non - trivial for LG χ , − .</p>
+
+				<p>We can define the fusion of two quasi - Hamiltonian G - manifolds µ i : ( M i , ω i ) →</p>
+
+				<figure>
+					<trash>G ( i = 1 , 2 ) as ( M 1 , ω 1 , µ 1 ) ⊠ ( M 2 , ω 2 , µ 2 ) = ( M 1 × M 2 , µ 1 · µ 2 ) , ( 6 . 21 ) with the 2 - form ω 1 + ω 2 + 1 2 &lt; µ * 1 θ , µ * 2 ¯ θ &gt; . Then ( M 1 × M 2 , µ 1 · µ 2</trash>
+
+
+				</figure>
+
+				<p>) is again a quasi - Hamiltonian G - manifold , and the corresponding Hamiltonian LG - manifold at level k is given by</p>
+
+				<figure>
+					<trash>M 1 ⊠ M 2 = ( M 1 × M 2 ) × G Lg * , ( 6 . 22 )</trash>
+
+					<figDesc>Where the universal principal ΩG - bundle over G factors through G : Lg * → ˜ G → G .</figDesc>
+
+				</figure>
+
+				<p>For the Hamiltonian L 0 G - manifold M Σg , 1 at any multiplicative level k , the proof of Proposi - tion 4 . 1 can be adapted to show that M</p>
+
+			</div>
+			<div>
+				<head>#</head>
+
+				<figure>
+					<figDesc>Σg , 1 admits a LG 1 pre - quantization line bundle . The key point in the proof is the Segal - Witten reciprocity property for transgressive central extensions ( we omit the details ) . The category of G - equivariant bundle gerbe modules for G ( k , 1 ) , G , when k is transgressive for G , admits the fusion object given by the fiber product M</figDesc>
+					<trash># Σ0 , 3 = ˆ M Σ0 , 3 × G 3 ˜ G 3 , which is a Hamiltonian ( LG ) 3 - manifold at level k with a ( LG ) 3 1 - equivariant pre - quantization line bundle L Σ0 , 3 . This can be verified the fact that M 1 ⊠ M 2 defined by ( 6 . 22 ) is diffeomorphic to the Hamiltonian quotient ( ˆ M 1 × ˆ M 2 ) × ˆ M # Σ0 , 3 / / diag ( LG × LG ) . Moreover , if M 1 and M 2 admit LG 1 - equivariant pre - quantization line bundles L 1 and L 2 re - spectively , then ( L 1 × L 2 ) × L Σ0 , 3 / / diag ( LG ) 2 1</trash>
+
+
+				</figure>
+
+				<p>defines a LG 1 - equivariant pre - quantization line bundle over M 1 ⊠ M 2 . Hence , the fusion cate - gory of rank one G - equivariant bundle gerbe modules of G ( k , 1 ) , G is well defined . We denote this fusion category by ( Q ( k , 1 ) , G , ⊠ G ) . We can apply the quantization functor χ ( k , 1 ) , G : ( Q ( k , 1 ) , G , ⊠ G ) −→ R k , 1 ( LG ) to define a fusion product on R k , 1 ( LG ) . Note that irreducible positive energy representations in R k , 1 ( LG ) are labelled by { ( Z · λ , ρ λ ) |Z · λ ⊂ Λ * k , 1 , ρ λ ∈ Hom ( Z λ , U ( 1 ) ) } .</p>
+
+				<figure>
+					<head>Definition 6 . 15 .</head>
+
+					<figDesc>We define the fusion coefficient for R k , 1 ( LG ) as :</figDesc>
+					<trash>N ( Z·ν , ρν ) ( Z·λ , ρ λ ) , ( Z·µ , ρµ ) : = Index / ∂ ( ρ λ , ρµ , ρν ) ( * λ , * µ , ν ) , G , ˆ M # Σ0 , 3 ( G , * λ , * µ , ν ) , ( 6 . 23 ) wherê M # Σ0 , 3 ( G , * λ , * µ , ν ) denotes the Hamiltonian ( LG ) 3 - reduction of M # Σ0 , 3 at ( * λ , * µ , ν ) , and / ∂ ( ρ λ , ρµ , ρν ) ( * λ , * µ , ν ) , G is the corresponding Spin c Dirac operator . Theorem 6 . 16 . χ ρ λ k , Z·λ * χ ρµ k , Z·µ = ( Z·ν , ρν ) N ( Z·ν , ρν ) ( Z·λ , ρ λ ) , ( Z·µ , ρµ ) χ ρν k</trash>
+
+
+				</figure>
+
+				<p>, Z·ν defines a fusion ring struc - ture on R k , 1 ( LG ) with the unit given by χ k , Z·0 , the representation corresponding to the Z - orbit through 0 .</p>
+
+				<p>FUSION OF SYMMETRIC D - BRANES AND VERLINDE RINGS</p>
+
+			</div>
+			<div>
+				<head>37</head>
+
+				<p>Proof . The fusion product defined on the Q ( k , 1 ) , G is commutative and associative modulo LG - equivariant symplecmorphisms and equivalence of LG 1 - equivariant line bundles . This imply that the fusion product on R k , 1 ( LG ) is commutative and associative . The unit in Q ( k , 1 ) , G is given by ΩG with its pre - quantization line bundle ΩG 1 × U ( 1 ) C , the quantization functor χ ( k , 1 ) , G : Q ( k , 1 ) , G −→ R k , 1 ( LG ) sends ΩG to χ k , Z·0 .</p>
+
+				<figure>
+					<head>Proposition 6 . 17 .</head>
+
+					<figDesc>If Z · λ , Z · µ and Z · ν are free Z - orbits , then</figDesc>
+
+				</figure>
+
+				<p><formula>N Z·ν Z·λ , Z·µ = z∈Z N z·ν λ , µ .</formula></p>
+
+				<p>Proof . Note that the Verlinde coefficients {N ν λ , µ } for R k ( L ˜ G ) satisfy the following symmetry under the action of Z : N z1z2·ν z1·λ , z2·µ = N ν λ , µ for any z 1 , z 2 ∈ Z . This is due to the fact that the moduli spaces for calculating the Verlinde coefficients N ν λ , µ and N z1z2·ν z1·λ , z2·µ for R k ( L ˜ G ) are identical :</p>
+
+				<figure>
+					<trash>ˆ M # Σ0 , 3 ( ˜ G , * λ , * µ , ν ) ∼ = ˆ M # Σ0 , 3 ( ˜ G , * ( z 1 · λ ) , * ( z 2 · µ ) , z 1 z 2 · ν ) from the holonomy descriptions of these moduli spaces . These facts imply that ˆ M # Σ0 , 3 ( G , * λ , * µ , ν ) ∼ = z∈Z M # Σ0 , 3 ( ˜ G , * λ , * µ , z · ν ) , as symplectic</trash>
+
+
+				</figure>
+
+				<p>manifolds , and their corresponding pre - quantization line bundles are also equiva - lent for free Z - actions on Z · λ , Z · µ and Z · ν . Hence , we have</p>
+
+			</div>
+			<div>
+				<head>N Z·ν</head>
+
+				<p>Z·λ , Z·µ = z∈Z N z·ν λ , µ .</p>
+
+				<p>Remark 6 . 18 . The fusion category ( Q ( k , 1 ) , G , ⊠ G ) is actually a braided tensor category , see [ 7 ] for a definition of a braided tensor category , where the braiding isomorphism for two Hamiltonian</p>
+
+				<figure>
+					<trash>LG - manifolds M 1 and M 2 ˆ M 1 ⊠ ˆ M 2 −→ M 2 ⊠ ˆ M 1</trash>
+
+					<figDesc>is induced by a diffeomorphism of Σ 0 , 3 exchanging the two incoming boundaries . Applying the conformal model for Σ 0 , 3</figDesc>
+
+				</figure>
+
+				<p>P w , q , q = {z ∈ C||q| ≤ |z| ≤ 1 , |z − w| ≥ |q|} with boundary points 1 , q and w + q , where 0 &lt; |w| &lt; 1 , and 0 &lt; |q| &lt; |w| − |q| &lt; 1 − 2|q| . Then the conformal model for Σ 0 , 3 with two incoming boundaries exchanged is given by P −w , q , q . Note that P w , q , q and P −w , q , q are connected by the path P e iθ w , q , q for θ ∈ [ 0 , π ] . The Pentagon axiom , Triangle axiom and Hexagon axioms follow from the multiplicative property of the equivariant bundle gerbe G ( k , 1 ) , G . This braiding isomorphism is important to determine the fusion coefficients for R k , 1 ( LG ) involving Z - orbits with non - trivial stabilizer .</p>
+
+				<p>To illustrate our result , we end this section by a detailed study for G = SO ( 3 ) and G = SU ( 3 ) / Z 3 . 6 . 5 . An example for G = SO ( 3 ) . Note that SO ( 3 ) = SU ( 2 ) / Z 2 , the basic level is 2 , and the level is transgressive if and only if it is a multiple of 4 . Given a class ( k , χ ) ∈ 2Z ⊕ ( Z 2 , U ( 1 ) ) where χ = ±1 ∈ Z 2 , we have the corresponding equivariant bundle gerbes G k , ±1 for k = 4n or k = 4n + 2 ( n &gt; 0 ) . We first give a complete classification of all irreducible positive energy representations of LSO ( 3 ) χ at level k ∈ 2Z and χ = ±1 .</p>
+
+				<p>For k = 4n and χ = +1 , the irreducible positive energy representations of LSO ( 3 ) +1 are labelled by Z 2 = Z ( SU ( 2 ) ) - orbits in the space of level k dominant weights . We instead use the half - integers ( half weights ) j = 0 , 1 / 2 , 1 , 3 / 2 , · · · , 2n − 1 / 2 , 2n to label level k dominant weights of LSU ( 2 ) . Denote H 0 , H 1 / 2 , H 1 , · · · , H 2n−1 / 2 , H 2n the corresponding irreducible positive energy representations of LSU ( 2 ) at level 4n . These rep - resentations of LSU ( 2 ) can be obtained by ( geometric ) quantization of equivariant bundle gerbe D - branes given by conjugacy classes labelled by those half - integer representations of SU ( 2 ) , or equivalently , quantization of equivariant bundle gerbe modules of the corresponding affine coadjoint LSU ( 2 ) - orbits at level 4n . Then the irreducible positive energy representations of</p>
+
+				<figure>
+					<trash>LSO ( 3 ) +1 , as LSU ( 2 ) - modules , are given by H 0 ⊕ H 2n , H 1 ⊕ H 2n−1 , H 2 ⊕ H 2n−2 , . . . H n−1 ⊕ H n+1 , H ± n ,</trash>
+
+
+				</figure>
+
+				<p>where the spin n is the fixed point of the Z 2 - action : j → 2n − j , and H ± n ∼ = H n as a LSU ( 2 ) - module , with the group of discontinuous loops corresponding to Z 2 acting via the character ±1 . These representations can be thought of as quantization of the projection of Z 2 - orbits of those conjugacy classes in SU ( 2 ) with integer spin weights . It is straightforward to verify that R 4n , +1 ( LSO ( 3 ) ) admits a fusion product , from which we obtain the non - diagonal modular invariant ( diagonal modular invariant for an extension of the chiral algebra by Z</p>
+
+				<figure>
+					<trash>Z 4n , +1 = k / 4−1 j=0 |χ k , j + χ k , k / 2−j | 2 + 2|χ k , n | 2 .</trash>
+
+
+				</figure>
+
+				<p>This agrees with the formula from fixed point resolution for simple current extensions in [ 47 ] [ 13 ] .</p>
+
+				<figure>
+					<figDesc>For k = 4n and χ = −1 , the irreducible positive energy representations of</figDesc>
+					<trash>LSO ( 3 ) −1 , as LSU ( 2 ) - modules , are given by H 1 / 2 ⊕ H 2n−1 / 2 , H 3 / 2 ⊕ H 2n−3 / 2 , H 5 / 2 ⊕ H 2n−5 / 2 , . . . H n−1 / 2 ⊕ H n+1 / 2 . Similarly , for k = 4n + 2 and χ = +1 , the irreducible positive energy representations of LSO ( 3 ) +1 , as LSU ( 2 ) - modules , are given by H 0 ⊕ H 2n+1 , H 1 ⊕ H 2n , H 2 ⊕ H 2n−1 , . . . H n−1 ⊕ H n+2 , H n ⊕ H n+1 . For k = 4n + 2 and χ = −1 , the irreducible positive energy representations of LSO ( 3 ) −1 , as LSU ( 2 ) - modules , are given by H 1 / 2 ⊕ H 2n+1 / 2 , H 3 / 2 ⊕ H 2n−1 / 2 , H 5 / 2 ⊕ H 2n−3 / 2 , . . . H n−1 / 2 ⊕ H n+3 / 2 , H ± n+1 / 2</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>,</figDesc>
+
+				</figure>
+
+				<p>where the spin n + 1 / 2 is the fixed point of the Z 2 - action : j → 2n + 1 − j , H</p>
+
+				<figure>
+					<trash>± n+1 / 2 ∼ = H n+1 / 2</trash>
+
+
+				</figure>
+
+				<p>as a LSU ( 2 ) - module , with the group of discontinuous loops corresponding to Z 2 acting via the character ±1 .</p>
+
+				<figure>
+					<trash>For each k ∈ 2Z and χ ∈ Z 2 ∼ = Hom ( Z 2 , U ( 1 ) ) , the quantization functor χ ( k , χ ) , SO ( 3 ) : Q ( k , χ ) , SO ( 3 ) −→ R k , χ ( LSO ( 3 ) ) , from the category Q ( k , χ ) , SO ( 3</trash>
+
+					<figDesc>) of SO ( 3 ) - equivariant generalized bundle gerbe modules of G k , χ over SO ( 3 ) to R k , χ ( LSO ( 3 ) ) , is surjective . Among the four cases discussed above , Q ( k , χ ) , SO ( 3 ) admits a fusion product structure if k = 4n and χ = +1 , and the corresponding quantization functor</figDesc>
+					<trash>χ ( 4n , +1 ) , SO ( 3 ) : Q ( 4n , +1 ) , SO ( 3 ) → R 4n , +1 ( LSO ( 3 ) ) preserves the fusion products . 6 . 6 . An example for G = SU ( 3 ) / Z 3 . Denote by {α 1 , α 2 } , and {α ∨ 1 , α ∨ 2</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>} the simple roots and the simple co - roots of SU ( 3 ) respectively . The fundamental weights and co - weights are denoted by {λ 1 , λ 2 } , and {λ</figDesc>
+					<trash>∨ 1 , λ ∨ 2 } respectively . Then we know that the highest root is given by α 1 + α 2 and α ∨ 1 + α ∨ 2 = λ ∨ 1 + λ ∨ 2 , α ∨ 1 − α ∨ 2 = 3 ( λ ∨ 1 − λ ∨ 2 ) , which gives the isomorphism Λ ∨ w / Λ ∨ r ∼ = Z ( λ ∨ 1 − λ ∨ 2 ) / 3Z ( λ ∨ 1 − λ ∨ 2 ) ∼ = Z 3 . The set of dominant weights at level Λ * k is given by {k 1 λ 1 + k 2 λ 2 |k i ≥ 0 , k 1 + k 2 ≤ k} , with the action of Z 3 generated by k 1 λ 1 + k 2 λ 2 → ( k − k 1 − k 2 ) λ 1 + k 1 λ 2 .</trash>
+
+
+				</figure>
+
+				<p>It is easy to see that the character map Λ * k → Hom ( Z 3 , U ( 1 ) ) is induced by k 1 λ 1 + k 2 λ 2 → ( k 1 − k 2 ) ( mod 3 ) , and Z 3 - action admits a fixed point if and only if k ∈ 3Z with the fixed point given by</p>
+
+				<figure>
+					<trash>k 3 λ 1 + k 3 λ 2 . For G = SU ( 3 ) / Z 3</trash>
+
+
+				</figure>
+
+				<p>, as the multiplicative level for SU ( 3 ) / Z 3 is 3 , we know that the trans - gressive level for SU ( 3 ) / Z 3 is given by k ∈ 3Z , we know that the multiplicative bundle gerbes over G are classified by their Dixmier - Douady classes : the level k ∈ 3Z . We note that ℓ b = 1 for SU ( 3 ) / Z 3 . Hence , the equivariant bundle gerbe G ( k , χ ) , SU ( 3 ) / Z3 exists for any level k ∈ Z and χ ∈ Hom ( Z 3 , U ( 1 ) ) . Here we only consider the transgressive levels . Given k ∈ 3Z and χ ∈ Z 3 ∼ = Hom ( Z 3 , U ( 1 ) ) , we have the corresponding quantization functor :</p>
+
+				<figure>
+					<trash>χ ( k / 3 , χ ) , SU ( 3 ) / Z3 : Q ( k / 3 , χ ) , SU ( 3 ) / Z3 −→ R k , χ ( L ( SU ( 3 ) / Z 3 ) ) . Denote by H ( k1 , k2 ) the positive energy irreducible representation of LSU ( 3 ) of the highest weight k 1 λ 1 + k 2 λ 2 ∈ Λ * k . Then R k , χ ( L ( SU ( 3 ) / Z 3 ) ) is generated by H ( k1 , k2 ) ⊕ H ( k−k1−k2 , k1 ) ⊕ H ( k2 , k−k1−k2 ) , for k 1 λ 1 + k 2 λ 2 ∈ Λ * k and χ ( [ λ ∨ 1 − λ ∨ 2 ] ) = e 2πi k 1 −k 2 3 for k 1 λ 1 + k 2 λ 2 with trivial stabilizer . For χ = 1 and k 1 = k 2 = k / 3 , there are three additional representations : H ρ0 ( k / 3 , k / 3 ) , H ρ1 ( k / 3 , k / 3 ) , H ρ1 ( k / 3 , k / 3 ) ,</trash>
+
+
+				</figure>
+
+				<p>which are equivalent to H ( k / 3 , k / 3 ) as LSU ( 3 ) - modules , with with the group of discontinuous loops corresponding to Z 3 acting via the character ρ i ∈ Hom ( Z 3 , U ( 1 ) ) . We give a complete list for k = 3 and k = 6 as follows : ( 1 ) For k = 3 , if χ ( [ λ ∨</p>
+
+				<figure>
+					<trash>1 − λ ∨ 2 ] ) = 1 , then R 3 , χ ( L ( SU ( 3 ) / Z 3 ) ) is generated by H ( 0 , 0 ) ⊕ H ( 3 , 0 ) ⊕ H ( 0 , 3 ) , H ρ0 ( 1 , 1 ) , H ρ1 ( 1 , 1 ) , H ρ2 ( 1 , 1 ) ,</trash>
+
+
+				</figure>
+
+				<p>FUSION OF SYMMETRIC D - BRANES AND VERLINDE RINGS 41 as LSU ( 3 ) - modules , where ( 1 , 1 ) is the fixed point of the Z 3 - action , H ρi ( 1 , 1 ) ∼ = H ( 1 , 1 ) as a LSU ( 3 ) - module , with the group of discontinuous loops corresponding to Z 2 acting via the character ρ i ; if χ ( [ λ ∨ 1 − λ ∨ 2 ] ) = e 2πi / 3 , then R 3 , χ (</p>
+
+				<figure>
+					<trash>L ( SU ( 3 ) / Z 3 ) ) is generated by H ( 1 , 0 ) ⊕ H ( 2 , 1 ) ⊕ H ( 0 , 2 ) , as LSU ( 3 ) - modules ; if χ ( [ λ ∨ 1 − λ ∨ 2 ] ) = e 4πi / 3 , then R 3 , χ ( L ( SU ( 3 ) / Z 3 ) ) is generated by H ( 2 , 0 ) ⊕ H ( 1 , 2 ) ⊕ H ( 0 , 1 ) , as LSU ( 3 ) - modules . Note that the Verlinde ring R 3 , +1 ( L ( SU ( 3 ) / Z 3</trash>
+
+
+				</figure>
+
+				<p>) ) gives rise to a modular invariant for SU ( 3 ) / Z 3 at level 3 ( Cf . [ 9 ] ) :</p>
+
+				<figure>
+					<trash>Z ( 3 , +1 ) , SU ( 3 ) / Z3 = |χ 3 , ( 0 , 0 ) + χ 3 , ( 3 , 0 ) + χ 3 , ( 0 , 3 ) | 2 + 3|χ 3 , ( 1 , 1 ) | 2 . ( 2</trash>
+
+
+				</figure>
+
+				<p>) For k = 6 , if χ ( [ λ ∨ 1 − λ ∨ 2 ] ) = 1 , then R 6 , χ ( L ( SU ( 3 ) / Z 3 ) ) is generated by H ( 0 , 0 ) ⊕ H ( 6 , 0 ) ⊕ H ( 0 , 6 ) ,</p>
+
+				<figure>
+					<trash>H ( 1 , 1 ) ⊕ H ( 4 , 1 ) ⊕ H ( 1 , 4 ) , H ρ0 ( 2 , 2 ) , H ρ1 ( 2 , 2 ) , H ρ2 ( 2 , 2 ) , H ( 3 , 3 ) ⊕ H ( 0 , 3 ) ⊕ H ( 3 , 0 ) , as LSU ( 3 ) - modules , where ( 2 , 2 ) is the fixed point of the Z 3 - action , H ρi ( 2 , 2 ) ∼ = H ( 2 , 2 ) as a LSU ( 3</trash>
+
+
+				</figure>
+
+				<p>) - module , with the group of discontinuous loops corresponding to Z 2 acting via the character ρ i ; if χ ( [ λ ∨</p>
+
+				<figure>
+					<trash>1 − λ ∨ 2 ] ) = e 2πi / 3 , then R 6 , χ ( L ( SU ( 3 ) / Z 3 ) ) is generated by H ( 1 , 0 ) ⊕ H ( 5 , 1 ) ⊕ H ( 0 , 5 ) , H ( 2 , 1 ) ⊕ H ( 3 , 2 ) ⊕ H ( 1 , 3 ) , H ( 4 , 0 ) ⊕ H ( 2 , 4 ) ⊕ H ( 0 , 2 ) , as LSU ( 3 ) - modules ; if χ ( [ λ ∨ 1 − λ ∨ 2 ] ) = e 4πi / 3 , then R 6 , χ ( L ( SU ( 3 ) / Z 3 ) ) is generated by H ( 2 , 0 ) ⊕ H ( 4 , 2 ) ⊕ H ( 0 , 4 ) , H ( 3 , 1 ) ⊕ H ( 2 , 4 ) ⊕ H ( 1 , 2 ) , H ( 5 , 0 ) ⊕ H ( 1 , 5 ) ⊕ H ( 0 , 1 ) , as LSU ( 3 ) - modules Note that only R 6 , +1 ( L ( SU ( 3 ) / Z 3</trash>
+
+					<figDesc>) ) admits a ring structure , which gives rise to a modular invariant for SU ( 3 ) / Z 3 at level 6 ( Cf . [ 6 ]</figDesc>
+
+				</figure>
+
+				<p>)</p>
+
+				<figure>
+					<trash>Z ( 3 , +1 ) , SU ( 3 ) / Z3 = |χ 6 , ( 0 , 0 ) + χ 6 , ( 6 , 0 ) + χ 6 , ( 0 , 6 ) | 2 + |χ 6 , ( 1 , 1 ) + χ 6 , ( 4 , 1 ) + χ 6 , ( 1 , 4 ) | 2 +|χ 6 , ( 3 , 3 ) + χ 6 , ( 0 , 3 ) + χ 6 , ( 3 , 0 ) | 2 + 3|χ 6 , ( 2 , 2 ) | 2 .</trash>
+
+
+				</figure>
+
+			</div>
+
+			<note place="foot" n="2000"> Mathematics Subject Classification. 55R65, 53C29, 57R20, 81T13. The authors acknowledge the support of the Australian Research Council. BLW thanks Valerio Toledano Laredo for stimulating e-mail correspondence. ALC thanks the Erwin Schrodinger Institute for their support.</note>
+
+			<note place="foot" n="8"> A.L. CAREY AND BAI-LING WANG</note>
+
+			<note place="foot">* 0 G ⊗ π * 2 G → π * 1 G over G×G, where π * i G is the pull-back bundle gerbe over G×G, such that, the stable isomorphism m is associative up to a 2-morphism in BGrb G×G×G : ϕ : π * 2 m @BULLET (π * 0 m ⊗ Id) =⇒ π * 1 m @BULLET (Id ⊗ π * 3 m), for which the corresponding line bundle L ϕ over G × G × G is trivial. Moreover, there is a canonical isomorphism between two trivial line bundles over G 4 with their induced trivializing sections: π * 1 L ϕ ⊗ π * 3 L ϕ ⊗ π * 5 L ϕ ∼ = π * 2 L ϕ ⊗ π *</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">References</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Malkin and E. Meinrenken Lie group valued moment maps</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Alekseev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Differential Geom</title>
+		<imprint>
+			<biblScope unit="volume">48</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="445" to="495" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Alekseev, V. Schomerus D-branes in the WZW model</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Yu</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="page">60</biblScope>
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<monogr>
+		<title level="m" type="main">Atiyah The geometry and physics of knots</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1990" />
+			<publisher>Cambridge University Press</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Bott The Yang-Mills equations over Riemann surfaces</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Atiyah</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Philos. Trans. Roy. Soc. London Ser. A</title>
+		<imprint>
+			<biblScope unit="volume">308</biblScope>
+			<biblScope unit="issue">1505</biblScope>
+			<biblScope unit="page" from="523" to="615" />
+			<date type="published" when="1983" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">L</forename>
+				<surname>Carey</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Bai-Ling</forename>
+				<surname>Wang</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Atiyah</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Gepner Fusion rules for extended current algebras</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Baver</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Modern Phys. Lett. A</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">24</biblScope>
+			<biblScope unit="page" from="1929" to="1945" />
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<title level="m" type="main">Lectures on tensor categories and modular functors</title>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Bakalov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Kirillov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Jr</forename>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Beauville Conformal blocks, fusion rules and the Verlinde formula</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ramat Gan Conf. Proc</title>
+		<imprint>
+			<publisher>Israel Math</publisher>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="75" to="96" />
+			<date type="published" when="1993" />
+			<publisher>Israel Math</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title level="m" type="main">String characters from Kac-Moody automorphisms, Nucl</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Bernard</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1987" />
+			<biblScope unit="page" from="628" to="648" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Stevenson Twisted K-theory and K-theory of bundle gerbes</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Bouwknegt</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Carey</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Mathai</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Murray</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comm. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">228</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="17" to="45" />
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title level="m" type="main">Ridout D-branes on group manifolds and fusion rings</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Bouwknegt</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Dawson</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2002" />
+			<biblScope unit="page" from="0212" to="065" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">McLaughlin The converse of the Segal-Witten reciprocity law</title>
+		<author>
+			<persName>
+				<forename type="first">J-L</forename>
+				<surname>Brylinski</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">A</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Internat. Math. Res. Notices</title>
+		<imprint>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page" from="371" to="380" />
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+		<title level="m" type="main">Zuber The A-D-E classification of minimal and A</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Cappelli</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Itzykson</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">B</forename>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">conformal invariant theories. Comm. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">113</biblScope>
+			<biblScope unit="page" from="1" to="26" />
+			<date type="published" when="1987" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Cardy Boundary conditions, fusion rules and the Verlinde formula</title>
+	</analytic>
+	<monogr>
+		<title level="j">Nuclear Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">324</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="581" to="596" />
+			<date type="published" when="1989" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<monogr>
+		<title level="m" type="main">Wang Bundle gerbes for Chern-Simons and Wess-Zumino-Witten theories, to apeear in Comm</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">L</forename>
+				<surname>Carey</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Johnson</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">K</forename>
+				<surname>Murray</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Stevenson</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">L</forename>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>Math. . Phys., math.DG/0410013</note>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">L</forename>
+				<surname>Carey</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">K</forename>
+				<surname>Murray</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Mickelsson Bundle gerbes in quantum field theory Rev Math Phys</title>
+		<imprint>
+			<date type="published" when="2000" />
+			<biblScope unit="page" from="65" to="90" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<monogr>
+		<title level="m" type="main">Wang The Universal Gerbe and Local Family Index Theory, preprint, math</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">L</forename>
+				<surname>Carey</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">L</forename>
+			</persName>
+		</author>
+		<editor>18] A.L. Carey, B.L. Wang Multiplicative bundle gerbe and equivariant twisted K-theory</editor>
+		<imprint>
+			<biblScope unit="page">0407243</biblScope>
+		</imprint>
+	</monogr>
+	<note>preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Topological Gauge Theories and Group Cohomology Commun</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Dijkgraaf</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Witten</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">129</biblScope>
+			<biblScope unit="page" from="393" to="429" />
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Boundary value problems for Yang-Mills fields</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Donaldson</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Jour. of Geom. Phys</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="89" to="122" />
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Spherical functions on affine Lie groups. Duke Math</title>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Etingof</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Frenkel</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Kirillov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J</title>
+		<imprint>
+			<biblScope unit="volume">80</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="59" to="90" />
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Schweigert The geometry of WZW branes</title>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Felder</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Frohlich</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Fuchs</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Geom. Phys</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="162" to="190" />
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<monogr>
+		<title level="m" type="main">Twining characters and orbit Lie algebras, hep-th</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Fuchs</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">U</forename>
+				<surname>Ray</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Schellekens</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Schweigert</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="9612060" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Kupiainen Spectra of Wess-Zumino-Witten models with arbitrary simple groups</title>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Felder</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Gawedzki</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comm. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">117</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="127" to="158" />
+			<date type="published" when="1988" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<monogr>
+		<title level="m" type="main">Teleman Twisted K-theory and Loop Group Representations, math.AT/0312155</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Freed</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">J</forename>
+				<surname>Hopkins</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<monogr>
+		<title level="m" type="main">Teleman Twisted equivariant K-theory with complex coefficients, math.AT/0206257</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Freed</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">J</forename>
+				<surname>Hopkins</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Schomerus Branes on Group Manifolds, Gluon Condensates, and twisted K-theory</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Fredenhagen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">0104</biblScope>
+			<biblScope unit="page">007</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Witten Anomalies in string theory with D-branes</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Freed</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Asian J. Math</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="819" to="851" />
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<monogr>
+		<title level="m" type="main">Roggenkamp The D-branes of SU(n)</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Gaberdiel</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Gannon</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2004" />
+			<biblScope unit="page" from="0407" to="015" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">GawedzkiTopological actions in two-dimensional quantum field theory</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Hooft</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Jaffe</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">K</forename>
+				<surname>Mack</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Mitter</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Nato</forename>
+				<surname>Stora</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Series</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Nonperturbative Quantum Field Theories</title>
+		<imprint>
+			<publisher>Plenum Press</publisher>
+			<date type="published" when="1988" />
+			<biblScope unit="page" from="101" to="142" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<monogr>
+		<title level="m" type="main">Gawedzki Abelian and non-Abelian branes in WZW models and gerbes, hep-th/0406072</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Reis WZW branes and gerbes</title>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Gawedzki</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Rev. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page" from="1281" to="1334" />
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Structure and unitary cocycle representations of loop groups and the group of diffeomorphisms of the circle</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Goodman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Wallach</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Reine Angew. Math</title>
+		<imprint>
+			<biblScope unit="volume">347</biblScope>
+			<biblScope unit="page" from="69" to="133" />
+			<date type="published" when="1984" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Quantization of pre-quasi-symplectic groupoids and their Hamiltonian spaces</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Laurent-Gengoux</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Xu</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Progr. Math</title>
+		<imprint>
+			<biblScope unit="volume">232</biblScope>
+			<biblScope unit="page" from="423" to="454" />
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Walcher Boundary Rings and N=2 Coset Models</title>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Lerche</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="volume">625</biblScope>
+			<biblScope unit="page" from="97" to="127" />
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Moore Geometrical interpretation of D-branes in gauged WZW models</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Maldacena</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Seiberg</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. High Energy Phys</title>
+		<imprint>
+			<biblScope unit="issue">7</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Stevenson Chern character in twisted K-theory: equivariant and holomorphic cases, Com- mun</title>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Mathai</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Math.Phys</title>
+		<imprint>
+			<biblScope unit="volume">228</biblScope>
+			<biblScope unit="page" from="17" to="49" />
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<monogr>
+		<title level="m" type="main">The basic gerbe over a compact simple Lie group, math</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Meinrenken</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Woodward Hamiltonian loop group actions and Verlinde factorization</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Meinrenken</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Differential Geom</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="417" to="469" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<monogr>
+		<title level="m" type="main">Woodward Fusion of Hamiltonian loop group manifolds and cobordism, dg-ga</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Meinrenken</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page">9707019</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Taming the conformal Zoo</title>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Moore</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Seiberg</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">220</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="422" to="430" />
+			<date type="published" when="1989" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">K</forename>
+				<surname>Bundle Gerbes</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>London</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Math. Soc</title>
+		<imprint>
+			<biblScope unit="volume">54</biblScope>
+			<biblScope unit="issue">2 2</biblScope>
+			<biblScope unit="page" from="403" to="416" />
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<monogr>
+		<title level="m" type="main">Segal Loop groups</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Pressley</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1988" />
+			<publisher>Oxford University Press</publisher>
+			<pubPlace>Oxford</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Weitsman Some comments on Chern-Simons gauge theory</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">R</forename>
+				<surname>Ramadas</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">M</forename>
+				<surname>Singer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comm. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">126</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="409" to="420" />
+			<date type="published" when="1989" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">K-theoretical boundary rings in N = 2 coset models</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Schafer-Nameki</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">706</biblScope>
+			<biblScope unit="issue">531</biblScope>
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">D-branes in N = 2 coset models and twisted equivariant K-theory. hep-th/0308058. [47] A. Schellekens, S. Yankielowicz Simple currents, modular invariants and fixed points</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Schafer-Nameki</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Internat. J. Modern Phys. A</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="issue">15</biblScope>
+			<biblScope unit="page" from="2903" to="2952" />
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">The definition of conformal field theory</title>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Segal</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">London Math. Soc. Lecture Note Ser</title>
+		<imprint>
+			<publisher>Cambridge Univ. Press</publisher>
+			<biblScope unit="volume">308</biblScope>
+			<biblScope unit="page" from="421" to="577" />
+			<date type="published" when="2004" />
+			<publisher>Cambridge Univ. Press</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<monogr>
+		<title level="m" type="main">The quantization conjectures revisited, Ann, of Math</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Teleman</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2000" />
+			<biblScope unit="page" from="1" to="43" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Positive energy representations of the loop groups of non-simply connected Lie groups</title>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Laredo</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comm. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">207</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="307" to="339" />
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+	<note>math. .QA</note>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">Verlinde Fusion rules and modular transformations in 2d conformal field theory</title>
+	</analytic>
+	<monogr>
+		<title level="j">Nuclear Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">300</biblScope>
+			<biblScope unit="page" from="360" to="376" />
+			<date type="published" when="1988" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">Non-abelian bosonization in two dimensions</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Witten</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comm. Maths. Phys</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="455" to="472" />
+			<date type="published" when="1984" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Two dimensional gauge theories revisited</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Witten</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Jour. of Geom. Phys</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="303" to="368" />
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<monogr>
+		<title level="m" type="main">High Energy Phys</title>
+		<author>
+			<persName>
+				<forename type="first">D-Branes</forename>
+				<surname>Witten</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K-Theory</forename>
+				<forename type="middle">J</forename>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+	<note>Paper. 019</note>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<monogr>
+		<title level="m" type="main">Geometric quantization</title>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Woodhouse</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1980" />
+			<publisher>Oxford University Press</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="m">SG/0307319. (Alan L. Carey) Mathematical Sciences Institute Canberra ACT 0200, Australia E-mail address: acarey@maths.anu.edu.au (Bai-Ling Wang) Mathematical Sciences Institute</title>
+		<meeting><address><addrLine>Canberra ACT 0200</addrLine></address></meeting>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

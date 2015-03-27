@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Measuring the ground-state wave functional of SU(2) Yang–Mills theory in 3 + 1 dimensions Abelian plane waves †</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2013-11-16">16 Nov 2013 July 29 – August 3, 2013</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName>
+								<forename type="first">Jeff</forename>
+								<surname>Greensite</surname>
+							</persName>
+							<email>E-mail: jgreensite@gmail.com</email>
+							<affiliation>
+								<orgName type="department">Physics and Astronomy Dept</orgName>
+								<orgName type="institution">San Francisco State University</orgName>
+								<address>
+									<postCode>94132</postCode>
+									<settlement>San Francisco</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Štefan</forename>
+								<surname>Olejník</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Institute of Physics</orgName>
+								<orgName type="institution" key="instit1">Slovak Academy of Sciences</orgName>
+								<orgName type="institution" key="instit2">SK–</orgName>
+								<address>
+									<postCode>845 11</postCode>
+									<settlement>Bratislava, Mainz</settlement>
+									<country>Slovakia, Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Measuring the ground-state wave functional of SU(2) Yang–Mills theory in 3 + 1 dimensions Abelian plane waves †</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2013-11-16">16 Nov 2013 July 29 – August 3, 2013</date>
+						</imprint>
+					</monogr>
+					<note>31st International Symposium on Lattice Field Theory LATTICE 2013 † This research was supported in part by the U.S. DOE under Grant No. DE-FG03-92ER40711 (J.G.), by the Slovak Research and Development Agency under Contract No. APVV–0050–11, and by the Slovak Grant Agency for Science, Project VEGA No. 2/0072/13 (Š.O.). In initial stages of this work, Š.O. was also supported by ERDF OP R&amp;D, Project meta-QUTE ITMS 2624012002. * Speaker.</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>A method of measuring relative probabilities of various gauge-field configurations in the Yang– Mills vacuum was proposed long ago [Phys. Lett. B 223 (1989) 207]. We applied this method to compute the square of the YM vacuum wave functional (VWF) in numerical simulations of SU(2) lattice gauge theory in D = 3 + 1 dimensions for sets of abelian plane waves. The results were compared to predictions based on some VWF proposals in the literature. None of them describes the data satisfactorily at large plane-wave momenta. The phenomenological best fit to data, containing three free parameters, appears to reduce in the continuum limit to the approximate form proposed in [Phys. Rev. D 77 (2008) 065003].</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+				<p>Measuring the ground-state wave functional of SU(2) YM theory. . .</p>
+
+			<div>
+				<head>Štefan Olejník 1. Formulation of the problem</head>
+
+				<p>One looks for the vacuum wave functional satisfying the Schrödinger equation of the SU(2) gauge theory in temporal gauge:</p>
+
+				<figure>
+					<trash>d 3 x − 1 2 δ 2 δ A a k (x) 2 + 1 4 F a i j (x) 2 Ψ 0 [A]</trash>
+
+
+				</figure>
+
+				<p>= E 0 Ψ 0 [A]. (1.1) Solutions of the equation corresponding to physical states must satisfy the Gauß-law constraint:</p>
+
+				<p><formula>δ ac ∂ k + gε abc A b k (x) δ Ψ[A] δ A c k (x) = 0. (1.2)</formula></p>
+
+				<p>The problem of finding the Yang–Mills VWF has been addressed by various techniques, in temporal and Coulomb gauges, in 2 and 3 space dimensions, but is still far from a full solution. (For a brief review and references see e.g. Sec. II of Ref. [1], the most recent work has been published in Ref. [2].) Relative weights of various gauge-field configurations can be computed also numerically, at least for some simple subsets, in simulations of the Yang–Mills theory in the lattice formulation, and we will present here results for sets of abelian plane waves and compare them to expectations based on a few proposed forms of the VWF.</p>
+
+			</div>
+			<div>
+				<head n="2">Proposals of the SU(2) Yang–Mills vacuum wave functional</head>
+
+				<p>On the basis of strong coupling and the idea of a magnetically disordered vacuum, one of us (J.G.) [3] suggested long ago that the VWF in (3+ 1) dimensions might assume the following form:</p>
+
+				<figure>
+					<trash>Ψ 0 [A] = N exp − 1 2 µ d 3 x Tr[F 2 i j (x)] . . . DR (2.1)</trash>
+
+
+				</figure>
+
+				<p>at least for sufficiently long-wavelength, slowly varying configurations. A similar suggestion in (2 + 1) dimensions was made by Halpern [4]. This so-called dimensional-reduction form cannot of course be right for all gauge fields, since it has some unwanted consequences, e.g. exact Casimir scaling and incorrect short-distance behaviour. We proposed another approximate VWF [5], that interpolates between the known g → 0 limit and the dimensional-reduction form,</p>
+
+				<figure>
+					<trash>Ψ 0 [A] = N exp − 1 4 d 3 x d 3 y F a i j (x) 1 K [A; m] ab xy F b i j (y) . . . GO (2.2) where K [A; m] ≡ −D 2 [A] − λ 0 + m 2 , (2.3) D 2 [A]</trash>
+
+
+				</figure>
+
+				<p>is the covariant laplacian in the adjoint representation, shifted by λ 0 , the lowest eigenvalue of (−D 2 [A]), and m is a free (mass) parameter. This form, a variation on an earlier VWF proposal of Samuel [6], was shown to be a fairly good approximation to the true ground state of the theory in (2 + 1) dimensions, see [1, 5, 7] for details. An ambitious attempt to compute the VWF analytically in (2 + 1) dimensions was undertaken by Karabali, Kim, and Nair [8]. They rewrote the theory with help of new gauge-invariant variables,</p>
+
+			</div>
+			<div>
+				<head>Measuring the ground-state wave functional of SU(2) YM theory. . .</head>
+
+				<p>Štefan Olejník and derived an expression for the VWF in their terms. When expressed again in the old variables, their VWF assumes the form:</p>
+
+				<figure>
+					<trash>Ψ 0 [A] = N exp − 1 2 d 2 x d 2 y B a (x) 1 √ −∇ 2 + m 2 + m xy B b (y) , (2.4) which, however, is not gauge-invariant. A gauge-invariant generalization to (3 + 1) dimensions, along the lines of the proposal (2.2), might be Ψ 0 [A] = N exp − 1 4 d 3 x d 3 y F a i j (x) 1 K [A; m] + m ab xy F b i j (y) . . . KKN (2.5)</trash>
+
+
+				</figure>
+
+				<p>This form will also be below confronted, for comparison&apos;s sake, with numerical data. However, we stress that this is not a proposal by the authors of Ref. [8], but is only a conjecture inspired by (2.2)–(2.4).</p>
+
+			</div>
+			<div>
+				<head n="3">Measurement method</head>
+
+				<p>The squared VWF is given (on a lattice in the temporal gauge) by the path integral:</p>
+
+				<figure>
+					<trash>Ψ 2 0 [U ′ ] = 1 Z [DU ]δ (U 0 ) ∏ x,i δ [U i (x, 0) −U ′ (x)]e −S[U] . (3.1)</trash>
+
+
+				</figure>
+
+				<p>The relative-weight method [9] enables one to compute ratios Ψ 2 [U (n) ]/Ψ 2 [U (m) ] for configurations belonging to a finite set U = {U</p>
+
+				<figure>
+					<trash>( j) i (x), j = 1, 2, . . . , M} (assuming</trash>
+
+
+				</figure>
+
+				<p>they are nearby in the configuration space). One uses Monte Carlo simulations with the usual update algorithm (e.g. heat-bath) for all spacelike links at t = 0 and for timelike links, while the spacelike links at t = 0 are updated all at once selecting one configuration from the set U at random and accepting/rejecting it via the Metropolis algorithm. Then</p>
+
+				<figure>
+					<trash>Ψ 2 [U (n) ] Ψ 2 [U (m) ] = lim N tot →∞ N n N m = lim N tot →∞ N n /N tot N m /N tot , (3.2) where N n (N m</trash>
+
+
+				</figure>
+
+				<p>) is the number of times the n-th (m-th) configuration is accepted and N tot is the total number of updates. The VWF can be written in the form Ψ 2 [U ] = N e −R[U]</p>
+
+				<figure>
+					<figDesc>, (3.3) hence the measured values of − log(N n /N tot ) should fall on a straight line with unit slope as function of R[U (n) ]</figDesc>
+
+				</figure>
+
+				<p>, see Fig. 1</p>
+
+				<figure>
+					<figDesc>for illustration. 4. Sets of test configurations Until now, we have performed numerical simulations using the relative-weight method for two kinds of simple gauge-field configurations: Measuring the ground-state wave functional of SU(2) YM theory. . .</figDesc>
+					<trash>Štefan Olejník 0 1 2 3 4 5 0 1 2 3 4 5 -log(N n /N tot )-0.592 R n Non-abelian constant conf&apos;ns, β=2.3, 20 4 lattice data</trash>
+
+					<head>Figure 1:</head>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>− log(N n /N tot ) (shifted by a constant) vs. R n = µκn for U nac [see Eq. (4.1</figDesc>
+
+				</figure>
+
+				<p>)] with κ = 0.14. The value of µ comes out 3.21(5).</p>
+
+			</div>
+			<div>
+				<head>• Non-abelian constant configurations:</head>
+
+				<p><formula>U nac = U (n) k (x) = 1 − a (n) 2 1 + ia (n) σ σ σ k , (4.1) where a (n) = κ 6L 3 n 1/4 , n = 1, 2, . . . , 10. (4.2)</formula></p>
+
+				<p>These configurations were used only to &quot; calibrate &quot; our computer code by comparison with the results of Ref. [9], obtained on lattices of much smaller size, see [10].</p>
+
+				<figure>
+					<trash>• Abelian plane-wave configurations: U apw = U ( j) 1 (x) = 1 − a ( j) n (x) 2 1 + ia ( j) n (x)σ σ σ 3 , U ( j) 2 (x) = U ( j) 3 (x) = 1 , (4.3) where n = (n 1 , n 2 , n 3 ), and a ( j) n = α n + γ n j L 3 cos 2π L n · x , j = 1, 2, . . . , 10. (4.4)</trash>
+
+					<figDesc>Pairs of (α n , γ n ) characterizing abelian plane waves with the wavenumber n in the above equations were carefully selected so that the actions of plane waves with different j were not much different (to ensure reasonable Metropolis acceptance rates in the method of Sec. 3).</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="5">Showcase of results</head>
+
+				<figure>
+					<figDesc>For a particular set of abelian plane waves with the wavenumber n the measured values of relative weights of individual plane waves are expected to be a linear function of (α n + γ n j). By a fit of the form − log(N</figDesc>
+					<trash>( j) n /N tot ) = R ( j) n = 1 2 (α n + γ n j) × ω(n) (5.1)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Measuring the ground-state wave functional of SU(2) YM theory. . .</figDesc>
+					<trash>Štefan Olejník 0 1 2 3 4 5 6 7 8 0 0.5 1 1.5 2 ω k Abelian plane waves, β=2.3, 24 4 lattice data 3.08 k 2 /(k 2 +1.37 2 ) 1/2 0.92 k 2 (1+1.05 k)/(k 2 +0.42 2 ) 1/2 1.74 k 2 0 1 2 3 4 5 6 7 8 9 10 0 0.5 1 1.5 2 ω k Abelian plane waves, β=2.5, 30 4 lattice data 2.58 k 2 /(k 2 +0.76 2 ) 1/2 1.13 k 2 (1+0.88 k)/(k 2 +0.32 2 ) 1/2 2.18 k 2</trash>
+
+					<head>Figure 2:</head>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Sample plots of ω(n) vs. k(n) for U apw sets, with fits of the DR (green line) and GO (red line).</figDesc>
+
+				</figure>
+
+				<p>one can determine the slope ω(n). The inferred dependence of ω(n) on n can then be compared with expectations based on the DR, GO, and KKN-inspired vacuum wave functionals. In particular, we performed the following fits:</p>
+
+				<figure>
+					<trash>ω(n) =                bk 2 (n) . . . DR, c k 2 (n) k 2 (n) + m 2 . . . GO, c k 2 (n) k 2 (n) + m 1 2 + m 2 . . . inspired by KKN, (5.2) where k 2 (n) = 2 ∑ i 1 − cos 2πn i L . (5.3)</trash>
+
+
+				</figure>
+
+				<p>In the KKN-inspired fit we used two mass parameters, m 1 and m 2 , instead of just m, cf. Eq. (2.5). We then performed one fit with both parameters free, and another constrained fit with m 1 = m 2 . It turned out that the former had a lower χ 2 and the preferred value of m 1 was close to 0.</p>
+
+				<p>The sample plots for fits of the form (5.2) are displayed in Fig. 2 for the DR and GO forms (ignore the blue lines for the moment) and Fig. 3 for the KKN-inspired forms. It is clear that while</p>
+
+				<figure>
+					<trash>0 1 2 3 4 5 6 0 0.5 1 1.5 2 ω k Abelian plane waves, β=2.5, 30 4 lattice data 3.16 k 2 /((k 2 +0.45 2 ) 1/2 +0.45) 3.98 k 2 /((k 2 +0.0023 2 ) 1/2 +0.95)</trash>
+
+					<head>Figure 3:</head>
+
+					<figDesc>A sample plot of ω(n) vs. k(n) for U apw , with &quot; KKN-inspired &quot; fits. Measuring the ground-state wave functional of SU(2) YM theory. . .</figDesc>
+
+				</figure>
+
+				<p>Štefan Olejník all forms in Eq. (5.2) describe the data reasonably at low plane-wave momenta, none of them is satisfactory for larger momenta. The agreement with data improves considerably by adding another parameter d to the GO form:</p>
+
+				<p><formula>ω(n) = c k 2 (n) k 2 (n) + m 2 (1 + dk(n)) . (5.4)</formula></p>
+
+				<p>The best fit to data show the blue lines in Fig. 2. For small-amplitude constant configurations the DR and GO forms of the VWF coincide. It is therefore an important check whether the value of µ nac determined from sets of non-abelian constant configurations agrees with the appropriate combination of parameters obtained for abelian plane waves. In particular, one expects:</p>
+
+				<p><formula>µ nac = 2c m apw . (5.5)</formula></p>
+
+				<p>As seen convincingly in Fig. 4(a), our results clearly pass this consistency check. If the parameters of the best fit, Eq. (5.4), correspond to physical quantities in the continuum limit, they should scale correctly when multiplied by the appropriate power of the function f (β ) =</p>
+
+				<figure>
+					<trash>0 0.01 0.02 0.03 0.04 0.05 2.2 2.3 2.4 2.5 (2c/m) f(β) β apw, L=24 L=30 µ f(β), nac, L=20 0 0.2 0.4 0.6 0.8 1 1.2 1.4 2.2 2.3 2.4 2.5 c β L=24 L=30 (a) (b) 0 20 40 60 80 100 120 2.2 2.3 2.4 2.5 m/f(β) β L=24 L=30 0 0.002 0.004 0.006 0.008 0.01 2.2 2.3 2.4 2.5 d f(β) β L=24 L=30 (c) (d)</trash>
+
+					<head>Figure 4: (a)</head>
+
+
+				</figure>
+
+				<p>The combination (2c/m) f (β ) of the best fit to data, Eq. (5.4). Also displayed is µ f (β ) = 0.0269(3) derived from non-abelian constant configurations. (b) The parameter c, (c) the rescaled parameter m/ f (β ), and (d) the rescaled parameter d f (β ) of the best fit, Eq. (5.4), vs. β .</p>
+
+				<p>Measuring the ground-state wave functional of SU(2) YM theory. . .</p>
+
+			</div>
+			<div>
+				<head>Štefan Olejník</head>
+
+				<p>(6π 2 β /11) 51/121 exp(−3π 2 β /11). The behaviour of [2c(β )/m(β )] f (β ), c(β ), m(β )/ f (β ), and d(β ) f (β ) vs. the coupling β is displayed in Fig. 4. While the scaling of (2c/m) is almost perfect, it is not as convincing for c and m separately, although their variation over the range of β = 2.2÷2.5 is not so large. On the contrary, d(β ) f (β ) drops considerably over the same range. The data thus suggest that the physical value of d vanishes in the continuum limit. This indicates that the form of the VWF, Eq. (2.2), proposed in Ref. [5], might be recovered in the continuum limit.</p>
+
+			</div>
+			<div>
+				<head n="6">Conclusions</head>
+
+				<p>Summarizing, none of the proposed SU(2) Yang–Mills vacuum wave functionals, confronted with our numerical results for abelian plane-wave configurations, describes data satisfactorily for larger plane-wave momenta. However, the data are nicely reproduced by a modification of our proposal [5], and the correction term may vanish in the continuum limit.</p>
+
+				<p>We presented here only a representative selection of our data, fits, and plots. A more extensive body of our results is contained in two recently submitted papers [11].</p>
+
+			</div>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Testing proposals for the Yang–Mills vacuum wavefunctional by measurement of the vacuum</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Greensite</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Matevosyan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Š</forename>
+				<surname>Olejník</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Quandt</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Reinhardt</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">P</forename>
+				<surname>Szczepaniak</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">83</biblScope>
+			<biblScope unit="page">11023941</biblScope>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<title level="m" type="main">The Yang–Mills vacuum wave functional in three dimensions at weak coupling, PoS(Confinement X)055, arXiv:1301 The regularization and determination of the Yang–Mills vacuum wave functional in three dimensions at</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Krug</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Pineda</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Krug</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Pineda</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="hep" to="th" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Calculation of the Yang–Mills vacuum wave functional</title>
+		<author>
+			<persName>
+				<surname>Greensite</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">158</biblScope>
+			<biblScope unit="page">469</biblScope>
+			<date type="published" when="1979" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Field strength and dual variable formulations of gauge theory</title>
+		<author>
+			<persName>
+				<surname>Halpern</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="issue">517</biblScope>
+			<date type="published" when="1979" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Š</forename>
+				<surname>Greensite</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Olejník</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Dimensional reduction and the Yang–Mills vacuum state in 2 + 1 dimensions</title>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="hep" to="lat" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">On the 0 ++ glueball mass</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Samuel</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="issue">4189</biblScope>
+			<biblScope unit="page">9604405</biblScope>
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Greensite</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Š</forename>
+				<surname>Olejník</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Coulomb confinement from the Yang–Mills vacuum state in 2 + 1 dimensions</title>
+		<imprint>
+			<date type="published" when="2010" />
+			<biblScope unit="page" from="hep" to="lat" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">On the vacuum wave function and string tension of Yang–Mills theories in (2 + 1)-dimensions</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Karabali</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Kim</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">P</forename>
+				<surname>Nair</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">434</biblScope>
+			<biblScope unit="issue">103</biblScope>
+			<biblScope unit="page">9804132</biblScope>
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Monte Carlo study of the Yang–Mills vacuum wave functional in D = 4 dimensions</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Greensite</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Iwasaki</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">223</biblScope>
+			<biblScope unit="issue">207</biblScope>
+			<date type="published" when="1989" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title level="m" type="main">Testing the Yang–Mills vacuum wave functional Ansatz in 3 + 1 dimensions, PoS(Confinement X)054, arXiv:1301</title>
+		<author>
+			<persName>
+				<forename type="first">Š</forename>
+				<surname>Greensite</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Olejník</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page">3631</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Numerical study of the SU(2) Yang–Mills vacuum state: Much ado about nothing?, PoS(QCD–TNT–III)027, submitted</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Greensite</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Š</forename>
+				<surname>Olejník</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Greensite, Š. Olejník, Numerical study of the Yang–Mills vacuum wavefunctional in D = 4 dimensions</title>
+		<imprint>
+			<biblScope unit="page">13106706</biblScope>
+		</imprint>
+	</monogr>
+	<note>submitted. for publication</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

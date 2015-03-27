@@ -1,0 +1,1559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Two-Loop QED Heavy-Flavor Contribution to Bhabha Scattering *</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2008-07-11">11 Jul 2008</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">R</forename>
+								<surname>Bonciani</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Institut fürTheoretischePhysik</orgName>
+								<orgName type="institution">UniversitätZürich</orgName>
+								<address>
+									<postCode>CH-8057</postCode>
+									<settlement>Zürich</settlement>
+									<country key="CH">Switzerland</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">A</forename>
+								<surname>Ferroglia</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Institut fürTheoretischePhysik</orgName>
+								<orgName type="institution">UniversitätZürich</orgName>
+								<address>
+									<postCode>CH-8057</postCode>
+									<settlement>Zürich</settlement>
+									<country key="CH">Switzerland</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Two-Loop QED Heavy-Flavor Contribution to Bhabha Scattering *</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2008-07-11">11 Jul 2008</date>
+						</imprint>
+					</monogr>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>We briefly review the status of the calculation of next-to-next-to-leading order corrections to large angle Bhabha scattering in pure QED. In particular, we focus on the analytic calculation of the two-loop virtual corrections involving a heavy-flavor fermion loop, which was recently completed. We conclude by assessing the numerical impact of these corrections on the Bhabha scattering cross section at colliders operating at a center of mass energy of 1 GeV and at the future ILC.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>Bhabha scattering [1] is the scattering process of an electron and a positron going into an electron-positron final state. The scattering of electrically changed particles is always accompanied by electromagnetic radiation, so that it becomes necessary to consider Bhabha scattering events of the type e + e − → e + e − + nγ. Since Bhabha scattering has a large cross section and involves charged leptons in the final state, it is a process that can be measured experimentally with very high accuracy. For example , in the KLOE/DAΦNE experiment with a center of mass energy of √ s ∼ 1 GeV, the cross section integrated over the allowed phase space region with scattering angle 55 • &lt; θ &lt; 125 • is of about 400 nb, known with 1 permille accuracy. Both at high energy e + − e − colliders and at e + − e − colliders operating at a intermediate center of mass energies ( √ s ∼ 1 − 10 GeV), it is possible to find kinematic regions in which the Bhabha scattering cross section is dominated by QED. This is the reason why the Bhabha scattering cross section can be calculated with high precision in perturbation theory, including nextto-next-to-leading order (NNLO) corrections.</p>
+
+				<p>Due to the nature of the two properties listed above, the Bhabha scattering was chosen for the luminosity determination at LEP, at the flavor * Work supported by the Swiss National Science Foundation (SNF) under contract 200020-117602. Zürich preprint number ZU-TH 11/08. factories (DAΦNE, VEPP-2M, etc.), and it will be employed for the luminosity measurement at the future International Linear Collider (ILC).</p>
+
+				<p>At colliders operating at a center of mass energy √ s ∼ 1 − 10 GeV, the luminosity is measured by observing Bhabha events at large scattering angles, θ ∼ 90 • ; in the past, at colliders operating at high center of mass energy such as LEP ( √ s ∼ 90, 200 GeV), the luminosity was measured by observing Bhabha events at small scattering angles, θ ∼ 1 • . At the ILC ( √ s ∼ 500 GeV), in order to disentangle the luminosity spectrum , it will be necessary to control both regions, θ ∼ 1 • and θ ∼ 90 • .</p>
+
+				<p>The luminosity L is defined as the ratio between the rate of events of a reference scattering process divided by the theoretical cross section of the same process: L = N/σ th . It enters , as a normalization factor, in the measurements of all other cross sections. Therefore, it has to be known with a very high accuracy. Since δL = δN +δσ th , and δN is to a large extent under control, a crucial point is to reduce the theoretical uncertainty δσ th to the greatest extent. This involves several steps, that we list schematically below. i) To begin, one needs a precise knowledge of the matrix elements, that is, to control the perturbative corrections to the basic process e + e − → e + e − + nγ. At the level of accuracy required by the experimental measurement , the NNLO corrections have to be taken into account. Therefore, from a dia- 2 grammatic point of view, it is necessary to evaluate two-loop 2 → 2 Feynman diagrams as well as one-loop 2 → 3 and tree-level 2 → 4. ii) Secondly, the theoretical cross section has to be inclusive of the soft-photon radiation and hard-collinear photon radiation. iii) Finally, it is necessary to consider the specific experimental set up. Usually detectors do not cover the whole solid angle but just a portion of it; when calculating the cross section, it is necessary to account for these experiment specific geometric constraints.</p>
+
+				<p>An accurate theoretical description of the Bhabha scattering must consider all these aspects. For this purpose, the best tools are Monte Carlo event generators (MC) that merge the fixed-order calculations with parton showers that take into account collinear and soft electromagnetic radiation . In the past, many MCs for the evaluation of the Bhabha scattering cross section were developed [2,3,4,5,6,7,8]. For a detailed discussion of their properties see [9].</p>
+
+				<p>In the rest of this proceeding, we will concentrate on the analytic calculation of the perturbative corrections to the matrix element.</p>
+
+			</div>
+			<div>
+				<head n="2">Perturbative Corrections</head>
+
+				<p>Since the theoretical error on the Bhabha scattering differential cross section directly affects the precision of the luminosity determination, in recent years a significant effort was devoted to the calculation of perturbative corrections to this scattering process. The NLO corrections are well known in the full Standard Model [10]. For what concerns the electroweak corrections at NNLO, only the logarithmic enhanced terms are known [11]. In pure QED, the situation is significantly different. The first complete diagrammatic calculation of the two-loop QED virtual corrections to Bhabha scattering can be found in [12]. However, this result was obtained by setting the electron mass m e to zero from the start, and by employing dimensional regularization (DR) to regulate both soft and collinear divergencies.</p>
+
+				<p>Today, the complete set of NNLO corrections to Bhabha scattering in pure QED have been evaluated using m e as the collinear regulator, as required in order to include these fixed order calculations in MCs. The two-loop Feynman diagrams involved in the calculation can be divided in three gauge independent sets: i) diagrams without fermion loops ( &quot; photonic &quot; ), ii) diagrams involving a closed electron loop, and iii) diagrams involving a closed loop of a fermion different from the electron. A large part of the NNLO &quot; photonic &quot; corrections can be obtained in a closed analytic form, including the full dependence on the electron mass, using a technique that has by now become standard in multi-loop calculations. This technique is based upon the Laporta algorithm [13] for the reduction of the Feynman diagrams to Master Integrals (MIs), and further based upon the differential equation method [14] for the analytical evaluation of the latter. With this technique, it is possible to calculate the NNLO corrections to the form factors [15] (see also the analogous cases for heavy quarks [16] and Higgs [17]) and to provide the photonic corrections to the cross section with the exception of the ones originating from two-loop boxes [18]. The calculation of the twoloop photonic boxes retaining the full dependence on m e is beyond the reach of this technique (partial results can be found in [19]). However, the full dependence on m e is not phenomenologically needed [18]. Fortunately, the physical problem exhibits a well defined mass hierarchy. The mass of the electron is always very small compared with other kinematic invariants, and it can be safely neglected everywhere except when it acts as a collinear regulator. The collinear structure of the NNLO corrections is the following:</p>
+
+			</div>
+			<div>
+				<head>dσ</head>
+
+				<figure>
+					<trash>(N N LO) dσ (Born) = α 2 π 2 2 i=0 δ (i) L i e + O m 2 e s , m 2 e t , (1) where L e = ln (s/m 2 e ) and where δ (i</trash>
+
+
+				</figure>
+
+				<p>) are functions of θ and of the mass of the heavy fermions involved in the virtual corrections. The approximation given by Eq. (1) is sufficient for a phenomenological description of the process. In the case of photonic corrections, the coefficients of the square and single collinear logarithm in Eq. (1) were obtained in [20,21]. The precision required for luminosity measurements at e + e − colliders demanded the calculation of the non-logarithmic coefficient, that was obtained in [22] through the infrared matching to the massless approximation. The technique of [22] allowed the reconstruction of the photonic differential cross section in the s ≫ m 2 e = 0 limit from the calculation in [12], where m e was set to zero from the start. The method employed in [22] involves a change of regularization scheme for the collinear divergencies originating from a vanishing electron mass. A method based on a similar principle was subsequently developed in [23,24]; the authors of [24] confirmed the result of [22].</p>
+
+				<p>The corrections involving a closed electron loop were calculated diagrammatically with the Laporta algorithm and the differential equation method in [25]. The analytic result, which retains the full dependence on m e , was expressed in terms of one-and two-dimensional Harmonic Polylogarithms (HPLs) of maximum weight three [26]. By expanding the cross section in the limit s, |t| ≫ m 2 e , the ratio of the NNLO corrections to the Born cross section can be written as in Eq. (1). However, the series starts with a cubic instead of a square collinear logarithm. As expected , the cubic collinear logarithm cancels out once the contribution of the soft pair production graphs is added to the virtual and soft corrections [27]. The analytic expressions of the expansion of the results of [25] was confirmed in [28,24].</p>
+
+			</div>
+			<div>
+				<head n="3">Heavy Flavor Corrections</head>
+
+				<p>We consider now the corrections originating from two-loop Feynman diagrams with a heavy fermion loop. Since this set of corrections involves an additional mass scale with respect to the corrections analyzed in the previous section, a direct diagrammatic calculation is in principle a more challenging task. Recently, in [24] the heavy flavor NNLO corrections to the Bhabha scattering cross section were obtained in the limit s, |t|, |u|</p>
+
+				<p><formula>≫ m 2 f ≫ m 2 e , where m 2</formula></p>
+
+				<p>f is the mass of the heavy fermion in the loop. This result was immediately confirmed in [28]. However, the results obtained in this approximation cannot be applied to the case in which the √ s &lt; m f (such as in the case of tau loops at √ s ∼ 1 GeV), and they apply only to a relatively narrow angular region perpendicular to the beam direction when √ s is not very much larger than m f (such as in the case of top quark loops at ILC). It was therefore necessary to calculate the heavy flavor corrections to Bhabha scattering assuming only that s, |t|, |u|</p>
+
+				<p><formula>, m 2 f ≫ m 2 e .</formula></p>
+
+				<p>The technical problem is simplified by carefully considering the structure of the collinear singularities of this set of corrections. The ratio of the NNLO heavy flavor corrections to the Born cross section is given by</p>
+
+			</div>
+			<div>
+				<head>dσ</head>
+
+				<figure>
+					<trash>(2,HF) dσ (Born) = α 2 π 2 1 i=0 δ (HF,i) L i e + O m 2 e s , m 2 e t . (2)</trash>
+
+
+				</figure>
+
+				<p>It is possible to prove that, in a physical gauge, all the collinear singularities factorize and can be absorbed in the external field renormalization [29]. This observation has two important consequences in the case at hand. The first consequence is that box diagrams are free of collinear divergencies in a physical gauge; since the sum of all boxes forms a gauge independent block, it can be concluded that the sum of all box diagrams is free of collinear divergencies in any gauge. The second consequence is that the single collinear logarithm in Eq. (2) arises from vertex corrections only. Moreover, if one chooses on-shell UV renormalization conditions, the irreducible two loop vertex graphs are free of collinear singularities. Therefore, among all the two-loop diagrams contributing to the NNLO heavy flavor corrections to Bhabha scattering, only the reducible vertex corrections of Fig. 1 are logarithmically divergent in the m e → 0 limit 2 , and they can be easily calculated even though they involve two different mass scales. By taking advantage of these two facts we were recently able to obtain the NNLO heavy flavor corrections to the Bhabha scattering differential cross section [30], assuming only that s, |t|, |u|, m</p>
+
+				<figure>
+					<trash>2 f ≫ m 2</trash>
+
+					<figDesc>e . In particular, in obtaining the analytic expression for the NNLO cross</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>2</head>
+
+				<p>Additional collinear logarithms arise also from the interference of one-loop vertex and one-loop self-energy dia- grams.</p>
+
+				<figure>
+					<head>Figure 1.</head>
+
+					<figDesc>Reducible two-loop vertex diagram contributing to the heavy flavor corrections. These kind of diagrams contain single electron mass logarithms.</figDesc>
+					<trash>+ = Free of collinear poles + = Free of collinear poles Figure 2</trash>
+
+
+				</figure>
+
+				<p>. Cancellation of the collinear poles among one-and two-loop box diagrams in the Feynman gauge. The diagrams are calculated by setting m e = 0 from the start. section, we worked in the Feynman gauge, setting m e = 0 from the start in all the diagrams with the exception of the reducible ones of the kind shown in Fig. 1 and in the interference of one-loop graphs. This procedure allowed us to effectively eliminate a mass scale from the twoloop boxes. The latter could then be evaluated with the techniques already employed in the diagrammatic calculation of the electron loop cor- rections 3 . In this approach, individual box diagrams are singular in the m e → 0 limit (since they are calculated in the Feynman gauge); their collinear singularities appear as additional poles in the dimensional regulator ǫ. However, it is easy to prove that such divergencies cancel in the sum of all the box diagrams, as schematically illustrated at the one-and two-loop level in Fig. 2. By expanding the analytic results of [30], it was possible to check the heavy flavor cross section in the s, |t|, |u| ≫ m 2 f ≫ m 2 e limit, which was previously known [24,28]. At intermediate energy colliders such as DAΦNE, the exact dependence on m f of the results of [30] allows us to account for the contribution of muons, taus, b-and c-quark loops to the Bhabha scattering cross section. At highenergy colliders such as the ILC, the top quark contribution can also be exactly evaluated. In the case in which the heavy flavor fermion is a quark, it was simple to modify the calculation of the twoloop self-energy diagrams to obtain the mixed QED-QCD corrections [30]. An alternative numerical approach to the calculation of the heavy flavor corrections to Bhabha scattering, based on dispersion relations, was pursued in [33]. With this method it is also possible to evaluate the contribution of the light quarks vacuum polarization to the Bhabha scattering cross section, that can be obtained by convoluting the kernel functions with the data concerning the cross section of the process e + e − → hadrons.</p>
+
+			</div>
+			<div>
+				<head n="4">Conclusions</head>
+
+				<p>The numerical impact of the photonic and electron loop QED corrections to the Bhabha scattering cross section at flavor factories was carefully examined in [8,9], in the context of the MC BABAYAGA. A similar analysis of the heavy flavor NNLO corrections is not yet available.</p>
+
+				<p>However, it is possible to evaluate numerically the NNLO heavy flavor corrections and compare them with the other contributions to the cross section. This can provide an estimate of the numerical impact of the heavy flavor corrections once these are introduced in a MC and correctly matched with the parton shower. In Table 1</p>
+
+				<figure>
+					<figDesc>(above) we show the results of such an evaluation for √ s = 1 GeV and for 50 • &lt; θ &lt; 130 • (see [30]</figDesc>
+
+				</figure>
+
+				<p>for details). The muon loop diagrams dominate the heavy flavor corrections; they are an order of magnitude larger than the corrections involving heavier fermions. They reach 1/2 permille of the Born cross section at large θ. In the lower part of Table 1 we show the results concerning the case in which √ s = 500 GeV. In this case, the muon and the tau contributions are of the same order, while the top contribution is suppressed by an order of magnitude at 90 • and by four orders of magnitude at 1 • .</p>
+
+				<p>In conclusion, the calculation of the two-loop corrections to Bhabha scattering in QED is now</p>
+
+				<figure>
+					<trash>√ s = 1 GeV θ phot (10 −4 ) e (10 −4 ) µ (10 −4 ) c (10 −4 ) τ (10 −4 ) b (10 −4 ) 50 • 36.688225 17.341004 1.7972877 0.3605297 0.0264013 0.0040026 70 • 41.240039 19.438718 2.6504950 0.5795114 0.0465329 0.0065839 90 • 45.780639 21.463240 3.4581845 0.6528096 0.0576348 0.0077240 110 • 49.366078 23.099679 4.0922189 0.5082196 0.0495028 0.0065277 130 • 50.349342 23.847394 4.4392717 0.2421310 0.0273145 0.0039094 √ s = 500 GeV θ phot (10 −3 ) e (10 −3 ) µ (10 −3 ) τ (10 −3 ) t (10 −3 ) 1 • 7.0074592 3.4957072 0.9690710 0.1542329 0.0000575 50 • 14.819671 7.5740980 2.3185800 1.8411736 0.1707137 70 • 15.687591 8.0081541 2.3708714 2.0072240 0.2998535 90 • 16.560845 8.4172449 2.4207950 2.1521199 0.4202418 110 • 17.270026 8.7451035 2.4090920 2.2456055 0.4979010 130 • 17.512918 8.8954702 2.2543834 2.2446158 0.5287459 Table 1</trash>
+
+
+				</figure>
+
+				<p>The second-order photonic, electron, muon, c-quark, τ -lepton, b-quark and t-quark contributions to the differential cross section of Bhabha scattering at √ s = 1 GeV and √ s = 500 GeV in units of 10 −4 (above) and 10 −3 (below) of the Born cross section. The c, b and t contributions include the O(αα s ) term. complete; these results remove the last piece of pure theoretical uncertainty in the luminosity determination at low-and high-energy accelerators.</p>
+
+			</div>
+
+			<note place="foot">arXiv:0806.4905v2 [hep-ph] 11 Jul 2008</note>
+
+			<note place="foot" n="3"> The necessary MIs can be found in [30,31,32]</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">J</forename>
+				<surname>Bhabha</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Roy. Soc. Lond. A</title>
+		<meeting>. Roy. Soc. Lond. A</meeting>
+		<imprint>
+			<date type="published" when="1936" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<forename type="middle">A</forename>
+				<surname>Berends</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Kleiss</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B Nucl. Phys. B</title>
+		<editor>537. F. A. Berends, R. Kleiss and W. Hollik</editor>
+		<imprint>
+			<biblScope unit="volume">228</biblScope>
+			<biblScope unit="issue">304</biblScope>
+			<biblScope unit="page">712</biblScope>
+			<date type="published" when="1983" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Cacciari</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Montagna</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Nicrosini</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Piccinini</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Phys. Commun</title>
+		<imprint>
+			<biblScope unit="volume">301</biblScope>
+			<biblScope unit="page">90</biblScope>
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Jadach</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Placzek</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Richter-Was</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">F L</forename>
+				<surname>Ward</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+				<surname>Was</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Phys. Commun</title>
+		<imprint>
+			<biblScope unit="volume">229</biblScope>
+			<biblScope unit="page">102</biblScope>
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Jadach</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Placzek</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">F L</forename>
+				<surname>Ward</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<editor>298. W. Placzek, S. Jadach, M. Melles, B. F. L. Ward and S. A. Yost</editor>
+		<imprint>
+			<biblScope unit="volume">390</biblScope>
+			<biblScope unit="page">9903381</biblScope>
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">B</forename>
+				<surname>Arbuzov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">V</forename>
+				<surname>Fedotovich</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">A</forename>
+				<surname>Ku-Raev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<forename type="middle">P</forename>
+				<surname>Merenkov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">D</forename>
+				<surname>Rushai</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Trentadue</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1997" />
+			<biblScope unit="page" from="9710" to="001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">M</forename>
+				<surname>Carloni</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Calame</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Lunardini</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Mon-Tagna</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Nicrosini</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Piccinini</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B Phys. Lett. B</title>
+		<editor>459. C. M. Car- loni Calame</editor>
+		<imprint>
+			<biblScope unit="volume">584</biblScope>
+			<biblScope unit="issue">520</biblScope>
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">M</forename>
+				<surname>Carloni</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Calame</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Montagna</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Nicrosini</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Piccinini</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. Proc</title>
+		<imprint>
+			<biblScope unit="page" from="131" to="48" />
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+	<note>Suppl</note>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Balossini</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">M</forename>
+				<surname>Carloni</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Calame</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Mon-Tagna</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Nicrosini</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Piccinini</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">758</biblScope>
+			<biblScope unit="issue">227</biblScope>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title level="m" type="main">proceedings of this confer- ence. C. M. Carloni Calame, proceedings of PHIPSI08</title>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Montagna</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2008-04-10" />
+			<pubPlace>Laboratori Nazionali di Frascati, Italy</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Consoli</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<editor>208. M. Bohm, A. Denner and W. Hollik</editor>
+		<imprint>
+			<biblScope unit="volume">160</biblScope>
+			<date type="published" when="1979" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">.</forename>
+				<forename type="middle">F A</forename>
+				<surname>Berends</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">M</forename>
+				<surname>Kleiss</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Caffo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Gatto</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Remiddi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. B Nucl. Phys. B Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">304</biblScope>
+			<biblScope unit="issue">378</biblScope>
+			<date type="published" when="1983" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">H</forename>
+				<surname>Kuhn</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">A</forename>
+				<surname>Penin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">A</forename>
+				<surname>Smirnov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Nucl. Phys. Proc. Suppl</title>
+		<editor>94. J. H. Kuhn, S. Moch, A. A. Penin and V. A. Smirnov B. Feucht, J. H. Kuhn, A. A. Penin and V. A. Smirnov</editor>
+		<meeting><address><addrLine>Phys</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<surname>Rev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="middle">B</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">H</forename>
+				<surname>Jantzen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">A</forename>
+				<surname>Kuhn</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">A</forename>
+				<surname>Penin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Smirnov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">93</biblScope>
+			<biblScope unit="issue">327</biblScope>
+			<biblScope unit="page" from="051301" to="752" />
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+				<surname>Bern</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Dixon</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Ghinculov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">63</biblScope>
+			<biblScope unit="page">053007</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Laporta</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Remiddi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B Int. J. Mod. Phys. A Phys. Lett. B Nucl. Phys. B</title>
+		<editor>283. S. Laporta</editor>
+		<imprint>
+			<biblScope unit="volume">379</biblScope>
+			<biblScope unit="issue">159</biblScope>
+			<date type="published" when="1981" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">V M</forename>
+				<surname>Kotikov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Caffo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Czyz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>La-Porta</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Remiddi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B Phys. Lett. B Phys. Lett. B E. Remiddi, Nuovo Cim. A Acta Phys. Polon. B</title>
+		<imprint>
+			<biblScope unit="volume">254</biblScope>
+			<biblScope unit="issue">29</biblScope>
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+	<note>2627. . Nuovo Cim. A 111</note>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Argeri</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Mastrolia</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Mod. Phys. A</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page">4375</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Bonciani</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Mastrolia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Remiddi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">) 399. M. Cza- kon, J. Gluza and T. Riemann</title>
+		<imprint>
+			<date type="published" when="2003" />
+			<biblScope unit="page">073009</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Bernreuther</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B Nucl. Phys. B Nucl. Phys. B Phys. Rev. D Phys. Rev. Lett. Nucl. Phys. B</title>
+		<editor>83. R. Bon- ciani, A. Ferroglia, T. Gehrmann, D. Maitre and C. Studerus</editor>
+		<imprint>
+			<biblScope unit="volume">706</biblScope>
+			<biblScope unit="issue">750</biblScope>
+			<biblScope unit="page" from="hep" to="ph" />
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">U</forename>
+				<surname>Aglietti</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Bonciani</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Degrassi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Vicini</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">595</biblScope>
+			<biblScope unit="issue">600</biblScope>
+			<biblScope unit="page" from="57" to="0701" />
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Anastasiou</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Beerli</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Bucherer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Daleo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+				<surname>Kunszt</surname>
+			</persName>
+		</author>
+		<editor>082. R. Bonciani, G. Degrassi and A. Vicini, JHEP 0711</editor>
+		<imprint>
+			<date type="published" when="2007" />
+			<biblScope unit="page" from="0701" to="095" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Bonciani</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Ferroglia</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">72</biblScope>
+			<biblScope unit="page">056004</biblScope>
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">A</forename>
+				<surname>Smirnov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">524</biblScope>
+			<biblScope unit="issue">129</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Heinrich</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">A</forename>
+				<surname>Smirnov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B Nucl. Phys. B</title>
+		<editor>M. Czakon, J. Gluza and T. Riemann</editor>
+		<imprint>
+			<biblScope unit="volume">598</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">A S</forename>
+				<surname>Smirnov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Friot</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Evaluating Feynman Integrals Phys. Lett. B</title>
+		<imprint>
+			<publisher>Springer</publisher>
+			<biblScope unit="volume">628</biblScope>
+			<biblScope unit="page">73</biblScope>
+			<date type="published" when="2004" />
+			<publisher>Springer</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">B</forename>
+				<surname>Arbuzov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">A</forename>
+				<surname>Kuraev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">G</forename>
+				<surname>Shaikhatdenov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Mod</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. A</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page">2305</biblScope>
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">W N</forename>
+				<surname>Glover</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">B</forename>
+				<surname>Tausk</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">J</forename>
+				<surname>Van</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Bij</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B Phys. Rev. Lett. Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">516</biblScope>
+			<biblScope unit="issue">185</biblScope>
+			<biblScope unit="page" from="0705" to="0706" />
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+	<note>33. . 22. A. A. Penin. 001. . 24. T. Becher and K. Melnikov</note>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Bonciani</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Ferroglia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Mastrolia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Remiddi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">J</forename>
+			</persName>
+		</author>
+		<imprint>
+			<pubPlace>Nucl</pubPlace>
+		</imprint>
+	</monogr>
+	<note>van. der Bij</note>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. BErratum-ibid. B Nucl. Phys. B Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">681</biblScope>
+			<biblScope unit="issue">280</biblScope>
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">B</forename>
+				<surname>Goncharov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Math. Res. Lett. D. J. Broadhurst, Eur. Phys. J. C Int. J. Mod. Phys. A</title>
+		<editor>311. E. Remiddi and J. A. M. Ver- maseren</editor>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="issue">15</biblScope>
+			<biblScope unit="page" from="497" to="516" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Gehrmann</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Remiddi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Phys. Commun</title>
+		<imprint>
+			<biblScope unit="volume">141</biblScope>
+			<biblScope unit="page">296</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun. D. Maˆ , Comput. Phys. Commun</title>
+		<imprint>
+			<biblScope unit="volume">144</biblScope>
+			<biblScope unit="issue">222</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">B</forename>
+				<surname>Arbuzov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">A</forename>
+				<surname>Kuraev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<forename type="middle">P</forename>
+				<surname>Merenkov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Trentadue</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Atom. Nucl.Yad. Fiz</title>
+		<imprint>
+			<biblScope unit="volume">60</biblScope>
+			<biblScope unit="issue">673</biblScope>
+			<biblScope unit="page" from="591" to="60" />
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Actis</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Czakon</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Gluza</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Rie-Mann</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">786</biblScope>
+			<biblScope unit="issue">26</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Frenkel</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">C</forename>
+				<surname>Taylor</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">116</biblScope>
+			<biblScope unit="issue">185</biblScope>
+			<date type="published" when="1976" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Bonciani</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Ferroglia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">A</forename>
+				<surname>Penin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">100</biblScope>
+			<biblScope unit="page">080</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">J</forename>
+				<surname>Broadhurst</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Fleischer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<forename type="middle">V</forename>
+				<surname>Tarasov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. C Nucl. Phys. B</title>
+		<editor>287. A. I. Davydychev and M. Y. Kalmykov</editor>
+		<imprint>
+			<biblScope unit="volume">60</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Fleischer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">V</forename>
+				<surname>Kotikov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<forename type="middle">L</forename>
+				<surname>Veretin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B Nucl. Phys. B</title>
+		<editor>343. U. Aglietti and R. Bonciani</editor>
+		<imprint>
+			<biblScope unit="volume">547</biblScope>
+			<biblScope unit="issue">668</biblScope>
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">698</biblScope>
+			<biblScope unit="issue">277</biblScope>
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Actis</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Czakon</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Gluza</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Rie-Mann</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">100</biblScope>
+			<biblScope unit="page">131602</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

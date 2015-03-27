@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Configuration Database for BaBar On-line</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date>March 24-28, 2003</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">R</forename>
+								<surname>Bartoldus</surname>
+							</persName>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">A</forename>
+								<surname>Salnikov</surname>
+							</persName>
+						</author>
+						<author>
+							<affiliation>
+								<orgName type="department">Stanford Linear Accelerator Center</orgName>
+								<orgName type="laboratory">CHEP03</orgName>
+								<orgName type="institution">Stanford University</orgName>
+								<address>
+									<addrLine>La Jolla</addrLine>
+									<postCode>94309</postCode>
+									<settlement>Stanford</settlement>
+									<region>CA, California</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation>
+								<orgName type="department">G. Dubois-Felsmann Caltech</orgName>
+								<address>
+									<addrLine>1200 E. California Bl</addrLine>
+									<postCode>91125</postCode>
+									<settlement>Pasadena</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation>
+								<orgName type="department">Y. Kolomensky LBNL</orgName>
+								<address>
+									<addrLine>1 Cyclotron Rd</addrLine>
+									<postCode>94720</postCode>
+									<settlement>Berkeley</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation>
+								<orgName type="department">On behalf of the BaBar Computing Group)</orgName>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Configuration Database for BaBar On-line</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published">March 24-28, 2003</date>
+						</imprint>
+					</monogr>
+					<note>SLAC-PUB-9831 1 MOKT004</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>The configuration database is one of the vital systems in the BaBar on-line system. It provides services for the different parts of the data acquisition system and control system, which require run-time parameters. The original design and implementation of the configuration database played a significant role in the successful BaBar operations since the beginning of experiment. Recent additions to the design of the configuration database provide better means for the management of data and add new tools to simplify main configuration tasks. We describe the design of the configuration database, its implementation with the Objectivity/DB object-oriented database, and our experience collected during the years of operation.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">INTRODUCTION</head>
+
+				<p>The BaBar on-line system uses a number of the databases to keep various information relevant to the data taking [1]. These databases include: • Conditions database [2], which contains time-dependent data, such as calibrations, geometry, etc. • Ambient database, which keeps a track of the history of data-taking conditions. This is a simplified conditions database and it is a part of the detector control system [3]. • Configuration database, which keeps settings for the parts of the data acquisition system (DAQ). • Prompt Reconstruction databases, which provide support for multi-node calibration. This paper describes the design and implementation of the configuration database. The main purpose of the configuration database is to provide all participants of the DAQ system with the data needed to configure them prior to data taking.</p>
+
+			</div>
+			<div>
+				<head n="2">CONFIGURATION DATABASE DESIGN 2.1. Requirements</head>
+
+				<p>The main requirements for the configuration database are the following: 1. Provide a support for configuration of the on-line software and hardware when data taking starts. 2. Be able to reconstruct the exact configuration used for in any run taken in the past. 3. Support both standard data taking with the full BaBar on-line system and standalone subsystems running on their test-stands. Additionally there are certain requirements, which influence both design and implementation, arising from the fact that the configuration database is a vital part of the real-time DAQ system.</p>
+
+			</div>
+			<div>
+				<head n="2.2">Configuration data</head>
+
+				<p>Configuration database stores and serves configuration data. Usually configuration data represent detector and software settings for the data taking, such as voltages, thresholds, trigger cuts, etc. The scope of these settings is from the beginning to the end of the data taking, i.e. single run. Different types of runs may require different settings, e.g. physics data taking, cosmics, and calibrations will need different triggers, high voltages, etc. To serve different types of runs there should be a number of &quot; active &quot; sets of configuration data, exactly which set of configuration data is used for the next run is determined by the run type.</p>
+
+			</div>
+			<div>
+				<head n="2.3">Configuration objects</head>
+
+				<p>Configuration data in the database are stored in the configuration objects, which are the &quot; atoms &quot; of the configuration database – they are the basic units of management. Single configuration object keeps related data, usually needed to configure a particular piece of hardware or software. Every configuration object in the database has an identity consisting of the three separate pieces: 1. Class name – non-empty string representing the type of the object. 2. Optional secondary key – string used to distinguish objects of the same type but used for different purposes. 3. Configuration key – a number. Enumerates objects of the same type/secondary key, similar to version.</p>
+
+				<p>Object identity can be represented in a simple textual format like &quot; ClassName:SecondaryKey[ConfigKey] &quot; , or &quot; ClassName[ConfigKey] &quot; when a secondary key is missing. This representation is used in the figures CHEP, La Jolla, March 23-28, 2003 MOKT004 below. The configuration database provides direct access to all configuration objects with their identity.</p>
+
+				<p>In addition to identity, the objects contain actual configuration data. Configuration objects are immutable, once created they never change; this allows exact reconstruction of the past configurations. When the user wants to change something in the configuration data, (s)he needs to create a new configuration object with the same type/secondary key, but with the new configuration key (version).</p>
+
+				<p>Configuration keys are assigned to the objects by the database itself by incrementing the last used key.</p>
+
+			</div>
+			<div>
+				<head n="2.4">Configuration maps and trees</head>
+
+				<p>Complete configuration of the whole system is a potentially big set of all configuration objects needed to setup DAQ system. To simplify management of the configuration this set should be further organized into a single entity. Configuration maps are special configuration objects, which serve as containers with the named links to other maps or objects. They have all the properties of the configuration objects, such as identity and immutability. The map object names the objects it is referring to; the scope of these names is the map objects itself. This allows two different map objects to refer to the same object with different link names. The maps are used as the building blocks for the configuration trees. The tree has a single root map, and the identity of the tree is the same as the identity of its root map object. Any configuration objects in the tree can be reached from the root of the tree by its path name, which is the sequence of the names needed to navigate from the root to the object in the tree. Because separate maps can link to the same objects, the trees also can share either basic objects or even sub-trees, thus eliminating the need for duplicating configuration objects. The complete configuration of the whole system is a single tree, and it has an identity, which is the same as the identity of the root map of the tree. Figure 1 shows an example of very simple configuration tree, which includes only a small number of configuration objects. There is also a special configuration map in the system which data taking run type strings into the configuration trees. It has links to the root maps, the links are named after the run types. Only one such mapping can be active at any given type, the active map is one with the highest configuration key. The trees referenced from the active run type map are themselves active, and only they can be used in the system. All other trees become a part of the configuration database history.</p>
+
+			</div>
+			<div>
+				<head n="2.5">Accessing configuration objects The following scenario describes client access to the configuration data. The run starting sequence is managed by the Run Control code. At the beginning of the new run Run Control determines the run type, which is usually specified by the operator. Then Run Control accesses the database and uses the special run type map to determine the identity of the configuration tree corresponding to the given run type. Run Control then distributes this identity to all participating DAQ processes. Each process uses this identity to access the corresponding configuration tree. Also each process knows the path name of its configuration object in a ConfigTopMap[250]</head>
+
+				<p>ConfigMap:Dch[13] ConfigMap:Emc[21]</p>
+
+				<figure>
+					<trash>Config. Map FileIdentifier: DchCalCycles [38]</trash>
+
+
+				</figure>
+
+				<p>CalConfigType: DchCalib [45] FileIdentifier: EmcCycles [16] ConfigFile: EMC:EC:X [2]</p>
+
+				<figure>
+					<trash>Config. Object Dch (Drift Chamber) Emc (Calorimeter) DchCalCycles CalConfigType Path to this object from the tree root: /Dch/DchCalCycles Top Map – root of the configuration tree ConfigFile: EMC:BF:X [2]</trash>
+
+
+				</figure>
+
+				<p>ConfigMap: DetCont [3]</p>
+
+				<figure>
+					<trash>ROMConfig DetCont BF EC</trash>
+
+					<head>Figure 1:</head>
+
+					<figDesc>Example of a simple configuration tree. The tree has a root map called &quot; Top Map &quot; , which refers to the subsystem maps. Subsystem maps can link to the objects directly or to the next level maps.</figDesc>
+
+				</figure>
+
+				<p>CHEP, La Jolla, March 23-28, 2003 MOKT004 tree and uses this path to locate and extract corresponding data object.</p>
+
+			</div>
+			<div>
+				<head n="2.6">Building configuration trees</head>
+
+				<p>Configuration trees could be arbitrarily complex, involving large numbers of objects. Building large trees is complicated by two design decisions: 1) it is not possible to change any existing object, 2) many active trees could reference the same basic object or sub-tree.</p>
+
+				<p>Typical configuration editing operations in these conditions would become rather involved. For example, replacing one of the leaf objects with a new version requires the update of all maps directly or indirectly connected to this objects in all active trees, and then replacing any modified tree in the run type map with the new tree.</p>
+
+				<p>To facilitate the configuration editing operations, one more structure is introduced into the configuration database – alias trees. Alias trees repeat the structure of the configuration trees but instead of real configuration objects they are built with the map aliases and object aliases. These aliases are free of one restriction of the configuration objects – they are allowed to change.</p>
+
+				<p>Also instead of numeric configuration keys aliases are identified by some meaningful alias names. An example of the alias tree is shown in figure 2. The objects aliases have links to the real configuration objects, while map aliases are only placeholders and have no connection to the corresponding configuration maps. Modifications to the alias trees are much easier, for example the version change of the basic object involves only the link between object alias and that configuration object. A special procedure is used to update the numeric trees after the changes are applied to alias trees. This procedure makes a node-by-node comparison of the active numeric trees and alias trees, and rebuilds the parts of the numeric trees affected by the changes in alias trees.</p>
+
+			</div>
+			<div>
+				<head n="3">IMPLEMENTATION</head>
+
+				<p>The configuration database is a vital part of the DAQ system, and it works in a real-time environment, which imposes strict requirements on performance and the quality of the implementation. The total number of clients accessing configuration data may reach 100, and many of them access data simultaneously during the &quot; configure &quot; transition when a new run starts.</p>
+
+			</div>
+			<div>
+				<head n="3.1">Storage technology</head>
+
+				<p>BaBar has chosen Objectivity/DB object database [4] as a storage technology for many of its databases, including the configuration database. There are many benefits, which Objectivity offers:</p>
+
+			</div>
+			<div>
+				<head>ConfigTopMap [TOP_PHYSICS]</head>
+
+				<p>ConfigMap:Dch [DCH_PHYSICS] ConfigMap:Emc [EMC_PHYSICS]</p>
+
+				<figure>
+					<trash>Map Alias FileIdentifier: DchCalCycles [PHYS_CYCLE]</trash>
+
+
+				</figure>
+
+				<p>CalConfigType: DchCalib [COMMON_CL] FileIdentifier: EmcCycles [ROM_PHYS] ConfigFile: EMC:EC:X [EC_CMN]</p>
+
+				<figure>
+					<trash>Object Alias Dch Emc DchCalCycles CalConfigType ConfigFile: EMC:BF:X [BF_CMN]</trash>
+
+
+				</figure>
+
+				<p>ConfigMap: DetCont [CTL_CMN]</p>
+
+				<figure>
+					<trash>ROMConfig DetCont FileIdentifier: DchCalCycles [38]</trash>
+
+
+				</figure>
+
+				<p>CalConfigType: DchCalib [45] FileIdentifier: EmcCycles [16] ConfigFile: EMC:EC:X [2] ConfigFile: EMC:BF:X [2]</p>
+
+				<figure>
+					<trash>Config. Object BF EC</trash>
+
+					<head>Figure 2:</head>
+
+					<figDesc>Example of the alias tree. Structure of the aliases repeats the structure of the configuration tree shown on Figure 1</figDesc>
+
+				</figure>
+
+				<p>. Object aliases have links to the real configuration objects.</p>
+
+			</div>
+			<div>
+				<head>CHEP, La Jolla, March 23-28, 2003 MOKT004</head>
+
+				<p>• Direct mapping of the persistency constructs into the OO paradigm and C++ constructs (classes). • Support for inter-object associations with direct links between objects, there is no need to run SQL-like queries to access the objects. • Complete support of ACID (Atomicity, Consistency, Isolation, and Durability) properties, providing data integrity guarantees. One more benefit of object databases in the context of the configuration database is the data model. The data model used in object databases is a network of objects, which makes the configuration database design easy to implement in the object database.</p>
+
+				<p>Certainly the same design could be implemented with a different data storage technology, such as relational databases, but it would require more effort for such an implementation with probable negative impact on performance.</p>
+
+			</div>
+			<div>
+				<head n="3.2">Data storage classes</head>
+
+				<p>All data storage objects in the configuration database are implemented as a single hierarchy of the persistent classes (see Figure 3). The root of the hierarchy is the BdbConfigObject class, which inherits directly from the Objectivity/DB ooObj class. The BdbConfigObject class implements functionality common to all inheriting classes, such as management of configuration keys, storage of bookkeeping information, etc. Some information, such as object class name and secondary key, are the properties of the Objectivity container object, which keeps the objects of the same class. All concrete classes, which keep configuration data, are subclasses of the BdbConfigObject class, and add specific services for data management. The configuration map class BdbConfigMap is implemented also as a subclass of BdbConfigObject. The configuration map class has a persistent map instance, which implements the list of named links to other configuration objects. There are two additional subclasses of the BdbConfigMap class, BdbConfigTopMap and BdbRunTypeMap, which implement additional functionality or constrains needed by the top configuration maps and run type maps.</p>
+
+			</div>
+			<div>
+				<head n="3.3">Client data access</head>
+
+				<p>Clients of the configuration database use standard BaBar approaches for accessing persistent data [5]. The main idea in these approaches is persistent/transient separation. Client code never manipulates persistent data directly, instead client code is presented with the transient interfaces which provide access to persistent data.</p>
+
+				<figure>
+					<figDesc>This separation allows clients to work independently of the concrete implementation of persistency mechanism. In this model every persistent data class has its transient counterpart. Conversion between transient and persistent representations of configuration data is performed by special proxy objects. The following scenario is used to access the data from client code: 1. Initialization code creates proxy objects for all types of configuration classes used in the client application. 2. When client needs a particular configuration object, it sends a request to the proxy dictionary. Object type (transient object class) is one of the request parameters. 3. Proxy dictionary locates a proxy object responsible for the data of given type and redirects the request to it. 4. Proxy finds persistent data in the configuration database using the parameters of the request or supplied during proxy construction. It then converts the persistent data into transient form and returns the transient object to client. Both BaBar Framework applications and standalone applications can use proxy mechanism to work with the configuration data. There are also clients, which have no direct access to database services, such as the code running in VME under control of VxWorks. One additional service was implemented which provides these clients with the configuration data using the BaBar DAQ-specific transport.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="3.4">Tools and utilities</head>
+
+				<p>There are two main tasks in managing the configuration database: 1) creating new configuration objects, 2) modifying configuration trees.</p>
+
+				<figure>
+					<trash>ooObj BdbConfigObject BdbConfigMap -key &lt;&lt;ConfigKey&gt;&gt; -links: ooMap * XxxConfigData -data &lt;&lt;Data&gt;&gt; BdbConfigTopMap + makeShortcuts()</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>BdbRunTypeMap</head>
+
+				<figure>
+					<head>Figure 3:</head>
+
+					<figDesc>Simplified diagram of the data storage classes. Only one concrete data storage class (XxxConfigData) is shown on this diagram.</figDesc>
+
+				</figure>
+
+				<p>CHEP, La Jolla, March 23-28, 2003 MOKT004 New configuration objects are created with standalone utilities. Every separate type of configuration objects are created with dedicated utilities, the data for the created object are usually loaded from external sources, such as files, or can be specified as command-line options. There are two related utilities, which control every aspect of the configuration trees and alias trees. The first is a command-line tool with a simple, but powerful, command language, which makes it easy to write sophisticated command scripts and automation tools. Another one is a GUI application (see Figure 4) built on top of Qt/X11 framework [6]. This application supports the same functionality as the command-line tool.</p>
+
+			</div>
+			<div>
+				<head n="4">CONCLUSION</head>
+
+				<p>BaBar has designed and implemented a configuration database for its on-line system, which provides configuration services for the components of DAQ system. The configuration database has successfully operated since the beginning of data taking in 1999, with minor modifications and additions later. The current implementation is based on Objectivity/DB ODBMS. The configuration database is a vital part of the BaBar DAQ system and proved to be sufficiently performant and reliable.</p>
+
+			</div>
+			<div>
+				<head n="5">AKNOWLEDGMENTS</head>
+
+				<p>This work is supported by Department of Energy contract DE-AC03-76SF00515.</p>
+
+			</div>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">The BaBar Online Databases An Overview of the BaBar Conditions Database BaBar Online Detector Control Architecture of the BaBar Reconstruction System: Practical Issues</title>
+		<author>
+			<persName>
+				<forename type="first">]</forename>
+				<forename type="middle">G</forename>
+				<surname>Zioulas</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">CHEP&apos;97</title>
+		<meeting><address><addrLine>Padova, Italy ; Padova, Italy ; Padova, Italy ; Berlin, Germany</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1997-04" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<title/>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Graphical interface for the configuration database. Upper left panel shows configuration tree structure, right panel displays configuration objects. Bottom part of the window is occupied by the message panel and transaction control</title>
+	</analytic>
+	<monogr>
+		<title level="j">Figure</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

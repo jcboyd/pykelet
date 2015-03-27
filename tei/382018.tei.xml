@@ -1,0 +1,2597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Bethe Ansatz for QCD Pomeron *</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="1995-01-19">19 Jan 1995 December, 1994</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">G</forename>
+								<forename type="middle">P</forename>
+								<surname>Korchemsky</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Institute for Theoretical Physics</orgName>
+								<orgName type="institution">State University of New York at Stony Brook</orgName>
+								<address>
+									<addrLine>Stony Brook</addrLine>
+									<postCode>11794 – 3840</postCode>
+									<region>New York</region>
+									<country key="US">U.S.A</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Bethe Ansatz for QCD Pomeron *</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="1995-01-19">19 Jan 1995 December, 1994</date>
+						</imprint>
+					</monogr>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>The equivalence is found between high–energy QCD in the generalized leading logarithmic approximation and the one-dimensional Heisenberg magnet. According to Regge theory, the high energy asymptotics of hadronic scattering amplitudes are related to sin-gularities of partial waves in the complex angular momentum plane. In QCD, the partial waves are determined by nontrivial two-dimensional dynamics of the transverse gluonic degrees of freedom. The &quot; bare &quot; gluons interact with each other to form a collective excitation, the Reggeon. The partial waves of the scattering amplitude satisfy the Bethe-Salpeter equation whose solutions describe the color singlet compound states of Reggeons – Pomeron, Odderon and higher Reggeon states. We show that the QCD Hamiltonian for reggeized gluons coincides in the multi–color limit with the Hamiltonian of XXX Heisen-berg magnet for spin s = 0 and spin operators the generators of the conformal SL(2,C) group. As a result, the Schrodinger equation for the compound states of Reggeons has a sufficient number of conservation laws to be completely integrable. A generalized Bethe ansatz is developed for the diagonalization of the QCD Hamiltonian and for the calculation of hadron-hadron scattering. Using the Bethe Ansatz solution of high–energy QCD we investigate the properties of the Reggeon compound states which govern the Regge behavior of the total hadron-hadron cross sections and the small−x behavior of the structure functions of deep inelastic scattering. * The paper is based on talks delivered at CERN (May 94), Princeton Univ. (June 94) and at the 2nd Workshop on Small−x and Diffractive Physics at the Tevatron, Fermilab (Sept 94) † On leave from the Laboratory of Theoretical Physics, JINR, Dubna, Russia</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>The Regge problem is one of the longstanding problems in high-energy physics which goes back to sixties [1]. In a general sense, it is the problem of behavior of hadronic scattering amplitudes in the limit of high-energies s and fixed transferred momentum t s ≫ −t ∼ M 2 (1.1) with M being a hadronic mass scale. There are a wealth of experimental data which still confirm its intricacies, e.g., remarkably linear Regge trajectories of hadronic families, approximate duality of hadronic scattering amplitudes [1], the growth of total hadronic cross sections [2] and the small−x behavior of the structure functions of deep inelastic scattering [3]. There were numerous attempts to solve the Regge problems during the pre-QCD era which have led to the development of the theory of the Regge poles [1]. The theory was inspired by the remarkable observation by Regge that, in quantum mechanics, the high-energy asymptotics of the scattering amplitudes in potential scattering is governed by the singularities of the partial waves in the complex angular momentum plane. It was understood from general principals of relativistic quantum field theory [1] that a similar phenomenon occurs in highenergy hadronic scattering in Regge kinematics (1.1). Namely, after the decomposition of the scattering amplitude A(s, t) over partial waves as A(s, t) = is</p>
+
+				<figure>
+					<trash>δ+i∞ δ−i∞ dω 2πi s M 2 ω A(ω, t) , (1.2)</trash>
+
+
+				</figure>
+
+				<p>the behavior of A(s, t) in the Regge limit (1.1) depends on the singularities of the partial waves, A(ω, t), which lie in the complex ω−plane to the left from the integration contour. Possible singularities of A(ω, t) were identified as Regge poles and Regge cuts. Among all families of Regge poles there is a special one corresponding to the so called Pomeranchuk poles or Pomerons, which have vacuum quantum numbers and which provide dominant contributions to the hadronic scattering amplitude. However, Regge theory itself does not allow us to calculate the positions of these singularities and it is still a challenge for QCD as a theory of strong interaction to give us this input from &quot; first principals &quot; . After almost twenty years of a great deal of activity, we have different phenomenological models to describe the Regge behavior of the scattering amplitudes [4, 5, 6, 7], but we do not have a complete understanding from QCD.</p>
+
+				<p>In this paper we concentrate on perturbative QCD approach to the Pomeron [8]. Namely, we consider hadrons as consisting of partons whose distributions are described by the nonperturbative hadronic wave functions in the infinite momentum frame. Hadrons scatter by exchanging quarks and gluons in the t−channel and we treat their interaction using the S−matrix of perturbative QCD. The hadronic scattering amplitude is a convolution of hadronic wave functions and partonic scattering amplitude. Although it cannot be calculated entirely perturbatively, we can find its evolution of as a function of energy s in perturbative QCD. The corresponding equations are called the evolution equations. There are at least two reasons why perturbative approach might make sense. First, since we do not understand dynamics in the nonperturbative regime of QCD, the perturbative approach is a first approximation to start with. Second, there is a simple way that perturbation theory itself could tell us about nonperturbative effects. Namely, studying ambiguities of perturbative series associated with the contribution of the so-called infrared renormalons one can get some insight into the structure of nonperturbative corrections [9, 10, 11, 12].</p>
+
+				<p>Analyzing the scattering amplitude in the Regge limit (1.1), one might be especially interested to consider the case t = 0, corresponding to the elastic forward scattering. Then, the optical theorem [1] allows us to relate the imaginary part of the scattering amplitude to the total hadronic cross section</p>
+
+				<figure>
+					<trash>σ tot h A h B (s) = 1 s Im A h A h B (s, t = 0) , (1.3)</trash>
+
+
+				</figure>
+
+				<p>with A h A h B the amplitude of elastic scattering of hadrons h A and h B . Moreover, replacing one of the incoming hadrons by virtual photon with M 2 = −Q 2 we get an analogous relation 1 for the structure function of deep inelastic scattering γ</p>
+
+				<figure>
+					<trash>* + h → X F (x, Q 2 ) = 1 s Im A γ * h (s, t = 0) , s = Q 2 /x , (1.4)</trash>
+
+
+				</figure>
+
+				<p>where −Q 2 is a photon virtuality and x is the Bjorken variable. The Regge limit (1.1) corresponds to s ≫ Q 2 or, equivalently, to small−x asymptotics of the structure function F (x, Q 2 ). We stress that relations (1.3) and (1.4) have been found under the additional conditions of unitarity and analyticity of the scattering amplitude, A(s, t), in its different channels and that one of the consequences of these conditions is the Froissart bound</p>
+
+				<figure>
+					<trash>σ tot h 1 h 2 (s) ≤ const. log 2 s , F (x, Q 2 ) ≤ const. log 2 x , s → ∞ , x → 0 . (1.5) Thus, in order to apply (1.3) and (1.4) in perturbative QCD, we have to calculate hadronic</trash>
+
+
+				</figure>
+
+				<p>scattering amplitude and preserve the conditions of unitarity and analyticity.</p>
+
+				<p>Expanded in powers of the coupling constant α s , the 2 → 2 scattering amplitudes have the following general form [14, 15]</p>
+
+				<figure>
+					<trash>in Regge kinematics (1.1), A(s, t) = i ∞ m=0 α s s (α s log s) m f m,m (t) + α s (α s log s) m−1 f m,m−1 (t) + . . . + α m s f m,0 (t) + O(s 0 ) , (1.6) where the f m,l (t) are some functions of the transferred momentum. In the case of deep inelastic scattering, the O(s 0</trash>
+
+
+				</figure>
+
+				<p>) term includes log Q 2 corrections to the scattering amplitude A γ * h . Since we are not able to resum corrections to all orders in α s , we need an effective approximation to the perturbative series which, first, will correctly describe the high-energy asymptotics of A(s, t) in perturbative QCD and, second, will be consistent with the unitarity and analyticity of the S−matrix. Combined together, these two conditions put severe restrictions on possible approximate schemes [8, 14, 15, 16]. One can easily satisfy the first condition by taking the leading logarithmic approximation</p>
+
+				<figure>
+					<trash>α s log s/M 2 ∼ 1 , α s ≪ 1 , (1.7) in which only the f m,m (t) term is kept in (1.6) and all nonleading terms f m,m−1 (t), ... , f m,0</trash>
+
+
+				</figure>
+
+				<p>(t) are neglected. However, the resummation of leading logarithmic terms leads to the result [17] A LLA (s, t) = i</p>
+
+				<figure>
+					<trash>∞ m=0 α s s(α s log s) m f m,m (t) ∝ s 1+∆ BFKL (t) (1.8) 1</trash>
+
+
+				</figure>
+
+				<p>The exact relation between electron-proton inclusive cross section and the proton structure function F 2 (x, Q 2 ) can be found in [13]</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+					<trash>with ∆ BFKL (0) = αsN π 4 log 2 &gt; 0</trash>
+
+
+				</figure>
+
+				<p>, which violates the unitarity bound (1.5). The s−channel unitarity of the S−matrix is explicitly broken in the leading logarithmic approximation [17]. To restore unitarity one has to take into account nonleading logarithmic corrections to the scattering amplitude (1.6) which will involve f m,m−1 (t), f m,m−2 (t), ... terms. Thus, to understand the Regge behavior in perturbative QCD we need a new approach beyond the leading logarithmic approximation, which will preserve the unitarity of the S−matrix. It is this requirement which makes the Regge problem so complicated in perturbative QCD. One of the possible ways to cure the unitarity problem, the so-called generalized leading logarithmic approximation, has been proposed in [14, 16] and can be formulated as follows 2 .</p>
+
+				<p>Although the leading logarithmic terms f m,m (t) violate unitarity of (1.6), the total sum of both leading and nonleading terms satisfies the unitarity conditions. Therefore, there should exist some minimal number of nonleading terms in (1.6) which compensate nonunitarity of the leading logarithmic result. The generalized leading logarithmic approximation allows us to identify the &quot; minimal &quot; subset of such nonleading terms f min m,m−1 , f min m,m−2 , ... . Of course, this procedure gives us only some pieces of nonleading terms f m,m−1 , f m,m−2 , ... and not their exact expressions. The question remains on how small are nonleading corrections, f − f min , which are left after a minimal set has been found. We have an answer [16] confirmed by lowest order perturbative calculations but the general proof is still missing.</p>
+
+				<p>In what follows, we use the generalized leading logarithmic approximation to understand the Regge behavior of the scattering amplitude. We show that in this approximation QCD turns out to be closely related to two-dimensional exactly solvable spin chain models [18, 19].</p>
+
+				<p>Such kind of relation has been expected for a variety of reasons [20, 21, 22, 23, 8]. The first calculations to lowest orders of perturbative QCD [21] showed that the contributions of individual Feynman diagrams to the partonic scattering amplitude (1.6) in the Regge limit (1.1) have a form of effective two-dimensional amplitudes in which α s log s plays a role of an expansion parameter and the dependence of f m,m on the transferred momentum t comes from two-dimensional integrals over transverse components k α (α = 1, 2) of the momenta of exchanged gluons. 3 Another argument came from the physical picture of hadron–hadron scattering [22], which suggests that the Regge asymptotics is determined by a two-dimensional dynamics of transverse partonic degrees of freedom.</p>
+
+				<p>In this paper we confirm these observations and identify the two-dimensional structure behind the high-energy QCD in the Regge limit as corresponding to the celebrated one-dimensional XXX Heisenberg magnet for the special value of the spin s = 0 corresponding to a unitary representation of the conformal SL(2,C) group [19]. This correspondence allows us to apply powerful quantum inverse scattering method [24, 25, 26, 27] for the calculation of the nonleading logarithmic corrections f min m,m−1 , f min m,m−2 , ... and it opens the possibility [20] of finding the Regge asymptotics of scattering amplitude in QCD by means of the generalized Bethe Ansatz. The paper is organized as follows. In Sect. 2 we describe the generalized leading logarithmic approximation and find expressions for large−s behavior of hadronic scattering amplitudes and small−x asymptotics of the structure functions of deep inelastic scattering in terms of wave functions and energies of the compound Reggeon states. In Sect. 3 we review the properties of the Reggeon interaction and consider simplifications which occur in the limit of multi–color QCD. In Sect. 4 we show that the holomorphic and antiholomorphic Reggeon hamiltonians coincide with the hamiltonian of XXX Heisenberg magnet for noncompact spin s = 0. The Schrodinger equation for the compound Reggeon states turns out to be completely integrable and the quantum inverse scattering method is applied to identify hidden conservation laws. In Sect. 5 we describe the generalized Bethe Ansatz which allows us to find the spectrum of the Reggeon states using the solutions of the Baxter equation. In Sect. 6 we discuss solution of the Baxter equation and general properties of the Reggeon states. Sect. 7 contains concluding remarks.</p>
+
+			</div>
+			<div>
+				<head n="2">Generalized leading logarithmic approximation</head>
+
+				<p>We begin the construction of the scattering amplitude A(s, t) in the generalized leading logarithmic approximation by summarizing the properties of the leading logarithmic approximation (1.7) in which only the coefficient functions f m,m (t) survive in (1.6).</p>
+
+				<p>In the leading logarithmic approximation [8, 17], the partonic scattering amplitude is dominated by the contribution of soft gluons propagating in the t−channel between hadrons and interacting with each other. This interaction leads to the remarkable property of gluon reggeization [8, 17]. The &quot; bare &quot; gluons interact with each other to form a collective excitation, the Reggeon, which has the quantum numbers of the gluon. However, in contrast with the gluon, the properties of the Reggeon depend not only on its momentum but also on the energy of particles interacting with the Reggeon. Introducing the Reggeon as a new elementary excitation , it is natural to replace QCD in the leading logarithmic approximation by an effective field theory in which the calculation of the scattering amplitudes can be performed in terms of the propagation of Reggeons in the t−channel and their interaction with each other. Each diagram in the effective theory is equivalent to an infinite sum of Feynman diagrams involving bare gluons. Then, the asymptotic behavior of the scattering amplitude is given in the leading logarithmic approximation by the contribution of diagrams with only two Reggeons propagating in the t−channel, the famous ladder diagrams [8, 17]. However, two Reggeon diagrams do not satisfy the s−channel unitarity condition and in the generalized leading logarithmic approximation one has to add additional diagrams to restore unitarity [14, 15, 16]. This minimal set of diagrams is obtained from the two Reggeon diagram by iterating the number of Reggeons in the t−channel. For example, the first nonleading correction corresponds to the diagram with three Reggeons propagating in the t−channel.</p>
+
+				<p>Continuing this procedure, we come to the conclusion that the scattering amplitude is given in the generalized leading logarithmic approximation by the sum of the diagrams shown in fig. 1. These diagrams have a form of generalized ladder diagrams [14, 16], in which summation is performed over all possible numbers of rungs representing the Reggeon interaction, and over all possible number of Reggeons in the t−channel, n = 2, 3, ... . It will be shown below that the scattering of each two Reggeons is described by the same effective theory as we started with in the leading logarithmic approximation. One of peculiar features of the Reggeon scattering is that it does not change the number of Reggeons in the t−channel. For n = 2 the diagram of fig.1 represents the leading logarithmic result for the scattering amplitude and it contributes to the coefficient functions f m,m (t) to all orders of perturbation theory. The contribution of the diagram with n = 3 is suppressed by a power of α s with respect to that for n = 2 and it determines the first nonleading coefficient f min m,m−1 in (1.6). In general, the contribution of the diagrams of fig.1 to the partial wave A(ω, t) can be represented in the following form</p>
+
+				<figure>
+					<trash>A(ω, t) = A 2 (ω, t) + α s A 3 (ω, t) + ... ≡ ∞ n=2 α n−2 s A n (ω, t) . (2.1)</trash>
+
+
+				</figure>
+
+				<p>Here, the n−th term corresponds to the diagram with n Reggeons in the t−channel, and the functions A n (ω, t) have the following expansion</p>
+
+				<figure>
+					<trash>A n (ω, t) = ∞ l=0 α s ω l+1 l! f n−2+l,l (t) . (2.2)</trash>
+
+
+				</figure>
+
+				<p>Each term in this sum has a singularity at ω = 0 which after integration in (1.2) is transformed into α s (α s log s) l correction. When (2.2) and (2.1) are substituted into (1.2), they reproduce the perturbative expansion (1.6). It does not mean however that the total sum, A n (ω, t), has singularities only at ω = 0. If the partial wave A n (ω, t) sums up to a singularity at ω = ω 0 , its contribution to the scattering amplitude (1.2) would have been a Regge asymptotic behavior ∼ s ω 0 . Indeed, as we shall see below, this turns out to be the case for A 2 (ω, t), which has a square-root singularity at ω = ∆ BFKL = αsN π 4 log 2, the so-called BFKL Pomeron [17]. We have to generalize this result for the higher partial waves A n (ω, t) with arbitrary n and find their singularities in the complex ω−plane.</p>
+
+			</div>
+			<div>
+				<head n="2.1">The Bethe–Salpeter equation for the partial waves</head>
+
+				<p>The partial wave A n (ω, t) can be represented in the following form [8, 17] in terms of partonic distributions inside hadrons, Φ A and Φ B , and partonic scattering amplitude, T n , A n (ω, t) = [d 2 k]</p>
+
+				<figure>
+					<trash>[d 2 k ′ ] Φ A ({k}; q) T n ({k}, {k ′ }; ω) Φ B ({k ′ }; q) , (2.3) where [d 2 k] = n j=1 d 2 k j δ( j k j − q) and the definition of [d 2 k ′ ]</trash>
+
+
+				</figure>
+
+				<p>is analogous. Here, the hadrons h A and h B emit n Reggeons in the t−channel with momenta {k} = (k 1 ,</p>
+
+				<figure>
+					<trash>. . . , k n ) and {k ′ } = (k ′ 1 , . . . , k ′ n ), respectively, and the total transferred momentum is q = n j=1 k j = n j=1 k ′ j , with q 2 = −t.</trash>
+
+
+				</figure>
+
+				<p>The functions Φ A and Φ B describe the internal structure of the hadrons, and they can be expressed in terms of hadronic wave functions in the infinite momentum frame. In the high-energy limit (1.1), both functions depend on the transverse momenta of Reggeons [8, 17] and not on the energy s, or equivalently on ω. The function T n describes n to n scattering of Reggeons in the t−channel, and is the main object of our consideration. In (2.3), the integration is performed over transverse momenta of n Reggeons, while integration over longitudinal components is performed inside T n (ω). The partonic distributions and the Reggeon scattering amplitude depend on the color indices of Reggeons and summation over these indices is implied in (2.3).</p>
+
+				<p>Considering the partonic distribution functions as states in a two-dimensional transverse phase space for the n Reggeons, one can rewrite the scattering amplitude (2.3) as the following matrix element</p>
+
+				<figure>
+					<trash>A n (ω, t) = Φ A (q)|T n (ω)|Φ B (q) , t = −q 2 , (2.4)</trash>
+
+
+				</figure>
+
+				<p>where the transition operator T n (ω) describes the elastic scattering of n Reggeons. To find the transition operator T n we notice that diagrams of fig.1 have a ladder structure, which suggests a Bethe–Salpeter–like equation for T n (ω) shown in fig.2. The corresponding equation has the following form [14, 28] ωT n (ω) = T</p>
+
+				<figure>
+					<trash>(0) n + H n T n (ω) , (2.5) where T (0</trash>
+
+					<figDesc>)</figDesc>
+
+				</figure>
+
+				<p>n corresponds to the free propagation of n Reggeons in the t−channel, while the operator H n describes the pair–wise interactions of n Reggeons. The Reggeon scattering amplitude, T n ({k}, {k ′ }; ω), depends on the transverse momenta and the color indices of n incoming and n outgoing Reggeons. The hamiltonian H n acts in (</p>
+
+				<figure>
+					<trash>2.5) only on the incoming Reggeons, and is given by H n = − α s 2π n≥i&gt;j≥1 H ij t a i t a j , (2.6)</trash>
+
+
+				</figure>
+
+				<p>where the sum goes over all possible pairs (i, j) of Reggeons. Each term in this sum has a color factor, which is given by the direct product of the gauge group generators in the adjoint representation of the SU(N) group, acting in the color space of i−th and j−th</p>
+
+				<figure>
+					<trash>Reggeons, t a i = I ⊗ ... ⊗ t a i ⊗... ⊗ I , (t a ) bc = −if abc ,</trash>
+
+
+				</figure>
+
+				<p>with f abc the structure constants of the SU(N). The Reggeon interaction (2.6) is described by the two-particle hamiltonian H ij , which depends only on the transverse momenta of Reggeons.</p>
+
+				<figure>
+					<trash>If {k 1 , ..., k n } and {k ′ 1 , ..., k</trash>
+
+
+				</figure>
+
+				<p>′ n } are the transverse momenta of incoming and outgoing Reggeons, respectively, then the operator H ij acts on Reggeon momenta as follows k 1 , ..., k n |H ij |k ′ 1 , ..., k ′ n = H(k i , k j |k ′ i , k ′ j ) n l=1,l =i,j δ 2 (k l − k ′ l ) , (2.7) where H(k i , k j |k ′ i , k ′ j ) is given by [17] H ij ≡ H(k i , k j |k</p>
+
+				<figure>
+					<trash>′ i , k ′ j ) = 1 π k 2 i (p − k ′ i ) 2 + (p − k i ) 2 k ′2 i − (k i − k ′ i ) 2 p 2 k 2 i (p − k i ) 2 (k ′ i − k i ) 2 (2.8) − δ 2 (k i − k ′ i ) d 2 k ′ k 2 i k ′2 + (k i − k ′ ) 2 + (p − k i ) 2 (p − k ′ ) 2 + (k i − k ′ ) 2 with p = k j + k i = k ′ j + k ′ i . The operator T (0)</trash>
+
+					<figDesc>n is equal to the product of n Reggeon propagators, and in momentum representation it can be written as</figDesc>
+					<trash>k 1 , ..., k n |T (0) n |k ′ 1 , ..., k ′ n = n j=1 δ 2 (k j − k ′ j ) 1 k 2 j . (2.9)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Iteration of the equation (2.5) reproduces the ladder in fig. 1, and gives the perturbative expansion of T n (ω) as series in α s /ω which leads to (2.2). But this is not what we are interested in because we want to resum the whole series in (2.2). Using the Bethe–Salpeter equation (2.5), we find the general solution for the transition operator</figDesc>
+					<trash>T n (ω) = 1 ω − H n T (0) n . (2.10)</trash>
+
+
+				</figure>
+
+				<p>We recall that the hamiltonian H n corresponds to the pair–wise interaction (2.6) of n Reggeons and it describes the evolution of the n−Reggeon state in the t−channel. Suppose for a moment that we know the spectrum of the Reggeon hamiltonian H n |χ n,{α} = E n,{α} |χ n,{α} , (2.11) with {α} some set of quantum numbers, which parameterize possible solutions of the equation. Then, the eigenstates of H n can be identified as compound states of n Reggeons, |χ n , and the corresponding eigenvalues, E n , determine the energies of these states. A simplest example of such states to be rederived below is the BFKL Pomeron [17] which is built from n =</p>
+
+				<figure>
+					<trash>2 Reggeons. Once we solve (2.11), we can expand the transition amplitude (2.10) over eigenstates of Reggeon hamiltonian as 4 T n (ω) = {α} 1 ω − E n,{α} |χ n,{α} χ n,{α} |T (0) n , (2.12)</trash>
+
+
+				</figure>
+
+				<p>where the sum over α means the summation over discrete and integration over continuous α. Combined with (2.4), this expression implies that the singularities of the partial waves A n (ω, t) in the ω−plane are determined by the eigenvalues E n,{α} of the Reggeon hamiltonian H n . Moreover, substituting (2.12) into (2.4) and (1.2), we formally take a residue at ω = H n and get the following expression for the scattering amplitude</p>
+
+				<figure>
+					<trash>A(s, t) = ∞ n=2 α n−2 s A n (s, t) , A n (s, t) = isΦ A |s Hn T (0) n |Φ B = is {α} β {α} A (t)β {α} B (t) s E n,{α} , (2.13) where the residue functions β {α} A and β {α} B measure the overlapping between partonic distribution functions and the wave functions of the compound states of Reggeons β {α} A (t) = Φ A (q)|χ n,{α} , β {α} B (t) = χ n,{α} |T (0) n |Φ B (q) , (t = −q 2 ) . (2.14)</trash>
+
+
+				</figure>
+
+				<p>Although the definitions of the residue functions look different, they are closely related to each other as we will show below in (5.29). We recall that the scalar product of states, used in (2.4), (2.13) and (2.14), implies integration over transverse momenta k 1 , ... , k n of n Reggeons as well as summation over their color indices. Thus, the scattering amplitude (2.13) has Regge behavior, A n (s, t) ∼ s E n,{α} , with the intercept related to the energy of compound states. Moreover, the scattering amplitude A n (s, t) gets its dominant contribution from the compound states with maximum energy E</p>
+
+				<figure>
+					<head>max n</head>
+
+					<figDesc>= max {α} E n,{α} . Once we have expressions for the wave functions of the Reggeon states we can use either phenomenological or model hadronic distributions to evaluate β</figDesc>
+					<trash>{α} A (t) and β {α} B (t).</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>The scattering amplitude (2.13) is given by a sum of A n (s, t) over all possible numbers of Reggeons in the t−channel. With each individual A n (s, t) we associate the family of the compound Reggeon states that appear as solutions of the eigenstate equation (2.11). Thus, the original problem of calculating the scattering amplitude A(s, t) in the generalized leading logarithmic approximation is reduced to the problem (2.11) of the diagonalization of the Reggeon hamiltonian H n for an arbitrary number of Reggeons. 2.2. Evolution equation for the structure function Let us apply (2.13) in the case of forward photon-proton scattering, A γ * p (s, t = 0). Using (1.4) and taking the imaginary part of the scattering amplitude (2.13), we obtain an expansion for the structure function F (x, Q 2 ) as a sum of nonleading corrections F n similar to that in (2.13). The expressions for F n follow from expressions (2.13) for A n (s = Q 2 /x, t = 0). Finally, we find the small−x asymptotic behavior of the structure function of deep inelastic scattering in the generalized leading logarithmic approximation as</figDesc>
+					<trash>5 F (x, Q 2 ) = ∞ n=2 α n−2 s F n (x, Q 2 ) + O(x 0 ) , F n (x, Q 2 ) = {α} x −E n,{α} Φ γ * (Q 2 ) (0)|χ n,{α} β {α} p (0) , (2.15) where the Q 2 −dependence comes from Φ γ * (Q 2 ) (0) and from O(x 0 ) terms.</trash>
+
+
+				</figure>
+
+				<p>To make the correspondence with the parton model, we represent F n (x, Q 2 ) as convolution of a partonic cross section σ 0 and a partonic distribution function f ,</p>
+
+				<figure>
+					<trash>F n (x, Q 2 ) = [d 2 k] σ a 1 ...an 0 (Q 2 ; k 1 , ..., k n ) f a 1 ...an (x; k 1 , ..., k n ) + O(x 0 ) , (2.16) where [d 2 k] ≡ d 2 k 1 ...d 2 k n δ (2) (k 1 +...+k n</trash>
+
+
+				</figure>
+
+				<p>), with a delta-function included to ensure the condition t = 0. The partonic cross section, σ 0 , describes the coupling of n Reggeons to the virtual photon through the quark loop. For large invariant mass, −Q 2 , it can be computed perturbatively [8] as a scalar product of the photon state Φ γ * (Q 2 ) (t = 0) and the state of n Reggeons with transverse momenta k 1 , ..., k n and color indices a 1 , ..., a n ,</p>
+
+				<figure>
+					<trash>σ a 1 ...an 0 (Q 2 ; k 1 , ..., k n ) = Φ γ * (Q 2 ) (0)|k 1 , a 1 ; ...; k n , a n .</trash>
+
+
+				</figure>
+
+				<p>The partonic distribution, f , takes into account all effects of Reggeon interactions and the coupling of Reggeons to the nonperturbative hadronic state. In the generalized leading logarithmic approximation it is given by</p>
+
+				<figure>
+					<trash>f a 1 ...an (x; k 1 , ..., k n ) = k 1 , a 1 ; ...; k n , a n |x −Hn T (0) n |Φ p (0) , (2.17)</trash>
+
+
+				</figure>
+
+				<p>where k n = −(k 1 + ... + k n−1 ) and the Bjorken variable x is small in the Regge limit. In terms of the eigenstates and eigenvalues, (2.11), the distribution function can be written as</p>
+
+				<figure>
+					<trash>f a 1 ...an (x; k 1 , ..., k n ) = {α} x −E n,{α} χ a 1 ...an n,{α} (k 1 , ..., k n ) β {α} p (0) , (2.18)</trash>
+
+
+				</figure>
+
+				<p>where we have used the following notation for the wave function of the compound state of n</p>
+
+				<figure>
+					<trash>Reggeons, χ a 1 ...an n,{α} (k 1 , ..., k n ) = k 1 , a 1 ; ...; k n , a n |χ n,{α} , and β {α} p (0</trash>
+
+
+				</figure>
+
+				<p>) is nonperturbative residue factor. Although we cannot compute the distribution function f in perturbative QCD, we may use expression (2.17) to find the evolution equation for f as a function of x</p>
+
+				<figure>
+					<trash>x d dx f {a} n (x; {k}) = − [d 2 k ′ ] H {a};{b} n ({k}; {k ′ }) f {b} n (x; {k ′ }) (2.19) where {a} = (a 1 , ..., a n ) and {k} = (k 1 , ..., k n ) and where the Reggeon hamiltonian was defined in (2.6), (2.7) and (2.8). For n = 2 the evolution equation (2.19) coincides with the BFKL equation [17]</trash>
+
+
+				</figure>
+
+				<p>.</p>
+
+				<p>Comparing expressions (2.13) and (2.15), we conclude that the Regge asymptotics is defined in both cases by the properties of the Reggeon hamiltonian. The hadronic scattering amplitude and the structure function of deep inelastic scattering are given by an infinite sum of terms corresponding to the diagram of fig. 1 with fixed number n of Reggeons in the t−channel. The first term, n = 2, describes the leading logarithmic asymptotics and, taken alone, it violates the s−channel unitarity of the S−matrix. Each next term in the sum over n in (2.13) and (2.15) defines a nonleading contribution, which is suppressed by a power of the coupling constant with respect to that of the (n − 1)−st term. Examining the high-energy behavior of the n−th term, A n (s, t) and F n (x, Q 2 ), we recognize that the contribution of compound Reggeon states with positive energy E n &gt; 0 to (2.13) and (2.15) grows as a power of energy, and thus violates the Froissart bound (1.5). We recall however that these nonleading terms have been defined from the very beginning in such a way that to restore unitarity of the total scattering amplitude. This means, that, although each term in the sum (2.13) and (2.15) violates the unitarity bound, unitarity is restored in their sum.</p>
+
+			</div>
+			<div>
+				<head n="6">3. Properties of the Reggeon hamiltonian</head>
+
+				<p>We turn now to the solution of the eigenstate problem (2.11) and (2.6) in order to find the spectrum of the compound Reggeon states. The Reggeon hamiltonian (2.6), (2.7) and (2.8) has been found from the analysis of Feynman diagrams contributing to the hadronic scattering amplitude in the generalized leading logarithmic approximation, and it inherits the properties of high-energy QCD in the Regge limit.</p>
+
+				<p>The solution of (2.11) is known only for n = 2 and the corresponding compound state of two Reggeons is called the BFKL Pomeron [17]. The Reggeon hamiltonian was defined in (2.6), (2.7) and (2.8) in the two-dimensional space of transverse momenta of Reggeons. It is more convenient however to analyse equation (2.11) in two-dimensional coordinate space, the so called impact parameter space, rather than in momentum space. To this end, we perform a twodimensional Fourier transformation, and replace in (</p>
+
+				<figure>
+					<trash>2.3), (2.7) and (2.8) the two-dimensional transverse momenta k 1 , ..., k n and k ′ 1 , ..., k ′ n by two-dimensional impact vectors b 1 , ..., b n and b ′ 1 , ..., b</trash>
+
+
+				</figure>
+
+				<p>′ n which describe the transverse coordinates of Reggeons. Then, for the impact vectors b j = (x j , y j ) we define holomorphic and antiholomorphic complex coordinates (z j ,</p>
+
+				<figure>
+					<trash>¯ z j ) as z j = x j + iy j , ¯ z j = x j − iy j , (j = 1, ..., n) , and analogous coordinates (z ′ j , ¯ z ′ j ) for the impact vectors b ′ j . Now one can use (2.7) and (2.8) to</trash>
+
+
+				</figure>
+
+				<p>find the two-particle Reggeon kernel H ij in the impact parameter space. It turns out that, expressed in terms of holomorphic and antiholomorphic coordinates, the kernel H ij becomes holomorphically separable [29]</p>
+
+				<figure>
+					<trash>, i.e., H ij = H(z i , z k ) + H(¯ z i , ¯ z k ) . (3.1) Here, two operators on the r.h.s. act separately on holomorphic and antiholomorphic coordinates of Reggeons. After Fourier transformation of (2.7) and (2.8) they are given by the following equivalent representations H(z i , z k ) = −P −1 i log(z i − z k )P i − P −1 k log(z i − z k )P k − log(P i P k ) − 2γ E = −2 log(z i − z k ) − (z i − z k ) log(P i P k )(z i − z k ) −1 − 2γ E , (3.2) where P i = i ∂ ∂z i</trash>
+
+
+				</figure>
+
+				<p>and γ E is the Euler constant. The same operator can be represented as [29]</p>
+
+				<figure>
+					<trash>H(z i , z k ) = ∞ l=0 2l + 1 l(l + 1) − L 2 ik − 2 l + 1 , L 2 ik = −(z i − z k ) 2 ∂ 2 ∂z i ∂z k . (3.3)</trash>
+
+
+				</figure>
+
+				<p>Substituting this expression into (3.1) and (2.6), we find that the Reggeon hamiltonian H n is invariant under the conformal transformations [8]</p>
+
+				<figure>
+					<trash>z i → az i + b cz i + d , ¯ z i → ¯ a¯ z i + ¯ b ¯ c¯ z i + ¯ d , (3.4) with ad − bc = ¯ a ¯ d − ¯ b¯ c = 1. Indeed, the generators of these transformations, S 3 = n k=1 z k ∂ k , S − = − n k=1 ∂ k , S + = n k=1 z 2 k ∂ k (3.5) and the analogous antiholomorphic generators ¯ S 3 , ¯ S − and ¯ S + form the SL(2,C) algebra and commute with L 2</trash>
+
+
+				</figure>
+
+				<p>ik and, as a consequence, with H n .</p>
+
+				<p>Let us consider the properties of the eigenstate χ n,{α} of the Reggeon hamiltonian (2.11) in the impact parameter space. These states are parameterized by quantum numbers {α}, which should appear as eigenvalues of some &quot; hidden &quot; integrals of motion, and by a two-dimensional real vector b 0 , which represents the center of mass of the compound Reggeon state. In this notation , the wave function χ n,{α} = χ n,{α} ({b i }; b 0 ) ≡ χ n,{α} ({z i ,</p>
+
+				<figure>
+					<trash>¯ z i }; z 0 , ¯ z 0 ) satisfies the relations (2.11), (2.6) and (3.1), or equivalently E n,{α} χ n,{α} ({z i , ¯ z i }; z 0 , ¯ z 0 ) = − α s 2π n j,k=1, j&gt;k [H(z j , z k ) + H(¯ z j , ¯ z k )] t a j t a k χ n,{α} ({z i , ¯ z i }; z 0 , ¯ z 0 ) , (3.6) which</trash>
+
+
+				</figure>
+
+				<p>can be interpreted as a two-dimensional Schrodinger equation for a system of n pair-wise interacting particles with coordinates {z i , ¯ z i } and internal color degrees of freedom. One may try to rewrite the total hamiltonian in (3.6) as a sum of holomorphic and antiholomorphic parts using the fact that H(z j , z k ) and H(¯ z j , ¯ z k ) commute. However, the resulting two terms do not commute with each other due to nontrivial color factor in (3.6), and as a consequence holomorphic and antiholomorphic sectors become coupled to each other via color degrees of freedom. It is this interaction which makes difficult the solution of the Schrodinger equation (3.6). Each Reggeon carries a color charge t a j and the total charge of n Reggeons is equal to their sum n j=1 t a j . Since the compound Reggeon states propagate in the t−channel between two hadrons, they carry zero color charge, unchanged by the Reggeon interaction,</p>
+
+				<figure>
+					<trash>[H n , n j=1 t a j ] = 0 , n j=1 t a j |χ n,{α} = 0 (3.7)</trash>
+
+					<figDesc>An essential simplification occurs in (3.6) in multi-color limit, N → ∞ and α s N = fixed, [29, 30]</figDesc>
+
+				</figure>
+
+				<p>.</p>
+
+				<figure>
+					<figDesc>In this limit, only planar diagrams of fig.1 survive, which have the form of a cylinder attached by both edges to the hadronic states [30]</figDesc>
+
+				</figure>
+
+				<p>.</p>
+
+				<figure>
+					<figDesc>Reggeons propagate along the sides of the cylinder and it makes them possible to interact only with two nearest Reggeons. Using the double line representation for Reggeon color charge and applying the standard rules of large N counting, one finds that the color structure in (3.6) can be simplified as</figDesc>
+					<trash>7 t a 1 t a 2 → −N , for n = 2 ; t a i t a j → − N 2 δ i,j+1 , for n ≥ 3 , where i, j = 1, ..., n</trash>
+
+
+				</figure>
+
+				<p>and the Reggeons with i = 1 and i = n + 1 are considering as coinciding. Then, in the multi-color limit we find that, first, the color factors become trivial in (3.6) and as a consequence holomorphic and antiholomorphic sectors become decoupled and, second, inside each sector in (3.6) the pair–wise Reggeon interaction is replaced by a nearest–neighbour interaction with periodic boundary conditions. Thus, in the large−N limit, the two-dimensional Schrodinger equation (3.6) is replaced by a system of two one-dimensional Schrodinger equations [29], H n ϕ n,{α} ({z i }; z 0 ) = ε n,{α} ϕ n,{α} ({z i }; z 0 ) ,</p>
+
+				<figure>
+					<trash>¯ H n ¯ ϕ n,{α} ({¯ z i }; ¯ z 0 ) = ¯ ε n,{α} ¯ ϕ n,{α} ({¯ z i }; ¯ z 0 ) . (3.8) The hamiltonians H n and ¯ H n are defined as H n = n k=1 H(z k , z k+1 ) , ¯ H n = n k=1 H(¯ z k , ¯ z k+1 ) , (3.9) with two-particle hamiltonians given by (3.2) or (3.3) and z n+1 ≡ z 1 . Once we know the solution of (3.8), the eigenstates (2.11) of the Reggeon hamiltonian in the multi-color limit can be found as χ n,{α} ({z i , ¯ z i }; z 0 , ¯ z 0 ) = ϕ n,{α} ({z i }; z 0 ) ϕ n,{α} ({¯ z i }; ¯ z 0 ) , (3.10) and the corresponding eigenvalues are given by E n,{α} = α s N 4π ε n,{α} + ε n,{α} . (3.11) We identify (3.8</trash>
+
+
+				</figure>
+
+				<p>) as a system of Schrodinger equations for two one-dimensional lattice models with nearest neighbour interaction (3.9), and with the number of lattice sites equal to the number of Reggeons. The hamiltonians of the models are defined by holomorphic and antiholomorphic parts of the Reggeon hamiltonian (3.1), and the quantum space for each site of the lattice, h k , (k = 1, ..., n), is parameterized by holomorphic and antiholomorphic coordinates , respectively. Finally, we notice that H n and ¯ H n are separately invariant under conformal transformations (3.4). Thus, using the properties of the Reggeon interaction in the multi-color limit, we reduced the original problem (2.11) and (3.6) of the diagonalization of the Reggeon hamiltonian to the solution of the one-dimensional lattice models (3.8). However, this alone does not at all guarantee that these lattice models can be exactly solved. To explore this possibility we recall 7 There are two special case, n = 2 and n = 3, when the color factor can be calculated for finite N .</p>
+
+				<figure>
+					<trash>For n = 2 we use (3.7) in the form t 1 + t 2 = 0 to get t a 1 t a 2 = −t a 1 t a 1 = −C A ; for n = 3 a similar condition t 1 + t 2 + t 3 = 0 leads to t a 1 t a 2 = 1/2(t a 1 + t a 2 ) 2 − 1/2(t a 1 t a 1 + t a 2 t a 2 ) = −C A /2 with C A = N the Casimir operator.</trash>
+
+
+				</figure>
+
+				<p>the famous example of the exactly solvable one-dimensional lattice model, the XXX Heisenberg chain of interacting spins s = 1/2 with the hamiltonian</p>
+
+				<figure>
+					<trash>H s=1/2 = − 1 2 n k=1 σ a k σ a k+1 − 1 , (3.12) where σ a k</trash>
+
+
+				</figure>
+
+				<p>are Pauli matrices acting in the k−th site of the lattice. This model can be generalized [31] by means of the quantum inverse scattering method to give a family of XXX Heisenberg models for an arbitrary complex values of spin s. The unique feature of these models is that they are completely integrable, that is, that they contain additional integrals of motion whose number is equal to the number of degrees of freedom. The reason why we might be interested in considering complex spin s is that the one-dimensional lattice models (3.8), (3.9) and (3.3), which describe the Regge behavior of multi-color QCD, coincide with the XXX Heisenberg magnet for spin s = 0. Let us now discuss how we may make this identification.</p>
+
+			</div>
+			<div>
+				<head n="4">Multi-color QCD as XXX Heisenberg magnet</head>
+
+				<p>To identify the lattice models (3.8) we forget for a moment about their QCD origin and construct the hamiltonian of the XXX Heisenberg magnet for spin s [31]. Let us consider the onedimensional lattice with n sites and assign the spin operators S</p>
+
+				<figure>
+					<trash>a k with a = 1, 2, 3 to all sites k = 1, ..., n, S + k = z 2 k ∂ k − 2sz k , S − k = −∂ k , S 3 k = z k ∂ k − s , (4.1) where S ± = S 1 ± iS 2 . The spins S k</trash>
+
+
+				</figure>
+
+				<p>act as differential operators on the local quantum space h k corresponding to the k−th site. The total spin of the lattice S = n k=1 S k acts on the full quantum space H n = ⊗ n k=1 h k , and for s = 0 the operators S a coincide with the generators of conformal transformations, eq.(3.5). The definition of the integrable XXX spin chain is based on the existence of a fundamental operator R km (λ), which acts on the space h k ⊗ h m , and which satisfies the Yang–Baxter equation [24, 25, 26, 27] R km (λ − µ)R kl (λ − ρ)R ml (µ − ρ) = R ml (µ − ρ)R kl (λ − ρ)R km (λ − µ) , (4.2) with λ, µ and ρ arbitrary complex spectral parameters and k, m, l = Z Z + . The solution of this equation for an arbitrary complex s is given by [31, 32] R km (</p>
+
+				<figure>
+					<trash>λ) = Γ(iλ − 2s)Γ(iλ + 2s + 1) Γ(iλ − J km )Γ(iλ + J km + 1) , (4.3) where the operator J km acts on the space h k ⊗ h m and satisfies the equation J km (1 + J km ) = ( S k + S m ) 2 = 2 S k S m + 2s(s + 1) .</trash>
+
+
+				</figure>
+
+				<p>The hamiltonian of the XXX Heisenberg magnet for spin s is defined as [31]</p>
+
+				<figure>
+					<trash>H n = n k=1 H k,k+1 , H k,k+1 = −i d dλ log R k,k+1 (λ) λ=0 . (4.4)</trash>
+
+
+				</figure>
+
+				<p>In the special case, s = 1/2, one can recover the hamiltonian (3.12) from this expression while the limit s → ∞ is related to the nonlinear Schrodinger equation. Let us consider the case s = 0. Using the explicit expressions (4.1) for the spin operators for s = 0 we obtain the two-particle holomorphic hamiltonian up to an inessential (</p>
+
+				<figure>
+					<trash>infinite) constant 8 as H k,k+1 = −ψ(−J k,k+1 ) − ψ(1 + J k,k+1 ) + 2ψ(1) , J k,k+1 (1 + J k,k+1 ) = −(z k − z k+1 ) 2 ∂ k ∂ k+1 (4.5) with ψ(x) = d dx Γ(x). Comparing (4.5) and (3.3</trash>
+
+
+				</figure>
+
+				<p>) we find that both expressions for the twoparticle hamiltonians coincide after we identify J k,k+1 (1 + J k,k+1 ) = L 2 k,k+1 and perform summation over l in (3.3). This means [19] that the holomorphic and antiholomorphic Reggeon hamiltonians (3.9) are identical to the hamiltonian (4.5) of the XXX Heisenberg magnet for spin s = 0. Among other things, this remarkable property implies that the system of Schrodinger equations (3.8), which describes the Regge asymptotics of multi-color QCD in the generalized leading logarithmic approximation, is completely integrable, and that one can apply the quantum inverse scattering method to identify the &quot; hidden &quot; integrals of motion.</p>
+
+				<p>To this end, we follow the standard procedure [24, 25, 26, 27] and define the auxiliary and fundamental Lax operators, L k,a (λ) and L k,f (λ), respectively, for all sites of the lattice,</p>
+
+				<figure>
+					<trash>L k,a (λ) = λI k ⊗ I a + i S k ⊗ σ a = λ + iS 3 k iS − k iS + k λ − iS 3 k , L k,f (λ) = R k,f (λ) . (4.6)</trash>
+
+
+				</figure>
+
+				<p>These operators act in the space h k ⊗ V with the auxiliary space V = C 2 for L k,a and V = h f for L k,f (the auxiliary space h f has the dimension of the local quantum space h k ). The Lax operators satisfy the Yang–Baxter equations similar to that in (4.2). Now, we multiply Lax operators as matrices in the auxiliary space and define the auxiliary monodromy matrix</p>
+
+				<figure>
+					<trash>T a (λ) = L n,a (λ)L n−1,a (λ) . . . L 1,a (λ) = A(λ) B(λ) C(λ) D(λ) (4.7) and analogously the fundamental monodromy matrix T f (λ) = L n,f (λ)L n−1,f (λ) . . . L 1,f (λ) . (4.8)</trash>
+
+
+				</figure>
+
+				<p>Finally, we take a trace of the monodromy matrices over auxiliary space and obtain the auxiliary and fundamental transfer matrices</p>
+
+				<figure>
+					<trash>Λ(λ) = tr a T a (λ) , τ (λ) = tr f T f (λ) , (4.9)</trash>
+
+
+				</figure>
+
+				<p>which are operators in the full quantum space H n of the lattice. Due to the properties of the Lax operators (4.6), the operators τ and Λ thus defined commute with each other for different values of the spectral parameters</p>
+
+				<figure>
+					<trash>[τ (λ), τ (µ)] = [τ (λ), Λ(µ)] = [Λ(λ), Λ(µ)] = 0 . (4.10) From this relation we find that the system of Schrodinger equations (3.8) has two families of mutually commuting local integrals of motions I k = −i d k dλ k log τ (λ) λ=0 , q n−k = 1 k! d k dλ k Λ(λ) λ=0 , (k = 1, 2, ..) . (4.11) We conclude from (4.11) and (4.10) that [24, 25, 26, 27]</trash>
+
+
+				</figure>
+
+				<p>[H n , I k ] = [H n , q k ] = [q k , q j ] = [I k</p>
+
+				<figure>
+					<trash>, I j ] = [q k , I j ] = 0 . (4.12) Here, the operators I k and q k describe the interaction between (k + 1) nearest neighbors, and in the special case k = 1 the operator I 1 coincides with the holomorphic Reggeon hamiltonian (3.9) I 1 = H n = n k=1 H k,k+1 . (4.13)</trash>
+
+
+				</figure>
+
+				<p>The expressions for I k with k ≥ 2 are more complicated, but one can easily find expressions for the operators q k by using the explicit form [18, 19] of the auxiliary Lax operator (</p>
+
+				<figure>
+					<trash>4.6) for spin s = 0, L k,a = λI + i 1 z k ⊗ (z k , −1)∂ k . (4.14) Then, using the definition (4.10) we find the auxiliary transfer matrix as Λ(λ) = 2λ n + q 2 λ n−2 + q 3 λ n−3 + . . . + q n (4.15) with the operators q k given by q k = n≥i 1 &gt;i 2 &gt;···&gt;i k ≥1 i k z i 1 i 2 z i 2 i 3 . . . z i k i 1 ∂ i 1 ∂ i 2 . . . ∂ i k (4.16) with k = 2, ..., n and z jk ≡ z j − z k . In particular, for q 2 we have expression q 2 = n≥j&gt;k≥1 z 2 jk ∂ j ∂ k = −S 3 S 3 − 1 2 S + S − + S − S + ≡ −h(h − 1) (4.17)</trash>
+
+
+				</figure>
+
+				<p>which we identify as the Casimir operator of the conformal group (3.5) with h being the conformal weight. Then, the relation [q 2 , H n ] = 0 follows from the invariance of the holomorphic hamiltonian under conformal transformations (3.4). Thus, the holomorphic Schrodinger equations (3.8) has a sufficient number of integrals of motion (4.11) and (4.12) to be exactly solvable. It is clear that the same consideration can be performed for the antiholomorphic sector in (3.8). The wave functions of the compound Reggeon state, χ n{α} , depend on the quantum numbers {α}, which we now identify as the eigenvalues of the integrals of motion (4.11) and their antiholomorphic partners. Moreover, the original complicated problem of solving the Schrodinger equations (3.8) can be reduced to the diagonalization of the conservation laws (4.11). We remember that in the case of the XXX Heisenberg magnet for spin s = 1/2 this has been done by means of Algebraic Bethe Ansatz [24, 25, 26, 27]. However, this method requires the existence of a highest weight for each site of the lattice. This makes it inapplicable for spin s = 0, corresponding to infinite-dimensional representations of the SL(2,C) group. To solve the XXX Heisenberg magnet for spin s = 0, we have to generalize the Bethe Ansatz to the case of the noncompact conformal group.</p>
+
+			</div>
+			<div>
+				<head n="5">Generalized Bethe Ansatz for Reggeon Hamiltonian</head>
+
+				<p>The Generalized Bethe Ansatz for the XXX Heisenberg chain for spin s = 0 has been developed in Ref. [19]. It is based on the method of the Q−operator [33, 34] and on the relation [19] between the XXX magnets for spins s = 0 and s = −1. To understand the latter relation we consider expression (4.1) for the spin operators for s = 0 and s = −1 and find the following identity, S</p>
+
+				<figure>
+					<trash>(s=−1) k = P k S (s=0) k P −1 k with P k = i∂ k . It leads to the similar relation between Lax operators (4.6), L (s=−1) k,a (λ) = P k L (s=0) k,a (λ) P −1 k , L (s=−1) k,f (λ) = iλ + 1 iλ − 1 P k L (s=0) k,f (λ) P −1 k , (5.1)</trash>
+
+
+				</figure>
+
+				<p>where the additional factor in the last relation follows from the numerator of the fundamental</p>
+
+				<figure>
+					<trash>R−operator (4.3). After its substitution into (4.7) and (4.8) we find the relation between transfer matrices (4.9) in both models Λ (s=−1) (λ) = P 1 ...P n Λ (s=0) (λ) (P 1 ...P n ) −1 = (z 12 z 23 ...z n1 ) −1 Λ (s=0) (λ) z 12 z 23 ...z n1 (5.2) and iλ − 1 iλ + 1 n τ (s=−1) (λ) = P 1 ...P n τ (s=0) (λ)(P 1 ...P n ) −1 = (z 12 z 23 ...z n1 ) −1 τ (s=0) (λ) z 12 z 23 ...z n1 ,</trash>
+
+
+				</figure>
+
+				<p>where we took into account that operator q n = z 12 z 23 ...z n1 P 1 ...P n , defined in (4.16), commutes with the transfer matrices (4.9). Hence, the eigenstates of the transfer matrices in the XXX models for spin s = 0 and s = −1 are related as</p>
+
+			</div>
+			<div>
+				<head>ϕ</head>
+
+				<figure>
+					<trash>(s=−1) n ({z i }; z 0 ) = (z 12 z 23 ...z n1 ) −1 ϕ (s=0) n ({z i }; z 0 ) = q −1 n P 1 P 2 ...P n ϕ (s=0) n ({z i }; z 0 ) . (5.3) For corresponding eigenvalues of the hamiltonians and the integrals of motion we have from (4.11), (4.13) and (5.2) ε (s=0) n = ε (s=−1) n − 2n , q (s=0) k = q (s=−1) k (5.4) and I (s=0) 2k = I (s=−1) 2k , I (s=0) 2k+1 = I (s=−1) 2k+1 − 2n(−) k (2k)! where q k and I k stand in (5.3) and (5.4) for</trash>
+
+
+				</figure>
+
+				<p>eigenvalues rather than for operators. These relations establish the equivalence between XXX Heisenberg magnets for spins s = 0 and s = −1. We recall that the holomorphic Reggeon hamiltonian (3.8) coincides with the hamiltonian (4.4) and (4.5) of the XXX magnet for spin s = 0 and therefore their spectrum are identical</p>
+
+			</div>
+			<div>
+				<head>ϕ</head>
+
+				<figure>
+					<trash>(s=0) n ({z i }; z 0 ) = ϕ n,{α} ({z i }; z 0 ) , ε (s=0) n = ε n,{α}</trash>
+
+
+				</figure>
+
+				<p>It is clear that the same correspondence takes place for the antiholomorphic Reggeon hamiltonian , ¯ H n , in (3.8). The spectrum of the Reggeon hamiltonian depends on the set of quantum numbers with the conformal weight h being one of them. As it follows from the definition (4.17), parameter (−h) has a meaning of the total spin of the XXX chain. In the case of the compact spin s = 1/2 XXX chain it can take either integer or half integer values [24, 25, 26, 27]. For noncompact spin s = 0 chain, possible values of h can be even complex and their explicit form will be found in Sect. 5.3. However, among all possible h there is a subset of integer positive h ≥ n which plays a special role.</p>
+
+			</div>
+			<div>
+				<head n="5.1">Algebraic Bethe Ansatz</head>
+
+				<p>The reason why we prefer to deal with the spin s = −1 in constructing the Bethe Ansatz is that there exists a pseudovacuum state |Ω in the total quantum space of the lattice which is the highest weight in each site</p>
+
+				<figure>
+					<trash>|Ω = 1 z 2 1 z 2 2 ...z 2 n , S + k |Ω = 0 , S 3 k |Ω = −|Ω with the spin operators given by (4.1) for s = −1. This property allows us to apply the Algebraic Bethe Ansatz [24, 25, 26, 27]</trash>
+
+
+				</figure>
+
+				<p>and construct the special subset of the eigenstates corresponding to the integer positive values of the conformal weight h ≥ n in (4.17). The corresponding eigenstates, the so-called Bethe states, are defined as [19]</p>
+
+				<figure>
+					<trash>ϕ (s=0) n,{λ} ({z i }; z 0 ) = z 12 z 23 ...z n1 B(λ 1 )B(λ 2 )...B(λ l ) 1 z 2 10 z 2 20 ...z 2 n0 , l = h − n = 0, 1, ... (5.5)</trash>
+
+					<figDesc>Here, B(λ) is the differential operator which acts on holomorphic coordinates z 1 , ..., z n and which can be found through (4.7) and using (4.14) and (5.1) as an element of the auxiliary monodromy matrix, T</figDesc>
+					<trash>(s=−1) a , for the XXX magnet of spin s = −1. As an example, we give expression for B(λ) for n = 2 B n=2 (λ) = −λ(P 1 + P 2 ) + P 1 P 2 z 12 . (5.6) The Bethe states (5.5) are parameterized by the set of complex numbers {λ} = (λ 1 , ..., λ h−n ) which are solutions of the Bethe equation for spin s = −1 λ k − i λ k + i n = h−n j=1,j =k λ k − λ j + i λ k − λ j − i . (5.7) The eigenvalues of the holomorphic Reggeon hamiltonian corresponding to the Bethe states (5.5) are given by ε (s=0) n = −2n − 2 h−n k=1 1 λ 2 k + 1 . (5.8) The Bethe states (5.5) diagonalize the transfer matrices Λ(λ) = (λ − i) n h−n k=1 λ k − λ + i λ k − λ + (λ + i) n h−n k=1 λ k − λ − i λ k − λ</trash>
+
+
+				</figure>
+
+				<p>and we can find the eigenvalues of the conserved charges {q} from this expression by expanding it in powers of λ and comparing with (4.15). The eigenvalues of the operators {I} can be found</p>
+
+				<figure>
+					<trash>from (5.4) using the relation I (s=−1) k = i(−) k (k − 1)! h−n j=1 (λ j + i) −k − (λ j − i) −k</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>.</head>
+
+				<p>Given a solution of the Bethe equation (5.7), the relations (5.5) and (5.8) allow us to find the solution of the holomorphic Schrodinger equation in (3.8), the holomorphic wave function (5.5) and the energy (5.8). We stress that these results correspond to the special case of positive integer conformal weight h ≥ n while in general we are interesting to choose h to be a complex.</p>
+
+			</div>
+			<div>
+				<head n="5.2">Functional Bethe Ansatz</head>
+
+				<p>The explicit form of the Bethe states (5.5) can be used in order to generalize them for an arbitrary complex h. The generalization is based on the existence [33, 34] of the Baxter operator Q n (λ) which acts on the full quantum space of the XXX spin s = −1 model and commutes with itself, [Q n (µ), Q n (λ)] = 0, and with auxiliary transfer matrix, [Q n (µ), Λ(λ)] = 0. Moreover, the eigenvalues of the operator satisfy the</p>
+
+				<figure>
+					<trash>Baxter equation 2λ n + q 2 λ n−2 + q 3 λ n−3 + ... + q n Q n (λ) = (λ + i) n Q n (λ + i) + (λ − i) n Q n (λ − i) , (5.9)</trash>
+
+					<figDesc>where q k and Q n (λ) denote the eigenvalues of the corresponding operators in the XXX model for spin s = −1. The relation (5.4) allows us not to indicate explicitly the value of spin. Solving the Baxter equation we will get expression for Q n (λ) which depends on the quantum numbers h and q k and which is the function of complex spectral parameter λ. Then, for given solution Q n (λ) of the Baxter equation the eigenvalues of the XXX magnet hamiltonian H</figDesc>
+					<trash>(s=−1) n and of the integral of motions I (s=−1) k are given by ε (s=−1) n = −i d dλ log Q n (−λ − i) Q n (−λ + i) λ=0 , I (s=−1) k = −i d k dλ k log Q n (−λ − i) Q n (−λ + i) λ=0</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>.</head>
+
+				<p>Using the relation (5.4) between XXX models for spins s = 0 and s = −1 we find the spectrum of the holomorphic Reggeon hamiltonian</p>
+
+				<figure>
+					<trash>ε n = −i d dλ log Q n (−λ − i) Q n (−λ + i) λ=0 , Q n (λ) ≡ λ n Q n (λ) (5.10) and the eigenvalues of the integrals of motion I k = −i d k dλ k log Q n (−λ − i) Q n (−λ + i) λ=0</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>.</head>
+
+				<p>To define the corresponding eigenstates we introduce the Sklyanin operators [34] for the XXX magnet of spin s = −1. We use the definition (4.6) and (4.1) of the auxiliary Lax operator for s = −1 and find from (4.7) that the operator B(λ) is a polynomial of order n − 1 in λ which we represent as</p>
+
+				<figure>
+					<trash>B(λ) = iS − (λ − x 1 )(λ − x 2 )...(λ − x n−1 ) , (5.11) where S − = − n k=1</trash>
+
+
+				</figure>
+
+				<p>∂ k is the total spin of the model and x 1 , ..., x n−1 are operator zeros of B(λ).</p>
+
+				<p>The relative order of factors is inessential in (5.11) since [S − , x k ] = [x k , x j ] = 0. The explicit form of the operator zeros x 1 , ..., x n−1 can be found for any fixed n from the definitions (5.11) and (4.7). In particular, using (5.6) we find the explicit expression for the operator zero at</p>
+
+				<p><formula>n = 2 x 1 n=2 = i ∂ 1 ∂ 2 ∂ 1 + ∂ 2 z 12 . (5.12)</formula></p>
+
+				<p>The operators B(λ) and x k have different expressions for s = −1 and s = 0 models and the relation between them is similar to that between the auxiliary monodromy matrices, eq.(5.2).</p>
+
+				<figure>
+					<figDesc>Then, having expressions for the operators x 1 , ..., x n−1 in the XXX model for spin s = −1 we use the solution of the Baxter equation (5.9) to find the eigenstates of the holomorphic Reggeon hamiltonian in the following form</figDesc>
+					<trash>ϕ n,{q} ({z i }; z 0 ) = z 12 z 23 ...z n1 (iS − ) h−n Q n (x 1 )Q n (x 2 )...Q n (x n−1 ) 1 z 2 10 z 2 20 ...z 2 n0 (5.13)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>with h a complex conformal weight. Notice that the operators Q n (λ) and x j do not commute, and Q n (x j ) denotes the eigenvalue of the operator Q n (λ) evaluated for operator value of the spectral parameter λ = x j . Expressions (5.10) and (5.13) give the solution of the holomorphic Schrodinger equation (3.8) for an arbitrary complex conformal weight h. Different eigenstates of the Reggeon hamiltonian are parameterized by different solutions of the Baxter equation (5.9). In particular, for integer positive conformal weight h ≥ n the Baxter equation (5.9) has a polynomial solution</figDesc>
+
+				</figure>
+
+				<p><formula>Q n (λ) = const. h−n k=1 (λ − λ k ) (5.14)</formula></p>
+
+				<p>and taking λ = λ j in (5.9) we find that the parameters λ 1 , ..., λ h−n satisfy the Bethe equation (5.7). After substitution of (5.14) into (5.13) we use the definition (5.11) to identify (5.10) and (5.13) with analogous expressions, (5.8) and (5.5), given by the algebraic Bethe ansatz.</p>
+
+				<p>To apply the expressions (5.10) and (5.13) one has to solve the Baxter equation (5.9) for an arbitrary values of the quantum numbers h and q k and under appropriate boundary conditions.</p>
+
+				<p>In particular, the condition for the solution of the Baxter equation (5.9) to be a finite polynomial in λ leads to the algebraic Bethe Ansatz described in the previous section.</p>
+
+			</div>
+			<div>
+				<head n="5.3">Scalar product</head>
+
+				<p>The decomposition of the Reggeon hamiltonian over the complete set of the states has been introduced before in (2.12). However this decomposition is formal unless we specify the scalar product on the Hilbert space of the Reggeon hamiltonian. Although we have the general expression (5.13) for the compound Reggeon states, the choice of a scalar product together with the condition of finiteness of the norm may rule out some of these eigenstates and introduce selection rules for the quantum numbers h and q k . In what follow, we use the scalar product proposed in [19] and based on the relation between XXX magnets for spin s = 0 and s = −1.</p>
+
+				<p>Let us define the following auxiliary hamiltonian</p>
+
+				<p><formula>H aux n = H (s=−1) n + ¯ H (s=0) n = n k=1 H aux k,k+1 , (5.15)</formula></p>
+
+				<p>which is equal to the sum of holomorphic XXX hamiltonian for spin s = −1 and antiholomorphic hamiltonian for spin s = 0. Using relations (5.4) we find the spectrum of this hamiltonian as</p>
+
+				<figure>
+					<trash>E aux n = ε (s=−1) n + ¯ ε (s=0) n , χ aux ({z k , ¯ z k }; z 0 , ¯ z 0 ) = ϕ (s=−1) ({z k }; z 0 ) ¯ ϕ (s=0) ({¯ z k }; ¯ z 0 ) .</trash>
+
+
+				</figure>
+
+				<p>These expressions are related to the eigenvalues and eigenstates of the Reggeon hamiltonian,</p>
+
+				<figure>
+					<trash>(3.10) and (5.3), as E aux n = ε n + ¯ ε n + 2n , χ aux ({z k , ¯ z k }; z 0 , ¯ z 0 ) = (z 12 z 23 ...z n1 ) −1 χ({z k , ¯ z k }; z 0 , ¯ z 0 ) . (5.16) = q −1 n P 1 P 2 ...P n χ({z k , ¯ z k }; z 0 , ¯ z 0 )</trash>
+
+
+				</figure>
+
+				<p>Then, in each site of the model (5.15) we have three holomorphic spin s = −1 operators and three antiholomorphic spin s = 0 operators which form the unitary representation of the principal series, t 0,2 , of the SL(2,C) group [35] and we identify t 0,2 as the local quantum space h k in the k−th site. This identification leads to the following properties. We notice that twoparticle hamiltonian H aux k,k+1 is unbounded operator due to singularities of the ψ−function on real negative axis,</p>
+
+				<figure>
+					<trash>H aux 12 = −ψ(−J 12 ) − ψ(1 + J 12 ) − ψ(− ¯ J 12 ) − ψ(1 + ¯ J 12 ) + C (5.17) where J 12 (J 12 + 1) = −∂ 1 ∂ 2 z 2 12 and ¯ J 12 ( ¯ J 12 + 1) = −¯ z 2 12 ¯ ∂ 1 ¯ ∂ 2 are two Casimir operators of the SL(2,C). The operators J 12 and ¯ J 12</trash>
+
+
+				</figure>
+
+				<p>act on the tensor product of two quantum spaces t 0,2 which can be decomposed [35] into the direct sum of the principal series representations t 0,2 ⊗ t 0,2 = ⊕ ν,m t ν,2m with integer m and real ν. For fixed m and ν the Casimir operators have the following eigenvalues [35]</p>
+
+				<figure>
+					<trash>J 12 = −h , ¯ J 12 = −1 + h * , h = 1 + m 2 − iν .</trash>
+
+
+				</figure>
+
+				<p>After their substitution into (5.17) we use the identity ψ(x) − ψ(1 − x) = −π cot(πx) and find that singularities at ν = 0 cancel in (5.17) to give a finite real result</p>
+
+				<figure>
+					<trash>H aux 12 = −4 Re ψ 1 + |m| 2 + iν + C (5.18) The constant C entering into (5.17) is defined as 9 C = ψ(−2iδ) + ψ(1 + 2iδ) + ψ(2 − 2iδ) + ψ(−1 + 2iδ) δ→0 = 2 + 4ψ(1) . (5.19)</trash>
+
+
+				</figure>
+
+				<p>The total quantum space of the model is the tensor product of n copies of t 0,2 and the scalar product on this space is given by [35]</p>
+
+				<figure>
+					<trash>χ aux 1 |χ aux 2 = dzd¯ z χ aux 1 ({z k , ¯ z k })(χ aux 2 ({z k , ¯ z k })) * (5.20) where dzd¯ z = n k=1</trash>
+
+
+				</figure>
+
+				<p>dz k d¯ z k . With this choice of the scalar product the hamiltonian H aux n as well as the Reggeon hamiltonian, H n , are bounded operators on the quantum space of the model. Using one-to-one correspondence, (5.16), between the spectra of the hamiltonians H aux n and H n , we obtain two different choices for the scalar product of the Reggeon states χ [18] dzd¯ z χ 1 (</p>
+
+				<p><formula>z, ¯ z)P 1 ¯ P 1 ...P n ¯ P n (χ 2 (z, ¯ z)) * or dzd¯ z χ 1 (z, ¯ z)(χ 2 (z, ¯ z)) * z 12 ¯ z 12 ...z n,1 ¯ z n,1 .</formula></p>
+
+				<p>For eigenstates of the Reggeon hamiltonian (3.10) both definitions are equivalent. Another important property of the hamiltonian (5.15) is that it is a selfadjoint operator,</p>
+
+				<p><formula>(H aux n ) † = H aux n</formula></p>
+
+				<p>since for s = −1 and s = 0 the spin operators (4.1) are related as S a † | s=−1 = ¯ S a | s=0 . Together with (5.16) this means that, first, the eigenvalues of the Reggeon hamiltonian corresponding to the eigenstates with the finite norm (5.20) are real</p>
+
+				<figure>
+					<trash>Im E n = α s N 4π Im (ε n + ¯ ε n ) = 0 , (5.21)</trash>
+
+
+				</figure>
+
+				<p>where E n is the energy of the compound state of n Reggeons defined in (2.11) and (3.11).</p>
+
+				<p>Second, the eigenstates (5.16) are orthogonal with respect to the scalar product (5.20) and, as a consequence, we have the following orthogonality condition δ q,q ′ δ(z 0 − z</p>
+
+				<figure>
+					<trash>′ 0 )δ(¯ z 0 − ¯ z ′ 0 ) = dzd¯ z χ n,{q ′ } ({z k , ¯ z k }; z ′ 0 , ¯ z ′ 0 ) * χ n,{q} ({z k , ¯ z k }; z 0 , ¯ z 0 ) z 12 ¯ z 12 z 23 ¯ z 23 ...z n1 ¯ z n1 (5.22) and the completeness condition n k=1 δ(z k − z ′ k )δ(¯ z k − ¯ z ′ k ) = {q} dz 0 d¯ z 0 χ n,{q} ({z k , ¯ z k }; z 0 , ¯ z 0 ) χ n,{q} ({z ′ k , ¯ z ′ k }; z 0 , ¯ z 0 ) * z 12 ¯ z 12 z 23 ¯ z 23 ...z n1 ¯ z n1 (5.23)</trash>
+
+
+				</figure>
+
+				<p>where sum over {q} means summation over discrete and integration over continuum quantum numbers q k .</p>
+
+				<p>We recall that relations (5.21) are valid only for the compound Reggeon states with the finite norm (5.20) and this condition restricts possible values of the quantum numbers {q k }. In particular, the energy of the compound state is given by (3.11) E n = α s N 4π (ε n (q) + ε n (¯ q)) with ε n = ε n (q) defined in (5.10) and with analogous expression for ¯ ε n = ε n (¯ q). To find the energy ε n one has to solve the Baxter equation (5.9) and it is natural to assume that for real {q} and λ the solution of the Baxter equation, Q n (λ), may be taken to be real. Then, it follows from (5.10) and (5.9), that ε n (q) is a function of holomorphic quantum numbers {q k } with real coefficients and, hence, (ε n (q)) * = ε n (q * ). We notice that in the model (5.15) the operators q k ≡ q</p>
+
+				<figure>
+					<trash>(s=−1) k and ¯ q k ≡ q (s=0) k are related as q †</trash>
+
+					<figDesc>k = ¯ q k for arbitrary k. This identity together with (5.4) leads to a similar relation between possible values of the quantum numbers</figDesc>
+
+				</figure>
+
+				<p><formula>q k = ¯ q * k , (k = 2, ..., n) (5.24)</formula></p>
+
+				<p>and as a result the energy of the compound Reggeon states is equal to</p>
+
+				<figure>
+					<trash>E n = α s N 4π (ε n (q) + ε n (q * )) = α s N 2π Re ε n (q) (5.25)</trash>
+
+					<figDesc>in accordance with (5.21). We can find possible values of q 2 and ¯ q 2 in (5.24) using the interpretation (4.17) of the corresponding operators as the Casimir operators of the SL(2,C) group.</figDesc>
+
+				</figure>
+
+				<p>Relation (5.4) implies that the eigenvalues q 2 and ¯ q 2 are the same for the Reggeon hamiltonian and for the hamiltonian (5.15). In the model (5.15), the operators q</p>
+
+				<figure>
+					<trash>(s=−1) 2 and ¯ q (s=0) 2</trash>
+
+
+				</figure>
+
+				<p>act on the total quantum space t 0,2 ⊗ ... ⊗ t 0,2 which can be decomposed into the direct sum of irreducible principal series representations, ⊕ ν,m t ν,2m , of the SL(2,C). Then, for each t ν,2m the Casimir operators q 2 and ¯ q 2 have the following eigenvalues</p>
+
+				<figure>
+					<trash>q 2 = −h(h − 1) , ¯ q 2 = − ¯ h( ¯ h − 1) , h = 1 + m 2 − iν , ¯ h = 1 − m 2 − iν (5.26)</trash>
+
+
+				</figure>
+
+				<p>with integer m and real ν. One checks that these expressions are in accordance with (5.24). Invariance of (5.22) and (5.23) under the conformal transformations (3.4) implies the following transformation properties of the Reggeon wave function,</p>
+
+				<figure>
+					<trash>χ n,{α} ({z i , ¯ z i }; z 0 , ¯ z 0 ) → χ ′ n,{α} ({z ′ i , ¯ z ′ i }; z ′ 0 , ¯ z ′ 0 ) = (cz 0 + d) 2h (¯ c¯ z 0 + ¯ d) 2 ¯ h χ n,{α} ({z i , ¯ z i }; z 0 , ¯ z 0</trash>
+
+					<figDesc>) with conformal weights h and ¯ h defined in (5.26). This relation can be rewritten in terms of generators of the conformal group as follows</figDesc>
+
+				</figure>
+
+				<p><formula>n k=1 ∂ k + ∂ 0 χ n,{α} = n k=1 z k ∂ k + z 0 ∂ 0 + h χ n,{α} = n k=1 z 2 k ∂ k + z 2 0 ∂ 0 + 2hz 0 χ n,{α} = 0</formula></p>
+
+				<p>and analogously for the antiholomorphic generators. Here, the first equation means that χ n,{α} ({z k , ¯ z k }; z 0 , ¯ z 0 ) depends on the distance z k0 = z k − z 0 to the center of mass, and the two remaining equations can be represented as S 3 χ n,{α} ({z i , ¯ z i }; 0, 0) = −hχ n,{α} ({z i , ¯ z i }; 0, 0) , S + χ n,{α} ({z i , ¯ z i }; 0, 0) = 0 (5.27) with S a the total spin for s = 0. One can show [19] that the wave functions of the Reggeon compound states, (3.10) and (5.13), satisfy (5.27). Using relations (5.22) and (5.23) we can give a meaning to the decomposition of the transition amplitude (2.12) over the Reggeon states.</p>
+
+				<figure>
+					<trash>Comparing (5.23) with analogous decomposition, I = {α} |χχ|, used in (2.12), we obtain, |χ = χ n,{q} ({z k , ¯ z k }; z 0 , ¯ z 0 ) , χ| = χ n,{q} ({z k , ¯ z k }; z 0 , ¯ z 0 ) * (z 12 ¯ z 12 ...z n1 ¯ z n1 ) −1 . Let us consider now the state χ|T (0) n which enters into (2.12) and (2.14). We recall that operator T (0) n describes the free propagation of n Reggeons, eq.(2.9), and therefore the state χ|T (0) n can be represented as χ|T (0) n = χ| P 1 ¯ P 1 ...P n ¯ P n −1 = (q n ¯ q n ) −1 χ n,{q} *</trash>
+
+
+				</figure>
+
+				<p>with operators q n defined in (4.16). Since χ n,{q} diagonalize q n and ¯ q n , the operators can be replaced by their corresponding eigenvalues, q n and q * n , respectively. After substitution of the last two relations into (2.12) we find transition operator as</p>
+
+				<figure>
+					<trash>T n ({z, ¯ z}, {z ′ , ¯ z ′ }; ω) = {q} 1 q n q * n dz 0 d¯ z 0 χ n,{q} ({z, ¯ z}; z 0 , ¯ z 0 ) χ n,{q} ({z ′ , ¯ z ′ }; z 0 , ¯ z 0 ) * ω − E n,{q} . (5.28)</trash>
+
+
+				</figure>
+
+				<p>Here, the sum goes over all possible compound n−Reggeon states propagating in the t−channel. Integration is performed over the position of the center of mass b 0 = (z 0 , ¯ z 0 ) of the states and after Fourier transformation d 2 b 0 exp(ib 0 · q 0 ) it can be replaced by integration over the total transverse momentum q 0 carried by the Reggeons in the t−channel. Momentum conservation fixes q 0 to be the transferred momentum q in the scalar products entering (2.4) and (2.14). As a result, for the residue factors (2.14) we obtain the following expressions</p>
+
+				<figure>
+					<trash>β {q} A (q 2 ) = dz 0 d¯ z 0 e ib 0 ·q dzd¯ z Φ A ({z, ¯ z})χ n,{q} ({z, ¯ z}; z 0 , ¯ z 0 ) , β {q} B (q 2 ) = 1 q n q * n β * A (q 2 )| A→B . (5.29)</trash>
+
+
+				</figure>
+
+				<p>We conclude from (5.21) and (5.29) that, in accordance with our expectations, the energy of the Reggeon states and the product of the residue factors are real in (2.13).</p>
+
+			</div>
+			<div>
+				<head n="6">Solving the Baxter equation</head>
+
+				<p>To find the explicit expressions for the spectrum of the Reggeon hamiltonian, (5.25) and (5.10), we have to solve the Baxter equation (5.9) for an arbitrary n and for fixed set of the quantum numbers {q k }. The next step will be the identification of the values of h and {q k } corresponding to maximum eigenvalue E max n , which determines the dominant contribution to the hadronic scattering amplitudes (2.13) and (2.15). To understand better this procedure we first consider the simplest case n = 2.</p>
+
+				<figure>
+					<trash>6.1. Special case: n = 2</trash>
+
+
+				</figure>
+
+				<p>For n = 2 the Reggeon hamiltonian (3.9) is equal to 2(H 12 + ¯ H 12 ) with the two-particle XXX spin s = 0 hamiltonians H 12 and ¯ H 12 given by (4.5). They depend on the operators J 12 and ¯ J 12 , which are related to the Casimir operators of the conformal group as J 12 (</p>
+
+				<figure>
+					<trash>J 12 + 1) = −q 2 = −z 2 12 ∂ 1 ∂ 2 and ¯ J 12 ( ¯ J 12 + 1) = −¯ q 2 = −¯ z 2 12 ¯ ∂ 1 ¯ ∂ 2 .</trash>
+
+
+				</figure>
+
+				<p>Possible eigenvalues of these operators were found in (5.26) and the corresponding eigenstates define the wave function of the compound state of n = 2 Reggeons, the BFKL Pomeron [17]</p>
+
+				<figure>
+					<figDesc>,</figDesc>
+					<trash>χ m,ν ({z, ¯ z}; z 0 , ¯ z 0 ) = N m,ν z 12 z 10 z 20 1+m 2 −iν ¯ z 12 ¯ z 10 ¯ z 20 1−m 2 −iν , (6.1) where the constant N m,ν = 1 4π 4 (ν 2 + m 2 /4</trash>
+
+
+				</figure>
+
+				<p>) fixes normalization of the state. To find the energy corresponding to this state one can use either the definition (4.5), or apply the relations (</p>
+
+				<figure>
+					<trash>3.11), (5.16), (5.18) and (5.19), E 2 (m, ν) = α s N π 2 Re ψ(1) − ψ 1 + |m| 2 + iν . (6.2)</trash>
+
+
+				</figure>
+
+				<p>Thus, the energy of n = 2 Reggeon state is finite and real. The maximum value of the energy</p>
+
+				<figure>
+					<trash>E max 2 = E 2 (0, 0) = α s N π 4 log 2 (6.3) corresponds to m = ν = 0, or equivalently to h = ¯ h = 1 2</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>.</head>
+
+				<p>One notice that the expression (6.2) is invariant under replacement h → h * and h → ¯ h, and the maximum value of E 2 corresponds to the values of h and ¯ h which are not changed under this transformation. This simple observation will be generalized in Sect. 6.3 for the spectrum of the Reggeon hamiltonian with n &gt; 2.</p>
+
+			</div>
+			<div>
+				<head n="6.2">Properties of the Baxter equation</head>
+
+				<p>After one introduces the notation (5.10) for the function Q n (λ) = λ n Q n (λ), the Baxter equation (5.9) takes a form of the discrete one-dimensional Schrodinger equation with a singular potential</p>
+
+				<figure>
+					<trash>Q n (λ + i) + Q n (λ − i) − 2 Q n (λ) = − h(h − 1) λ 2 + q 3 λ 3 + ... + q n λ n Q n (λ) (6.4)</trash>
+
+
+				</figure>
+
+				<p>where we replaced q 2 by the expression (5.26) in terms of the conformal weight h. We notice that (6.4) is invariant under the replacement h → 1 − h and we may restrict the values of the conformal weights to be Re h ≥ 1/2 (6.5) or equivalently m ≥ 0 in (5.26). Taking a naive continuum limit in (6.4), λ → ∞, we find that for finite h and {q} the equation has two independent solutions corresponding to the different asymptotic behavior of the solutions</p>
+
+				<figure>
+					<trash>λ n Q n (λ) λ→∞ −→ C 1 λ h + C 2 λ 1−h (6.6) with C 1</trash>
+
+
+				</figure>
+
+				<p>and C 2 arbitrary constants. One of the solutions grows at infinity while the second one vanishes. To make a choice between them, we compare (6.6) with the expression (5.14) for Q n (λ) given by the algebraic Bethe Ansatz. We find that C 2 = 0 for integer conformal weights h ≥ n. This suggests to impose the following asymptotic behavior on the solutions of the</p>
+
+				<figure>
+					<trash>Baxter equation (5.9), 10 Q n (λ) λ→∞ −→ λ h−n (6.7)</trash>
+
+
+				</figure>
+
+				<p>with the conformal weight h in the fundamental domain (6.5). Suppose we know the solution of the Baxter equation, Q n = Q n (λ; h, {q}), which obeys (6.7). Then, replacing h → 1 − h or λ → −λ and q k → (−) k q k in (6.4) we find that equation takes the original form, which means that up to inessential factor Q n (λ; h, {q k }) = Q n (λ; 1 − h, {q k }) = Q n (−λ; h, {(−) k q k }) . (6.8)</p>
+
+				<p>We substitute this identity into expressions for the energy and for integrals of motion, (5.10), and find that ε n (h, {q k }) = ε n (1 − h, {q k }) = ε n (h,</p>
+
+				<figure>
+					<trash>{(−) k q k }) (6.9) and I k (h, {q k }) = I k (1 − h, {q k }) = (−) k I k (h, {(−) k q k }) .</trash>
+
+
+				</figure>
+
+				<p>The last part of these relations can be understood from the properties of the model under reparameterization of the Reggeon coordinates, z k → z n−k+1 , with k = 1...n. We check that the Reggeon hamiltonian (3.9) is invariant under this transformation while the operators q k , defined in (4.16), change sign for odd k.</p>
+
+				<p>Let us consider the special values of the quantum numbers, q k = q k+1 = ... = q n = 0 with n the number of Reggeons and k ≥ 3. Then, the solution of the Baxter equation (5.9) for n Reggeons can be expressed as Q n (λ; h, q 3 ,</p>
+
+				<figure>
+					<trash>..., q k−1 , 0, ..., 0) = λ −n+k−1 Q k−1 (λ; h, q 3 , ..., q k−1 ) (6.10)</trash>
+
+
+				</figure>
+
+				<p>where Q k−1 (λ; h, q 3 , ..., q k−1 ) is the solution of the Baxter equation (5.9) for k − 1 Reggeons with the same quantum numbers h and q 3 , ... , q k−1 .</p>
+
+				<p>To understand this identity we substitute it into (5.10) and find the relation between the eigenvalues of the holomorphic hamiltonians for different number of Reggeons ε n (h, q 3 ,</p>
+
+				<figure>
+					<trash>..., q k−1 , 0, ..., 0) = ε k−1 (h, q 3 , ..., q k−1 ) . (6.11)</trash>
+
+
+				</figure>
+
+				<p>As it follows from the definition, (4.16), the operators q k are given by a sum of differential operators and each of them acts only on k holomorphic variables from the total set of n Reggeon coordinates z 1 , ..., z n . Therefore, to satisfy q k = q k+1 = ... = q n = 0 one can choose the eigenstate to be a function of only k − 1 holomorphic Reggeon coordinates, that is to be the holomorphic part of the compound state of k − 1 Reggeons. Using (5.28) we find that these states give infinite contributions to the transition operator and therefore should be excluded from the spectrum of n−Reggeon hamiltonian. This means, that solving the Baxter equation,</p>
+
+				<figure>
+					<trash>(5.9) and (6.4), we should satisfy condition q n = 0 . (6.12)</trash>
+
+
+				</figure>
+
+				<p>In particular, for n = 2 this condition together with (5.26) and (6.5) implies that h = 1 and h = 0.</p>
+
+			</div>
+			<div>
+				<head n="6.3">Maximum eigenvalue of the Reggeon hamiltonian</head>
+
+				<p>Let us consider expression (5.25) for the energy of the n−Reggeon compound state as a function of possible sets of the quantum numbers E n = E n (q). Then, it follows from (5.25) and (6.9), that this function has the following properties E n (q) = E n (q * ) = E n (−q) , where q = (q 2 , q 3 , ..., q n ) and −q = (q 2 , −q 3 , ..., (−) n q n ) and where complex conjugation acts in q * on all elements of the set. This means that the spectrum of the Reggeon hamiltonian is degenerate with respect to quantum numbers {q k }. Hence, if we assume from the very beginning that the eigenstate of the Reggeon hamiltonian corresponding to maximum eigenvalue is not degenerate, then the values of the corresponding quantum numbers can be fixed as</p>
+
+				<figure>
+					<trash>11 q 2k max = q * 2k max = ¯ q 2k max = ¯ q * 2k max , q 2k+1 max = ¯ q 2k+1 max = 0 . (6.13) In particular, for quantum numbers q 2 and ¯ q 2 defined in (5.26) this relation leads to q 2 max = ¯ q 2 max = 1 4 , for h = ¯ h = 1/2 , (6.14)</trash>
+
+
+				</figure>
+
+				<p>which indeed corresponds to the maximal energy (6.3) in the special case n = 2.</p>
+
+			</div>
+			<div>
+				<head n="6.4">Ansatz for the Baxter equation</head>
+
+				<p>To solve the Baxter equation (5.9) we choose the following ansatz [19] Q n (λ) =</p>
+
+				<figure>
+					<trash>Cz dz 2πi z −iλ−1 (z − 1) iλ−1 Q n (z) (6.15)</trash>
+
+
+				</figure>
+
+				<p>where the function Q n (z) is integrated along the closed path C z in the complex z−plane.</p>
+
+				<p>Integrating by parts k times we get the equivalent representation</p>
+
+				<figure>
+					<trash>Q n (λ) = λ −k Cz dz 2πi (z − 1) iλ−1 z −iλ−1 −iz(1 − z) d dz k Q n (z) (6.16)</trash>
+
+
+				</figure>
+
+				<p>which allows us to replace the original functional equation (5.9) by the n−th order differential equation on the function Q n (z)</p>
+
+				<figure>
+					<trash>  z(1 − z) d dz n + z(1 − z) n−2 k=0 i n−k q n−k z(1 − z) d dz k   Q n (z) = 0 (6.17)</trash>
+
+
+				</figure>
+
+				<p>with q 2 = −h(h − 1). It is important to notice that the integration by parts in (6.16) leads to the integrals like</p>
+
+				<figure>
+					<trash>Cz dz d dz (...) where (...) denotes the product of Q n (z) and z −iλ−1 (z − 1) iλ−1</trash>
+
+
+				</figure>
+
+				<p>or their derivatives with respect to z. The choice of the integration contour C z is fixed by the condition that these additional terms can be neglected, or equivalently that after encircling the path C z the function (...) comes to the initial point with the same value. To this end we notice that z −iλ−1 (z − 1) iλ−1 has a nontrivial monodromy at z = 0 and z = 1 and the same points are the singular points for the differential equation (6.17). The asymptotics (6.7) of the solution of the Baxter equation corresponds to the behavior of the function Q n (z) at infinity</p>
+
+				<figure>
+					<trash>Q n (z) z→∞ −→ z h−n+1 , (6.18)</trash>
+
+
+				</figure>
+
+				<p>which may be considered as a possible additional condition on the solutions of the differential equation (6.17).</p>
+
+				<figure>
+					<trash>6.5. Solution for n = 2 For n = 2 the differential equation (6.17) has a form of the hypergeometric equation d dz z(1 − z) d dz + h(h − 1) Q 2 (z) = 0 (6.19)</trash>
+
+
+				</figure>
+
+				<p>and its general solution is known as [36]</p>
+
+				<figure>
+					<trash>Q 2 (z) = const. Cw dw 2πi w h−1 (w − 1) h−1 (w − z) −h , (6.20)</trash>
+
+
+				</figure>
+
+				<p>where the integration path C w is fixed by the condition that the integrand should be a single valued function on C w , that is after encircling around C w it should have the same value. We substitute (6.20) into (6.15) and find the general solution of the Baxter equation for n = 2 as</p>
+
+				<figure>
+					<trash>Q 2 (λ) = const. Cz dz 2πi z −iλ−1 (z − 1) iλ−1 Cw dw 2πi w h−1 (w − 1) h−1 (w − z) −h . (6.21)</trash>
+
+
+				</figure>
+
+				<p>This expression depends on the integration paths C z and C w . Their choice depends on the values of λ and h. To show this let us consider the special case of integer positive conformal weight h. For h = Z Z + , the integrand in (6.21) has a pole at w = z and for the integral over w do not vanish the contour C w in (6.20) and (6.21) should encircle the point w = z. The result of taking residue at w = z leads to the well-known Rodrigues&apos;s formula for the</p>
+
+				<figure>
+					<trash>Legendre polynomials 12 Q 2 (z) = P h−1 (1 − 2z) = 1 (h − 1)! d h−1 dz h−1 (z(1 − z)) h−1 = F (h, 1 − h; 1; z) .</trash>
+
+
+				</figure>
+
+				<p>The integral over z in (6.21) has two branch points at z = 0 and z = 1. For the integrand to be single valued, the contour C z should encircle both branch points in the same direction. Then, we deform the integration path to be close to the segment [0, 1] and get the solution of the Baxter equation for integer h as</p>
+
+				<figure>
+					<trash>Q 2 (λ; h) = i h+1 π sinh(πλ) 1 0 dz z −iλ−1 (1 − z) iλ−1 P h−1 (1 − 2z) (6.22)</trash>
+
+
+				</figure>
+
+				<p>where the constant has been choosen for the solution to be real for h = Z Z + . The Legendre polynomials P k (x) for k = 0, 1, ... form a system of orthogonal polynomials on the interval −1 ≤ x ≤ 1 with the weight 1. They have the following properties [37]</p>
+
+				<figure>
+					<trash>P k (x) = P −k−1 (x) , P k (−x) = (−1) k P k (x) (6.23) and z(1 − z) d dz P k (1 − 2z) = k(k + 1) 2(2k + 1) P k+1 (1 − 2z) − P k−1 (1 − 2z) . (6.24) Using (6.23) we verify that Q 2 (λ; h) = i 1−2h Q 2 (λ; 1 − h) , Q 2 (−λ; h) = (−1) h Q 2 (λ; h) , Q * 2 (λ; h) = Q 2 (λ; h) . (6.25) Applying identity (6.24) together with (6.16) we find that Q 2 (λ; h) satisfies the recurrence relation λQ 2 (λ; h) = − h(h − 1) 2(2h − 1) Q 2 (λ; h + 1) + Q 2 (λ; h − 1) . (6.26)</trash>
+
+
+				</figure>
+
+				<p>Using expansion of the Legendre polynomial P h−1 (2z − 1) in powers of z we obtain the representation for the solution of the Baxter equation for integer conformal weight h as [19]</p>
+
+				<figure>
+					<trash>Q 2 (λ; h) = i h ∞ k=1 (−) k k (k!) 3 Γ(h + k) Γ(h − k) Γ(k − iλ) Γ(1 − iλ) = i h h(1 − h) 3 F 2 1 + h, 2 − h, 1 − iλ 2, 2 ; 1 . (6.27)</trash>
+
+					<figDesc>For lowest values of the conformal weight h the explicit expressions for Q 2 (λ; h) are</figDesc>
+					<trash>Q 2 (λ; 2) = 2 , Q 2 (λ; 3) = −6λ , Q 2 (λ; 4) = −2 + 10λ 2 , Q 2 (λ; 5) = 25 3 λ − 35 3 λ 3 . (6.28)</trash>
+
+
+				</figure>
+
+				<p>As it was expected from the algebraic Bethe Ansatz, (5.14), they are polynomials of degree h − 2 in λ and one checks that the roots of Q 2 (λ; h) do satisfy the Bethe equation (5.7).</p>
+
+			</div>
+			<div>
+				<head n="6.5.1">Relation to orthogonal polynomials</head>
+
+				<p>The remarkable property of the expression (6.27) is that being taken in the form of 3 F 2 hypergeometric infinite series for arbitrary complex h and λ, the expression for Q 2 (λ; h) becomes a polynomial of finite degree either for h = m or for λ = im with m integer. This suggests that there is a deep relation between solutions of the Baxter equation for n = 2 (and higher n) and some systems of orthogonal polynomials. The latter relation was explicitly specified by V. Spiridonov who has observed that solutions of the Baxter equation for n = 2 are tied to the Hahn class of orthogonal polynomials. Indeed, if one sets λ = −i(m + 1) with m = 0, 1, ... and h = ix + 1/2, then the Baxter equation (5.9) takes the form of three term recurrence relation which defines the continuous dual Hahn polynomials of the argument x 2 (see, e.g. [38]),</p>
+
+				<figure>
+					<trash>S m (x 2 ; a, b, c) = (a + b) m (a + c) m 3 F 2 −m, a + ix, a − ix a + b, a + c ; 1 , a = 3/2, b = c = 1/2 .</trash>
+
+
+				</figure>
+
+				<p>These polynomials are orthogonal on the interval 0 ≤ x &lt; ∞ with respect to a positive measure and they coincide up to an inessential factor with the solution Q 2 (−i(m + 1); ix + 1/2). Due to the well known property of duality of classical orthogonal polynomials the same solution of the Baxter equation determines different system of orthogonal polynomials for which λ becomes continuous variable while h plays a role of integer index. Indeed, putting h = m + 2 with m = 0, 1, ... and λ = x in (6.26) we find that (6.26) takes the form of three term recurrence relation for continuous symmetric Hahn polynomials [38],</p>
+
+				<figure>
+					<trash>P m (x; a, b) = i m 3 F 2 −m, m + 2a + 2b − 1, a − ix a + b, 2a ; 1 , a = b = 1</trash>
+
+					<figDesc>,</figDesc>
+
+				</figure>
+
+				<p>which are orthogonal on the interval −∞ &lt; x &lt; ∞ and which are proportional to Q 2 (x; m + 2). Identification of Q 2 (λ; m + 2) as Hahn polynomials implies, first, that the solutions, {λ} = (λ 1 , ... , λ k−2 ), of the Bethe equation (5.7) and (5.14) have the properties of the roots of orthogonal polynomials [37]. Namely, all roots {λ} are real and simple, between two consecutive zeros of Q 2 (λ; k) there is exactly one zero of Q 2 (λ; k + 1) and at least one zero of Q 2 (λ; k + m) for each m &gt; 0. The relation between orthogonal polynomials and solutions of the Baxter equation is a general property of the Baxter equation for XXX magnet of an arbitrary spin, including the case of compact SU(2) spins. In particular, some solutions of the Baxter equation (5.9) for n = 3 can be identified with the Wilson polynomials. The detailed consideration of these and other analytical solutions of the Baxter equation for generalized Heisenberg magnet models on the basis of methods developed in [39] will be given elsewhere [40]</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+					<trash>6.5.2. Eigenvalues for n = 2</trash>
+
+
+				</figure>
+
+				<p>Let us use the solution (6.27) to obtain the spectrum of the Reggeon hamiltonian for n = 2 which has been already defined in sect. 6.1. We start with the expression for the energy, (5.10), and evaluate Q 2 (λ; h) and its derivative at λ = −i while the same quantities at λ = i can be found from (6.25). We use (6.27) to get for h = Z Z +</p>
+
+				<figure>
+					<trash>Q 2 (−i; h) = i h h−1 k=1 (−1) k k (k!) 3 Γ(h + k) Γ(h − k) Γ(k − 1) Γ(0) = i h h(1 − h) (6.29)</trash>
+
+					<figDesc>since only one term with k = 1 survives in total sum. For the derivative we obtain</figDesc>
+					<trash>−i d dλ Q 2 (−λ − i; h) λ=0 = i h h−1 k=2 (−) k Γ(h + k) (k − 1)Γ(h − k)Γ 2 (k + 1) .</trash>
+
+
+				</figure>
+
+				<p>To evaluate this sum we rewrite it as a contour integral in the complex j−plane</p>
+
+				<figure>
+					<trash>−i d dλ Q 2 (−λ − i; h) λ=0 = i h dj 2πi π sin(πj) Γ(h + j) (j − 1)Γ(h − j)Γ 2 (j + 1)</trash>
+
+
+				</figure>
+
+				<p>where integration contour encircles half of the real axis right to j = 2. The integral is defined by singularities of the integrand in the complex j−plane. A simple analysis shows that the integrand has poles at j = 0, 1, 2, ..., h−1 while singularities at j = −1, −2, . . . are compensated by Γ 2 (j + 1) in the denumerator. Since the points j = 2, 3, ..., h − 1 are inside the integration contour, the integral is given by the residue at j = 0 and j = 1,</p>
+
+				<figure>
+					<trash>−i d dλ Q 2 (−λ − i; h) λ=0 = −2i h h(1 − h) [ψ(h) − ψ(1) − 1] (6.30)</trash>
+
+
+				</figure>
+
+				<p>with h positive integer conformal weight. Now, we substitute (6.27) into (5.10), take into account (6.29), (6.30) together with (6.25) and obtain the following expression for the energy of the holomorphic Reggeon hamiltonian ε 2 (h) = −4 [ψ(h) − ψ(1)] , for h = Z Z + . (6.31)</p>
+
+				<p>Expression (6.31) is valid for positive integer conformal weight h and in order to find the energy for negative integer h we have to use the symmetry (6.9). In particular, the conformal weight ¯ h corresponding to the antiholomorphic hamiltonian can be found from (5.26) as ¯ h = 1 − h * and for positive h it becomes negative or zero. In general, for an arbitrary complex h the energy of the n = 2 Reggeon state is given by (5.25). We replace ε 2 (h) in (5.25) by its expression (6.31) for integer h and analytically continue the result to complex values of the conformal weight,</p>
+
+				<figure>
+					<trash>(5.26), E 2 (h) = α s N 2π Re ε 2 (h) = 2 α s N π Re [ψ(1) − ψ(h)] .</trash>
+
+
+				</figure>
+
+				<p>This expression coincides with the energy (6.2) of the Reggeon hamiltonian at n = 2.</p>
+
+				<figure>
+					<trash>6.5.3. Eigenstates for n = 2</trash>
+
+					<figDesc>For n = 2 we obtain from (5.13) the expression for the holomorphic wave function of n = 2 Reggeon state as</figDesc>
+					<trash>ϕ h (z 1 , z 2 ; z 0 ) = −z 2 12 (iS − ) h−2 Q 2 (x 1 ; h) 1 z 2 10 z 2 20 , (6.32) where the operator x 1 was defined in (5.12) and S − = −(∂ 1 + ∂ 2 ). Substituting (6.28) into (6.32), we find that ϕ 2 = −2 z 12 z 10 z 20 2 , ϕ 3 = 2 · 3! z 12 z 10 z 20 3 , ϕ 4 = −3 · 4! z 12 z 10 z 20 4 , ϕ 5 = 4 · 5! z 12 z 10 z 20 5</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>.</head>
+
+				<p>To find ϕ h for an arbitrary h we introduce the notation for the holomorphic part of the wave function (</p>
+
+				<figure>
+					<trash>5.16) φ h = −z −2 12 ϕ h = (iS − ) h−2 Q 2 (x 1 ; h) 1 z 2 10 z 2 20 (6.33) and use the property (6.26) of Q 2 (x 1 ; h) together with (6.32) to transform it into the recurrence relation ∂ 1 ∂ 2 z 12 φ h = − h(h − 1) 2(2h − 1) φ h+1 − (∂ 1 + ∂ 2 ) 2 φ h−1</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>.</head>
+
+				<p>One can check that the solution of this equation is</p>
+
+				<figure>
+					<trash>φ h = (−) h (h − 1)N h z h−2 12 (z 10 z 20 ) h ,</trash>
+
+
+				</figure>
+
+				<p>where N h = hN h−1 . Substituting φ h into (6.33) we obtain the holomorphic wave function of the n = 2 Reggeon state in the form (6.1). Thus, for n = 2 the solution of the Baxter equation (6.27) allows us to reproduce the spectrum of the Reggeon hamiltonian. 6.6. Solution for n ≥ 3</p>
+
+				<p>Analyzing the differential equation (6.17) for n ≥ 3, we follow the same procedure as for n = 2. Namely, we start with integer positive conformal weight h and try to find solution of (6.17) and (6.15) which can be analytically continued for complex values of h given in (5.26). However, for n ≥ 3 the solution of (6.17) depends on additional quantum numbers q 3 , ..., q n which makes analysis more complicated. Let us introduce notation for the derivative</p>
+
+				<figure>
+					<trash>Q n (z) = −iz(1 − z) d dz n−2 Q n (z) , . Applying operator z(1 − z) d dz n−2 (z(1−z)) −1 to the both sides of (6.17) we find the differential equation for Q n (z) as   z(1 − z) d dz n−2 d dz z(1 − z) d dz + n−2 k=0 i n−k q n−k z(1 − z) d dz k   Q n (z) = 0 . (6.34)</trash>
+
+
+				</figure>
+
+				<p>Comparison of this equation with (6.19) and the property (6.24) of the Legendre polynomials suggest us to look for the solution of (6.34) as a linear combination of the Legendre polynomials</p>
+
+				<figure>
+					<trash>Q n (z) = ∞ k=1 i k P k−1 (1 − 2z) C k , (6.35)</trash>
+
+
+				</figure>
+
+				<p>where summation is performed over positive integer k and the coefficients C k = C k (h, {q}) have to be found from (6.34). Once we know these coefficients, we use (6.15) and (6.17) to find the solution of the Baxter equation as</p>
+
+				<figure>
+					<trash>Q n (λ; h, {q}) = λ 2−n ∞ k=1 Q 2 (λ; k) C k (h, {q}) (6.36) with Q 2</trash>
+
+					<figDesc>(λ; k) the solution of the Baxter equation for n = 2 defined in (6.27). Substituting this expansion into (5.10), we find expression for the energy of the holomorphic hamiltonian in terms of the coefficients C k</figDesc>
+					<trash>ε n (h, {q}) = −4 ∞ k=1 [ψ(k) − ψ(1)] ˆ C k (h, {q}) (6.37) with normalized coefficients C k defined as ˆ C k = Re i k k(k − 1)C k m≥1 i m m(m − 1)C m , ∞ k=1 C k = 1 . (6.38)</trash>
+
+
+				</figure>
+
+				<p>For n = 2 we havê C k = δ k,h and only one term with k = h survives in the sum (6.36) and (6.37). For n ≥ 3 we substitute (6.34) into (6.17) and equate to zero coefficients in front of Legendre polynomials. To this end, we notice from (6.24) that acting on the Legendre polynomial, P k (1 − 2z), the operator z(1 − z) d dz shifts its index, while operator d dz z(1 − z) d dz is diagonal. Hence, in the basis of the Legendre polynomials, |k = P k−1 (1 − 2z), both operators can be represented as infinite dimensional matrices</p>
+
+				<figure>
+					<trash>U m,k ≡ i k−m−1 m|z(1 − z) d dz |k = − k(k − 1) 2(2k − 1) (δ m,k+1 + δ m,k−1 ) , V m,k ≡ −m| d dz z(1 − z) d dz + h(h − 1)|m = (k + h − 1)(k − h)δ m,k . (6.39)</trash>
+
+
+				</figure>
+
+				<p>In terms of these operators, the resulting equation for the coefficients C k has the following matrix form</p>
+
+				<figure>
+					<trash>W (q) = U n−2 V + n k=3 q k U n−k , W (q)|C = 0 , (6.40)</trash>
+
+
+				</figure>
+
+				<p>where |C denotes infinite dimensional vector with components C k and the term with q 2 has been included into the definition (6.39) of the operator V . The condition (6.18) leads to the asymptotic behavior of the function Q n (z)</p>
+
+				<figure>
+					<trash>Q n (z) z→∞ → z h−1 , for h = Z Z + . (6.41)</trash>
+
+
+				</figure>
+
+				<p>Let us look for the solutions of (6.34) and (6.35) which are finite sums of the Legendre polynomials . Then, from the asymptotics of the Legendre polynomials at infinity, P n (z) ∼ z n−1 , and from comparison of (6.41) and (6.35) we find that C h+1 = C h+2 = ... = 0 (6.42) and nonzero components of |C form a h−dimensional vector. It is clear from (6.40) that the resulting finite-dimensional vector is the eigenstate of the h×h minor of the infinite-dimensional matrix (6.40) corresponding to the zero eigenvalue. This implies that the determinant of the minor should vanish which leads to the condition on the quantum numbers q k entering into (6.40). Moreover, as we will show below, there are n − 3 additional conditions on q k which follow from the relations (6.42) and hence the total number of the independent constraints turns out to be equal to the number of q k &apos;s. This means, that for the Baxter equation (5.9) to have polynomial solutions, the quantum numbers q k have to be quantized. 6.6.1. Special case: n = 3</p>
+
+				<p>Let us consider the explicit form of (6.40) for n = 3, f k+1 C k+1 (q 3 ) + f k−1 C k−1 (q 3 ) = q 3 C k (q 3 ) , (6.43) where the coefficients f k depend on the conformal weight h and are given by</p>
+
+				<figure>
+					<trash>f k = k(k − 1) 2(2k − 1) (k − h)(k + h − 1) , f 1 = f h = 0 . (6.44)</trash>
+
+
+				</figure>
+
+				<p>The last identity ensures the trancation of the recurrence relations (6.43) at k = h − 1. Introducing the notation for W h to be h × h minor of the matrix W defined in (6.39) and for |C h to be h−dimensional component of the vector |C,</p>
+
+				<figure>
+					<trash>W h (q 3 ) =          q 3 −f 2 0 . . . 0 −f 1 q 3 −f 3 0 −f 2 q 3 . . . −f h 0 −f h−1 q 3          , |C h =          C 1 C 2 C 3 . . . C h          , (6.45) we rewrite original matrix equation (6.40) as det W h (q 3 ) = 0 , W h (q 3 )|C h = 0 . (6.46)</trash>
+
+
+				</figure>
+
+				<p>Here, the first equation gives us possible values of the quantum numbers q 3 for positive integer conformal weight h, while the second one determines the coefficients entering into solution of the Baxter equation (6.36) and energy of the Reggeon hamiltonian, (6.37) and (6.38). It can be easily shown from (6.45) that det W h (−q 3 ) = (−1) h det W h (q 3 ) . (6.47)</p>
+
+				<p>For even h this equation has h−2 nontrivial solutions, q 3 = 0, and a degenerate solution q 3 = 0, which being substituted into (6.43) leads to C k = 0. For odd h it has h − 3 solutions for q 3 = 0 (see fig. 8) and a solution q 3 = 0 corresponding to the degenerate states discussed in Sect. 6.2. Hence, for fixed h we have 2[h/2 − 1] nontrivial solutions for q 3 which satisfy (6.12) and which determine the solutions (6.36) of the Baxter equation, or equivalently 2[h/2 − 1] eigenstates of the holomorphic Reggeon hamiltonian. Although it is not difficult to solve (6.43) or (6.46) for lowest values of h = Z Z + , the general analytical formula is not available yet.</p>
+
+				<p>Since det W h (q 3 ) is a polynomial of degree h in q 3 with real coefficients and certain parity (6.47), its zeros may be either real or pure imaginary. It turns out that only the first possibility is realized Im q 3 = 0 , for h = Z Z + . (6.48)</p>
+
+				<p>To understand this property we notice that the coefficients C k (q 3 ) satisfy the three–term recurrence relations (6.43), which define a system of generalized orthogonal polynomials in continuous variable q 3 . 13 Condition C h+1 (q 3 ) = 0 is equivalent to (6.46) and it implies that the possible values of q 3 , being roots of orthogonal polynomial, are real and simple. We conclude that each term in the sum (6.36) which determines the solution of the Baxter equation for n = 3 and h = Z Z has a form of the product of two orthogonal polynomials, Q 2 (λ; k) in continuous variable λ and C k (q 3 ) in continuous variable q 3 .</p>
+
+				<p>One can find C k from (6.43) and (6.46) up to some constant which can be fixed by putting C 1 = 1. Then, it follows from (6.43) and (6.48) that C k are real and C k (−q 3 ) = (−) k+1 C k (q 3 ). As a consequence the solution of the Baxter equation (6.36) and the energy of the holomorphic hamiltonian (6.37) are also real for integer conformal weight h and real λ. Here, we give few examples of the solutions of the Baxter equation, Q 3 (λ; h, q 3 ), for lowest values of the conformal weight h and positive q 3 ,</p>
+
+				<figure>
+					<trash>Q 3 (λ; 4, 2 √ 3) = −6 − 6 √ 3λ , Q 3 (λ; 5, 6 √ 3) = − 10 3 − 10 √ 3λ − 40 3 λ 2 , Q 3 (λ; 6, 4 √ 30) = − 5 √ 30 2 λ − 30λ 2 − 5 √ 30 2 λ 3 , Q 3 (λ; 6, 4 √ 3) = − 15 2 − 35 √ 3 4 λ + 15 2 λ 2 + 25 √ 3 4 λ 3 , Q 3 (λ; 7, 6 √ 23 ± 6 √ 3) = − 21∓7 √ 69 20 − 21 √ 23∓49 √ 3 8 λ − 189±7 √ 69 8 λ 2 − 21 √ 23±119 √ 3 8 λ 3 − 63±49 √ 69 40 λ 4 .</trash>
+
+
+				</figure>
+
+				<p>For h &lt; 4 the Baxter equation has only degenerate solutions (6.10) corresponding to q 3 = 0. As a nontrivial check of these expressions we verify that, similar to the case n = 2, the roots of Q 3 (λ; h, q 3 ) satisfy the Bethe equation (5.7) for n = 3. Moreover, we find that the roots {λ k } are real and simple. This should be compared with the situation for spin s = 1/2 XXX magnet, where the solutions of the Bethe equation (5.7) form strings in the complex λ−plane symmetric with respect to real axis [24, 25, 26, 27].</p>
+
+				<p>Unfortunately, we do not have analytical expressions for Q 3 (λ; h, q 3 ) similar to that for n = 2, eq.(6.27). For lowest values of h the results of our calculations of the solution of the Baxter equation and the energy of the holomorphic Reggeon hamiltonian are shown in fig. 3–10. For fixed h = Z Z + the energy ε 3 (h, q 3 ) turns out to be a decreasing function of q 3 and for q 2 3 → 0 it approaches the value ε 2 (h) = −4[ψ(h) − ψ(1)] in accordance with (6.11). 6.6.2. Generalizations for n ≥ 4</p>
+
+				<p>Let us consider the properties of the equations (6.40) and (6.42) for n ≥ 4. Using the explicit form of the matrices (6.39) one finds that for an arbitrary n the coefficients C k satisfy the (2n − 3)−term recurrence relations similar to (6.43) which relate the coefficients C k−n+2 , ..., C k+n−2 and involve the quantum numbers q 3 , ..., q n . If we again define W h as a h−dimensional minor of the matrix (6.40), then the relations (6.46) are still valid. The first equation in (6.46) gives the relation between q 3 , ..., q n , while the second one allows us to find the coefficients C k as functions of these quantum numbers. We notice that for n = 3 it is enough to satisfy C h+1 = 0 in order to get C h+2 = C h+3 = ... = 0 from the three-term recurrence relations (6.43). For n ≥ 4 the recurrence relations for C k involve (2n − 3) terms and as a result equation (6.42) becomes equivalent to C h+1 = ... = C h+n−2 = 0. These relations together with (6.40) lead to the following conditions W mk (q)C k = 0 , (6.49) with k = 1, ..., h and m = h + 1, ..., h + n − 3. Once we know expressions for |C h from (6.46), we substitute them into (6.49) to get (n − 3)−additional conditions on q 3 , ..., q n which together with (6.46) completely fix allowed values of these quantum numbers. The problem becomes pure algebraic and we summarize the properties of the solutions in figs.3–10. It turns out that for n ≥ 4 and integer positive conformal weight, h = Z Z + , the Baxter equation (5.9) has nontrivial polynomial solutions only for h ≥ n since for h &lt; n one can not satisfy condition (6.12). Similar to (6.48), the quantum numbers q 3 , ..., q n which one finds solving (6.46) and (6.49) are real and simple. Then, the solution of the Baxter equation, Q n (λ; h, {q}), becomes a polynomial of degree h − n in spectral parameter λ with real coefficients. The roots λ 1 , ..., λ h−n of Q n (λ; h, {q}) satisfy the Bethe equation (5.7). We find that for each solution of the Baxter equation, the roots are simple and real Im λ k = 0 (6.50) with k = 1, 2, ..., h − n. Being taken together, the roots corresponding to all solutions of the Baxter equation for fixed n belong to the interval of real axis in the complex λ−plane symmetric with respect to 0. The length of the interval increases as n grows. The property (6.50) allows us to find lower and upper bounds on the energy of the Reggeon hamiltonian, ε n (h, q), corresponding to the polynomial solutions of the Baxter equation.</p>
+
+				<figure>
+					<trash>Using (6.50) we find from (5.8) the following relation − 2h ≤ ε n (h, q) ≤ −2n . (6.51)</trash>
+
+
+				</figure>
+
+				<p>One checks, that for n = 2, 3 and 4 this estimate is in agreement with our results, (6.31) and fig. 3–10. Moreover, one can find using (5.10) and (5.14) that the maximum value of energy, ε n = −2n, is achieved for the trivial solution of the Baxter equation (</p>
+
+				<figure>
+					<trash>5.9), Q n (λ) = const. , h = n , q 2k = 2(−) k n! (2k)!(n − 2k)! , q 2k+1 = 0 , ϕ n = z 12 z 23 ...z n1 z 2 10 z 2 20 ...z 2 n0</trash>
+
+
+				</figure>
+
+				<p>, which is in agreement with (6.13). Notice that for odd n this solution is degenerate since it does not satisfy (6.12).</p>
+
+				<p>As we have seen in Sect. 2, the Regge asymptotics of the scattering amplitude is dominated by the n−Reggeon states with maximum value of the energy (5.25). The relation (6.51) implies that using the polynomial solutions of the Baxter equation we cannot exceed the bound for the energy E n = − αsN π n. However this value cannot be maximal because for n = 2 the maximal value of the energy, (6.3), is positive. This is in accordance with our expectations, (6.13) and (6.14), that the maximal value of energy corresponds to the conformal weight h = 1/2, while polynomial solutions exist only for integer h ≥ n. Nevertheless, the reason why we might be interested in solving the Baxter equation for integer conformal weight h is that, similar to the situation for n = 2 described in Sect. 6.5, we hope to find expressions for the spectrum of the Reggeon hamiltonian which can be analytically continued for arbitrary h. The analytical expressions for n = 2 and the properties of the Baxter equation for n ≥ 3 (see figs.3– 10) indicate that the polynomial solutions of the Baxter equations should be related to new systems of orthogonal polynomials [40]</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="7">Conclusions</head>
+
+				<p>In this paper we studied the asymptotic behavior of hadronic scattering amplitudes in the Regge limit (1.1) of high energies and fixed transferred momentum. The consideration was performed in the generalized leading logarithmic approximation which preserves unitarity of the S−matrix and which requires the resummation of infinite series of nonleading logarithmic corrections, α k s log m s, to the scattering amplitude. Although this approximation is rather crude, e.g., it does not allow us to fix the argument of the coupling constant in (2.13) and (2.15), it gives the first order approximation to the exact result. After resummation to all orders of perturbation theory, the scattering amplitude has a Regge behavior which can be associated with the singularities of the partial waves in the complex angular momentum plane. In the generalized leading logarithmic approximation, due to gluon reggeization, longitudinal gluonic degrees of freedom become semiclassical and nontrivial interaction occurs only in two-dimensional space of transverse gluon momenta. As a result of this interaction, reggeized gluons form color singlet compound states – Pomeron, Odderon and higher Reggeon states, which satisfy the Schrodinger equation with the Reggeon hamiltonian depending on the color charges of gluons and their transverse momenta. The Reggeon hamiltonian describes the pair–wise interaction between reggeized gluons and it obeys the remarkable properties of holomorphic separability and conformal invariance in the impact parameter space.</p>
+
+				<p>The properties of the compound Reggeon states govern the large−s behavior of the total cross section, (1.3) and (2.13), and small−x asymptotics of the structure function of deep inelastic scattering, (2.15).</p>
+
+				<p>In the impact parameter space, holomorphic and antiholomorphic gluonic degrees of freedom are coupled to each other only via interaction between their color charges, t a k t a m . If one will be able to find the limit in which this interaction becomes trivial, then the original two-dimensional Schrodinger equation (3.6) can be replaced by the system of holomorphic and antiholomorphic one-dimensional Schrodinger equations (3.8). Moreover, this correspondence becomes exact in the special case of the compound states built from n = 2 and n = 3 Reggeons – the BFKL Pomeron and Odderon, respectively. For n &gt; 3 we analyzed the Schrodinger equation (3.6) in the multi–color limit, N → ∞, in which holomorphic and antiholomorphic sectors become decoupled and the interaction occurs only between nearest Reggeons, (3.9). 14 Thus, the expression for the energy of the compound n−Reggeon state (3.11) is exact for n = 2, 3, but for n &gt; 3 it contains O(1/N 2 ) corrections which can be fixed from the condition of the S−matrix unitarity in the 1/N−expansion [30]. We found that holomorphic and antiholomorphic Reggeon hamiltonians (3.1), (3.2) and (3.3) coincide with the hamiltonian (4.4) and (4.5) of generalized XXX Heisenberg magnet for spin s = 0 corresponding to the principal series representation of the SL(2,C) group. As a result, the system of Schrodinger equations (3.8) turns out to be completely integrable. The holomorphic wave functions and the corresponding energies of the compound n−Reggeon states become identical to the eigenstates and eigenvalues of the one-dimensional XXX Heisenberg magnet defined on the one-dimensional lattice with periodic boundary conditions and with the number of sites equal to the number of Reggeons. In each site of the lattice the spin operators are realized as generators of the conformal SL(2,C) group acting on the Reggeon holomorphic and antiholomorphic coordinates. A generalized Bethe ansatz, based on the method of Baxter Q−operator, was developed for the diagonalization of the Reggeon hamiltonian. The spectrum of the n−Reggeon states, (5.13) and (5.13), was obtained in terms of the solution of the Baxter 14 Another possibility would be to consider the SU (2) gauge group and take into account [14] that for the color singlet n−Reggeon states t a k t a m |χ = −2/(n − 1)|χ with (t a ) bc = −iǫ abc . This means that for the SU (2) gauge group the Schrodinger equation (3.6) is equivalent to the system (3.8) but with (anti-)holomorphic hamiltonian describing the long–range interaction on the one-dimensional lattice, k&gt;m H(z k , z m ). equation (5.9). We studied the general properties of this equation and found the relation between its solutions and some systems of orthogonal polynomials. For n = 2 the solutions of the Baxter equation were identified as series of Hahn orthogonal polynomials. These solutions were used to derive the spectrum of the n = 2 Reggeon state, the BFKL Pomeron. The next step is the solution of the Baxter for n ≥ 3. We might hope that the analytical solution can be found using the relation of Baxter equation to the orthogonal polynomials.</p>
+
+				<p>Another way to solve the Baxter equation (5.9) can be to explore the conformal invariance of the Reggeon interaction and find interpretation of the differential equation (6.17) within the framework of two-dimensional conformal field theories. To this end, we notice the remarkable similarity between solution of the Baxter equation for n = 2 and the spectrum of the SL(2, IR)/U(1) coset conformal field theory [42].</p>
+
+				<figure>
+					<trash>Figures: # &quot; ! 1 0 ( )   4 4 ¨ ¨ r r P P 1 2 3 n · · · γ * γ * ¥ §¥ §¥ § ¦ ¤ ¦ ¤ ¦ ¤</trash>
+
+					<head>Figure 1:</head>
+
+					<figDesc>Unitary Feynman diagrams contributing to the structure function of deep inelastic scattering in the generalized leading logarithmic approximation in the multicolor limit, N → ∞.</figDesc>
+
+				</figure>
+
+				<p>Solid lines represent n reggeized gluons propagating in the t−channel. Dotted lines denote interaction of reggeized gluons with their nearest neighbours. Upper and lower blobs describe the coupling of gluons to virtual photon γ * and proton state p, respectively. For finite N one has to add the diagrams with pair–wise interactions between n reggeized gluons.</p>
+
+				<figure>
+					<trash>9 8 6 7 9 8 6 7</trash>
+
+
+				</figure>
+
+			<note>= + 1≤j&lt;k≤n ... ... ... ... ... ... ... ... ...</note>
+
+				<figure>
+					<trash>T n (ω) 1 j k n n k j 1 1 j k n ω T n (ω)</trash>
+
+					<head>Figure 2:</head>
+
+					<figDesc>The Bethe–Salpeter equation for the transition operator T n (ω), describing n → n elastic scattering of reggeized gluons in the t−channel. Iterations of this equation reproduce the ladder diagrams of fig. 1.</figDesc>
+					<trash>-15 -14 -13 -12 -11 -10 -9 -8 -7 -6 3 4 5 6 7 8 9 10 11 ε 3 h                                             </trash>
+
+
+				</figure>
+
+				<figure>
+					<head>Figure 3:</head>
+
+					<figDesc>The energy of the holomorphic Reggeon hamiltonian for n = 3 corresponding to the polynomial solutions of the Baxter equation.</figDesc>
+
+				</figure>
+
+				<p>The solid line represents the energy for n = 2 defined in (6.31). Points on this line correspond to the degenerate solutions, q 3 = 0, of the Baxter equation for n = 3.</p>
+
+				<figure>
+					<trash>-18 -16 -14 -12 -10 -8 -6 3 4 5 6 7 8 9 10 11 ε 4 h                                                                                                                       </trash>
+
+					<head>Figure 4:</head>
+
+					<figDesc>The holomophic energy for n = 4 corresponding to the polynomial solutions of the Baxter equation. The solid line represents ε 2 (h).</figDesc>
+					<trash>-15 -14 -13 -12 -11 -10 -9 -8 -7 -6 -200 -150 -100 -50 0 50 100 150 200 ε 3 q 3                                             </trash>
+
+
+				</figure>
+
+				<figure>
+					<head>Figure 5:</head>
+
+					<figDesc>The holomorphic energy ε 3 for n = 3 as a function of quantized q 3 .</figDesc>
+
+				</figure>
+
+				<p>The maximum value of the energy ε 3 = −6 corresponds to the degenerate solution q 3 = 0.</p>
+
+				<figure>
+					<trash>-18 -17 -16 -15 -14 -13 -12 -11 -10 -9 -8 -250 -200 -150 -100 -50 0 50 100 150 200 250 ε 4 q 3                                                                                                                      </trash>
+
+					<head>Figure 6:</head>
+
+					<figDesc>The holomorphic energy ε 4 for n = 4 as a function of quantized q 3 .</figDesc>
+
+				</figure>
+
+				<p>The maximum value of energy ε 4 = −8 corresponds to q 3 = 0 but in contrast with fig. 5 this solution is not degenerate because it corresponds to q 4 = 2.</p>
+
+				<figure>
+					<trash>-18 -17 -16 -15 -14 -13 -12 -11 -10 -9 -8 -200 -100 0 100 200 300 400 500 600 ε 4 q 4                                                                                                                      </trash>
+
+					<head>Figure 7:</head>
+
+					<figDesc>The holomorphic energy ε 4 for n = 4 as a function of quantized q 4 .</figDesc>
+
+				</figure>
+
+				<p>The maximum value of the energy ε 4 = −8 corresponds to q 4 = 2.</p>
+
+				<figure>
+					<trash>-200 -150 -100 -50 0 50 100 150 200 3 4 5 6 7 8 9 10 11 q 3 h                                             </trash>
+
+					<head>Figure 8:</head>
+
+					<figDesc>Quantized values of q 3 as a function of conformal weight h for n = 3 Baxter equation.</figDesc>
+
+				</figure>
+
+				<p>The symmetry q 3 → −q 3 is in agreement with (6.8) and (6.9). The points q 3 = 0 correspond to the degenerate solutions. The distribution of q 3 for n = 4 Baxter equation follows the same pattern.</p>
+
+				<figure>
+					<trash>-200 -100 0 100 200 300 400 500 600 4 5 6 7 8 9 10 11 q 4 h                                                                                                                        </trash>
+
+					<head>Figure 9:</head>
+
+					<figDesc>Quantized values of q 4 as a function of conformal weight h for n = 4 Baxter equation.</figDesc>
+					<trash>-100 -50 0 50 100 150 200 250 300 350 400 -200 -150 -100 -50 0 50 100 150 200 q 4 q 3                             </trash>
+
+
+				</figure>
+
+				<figure>
+					<head>Figure 10:</head>
+
+					<figDesc>Distribution of the quantized values of q 4 versus q 3 for n = 4 and h = 10.</figDesc>
+
+				</figure>
+
+			</div>
+
+			<note place="foot" n="2"> We should note that the generalized leading logarithmic approximation restores unitarity of the scattering amplitude in its direct s, t and u−channels but not in the subchannels corresponding to the intermediate states [14]. 3 Here we refer to the Sudakov decomposition of the gluon momenta over longitudinal and transverse momenta , K = αP A + βP B + k with P A and P B hadron momenta.</note>
+
+			<note place="foot" n="4"> To give a meaning to this expansion one has to specify the scalar product on the Hilbert space of the eigenstates and find the hermiticity properties of the hamiltonian. This will be done in sect. 5.3.</note>
+
+			<note place="foot" n="5"> Here we assumed that the energies of the compound states, E n,{α} , and the product of the residue functions are real in (2.13). The proof will be given in Sect. 5.3.</note>
+
+			<note place="foot" n="6"> To get some insight into possible mechanisms of unitarity restoration one may consider the following example , s λ − α s s 2λ /2 + α 2 s s 3λ /3 + ... = −λ/α s log s, in which each individual term of the series violates the unitarity bound but their sum does not.</note>
+
+			<note place="foot" n="8"> As we will show in Sect. 5.3 infinite constants corresponding to holomorphic and antiholomorphic hamiltonians , H k,k+1 and ¯ H k,k+1 , are canceled in the sum (3.11).</note>
+
+			<note place="foot" n="9"> To derive (5.17) and the expression for C one uses the definition (4.4) and (4.3) of the two particle XXX hamiltonian for antiholomorphic spin s and for holomorphic spin (−1 − s * ) with s = iδ and δ → 0</note>
+
+			<note place="foot" n="10"> This condition fixes the ambiguity of (6.4) those solutions can be defined up to factors exp(±2πλk) for k = Z Z + which lead to the exponential growth of Q n (λ) at infinity.</note>
+
+			<note place="foot" n="11"> Changing the sign of the Reggeon hamiltonian we can reformulate this condition as uniqueness of the ground state of the model.</note>
+
+			<note place="foot" n="12"> We should notice that there is a second solution of (6.19), known as the Legendre function of the second kind [36, 37]. However, it does not satisfy the additional condition (6.18) and leads to the solution of the Baxter equation with asymptotic behavior (6.6) for C 1 = 0.</note>
+
+			<note place="foot" n="13"> The recurrence relation similar to (6.43) and the interpretation of its solutions in terms of orthogonal polynomials have been also proposed in [41].</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+				<head>Acknowledgements</head>
+				<p>This paper arose essentially from a joint work [19] with L.D. Faddeev to whom I am deeply indebted. I greatly benefit from stimulating discussions with J. de Boer, D. Jatkar, V.P. Spiridonov and G. Sterman. I am grateful for critical remarks to J.</p>
+			<note>Bartels, A.V. Efremov, J. Ellis, D. Gross, V.E. Korepin, L.N. Lipatov, B. McCoy, A.V. Radyushkin and G. Veneziano.</note>
+				<p>This work was supported in part by the National Science Foundation under grant PHY 9309888.</p>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">Regge poles and S-matrix theory Benjamin, 1963; V. de Alfaro and T. Regge, Potential scattering An introduction to Regge theory and high energy physics</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">C</forename>
+				<surname>Frautschi</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1965" />
+			<publisher>P.D.B. Collins Cambridge Uni- versity Press</publisher>
+			<pubPlace>New York, W.A ; Amsterdam, North-Holland</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">DESY-94-198</title>
+		<author>
+			<persName>
+				<forename type="first">H1</forename>
+				<surname>Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">(</forename>
+				<forename type="middle">T</forename>
+				<surname>Ahmed</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. Z. Phys</title>
+		<imprint>
+			<publisher>ZEUS Collaboration (M. Derrick</publisher>
+			<biblScope unit="volume">338</biblScope>
+			<biblScope unit="issue">338</biblScope>
+			<biblScope unit="page" from="63" to="391" />
+			<date type="published" when="1994-11" />
+			<publisher>ZEUS Collaboration (M. Derrick</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H1</forename>
+				<forename type="middle">K</forename>
+				<surname>Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Muller</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">DESY 94-112-D</title>
+		<imprint>
+			<publisher>ZEUS Collaboration</publisher>
+			<date type="published" when="1993" />
+			<biblScope unit="page" from="94" to="19294" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">D12 (1975) 163; S. Nussinov</title>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Low</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Phys. Rev. Lett. Phys. Rev</title>
+		<editor>1286</editor>
+		<editor>J. Gunion and D. Soper</editor>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="15" to="2617" />
+			<date type="published" when="1975" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Donnachie</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">V</forename>
+				<surname>Landshoff</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">244</biblScope>
+			<biblScope unit="issue">227</biblScope>
+			<biblScope unit="page">296</biblScope>
+			<date type="published" when="1984" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">V</forename>
+				<surname>Gribov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">M</forename>
+				<surname>Levin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">G</forename>
+				<surname>Ryskin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">M</forename>
+				<surname>Levin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">G</forename>
+				<surname>Ryskin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">M. Levin, Low x(B) physics with open eyes, FERMILAB-CONF-94-068-T</title>
+		<imprint>
+			<date type="published" when="1983" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title level="m" type="main">152B (1985) 256; Measuring parton densities in the pomeron</title>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Ingelman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Schlein</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<forename type="middle">J</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Collins</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>preprint. CTEQ/PUB/02</note>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Pomeron in quantum chromodynamics, in &quot; Perturbative QCD</title>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">N</forename>
+				<surname>Lipatov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">World Scientific</title>
+		<editor>ed. A.H. Mueller</editor>
+		<imprint>
+			<biblScope unit="page" from="411" to="489" />
+			<date type="published" when="1989" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">B250 (1985) 327; in QCD 20 years later</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">H</forename>
+				<surname>Mueller</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">World Scientific</title>
+		<editor>ed. P.M.Zerwas and H.A.Kastrup</editor>
+		<imprint>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page">162</biblScope>
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">B312 (1993) 340; V.I. Zakharov</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Beneke</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">I</forename>
+				<surname>Zakharov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="page" from="385" to="452" />
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title level="m" type="main">Nonperturbative corrections in resummed high energy cross sections</title>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">P</forename>
+				<surname>Korchemsky</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Sterman</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1994-11" />
+			<biblScope unit="page" from="hep" to="ph" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title level="m" type="main">Renormalons at low x, Tel–Aviv Univ</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Levin</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1994-12" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<surname>Handbook</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Qcd</forename>
+				<surname>Perturbative</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Cteq</forename>
+				<surname>Collaboration</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Sterman, FERMILAB–PUB– 93/094</title>
+		<imprint>
+			<date type="published" when="1993-04" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Bartels</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">365</biblScope>
+			<biblScope unit="page">175</biblScope>
+			<date type="published" when="1980" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+		<title level="m" type="main">Expanding Protons: Scattering at High Energies</title>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Cheng</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">T</forename>
+				<surname>Wu</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1987" />
+			<publisher>MIT Press</publisher>
+			<pubPlace>Cambridge, Massachusetts</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Cheng</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Dickinson</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">Y</forename>
+				<surname>Lo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Olaussen</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">534</biblScope>
+			<biblScope unit="page">23</biblScope>
+			<date type="published" when="1981" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">B60 (1975) 50; Sov</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">A</forename>
+				<surname>Kuraev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">N</forename>
+				<surname>Lipatov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">S</forename>
+				<surname>Fadin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. JETP Ya.Ya. Balitskii and L.N. Lipatov, Sov. J. Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="issue">822</biblScope>
+			<biblScope unit="page">28</biblScope>
+			<date type="published" when="1976" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">High-energy asymptotics of multicolor QCD and exactly solvable lattice mod- els, Padova preprint DFPD-93-TH-70</title>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">N</forename>
+				<surname>Lipatov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JETP Lett</title>
+		<imprint>
+			<biblScope unit="volume">59</biblScope>
+			<biblScope unit="issue">596</biblScope>
+			<date type="published" when="1993-10" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">High energy QCD as a completely integrable model</title>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">D</forename>
+				<surname>Faddeev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">P</forename>
+				<surname>Korchemsky</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett</title>
+		<imprint>
+			<biblScope unit="page" from="342" to="311" />
+			<date type="published" when="1994-04" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Feynman&apos;s office: the last blackboards</title>
+	</analytic>
+	<monogr>
+		<title level="j">Physics Today</title>
+		<imprint>
+			<biblScope unit="page">88</biblScope>
+			<date type="published" when="1989-02" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">) 1074; Phys.Rev.D13 (1976) 1082</title>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">T</forename>
+				<surname>Nieh</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y.-P. Yao</forename>
+				<surname>Mccoy</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">T</forename>
+				<surname>Wu</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev.Lett. Phys. Rev. Phys. Rev. Phys.Rev</title>
+		<editor>3257</editor>
+		<editor>C.Y. Lo and H. Cheng L. Tyburski</editor>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="page" from="12" to="13" />
+			<date type="published" when="1131" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<title level="m" type="main">QCD at high energies and two-dimensional field theory, Princeton Univ. preprint, PUPT-1319</title>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Verlinde</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Verlinde</surname>
+			</persName>
+		</author>
+		<imprint>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Laenen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Levin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">G</forename>
+				<surname>Shuvaev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="page">419</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">K</forename>
+				<surname>Sklyanin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">A</forename>
+				<surname>Takhtajan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">D</forename>
+				<surname>Faddeev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Theor. Math. Phys</title>
+		<imprint>
+			<biblScope unit="page" from="40" to="688" />
+			<date type="published" when="1980" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">A</forename>
+				<surname>Takhtajan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">D</forename>
+				<surname>Faddeev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Russ. Math. Survey</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<date type="published" when="1979" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Stony Brook preprint, ITP-SB-94-11, Mar 1994; hep-th/9404013; The Bethe ansatz , Andrejewski lectures, Freie Univ. preprint, SFB-288-70</title>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">D</forename>
+				<surname>Faddeev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Nankai Lec- tures on Mathematical Physics, Integrable Systems</title>
+		<editor>X.-C.Song</editor>
+		<meeting><address><addrLine>Singapore</addrLine></address></meeting>
+		<imprint>
+			<publisher>World Scientific</publisher>
+			<date type="published" when="1990" />
+			<biblScope unit="page" from="23" to="70" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<monogr>
+		<title level="m" type="main">Quantum inverse scattering method and correlation functions</title>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">E</forename>
+				<surname>Korepin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<forename type="middle">M</forename>
+				<surname>Bogoliubov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">G</forename>
+				<surname>Izergin</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1993" />
+			<publisher>Cambridge Univ. Press</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Kwiecinski</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Praszalowicz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1980" />
+			<biblScope unit="page" from="94" to="413" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">N</forename>
+				<surname>Lipatov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1990" />
+			<biblScope unit="page">251</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">B74 (1974) 365; Phys. Lett. 52B (1974) 220; A. Schwimmer and G. Veneziano, Nucl. Phys. B81 (1974) 445</title>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Veneziano</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Nucl</forename>
+				<forename type="middle">M</forename>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Ciafaloni</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Marchesini</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Veneziano</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">493</biblScope>
+			<biblScope unit="page" from="98" to="472" />
+			<date type="published" when="1975" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">O</forename>
+				<surname>Tarasov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">A</forename>
+				<surname>Takhtajan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">D</forename>
+				<surname>Faddeev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Theor. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">163</biblScope>
+			<biblScope unit="page">57</biblScope>
+			<date type="published" when="1983" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">P</forename>
+				<surname>Kulish</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Yu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">K</forename>
+				<surname>Reshetikhin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Sklyanin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lett. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="issue">393</biblScope>
+			<date type="published" when="1981" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<monogr>
+		<title level="m" type="main">Exactly Solved Models in Statistical Mechanics</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">J</forename>
+				<surname>Baxter</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1982" />
+			<publisher>Academic Press</publisher>
+			<pubPlace>London</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">The quantum Toda chain Quantum Inverse Scattering Method. Selected Topics</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">K</forename>
+				<surname>Sklyanin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Quantum Group and Quan- tum Integrable Systems &quot; (Nankai Lectures in Mathematical Physics)</title>
+		<meeting><address><addrLine>Sin- gapore</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer Mo-Lin Ge World Scientific</publisher>
+			<date type="published" when="1985" />
+			<biblScope unit="page" from="63" to="97" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<monogr>
+		<title level="m" type="main">Representations of Lie groups</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">P</forename>
+				<surname>Zhelobenko</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">I</forename>
+				<surname>Shtern</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1983" />
+			<biblScope unit="page" from="211" to="220" />
+			<pubPlace>Nauka, Moscow</pubPlace>
+		</imprint>
+	</monogr>
+	<note>in. Russian</note>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<monogr>
+		<title level="m" type="main">A course of modern analysis</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">T</forename>
+				<surname>Whittaker</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">N</forename>
+				<surname>Watson</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1963" />
+			<publisher>Cambridge Univ. Press</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="m">Higher transcendental functions</title>
+		<editor>Bateman manuscript project, ed. A. Erdelyi</editor>
+		<imprint>
+			<publisher>McGraw-Hill</publisher>
+			<date type="published" when="1953" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Some basic hypergeometric orthogonal polynomials that generalize Jacobi polynomials</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Askey</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Wilson</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mem. Am. Math. Soc</title>
+		<imprint>
+			<biblScope unit="page" from="319" to="1" />
+			<date type="published" when="1985" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Discrete reflectionless potentials, quantum algebras and q-orthogonal polynomials, preprint CRM-1928 (1993)) 126; Discrete Darboux transformations, discrete time Toda lattice and the Askey-Wilson polynomials</title>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Spiridonov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Zhedanov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Annals of Physics</title>
+		<imprint>
+			<biblScope unit="volume">237</biblScope>
+			<biblScope unit="page">1929</biblScope>
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">P</forename>
+				<surname>Korchemsky</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">P</forename>
+				<surname>Spiridonov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">S</forename>
+				<surname>Zhedanov</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>in. preparation</note>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">N</forename>
+				<surname>Lipatov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Talk at the 2nd Workshop on Small–x and Diffractive Physics at the Teva- tron, Fermilab</title>
+		<imprint>
+			<date type="published" when="1994-09" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Dijkgraaf</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Verlinde</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Verlinde</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">167</biblScope>
+			<biblScope unit="page">395</biblScope>
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

@@ -1,0 +1,1787 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Large-N c equivalence and the sign problem at finite baryon density</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2012-09-25">25 Sep 2012</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Masanori</forename>
+								<surname>Hanada</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Department of Physics</orgName>
+								<orgName type="institution">University of Washington</orgName>
+								<address>
+									<postCode>98195-1560</postCode>
+									<settlement>Seattle</settlement>
+									<region>WA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+							<affiliation>
+								<orgName type="department">KEK Theory Center</orgName>
+								<orgName type="institution">High Energy Accelerator Research Organization (KEK)</orgName>
+								<address>
+									<postCode>305-0801</postCode>
+									<settlement>Tsukuba</settlement>
+									<country key="JP">Japan</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Large-N c equivalence and the sign problem at finite baryon density</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2012-09-25">25 Sep 2012</date>
+						</imprint>
+					</monogr>
+					<note>1</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>QCD with a finite baryon chemical potential, despite its importance, is not well understood because the standard lattice QCD simulation is not applicable due to the sign problem. Although QCD-like theories which do not suffer from the sign problem have been studied intensively, relation to QCD with a finite baryon chemical potential was not clear. This paper introduces large-N c equivalences between QCD and various QCD-like theories. These equivalences lead us to a unified viewpoint for QCD with baryon and isospin chemical potentials, SO(2N c) and Sp(2N c) gauge theories , QCD with adjoint matters and two-color QCD. In particular QCD with the baryon chemical potential is large-N c equivalent to its phase quenched version in a certain parameter region, which is relevant for heavy ion collision experiments. All previous simulation results which study the effect of the phase confirm the phase quench approximation is quantitatively good already at N c = 3; it is so good that often two theories give the same value within error. Therefore the phase quenched simulation is the best strategy for the QCD critical point search. At small volume one can study a tiny 1/N c effect by the phase reweighting; the large-N c equivalence guarantees that the phase reweighing method works without suffering from the overlapping problem.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>Consider QCD at a finite baryon chemical potential (QCD B ),</p>
+
+				<figure>
+					<trash>L = 1 4g 2 tr(F µν ) 2 + N f f =1 ¯ ψ f γ µ D µ + m f + µγ 4 ψ f , (1)</trash>
+
+
+				</figure>
+
+				<p>where the gauge group is SU (3), N f is the number of flavors, ψ f are quarks of mass m f in the fundamental representation, and µ is the quark chemical potential which is related to the baryon chemical potential µ B as µ B = 3µ. Properties of this theory have long been a subject of intense interest. (For a review, see [1].) Apart from its intrinsic theoretical appeal, this subject is important in astrophysics, especially in the study of neutron stars. The behavior of QCD B at asymptotically large µ B is well understood theoretically due to the asymptotic freedom, and QCD B becomes a color superconductor as µ B → ∞ [2]. At more phenomenologically realistic densities, QCD is strongly coupled, and thus not amenable to controlled analytic treatment. Although lattice Monte Carlo is very useful at µ B = 0, however , it runs into trouble at µ B = 0 due to the fermion sign problem – the fermion determinant N f f =1 det γ µ D µ + m f + µγ 4 becomes complex, rendering importance sampling exponentially dif- ficult.</p>
+
+				<p>In order to circumvent this difficulty people have studied gauge theories which do not suffer from the sign problem at finite density. Consider QCD and QCD-like theories 1 of the form</p>
+
+				<figure>
+					<trash>L G = 1 4g 2 G tr(F G µν ) 2 + N f f =1 ¯ ψ G f γ µ D G µ + m f + µ f γ 4 ψ G f , (2)</trash>
+
+
+				</figure>
+
+				<p>where G is the gauge group e.g. SU (N c ), µ f is a generic quark chemical potential, and fermions ψ G are not necessarily in the fundamental representation. The main examples are QCD with an isospin chemical potential µ I (i.e. N f is even, µ 1 = −µ 2 = µ 3 = −µ 4 = · · · = µ I /2; we call this theory as QCD I ) and degenerate mass [3], two-color QCD of even number of flavors and degenerate mass [4], QCD with adjoint fermions [4], and SO(2N c ) and Sp(2N c ) Yang-Mills theories [5, 6]. However, while interesting, these theories have many qualitative differences from N c = 3 QCD, such as e.g. explicitly broken flavor symmetry in the first case. Therefore it is important to understand what we can learn from these theories, or in other words, in what sense they are similar to real QCD with the baryon chemical potential. In [5, 6], an answer to this question has been given. The statements are • SO(2N c ) and Sp(2N c ) theories with fundamental fermions and µ B (SO B and Sp B ) and QCD I are large-N c equivalent both in the &apos;t Hooft limit (N f fixed) and the Veneziano limit (N f /N c fixed), everywhere in the T -µ plane.</p>
+
+				<p>• SO B , Sp B , QCD I and QCD B are large-N c equivalent in the &apos;t Hooft limit, outside the BEC/BCS crossover region of the former three theories.</p>
+
+				<p>• More generally, SO(2N c ), Sp(2N c ) and SU (N c ) theories with fermion mass m 1 , · · · , m N f and chemical potential µ 1 , · · · , µ N f are equivalent. The signs of the quark chemical potentials can be flipped without spoiling the equivalence. (Fig. 2) • SO(2N c ) YM with the N f complex adjoint fermions and µ B , SU (N c ) YM with the N f complex adjoint fermions and µ B , and SU (N c ) YM with the 2N f complex anti-symmetric fermions and µ I are large-N c equivalent everywhere in the T -µ plane.</p>
+
+				<p>Furthermore, • At finite-N c , QCD B and QCD I agree up to (N f /N c ) 2 corrections. Previous simulation results show the agreement is very good already at N c = 3. • One can take into account 1/N c corrections by the phase reweighting method. The large-N c equivalence guarantees the absence of a severe overlapping problem.</p>
+
+				<p>These statements have been derived by using string-inspired large-N c techniques [8, 9, 10, 11]. As shown in [5, 6], there are orbifold projections relating SO B , Sp B , QCD B and QCD I (Fig. 1). At large-N c , the orbifold equivalence guarantees these theories are equivalent in the sense a class of correlation functions (e.g. the expectation value of the chiral condensate and π 0 correlation functions) and the phase diagrams determined by such quantities coincide, as long as the projection symmetry is not broken spontaneously [11]. A similar argument shows QCD with adjoint fermions and µ B is equivalent to QCD with fermions of two-index antisymmetric representation, which is a so-called the Corrigan-Ramond large-N c limit, with µ I (Fig. 3). In order for these equivalence to hold, orbifolding symmetries must not be broken spontaneously. This requirement is always satisfied for the equivalences between SO B , Sp B and QCD I . For the equivalences between these three theories and QCD B , &apos;outside the BEC/BCS crossover region&apos; is required for the symmetry realization. This region (&apos;outside the BEC/BCS crossover region&apos;) is relevant for the search for the QCD critical point, which attract intense interest over the decade. Our answer to the problem is strikingly simple – by using sign-free theories one can answer to the question. In the case of the two-flavor theory, QCD I is nothing but the phase-quenched version of QCD B . Therefore, the sign problem is merely an illusion, up to the 1/N c correction. In fact this fact has been known empirically, as nicely summarized for example in [27]. Actually all previous simulation results which study the effect of the phase confirm the phase quench approximation is quantitatively very good already at N c = 3; the agreement is so good that often two theories are indistinguishable. 2 This is not surprising at all: for flavor physics the 1/N c -expansion is quantitatively good at N c = 3, often much better than a naive expectation, and that is the reason why it has been studied since &apos;t Hooft. In § 4 we review some previous simulation results which prove the validity of the phase quenching at N c = 3. Note that the 1/N c correction can be studied by the phase reweighting; the orbifold equivalence guarantees that the overlapping problem can be avoided by using the phase quenched ensemble, which provides us with the first solution to the overlapping problem with a full theoretical justification. This paper is organized as follows. In § 2 we show the absence of the sign in SO B and Sp B .</p>
+
+				<p>In § 3, we review the orbifold equivalence and provide a proof to all order in perturbation 3 . As</p>
+
+				<figure>
+					<trash>Sp(2Nc) YM with μB SO(2Nc) YM with μB SU(Nc) QCD with μB SU(Nc) QCD with μI Figure 1: A web of equivalences. Arrows with solid lines represents equivalences through orbifold projections.</trash>
+
+
+				</figure>
+
+				<p>Arrows with dashed lines are the &apos;parent-parent&apos; and &apos;daughter-daughter&apos; equivalences which arise as combinations of the orbifold equivalences.</p>
+
+				<figure>
+					<trash>Sp(2Nc) YM with μ1 , μ2,… SO(2Nc) YM with μ1, μ2,… SU(Nc) QCD with μ1, μ2,… Figure 2</trash>
+
+
+				</figure>
+
+				<p>: More general version of the equivalences. Values of the quark chemical potentials can be different.</p>
+
+				<figure>
+					<trash>SO(2Nc), Nf adjoint with μB SU(Nc), Nf adjoint with μB SU(Nc), 2Nf AS with μI Figure 3</trash>
+
+
+				</figure>
+
+				<p>: Equivalences in the Corrigan-Ramond limit. SU (N c ) YM with anti-symmetric fermions can be regarded as a special kind of large-N c limit of three-color QCD (the Corrigan-Ramond limit), because anti-symmetric and fundamental representations are equivalent at N c = 3. Unfortunately , SU (N c ) YM with anti-symmetric fermions and µ B cannot be incorporated in these equivalences. discussed in [11], projection symmetries must be unbroken in order for the equivalences to hold.</p>
+
+				<p>In order to see the fate of the symmetries, we discuss the phase diagrams of SO B , Sp B , QCD I and QCD B in § 3.2.3. In § 4 we review previous simulation results which studied the effect of the phase and show that the phase quench gives qualitatively good answer. In § 5 we generalize the equivalences to analytically solvable toy models and confirm the equivalence explicitly. Results in this section strongly suggests the validity of the equivalences at nonperturbative level. § 6 is devoted for the conclusion and outlook. This paper has been prepared for Seitaro Nakamura prize competition, and is based on papers [5, 6, 7] and a few new results. In 2011 the first version of this paper was rejected, with referees&apos; comment &quot; The author must prove the effectiveness of the method. &quot; 4 Therefore we have added a new section, § 4, in which we pointed out that all previous simulations which study the effect of the phase confirm the phase quench approximation is quantitatively very good already at N c = 3; the agreement is so good that often two theories completely agree within numerical error.</p>
+
+			</div>
+			<div>
+				<head>Note added after the second rejection</head>
+
+				<p>This paper had been rejected again in 2012, this time with a comment &quot; The applicant must realize that the paper is not an application document written for referees. Eventually it will be published. &quot; proof for the theories with fundamental fermion can easily be modified for this case. The projection is the same as the one used in [12]. The equivalence between two SU (Nc) theories (when the chemical potential is zero) has been found in [13]. 4 More precisely: &quot; There is a very interesting paper among the ones which were not chosen this time. We encourage him to challenge again, after proving the effectiveness of the method. For such a difficult problem studied over decades, for which many solutions had been proposed, it is very important to prove the effectiveness. &quot; 2 Absence of the sign problem in SO(2N c ) and Sp(2N c ) theories</p>
+
+				<p>In this section we prove the absence of the sign problem in SO B and Sp B . Let us start with SU (N c ) theory. In four-dimensional Euclidean space, the gamma matrices can be taken</p>
+
+				<figure>
+					<trash>Hermitian, γ † µ = γ µ . The covariant derivative D SU µ = ∂ µ + iA SU µ , where A SU µ is an N c × N c Hermitian matrix, is skew-hermitian, D SU µ † = −D SU µ . Therefore, γ µ D µ is also skew-Hermitian, γ µ D SU µ † = −γ µ D SU µ . (3)</trash>
+
+
+				</figure>
+
+				<p>Hence the eigenvalues of γ µ D SU µ are pure imaginary. Furthermore the eigenvalues appear in pairs ±iλ, where λ is real, because of the chiral symmetry γ 5 γ µ D SU µ γ 5 = −γ µ D SU µ . When the mass m f is turned on, the eigenvalues are shifted to ±iλ + m f . Hence the eigenvalues appear with their complex conjugate (as long as m f is real) and hence the determinant, which is the product of the eigenvalues, is real positive. Once the chemical potential µ is turned on, the skew-Hermiticity is lost,</p>
+
+				<figure>
+					<trash>γ µ D SU µ + µγ 4 † = −γ µ D SU µ + µγ 4 , (4) and hence the determinant is complex in general. Note however that det γ µ D µ + m + µγ 4 * = det γ µ D µ + m − µγ 4 . (5)</trash>
+
+
+				</figure>
+
+				<p>For this reason QCD I with degenerate mass is sign-free; the determinant is</p>
+
+				<figure>
+					<trash>det γ µ D µ + m + µγ 4 × det γ µ D µ + m − µγ 4 = det γ µ D µ + m + µγ 4 2 ≥ 0. (6)</trash>
+
+
+				</figure>
+
+				<p>In SO(2N c ) theory, the sign is absent thanks to an additional anti-unitary symmetry. The crucial point is D SO µ is real in the coordinate basis; both ∂ µ and iA SO µ are real antisymmetric.</p>
+
+				<figure>
+					<trash>Therefore (Cγ 5 ) γ µ D µ + m + µγ 4 (Cγ 5 ) −1 = γ µ D µ + m + µγ 4 * , (7)</trash>
+
+
+				</figure>
+
+				<p>where C is the charge conjugation matrix satisfying Cγ µ C −1 = −γ T µ = −γ * µ . It guarantees the pair structure of the eigenvalues (λ, λ * ); if v is an eigenvector with an eigenvalue λ, (Cγ 5 ) −1 v * is another eigenvector with an eigenvalue λ * , and furthermore, they are linearly independent even when λ is real [5].</p>
+
+				<figure>
+					<trash>In Sp(2N c ) theory, a similar relation holds, (J c Cγ 5 ) γ µ D µ + m + µγ 4 (J c Cγ 5 ) −1 = γ µ D µ + m + µγ 4 * , (8) where J c = iσ 2 ⊗ 1 Nc (see § 3.1.2</trash>
+
+
+				</figure>
+
+				<p>). Unlikely to the case of SO(2N c ), this relation does not give the pair structure when λ is real, and hence only the reality, not the positivity, is guaranteed. However as long as the mass and chemical potential are degenerate (m 1 = m 2 , m 3 = m 4 , · · · , µ 1 = µ 2 , µ 3 = µ 4 , · · · ) the determinant is real and positive.</p>
+
+				<figure>
+					<trash>3 Orbifold equivalence 3.1 Pure Yang-Mills theory 3.1.1 SO(2N c ) to SU (N c )</trash>
+
+
+				</figure>
+
+				<p>The notion of the orbifold equivalence came from the string theory [8, 9]. Soon it has been proven by using only field theory techniques [10, 11], without referring to the string theory. As a simple example, let us consider the equivalence between SO(2N c ) and SU (N c ) pure Yang-Mills theories. To perform an orbifold projection, one identifies a discrete subgroup of the symmetry group of the &apos;parent&apos; theory, which is the SO(2N c ) theory in this case, and require the fields to be invariant under the discrete symmetry. This gives a &apos;daughter&apos; theory, which is SU (N c ) YM.</p>
+
+				<p>The orbifold projection uses a Z 2 subgroup of the SO(2N c ) gauge symmetry. Let us take J c ∈ SO(2N c ) to be J c = iσ 2 ⊗ 1 Nc , which generates a Z 4 subgroup of SO(2N c ). Here 1 N is an N × N identity matrix. We require the gauge field A µ to be invariant under</p>
+
+				<figure>
+					<trash>A µ → J c A µ J −1 c , (9) which generates a Z 2 subgroup of SO(2N c ). A µ can be written in N c × N c blocks as A µ = i A A µ + B A µ C A µ − D S µ C A µ + D S µ A A µ − B A µ , (10) where fields with an &apos;A&apos; (&apos;S&apos;) superscript are anti-symmetric (symmetric) matrices. Under the Z 2 symmetry, A A µ , D S µ are even while B A µ , C A µ are odd, and hence the orbifold projection sets B A µ = C A µ = 0; the &apos;daughter&apos; field is A proj µ = i A A µ −D S µ D S µ A A µ . (11) By using a unitary matrix P = 1 √ 2 1 Nc i1 Nc 1 Nc −i1 Nc , (12) it can be rewritten as P A proj µ P −1 = −A T µ 0 0 A µ , (13)</trash>
+
+
+				</figure>
+
+				<p>where A µ ≡ D S µ +iA A µ is a U (N c ) gauge field. However, the difference between U (N c ) and SU (N c ) is a 1/N 2 c correction and can be neglected at large-N c . 5 The gauge part of the action after the orbifold projection is thus simply</p>
+
+				<figure>
+					<trash>L gauge,proj = 2 4g 2 SO Tr F µν F µν , (14) J n 1 J - n 1 J n 2 J n 3 J - n 2 J - n 3 J n 4 J n 5 J - n 4 J n 6 J - n 6 J - n 5</trash>
+
+					<head>Figure 4</head>
+
+					<figDesc>: A vacuum planar diagram in the double-line notation. where F µν is the SU (N c ) field strength. Let us identify it with the Lagrangian of the daughter theory times two,</figDesc>
+					<trash>L SO → 2L SU , (15) or equivalently let us take g 2 SU = g 2</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>SO , where g SU is the gauge coupling constant of the SU (N c )</figDesc>
+
+				</figure>
+
+				<p>theory. This factor two is necessary in order for the ground state energies, which are proportional to the degrees of freedom, to match. Then expectation values of the gauge-invariant operators in parent O (p) [A µ ] agree with the expectation values of the daughter theory, which is obtained by replacing A µ with A proj µ , O (d) [A µ ] ≡ O (p) [A proj µ ]. As a pedagogical demonstration, consider a planar diagram in Fig. 4. In order to obtain the SU (N c ) diagram, we insert the projector P defined by</p>
+
+				<figure>
+					<trash>A proj µ = P(A SO µ ) ≡ 1 4 3 n=0 J n c A SO µ J −n c = 1 2 A SO µ + J c A SO µ J −1 c . (16)</trash>
+
+
+				</figure>
+
+				<p>to each propagator in the SO(2N c ) diagram. Then the only difference, if exists, comes from the contractions of color indices. This additional kinematic factor multiplied to the SU</p>
+
+				<figure>
+					<trash>(N c ) diagram is n i =0,1 1 2 N P · tr(J −n 1 J n 4 J n 5 ) · tr(J −n 2 J −n 4 J n 6 ) · tr(J −n 3 J −n 5 J −n 6 ) · tr(J n 1 J n 2 J n 3 ), (17)</trash>
+
+
+				</figure>
+
+				<p>where J = −iσ 2 is a 2 × 2 matrix and the factor (1/2) N P comes from the projectors with N P = 6, where N P is the number of propagators. Because J satisfies a simple relation</p>
+
+				<figure>
+					<trash>T rJ n = 0 unless J n = ±1 2 , (18) it is nonvanishing only when J −n 1 J n 4 J n 5 = ±1 2 , J −n 2 J −n 4 J n 6 = ±1 2 , J −n 3 J −n 5 J −n 6 = ±1 2 , J n 1 J n 2 J n 3 = ±1 2 , (19) or equivalently −n 1 + n 4 + n 5 = even, −n 2 − n 4 + n 6 = even, −n 3 − n 5 − n 6 = even, n 1 + n 2 + n 3 = even. (20)</trash>
+
+
+				</figure>
+
+				<p>Not all constraints are independent; actually the last one follows from the others, and hence, there are N L − 1 = 3 independent constraints, where N L = 4 is the number of index loops. By summing over n i for all N P = 6 propagators with N L − 1 = 3 constraints, one obtains a factor of 2 6−3 .</p>
+
+				<p>Another factor 2 4 comes from the traces over color indices. Therefore, the total factor is</p>
+
+				<figure>
+					<trash>2 −6 · 2 6−3 · 2 4 = 2. (21) Generally, for given planar vacuum diagrams with N P propagators and N L loops, the projectors give a factor of (1/2) N P , the summation over n i under the N L − 1 constraints gives 2 N P −(N L −1) , and the trace gives 2 N L . The total factor is always 2: 2 −N P · 2 N P −(N L −1) · 2 N L = 2. (22)</trash>
+
+
+				</figure>
+
+				<p>This factor 2 reflects the fact that the number of degrees of freedom in the parent theory is twice larger than that in the daughter theory. Hence the vacuum energy per degree of freedom is equivalent between these theories. The counting does not apply for nonplanar diagrams. Indeed, one can easily check that the number of independent constraints is no longer N L − 1, and the factor counted in (22) is generally different from 2 [10]. This is why we need to take the large-N c limit to suppress the nonplanar diagrams. A few remarks are in order here. Firstly, in order for the orbifold equivalence to work, the projection symmetry must not be broken spontaneously. In this example, because the projection symmetry is embedded to the gauge transformation, it is not broken. In the following sections, we introduce matter fields and use flavor symmetries for the projection. Then the projection symmetry does break in a certain parameter region. Secondly, not all operators in two theories coincide. In the parent theory, only operators invariant under the projection symmetry is related to projected fields in the daughter. (In the above example this condition is not relevant because all the gauge invariant operators automatically satisfy this condition.) In the daughter, not all operators are obtained from the parent through the projection; in the present case, the projected operators are necessarily charge conjugation invariant. 3.1.2 Sp(2N c ) to SU (N c )</p>
+
+				<figure>
+					<trash>For Sp(2N c ) gauge theory, the symplectic algebra Sp(2N c ) formed by 2N c × 2N c Hermitian matrices satisfying J c A Sp + (A Sp ) T J c = 0, (23) can be written using N c × N c matrices as A Sp µ = iA A µ + B S µ C S µ − iD S µ C S µ + iD S µ iA A µ − B S µ , (24) where the fields A A µ (B S µ , C S µ , and D S µ</trash>
+
+					<figDesc>) are anti-symmetric (symmetric) matrices. We use the same projection condition (9); then one obtains B S µ = C S µ = 0 after the projection. This gives SU (N c ) gauge theory again.</figDesc>
+					<trash>3.2 Introducing fundamental fermions 3.2.1 Orbifold projection of fundamental fermions</trash>
+
+
+				</figure>
+
+				<p>In this section, we introduce the orbifold projection for fundamental fermions [5, 6].</p>
+
+				<figure>
+					<figDesc>Let us consider the effect of the orbifolding on ψ f . By using ω = e iπ/2 ∈ U (1) B , we define the projection by</figDesc>
+					<trash>ψ f = ωJ c ψ f . (25) Writing ψ + f ψ − f = P ψ f , (26) the action of the Z 2 symmetry is just (ψ + f , ψ − f ) → (−ψ + f , ψ − f ). The projection consists of setting ψ + a = 0.</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>The action of the daughter theory is (after rescaling the coupling constant)</figDesc>
+					<trash>L = 1 4g 2 SU Tr F 2 µν + N f f =1 ¯ ψ SU f γ µ D µ + m f + µγ 4 ψ SU f , (27)</trash>
+
+
+				</figure>
+
+				<p>where F µν is the field strength of the SU (N c ) gauge field A µ = D S µ + iA A µ , ψ SU a = ψ − a , and D µ = ∂ µ + iA µ . This is an SU (N c ) gauge theory with N f flavors of fundamental Dirac fermions and the baryon chemical potential µ B = µN c . So the orbifold projection relates SO(2N c ) gauge theory to large N c QCD. On the other hand, in order to obtain fermions at finite µ I for even N f , we use J c ∈</p>
+
+				<figure>
+					<trash>SO(2N c ) [or J c ∈ Sp(2N c )] and J i ∈ SU (2) isospin [⊂ SU (N f )] defined by J i = −iσ 2 ⊗ 1 N f /2 . (28) Here we divided the flavor N f -component fundamental fermion is decomposed into two (N f /2)- component fields, ψ SO(Sp) = (ψ i ψ j ), (29) with i and j being the isospin indices, and σ 2 mixes ψ i and ψ j . By using them, we choose the projection condition as (J c ψ SO(Sp) J −1 i ) af = ψ SO(Sp) af . (30) If we define ϕ ± = (ψ i ± ∓ iψ j ± )/ √ 2 and ξ ± = (ψ i ± ± iψ j ± )/ √ 2, the fermions ϕ ± survive but ξ ± disappear after the projection (30). Because ϕ ± couple to (A SU µ ) C and A SU µ respectively, the action of the daughter theory is expressed as L SU = 1 4g 2 SU tr(F SU µν ) 2 + N f /2 f =1 ± ¯ ψ SU f ± γ µ D µ + m ± µγ 4 ψ SU f ± , (31) where ψ SU + = √ 2ϕ − and ψ SU − = √ 2ϕ C + . This theory has the isospin chemical potential µ I = 2µ. 3.2.2 &apos;t Hooft limit vs Veneziano limit</trash>
+
+
+				</figure>
+
+				<p>In the proof of the orbifold equivalence of the pure Yang-Mills theories shown in § 3.1, the conditions (20) are crucial. What happens when the fermions are introduced? Firstly note that two projections (25) and (30) are equivalent when the chemical potential is absent. Both utilize a Z 4 subgroup of the flavor symmetry which mixes two Majorana flavors. Once the chemical potential is turned on, they are not equivalent anymore. The flavor symmetry J i used in (30) satisfies the condition similar to (18). Therefore, the proof can be repeated straightforwardly; the only difference is some color-index loops are replaced with flavor-index loops. On the other hand, Z 4 ∈ U (1) B used in (25) does not satisfy such a condition. Note however that one of the conditions in (20) is not independent and follows from other ones. Therefore, as long as the number of flavor-index loop is one, the proof holds. Because the fermion loops are suppressed by the factor N f /N c , the equivalence through (25) holds in the &apos;t Hooft large-N c limit (N f fixed) while the one through (30) holds also in the Veneziano limit (N f /N c fixed).</p>
+
+				<figure>
+					<figDesc>The above argument has an implication for the 1/N c correction. Let us consider QCD with µ B and that with µ I . In the &apos;t Hooft large-N c limit, gluonic operators trivially agree because the fermions are not dynamical. Let us consider finite-N c , say N c = 3 and N f = 2. Then the largest correction to the &apos;t Hooft limit comes from one-fermion-loop planar diagrams, which, as we have seen, do not distinguish µ B and µ I . Therefore gluonic operators should behave similarly even quantitatively; the difference is at most (N f /N c ) 2 .</figDesc>
+
+				</figure>
+
+				<p>In particular, the deconfinement temperatures, which is determined from the Polyakov loop, must be close.</p>
+
+				<figure>
+					<trash>3.2.3</trash>
+
+					<figDesc>Symmetry realization and validity of the equivalence As we have seen so far, QCD B , QCD I , SO B and Sp B are equivalent in the large-N c limit as long as the projection symmetries are not broken spontaneously. In this section we discuss the phase structures of these theories and clarify when the symmetries are broken. It turns out that QCD I , SO B and Sp B are equivalent everywhere in T − µ parameter space. The equivalence to QCD B is not valid in the BEC/BCS crossover region of other three theories. Let us start with SO B . A crucial difference from QCD is that there is no distinction between &apos;matter&apos; and &apos;antimatter&apos; because the gauge group is real. In other words, &apos;fundamental&apos; and &apos;antifundamental&apos; representations are equivalent. For this reason, mesons in this theory are not necessarily neutral under U (1) B ; one can construct &apos;baryonic mesons&apos; and &apos;antibaryonic mesons&apos; out of two &apos;quarks&apos; and &apos;antiquarks&apos;, respectively. Because they couple to µ B , as the value of µ B is increased the lightest &apos;baryonic meson&apos; condenses at some point. Then the U (1) B symmetry is broken to Z 2 and the equivalence to QCD B fails. (Note that we have used Z 4 subgroup of U (1) B for the projection.) In order to identify the lightest baryonic meson, let us consider the chiral symmetry breaking in this theory. When m = µ B = 0, the Lagrangian (2) seems to have the SU (N f ) L × SU (N f ) R × U (1) B ×U (1) A symmetry at the classical level at first sight. However, chiral symmetry of the theory is known to be enhanced to SU (2N f ). Here U (1) A is explicitly broken by the axial anomaly. One can actually rewrite the fermionic part of the Lagrangian (2) manifestly invariant under SU (2N f ) using the new variable Ψ = (ψ L , σ 2 ψ * R ), which can be regarded as 2N f Weyl flavors:</figDesc>
+
+				</figure>
+
+				<p><formula>L f = iΨ † σ µ D µ Ψ, (32) T μ B E C B C S U ( 1 ) B b r o k e n U ( 1 ) B r e s t o r e d</formula></p>
+
+				<figure>
+					<head>Figure 5:</head>
+
+					<figDesc>Phase diagram of SO(2N c ) gauge theory at finite µ B . (Figure taken from [6]</figDesc>
+
+				</figure>
+
+				<p>.</p>
+
+				<p><formula>) T μ B E C B C S U ( 1 ) L + R b r o k e n U ( 1 ) L + R r e s t o r e d</formula></p>
+
+				<figure>
+					<head>Figure 6:</head>
+
+					<figDesc>Phase diagram of QCD at finite µ I = 2µ. (Figure taken from [6]</figDesc>
+
+				</figure>
+
+				<p>.) where σ µ = (σ k , −i) with the Pauli matrices σ k (k = 1, 2, 3). The SU (2N f ) chiral symmetry is spontaneously broken down to SO(2N f ) by the formation of the chiral condensate ¯ ψψ, leading to the 2N 2 f + N f − 1 Nambu-Goldstone bosons living on the coset space SU (2N f )/SO(2N f ): neutral pions Π a = ¯ ψγ 5 P a ψ, &apos;baryonic pions&apos; (or simply &apos;diquark&apos;) Σ S = ψ T Cγ 5 Q S ψ and &apos;antibaryonic pions&apos; Σ † S = ψ † Cγ 5 Q S ψ * . It is easy to see the fate of these bosons under the orbifold projection. The projection to QCD B maps neutral pions to pions in QCD, and baryonic and antibaryonic pions are projected away. On the other hand, the projection to QCD I sends neutral/baryonic/antibaryonic pions to π 0 , π + and π − , respectively. Therefore the (baryonic) pions in SO(2N c ) YM and those in QCD have the same mass m π . In the same way as the π + condensation in QCD I at µ = m π /2, baryonic pions condense at µ = m π /2 (Fig. 5 and Fig. 6). At sufficiently large µ, the one-gluon exchange interaction in the ψψ-channel is attractive in the color symmetric channel, leading to the condensation of the diquark pairing ψ T Cγ 5 Q S ψ. This diquark condensate does not break SO(2N c ) symmetry. This BCS pairing has the same quantum numbers and breaks the same U (1) B symmetry as the BEC Σ S at small µ B , and there should be no phase transition for µ &gt; m π /2 along µ axis. The phase diagram of this theory is similar to that of QCD I , as shown in Fig. 5 and Fig. 6. This is because the condensates in two theories are related each other through the orbifold projection, and furthermore, the condensation does not break the flavor symmetry used for the projection. In the same manner, Sp B and QCD I are equivalent everywhere in T − µ plane; see Fig. 7. (For further details, see [6].) QCD B behaves rather differently, because µ B does not couple to mesons. This does not lead to a contradiction, however: because baryons are much heavier than pions, phenomena characteristic to QCD B (e.g. formation of hadronic matter) take place after the equivalence is gone due to the</p>
+
+				<p><formula>T μ B E C B C S U ( 1 ) B b r o k e n U ( 1 ) B r e s t o r e d</formula></p>
+
+				<figure>
+					<head>Figure 7:</head>
+
+					<figDesc>Phase diagram of Sp(2N c ) gauge theory at finite µ B . ˜ Σ A = ψ T Cγ 5 J c Q A ψ, where Q A (A = 1, 2, · · · , N f (N f − 1)/2) are antisymmetric N f × N f matrices in the flavor space. (Figure taken from [6].) U (1) B breakdown in SO B and Sp B Yang-Mills and the pion condensation in QCD I . 4 Numerical justification at N c = 3</figDesc>
+
+				</figure>
+
+				<p>As briefly mentioned in the introduction, the fact that the phase quenching (at N c = 3) is an extremely good approximation for certain quantities has been known empirically for long, as clearly summarized in [27]. In this section we review previous simulation results 6 .</p>
+
+			</div>
+			<div>
+				<head n="4.1">Direct comparison by the phase reweighting</head>
+
+				<p>The most straight forward way to study QCD B is the phase reweighing method, which utilizes a trivial identity</p>
+
+				<figure>
+					<trash>O B = O · phase I phase I , (33)</trash>
+
+
+				</figure>
+
+				<p>where ·· B and ·· I represent expectation values in QCD B and QCD I , respectively, and phase is the complex phase of the fermion determinant. The right hand side is calculable at least in principle. (In practice, at large volume the phase fluctuation is so violent that the average is essentialy zero.) Because of the orbifold equivalence, for a class of observables O B and O I are the same up to 1/N c correction. One can directly see whether this relation holds with good accuracy at N c = 3, at small µ and/or small volume where the phase fluctuation can be taken into account with a reasonable computational resource. (Note that a reweighting from other ensemble, say µ = 0, is also possible. However one has to choose a good ensemble which has enough overlap with QCD B , because otherwise the importance sampling does not work. This problem is called the &quot; overlapping problem. &quot; The orbifold equivalence guarantees that the overlapping problem can be avoided by using the phase quenched ensemble (QCD I ). This provides us with the first solution to the overlapping problem with a full theoretical justification. 7 )</p>
+
+				<p>In</p>
+
+				<p>[30], QCD B and QCD I are studied as a function of the number of up quarks, Q. The result of the former is obtained by the reweighing from QCD at µ = 0. They use two staggered fermions (corresponding to degenerate four up and four down quark species) with the bare quark mass m/T = 0.56 on a 8 3 × 4 lattice. In the right panel of Fig. 1 and the left panel of Fig. 4 of [30], the free energy is plotted for various temperatures as functions of Q. By putting these plots on top of each other, one can see a very nice agreement near the critical temperature and Q 100. It clearly shows the validity of the phase quenching. It should also be remarked that the corrections are still tiny for N f = 8; in the real world N f , and hence the corrections, are smaller. In [28], three-color and two-flavor QCD B and QCD I are studied using staggered fermions (the former is estimated by a phase reweighting from the latter). The bare quark mass m/T = 0.2 and the lattice size is 8 3 × 4. The chiral condensate and the Polyakov loop are computed for µ/T = 0.4 and µ/T = 0.8, and QCD B and QCD I give the same value within numerical error.</p>
+
+			</div>
+			<div>
+				<head n="4.2">Taylor expansion method</head>
+
+				<p>Another common approach to circumvent the sign problem is the Taylor expansion method; one expands the expectation value of an observable in power series of µ/</p>
+
+				<p><formula>T , O B = ∞ n=0 c B n µ T n (34) and O I = ∞ n=0 c I n µ T n (35)</formula></p>
+
+				<p>in QCD B and QCD I , respectively. Taylor coefficients c B n and c I n , which are functions of the temperature T , can be determined by the simulation at µ = 0. Because of the large-N c equivalence, the coefficients must be the same in the large-N c limit. In [34], the coefficients c B 2 and c I 2 for the chiral condensate and the pressure of the quarkgluon plasma have been calculated 8 in three-color and two-flavor QCD. Their calculations are performed using staggered fermions on a 16 3 × 4 lattice, with the bare quark mass m/T = 0.4. The coefficients for the pressure are [34] :</p>
+
+				<figure>
+					<trash>T /T c c B 2 c I 2 0.81 0.0450(20) 0.0874(8) 0.90 0.1015(24) 0.1551(14) 1.00 0.3501(32) 0.3822(26) 1.07 0.5824(23) 0.5972(21) 1.16 0.7091(15) 0.7156(14) 1.36 0.7880(11) 0.7906(9) 1.65 0.8157(8) 0.8169(7) 1.98 0.8230(7) 0.8250(6) 8 For odd n, c B n and c I n vanish, and the first nontrivial µ-dependences appear in c B 2 and c I 2 . Although c B n (n ≥ 4) have been calculated, c I n</trash>
+
+
+				</figure>
+
+				<p>(n ≥ 4) have not been calculated in [34]. (Note that, for n ≥ 4, they use the same symbol c I n for another quantity.)</p>
+
+				<p>Although the difference between c B 2 and c I 2 are not very small for T &lt; T c in the chiral symmetry broken (and confinement) phase, they agree exceptionally well for T &gt; T c . That the 1/N c correction becomes large in the chiral symmetry broken phase is easy to understand; there are light modes (pions) which can easily be excited thermally. However they do not give a large correction to the chiral condensate; indeed the coefficients for the chiral condensate, which are plotted in the second panel of Fig. 3.6 of [34], shows even better agreement; actually the coefficients precisely agree within error at T /T c ≥ 0.87.</p>
+
+			</div>
+			<div>
+				<head n="4.3">Imaginary chemical potential method</head>
+
+				<p>The sign problem is absent when the chemical potential is pure imaginary, µ = iµ img (µ img ∈ R) [31, 32]. Although the imaginary chemical potential does not have a direct physical interpretation, it is useful if observables are analytic in µ 2 around µ 2 = 0, because the values at µ 2 &gt; 0 (real chemical potential), which are difficult to study due to the sign problem, may be obtained through an analytic continuation. Note however that the analyticity, which is necessary for the analytic continuation, can be lost at any phase transition, such as the chiral transition and deconfinement transition. Our derivation for the large-N c equivalence can also be applied for the imaginary baryon and isospin chemical potentials, (µ u , µ d ) = (iµ img , iµ img ) and (µ u , µ d ) = (iµ img , −iµ img ), without any modification. As a result, the equivalence holds as long as the projection symmetry is unbroken. In [33], pseudo-critical temperatures of the chiral transition T c (µ) in two-flavor three-color QCD has been studied by using the imaginary chemical potential. (They have used the staggered fermion with the bare mass m/T = 0.2 on a 16 3 × 4 lattice). With a quadratic ansatz</p>
+
+				<figure>
+					<trash>T c (µ) T c (0) = 1 + a 1 µ πT 2 , (36) they found a 1 = −0.465(9) for µ I , a 1 = −0.515(11) for µ B , (37)</trash>
+
+
+				</figure>
+
+				<p>which provide a nice quantitative agreement (difference∼10%) already at N c = 3.</p>
+
+			</div>
+			<div>
+				<head>5</head>
+
+				<p>Demonstration of the nonperturbative equivalence in solvable models If the orbifold equivalence holds between the gauge theories, it is natural to expect that the equivalence should hold also in solvable toy models which are believed to capture essential features of the gauge theories. In this section, we consider the chiral random matrix theory (RMT) [16], and the holographic D3/D7 model which can be studied via AdS/CFT correspondence. We show that the perturbative proof applies also in these cases, and furthermore, we confirm the equivalence at nonperturbative level. These results strongly suggest that the orbifold equivalence of the gauge theories hold nonperturbatively.</p>
+
+			</div>
+			<div>
+				<head n="5.1">Chiral random matrix theories</head>
+
+				<p>The partition function of the RMT is given by an integral over a Gaussian random matrix ensemble , instead of the average over the gauge field of the original Yang-Mills action:</p>
+
+				<figure>
+					<trash>Z = dΦ N f i=1 det D e − N β 2 G 2 tr Φ † Φ , (38)</trash>
+
+
+				</figure>
+
+				<p>where Φ is an N × (N + ν) random matrix element, N is the size of the system, ν is the topological charge, and the Dirac operator D with quark mass m f is given by</p>
+
+				<figure>
+					<trash>D = m f 1 Φ + µ1 −Φ † + µ1 m f 1 . (39)</trash>
+
+
+				</figure>
+
+				<p>We also introduced a suitable normalization with the parameter G in the Gaussian. Note that there is no spacetime coordinate in the theory; the size of the matrix N corresponds to the spacetime volume. It is taken to infinity in the end, corresponding to the thermodynamic limit.</p>
+
+				<p>Depending on the anti-unitary symmetries of the Dirac operator, Φ is chosen as the real, complex, or quaternion real [see (44) for the definition] matrices denoted by the Dyson index β = 1, β = 2, and β = 4, respectively. The value of β corresponds to the degrees of freedom per matrix element. QCD and QCD-like theories corresponding to each universality class are [20]:</p>
+
+				<figure>
+					<figDesc>• β = 1 : two-color QCD and Sp(2N c ) gauge theory. • β = 2 : SU (N c ) QCD (N c ≥ 3). • β = 4 : SU (N c ) QCD with adjoint fermions and SO(N c ) gauge theory.</figDesc>
+
+				</figure>
+
+				<p>The effect of temperature T can be incorporated as the (first) Matsubara frequencies by changing µ → µ + iT for one half of the determinant and µ → µ − iT for the other half of the determinant in the simplest model [19]. The RMT is exactly equivalent to QCD in the -regime [21]</p>
+
+				<figure>
+					<trash>1 Λ χ L 1 m π , µL 1, (40)</trash>
+
+
+				</figure>
+
+				<p>where L is the typical scale of the system, because QCD reduces to a theory of zero momentum modes of pions. In this regime, the system has a universality, i.e., the dynamics depends only on the symmetry breaking pattern and is independent of the microscopic details; QCD can be replaced by the RMT with the same global symmetry breaking pattern. Outside the -regime, the universality is lost. However, the RMT is still useful as a schematic model to study the qualitative properties of QCD such as the phase structure at finite T and µ [19]. The advantage of the RMT is that it can be solved analytically although QCD itself cannot be. As mentioned above, the RMT has the size of the matrix N , which should be taken to infinite (thermodynamic limit) in the end. In this sense, the RMT is a &quot; large-N &quot; matrix model, and hence, the perturbative proof of the orbifold equivalence given in Sec. 3 is directly applicable. Note that the size of the random matrix is not related to the number of color N c . The RMT is analytically solvable and hence the nonperturbative orbifold equivalence can be checked explicitly.</p>
+
+				<figure>
+					<trash>β=1 RMT with μB β=4 RMT with μB β=2 RMT with μB β=2 RMT with μI Figure 8</trash>
+
+
+				</figure>
+
+				<p>: Relations between β = 2 RMT at finite µ B or µ I and β = 4 and β = 1 RMTs at finite µ B through orbifolding. β = 2 RMT at small and large µ I can be obtained from β = 4 and β = 1 RMTs at small and large µ B . β = 2 RMT at small µ B can also be obtained from β = 4 RMT at small µ B , while β = 2 RMT at large µ B inside the BEC-BCS crossover region cannot.</p>
+
+			</div>
+			<div>
+				<head>5.1.1</head>
+
+				<p>Orbifold projections in the chiral random matrix theories</p>
+
+				<p>In this section, we construct the orbifold projections in the chiral random matrix theories (RMTs) between β = 4, β = 2, and β = 1. Thereby a class of observables in the RMTs with the different Dyson indices are found to be identical to each other. In the following, we will concentrate on the RMT at finite µ and T = 0, which can be easily generalized to nonzero T . For simplicity, we set ν = 0 and quark masses to be common, m f = m. The relationships between these RMTs via orbifold projections are summarized in Fig. 8. We start with the β = 4 or β = 1 RMT at finite µ B with the size of Φ being 2N , and define the orbifold projection to the β = 2 RMT at finite µ B or µ I with the size N .</p>
+
+				<p>The action of the β = 4 RMT is given by</p>
+
+				<figure>
+					<trash>Z = dΦdΨ e −S , S = S B + S F , (41) where S B = N β 2 G 2 tr Φ † Φ, S F = N f f =1 ¯ Ψ f DΨ f , (42) and D = m1 2N Φ + µ1 2N −Φ † + µ1 2N m1 2N . (43)</trash>
+
+
+				</figure>
+
+				<p>Here Ψ f are complex Grassmann 4N -component vectors and Φ is a 2N × 2N quaternion real matrix of the form:</p>
+
+				<figure>
+					<trash>Φ ≡ 3 µ=0 a µ iσ µ = a 0 + ia 3 a 2 + ia 1 −a 2 + ia 1 a 0 − ia 3 , (44)</trash>
+
+
+				</figure>
+
+				<p>where a µ are N × N real matrices and σ µ = (−i, σ k ) with Pauli matrices σ k .</p>
+
+				<p>For the bosonic matrix Φ, we impose the projection condition</p>
+
+				<figure>
+					<trash>J c ΦJ −1 c = Φ, J c ≡ −1 N 1 N . (45) Then we obtain Φ proj = a 0 a 2 −a 2 a 0 , (46)</trash>
+
+
+				</figure>
+
+				<p>which is equivalent to two copies of a N × N complex matrix after a unitary transformation</p>
+
+				<figure>
+					<trash>P Φ proj P −1 = φ * 0 0 φ ≡ Φ β=2 , P ≡ 1 √ 2 1 N i1 N 1 N −i1 N , (47)</trash>
+
+
+				</figure>
+
+				<p>where φ = a 0 + ia 2 . The bosonic part of the action is mapped to the one for the β = 2 RMT. Note that the factor 2 in (15) is reflected in the difference of normalization between β = 4 and β = 2 in (42) if the trace for β = 4 is defined as the so-call &quot; QTr &quot; which is one-half the usual trace.</p>
+
+				<p>In order to define a projection for the fermions, we write Ψ by using two 2N -component fermions ψ R and ψ L as</p>
+
+				<p><formula>Ψ = ψ R ψ L . (48)</formula></p>
+
+				<p>Here ψ R and ψ L are further decomposed into two N -component fermions</p>
+
+				<figure>
+					<trash>ψ R = ψ 1 R ψ 2 R , ψ L = ψ 1 L ψ 2 L , (49)</trash>
+
+
+				</figure>
+
+				<p>where the flavor index is suppressed for simplicity. Then it is straightforward to check that the projection ψ R = ωJ c ψ R , ψ L = ωJ c ψ L , (50) where ω = e iπ/2 as before, provides us with the β = 2 RMT at finite baryon chemical potential. In a similar manner, the β = 2 RMT at finite isospin chemical potential can be obtained by imposing the projection condition</p>
+
+				<figure>
+					<trash>J c ψ R J −1 i = ψ R , J c ψ L J −1 i = ψ L . (51)</trash>
+
+
+				</figure>
+
+				<p>The β = 2 RMT can also be obtained from the β = 1 RMT. We start with the action of the β = 1 RMT given by (42), but this time Φ is a 2N × 2N real matrix, which can be parametrized as Φ = a 0 + a 3 a 2 + a 1 −a 2 + a 1 a 0 − a 3 , (52) where a µ are N × N real matrices. Note that the only change in this expression compared with (44) is that the factors i in front of a 0 and a 3 are absent. Then one can easily find that the same projection conditions for Φ and Ψ in the previous subsection gives the β = 2 RMT at finite µ B or finite µ I .</p>
+
+			</div>
+			<div>
+				<head n="5.1.2">Explicit demonstration of the nonperturbative equivalence</head>
+
+				<p>The orbifold equivalence in the RMT predicts that the β = 4 and β = 1 RMTs at finite µ B and β = 2 RMT at finite µ I are equivalent to each other for any m, T and µ in the neutral sector, to all order in perturbation theory. Outside the (baryonic) pion condensation phase, the above three theories must also be equivalent to the β = 2 RMT at finite µ B . Below we verify the nonperturbative equivalence by computing the effective potential of each RMT explicitly. For the β = 2 and β = 1 RMTs, the effective potentials are computed in [17, 18], and the coincidence of the effective potential of the β = 2 RMT at finite µ B (at µ I = 0) and that of the β = 2 RMT at finite µ I (at µ B = 0) outside the pion condensed phase has been pointed out. Below we first summarize the effective potential of the N f = 2 RMT with the quark mass m f and the chemical potential µ f for each flavor, f = 1, 2. The average baryon and isospin chemical potentials ¯ µ B and ¯ µ I are defined as</p>
+
+				<figure>
+					<trash>¯ µ B ≡ µ B N c = 1 2 (µ 1 + µ 2 ), (53) ¯ µ I ≡ µ I 2 = 1 2 (µ 1 − µ 2 ). (54)</trash>
+
+
+				</figure>
+
+				<p>We denote the parameters of the RMT representing the chiral condensate σ f , pion condensate ρ, and diquark (baryonic pion) condensate ∆, and their sources as m f , λ, and J, respectively. Then we show that the equivalence holds nonperturbatively between RMTs as a natural consequence of the orbifold projections. The importance of the unbroken projection symmetry will become clear through the argument.</p>
+
+				<p>Effective potential of β = 4 We first consider the β = 4 RMT with degenerate quark mass m f = m at finite baryon chemical potential µ f = ¯ µ B . The effective potential is [6]</p>
+
+				<figure>
+					<trash>Ω β=4 = 16G 2 σ − m 2 2 + ∆ − J 2 2 − 2 ± ln[4σ 2 + 4∆ 2 − (¯ µ B ± iT ) 2 ]. (55)</trash>
+
+					<figDesc>The chiral condensate and the diquark condensate are expressed using σ and ∆ as</figDesc>
+					<trash>¯ uu β=4 = 1 4N ∂ m ln Z β=4 m=0 = −4G 2 σ β=4 , (56) ¯ u T Cγ 5 u β=4 = 1 4N ∂ J ln Z β=4 J=0 = −4G 2 ∆ β=4 . (57)</trash>
+
+
+				</figure>
+
+				<p>Effective potential of β = 2 The effective potential of β = 2 is [17]</p>
+
+				<figure>
+					<trash>Ω β=2 = G 2 [(σ 1 − m 1 ) 2 + (σ 2 − m 2 ) 2 + 2(ρ − λ) 2 ] − 1 2 ± ln[(σ 1 + µ 1 ± iT )(σ 2 − µ 2 ∓ iT ) + ρ 2 ][(σ 1 − µ 1 ∓ iT )(σ 2 + µ 2 ± iT ) + ρ 2 ]. (58) The chiral condensate and pion condensate are ¯ uu β=2 = 1 2N ∂ m 1 ln Z β=2 m 1 =0 = −G 2 σ β=2 , (59) ¯ dγ 5 u β=2 = 1 4N ∂ λ ln Z β=2 λ=0 = −G 2 ρ β=2 . (60)</trash>
+
+
+				</figure>
+
+				<p>Note that, as long as ρ = 0 (i.e., outside the pion condensed phase), the potential (58) is a function of µ</p>
+
+				<figure>
+					<trash>2 1 = (¯ µ B + ¯ µ I ) 2 and µ 2 2 = (¯ µ B − ¯ µ I ) 2 . Therefore, Ω β=2 (¯ µ B = µ, ¯ µ I = 0) = Ω β=2 (¯ µ I = µ, ¯ µ B = 0) for ρ = 0. (61)</trash>
+
+
+				</figure>
+
+				<p>Here ρ = 0 means that the projection symmetry, which is used for the orbifolding in Sec. 5.1.1, is not broken. From (61), the magnitude of the chiral condensate σ and the critical temperature of chiral phase transition T σ in each theory coincide,</p>
+
+				<figure>
+					<trash>σ β=2 (¯ µ B )| ¯ µ I =0 = σ β=2 (¯ µ I )| ¯ µ B =0 for ρ = 0, (62) T σ β=2 (¯ µ B )| ¯ µ I =0 = T σ β=2 (¯ µ I )| ¯ µ B =0 for ρ = 0, (63)</trash>
+
+
+				</figure>
+
+				<p>as a consequence of the orbifold equivalence. Especially, this shows that the phase-quenched approximation for σ β=2 (¯ µ B ) and T σ β=2 (¯ µ B ) works outside the pion condensed phase, as mentioned in [17]. Note that, even though the effective potentials are identical for ρ = 0 in (61), the partition functions themselves are not generally the same. This is because the pre-exponential factor also contributes to the partition function, which is not taken into account in computing the effective potential. Therefore, the sign problem measured as the phase of the partition function can be severe inside as well as outside the pion condensed phase [22]. The result here shows that the phase-quenched approximation is exact for the observables above independently of the severity of the sign problem, as long as ρ = 0.</p>
+
+				<p>Effective potential of β = 1 The effective potential of β = 1 is [18]</p>
+
+				<figure>
+					<trash>Ω β=1 = G 2 [(σ 1 − m 1 ) 2 + (σ 2 − m 2 ) 2 + 2(ρ − λ) 2 + 2(∆ − J) 2 ] − 1 4 ± ln{[(σ 1 + µ 1 ± iT )(σ 2 − µ 2 ∓ iT ) + ρ 2 + ∆ 2 ] ×[(σ 1 − µ 1 ± iT )(σ 2 + µ 2 ∓ iT ) + ρ 2 + ∆ 2 ] + 4∆ 2 µ 1 µ 2 } ×{[(σ 1 − µ 1 ∓ iT )(σ 2 + µ 2 ± iT ) + ρ 2 + ∆ 2 ] ×(σ 1 + µ 1 ∓ iT )(σ 2 − µ 2 ± iT ) + ρ 2 + ∆ 2 ] + 4∆ 2 µ 1 µ 2 }. (64) The chiral condensate, pion condensate, and diquark condensate are ¯ uu β=1 = 1 2N ∂ m 1 ln Z β=1 m 1 =0 = −G 2 σ β=1 , (65) ¯ dγ 5 u β=1 = 1 4N ∂ λ ln Z β=1 λ=0 = −G 2 ρ β=1 . (66) d T Cγ 5 u β=1 = 1 4N ∂ J ln Z β=1 J=0 = −G 2 ∆ β=1 . (67) The potential (64) has the symmetry Ω β=1 (∆, ρ, µ 1 , µ 2 ) = Ω β=1 (ρ, −∆, µ 1 , −µ 2 ), (68)</trash>
+
+
+				</figure>
+
+				<p>due to the ¯ µ B ↔ ¯ µ I symmetry for β = 1. Note that this symmetry has nothing to do with the orbifold equivalence.</p>
+
+				<p>Nonperturbative orbifold equivalence between β = 4, β = 2, and β = 1 By comparing (55), (58), and (64), and by using the ¯ µ B ↔ ¯ µ I symmetry for β = 1, one finds the relation (note that ∆ = 0 at ¯ µ B = 0 and ρ = 0 at ¯</p>
+
+				<figure>
+					<trash>µ I = 0): Ω β=4 (2σ β=4 , 2∆ β=4 )| ¯ µ B =µ,¯ µ I =0 = 2Ω β=2 (σ β=2 , ρ β=2 )| ¯ µ I =µ,¯ µ B =0 = 2Ω β=1 (σ β=1 , ∆ β=1 )| ¯ µ B =µ,¯ µ I =0 . (69)</trash>
+
+
+				</figure>
+
+				<p>Unlike the relation (61), this is valid not only for ρ = 0 (or ∆ = 0) but also for ρ = 0 (or ∆ = 0). This is expected because the condensation does not break the projection symmetry, as discussed in § 3. The factor 2 of the effective potentials, mentioned in (15), comes from the fact that the β = 4 RMT with the size of Φ being 2N twice more degrees of freedom compared to the β = 2 or β = 1 RMT with the size N . The origin of the factor 2 for the arguments of the potential of the β = 4 RMT is the same; fermions in β = 4 theory has twice larger degrees of freedom, ¯ uu β=4 = 2¯ uu β=2 = 2¯ uu β=1 . The relation (69) leads to the coincidence of the magnitudes of the order parameters (up to the factor 2) and the critical temperatures,</p>
+
+				<figure>
+					<trash>2σ β=4 (¯ µ B = µ)| ¯ µ I =0 = σ β=2 (¯ µ I = µ)| ¯ µ B =0 = σ β=1 (¯ µ B = µ)| ¯ µ I =0 , (70) 2∆ β=4 (¯ µ B = µ)| ¯ µ I =0 = ρ β=2 (¯ µ I = µ)| ¯ µ B =0 = ∆ β=1 (¯ µ B = µ)| ¯ µ I =0 , (71) T σ β=4 (¯ µ B = µ)| ¯ µ I =0 = T σ β=2 (¯ µ I = µ)| ¯ µ B =0 = T σ β=1 (¯ µ B = µ)| ¯ µ I =0 , (72) T ∆ β=4 (¯ µ B = µ)| ¯ µ I =0 = T ρ β=2 (¯ µ I = µ)| ¯ µ B =0 = T ∆ β=1 (¯ µ B = µ)| ¯ µ I =0 , (73)</trash>
+
+
+				</figure>
+
+				<p>which are expected as a consequence of the orbifold equivalence. We note that, the equivalence of the neutral order parameters and the critical temperatures should be satisfied in the original QCD and QCD-like theories as we claimed in §3, while the effective potentials will not necessarily coincide in QCD. The RMT has much less degrees of freedom; the effective potential is a function of only the neutral order parameters, and furthermore, all the moments are identical due to the orbifold equivalence. As a result, the effective potentials must be identical. In QCD and QCD-like theories, the effective potentials depend also on non-neutral observables, and hence the effective potentials are not identical in general.</p>
+
+			</div>
+			<div>
+				<head n="5.2">Holographic models</head>
+
+				<p>Among other interesting toy models are supersymmetric analogues of large-N c QCD which have gravity dual description. In [23] the D3/D7 system with chemical potential has been studied (Fig. 9). The starting point is 4d N = 4 U (2N c ) super Yang-Mills, which is dual to type IIB supergravity in AdS 5 × S 5 . We introduce N f D7 branes winding on three-cycle of S 5 . Then open strings stretching between D3 and D7 can be regarded as &apos;quarks&apos; with &apos;flavor symmetry&apos; U (N f ).</p>
+
+				<p>In the &apos;t Hooft limit N f /N c → 0, D7-branes behave as probes, and their dynamics is described by the Dirac-Born-Infeld (DBI) action on the AdS 5 × S 5 background. The isospin chemical potential µ I can be introduced through the boundary condition of the gauge field in the DBI action. This theory can be projected to an SO(2N c ) theory with µ B through an orientifold projection, and further down to U (N c ) theory with µ B . However because the orientifold projection does not change the local structure of the brane configuration, the equation of motion remains untouched as long as the projection symmetry is not broken spontaneously. Therefore, the dynamics of mesons determined by the DBI action coincide, and the orbifold equivalence follows. Note that this is a &apos;nonperturbative proof&apos;, if we assume the AdS/CFT duality holds nonperturbatively.</p>
+
+				<p>Actually these theories are solved in [24] (U (N c ) with µ B ) and [25, 26] (U (N c ) with µ I ), and as long as the necessary symmetry is intact the equivalence can be seen explicitly.</p>
+
+				<figure>
+					<head>Figure 9:</head>
+
+					<figDesc>N = 1 Supersymmetric version of the orbifold projection which has a holographic realization.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="6">Conclusion and outlook</head>
+
+				<p>We have pointed out that QCD and various QCD-like theories with chemical potentials are equivalent at large-N c through the orbifold equivalence, at least to all order in perturbation theory. QCD I , SO B and Sp B are equivalent everywhere in the T -µ plane, and furthermore, they are equivalent to QCD B outside the BEC-BCS crossover region. Our result has immediate implication for the study of the chiral and deconfinement transitions in high-T , small-µ region. In this region it is reasonable to assume the N f /N c expansion is not bad and hence we can expect that the Monte-Carlo results of the QCD with isospin chemical potential describe the QCD with the baryon chemical potential with rather good accuracy. (Note that the deviation is only O((N f /N c ) 2 ), as explained in § 3.2.2.) Indeed, as reviewed in 4, all previous simulation results confirmed the validity of the phase quenching at N c = 3. At small volume, it is possible to take into account the 1/N c corrections by the phase reweighting method. Because of the large-N c equivalence, many important observables are free from the overlapping problem (in other words the overlapping problem is 1/N c suppressed.) Furthermore, by using the SO B , one can study three-flavor theory without suffering from the sign problem. In a similar manner, from simulation results of the two-color QCD and adjoint QCD, which belong to the same universality classes as Sp(2N c ) and SO(2N c ) theories, respectively, one can extract qualitative information relevant for SU (3) QCD B . 9 Similar study e.g. phase quenched simulation of SU (3) 3-flavor QCD has been performed [27] and the result suggests the QCD critical point does not exist. Therefore it is very important to study these sign-free theories numerically, further in detail, in order to find (or exclude) the QCD critical point.</p>
+
+			</div>
+
+			<note place="foot" n="1"> In this paper we call SU (Nc) Yang-Mills with N f fundamental fermions &apos;QCD&apos;. SU (Nc) Yang-Mills with fermions in other representations and SO(2Nc)/Sp(2Nc) theories are referred to &apos;QCD-like theories&apos;.</note>
+
+			<note place="foot" n="2"> This is the answer to the criticism from referees, &apos;The author must prove the effectiveness of the method.&apos; 3 We do not show the proof the equivalence between theories with adjoint and antisymmetric fermions. The</note>
+
+			<note place="foot" n="5"> When one studies U (Nc) theory, it is difficult to control the U (1) part and the effect of the chemical potential can disappear [14] by a lattice artifact. In order to avoid that one should simulate SU (Nc) theory on the lattice.</note>
+
+			<note place="foot" n="6"> In [27], as evidence for the validity of the phase quenching, they mentioned the fact that the expectation values of the chiral condensate take the same value in the mean-field calculation of several models. This is also a straightforward consequence of the orbifold equivalence; see [7]. 7 The author would like to thank S. Aoki for very fruitful discussion on this point.</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+				<head>Acknowledgement</head>
+				<p>The author would like to thank Aleksey Cherman, Yoshinori Matsuo, Daniel Robles-Llana and Naoki Yamamoto for fruitful collaborations which this paper is based on. He thank Naoki Yamamoto also for valuable comments on this paper at various stages. He also thanks Philippe de Forcrand, Shoji Hashimoto, Carlos Hoyos, Andreas Karch, Keitaro Nagata, Atsushi Nakamura , Brian Tiburzi and Laurence Yaffe for stimulating discussions, comments, and/or related collaborations. The author was in part supported by Japan Society for the Promotion of Science Postdoctoral Fellowships for Research Abroad.</p>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">The phase diagram of dense QCD</title>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Fukushima</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Hatsuda</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Rept. Prog. Phys</title>
+		<imprint>
+			<biblScope unit="volume">74</biblScope>
+			<biblScope unit="page">014001</biblScope>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Color superconductivity in dense quark matter</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">G</forename>
+				<surname>Alford</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Schmitt</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Rajagopal</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Schä</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Rev. Mod. Phys</title>
+		<imprint>
+			<biblScope unit="volume">80</biblScope>
+			<biblScope unit="page">1455</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">QCD at finite isospin density</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">T</forename>
+				<surname>Son</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">A</forename>
+				<surname>Stephanov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="issue">592</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">On two-color QCD with baryon chemical potential</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">B</forename>
+				<surname>Kogut</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">A</forename>
+				<surname>Stephanov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Toublan</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">4649906346</biblScope>
+			<biblScope unit="issue">183</biblScope>
+			<biblScope unit="page" from="hep" to="ph" />
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Orbifold equivalence and the sign problem at finite baryon density</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Cherman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Hanada</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Robles-Llana</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">106</biblScope>
+			<biblScope unit="page">091603</biblScope>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Universality of Phases in QCD and QCD-like Theories</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Hanada</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Yamamoto</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP 1202</title>
+		<imprint>
+			<biblScope unit="volume">138</biblScope>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title level="m" type="main">Sign problem and phase quenching in finite-density QCD: models, holography, and lattice</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Hanada</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Matsuo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Yamamoto</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="hep" to="lat" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<title level="m" type="main">is meaningful only in the ε-regime, while the large-Nc limit with fixed quark mass, chemical potential and volume is not in that regime. Therefore the similarity is expected only at qualitative level, similarly to the case of the chiral random model in the planar limit discussed in § 5</title>
+		<imprint/>
+	</monogr>
+	<note>1. .1. We thank N. Yamamoto, J. Verbaarschot and P. H. Damgaard for discussions on this issue</note>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Kachru</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Silverstein</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">4d conformal theories and strings on orbifolds</title>
+		<imprint>
+			<date type="published" when="1998" />
+			<biblScope unit="page">4855</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">String expansion as large N expansion of gauge theories</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Bershadsky</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+				<surname>Kakushadze</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Vafa</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">5239803076</biblScope>
+			<biblScope unit="issue">59</biblScope>
+			<biblScope unit="page" from="hep" to="th" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Large N limit of orbifold field theories</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Bershadsky</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Johansen</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">5369803249</biblScope>
+			<biblScope unit="issue">141</biblScope>
+			<biblScope unit="page" from="hep" to="th" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title level="m" type="main">Non-perturbative equivalences among large N(c) gauge theories with adjoint and bifundamental matter fields</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Kovtun</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Unsal</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">G</forename>
+				<surname>Yaffe</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2003" />
+			<biblScope unit="page">034</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title level="m" type="main">Necessary and sufficient conditions for nonperturba- tive equivalences of large N(c) orbifold gauge theories</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Kovtun</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Unsal</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">G</forename>
+				<surname>Yaffe</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2005" />
+			<biblScope unit="page">008</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">In)validity of large N orientifold equivalence</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Unsal</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">G</forename>
+				<surname>Yaffe</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">74</biblScope>
+			<biblScope unit="issue">105019</biblScope>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Exact results in non-supersymmetric large N orientifold field theories</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Armoni</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Shifman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Veneziano</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">667</biblScope>
+			<biblScope unit="issue">170</biblScope>
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Problems with Finite Density Simulations of Lattice QCD</title>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<forename type="middle">E</forename>
+				<surname>Barbour</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Behilil</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Dagotto</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Karsch</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Moreo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">W</forename>
+				<surname>Stone</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Wyld</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">275</biblScope>
+			<biblScope unit="page">296</biblScope>
+			<date type="published" when="1986" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Orbifold equivalence for finite density QCD and effective field theory</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Cherman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">C</forename>
+				<surname>Tiburzi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">JHEP 1106</title>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="page">034</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Random Matrix Theory And Spectral Sum Rules For The Dirac Operator In QCD</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">V</forename>
+				<surname>Shuryak</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">J M</forename>
+				<surname>Verbaarschot</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. A</title>
+		<imprint>
+			<biblScope unit="volume">560</biblScope>
+			<biblScope unit="issue">306</biblScope>
+			<biblScope unit="page" from="hep" to="th" />
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">The QCD phase diagram at nonzero temperature, baryon and isospin chemical potentials in random matrix theory</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Klein</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">J M</forename>
+				<surname>Toublan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Verbaarschot</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">68</biblScope>
+			<biblScope unit="page">014009</biblScope>
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Diquark and pion condensation in random matrix models for two-color QCD</title>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Klein</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Toublan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">J M</forename>
+				<surname>Verbaarschot</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">72</biblScope>
+			<biblScope unit="page">015007</biblScope>
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">On the phase diagram of QCD</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">M</forename>
+				<surname>Halasz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">D</forename>
+				<surname>Jackson</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">E</forename>
+				<surname>Shrock</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">A</forename>
+				<surname>Stephanov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">J M</forename>
+				<surname>Verbaarschot</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">589804290</biblScope>
+			<biblScope unit="page">096007</biblScope>
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Random matrix triality at nonzero chemical potential</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">M</forename>
+				<surname>Halasz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">C</forename>
+				<surname>Osborn</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">J M</forename>
+				<surname>Verbaarschot</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">569704007</biblScope>
+			<biblScope unit="issue">7059</biblScope>
+			<biblScope unit="page" from="hep" to="lat" />
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Spectrum of Dirac operator and role of winding number in QCD</title>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Leutwyler</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">V</forename>
+				<surname>Smilga</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page">5607</biblScope>
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<monogr>
+		<title level="m" type="main">A Random Matrix Study of the QCD Sign Problem</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Han</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">A</forename>
+				<surname>Stephanov</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<monogr>
+		<title/>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="page">054507</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<title level="m" type="main">Holographic realization of large-Nc orbifold equivalence with non-zero chemical potential</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Hanada</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Hoyos</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Karch</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">G</forename>
+				<surname>Yaffe</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="hep" to="th" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<monogr>
+		<title level="m" type="main">Holographic phase transitions at finite chemical potential</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Mateos</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Matsuura</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">C</forename>
+				<surname>Myers</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">M</forename>
+				<surname>Thomson</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2007" />
+			<biblScope unit="page">085</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<monogr>
+		<title level="m" type="main">Finite baryon and isospin chemical potential in AdS/CFT with flavor</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Erdmenger</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Kaminski</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Kerner</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Rust</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="page">031</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Superconductivity from gauge/gravity duality with flavor</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Ammon</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Erdmenger</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Kaminski</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Kerner</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">680</biblScope>
+			<biblScope unit="issue">516</biblScope>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Lattice QCD at finite temperature and density in the phase-quenched approximation</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">B</forename>
+				<surname>Kogut</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">K</forename>
+				<surname>Sinclair</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="page">114503</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Phase fluctuation of fermion determinant in lattice QCD at finite density</title>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Sasai</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Nakamura</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Takaishi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. Proc</title>
+		<imprint>
+			<biblScope unit="volume">129</biblScope>
+			<biblScope unit="page">539</biblScope>
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+	<note>Suppl. .</note>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Finite Density Lattice QCD: How To Fight Against The Complex Fermion Determinant</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Nakamura</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Sasai</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Takaishi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">AIP Conf. Proc. 756</title>
+		<imprint>
+			<date type="published" when="2005" />
+			<biblScope unit="page">416</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">On the phase diagram of QCD at finite isospin density</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>De Forcrand</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">A</forename>
+				<surname>Stephanov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">U</forename>
+				<surname>Wenger</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PoS LAT</title>
+		<imprint>
+			<biblScope unit="volume">2007</biblScope>
+			<biblScope unit="issue">237</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Imaginary chemical potential and finite fermion density on the lattice</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">G</forename>
+				<surname>Alford</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Kapustin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Wilczek</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">599807039</biblScope>
+			<biblScope unit="page">054502</biblScope>
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">The QCD phase diagram for small densities from imaginary chemical potential</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>De Forcrand</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Philipsen</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">642</biblScope>
+			<biblScope unit="issue">290</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<monogr>
+		<title level="m" type="main">The critical line of two-flavor QCD at finite isospin or baryon densities from imaginary chemical potentials, &quot; arXiv:1202.5700 [hep- lat]; &quot; Phase diagram of QCD with two degenerate staggered quarks</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Cea</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Cosmai</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">D</forename>
+				<surname>Elia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Papa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Sanfilippo</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Thermodynamics of two flavor QCD to sixth order in quark chemical potential</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">R</forename>
+				<surname>Allton</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Doring</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Ejiri</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">J</forename>
+				<surname>Hands</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Kaczmarek</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Karsch</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Laermann</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Redlich</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">71</biblScope>
+			<biblScope unit="page">054508</biblScope>
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

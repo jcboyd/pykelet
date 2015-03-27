@@ -1,0 +1,1976 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Semiclassical Field Theory Approach to Quantum Chaos</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">A</forename>
+								<forename type="middle">V</forename>
+								<surname>Andreev</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Department of Physics</orgName>
+								<orgName type="institution">Massachusetts Institute of Technology</orgName>
+								<address>
+									<addrLine>77 Massachusetts Avenue</addrLine>
+									<postCode>02139</postCode>
+									<settlement>Cambridge</settlement>
+									<region>MA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+							<affiliation>
+								<orgName type="institution">NEC Research Institute</orgName>
+								<address>
+									<addrLine>4 Independence Way</addrLine>
+									<postCode>08540</postCode>
+									<settlement>Princeton</settlement>
+									<region>NJ</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">B</forename>
+								<forename type="middle">D</forename>
+								<surname>Simons</surname>
+							</persName>
+							<affiliation>
+								<orgName type="laboratory">Cavendish Laboratory</orgName>
+								<address>
+									<addrLine>Madingley Road</addrLine>
+									<postCode>CB3 0HE</postCode>
+									<settlement>Cambridge</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">O</forename>
+								<surname>Agam</surname>
+							</persName>
+							<affiliation>
+								<orgName type="institution">NEC Research Institute</orgName>
+								<address>
+									<addrLine>4 Independence Way</addrLine>
+									<postCode>08540</postCode>
+									<settlement>Princeton</settlement>
+									<region>NJ</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">B</forename>
+								<forename type="middle">L</forename>
+								<surname>Altshuler</surname>
+							</persName>
+							<affiliation>
+								<orgName type="institution">NEC Research Institute</orgName>
+								<address>
+									<addrLine>4 Independence Way</addrLine>
+									<postCode>08540</postCode>
+									<settlement>Princeton</settlement>
+									<region>NJ</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Semiclassical Field Theory Approach to Quantum Chaos</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<note>arXiv:cond-mat/9605204v1 2 Jun 1996</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>We construct a field theory to describe energy averaged quantum statistical properties of systems which are chaotic in their classical limit. An expression for the generating function of general statistical correlators is presented in the form of a functional supermatrix nonlinear σ-model where the effective action involves the evolution operator of the classical dynamics. Low-lying degrees of freedom of the field theory are shown to reflect the irreversible classical dynamics describing relaxation of phase space distributions. The validity of this approach is investigated over a wide range of energy scales. As well as recovering the universal long-time behavior characteristic of random matrix ensembles, this approach accounts correctly for the short-time limit yielding results which agree with the diagonal approximation of periodic orbit theory.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head>I. INTRODUCTION</head>
+
+				<p>The quantum description of systems which are chaotic in the classical limit is the subject of &quot; quantum chaos &quot; . A wide variety of physical systems fall into this category. Amongst those most commonly studied are the neutron resonances of atomic nuclei [1], Rydberg atoms in strong magnetic fields [2], and electrons in weakly disordered metallic grains (quantum dots) [3]. The energy spectrum as a whole is specific for each individual chaotic system. However, in contrast to integrable systems, each eigenstate is characterized only by its energy rather than by a set of quantum numbers [4]. The variables in the corresponding Schrödinger equation do not separate, and an analytical solution is prohibited. Therefore, a useful description of highly excited eigenstates of chaotic systems is a statistical one. The statistical approach assumes certain averaging. Sometimes, as with disorder, one can think about an ensemble of chaotic systems. In such cases ensemble averaging is sufficient. For an individual chaotic system, such as a Rydberg atom in a magnetic field, averaging over a wide energy interval is the only choice.</p>
+
+				<p>Quantities investigated in the statistical approach to quantum spectra include various correlators of density of states (DoS) ν(E) = Tr δ(E − ˆ H), wherê H is the Hamiltonian of the system. Here, it is natural to measure energy differences in units of the mean level spacing ∆. Perhaps the property most frequently studied is the dimensionless two-point DoS correlator,</p>
+
+				<figure>
+					<trash>R 2 (s) = ∆ 2 ν E + s 2 ∆ ν E − s 2 ∆ − 1, (1)</trash>
+
+
+				</figure>
+
+				<p>where s is the dimensionless energy difference. As mentioned above, for disordered metals the statistical average, denoted by · · · can be performed over different realizations of the random Hamiltonian while, in general, the average can be taken over a wide energy band. Associated with each particular chaotic system there are typically two relevant energy scales. The first, E c , is associated with the classical time scale τ c = ¯ h/E c on which a density distribution in phase space becomes ergodic, i.e. spreads uniformly over the constant energy shell. On time scales larger than τ c , time averages over a classical trajectory can be substituted by microcanonical averages over the energy shell in phase space. In a cavity in which a quantum particle scatters ballistically from a boundary, the &quot; chaotic billiard &quot; , the energy scale E c is typically set by the frequency of the shortest periodic orbit, or the inverse flight time across the system. In a weakly disordered metallic grain, on the other hand, the classical energy scale is set by the inverse transport time, or Thouless energy E c = ¯ hD/L 2 , where D denotes the classical diffusion constant, and L represents the system size. The second energy scale is set by the mean energy level spacing ∆ which defines the Heisenberg time τ H = ¯ h/∆. The two energy scales can be combined into the dimensionless ratio,</p>
+
+				<figure>
+					<trash>g = E c /∆ (2)</trash>
+
+
+				</figure>
+
+				<p>which represents the &quot; dimensionless conductance &quot; [5] of a chaotic system. The ergodic time τ c = ¯ h/E c sets the scale beyond which the details of the classical dynamics of the system become irrelevant (as long as the system is chaotic).</p>
+
+				<p>Correspondingly, for energy scales s ≪ g, spectral statistics become universal, independent of the details of the underlying classical dynamics. To a very good approximation they are determined only by the global symmetries of the system [6–8] such as T-invariance, and coincide with the universal Wigner-Dyson level statistics of the corresponding random matrix ensembles [9]: Unitary (broken T-invariance), Orthogonal (spinless T-invariant systems), or Symplectic (T-invariant systems with spin-orbit interaction) [10,11]. In the semiclassical limit, and in dimensions greater than one, the dimensionless conductance is large, g ≫ 1, and universal statistics apply over a wide energy interval.</p>
+
+				<p>The study of the universal and non-universal statistical properties of quantum chaotic systems has been conducted largely along two separate lines: 1. The first approach has been based on the nonlinear σ-model proposed by Wegner [12], and is applied to the study of an ensemble of similar systems such as weakly disordered metallic grains in which electrons experience scattering by a random potential. Here, ensemble averaging is a crucial step exploited at an early stage of calculation. The supersymmetric version of the nonlinear σ-model proposed by Efetov [13] provided a microscopic justification for the random matrix theory (RMT) description of universal long-time properties of such systems [14,15]. The same theory accounts for non-universal features of spectral statistics associated with the diffusive dynamics of electrons. However, such an approach suffers from two drawbacks: Firstly, it relies on the very existence of an ensemble. Very often we are concerned with non-stochastic chaotic systems, such as a chaotic billiard, where the notion of an ensemble is inappropriate. Secondly, this type of averaging tends to erase information about individual features of the system.</p>
+
+			</div>
+			<div>
+				<head>2.</head>
+
+				<p>The second approach has been based on Gutzwiller&apos;s trace formula in which the semiclassical DoS is expressed as a sum over the classical periodic orbits [4]. This approach focuses on the behavior of individual systems, and statistical properties reply implicitly on energy averaging. This approach has proved to be a powerful tool in describing non-universal properties associated with short-time behaviour. However, its success in reproducing universal long time properties associated with RMT has been limited [7,16]. In particular, it fails to account for the correct behavior at times in excess of the inverse level spacing or the Heisenberg time τ H = ¯ h/∆. Thus, in spite of extensive numerical evidence [17,6] which supports the random matrix description of spectral statistics of individual systems at small energies, the origin of its success has remained obscure.</p>
+
+				<p>In Ref. [18] it was conjectured that the σ-model approach to diffusive systems could be generalised to include the wider class of chaotic systems. In a recent and insightful development, Muzykantskii and Khmel&apos;nitskii [19] proposed a σ-model to describe short-time ballistic dynamics in disordered conductors. Although their argument relied solely on impurity averaging, they conjectured that their σ-model should apply even in the absence of disorder. Here we develop a semiclassical field theoretic description of quantum spectral statistics of individual chaotic systems based solely on energy averaging. This method offers a semiclassical description of the statistical properties of individual quantum chaotic systems which accounts both for universal as well as non-universal features. The basic ingredients of the underlying classical dynamics are no longer the individual periodic orbits, but general properties of the classical flow in phase space. It will be shown the the σ-model constructed in this way indeed coincides with that proposed in Ref. [19]. Before introducing the main conclusions of this study, we begin by identifying the questions which will be of most concern. To do so it is convenient to draw on the insight offered by the study of the dynamics of a particle moving in a background of weak randomly distributed scattering impurities. Amenable to the method of ensemble averaging, properties of this chaotic quantum mechanical problem are now reasonably well understood. What is the quantum evolution of a wavepacket in a background of impurities? According to the time of evolution, the dynamics of the wavepacket is characterised by several quite distinct regimes. On time scales t in excess of the mean free scattering time τ , the initial ballistic evolution of the wavepacket becomes diffusive. At longer times the interference of different semiclassical paths induces a quantum renormalization of the bare diffusion constant D = v 2 F τ /d. This leads to the phenomena of &quot; weak localisation &quot; and is responsible for the quantum coherence effects observed in transport properties of mesoscopic metallic conductors. If the impurity potential is not strong enough to localise the wavepacket altogether, the wavepacket continues to spread. After a time τ c = L 2 /D, the typical transport or diffusion time, the wavepacket is spread approximately uniformly throughout the system. Further evolution of the wavepacket is therefore said to be ergodic. Beyond the ergodic time t ≫ τ c the evolution of the wavepacket becomes universal, independent of the individual features of the system. Finally, the spectral rigidity characteristic of quantum chaotic systems leads to an approximately coherent superposition or &quot; echo &quot; [20] of the wavepacket at t = τ H after which the wavepacket relaxes to a uniform distribution. A similar question can be asked about the quantum evolution of a wavepacket introduced into, say, an irregular cavity (quantum billiard) without impurities. In such systems it is widely believed that there too exists some ergodic time τ c after which properties of the system become universal. However, at shorter time scales, how is the unstable nature of the classical dynamics reflected in the quantum evolution? Is there an analogue of quantum renormalization? What, in general, plays the role of the diffusion operator in describing the low energy degrees of freedom? In a recent study by three of us [21], a comparison of results taken from the leading order of diagrammatic perturbation theory for disordered metals within the diagonal approximation of periodic orbit theory led to the conjecture that, for general chaotic systems, the role of the diffusion operator is, in general, played by the generator L of the classical evolution (or Perron-Frobenius) operator, e − ˆ Lt . If ρ(x, 0) is an initial probability density distribution defined as a function of phase space variables x ≡ (q, p), where q and p are coordinates of the position and momentum vectors respectively, the density at a later time t is given by</p>
+
+				<figure>
+					<trash>ρ(x, t) = e − ˆ Lt ρ(x, 0) ≡ Γ dy δ[x − u t (y)] ρ(y, 0), (3)</trash>
+
+
+				</figure>
+
+				<p>where u t (y) is the solution of classical equations of motion with initial conditions y at t = 0, and Γ covers the region of available phase space. One eigenvalue of the Perron-Frobenius operator is always unity and corresponds to the ergodic state. The rest of the eigenvalues are of the form e −γµt , where ℜ(γ µ ) &gt; 0, and appear as complex conjugate pairs. They are associated with decaying modes in which a smooth distribution relaxes into the uniform ergodic state and are analogous to the diffusion modes of disordered systems. This analogy, therefore, suggests that the ergodic time in general chaotic systems is set by the first non-zero eigenvalue τ c ∼ ¯ h/ℜ(γ 1 ). As well as confirming the conjecture made in Ref. [21], the field theoretic approach will reveal that, in the semiclassical limit, all statistical spectral properties of the quantum system depend only on properties of the Perron-Frobenius operator. In particular, by considering only its leading eigenvalue γ 0 = 0, one exactly reproduces RMT, while taking into account higher modes enables one to characterize deviations from universality. The field theoretic approach provides for the first time a systematic and controlled way to investigate quantum corrections which lie beyond the diagonal approximation typically employed in the periodic orbit theory. The range of energy scales over which this approach is valid is illustrated in Fig. 1. Energy averaging will be performed over a wide energy band of width W centered at E 0 . As well as requiring that E 0 ≫ W , we will assume that W is much larger than the energy scale set by the first non-zero eigenvalue of L, γ 1 . This is to ensure that the time scale ¯ h/W is fine enough to resolve the behavior of the classical dynamics over a time interval smaller than the ergodic time τ c ∼ ¯ h/γ 1 . It will be also assumed that the finest energy scale, the mean level spacing ∆, is much smaller than γ 1 . Therefore, we will focus on a range of energy scales where ∆ ≪ γ 1 ≪ W ≪ E 0 . As well as describing the universal regime of RMT, corresponding to energy scales comparable to the mean level spacing ∆, the field theory developed here properly describes non-universal behavior which appears at larger energy scales. However, to avoid encountering non-universal features associated with the finite band width W , it will be always assumed that all correlators involve energy differences much smaller than W . Final results are therefore expressed in zeroth order in ∆/W , i.e. when the number of levels in the band tends to infinity.</p>
+
+				<p>The paper is organized as follows: A derivation of the ballistic nonlinear σ-model is presented in section II. The interpretation of the resulting functional integral will be discussed in section III. There it is shown that regularization of the functional integral forces one to identify the low lying modes of the field theory as the Perron-Frobenius modes associated with irreversible classical dynamics. In section IV we present two applications: the reduction of our model to RMT, and a calculation of the two-point DoS correlator beyond the universal regime. At the end of this section the range of validity of our approach is discussed. In section V we generalize the model to incorporate non-semiclassical corrections such as weak scattering from δ-correlated random impurities. This establishes the relation between the ballistic σ-model and the conventional diffusive counterpart. A summary and discussion of the results is presented in section VI.</p>
+
+				<figure>
+					<trash>2 3 0 W E E 1 γ γ γ γ The validity domain of the ∆ mean level spacing The universal regime constructed field theory of energy averaging n eigenvalues Perron -Frobenius center of band width the band FIG. 1</trash>
+
+
+				</figure>
+
+				<p>. A schematic diagram showing the relevant energy scales, as well as the domains of validity of RMT and the field theory constructed in this paper.</p>
+
+				<p>II. THE NONLINEAR σ-MODEL</p>
+
+				<p>To present the derivation of the effective field theory describing spectral correlations of quantum chaotic systems, we will focus on the problem of a single particle confined by an irregular potential described by the Hamiltonian</p>
+
+				<figure>
+					<trash>ˆ H = ˆ p 2 2m + V (ˆ q). (4)</trash>
+
+
+				</figure>
+
+				<p>The classical counterpart of the quantum Hamiltonian is assumed to be chaotic and to have no discrete symmetries. We confine attention to closed systems so that classical motion inhabits a finite region of the 2d-dimensional phase space. We will assume that all classical orbits are unstable and, in particular, exclude (KAM) systems where the phase space contains islands of regular motion. We will concentrate on statistical properties defined on an energy band of width W centered at an energy E 0 . To discuss meaningful averages it is necessary to assume that the average DoS, specified by the Weyl formula</p>
+
+				<figure>
+					<trash>ν(E 0 ) = 1 h d dx δ [E 0 − H(x)] , x = (q, p) (5)</trash>
+
+
+				</figure>
+
+				<p>is approximately constant within this interval. Taking as an example a particle in a random impurity potential, the accuracy of this approximation is of order W/E 0 , and can be made arbitrarily small by going into the semiclassical limit E 0 → ∞. On the other hand, the bandwidth is assumed to be sufficiently large that the number of levels, N = ν(E 0 )W ≫ 1 can be employed as an expansion parameter — final expressions will be expressed in the zeroth order approximation in 1/N . Henceforth we will express energy in units of the mean level spacing, ∆ = 1/ν(E 0 ) and denote such energies by ǫ = E/∆. For simplicity, it is convenient to employ Gaussian averaging</p>
+
+				<figure>
+					<trash>· · · ǫ0 = dǫ (2πN 2 ) 1/2 exp − (ǫ − ǫ 0 ) 2 2N 2 (· · ·). (6)</trash>
+
+
+				</figure>
+
+				<p>A general n-point correlator of physical operators, such as the local or global DoS or current densities, can be obtained from a generating function which depends on appropriate external sources. Here we focus on two-point correlators. Expressed as a field integral, the generating function for two-point correlators takes the form</p>
+
+				<figure>
+					<trash>Z( ˆ J) = z DΨ exp − i 2 dqΨ † (q)L ˆ G −1 (ǫ) − ˆ J Ψ(q) , (7) 1 Following Ref. [22]</trash>
+
+
+				</figure>
+
+				<p>we express the 8-component superfields Ψ, which appear in</p>
+
+				<figure>
+					<trash>Eq. (7), in the block notation Ψ p gd = Ψ A gd Ψ R gd p , Ψ p g=1,d = χ p χ p * d , Ψ p g=2,d = S p S p * d , (9)</trash>
+
+
+				</figure>
+
+				<p>where superscript p refers to retarded/advanced components, subscript g refers to fermionic (F) components χ and bosonic (B) components S, and subscript d refers to time-reversal (complex conjugated) components. The introduction of equal numbers of bosonic and fermionic fields is a standard trick which obviates the need to introduce replicas and normalizes the generating function to unity.</p>
+
+				<figure>
+					<trash>Matrices Λ = 1 0 0 −1 p ⊗ 1 1 g ⊗ 1 1 d , k = 1 0 0 −1 g ⊗ 1 1 d , (10)</trash>
+
+
+				</figure>
+
+				<p>break the symmetry between the advanced/retarded and graded components respectively, and we have chosen a convention which introduces the supermatrix</p>
+
+				<figure>
+					<trash>L = 1 1 0 0 k p ⊗ 1 1 d . (11)</trash>
+
+					<figDesc>The inclusion of complex conjugated fields effectively doubles the number of fields and implies the relation</figDesc>
+					<trash>Ψ † (q) = Ψ(q) T C T , (12)</trash>
+
+
+				</figure>
+
+				<p>where the operations of complex conjugation, and transposition of supervectors are defined following Efetov [14], while</p>
+
+				<figure>
+					<trash>C = 1 1 p ⊗ −iτ 2 0 0 τ 1 g , (13) denotes the &quot; charge conjugation &quot; matrix, and τ 0 = 1 0 0 1 d , τ 1 = 0 1 1 0 d , τ 2 = 0 −i i 0 d , τ 3 = 1 0 0 −1 d (14) represent Pauli matrices which act inside time-reversal blocks. 2</trash>
+
+
+				</figure>
+
+				<p>As an application, Eq. (7) can be used to represent the fluctuations in the two-point correlator of DoS by defining the source as</p>
+
+				<figure>
+					<trash>ˆ J = Jδ(q − q ′ )kΛ, (15) where J is a constant. Then R 2 (s), defined in Eq. (1), can be expressed as R 2 (s) = − 1 16π 2 ∂ 2 ∂J 2 ℜZ(J) ǫ0 J=0 . (16)</trash>
+
+
+				</figure>
+
+				<p>If the energy difference s is chosen to be much smaller than the width of the energy band N , correlators become independent of N and of the particular shape of the band (whether it is Gaussian or Lorentzian, etc). Performing the energy averaging (6) of Z(J) we obtain 1 Energy averaging of the generating functional (7) induces a quartic interaction of the form (Ψ † LΨ) 2 among the supervector fields. The matrix L serves as a metric tensor. In Ref. [15] it was shown that the appropriate group of transformations preserving the interactions in the fermionic sector is compact while in the bosonic sector it must be chosen non-compact. This fixes the definition of L</p>
+
+				<figure>
+					<trash>(see Eq. (11)). With this definition, the constant z = exp 1 2 STrq ln(ΛL) , (8) accounts for the correct normalisation. For the definition of STrq see discussion below Eq. (19). 2</trash>
+
+
+				</figure>
+
+				<p>This convention differs slightly from that discussed by Ref. [14]</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+					<trash>Z(J) ǫ0 = z DΨ exp − i 2 dqΨ † (q)L ˆ G −1 (ǫ 0 ) − ˆ J Ψ(q</trash>
+
+
+				</figure>
+
+				<p>) − S int [Ψ] , (17a) S int = N 2 8 dqΨ † (q)LΨ(q) 2 . (17b) Therefore, in contrast to an impurity averaging, energy averaging induces a nonlocal interaction of Ψ. This represents an important departure from the usual consideration of random Hamiltonians. The next step involves the decoupling of the interaction induced in the averaging by means of a Hubbard- Stratonovich transformation. This is achieved with the introduction of 8 × 8-component supermatrix fields Q(q 1 , q 2 ) which are non-local in space. To define the correct decoupling it is crucial to identify those contributions to S int which vary slowly in comparison with the wavelength. In the semi-classical analysis that follows we will show that the low lying degrees of freedom are described by matrices Q(q 1 , q 2 ) which vary slowly with respect to the center-of-mass coordinate (q 1 + q 2 )/2. Anticipating this, it is convenient to switch to a momentum space representation of the interaction and explicitly separate such contributions</p>
+
+				<figure>
+					<trash>S int = N 2 8 dP |p|&lt;p0 dp Ψ † (P)LΨ(−P) Ψ † (P + p)LΨ(−P − p) + Ψ † (P)LΨ(−P) Ψ † (−P − p)LΨ(P + p) . (18)</trash>
+
+
+				</figure>
+
+				<p>The characteristic momentum cut-off is defined such that p 0 &lt; W/v, where v is the velocity of the particle. Using the charge conjugation symmetry of Ψ (12) it is straightforward to show that these terms give an equivalent contribution.</p>
+
+				<p>Therefore, following Ref. [14] we decouple the interaction (17b) as e −Sint[Ψ]</p>
+
+				<figure>
+					<trash>= DQ exp − STr q ˆ Q 2 4 + N 2 Ψ † L ˆ QΨ , (19)</trash>
+
+
+				</figure>
+
+				<p>where STr q denotes the trace operation for supermatrices, STrM = TrM F F − TrM BB , with a subscript q used to denote a further extension of the trace to include the coordinate integration.</p>
+
+				<figure>
+					<trash>Eq. (12) implies that the dyadic product A(q, q ′ ) = Ψ(q) ⊗ Ψ † (q ′ )L obeys the symmetry property A(q, q ′ ) = C T LA T (q ′ , q)LC. This induces the corresponding symmetry ˆ Q = C T L ˆ Q T LC, (20)</trash>
+
+
+				</figure>
+
+				<p>where the transposition should be understood in the sense of an operator.</p>
+
+				<figure>
+					<trash>Substituting Eq. (19) into Eq. (17a) and integrating over Ψ we obtain the following expression for the averaged generating functional Z( ˆ J) ǫ0 = DQ exp − 1 4 STr q ˆ Q 2 + 1 2 STr q ln G −1 ( ˆ Q) − s + 2 Λ − ˆ J , (21a) ˆ G −1 ( ˆ Q) = ǫ 0 − ˆ H − iN Q. (21b)</trash>
+
+
+				</figure>
+
+				<p>Thus far no approximations have been made. The next step is to identify the low energy degrees of freedom and obtain an effective action.</p>
+
+				<p>To do so, we will employ a saddle-point approximation and find the matrix Q 0 which minimizes the action in Eq. (21a). The effective field theory is described by the expansion of the action in fluctuations of Q around the saddle-point. These fluctuations are strongly anisotropic and can be classified into massive and massless modes. The integral over the former can be evaluated within the saddle-point approximation to leading order in 1/N (see Appendix A). The integral over the remaining massless modes, which arise from the underlying symmetry of the action (17a) must be evaluated exactly. The resulting field theory has the form of a nonlinear σ-model.</p>
+
+				<p>A. Saddle-point approximation and the σ-model</p>
+
+				<p>Varying the action in Eq. (21a) with respect tô Q, and neglecting the terms of order s and J, we find minima at Q 0 which satisfy the equation</p>
+
+				<figure>
+					<trash>ˆ Q 0 ˆ G −1 ( ˆ Q 0 ) = −iN, (22) ˆ Q 0 = −i ǫ 0 − ˆ H 2N +   1 − ǫ 0 − ˆ H 2N 2   1/2 Λ. (23)</trash>
+
+
+				</figure>
+
+				<p>Note that N ˆ Q 0 plays the role of the self-energy in the average Green function G( ˆ Q 0 ). The saddle-point solution in Eq. (23) is not unique but is in fact one member of a degenerate manifold of solutions. Their existence follows from the underlying symmetry of the action of Eq. (17a). The interaction term S int [Ψ] is invariant under the group of transformations Ψ → ˆ</p>
+
+				<figure>
+					<trash>U Ψ such that ˆ U † L ˆ U = L, (24) wherê U is an operator in Hilbert space. Terms that break the symmetry of the total action in Eq. (17a) are sΛ, ˆ JkΛ and the commutator [ ˆ H, ˆ U ]. The invariance of the relation Ψ † = Ψ T C T under the transformation Ψ → ˆ UΨ induces an additional constraint on U ˆ U † = C ˆ U T C T . (25) From Eq. (19</trash>
+
+					<figDesc>) it follows that these transformations induce the following constraint on the Hubbard-Stratonovich field Q: ˆ Q → ˆ U −1 Q ˆ U . The saddle-point solution in Eq. (23) is not invariant under this group of transformations. Therefore the low energy modes of the action are of the form Q = ˆ U −1 Q 0 ˆ U . However, not all of these transformations should be taken into account. The group of transformations (24) contains a subgroup of matrices which commute with the Hamiltonian. The matrix Q remains diagonal in Hilbert space in the basis of eigenstates of the Hamiltonian. In Appendix A we show that the massive mode integration gives rise to a suppression of the fluctuations of Q by the large parameter N . The only matrix U commuting with H which &quot; survives &quot; the N → ∞ limit is the one proportional to the unit matrix in Hilbert space. Admitting matrices Q of such form into Eq. (21a) we obtain</figDesc>
+					<trash>Z( ˆ J) ǫ0 = DQ exp (−S eff [Q]) , (26) where S eff [ ˆ Q] = − 1 2 STr q ln G −1 ( ˆ Q) − s + 2 Λ − ˆ J = − 1 2 STr q ln G −1 ( ˆ Q 0 ) − ˆ U s + 2 Λ + ˆ J ˆ U −1 − ˆ U [ ˆ H, ˆ U −1 ] . (27)</trash>
+
+
+				</figure>
+
+				<p>The last three terms under the logarithm in Eq. (27) are small as compared to the first, and an expansion can be made in them. Each order in this expansion brings an additional power of 1/N , and suggests the inclusion of just the leading order term:</p>
+
+				<figure>
+					<trash>S eff [ ˆ Q] = i 2N STr q ˆ Q s + 2 Λ + ˆ J − ˆ U −1 [ ˆ H, ˆ U ] . (28)</trash>
+
+
+				</figure>
+
+				<p>This approximation is justified only if s ≪ N and the commutator [ ˆ H, ˆ U ] is not anomalously large. The validity of this approximation must be considered individually for each system. In section V A we will discuss an example where this is not the case, and one has to keep the second order expansion of the logarithm in Eq. (27).</p>
+
+			</div>
+			<div>
+				<head>B. Semiclassical approximation</head>
+
+				<p>In the limit ǫ 0 → ∞, the configurations of the Q-matrix that contribute substantially to the functional integral in Eq. (17a) can be described within the semiclassical approximation. It is therefore convenient to re-express all operators in the Wigner representation. Given an operator O as a set of matrix elements O(q 1 , q 2 ) between two position states at q 1 and q 2 , its Wigner representation is a function of the phase space variables x =</p>
+
+				<figure>
+					<trash>(q, p) defined by O(x) = d d q ′ exp(ip · q ′ /¯ h) O(q + q ′ /2, q − q ′ /2). (29)</trash>
+
+
+				</figure>
+
+				<p>We will use the fact that, in the semiclassical limit, the Wigner transform of a product of operators is equal the product of the Wigner transformed operators, (O 1 O 2 )(x) → O 1 (x)O 2 (x), where O 1,2 (x) are smooth slowly varying functions on the quantum scale [23]</p>
+
+				<figure>
+					<trash>. In this approximation Eq. (24) becomes U † (x)LU (x) = L, (30) and implies that the matrices U (x) belong to the pseudounitary supergroup U (2, 2/4). Expressed in the Wigner representation, the constraint in Eq. (25), U * (q, p) = CU (q, −p)C T , (31)</trash>
+
+
+				</figure>
+
+				<p>shows that the matrices U (x) at different x are not independent. This agrees with the findings of Ref. [24]. The massless modes in the Wigner representation are generated by those matrices U (x) which do not commute with Λ. Such matrices, denoted by T (x), belong to the coset space H</p>
+
+				<figure>
+					<trash>= G/K = U (2, 2/4)/ [U (2/2) × U (2/2)] and, as implied by Eq. (31), satisfy the symmetry relation T * (q, p) = CT (q, −p)C T . (32)</trash>
+
+
+				</figure>
+
+				<p>As mentioned above, those matrices U which commute with the Hamiltonian are strongly suppressed by massive modes (see Appendix A). In the semiclassical limit, we therefore admit only those matrices T (x) which are independent of the energy. The massless modes are then given by</p>
+
+				<figure>
+					<trash>Q(x) = T −1 (x )Q 0 (H)T (x ), (33) where x denotes a phase space coordinate on the energy shell ǫ 0 = H(x). Substituting T for U in Eq. (28), and applying the semiclassical approximation in which the commutator with the Hamiltonian becomes the Liouville operator L, [ ˆ H, ˆ T ] → −i¯ h ˆ LT (x ) = −i¯ h T (x ), H , (34) where {A, B} = i ∂A ∂q i ∂B ∂p i − ∂B ∂q i ∂A ∂p i (35) denotes the Poisson bracket of A and B, we obtain S eff [Q] = i 2N dx h d STr Q(x) s + 2 Λ + ˆ J + i¯ hT −1 LT . (36)</trash>
+
+
+				</figure>
+
+				<p>Since the only dependence on the coordinate x ⊥ ≡ H(x) normal to the energy shell enters through Q 0 (H), given by Eq. (23), the integral over this variable can be performed and yields a factor πN Λ. Introducing the notation</p>
+
+				<figure>
+					<trash>Q(x ) ≡ 1 πN dH T −1 (x )Q 0 (H)T (x ) = T −1 (x )ΛT (x ), (37) we obtain the final expression S eff [Q] = iπ 2 dx h d STr Q s + 2 Λ + ˆ J + i¯ hT −1 LT . (38)</trash>
+
+					<figDesc>Here and henceforth when the arguments of Q and T are omitted they should be understood as functions of x .</figDesc>
+					<trash>3 The matrix Q(x ) introduced in Eq. (37) satisfies the nonlinear and symmetry constraints Q(x ) 2 = 1, Q(q, p) = C T LQ T (q, −p)LC. (39) Naively, since Eq. (38</trash>
+
+
+				</figure>
+
+				<p>) is expressed through the matrices T rather than through Q = T −1 ΛT , it appears that it does not correspond to a σ-model. However, a general property of σ-models is the invariance of the action under gauge transformations T → RT , where R commutes with Λ. Using the fact that the Liouvillian L = ˙ x · ∇ x (where ˙ x is the phase space velocity) is a first order differential operator it is straightforward to show that, under a gauge transformation, the change of the action (38) is given by δS eff [Q]</p>
+
+				<figure>
+					<trash>= − π¯ h 2 dx h d STr ΛR −1 LR = − π¯ h 2 dx h d STr Λ ˆ L ln R = 0. (40)</trash>
+
+
+				</figure>
+
+				<p>To arrive at the last equality we used the fact that the flow in phase space is incompressible: ∇ x · ˙ x = 0. The kinetic part of the action in Eq. (38) is equivalent to that introduced by Muzykantskii and Khmel&apos;nitskii [19] where it is written in the form of the Wess-Zumino-Witten action S WZW [Q]</p>
+
+				<figure>
+					<trash>= π¯ h 8 dx h d 1 0 du STr Q ∂ Q ∂u , ˆ L Q , (41)</trash>
+
+
+				</figure>
+
+				<p>where Q is a smooth function of the auxiliary variable u and x with the boundary conditions:</p>
+
+				<figure>
+					<trash>Q(x , 1) = Q(x ) and Q(x , 0) = Λ. The equivalence of Eq. (41) with the kinetic part of the action in Eq. (38) can be established straightforwardly by substituting Q = T −1 Λ T and manipulating the various terms using the identities T −1 L T = −( ˆ L T −1 ) T and T −1 ∂ u T = −(∂ u T −1 ) T which follow from L T −1 T = ∂ u T −1 T = 0</trash>
+
+
+				</figure>
+
+				<p>. An integration by parts with respect to x shows that the resulting integrand is a total derivative with respect to u. The integration over u, with the boundary conditions T (x , 1) = T (x ) and T (x , 0) = 1 1, leads to the kinetic part of the action in Eq. (38).</p>
+
+			</div>
+			<div>
+				<head>C.</head>
+
+				<p>Range of validity of the σ-model</p>
+
+				<p>To clarify the domain of applicability of the nonlinear σ-model in Eq. (38) let us review the main steps involved in its derivation. The construction of the effective generating functional in Eq. (21a) involved purely formal manipulations which involved no approximation. To proceed beyond this expression we invoked a saddle-point approximation in which the fluctuations of the massive modes were neglected. The parameter which controlled this approximation was the inverse bandwidth 1/N . The second approximation involved the replacement of quantum mechanical commutators by the semiclassical Poisson bracket. Such an approximation is justified at high energies where the shortest length scale is set by the wavelength of the particle. Finally, in treating fluctuations of the massless modes around the saddle-point, we treat only the leading order term in the expansion. Formally, if the commutator [ ˆ H, ˆ T ] is not anomalously large, this approximation is also justified by large N . Since characteristic configurations of T are assumed semiclassical this assumption can be violated only if H contains some non-semiclassical contributions. The validity of this semiclassical approximation is discussed in more detail later in section V A when we return to consider scattering from quantum impurities and the relation of the ballistic σ-model to the conventional diffusive nonlinear σ-model.</p>
+
+				<p>The symmetry breaking terms in the action place additional constraints on the range of validity. The expansion around the saddle-point relies on characteristic frequencies (or energy scales arising from the Poisson bracket in the action (38)) being much smaller than the bandwidth N . The derivation of the σ-model of Eq. (38) relies solely on the presence of energy averaging which allows us to neglect the contribution of massive modes in the functional integral. Indeed, energy averaging is crucial in the ballistic limit even in the presence of disorder. This was emphasized in the study of Altland and Gefen [25] of spectral statistics of ballistic metallic grains. There it was pointed out that ensemble averages of spectral correlators differ from averages performed over both ensemble and energy. In the semiclassical language of periodic orbit theory this difference emerges from trajectories which are not scattered by impurities [26] and give rise to &quot; clean features &quot; in the quantum spectrum. The neglect of interference terms among different trajectories (namely the diagonal approximation) is allowed only upon energy averaging over a wide band. Otherwise, the interference among these trajectories is substantial. In section V A we show that without energy averaging only the diffusive σ-model of Efetov [14] can strictly be justified.</p>
+
+				<p>In this case, the large parameter which suppresses the fluctuations of the massive modes is (τ ∆) −1 .</p>
+
+				<p>As numerical or experimental studies of quantum chaos always involve finite statistics it is worth discussing how the results of such studies should be compared to the expressions above. Since the exact DoS consists of δ-functions at the positions of energy levels, all spectral correlators based on finite statistics are inevitably singular. As the statistics are increased by extending the energy window W over which averaging is performed, these correlators remain singular. The meaningful way to define spectral correlations is by introducing a smoothed DoS, ρ γ (</p>
+
+				<figure>
+					<trash>ǫ) = (γ/π) i 1/((ǫ − ǫ i ) 2 + γ 2 ).</trash>
+
+					<figDesc>For any finite γ, the limit N → ∞ exists and generates a &quot; smooth &quot; function. As an example, consider the two-point correlator of DoS for the unitary random matrix ensemble: To obtain the universal expression R 2 (s) = δ(s) − sin 2 (πs)/(πs) 2 it is possible to take the limit γ → 0 only after the limit N → ∞. If, however, one keeps N finite while decreasing γ, the expression will approach the universal result only until γ ≈ 1/N after which it will start to deviate with increasing magnitude. The expressions for spectral correlators that we are describing here should be understood in exactly the same way.</figDesc>
+
+				</figure>
+
+				<p>They are asymptotic expressions corresponding to the limit of N → ∞ taken before the limit γ → 0. When one deals with experimental/numerical data, which necessarily involve finite statistics, one should always keep the level width finite such that γ &gt; 1/N .</p>
+
+			</div>
+			<div>
+				<head>III. REGULARIZATION OF THE FUNCTIONAL INTEGRAL AND IRREVERSIBILITY OF THE CLASSICAL DYNAMICS</head>
+
+				<p>In this section we discuss the question of ultraviolet divergences of the σ-model and show that the regularization procedure forces us to understand L in Eq. (38) as the generator of irreversible classical evolution.</p>
+
+				<p>The functional integral in Eq. (26) with the action (38) suffers from ultraviolet divergences and must be regularized.</p>
+
+				<p>The ultraviolet divergence is not an artifact of the approximations employed in the derivation of Eq. (38) and is present even in the original expression (7) for the ratio of quantum spectral determinants Det(ǫ− H). Although supersymmetry of Eq. (7) improves the ultraviolet properties of the functional integral, in higher dimensions it is not sufficient to make the expression converge. Therefore an ultraviolet regulator needs to be introduced. This regularization induces the corresponding regularization on the functional integral in Eq. (26). The kinetic part of the effective action (38) can be presented as STr[QT −1 ˙ x ∇ x T ], where ˙ x is the classical phase space velocity. This action is only sensitive to the variations of the Q-matrix along the classical trajectories. Therefore nothing prevents the Q-field from fluctuating in the directions transverse to ˙ x . It is these short scale fluctuations that ultimately lead to the divergence of the functional integral. The ultraviolet divergences are independent of the classical dynamics and of the shape of the constant energy surface and are unphysical. The diverging contribution to the functional integral therefore needs to be extracted by an appropriate regularization procedure.</p>
+
+				<p>The problem of the ultraviolet regularization of functional integrals is well studied in field theory. One of the ways to regularize the functional integral is to introduce a term</p>
+
+				<figure>
+					<trash>δS R = m dx STr(∇ x Q) 2 , (42)</trash>
+
+					<figDesc>into the effective action (38). This term suppresses strong fluctuations of Q in the directions transverse to ˙ x , and favors the physical functions Q(x ) which are smooth. Depending on the dimensionality of the phase space this may not be sufficient to make the integral convergent and additional regularization procedures should be invoked. To explore this issue in more detail we will consider the functional integral which arises from the lowest order perturbative expansion of the action.</figDesc>
+
+				</figure>
+
+				<p>In this case we can represent T = 1 + δT and expand the action (38) with the regulator (42) to second order in δT . We refer the reader to section IV B where this is discussed in greater detail. Here we only outline the conceptual steps which relate to the regularization. In the lowest order of perturbation theory, the resulting Gaussian functional integral generates simply the determinant of the elliptic operator is − ˆ L R = is − ˆ L − m∇ 2 x (see section IV B). An operator is called elliptic is the component of highest rank in derivatives is positive definite. The problem of regularization of the determinants of such operators is discussed in the literature (see, for example, Ref. [27]). One method involves the construction of a zeta function of the operator defined as</p>
+
+				<figure>
+					<trash>ζ(is − ˆ L R |z) = i 1 (is − λ i ) z = 1 Γ(z) ∞ 0 t −z−1 dtTr exp − is − ˆ L R t . (43)</trash>
+
+
+				</figure>
+
+				<p>Here λ i denote the eigenvalues of L R , and we assume that s is chosen such that the operator is − ˆ L R has no zero modes. Then the integral in the right hand side converges at the upper limit. At the lower limit t → 0 it can diverge depending on the value of z. However, this divergence is ultraviolet in nature and can be removed by taking the integral at sufficiently large positive z. The expression can then be analytically continued to the rest of the complex plane. A regularized spectral determinant is expressed through the derivative of the zeta function (43)</p>
+
+				<figure>
+					<trash>ln Det(is − ˆ L R ) = −ζ ′ (is − ˆ L R |z) z=0 . (44)</trash>
+
+					<figDesc>The regularized spectral determinant Det(is − ˆ L R ) is a function of s. It has zeroes at the positions of eigenvalues of L R and nowhere else on the complex plane. By taking the limit one recovers the result which is independent of the regulator (42)</figDesc>
+					<trash>1 Z(is) = Det(is − ˆ L) = lim m→0 Det(is − ˆ L R ). (45)</trash>
+
+
+				</figure>
+
+				<p>This limit is very different for integrable and chaotic systems. In particular, antihermiticity of L in the limit m → 0 suggests that the zeroes of the regularized determinant Det(is − ˆ L) lie on the imaginary axis of is. However, for chaotic systems this is not the case [28,29].</p>
+
+				<p>To understand the subtleties which arise when this limit is taken for nonintegrable systems, let us consider the purely classical evolution. Suppose we form an initially non-uniform probability density distribution ρ(x ) in the phase space. The classical dynamics involves stretching along the unstable manifold and contraction along the stable one. Thus, any non-uniform initial distribution will evolve into a highly singular function along the stable manifold.</p>
+
+				<p>The regularization term (42) in the classical evolution can be ignored for short times but eventually, when contractions along the stable manifold make the phase space gradients sufficiently large, it becomes relevant. 4 Therefore the limits time-to-infinity and m → 0 do not commute. To find the spectrum one has to take the time-to-infinity limit first and then set the regulator to zero. In this limit the eigenvalues γ µ of L have finite real parts corresponding to relaxation rates into the equilibrium distribution. These physical eigenvalues which reflect intrinsic irreversible properties of the purely classical dynamics are known as Ruelle resonances or the Perron-Frobenius spectrum [28,29]. Thus, the necessity to regularize the functional integral of the σ-model forces us to understand L as the classical evolution operator which corresponds to the irreversible classical dynamics. There are several ways of calculating the Perron-Frobenius spectrum other than diagonalizing L R and taking the &quot; zero noise limit &quot; , m → 0 [31]. These employ, for instance, symbolic dynamics [32], course graining of the flow dynamics in phase space [33], and analytic continuation [34]. An exact formal expression for the dynamical zeta function 1/Z(z), which should be understood as a regularized product µ (z − γ µ ), is given in terms of the classical periodic orbits of the system. For two-dimensional systems it is of the form [35]</p>
+
+				<figure>
+					<trash>1 Z(z) = p ∞ k=0 1 − e zTp |Λ p |Λ k p k+1 , (46)</trash>
+
+
+				</figure>
+
+				<p>where T p is the period of the p-th primitive orbit and Λ is the eigenvalue of the Monodromy matrix with absolute value larger than one. (The Monodromy matrix is the linearized map on the Poincare surface of section in the vicinity of the orbit.) In its present form, 1/Z(z) cannot be used to determine the eigenvalues γ µ . For this purpose a re-summed formula is required. It can be obtained by expanding the infinite product over the periodic orbits and ordering the various terms in a way that leads to maximal cancellation among them. This method, known as the cycle expansion [36], exploits the property that the dynamics of chaotic systems in phase space is coded by a skeleton of a small number of periodic orbits called fundamental orbits. In this sense, long periodic orbits may be viewed as linear combinations of the fundamental orbits.</p>
+
+				<p>To summarise the main conclusion of this section, it was shown that the regularization procedure which properly defines the functional integration forces one to understand the low lying degrees of freedom of the action (38) as the Perron-Frobenius relaxational modes of the classical counterpart. We emphasize that these modes represent purely classical characteristics of the system independent of the regularization procedure. Indeed the corresponding spectral determinant det(z − ˆ L) has an exact representation in terms of the classical periodic orbits of the system (46).</p>
+
+			</div>
+			<div>
+				<head>4</head>
+
+				<p>An analogous situation arises in the theory of turbulence [30]. In the inertial range, viscosity can be neglected and turbulence can be considered as dissipationless. However at sufficiently small scales, velocity gradients become large and viscosity becomes relevant. In this picture the energy which is pumped into the system at large spatial scales is transfered without dissipation in the inertial range to smaller spatial scales and is eventually absorbed at microscopic scales determined by viscosity. The latter can be viewed as an ultraviolet regulator, which is eventually set to zero but has a finite effect on the velocity correlators since it is necessary to produce a stationary solution.</p>
+
+			</div>
+			<div>
+				<head>IV. APPLICATIONS</head>
+
+				<p>To interpret the findings of the previous sections we will apply the generalized nonlinear σ-model to the regime of long-time or low energy scales. This will establish a firm connection of level statistics with RMT. Corrections to RMT will be studied within the framework of a perturbation theory involving the modes of the Perron-Frobenius operator. These results indicate a close correspondence between spectral correlations of the classical and quantum operators which we discuss.</p>
+
+			</div>
+			<div>
+				<head>A. Random Matrix Theory</head>
+
+				<p>It is widely believed that the statistical quantum properties of systems with few degrees of freedom can be described, at least over some range of energy scales, by RMT [17,6,7]. To interpret this, various approaches have been developed largely along two parallel lines discussed in the introduction. The first approach concerned the study of ensembles of random systems such as disordered metallic grains [37,14,38]. Randomness in this case is introduced on the level of the Hamiltonian itself usually as a consequence of some impurity configuration. The second approach involves the study of non-stochastic systems which are chaotic in their classical limit such as the Sinai or the stadium billiards [6].</p>
+
+				<p>In this case &quot; randomness &quot; is generated by the underlying deterministic classical dynamics itself. Nevertheless, it has been conjectured [6] that spectral fluctuations of strongly chaotic quantum systems are described by level statistics of random matrix ensembles. Despite being supported by extensive numerical studies, the origin of the success of RMT as well as its domain of validity are still not completely resolved. Below we will show that, in the semiclassical limit, this conjecture is indeed valid for chaotic systems without any discrete symmetries, and which are characterized by an exponential decay of classical correlation functions in time.</p>
+
+				<p>If we define by {γ n } the set of eigenvalues of the Perron-Frobenius operator L, then the lowest eigenvalue in ergodic systems is γ 0 = 0. This eigenvalue, associated with the invariant density on the energy shell, is non-degenerate and manifests the conservation of probability density. Any initial density distribution eventually relaxes to the state associated with γ 0 . If, in addition, this relaxation is exponential in time, then the Perron-Frobenius spectrum has a gap associated with the slowest decay rate. Thus, for the first non-zero eigenvalue γ 1 , we have γ ′ 1 ≡ ℜ(γ 1 ) &gt; 0. This gap sets the ergodic time scale, τ c = 1/γ ′ 1 over which the classical dynamics relaxes to equilibrium. In the case of disordered metallic grains, it coincides with the Thouless time, while in ballistic systems or billiards it is of order of the time of flight across the system. In the limit s ≪ γ ′ 1 , or equivalently at times which are much longer than τ c , the dominant contribution to Eq. (26) with the effective action of Eq. (38) arises from the ergodic classical distribution, the zero-modê LT 0 = 0. Taking only this contribution, the functional integral (26) becomes definite. Previous studies have demonstrated the equivalence of the zero-mode action with Wigner-Dyson level statistics of RMT [14,15]. For example, taking the source as given</p>
+
+				<figure>
+					<trash>by Eq. (15), we obtain Z(J) ǫ0 = dQ 0 exp −i π 4 STr s + + 2Jk ΛQ 0 , (47) where Q 0 = T −1 0 ΛT 0 .</trash>
+
+
+				</figure>
+
+				<p>This expression coincides with that obtained in Ref. [14] and reproduces Wigner-Dyson level correlations. We therefore conclude that the quantum statistics of chaotic systems having no discrete symmetries and with exponential classical relaxation are described by RMT at energies smaller than γ ′ 1 .</p>
+
+				<p>The RMT description is expected to hold even for certain chaotic systems where the Perron-Frobenius spectrum is gapless [6]. Examples include the stadium or Sinai billiards where classical correlation functions decay algebraically in time [39]. In this case, the resolvent (z − ˆ L) −1 is expected to have cuts which reach the ℑz axis. Nevertheless, we expect the RMT description to hold whenever the spectral weight of the resolvent inside the strip 0 ≤ ℜz ≤ 1 (which, however, excludes the pole at the origin) is much smaller than unity.</p>
+
+				<figure>
+					<figDesc>B. The two-point correlation function: Beyond universality In this section we will make use of the σ-model to examine how corrections to RMT appear at larger energy scales. Again, focusing on the two-point DoS correlator, the generating function leads to the expression</figDesc>
+					<trash>R 2 (s) = 1 64 ℜ DQ dx STr[ΛkQ(x )] 2 exp [−S eff (s)] , (48) where S eff (s) = π 2 dx STr i s + 2 ΛQ + QT −1 LT . (49)</trash>
+
+
+				</figure>
+
+				<p>Although straightforward, the perturbative expansion is somewhat technical, and here we present only the results of the detailed calculation described in Appendix B.</p>
+
+				<p>In the limit of high frequencies s ≫ 1, the two-point correlator takes the asymptotic form</p>
+
+				<figure>
+					<trash>R 2 (s) = R P (s) + R N P (s), (50)</trash>
+
+
+				</figure>
+
+				<p>where both the nonperturbative term R N P (s) as well as the perturbative one R P (s) are expressed through the classical spectral determinant D(s) as</p>
+
+				<figure>
+					<trash>R N P (s) = cos(2πs) 2π 4 D 2 (s), R P (s) = − 1 π 2 ∂ 2 ∂s 2 ln[D(s)]. (51)</trash>
+
+
+				</figure>
+
+				<p>The determinant D(s), regularized according to the procedure outlined in section III, is expressed in terms of determinants of the Perron-Frobenius operator</p>
+
+				<figure>
+					<trash>D(s) = ℜ Det ′ ( ˆ L) 2 Det (is − ˆ L)(−is − ˆ L) , (52)</trash>
+
+
+				</figure>
+
+				<p>where the prime indicates that the zero eigenvalue should be excluded from the determinant. D(s) can be expressed in terms of the eigenvalues γ µ of L, the Ruelle resonances, as</p>
+
+				<figure>
+					<trash>D(s) = µ A 2 (γ µ ) γ 2 µ + s 2 2 , (53) where A(γ µ ) = γ 2</trash>
+
+
+				</figure>
+
+				<p>µ for γ µ = 0 and A(γ 0 = 0) = 1. Note that, if the product in Eq. (53) is formally divergent, D(s) should be understood as the regularized determinant (45). These results agree with those conjectured in Ref. [21] and compare with the perturbative expressions previously found for weakly disordered metals [38,18,40] when the eigenvalues of the Liouville operator are identified by the eigenvalues of the diffusion operator.</p>
+
+			</div>
+			<div>
+				<head>V. BEYOND THE SEMICLASSICAL APPROXIMATION</head>
+
+				<p>The derivation of the nonlinear σ-model in Eq. (38) relied on the use of the semiclassical approximation. However, often we are concerned with quantum chaotic systems which can not be treated straightforwardly within the framework of semiclassics. A familiar example involves the quantum mechanical scattering of particles from a weak random impurity potential. In such cases, a formal justification of the ballistic nonlinear σ-model in Eq. (38) does not seem possible. However, if the quantum Hamiltonian can be resolved into a part that can be treated within semiclassics and a part which can not, when the latter is small, a perturbation treatment may still be possible.</p>
+
+				<figure>
+					<trash>Consider a general Hamiltonian H with matrix elements ˆ H = ˆ H cl + ˆ H qu , (54)</trash>
+
+
+				</figure>
+
+				<p>wherê H cl represents the contribution which can be treated within a semiclassical approximation, and H qu determines the part which can not. If the matrix elements of H qu are small as compared to the band width N (a more precise criterion for a specific operator H qu is formulated below) their effect can be treated within the σ-model approach. In this case the saddlepoint is governed by H cl , and we can use Eq. (23) with H replaced by H cl . The contribution of H qu to the effective action can be found by expanding</p>
+
+				<figure>
+					<trash>Eq. (27), S eff [ ˆ Q] = − 1 2 STr q ln G −1 ( ˆ Q 0 ) − ˆ H qu − ˆ U s + 2 Λ + ˆ J ˆ U −1 − ˆ U[ ˆ H, ˆ U −1 ] , (55) where the supermatrix Green function involves only H cl . Expanding to second order in H qu we obtain S eff [ ˆ Q] = 1 2N STr q i ˆ Q s + 2 Λ + ˆ J + ˆ H qu − ˆ U −1 [ ˆ H cl , ˆ U ] + 1 2N Q ˆ H qu 2 . (56)</trash>
+
+
+				</figure>
+
+				<p>Finally, representing the Q-matrices in the Wigner representation, the second order correction to the action takes the form</p>
+
+				<figure>
+					<trash>− 1 4N 2 STr q ˆ Q ˆ H qu 2 = − 1 4N 2 4 i=1 dq i 2 i=1 dp i h d e −ip1(q1−q2)/2¯ h−ip2(q3−q4)/2¯ h ×H qu (q 2 , q 3 )H qu (q 4 , q 1 )STr [Q (p 1 , (q 1 + q 2 )/2) Q (p 2 , (q 3 + q 4 )/2)] , (57) where H qu (q, q ′ ) = q| H qu |q ′ .</trash>
+
+
+				</figure>
+
+				<p>A. Random impurities and the restoration of the diffusive nonlinear σ-model</p>
+
+				<p>To illustrate these ideas, let us consider the physical example involving a particle moving in a background of weakly scattering impurities. If the Q matrices vary on a scale that is long as compared to the scattering length ℓ = vτ , the particle dynamics becomes diffusive and we should recover the supersymmetric nonlinear σ-model obtained by Efetov [14]. In the opposite limit, the impurities generate a new term in the action which takes the form of a collision integral. The problem of dilute scattering impurities in an otherwise ballistic system has been discussed previously. A description within the framework of diagrammatic perturbation theory was investigated by Altland and Gefen [25]. More recently, in an important development, Muzykantskii and Khmelnitskii [19] introduced an effective field theory to extend the diffusive σ-model into the ballistic regime. For simplicity, let us consider a (dimensionless) δ-correlated white noise Gaussian random potential</p>
+
+				<figure>
+					<trash>H qu (q, q ′ ) = V (q)δ d (q − q ′ ), (58)</trash>
+
+
+				</figure>
+
+				<p>with a second moment defined by the mean free time τ ,</p>
+
+				<figure>
+					<trash>δV (q) V = 0, δV (q)δV (q ′ ) V = ¯ h 2πντ ∆ 2 δ d (q − q ′ ). (59)</trash>
+
+
+				</figure>
+
+				<p>Here · · · V denotes the ensemble average over the random potential, ν = 1/∆Ω represents the average local DoS, and Ω is the volume of the system.</p>
+
+				<p>In this case, the expansion of the action around the saddle-point of the Hamiltonian H cl is justified in the limit ¯ h/τ ≪ N ∆. The same condition allows the truncation of the perturbation series at second order. Once again, performing the energy integration (37) and using the fact that dx /h d = dqdp /4πp 2 F Ω, where p is momentum on the constant energy shell (|p | = p F ), we obtain the effective action S eff [Q]</p>
+
+				<figure>
+					<trash>= iπν 2 dqdp 4πp 2 F Str ∆ s + 2 Λ + ˆ J − i¯ hT −1 {H cl , T } Q + πν¯ h 8τ dqdp dp ′ (4πp 2 F ) 2 STr Q(q, p )Q(q, p ′ ) . (60)</trash>
+
+
+				</figure>
+
+				<p>Although this action is precisely of the form of that introduced in Ref. [19], its derivation and the domain of validity seems far removed from that proposed in this earlier work. The σ-model description of the ballistic regime holds only if the frequencies of interest (or, equivalently the characteristic energies of the gradient terms) are small as compared with the width of the band N ∆. In the absence of energy averaging the range of validity of this description is restricted to the diffusive regime, where it coincides with the diffusive σ-model [19]. At higher energies the massive modes have to be taken into account, and the σ-model description breaks down. The distinction drawn by energy averaging has been emphasized by Altland and Gefen [25]. Physically the difference arises from those orbits whose period is shorter than τ but longer than the inverse band width (N ∆) −1 . Technically the energy averaging suppresses the massive mode fluctuations and facilitates the σ-model description.</p>
+
+				<p>To establish the relation between the ballistic σ-model and the conventional diffusive counterpart we follow Ref. [19]. Let us suppose that the classical component of the Hamiltonian corresponds to free propagation. Anticipating a rapid relaxation of the momentum dependent degrees of freedom of Q on the energy shell, and a slow variation of the spatial modes, we introduce a parametrisation which involves the moment expansion</p>
+
+				<figure>
+					<trash>T (x) = T K (q)T 0 (q), T K (q) = exp[in(q) · K(q)], (61)</trash>
+
+
+				</figure>
+
+				<p>where n = p/|p| and, without any loss of generality, we choose ΛK + KΛ = 0. To enforce the nonlinear constraint in the most convenient way, we have adopted a parametrisation which departs from that discussed in Ref. [19]. Expanding the action to second order in K and performing integrals over n we obtain</p>
+
+				<figure>
+					<trash>S eff = πν 2 dqSTr i∆ s + 2 Λ + ˆ J Q − 2i¯ hv f 3 K · (∇T 0 )T −1 0 Λ − ¯ h 3τ K 2 , (62) where Q(q) = T −1 0 (q)ΛT 0 (q). Performing the Gaussian integration over K we obtain the effective action S eff = πν 8 dqSTr ¯ hD(∇Q) 2 + i2∆ s + Λ + 2 ˆ J Q , (63)</trash>
+
+
+				</figure>
+
+				<p>which coincides with that of the conventional diffusive σ-model [14].</p>
+
+			</div>
+			<div>
+				<head>VI. DISCUSSION</head>
+
+				<p>In conclusion, we have shown that the quantum statistical properties of chaotic systems are described by a functional supersymmetric nonlinear σ-model with an effective action given by Eq. (38). This result was obtained by employing energy averaging as opposed to ensemble averaging previously used for disordered metallic grains. The low lying degrees of freedom of the action (38) were identified as the Perron-Frobenius eigenmodes of the underlying classical dynamics. Thus, statistical characteristics of the quantum mechanical system in the semiclassical limit are determined by the symmetries of the system and properties of the Perron-Frobenius operator. In particular, a universal behaviour described by RMT is expected whenever the system has no symmetries and a gap exists in the Perron-Frobenius spectrum. Our approach, however, assumes no systematic degeneracies of the actions of the classical orbits of the system other than those associated with the known discrete symmetries of the Hamiltonian. To emphasize this point, consider the return probability to a given point. In the semiclassical limit it is given by a double sum over classical returning trajectories ij A i A * j , where A i denotes the probability amplitude associated with the i-th path. If the corresponding actions are much larger than ¯ h, the return probability reduces to a sum over probabilities, η i |A i | 2 . The factor η is an integer which accounts for exact degeneracies in the orbits of the action, which arise, for example, from the existence of time reversal or reflection symmetries. When such a degeneracy is characterized by the existence of a discrete symmetry, it can, in principle, be incorporated into the σ-model. However, there are systems in which degeneracies of the actions cannot be characterized by simple discrete symmetries. Examples include the arithmetic billiards on surfaces of constant negative curvature [41]. The actions of the periodic orbits of these systems become exponentially degenerate as their length increases. This is a result of hidden symmetries which originate from number theoretic properties of these billiards. Indeed, despite showing a gap in the corresponding Perron-Frobenius spectrum, arithmetic billiards to not exhibit random matrix behaviour. The σ-model derived here has a wide domain of validity which goes well beyond the RMT results. Using perturbation theory the two-point DoS correlation function (1) was calculated. The result (shown in Eqs. (50) and (51)) is expressed in terms of the spectral determinants of the Perron-Frobenius spectrum. Similar results were obtained recently by Bogomolny and Keating [42]. However, their results differ from ours by terms which are related to high repetitions of the same periodic orbit. The two results therefore clearly coincide in the limit where all orbits are highly unstable. At this stage the source of discrepancy is not understood. Whether it is related to corrections to the leading order of perturbation theory (Eqs. (50) and (51)) or to the nature of uncontrolled approximations used by Bogomolny and Keating [42] remains unclear. It is appropriate, however, to mention that the σ-model functional integral with the action (38) can be solved exactly for the one-dimensional harmonic oscillator [43] and gives the correct result. This result can also be obtained by use of the perturbation theory described in section IV B. Such a calculation shows that it is necessary to take into account the contributions of both stationary points of the action to obtain the exact result.</p>
+
+				<p>The diagonal approximation of periodic orbit theory, on the other hand, also reproduces the exact result. Since all the periodic orbits of this system are repetitions of one primitive orbit, this result suggests that the diagonal approximation commonly employed in periodic orbit theory, does not coincide precisely with the diagrammatic perturbation theory, as is commonly assumed.</p>
+
+				<p>Many of the results previously obtained for disordered systems concerning statistical properties of wavefunctions and spectra depend only on the spectral properties of the diffusion operator in a given system [44,45]. These can be generalized straightforwardly to the case of chaotic systems by substituting the spectrum of the diffusion operator by the Perron-Frobenius spectrum. The field theoretic approach described in this paper offers a systematic way of studying a variety of issues. These include; (i) the transition between the orthogonal and the unitary ensembles in ballistic systems; (ii) the effects of discrete symmetries on spectral statistics in systems exhibiting hard chaos; and (iii) weak localization effects in ballistic systems [46]. We are grateful to K. B.</p>
+
+			<note>Efetov, D. E. Khmel&apos;nitskii, A. I. Larkin, I. V. Lerner, B. A. Muzykantskii, A. M. Polyakov, D.</note>
+
+				<p>Ruelle, Ya. G. Sinai, N. Taniguchi, and M. R. Zirnbauer for stimulating discussions. This work was supported in part by JSEP No. DAAL 03-89-0001, and by the National Science Foundation under Grant Nos. DMR 92-14480 and PHY94-07194.</p>
+
+				<figure>
+					<figDesc>We acknowledge the hospitality of the ITP in Santa Barbara where part of this work was performed. O. A. also acknowledges the support of the Rothschild Fellowship. APPENDIX A: SADDLE-POINT APPROXIMATION: IDENTIFYING THE MASSIVE MODES</figDesc>
+
+				</figure>
+
+				<p>In this section we examine fluctuations around the solution (23) of the saddle-point Eq. (22) to identify the massive modes in the effective theory of Eq. (21b). Although we focus our remarks on the orthogonal case studied in this paper, the general conclusions of this appendix hold for all ensembles.</p>
+
+				<p>To identify the massive modes it is convenient to work in the eigenbasis {ϕ n } of the quantum Hamiltonian, where Eq. (23) takes the form [Q 0 ] µν = δ µν Q ν = δ µν</p>
+
+				<figure>
+					<trash>  ǫ 0 − ǫ µ 2N + 1 − ǫ 0 − ǫ µ 2N 2 1/2 Λ   . (A1)</trash>
+
+
+				</figure>
+
+				<p>Massive modes appear as fluctuations δQ that commute with Q 0 in superspace. Expanding the action in Eq. (21b) around the saddle-point to second order in δQ and neglecting s (and using the fact that Q 0 is diagonal in the Hilbert space indices) we obtain δS 2 = − 1 2 µν Str (Q µ δQ µν Q ν δQ νµ + δQ µν δQ νµ ) . (A2)</p>
+
+				<p>The mass of these modes is not apparently large but is of order one. However, their contribution to the two-point DoS correlator is given by</p>
+
+				<figure>
+					<trash>R 2,massive = − 1 (4πN ) 2 µ STr(ΛkδQ µµ ) STr(ΛkδQ µµ ) Q ∝ 1 N , (A3)</trash>
+
+
+				</figure>
+
+				<p>where · · · Q denotes the average over supermatrices Q with respect to the action in Eq. (21a). This contribution vanishes in the N → ∞ limit. If we consider the contribution of the massive modes to a correlator of local observables such as the local DoS ν(q) we find</p>
+
+				<figure>
+					<trash>δν(q 1 )δν(q 2 ) massive = − 1 (4πN ) 2 µν ϕ µ (q 1 )ϕ * ν (q 1 )ϕ * µ (q 2 )ϕ ν (q 2 ) STr(ΛkδQ µν ) STr(ΛkδQ νµ ) Q ∝ 1 N 2 µ ϕ µ (q 1 )ϕ * µ (q 2 ) × ν ϕ * ν (q 1 )ϕ ν (q 2 ). (A4)</trash>
+
+
+				</figure>
+
+				<p>The contribution from both the diagonal (µ = ν) and off-diagonal terms is small: The former is of order N −1 , while the latter involves N 2 terms each of which is of order N −2 . However, since the the phases of wave functions at different point are almost uncorrelated so the off-diagonal terms arise with random phases. This implies a contribution of the off-diagonal terms which is also of order N −1 . Another way to see this is by invoking the completeness argument: Each sum in the last line of Eq. (A4) tends to δ(q 1 − q 2 ) as the width of the band is increased (this follows from completeness of the basis of eigenstates of the Hamiltonian). At any finite band width the function µ ϕ µ (q 1 )ϕ function (N/Ω)Θ((Ω/N ) 1/d − |q 1 − q 2 |). Therefore the r.h.s. of Eq. (A4) vanishes if the coordinates q 1 and q 2 are separated by a distance larger than (Ω/N ) 1/d . These considerations enable us to neglect the massive modes.</p>
+
+				<p>The integration measure in Eq. (21a) is invariant under the group of transformations Q → ˆ U −1 Q ˆ U , wherê U is an operator satisfying Eq. (24) with indices both in the Hilbert space U µν and in superspace. The action Eq. (21b) is also invariant under such transformations, provided that U commutes with H. We will denote such transformations by U 0 This symmetry leads to the existence of a degenerate manifold of saddle-point solutions (at s = 0). All matrices of the form</p>
+
+				<figure>
+					<trash>ˆ Q = ˆ U −1 0 ˆ Q 0 ˆ U 0 , (A5) where [ ˆ U 0 , ˆ H] = 0 satisfy Eq. (22).</trash>
+
+
+				</figure>
+
+				<p>In the basis of the eigenstates of the Hamiltonian such matrices are of the form U 0,µν = δ µν U 0,µ with U 0,µ ∈ U OSP (2, 2/4) [15]. We assume the absence of degeneracies due to non-integrability. All such matrices generate zero-modes. It is shown below that the integration over the massive modes strongly favors the ground state configurations of Q which correspond to identical Q µ &apos;s. This happens because the ground state in which Q µ &apos;s are different breaks supersymmetry of the action for the massive modes. This leads to a rapid decay (as a function of inhomogeneity of Q µ ) of the superdeterminant which arises from the integration over the massive modes. Therefore the integration over the massive modes gives a non-vanishing contribution to the effective action which depends on Q µ &apos;s. This contribution can be interpreted as an effective interaction between Q µ &apos;s which favors configurations with identical Q µ &apos;s. Hence, it can be thought of as &quot; ferromagnetic &quot; interaction of &quot; spins &quot; Q µ which reside on the nonlinear manifold U OSP (2, 2/4)/[U OSP (2/2) × U OSP (2/2)]. This interaction is long range (all &quot; spins &quot; within the band interact with approximately equal strength) and therefore, in the thermodynamic limit N → ∞, leads to a ferromagnetic ground state. The fluctuations of &quot; spins &quot; from the the ground state configurations are small as 1/N and can be neglected.</p>
+
+				<p>To see how the supersymmetry breaking for the massive modes arises let us consider one term in the sum (A2) corresponding to particular µ and ν. The matrix Q µ has the same symmetries as the Q-matrix in Efetov&apos;s nonlinear σ-model and can be parametrized as</p>
+
+				<figure>
+					<trash>Q µ = u µ 0 0 v ν Q E ( ˆ θ µ ) ¯ u µ 0 0 ¯ v µ , Q E ( ˆ θ µ ) = cos( ˆ θ µ ) i sin( ˆ θ µ ) −i sin( ˆ θ µ )) − cos( ˆ θ µ ) , ˆ θ µ = diag(θ, θ, iθ + , iθ − ). (A6)</trash>
+
+
+				</figure>
+
+				<p>Here we deviate from Efetov&apos;s original parametrization by introducing the angles θ + and θ − which can be expressed through the angles appearing in Ref. [14], θ 1 and θ 2 as θ + = θ 1 + θ 2 and θ − = θ 1 − θ 2 . The particular form of the matrices u and v is not important for what follows and will be left unspecified. If the angles θ µ and θ ν coincide then the massive modes line up with θ ν . In other words we can make a global rotation to bring θ ν to zero, and in this coordinate frame the massive fluctuations correspond to δQ RR µν and δQ AA µν . If the angles θ µ and θ ν differ by a small amount, we can go to the &quot; center of mass &quot; coordinate where ˆ θ µ = − ˆ θ ν . (A7)</p>
+
+				<p>In this frame the massive modes will still correspond to δQ</p>
+
+				<figure>
+					<trash>RR µν and δQ AA µν . The contribution of δQ AA µν to the effective action is STr Q E ( ˆ θ µ )¯ u µ δQ AA µν u ν Q E ( ˆ θ ν )¯ u ν δQ AA νµ u µ + δQ AA µν δQ AA νµ (A8) Instead of integration variables δQ AA µν and δQ AA νµ it is more convenient to use δ ˜ Q AA µν = ¯ u µ δQ AA µν u ν and δ ˜ Q AA νµ = ¯ u ν δQ</trash>
+
+
+				</figure>
+
+				<p>AA νµ u µ . Since the superjacobian of such transformation is equal to unity,</p>
+
+				<figure>
+					<trash>SDet ∂(δQ AA µν , δQ AA νµ ) ∂(δ ˜ Q AA µν , δ ˜ Q AA νµ ) = 1, (A9)</trash>
+
+
+				</figure>
+
+				<p>the invariant measure is preserved. With the parametrization involving ordinary variables a i , b i , and Grassmann variables σ i , σ</p>
+
+				<figure>
+					<trash>* i , δ ˜ Q AA µν =    a 1 a 2 iσ 1 iσ 2 −a * 2 a * 1 −iσ * 2 −iσ * 1 σ * 3 σ 4 ib 1 ib 2 σ * 4 σ 3 ib * 2 ib * 1    , δ ˜ Q AA νµ =    a * 1 −a 2 −σ 3 −σ 4 a * 2 a 1 σ * 4 σ * 3 −iσ * 1 −iσ 2 ib * 1 ib 2 −iσ * 2 −iσ 1 ib * 2 ib 1    , (A10) which obey the symmetry relations δ ˜ Q AA µν = C T (δ ˜ Q AA νµ ) T C, δ ˜ Q AA µν = k(δ ˜ Q AA νµ ) † , (A11) integration over massive modes δQ AA µν and δQ AA νµ with the action Eq. (A8) can be performed and yields I µν = [2 + cos θ(cosh θ + + cosh θ − )] 4 (2 + cosh 2 θ + + cosh 2 θ − )(2 + 2 cosh θ + cosh θ − )(2 + 2 cos 2 θ) 2 . (A12)</trash>
+
+
+				</figure>
+
+				<p>For smalî θ µ , writing cos θ = 1 − α, cosh θ + = 1 + β + , and cosh θ − = 1 + β − , I µν can be expanded to second order,</p>
+
+				<figure>
+					<trash>I µν ≈ 1 − 1 8 (2α + β + + β − ) 2 ≈ exp − 1 8 (2α + β + + β − ) 2 . (A13)</trash>
+
+
+				</figure>
+
+				<p>If alî θ µ are small, then we obtain a model equivalent to spins with infinite range interactions. In the thermodynamic limit of such a model the mean field approximation becomes exact. The fluctuations of α, β + and β − become small as 1/N and can be neglected. This forces us to consider the matrices Q 0 which are of the form of Eq. (A1). Then the relevant (massless) fluctuations of the Q-matrix are those that anticommute with Λ in superspace.</p>
+
+			</div>
+			<div>
+				<head>APPENDIX B: PERTURBATION THEORY</head>
+
+				<p>In this appendix we will employ the σ-model to study to the two-point correlator of DoS fluctuations. In particular , we will examine the perturbative corrections to RMT which appear at larger energy scales. To obtain the high frequency asymptotics of R 2 (s) the functional integral in Eq. (48) can be evaluated using the stationary point approximation . However, to obtain the contribution which is non-perturbative in 1/s it is necessary to introduce an additional term u 2 (ΛQ) 2 into the action (49) which serves as a regulator controlling the stationary point approximation [18,40].</p>
+
+				<p>Ultimately, the regularization parameter u can be set to zero.</p>
+
+				<p>We therefore express the two-point correlator as</p>
+
+				<figure>
+					<trash>R 2 (s) = lim u→0 1 64 ℜ DQ dx STr[ΛkQ(x )] 2 exp [−S eff (s)] , (B1) where S eff (s) = π 2 dx STr i s + 2 ΛQ − u 2 (ΛQ) 2 + QT −1 LT . (B2)</trash>
+
+
+				</figure>
+
+				<p>The derivation of the results already presented in Eqs. (51) and (52) closely parallels that of Ref. [18]. For a more detailed account of the method see Ref. [40]. At high frequency the integrand in Eq. (B2) becomes highly oscillatory, and we can use the stationary phase method to evaluate the integral. We will show that there are two stationary points: Q = Λ and Q = −Λk. The term u 2 (ΛQ) 2 in the action is introduced in order to stabilize the second one. We can expand the integrand in small fluctuations of the Q-matrix around Λ and −Λk to obtain the leading high-frequency asymptotics of R 2 (s). We first consider the expansion around Q = Λ. This corresponds to the ordinary perturbation expansion previously employed in the study of disordered conductors [14,38]. We begin with the parametrisation</p>
+
+				<figure>
+					<trash>T = 1 1 + iP, P = 0 B ¯ B 0 , (B3) where, from Eq. (32), it follows that P satisfies the condition P (q, p) * = −CP (q, −p)C T . (B4)</trash>
+
+
+				</figure>
+
+				<p>Next we substitute Eq. (B3) into Eq. (B1) and expand the integrals in the pre-exponential factor and the free energy (B2) to second order in P . Due to the presence of the infinitesimal imaginary part in s + , the stationary point Q = Λ is stable and we can safely set u = 0 in the free energy (B2). To second order in B and ¯</p>
+
+				<figure>
+					<trash>B we have STr(ΛkQ) ≈ 8 − 2STr(kB ¯ B + k ¯ BB), STr(ΛkQ) 2 ≈ −8STr(k ¯ BkB + ¯ BB) (B5a) STr(ΛQ) ≈ −4STr( ¯ BB). (B5b)</trash>
+
+					<figDesc>Using these relations we obtain the following expression for the perturbative part of R 2 (s)</figDesc>
+					<trash>R P (s) = ℜ D[B, ¯ B] dx [1 − 1 2 STr(kB ¯ B + k ¯ BB)] 2 exp [−S eff (s)] , (B6) where S eff (s) = iπ (dx ) STr −s ¯ BB − i ¯ B ˆ LB + O(B 4 ). (B7)</trash>
+
+
+				</figure>
+
+				<p>In order to perform the integration over B and ¯ B it is convenient to represent these matrices as</p>
+
+				<figure>
+					<trash>B = 3 i=0 B i τ i , ¯ B = 3 i=0 ¯ B i τ i , (B8) where the Pauli matrices τ i are defined in Eq. (14). As follows from Eq. (30) the matrices B and ¯ B in Eq. (B3) obey the relation ¯ B = kB † , which implies ¯ B i = kB † i , i = 0, . . . , 3. (B9) In this notation, Eq. (B7) becomes S eff ,P (s) = −iπ (dx ) STr 3 i=0 ¯ B i (s + i ˆ L)B i . (B10) Each matrix B i can be parametrized as B i = a i iσ i η * i ib i . (B11)</trash>
+
+
+				</figure>
+
+				<p>The parametrization for ¯ B i can be obtained from Eq. (B9). To evaluate the integral (B6) over the variables (B11) one can use Wick&apos;s theorem. It is necessary to take into account Eq. (B4) which reduces the number of independent integration variables by a factor of two. As a result we obtain the second part in Eq. (51). The stationary point Q = Λ of the functional integral (B1) is not the only one. To find the other stationary points consider Eq. (B1). It is possible to parameterize fluctuations around a general stationary point Q 0 as Q = Q 0 (1 + iP 0 )(1 − iP 0 ) −1 , where P 0 anticommutes with Q 0 and no longer obeys equations (B3) and (B4). Expanding the effective action in Eq. (B2) in powers of P 0 we would obtain the stationarity condition ∂S eff (s)/∂P 0 = 0. This route however is inconvenient since the parametrization of P 0 will depend explicitly on Q 0 . Instead it is convenient to perform a global coordinate transformation on H =</p>
+
+				<figure>
+					<trash>U (2, 2/4)/[U (2/2) × U (2/2)], Q → U −1 0 QU 0 , where U 0</trash>
+
+
+				</figure>
+
+				<p>∈ H, which maps Q 0 to Λ.</p>
+
+				<p>Since all points on a symmetric space are equivalent by definition, this coordinate transformation preserves the invariant measure and leaves the functional integral in Eq. (B1) invariant. The integrand, however, will change because it contains matrices Λ and −kΛ that break the symmetry in the coset space. Such a coordinate transformation is equivalent to changing only the source matrices Λ →</p>
+
+				<figure>
+					<trash>Q Λ = U 0 ΛU −1 0 and −kΛ → −Q kΛ = −U 0 kΛU −1 0 in Eqs. (B1), (B2) and</trash>
+
+
+				</figure>
+
+				<p>keeping the old parametrization of Eq. (B3). The stationary points will correspond to those U 0 for which the linear in P terms in the expansion of the effective action vanish. Note that because the transformation matrix U 0 is independent of momenta p, from Eq. (31) it follows that U * 0 = CU 0 C T . Therefore U 0 belongs to the coset space of the usual orthogonal ensemble [15]</p>
+
+				<figure>
+					<trash>, U OSP (2, 2/4)/[U OSP (2/2)× U OSP (2/2)]</trash>
+
+
+				</figure>
+
+				<p>. For this case there is only one other stationary point [18,40] corresponding to Q Λ =</p>
+
+				<figure>
+					<trash>U 0 ΛU −1 0 = −kΛ and −Q kΛ = −U 0 kΛU −1 0 = Λ. For this point Eq. (B1) can be rewritten as R 2 (s) = − lim u→0 1 64 ℜ DQ dx STr[ΛQ(x )] 2 exp − ˜ S eff (s) , (B12a) ˜ S eff (s, u) = π 4 (dx )STr −is + kΛQ − u 2 (kΛQ) 2 + QT −1 LT . (B12b)</trash>
+
+
+				</figure>
+
+				<p>We now expand Eq. (B12a) in powers of P using Eq. (B3). This expansion is equivalent to expanding the Q-matrix around −kΛ in Eq. (B1). Expanding the free energy (B12b) to second order in P we use Eq. (B5a). Note that with the parametrization of Eq. (B11)</p>
+
+				<figure>
+					<trash>STr k ¯ BB + kB ¯ B = −4 3 i=0 (|a i | 2 − |b i | 2 ), (B13a) STr k ¯ BkB + ¯ BB = −4 3 i=0 (|a i | 2 + |b i | 2 ). (B13b)</trash>
+
+
+				</figure>
+
+				<p>Therefore the Grassmann variables in the parametrization (B11) do not couple to s and u 2 . As follows from Eq. (B13a), the ordinary variables a i and b i couple to s with opposite sign. Due to the presence of the infinitesimal imaginary part in s the integral over a 0 i (the zero mode variable) would diverge at u = 0. Eq. (B13b) shows that the term STr(kΛQ) 2 makes the integration over a 0 i convergent. We therefore have to keep u finite during the evaluation of the functional integral and take the limit u → 0 only in the final expressions. The quadratic approximation to the free energy (</p>
+
+				<figure>
+					<trash>B12b) becomes ˜ S eff (s) = −2πis + 2π (dx )STr 3 i=0 a * i (−is + − u 2 + ˆ L)a i + b * i (is + − u 2 + ˆ L)b i + σ * i ˆ Lσ i + η * i ˆ Lη i . (B14) The zero mode Grassmann variables η 0 i and σ 0</trash>
+
+
+				</figure>
+
+				<p>i do not appear in the quadratic expansion of the effective action (B14). For the integral (B12a) not to vanish they have to come from the pre-exponential factor. While evaluating the integral we have to take into account the symmetry (B4) which reduces the number of independent integration variables by factor of two. Therefore there are eight independent Grassmann variables in the zero mode. Thus, in order to obtain a non-zero result we should expand the pre-exponential factor to eighth order in P . Then in the eighth order expansion of the prefactor we should keep only the zero mode terms. This renders the integration over the zero mode variables non-vanishing, whereas the integration over the ordinary zero mode variables yields a factor (s 2 + u 4 ) −2 . The integral over the non-zero modes yields the superdeterminant of the operator (B14). After we perform the integration we take the u → 0 limit to obtain Eq. (52).</p>
+
+			</div>
+
+			<note place="foot" n="3"> Note that, since we adopt the convention in which the DoS is equal to unity, the phase space coordinates are normalized as dx /h d = 1.</note>
+
+			<note place="foot">* µ (q 2 ) has the characteristic width (Ω/N ) 1/d , where Ω is the volume of the system, and can be approximated by the Heaviside</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">Statistical Theories of Spectra: Fluctuations</title>
+		<editor>C. E. Porter</editor>
+		<imprint>
+			<date type="published" when="1965" />
+			<publisher>Academic Press</publisher>
+			<pubPlace>New York</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<surname>Delande</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of Les-Houches Summer School, session LII</title>
+		<editor>M. -J. Giannoni, A. Voros and J. Zinn- Justin</editor>
+		<meeting>Les-Houches Summer School, session LII<address><addrLine>Amsterdam</addrLine></address></meeting>
+		<imprint>
+			<publisher>North-Holland</publisher>
+			<date type="published" when="1989" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M.-J</forename>
+				<surname>Jianonni</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Voros</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Zinn-Justin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Chaos in Quantum Physics</title>
+		<meeting><address><addrLine>Les Houches, Session LII ; Amsterdam</addrLine></address></meeting>
+		<imprint>
+			<publisher>North- Holland</publisher>
+			<date type="published" when="1989" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">C</forename>
+				<surname>Gutzwiller</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Chaos in Classical and Quantum Mechanics</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer-Verlag</publisher>
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">J</forename>
+				<surname>Thouless</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rep</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page">93</biblScope>
+			<date type="published" when="1974" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Bohigas</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">J</forename>
+				<surname>Giannoni</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Schmidt</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">52</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<date type="published" when="1984" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">V</forename>
+				<surname>Berry</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Roy. Soc. Lon. A 400</title>
+		<meeting>. Roy. Soc. Lon. A 400</meeting>
+		<imprint>
+			<date type="published" when="1985" />
+			<biblScope unit="page">229</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">L</forename>
+				<surname>Altshuler</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">D</forename>
+				<surname>Simons</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of Les-Houches Summer School, session LXI</title>
+		<editor>E. Akkermans, G. Montambaux, J-L. Pichard, and J. Zinn-Justin</editor>
+		<meeting>Les-Houches Summer School, session LXI</meeting>
+		<imprint>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+	<note>to. be published</note>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<forename type="middle">J</forename>
+				<surname>Dyson</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="issue">157</biblScope>
+			<biblScope unit="page">166</biblScope>
+			<date type="published" when="1962" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">L</forename>
+				<surname>Mehta</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Random Matrices</title>
+		<imprint>
+			<publisher>Academic Press</publisher>
+			<date type="published" when="1991" />
+			<publisher>Academic Press</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title level="m" type="main">Quantum Signatures of Chaos</title>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Haake</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1991" />
+			<publisher>Springer-Verlag</publisher>
+			<pubPlace>Berlin</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Wegner</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1979" />
+			<biblScope unit="page">207</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">B</forename>
+				<surname>Efetov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Zh</forename>
+				<surname>Eksp</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Teor. Fiz</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="issue">83</biblScope>
+			<biblScope unit="page">833</biblScope>
+			<date type="published" when="1982" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">B</forename>
+				<surname>Efetov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Phys</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="page">53</biblScope>
+			<date type="published" when="1983" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">J</forename>
+				<surname>Verbaarschot</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">A</forename>
+				<surname>Weidenmuller</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">R</forename>
+				<surname>Zirnbauer</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rep</title>
+		<imprint>
+			<biblScope unit="volume">129</biblScope>
+			<biblScope unit="page">367</biblScope>
+			<date type="published" when="1985" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Wilkinson</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. A: Math. Gen</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page">1173</biblScope>
+			<date type="published" when="1988" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<monogr>
+		<title level="m" type="main">Valz-Gris and I. Guarnery, Lettere al Nuovo Cimento</title>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Casati</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1980" />
+			<biblScope unit="page">279</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">V</forename>
+				<surname>Andreev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">L</forename>
+				<surname>Altshuler</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">75</biblScope>
+			<biblScope unit="page">902</biblScope>
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">A</forename>
+				<surname>Muzykantskii</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">E</forename>
+				<surname>Khmelnitskii</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Jetp</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1995" />
+			<biblScope unit="page">76</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">N</forename>
+				<surname>Prigodin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">72</biblScope>
+			<biblScope unit="page">546</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Agam</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">L</forename>
+				<surname>Altshuler</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">V</forename>
+				<surname>Andreev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">75</biblScope>
+			<biblScope unit="page">4389</biblScope>
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Altland</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Iida</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">B</forename>
+				<surname>Efetov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. A: Math. Gen</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page">3545</biblScope>
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">E</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Camb</title>
+		<meeting>. Camb</meeting>
+		<imprint>
+			<date type="published" when="1949" />
+			<biblScope unit="page">99</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">A</forename>
+				<surname>Muzykantskii</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">E</forename>
+				<surname>Khmelnitskii</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="9601045" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Altland</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Gefen</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett. Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">71</biblScope>
+			<biblScope unit="issue">51</biblScope>
+			<biblScope unit="page">10671</biblScope>
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Agam</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Fishman</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="page">726</biblScope>
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<monogr>
+		<title/>
+		<editor>A. S. Schwarz, Quantum Field Theory and Topology</editor>
+		<imprint>
+			<date type="published" when="1993" />
+			<publisher>Springer-Verlag</publisher>
+			<pubPlace>Berlin</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Ruelle</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">56</biblScope>
+			<biblScope unit="page">405</biblScope>
+			<date type="published" when="1986" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Pollicot</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ann. Math</title>
+		<imprint>
+			<biblScope unit="volume">131</biblScope>
+			<biblScope unit="page">331</biblScope>
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">M</forename>
+				<surname>Polyakov</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page">9506189</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Gaspard</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Nicolis</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Provata</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Tasaki</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. E</title>
+		<imprint>
+			<biblScope unit="volume">51</biblScope>
+			<biblScope unit="page">74</biblScope>
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<monogr>
+		<title level="m" type="main">Statistical Mechanics, Thermodynamic Formalism</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Ruelle</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1978" />
+			<publisher>Addison-Wesley</publisher>
+			<pubPlace>Reading, MA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Nicolis</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Nicolis</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. A</title>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="page">427</biblScope>
+			<date type="published" when="1988" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">H</forename>
+				<surname>Hasegawa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">J</forename>
+				<surname>Driebe</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. E</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="page">1781</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">B</forename>
+				<surname>Cvitanovi´cvitanoviá</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Eckhardt</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. A: Math Gen</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page">237</biblScope>
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Artuso</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Aurell</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Cvitanovi´</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1990" />
+			<biblScope unit="page" from="325" to="361" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">P</forename>
+				<surname>Gor</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">M</forename>
+				<surname>Eliashberg</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Zh. Eksp. Teor. Fiz</title>
+		<imprint>
+			<biblScope unit="volume">48</biblScope>
+			<biblScope unit="issue">21</biblScope>
+			<biblScope unit="page" from="1407" to="940" />
+			<date type="published" when="1965" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">L</forename>
+				<surname>Altshuler</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">I</forename>
+				<surname>Shklovskii</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1986" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">A</forename>
+				<surname>Bunimovich</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Sov</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. JETP</title>
+		<imprint>
+			<biblScope unit="volume">62</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page">842</biblScope>
+			<date type="published" when="1985" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">V</forename>
+				<surname>Andreev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">D</forename>
+				<surname>Simons</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">L</forename>
+				<surname>Altshuler</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Math. Phys</title>
+		<imprint>
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+	<note>to. be published</note>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">B</forename>
+				<surname>Bogomolny</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Georgoet</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M.-J</forename>
+				<surname>Giannoni</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Schmit</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">69</biblScope>
+			<biblScope unit="page">1477</biblScope>
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Bogomolny</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Keating</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1996" />
+			<biblScope unit="page">preprint</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">R E</forename>
+				<surname>Zirnbauer44 ] V</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">D</forename>
+				<surname>Kravtsov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Sov</forename>
+				<surname>Mirlin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Pis&apos;ma ZhETF</title>
+		<imprint>
+			<date type="published" when="1994" />
+			<biblScope unit="page" from="656" to="645" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<forename type="middle">V</forename>
+				<surname>Fyodorov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">D</forename>
+				<surname>Mirlin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">51</biblScope>
+			<biblScope unit="page">13403</biblScope>
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Aleiner</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">I</forename>
+				<surname>Larkin</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

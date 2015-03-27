@@ -1,0 +1,2657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">NLO QCD corrections to five-jet production at LEP and the extraction of α s (M Z )</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2010-11-29">29 Nov 2010</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Rikkert</forename>
+								<surname>Frederix</surname>
+							</persName>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Stefano</forename>
+								<surname>Frixione</surname>
+							</persName>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Kirill</forename>
+								<surname>Melnikov</surname>
+							</persName>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Giulia</forename>
+								<surname>Zanderighi</surname>
+							</persName>
+						</author>
+						<author>
+							<affiliation>
+								<orgName type="department" key="dep1">Institut fürTheoretischePhysik</orgName>
+								<orgName type="department" key="dep2">PHDepartment</orgName>
+								<orgName type="institution">UniversitätZürich</orgName>
+								<address>
+									<addrLine>Winterthurerstrasse190</addrLine>
+									<postCode>8057</postCode>
+									<settlement>Zürich</settlement>
+									<country key="CH">Switzerland</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation>
+								<orgName type="institution" key="instit1">THUnit</orgName>
+								<orgName type="institution" key="instit2">CERN</orgName>
+								<address>
+									<postCode>CH-1211</postCode>
+									<settlement>Geneva23</settlement>
+									<country key="CH">Switzerland</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation>
+								<orgName type="department">DepartmentofPhysicsandAstronomy</orgName>
+								<orgName type="institution" key="instit1">ITPP</orgName>
+								<orgName type="institution" key="instit2">EPFL</orgName>
+								<address>
+									<postCode>CH-1015</postCode>
+									<settlement>Lausanne</settlement>
+									<country key="CH">Switzerland</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation>
+								<orgName type="department">RudolfPeierlsCentreforTheoreticalPhysics</orgName>
+								<orgName type="institution">JohnsHopkinsUniversity</orgName>
+								<address>
+									<addrLine>1KebleRoad</addrLine>
+									<settlement>Baltimore</settlement>
+									<region>MD</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation>
+								<orgName type="institution">UniversityofOxford</orgName>
+								<address>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">NLO QCD corrections to five-jet production at LEP and the extraction of α s (M Z )</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2010-11-29">29 Nov 2010</date>
+						</imprint>
+					</monogr>
+					<note>Preprint typeset in JHEP style -HYPER VERSION * On leave of absence from INFN, Sez. di Genova, Italy.</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Jets</term>
+					<term>NLO Computations</term>
+					<term>QCD</term>
+					<term>LEP HERA and SLC Physics</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>The highest exclusive jet multiplicity studied at LEP experiments is five. In this paper we compute the next-to-leading order QCD corrections to e + e − annihilation to five jets, essentially closing the (pure) perturbative QCD studies of exclusive jetty final states at LEP. We compare fixed-order perturbative results with ALEPH data. We estimate hadronization corrections to five-jet observables using the event generator SHERPA, which employs the CKKW procedure to combine a reliable perturbative treatment of high-multiplicity jet final states with parton showers. We show that a competitive value of the strong coupling constant α s (M Z) = 0.1156 +0.0041 −0.0034 can be extracted from the distribution of the five-jet resolution parameter and the five-jet rate at LEP1 and LEP2.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+				<figure>
+					<trash>Contents 1. Introduction 1 2. Technical details 3 2.1 Calculation of one-loop amplitudes 4 2.2 Real emission corrections with MadFKS 5 3. Phenomenology of five-jet production 7 4. The strong coupling constant from five-jet observables 12 5. Conclusions 16</trash>
+
+
+				</figure>
+
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>The production of hadrons in e + e − annihilation is one of the best-studied processes in highenergy physics. It played a crucial role in establishing the correctness of QCD as the theory of strong interactions. Studies of hadronic final states in e + e − annihilation at PEP, KEK, PETRA, SLD and LEP were instrumental for understanding jets, advancing perturbative QCD computations, developing parton showers and investigating non-perturbative QCD effects in high-energy collisions. At LEP experiments, exclusive processes with up to five jets in the final state were studied in detail; inclusive measurements are available for up to six jets [1–16]. Theoretically , e + e − annihilation cross sections into two [17, 18] and three [19–21] jets are known at next-to-next-to-leading order (NNLO) in perturbative QCD, the production of four jets is known at next-to-leading order (NLO) [22–26], while only leading order (LO) predictions were available so far for five-jet observables. Resummed results for jet rates have been also obtained [27–31]. High-quality data, primarily from LEP measurements at the Z-pole, open up an opportunity to perform very accurate studies in jet physics [32]. Since, by now, gross features of QCD are well understood, the interest shifts towards subtle details which can be revealed only through dealing with complicated final states and improving the accuracy of theoretical predictions. Because the n-jet rate is proportional to the strong coupling constant at high power σ njet ∼ α n−2 s , leading-order predictions for n-jet observables for n ≫ 2 are very uncertain and an improved theoretical description of such final states is desirable. When improved descriptions become available, they are used to study interesting properties of hadronic final states including event rates, event shapes and ultimately to extract the value of the strong coupling constant α s [18–20, 23, 33–38]. – 1 –</p>
+
+				<p>Infra-red safe observables, traditionally studied in e + e − annihilation, are dominated by short-distance physics; they are computable in perturbative QCD up to corrections suppressed by inverse powers of some large energy scale related to e.g. the average relative transverse momentum of jets in a given process. Those power (or hadronization) corrections are typically estimated using event generators such as PYTHIA [39], HERWIG [40], and ARIADNE [41], under the assumption of a complete factorization of non-perturbative and perturbative physics. This factorization implies that the hadronization corrections to an infrared-safe observable O can be estimated as H i [O] =</p>
+
+				<p><formula>O i hadr O i part , (1.1)</formula></p>
+
+				<p>where O i hadr and O i part are the values of the observable O computed at the hadron and at the parton level with the event generator i. Because hadronization corrections are assumed to be factorizable, they can be used to &quot; improve &quot; the perturbative prediction O pt for the observable under study. Hence, one defines the quantity O impr = H i [O] O pt , and compares it to experimental data 1 .</p>
+
+				<p>While the use of the procedure that we just described is widespread, it is clear that it can not be fully valid. Indeed, one can imagine that, for a particular observable O, the event generator i happens to reproduce its measured value, O i hadr = O Data . As a result,</p>
+
+				<figure>
+					<trash>O impr reads O impr = O Data O pt O i part . (1.2)</trash>
+
+
+				</figure>
+
+				<p>Clearly, O impr can only be equal to O data if O pt = O i part , but this equality can not hold true for a variety of reasons, including different approximations in parton/dipole showers and fixed-order perturbative calculations, different dependencies of O pt and O i part on the renormalization scale µ, etc. Differences at the perturbative level are particularly worrisome when considering high-multiplicity final states, since standard event generators routinely used in e + e − studies are based solely on e + e − → q ¯ q and e + e − → q ¯ qg matrix elements. This implies that, since event generators are tuned to data, hadronization corrections as defined by eq. (1.1) contain both non-perturbative and perturbative effects; the latter are present to compensate for deficiencies of the partonic part of a particular event generator 2 . To the extent that both perturbative and hadronization corrections are small, the inconsistency of the whole procedure may not be very apparent, but it becomes evident if those corrections are large. It is very likely that these issues are important for five-jet production at LEP. Indeed, because e + e − → 5 jets involves a high power of α s , NLO QCD corrections are expected to be large. In addition, a correct description of five hard, wellseparated partons is difficult for traditional event generators, so that all the problems of a conventional approach to estimating hadronization corrections can be exposed by studying five-jet observables.</p>
+
+				<p>By extracting hadronization corrections with traditional event generators – PYTHIA, HERWIG and ARIADNE – we find these corrections to be large and generator-dependent. This is unfortunate since it implies a large spread of &quot; improved &quot; predictions for five-jet observables when perturbative and hadronization effects are combined. For this reason, we believe it is important to obtain hadronization corrections from an event generator whose perturbative part is up to the task of describing the production of five hard, wellseparated partons. Within the context of event generation, the implementation of such a description requires a consistent matching between high-multiplicity matrix elements, and parton/dipole showers.</p>
+
+				<p>In this paper, we employ the SHERPA event generator [45, 46], which implements the CKKW [47] matching prescription 3 . By calculating hadronization corrections with SHERPA/CKKW, we find that they are relatively small (see the right pane of fig. 2), in particular in the kinematic region where perturbative QCD is reliable. This is what we expect since, with CKKW matching, the perturbative description of five-jet production provides a good approximation to the actual physical process. As a consequence , when we use SHERPA/CKKW to extract non-perturbative corrections according to eq. (1.1), the results are less contaminated by perturbative contributions, compared to the case when traditional event generators are used for this purpose. Since these considerations apply to hadron collisions as well, our results have obvious implications for jet physics at the LHC. The goal of this paper is to investigate five-jet production at LEP, using theoretical predictions that are accurate at NLO in QCD. We discuss hadronization corrections and show that they depend significantly upon the event generator that is used to estimate them. We extract the strong coupling constant by fitting the NLO QCD predictions for the distributions of the five-jet resolution parameter y 45 and the five-jet rate R 5 . The remainder of the paper is organized as follows. In Section 2 we discuss the technical details pertinent to the computation of the NLO QCD corrections to e + e − → 5 jets. In Section 3 a phenomenological analysis of five-jet production at LEP is reported. In Section 4 the value of the strong coupling constant is extracted. In Section 5 we present our conclusions. Details of the fit procedure that we use in our analysis of the strong coupling constant are described in the Appendix.</p>
+
+			</div>
+			<div>
+				<head n="2">Technical details</head>
+
+				<p>The computation of NLO QCD corrections to any process or observable in the context of a subtraction formalism involves the evaluation of the following contributions: the oneloop virtual corrections, the real-emission corrections and their subtraction terms, and the finite remainders obtained from the analytical integration of the subtraction terms over the degrees of freedom of the unresolved parton(s). The one-loop virtual amplitudes for e + e − → 5 jet required in this paper are computed within the generalized D-dimensional unitarity framework, as described in Refs. [48–50]; a few technicalities relevant to the five-jet case are given in sect. 2.1. The remaining contributions are calculated using MadFKS [51], which is also employed to perform the integration over the phase space of the final shortdistance cross sections. Details of MadFKS relevant for this computation are reviewed in sect. 2.2.</p>
+
+			</div>
+			<div>
+				<head n="2.1">Calculation of one-loop amplitudes</head>
+
+				<p>Within the context of generalized D-dimensional unitarity, we compute the so-called primitive amplitudes [52], which are gauge-invariant subsets of color-ordered amplitudes. The color decomposition of amplitudes that we need in this paper coincides with the color decomposition of QCD amplitudes without any colorless vector boson γ * /Z. We use the color decomposition introduced in ref. [53]. The relation between primitive and color-ordered amplitudes that we need in this paper can be found in ref. [50].</p>
+
+				<p>In general, the amplitudes needed for the NLO calculation of e + e − → γ * /Z → 5 partons are very similar to the amplitudes with a W -boson and five partons. The main differences between amplitudes that involve charged and neutral currents originate from the different couplings of W -bosons and γ * /Z bosons to fermions. In particular, in the Standard Model, the coupling of the W -boson to fermions is only left-handed, while for γ * /Z one has to sum over left-and right-handed states. Indeed, the Z-boson couples to fermions via a vector and a vector-axial coupling g V γ µ + g A γ µ γ 5 . We can rewrite this coupling through left-and right-handed projection operators P</p>
+
+				<figure>
+					<trash>L,R = (1 ∓ γ 5 )/2 as g V γ µ + g A γ µ γ 5 = g L γ µ P L + g R γ µ P R , (2.1) where g L,R = g V ∓g A .</trash>
+
+
+				</figure>
+
+				<p>Therefore, all the one-loop amplitudes relevant for this paper can be obtained by considering quarks coupled to a vector current only; the only subtlety is that the vector current should couple to left-and right-handed quarks with different strength. As we already mentioned, many of the non-trivial amplitudes that we need are identical to the amplitudes calculated for 0 → W + 5 partons case [50]. We note, however, that new amplitudes appear if γ * /Z couples directly to a loop of virtual fermions. There are two reasons for this. First, such amplitudes are not present in the W -boson case studied in ref. [50] because of charge (or flavor) conservation. Second, certain parts of those amplitudes are related to an axial anomaly and, therefore, violate the symmetry between the vector current and the axial-vector current. It is interesting to remark that within the context of generalized D-dimensional unitarity, a correct computation of the axial anomaly entails a literal implementation of the &apos;t Hooft-Veltman prescription for dealing with γ 5 in dimensional regularization. We have calculated the required amplitudes where γ * /Z couples to the fermion loop but we neglect them in this paper since previous experience with those amplitudes shows that they are very small [22, 23, 54, 55], especially when compared to the residual theoretical uncertainty of the five-jet rate.</p>
+
+				<p>The cross section involves Born and virtual amplitudes with two or four quarks in the final state. We relate amplitudes involving a Z-boson exchange to amplitudes that only – 4 – involve the photon (vector) exchange: A Z (¯ q λ , q −λ , e</p>
+
+				<figure>
+					<trash>+ µ , e − −µ , . . .) = Q −1 q Q −1 e P Z (s) g q R g e R δ Rλ δ Rµ A γ * (¯ q − , q + , ¯ e − , e + , . . .) + g q R g e L δ Rλ δ Lµ A γ * (¯ q − , q + , ¯ e + , e − , . . .) + g q L g e R δ Lλ δ Rµ A γ * (¯ q + , q − , ¯ e − , e + , . . .) + g q L g e L δ Lλ δ Lµ A γ * (¯ q + , q − , ¯ e + , ¯ e − , . . .) . (2.2) In eq. (2.2</trash>
+
+
+				</figure>
+
+				<p>) all particles are outgoing, the dots denote all gluon momenta, and the propagator factor P(s) is given by</p>
+
+				<figure>
+					<trash>P Z (s) = s s − M 2 Z + iΓ Z M Z , (2.3)</trash>
+
+
+				</figure>
+
+				<p>where M Z and Γ Z are the mass and the width of the Z boson respectively. The left-and right-handed coupling of the electrons (f = e) and quarks (f = q) to the Z boson are explicitly given by</p>
+
+				<figure>
+					<trash>g f L = g f V − g f A = 2(T f 3 − Q f sin 2θ W ) sin(2θ W ) , g f R = g f V + g f A = −2Q f sin 2θ W sin(2θ W ) , (2.4) where θ W is the Weinberg angle, T e 3 = T d 3 = −1/2, T u 3 = 1/2</trash>
+
+
+				</figure>
+
+				<p>are the values of weak isospin for quarks and leptons and Q e = −1, Q u = 2/3, Q d = −1/3 are the respective electric charges. The amplitudes involving four quarks and a Z-boson can be written in a similar way. The amplitude that involves different quark flavors can always be written as the sum of two amplitudes, where the Z-boson couples to a particular quark line</p>
+
+				<figure>
+					<trash>A Z (¯ q λ , q −λ , ¯ Q Λ , Q −Λ , e + µ , e − −µ , . . .) = ˜ A Z (¯ q λ , q −λ , ¯ Q Λ , Q −Λ , e + µ , e − −µ , . . .) + ˜ A Z ( ¯ Q Λ , Q −Λ , ¯ q λ , q −λ , e + µ , e − −µ , . . .). (2.5)</trash>
+
+
+				</figure>
+
+				<p>Note that when amplitudes A are computed, the Z-boson is allowed to couple to the quark flavor indicated by first and second argument of A. The expression for A Z amplitude in terms of A * γ is identical to eq. (2.2), so we do not repeat it here. Finally, if the flavor of the two quark lines is the same, we include the symmetry factor 1/4 and anti-symmetrise with respect to the exchange of the quarks or anti-quarks. We point out that the full one-loop matrix elements squared that we use in this paper were checked against a similar computation performed by the BlackHat collaboration [56–58], and complete agreement was found.</p>
+
+			</div>
+			<div>
+				<head n="2.2">Real emission corrections with MadFKS</head>
+
+				<p>MadFKS is based on the (FKS) subtraction formalism of ref. [59]. The implementation of the FKS procedure is fully automated in MadFKS. In essence, MadFKS goes through the following steps. First, it determines the partonic processes that contribute to a given physical reaction, and their singularity structures. Then, it constructs the real-emission matrix</p>
+
+				<figure>
+					<trash>– 5 – Process # of FKS pairs e + e − → q ¯ qgggg 3 e + e − → q ¯ qq ′ ¯ q ′ gg 7 e + e − → q ¯ qq ¯ qgg 4 e + e − → q ¯ qq ′ ¯ q ′ q ′′ ¯ q ′′ 3 e + e − → q ¯ qq ¯ qq ′ ¯ q ′ 2 e + e − → q ¯ qq ¯ qq ¯ q 1</trash>
+
+					<head>Table 1:</head>
+
+
+				</figure>
+
+				<p>Numbers of FKS pairs for the various real-emission processes that contribute to the five-jet cross section. See the text for details. elements, their subtraction terms, the finite remainders, and the Born matrix elements. Finally , it proceeds to the actual computation, by sampling (possibly with multi-channeling techniques) the phase space, by evaluating the short-distance cross sections, and by returning weighted parton-level kinematic configurations, that can be used to construct as many observables as one likes. All matrix elements, except those of virtual origin, are obtained by calls to MadGraph [60] routines. The virtual matrix elements are on the other hand computed as described in sect. 2.1. We point out that MadFKS gives, for each phase-space point, a four-momentum configuration as input to the code of sect. 2.1, which returns three numbers – corresponding to the double and single (IR) pole residues, and to the finite part; the talk-to between the two codes uses the Binoth-Les Houches interface [61]. As clarified in ref. [51], MadFKS integrates quantities that are locally finite in the phase space, and in four dimensions. Therefore, the pole residues provided by the virtual amplitudes are used only to check that they match those that are known analytically from the subtraction procedure, in this way ensuring that KLN cancellation does indeed take place. The only output of the code of sect. 2.1 used in the integration of the short-distance cross sections is thus the finite part, defined according to the conventions given in the Appendix B of ref. [51].</p>
+
+				<p>We have performed the calculation of the five-jet cross section in a straightforward manner. We included all partonic processes, and performed explicit sums over colors and helicities, except in the case of virtual amplitudes. For the latter, we have computed separately the leading-and subleading-color contributions, and performed the sum over helicities using Monte Carlo methods. We have used five massless quark flavors. We remind the reader that the FKS formalism is particularly efficient in keeping the number of subtraction terms to a minimum. Furthermore, the real-emission matrix element minus the subtraction terms is re-organized into a sum that gets as many contributions as the subtraction terms themselves, and that are separately finite, which implies that they can be (and are) integrated independently from each other. Physically, these contributions corresponds to pairs of particles (called FKS pairs) that can give one soft and/or one collinear singularity at most. We report in table 1 the number of FKS pairs relevant to the various real-emission processes that contribute to the five-jet cross section.</p>
+
+			</div>
+			<div>
+				<head>– 6 –</head>
+
+				<p>With five massless flavors, the number of independent partonic subprocesses that contribute to the five-jet cross section is 25. Using the entries of table 1, this implies 81 FKS pairs in total, i.e. 81 independent integrations. On the other hand, the complexity of the kinematics is such that even in the context of an adaptive integration it may be very difficult to map correctly all the peaks of the Feynman diagrams, and thus to have a stable numerical behavior. We have therefore preferred to adopt a multi-channelling integration strategy, that in MadFKS follows the same procedure as in MadGraph [62]. In doing so, the numbers of integration channels we deal with at the real-emission and virtual level are equal to 3620 and 2×1408 respectively (the factor of two in the virtual amplitudes being due to the independent integration of the leading-and subleading-color contributions). These numbers are much larger than the 81 FKS pairs we started with; however, the Feynmandiagrams peaks can now be mapped accurately by the integration routines, and relatively small statistics is sufficient in each channel to obtain numerical stability. We conclude by stressing that the MadFKS integration channels are fully independent. Furthermore, they are not determined dynamically (e.g. by performing a preliminary integration of the cross section), but are defined a priori, by considering the topologies of the Feynman diagrams that contribute to the relevant partonic processes. The whole organization of the calculation is therefore inherently parallel.</p>
+
+			</div>
+			<div>
+				<head n="3">Phenomenology of five-jet production</head>
+
+				<p>In this Section we present the results of our calculation. We consider e + e − → jets and define jets using the Durham jet algorithm [28] with resolution parameter y cut . The following distance between each pair of particles is used in the Durham jet algorithm</p>
+
+				<figure>
+					<trash>y ij = 2min(E 2 i , E 2 j ) s (1 − cos θ ij ) , (3.1)</trash>
+
+
+				</figure>
+
+				<p>where s is the center-of-mass energy of the collision squared, E i is the energy of the parton i, and θ ij is the relative angle between the partons i and j, in the e + e − center-of-mass reference frame. The pair of particles with the smallest distance is clustered together by adding their four-momenta, as long as y ij &lt; y cut , and the procedure is then iterated. When all distances y ij are larger than y cut , the recombination stops and the number of jets in the event is defined to be equal to the number of (pseudo)-particles left at that stage.</p>
+
+				<p>In this paper we consider two observables which we define with the Durham jet algorithm . The first observable is the differential distribution with respect to the five-jet resolution parameter y 45 , normalized to the total cross section for e + e − → hadrons, σ tot (which we compute at the NLO, i.e. at O(α s )). The resolution parameter y 45 is the maximal value of y cut such that a given event is classified as a five-jet event by the Durham jet algorithm.</p>
+
+				<figure>
+					<trash>We note that 1 σ tot 1 ycut dy 45 dσ dy 45 = σ 5−jet incl (y cut ) σ tot , (3.2) – 7 – where σ 5−jet incl</trash>
+
+
+				</figure>
+
+				<p>is the inclusive five-jet production cross section in e + e − annihilation. The second observable that we study is the five-jet rate R 5 (y cut ). It is defined as follows</p>
+
+				<figure>
+					<trash>R 5 (y cut ) = σ 5−jet excl (y cut ) σ tot , (3.3) where σ 5−jet</trash>
+
+
+				</figure>
+
+				<p>excl (y cut ) is the exclusive five-jet production cross section. It is calculated by applying the Durham jet algorithm to the given event, and by requiring that exactly five jets are reconstructed.</p>
+
+				<figure>
+					<trash>When we compute σ −1 tot dσ/d ln y −1 45 and R 5 in perturbative QCD, we obtain a power series in the strong coupling constant σ −1 tot dσ d ln y −1 45 = α s (µ) 2π 3 A 45 (y 45 ) + α s (µ) 2π 4 B 45 (y 45 ) + 3b 0 A 45 (y 45 ) ln µ √ s ,(3.4) R 5 (y cut ) = α s (µ) 2π 3 A 5 (y cut ) + α s (µ) 2π 4 B 5 (y cut ) + 3b 0 A 5 (y cut ) ln µ √ s , (3.5)</trash>
+
+
+				</figure>
+
+				<p>where µ is the renormalization scale, b 0 = (33 − 2n f )/3 and n f = 5 is the number of quark flavors that we treat as massless. The top quark is considered to be infinitely heavy and is completely neglected in our computation. It is important to emphasize that the coefficients A 45,5 and B 45,5 depend on y 45 and y cut , respectively, but not, say, on the total center-of-mass energy squared. This feature is a consequence of the following approximations employed in our computation: 1) all particles, except the Z boson, are treated as massless; 2) the observables that we are interested in are sufficiently inclusive so that the vector and the axial currents do not interfere; 3) we neglect triangle fermion diagrams that lead to the axial anomaly so that (for equal couplings) vector and axial current contributions to the final result are equal. These three points are sufficient to ensure that A 45,5 and B 45,5 are independent of the electroweak parameters and the center-of-mass energy squared. Experimentally [16], five-jet observables are computed using the reconstructed momenta and energies of charged and neutral particles. Measurements are corrected for detector effects, so that final distributions correspond to stable hadrons and leptons, and for initial-and final-state photon radiation, which is a sizable correction for LEP2 data. Above the Z peak, relevant backgrounds are subtracted; the most important among them is W -pair production. The experimental uncertainties are estimated by varying event-and particle-selection cuts. They are below 1% at LEP1 and slightly larger at LEP2. Further details of the experimental analysis can be found in ref. [16]. In fig. 1, we compare ALEPH LEP1 data [16] for 1/σ tot dσ/d ln y −1 45 with the hadronlevel predictions of three event generators – PYTHIA, HERWIG and ARIADNE. We observe that these event generators describe experimental data fairly well; differences between data and theoretical predictions are below twenty five percent in the central 4.5 &lt; ln y −1 45 &lt; 9 region of the distribution, where the statistical accuracy of the data is good. This is an impressive accomplishment since σ −1 tot dσ/d ln y −1 45 changes by three orders of magnitude in this range of ln y −1 45 . On the other hand, it is clear from the upper pane of fig. 1 that hadronization corrections are very large and change from 0.5 to 1.5 in that</p>
+
+				<figure>
+					<trash>– 8 – det. cor. statistical uncertainty had. cor. 1/σ dσ/d ln(y 45 ) ALEPH E cm = 91.2 GeV PYTHIA6.1 HERWIG6.1 ARIADNE4.1 data with statistical ⊕ systematical errors (data-MC)/data -ln(y 45 ) total uncertainty 0.5 0.75 1 1.25 1.5 0.0 0.5 1.0 1.5 0 0.05 0.1 0.15 0.2 0.25 0.3 0.35 0.4 0.45 0.5 -0.5 -0.25 0.0 0.25 4 5 6 7 8 9 10 11</trash>
+
+					<head>Figure 1:</head>
+
+					<figDesc>ALEPH data [16]</figDesc>
+
+				</figure>
+
+				<p>for the y 45 distribution at LEP1, compared to PYTHIA, HERWIG and ARIADNE results. The upper panes show detector and hadronization corrections, respectively. The lowest pane shows the relative difference between data and event generator predictions. This figure was provided to us by H. Stenzel. range of ln y −1 45 . In addition, it follows from fig. 1 that the difference between hadronization corrections, as calculated using different event generators, can be as large as 20-30%.</p>
+
+				<p>We attribute these features to the inability of PYTHIA, HERWIG and ARIADNE to describe hard perturbative radiation correctly. Indeed, these programs generate highmultiplicity final states starting from hard low-multiplicity processes; they produce additional jets by means of parton/dipole showers. Since these showers describe hard large-angle emissions only approximately, the so-called hadronization corrections attempt to correct for this (perturbative) deficiency. While this problem is unavoidable if traditional event generators are used to describe high-multiplicity final states, techniques exist to match parton showers and high-multiplicity matrix elements in a consistent manner, thereby improving the pure-perturbative part of event generators. One such technique is the CKKW matching procedure [47], which is implemented as default in the SHERPA event generator . The comparison of ALEPH LEP1 data with SHERPA predictions, as well as the hadronization corrections derived from SHERPA, are shown in fig. 2. Two hadronization models – Lund string [63] and cluster [64] – are employed. In the central part of the</p>
+
+				<p><formula>– 9 – 0 0.1 0.2 0.3 0.4 0.5 0.6 1/σ dσ/dlny 45 ALEPH SHERPA/Lund SHERPA/Cluster -0.4 -0.2 0 0.2 0.4 4 5 6 7 8 9 10 (Data-MC)/MC -ln(y 45 ) 0.6 0.8 1 1.2 1.4 1.6 1.8 2 3.5 4 4.5 5 5.5 6 6.5 Hadr. Corr. -ln(y 45 )</formula></p>
+
+				<p>Lund Cluster Figure 2: ALEPH data for the y 45 distribution at LEP1, compared to SHERPA results. Two hadronization models – Lund string [63] and cluster [64] – are employed. The lower pane in the left plot shows the relative difference between Sherpa predictions with the two hadronization models, and ALEPH data. In the right plot, the hadronization corrections for the two models are shown. distribution, SHERPA results agree with ALEPH data to 20 − 25%, similar to traditional event generators. Moreover, in the region of moderately small values of ln y −1 45 , where fixedorder perturbative description is reliable, the hadronization corrections are below twenty percent, in sharp contrast with estimates of hadronization corrections based on PYTHIA, HERWIG and ARIADNE. It is important to emphasize that, although in that region of ln y −1 45 traditional event generators provide slightly better description of data compared to SHERPA, this does not mean that hadronization corrections extracted with the former codes are more reliable. Indeed, traditional event generators achieve agreement with data at the price of very large hadronization corrections. This feature precludes a clear separation between long-and short-distance phenomena, which is crucial for the procedure outlined below eq. (1.1) to be meaningful.</p>
+
+				<p>The ALEPH data exhibit a characteristic turnover shape. This turnover means that for small values of y 45 , the result is dominated by exclusive five-jet production with very small resolution parameter, where fixed order perturbation theory fails and a resummation is required to achieve meaningful results. A resummation of α n s L 2n and α n s L 2n−1 terms, where L = ln y −1 cut , was performed for R 5 in [28], while no resummation is currently available for the five-jet resolution parameter distribution. However, there seems to be no region in L where this resummation can be valid since two conditions L ≫ 1 and α s L ≪ 1 should be satisfied simultaneously. Taking α s ∼ 0.15 as a typical value of the strong coupling constant 4 , we find that L should be smaller than 6. On the other hand, practical experience</p>
+
+			</div>
+			<div>
+				<head>4</head>
+
+				<figure>
+					<figDesc>We take 5 − 20 GeV as a reasonable estimate of the scale of the strong coupling constant for five-jet</figDesc>
+
+				</figure>
+
+				<p><formula>– 10 – 10 -4 10 -3 10 -2 10 -1 1/σ dσ/dlny 45 LO NLO ALEPH 0 0.5 1.0 1.5 3.5 4 4.5 5 5.5 6 6.5 Data/NLO -ln(y 45 ) 10 -4 10 -3 10 -2 10 -1 R5 LO NLO ALEPH 0 0.5 1.0 1.5 3.5 4 4.5 5 5.5 6 6.5 Data/NLO -ln(y cut ) Figure 3</formula></p>
+
+				<p>: ALEPH LEP1 data compared to leading and next-to-leading order predictions in QCD, without hadronization corrections. We use α s (M Z ) = 0.130 at the leading and α s (M Z ) = 0.118 at the next-to-leading order in perturbative QCD. The renormalization scale is chosen to be 0.3M Z .</p>
+
+				<p>The uncertainty bands are obtained by considering the scale variation 0.15 M Z &lt; µ &lt; 0.6 M Z .</p>
+
+				<p>Solid lines refer to NLO QCD results evaluated with µ = 0.3M Z .</p>
+
+				<p>with resummations suggests that L ≫ 5 is what can be considered as a large logarithm.</p>
+
+				<p>Clearly, 5 ≪ L &lt; 6 leaves very little room for the validity of this approach. It should be possible to improve on the resummation by including sub-leading logarithms and matching to NLO QCD computations. However, since we do not perform any resummation in this paper, we require ln y −1 45 , ln y −1 cut &lt; ∼ 6 for the comparison of the NLO QCD computation with data. Interestingly, a similar upper bound on ln y −1 45 appears because we neglect the mass of b-quarks in our computation. This implies that the resolution parameter times the center of mass energy should be larger than the b-quark mass, i.e. sy 45 &gt; m 2 b , which translates into ln(y</p>
+
+				<figure>
+					<trash>−1 45 ) &lt; ln(s/m 2 b ) &lt;</trash>
+
+					<figDesc>∼ 6, for s = M 2 Z . When fixed-order perturbative QCD calculations are compared to experimental data, the choice of the renormalization scale becomes an important issue. Traditionally, multijet observables in e + e − annihilations are computed in perturbative QCD by evaluating the strong coupling constant at the center-of-mass energy. However, for large numbers of jets this choice should be reconsidered, since the hardness of each jet decreases with their number. Dynamical renormalization scales used in event generators account for this effect by relating the choice of the renormalization scale to the event kinematics.</figDesc>
+
+				</figure>
+
+				<p>Our choice of the renormalization scale is also motivated by dynamical considerations. To this end, we consider the clustering history of five-and six-parton configurations that results from using the Durham jet algorithm. We compute the average value of √ y 23 , where y 23 is the three-jet resolution parameter, using only phase-space weights. We find this average to be approximately equal to 0.3. Since √ y 23 s is, roughly, the relative transverse momentum of production in the range 3 &lt; ln y −1 cut &lt; 7.</p>
+
+			</div>
+			<div>
+				<head>– 11 –</head>
+
+				<p>the hardest branching in the clustering history, we select µ = 0.3 √ s as the default choice for the renormalization scale of α s that we use to describe the five-jet production. With this choice of the renormalization scale, we compare in fig. 3 ALEPH LEP1 data for σ −1 had dσ 45 /d ln y −1 45 and R 5 with our leading and next-to-leading results. We use the value of strong coupling constant α s (M Z ) = 0.130 for leading order computations and α s (M Z ) = 0.118 for next-to-leading order computations. While it is not customary to change the value of the strong coupling constant from one order in perturbation theory to the other in applications of QCD to e + e − physics, it is done routinely in the context of hadron collider physics. Our choice of the leading-order value for α s is motivated by fits of parton distribution functions and of the strong coupling constant described in ref. [65]; our next-to-leading order value for α s is close to the world average [66, 67]. We do not apply hadronization corrections at this stage. In order to assess the perturbative uncertainty, a scale variation by a factor of two around the default scale µ = 0.3 M Z is performed. A close inspection of the two plots shown in fig. 3 reveals that the most important effect of the NLO QCD corrections is the reduction in the uncertainty related to the renormalization scale dependence . The renormalization scale uncertainty is reduced from [−30%, +45%] at leading order to [−20%, +25%] at next-to-leading order. When leading order and next-to-leading order results are compared for µ = 0.3 M Z , the QCD corrections increase the leading order predictions by 10 − 20% 5 . The agreement between NLO QCD results and ALEPH data is very good for both observables considered. However, for the σ −1 had dσ 45 /d ln y −1 45 distribution systematic differences appear for ln y −1 45 &gt; 5.2, whereas the R 5 data can be described by fixed-order QCD without hadronization corrections all the way up to ln y −1 cut = 6.5.</p>
+
+			</div>
+			<div>
+				<head n="4">The strong coupling constant from five-jet observables</head>
+
+				<p>It follows from the discussion in the previous Section that the use of the world-average value of the strong coupling constant results in good agreement between parton-level NLO predictions, and LEP1 data for the five-jet resolution parameter and the five-jet rate. Therefore, we can turn this consideration around, and extract the value of the strong coupling constant from these two five-jet observables at LEP1 and LEP2. To combine the values of the strong coupling constant extracted from different observables and at different energies, we use the procedure advocated by the LEP QCD working group [68]. Technical details of the fit procedure are reported in the Appendix. We consider ALEPH data [16] for R 5 and σ −1 tot dσ/dy 45 , as measured at LEP1 ( √ s = M Z ), and at LEP2 ( √ s = 183, 189, 200, and 206 GeV). We point out that data for σ −1 tot dσ/dy 45 are not available at √ s = 200 GeV. Similar to other precision-QCD studies at LEP, we do not consider LEP2 data taken at √ s &lt; 183 GeV. As explained above, we use SHERPA for the computation of hadronization corrections. By default, hadronization in SHERPA is performed with the cluster model [64], which we therefore adopt as our default as well. Incidentally, we observe that it gives smaller hadronization corrections in the kinematic range of interest, than the Lund string hadronization model [63], which is also available in</p>
+
+				<figure>
+					<trash>LEP1, hadr. LEP1, no hadr. σ −1 tot dσ/dy 45 , R 5 σ −1 tot dσ/dy 45 , R 5 stat. +0.0002 −0.0002 +0.0002 −0.0002 syst. +0.0027 −0.0029 +0.0027 −0.0029 pert. +0.0062 −0.0043 +0.0068 −0.0047 fit range +0.0014 −0.0014 +0.0005 −0.0005 hadr. +0.0012 −0.0012 – α s (M Z ) 0.1159 +0.0070 −0.0055 0.1163 +0.0073 −0.0055</trash>
+
+					<head>Table 2:</head>
+
+					<figDesc>Values of the strong coupling constant α s (M Z ) obtained from fits to ALEPH LEP1 data for σ</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head>−1</head>
+
+				<p>tot dσ/dy 45 and R 5 . NLO QCD predictions are used. Hadronization corrections are estimated with SHERPA. Default fit ranges are 3.8 ≤ − ln y 45 ≤ 5.2, and 4.0 ≤ − ln y cut ≤ 5.6. See the text for details.</p>
+
+				<p>SHERPA. We use the Lund string model to estimate systematic uncertainties related to hadronization effects. Since we use fixed-order perturbative results and do not perform any resummation, it is not possible to describe the data in the full kinematic ranges studied by experiments. This feature makes the choice of the kinematic range used in the fit an important but, unfortunately, somewhat a subjective issue. In general, we attempt to take the fit range as large as possible, with the condition that our computations are reliable and that the data quality is good. In the determination of the central value of α s at LEP1, we consider 3.8 ≤ − ln y 45 ≤ 5.2 (7 data points) for the five-jet resolution parameter distribution, and 4.0 ≤ − ln y cut ≤ 5.6 (8 data points) for R 5 . In order to estimate the error on α s related to our choice of the fit range, we extract the value of α s by performing a second fit, with larger ranges 3.4 ≤ − ln y 45 ≤ 5.6 (11 data points) for the five-jet resolution parameter, and 3.4 ≤ − ln y cut ≤ 6.0 for R 5 (13 data points). The difference between the values of α s obtained in the two fits is called the &quot; fit range &quot; error; it is supposed to quantify the uncertainty on α s due to the choice of the data points included in the fits. At LEP2 the situation is different. Firstly, data are given with a coarser binning and, secondly, large fluctuations are present in experimental results at small values of ln y −1 45 and ln y −1 cut (for example, for some center-of-mass energies the corresponding observables are not even monotonic). Because of this, we decided to exclude those data points from our fits, effectively reducing the fit ranges. We note that those data would have had a modest impact on the final result anyhow, because they are affected by fairly large errors.</p>
+
+				<figure>
+					<trash>– 13 – LEP2, no hadr. LEP2, no hadr. LEP2, no hadr. σ −1 tot dσ/dy 45 R 5 σ −1 tot dσ/dy 45 , R 5 stat. +0.0020 −0.0022 +0.0022 −0.0025 +0.0015 −0.0016 syst. +0.0008 −0.0009 +0.0012 −0.0012 +0.0008 −0.0008 pert. +0.0049 −0.0034 +0.0029 −0.0020 +0.0029 −0.0020 fit range +0.0038 −0.0038 +0.0030 −0.0030 +0.0028 −0.0028 α s (M Z ) 0.1189 +0.0066 −0.0057 0.1120 +0.0050 −0.0047 0.1155 +0.0044 −0.0039</trash>
+
+					<head>Table 3:</head>
+
+					<figDesc>Values of the strong coupling constant α s (M Z ) obtained from fits to ALEPH LEP2</figDesc>
+
+				</figure>
+
+				<p>data with E cm ≥ 183 GeV for σ −1 tot dσ/dy 45 and R 5 . NLO QCD predictions are used. Hadronization corrections are not included. Default fit ranges are 4.8 ≤ − ln y 45 ≤ 6.4, and 2.1 ≤ − log 10 y cut ≤ 2.9.</p>
+
+				<p>See the text for details.</p>
+
+				<p>We use 4.8 ≤ − ln y 45 ≤ 6.4 for the five-jet resolution parameter (2 data points per √ s), and 2.1 ≤ − log 10 y cut ≤ 2.9 for R 5 (4 data points per √ s), to find the central values of α s .</p>
+
+				<p>In order to estimate the fit-range error, we employ 4.8 ≤ − ln y 45 ≤ 5.6 (1 data point per √ s), and 2.1 ≤ − log 10 y cut ≤ 2.5 (2 data points per √ s), since the choice of these ranges leads to the largest changes in the values of the strong coupling constant compared to the α s values obtained from fitting with the default ranges.</p>
+
+				<p>The results of our fits to LEP1 data are shown in table 2. The agreement between the two values of α s (M Z ) extracted with and without hadronization corrections is impressive ; the difference is completely negligible compared to the overall uncertainties. This result could have been anticipated by inspecting fig. 2, which shows that, in the fit region, hadronization corrections are small, in particular when the default SHERPA choice, the cluster model, is used. We note that if we use the hadronization corrections as given by conventional HERWIG, PYTHIA, or ARIADNE, without matching them to high-multiplicity matrix elements, the picture changes drastically and the values of α s (M Z ) extracted with or without hadronization corrections are quite different from each other. We also note that the overall errors of the two results given in table 2 are slightly smaller when including hadronization corrections. This is due to a marginally better description of the data in the central region of the fit range – which leads to smaller value of α s (M Z ) and thus to smaller perturbative errors. However, the error reduction is partially compensated by the degradation of the fit quality when including larger values of ln y −1 45 , ln y −1 cut , where hadronization corrections increase. This feature leads to larger fit-range error compared to the no-hadronization case. Note also that if we extract the values of α s (M Z ) by fitting 6 the 6 Hadronization corrections are included. – 14 – five-jet resolution parameter distribution and R 5 separately, we obtain 0.1168</p>
+
+				<figure>
+					<trash>+0.0076 −0.0060 and 0.1151</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head>+0.0071</head>
+
+				<p>−0.0056 respectively. These values are consistent with the result of the combined fit shown in table 2 but have slightly larger errors. From table 2, it is clear that the sensitivity of the five-jet observables to α s is very high, as illustrated by the tiny statistical errors. This sensitivity is ultimately related to the high power of α s that enters the five-jet observables . In spite of this, the overall error is not particularly small, since the perturbative uncertainty is still quite sizable at this order in perturbative QCD. Compared to LEP1, there are important differences when we extract α s by fitting to the LEP2 data. Firstly, because hadronization corrections are negligible at LEP1, and because these corrections decrease with energy, we do not consider them for LEP2. Secondly, for the reasons explained above, we do not consider the data points at small values of ln y −1 45 and ln y −1 cut . This fact, combined with coarser binning of data, pushes us to the region of y 45 that may be affected by large logarithms of the resolution parameter. As a result, we find larger fit-range errors at LEP2 than at LEP1. The statistical errors are also much larger at LEP2 than at LEP1, as one expects given the luminosities collected. On the other hand, since the effective strong coupling is smaller at LEP2, the perturbative uncertainty affecting five-jet observables decreases, making the α s extraction at LEP2 competitive with that done at LEP1. This effect is particularly strong for R 5 , for which the extracted central value of α s is slightly smaller than for the five-jet resolution parameter. In table 3 we present the α s values obtained by fitting separately the five-jet resolution parameter and R 5 at LEP2, since they differ from each other by a larger amount than at LEP1. Still, both values are within one standard deviation from the strong coupling constant that we obtain by performing a simultaneous fit to the two observables. We take the latter value, given in the third column of table 3, as our best determination of α s from LEP2 data. We obtain our final estimate of the strong coupling constant by combining the values of α s (M Z ) extracted from LEP1 and LEP2 data. We assume that the statistical and systematic errors of the two results are not correlated (an assumption which is strictly correct for the former, and a very good approximation for the latter), while the perturbative errors are considered to be fully correlated. The correlation of the perturbative uncertainties is due to the fact that we estimated them by varying the renormalization scale, which results in changes of the cross sections whose pattern is independent of the center-of-mass energy. It is quite likely that a more sophisticated approach to estimating perturbative errors (see e.g. ref. [69]) will result in a smaller uncertainty on α s . Hence, the procedure that we employ in this paper is rather conservative. Using the results of tables 2 and 3, we finally obtain α s (M Z ) = 0.1156 +0.0041 −0.0034 . (4.1) We note that if we perform the fit to both LEP1 and LEP2 data simultaneously, we obtain α s (M Z ) = 0.1156</p>
+
+			</div>
+			<div>
+				<head>+0.0045</head>
+
+				<p>−0.0041 , in perfect agreement with eq. (4.1). The value of α s (M Z ) that we extract from five-jet observables at LEP can be compared with other recent determinations of this quantity, shown in table 4. We see that both the central value of α s and its error, obtained from fitting five-jet observables, compare well with other determinations. On the other hand, it is interesting that α S (M Z ) in eq.</p>
+
+				<figure>
+					<trash>(4.1) – 15 – Observable α s (M Z ) Ref. τ decays 0.1197 ± 0.0016 [67]</trash>
+
+
+				</figure>
+
+				<p>Υ decays 0.119 ± 0.0055 [70] 3 jet observables 0.1224 ± 0.0039 [44] jets in DIS 0.1198 ± 0.0032 [71] DIS 0.1142 ± 0.0021 [72] thrust 0.1135 ± 0.0011 [73] lattice 0.1183 ± 0.0008 [74] EW fits 0.1193 ± 0.0028 [75] world average 0.1184 ± 0.0007 [67] e + e − → five jets 0.1156 ± 0.0038 this paper Table 4: Summary of selected determinations of the strong coupling constant α s (M Z ). We have averaged the ± errors shown eq. (4.1) for the determination of α s reported in this paper. Not all results shown in this table are included in the world average.</p>
+
+				<p>is lower than the world average. It is peculiar that a number of recent determinations of α s arrived at a similar conclusion.</p>
+
+			</div>
+			<div>
+				<head n="5">Conclusions</head>
+
+				<p>In this paper we study the production of five jets in e + e − annihilation at LEP1 and LEP2.</p>
+
+				<p>We improve the perturbative QCD predictions for five-jet observables, 1/σ tot dσ/dy 45 and R 5 , by computing the NLO QCD corrections. For suitably chosen renormalization scales, such corrections are between ten and twenty percent 7 . They reduce the scale uncertainty by about a factor of two with respect to the LO predictions, and lead to a better agreement between theoretical predictions and experimental data. We point out that hadronization corrections computed with event generators whose showers are not matched to high-multiplicity matrix elements (such as out-of-the-box HER- WIG, PYTHIA, and ARIADNE) are large and uncertain. For this reason, we believe it is important to describe five-jet observables in a way that incorporates high-multiplicity treelevel matrix elements. This is provided by the event generator SHERPA, which implements the CKKW procedure for matching tree-level matrix elements to parton showers. In this way, an improved description of five hard, well-separated partons is obtained, which in turn results in fairly small hadronization corrections in the range where fixed-order perturbative results are most reliable. We extract the strong coupling constant from the distributions of the five-jet resolution parameter and the five-jet rate, as measured at LEP1 and LEP2 by the ALEPH 7 Note that this statement is only valid if the leading order result is calculated with αS(MZ ) = 0.130, which is much larger than the value of the strong coupling constant given in eq. (4.1) or the world average.</p>
+
+				<p>Changing the value of the strong coupling constant from one order in perturbation theory to the other is not customary in e + e − collider physics, while it is an accepted practice in hadron collider physics.</p>
+
+			</div>
+			<div>
+				<head>– 16 –</head>
+
+				<p>collaboration. We find α s (M Z ) = 0.1156</p>
+
+			</div>
+			<div>
+				<head>+0.0041</head>
+
+				<p>−0.0034 , which compares well with other recent determinations of the strong coupling constant, and is somewhat lower than the current world average value. We stress that our treatment of the uncertainties on α s is conservative. A detailed knowledge of the experimental systematics, and a more sophisticated approach to theoretical errors will very likely lead to a higher precision in the determination of α s from five-jet observables at LEP.</p>
+
+			</div>
+			<div>
+				<head>Acknowledgments</head>
+
+				<p>We are grateful to Hasko Stenzel for the participation in earlier stages of this work. We would like to thank Stefan Höche for providing us with SHERPA results. Useful conversations with Andrea Banfi, Guenther Dissertori, Stefano Forte, Michelangelo Mangano, Gavin Salam, Peter Skands, Roberto Tenchini, Paolo Torrielli, and Bryan Webber are gratefully acknowledged.</p>
+
+				<p>During the work on this paper, we have benefited from the hospitality extended to us by the Aspen Center for Physics, the Fermilab Theory group, and the Theory Unit at CERN. This research is supported by the NSF under grant PHY-0855365, by the start-up funds provided by Johns Hopkins University, by the British Science and Technology Facilities Council, and by the Swiss National Science Foundation under contract 200020-126691. Appendix: details of the fit</p>
+
+				<p>In this Appendix, the details of the fitting procedure are described. In the fit, we consider two observables – the five-jet resolution parameter distribution and the five-jet rate. These observables are measured at several energies; the results are available in the form of binned distributions. In principle, we can extract the value of the strong coupling constant from any of the bins but, clearly, the availability of many bins helps in decreasing the errors. The problem is that both the experimental and theoretical errors affecting different bins may be correlated, and it is important to take these correlations correctly into account, to obtain a proper estimate of the overall uncertainty in the determination of α s . Our procedure follows closely the approach of the LEP QCD working group described in ref. [68]. A possible way to treat theoretical uncertainties is discussed in ref. [69], but we follow a simpler approach that is described below.</p>
+
+				<p>The set of all available bins, for a chosen range of y 45 and y cut , is a set of observables L O from which values of the strong coupling constant can be determined. Each member of L O is represented by three numbers O i = [X i , σ stat i , σ syst i ], where X i , and σ stat,syst i are the central value and the statistical and systematic uncertainties respectively, for a given observable in the bin i. If uncertainties are asymmetric, O i is a collection of five numbers, and the discussion below applies to positive and negative errors separately. In what follows, we use α s ± δα s as the shorthand notation instead of the full one α s +δ + αs −δ − αs</p>
+
+			</div>
+			<div>
+				<head>.</head>
+
+				<p>As we already mentioned, each of the observables from the list L O can be used to determine the value of the strong coupling constant. This is done by solving the equation</p>
+
+				<p><formula>T i H i = E i , (5.1) – 17 –</formula></p>
+
+				<p>where T i is the (parton level) theoretical prediction, H i is the hadronization correction, and E i is the experimental value for the bin i. The theoretical prediction T i depends on α s (M Z ) and the renormalization scale µ. As discussed in the text, for the hadronization correction we can use either the cluster or the Lund string model and we choose the former as our default. We write the value of the strong coupling constant at M Z , obtained by solving eq.</p>
+
+				<p><formula>(5.1), as α i s = α i s ± δα i,stat s ± δα i,syst s ± δα i,scale s ± δα i,hadr s , (5.2)</formula></p>
+
+				<p>where α i s is the central value. The central value and the errors in eq. (5.2) are obtained in the following way: 1) the central value α i s is obtained by solving eq. (5.1) for α s with µ = µ 0 , µ 0 = 0.3 √ s, E i = X i (i.e., the central data value in the relevant bin), and the cluster model for hadronization. The results without hadronization corrections are obtained by simply setting H i = 1.</p>
+
+			</div>
+			<div>
+				<head>2) δα</head>
+
+				<p>i,stat s and δα i,syst s are obtained by solving eq. (5.1) for α s with the same settings as in item 1), except that E i = X i ± σ i,stat or E i = X i ± σ i,syst . The differences between the values of α s obtained in this way, and the central value α i s , are ±δα</p>
+
+				<figure>
+					<trash>i,stat s and ±δα i,syst s . 3) δα i,scale s</trash>
+
+
+				</figure>
+
+				<p>is obtained by solving eq. (5.1) for α s with the same settings as in item 1), except that µ = 0.5µ 0 and µ = 2µ 0 are used. The differences between the values of α s obtained in this way, and the central value α i s , are ±δα</p>
+
+				<figure>
+					<trash>i,scale s . 4) δα i,hadr s</trash>
+
+
+				</figure>
+
+				<p>is obtained by solving eq. (5.1) for α s with the same settings as in item 1), except that the Lund string model is used for hadronization. We define ±δα i,hadr s = ±|α s − α i s |. We note that this is a conservative choice, since clearly α s − α i s is either positive or negative.</p>
+
+				<p>The result of this procedure is a set of values of the strong coupling constants, α i s , with the corresponding errors. They need to be combined to obtain the average value of α s . To this end, it is necessary to construct the covariance matrix, which we define as the sum of the covariance matrices for statistical, systematic, perturbative, and hadronization errors. If we denote generically by δα i s one of these four errors, the corresponding covariance matrix is V ij =</p>
+
+				<figure>
+					<trash>δ ij δα i s 2 + (1 − δ ij ) C ij δα i s δα j s , (5.3)</trash>
+
+					<head>where</head>
+
+
+				</figure>
+
+				<p>C ij is the statistical correlation between α i s and α j s (see later). The covariance matrix is used to calculate the average value of the strong coupling constant and its error in a standard way. We compute the weights</p>
+
+				<figure>
+					<trash>w i = N j=1 (V −1 ) ij N k,l=1 (V −1 ) kl , 1 ≤ i ≤ N , N = dim(V ), (5.4) – 18 –</trash>
+
+
+				</figure>
+
+				<p>and obtain the estimate of the average of the strong coupling constant and of its error</p>
+
+				<figure>
+					<trash>α s = N i=1 w i ¯ α i s , (5.5) σ 2 (α s ) = N i,j=1 w i V ij w j . (5.6)</trash>
+
+
+				</figure>
+
+				<p>It is easy to see that if two or more errors that enter the definition of the covariance matrix are close numerically, and the absolute values of the corresponding statistical correlations C ij is close to one, eq. (5.3) may lead to pathological results, since the weights w i tend to grow large in absolute value and to have opposite signs. To avoid this, the LEP QCD working group [68] adopts the formula</p>
+
+				<figure>
+					<trash>V ij = δ ij δα i s 2 + (1 − δ ij ) min (δα i s ) 2 , (δα j s ) 2 , (5.7)</trash>
+
+
+				</figure>
+
+				<p>which is essentially equivalent to taking the largest possible C ij in eq. (5.3), that still leads to non-pathological weights w i . Clearly, eq. (5.7) is an overestimate of the correlation if the actual C ij is small. For this reason, in our fit we use a slightly modified formula for the covariance matrix</p>
+
+				<figure>
+					<trash>V ij = δ ij δα i s 2 + (1 − δ ij ) min (δα i s ) 2 , (δα j s ) 2 , C ij δα i s δα j s . (5.8)</trash>
+
+
+				</figure>
+
+				<p>As we explain below, for the observables and errors that we consider, eq. (5.8) coincides with eq. (5.7) in all cases, except for the statistical correlation between σ −1 tot dσ/dy 45 and R 5 .</p>
+
+				<p>In summary, we take the covariance matrix to be</p>
+
+				<figure>
+					<trash>V = V stat + V syst + V scale + V hadr , (5.9</trash>
+
+					<figDesc>) where each of the terms on the right-hand side of eq. (5.9) is constructed according to eq. (5.8) using δα</figDesc>
+					<trash>i,stat s , δα i,syst s , δα i,scale s , and δα i,hadr s</trash>
+
+
+				</figure>
+
+				<p>respectively. As far as the off-diagonal terms of the various V matrices are concerned, we have assumed what follows: • Statistical errors are uncorrelated between different center-of-mass energies. At a given center-of-mass energy, σ −1 tot dσ/dy 45 data are uncorrelated, R 5 data are fully correlated, and R 5 data are correlated with σ −1 tot dσ/dy 45 ones for y cut ≤ y 45 . We have explicitly computed the coefficient C ij relevant to the σ −1 tot dσ/dy 45 − R 5 correlation, and have used them in eq. (5.8). • Since we do not have detailed information about correlations of systematic uncertainties in ALEPH data, we assume conservatively that all systematic errors at a given center-of-mass energy are fully correlated. We also assume that systematic errors are completely uncorrelated between LEP1 and LEP2, but that they are fully correlated in the measurements performed at different LEP2 energies.</p>
+
+			</div>
+			<div>
+				<head>– 19 –</head>
+
+				<p>• Perturbative errors are assumed to be fully correlated, for all observables and energies. See also the main text for a comment on this point. • Hadronization errors, that we compute only at LEP1, are assumed to be fully corre- lated.</p>
+
+				<p>Finally we point out that in the computation of the central value of α s , according to eq. (5.5), we neglect the off-diagonal entries of V scale and V hadr [68]. On the other hand, we include all the off-diagonal entries in the computation of the standard deviation according to eq. (5.6). In fact, in the presence of errors numerically very close to each other (which is the case for the perturbative and hadronization errors), the result for the average value of α s tends to assume the value of the input with the smallest error, which is again an artifact of the combination procedure. We have checked that the value of the strong coupling constant that we obtain in this way is statistically fully compatible with the result we would have obtained by considering all correlations when determining the central value of α s . [5] OPAL Collaboration, G. Abbiendi et al., QCD studies with e + e − annihilation data at 172–189 GeV, Eur.Phys.J. C16 (2000) 185–210, [hep-ex/0002012]. Revised Feb 2000. [6] OPAL Collaboration, G. Abbiendi et al., Measurement of event shape distributions and moments in e + e − → hadrons at 91–209 GeV and a determination of α s , Eur.Phys.J. C40 (2005) 287–316, [hep-ex/0503051]. [7] OPAL Collaboration, G. Abbiendi et al., Measurement of α s with radiative hadronic events, Eur.Phys.J. C53 (2008) 21–39. [8] L3 Collaboration, M. Acciarri et al., Study of the structure of hadronic events and determination of α s at √ s = 130 and 136 GeV, Phys.Lett. B371 (1996) 137–148. [9] L3 Collaboration, M. Acciarri et al., QCD studies and determination of α s in e + e − collisions at √ s = 161 and 172 GeV, Phys.Lett. B404 (1997) 390–402. [10]</p>
+
+				<figure>
+					<figDesc>L3 Collaboration, M. Acciarri et al., QCD results from studies of hadronic events produced in e + e − annihilations at √ s = 183 GeV, Phys.Lett. B444 (1998) 569–582. [11] L3 Collaboration, P. Achard et al., Determination of α s from hadronic event shapes in e + e</figDesc>
+					<trash>− annihilation at 192 GeV ≤ √ s ≤ 208 GeV, Phys.Lett. B536 (2002) 217–228, [hep-ex/0206052]</trash>
+
+
+				</figure>
+
+				<p>.</p>
+
+				<figure>
+					<figDesc>– 20 –</figDesc>
+
+				</figure>
+
+			</div>
+
+			<note place="foot">* On leave of absence from INFN, Sez. di Genova, Italy.</note>
+
+			<note place="foot" n="1"> There are alternative approaches to estimate hadronization corrections that address both theoretical [42] and experimental [16, 43] aspects of this procedure. 2 See ref. [44] for a related discussion. – 2 –</note>
+
+			<note place="foot" n="3"> We emphasize that it is not the parton/dipole shower per se that makes the difference, but the possibility to match it to high-multiplicity matrix elements. We expect to obtain quantitatively similar results with HERWIG, PYTHIA, and ARIADNE if these event generators are supplemented with a matrix-elementmatching procedure. – 3 –</note>
+
+			<note place="foot" n="5"> We note that had we used the same value of the coupling constant at LO as at NLO, as is usually done in e + e − calculations, NLO corrections would have been much larger, 45 − 60%. – 12 –</note>
+
+			<note place="foot" n="3"> s ) in QCD, Phys.Rev.Lett. 100 (2008) 172001, [arXiv:0802.0813].</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Studies of QCD in e + e − → hadrons at E cm = 130 and 136 GeV</title>
+		<author>
+			<persName>
+				<forename type="first">Aleph</forename>
+				<surname>Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Buskulic</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Z.Phys</title>
+		<imprint>
+			<biblScope unit="page" from="73" to="409" />
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">A Determination of α s (M Z 0 ) at LEP using resummed QCD calculations</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Opal Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Acton</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Z.Phys</title>
+		<imprint>
+			<biblScope unit="page" from="59" to="1" />
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">QCD studies with e + e − annihilation data at 130 and 136 GeV</title>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Opal Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Alexander</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Z.Phys</title>
+		<imprint>
+			<biblScope unit="page" from="72" to="191" />
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<monogr>
+		<title level="m" type="main">QCD studies with e + e − annihilation data at 161</title>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Opal Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Ackerstaff</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+				<surname>Gev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys</title>
+		<imprint>
+			<biblScope unit="volume">75</biblScope>
+			<biblScope unit="page" from="193" to="207" />
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Studies of hadronic event structure in e + e − annihilation from 30 to 209 GeV with the L3 detector</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>L3 Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Achard</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rept</title>
+		<imprint>
+			<biblScope unit="volume">399</biblScope>
+			<biblScope unit="page" from="71" to="174" />
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Energy dependence of event shapes and of α s at LEP2, Phys</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Delphi Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Abreu</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lett</title>
+		<imprint>
+			<biblScope unit="page" from="456" to="322" />
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">A Study of the energy evolution of event shape distributions and their means with the DELPHI detector at LEP, Eur.Phys</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Delphi Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Abdallah</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="page" from="285" to="312" />
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">The Measurement of α s from event shapes with the DELPHI detector at the highest LEP energies</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Delphi Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Abdallah</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eur.Phys.J</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="issue">0406011</biblScope>
+			<biblScope unit="page" from="1" to="23" />
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Studies of QCD at e + e − centre-of-mass energies between 91 and 209 GeV</title>
+		<author>
+			<persName>
+				<forename type="first">Aleph</forename>
+				<surname>Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Heister</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eur.Phys.J</title>
+		<imprint>
+			<biblScope unit="page" from="35" to="457" />
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Anastasiou</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Melnikov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Petriello</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>Real. radiation at NNLO: e + e − → 2 jets through O(α</note>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev.Lett</title>
+		<imprint>
+			<biblScope unit="volume">93</biblScope>
+			<biblScope unit="page">032002</biblScope>
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">NNLO corrections to 2-jet observables in electron-positron annihilation</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">74</biblScope>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">NNLO corrections to event shapes in e + e − annihilation</title>
+		<author>
+			<persName>
+				<forename type="first">A. Gehrmann-De</forename>
+				<surname>Ridder</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Gehrmann</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Glover</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Heinrich</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">0712</biblScope>
+			<biblScope unit="page">094</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+		<title level="m" type="main">Jet rates in electron-positron annihilation at O(α</title>
+		<author>
+			<persName>
+				<forename type="first">A. Gehrmann-De</forename>
+				<surname>Ridder</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Gehrmann</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Glover</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Heinrich</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">NNLO corrections to 3-jet observables in electron-positron annihilation</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev.Lett</title>
+		<imprint>
+			<biblScope unit="volume">101</biblScope>
+			<biblScope unit="issue">162001</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Electron–positron annihilation into four jets at next-to-leading order in α s</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Signer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">J</forename>
+				<surname>Dixon</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev.Lett</title>
+		<imprint>
+			<biblScope unit="volume">789609460</biblScope>
+			<biblScope unit="page" from="811" to="814" />
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Complete O(α 3 s ) results for e + e − → (γ, Z) → four jets</title>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">J</forename>
+				<surname>Dixon</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Signer</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">569706285</biblScope>
+			<biblScope unit="page" from="4031" to="4038" />
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Next-to-leading order calculation of four jet shape variables</title>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+				<surname>Nagy</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+				<surname>Trocsanyi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev.Lett</title>
+		<imprint>
+			<biblScope unit="volume">799707309</biblScope>
+			<biblScope unit="page" from="3604" to="3607" />
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Next-to-leading order calculation of four jet observables in electron positron annihilation</title>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+				<surname>Nagy</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+				<surname>Trocsanyi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">599806317</biblScope>
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Four jet event shapes in electron -positron annihilation, Eur.Phys</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">M</forename>
+				<surname>Campbell</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Cullen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Glover</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J</title>
+		<imprint>
+			<biblScope unit="volume">9809429</biblScope>
+			<biblScope unit="page" from="9" to="245" />
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Jet cross-sections at leading double logarithm in e + e − annihilation</title>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Brown</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Stirling</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Lett</title>
+		<imprint>
+			<biblScope unit="page" from="252" to="657" />
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">New clustering algorithm for multi-jet cross-sections in e + e − annihilation</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Catani</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<forename type="middle">L</forename>
+				<surname>Dokshitzer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Olsson</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Turnock</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Webber</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Lett</title>
+		<imprint>
+			<biblScope unit="page" from="269" to="432" />
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Average number of jets in e + e − annihilation</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Catani</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<forename type="middle">L</forename>
+				<surname>Dokshitzer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Fiorani</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Webber</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="page" from="377" to="445" />
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">An Improved theoretical prediction for the two jet rate in e + e − annihilation</title>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Dissertori</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Schmelling</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Lett</title>
+		<imprint>
+			<biblScope unit="page" from="361" to="167" />
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<title/>
+		<imprint>
+			<biblScope unit="page">21</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Semi-numerical resummation of event shapes</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Banfi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Salam</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Zanderighi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">0201</biblScope>
+			<biblScope unit="issue">018</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Event shapes in e + e − annihilation and deep inelastic scattering</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Dasgupta</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">P</forename>
+				<surname>Salam</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J.Phys.G</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="page">143</biblScope>
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Second-order QCD corrections to the thrust distribution</title>
+		<author>
+			<persName>
+				<forename type="first">A. Gehrmann-De</forename>
+				<surname>Ridder</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Gehrmann</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Glover</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Heinrich</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev.Lett</title>
+		<imprint>
+			<biblScope unit="volume">99</biblScope>
+			<biblScope unit="page">132002</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<monogr>
+		<title level="m" type="main">First determination of the strong coupling constant using NNLO predictions for hadronic event shapes in e + e − annihilations</title>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Dissertori</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Gehrmann-De Ridder</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Gehrmann</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Glover</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Heinrich</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="0802" to="040" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Precise determination of the strong coupling constant at NNLO in QCD from the three-jet rate in electron–positron annihilation at LEP</title>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Dissertori</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Gehrmann-De Ridder</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Gehrmann</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Glover</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Heinrich</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev.Lett</title>
+		<imprint>
+			<biblScope unit="volume">104</biblScope>
+			<biblScope unit="page">072002</biblScope>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<monogr>
+		<title level="m" type="main">Event shapes and jet rates in electron–positron annihilation at NNLO</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">A Precise determination of α s from LEP thrust data using effective field theory</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Becher</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">D</forename>
+				<surname>Schwartz</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">07</biblScope>
+			<biblScope unit="page">034</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<monogr>
+		<title level="m" type="main">Resummation of heavy jet mass and comparison to LEP data</title>
+		<author>
+			<persName>
+				<forename type="first">Y.-T</forename>
+				<surname>Chien</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">D</forename>
+				<surname>Schwartz</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Sjostrand</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Mrenna</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">Z</forename>
+				<surname>Skands</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">PYTHIA 6.4 Physics and Manual, JHEP 0605</title>
+		<imprint>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">An Event generator for hadron emission reactions with interfering gluons (including supersymmetric processes)</title>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Corcella</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Knowles</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Marchesini</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Moretti</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Odagiri</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">HERWIG</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="0101" to="010" />
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">ARIADNE version 4: A Program for simulation of QCD cascades implementing the color dipole model</title>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Lonnblad</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput.Phys.Commun</title>
+		<imprint>
+			<biblScope unit="page" from="71" to="15" />
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Dispersive approach to power behaved contributions in QCD hard processes</title>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<forename type="middle">L</forename>
+				<surname>Dokshitzer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Marchesini</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Webber</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="page" from="469" to="93" />
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Studies of quantum chromodynamics with the ALEPH detector</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Barate</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rept</title>
+		<imprint>
+			<biblScope unit="volume">294</biblScope>
+			<biblScope unit="page" from="1" to="165" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<monogr>
+		<title level="m" type="main">Determination of the strong coupling constant using matched NNLO+NLLA predictions for hadronic event shapes in e + e − annihilations</title>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Dissertori</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Gehrmann-De Ridder</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Gehrmann</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Glover</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Heinrich</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page" from="0908" to="036" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">SHERPA 1.α: A Proof of concept version</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Gleisberg</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Hoche</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Krauss</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Schalicke</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Schumann</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">0402</biblScope>
+			<biblScope unit="page">056</biblScope>
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Gleisberg</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Hoche</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Krauss</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Schonherr</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Schumann</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page">007</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">QCD matrix elements + parton showers</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Catani</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Krauss</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Kuhn</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Webber</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">0111</biblScope>
+			<biblScope unit="issue">063</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">A Numerical Unitarity Formalism for Evaluating One-Loop Amplitudes</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Ellis</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Giele</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+				<surname>Kunszt</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">0803</biblScope>
+			<biblScope unit="issue">003</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<monogr>
+		<title/>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Full one-loop amplitudes from tree amplitudes</title>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">T</forename>
+				<surname>Giele</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+				<surname>Kunszt</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Melnikov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">0804</biblScope>
+			<biblScope unit="issue">049</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<monogr>
+		<title level="m" type="main">One-loop amplitudes for W+3 jet production in hadron collisions</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Ellis</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Giele</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+				<surname>Kunszt</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Melnikov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Zanderighi</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page">012</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<monogr>
+		<title level="m" type="main">Automation of next-to-leading order computations in QCD: The FKS subtraction</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Frederix</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Frixione</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Maltoni</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Stelzer</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page">003</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">One loop corrections to two quark three gluon amplitudes</title>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+				<surname>Bern</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">J</forename>
+				<surname>Dixon</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">A</forename>
+				<surname>Kosower</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="volume">4379409393</biblScope>
+			<biblScope unit="page" from="259" to="304" />
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">New color decompositions for gauge amplitudes at tree and loop level</title>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Duca</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">J</forename>
+				<surname>Dixon</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Maltoni</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="volume">571</biblScope>
+			<biblScope unit="page" from="51" to="70" />
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">QCD Corrections to the Axial Part of the Z Decay Rate</title>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">A</forename>
+				<surname>Kniehl</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">H</forename>
+				<surname>Kuhn</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Lett</title>
+		<imprint>
+			<biblScope unit="volume">229</biblScope>
+			<biblScope unit="page">224</biblScope>
+			<date type="published" when="1989" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">Three jet distributions from the one-loop Zgg vertex at e + e − colliders</title>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Hagiwara</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Kuruma</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Yamada</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="page" from="358" to="80" />
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<monogr>
+		<title level="m" type="main">One-Loop Multi-Parton Amplitudes with a Vector Boson for the LHC</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">F</forename>
+				<surname>Berger</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="0808" to="0941" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Next-to-Leading Order QCD Predictions for W+3-Jet Distributions at Hadron Colliders</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">F</forename>
+				<surname>Berger</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">80</biblScope>
+			<biblScope unit="page">074036</biblScope>
+			<date type="published" when="1984" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<monogr>
+		<title level="m" type="main">Next-to-Leading Order QCD Predictions for Z, γ * + 3 jet Distributions at the Tevatron</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">F</forename>
+				<surname>Berger</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">Three jet cross-sections to next-to-leading order</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Frixione</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+				<surname>Kunszt</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Signer</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="volume">467</biblScope>
+			<biblScope unit="page" from="399" to="442" />
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title level="a" type="main">MadGraph/MadEvent v4: The New Web Generation</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Alwall</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Demin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>De Visscher</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Frederix</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Herquet</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">0709</biblScope>
+			<biblScope unit="page">028</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">A Proposal for a standard interface between Monte Carlo tools and one-loop programs</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Binoth</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Boudjema</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Dissertori</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Lazopoulos</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Denner</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput.Phys.Commun</title>
+		<imprint>
+			<biblScope unit="volume">181</biblScope>
+			<biblScope unit="page" from="1612" to="1622" />
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<monogr>
+		<title level="m" type="main">MadEvent: Automatic event generation with MadGraph</title>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Maltoni</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Stelzer</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2003" />
+			<biblScope unit="page">0302</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">Parton Fragmentation and String Dynamics</title>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Andersson</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Gustafson</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Ingelman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Sjostrand</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rept</title>
+		<imprint>
+			<biblScope unit="page" from="97" to="31" />
+			<date type="published" when="1983" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">A Modified cluster hadronization model, Eur.Phys</title>
+		<author>
+			<persName>
+				<forename type="first">J.-C</forename>
+				<surname>Winter</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Krauss</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Soff</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page" from="381" to="395" />
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Martin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Stirling</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Thorne</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Watt</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Parton</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Lhc</forename>
+				<surname>For</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Eur</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.J</title>
+		<imprint>
+			<biblScope unit="volume">63</biblScope>
+			<biblScope unit="page" from="189" to="285" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<surname>Amsler</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Review of Particle Physics, Phys.Lett</title>
+		<imprint>
+			<biblScope unit="volume">667</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+	<note>partial. update for the 2010 edition</note>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title level="a" type="main">The 2009 World Average of α s , Eur.Phys</title>
+		<author>
+			<persName>
+				<surname>Bethke</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J</title>
+		<imprint>
+			<biblScope unit="page" from="64" to="689" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<monogr>
+		<title/>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title level="a" type="main">Final α s combinations from the LEP QCD Working Group</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Jones</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys.Proc</title>
+		<imprint>
+			<biblScope unit="volume">152</biblScope>
+			<biblScope unit="page" from="15" to="22" />
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+	<note>Suppl</note>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<monogr>
+		<title level="m" type="main">Theoretical uncertainties on α s from event-shape variables in e + e − annihilations</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">W L</forename>
+				<surname>Jones</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Ford</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">P</forename>
+				<surname>Salam</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Stenzel</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Wicke</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2003" />
+			<biblScope unit="page">007</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b67">
+	<analytic>
+		<title level="a" type="main">Extraction of α s from radiative Υ(1S) decays</title>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Brambilla</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">X</forename>
+				<surname>Garcia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Tormo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Soto</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Vairo</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">75</biblScope>
+			<biblScope unit="page">074014</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b68">
+	<analytic>
+		<title level="a" type="main">Precision measurements of α s at HERA</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>H1 Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Glasman</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Conf. Ser</title>
+		<editor>J. Blumlein, Λ QCD and α s</editor>
+		<imprint>
+			<biblScope unit="volume">110</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b69">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Z ) from DIS Structure Functions</title>
+		<imprint>
+			<biblScope unit="page" from="0706" to="2430" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b70">
+	<monogr>
+		<title level="m" type="main">Thrust at N 3 LL with Power Corrections and a Precision Global Fit for α s (m Z )</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Abbate</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Fickinger</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">H</forename>
+				<surname>Hoang</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Mateu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">W</forename>
+				<surname>Stewart</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b71">
+	<analytic>
+		<title level="a" type="main">Update: Accurate Determinations of α s from Realistic Lattice QCD</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">T H</forename>
+				<surname>Hpqcd Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Davies</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">78</biblScope>
+			<biblScope unit="issue">114507</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b72">
+	<analytic>
+		<title level="a" type="main">Gfitter -Revisiting the Global Electroweak Fit of the Standard Model and Beyond, Eur. Phys</title>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Flacher</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J</title>
+		<imprint>
+			<biblScope unit="volume">60</biblScope>
+			<biblScope unit="page" from="543" to="583" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b73">
+	<monogr>
+		<title/>
+		<imprint>
+			<biblScope unit="page">24</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

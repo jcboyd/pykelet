@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Potential flows in the Reissner- Nordström-(anti) de Sitter metric: numerical results</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2009-10-05">5 Oct 2009</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Gustavo</forename>
+								<forename type="middle">C</forename>
+								<surname>Colvero</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Centro de CiênciasNaturaiseHumanas</orgName>
+								<orgName type="institution">UniversidadeFederaldoABC</orgName>
+								<address>
+									<postCode>09210-170</postCode>
+									<settlement>SantoAndré, SãoPaulo</settlement>
+									<country key="BR">Brasil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Maximiliano</forename>
+								<surname>Ujevic</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Centro de CiênciasNaturaiseHumanas</orgName>
+								<orgName type="institution">UniversidadeFederaldoABC</orgName>
+								<address>
+									<postCode>09210-170</postCode>
+									<settlement>SantoAndré, SãoPaulo</settlement>
+									<country key="BR">Brasil</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Potential flows in the Reissner- Nordström-(anti) de Sitter metric: numerical results</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2009-10-05">5 Oct 2009</date>
+						</imprint>
+					</monogr>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords scheme="pacs">
+					<term>4715Hg</term>
+					<term>0425Dm</term>
+					<term>4775+f</term>
+					<term>9760Lf</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>Numerical solutions for the integral curves of the velocity field (streamlines), the density contours, and the accretion rate of a steady-state flow of an ideal fluid with p = Kn γ equation of state are presented. The streamlines and velocity fields associated with a black hole and a rigid sphere in a Reissner-Nordström-(anti) de Sitter spacetimes are studied in some detail. For each case the fluid density is studied using contour lines. For γ = 2, we found that the studied properties of the fluid are more sensitive to variations of the electric charge and the cosmological constant. Also, the accretion rate was found to increase or decrease when the cosmological constant increases or decreases respectively.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head>I. INTRODUCTION</head>
+
+				<p>Most of the articles about potential flows in this area deal with the important case of fluid motion evolving in the spacetime associated with compact stars and black holes. The implementation of new background metrics brings some new challenges. First, metrics other than Schwarzschild and Kerr are not so well studied, sometimes a complete understanding of the physical meaning of the metric is missing. Also, the solutions of the fluid equations in a non trivial metric may be quite involved.</p>
+
+				<p>In particular, the search for significant boundary values (or initial conditions) presents a non trivial problem. A simple and paradigmatic case of a flow is the stationaryzero-vorticity flow of a fluid with adiabatic stiff equation of state. In this case, for relativistic flows, the fluid equations admit analytical solutions for some particular metrics [1, 2, 3]. These solutions are used as test-beds for testing almost all the numerical hydrodynamic codes in the subject. Other potential flows in a nonstationary background and different equation of state had been studied, see for instance [4, 5, 6]. Also, the solutions for potential flows permit to test new optimized codes in resolving nonlinear hyperbolic systems of conservation laws [7], see for a representative sample of numerical schemes [8].</p>
+
+				<p>In previous articles [1, 2, 3, 5] the authors used for the fluid the stiff equation of state, i.e., a polytropic, p = Kn γ with γ = 2. This stiff equation of state over simplifies the partial differential equation for the velocity potential field Φ (it becomes linear). In this case the sound velocity in the fluid is equal to the speed of light. Therefore the stiff equation of state represents a limit situation not easily encountered in usual physical situations. Some articles [4, 6] studied the more realistic situation, a fluid with a polytropic equation of state with 1 &lt; γ &lt; 2 in the presence of either a rigid sphere or a black hole. The sound velocity in this case is less than * e-mail: gustavo.colvero@ufabc.edu.br † e-mail: mujevic@ufabc.edu.br the speed of light and the partial differential equation for Φ turns to be nonlinear and needs to be solved numerically . In this work we present a nontrivial extension of the investigations about potential flows by studying the streamlines and baryon density contours for a fluid with polytropic equation of state with 1 &lt; γ &lt; 2 in the presence of either a rigid sphere or a black hole in a Reissner- Nordström -(anti) de Sitter background. We consider also the accretion rate of particles into the black hole and its dependence with γ, the electric charge and the cosmological constant. We assume that the fluid is a test fluid, i.e., the metric does not evolve and it is given a priori. The state equation and the idea of a rigid star (rigid sphere) we use are idealized. However, they bring important results about the behavior of the fluid, and the difficulties involved in this kind of scenarios. This work is divided as follows. In Sec. II we present the basic equations that describe potential flows and the nonlinear equation for the velocity potential for a polytropic equation of state of the form p = Kn γ . In Sec. III we present the numerical method used to solve the nonlinear partial differential equation presented in Sec. II.</p>
+
+				<p>In Sec. IV we show the numerical results for the density contours, the streamlines and the accretion rate for the black hole and rigid sphere cases for different values of the parameters Λ, M , Q and γ. Finally, in Sec. V we summarize our results.</p>
+
+			</div>
+			<div>
+				<head>II. BASIC EQUATIONS</head>
+
+				<p>We start from the energy-momentum tensor for an ideal fluid, T µν = (p + ρ)U µ U ν + pg µν , where p is the pressure, U µ represents the fluid four-velocity, ρ = ρ 0 + ǫ is the total energy density, ρ 0 is the rest mass energy density, and ǫ is the internal energy density. Our conventions are G = c = 1, metric with signature +2. Partial and covariant derivatives are denoted by commas and semicolons, respectively. The conservation equations, T µν ;ν = 0, for this kind of fluid reduce to</p>
+
+				<figure>
+					<trash>(ρ + p)U µ ;µ + ρ ,µ U µ = 0, (1) and (ρ + p)U ν U µ;ν + p ,µ + p ,ν U ν U µ = 0, (2)</trash>
+
+
+				</figure>
+
+				<p>which are, respectively, the &apos;mass&apos; conservation law and the Euler equation. For isentropic flows we have (σ/n) ;µ = 0, where σ is the entropy per unit volume and n is the baryon number density. In this case the equations of motion (2) take the form [9]</p>
+
+				<figure>
+					<trash>U ν ω µν = 0, (3) where ω µν is the relativistic vorticity tensor defined as ω µν = ρ + p n U µ ;ν − ρ + p n U ν ;µ . (4) The potential flow solution of this equation (ω µν = 0) is hU α = Φ ,α , (5) where h = (ρ + p)/n is the enthalpy per baryon. From Eq. (5) and the baryon number density conservation equation, (nU µ ) ;µ = 0, (6) we obtain the differential equation for the velocity poten- tial, Φ + [ln n h ] ,α Φ ,α = 0, (7) where, Φ = [ √ −gg µν Φ ,µ ]</trash>
+
+
+				</figure>
+
+				<p>,ν / √ −g. This equation is in general nonlinear and depends on the fluid equation of state. If we consider a polytropic equation of state p = Kn γ and use the first law of thermodynamics for isentropic flows, d(ρ/n) + pd(1/n) = T ds, (s is the entropy per baryon and T the temperature), we find</p>
+
+				<figure>
+					<trash>ρ = ρ 0 + Kn γ γ − 1 . (8)</trash>
+
+
+				</figure>
+
+				<p>Now, assuming that the flow is relativistic we can neglect the rest mass energy density ρ 0 with respect to the internal energy density Kn γ /(γ − 1), i.e., the flow satisfies a barotropic equation of state, p = (γ − 1)ρ. In this case, the baryon number density can be written in terms of the enthalpy as</p>
+
+				<figure>
+					<trash>n = κh 1 γ−1 , (9) where κ = γ−1 γK 1 γ−1 . In this case, equation (7) can be written as Φ + 2 − γ γ − 1 [ln h(Φ)] ,α Φ ,α = 0. (10)</trash>
+
+
+				</figure>
+
+				<p>The simplest case is found when γ = 2, Eq. (7) reduces to a linear equation. In this case the barotropic sound speed, defined as dp/dρ ≡ c 2 s , is equal to the speed of light, i.e., we have a stiff equation of state. In the general case (1 &lt; γ &lt; 2), the differential equation is nonlinear and the barotropic sound speed, c</p>
+
+				<figure>
+					<trash>2 s = (γ − 1), is less than the speed of light. The normalization condition, U α U α = −1, gives us a relation between the enthalpy and the scalar field, h = −Φ, α Φ ,α . (11)</trash>
+
+					<figDesc>This relation will be also useful to determine the baryon number density.</figDesc>
+
+				</figure>
+
+				<p>In this section we have followed the work of Moncrief [10] which is in accord with Tabensky and Taub [11]</p>
+
+				<figure>
+					<figDesc>who consider a constant barotropic sound speed, c</figDesc>
+					<trash>2 s = (γ − 1). III. POTENTIAL FLOWS IN REISSNER-NORDSTR OM-(ANTI) DE SITTER BLACK HOLES AND RIGID SPHERES A. The metric The Reissner- Norström-(anti) de Sitter metric can be written as ds 2 = −f dt 2 + f −1 dr 2 + r 2 dΩ 2 , (12) where f = 1 − 2M/r + Q 2 /r 2 − Λr 2 /3</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>, M is the mass, Q is the electric charge and Λ is the cosmological constant. The metric (12) has different number of horizons given by the roots of f = 0, which depend on M , Q and Λ. If Λ &gt; 0 (de Sitter spacetime) we may obtain four different real roots. For simplicity, we have taken our parameters such this is always true. Three of the roots are then identified as the inner (</figDesc>
+
+				</figure>
+
+				<p>or Cauchy) horizon (r i ), the event (or outer) horizon (r h ) and the cosmological horizon (r c ). These horizons satisfy the relation r i &lt; r h &lt; r c . The remaining root is negative and no physical meaning is attached. Following the classification due to Brill and Hayward [13], we are dealing with a generic black hole. If Λ &lt; 0 (anti de Sitter spacetime), we obtain two real roots representing the inner horizon and the event horizon. In this case there is no cosmological horizon and the function f (r) diverges as the radial coordinate r tends to infinity.</p>
+
+			</div>
+			<div>
+				<head>B. Numerical method</head>
+
+				<p>To solve equation (10) in the space-time with metric (12) we assume: (a) That fluid is stationary, i.e., the function Φ depends on time only through the addition of −at, where a is a constant related to the zeroth component of the velocity. (b) That due to the axial symmetry of the metric the potential Φ does not depend on the variable ϕ, and (c) That the fluid is a test fluid, i.e. the metric does not evolve and it is given a priori. With the above mentioned assumptions Eq. (10) reduces to an elliptical differential equation with an inner boundary condition near the black hole or rigid sphere and an external boundary condition (asymptotic condition).</p>
+
+				<p>To obtain the numerical solution of Eq. (10) we use a computational code based on a relaxation method with a second-order precision, five-point, finite difference scheme. The relaxation method employed is the Stone&apos;s strongly implicit procedure applied in a numeric grid evenly spaced in both r and θ. The whole method is detailed in reference [14].</p>
+
+				<p>In the case of a rigid sphere, for the inner boundary condition, the usual condition of zero normal velocity in the surface of the sphere is employed. In general, the fluid velocity must be equal to the corresponding component of the velocity of the surface. Since usual stars have gaseous surfaces (not hard), this condition does not describe a typical flow around a star. In special astrophysical situations, like relativistic flows around a neutron star, this condition can be valid. For a black hole we use the condition that the fluid particle number density must remain finite on the black hole horizon [2]. This leads to the numerical condition [4] that near r = r h (the black hole horizon),</p>
+
+				<figure>
+					<trash>∂ ∂r * Φ ,r * − Φ ,t r − r h = 0, (13)</trash>
+
+
+				</figure>
+
+				<p>where dr * ≡ dr/f defines the tortoise radial coordinate [12]. With the assumption that Φ ,t = −a &lt; 0, the condition (13) can also be satisfied in our case and it will be taken as the inner boundary condition. For numerical applications of this condition see [5, 7].</p>
+
+				<figure>
+					<figDesc>On the outer boundary we apply the dirichlet condition imposing that the fluid is homogeneous and has a constant velocity parallel to the z-axis of the coordinate system, say</figDesc>
+					<trash>Φ = −U 0 ∞ t + U ∞ r cos θ, (14) where U a ∞ = (U 0 ∞ , U ∞ ) = (1 − v 2</trash>
+
+
+				</figure>
+
+				<p>∞ ) −1/2 (1, v ∞ ). This condition is applied in a region located usually between the surface of the sphere (or black hole horizon) and 60 Schwarzschild radius. Note that the presence of a cosmological horizon (for Λ &gt; 0) does not represent any further difficulty. Our domain of interest is delimited to the asymptotic boundary condition, which we carefully apply in a radius much smaller than r c .</p>
+
+				<p>To solve the non-linear equation (10) we first put the non-linear term equal to zero and calculate the linear part of the equation to find Φ. This solution is used as an initial guess for the non-linear problem. Then, from (11) we compute the fluid enthalpy. Finally, with this information we compute the non-linear term that is introduced in the non-linear equation to find new values of Φ. The process is repeated until the sum of the fractional change in the enthalpy for all interior points of the grid in one iteration is less than a certain error ξ. Usually less than 10 iterations were required to reach an error of ξ ≤ 10 −6 . Obviously, for the linear case we need only one iteration. The number of iterations depends on the value of γ. We found that for values of γ &lt; 5/3 our code does not converge, this is because the enthalpy becomes negative in some points of our grid. So, this value of γ may represent a physical limit to our model. Moreover, when γ = 1 the fluid is pressureless (dust) and the fluid flow is geodesic, i.e., no longer obeys (10). The code was tested for the case γ = 2 using the analytical results for the steady flow of a fluid in the presence of either a hard sphere [3] or a black hole [1, 2]. In this case the numerical solution agreed with the exact solution within an error better than 1% for the radial velocity and angular velocity. This accuracy is sufficient for our purposes. Another aspect of the fluid dynamics is the accretion rate of matter into a black hole. This accretion rate can be computed from (</p>
+
+				<figure>
+					<trash>5) and (9), we find ˙ N = − S nU i √ −gdS i = − S κh 2−γ γ−1 Φ ,r g rr √ −gdΩ, (15)</trash>
+
+
+				</figure>
+
+				<p>where the integration is performed in a two-surface sphere centered on the black hole. The exact form of (15), for γ = 2, is known [1, 2]. It is ˙</p>
+
+				<figure>
+					<trash>N = 4πr 2 h n ∞ U 0</trash>
+
+
+				</figure>
+
+				<p>∞ , where r h is the event horizon and n ∞ and U</p>
+
+			</div>
+			<div>
+				<head>0</head>
+
+				<p>∞ are the asymptotic density and zeroth component of the 4-velocity, respectively . The quantity n ∞ is a constant in this case. We test our code to compute the accretion rate with this exact solution. We found an error less than 1%.</p>
+
+			</div>
+			<div>
+				<head>IV. NUMERICAL RESULTS A. Black holes</head>
+
+				<p>In</p>
+
+				<p>Fig. 1, we show the streamlines and density contours (n/κ) for a potential flow with γ = 2 and γ = 1.7 through a Reissner- Nordström black hole for different values of the factor ΛM 2 . For increasing values of ΛM 2 , and fixed Q and γ, we see, from the upper and middle graphs of Fig 1, that the density in the incident region increases and in the opposite side decreases. On the other hand, for decreasing values of ΛM 2 , we obtain, from the middle and lower graphs of Fig. 1, that the density decreases in the incident region and increases in the opposite side. These behaviors can be seen as a shift of the density contours (more evident for n/κ = 2.0) and an expansion or contraction of the density contours (more evident for n/κ = 1.5). These effects are enhanced for lower values of γ, e.g. the contour n/κ = 1.5 does not even appear in the upper graph when γ = 1.7. It must be noted, however, that the adopted values for ΛM 2 are choose in order to magnify their effects on the flow.</p>
+
+				<p>In</p>
+
+				<p>Fig. 1 we use a fixed value for the electric charge, say Q = 0.9M . Further simulations show that the qualitative properties of the density contours are independent whether the black hole has electric charge or not. Nevertheless , the density contour values are more sensitive to changes in Λ if the black hole has small or null electric charge. In general, all the effects are more evident for lower values of γ. FIG. 1: Numerical results for the streamlines and density contours (n/κ) for a stiff fluid (γ = 2) and a fluid with γ = 1.7 flowing through a black hole with an electric charge Q = 0.9M . Three values for ΛM 2 were considered for comparison (null, positive and negative cosmological constant). The fluid flows from left to right with v∞ = 0.6.</p>
+
+				<p>Another quantity of interest for flows through a black hole is the accretion rate of matter given by Eq. (15). We numerically integrate Eq. (15), using Simpson&apos;s rule, to find that the presence of a positive or negative cosmological constant leads to an increase or decrease in the accretion rate, respectively. Furthermore, the increase due to Λ &gt; 0 is numerically equivalent to the decrease due to Λ &lt; 0. The accretion rate is slightly larger if the black hole has small or null electric charge.</p>
+
+				<p>Regardless the value of Λ and Q, the accretion rate always increases for lower values of γ. Also the accretion rate is more sensitive to variations in both Q and Λ if γ is less than 2. For example, if Q = 0.9M , the influence of the cosmological constant is about ten times greater when we lower the value of γ from 2 to 1.7, and for Q = 0 is almost twenty times greater. Moreover, examining the streamlines pattern, we note that, if we increase or decrease the value of Λ we also increase or decrease the number of streamlines that fall into the black hole, respectively , see Fig 1. For lower values of the parameter γ the streamlines flux through the black hole increases, this behavior is in accordance with the previous numerical results for the accretion rate.</p>
+
+			</div>
+			<div>
+				<head>B. Rigid spheres</head>
+
+				<p>In</p>
+
+				<p>Fig. 2, we show the streamlines and density contours (n/κ) for a potential flow with γ = 2 and γ = 1.7 through a Reissner- Nordström rigid sphere for different FIG. 2: Numerical results for the streamlines and density contours (n/κ) for a stiff fluid (γ = 2) and a fluid with γ = 1.7 flowing through a hard sphere of radius R = 2.5M with an electric charge Q = 0.9M . Two values are considered for ΛM 2 to contrast to the case of Λ = 0. The fluid flows from left to right with v∞ = 0.6. values of the factor ΛM 2 . We see that for increasing values of ΛM 2 , with fixed Q and γ, the density contours expand, which is associated to an increase in the density around the rigid sphere. Also, the effect of the cosmological constant is to change the oblateness of the density contours. For large values of Λ the contours are more spherical, this is easily noted from the n/κ = 1.9 density contours of the γ = 2 column graphs. When ΛM 2 decreases, we obtain the opposite behavior. These expansions and contractions of the density contours are enhanced when we lower the value of the parameter γ, this can be seen through a direct comparison from the graphs of the different columns of Fig 2. For all parameters, the streamlines suffer little changes.</p>
+
+				<p>In addition, further numerical simulations show us that, for a fixed γ, the density of fluid around a hard sphere is more sensitive to changes in Λ if the rigid sphere has a large electric charge. This is contrary to what happens in the black hole case where we find that the effects are less sensitive when it has a large electric charge.</p>
+
+			</div>
+			<div>
+				<head>V. CONCLUSIONS</head>
+
+				<p>We have numerically analyzed the effect of the electric charge and both, positive and negative, cosmological constants on a potential flow of an ideal fluid with polytropic equation of state p =</p>
+
+				<figure>
+					<figDesc>Kn γ around a black hole and a hard sphere by means of the streamlines, the fluid density contours and the accretion rate (black hole case TABLE I: Qualitative description of the influence of the parameters (Q, Λ, γ) and their combined changes on the potential flow through black holes and rigid spheres.</figDesc>
+					<trash>Variable parameter Variation performed Summary of effects: Black holes Summary of effects: Rigid spheres Q a Increase of the ratio Q 2 /M 2 , with Λ = 0.</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Decrease of ˙ N . Increase of the density around the black hole. Expansion of the density contours.</figDesc>
+
+				</figure>
+
+				<p>Decrease of the density around the sphere. Contraction of the density con- tours. Λ Increase/Decrease of ΛM 2 and Q = 0.</p>
+
+				<p>Increase/Decrease of ˙ N .</p>
+
+				<p>Increase/Decrease of the density over the region of incidence of the fluid and decrease/increase of the density on the opposite region. Slight expansion/contraction and shift to the left/right of the density contours.</p>
+
+				<p>Increase/Decrease of the number of streamlines that fall into the black hole.</p>
+
+				<p>Increase/Decrease of the density around the sphere, mainly over the region of θ = π/2. Expansion/Contraction of the density contours.</p>
+
+				<figure>
+					<trash>Q, Λ Increase/Decrease of ΛM 2 and Q = 0.</trash>
+
+
+				</figure>
+
+				<p>The effects due to the presence of Λ are qualitative the same as those observed if Q = 0 but less evident.</p>
+
+				<p>The effects due to the presence of Λ are qualitative the same as those observed if Q = 0 but more evident.</p>
+
+			</div>
+			<div>
+				<head>γ b</head>
+
+				<p>Decrease of γ to values smaller than 2.</p>
+
+				<figure>
+					<head>Increase of ˙</head>
+
+					<figDesc>N . Increase of the density around the black hole. Expansion of the density contours. Increase the number of streamlines that fall into the black hole. The effects due to variations of Q and/or Λ are enhanced.</figDesc>
+
+				</figure>
+
+				<p>Increase of the density around the sphere. Expansion of the density contours . The effects due to variations of Q and/or Λ are enhanced. a This case has analytical solutions for γ = 2 [1]. b The effects of γ &lt; 2 had been treated in other physical situations. See for example references [4, 6] only). The main effects observed in our numerical simulations are summarized in Table I.</p>
+
+				<p>As a final comment, we must say that results in cosmology indicates with 99% of confident that Λ &gt; 0 [15], with possible values of Λ ≈ 10 −52 /m 2 [15, 16, 17]. A value such as ΛM 2 ≈ 10 −7 implies in an object with M ≈ 10 19 solar masses. If we considered that the supposed super massive black holes in the center of some galaxies have masses of order M ≈ 10 −9 , we conclude that the detection of the influence of the cosmological constant near such objects is going to be difficult.</p>
+
+			</div>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+				<head>Acknowledgments</head>
+				<p>We want to thank UFABC and CAPES for financial support.</p>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Babichev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">78</biblScope>
+			<biblScope unit="page">104027</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">I</forename>
+				<surname>Petrich</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">L</forename>
+				<surname>Shapiro</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">A</forename>
+				<surname>Teukolsky</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">60</biblScope>
+			<biblScope unit="page">1781</biblScope>
+			<date type="published" when="1988" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">L</forename>
+				<surname>Shapiro</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="page">2839</biblScope>
+			<date type="published" when="1989" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">M</forename>
+				<surname>Abrahams</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">L</forename>
+				<surname>Shapiro</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">41</biblScope>
+			<biblScope unit="page">327</biblScope>
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Ujevic</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">S</forename>
+				<surname>Letelier</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Class. Quant. Grav</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page">2917</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Ujevic</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">S</forename>
+				<surname>Letelier</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Class. Quant. Grav</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page">4085</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">A</forename>
+				<surname>Font</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">M</forename>
+				<surname>Martí</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">M</forename>
+				<surname>Ibáñ</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">A</forename>
+				<surname>Miralles</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comp. Phys. Commun</title>
+		<imprint>
+			<biblScope unit="volume">75</biblScope>
+			<biblScope unit="page">31</biblScope>
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">J. A. Font, Liv. Rev. Rel</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="2002" to="2" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<title level="m" type="main">Fluid Mechanics</title>
+		<author>
+			<persName>
+				<forename type="first">See</forename>
+				<forename type="middle">L D</forename>
+				<surname>Landau</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">M</forename>
+				<surname>Lifshitz</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1959" />
+			<pubPlace>Butterworth-Heinenann, Oxford</pubPlace>
+		</imprint>
+	</monogr>
+	<note>2nd. edition</note>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Moncrief</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Astrophys. J</title>
+		<imprint>
+			<biblScope unit="volume">235</biblScope>
+			<biblScope unit="page">1038</biblScope>
+			<date type="published" when="1980" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Tabensky</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">H</forename>
+				<surname>Taub</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="page">61</biblScope>
+			<date type="published" when="1973" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Regge</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">A</forename>
+				<surname>Wheeler</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">108</biblScope>
+			<biblScope unit="page">1063</biblScope>
+			<date type="published" when="1957" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">R</forename>
+				<surname>Brill</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">A</forename>
+				<surname>Hayward</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Class. Quant. Grav</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">359</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<title level="m" type="main">Computational methods for fluid dynamics</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">H</forename>
+				<surname>Ferziger</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Peric</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2002" />
+			<publisher>Springer</publisher>
+			<pubPlace>Berlin</pubPlace>
+		</imprint>
+	</monogr>
+	<note>3rd. edition</note>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Perlmutter</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Astrophys. J</title>
+		<imprint>
+			<biblScope unit="volume">517</biblScope>
+			<biblScope unit="page">565</biblScope>
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">]</forename>
+				<forename type="middle">S</forename>
+				<surname>Perlmutter</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">AIP Conference Proceed- ings 586</title>
+		<imprint>
+			<date type="published" when="1997" />
+			<biblScope unit="page">316</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Shape Dynamics</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName>
+								<forename type="first">Tim</forename>
+								<forename type="middle">A</forename>
+								<surname>Koslowski</surname>
+							</persName>
+							<email>E-mail: 1 t.a.koslowski@gmail.com</email>
+							<affiliation>
+								<orgName type="department" key="dep1">Perimeter Institute for Theoretical Physics</orgName>
+								<orgName type="department" key="dep2">Department of Mathematics and Statistics</orgName>
+								<orgName type="institution">University of New Brunswick</orgName>
+								<address>
+									<addrLine>31 Caroline St. N</addrLine>
+									<postCode>N2L 2Y5, E3B 5A3</postCode>
+									<settlement>Waterloo, Fredericton</settlement>
+									<region>Ontario, New Brunswick</region>
+									<country>Canada New, Canada</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Shape Dynamics</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>Barbour&apos;s formulation of Mach&apos;s principle requires a theory of gravity to implement local relativity of clocks, local relativity of rods and spatial covariance. It turns out that relativity of clocks and rods are mutually exclusive. General Relativity implements local relativity of clocks and spatial covariance, but not local relativity of rods. It is the purpose of this contribution to show how Shape Dynamics, a theory that is locally equivalent to General Relativity, implements local relativity of rods and spatial covariance and how a BRST formulation, which I call Doubly General Relativity, implements all of Barbour&apos;s principles.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>A reflection on Mach&apos;s principle led Barbour to postulate that rods and spatial frames of reference should be locally determined by a procedure that he calls &quot; best matching, &quot; while clocks should be locally determined by what he calls &quot; objective change &quot; (for more see [1]). More concretely, Barbour&apos;s principles postulate local time reparametrization invariance, local spatial conformal invariance and spatial covariance. The best matching algorithm for spatial covaraince and local spatial conformal invariance turns out to be equivalent to the imposition of linear diffeomorphism and conformal constraints</p>
+
+				<figure>
+					<trash>H(ξ) = Σ d 3 x π ab (L ξ g) ab , C(ρ) = Σ d 3 x ρ π, (1)</trash>
+
+
+				</figure>
+
+				<p>where we use a compact Cauchy surface Σ without boundary with Riemannian metric g ab and metric momentum density π ab with trace π. The vector field ξ and the scalar field ρ are Lagrange multipliers. A more involved procedure, which I will not explain here, leads to the implementation of local time reparametrization invariance through</p>
+
+				<figure>
+					<trash>quadratic Hamilton constraints ˆ S(N ) = Σ d 3 x N π ab F abcd π cd − V , (2)</trash>
+
+
+				</figure>
+
+				<p>where F abcd (x) and V (x) are constructed from g ab (x) and its derivatives at x and N denotes a Lagrange multiplier. There is no reason for S to have homogeneous conformal weight, so a system containing the constraints S(N ) and C(ρ) will not be first class except for very special choices of F abcd , V . This means that time reparametrization symmetry and spatial conformal symmetry generically exclude one another. An interesting situation occurs when we choose the F abcd , V to reproduce the</p>
+
+				<figure>
+					<trash>Hamilton constraints of General Relativity S(N ) = Σ d 3 x N π ab (g ac g bd − 1 2 g ab g cd )π cd |g| − (R − 2Λ) |g| , (3)</trash>
+
+
+				</figure>
+
+				<p>where the constraint system S(N ), Q(ρ) is completely second class, while the constraint system S(N ), H(ξ) is first class as is the constraint system Q(ρ), H(ξ). We will shortly see that this is the reason why Shape Dynamics and Doubly General Relativity can be constructed [2]</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="2">Symmetry Trading</head>
+
+				<p>Gauge theories describe a physical system using redundant degrees of freedom. The physical degrees of freedom are identified with orbits of the action of the gauge group. This redundant description is very useful in field theory, because it is often the only local description of a given system. The canonical description of gauge theories (see e.g. [5]) is provided by a regular irreducible set of first class constraints {χ α } α∈A , whose elements χ α are smooth functions on a phase space Γ with Poisson bracket {., .}. First class means that the constraint surface C = {x ∈ Γ : χ α (x) = 0, ∀α ∈ A} is foliated into gauge orbits, whose infinitesimal generators are the Hamilton vector fields v α : f → {χ α , f }. For simplicity we will assume that the system is generally covariant, so it has vanishing on-shell Hamiltonian. Observables [O] of the system are equivalence classes of smooth gaugeinvariant functions O on Γ, where two functions are equivalent if they coincide on C and where gauge invariance means that O is constant along gauge orbits. This means that an observable is completely determined by determining its dependence on a reduced phase space Γ red , which contains one and only one point out of each gauge orbit. There is no unique choice of Γ red and the simplest description is through a regular irreducible set of gauge fixing conditions {σ α } α∈A such that a proper reduced phase is defined through Γ red = {x ∈ Γ : χ α (x) = 0 = σ α (x), ∀α ∈ A}. The observable algebra can then be identified with the Dirac algebra on reduced phase space, where the Dirac bracket takes the form {f, g} D := {f, g} −</p>
+
+				<p><formula>{f, χ α }M α β {σ β , g} − {f, σ β }M α β {χ α , g} , (4)</formula></p>
+
+				<p>where M denotes the inverse of the linear operator {χ, σ}.</p>
+
+				<p>The condition that Γ red contains one and only one point out of each gauge orbit imposes important restrictions on the gauge fixing conditions, but the set of gauge fixing conditions is not required to be first class. A very interesting situation arises when the set of gauge fixing conditions is itself first class: In this case one can switch the role of gauge fixing conditions and constraints and describe the same observable algebra, and thus the same physical system, with the gauge theory A = (Γ, {., .}, {χ α } α∈A ) or with the gauge theory B = (Γ, {., .}, {σ α } α∈A ). The manifest equivalence of the two theories is established by gauge fixing theory A with the gauge fixing set {σ α } α∈A and gauge theory B with the gauge fixing set {χ α } α∈A .</p>
+
+				<p>One thus trades one gauge symmetry for another. A very useful tool for the construction of equivalent gauge theories is a linking theory, see [4] and figure 1. Let us start with a phase space extension and denote the configuration variables of the extension by φ α and their canonically conjugate momenta by π β and local Darboux coordinates on the original phase space Γ by (q i , p j ). A linking theory on extended phase space is a set of regular irreducible first class constraints that can be split into three subsets: The set {χ 1 α } α∈A can be weakly 1 solved for φ α , the set {χ α 2 } α∈A can be weakly solved for π α and the set {χ 3 µ } µ∈M is weakly independent of the phase space extension. In this case, we can simplify the discussion by noticing that the three constraint sets are equivalent to the sets</p>
+
+				<figure>
+					<trash>{φ α − φ α o (q, p)} α∈A , {π α − π o α (q, p)} α∈A and { ˜ χ 3 µ (q, p)} µ∈M . (5)</trash>
+
+					<figDesc>There are two sets of natural gauge fixing conditions {φ α } α∈A and {π α } α∈A . Imposing the gauge φ α = 0 fixes the constraints π α − π</figDesc>
+					<trash>o α (q, p) and leads to the phase space reduction (φ α , π β ) → (0, π o β (q, p)), so the reduced</trash>
+
+
+				</figure>
+
+				<p>phase space is Γ. Moreover, the Dirac bracket associated with this phase space reduction coincides with the Poisson bracket on Γ. The result of the phase space reduction is the gauge theory B = (</p>
+
+				<p><formula>Γ, {., .}, {π o α } α∈A ∪ { ˜ χ 3 µ } µ∈M ).</formula></p>
+
+			</div>
+			<div>
+				<head>Linking Theory on extended phase space with extended gauge symmetry partial gauge fixing partial gauge fixing Theory B Theory A same phase space as Theory B gauge symmetry A same phase space as Theory A gauge symmetry B further gauge fixing further gauge fixing Dictionary Theory on reduced phase space reduced gauge symmetry</head>
+
+				<figure>
+					<head>Figure 1.</head>
+
+					<figDesc>Construction of equivalent gauge theories from a linking theory.</figDesc>
+					<trash>Similarly, imposing π α = 0 yields a phase space reduction (φ α , π β ) → (φ α o (q, p), 0) and the resulting gauge theory is A = (Γ, {., .}, {φ o α } α∈A ∪ { ˜ χ 3 µ } µ∈M ). The gauge theories A and B obviously describe the same physical system. It turns out that we would have obtained the same result even if had we not solved the first two subsets of constraints for the phase space extension.</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="3">Shape Dynamics</head>
+
+				<p>Let us now extend the phase space of General Relativity by a conformal factor φ and its conjugate momentum density π φ .</p>
+
+			</div>
+			<div>
+				<head>The linking theory between General Relativity on a compact manifold Σ without boundary and Shape Dynamics can be obtained by canonical best matching General</head>
+
+				<p>Relativity in the ADM formulation with respect to conformal transformations that do not change the total spatial volume. This yields the following set of constraints</p>
+
+				<p><formula>T S(N ) = Σ d 3 xN σ a b σ b a √ |g| e −6 φ + (2Λ − 1 6 π 2 ) |g|e 6 ˆ φ − R(e 6 ˆ φ g) |g|e 2 ˆ φ + a Q(ρ) = Σ d 3 x ρ π φ − 4π + 4π |g| H(ξ) = Σ d 3 x π ab (L ξ g) ab + π φ L ξ φ , (6) wherê φ := φ − 1 6 lne 6φ , σ a b = π ac g cb − 1 3 πδ</formula></p>
+
+				<p>a b and where triangle brackets denote the mean w.r.t. |g| and where the term a vanishes when π = π |g|. Imposing the gauge fixing condition φ = 0 results in a phase space reduction (φ, π φ ) → (0, 4(π − π)) and reduces the system back to the ADM formulation of General Relativity. Imposing the gauge fixing condition π φ = 0 gauge fixes all T S(N ) except for one. The simplest way to see this is to observe that T S = 0 is equivalent to requiring that φ solves the</p>
+
+				<p><formula>York equation 8∆ g Ω = 1 6 π 2 − 2Λ Ω 5 + R Ω − σ a b σ b a |g| Ω −7 (7)</formula></p>
+
+				<p>for Ω = e φ but with the reducibility condition that the conformal factor is volume preserving Σ d 3 x |g| 1 − e 6φ = 0. The left-over constraint is thus equivalent to the constraint Σ d 3 x |g| 1 − e 6φo[g,π] = 0, (8) where φ o [g, p; x) denotes the positive solution to the Lichnerowicz-York equation, which is known to uniquely exist on physical phase space [6].</p>
+
+				<figure>
+					<figDesc>The phase space reduction thus yields the constraint system</figDesc>
+					<trash>H SD = Σ d 3 x |g|(1 − e 6φo[g,π] ) ˆ C(ρ) = Σ d 3 x ρ π − π |g| H(ξ) = Σ d 3 xπ ab (L ξ g) ab . (9)</trash>
+
+
+				</figure>
+
+				<p>This is not exactly Shape Dynamics because the total conformal transformations generated by C(ρ) preserve the total spatial volume. One can however obtain a true theory of Shape Dynamics by observing that the only nonlinear constraint H SD has the form of a reparametrization constraint p t −H(t) ≈ 0 of parametrized dynamics. Thus, after identifying the total volume V with the momentum conjugate to York time τ = 3 2 π and deparametrizing the theory one obtains the physical Hamiltonian H phys = Σ |g|e 6φ[g,π] . (10)</p>
+
+				<p>The π(x) is constrained to π |g|(x) and the conformal factor of the metric is pure gauge, except for the total volume. The physical phase space is thus coordinatized by the conformal metric ρ ab = |g| −1/3 g ab , trace free momenta σ a b and the pair V, π. The only physical phase space coordinate that is affected differently by volume preserving conformal transformations as opposed to unrestricted conformal transformations is V . But after reinterpreting 3 2 π, V as time and its momentum there is no difference between the physical phase space volume preserving and unrestricted conformal transformations. The Shape Dynamics Hamiltonian H phys comes with the constraints</p>
+
+				<figure>
+					<trash>C(ρ) = Σ d 3 x π, H(ξ) = Σ d 3 x π ab (L ξ g) ab . (11)</trash>
+
+
+				</figure>
+
+				<p>The dictionary between Shape Dynamics and General Relativity is established as follows: Given a solution ρ ab (τ ), σ a b (τ ) to the Shape Dynamics equations of motion, one finds that this is also a solution to the equations of motion of General Relativity in constant mean curvature (CMC) gauge.</p>
+
+			</div>
+			<div>
+				<head n="4">Doubly General Relativity</head>
+
+				<p>An important difficulty of Shape Dynamics is that the physical Hamiltonian is non-local. One can improve this situation by working with the BRST formalism. One obtains the BRST formalism by adjoining to each of the regular irreducible first class constraints χ α a ghost η α and canonically conjugate ghost momentum P α with opposite statistics. A result from cohomological perturbation theory then shows that the first class property of the constraints allows one to construct a nilpotent ghost number one BRST generator Ω = η α χ α + O(η 2 ), which provides a resolution of the observable algebra. This means that {Ω, .} is a differential whose cohomology at ghost number zero is precisely the classical observable algebra. The prerequisite for symmetry trading to work was that there were two first class surfaces that gauge fixed one another. One can thus construct two nilpotent BRST generators: A ghost number +1 generator Ω from the first set of first class constraints and a ghost number −1 generator Ψ from the second set of first class constraints. For generally covariant theories, i.e. theories with vanishing on-shell Hamiltonian, one finds that the BRST gauge-fixed Hamiltonian can be written as H BRST = {Ω, Ψ}. The Jacobi identity and nilpotency of the generators then imply that H BRST is annihilated by two BRST transformations: those generated by Ω and those generated by Ψ. One can thus not only relate the observables of the two theories with one another (Ω provides a resolution for the first and Ψ for the second), but one also sees that the BRST gauge-fixed actions of the two theories can be chosen to coincide.</p>
+
+				<p>It goes beyond the scope of this contribution to discuss a detailed application of this construction for the duality between General Relativity and Shape Dynamics (for details see [3]), so I will only illustrate what the two BRST charges can be chosen to be:</p>
+
+				<p><formula>Ω = Σ d 3 x S(η) + H a (η a ) + O(η 2 ) Ψ = Σ d 3 x P π √ |g| + H a (g ab P b ) √ |g| + O(P 2 ) , (12)</formula></p>
+
+				<p>where the higher orders in ghosts are chosen such that the two generators are nilpotent. It is evident that the construction will lead to a canonical action that is left invariant by ADM-and Shape Dynamics BRST transformations, hence the name Doubly General Relativity. I conclude this short description with the warning that the ghost-number zero term of this Hamiltonian is not the CMC gauge-fixing of ADM.</p>
+
+			</div>
+			<div>
+				<head n="5">Interpretation</head>
+
+				<p>Although local relativity of clocks and local relativity of rods seem to be incompatible as gauge symmetries, they are reconcilable. This reconciliation can be seen in the canonical formalism, where it appears that gravitational dynamics is equivalently described either by the ADM system or by the Shape Dynamics system. This means that both theories have the same solutions and make the same predictions for all observables. It can also be seen in the BRST formalism, where not only the predictions for observables coincide, but where it turns out that the gauge fixed gravity action has two BRST invariances, one corresponding to the onshell spacetime symmetries of the ADM description of gravity, the other to corresponding to the conformal symmetries of the Shape Dynamics description of gravity. I want to conclude by considering the ideas behind the construction of Shape Dynamics. The construction of Shape Dynamics requires two steps: symmetry trading and the identification of a parametrized dynamical system. There is a lot of literature on the second step (e.g. Kuchař&apos;s perennials), but the idea behind symmetry trading seems to have not been discussed in the literature although the idea itself is obvious. Gauge theories are formulated with redundant degrees of freedom and gauge invariance to have a local 2 (and thus comprehensible) field theory. This is a special instance of the more general fact that a comprehensible description of the real world often requires auxiliary concepts that are not truly part of reality. Which auxiliary concept is chosen is not unique; in general there is an infinite number of internally consistent descriptions. But although all descriptions are required to accurately describe the real world and to be internally consistent, it can happen that two descriptions are mutually exclusive because the auxiliary concepts are incompatible.</p>
+
+				<p>We see this in the duality between General Relativity and Shape Dynamics: General Relativity teaches that gravity is spacetime geometry and not a conformal theory, while Shape Dynamics teaches that gravity is a conformal theory without spacetime. This can be very disturbing and leads to the question: &quot; How can we discriminate between better and worse descriptions? &quot; Provided two descriptions are accurate and internally consistent, I can only think of one criterion: Which description has more explanatory power? However, this may be the wrong question. I think one should rather embrace the fact there are many possibly equally good consistent but mutually exclusive descriptions of the real world and one should use whichever is better adapted to answer a particular problem. For example, a question regarding spacetime has most likely a simple answer in a covariant description, while a question regarding the observable algebra has most likely a simple answer in the Shape Dynamics description.</p>
+
+			</div>
+
+			<note place="foot" n="2"> Note that the Shape Dynamics Hamiltonian, although nonlocal, can be described locally through the linking theory.</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+				<head>Acknowledgements</head>
+				<p>I want to thank J. Barbour for a careful proofreading of this contribution. Research at the Perimeter Institute is supported in part by the Government of Canada through NSERC and by the Province of Ontario through MEDT.</p>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">Shape Dynamics: An Introduction</title>
+		<author>
+			<persName>
+				<forename type="first">Julian</forename>
+				<surname>Barbour</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Gravity</forename>
+				<surname>Qft</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Conf. at Regenburg</title>
+		<meeting>. Conf. at Regenburg</meeting>
+		<imprint>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Einstein gravity as a 3D conformally invariant theory</title>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Gomes</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Gryb</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Koslowski</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Class.Quant.Grav</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="page">045005</biblScope>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<monogr>
+		<title level="m" type="main">[arXiv:1010.2481 [gr-qc]</title>
+		<author>
+			<persName>
+				<surname>Doi</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<monogr>
+		<title level="m" type="main">Symmetry Doubling: Doubly General Relativity</title>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Gomes</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Koslowski</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">The Link between General Relativity and Shape Dynamics</title>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Gomes</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Koslowski</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Class.Quant.Grav</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="page">075009</biblScope>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title level="m" type="main">Quantization of gauge systems</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Henneaux</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Teitelboim</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Existence and uniqueness of solutions of the Hamiltonian constraint of general relativity on compact manifolds</title>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Murchadha</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>York</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page" from="1551" to="1557" />
+			<date type="published" when="1973" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

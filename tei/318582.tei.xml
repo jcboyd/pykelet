@@ -1,0 +1,1292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main"></title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="1991-09-20">20 Sep 1991 September, 1991</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Batalin-Vilkovisky</forename>
+								<surname>Lagrangian</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Instituut voor Theoretische Fysica</orgName>
+								<orgName type="institution">Universiteit Leuven</orgName>
+								<address>
+									<postCode>B-3001</postCode>
+									<settlement>Leuven</settlement>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Quantisation</forename>
+							</persName>
+							<affiliation>
+								<orgName type="department">Instituut voor Theoretische Fysica</orgName>
+								<orgName type="institution">Universiteit Leuven</orgName>
+								<address>
+									<postCode>B-3001</postCode>
+									<settlement>Leuven</settlement>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Antoine</forename>
+								<surname>Van Proeyen</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Instituut voor Theoretische Fysica</orgName>
+								<orgName type="institution">Universiteit Leuven</orgName>
+								<address>
+									<postCode>B-3001</postCode>
+									<settlement>Leuven</settlement>
+								</address>
+							</affiliation>
+						</author>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="1991-09-20">20 Sep 1991 September, 1991</date>
+						</imprint>
+					</monogr>
+					<note>arXiv:hep-th/9109036v1 1 to be published in the proceedings of &quot; Strings and Symmetries 1991 &quot; , may 20-25, Stony Brook. 2 Onderzoeksleider, N.F.W.O. Belgium; Bitnet FGBDA19 at BLEKUL11</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>The Lagrangian Batalin-Vilkovisky (BV) formalism gives the rules for the quantisation of a general class of gauge theories which contain all the theories known up to now. It does, however, not only give a recipe to obtain a gauge fixed action, but also gives a nice understanding of the mechanism behind gauge fixing. It moreover brings together a lot of previous knowledge and recipes in one main concept : the canonical transformations. We explain the essentials of this formalism and give related results on the superparticle. Also anomalies (in general functions of fields and antifields) can be obtained in this formalism, and it gives the relation between anomalies in different gauges. A Pauli-Villars scheme can be used to obtain a reg-ularised definition of the expressions at the one loop level. The calculations become similar to those of Fujikawa with the extra freedom of using arbitrary variables. A discrepancy between anomalies in light-cone gauge of the Green-Schwarz superstring and in the semi-light-cone gauge is discussed.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>Gauge theories are responsible for nearly all important elementary particle theories in the last 25 years. Quantisation of gauge theories is then also one of the most important ingredients of our field of research. From the simple gauge theory of QED to the types of gauge theories which we use nowadays in string theories is a large development of quantisation of gauge theories. A lot of new aspects came in, as there are soft algebras, open algebras, reducible algebras, ... and various people found how to quantise them using different types of ghosts, antighosts, ghosts for ghosts, Nakanishi-Lautrup fields, Nielsen-Kallosh ghosts, ... . The Lagrangian formalism of Batalin and Vilkovisky [1] summarises all these developments in a few general concepts. But the BV formalism does even more. By rephrasing everything in terms of canonical transformations [2, 3], the whole picture of the quantisation procedure becomes more transparent. One can understand how the physical variables from the classical theory are represented by the cohomology of the BRST operator of the gauge fixed theory. One can understand the meaning of gauge fixing in a new way, namely as a canonical transformation from a classical &apos;extended&apos; action to a &apos;gauge fixed&apos; extended action. Further also the quantum aspects of gauge theories can be treated in this way, in particular the anomalies of the theory [3]. It becomes clear what happens when one goes from one gauge to another, these being related by a canonical transformation. I will use during the talk the particle and the bosonic string to explain the general ideas. These are of course very simple gauge theories. But it is clear that the formalism can handle much more complicated theories. That is what it was set up for. I will first treat the classical (zero loop) aspects of the BV formalism, and then discuss anomalies. For the first part, the idea of presenting the BV formalism in this way was developed during a collaboration with Eric Bergshoeff and Renata Kallosh on the superparticle [4]. I will give some conclusions of that article at the end of that part. The necessary technical tools I learned from the Ph. D. thesis of Jean Fisch [5], which summarises some articles of himself and Marc Henneaux [6]. The part about anomalies was first developed a few years ago in a collaboration with Walter Troost and Peter van Nieuwenhuizen [3], and partly also in collaborations including moreover Alvaro Diaz [7], Machiko Hatsuda [8], and Fiorenzo Bastianelli [9]. Recently we got new insights in a collaboration with Taichiro Kugo, Stany Schrans and Walter Troost [10]. The parts in this text about anomalies have been written down together with Walter Troost and Stany Schrans.</p>
+
+			</div>
+			<div>
+				<head n="2">Ingredients : antifields and antibrackets</head>
+
+				<p>As announced, I will use as an example the bosonic relativistic particle in D dimensions. The classical action is given by:</p>
+
+				<figure>
+					<trash>S cl (φ i ) = dt P µ ˙ X µ − 1 2 gP µ P µ (1)</trash>
+
+
+				</figure>
+
+				<p>The classical fields φ i are the coordinates X µ (µ = 1, . . . , D), their conjugate momenta P µ and the 1-dimensional metric g. The dot indicates a time derivative. The above action is invariant under general coordinate transformations (with parameter ξ): δX µ = ξP µ , δg = ˙ ξ.</p>
+
+				<p>The physical variables are by definition the variables that remain on the &apos;stationary surface&apos; (that is the surface in the field space defined by the field equations). However in gauge theories two solutions are said to be equivalent when they are connected by gauge transformations. phys. obs. = soln. of field eqs. gauge transf. . (2)</p>
+
+				<p>The problem for making quantum calculations in gauge theories is that the propagator is not defined, or in other words, the matrix 1 S cl ij ≡ → ∂i ← ∂j S cl is not invertible on the stationary surface. Its rank is &lt; n where n is the number of fields φ i . The path integral is then also not well defined. The aim will be to replace this classical action by a new action which 1. is gauged fixed : propagators can be defined. 2. has the same physical content.</p>
+
+				<p>For the latter requirement we will define the physical variables of the gauge-fixed action as solutions of the field equations which are in the cohomology of some BRST operator Ω. The latter is a fermionic operator which squares to zero modulo field equations (denoted by ≈) : Ω 2 ≈ 0. By the cohomology of this operator we mean the states |Ψ &gt;</p>
+
+				<figure>
+					<trash>which satisfy Ω|Ψ &gt;≈ 0 (3) where 2 states are equivalent which differ on shell by a BRST exact state : |Ψ &gt;∼ |Ψ ′ &gt;≈ |Ψ &gt; +Ω|χ &gt; (4)</trash>
+
+
+				</figure>
+
+				<p>The essential ingredients in the BV procedure are antifields and antibrackets. For all fields Φ A (including the classical fields φ i introduced above, but this set of fields will be enlarged by e.g. ghosts), one introduces an antifield Φ</p>
+
+				<figure>
+					<trash>* A . These have opposite 1 The notations → ∂ A and ← ∂ A indicate left and right derivatives with respect to fields Φ A . We have ← ∂ A X = (−) A(X+1) → ∂ A X, where (−) A is + if Φ A is a bosonic field, and is − if Φ A is a fermionic field. When we write no arrow it does not matter whether it is a right or left derivative (or it is a printing error).</trash>
+
+
+				</figure>
+
+				<p>The index A is a shorthand for all the indices which the fields can have and for the space-time point. Sums over A will thus also involve integrations over space-time. statistics as their corresponding fields. In our example the fields φ i are all bosonic, so the φ * i are fermionic. Further a ghost number is defined such that for the classical fields gh(φ i ) = 0, the (extended) action has ghost number zero, and for all fields gh(Φ * A ) = −gh(Φ A ) − 1. The antibrackets are defined between two functions F and G of the fields and antifields by</p>
+
+				<figure>
+					<trash>(F, G) = ← ∂A F → ∂ A G− ← ∂ A F → ∂A G, (5) where ∂ A ≡ ∂ ∂φ A and ∂ A ≡ ∂ ∂φ * A . They satisfy graded commutation, distribution and Jacobi relations. For these brackets fields and antifields behave as coordinates and momenta (Φ A , Φ B ) = 0 ; (Φ * A , Φ * B ) = 0; (Φ A , Φ * B ) = δ A B . (6)</trash>
+
+
+				</figure>
+
+				<p>Sometimes it is useful to write all fields and antifields in a general notation {z</p>
+
+				<figure>
+					<trash>α } = {Φ A , Φ * A } and define η αβ ≡ (z α , z β ) ; (F, G) = ← ∂a F η ab → ∂ b G. (7) 3. Construction of the quantum action 3.1.</trash>
+
+					<figDesc>Construction of the extended action We first extend the classical action to an extended action S(Φ, Φ * ). It should satisfy • S cl (φ) = S(Φ, 0) : the classical action is recovered when all antifields are set to zero.</figDesc>
+
+				</figure>
+
+				<p>• The extended action should satisfy the master equation, which at the classical level reads (S, S) = 0. • S is a proper solution, which means that S αβ ≡ → ∂ α ← ∂ β S is a matrix of rank N on the stationary surface where N is the number of fields Φ A .</p>
+
+				<p>The last condition gives the possibility of a gauge fixed action. In fact, the gauge fixed action will just consist of the same extended action, but where we choose other coordinates as fields, such that the N non-trivial directions of S α β (z) ≡ η αγ S γβ (z) are fields rather than antifields.</p>
+
+				<p>The second requirement implies that on the stationary surface S</p>
+
+				<figure>
+					<trash>α β (z) satisfies S α β (z)S β γ (z) ≈ 0 (8)</trash>
+
+
+				</figure>
+
+				<p>where ≈ means modulo field equations of the extended action. A nilpotent matrix of size 2N × 2N has rank ≤ N, and only rank N if all its zero modes are contained in the matrix itself. This implies that we have for arbitrary smooth local functions v α (z) the implication</p>
+
+				<figure>
+					<trash>S α β (z)v β (z) ≈ 0 ⇒ v β (z) ≈ S β γ w γ (z) (9)</trash>
+
+
+				</figure>
+
+				<p>for some local smooth functions w γ (z).</p>
+
+				<p>In our example we have thus to extend the action by terms depending on antifields, because the gauge invariance implies that there is a zero mode. We have to extend the action such that this zero mode appears as S i c where c is a new field to be introduced, which is the ghost of the symmetry. So the extended action is</p>
+
+				<figure>
+					<trash>S(Φ, Φ * ) = dt P µ ˙ X µ − 1 2 gP µ P µ + X * µ cP µ + g * ˙ c. (10)</trash>
+
+
+				</figure>
+
+				<p>In this case we are already finished. It is clear that the terms linear in the antifields are the BRST transformations of the corresponding fields. This extended action satisfies the master equation, and it is proper. The master equation includes in this case just the invariance of the action under the symmetry. But in more complicated theories the same principles include also the closure of the algebra and all the relations found in the previous years about open algebras, and other similar complications.</p>
+
+				<figure>
+					<figDesc>The properness implies that all zero modes, ... have to be included. The master equation can always be solved perturbatively in antifield number (that is the same as the ghost number for the antifields and zero for fields.) When we have obtained the extended action, the physical variables are represented by an antibracket (AB) cohomology at ghost number zero. phys. variables ⇒ local AB coho at ghost nr. 0. (11) This means the following. The operation which consists of taking an antibracket with S is nilpotent. Indeed from the Jacobi identity (S, (S, F )) =</figDesc>
+					<trash>1 2 ((S, S), F ) = 0.</trash>
+
+
+				</figure>
+
+				<p>The antibracket cohomology are the local functions F which have SF = (F, S) = 0 and where two solutions are equivalent which differ by (S, G), where G is any local function. Cohomology is now defined with = instead of ≈ in eqs.(3-4). This will allow to do field redefinitions which change the field equations. For general gauge theories the fact that the physical variables are equivalent to this antibracket cohomology is proven using the language of homological perturbation theory in [6, 5].</p>
+
+			</div>
+			<div>
+				<head n="3.2">Canonical transformations</head>
+
+				<p>In the example it is easy to define the fields such that the action is gauge fixed.</p>
+
+				<p>We have at this point the bosons X µ , P µ , g and c * and the fermions X This is a canonical transformation which means that the transformation preserves the brackets : calculating brackets in the old or new variables is the same, or in other words the new variables also satisfy Eq. 6. Therefore they also conserve the master equation (S, S) = 0.</p>
+
+				<figure>
+					<trash>Canonical transformations from {ΦΦ * } to {Φ ′ Φ ′ * } for which the matrix ← ∂Φ B ∂Φ ′A Φ ′ * is invertible, can be obtained from a fermionic generating function F (Φ, Φ ′ * ). This useful formulation [2]</trash>
+
+
+				</figure>
+
+				<p>is explained in detail in the appendix of [3]</p>
+
+				<figure>
+					<trash>. The transformations are defined by Φ ′A = ∂F (Φ, Φ ′ * ) ∂Φ ′ * A Φ * A = ∂F (Φ, Φ ′ * ) ∂Φ A . (13)</trash>
+
+					<figDesc>Canonical transformations are an important part of the formalism. In this one concept we find several steps which people do in quantisation procedures. • Point transformations are the easiest ones. This are just redefinitions between the fields Φ ′A = f A (Φ). They are obtained by F = Φ ′ * A f A (Φ) which thus determines the corresponding transformations of the antifields. The latter replace the calculations of the variations of the new variables. • Adding the BRST transformation of a function sΨ(Φ) to the action is obtained by a canonical transformation with F = Φ</figDesc>
+					<trash>′ * A Φ A + Ψ(Φ). The latter gives Φ ′A = Φ A ; Φ * A = Φ ′ * A + ∂ A Ψ(Φ). (14) • Redefine the symmetries by adding equation of motions (&apos;trivial symmetries&apos;). This is obtained by F = Φ ′ * A Φ A + Φ ′ * A Φ ′ * B h AB (Φ) (15)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>(the first term is the identity transformation). • Elimination of auxiliary fields can be done by canonical transformations (see appendix B of [4]</figDesc>
+
+				</figure>
+
+				<p>). This procedure will then also give the &apos;compensating trans- formations&apos;.</p>
+
+				<p>The canonical transformations keep by definition the master equation invariant, and because they are non-singular, they also keep the properness requirement on the extended action. Of course in the new variables, we do not see the classical limit anymore. But the most important property is that the antibracket cohomology is not changed. This should be obvious from the definition.</p>
+
+				<figure>
+					<trash>3.3. The gauge fixed theory After our transformation Eq. 12 we end up with the following extended action: S = dt P µ ˙ X µ − 1 2 P 2 + b ˙ c + X * µ cP µ + 1 2 b * P 2 . (16)</trash>
+
+
+				</figure>
+
+				<p>Now the action obtained by putting all antifields to zero is &apos;gauge fixed&apos;. For a gauge fixed action one can prove [5, 6] local AB coho ⇒ local BRST coho. (17)</p>
+
+				<figure>
+					<head>The antibracket cohomology is now represented by the BRST cohomology for some operator ΩΦ</head>
+
+					<trash>A = → ∂ S ∂Φ * A Φ * =0 (18) The combination of Eq. 11 and Eq. 17</trash>
+
+
+				</figure>
+
+				<p>imply that the physical variables are represented by the local BRST cohomology at ghost number zero. In contradistinction to the antibracket cohomology we have to use the field equations (of this gauge-fixed action) in the analysis of the BRST cohomology.</p>
+
+			</div>
+			<div>
+				<head n="3.4">Trivial variables</head>
+
+				<p>We have done here the gauge fixing by just one canonical transformation : Eq. 12. This is usually possible for actions which are linear in derivatives. But in general it is not always possible to find suitable covariant variables. Therefore we add new trivial variables. Trivial variables are a set of fields with corresponding antifields, for which terms are added or subtracted from the extended action. They are separately solutions of the master equation and carry no antibracket cohomology. The simplest examples are adding a bosonic λ and fermionic b and corresponding antifields by an extra term in S of the form b * λ. One checks that this trivially satisfies the master equation, that one has changed the number of fields + antifields by 4 and increased the rank of S αβ by 2, and that there is no change in the antibracket cohomology. Other examples are just adding a bosonic λ with S = λ 2 or a fermionic b with S = (b * ) 2 .</p>
+
+				<p>The addition of such trivial b, λ sectors is part of the scheme which Batalin and Vilkovisky suggested [1] to obtain the gauge fixed action. Then they propose to do a canonical transformation of the type Eq. 14. If a &apos;gauge fermion&apos; can be found which satisfies certain conditions then the action is gauge fixed. However, for a given gauge theory it is not clear that such a gauge fermion exist. In other words, choosing the right variables for the gauge fixed theory has an arbitrariness and there is no guarantee that such a covariant basis exist. 3.5. The superparticle As an example we mention that such a procedure has not yet been found for the Brink-Schwarz (BS) superparticle action (for D = 10) [11]</p>
+
+				<figure>
+					<trash>S cl = P µ ˙ X µ − θ P ˙ θ − 1 2 gP µ P µ . (19)</trash>
+
+
+				</figure>
+
+				<p>The classical variables are the coordinates X µ , their conjugate momenta P µ , the einbein g and the fermionic variable θ which is a ten-dimensional Majorana-Weyl spinor. The action is infinitely reducible, which means that one needs an infinite number of ghosts, called θ p0 with p = 1, ..., ∞ to be added to the classical variables in order to obtain the minimal solution for the extended action [12, 13]. Then one adds fields as suggested by Batalin and Vilkovisky. That implies two infinite pyramids of fields. Steps which people took to get a &apos;gauge fixed action&apos; are now recognised as being no canonical transformations or adding variables which are not &apos;trivial&apos; [4].</p>
+
+				<figure>
+					<figDesc>Therefore the BRST operator which was found for the final gauge fixed action had extra solutions for its cohomology which do not correspond to physical variables of the classical action. The spinor variables in the gauge fixed action are given in table 1 with their ghost number. All the fields with 2 non-zero indices have been introduced</figDesc>
+					<head>Table 1:</head>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Spinor fields in the superparticle gauge-fixed action.</figDesc>
+					<trash>−3 −2 −1 0 1 2 3 θ ¯ θ 11 θ 10 ¯ θ 21 θ 11 θ 20 ¯ θ 31 ¯ θ 22 θ 21 θ 30</trash>
+
+
+				</figure>
+
+			<note>. . . . . . . . . . . . . . . . . . .</note>
+
+				<figure>
+					<trash>. . ¯ λ 00 ¯ λ 10 λ 11 ¯ λ 20 ¯ λ 11 λ 21 ¯ λ 30 ¯ λ 21 λ 22 λ 31</trash>
+
+
+				</figure>
+
+			<note>. . . . . . . . . . . . . . . . . . . . .</note>
+
+				<p>as trivial sectors. Nevertheless, there were counting arguments in favor of this set of fields based on considerations about orthosymplectic symmetry [14]. And indeed for this gauge fixed action another BRST operator has been found [15], which has the &apos;right cohomology &apos;, that is the fields occurring in the d = 10 super-Maxwell theory. However, this BRST operator does not follow from a quantisation procedure on the BS action. The gauge fixed extended action at this point is of the form</p>
+
+				<figure>
+					<trash>S gf = 1 2 Φ A C AB ˙ Φ B − 1 2 P 2 + Φ * A C AB → ∂B Ω (20)</trash>
+
+
+				</figure>
+
+				<p>where C AB is a constant non-singular matrix, with inverse C AB and Ω is the BRST current. We can then perform again a canonical transformation to a classical action. It is in fact the generalisation of the inverse of Eq. 12. All the fields of negative ghost number in table 1 are replaced by their antifields. E.g. the antifields of the fields of ghost number −1 become in this way fields of ghost number 0, and will be called gauge fields (as there was g in our example of the particle). So after this canonical transformation which is the inverse of a gauge fixing, all the fields of ghost number 0 are now classical fields. The classical action is then [16]</p>
+
+				<figure>
+					<trash>S cl = P ˙ X − 1 2 gP 2 + ∞ p=0 λ p ˙ θ p − ∞ p=0 λ p P ζ p − ∞ p=0 {λ p+1 − θ p+1 P + λ p + θ p P }η p (21) where λ p ≡ ¯ λ p,p , θ p = θ p,p , ζ p = − ¯ λ * p+1,p and η p = ¯ θ * p+1,p+1</trash>
+
+					<figDesc>. The full extended action follows from straightforward application of the quantisation principles. All the remaining fields in the table (or their antifields for the negative ghost numbers) now occur as minimal ghosts or ghosts for ghosts. There are a double infinite set of fields, of symmetries, of zero modes of this symmetries, ..., which is the reason why we have called this formulation of the superparticle the DISP (Doubly Infinite Symmetric superParticle). It has the same physical variables as the BS action, but allows a straightforward quantisation because in the Hamiltonian language there are only first class constraints. Other similar approaches, where the BS action has also been replaced by another classical action, allowing a consistent quantisation, have been given in [17].</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="4">Anomalies at the formal level</head>
+
+				<p>In the full quantum theory, the master equation gets replaced by</p>
+
+				<figure>
+					<trash>(W, W ) = 2i¯ h∆W, (22) where ∆ ≡ (−) A → ∂A → ∂ A = 1 2 (−) α → ∂α η αβ → ∂β . (23)</trash>
+
+					<figDesc>W is the quantum action which can be expanded in a loop expansion as</figDesc>
+					<trash>W = S + ¯ hM 1 + ¯ h 2 M 2 + . . . . (24)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>and we require that this action is local (see e.g. below for M 1 ). The lowest order of Eq. 22 is the classical master equation. At one-loop we have the equation (M 1 , S) = i∆S. (25)</figDesc>
+
+				</figure>
+
+				<p>The sum over A in the definition of ∆ involves an integral over the space-time points, and thus for a local action ∆S is proportional to δ(0). We will need therefore a regularisation scheme to make sense of these expressions. That is what we should expect in all quantum field theories. In the following section we will talk about such a regularisation scheme, but first we will give here some general results valid for a regularised definition of ∆ such that its fundamental properties related to the antibracket algebra are preserved. We will restrict ourselves here to one-loop.</p>
+
+				<p>While there is a proof that one can always find a solution to the classical master equation (S, S) = 0, there is no guarantee that there exist a local solution for M 1 in Eq. 25. Local means here that the function M 1 is of the form M 1 = dx m (Φ(x), ∂Φ(x), . . .) (26) where there is a number n such that there are no terms with more than n derivatives on the fields. If there is such a solution, then there is no problem with preserving the gauge symmetries in the quantisation at one loop. If there is no such solution, then we say that there is an anomaly. We define</p>
+
+				<figure>
+					<trash>A(Φ, Φ * ) = ∆S + i(S, M 1 ) (27)</trash>
+
+
+				</figure>
+
+				<p>using any &apos;local counterterm&apos; M 1 . This &apos;anomaly&apos; has ghost number 1. In the usual cases it can be written as c a a a where c a are the ghosts. Then &lt; a a &gt; is the anomaly in the corresponding symmetry in the sense that it gives the change of the path integral under a change of the gauge fixing for that symmetry. From this it is clear that by choosing another local counterterm the anomalies can be moved to different symmetries. From the general properties of brackets and the ∆ operation it follows that, at least formally,</p>
+
+				<figure>
+					<trash>(A, S) = 0. (28)</trash>
+
+					<figDesc>This is the consistency condition for the anomalies. We are thus investigating &apos;consistent anomalies&apos;. On the other hand A ∼ A ′ = A + i(M, S) (29)</figDesc>
+
+				</figure>
+
+				<p>so that possible anomalies are solutions of the antibracket cohomology at ghost number 1. Remark that to classify the physical states as the antibracket cohomology at ghost number zero, we were talking about local functions, while here we consider integrals over space-time of local functions in the sense of Eq. 26. As an example we can look at these equations for the bosonic string. We [10] investigated what constraints are implied by the consistency equations if we suppose that a candidate anomaly is of the form</p>
+
+				<p><formula>∆S = d 2 x d g αβ , g * αβ , c α , c * α , c, c * (30)</formula></p>
+
+				<p>where d is a functional of the fields indicated and a finite number of derivatives of these fields. Here c α is the ghost for general coordinate transformations and c is the ghost for local dilatations. By canonical transformations one can first &apos;trivialise&apos; c and the determinant of the metric. This implies that up to counterterms all solutions of the consistency equations can be written in terms of c α and two remaining components of the metric, for which we take</p>
+
+				<figure>
+					<trash>h ++ = g ++ g +− + √ g (31)</trash>
+
+					<figDesc>and its + ↔ − interchanged, and their antifields. The only solutions which can not be absorbed in a counterterm and which have the correct dimensionality can be written as A L ≡</figDesc>
+
+				</figure>
+
+				<p><formula>d 2 x c − + h ++ c + ∂ 3 − h ++ (32)</formula></p>
+
+				<p>and its partner A R . If the right-left symmetry is not broken, then we can only find an anomaly proportional to A L + A R . Going back to the original variables g αβ , c α and c, and by adding local counterterms M, this can be written as</p>
+
+				<figure>
+					<trash>A L + A R = − 1 2 d 2 x c √ gR + (M, S). (33)</trash>
+
+
+				</figure>
+
+				<p>This is the usual expression of the dilatation anomaly. In the conformal gauge g αβ = η αβ , this expression vanishes, but this does not mean that there is no anomaly. This can be avoided by introducing a gauge choice g αβ = ρ αβ where ρ is some background metric. The anomaly is then a functional of this ρ. In the present scheme, this procedure does not make sense : the anomaly is a functional of the fields, not of background fields (and can thus be shifted by local counterterms, which are also field-dependent). The conformal gauge is obtained in a way analogous to Eq. 12 for the particle : g * αβ = −b αβ ; g αβ = η αβ + b * αβ . (34)</p>
+
+				<p>The field g occurring in Eq. 33 is then a function of the antifields. This reinterpretation allows one to determine the form of the anomaly in any gauge, using canonical transformations. So the next question is : how do these affect the expression for the anomaly ? Canonical transformations do not leave the ∆ operation invariant. But we have</p>
+
+				<figure>
+					<trash>∆S − ∆ ′ S = 1 2 (S, ln J) ; J = sdet ∂(ΦΦ * ) ∂(Φ ′ Φ ′ * ) . (35)</trash>
+
+
+				</figure>
+
+				<p>If ln J is a local expression then the anomaly does not change in the cohomological sense. In the above case J = 1, so there is no change at all by going from the original to the gauge-fixed basis. But changing to different variables with a non-local canonical transformation, this formula gives formally the change in the anomaly.</p>
+
+			</div>
+			<div>
+				<head n="5">Regularisation 5.1. Introducing and eliminating Pauli-Villars fields</head>
+
+				<p>We will use a Pauli-Villars (PV) regularisation. It will allow us to make contact with the work of Fujikawa [18] on obtaining anomalies from the non-invariance of the measure. The consistency of the PV scheme will then imply that the obtained expressions satisfy the consistency equations, a point which is very unclear in Fujikawa&apos;s method. To start, we introduce PV partners for all fields and antifields. So we have</p>
+
+				<figure>
+					<trash>z α = { Φ A , Φ * A } ; w α = { χ A , χ * A } (36)</trash>
+
+
+				</figure>
+
+				<p>where the latter are the PV fields. For the calculations at one loop it is sufficient to give the extra recipe that loops of PV fields produce an extra minus sign which reflects itself in a modified definition of ∆ :</p>
+
+				<figure>
+					<trash>∆ ≡ (−) A → ∂A → ∂ A − (−) A → ∂ ∂χ A → ∂ ∂χ * A . (37)</trash>
+
+
+				</figure>
+
+				<p>To obtain this sign one can modify the definition of the path integral over these fields [7], or else introduce extra sets of fermions and bosons. The first method is certainly the simplest when we are only looking to one loop. The PV fields then have the same statistics as the ordinary fields, but one can say that the integration over these fields in the path integral is defined differently, such as to produce a minus sign. This is consistent for fields which occur only in loops, i.e. quadratically in the action. The second method produces the minus in the loop by having opposite statistics for PV fields. E.g. for regularising a real boson field, we have to introduce a fermion. But as the kinetic operator of a boson is a symmetric operator, this would vanish for a fermion. Therefore one has to introduce a complex fermion (or 2 reals). Then one has over-compensated the loop of the original boson in the regularisation procedure. One thus introduces an extra PV boson. So in summary, one has introduced e.g. for a boson field φ, 3 PV fields : the fermions χ 1 and χ 2 and the boson χ 0 . Each of them have also their antifields. But again, this complication can be forgotten when considering 1 loop anomalies : one may just treat the PV fields as having the same statistics, and insert the sign by hand.</p>
+
+				<p>The PV fields are introduced as trivial systems in the limit M → ∞. We add to the action a term M 2 χ A T AB χ B where T is an invertible matrix. This implies that the χ * fields are not invariant under S while the χ fields are in the image of this operator.</p>
+
+				<p>In the language of Feynman graphs, these fields are thus very massive. Also, these fields should provide a regularisation of the original action. Therefore, neglecting the mass terms, they should produce the same vertices as the original action. The regularisation now consists in postponing to take the limit M → ∞ to the end of the calculation. We will define</p>
+
+				<figure>
+					<trash>S P V = S P V 0 + S P V M = 1 2 w α S αβ w β − 1 2 M 2 χ A T AB χ B (38)</trash>
+
+
+				</figure>
+
+				<p>Let us first look at the massless part. It is the w 2 part of the action</p>
+
+				<figure>
+					<trash>S reg 0 = 1 2 (S(z + w) + S(z − w)) = S(z) + S P V 0 + O(w 4 ) (39)</trash>
+
+					<figDesc>which automatically satisfies then the classical master equation. When looking only at one loop (the only case which we consider here), one can forget all terms of order w 4 . In the formulation with 3 PV fields for each ordinary field, of which χ</figDesc>
+					<trash>A 1 and χ A 2 have opposite statistics from φ A and χ 0 has the same statistics, we would write S P V 0 − → ∂1 ← ∂2 S + 1 2 → ∂0 ← ∂0 S. (40) where we defined the operators ∂ 0 = χ A 0 ∂ A + χ * 0A ∂ A ; ∂ 1 = χ A 1 ∂ A + χ * 2A ∂ A ; ∂ 2 = χ A 2 ∂ A + χ * 1A ∂ A . (41) The notation ← ∂ 2</trash>
+
+
+				</figure>
+
+				<p>implies also that the corresponding w fields appear at the right of S. This satisfies the master equation, and also ∆S P V = 0, where we do not have to modify ∆ this time. We can introduce this action from the start, even before gauge fixing. The reason is that introducing a PV regulator in this way &apos;commutes&apos; with a canonical transformation . By this we mean the following. Suppose that one has introduced the PV fields using the above prescription and then performs a canonical transformation. Any canonical transformation on the z fields can be generalised to a canonical transformation on the z and w fields such that after this canonical transformation the same result is obtained as when introducing the PV sector only after the canonical transformation. So we have the following scheme</p>
+
+				<figure>
+					<trash>S(z) can. transf. −→ S(˜ z) ↓ P V ↓ P V S(z) + 1 2 w α S αβ w β can. transf. −→ S(z ′ ) + 1 2 w ′α S αβ w ′β (42)</trash>
+
+
+				</figure>
+
+				<p>So this part is fixed immediately when giving the theory. On the other hand, for the mass term there is a lot of arbitrariness. First of all we have separated here fields from antifields. This should be done suitably for gauge fixing, i.e. S AB should have rank N. But once this has been specified T is an arbitrary non-singular matrix, which may depend on fields or antifields. We will claim that the results for the anomalies for different choices of T (&apos;different regularisations&apos;) differ only by the variations of local counterterms. In other words, the anomalies do not change in the cohomological sense.</p>
+
+				<p>Let us now look again at the full master equation for the regularised action</p>
+
+				<figure>
+					<trash>S reg = S reg 0 + S P V M = S(z) + S P V + O(w 4 ) (43)</trash>
+
+
+				</figure>
+
+				<p>First of all, due to the definition Eq. 37 one has ∆S = O(w 2 ). But the anomalies now come from the violation of the &apos;classical master equation&apos; due to the mass terms.</p>
+
+				<p>This will be proportional to w 2 . Removing the PV fields by integrating them out will replace w 2 by a term of order ¯ h.</p>
+
+				<p>The violation of the master equation (to order w 2 ) is given by</p>
+
+				<figure>
+					<trash>− i¯ hA = 1 2 (S reg , S reg ) − i¯ h∆S reg = (S P V M , S reg 0 ) + O(w 4 ) + ¯ hO(w 2 ) = −M 2 χ A T AB S B α w α − 1 2 M 2 χ A (T AB , S(z)) χ B (−) B +O(w 4 ) + ¯ hO(w 2 ), (44) where S B α</trash>
+
+
+				</figure>
+
+				<p>is the left derivative of S w.r.t. Φ * B and right w.r.t. z α . Now we remove the PV fields. In a path integral this would mean that the χχ terms are replaced by their propagator (which gives a ¯ h). The χ * terms are dropped in this step. We follow this idea and defining</p>
+
+				<figure>
+					<trash>O A B ≡ T −1 AC S CB ; K A B ≡ S A B , (45) we obtain A = K + 1 2 T −1 (T, S)(−) B A B M 2 M 2 − O B A (−) A . (46)</trash>
+
+
+				</figure>
+
+				<p>Note that for gauge theories with a closed algebra K is the matrix of the derivatives of the transformation of fields w.r.t. the fields. In the limit M → ∞ we take the trace of this expression (for a field independent matrix T ). Now we will regularise this using the regulator O.</p>
+
+				<p>The PV fields were a way to obtain a regularised definition of ∆S. Without the PV fields (S, S) = 0 and ∆S = 0, and we define ∆S as the expression in Eq. 46. Note that if we first take the limit M → ∞ (and for T a constant matrix), it corresponds indeed to the unregularised definition of ∆S.</p>
+
+			</div>
+			<div>
+				<head n="5.2">The integrals and the Fujikawa regularisation</head>
+
+				<p>We then replace the propagator by an exponential function. This will allow us to make contact with the Fujikawa calculation of anomalies [18]</p>
+
+				<figure>
+					<trash>. 1 1 − O/M 2 = ∞ 0 dλ exp λO/M 2 exp(−λ). (47) For a local action, we split A = (a, x), B = (b, y) and (K + 1 2 T −1 (T, S)(−) B ) A B = J a b (x)δ(x − y) = J †a b (y)δ(x − y) (48)</trash>
+
+					<figDesc>where J is some differential operator. Also for the propagator we have</figDesc>
+					<trash>O A B = R a b (x)δ(x − y). (49) The anomalies are at this point A = ∞ 0 dλ e −λ dx dy str J † (y)δ(x − y) · exp λR(y) M 2 δ(x − y) = ∞ 0 dλ e −λ dx dy str δ(x − y)J(x) exp λR(x) M 2 δ(x − y) (50)</trash>
+
+
+				</figure>
+
+				<p>where J and R are now considered as matrices in the a, b, and str denotes a supertrace over these indices. The · indicates that derivatives in the operators do not act further.</p>
+
+				<p>Several lemma&apos;s have been obtained to calculate expressions of the form Eq. 50. I believe that the one in [9] contains most of the others. However, the formulas in [19] do in fact contain all this, and could be used to generalise them even further. One obtains an expansion in M 2 . The divergent terms when M 2 → ∞ can usually be eliminated by a local counterterm M 1 , but the PV procedure introduces several copies of PV fields with masses adapted such that these terms disappear anyway. So we can forget about them. One discards also the terms which vanish in this limit, and the result is thus independent of M 2 . From the last expression, one can see that the M 2 independent terms have only λ occurring in the first factor, and the integral over λ gives thus 1. As already mentioned, the above regularisation scheme is very similar to Fujikawa regularisation [18] and to the heat kernel approach [20]. These approaches have to use special variables in order to avoid anomalies in &apos;preferred symmetries&apos;. The Jacobian which is regularised in the Fujikawa approach corresponds to the first term in Eq. 48. By including the second term in that equation we can avoid this restriction to the &apos;Fujikawa variables&apos;. 5.3. The Green-Schwarz superstring and the light-cone gauge A contradiction with the above statements on gauge-independence of anomalies seems to exist in the Green-Schwarz superstring. The classical action can be gaugefixed in the light-cone gauge [21] or in the so-called semi-light-cone gauge [22], both of which destroy the manifest rigid space-time super-Poincaré invariance. In the former there are no space-time anomalies. In the latter the local fermionic κ-symmetry is fixed by the unitary gauge Γ + θ = 0, while the other local worldsheet symmetries are covariantly quantized. It was claimed by Kraemmer and Rebhan that anomalies in the semi-light cone approach do not cancel [23]. On the other hand, M. Chu [24] claimed that in a Hamiltonian formulation, the definition of the Lorentz generators can be changed in order ¯ h such that anomalies disappear. Using our methods (although we did not yet completely formulate it in the way described above) we redid the calculation [9] and obtained A = −12</p>
+
+			</div>
+			<div>
+				<head n="1">24π</head>
+
+				<p>A L . Adding local counterterms this anomaly could still be moved to an anomaly in global Lorentz symmetries, but it could not be canceled.</p>
+
+				<p>There seems therefore a contradiction between gauge independence and the different results in light-cone and semi-light-cone gauge. The difference between these two gauges is in the bosonic sector. The arguments why they should be the same should go by using canonical transformation as in the general theory written above. One could even ask the question just for the bosonic string. The calculation of anomalies in the conformal gauge, which was reviewed above gives as a final result that anomalies cancel for D = 26. On the other hand in the light cone gauge this requirement comes from the analysis of the quantum rigid space-time Lorentz algebra. It only closes when D = 26. Are these two calculations connected ? Is there a canonical transformation between both ? We do not have a final answer to this question, but it seems that one can not avoid non-local canonical transformations to eliminate the ghosts in going to the usual light-cone gauge fixed action [10]. Therefore, we can see no contradiction with the statements above. If one does not perform local canonical transformations, it is not clear that anomalies should be conserved when going to the light-cone gauge.</p>
+
+			</div>
+			<div>
+				<head n="6">Conclusions</head>
+
+				<p>The Batalin-Vilkovisky formalism is a convenient framework for the quantisation of gauge theories. One first builds an extended action, function of fields and antifields which satisfies 3 requirements : a classical limit, the master equation and a properness condition. The latter implies that there are enough non-trivial directions in the Hessian of this extended action, such that when choosing (by a canonical transformation ) the &apos;fields&apos; as those directions in the extended space and antifields as the other directions, one obtains a gauge fixed action. Using antibracket cohomology one can prove that this action describes the same physical states.</p>
+
+				<figure>
+					<figDesc>For the quantum theory one needs another master equation. A theory has no anomalies if a local action can be found which satisfies this equation. Possible consistent anomalies are solutions of antibracket cohomology equations at ghost number 1. For local actions, the definition of the operation ∆ which occurs in the master equation needs regularisation. By introducing Pauli-Villars fields one can motivate the regularised definition</figDesc>
+					<trash>∆S = lim M →∞ dx dy str δ(x − y)J(x) exp λR(x) M 2 δ(x − y) (51)</trash>
+
+
+				</figure>
+
+				<p>where infinite terms are removed. J and R are given by Eq.45,48, 49 using an arbitrary matrix T which &apos;determines the regularisation&apos;. The anomaly is then a function of fields and antifields, and does not change under local canonical transformations (in the cohomological sense), in particular they are gauge independent. They are also independent of the regularisation, in particular of the choice of T . For the superparticle and for the superstring we found difficulties with the Brink- Schwarz and the Green-Schwarz actions. For the BS superparticle, which is a good formulation in the light-cone gauge, we could not find canonical transformations or the right trivial variables to obtain a gauge fixed action. We found however another action, the DISP superparticle, which describes at the classical level the same physical states, and allows a straightforward quantisation [4]. Other modified suitable actions have been found by other groups [17]. For the superstring also the Green-Schwarz action, which is a good formulation in the light-cone gauge, has anomalies in a semicovariant gauge (covariant in the bosonic sector). This is not in contradiction with the general results, as going from the covariant to the light-cone gauge involves nonlocal canonical transformations. So far also no gauge-fixing procedure has been found for the Green-Schwarz action. Probably we also need in this case a modified action similar to those for the superparticle.</p>
+
+			</div>
+
+			<note place="foot">* µ , P * µ , g * and c. It is clear from Eq. 10 that we have a non-trivial kinetic term between g * and c. Thus we will define g * as a field, which we will call b : g * = b ; g = 1 − b * . (12)</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">References</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">A</forename>
+				<surname>Batalin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">A</forename>
+				<surname>Vilkovisky</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">508</biblScope>
+			<biblScope unit="page" from="28" to="2567" />
+			<date type="published" when="1983" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">A</forename>
+				<surname>Batalin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">A</forename>
+				<surname>Vilkovisky</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">106</biblScope>
+			<biblScope unit="page">234</biblScope>
+			<date type="published" when="1984" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Troost</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Van Nieuwenhuizen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A. Van</forename>
+				<surname>Proeyen</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="page" from="333" to="727" />
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">A</forename>
+				<surname>Bergshoeff</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Kallosh</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Van Proeyen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Cern-Th</forename>
+				<surname>Preprint</surname>
+			</persName>
+		</author>
+		<imprint>
+			<pubPlace>SU-ITP-888, KUL-TF-91</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title level="m" type="main">On the Batalin-Vilkovisky antibracket-antifield BRST formalism and its applications</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">M L</forename>
+				<surname>Fisch</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="90" to="01" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Fisch</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Henneaux</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Stasheff</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Teitelboim</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun. Math. Phys. J. Fisch and M. Henneaux, Commun. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">120</biblScope>
+			<biblScope unit="issue">627</biblScope>
+			<biblScope unit="page">128</biblScope>
+			<date type="published" when="1989" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Diaz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Troost</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Van Nieuwenhuizen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A. Van</forename>
+				<surname>Proeyen</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Mod. Phys</title>
+		<imprint>
+			<biblScope unit="volume">3959</biblScope>
+			<biblScope unit="page">4</biblScope>
+			<date type="published" when="1989" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Hatsuda</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Troost</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Van Nieuwenhuizen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A. Van</forename>
+				<surname>Proeyen</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">166</biblScope>
+			<biblScope unit="page">335</biblScope>
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Bastianelli</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Van Nieuwenhuizen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A. Van</forename>
+				<surname>Proeyen</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">67</biblScope>
+			<biblScope unit="page">253</biblScope>
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Kugo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Schrans</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Troost</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A. Van</forename>
+				<surname>Proeyen</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>work. in progress</note>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Casalbuoni</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Nuovo</forename>
+				<surname>Cimento</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">33a</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett</title>
+		<editor>389</editor>
+		<editor>L. Brink and J.H. Schwarz</editor>
+		<imprint>
+			<biblScope unit="page" from="100" to="310" />
+			<date type="published" when="1976" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Kallosh</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1987" />
+			<biblScope unit="page">195</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">U</forename>
+				<surname>Lindströ</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Roč</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Siegel</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Van Nieuwenhuizen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">E</forename>
+				<surname>Van</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Ven</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett</title>
+		<imprint>
+			<biblScope unit="page" from="224" to="285" />
+			<date type="published" when="1989" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Bars</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Kallosh</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1989" />
+			<biblScope unit="page">233</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">A</forename>
+				<surname>Bergshoeff</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Kallosh</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Van Proeyen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">16. R. Kallosh, Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">128</biblScope>
+			<biblScope unit="issue">134</biblScope>
+			<biblScope unit="page" from="251" to="251" />
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">B254 (1991) 411</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Mikovi´oč</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Siegel</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Van Nieuwenhuizen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Yamron</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">E</forename>
+				<surname>De Ven</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<forename type="middle">F</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Eßler</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Laenen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">P</forename>
+				<surname>Siegel</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Yamron</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="middle">F</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Eßler</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Hatsuda</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Laenen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Siegel</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Mod. Phys. Lett. A5 (1990) 1399, and in Strings &apos;90</title>
+		<editor>M.B. Green and C.M. Hull R. Arnowitt et al.</editor>
+		<meeting><address><addrLine>Singapore ; Berkovits, Phys. Lett</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1990" />
+			<biblScope unit="page" from="235133" to="247" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Fujikawa</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett. Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="issue">44</biblScope>
+			<biblScope unit="page" from="212848" to="22" />
+			<date type="published" when="1195" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<title level="m" type="main">10 (1975) 601; Invariance Theory, the Heat Equation and the Atiyah-Singer Index Theorem (Publish or Perish, Inc.) Math. Lect. series no</title>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Gilkey</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Diff</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Geo</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1984" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Lü</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Ann</forename>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">;</forename>
+				<forename type="middle">J W</forename>
+				<surname>Van Holten</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Kowalski-Glikman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">N</forename>
+				<surname>Petcher</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physics Nucl. Phys. Phys. Rev</title>
+		<editor>680</editor>
+		<editor>K. Fujikawa, U. Lind- strö, N.K. Nielsen, M. Roč and P. van Nieuwenhuizen</editor>
+		<imprint>
+			<biblScope unit="volume">142</biblScope>
+			<biblScope unit="issue">309</biblScope>
+			<biblScope unit="page" from="37" to="391" />
+			<date type="published" when="1982" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Green</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Schwarz</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">243</biblScope>
+			<biblScope unit="issue">285</biblScope>
+			<date type="published" when="1984" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Carlip</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Int. J. Mod. Phys</title>
+		<editor>R. Kallosh and A. Morozov</editor>
+		<imprint>
+			<biblScope unit="volume">284</biblScope>
+			<biblScope unit="issue">365</biblScope>
+			<biblScope unit="page">3</biblScope>
+			<date type="published" when="1943" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">U</forename>
+				<surname>Kraemmer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Rebhan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1990" />
+			<biblScope unit="page">236</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Chu</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">353</biblScope>
+			<biblScope unit="issue">538</biblScope>
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

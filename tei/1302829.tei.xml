@@ -1,0 +1,1410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Fermionic scalar field</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2014-10-11">11 Oct 2014 June 24, 2014</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName>
+								<forename type="first">Yoshiharu</forename>
+								<surname>Kawamura</surname>
+							</persName>
+							<email>E-mail: haru@azusa.shinshu-u.ac.jp</email>
+							<affiliation>
+								<orgName type="department">Department of Physics</orgName>
+								<orgName type="institution">Shinshu University</orgName>
+								<address>
+									<postCode>390-8621</postCode>
+									<settlement>Matsumoto</settlement>
+									<country key="JP">Japan</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Fermionic scalar field</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2014-10-11">11 Oct 2014 June 24, 2014</date>
+						</imprint>
+					</monogr>
+					<note>* 1</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>We reexamine the connection between spin and statistics through the quanti-zation of a complex scalar field, using the formulation with the property that the hermitian conjugate of canonical momentum for a variable is just the canonical momentum for the hermitian conjugate of the variable. Starting from an ordinary Lagrangian density and imposing the anti-commutation relations on the field, we find that the difficulty stems from not the ill-definiteness (or unboundedness) of the energy and the breakdown of the causality but the appearance of states with negative norms. It is overcome by introducing an ordinary scalar field to form a doublet of fermionic symmetries, although the system becomes empty leaving the vacuum state alone. These features also hold for the system with a spinor field imposing the commutation relations on.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+				<figure>
+					<trash>Contents 1 Introduction 2 2 Harmonic oscillators 3 2.1</trash>
+
+
+				</figure>
+
+			<note>Ordinary harmonic oscillators . . . . . . . . . . . . . . . . . . . . . . . . . . . 4 2.2 Fermionic harmonic oscillators . . . . . . . . . . . . . . . . . . . . . . . . . . . 6 2.3 Coexisting system of harmonic oscillators . . . . . . . . . . . . . . . . . . .</note>
+
+				<figure>
+					<trash>. 9 3 Scalar fields 13 3.1</trash>
+
+
+				</figure>
+
+			<note>Ordinary scalar field . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13 3.2 Fermionic scalar field . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16 3.3 Coexisting system of scalar fields . . . . . . . . . . . . . . . . . . . . . . . . .</note>
+
+				<figure>
+					<trash>. 19 4 Conclusions 22 A Differentiation, Hamiltonian and analytical mechanics 23 B Bosonic spinor field 25</trash>
+
+
+				</figure>
+
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>Observed particles of integer spin obey Bose-Einstein statistics and are quantized using the commutation relations, and those of half-odd-integer spin obey Fermi-Dirac statistics and are quantized using the anti-commutation relations. These properties are explained under conditions such as the positivity of energy, the microscopic causality and the positive-definiteness of norm in the framework of relativistic quantum field theory, and is known as the spin-statistics theorem [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].</p>
+
+				<p>Although it is taken for granted that such a connection between spin and statistics exists in nature, it is not so clear what happens when particles are quantized by imposing abnormal relations on. There seems to be a confusion or the absence of common understanding on which condition is essential to the theorem or incompatible with abnormal relations. It might cause mainly from the difference of setup or preconditions, and hence model-dependent analyses would be useful to avoid ambiguities and to help a deeper understanding of spin and statistics. From this viewpoint, we deal with explicit models at the expense of a generality, taking a clue from the features of Faddeev-Popov ghost fields.</p>
+
+				<p>Faddeev-Popov ghost fields are hermitian scalar fields appearing on the quantization of gauge theories, and follow the anti-commutation relations [12]. They have positive energies and respect the causality but generate states with negative norms. It is natural to expect that these features are shared in a wide class of models. Actually, Fujikawa has studied the spin-statistics theorem in the path integral formalism, with expressions of the operator formalism, and pointed out that the causality is ensured regardless of statistics and the positive norm condition is crucial to the theorem [13]. 1 Our study is regarded as a manifestation of the statement based on explicit models in the operator formalism.</p>
+
+				<p>In this paper, we reexamine the connection between spin and statistics through the quantization of a complex scalar field. Starting from an ordinary Lagrangian density and imposing the anti-commutation relations on the scalar field, we find that the difficulty stems from not the ill-definiteness (or unboundedness) of the energy and the breakdown of the causality but the appearance of states with negative norms. We refer to such an abnormal scalar field as a &apos;fermionic scalar field&apos;. The difficulty is overcome by introducing an ordinary scalar field to form a doublet of fermionic symmetries, although the system becomes empty leaving the vacuum state alone. These features also hold for the system with a spinor field imposing the commutation relations on. We refer to such an abnormal spinor field as a &apos;bosonic spinor field&apos;. As a by-product, we construct analytical mechanics in the form with the manifestly hermitian property such that the hermitian conjugate of canonical momentum for a variable is just the canonical momentum for the hermitian conjugate of the variable. The contents of this paper are as follows. In Sec. II, we study the system with harmonic oscillators imposing the anti-commutation relations on variables, as a warm-up. In Sec. III, we examine the system of a fermionic scalar field and clarify the difficulty on quantization. We investigate the system containing both an ordinary complex scalar field and a fermionic one. Section IV is devoted to conclusions and discussions. Appendices also contains new ingredients. In Appendix A, we present useful formulas of differentiation for variables and a new definition of the canonical momenta, the Hamiltonian and the Noether charge, and develop analytical mechanics for the system containing both bosonic and fermionic non-hermitian variables. In Appendix B, we study the system of a bosonic spinor field and clarify the difficulty on quantization.</p>
+
+			</div>
+			<div>
+				<head n="2">Harmonic oscillators</head>
+
+				<p>First, we consider the systems of harmonic oscillators in quantum mechanics, because they have features in common with those of scalar fields and its study facilitates the understanding of a difficulty and a remedy appearing in a case with abnormal quantization rules in quantum field theory.</p>
+
+			</div>
+			<div>
+				<head n="2.1">Ordinary harmonic oscillators</head>
+
+				<p>For the sake of completeness, let us begin with the system described by the Lagrangian,</p>
+
+				<figure>
+					<trash>L q = m ˙ q † ˙ q − mω 2 q † q , (1)</trash>
+
+
+				</figure>
+
+				<p>where q = q(t ) is a coordinate taking complex numbers, q † its hermitian conjugate, ˙ q = d q/d t , and ω is an angular frequency. The Euler-Lagrange equations for q and q</p>
+
+				<figure>
+					<trash>† are given by m d 2 q † d t 2 = −mω 2 q † , m d 2 q d t 2 = −mω 2 q , (2)</trash>
+
+
+				</figure>
+
+				<p>respectively. They describe two harmonic oscillators with the same mass m.</p>
+
+				<p>According to Appendix A, let us define the canonical conjugate momenta of q</p>
+
+				<figure>
+					<trash>and q † as p ≡ ∂L q ∂ ˙ q R = m ˙ q † , p † ≡ ∂L q ∂ ˙ q † L = m ˙ q , (3)</trash>
+
+
+				</figure>
+
+				<p>respectively. Here, R and L stand for the right-differentiation and the left-differentiation, respectively.</p>
+
+				<figure>
+					<trash>By solving (2) and (3), we obtain the solutions q(t ) = ħ 2mω ae −i ωt + b † e i ωt , q † (t ) = ħ 2mω a † e i ωt + be −i ωt , (4) p(t ) = i ħmω 2 a † e i ωt − be −i ωt , p † (t ) = −i ħmω 2 ae −i ωt − b † e i ωt , (5) where a, b † , a † and b are some constants. Using (3) and (158), the Hamiltonian is obtained as H q = p ˙ q + ˙ q † p † − L = 1 m pp † + mω 2 q † q . (6)</trash>
+
+
+				</figure>
+
+				<p>Later, we will comment on a consequence of a difference between H q and the ordinary Hamiltonian defined by only the right-differentiation.</p>
+
+				<p>The system is quantized by regarding variables as operators and imposing the following commutation relations on the canonical pairs (q,</p>
+
+				<figure>
+					<trash>p) and (q † , p † ), [q(t ), p(t )] = i ħ , [q † (t ), p † (t )] = i ħ , [q(t ), p † (t )] = 0 , [q † (t ), p(t )] = 0 , [q(t ), q † (t )] = 0 , [p(t ), p † (t )] = 0 , (7) where [A, B]</trash>
+
+
+				</figure>
+
+				<p>≡ AB − B A. Or equivalently, for operators a, b † , a † and b, the following relations are imposed on, [a, a † ] = 1 , [b, b † ] = 1 , [a, b] = 0 , [a † , b † ] = 0 , [a, b † ] = 0 , [a † , b] = 0 . (8)</p>
+
+				<p>In quantum theory, an operator O = O(t ) evolves by the Heisenberg equation,</p>
+
+				<figure>
+					<trash>dO d t = i ħ [H,O] , (9) where H is the Hamiltonian. From (6), (7) and (9), the following equations are derived d q d t = i ħ [H q , q] = p † m , d q † d t = i ħ [H q , q † ] = p m , (10) d p d t = i ħ [H q , p] = −mω 2 q † , d p † d t = i ħ [H q , p † ] = −mω 2 q , (11) where we use the relation among operators A, B and C : [AB,C ] = A[B,C ] + [A,C ]B . (12) (10) and (11) are equivalent to (2) and (3). By inserting (4) and (5) into (6), H q is written by H q = ħω a † a + bb † = ħω a † a + b † b + 1 , (13) where we use [b, b † ]</trash>
+
+
+				</figure>
+
+				<p>= 1 to derive the last expression and the constant part ħω is the zero-point energy. The eigenstates and eigenvalues of H q are given by</p>
+
+				<figure>
+					<trash>|n a , n b 〉 = (a † ) n a n a ! (b † ) n b n b ! |0, 0〉 ; E n a ,n b = ħω (n a + n b + 1) , (14)</trash>
+
+
+				</figure>
+
+				<p>where n a , n b = 0, 1, 2 · · · and |0, 0〉 is the ground state that satisfies a|0, 0〉 = 0 and b|0, 0〉 = 0. We find that the values of E n a ,n b are positive. Using (8), the inner products are calculated as 〈m a , m b |n a , n b 〉 = δ m a n a δ m b n b , (15) and hence the positive-definiteness of norm holds on. If we take a † |0, 0〉 = 0 in place of a|0, 0〉 = 0, a|0, 0〉 has a negative norm as seen from the relation,</p>
+
+				<figure>
+					<trash>1 = 〈0, 0|0, 0〉 = 〈0, 0|[a, a † ]|0, 0〉 = −〈0, 0|a † a|0, 0〉 = −|a|0, 0〉| 2 . (16)</trash>
+
+
+				</figure>
+
+				<p>The same is true of b and b † . L q is invariant under the U (1) transformation, δq = i [ǫN q , q] = i ǫq , δq † = i [ǫN q , q † ] = −i ǫq † , (17) where ǫ is an infinitesimal real number and N q is the conserved U (1) charge defined by</p>
+
+				<figure>
+					<trash>ǫN q ≡ 1 ħ ∂L q ∂ ˙ q R δq + δq † ∂L q ∂ ˙ q † L . (18) Note that N q is hermitian by definition, using (155) with L † q = L q . From (18), N q is given by N q = i ħ pq − q † p † = −a † a + bb † = −a † a + b † b + 1 , (19) where we use [b, b † ]</trash>
+
+
+				</figure>
+
+				<p>= 1 to derive the last expression.</p>
+
+				<p>Here, we give a comment on a consequence of a difference between ours (H q , N q ) and the following ordinary ones defined by only the right-differentiation,</p>
+
+				<figure>
+					<trash>H 0 = p ˙ q + p † ˙ q † − L q = 1 m p † p + mω 2 q † q , N 0 = i ħ pq − p † q † . (20)</trash>
+
+
+				</figure>
+
+				<p>Note that N 0 turns out to be hermitian by using the commutation relations (7),</p>
+
+				<figure>
+					<trash>N † 0 = − i ħ q † p † − q p = − i ħ p † q † − pq = N 0 . (21) Using (4) and (5), H 0 and N 0 are rewritten by H 0 = 1 2 ħω a † a + aa † + b † b + bb † = ħω a † a + b † b + 1 , (22) N 0 = 1 2 −a † a − aa † + b † b + bb † = −a † a + b † b , (23) where we use [a, b]</trash>
+
+
+				</figure>
+
+				<p>= 0 and [a † , b † ] = 0 to derive the second expressions and [a, a † ] = 1 and [b, b † ] = 1 to derive the last expressions. In case that variables are bosonic or follow the commutation relations, H 0 agrees with H q because of p † p = pp † and we obtain the same result. If we replace [a, a † ] = 1 and [b, b † ] = 1 with the anti-commutation relations aa † + a † a = 1 and bb † + b † b = 1, we arrive at a misleading result that H 0 are N 0 are some constants from the second expressions in (22) and (23). We will find that the treatment is not proper with careful consideration.</p>
+
+			</div>
+			<div>
+				<head n="2.2">Fermionic harmonic oscillators</head>
+
+				<p>Next, we study the system described by the Lagrangian,</p>
+
+				<figure>
+					<trash>L ξ = m ˙ ξ † ˙ ξ − mω 2 ξ † ξ , (24) where ξ = ξ(t ) is a fermionic coordinate taking Grassmann numbers and L † ξ = L ξ . The Euler-Lagrange equations for ξ and ξ † are given by m d 2 ξ † d t 2 = −mω 2 ξ † , m d 2 ξ d t 2 = −mω 2 ξ , (25)</trash>
+
+
+				</figure>
+
+				<p>respectively. They also describe two harmonic oscillators with the same mass.</p>
+
+				<p>According to Appendix A, let us define the canonical conjugate momenta of ξ and ξ † as ρ ≡ ∂L ξ ∂ ˙ ξ R = m ˙ ξ † , ρ † ≡ ∂L ξ ∂ ˙ ξ † L = m ˙ ξ , (26) respectively. By solving (25) and (26), we obtain the solutions</p>
+
+				<figure>
+					<trash>ξ(t ) = ħ 2mω ce −i ωt + d † e i ωt , ξ † (t ) = ħ 2mω c † e i ωt + d e −i ωt , (27) ρ(t ) = i ħmω 2 c † e i ωt − d e −i ωt , ρ † (t ) = −i ħmω 2 ce −i ωt − d † e i ωt , (28) where c, d † , c † and d are Grassmann numbers. Using (26), the Hamiltonian is obtained as H ξ = ρ ˙ ξ + ˙ ξ † ρ † − L ξ = 1 m ρρ † + mω 2 ξ † ξ . (29)</trash>
+
+
+				</figure>
+
+				<p>Let us quantize the system by regarding variables as operators and imposing the</p>
+
+				<figure>
+					<trash>lowing anti-commutation relations on (ξ, ρ) and (ξ † , ρ † ), {ξ(t ), ρ(t )} = i ħ , {ξ † (t ), ρ † (t )} = −i ħ , {ξ(t ), ξ(t )} = 0 , {ρ(t ), ρ(t )} = 0 , {ξ † (t ), ξ † (t )} = 0 , {ρ † (t ), ρ † (t )} = 0 , {ξ(t ), ξ † (t )} = 0 , {ρ(t ), ρ † (t )} = 0 , {ξ(t ), ρ † (t )} = 0 , {ξ † (t ), ρ(t )} = 0 , (30) where {A, B} = AB + B A. Note that (30) are compatible with the classical counterparts (163) and (169). Or equivalently, for operators c, d † , c † and d , the following relations are imposed on, {c, c † } = 1 , {d , d † } = −1 , {c, c} = 0 , {c † , c † } = 0 , {d , d } = 0 , {d † , d † } = 0 , {c, d } = 0 , {c † , d † } = 0 , {c, d † } = 0 , {c † , d } = 0 . (31) From (29), (30) and (9), the following equations are derived d ξ d t = i ħ [H ξ , ξ] = ρ † m , d ξ † d t = i ħ [H ξ , ξ † ] = ρ m , (32) d ρ d t = i ħ [H ξ , ρ] = −mω 2 ξ † , d ρ † d t = i ħ [H ξ , ρ † ] = −mω 2 ξ , (33) where we use the relation, [AB,C ] = A{B,C } − {A,C }B . (34) (32) and (33) are equivalent to (25) and (26). By inserting (27) and (28) into (29), H ξ is written by H ξ = ħω c † c + d d † = ħω c † c − d † d − 1 , (35) where we use {d , d † } = −1 to derive the last expression. There are four eigenstates with the following eigenvalues for H ξ |0, 0〉 ; E = −ħω , |1, 0〉 = c † |0, 0〉 , |0, 1〉 = d † |0, 0〉 ; E = 0 , |1, 1〉 = c † d † |0, 0〉 ; E = ħω , (36) where |0, 0〉 is the ground state that satisfies c|0, 0〉 = 0 and d |0, 0〉 = 0. From the relation, 1 = 〈0, 0|0, 0〉 = −〈0, 0|{d , d † }|0, 0〉 = −〈0, 0|d d † |0, 0〉 = −|d † |0, 0〉| 2 , (37)</trash>
+
+
+				</figure>
+
+				<p>we find that the state d † |0, 0〉 has a negative norm, and then the probability interpretation does not hold on. Hence, it is difficult to construct a quantum theory for fermionic harmonic oscillators alone.</p>
+
+				<p>Even if we take another state |0, 0〉 as the ground state that satisfies c |0, 0〉 = 0 and d † |0, 0〉 = 0, the appearance of the negative norm states is inevitable from the relation,</p>
+
+				<figure>
+					<trash>1 = 〈0, 0| 0, 0〉 = − 〈0, 0|{d , d † } |0, 0〉 = − 〈0, 0|d † d |0, 0〉 = −|d |0, 0〉| 2 , (38)</trash>
+
+
+				</figure>
+
+				<p>In this case, the energy spectrum is given by</p>
+
+				<figure>
+					<trash>d |0, 0〉 ; E = −ħω , |0, 0〉 , c † d |0, 0〉 ; E = 0 , c † |0, 0〉 ; E = ħω , (39) L ξ is invariant under the U (1) transformation, δξ = i [ǫN ξ , ξ] = i ǫξ , δξ † = i [ǫN ξ , ξ † ] = −i ǫξ † , (40) where N ξ is the conserved U (1) charge defined by ǫN ξ ≡ 1 ħ ∂L ξ ∂ ˙ ξ R δξ + δξ † ∂L ξ ∂ ˙ ξ † L . (41) From (41), N ξ is given by N ξ = i ħ ρξ − ξ † ρ † = −c † c + d d † = −c † c − d † d − 1 , (42)</trash>
+
+
+				</figure>
+
+				<p>where we use {d , d † } = −1 to derive the last expression.</p>
+
+				<p>We find that both H ξ and N ξ are hermitian by definition and are not constants, but the system is abnormal because it contains a state with a negative norm. We point out that the same conclusion is obtained even if we adopt the ordinary convention that the canonical momenta are defined by only the right differentiation.</p>
+
+			</div>
+			<div>
+				<head n="2.3">Coexisting system of harmonic oscillators</head>
+
+				<p>Next, let us consider the system that (q,</p>
+
+				<figure>
+					<trash>q † ) and (ξ, ξ † ) coexist, whose Lagrangian is given by L q,ξ = m ˙ q † ˙ q − mω 2 q † q + m ˙ ξ † ˙ ξ − mω 2 ξ † ξ . (43) From (13) and (35), the Hamiltonian is obtained as H q,ξ = ħω a † a + b † b + c † c − d † d . (44)</trash>
+
+
+				</figure>
+
+				<p>Note that the sum of the zero-point energies vanishes due to the cancellation between contributions from (q, q † ) and (ξ, ξ † ).</p>
+
+				<p>There are four kinds of eigenstates with the following eigenvalues for H q,ξ ,</p>
+
+				<figure>
+					<trash>|n a , n b , 0, 0〉 ≡ (a † ) n a n a ! (b † ) n b n b ! |0, 0, 0, 0〉 ; E = ħω(n a + n b ) , (45) |n a , n b , 1, 0〉 ≡ c † (a † ) n a n a ! (b † ) n b n b ! |0, 0, 0, 0〉 ; E = ħω(n a + n b + 1) , (46) |n a , n b , 0, 1〉 ≡ d † (a † ) n a n a ! (b † ) n b n b ! |0, 0, 0, 0〉 ; E = ħω(n a + n b + 1) , (47) |n a , n b , 1, 1〉 ≡ c † d † (a † ) n a n a ! (b † ) n b n b ! |0, 0, 0, 0〉 ; E = ħω(n a + n b + 2) , (48) where |0, 0, 0</trash>
+
+
+				</figure>
+
+				<p>, 0〉 is the ground state that satisfies a|0, 0, 0, 0〉 = 0, b|0, 0, 0, 0〉 = 0, c|0, 0, 0, 0〉 = 0 and d |0, 0, 0, 0〉 = 0.</p>
+
+				<p>As seen from (37), |n a , n b , 0, 1〉 and |n a , n b , 1, 1〉 have a negative norm, and the theory appears to be inconsistent. We will show that the system has fermionic symmetries and they save it from the disaster.</p>
+
+				<p>The L q,ξ is invariant under the fermionic transformations,</p>
+
+				<figure>
+					<trash>δ F q = −ζξ , δ F q † = 0 , δ F ξ = 0 , δ F ξ † = ζq † (49) and δ † F q = 0 , δ † F q † = ζ † ξ † , δ † F ξ = ζ † q , δ † F ξ † = 0 , (50)</trash>
+
+
+				</figure>
+
+				<p>where ζ and ζ † are Grassmann numbers. Note that δ F is not generated by a hermitian operator, different from the generator of the BRST transformation in systems with first class constraints [14] and that of the topological symmetry [15, 16].</p>
+
+				<p>From the above transformation properties, we see that δ F and δ</p>
+
+				<figure>
+					<trash>† F are nilpotent, i.e., δ 2 F = 0 and δ †2 F = 0, or Q F 2 = 0 and Q † F 2 = 0 , (51) where the bold ones δ F and δ † F are defined by δ F = ζδ F and δ † F = ζ † δ † F , respectively. Q F and Q † F are the corresponding generators given by δ F O = i [ζQ F ,O] , δ † F O = i [Q † F ζ † ,O] , (52) and defined by ζQ F ≡ 1 ħ ∂L q,ξ ∂ ˙ q R δ F q + δ F ξ † ∂L q,ξ ∂ ˙ ξ † L , Q † F ζ † ≡ 1 ħ δ † F q † ∂L q,ξ ∂ ˙ q † L + ∂L q,ξ ∂ ˙ ξ R δ † F ξ . (53) Furthermore, we find the algebraic relation, {Q F ,Q † F } = N D , (54) where N D is the number operator defined by N D ≡ −N q − N ξ = a † a − b † b + c † c + d † d . (55)</trash>
+
+					<figDesc>N q and N ξ are generators for U (1) transformations of q and ξ, defined by (19) and (42), respectively. The symmetry of our system is equivalent to OSp(2|2).</figDesc>
+					<trash>From (53), the conserved fermionic charges Q F and Q † F are given by Q F = 1 ħ −pξ + q † ρ † , Q † F = 1 ħ −ξ † p † + ρq . (56) Then, the canonical momenta are transformed as, δ F p = 0 , δ F p † = −ζρ † , δ F ρ = ζp , δ F ρ † = 0 (57) and δ † F p = ζ † ρ , δ † F p † = 0 , δ † F ρ = 0 , δ † F ρ † = −ζ † p † . (58)</trash>
+
+
+				</figure>
+
+				<p>It is easily understood that L q,ξ is invariant under the transformations (49) and (50), from the nilpotency of δ F and δ † F and the relations,</p>
+
+				<figure>
+					<trash>L q,ξ = δ F R q,ξ = δ † F R † q,ξ = δ F δ † F L q = −δ † F δ F L q , (59) where R q,ξ and R † q,ξ are given by R q,ξ = m ˙ ξ † ˙ q − mω 2 ξ † q , R † q,ξ = m ˙ q † ˙ ξ − mω 2 q † ξ . (60) The Hamiltonian H q,ξ is written in the Q F and Q † F exact forms such that H q,ξ = i Q F , ˜ R q,ξ = −i Q † F , ˜ R † q,ξ = Q F , Q † F , H q = − Q † F , Q F , H q , (61) where R q,ξ and R † q,ξ are given by ˜ R q,ξ = 1 m ρp † + mω 2 ξ † q , ˜ R † q,ξ = 1 m pρ † + mω 2 q † ξ . (62) Using the solutions (4), (5), (27), and (28), Q F and Q † F are written by Q F = −i (a † c − d † b) , Q † F = i (c † a − b † d ) . (63) Then, the operators are transformed as, δ F a = −ζc , δ F a † = 0 , δ F b † = −d † , δ F c = 0 , δ F c † = ζa † , δ F d = ζb , δ F d † = 0 (64) and δ † F a = 0 , δ † F a † = ζ † c † , δ † F b = ζ † d , δ † F b † = 0 , δ † F c = ζ † a , δ † F c † = 0 , δ † F d = 0 , δ † F d † = ζ † b † . (65)</trash>
+
+
+				</figure>
+
+				<p>To formulate our model in a consistent manner, we use a feature that a conserved charge can, in general, be set to be zero as an auxiliary condition. Let us select physical states |phys〉 by imposing the following conditions on states,</p>
+
+				<figure>
+					<trash>Q F |phys〉 = 0 , Q † F |phys〉 = 0 , N D |phys〉 = 0 (66) or ˜ Q 1 |phys〉 = 0 , ˜ Q 2 |phys〉 = 0 , N D |phys〉 = 0 , (67) where Q 1 and Q 2 are hermitian fermionic charges defined by ˜ Q 1 ≡ Q F +Q † F , ˜ Q 2 ≡ i (Q F −Q † F ) . (68) Then, the following relations are derived, 〈phys|δ F O|phys〉 = 〈phys|i [ζQ F ,O]|phys〉 = 0 , (69) 〈phys|δ † F O|phys〉 = 〈phys|i [Q † F ζ † ,O]|phys〉 = 0 . (70) Using (69) and (70), we obtain the following relations from (64) and (65): 〈phys|a|phys〉 = 0 , 〈phys|a † |phys〉 = 0 , (71) 〈phys|b|phys〉 = 0 , 〈phys|b † |phys〉 = 0 , (72) 〈phys|c|phys〉 = 0 , 〈phys|c † |phys〉 = 0 , (73) 〈phys|d |phys〉 = 0 , 〈phys|d † |phys〉 = 0 . (74)</trash>
+
+
+				</figure>
+
+				<p>The conditions (66) are interpreted as counterparts of the Kugo-Ojima subsidiary condition in the BRST quantization [17, 18]. We find that all states given by |n a , n b , n c , n d 〉, except for the ground state |0, 0, 0, 0〉, are unphysical because they do not satisfy (66). Or it is interpreted as the quartet mechanism [17, 18]. The projection operator P (n) on the states with n = n a + n b + n c + n d is given by</p>
+
+				<figure>
+					<trash>P (n) = 1 n a † P (n−1) a + b † P (n−1) b +c † P (n−1) c − d † P (n−1) d (n ≥ 1) , (75) and is written by P (n) = i Q F , R (n) , (76) where R (n) is given by R (n) = 1 n c † P (n−1) a + b † P (n−1) d (n ≥ 1) . (77)</trash>
+
+
+				</figure>
+
+				<p>We find that any state with n ≥ 1 is unphysical from the relation 〈phys|P (n) |phys〉 = 0 for n ≥ 1, i.e., only the ground state |0, 0, 0, 0〉 is physical. This is also regarded as a quantum mechanical version of the Parisi-Sourlas mechanism [19]. The point is that the system has negative norm states, but they become unphysical and harmless.</p>
+
+				<p>The remedy of the system described by L ξ is not unique. There is a possibility that the real and the imaginary part of ξ are regarded as the Faddeev-Popov ghost variable c(t ) and the anti-ghost one c(t ), respectively.</p>
+
+				<figure>
+					<trash>Using ξ(t ) = (c(t ) + i c(t ))/ 2, L ξ is rewritten by L ξ = m ˙ ξ † ˙ ξ − mω 2 ξ † ξ = −i m ˙ c ˙ c + i mω 2 cc . (78) We introduce those BRST partners r (t ) and B(t ) with the BRST transformation, δ B r = −c , δ B c = 0 , δ B c = i B , δ B B = 0 , (79) and construct the Lagrangian, L r,c = −i δ B ˙ c ˙ r − mω 2 cr = m ˙ B ˙ r − mω 2 Br − i m ˙ c ˙ c + i mω 2 cc . (80) Using the change of variables r (t ) = (x(t ) + y(t ))/ 2 and B(t ) = (x(t ) − y(t ))/ 2, the part containing r (t ) and B(t ) is rewritten as L x,y = m ˙ x 2 − mω 2 x 2 − m ˙ y 2 + mω 2 y 2 , (81)</trash>
+
+
+				</figure>
+
+				<p>and then we find that x(t ) has a positive norm and y(t ) has a negative norm. Based on the BRST quantization, we understand that the system is also empty leaving the vacuum state alone.</p>
+
+				<p>Furthermore, we give comments on similarities and differences between supersymmetric (SUSY) quantum mechanics[20] and our model. The ingredients of SUSY quantum mechanics are two hermitian fermionic charges Q i (</p>
+
+				<figure>
+					<trash>i = 1, 2) that satisfy Q 1 Q 2 + Q 2 Q 1 = 0 and the Hamiltonian H defined by H = Q 2 1 = Q 2 2 . By definition, H is commutable to Q i . In our model, ˜ Q 1 and Q 2 satisfy Q 1 ˜ Q 2 + ˜ Q 2 ˜ Q 1 = 0 and N D = ˜ Q 2 1 = ˜ Q 2 2 . Here N D is the number operator of the Q F doublet. Note that the algebraic relations among ( ˜ Q 1 , ˜ Q 2 , N D ) are same as (Q 1 ,Q 2 , H) in N = 2 SUSY, but N D is different from our Hamiltonian H q,ξ . Our model is also formulated, using Q 1 and Q 2 . Concretely, L q,ξ and H q,ξ are written as L q,ξ = δ 1 R (1) q,ξ = δ 2 R (2) q,ξ , H q,ξ = i ˜ Q 1 , ˜ R (1) q,ξ = i ˜ Q 2 , ˜ R (2) q,ξ , (82) where δ 1 and δ 2 are defined by θδ 1 O = i [θ ˜ Q 1 ,O] = i [θ(Q F +Q † F ),O] and θδ 2 O = i [θ ˜ Q 2 ,O] = i [θi (Q F −Q † F ),O] with a Grassmann parameter satisfying θ † = −θ. R (i ) q,ξ and R (i ) q,ξ are given by R (1) q,ξ = 1 2 (R q,ξ − R † q,ξ ) , R (2) q,ξ = 1 2i (R q,ξ + R † q,ξ ) , (83) ˜ R (1) q,ξ = 1 2 ( ˜ R q,ξ − ˜ R † q,ξ ) , ˜ R (2) q,ξ = 1 2i ( ˜ R q,ξ + ˜ R † q,ξ ) . (84) They are anti-hermitian, i.e., R (i ) † q,ξ = −R (i ) q,ξ and R (i ) † q,ξ = − ˜ R (i ) q,ξ , and are invariant under the transformation generated by N D , i. e., δ D R (i ) q,ξ = 0 and [N D , ˜ R (i ) q,ξ ] = 0. ˜ R (1) q,ξ and R (2) q,ξ satisfy the relations R (1)2 q,ξ = ˜ R (2)2 q,ξ = −(ħω) 2 N D /4 and R (1) q,ξ ˜ R (2) q,ξ + ˜ R (2) q,ξ ˜ R (1) q,ξ = 0, and H q,ξ is commutable tõ Q i , ˜ R (i ) q,ξ and N D .</trash>
+
+
+				</figure>
+
+				<p>Every state has a positive norm in SUSY quantum mechanics and H is positive semidefinite by definition. In contrast, some states have a negative norm in our model and hence H q,ξ is positive semi-definite despite its appearance.</p>
+
+				<figure>
+					<trash>The relation N D = ˜ Q 2 1 = ˜ Q 2 2</trash>
+
+
+				</figure>
+
+				<p>holds consistently with both positive and negative eigenvalues of N D , because some states operated by Q i have negative norms. In this way, our model is physically different from SUSY quantum mechanics.</p>
+
+			</div>
+			<div>
+				<head n="3">Scalar fields 3.1 Ordinary scalar field</head>
+
+				<p>Let us start with the system of a complex scalar field ϕ described by the Lagrangian den- sity,</p>
+
+				<figure>
+					<trash>L ϕ = ∂ µ ϕ † ∂ µ ϕ − m 2 ϕ † ϕ . (85) Here and hereafter, we use the metric tensor η µν = diag(1, −1, −1, −1) and the natural units c = ħ = 1. The Euler-Lagrange equations for ϕ and ϕ † are given by + m 2 ϕ † = 0 , + m 2 ϕ = 0 , (86) and the canonical conjugate momenta of ϕ and ϕ † are defined by π ≡ ∂L ∂ ˙ ϕ R = ˙ ϕ † , π † ≡ ∂L ∂ ˙ ϕ † L = ˙ ϕ . (87) By solving (86) and (87), we obtain the solutions ϕ(x) = d 3 k (2π) 3 2k 0 a(k)e −i kx + b † (k)e i kx , (88) ϕ † (x) = d 3 k (2π) 3 2k 0 a † (k)e i kx + b(k)e −i kx , (89) π(x) = i d 3 k k 0 2(2π) 3 a † (k)e i kx − b(k)e −i kx , (90) π † (x) = −i d 3 k k 0 2(2π) 3 a(k)e −i kx − b † (k)e i kx , (91) where k 0 = k 2 + m 2 and kx = k µ x µ . Using (87), the Hamiltonian density is obtained as H ϕ = π ˙ ϕ + ˙ ϕ † π † − L ϕ = ππ † + ∇ϕ † ∇ϕ + m 2 ϕ † ϕ . (92)</trash>
+
+
+				</figure>
+
+				<p>The system is quantized by regarding variables as operators and imposing the following commutation relations on the canonical pairs (ϕ, π) and (ϕ † , π † ), [ϕ(x, t</p>
+
+				<figure>
+					<trash>), π(y, t )] = i δ 3 (x − y) , [ϕ † (x, t ), π † (y, t )] = i δ 3 (x − y) , (93) and otherwise are zero. Or equivalently, for operators a(k), b † (k), a † (k) and b(k), the following commutation relations are imposed on, [a(k), a † (l)] = δ [a † (k), b † (l)] = 0 , [a(k), b † (l)] = 0 , [a † (k), b(l)] = 0 , [a(k), a(l)] = 0 , [a † (k), a † (l)] = 0 , [b(k), b(l)] = 0 , [b † (k), b † (l)] = 0 . (94) Using (12), (92), (93) and the Heisenberg equation, (86) are derived where the Hamiltonian is given by H ϕ = H ϕ d 3 x. By inserting (88) – (91) into (92), the Hamiltonian H ϕ is written by H ϕ = d 3 kk 0 a † (k)a(k) + b(k)b † (k) = d 3 kk 0 a † (k)a(k) + b † (k)b(k) + d 3 kd 3 x (2π) 3 k 0 . (95)</trash>
+
+
+				</figure>
+
+				<p>The ground state |0〉 is defined as the state that satisfies a(k)|0〉 = 0 and b(k)|0〉 = 0. The eigenstates and eigenvalues of H ϕ are given by</p>
+
+				<figure>
+					<trash>d 3 k 1 d 3 k 2 · · · d 3 k n a d 3 l 1 d 3 l 2 · · · d 3 l n b f 1 (k 1 ) f 2 (k 2 ) · · · f n a (k n a )g 1 (l 1 )g 2 (l 2 ) · · · g n b (l n b ) · a † (k 1 )a † (k 2 ) · · · a † (k n a )b † (l 1 )b † (l 2 ) · · · b † (l n b )|0〉 , (96) E = k 10 + k 20 + · · · + k n a 0 + l 10 + l 20 + · · · + l n b 0 , (97) where f n (k n ) and g n (l n ) are some square integrable functions, k n0 = k 2 n + m 2 , l n0 = l 2</trash>
+
+					<figDesc>n + m 2 , and we subtract an infinite constant corresponding to the sum of the zeropoint energies because not the energy itself but the energy difference has physical meaning in the absence of gravity. Concretely, using the normal ordering, we define H ϕ by</figDesc>
+					<trash>H ϕ ≡: H ϕ := d 3 kk 0 a † (k)a(k) + b † (k)b(k) . (98)</trash>
+
+
+				</figure>
+
+				<p>L ϕ is invariant under the U (1) transformation, δϕ = i [ǫN ϕ , ϕ] = i ǫϕ , δϕ † = i [ǫN ϕ , ϕ † ] = −i ǫϕ † , (99) where N ϕ is the conserved U (1) charge defined by</p>
+
+				<p><formula>ǫN ϕ ≡ d 3 x ∂L ϕ ∂ ˙ ϕ R δϕ + δϕ † ∂L ϕ ∂ ˙ ϕ † L . (100)</formula></p>
+
+				<p>Note that N ϕ is hermitian by definition and L † ϕ = L ϕ . From (100), N ϕ is given by</p>
+
+				<figure>
+					<trash>N ϕ = i d 3 x πϕ − ϕ † π † = d 3 k −a † (k)a(k) + b(k)b † (k) = d 3 k −a † (k)a(k) + b † (k)b(k) + d 3 kd 3 x (2π) 3 , (101) where we use [b(k), b † (l)] = δ 3</trash>
+
+					<figDesc>(k−l) to derive the last expression. To subtract the infinite constant in N ϕ , we define N ϕ by</figDesc>
+					<trash>N ϕ ≡: N ϕ := d 3 k −a † (k)a(k) + b † (k)b(k) . (102)</trash>
+
+
+				</figure>
+
+				<p>We find that the U (1) charge of particle corresponding b † (k)|0〉 is opposite to that corresponding a † (k)|0〉. Hence, a(k) and b † (k) are regarded as the annihilation operator of particle and the creation operator of antiparticle, respectively.</p>
+
+				<figure>
+					<head>The 4</head>
+
+					<figDesc>-dimensional commutation relations are calculated as [ϕ(</figDesc>
+
+				</figure>
+
+				<p><formula>x), ϕ † (y)] = d 3 kd 3 l (2π) 3 2k 0 2l 0 [a(k), a † (l)]e −i kx+i l y + [b † (k), b(l)]e i kx−i l y = d 3 kd 3 l (2π) 3 2k 0 2l 0 [a(k), a † (l)]e −i kx+i l y − [b(l), b † (k)]e i kx−i l y = d 3 k (2π) 3 2k 0 e −i k(x−y) − e i k(x−y) = d 4 k (2π) 3 ǫ(k 0 )δ(k 2 − m 2 )e −i k(x−y) ≡ i ∆(x − y) , (103) [ϕ(x), ϕ(y)] = 0 , [ϕ † (x), ϕ † (y)] = 0 , (104)</formula></p>
+
+				<p>where ǫ(k 0 ) = k 0 /|k 0 | with ǫ(0) = 0, ∆(x − y) is the invariant delta function, and two fields separated by a space-like interval commute with each other as seen from the relation ∆(x − y) = 0 for (x − y) 2 &lt; 0. This feature is called &apos;the microscopic causality&apos;.</p>
+
+				<p>The vacuum expectation values of the time ordered products are calculated as</p>
+
+				<figure>
+					<trash>〈0|Tϕ(x)ϕ † (y)|0〉 = 〈0|(θ(x 0 − y 0 )ϕ(x)ϕ † (y) + θ(y 0 − x 0 )ϕ † (y)ϕ(x))|0〉 = d 3 kd 3 l (2π) 3 2k 0 2l 0 θ(x 0 − y 0 )〈0|a(k)a † (l)|0〉e −i kx+i l y +θ(y 0 − x 0 )〈0|b(k)b † (l)|0〉e i kx−i l y = d 3 k (2π) 3 2k 0 θ(x 0 − y 0 )e −i k(x−y) + θ(y 0 − x 0 )e i k(x−y) = d 4 k (2π) 4 i e −i k(x−y) k 2 − m 2 + i ε ≡ i ∆ F (x − y) , (105) 〈0|Tϕ(x)ϕ(y)|0〉 = 0 , 〈0|Tϕ † (x)ϕ † (y)|0〉 = 0 , (106)</trash>
+
+
+				</figure>
+
+				<p>where ∆ F (x − y) is the Feynman propagator.</p>
+
+				<p>Here, we roughly estimate what happens for the causality in the case with abnormal relations. Using (88) and (89), the 4-dimensional anti-commutation relation between</p>
+
+				<figure>
+					<trash>ϕ(x) and ϕ † (y) is given by {ϕ(x), ϕ † (y)} = d 3 kd 3 l (2π) 3 2k 0 2l 0 {a(k), a † (l)}e −i kx+i l y + {b † (k), b(l)}e i kx−i l y , = d 3 kd 3 l (2π) 3 2k 0 2l 0 {a(k), a † (l)}e −i kx+i l y + {b(l), b † (k)}e i kx−i l y . (107) If we replace [a(k), a † (l)] = δ 3 (k−l) and [b(l), b † (k)] = δ 3 (k−l) with {a(k), a † (l)} = δ 3 (k− l) and {b(l), b † (k)} = δ 3 (k − l), we obtain the relation, {ϕ(x), ϕ † (y)} = d 3 k (2π) 3 2k 0 e −i k(x−y) + e i k(x−y) ≡ i ∆ (1) (x − y) . (108)</trash>
+
+					<figDesc>(108) means that the causality is violated because ∆ (1) (x −y) does not vanish for (x −y) 2 &lt;</figDesc>
+
+				</figure>
+
+				<p>0. However, it would still be unwise to conclude that the causality is conflict with the anti-commutation relations imposed on a complex scalar field, because it is not clear whether the above replacement of relations is appropriate or compatible with relations including the field equations. We will study it soon.</p>
+
+			</div>
+			<div>
+				<head n="3.2">Fermionic scalar field</head>
+
+				<p>Let us study the system described by the Lagrangian density,</p>
+
+				<figure>
+					<trash>L c ϕ = ∂ µ c † ϕ ∂ µ c ϕ − m 2 c † ϕ c ϕ , (109)</trash>
+
+					<figDesc>where c ϕ = c ϕ (x) is a complex scalar field taking Grassmann numbers. The Euler-Lagrange equations for c ϕ and c † ϕ are given by</figDesc>
+
+				</figure>
+
+				<p><formula>+ m 2 c † ϕ = 0 , + m 2 c ϕ = 0 , (110) respectively. The canonical conjugate momenta of c ϕ and c † ϕ are defined by π c ϕ ≡ ∂L c ϕ ∂ ˙ c ϕ R = ˙ c † ϕ , π † c ϕ ≡ ∂L c ϕ ∂ ˙ c † ϕ L = ˙ c ϕ , (111) respectively. By solving (110) and (111), we obtain the solutions c ϕ (x) = d 3 k (2π) 3 2k 0 c(k)e −i kx + d † (k)e i kx , (112) c † ϕ (x) = d 3 k (2π) 3 2k 0 c † (k)e i kx + d (k)e −i kx , (113) π c ϕ (x) = i d 3 k k 0 2(2π) 3 c † (k)e i kx − d (k)e −i kx , (114) π † c ϕ (x) = −i d 3 k k 0 2(2π) 3 c(k)e −i kx − d † (k)e i kx . (115) Using (111), the Hamiltonian density is obtained as H c ϕ = π c ϕ ˙ c ϕ + ˙ c † ϕ π † c ϕ − L c ϕ = π c ϕ π † c ϕ + ∇c † ϕ ∇c ϕ + m 2 c † ϕ c ϕ . (116)</formula></p>
+
+				<p>Let us quantize the system by regarding variables as operators and imposing the following anti-commutation relations on (c ϕ ,</p>
+
+				<figure>
+					<trash>π c ϕ ) and (c † ϕ , π † c ϕ ), {c ϕ (x, t ), π c ϕ (y, t )} = i δ 3 (x − y) , {c † ϕ (x, t ), π † c ϕ (y, t )} = −i δ 3 (x − y) , (117) and otherwise are zero. Or equivalently, for operators c(k), d † (k), c † (k) and d (k), the following relations are imposed on, {c(k), c † (l)} = δ 3 (k − l) , {d (k), d † (l)} = −δ 3 (k − l) , {c(k), c(l)} = 0 , {c † (k), c † (l)} = 0 , {d (k), d (l)} = 0 , {d † (k), d † (l)} = 0 , {c(k), d (l)} = 0 , {c † (k), d † (l)} = 0 , {c(k), d † (l)} = 0 , {c † (k), d (l)} = 0 . (118) Using (34), (116), (117) and the Heisenberg equation, (110) and (111) are derived where the Hamiltonian is given by H c ϕ = H c ϕ d 3 x By inserting (112) – (115) into (116), the Hamiltonian H c ϕ is written by H c ϕ = d 3 kk 0 c † (k)c(k) + d (k)d † (k) = d 3 kk 0 c † (k)c(k) − d † (k)d (k) − d 3 kd 3 x (2π) 3 k 0 . (119)</trash>
+
+
+				</figure>
+
+				<p>The ground state |0〉 is defined by the state that satisfies c(k)|0〉 = 0 and d (k)|0〉 = 0. The eigenstates and eigenvalues of H c ϕ are given by</p>
+
+				<figure>
+					<trash>d 3 k 1 d 3 k 2 · · · d 3 k n a d 3 l 1 d 3 l 2 · · · d 3 l n b f 1 (k 1 ) f 2 (k 2 ) · · · f n a (k n a )g 1 (l 1 )g 2 (l 2 ) · · · g n b (l n b ) · c † (k 1 )c † (k 2 ) · · · c † (k n a )d † (l 1 )d † (l 2 ) · · · d † (l n b )|0〉 , (120) E = k 10 + k 20 + · · · + k n a 0 + l 10 + l 20 + · · · + l n b 0 , (121)</trash>
+
+
+				</figure>
+
+				<p>where we subtract an infinite constant corresponding to the sum of the zero-point energies . We find that the energy is positive, although the anti-commutation relations are imposed on scalar fields and the negative sign appears in front of d † (k)d (k) in H c ϕ . Note that the negative sign also exists in {d (k), d † (l)} = −δ 3 (k − l) and it guarantees the</p>
+
+			</div>
+			<div>
+				<head>tivity of energy.</head>
+
+				<p>L c ϕ is invariant under the U (1) transformation,</p>
+
+				<figure>
+					<trash>δc ϕ = i [ǫN c ϕ , c ϕ ] = i ǫc ϕ , δc † ϕ = i [ǫN c ϕ , c † ϕ ] = −i ǫc † ϕ , (122) where N c ϕ is the conserved U (1) charge defined by ǫN c ϕ ≡ d 3 x ∂L c ϕ ∂ ˙ c ϕ R δc ϕ + δc † ϕ ∂L c ϕ ∂ ˙ c † ϕ L . (123) Note that N c ϕ is hermitian by definition and L † c ϕ = L c ϕ . From (123), N c ϕ is given by N c ϕ = i d 3 x π c ϕ c ϕ − c † ϕ π † c ϕ = d 3 k −c † (k)c(k) + d (k)d † (k) = − d 3 k c † (k)c(k) + d † (k)d (k) − d 3 kd 3 x (2π) 3 , (124) where we use {d (k), d † (l)} = −δ 3</trash>
+
+					<figDesc>(k − l) to derive the last expression. To subtract the infinite constant in N c ϕ , we define N c ϕ by</figDesc>
+					<trash>N c ϕ ≡: N c ϕ := − d 3 k c † (k)c(k) + d † (k)d (k) . (125) The 4-dimensional anti-commutation relations are calculated as {c ϕ (x), c † ϕ (y)} = d 3 kd 3 l (2π) 3 2k 0 2l 0 {c(k), c † (l)}e −i kx+i l y + {d † (k), d (l)}e i kx−i l y = d 3 k (2π) 3 2k 0 e −i k(x−y) − e i k(x−y) = i ∆(x − y) , (126) {c ϕ (x), c ϕ (y)} = 0 , {c † ϕ (x), c † ϕ (y)} = 0 , (127)</trash>
+
+
+				</figure>
+
+				<p>where we use the anti-commutation relations (118). Then, bosonic variables composed of c ϕ and c † ϕ are commutative to any bosonic variables separated by a space-like interval, and hence the microscopic causality is not violated. From (103) and (126), it is understood that the following replacements are carried out,</p>
+
+				<figure>
+					<trash>[a(k), a † (l)] = δ 3 (k − l) → {c(k), c † (l)} = δ 3 (k − l) , [b † (k), b(l)] = −δ 3 (k − l) → {d † (k), d (l)} = −δ 3 (k − l) . (128)</trash>
+
+
+				</figure>
+
+				<p>Note that the replacement [b(l), b † (k)] = δ 3 (k −l) by {d (l), d † (k)} = δ 3 (k −l) is incompatible with our anti-commutation relations (118).</p>
+
+				<p>The vacuum expectation values of the time ordered products are calculated as</p>
+
+				<figure>
+					<trash>〈0|Tc ϕ (x)c † ϕ (y)|0〉 = 〈0|(θ(x 0 − y 0 )c ϕ (x)c † ϕ (y) − θ(y 0 − x 0 )c † ϕ (y)c ϕ (x))|0〉 = d 3 kd 3 l (2π) 3 2k 0 2l 0 θ(x 0 − y 0 )〈0|c(k)c † (l)|0〉e −i kx+i l y −θ(y 0 − x 0 )〈0|d (k)d † (l)|0〉e i kx−i l y = d 3 k (2π) 3 2k 0 θ(x 0 − y 0 )e −i k(x−y) + θ(y 0 − x 0 )e i k(x−y) = d 4 k (2π) 4 i e −i k(x−y) k 2 − m 2 + i ε = i ∆ F (x − y) , (129) 〈0|Tc ϕ (x)c ϕ (y)|0〉 = 0 , 〈0|Tc † ϕ (x)c † ϕ (y)|0〉 = 0 , (130) where we use 〈0|c(k)c † (l)|0〉 = δ 3 (k − l), 〈0|d (k)d † (l)|0〉 = −δ 3 (k − l) and so forth. Hence,</trash>
+
+
+				</figure>
+
+				<p>we obtain the same results as those in the case of the ordinary complex scalar field.</p>
+
+				<p>From {d (k), d † (l)} = −δ 3 (k − l), the negative norm states appear, and the probability interpretation does not hold on. Hence, it is difficult to construct a consistent quantum field theory for a fermionic scalar field alone.</p>
+
+			</div>
+			<div>
+				<head n="3.3">Coexisting system of scalar fields</head>
+
+				<p>Now, let us consider the system that (ϕ, ϕ</p>
+
+				<figure>
+					<trash>† ) and (c ϕ , c † ϕ ) coexist, described by the Lagrangian density, L ϕ,c ϕ = ∂ µ ϕ † ∂ µ ϕ − m 2 ϕ † ϕ + ∂ µ c † ϕ ∂ µ c ϕ − m 2 c † ϕ c ϕ . (131) From (95) and (119), the Hamiltonian is obtained as H ϕ,c ϕ = d 3 kk 0 a † (k)a(k) + b † (k)b(k) +c † (k)c(k) − d † (k)d (k) . (132)</trash>
+
+
+				</figure>
+
+				<p>Note that the sum of the zero-point energies vanishes due to the cancellation between contributions from (ϕ, ϕ † ) and (c ϕ , c † ϕ ). The eigenstates for H ϕ,c ϕ are constructed by acting the creation operators a</p>
+
+				<p><formula>† (k), b † (k), c</formula></p>
+
+				<p>† (k) and d † (k) on the vacuum state |0〉. This system also contains negative norm states, because the relation {d (k), d † (l)} = −δ 3 (k − l) is imposed on. In the same way as the coexisting system of harmonic oscillators, it is shown that the system has fermionic symmetries and they rescue it from the difficulty.</p>
+
+				<p>The L ϕ,c ϕ is invariant under the fermionic transformations,</p>
+
+				<figure>
+					<trash>δ F ϕ = −ζc ϕ , δ F ϕ † = 0 , δ F c ϕ = 0 , δ F c † ϕ = ζϕ † (133) and δ † F ϕ = 0 , δ † F ϕ † = ζ † c † ϕ , δ † F c ϕ = ζ † ϕ , δ † F c † ϕ = 0 . (134) From the above transformation properties, we see that δ F and δ † F are nilpotent, i.e., Q F 2 = 0 and Q † F 2 = 0. Here, Q F and Q † F are the corresponding generators defined by ζQ F ≡ d 3 x ∂L ϕ,c ϕ ∂ ˙ ϕ R δ F ϕ + δ F c † ϕ ∂L ϕ,c ϕ ∂ ˙ c † ϕ L , (135) Q † F ζ † ≡ d 3 x δ † F ϕ † ∂L ϕ,c ϕ ∂ ˙ ϕ † L + ∂L ϕ,c ϕ ∂ ˙ c ϕ R δ † F c ϕ . (136) We have the algebraic relation, {Q F ,Q † F } = N D , (137) where N D is the number operator defined by N D ≡ −N ϕ − N c ϕ = d 3 k a † (k)a(k) − b † (k)b(k) +c † (k)c(k) + d † (k)d (k) . (138)</trash>
+
+
+				</figure>
+
+				<p>N ϕ and N c ϕ are generators for U (1) transformations of ϕ and c ϕ , given by (101) and (124), respectively. Note that the infinite constants in N ϕ and N c ϕ are canceled out in N D in the similar way as H ϕ,c ϕ . The symmetry of our system is also equivalent to OSp(2|2).</p>
+
+				<figure>
+					<trash>From (135) and (136), the conserved fermionic charges Q F and Q † F are obtained by Q F = d 3 x −πc ϕ + ϕ † π † c ϕ = −i d 3 k a † (k)c(k) − d † (k)b(k) , (139) Q † F = d 3 x −c † ϕ π † + π c ϕ ϕ = i d 3 k c † (k)a(k) − b † (k)d (k) . (140) Then, the canonical momenta are transformed as, δ F π = 0 , δ F π † = −ζπ † c ϕ , δ F π c ϕ = ζπ , δ F π † c ϕ = 0 (141) and δ † F π = ζ † π c ϕ , δ † F π † = 0 , δ † F π c ϕ = 0 , δ † F π † c ϕ = −ζ † π † . (142)</trash>
+
+
+				</figure>
+
+				<p>It is easily understood that L ϕ,c ϕ is invariant under the transformations (133) and (134), from the nilpotency of δ F and δ † F and the relations,</p>
+
+				<figure>
+					<trash>L ϕ,c ϕ = δ F R ϕ,c ϕ = δ † F R † ϕ,c ϕ = δ F δ † F L ϕ = −δ † F δ F L ϕ , (143) where R ϕ,c ϕ and R † ϕ,c ϕ are given by R ϕ,c ϕ = ∂ µ c † ϕ ∂ µ ϕ − m 2 c † ϕ ϕ , R † ϕ,c ϕ = ∂ µ ϕ † ∂ µ c ϕ − m 2 ϕ † c ϕ . (144) The Hamiltonian density H ϕ,c ϕ is written in the Q F and Q † F exact forms such that H ϕ,c ϕ = i Q F , ˜ R ϕ,c ϕ = −i Q † F , ˜ R † ϕ,c ϕ = Q F , Q † F , H ϕ = − Q † F , Q F , H ϕ , (145) where R ϕ,c ϕ and R † ϕ,c ϕ are given by ˜ R ϕ,c ϕ = π c ϕ π † + ∇c † ϕ ∇ϕ + m 2 c † ϕ ϕ , ˜ R † ϕ,c ϕ = ππ † c ϕ + ∇ϕ † ∇c ϕ + m 2 ϕ † c ϕ . (146)</trash>
+
+
+				</figure>
+
+				<p>As in the case of the harmonic oscillators, negative norm states can be projected out by imposing the following subsidiary conditions on states,</p>
+
+				<figure>
+					<trash>Q F |phys〉 = 0 , Q † F |phys〉 = 0 , N D |phys〉 = 0 (147) or ˜ Q 1 |phys〉 = 0 , ˜ Q 2 |phys〉 = 0 , N D |phys〉 = 0 , (148) where Q 1 and Q 2 are defined by ˜ Q 1 ≡ Q F +Q † F , ˜ Q 2 ≡ i (Q F −Q † F ) . (149)</trash>
+
+
+				</figure>
+
+				<p>As a result, the theory becomes harmless but empty leaving the vacuum state alone.</p>
+
+				<p>Finally, we point out that the remedy of the system described by L c ϕ is not unique as in the case with the harmonic oscillator. There is a possibility that the real and the imaginary part of c ϕ are regarded as the Faddeev-Popov ghost field c(x) and the antighost field c(x), respectively. Using c ϕ (x) = (c(x) + i c (x))/ 2, L c ϕ is rewritten by</p>
+
+				<p><formula>L c ϕ = −i ∂ µ c(x)∂ µ c(x) − i m 2 c(x)c(x) . (150)</formula></p>
+
+				<p>As is well known, in the presence of the gauge boson A µ (x), we can construct a consistent quantum theory containing massless scalar fields obeying anti-commutation relations. Non-gauge model with a pair of hermitian scalar fields (c(x), c(x)) and those BRST partners also has been constructed and studied [21, 22]</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="4">Conclusions</head>
+
+				<p>We have reexamined the connection between spin and statistics through the quantization of a complex scalar field. Starting from an ordinary Lagrangian density and imposing the anti-commutation relations on the scalar field, we have found that the difficulty stems from not the ill-definiteness (or unboundedness) of the energy and the violation of the causality but the appearance of states with negative norms. 2,3 These features also hold for the system with a spinor field imposing the commutation relations on. As a by-product, we have constructed analytical mechanics in the form with the manifestly hermitian property.</p>
+
+				<p>The fermionic scalar field (or a bosonic spinor field) cannot exist alone, because the probability of its discovery is negative and physically meaningless. We have proposed that the system with a fermionic scalar field (or a bosonic spinor field) becomes harmless by introducing an ordinary complex scalar field (or an ordinary spinor field) to form a doublet of fermionic symmetries, although the system becomes empty leaving the vacuum state alone. It is meaningful to construct an interacting model containing our coexisting system as a subsystem, after the example of the gauge fixing term and the Faddeev- Popov ghost term in gauge theories.</p>
+
+				<p>Here, the following question arises from the physical point of view. Even if there were a coexisting system with only unphysical modes, is it physically meaningful or is it verified? It is deeply connected to the question &quot; what is the physical reality? &quot; There is a possibility that unphysical particles leave behind a fingerprint relating symmetries based on the scenario that our world comes into existence from unphysical world, even if they did not give any dynamical effects on the physical sector at the beginning [25]. It would be interesting to explore the physics concerning the reversal connection of spin and statistics and the application to its phenomenology, based on the above scenario.</p>
+
+			</div>
+			<div>
+				<head>Acknowledgments</head>
+
+				<p>The author thanks Prof. T. Kugo for valuable discussions and useful comments. This work was supported in part by scientific grants from the Ministry of Education, Culture, Sports, Science and Technology under Grant Nos. 22540272 and 21244036. 2 Recently, higher spin fields with abnormal commutation relations are studied and the same features are obtained using explicit models in [23]. The models are different from ours in the following point. The models in [23] are constructed from a pair of complex fields such as a pair of fermionic scalar fields or a pair of bosonic spinor fields and their Lagrangian density is composed of the mixing terms of the pair. In contrast, our model is constructed from a single fermionic scalar field or a single bosonic spinor field and the Lagrangian density has the same form as that of an ordinary complex scalar field or an ordinary Dirac spinor field. If combined with our results, it is not unreasonable to conjecture that the positive norm condition is crucial to the spin-statistics theorem in a wide class of models. 3 In [24], the connection of spin and statistics are examined for massless fields in any number of spacetime dimensions, and it is concluded that hermitian fields obeying abnormal relations like the Faddeev- Popov ghost fields do not violate the microscopic causality, either.</p>
+
+			</div>
+			<div>
+				<head>A Differentiation, Hamiltonian and analytical mechanics</head>
+
+				<p>We present useful formulas of differentiation for variables. For variables A and B, the right-differentiation of AB by a Grassmann variable θ i is given by</p>
+
+				<figure>
+					<trash>∂ ∂θ i (AB) R = A ∂B ∂θ i R + (−) |B| ∂A ∂θ i R B , (151)</trash>
+
+
+				</figure>
+
+				<p>where |B| is the number representing the Grassmann parity of B, i.e., |B| = 1 for the Grassmann odd B and |B| = 0 for the Grassmann even B.</p>
+
+				<p>The left-differentiation of AB by θ i is given by</p>
+
+				<figure>
+					<trash>∂ ∂θ i (AB) L = ∂A ∂θ i L B + (−) |A| A ∂B ∂θ i L . (152)</trash>
+
+
+				</figure>
+
+				<p>We have the following relation between the right and the left-differentiation:</p>
+
+				<p><formula>∂A ∂θ i R † = ∂A † ∂θ † i L . (153)</formula></p>
+
+				<p>Actually, the hermitian conjugate of (151) is rewritten as</p>
+
+				<figure>
+					<trash>∂ ∂θ i (AB) R † = ∂B ∂θ i R † A † + (−) |B| B † ∂A ∂θ i R † = ∂B † ∂θ † i L A † + (−) |B † | B † ∂A † ∂θ † i L = ∂ ∂θ † i (B † A † ) L = ∂ ∂θ † i (AB) † L , (154) where we use (AB) † = B † A † , |B| = |B † |, (152</trash>
+
+
+				</figure>
+
+				<p>) and (153). This relation consists with (153).</p>
+
+				<p>For any variable z n taking an ordinary or a Grassmann number, (153) is generalized to ∂ f (z m , z</p>
+
+				<p><formula>† m ) ∂z n R † = ∂ f † (z m , z † m ) ∂z † n L . (155)</formula></p>
+
+				<p>Let us develop analytical mechanics for the system with a set of variables (Q k ,Q † k ) containing bosonic and/or fermionic ones. For the Lagrangian L = L(Q k , ˙</p>
+
+				<figure>
+					<trash>Q k ,Q † k , ˙ Q † k ), we define the canonical momentum of Q k by P k ≡ ∂L ∂ ˙ Q k R . (156)</trash>
+
+					<figDesc>Then the hermitian conjugate of P k is given by</figDesc>
+					<trash>P † k = ∂L ∂ ˙ Q k R † = ∂L † ∂ ˙ Q † k L = ∂L ∂ ˙ Q † k L , (157) where we use (155) and L † = L. Here, we adopt P † k defined in (157) as the canonical momenta of Q † k</trash>
+
+
+				</figure>
+
+				<p>. and then analytical mechanics can be constructed with the manifestly hermitian property that the hermitian conjugate of canonical momentum for a variable is just the canonical momentum for the hermitian conjugate of the variable.</p>
+
+				<figure>
+					<trash>Using P k and P † k , the Hamiltonian is defined by H ≡ k ∂L ∂ ˙ Q k R ˙ Q k + ˙ Q † k ∂L ∂ ˙ Q † k L − L = k P k ˙ Q k + ˙ Q † k P † k − L , (158)</trash>
+
+
+				</figure>
+
+				<p>where H is hermitian by definition and should be expressed using canonical variables after ˙ Q k and ˙ Q † k are obtained as functions of canonical ones.</p>
+
+				<p>Based on this definition, the variations of L and H are given by</p>
+
+				<p><formula>δL = k ∂L ∂Q k R δQ k + ∂L ∂ ˙ Q k R δ ˙ Q k +δQ † k ∂L ∂Q † k L + δ ˙ Q † k ∂L ∂ ˙ Q † k L , (159) δH = k ∂H ∂Q k R δQ k + δP k ∂H ∂P k L +δQ † k ∂H ∂Q † k L + ∂H ∂P † k R δP † k , (160)</formula></p>
+
+				<p>where L and H are assumed not to contain the time variable t explicitly. From the variational principle, the following Hamilton&apos;s canonical equations of motion are derived,</p>
+
+			</div>
+			<div>
+				<head>dQ</head>
+
+				<p><formula>k d t = ∂H ∂P k L , d P k d t = − ∂H ∂Q k R , dQ † k d t = ∂H ∂P † k R , d P † k d t = − ∂H ∂Q † k L . (161)</formula></p>
+
+				<p>Then, the Hamilton equation for F = F (Q k ,</p>
+
+				<figure>
+					<trash>P k ,Q † k , P † k ) is written by d F d t = {F, H} PB , (162) where f , g PB is the Poisson bracket defined by f , g PB ≡ k ∂ f ∂Q k R ∂g ∂P k L − (−) |Q k | ∂ f ∂P k R ∂g ∂Q k L +(−) |Q k | ∂ f ∂Q † k R ∂g ∂P † k L − ∂ f ∂P † k R ∂g ∂Q † k L . (163)</trash>
+
+
+				</figure>
+
+				<p>We see that (161) is derived from (162) using the relations,</p>
+
+				<figure>
+					<trash>∂H ∂Q k L = (−) |Q k | ∂H ∂Q k R , ∂H ∂P † k R = (−) |Q k | ∂H ∂P † k L . (164) Note that (−) |Q k | = (−) |P k | = (−) |Q † k | = (−) |P † k | and (−) 2|Q k | = 1.</trash>
+
+					<figDesc>We see that the following relations concerning the above Poisson bracket hold on: f , g PB = (−)</figDesc>
+					<trash>| f ||g |+1 g , f PB , (165) f , αg + βh PB = α f , g PB + β f , h PB , (166) f g , h PB = f g , h PB + (−) |g ||h| f , h PB g , (167) (−) |h|| f | f , g PB , h PB + (−) | f ||g | g , h PB , f PB + (−) |g ||h| h, f PB , g PB = 0 , (168)</trash>
+
+
+				</figure>
+
+				<p>where α and β are quantities irrelevant to canonical variables, and the last relation is the Jacobi identity.</p>
+
+				<p>The canonical quantization is carried out by regarding variables as operators and replacing the Poisson bracket into the commutation relation for bosonic variables or the anti-commutation relation for fermionic variables such that</p>
+
+				<figure>
+					<trash>f , g PB → 1 i ħ [ f , g ] or 1 i ħ { f , g } . (169)</trash>
+
+
+				</figure>
+
+				<p>Let L be invariant under the transformation, δQ k = i [ǫN ,Q k ] , δQ † k = i [ǫN ,Q † k ] , (170) where ǫ is an infinitesimal real number and N is the conserved Noether charge defined</p>
+
+				<p><formula>by ǫN ≡ k ∂L ∂ ˙ Q k R δQ k + δQ † k ∂L ∂ ˙ Q † k L = k P k δQ k + δQ † k P † k , (171)</formula></p>
+
+				<p>where N is also hermitian by definition.</p>
+
+				<figure>
+					<trash>For the Lagrangian density L = L (φ a , ∂ µ φ a , φ a † , ∂ µ φ a † ) with (φ a , φ a † ) containing</trash>
+
+
+				</figure>
+
+				<p>bosonic and/or fermionic variables, let L be invariant under the transformation (irrelevant to the space-time) φ</p>
+
+				<figure>
+					<trash>a → φ a + δφ a and φ a † → φ a † + δφ a † . Then, the Noether current j µ is defined by ǫ j µ ≡ k ∂L ∂∂ µ φ a R δφ a + δφ a † ∂L ∂ µ φ a † L (172)</trash>
+
+
+				</figure>
+
+				<p>and is subject to the conservation law such as ∂ µ j µ = 0.</p>
+
+			</div>
+			<div>
+				<head>B Bosonic spinor field</head>
+
+				<p>We study the system of a bosonic spinor field (a spinor field imposing the commutation relations on variables), and clarify the difficulty on quantization.</p>
+
+				<p>Let us take the system described by the Lagrangian density,</p>
+
+				<figure>
+					<trash>L c ψ = i c ψ γ µ ∂ µ c ψ − mc ψ c ψ , (173) where c ψ is a spinor field taking complex numbers, c ψ ≡ c † ψ γ 0 and γ µ are the gamma matrices satisfying {γ µ , γ ν } = 2η µν . The Euler-Lagrange equations for c ψ and c ψ are given by c ψ i γ µ ← − ∂ µ + m = 0 , i γ µ ∂ µ − m c ψ = 0 , (174) respectively. Here and hereafter, we use L c ψ in place of the hermitian one, L 0 c ψ = i 2 c ψ γ µ ∂ µ c ψ − ∂ µ c ψ γ µ c ψ − mc ψ c ψ , (175)</trash>
+
+
+				</figure>
+
+				<p>because the same conclusions are obtained easier.</p>
+
+				<p>The canonical conjugate momentum of c ψ is given by</p>
+
+				<figure>
+					<trash>π c ψ ≡ ∂L c ψ ∂ ˙ c ψ R = i c ψ γ 0 = i c † ψ . (176) By solving (174) and (176), we obtain the solutions, c ψ (x) = d 3 k (2π) 3 2k 0 s ˜ c(k, s)u(k, s)e −i kx + ˜ d † (k, s)v (k, s)e i kx , (177) π c ψ (x) = i d 3 k (2π) 3 2k 0 s ˜ c † (k, s)u † (k, s)e i kx + ˜ d (k, s)v † (k, s)e −i kx , (178)</trash>
+
+
+				</figure>
+
+				<p>where s represents the spin state, and u(k, s) and v (k, s) are Dirac spinors on the momentum space. They satisfy the relations,</p>
+
+				<figure>
+					<trash>s u(k, s)u(k, s) = k + m , s v (k, s)v(k, s) = k − m , (179) where u(k, s) ≡ u † (k, s)γ 0 , v (k, s) ≡ v † (k, s)γ 0 and k = γ µ k µ . Using (176), the Hamiltonian density is obtained as H c ψ = π c ψ ˙ c ψ − L c ψ = −i 3 i =1 c ψ γ i ∂ i c ψ + mc ψ c ψ . (180)</trash>
+
+
+				</figure>
+
+				<p>Let us quantize the system regarding variables as operators and imposing the following commutation relations on (c ψ , π c ψ ), [c</p>
+
+				<figure>
+					<trash>α ψ (x, t ), π β c ψ (y, t )] = i δ αβ δ 3 (x − y) , [c α ψ (x, t ), c β ψ (y, t )] = 0 , [π α c ψ (x, t ), π β c ψ (y, t )] = 0 , (181) where α and β are spinor indices. Or equivalently, for operators c(k, s), ˜ d † (k, s), ˜ c † (k, s) and d (k, s), the following commutation relations are imposed on, [ ˜ c(k, s), ˜ c † (l, s ′ )] = δ ss ′ δ [ ˜ c(k, s), ˜ d (l, s ′ )] = 0 , [ ˜ c † (k, s), ˜ d † (l, s ′ )] = 0 , [ ˜ c(k, s), ˜ d † (l, s ′ )] = 0 , [ ˜ c † (k, s), ˜ d (l, s ′ )] = 0 , [ ˜ c(k, s), ˜ c(l, s ′ )] = 0 , [ ˜ c † (k, s), ˜ c † (l, s ′ )] = 0 , [ ˜ d (k, s), ˜ d(l, s ′ )] = 0 , [ ˜ d † (k, s), ˜ d † (l, s ′ )] = 0 . (182) Using (12), (180), (181) and the Heisenberg equation, (174) and (176) are derived where the Hamiltonian is given by H c ψ = H c ψ d 3 x. By inserting (177) and (178) into (180), the Hamiltonian H c ψ is written by H c ψ = d 3 k s k 0 ˜ c † (k, s) ˜ c(k, s) − ˜ d (k, s) ˜ d † (k, s) = d 3 k s k 0 ˜ c † (k, s) ˜ c(k, s) − ˜ d † (k, s) ˜ d (k, s) + d 3 kd 3 x (2π) 3 s k 0 . (183)</trash>
+
+
+				</figure>
+
+				<p>Let us define the ground state |0〉 as the state that satisfies c(k, s)|0〉 = 0 and d (k, s)|0〉 = 0. Then, the eigenstates and eigenvalues of H c ψ are given by</p>
+
+				<figure>
+					<trash>d 3 k 1 d 3 k 2 · · · d 3 k n a d 3 l 1 d 3 l 2 · · · d 3 l n b f 1 (k 1 ) f 2 (k 2 ) · · · f n a (k n a )g 1 (l 1 )g 2 (l 2 ) · · · g n b (l n b ) · ˜ c † (k 1 , s 1 ) ˜ c † (k 2 , s 2 ) · · · ˜ c † (k n a , s n a ) ˜ d † (l 1 , s ′ 1 ) ˜ d † (l 2 , s ′ 2 ) · · · ˜ d † (l n b , s ′ n b )|0〉 , (184) E = k 10 + k 20 + · · · + k n a 0 + l 10 + l 20 + · · · + l n b 0 , (185)</trash>
+
+
+				</figure>
+
+				<p>where we subtract an infinite constant corresponding to the sum of the zero-point energies . From (185), we find that the positivity of energy holds on, although the commutation relations are imposed on the spinor field and the negative sign appears in front of d † (k, s) ˜ d (k, s) in H c ψ . Note that the negative sign also exists in [ ˜ d</p>
+
+				<figure>
+					<trash>(k, s), ˜ d † (l, s ′ )] = −δ ss ′ δ 3</trash>
+
+					<figDesc>(k − l) and it guarantees the positivity of energy. L c ψ is invariant under the U (1) transformation,</figDesc>
+					<trash>δc ψ = i [ǫN c ψ , c ψ ] = i ǫc ψ , δc † ψ = i [ǫN c ψ , c † ψ ] = −i ǫc † ψ , (186) where N c ψ is the conserved U (1) charge given by N c ψ = − d 3 xc † ψ c ψ = − d 3 k s ˜ c † (k, s) ˜ c(k, s) + ˜ d (k, s) ˜ d † (k, s) = − d 3 k s ˜ c † (k, s) ˜ c(k, s) + ˜ d † (k, s) ˜ d(k, s) , (187)</trash>
+
+
+				</figure>
+
+				<p>where we subtract an infinite constant. We find that the U (1) charge of particle corre- sponding d † (k, s)|0〉 is opposite to that corresponding c † (k, s)|0〉 from [ ˜ d</p>
+
+				<figure>
+					<trash>(k, s), ˜ d † (l, s ′ )] = −δ ss ′ δ 3 (k − l) and [ ˜ c(k, s), ˜ c † (l, s ′ )] = δ ss ′ δ The 4-dimensional commutation relations are calculated as [c α ψ (x), c β ψ (y)] = d 3 kd 3 l (2π) 3 2k 0 2l 0 s,s ′ [ ˜ c(k, s), ˜ c † (l, s ′ )]u α (k, s)u β (l, s ′ )e −i kx+i l y +[ ˜ d † (k, s), ˜ d (l, s ′ )]v α (k, s)v β (l, s ′ )e i kx−i l y = d 3 k (2π) 3 2k 0 s u α (k, s)u β (k, s)e −i k(x−y) + v α (k, s)v β (k, s)e i k(x−y) = i γ µ ∂ µ + m αβ d 3 k (2π) 3 2k 0 e −i k(x−y) − e i k(x−y) = i γ µ ∂ µ + m αβ i ∆(x − y) ≡ i S αβ (x − y) , (188) [c α ψ (x), c β ψ (y)] = 0 , [c α ψ (x), c β ψ (y)] = 0 , (189) where we use [ ˜ c(k, s), ˜ c † (l, s ′ )] = δ ss ′ δ 3 (k − l) and [ ˜ d (k, s), ˜ d † (l, s ′ )] = −δ ss ′ δ 3 (k − l). We find</trash>
+
+
+				</figure>
+
+				<p>that two fields separated by a space-like interval commute with each other from the relation ∆(x − y) = 0 for (x − y) 2 &lt; 0, and hence the microscopic causality also holds on.</p>
+
+				<p>The vacuum expectation values of the time ordered products are calculated as</p>
+
+				<figure>
+					<trash>〈0|Tc α ψ (x)c β ψ (y)|0〉 = 〈0|(θ(x 0 − y 0 )c α ψ (x)c β ψ (y) + θ(y 0 − x 0 )c β ψ (y)c α ψ (x))|0〉 = d 3 kd 3 l (2π) 3 2k 0 2l 0 s,s ′ θ(x 0 − y 0 )〈0| c(k, s) ˜ c † (l, s ′ )|0〉u α (k, s)u β (l, s ′ )e −i kx+i l y +θ(y 0 − x 0 )〈0| d (k, s) ˜ d † (l, s ′ )|0〉v α (k, s)v β (l, s ′ )e i kx−i l y = d 3 k (2π) 3 2k 0 s θ(x 0 − y 0 )u α (k, s)u β (k, s)e −i k(x−y) −θ(y 0 − x 0 )v α (k, s)v β (k, s)e i k(x−y) = i γ µ ∂ µ + m αβ d 3 k (2π) 3 2k 0 θ(x 0 − y 0 )e −i k(x−y) + θ(y 0 − x 0 )e i k(x−y) = i γ µ ∂ µ + m αβ i ∆ F (x − y) = d 4 k (2π) 4 i e −i k(x−y) k − m + i ε αβ = i S αβ F (x − y) , (190) 〈0|Tc ψ (x)c ψ (y)|0〉 = 0 , 〈0|Tc ψ (x)c ψ (y)|0〉 = 0 , (191) where we use 〈0| c(k, s) ˜ c † (l, s ′ )|0〉 = δ ss ′ δ 3 (k − l) and 〈0| d (k, s) ˜ d † (l, s ′ )|0〉 = −δ ss ′ δ 3 (k − l), and S αβ F</trash>
+
+					<figDesc>(x − y) is the Feynman propagator for spinors. Hence we obtain the same results as those in the case of the ordinary Dirac spinor field.</figDesc>
+					<trash>From [ ˜ d (k, s), ˜ d † (l, s ′ )] = −δ ss ′ δ</trash>
+
+
+				</figure>
+
+				<p>a consistent quantum field theory for a spinor field obeying the commutation relations alone. This difficulty is also recovered by introducing an ordinary spinor field ψ obeying the anti-commutation relations. Concretely, for the system described by the Lagrangian density [25]</p>
+
+				<figure>
+					<figDesc>, L ψ,c ψ = i ψγ µ ∂ µ ψ − mψψ + i c ψ γ µ ∂ µ c ψ − mc ψ c ψ , (192)</figDesc>
+
+				</figure>
+
+				<p>the theory becomes harmless but empty leaving the vacuum state alone, assisted by fermionic symmetries, that is, the invariance under the transformations,</p>
+
+				<figure>
+					<trash>δ F ψ = ζc ψ , δ F ψ † = 0 , δ F c ψ = 0 , δ F c † ψ = ζψ † , (193) and δ † F ψ = 0 , δ † F ψ † = ζ † c † ψ , δ † F c ψ = ζ † ψ , δ † F c † ψ = 0 . (194)</trash>
+
+
+				</figure>
+
+			</div>
+
+			<note place="foot">* E-mail: haru@azusa.shinshu-u.ac.jp</note>
+
+			<note place="foot" n="1"> Pauli reconsidered the spin-statistics theorem using the formulation based on the Fock space with indefinite metrics, and found that the positive norm condition plays a vital role in the theorem [6].</note>
+
+			<note place="foot" n="3"> (k − l) , [b(k), b † (l)] = δ 3 (k − l) , [a(k), b(l)] = 0 ,</note>
+
+			<note place="foot" n="3"> (k − l) , [ ˜ d (k, s), ˜ d † (l, s ′ )] = −δ ss ′ δ 3 (k − l) ,</note>
+
+			<note place="foot" n="3"> (k − l). Hence, ˜ c(k, c) and d † (k, s) in c ψ (x) are regarded as the annihilation operator of particle and the creation operator of antiparticle , respectively. ˜ c † (k, c) and d (k, s) in π c ψ (x) are regarded as the creation operator of particle and the annihilation operator of antiparticle, respectively.</note>
+
+			<note place="foot" n="3"> (k − l), we find that the negative norm states appear and the probability interpretation does not hold on. 4 Hence, it is difficult to construct 4 If we take d † (k, s)|0〉 = 0 in place of d(k, s)|0〉 = 0, negative norm states do not appear but the</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Pauli</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<forename type="middle">J</forename>
+				<surname>Belinfante</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physica VII</title>
+		<imprint>
+			<biblScope unit="volume">177</biblScope>
+			<date type="published" when="1940" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">J. S. deWet, Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">57</biblScope>
+			<biblScope unit="issue">646</biblScope>
+			<date type="published" when="1940" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Pauli</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">58</biblScope>
+			<biblScope unit="issue">716</biblScope>
+			<date type="published" when="1940" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Feynman</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="page">749</biblScope>
+			<date type="published" when="1949" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Feynman</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="page">769</biblScope>
+			<date type="published" when="1949" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Pauli</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Prog. Theor. Phys</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page">526</biblScope>
+			<date type="published" when="1950" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">J. Schwinger, Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="issue">914</biblScope>
+			<date type="published" when="1951" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Lüders</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Zumino</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">110</biblScope>
+			<biblScope unit="page">1450</biblScope>
+			<date type="published" when="1958" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Burgoyne</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Nuovo</forename>
+				<surname>Cim</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1958" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">F</forename>
+				<surname>Streater</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">S</forename>
+				<surname>Wightman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Pct</forename>
+				<surname>Spin</surname>
+			</persName>
+		</author>
+		<editor>Statistics, and All That (W. A. Ben- jamin</editor>
+		<imprint>
+			<date type="published" when="1964" />
+			<pubPlace>New York</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Duck</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">C G</forename>
+				<surname>Sudarshan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Pauli</forename>
+				<surname>Spin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Statistics TheoremWorld Scien- tific</title>
+		<imprint>
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">D</forename>
+				<surname>Faddeev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Popov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page">29</biblScope>
+			<date type="published" when="1967" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Fujikawa</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Mod. Phys</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page">4025</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<title level="m" type="main">tivity of energy is ruined This possibility might not be reasonable because d (k, s) ( ˜ d † (k, s)) is normally interpreted as the annihilation (creation) operator of antiparticle and hence it is</title>
+		<imprint/>
+	</monogr>
+	<note>natural. to choose the conditioñ d (k, s)|0〉 = 0</note>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">See</forename>
+				<forename type="middle">M</forename>
+				<surname>For A Review</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Henneaux</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rept</title>
+		<imprint>
+			<biblScope unit="volume">126</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<date type="published" when="1985" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Witten</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">117</biblScope>
+			<biblScope unit="issue">353</biblScope>
+			<date type="published" when="1988" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">See</forename>
+				<forename type="middle">D</forename>
+				<surname>Birmingham</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Blau</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Rakowski</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Thompson</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rept</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="issue">209</biblScope>
+			<biblScope unit="page">129</biblScope>
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Kugo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Ojima</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">73</biblScope>
+			<biblScope unit="page">459</biblScope>
+			<date type="published" when="1978" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Kugo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Ojima</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Prog</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Theor</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Supplement</title>
+		<imprint>
+			<biblScope unit="volume">66</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<date type="published" when="1979" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Parisi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Sourlas</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">43</biblScope>
+			<biblScope unit="page">744</biblScope>
+			<date type="published" when="1979" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Witten</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Diff</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Geom</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1982" />
+			<biblScope unit="page">661</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Fujikawa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Prog</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Theor</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys</title>
+		<imprint>
+			<biblScope unit="volume">63</biblScope>
+			<biblScope unit="page">1364</biblScope>
+			<date type="published" when="1980" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Fujikawa</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1983" />
+			<biblScope unit="page">218</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">Z</forename>
+				<surname>Tóth</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Ohta</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="issue">442</biblScope>
+			<date type="published" when="1985" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Kawamura</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>hep. -ph]</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

@@ -1,0 +1,1072 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">The four-dimensional helicity scheme and dimensional reconstruction</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2011-06-27">27 Jun 2011</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Radja</forename>
+								<surname>Boughezal</surname>
+							</persName>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Kirill</forename>
+								<surname>Melnikov</surname>
+							</persName>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Frank</forename>
+								<surname>Petriello</surname>
+							</persName>
+						</author>
+						<author>
+							<affiliation>
+								<orgName type="department" key="dep1">High Energy Physics Division</orgName>
+								<orgName type="department" key="dep2">Department of Physics and Astronomy</orgName>
+								<orgName type="institution">Argonne National Laboratory</orgName>
+								<address>
+									<postCode>60439</postCode>
+									<settlement>Argonne</settlement>
+									<region>IL</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation>
+								<orgName type="department">Department of Physics &amp; Astronomy</orgName>
+								<orgName type="institution">Johns Hopkins University</orgName>
+								<address>
+									<settlement>Baltimore</settlement>
+									<region>MD</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation>
+								<orgName type="institution">Northwestern University</orgName>
+								<address>
+									<postCode>60208</postCode>
+									<settlement>Evanston</settlement>
+									<region>IL</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation>
+								<orgName type="department">High Energy Physics Division</orgName>
+								<orgName type="institution">Argonne National Laboratory</orgName>
+								<address>
+									<postCode>60439</postCode>
+									<settlement>Argonne</settlement>
+									<region>IL</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">The four-dimensional helicity scheme and dimensional reconstruction</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2011-06-27">27 Jun 2011</date>
+						</imprint>
+					</monogr>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>The four-dimensional helicity regularization scheme is often used in one-loop QCD computations. It was recently argued in Ref. [1] that this scheme is inconsistent beyond the one-loop order in perturbation theory. In this paper, we clarify the reason for this inconsistency by studying the perturbative expansion of the vector current correlator in one-flavor QED through three-loop order. We develop a simple, practical way to fix the four-dimensional helicity scheme using the idea of dimensional reconstruction, and demonstrate its application in several illustrative examples.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+				<p>The four-dimensional helicity (FDH) regularization scheme [2, 3] is one of several regularization schemes [4– 6] based on the idea that consistent definitions of quantum field theories can be achieved through analytic continuation in the number of space-time dimensions [4].</p>
+
+				<p>The modern use of the FDH scheme is largely restricted to one-loop computations [7]. The motivation for FDH arose from on-shell methods for loop computations [8], which seek to reconstruct higher-loop scattering amplitudes from tree-amplitudes through their unitarity cuts. The tree amplitudes in massless QCD have a remarkably simple form [9] if a four-dimensional concept – the spinor-helicity formalism [10] – is employed in their evaluation . If this simplification is to be used in loop computations , the spin degrees of freedom for virtual particles must be treated as four-dimensional, in contrast to their momenta. This distinction is made manifest in the FDH scheme.</p>
+
+				<p>Until recently, very little work was done to extend the FDH scheme beyond one-loop computations. To the best of our knowledge, the majority of complete multiloop computations in non-supersymmetric theories are performed using conventional dimensional regularization (CDR) [29]. In contrast to this, the known higher-order FDH results include some two-loop scattering amplitudes (see Ref. [3] for examples), that have not been used for a computation of any physical quantity. * rboughezal@hep.anl.gov † melnikov@phys.jhu.edu ‡ f-petriello@northwestern.edu There is a good reason for this state of affairs. The CDR scheme is a natural scheme to use if inclusive quantities such as cross-sections and decay rates are computed using the optical theorem. Since computations of multiloop integrals in those cases are mostly based on the integration-by-parts identities [11, 12], it is important to set up calculations in such a way that D-dimensional Lorentz invariance, where D is the space-time dimension of CDR, is explicit in all stages of the computation. The fact that intermediate observable states are more naturally described by four-, rather than D-dimensional quantum fields, is immaterial within such an approach. The distinction between observable and unobservable states is accomplished indirectly, by taking the imaginary part of an appropriate Green&apos;s function at the very end of the calculation.</p>
+
+				<p>However, CDR is also used in existing fully differential next-to-next-to-leading order (NNLO) computations [13– 19]. Its use in such situations is much less natural. CDR necessitates calculations of multi-parton matrix elements to higher orders in ǫ = (4 − D)/2. If FDH were extended to the two-loop order, this step could be avoided, leading to increased efficiency in computations of quantities with rich multi-parton kinematics. In fact, FDH is a scheme of choice in many calculations that address next-to-leading order (NLO) QCD corrections to kinematic distributions at hadron colliders (see Ref. [20] for a recent summary of results). Having in mind that extension of perturbative computations for some basic LHC processes to NNLO is desirable for several reasons, it is interesting to understand if the FDH scheme can be used beyond one loop in non-supersymmetric theories.</p>
+
+				<p>In a recent work [1], Kilgore made a step in this direction by studying the application of several regularization schemes to higher-order calculations: CDR, FDH, and the dimensional reduction approach [6] commonly used in supersymmetric theories. He considered the imaginary part of the correlator of two vector currents and pointed out that the FDH scheme as formulated in Ref. [3] becomes inconsistent at higher orders. The goal of this article is to elucidate the reasons behind this inconsistency, and see if they can be fixed. We find that the problem with the FDH scheme follows from the fact that the gauge invariance of the full theory is broken by the restriction of the loop momenta to a smaller dimensionality than the spin dimensions. As the result of this, the Ward identities are not satisfied for the additional spin degrees of freedom. The situation with the FDH scheme becomes very similar to that of the dimensional reduction. However, we also find that the ills of FDH at NNLO can be cured very simply using &quot; dimensional reconstruction &quot; : if the one-loop result for an observable is known for an arbitrary number of spin dimensions , then the (incorrect) two-loop FDH result can be fixed once the one-loop renormalization constants of the theory are known for two different integer numbers of spin dimensions. No two-loop CDR computation is necessary, so that this set-up preserves some of the simplicity of the original FDH. The spirit of this fix is similar to a technique employed to reconstruct the rational parts of one-loop amplitudes in generalized D-dimensional unitarity [21]. We would like to illustrate this idea by considering as simple a set-up as possible. We choose to study Quantum Electrodynamics (QED) with a single massless fermion field. The Lagrangian of the theory reads</p>
+
+				<figure>
+					<trash>L = ¯ ψ(i∂ µ γ µ + eA µ γ µ )ψ − 1 4 F µν F µν , (1) where F µν = ∂ µ A ν − ∂ ν A µ . The vector current in this theory J µ = ¯ ψγ µ ψ is conserved, ∂ µ J µ = 0, and does not require renormalization. We study the correlator of two vector currents, ω µν (q)Π(q 2 ) = −i d 4 xe iqx 0|T J µ (x)J ν (0)|0, (2) where we used ω µν (q) = (q 2 g µν</trash>
+
+
+				</figure>
+
+				<p>− q µ q ν ). It is important to stress that, as it is customary in FDH, the external Lorentz indices µ and ν are taken to be four-dimensional. Conservation of the vector current requires that the imaginary part of the correlator Im[Π(q 2 )] is finite without any renormalization if the gauge-invariant subset of diagrams with closed fermion loops (the only contribution to the renormalization of the electric charge e) are discarded . It is this absence of any renormalization that makes this quantity an ideal laboratory for our investigation into various regularization schemes. We note that Kilgore studied the correlator of the two conserved vector currents in QCD [1], where disentangling the coupling constant renormalization is possible, but more difficult.</p>
+
+				<p>We believe that focusing on the QED aspect of the problem allows us to illustrate the main issue very sharply. It is straightforward to compute Π(q 2 ) to three-loops using various regularization schemes. We have done this in the variety of ways, including utilizing Mincer [22] or Air [23], as well as using in-house implementations of the Laporta algorithm [24] established previously [25]. We find complete agreement with the result reported in Ref. [1] when it is truncated to QED and all terms that are proportional to the number of lepton flavors are dropped. The imaginary parts of the correlator computed in CDR and FDH are</p>
+
+				<figure>
+					<trash>Im Π(q 2 ) CDR = 1 12π 1 + 3 4 α π − 3 32 α π 2 , Im Π(q 2 ) FDH = 1 12π 1 + 3 4 α π − 15 32 α π 2 . (3)</trash>
+
+
+				</figure>
+
+				<p>The difference is striking. It implies that the computation of a finite quantity, that does not require any renormalization , leads to different results when two different regularization schemes are applied. Moreover, we emphasize that both CDR and FDH computations are consistent with the conservation of the vector current J µ in four dimensions so there is nothing at this point that makes either of the two results in Eq. (3) obviously incorrect. One could have suspected that a finite shift in the coupling constant – familiar from the application of the FDH scheme in one-loop QCD computations [7]– can account for the difference of the two results. However, the known shift of the coupling constant is purely non-abelian [7]. Since it vanishes in the abelian (QED) limit, it is not possible to reconcile the two results shown in Eq. (3) by existing means.</p>
+
+				<p>To understand the reason behind the difference, we review the rules [3] that are used in the FDH computation.</p>
+
+				<p>We begin by considering QED in a D s -dimensional space, but with all momenta restricted to a D-dimensional subspace of this D s -dimensional space. This arrangement requires D s &gt; D. Upon performing spin algebra in all contributing diagrams, we take D s → 4, keeping D fixed.</p>
+
+				<p>The limit D → 4 is taken at the end of the calculation. We note that the CDR scheme can be formulated in a similar way, making it explicit that the two schemes differ by the order of limit-taking. Indeed, to arrive at the CDR result, we take D s → D for fixed D, and then take the limit D → 4. The origin of the differences in CDR and FDH results can be best understood by presenting Π(q 2 ) in a form where D s is kept fixed, while the limit D → 4 − 2ǫ is taken.</p>
+
+				<figure>
+					<trash>We find Im Π(q 2 ) = 1 12π 1 + 3 4 − 3 8 δ s α π + − 15 32 − 3 16 δ s ǫ − 3 32 δ 2 s ǫ + O(δ s ) α π 2 , (4)</trash>
+
+
+				</figure>
+
+				<p>where δ s = D s −4. The FDH result is obtained by setting δ s = 0 in Eq. (4), while the CDR result corresponds to setting δ s = −2ǫ and taking the limit ǫ → 0. O(δ s ) terms that are not enhanced by inverse powers of ǫ are present at NNLO but are irrelevant for both CDR and FDH. A similar term at NLO is also irrelevant for both CDR and FDH but, as we will see, it is important for understanding differences at NNLO between the two schemes. For this reason, it is shown explicitly in Eq. (4). It follows from Eq. (4) that the difference between the CDR and FDH schemes appears at NNLO because terms of the form α 2 δ s /ǫ are present in that order of the perturbative expansion. Those terms either contribute to the final result (CDR), or are set to zero by convention (FDH). Note that no δ s /ǫ term appears at NLO. Therefore , to understand the difference between CDR and FDH schemes, we must explain why divergent terms proportional to the number of &quot; extra-dimensional &quot; degrees of freedom appear at NNLO. The reason becomes very clear if we set D s to an integer value greater than four. For the sake of argument, we take D s = 5. It immediately follows from Eq. (4) that Im Π(q 2 ) is divergent. To see why this divergence occurs, we must go back to the QED Lagrangian in Eq. (1) and ask what theory arises if we set D s to five but keep all space-time coordinates four-dimensional. We begin by extending the Dirac algebra to five dimensions by taking Γ</p>
+
+				<figure>
+					<trash>µ = γ µ , µ = 0, .., 3 and Γ 4 = iγ 5 , so that Γ M Γ N + Γ N Γ M = 2g MN , M, N = 0, ..4. (5)</trash>
+
+					<figDesc>The fermion fields are not analytically continued, so the number of independent fermion helicities remains two. The gauge field A M is split into a four-dimensional gauge field and a scalar field, A M = (A µ , φ). The QED Lagrangian of Eq. (1) written in terms of four-dimensional fields reads</figDesc>
+					<trash>L = ¯ ψ(iγ µ ∂ µ + eA µ γ µ )ψ − ig φ ¯ ψγ 5 ψφ − 1 4 F µν F µν + 1 2 ∂ µ φ∂ µ φ. (6)</trash>
+
+
+				</figure>
+
+				<p>Note that in Eq. (6) we introduced a new coupling constant g φ , to parameterize the interaction of the field φ and the pseudoscalar fermion current. Because the Lagrangian in Eq. (6) originates from the five-dimensional QED Lagrangian in Eq. (1), g φ = e. However, since we use four-dimensional momenta and coordinates, this equality of the coupling constants can not be protected by the full D s -dimensional gauge invariance. This implies that in Eq. (6), the coupling constant g φ requires renormalization, while the electric charge e is not renormalized and is protected by the four-dimensional gauge invariance. For D s = 5, the result shown in Eq. (4) corresponds to the calculation of Im[Π(q 2 )] in a theory defined by Eq. (6) in terms of bare charges, e and g φ .</p>
+
+				<p>The bare electric charge e coincides with the physical charge because of the four-dimensional gauge invariance, but renormalization is required for g φ to make the correlator of the two vector currents explicitly finite in D s = 5. Such renormalization has not been performed in Eq. (4). This is the reason for the 1/ǫ divergences present there. We conclude that the &quot; divergences &quot; in Eq. (4) – crucial for understanding the CDR/FDH difference – can be related to the renormalization of the coupling constant g φ for finite D s . Below we describe the details of this rela- tion. Because the scalar field φ contributes to the correlator of the two vector currents only at NLO, through NNLO we only need the one-loop renormalization of the coupling constant g φ . It is easy to obtain this renormalization constant by considering the Green&apos;s function 0|T ¯ ψ(x)φψ(x)|0.</p>
+
+				<figure>
+					<trash>We find α bare φ | Ds=5 = α 1 − 3 4ǫ α π , (7) where α φ = g 2 φ /4π is introduced. Rewriting Eq. (4) for D s = 5 (δ s → 1) and separating the two couplings at NLO explicitly, we find Im Π(q 2 ) Ds=5 = 1 12π 1 + 3 4 α π − 3 8 α bare φ π + − 15 32 − 9 32ǫ α π 2 . (8)</trash>
+
+					<figDesc>Removing the bare coupling from Eq. (8) using Eq. (7), we see that the divergence in Eq. (8) disappears. This proves our assertion about the origin of the divergent δ s /ǫ terms in Eq. (4). Having understood the origin of divergences in Eq. (4), we must find a way to calculate the difference between Im[Π(q 2 )] in the FDH and CDR schemes without performing a complete three-loop computation. We observe in Eq. (4) that only the O(δ s /ǫ) term contributes to the CDR/FDH difference; the O(δ</figDesc>
+
+				</figure>
+
+			<div>
+				<head>2</head>
+
+				<p>s /ǫ) term is not relevant. However, since Eq. (4) is a second-degree polynomial in δ s , it is not possible to isolate the desired term by performing the computation in a single integer-dimensional space. Two such calculations are required. A similar need occurs when attempting to reconstruct the rational parts of one-loop amplitudes using tree-level amplitudes in higher integer dimensions [21], albeit for a different reason. We have already discussed the case D s = 5. The case D s = 6 is qualitatively similar, but different in detail.</p>
+
+				<figure>
+					<trash>The D s = 6 QED Lagrangian of Eq. (1) deconstructs to L = ¯ Ψ(iγ µ ∂ µ + eA µ γ µ )Ψ − g φ √ 2 ¯ Ψγ 5 σ + Ψφ + h.c − 1 4 F µν F µν + ∂ µ φ∂ µ φ * , (9) where ¯ Ψ = (¯ u, ¯ d) is the lepton &quot; doublet &quot; , σ + = (σ 1 + iσ 2 )/2, σ 1,2</trash>
+
+					<figDesc>,3 are the Pauli matrices and φ is a complex scalar field. We define the conserved vector current as J µ = (¯ uγ µ u + ¯ dγ µ d)/ √ 2, where the normalization factor is chosen for convenience. The corresponding result for the imaginary part of the polarization operator follows from Eq. (4), where we isolate the contribution due to scalar degrees of freedom at one-loop:</figDesc>
+
+				</figure>
+
+				<p><formula>Im Π(q 2 ) Ds=6 = 1 12π 1 + 3 4 α π − 3 4 α bare φ π + − 15 32 − 3 4ǫ α π 2 . (10)</formula></p>
+
+				<p>The divergence is removed by the renormalization of the bare coupling g φ which, for D s = 6, is computed from the &quot; flavor-changing &quot; Green&apos;s function 0|T ¯ dφu|0.</p>
+
+				<figure>
+					<trash>We find α bare φ | Ds=6 = α 1 − α πǫ . (11)</trash>
+
+					<figDesc>It is clear from Eq.(10) that this renormalization of the coupling constant makes Im Π(q 2 ) finite.</figDesc>
+
+				</figure>
+
+				<p>Since we understand the structure of ultraviolet divergences for two values of D s , it is easy to find a relation between the FDH and CDR schemes. We imagine that a one-loop computation is performed, and the D s dependence of the one-loop result is established. We assume that the two-loop FDH result is also known. The result for general D s reads</p>
+
+				<figure>
+					<trash>Im Π(q 2 ) δs = Im Π(q 2 ) FDH + 1 12π − 3 8 δ s α bare φ π + c 1 δ s ǫ + c 2 δ 2 s ǫ α π 2 . (12) The CDR result corresponds to setting δ s → −2ǫ in Eq. (12) and neglecting all O(ǫ) terms. Doing so, we find Im Π(q 2 ) CDR = Im Π(q 2 ) FDH − c 1 6π α π 2 . (13)</trash>
+
+
+				</figure>
+
+				<p>The connection between the two schemes requires knowledge of the coefficient c 1 . As we discussed earlier, both c 1 and c 2 are related to the renormalization constants of the couplings of pseudoscalar fields, that appear as the result of dimensional deconstruction, to fermion bi-linears. Hence, it is a simple matter to find c 1 . We require that Eq. (12) becomes finite for D s = 5, 6 if the renormalization of the coupling constant g φ is performed. Doing so for both values of D s leads to a system of two equations that can be solved for c 1 and c 2 . We find c 1 = 3π 4α ǫ δZ 5 − 1 2 δZ 6 . (14)</p>
+
+				<p>In Eq. (14), we have introduced the one-loop renormalization constants for the couplings of the scalar fields to fermions in the compactification of D s -dimensional QED to four-dimensional space-time:</p>
+
+				<figure>
+					<trash>α bare φ | Ds = α (1 + δZ Ds ) . (15) Explicit expressions for δZ Ds for D s = 5, 6 follow from Eqs. (7,11). Using those results, we find 12πIm Π(q 2 ) CDR − Π(q 2 ) FDH = 12 32 α π 2 , (16)</trash>
+
+					<figDesc>in agreement with the explicit computations of Eq. (3).</figDesc>
+
+				</figure>
+
+				<p>As advertised, we are able to obtain the correct NNLO result from the FDH result without dealing with D s dimensional spin degrees of freedom at NNLO. There are several possible directions that one can explore at this point, including how this picture generalizes to more complicated theories (QCD, massive QED, etc.) or more complicated observables. Except for a few comments , in this paper we restrict ourselves to QED but we study observables that depend on the mass of the lepton . We show that the procedure we introduced in the context of the vector current correlator is general and remains valid also in those cases. We work with one massive fermion flavor in both examples. • We begin by computing the mass renormalization constant in FDH in the on-shell scheme, and ask if we can relate it to the mass renormalization constant in CDR.</p>
+
+				<p>The mass renormalization constant is defined as m 0 = Z m m, (17) where m 0 is the bare fermion mass and m is pole mass of a lepton. One can easily read off the MS mass renormalization constant from Eq. (17) because the lepton pole mass is an infra-red finite quantity. We compute Z m through two-loop order in QED. We consistently neglect the contribution of the fermion loops, so that the electric charge does not need to be renormalized. The mass renormalization constant takes the form</p>
+
+				<figure>
+					<trash>Z m = 1 + a 0 Z (1) m + a 2 0 Z (2) m , (18) where a 0 = α/πΓ(1 + ǫ)/(4π) −ǫ m −2ǫ and Z (1) m = − 3 4ǫ − 5 4 − δ s 8 1 ǫ + 1 + O(ǫ), Z (2) m = 1 ǫ 2 9 32 + δ s 16 − δ 2 s 128 + 1 ǫ 53 64 + δ s 16 − 13δ 2 s 256 + 219 128 − 5π 2 16 + π 2 2 ln 2 − 3 4 ζ 3 + O(ǫ). (19)</trash>
+
+
+				</figure>
+
+				<p>We have written the result in a form where the δ s dependent terms are manifest. The expression Eq.(19) can be translated into the CDR and FDH values for the on-shell mass renormalization constant by setting δ s to the appropriate values. Suppose we have computed Eq. (19) using the FDH scheme. Can we obtain the mass anomalous dimension in the CDR scheme without doing a complete calculation? The evolution equation for the mass parameter reads</p>
+
+				<figure>
+					<trash>µ dm(µ) dµ = m (2ǫα + β(α)) ∂ ∂α ln Z m . (20) Taking Z FDH m from Eq. (19) and setting β(α) = 0, we find µ dm(µ) dµ = mγ(a) = m 1 + ∞ i=1 γ i a i (21) which implies γ FDH 1 = − 3 2 , γ FDH 2 = 53 16 . (22)</trash>
+
+
+				</figure>
+
+				<p>To find the anomalous dimension in the CDR scheme, we write a relation between the FDH renormalization constant and the renormalization constant at arbitrary D s</p>
+
+				<figure>
+					<trash>Z m (δ s )−Z FDH m = −a δ s 8ǫ +a 2 c 21 δ s ǫ 2 + c 22 δ 2 s ǫ 2 +..., (23)</trash>
+
+
+				</figure>
+
+				<p>where the ellipses stands for other terms that do not affect the anomalous dimension. To find Z CDR m , we need c 21 , since it leads to divergent contribution in the limit δ s = −2ǫ. Repeating what we did for the photon vacuum polarization, we must consider the theory at finite D s , so that c 21 and c 22 contribute to the leading two-loop divergence of the fermion self-energy. Since such divergence is entirely fixed by the lowest-order mass anomalous dimension and the β-functions for the coupling constants, we can find an equation for c 21 and c 22 . We note that the β-functions appear because of the need to renormalize the scalar-fermion couplings, as described in Eqs. (7,11).</p>
+
+				<p>The relevant condition is that 2ǫα ∂ ∂α ln Z m (δ s ) + β(α φ ) ∂ ∂α φ ln Z m (δ s ) (24) is free from 1/ǫ singularities for any value of δ s . In practice , we choose D s = 5 and D s = 6. The β-functions follow from Eqs. (7,11). We write them here for completeness: β(α φ ) = −3/4a 2 for D s = 5, and β(α φ ) = −a 2 for D s = 6. We finally find c 21 = 1/16 and c 22 = −1/128, in agreement with Eq. (19). The mass anomalous dimensions in the CDR scheme follows immediately. Finally, one can imagine that the difference between on-shell Z m factors in different schemes Eq.(19) can be understood completely, by going beyond the MS renormalization of the g φ coupling constants as in Eqs. (7,11) and insisting that the two couplings g φ and e are equal to each other, including the finite renormalization. We did not pursue this question in this paper but it is an interesting avenue for further studies. • As the final example we compute the two-loop QED corrections to the electron anomalous magnetic moment and show that the correct result can be obtained using the FDH scheme and the procedure outlined above. We begin by writing the amplitude for the electron scattering off the electromagnetic field as</p>
+
+				<figure>
+					<trash>iM = −ie ¯ u(p 2 )Γu(p 1 ), Γ = ˆ ǫF 1 (q 2 ) + iσ µν ǫ µ q ν 2m F 2 (q 2 ). (25)</trash>
+
+
+				</figure>
+
+				<p>In Eq. (25), ǫ µ is the &quot; polarization vector &quot; of the external field, ˆ ǫ = γ µ ǫ µ , and q = p 2 −p 1 is the momentum transfer from the electron to the field. The anomalous magnetic moment is given by a e = (g −2)/2 = F 2 (0). The one-loop result for arbitrary δ s is given by</p>
+
+				<p><formula>a (1) e = α 2π 1 − δ s 2 . (26)</formula></p>
+
+				<p>The two-loop result for g − 2 requires the on-shell wavefunction and mass renormalization constants for the electron at the one-loop order. The mass renormalization constant Z m is given in Eq. (19). The wave-function renormalization constant Z 2 coincides with Z m in QED at this order in both CDR and FDH schemes. We find the following results for the two-loop contribution to the electron anomalous magnetic moment in the CDR and FDH schemes</p>
+
+			</div>
+			<div>
+				<head>a</head>
+
+				<figure>
+					<trash>(2),CDR e = α π 2 − 31 16 + 3 4 ζ 3 − π 2 2 ln 2 + 5π 2 12 , a (2),FDH e = α π 2 − 35 16 + 3 4 ζ 3 − π 2 2 ln 2 + 5π 2 12 . (27)</trash>
+
+
+				</figure>
+
+				<p>Our CDR result matches well-known results in the literature [26, 27], when fermion-loop contributions are neglected . The FDH result is new. We now illustrate how to use dimensional reconstruction to obtain the CDR result , given the δ s -dependent 1-loop result in Eq. (26) and the 2-loop FDH result. We proceed as we did for the current correlator by writing the result for arbitrary δ s as</p>
+
+				<figure>
+					<trash>a δs e = a FDH e − δ s 4 α bare φ π + c 1 δ s ǫ + c 2 δ 2 s ǫ α π 2 . (28) The CDR result is obtained by taking δ s = −2ǫ: a CDR e = a FDH e − 2c 1 α π 2 . (29) To obtain c 1 , we compute Eq. (28) for D s = 5, 6 and demand the result be finite after renormalizing α bare φ . We obtain c 1 = π 4α ǫ (2 δZ 5 − δZ 6 ) . (30)</trash>
+
+
+				</figure>
+
+				<p>Inserting this into Eq. (29), we derive the correct (CDR) result for g − 2. Hence, the procedure that we developed by studying the correlator of two conserved currents appears to be valid in a more general context. Before concluding, we comment on two possible venues for the extension of this analysis, namely its extension to QCD and to its application to less inclusive observables . The first comment concerns the well-established procedure for applying the FDH scheme in one-loop QCD computations. As explained in Ref. [7], it is possible to use FDH in one-loop computations consistently provided that a finite renormalization of the strong coupling con- stant,</p>
+
+				<figure>
+					<trash>α FDH s = α MS s 1 + C A 6 α s 2π , (31)</trash>
+
+
+				</figure>
+
+				<p>To conclude, in this paper we explored the fourdimensional helicity scheme at NNLO, following an interesting observation in Ref. [1] that it becomes inconsistent at that order in perturbation theory. To avoid the complications of renormalization, we studied QED corrections to the imaginary part of the correlator of two conserved currents. We found that the differences between the FDH and the CDR schemes are related to the fact that, upon continuing QED to a space-time of higher dimensionality while restricting all the loop momenta to lower-dimensional space-times, (D s − 4) components of the gauge fields turn into scalar fields and become unprotected by full D s -dimensional gauge invariance. As a result, divergences are introduced that require additional renormalization. They are removed in the FDH scheme by simply ignoring these additional degrees of freedom.</p>
+
+				<p>In the CDR scheme, terms of the form (D s − 4)/ǫ give additional finite contributions. One can argue for the correctness of the CDR result over FDH result by simply stating that the former respects gauge invariance of the theory in D s -dimensions, while the latter only respects four-dimensional gauge invariance.</p>
+
+				<p>Restoring the D s -dimensional gauge invariance in the FDH scheme is possible using dimensional reconstruction: if the oneloop result is known for arbitrary δ s , and the two-loop FDH result is known, then the two-loop result in the CDR scheme can be obtained by studying the one-loop renormalization of the theory in D s = 5, 6. This gives a simple, practical prescription for maintaining the simplifying features of FDH while still getting the answer right [31]. We demonstrated the applicability of this procedure by reconstructing the two-loop CDR results from FDH for three examples: the correlator of two vector currents in QED, the mass anomalous dimension of a fermion in QED, and the electron anomalous magnetic moment. Further studies are required to extend these ideas to QCD and develop them to a point where computations of fully exclusive observables through NNLO in the FDH scheme are possible and transparent. This remains an interesting problem for the future.</p>
+
+			</div>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+				<p>Acknowledgments K.M. gratefully acknowledges useful discussions with Z. Kunszt. K.M. would like to thank the KITP at UCSB for hospitality during the completion of this paper. This research is supported by the US DOE under contract DE-AC02-06CH11357, by the NSF under grants PHY-0855365 and PHY05-51164, and with funds provided by Northwestern University.</p>
+			</div>
+
+		<div type="annex">
+				<p>is performed. We can easily understand this result using dimensional reconstruction idea. Dimensional reconstruction in QCD leads to the appearance of color-octet massless scalars that interact with both fermions and &quot; four-dimensional &quot; gluons. Tree-level computations involve four-dimensional fields by definition, and therefore all one-loop amplitudes are proportional to the &quot; fourdimensional &quot; version of the strong coupling constant α s . Massless QCD is made finite by the coupling constant renormalization which, in the case of dimensional reconstruction, involves the contribution of color-octet scalars. Because we only need the divergent contribution of massless color-octet scalar to the renormalization of α s , we can find it by inspecting the QCD β-function, β 0 = 11/3C A −2/3N f −C A /6N s and focusing on the contribution of the color-octet scalars (the term proportional to N s ). As expected, the required shift in the coupling constant in Eq. (31) and the contribution of the coloroctet scalars to QCD β-functions are appropriately correlated . By studying the FDH scheme in one-loop QCD in terms of dimensional reconstruction, it is obvious that finite renormalization of the coupling constant in Eq. (31) is the only thing needed to perform self-consistent computations in FDH [30]. As a second comment, it is interesting to ask what the dimensional reconstruction procedure outlined in this paper implies for exclusive computations. For the sake of argument, consider again the correlator of two vector currents in QED. Its imaginary part is directly related to the inclusive decay rate of a vector boson. But how should a decay rate be treated if we require a certain number of &quot; jets &quot; , borrowing from the QCD terminology? At NNLO, it is possible to have four, three and two jets in the final state. The four-jet rate is finite at this order . The three-jet rate is only needed through NLO, and therefore FDH can be used straightforwardly. The two-jet rate is needed at NNLO, which makes it obvious that this is the place where corrections to the inclusive rate must be accommodated. Moreover, since the phasespace for the two-jet configuration can be driven arbitrarily close to the two-parton kinematics by appropriate adjustments in the jet selection criteria, the correction to the inclusive cross-section is the finite renormalization of the Born matrix element. This argument applies to processes which possess infra-red finite total cross-sections, but it needs further refinements for consistent application of the FDH scheme to exclusive processes at hadron colliders beyond one-loop.</p>
+
+		</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">B</forename>
+				<surname>Kilgore</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">83</biblScope>
+			<biblScope unit="page">114005</biblScope>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+				<surname>Bern</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Kosower</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1992" />
+			<biblScope unit="page">451</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+				<surname>Bern</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>De</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">J</forename>
+				<surname>Freitas</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">L</forename>
+				<surname>Dixon</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Wong</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">66</biblScope>
+			<biblScope unit="page">085002</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Hooft</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">J G</forename>
+				<surname>Veltman</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="page" from="189" to="213" />
+			<date type="published" when="1972" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<monogr>
+		<title level="m" type="main">Renormalization and regularization, Cam- bridge University Press</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Collins</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1984" />
+			<pubPlace>Cambridge, England</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Siegel</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1979" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">For an illustration, see e.g</title>
+	</analytic>
+	<monogr>
+		<title level="j">Z. Kunszt, A. Signer, Z. Troc- sanyi, Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">411</biblScope>
+			<biblScope unit="page" from="397" to="442" />
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+				<surname>Bern</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">J</forename>
+				<surname>Dixon</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">C</forename>
+				<surname>Dunbar</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">A</forename>
+				<surname>Kosower</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">425</biblScope>
+			<biblScope unit="page">217</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">J</forename>
+				<surname>Parke</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">R</forename>
+				<surname>Taylor</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">56</biblScope>
+			<biblScope unit="page">2459</biblScope>
+			<date type="published" when="1986" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<forename type="middle">A</forename>
+				<surname>Berends</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Kleiss</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>De</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Causmaecker</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">T</forename>
+				<surname>Gast-Mans</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Wu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1981" />
+			<biblScope unit="page">124</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<forename type="middle">V</forename>
+				<surname>Tkachov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1981" />
+			<biblScope unit="page" from="65" to="68" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">G</forename>
+				<surname>Chetyrkin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<forename type="middle">V</forename>
+				<surname>Tkachov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">192</biblScope>
+			<biblScope unit="page" from="159" to="204" />
+			<date type="published" when="1981" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Anastasiou</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Melnikov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Petriello</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">724</biblScope>
+			<biblScope unit="page" from="197" to="246" />
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Melnikov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Petriello</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">74</biblScope>
+			<biblScope unit="page">114017</biblScope>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A. Gehrmann-De</forename>
+				<surname>Ridder</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Gehrmann</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">W N</forename>
+				<surname>Glover</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Heinrich</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2007" />
+			<biblScope unit="page">094</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Anastasiou</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Melnikov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Petriello</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2007" />
+			<biblScope unit="page">014</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Catani</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Grazzini</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">98</biblScope>
+			<biblScope unit="page">222002</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Melnikov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="336" to="339" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Catani</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Cieri</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Ferrera</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>De Florian</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Grazz-Ini</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">103</biblScope>
+			<biblScope unit="page">082001</biblScope>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">SM and NLO Multileg Working Group Collaboration ], [arXiv:1003.1241 [hep-ph</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">R</forename>
+				<surname>Andersen</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Z. Kunszt, K. Melnikov, JHEP</title>
+		<editor>W. T. Giele</editor>
+		<imprint>
+			<biblScope unit="volume">0804</biblScope>
+			<biblScope unit="page">049</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">G</forename>
+				<surname>Gorishnii</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">A</forename>
+				<surname>Larin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">R</forename>
+				<surname>Surguladze</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<forename type="middle">V</forename>
+				<surname>Tkachov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Compt</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Comm</title>
+		<editor>S. A. Larin, F.V. Tkachov and J. A. M. Vermaseren</editor>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="page">381</biblScope>
+			<date type="published" when="1989" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Anastasiou</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Lazopoulos</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2004" />
+			<biblScope unit="page">046</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Laporta</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Mod. Phys</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="5087" to="5159" />
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Boughezal</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">R</forename>
+				<surname>Melnikov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">A</forename>
+				<surname>Barbieri</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Mignaco</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Nuovo</forename>
+				<surname>Remiddi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Cim</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1972" />
+			<biblScope unit="page" from="824" to="864" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Fleischer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<forename type="middle">V</forename>
+				<surname>Tarasov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Phys. Commun</title>
+		<imprint>
+			<biblScope unit="volume">71</biblScope>
+			<biblScope unit="page" from="193" to="205" />
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<editor>28] A. Signer, D. Stockinger</editor>
+		<imprint>
+			<biblScope unit="volume">808</biblScope>
+			<biblScope unit="page" from="88" to="120" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<monogr>
+		<title level="m" type="main">In what follows, we do not distinguish between the t&apos;Hooft-Veltman regularization scheme and CDR</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<monogr>
+		<title level="m" type="main">For processes with hadrons in the initial state, parton distribution functions in the CDR scheme are typically employed. Because of that, FDH results are usually trans- lated to CDR at the end of the calculation. The rules for such a translation are given in Refs</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<monogr>
+		<title level="m" type="main">We note that this prescription will have to be extended for yet higher orders in perturbation theory, since the N k LO result for a particular observable is a rank-k poly- nomial in Ds</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

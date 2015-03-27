@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Algebraic Aspects of Orbifold Models</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="1993-03-02">2 Mar 1993 February 1993</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">P</forename>
+								<surname>Bántay</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Institute for Theoretical Physics</orgName>
+								<orgName type="institution">EötvösUniversity</orgName>
+								<address>
+									<settlement>Budapest</settlement>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Algebraic Aspects of Orbifold Models</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="1993-03-02">2 Mar 1993 February 1993</date>
+						</imprint>
+					</monogr>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>Algebraic properties of orbifold models on arbitrary Riemann surfaces are investigated. The action of mapping class group transformations and of standard geometric operations is given explicitly. An infinite dimensional extension of the quantum group is presented.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>The interest in studying orbifold models is twofold. First, they provide a mean to construct new conformal field theories from known ones, whose properties may in principle be determined from the knowledge of the original theory [1]. This may prove important in attempts to classify CFTs. Secondly, they provide an interesting laboratory for understanding the basic properties of CFTs as well as their relation to 3-dimensional topological field theories ( via Dijkgraaf-Witten theory [2] ) and quantum groups [3,4]. An important property of orbifold models based on finite groups is that the associated quantum group is finite dimensional and semisimple, which greatly simplifies the analysis of their algebraic properties.</p>
+
+				<p>The aim of the present paper is to study the algebraic properties of the correlation functions of orbifold models on higher genus Riemann surfaces. As we shall see, a lot of information may be obtained simply by considering the symmetry properties of the model.</p>
+
+				<p>The basic property of orbifold models is that their Hilbert-space affords a representation of the orbifold quantum group. For holomorphic orbifolds the irreps of the chiral algebra are in one-to-one correspondence with the irreps of the quantum group, and the fusion rules of the chiral algebra as well as the modular transformations of the genus one characters are determined by the corresponding properties of the quantum group [3,4]. As far as representation theory is concerned, one can replace the chiral algebra by the quantum group.</p>
+
+				<p>Our starting point is the generalized version of Verlinde&apos;s formula [5], which gives the dimension of the space V g (p 1 , . . . , p n ) of holomorphic blocks of genus g with external legs saturated by the irreps p 1 , . . . , p n of the chiral algebra A in terms of the matrix elements of the modular transformation S :</p>
+
+				<p><formula>dim V g (p 1 , . . . , p n ) = q S 2(1−g) 0q n i=1 S p i q S 0q (1.1)</formula></p>
+
+				<p>where the sum runs over the irreps of the chiral algebra and 0 labels the vacuum representation ( which contains the identity operator ).</p>
+
+				<p>We shall interpret the rhs. of (1.1) as the multiplicity of the irrep (p 1 , . . . , p n )</p>
+
+				<p>in some representation of the algebra A ⊗n ( clearly the irreps of the algebra A ⊗n are in one-to-one correspondence with n-tuples of irreps of A ).</p>
+
+				<p>Thus, the basic point of our approach is to associate to each ( topological equivalence class of ) Riemann surface Σ g,n of genus g with n punctures, a linear space H g,n affording a representation of the algebra A ⊗n , subject to the restriction that the multiplicity of the irrep (p 1 , . . . , p n ) of A ⊗n is equal to dim V g (p 1 , . . . , p n ).</p>
+
+				<p>This is somewhat reminescent of topological field theories, but there is a major difference : TFTs associate to a Riemann surface Σ g,n with punctures marked by the irreps p 1 , . . . , p n the finite dimensional vector spaces V g (p 1 , . . . , p n ) of holomorphic blocks [6], while in our approach the punctures are not marked.</p>
+
+				<p>We shall show that the spaces H g,n afford unitary representations of the mapping class groups Γ g,n of Riemann surfaces of genus g with n coordinatized punctures . Moreover, we shall introduce on the spaces H g,n algebraic operations which correspond to the standard geometric operations on Riemann surfaces [7], and shall show how the direct sum of the spaces H g,n becomes a bigraded associative algebra whose zero mode subalgebra may be naturally identified with the quantum group A(G, φ).</p>
+
+				<p>Finally, we shall give the physical interpretation of the above results. A short appendix is also included to recall the basic facts about the orbifold quantum group and to fix the notation. 2. The spaces H g,n</p>
+
+				<p>In this section we shall construct for holomorphic orbifold models the spaces H g,n alluded to in the introduction.</p>
+
+				<p>Let G be a finite group and φ a unimodular 3-cocycle of G, and let&apos;s denote by A(G, φ) the corresponding orbifold quantum group ( see the appendix for notations and definitions ).</p>
+
+				<p>Let C g,n be the space of complex valued functions on G 2(n+g) . We shall denote the elements of C g,n by Ψ x y a b , where x and y are n-tuples with components x i , y i ∈ G (i = 1, . . . , n), while a and b are g-tuples with components a j , b j ∈ G (j = 1, . . . , g). The elements z ∈ G operate on these arrays componentwise , so for example zy and x z have components zy i and x z i (i = 1, . . . , n) respectively. We shall also use the notations X i = i k=1 x k (i = 1, . . . , n) and A j = j k=1 [a k , b k ] (j = 1, . . . , g).</p>
+
+				<p>We define operators P i (z) and Q i (z) (i = 0, . . . , n) acting on C g,n .</p>
+
+				<figure>
+					<trash>First, P 0 (z)Ψ x y a b = δ z,X n A g Ψ x y a b (2.1) Q 0 (z)Ψ x y a b = η z (X n , A g )ζ z x y ω z a b Ψ x z z −1 y a z b z (2.2) where ζ z x y = n i=1 η z (X i−1 , x i )θ x y i i (y −1 i , z) (2.3) and ω z a b = g j=1 η z (A j−1 , [a j , b j ])η z (a −1 j , a b j j )η z (a j , b j ) η z (a −1 j , a j )η z (b j , a b j j ) (2.4) Next, for i = 1, . . . , n P i (z)Ψ x y a b = δ z −1 ,x y i i Ψ x y a b (2.5) and Q i (z)Ψ x y a b = θ −1 x y i i (z, z −1 y −1 i )η −1 z (x y i i , (x</trash>
+
+
+				</figure>
+
+				<p><formula>−1 i ) y i )Ψ . . . . . . x i y i z . . . . . . a b (2.6)</formula></p>
+
+				<p>the last notation meaning that only the i-th argument of Ψ has been changed.</p>
+
+				<p>Let A i denote the algebra generated by the operators P i (z) and Q i (z) (i = 0, . . . , n). It is staightforward to show that each A i is isomorphic to the algebra A(G, φ), and they commute with each other.</p>
+
+				<p>We define H g,n to be the subspace of C g,n left invariant by A 0 .</p>
+
+				<figure>
+					<trash>Ψ ∈ H g,n ⇔ Ψ x y a b = 0 if X n A g = 1 and Ψ x y a b = η z (X n , A g )ζ z x y ω z a b Ψ x z z −1 y a z b z (2.7) Clearly, H g,n is the image of the projection operator P 0 , where P i = 1 |G| z∈G P i (1)Q i (z) (i = 0, . . . , n) (8)</trash>
+
+
+				</figure>
+
+				<p>It follows from what have been said above that H g,n affords a representation of ⊗ n i=1 A i . Let us denote the character of this representation by Υ g,n x y , which is by definition the trace over H g,n of the operator n i=1 P i (x i )Q i (y i ). It is given by the following formula</p>
+
+				<p><formula>Υ g,n x y = p S 2−2g−n 0p n i=1 ¯ ψ p (y i , x i ) (2.9)</formula></p>
+
+				<p>If we label the irreducible representations of the algebra ⊗ n i=1 A i by the n-tuples (p 1 , . . . , p n ), where the p i -s are irreps of A(G, φ), then the multiplicity of the irrep</p>
+
+				<figure>
+					<trash>(p 1 , . . . , p n ) in H g,n is q S 2(1−g) 0q n i=1 S p i q S 0q (2.10)</trash>
+
+
+				</figure>
+
+				<p>and this last expression is just the rhs. of (1.1), thus H g,n is indeed the space we have been looking for.</p>
+
+				<p>For later use, we also introduce the projection operators</p>
+
+				<figure>
+					<trash>P (p 1 ,...,p n ) = n i=1 S 0p i x i ,y i ∈G ¯ ψ p i (x i , y i )P i (x i )Q i (y i ) (2.11)</trash>
+
+
+				</figure>
+
+				<p>which project H g,n onto the subspace H g (p 1 , . . . , p n ) affording the irrep p i at the i-th puncture.</p>
+
+				<p>For n &gt; 0 define K g,n x y a b = δ 1,X n A g θ X n (y n , y</p>
+
+				<figure>
+					<trash>−1 n )η y −1 n ((X −1 n ) y n , X y n n ) φ(X −1 n , X n−1 , x n ) n i=1 φ(X −1 i , X i−1 , x i ) φ(x −1 i , X −1 i−1 , X i−1 ) η y −1 n ((x −1 i ) y n , (X −1 i−1 ) y n ) θ (x −1 i ) y n (y −1 n y i , y −1 i )η y −1 i ((x −1 i ) y i , x y i i ) g j=1 η y n (b j , (a −1 j ) b j )η y n (a j , a −1 j ) η y n ([b j , a j ], A −1 j−1 )η y n (a −1 j , b j )η y n ((a −1 j ) b j , a j ) g j=1 φ(A −1 j−1 , A j−1 , [a j , b j ])φ(a j , a −1 j , a b j j ) φ([b j , a j ], A −1 j−1 , A j )φ((a −1 j ) b j , a j , [a j , b j ])η b j (a −1 j , a j ) (2.12) It may be shown that K g,n x y a b belongs to H g,n , that is K g,n x y a b = η z (X n , A g )ζ z x y ω z a b K g,n x z z −1 y a z b z (2.13)</trash>
+
+
+				</figure>
+
+				<p>It follows that for n &gt; 0 any element Ψ of H g,n has the form</p>
+
+				<p><formula>Ψ x y a b = K g,n x y a b Ψ • x y 1 2 y −1 1 y 2 . . . . . . x y 1 n y −1 1 y n a y 1 1 b y 1 1 . . . . . . a y 1 g b y 1 g (2.14)</formula></p>
+
+				<p>where the function Ψ • belongs to C g,n−1 .</p>
+
+				<p>There is a natural scalar product on H g,n with respect to which the operators Q i (z) are unitary and the P i (z) are hermitian. It is given by</p>
+
+				<figure>
+					<trash>Ψ 1 , Ψ 2 = 1 |G| (n+g) x,y,a,b Ψ 1 x y a b ¯ Ψ 2 x y a b (2.15)</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="3">Mapping class group representations</head>
+
+				<p>The space H g,n affords a unitary representation of the mapping class group Γ g,n . We shall illustrate the above point for the groups Γ 0,n and Γ g,0 . Γ 0,n is generated by the Dehn-twists τ i (i = 1, . . . , n) around a curve encircling the i-th puncture and the Dehn-twists σ i (i = 1, . . . , n−1) around a curve encircling the i-th and i + 1-th punctures. The action of these operators on H 0,n is given by the following formulas</p>
+
+				<figure>
+					<trash>τ i Ψ x y = θ −1 x y i i (y −1 i x −1 i , x i )Ψ . . . . . . x i x i y i . . . . . . (3.1) σ i Ψ x y = φ(X i−1 , x i+1 , x x i+1 i ) φ(X i−1 , x i , x i+1 ) θ x y i i (y −1 i , x i+1 )Ψ . . . . . . x i+1 y i+1 x x i+1 i x −1 i+1 y i . . . . . . (3.2) They satisfy the relations σ i σ j = σ j σ i if |i − j| &gt; 1 (3.3) σ i σ i+1 σ i = σ i+1 σ i σ i+1 (3.4) τ i τ j = τ j τ i (3.5) σ i τ i σ −1 i = σ −1 i τ i σ i = τ i+1 (3.6) σ 1 . . . σ 2 n−1 . . . σ 1 = τ 2 1 (3.7) (σ 1 . . . σ n−1 ) n = τ 1 . . . τ n (3.8)</trash>
+
+
+				</figure>
+
+				<p>which are the defining relations of the group Γ 0,n [5].</p>
+
+				<p>Moreover, the τ i -s commute with the A j -s, as well as the σ i -s if j = i, i + 1, while σ i P i (z)σ</p>
+
+				<figure>
+					<trash>−1 i = σ −1 i P i (z)σ i = P i+1 (z) (3.9) σ i Q i (z)σ −1 i = σ −1 i Q i (z)σ i = Q i+1 (z) (3.10)</trash>
+
+
+				</figure>
+
+				<p>Consequently, σ i maps the space H g (. . . , p i , p i+1 , . . .) onto H g (. . . , p i+1 , p i , . . .), and this shows clearly its braiding nature. We also have τ i P (p 1 ,...,p n ) = λ p i P (p 1 ,...,p n ) (3.11) where λ p is the eigenvalue of the modular T operator corresponding to the irreducible character ψ p ( c.f. Eq.(A.30) ). This means that τ i acts on H g (p 1 , . . . , p n ) by multiplication by λ p i .</p>
+
+				<p>Let&apos;s now consider the group Γ g,0 . It is generated by the Dehn-twists α j , β j around the curves of a canonical homology basis a j , b j (j = 1, . . . , g) and the Dehn-twits γ j around the curves c j (j = 1, . . . , g − 1) connecting two consecutive handles. The action of these operators on H g,0 is given by α j Ψ a b = θ a j (a j , b</p>
+
+			<note>j )Ψ . . . . . . a j a j b j . . . . .</note>
+
+				<figure>
+					<trash>. (3.12) β j Ψ a b = φ(a −1 j , b j , b −1 j a b j j ) φ(a −1 j , b j , b −1 j a j )φ(b j , b −1 j a j , b j ) Ψ . . . . . . b −1 j a j b j . . . . . . (3.13) γ j Ψ a b = ςΨ . . . . . . c −1 a j b c j a j+1 c b j+1 . . . . . . (3.14) where c = b j (b −1 j+1 ) a j+1</trash>
+
+
+				</figure>
+
+				<p>and the prefactor is ς = φ(A j−1 , [a j , b j ][b j , c], [c, b j ][a j+1 , b j+1 ]) φ(A j−1 , [a j , b j ], [a j+1 , b j+1 ])</p>
+
+				<figure>
+					<trash>η b j (c −1 , c) η b j+1 (a j+1 , c) φ(b j , a b j j , [b j , c]</trash>
+
+
+				</figure>
+
+				<p>)φ([a j , b j ], [b j , c], [c, b j ][a j+1</p>
+
+				<figure>
+					<trash>, b j+1 ])φ(a −1 j , c, (a j c −1 ) b j c ) φ(a</trash>
+
+
+				</figure>
+
+				<p>j , b j , [b j , c])φ([b j , c], [c, b j ], [a j+1 , b j+1 ])φ(a</p>
+
+				<figure>
+					<trash>−1 j , a b j j , [b j , c]) φ(c −1 , a −1 j+1 , (a j+1 c) b j+1 )φ(a −1 j c, c −1 , a j )φ(c −1 a −1 j+1 , a j+1 , c) φ(a −1 j+1 , a b j+1 j+1 , c b j+1 )φ(b j , c, (a j c −1 ) b j c )φ(c −1 , a −1 j+1 , a j+1 ) φ(c −1 , a j , b c j )φ((c −1 ) b j , c, c −1 )φ(b j , (c −1 ) b j , c) φ(c −1 , b j c, (a j c −1 ) b j c )φ(a −1 j , c, c −1 )φ(c −1 , b j , c) φ(c −1 , [a j+1 , b j+1 ], b −1 j+1 b j )φ(b −1 j , cb j+1 , b −1 j+1 b j )φ(b −1 j+1 b j , b −1 j , cb j+1 ) φ([b j , c]</trash>
+
+
+				</figure>
+
+				<p>, c −1 , c b j )φ(c −1 [a j+1 , b j+1 ], b −1 j+1 b j , [a j+1 , b j+1 ])φ(b j+1 , b</p>
+
+				<figure>
+					<trash>−1 j+1 , b j ) φ(c, b j+1 , b −1 j+1 b j )φ(b −1 j+1 , b j+1 , c b j+1 )φ(b j+1 , b −1 j+1 , b j+1 ) φ(c −1 , [a j+1 , b j+1 ], c b j+1 )φ(b −1 j , b j , c b j )φ(b</trash>
+
+					<head>−1</head>
+
+
+				</figure>
+
+				<p><formula>j+1 , b j , b −1 j )φ(b j , b −1 j , b j ) (3.15)</formula></p>
+
+				<p>It may be shown by rather lengthy calculations, that the above operators satisfy the defining relations of the group Γ g,0 ( cf. [5] ).</p>
+
+			</div>
+			<div>
+				<head n="4">Geometric operations</head>
+
+				<p>Until now we have only considered operators mapping H g,n to itself. We now turn to the study of operators between different spaces.</p>
+
+				<p>The first operators of interest are the projections P i defined by (2.8), which correspond to saturating the i-th puncture by the vacuum. The image of H g,n under this projection may be naturally identified with the space H g,n−1 . This provides us with a natural imbedding of H g,m into H g,n for m &lt; n.</p>
+
+				<p>For Ψ 1 ∈ H g,n+1 and Ψ 2 ∈ H k,m+1 we define Ψ 1 ∞Ψ 2 ∈ H g+k,n+m as</p>
+
+				<p><formula>Ψ 1 ∞Ψ 2 x 1 y 1 . . . . . . x n+m y n+m a 1 b 1 . . . . . . a g+k b g+k = X,Y ξ X,Y Ψ 1 x 1 y 1 . . . . . . x n y n X Y a k+1 b k+1 . . . . . . a g+k b g+k Ψ 2 X −1 Y x n+1 y n+1 . . . . . . x n+m y n+m a 1 b 1 . . . . . . a k b k</formula></p>
+
+				<figure>
+					<trash>(4.1) where ξ X,Y = η Y −1 ((X −1 ) Y , X Y ) φ(A −1 k+g A k , A −1 k A k+g , A −1 k+g A k )φ(A −1 k A k+g , A −1 k+g , A k+g ) φ(X −1 X −1 n , X n , X) m i=1 φ(X −1 X −1 n , X n+i−1 , x n+i ) g j=1 φ(A −1 k , A k+j−1 , [a k+j , b k+j ]) (4.2)</trash>
+
+					<figDesc>This operation, which may be shown to be associative, corresponds to sewing two Riemann surfaces. Endowed with this operation, the space</figDesc>
+
+				</figure>
+
+				<p><formula>H = n&gt;0,g≥0 H g,n (4.3)</formula></p>
+
+				<p>becomes a bigraded associative algebra.</p>
+
+				<p>Clearly the subspace H 0,2 is a closed subalgebra of H ( it is the zero grade subalgebra ). This subalgebra is isomorphic to A(G, φ). This may be shown by introducing the following basis in H 0,2</p>
+
+				<p>|X</p>
+
+				<p><formula>, Y x 1 y 1 x 2 y 2 = θ X (Y, y −1 2 ) η y −1 1 (X −1 , X) δ x 1 x 2 ,1 δ X −1 ,x y 1 1 δ Y,y −1 1 y 2 (4.4)</formula></p>
+
+				<p>It is then straightforward to show that</p>
+
+				<p><formula>|x 1 , y 1 ∞|x 2 , y 2 = δ x 2 ,x y 1 1 θ x 1 (y 1 , y 2 )|x 1 , y 1 y 2 (4.5)</formula></p>
+
+				<p>For Ψ in H we have |x, y∞Ψ = P 1 (x)Q 1 (y)Ψ (4.6)</p>
+
+				<p>This shows that the action of A 1 on H may be realized by sewing with elements of H 0,2 . Recalling Eqs.(3.9) and (3.10),we see that the action of the other A i -s may be realized as well by combining ∞ with suitable braids ( which corresponds to sewing in different channels ).</p>
+
+				<p>Of special interest is the infinite dimensional subalgebra</p>
+
+				<figure>
+					<trash>ˆ A(G, φ) = g≥0 H g,2 (4.7</trash>
+
+					<figDesc>) which may be viewed as the extension of the original algebra A(G, φ) to all genera.</figDesc>
+
+				</figure>
+
+				<p>Another operation of interest is the map S : H g,n+2 → H g+1,n defined by</p>
+
+				<figure>
+					<trash>SΨ x y a 0 b 0 a b = φ(X n , [a 0 , b 0 ], A g )φ(X n , a −1 0 , a b 0 0 ) g j=1 φ([a 0 , b 0 ]</trash>
+
+
+				</figure>
+
+				<p>, A j−1 , [a j , b j ])</p>
+
+				<figure>
+					<trash>z∈G η z −1 ((a −1 0 ) z , a z 0 )θ a z 0 (z −1 , b 0 )Ψ x y a −1 0 z a b 0 0 b −1 0 z a b (4.8)</trash>
+
+
+				</figure>
+
+				<p>This operation corresponds to sewing the n-th and n + 1-th punctures of the same Riemann surface, and it maps H g,n onto H g+1,n−2 .</p>
+
+				<p>For example, S maps H 0,2 onto H 1,0 . The matrix elements of S between the basis |x, y of H 0,2 ( c.f. Eq.(4.4) ) and the natural basis of H 1,0 provided by the irreducible characters ψ p of A(G, φ) are ψ p |S|x, y = ψ p (x, y) (4.9)</p>
+
+				<p>Next, for i = 1, . . . , n consider the maps ∂ i : H g,n+1 → H g,n given by</p>
+
+				<figure>
+					<trash>∂ i Ψ x y a b = z∈G φ(X i−1 , z, z −1 x i ) φ(X y i i−1 , z y i , (z −1 x i ) y i ) η y −1 i (z y i , (z −1 x i ) y i )Ψ . . . . . . z y i z −1 x i y i . . . . . . a b (4.10)</trash>
+
+
+				</figure>
+
+				<p>They correspond to coalescing the i-th and i + 1-th punctures, and satisfy the relations ∂ i ∂ j = ∂ j ∂ i+1 for n &gt; i ≥ j ≥ 1 (4.11) The above relations imply that the operator D n defined as</p>
+
+				<figure>
+					<trash>D n = n i=1 (−1) i ∂ i (4.12) is a differential operator in the sense that D n−1 D n = 0 (4.13)</trash>
+
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="5">Physical interpretation</head>
+
+				<p>Let&apos;s consider a conformal field theory on a compact Riemann surface Σ of genus g, defined via an action functional S[X]. The correlation functions of local operators ( i.e. local functionals O[X] of the X-s ) are given by the functional integral O 1 (P 1 ) . . . O n (P n ) Σ = DX n i=1 O i [X(P i )] exp(−iS[X]) (5.1) where one should integrate over those X-s which are single-valued on Σ. Besides the insertion points P i ∈ Σ, the correlator (5.1) depends also on the moduli of the</p>
+
+				<p>Riemann surface Σ.</p>
+
+				<p>To get an orbifold model [8], we choose a group G of global symmetries , i.e. transformations of the X-s that leave the action invariant. For simplicity, we shall assume that G is finite. The orbifold model is defined by imposing equivalence modulo G, i.e. gauging the group G. The correlators of the orbifold model are still given by the functional integral (5.1), but with integration to be performed over X-s which are allowed to have G valued monodromies around the homotopicaly nontrivial curves of the punctured surface Σ\{P 1 , . . . , P n } ≡ Σ g,n .</p>
+
+				<p>The multivaluedness of X is completely characterized by its monodromies around the simple closed curves on Σ g,n . It is enough to specify the monodromies around a set of generators of the fundamental group of Σ g,n . A convenient set of generators of the fundamental group is obtained by fixing a base point P 0 on</p>
+
+				<figure>
+					<head>Σ\{P 1</head>
+
+					<figDesc>, . . . , P n }, and considering the simple loops based at P 0 which encircle one puncture P i at a time, as well as the curves of a canonical homology basis of the compact Riemann surface Σ. We shall denote the monodromies around these loops by x 1 , . . . , x n and a 1 , . . . , a g , b 1 , . . . , b g respectively, and call their collection a twist structure. They have to satisfy</figDesc>
+
+				</figure>
+
+				<p><formula>n i=1 x i g j=1 [a j , b j ] = 1 (5.2)</formula></p>
+
+				<p>in order that there exists an X with these given monodromies.</p>
+
+				<p>The functional integral for the orbifold model decomposes into a sum</p>
+
+				<figure>
+					<trash>O 1 (P 1 ) . . . O n (P n ) Σ = 1 |G| (n+g) x,y,a,b Z x y a b (5.3) where x, y and a, b are respectively n and g-tuples of elements of G, while Z x y a b = DX n i=1</trash>
+
+
+				</figure>
+
+				<p>O i [y i X(P i )] exp(−iS[X]) (5.4) where integration is restricted to those X-s with monodromies specified by x, a and b. The sum over y i -s in (5.3) implements the G-invariant projection and it is the analogue of the GSO projection in fermionic string theory, while the sum over the twist structures is the analogue of the sum over spin structures.</p>
+
+				<figure>
+					<trash>The basic properties of Z x y a b are Z x y a b = 0 if n i=1 x i g j=1 [a j , b j ] = 1 (5.5) which follows from (5.2), and Z x y a b = Z x z z −1 y a z b z (5.6</trash>
+
+					<figDesc>) which follows from the G-invariance of the action. Let us suppose now that we are considering a holomorphic orbifold model, i.e. the theory we started with had only one chiral block. Then Z x y a b is the modulus squared of some holomorphic function of the moduli, i.e.</figDesc>
+					<trash>Z x y a b = Ψ x y a b 2 (5.7) where Ψ x y a b</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>is a holomorphic function of the moduli of Σ\{P 1 , . . . , P n }.</figDesc>
+
+				</figure>
+
+				<p>The point is that in order to have a consistent theory, Ψ should belong to H g,n . This claim follows from the observation that (5.5) implies a similar condition on Ψ, while</p>
+
+				<figure>
+					<trash>(5.6) implies that Ψ x y a b = ϑΨ x z z −1 y a z b z (5.8)</trash>
+
+
+				</figure>
+
+				<p>where the phase ϑ depends only on the variables x, y, a, b, but not on the operators O i nor the moduli of the surface. Duality and modular invariance of the theory then forces Ψ to belong to H g,n .</p>
+
+				<p>If we specify the irreps p 1 , . . . , p n of the chiral algebra to which the operators O 1 , . . . , O n belong, then Ψ may be considered as an intertwiner between the irrep (p 1 , . . . , p n ) of A ⊗n and the space H g,n , which depends holomorphicaly on the moduli. An argument involving Schur&apos;s lemma shows that Ψ will depend on dim V g (p 1 , . . . , p n ) holomorphic functions of the moduli, and consequently the correlator (5.3) will be the sum of the modulus squared of these functions, which of course are nothing but the holomorphic blocks of the orbifold model.</p>
+
+				<p>If we consider Ψ as a function over Teichmuller space T g,n , then it should be equivariant with respect to Γ g,n , i.e. the action of any mapping class group transformation on T g,n can be compensated by the action of its inverse on H g,n .</p>
+
+				<p>The physical meaning of the operations introduced in the previous sections is quite transparent in this setting. For example the operations ∞ and S are related to the sewing of correlators, while the operations ∂ i are related to operator product expansions. The associativity of ∞ is connected to the duality of the theory, while (4.11) is connected to the associativity of OPEs.</p>
+
+			</div>
+			<div>
+				<head n="6">Summary</head>
+
+				<p>In this paper we have studied the properties of orbifold models on higher genus</p>
+
+				<p>Riemann surfaces. We have done this by associating to the Riemann surface Σ g,n the space H g,n , which carries a specific representation of the n-fold tensor power A ⊗n of the orbifold quantum group. We have shown that the mapping class group Γ g,n is represented on the space H g,n , as well as other important geometrical operations.</p>
+
+				<p>It turned out that the algebraic structure of the quantum group is closely related to the operation of sewing Riemann surfaces, and this led us to generalize the quantum group to higher genera.</p>
+
+				<p>We have sketched only those aspects of the theory which have a direct physical interpretation. The spaces H g,n admit more structure than described in the paper, which may prove useful in mathematical applications.</p>
+
+				<p>One such aplication is related to Moonshine [9,10]. Starting from a holomorphic CFT whose symmetry group contains the group G – which is known to exist for the Monster [11] –, one may in principle compute the functions Ψ ∈ H g,n for suitable vertex operators, and these would satisfy a set of relations which may be naturally interpreted as an extension of the Moonshine properties to arbitrary Riemann surfaces. From this point of view the two basic facets of Moonshine are the existence of a holomorphic CFT on which G acts as a symmetry group and the theory developped in section 3.</p>
+
+				<p>Another interesting application of the above theory is to the description of the statistics of many-vortex systems in spontaneously broken gauge theories, which will be dealt with in a forthcoming publication [12].</p>
+
+			</div>
+			<div>
+				<head>Appendix</head>
+
+				<p>Let G be a finite group, and φ a unimodular 3-cocycle of G, that is a function on G 3 taking its values in the complex unit circle, and which satisfies φ(x 1 , x 2 , x 3 )φ(x 1 , x 2 x 3 , x 4 )φ(x 2 , x 3 , x 4 ) = φ(x 1 x 2 , x 3 , x 4 )φ(x 1 , x 2 , x 3 x 4 ) (A.1)</p>
+
+				<p>We suppose φ normalized, i.e. it takes the value 1 whenever any of its arguments equals the identity element of G ( which we shall also denote by 1 ).</p>
+
+				<p>We introduce the auxiliary quantities ( where x z ≡ z −1 xz ) θ z (x, y) = φ(x, z x , y) φ(z, x, y)φ(x, y, z xy ) (A.2) η z (x, y) = φ(x, z, y z ) φ(x, y, z)φ(z, x z , y z )</p>
+
+				<figure>
+					<trash>(A.3) They satisfy the following basic identities θ z (x 1 , x 2 )θ z (x 1 x 2 , x 3 ) = θ z x 1 (x 2 , x 3 )θ z (x 1 , x 2 x 3 ) (A.4) θ z 1 (x 1 , x 2 )θ z 2 (x 1 , x 2 )η x 1 (z 1 , z 2 )η x 2 (z x 1 1 , z x 1 2 ) = θ z 1 z 2 (x 1 , x 2 )η x 1 x 2 (z 1 , z 2 ) (A.5) η z (x 1 , x 2 )η z (x 1 x 2 , x 3 )φ(x 1 , x 2 , x 3 ) = η z (x 2 , x 3 )η z (x 1 , x 2 x 3 )φ(x z 1 , x z 2 , x z 3 ) (A.6) θ x (z, y z ) θ x (y, z) = η z (y, x y ) η z (x, y) (A.7) θ z (x, y) = η z (x, y) if x, y ∈ C G (z) (A.8)</trash>
+
+
+				</figure>
+
+				<p>A(G, φ) is the associative algebra generated by the elements P (x) and Q(x) ( x ∈ G ), subject to the relations</p>
+
+				<figure>
+					<trash>P (x)P (y) = P (x) if x = y, 0 otherwise (A.9) Q −1 (x)P (y)Q(x) = P (y x ) (A.10) Q(x)Q(y) = z∈G θ z (x, y)P (z)Q(xy) (A.11) x∈G P (x) = Q(1) (A.12)</trash>
+
+
+				</figure>
+
+				<p>A(G, φ) is semisimple, with unit element Q(1).</p>
+
+				<p>The comultiplication, a homomorphism ∆ : A(G, φ) → A(G, φ) ⊗ A(G, φ), is</p>
+
+				<figure>
+					<trash>defined by ∆P (x) = z∈G P (z) ⊗ P (z −1 x) (A.13) ∆Q(x) = y,z∈G η x (y, z)P (y)Q(x) ⊗ P (z)Q(x) (A.14)</trash>
+
+
+				</figure>
+
+				<p>The comultiplication ∆ is needed in order to define the tensor product of A(G, φ)-modules. The following properties of ∆ insure that this tensor product is associative and commutative, or in the language of Hopf algebras, A(G, φ) endowed with ∆ is a quasi-triangular quasi-Hopf algebra.</p>
+
+				<figure>
+					<trash>(id ⊗ ∆) • ∆(a) = ϕ((∆ ⊗ id) • ∆(a))ϕ −1 , (A.15) τ • ∆(a) = R∆(a)R −1 (A.16) for all a ∈ A(G, φ), where τ is the map a ⊗ b → b ⊗ a, ϕ = x,y,z∈G φ(x, y, z)P (x) ⊗ P (y) ⊗ P (z), (A.17) and R = x∈G P (x) ⊗ Q(x) (A.18)</trash>
+
+
+				</figure>
+
+				<p>is the so called universal R-matrix. The antipode γ is</p>
+
+				<figure>
+					<trash>γ (P (x)Q(y)) = θ −1 x −1 (y, y −1 )η −1 y (x −1 , x)Q(y −1 )P (x −1 ) (A.19)</trash>
+
+
+				</figure>
+
+				<p>The representation theory of A(G, φ) is very similar to that of finite groups.</p>
+
+				<p>One defines the character ψ of a representation as the trace of P (x)Q(y) ψ(x, y) = Tr (P (x)Q(y)) (A.20)</p>
+
+				<p>The basic properties of characters are the following :</p>
+
+				<figure>
+					<trash>ψ(x, y) = 0 if xy = yx (A.21) ψ(x z , y z ) = η z (y, x) η z (x, y) ψ(x, y) (A.22) ψ(x, y −1 ) = θ x (y, y −1 ) ¯ ψ(x, y) (A.23)</trash>
+
+					<figDesc>It may be shown that representations of A(G, φ) are characterized up to equivalence by their characters. If we denote by ψ p the characters of the irreducible representations, we have the so-called generalized orthogonality relation</figDesc>
+					<trash>1 |G| z∈G θ −1 x (z, z −1 y)ψ p (x, z)ψ q (x, z −1 y) = δ p,q ψ p (x, y) d p (A.24) where d p is the dimension of p-th irrep. A direct consequence of (A.24) is the orthogonality relation 1 |G| x,y∈G ψ p (x, y) ¯ ψ q (x, y) = δ p,q (A.25)</trash>
+
+
+				</figure>
+
+				<p>The following formulas, which follow from the orthogonality relations, are very important in the proof of formula (2.9) : u∈C(x) [y,u]=z</p>
+
+				<figure>
+					<trash>η x (y, u) η x (u, y u ) = p ψ p (x, y) ¯ ψ p (x, yz) (A.26) 1 |G| x,y∈C(z) [x,y]=u η z (x, y)η z (x −1 , x y ) η z (y, x y )η z (x, x −1 ) = p d −1 p ¯ ψ p (z, u) (A.27)</trash>
+
+
+				</figure>
+
+				<p>The linear space spanned by the characters is nothing but the space H 1,0 .</p>
+
+				<p>Consequently the modular group Γ 1,0 ∼ = SL 2 (Z) is represented unitarily on the space of characters. It is well known that SL 2 (Z) is generated by the transformations S and T subject to the relations S 4 = 1 and (ST ) 3 = S 2 . The action of these generators on the characters is given by T ψ(x, y) = θ x (x, y)ψ(x, xy) (A.28)</p>
+
+				<figure>
+					<trash>Sψ(x, y) = θ −1 y (x, x −1 )ψ(y, x −1 ) (A.29)</trash>
+
+					<figDesc>It may be shown that the transformation T is diagonal in the basis of irreducible</figDesc>
+					<head>characters :</head>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>T ψ p (x, y) = λ p ψ p (x, y)</figDesc>
+					<trash>(A.30) where λ p = 1 d p x∈G ψ p (x, x) (A.31) Moreover, the matrix of S in this same basis, S pq = 1 |G| x,y∈G ¯ ψ p (x, y) ¯ ψ q (y, x) (A.32) is symmetric, S pq = S qp .</trash>
+
+
+				</figure>
+
+				<p>A most important result is the so-called Verlinde formula. As explained before, the comultiplication ∆ allows us to define the tensor product of representations of the quantum group A(G, φ). Let us denote by N r pq the multiplicity of the irrep r in the tensor product of the irreps p and q. The Verlinde formula expresses N r pq in terms of the matrix elements of S :</p>
+
+				<figure>
+					<trash>N r pq = s S ps S qs ¯ S rs S 0s (A.33)</trash>
+
+
+				</figure>
+
+				<p>Finally, we note that the theory only depends on the cohomology class of the 3-cocycle φ, i.e. cohomologous cocycles give rise to isomorphic algebras whose representation theory is identical. This &quot; gauge invariance &quot; carries over to the theory developped in the main body of the paper, e.g. to the mapping class group representations associated to the pair (G, φ).</p>
+
+			</div>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Dijkgraaf</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Vafa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Verlinde</forename>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Verlinde</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comm. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">123</biblScope>
+			<biblScope unit="page">485</biblScope>
+			<date type="published" when="1989" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Dijkgraaf</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Witten</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comm. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">129</biblScope>
+			<biblScope unit="page">393</biblScope>
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<surname>Bantay</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lett. Math. Phys</title>
+		<editor>Phys. Lett. B245</editor>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="477" to="187" />
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Dijkgraaf</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Pasquier</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Roche</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1990" />
+			<biblScope unit="page">1169</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Moore</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Seiberg</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comm. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">123</biblScope>
+			<biblScope unit="page">177</biblScope>
+			<date type="published" when="1989" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title level="m" type="main">The Geometry and Physics of Knots</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Atiyah</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1990" />
+			<publisher>Cambridge Univ. Press</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Vafa</surname>
+			</persName>
+		</author>
+		<editor>Phys. Lett. B199</editor>
+		<imprint>
+			<date type="published" when="1987" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Dixon</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Harvey</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Vafa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Witten</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1986" />
+			<biblScope unit="page">285</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Conway</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Norton</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">London Math. Soc</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">308</biblScope>
+			<date type="published" when="1979" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Mason</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Symp. Pure Math</title>
+		<meeting>. Symp. Pure Math</meeting>
+		<imprint>
+			<date type="published" when="1987" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Frenkel</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Lepowsky</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Meurman</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Vertex Operator Algebras and the Monster</title>
+		<imprint>
+			<publisher>Academic Press</publisher>
+			<date type="published" when="1988" />
+			<publisher>Academic Press</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Bantay : in preparation</title>
+	</analytic>
+	<monogr>
+		<title level="j">P</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

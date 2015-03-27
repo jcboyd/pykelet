@@ -1,0 +1,1819 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Conserved charges and quantum-group transformations in noncommutative field theories</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2010-09-16">16 Sep 2010</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Giovanni</forename>
+								<surname>Amelino-Camelia</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Dipartimento di Fisica</orgName>
+								<orgName type="institution">Universit a di Roma &quot; La Sapienza &quot; and Sez</orgName>
+								<address>
+									<addrLine>Roma1 INFN P.le A. Moro 2</addrLine>
+									<postCode>00185</postCode>
+									<settlement>Roma</settlement>
+									<country key="IT">Italy</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Giulia</forename>
+								<surname>Gubitosi</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Dipartimento di Fisica</orgName>
+								<orgName type="institution">Universit a di Roma &quot; La Sapienza &quot; and Sez</orgName>
+								<address>
+									<addrLine>Roma1 INFN P.le A. Moro 2</addrLine>
+									<postCode>00185</postCode>
+									<settlement>Roma</settlement>
+									<country key="IT">Italy</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Flavio</forename>
+								<surname>Mercati</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Dipartimento di Fisica</orgName>
+								<orgName type="institution">Universit a di Roma &quot; La Sapienza &quot; and Sez</orgName>
+								<address>
+									<addrLine>Roma1 INFN P.le A. Moro 2</addrLine>
+									<postCode>00185</postCode>
+									<settlement>Roma</settlement>
+									<country key="IT">Italy</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Giacomo</forename>
+								<surname>Rosati</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Dipartimento di Fisica</orgName>
+								<orgName type="institution">Universit a di Roma &quot; La Sapienza &quot; and Sez</orgName>
+								<address>
+									<addrLine>Roma1 INFN P.le A. Moro 2</addrLine>
+									<postCode>00185</postCode>
+									<settlement>Roma</settlement>
+									<country key="IT">Italy</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Conserved charges and quantum-group transformations in noncommutative field theories</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2010-09-16">16 Sep 2010</date>
+						</imprint>
+					</monogr>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>The recently-developed techniques of Noether analysis of the quantum-group spacetime symmetries of some noncommutative field theories rely on the ad hoc introduction of some peculiar auxiliary transformation parameters, which appear to have no role in the structure of the quantum group. We here show that it is possible to set up the Noether analysis directly in terms of the quantum-group symmetry transformations, and we therefore establish more robustly the attribution of the conserved charges to the symmetries of interest. We also characterize the concept of &quot; time independence &quot; (as needed for conserved charges) in a way that is robust enough to be applicable even to theories with space/time noncommutativity, where it might have appeared that any characterization of time independence should be vulnerable to changes of ordering convention. * giovanni.amelino-camelia@roma1.infn.it 2 CONTENTS</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head>I. Introduction and summary 2</head>
+
+				<p>II. Auxiliary noncommutative infinitesimal transformation parameters 3 III. Quantum Poincaré groups 5 A. The classical Poincaré group as a Hopf algebra 5 B. General structure of Quantum Poincaré groups 6 C. Twisted Poincaré quantum group of symmetries of canonical spacetimes 8 IV. Noether analysis 10 V. Charges and stationary fields with space/time noncommutativity 11 VI. Closing remarks 13</p>
+
+			</div>
+			<div>
+				<head>I. INTRODUCTION AND SUMMARY</head>
+
+				<p>Over the last decade there has been a strong research effort focused on theories formulated in noncommutative versions of Minkowski spacetime. Among the reasons of interest in such studies several concern the implications of the noncommutativity of spacetime coordinates for the fate of spacetime symmetries (see, e.g., Ref. [1–7]), an issue which is not only of obvious conceptual appeal but also provides the basis for an intriguing phenomenological program (see, e.g., Ref. [8–15]). The simplest and most studied possibility for spacetime noncommutativity are &quot; canonical spacetimes &quot; [1, 5–7, 16, 17] (or &quot; θ-Minkowski &quot; ) with coordinates such that 1 [x µ , x ν ] = iθ µν . (1)</p>
+
+				<p>Even restricting one&apos;s attention to this possibility the literature offers a multitude of alternative scenarios. The research program initiated in Ref. [1] intends to find suitable restrictions on the form of θ µν and to introduce appropriate nontrivial algebraic properties [18] to θ µν .</p>
+
+				<p>In recent times most of the related literature has focused on the less ambitious possibility of a (dimensionful) number-valued matrix θ µν , and this in turn splits very sharply into two alternative scenarios. The conceptually simplest scenario assumes that θ µν behaves like a tensor under ordinary Lorentz/Poincaré transformations, and as a result it predicts a breakdown of relativistic properties somewhat analogous to the case of light propagation in anisotropic media: the tensor θ µν takes of course different values for different inertial observers and this breaks the relativistic equivalence of inertial frames. The other much studied possibility assumes that θ µν is a constant/invariant matrix, whose matrix elements take exactly the same numerical value in all inertial frames, and as a result (in light of the relationship between products of coordinates and the noncommutativity matrix) is incompatible with symmetry under classical Lorentz transformations. It turns out that, as we shall summarize in Sections II and III, in order to have the noncommutativity matrix as a relativistic invariant it is necessary to describe the laws of transformation between inertial frames in terms of a Hopf algebra.</p>
+
+				<p>As several recent studies we shall here focus on this latter possibility, with relativistic symmetries described by a Hopf algebra. The idea of &quot; deformation &quot; (rather than breakdown) of spacetime symmetries in a quantum spacetime, preliminarily proposed in Refs. [9, 13], is attracting interest as a plausible scenario for quantum-gravity research [19, 20]. And theories in noncommutative spacetime with Hopf-algebra symmetries could be a valuable laboratory for sharpening these novel concepts. Indeed several studies have adopted this perspective, focusing both on θ-Minkowski, of (1), and on &quot; κ-Minkowski &quot; noncommutative spacetime [2–4, 21, 22], with the characteristic noncommutativity [x j , x 0 ] = i λ x j , [x k , x j ] = 0 . (2)</p>
+
+				<p>We are mainly concerned here with some of the unsettled issues that need to be clarified in order to establish whether the relevant Hopf-algebra spacetime symmetries are strong enough to produce conserved currents and charges. Some techniques of Noether analysis of these novel symmetries were only developed very recently [17, 21–24], but the interpretation of the currents and charges produced by these techniques has not yet been fully clarified. Part of the residual concerns are due to the fact that these recent Noether analyses found necessary to introduce some ad hoc &quot; infinitesimal noncommutative transformation parameters &quot; , which puzzlingly could not be expressed in terms of previously known mathematical properties of the relevant Hopf algebras. This clearly may give rise to some skepticism concerning the attribution of the conserved charges to the symmetries of interest. Our main goal here is to show that there is no need for such peculiarities: the Noether analysis of the relevant Hopf-algebra symmetries can be performed following exactly the same steps of the Noether analysis of classical symmetries, of course replacing the classical-symmetry rules of transformation of fields with the Hopf-algebra transformation rules. This is what we accomplish in Section IV, where we rely on a standard description of the quantum-group symmetry transformations, which for θ-Minkowski involves the &quot; twisted Poincaré &quot; (or &quot; θ-Poincaré) quantum group [5, 25, 26] (here reviewed in Section III). After having established more firmly the attribution of the conserved currents and charges to the Hopf-algebra spacetime symmetries, we contemplate in Section V the issue of how to properly introduce the concept of time-independent quantities (like conserved charges) and in general of stationary fields in theories with &quot; space/time noncommutativity &quot; , where the time coordinate is noncommutative and its presence in an expression may appear to depend on ordering conventions. We introduce a robust (ordering-convention independent) characterization of stationary fields (and conserved charges) which we show to be fully satisfactory.</p>
+
+				<p>In the closing Section VI we offer some remarks on possible applications of our findings and a perspective on other challenges that deserve priority in this research area.</p>
+
+			</div>
+			<div>
+				<head>II. AUXILIARY NONCOMMUTATIVE INFINITESIMAL TRANSFORMATION PARAMETERS</head>
+
+				<p>We find convenient to first briefly summarize the description of Hopf-algebra symmetries and the peculiarities of the &quot; noncommutative infinitesimal transformation parameters &quot; used in the Noether analysis [17] for θ-Minkowski (which are completely analogous to the type of parameters used for Noether analyses in κ-Minkowski spacetime [17, 21–24]). It is convenient [16] to describe fields in θ-Minkowski in terms of a basis of exponentials</p>
+
+				<figure>
+					<trash>Φ(x) = d 4 k ˜ Φ(k)e ik µ xµ , (3)</trash>
+
+
+				</figure>
+
+				<p>where the &quot; Fourier parameters &quot; k µ are commutative [16]. The novel properties of these fields are conveniently all encoded in the x µ dependence of the basis of exponentials, and all ordering issues are taken care of by specifying the basis. In (3) we adopted (as most frequently preferred in the literature) the &quot; Weyl basis &quot; e ik µ xµ . Clearly one may choose among infinitely many alternative ordering conventions, such as the time-to-the-right ordering convention e ik j xj e ik 0 x0 , and a change of ordering prescription for the basis of exponentials clearly demands a change of &quot; Fourier transform &quot; ˜ Φ(k) in order to describe the same field. But of course the &quot; physical predictions &quot; of such field theories will be ultimately independent [17] of this choice of ordering convention. One then introduces rules of &quot; classical action &quot; of symmetry generators on basis elements:</p>
+
+				<figure>
+					<trash>P µ ⊲ e ikx = −k µ e ikx , (4) for translation generators, and 2 M µν ⊲ e ikx = 1 2 x [µ (P ν] ⊲ e ikx ) + (P [ν ⊲ e ikx )x µ] = − 1 2 k [ν x µ] e ikx + e ikx x µ] , (5) for Lorentz-sector generators.</trash>
+
+
+				</figure>
+
+				<p>Of course then commutators of these generators are the same as in the ordinary Poincaré Lie algebra: [P µ , P ν ] = 0 [P α , M µν ] = iη α[µ P ν] [M µν , M αβ ] = i η α[ν M µ]β + η β[µ M ν]α . (6)</p>
+
+				<p>The main element of novelty imposed by the noncommutativity is found in the description of the action of symmetry generators on products of fields: in light of the noncommutativity of θ-Minkowski coordinates, governed by (1), one has a Baker-Campbell-Hausdorff formula, for the product of the exponentials in the basis, of the familiar form e</p>
+
+				<figure>
+					<trash>ik µ xµ e iq µ xµ = e − i 2 θµν k µ q ν e i(k µ +q µ )xµ</trash>
+
+
+				</figure>
+
+				<p>, and this in turn implies that the action of symmetry generators on products of fields cannot obey a standard Leibniz rule. Such anomalies in the Leibniz rule are the core feature for which Hopf algebras are equipped, describing them in terms of the so-called &quot; co-products &quot; .</p>
+
+				<figure>
+					<trash>From (4) and (5) it follows that P µ e ikx e iqx = P µ e ikx e iqx + e ikx P µ e iqx , M µν e ikx e iqx = M µν e ikx e iqx + e ikx M µν e iqx − 1 2 θ αβ η α[µ P ν] e ikx P β e iqx + P α e ikx η β[µ P ν] e iqx . (7)</trash>
+
+
+				</figure>
+
+				<p>which in Hopf-algebra jargon amounts to a primitive coproduct for translations, but a non-primitive (non-cocommutative) coproduct in the Lorentz sector:</p>
+
+				<figure>
+					<trash>∆P µ = P µ ⊗ ½ + ½ ⊗ P µ , ∆M µν = M µν ⊗ ½ + ½ ⊗ M µν − 1 2 θ αβ η α[µ P ν]</trash>
+
+
+				</figure>
+
+				<p>⊗ P β + P α ⊗ η β[µ P ν] , (8)</p>
+
+				<p>Let us note in passing that it is of some mathematical interest that this θ-Poincaré Hopf algebra, characterized by the coproducts (8), can be described as the result of &quot; twisting &quot; of the classical Poincaré algebra by the twist element [5–7, 16, 17] F = e</p>
+
+				<figure>
+					<trash>i 2 θ µν Pµ⊗Pν . (9)</trash>
+
+
+				</figure>
+
+				<p>The hypothesis that this &quot; twisted &quot; θ-Poincaré Hopf algebra should describe the symmetries of θ-Minkowski finds preliminary support in the observation that the θ-Minkowski commutation relations (1) are invariant under the action of the generators of θ-Poincaré P µ ⊲ [x ρ , x σ ] = (P µ ⊲ x [ρ )x σ] + x [ρ (P µ ⊲ x σ] ) = iη µ[ρ x σ] + iη µ[σ x ρ] = 0 ≡ P µ ⊲ (iθ ρσ ) , M µν ⊲ [x ρ , x σ ] = (M µν ⊲ x [ρ )x σ] + x [ρ (M µν ⊲ x σ] ) − 1 2 θ αβ η α[µ (P ν] ⊲ x [ρ )(P β ⊲ x σ] ) + (P α ⊲ x [ρ )η β[µ (P ν] ⊲ x σ] ) = i([x α , x β ] − iθ αβ )η α[µ η ν][ρ η σ]β = 0 ≡ M µν ⊲ (iθ ρσ ) , (10) where we also made use of the coproducts (8) and of the rules of action (4) and (5) applied on the coordinates. We shall give more substance to the claim that the θ-Poincaré Hopf algebra describes the symmetries of θ-Minkowski in the next sections. Before doing that we find appropriate to revisit the ad hoc, but evidently efficacious, introduction of &quot; infinitesimal noncommutative parameters &quot; for the purpose of obtaining conserved currents from the Hopf-algebra symmetries [17, 21–24]. For the θ-Poincaré case this prescription amounts to [17] df (x) = i [γ α P α + ω µν M µν ] f (x) , (11) with transformation parameters that act on the spacetime coordinates only by (associative) multiplication and with rules for products of transformation parameters and spacetime coordinates such that</p>
+
+				<figure>
+					<trash>x β , γ α = − i 2 ω µν (θ [µ α δ ν] β + θ β [µ δ ν] α ) , (12) x β , ω µν = 0 .</trash>
+
+
+				</figure>
+
+				<p>It is then easy to verify [17], using (12), that the df given in (11) is a legitimate differential, which satisfies</p>
+
+				<figure>
+					<trash>Leibniz rule d(f (x)g(x)) = (df (x))g(x) + f (x)(dg(x)) . (13)</trash>
+
+
+				</figure>
+
+				<p>The details of how this allows a successful Noether analysis can be found in Ref. [17]. We shall here just recall that for a theory of free massless scalar fields in θ-Minkowski with equation of motion</p>
+
+				<figure>
+					<trash>φ(x) ≡ P µ P µ φ(x) = 0 (14) this type of Noether analysis produces [17]</trash>
+
+
+				</figure>
+
+				<p>the following Noether current for translation symmetry</p>
+
+				<figure>
+					<trash>T µν = η µν L − (P µ φ(x)) P ν φ(x) − (P ν φ(x)) P µ φ(x) , (15) and the following Noether current for Lorentz-sector symmetry K α µν = 1 2 {x [µ , T α ν] } . (16) III. QUANTUM POINCAR E GROUPS</trash>
+
+
+				</figure>
+
+				<p>The description of transfomations of fields given in the previous section has the merit of producing a working Noether analysis, but does not match any previously-known formalization of quantum-group symmetry transformations. The resulting Noether charges (obtained by integration [17, 21–24] of the Noether currents) are indeed conserved, so the procedure does work. But the attribution of the conserved charges to the Hopf-algebra symmetries remains dubious because of the mediation of the &quot; foreign &quot; transformation parameters. In this section we review (and elaborate on) the description of field transformations given genuinely in terms of quantum-group structures. This will prepare the ground for the result we shall seek in the next section, which is a Noether analysis relying exclusively on a genuine quantum-group description of field transformations. We start, in the first subsection, by describing the classical Poincaré group as a Hopf algebra, since that will render more intelligible the picture of quantum-group transformations discussed in the following subsections.</p>
+
+			</div>
+			<div>
+				<head>A. The classical Poincaré group as a Hopf algebra</head>
+
+				<p>The Poincaré group G is of course defined by its associative product law, its identity element, and its inverse,</p>
+
+				<figure>
+					<trash>(a, Λ) · (a ′ , Λ ′ ) = (Λ · a ′ + a, Λ · Λ ′ ) ∀ (a, Λ) ∈ G , (a, Λ) · (0, I) = (0, I) · (a, Λ) = (a, Λ) , (a, Λ) · (−Λ T · a, Λ T ) = (−Λ T · a, Λ T ) · (a, Λ) = (0, I) , (17)</trash>
+
+
+				</figure>
+
+				<p>where Λ represents the Lorentz matrices, a the translation vectors, and I the identity matrix. The algebra C[G] is the unital commutative algebra of functions over the Poincaré group, with pointwise product and trivial linear space structure,</p>
+
+				<figure>
+					<trash>(f · g)(X) = f (X)g(X) ∀ X ∈ G , (αf + βg)(X) = αf (X) + βg(X) , (18) and identity given by ½(X) = 1. C[G]</trash>
+
+
+				</figure>
+
+				<p>can encode the group structure of G if it is generalized to a Hopf algebra [27] (also see Ref. [28]),</p>
+
+				<figure>
+					<trash>∆(f )(X, X ′ ) = f (X · X ′ ) , S(f )(X) = f (X −1 ) , ǫ(f ) = f (½) . (19)</trash>
+
+
+				</figure>
+
+				<p>In fact from the coproducts in C[G] one can reconstruct the product law of G, and from the antipodes and identity one deduces the inverses and the identity element. A basis for C(G) is given by the functions Λ µ ν and a µ , which give the matrix entries of the defining representation of G when calculated over a group element. Their Hopf algebra structure is</p>
+
+				<figure>
+					<trash>∆(Λ µ ν ) = Λ µ ρ ⊗ Λ ρ ν , ∆(a µ ) = Λ µ ν ⊗ a ν + a µ ⊗ ½ , S(Λ µ ν ) = (Λ −1 ) µ ν , S(a µ ) = −(Λ −1 ) µ ν a ν , ε(Λ µ ν ) = δ µ ν , ε(a µ ) = 0 . (20)</trash>
+
+
+				</figure>
+
+				<p>The classical Poincaré group is the group of the isometries of classical Minkowski spacetime M. We can represent the coordinate systems over M with the commutative algebra C[M] of functions over the Minkowski space. We&apos;ll represent the coordinate functions (which, when calculated over a point give its four coordinates in a certain coordinate system) as x µ , and we&apos;ll use them as a basis for our Hopf algebra. The Hopf algebra structure of C[M]</p>
+
+				<figure>
+					<trash>is ∆(x µ ) = x µ ⊗ ½ + ½ ⊗ x µ , S(x µ ) = −x µ , ε(x µ ) = 0 ; (21)</trash>
+
+
+				</figure>
+
+				<p>A classical Poincaré transformation of the classical Minkowski spacetime M is often described as a map from the space-time coordinates x µ to a new set of coordinates x ′µ = a µ +x ν Λ µ ν , with the transformed coordinates x ′µ given by elements of the (defining representation of the) Poincaré group multiplied and/or summed with spacetime coordinates x µ . In order to give a more robust description, suitable for generalization to the &quot; quantum symmetries &quot; that are here of our interest, one must pay attention to the fact that these transformations involve elements of different algebras, so one must specify what is meant by &quot; products &quot; and &quot; sums &quot; involving elements of these different algebras. The simplest way to allow for sums and products of two algebras is the direct product of the two algebras C[M] ⊗ C[G] (or, equivalently, C[G] ⊗ C[M]). Within this framework, it is clear that the Poincaré transformation map goes from C[M] to the direct product C[M] ⊗ C[G] ( or C[G] ⊗ C[M]); so it is a right (left) coaction, ∆ R : C[M] → C[M] ⊗ C[G]</p>
+
+				<figure>
+					<trash>, ∆ R [x µ ] = ½ ⊗ a µ + x ν ⊗ Λ µ ν . (22)</trash>
+
+
+				</figure>
+
+				<p>The coaction is an algebra homomorphism with respect to the product of C[M]</p>
+
+				<figure>
+					<figDesc>: ∆ R [x µ x ν ]</figDesc>
+
+				</figure>
+
+				<p>= ∆ R [x µ ]∆ R [x ν ] , (23) so that it can be extended over polynomials in C[M], and consequently over all functions of C[M].</p>
+
+			</div>
+			<div>
+				<head>B. General structure of Quantum Poincaré groups</head>
+
+				<p>We have shown a description of classical Poincar e symmetries such that all the group properties are codified in the coalgebraic sector of the Hopf algebra C[G]. In that familiar context the Hopf algebra, C[G], is commutative, but in general (particularly for the application to the description of the spacetime symmetries of quantum spacetimes, which are here of interest) this commutativity need not be enforced. One can indeed deform the algebraic structure of C[G], C[G] → C q [G] making it into a noncommutative Hopf algebra, or quantum group, without modifying G. Such a deformation does not allow anymore the description of C q [G] in terms of (18), because the product there is necessarily commutative, but instead we can start from the basis Λ µ ν , a µ , with the coalgebraic properties (20) and deform its commutators [a µ , a ν ], [a µ , Λ ρ σ ], [Λ µ ν , Λ ρ σ ]. The commutation rules of C q [G] depend on those of the spacetime coordinates, because the noncommutativity of C q [G] is needed to enforce the homogeneity of spacetime. In fact, from the homomorphism property of the coaction (22) one can see that the noncommutativity of the algebra C q [M] implies the noncommutativity of C q [G], and vice versa. Here we are interested in noncommutative algebraically homogeneous spacetimes. This means that the algebraic properties are the same for all points of space-time. This requires us to impose that the coordinates x µ of every point satisfy the same algebra C q [M]</p>
+
+				<figure>
+					<figDesc>: [x µ , x ν ]</figDesc>
+
+				</figure>
+
+				<p>= i Θ µν (x) , (24) which means that Θ µν (x) is the same function of the coordinates in every coordinate system. Since we want to preserve the commutation rules of spacetime under Poincaré transformations, in the noncommutative case the transformed coordinates,</p>
+
+				<figure>
+					<trash>x ′µ = ½ ⊗ a µ + x ν ⊗ Λ µ ν ∈ C q [M]</trash>
+
+
+				</figure>
+
+				<p>⊗ C q [G] , should be required to satisfy the same commutation rules as (24), [x ′µ , x ′ν ] = i Θ µν (x ′ ) , (25) so the coaction should still be a homomorphism with respect to the noncommutative product of C q [M] ∆ R [f (x)g(x)] = ∆ R [f (x)]∆ R [g(x)] . (26)</p>
+
+				<p>In the case of a noncommutative space, Θ µν (x) = 0, one can use this requirement to derive the noncommutativity of the product of the generators of C q [G]</p>
+
+				<figure>
+					<trash>; in fact, imposing (25) one finds Θ µν (x ′ ) = [x ′µ , x ′ν ] = ½ ⊗ [a µ , a ν ] + x ρ ⊗ ([a µ , Λ ν ρ ] − [a ν , Λ µ ρ ]) + x σ x ρ ⊗ (Λ µ ρ Λ ν σ − Λ ν ρ Λ µ σ ) . (27)</trash>
+
+
+				</figure>
+
+				<p>The coaction is specified explicitly only over a single coordinate, but from the homomorphism property (26) it can be computed over every product of coordinates. For example one has ∆ R [x µ x ν ] = ∆ R [x µ ]∆ R [x ν ] = ½ ⊗ a µ a ν + x ρ ⊗ (a µ Λ ν ρ + Λ µ ρ a ν ) + x σ x ρ ⊗ Λ µ ρ Λ ν σ . (28) The right coaction of the group over the algebra C q [M] of functions over the noncommutatve spacetime (understood as the universal enveloping algebra to the coordinate algebra (24)), gives an element of the tensor product C q [M]</p>
+
+				<figure>
+					<trash>⊗ C q [G], ∆ R [f (x)] = f (1) (x) ⊗ f ′(2) , f (1) j (x) ∈ C q [M] , f ′(2) j ∈ C q [G]</trash>
+
+
+				</figure>
+
+				<p>, where we use Sweedler&apos;s notation with summation understood. The above coaction can be viewed as a combination of actions (linear maps from C q [M] to C q [M]) over f (</p>
+
+				<figure>
+					<trash>x), ∆ R [f (x)] = n T n [f (x)] ⊗ g n , g n ∈ C q [G]</trash>
+
+
+				</figure>
+
+				<p>, T n : C q [M] → C q [M]</p>
+
+				<figure>
+					<figDesc>, (29) where the T n are linear operators acting over the function f (x), and the group elements g n are polynomials in the basis elements Λ µ ν and a µ . The linear operators T n constitute a Hopf algebra, U q [g]</figDesc>
+
+				</figure>
+
+				<p>, which is dual to C q [G]. In fact, a coaction of a Hopf algebra H over another Hopf algebra A induces an action of the dual Hopf algebra H * over A ([29, 30]):</p>
+
+				<figure>
+					<trash>h ⊲ a = a (1) (h, a ′(2) ) , ∀ h ∈ H * , a ∈ A ,</trash>
+
+					<figDesc>As suggested by our description of the commutative case, one should look for the algebra U q (g) dual to the group C q [G]</figDesc>
+
+				</figure>
+
+				<p>by developing the coaction over C q [M]</p>
+
+				<figure>
+					<figDesc>in powers of the parameters (or group coordinates) a µ and ω</figDesc>
+					<trash>µ ν = (log Λ) µ ν . Considering the first order ∆ R [f (x)] = f (x) ⊗ ½ + iP µ ⊲ [f (x)] ⊗ a µ + i 2 M µν ⊲ [f (x)] ⊗ ω µν + O(a 2 , ω 2 , aω) , (30)</trash>
+
+
+				</figure>
+
+				<p>one infers that the operators P µ and M µν should be our deformed-algebra generators, expected to be the dual Hopf algebra to C q [G], called U q (g), with: 1. an action over C q [M] which is dual to the coaction of the 1-parameters subgroups of C q [G]</p>
+
+				<figure>
+					<figDesc>; 2. a coproduct that can be found by requiring compatibility with the product of C q [M]</figDesc>
+
+				</figure>
+
+				<p>, by acting on product of functions; 3. commutators that can be found by compatibility with the composition law of C q [G] (which is encoded into its coproducts); 4. antipodes and counits which are dual to those of C q [G].</p>
+
+				<p>But it should be noticed that this procedure is affected essentially by an ordering ambiguity. Since the group parameters in general do not commute, it is not clear in what sense one can cut off the series expansion to first order in all parameters: this is a meaningful concept in the commutative case, or in the case in which one has only one parameter, but not in the case in which one has products of noncommuting parameters. For example, in the case [a µ , a ν ] = iα µν with constant α µν , one could naively describe the monomial a 1 a 2 as a second-order expression, but this does not take into account the fact that a 1 a 2 = a 2 a 1 + iα 12 . To give a sensible notion of &quot; first order &quot; it appears that one should necessarily adopt an ordering prescription, for example: : a 2 a 1 : =</p>
+
+				<figure>
+					<head>1 2</head>
+
+					<figDesc>(a 1 a 2 + a 2 a 1 ), : a ρ ω µν : = ω µν a ρ , so that one can write the coaction as an ordered power series:</figDesc>
+
+				</figure>
+
+				<p><formula>∆ R [f (x)] = n,m (i) n+m 2 m n!m! ¯ M ρ1σ1 . . . ¯ M ρmσm ¯ P µ1 . . . ¯ P µn ⊲ f (x)⊗ : a µ1 . . . a µn ω ρ1σ1 . . . ω ρmσm : , (31)</formula></p>
+
+				<p>where, now, the algebra generators ¯ M µν and ¯ P µ w are ordering-choice-dependent. Any change of ordering corresponds to a nonlinear change of algebra generators, which is perfectly legitimate in the universal enveloping algebra framework. We can then find the coproducts for every basis of the algebra U q (g) linked with an ordering choice for the coaction, by considering the right coaction over a product of functions and ask the homomorphism property,</p>
+
+				<p><formula>: e i 2 ¯ M µν ⊗ωµν e i ¯ P ρ ⊗aρ : [f (x)g(x) ⊗ ½] = : e i 2 ¯ M µν ⊗ωµν e i ¯ P ρ ⊗aρ : [f (x) ⊗ ½] : e i 2 ¯ M µν ⊗ωµν e i ¯ P</formula></p>
+
+				<p>The role of the coproduct in the coaction over a product of functions can be made manifest in this way:</p>
+
+				<p><formula>∆ R [f (x)g(x)] = µ 12 : e i 2 ∆( ¯ M µν )⊗ωµν e i∆( ¯ P ρ )⊗aρ : [f (x) ⊗ g(x) ⊗ ½]</formula></p>
+
+				<p>where µ 12 : C q [M] ⊗ C q [M] ⊗ C q [G] −→ C q [M] ⊗ C q [G] is the representation in the triple tensor product of the product of C q [M]</p>
+
+				<figure>
+					<figDesc>: µ 12 {f (x) ⊗ g(x) ⊗ α} = f (x) · g(x) ⊗ α, ∀ α ∈ C q [G]</figDesc>
+
+				</figure>
+
+				<p>; ∀ f, g ∈ C q [M]. ∆ is the coproduct of U q (g).</p>
+
+				<p>Imposing that the last expression is equal to ∆ R [f (x)]∆ R [g(x)] for all f (x), g(x), we can compute the coproducts,</p>
+
+				<p><formula>: e i 2 ∆( ¯ M µν )⊗ωµν e i∆( ¯ P ρ )⊗aρ : = : e i 2 ¯ M µν ⊗½⊗ωµν e i ¯ P ρ ⊗½⊗aρ :: e i 2 ½⊗ ¯ M µν ⊗ωµν e i½⊗ ¯ P ρ ⊗aρ : . (32)</formula></p>
+
+				<figure>
+					<figDesc>From the equation above it is clear that if all the a µ and the ω µν commute, the coproducts will be primitive. In fact in that case, since ½ ⊗ T and T ′ ⊗ ½ commute for all T and T ′ in U q (g), we get:</figDesc>
+
+				</figure>
+
+				<p><formula>: e i 2 ∆( ¯ M µν )⊗ωµν e i∆( ¯ P ρ )⊗aρ : = : e i 2 ( ¯ M µν ⊗½+½⊗ ¯ M µν )⊗ωµν e i( ¯ P ρ ⊗½+½⊗ ¯ P ρ )⊗aρ : . (33)</formula></p>
+
+				<p>One can also enforce that the coaction be a homomorphism also with respect to the composition law of the Poincaré group:</p>
+
+				<figure>
+					<trash>: e i 2 ¯ M µν ⊗ωµν e i ¯ P ρ ⊗aρ : [½ ⊗ (a, Λ) · (a ′ , Λ ′ )] = : e i 2 ¯ M µν ⊗ωµν e i ¯ P ρ ⊗aρ : [½ ⊗ (a, Λ)] : e i 2 ¯ M µν ⊗ωµν e i ¯ P ρ ⊗aρ : [½ ⊗ (a ′ , Λ ′ )]</trash>
+
+
+				</figure>
+
+				<p>where the tensor product is understood as U q (g) ⊗ G, since the group-elements a ρ and Λ µ ν act as functions over G.</p>
+
+				<p>We know that the coproduct of C q [G] reproduces the product in G, so we can write</p>
+
+				<figure>
+					<trash>: e i 2 ¯ M µν ⊗ωµν e i ¯ P ρ ⊗aρ : [½ ⊗ (a, Λ) · (a ′ , Λ ′ )] = µ 23 : e i 2 ¯ M µν ⊗∆(ωµν ) e i ¯ P ρ ⊗∆(aρ) : [½ ⊗ (a, Λ) ⊗ (a ′ , Λ ′ )]</trash>
+
+
+				</figure>
+
+				<p>where µ 23 : U q [g]</p>
+
+				<figure>
+					<figDesc>⊗ G ⊗ G −→ U q (g) ⊗ G is the representation in the triple tensor product of the product of G: µ 23 {T ⊗ (a, Λ) ⊗ (a ′ , Λ ′ )} = T ⊗ (a, Λ) · (a ′ , Λ ′ ), ∀ T ∈ U q [g]</figDesc>
+
+				</figure>
+
+				<p>; ∀ (a, Λ), (a ′ , Λ ′ ) ∈ G. This leads us to the following relationship</p>
+
+				<p><formula>: e i 2 ¯ M µν ⊗∆(ωµν ) e i ¯ P ρ ⊗∆(aρ) : = : e i 2 ¯ M µν ⊗½⊗ωµν e i ¯ P ρ ⊗½⊗aρ : : e i 2 ¯ M µν ⊗ωµν ⊗½ e i ¯ P ρ ⊗aρ⊗½ : (34) where ∆(a µ ) = Λ µ ν ⊗ a ν + a µ ⊗ ½ , ∆(ω µν ) = ω µν ⊗ ½ + ½ ⊗ ω µν .</formula></p>
+
+				<p>For example, in the commutative case eq.(34) reduces to</p>
+
+				<p><formula>e i 2 M µν ⊗(ωµν ⊗½+½⊗ωµν ) e iP ρ ⊗(Λ ρ σ ⊗a σ +a ρ ⊗½) = e i 2 M µν ⊗½⊗ωµν e iP ρ ⊗½⊗aρ e i 2 M µν ⊗ωµν ⊗½ e iP ρ ⊗aρ⊗½ , (35)</formula></p>
+
+				<p>which is satisfied by the classical Poincaré algebra.</p>
+
+			</div>
+			<div>
+				<head>C. Twisted Poincaré quantum group of symmetries of canonical spacetimes</head>
+
+				<p>Let us now return to the &quot; canonical noncommutative spacetimes &quot; (or &quot; θ-Minkowski &quot; ), characterized by the canonical algebra M θ : [x µ , x ν ] = iθ µν . (36)</p>
+
+				<p>We shall describe the symmetries of these spacetimes in terms of the twisted Poincaré quantum group [5, 25, 26], or &quot; θ-Poincaré group &quot; , C θ [G]</p>
+
+				<figure>
+					<figDesc>:</figDesc>
+					<trash>[a µ , a ν ] = iθ ρσ (δ µ ρ δ ν σ − Λ µ ρ Λ ν σ ) , [Λ µ ν , Λ ρ σ ] = 0 , [Λ µ ν , a ρ ] = 0 ∆(Λ µ ν ) = Λ µ ρ ⊗ Λ ρ ν , ∆(a µ ) = Λ µ ν ⊗ a ν + a µ ⊗ ½ , S(Λ µ ν ) = (Λ −1 ) µ ν , S(a µ ) = −(Λ −1 ) µ ν a ν , ǫ(Λ µ ν ) = δ µ ν , ǫ(a µ ) = 0 . (37)</trash>
+
+
+				</figure>
+
+				<p>It is important to notice that in θ-Minkowski one cannot perform a pure Lorentz transformation, a feature first emphasized in Ref.[17]. In fact, from [a µ</p>
+
+				<figure>
+					<trash>, a ν ] = iθ ρσ (δ µ ρ δ ν σ − Λ µ ρ Λ ν σ ) it follows that δa µ δa ν ≥ |θ ρσ δ µ ρ δ ν σ − Λ µ ρ Λ ν σ | , (38)</trash>
+
+
+				</figure>
+
+				<p>and therefore a pure Lorentz transformation, which must be a transformation with a µ = 0, δa µ = 0, must necessarily be trivial:</p>
+
+				<p><formula>Λ µ ν = δ µ ν .</formula></p>
+
+				<p>For our purposes, most notably in the next section devoted to the Noether analysis, it is sometimes convenient to consider the expansion of the Lorentz matrix to first order:</p>
+
+				<p><formula>Λ µ ν ≃ ½ + ω µ ν + O(ω 2 ) , (39)</formula></p>
+
+				<p>where ω µν = −ω νµ . This expansion is univocally defined, due to the commutativity of Lorentz group elements. And we shall occasionally make use of [a µ</p>
+
+				<figure>
+					<trash>, a ν ] = i (θ νρ ω µ ρ − θ µρ ω ν ρ ) (40) which follows from [a µ , a ν ] = iθ ρσ (δ µ ρ δ ν σ − Λ µ ρ Λ ν σ ).</trash>
+
+
+				</figure>
+
+				<p>It is straightforward to check that if the U θ (g) generators satisfy classical Poincaré commutation rules, the equation</p>
+
+				<figure>
+					<trash>e i 2 M µν ⊗∆(ωµν ) e iP ρ ⊗∆(aρ) = e i 2 M µν ⊗½⊗ωµν e iP ρ ⊗½⊗aρ e i 2 M µν ⊗ωµν ⊗½ e iP ρ ⊗aρ⊗½ , (41) is satisfied.</trash>
+
+
+				</figure>
+
+				<p>In fact it is sufficient to commute the two exponentials in the middle of the rhs</p>
+
+				<figure>
+					<trash>e iPρ⊗½⊗a ρ e i 2 M µν ⊗ωµν ⊗½ = e i 2 M µν ⊗ωµν ⊗½ e iPρ⊗Λ ρ ν ⊗a ν (42)</trash>
+
+
+				</figure>
+
+				<p>which is the classical formula for the adjoint action of a Lorentz transformation over a translation, and to observe that if [P µ , P ν ] = 0 then, since a µ and Λ</p>
+
+				<figure>
+					<trash>ρ σ commute, we have e iPρ⊗Λ ρ ν ⊗a ν e iPρ⊗a ρ ⊗½ = e iP ρ ⊗∆(aρ) . (43) Pure (both spatial and temporal) translations are allowed, so we can write: ∆ R [f (x)] = e iPµ⊗a µ ⊲ f (x) ⊗ ½ , (44) assuming that Λ µ ν = δ µ ν</trash>
+
+
+				</figure>
+
+				<p>, which renders the a µ s commutative. This means that the coproducts of the P µ are primitive: ∆(P µ ) = P µ ⊗ ½ + ½ ⊗ P µ .</p>
+
+			</div>
+			<div>
+				<head>(45)</head>
+
+				<p>The nontrivial features are in the Lorenz sector: imposing the homomorphism property to be satisfied by a complete transformation we can compute the coproducts,</p>
+
+				<figure>
+					<trash>e i 2 ∆(Mρσ )⊗ω ρσ e i∆(Pµ)⊗a µ [f (x) ⊗ g(x) ⊗ ½] = e i 2 Mρσ ⊗½⊗ω ρσ e iPµ⊗½⊗a µ e i 2 ½⊗M αβ ⊗ω αβ e i½⊗Pν ⊗a ν [f (x) ⊗ g(x) ⊗ ½]. (46) From this, using e iPµ⊗½⊗a µ e i 2 ½⊗M αβ ⊗ω αβ = e i 2 ½⊗M αβ ⊗ω αβ e iPµ⊗½⊗a µ ,</trash>
+
+
+				</figure>
+
+				<p>which follows form the fact that a µ and ω ρσ commute, we obtain (using also the commutativity between the ω ρσ )</p>
+
+				<figure>
+					<trash>e i 2 ∆(Mρσ)⊗ω ρσ e i∆(Pµ)⊗a µ = e i 2 (Mρσ ⊗½+½⊗Mρσ )⊗ω ρσ e iPµ⊗½⊗a µ e i½⊗Pν ⊗a ν (47) Then using the Baker-Campbell-Hausdorff formula one finds that e i∆(Pµ)⊗a µ ≡ e iPµ⊗½⊗a µ +i½⊗Pµ⊗a µ = e iPµ⊗½⊗a µ e i½⊗Pµ⊗a µ e 1 2 Pµ⊗Pν ⊗[a µ ,a ν ] = e iPµ⊗½⊗a µ e i½⊗Pµ⊗a µ e i 2 θ ρσ Pµ⊗Pν ⊗(δ µ ρδ ν σ −Λ µ ρΛ ν σ ) = e i 2 θ ρσ Pµ⊗Pν ⊗(δ µ ρδ ν σ −Λ µ ρ Λ ν σ ) e iPµ⊗½⊗a µ e i½⊗Pµ⊗a µ</trash>
+
+
+				</figure>
+
+				<p>where the last equality follows from the commutativity of the P µ &apos;s. So we finally arrive at the relation</p>
+
+				<figure>
+					<trash>e i 2 ∆(Mρσ)⊗ω ρσ = e i 2 (Mρσ ⊗½+½⊗Mρσ )⊗ω ρσ e − i 2 θ ρσ Pµ⊗Pν ⊗(δ µ ρ δ ν σ −Λ µ ρΛ ν σ ) , (48) that can be rewritten in the form e i 2 ∆(Mρσ )⊗ω ρσ e i 2 θ µν Pµ⊗Pν ⊗½ = e i 2 (Mρσ⊗½+½⊗Mρσ )⊗ω ρσ e i 2 θ ρσ Pµ⊗Pν ⊗Λ µ ρΛ ν σ . (49) The last step consists in observing that e i 2 ½⊗Mρσ⊗ω ρσ e i 2 θ ρσ Pµ⊗Pν ⊗Λ µ ρ Λ ν σ e − i 2 ½⊗Mρσ⊗ω ρσ = e i 2 θ ρσ Pµ⊗Pα⊗(Λ −1 ) α ν Λ µ ρΛ ν σ (50)</trash>
+
+
+				</figure>
+
+				<p>so that we get an expression in terms of the twist element F</p>
+
+				<figure>
+					<trash>in (9) e i 2 ∆(Mρσ)⊗ω ρσ = e i 2 θ µν Pµ⊗Pν ⊗½ e i 2 (Mρσ ⊗½+½⊗Mρσ )⊗ω ρσ e − i 2 θ µν Pµ⊗Pν ⊗½ . (51)</trash>
+
+
+				</figure>
+
+				<p>This, exploiting the &quot; twisting &quot; relation [5] ∆M µν = F (M µν ⊗ ½ + ½ ⊗ M µν )F</p>
+
+				<figure>
+					<trash>−1 , leads to ∆(M ρσ ) = M ρσ ⊗ ½ + ½ ⊗ M ρσ − 1 2 θ µν η µ[ρ P σ]</trash>
+
+
+				</figure>
+
+				<p>⊗ P ν + P µ ⊗ η ν[ρ P σ] . (52)</p>
+
+			</div>
+			<div>
+				<head>IV. NOETHER ANALYSIS</head>
+
+				<p>Equipped with the preparatory discussion reported in the previous section, we can now turn to the main objective of this study, which concerns a Noether analysis of the Hopf-algebra symmetries of θ-Minkowski. We shall describe as variation of the lagrangian the following element of the tensor product C q [M] ⊗ C q [G] δL(x) = L(∆ R [x]) − ∆ R [L(x)] ∈ C q [M] ⊗ C q [G] . (53)</p>
+
+				<p>If δL = 0 then the lagrangian is a scalar field.</p>
+
+				<p>The variation of the lagrangian, as every element of the tensor product C q [M] ⊗ C q [G], can be expanded in powers of the transformation parameters a µ and ω µν , upon adopting an ordering prescription,</p>
+
+				<figure>
+					<trash>δL = P µ ⊗ a µ + M µν ⊗ ω µν + . . . (54)</trash>
+
+
+				</figure>
+
+				<p>For an invariant lagrangian this must vanish, independently on the state of the transformation parameters a µ and ω µν . This must hold for every possible ordering choice for the transformation parameters, and therefore the invariance of the lagrangian implies infinitely many equations of the kind of P µ = 0 and M µν = 0. However one must expect that the different laws found by changing ordering prescription are not independent from each other. Of course, in the commutative case through the Noether analysis one finds quantities P µ and M µν which are both 4-divergences:</p>
+
+				<p><formula>P µ = ∂ ν T µν , M µν = ∂ ρ K ρ µν , (55)</formula></p>
+
+				<p>so that from the fact that they vanish one obtains local conservation laws. We shall now establish how these properties found in the commutative case generalize to the case of noncommutative theories. We focus for simplicity on the case of free scalar fields in θ-Minkowski, for which a standard choice of Lagrangian density is [6, 17] L</p>
+
+				<p><formula>(x) = 1 2 P µ Φ(x)P µ Φ(x) − m 2 Φ 2 (x) .</formula></p>
+
+				<p>This choice is motivated by the fact that the commutators among generators of the θ-Poincaré Hopf algebra are undeformed (the θ-Poincaré deformation is all in the coalgebra sector). Then describing the variation of the lagrangian as δL ≃ P µ ⊗ a µ + M µν ⊗ ω µν one easily finds a result for the translation sector of the θ-Poincaré symmetries, which is</p>
+
+				<figure>
+					<trash>0 = P µ = P ν T µν with T µν (x) = 1 2 {P ν Φ(x)P µ Φ(x) + P µ Φ(x)P ν Φ(x)} − η µν L(x) .</trash>
+
+					<figDesc>For the Lorentz sector obtaining a fully intelligible result is slightly more tedious. We first notice that 0 = M ρσ ≃ i 4 {P µ M ρσ Φ(x)P µ Φ(x) + P µ Φ(x)P µ M ρσ Φ(x)} +</figDesc>
+					<head>i 4 1 2 Υ</head>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>αβ ρσ P µ P α Φ(x)P µ P β Φ(x) − M ρσ (P µ Φ(x)P µ Φ(x)) , (56) where we used the compact notation</figDesc>
+
+				</figure>
+
+				<p><formula>Υ αβ ρσ = θ α [σ δ β ρ] − θ β [σ δ α ρ] ,</formula></p>
+
+				<p>so that in particular Υ αβ ρσ P α ⊗ P β = −θ µν η µ[ρ P σ] ⊗ P ν + P µ ⊗ η ν[ρ P σ] , and we recall that the coproduct of M ρσ takes the form ∆(M ρσ ) = M ρσ ⊗ ½ + ½ ⊗ M ρσ + 1 2 Υ αβ ρσ P α ⊗ P β .</p>
+
+				<p>Our main objective is already achieved by Eq. (56), which reproduces the key point of the Noether analysis of scalar fields in θ-Minkowski that was previously obtained in Ref. [17]. Here this result has been derived from an intelligible characterization of the quantum-group symmetry transformation governed by θ-Poincaré, while in Ref. [17] one could only obtain this result by the ad hoc introduction of the peculiar transformation parameters on which we commented already in Section II. With straightforward but tedious manipulations one can rearrange Eq. (56) in the form 0 = M ρσ ≃ i 8 P µ x [σ P ρ] Φ</p>
+
+				<figure>
+					<trash>(x)P µ Φ(x) + P µ Φ(x)P ρ] Φ(x) − 2δ µ [ρ L(x) + i 8 P µ P [ρ Φ(x)P µ Φ(x) + P µ Φ(x)P [ρ Φ(x) − 2δ µ [ρ L(x) x σ]</trash>
+
+					<figDesc>,</figDesc>
+
+				</figure>
+
+				<p>which in turn can be usefully expressed in terms of the energy-momentum tensor:</p>
+
+				<p><formula>0 = M ρσ = i 2 P µ x [ρ T µ σ] (x) + T µ [σ (x)x ρ]</formula></p>
+
+				<p>.</p>
+
+				<p>As expected we therefore find that the Noether analysis leads us to the introduction of a conserved angular-momentum tensor K µ ρσ , such that M ρσ = P µ K</p>
+
+				<figure>
+					<trash>µ ρσ , and K µ ρσ (x) = 1 2 x [ρ T µ σ] (x) + T µ [σ (x)x ρ]</trash>
+
+
+				</figure>
+
+				<p>.</p>
+
+			</div>
+			<div>
+				<head>V. CHARGES AND STATIONARY FIELDS WITH SPACE/TIME NONCOMMUTATIVITY</head>
+
+				<p>With the analysis reported so far, which was our main objective for this manuscript, we established more firmly and intelligibly the attribution of conserved currents and charges to the Hopf-algebra spacetime symmetries of noncommutative field theories. We feel that, to some extent, having achieved this higher level of confidence in the possibility of Noether analysis of these novel descriptions of spacetime symmetries, we must now consider more urgent the investigation of other aspects of these Noether-analysis results that are still not fully clarified. The most urgent of these open issues concern the interpretation of the conserved currents and charges produced by the Noether analysis.</p>
+
+				<p>It was already stressed in previous works [17, 21–24] that at present the only tangible source of confidence in the criteria for current conservation that are being adopted (P µ J µ = 0 for θ-Minkowski) come from the fact that the associated conserved charges actually &quot; work &quot; , they are time independent when evaluated on solutions of the equation of motion. So a crucial result for this whole research programme is the one reported in detail in Refs. [17, 21, 22], where the time independence of the conserved charges was verified. But in connection with the time independence of the conserved charges we feel that a subtle issue needs to be addressed. In order to introduce this issue let us quickly summarize the analysis reported in Ref.[17] for the time independence of the energy-momentum charges for solutions of the equation of motion in θ-Minkowski. These charges are of course obtained in terms of the energy-momentum tensor in θ-Minkowski spacetime (15) through the formula:</p>
+
+				<p><formula>Q P ν = d 3 xT 0ν , (57)</formula></p>
+
+				<p>where the standard (and elementary) concept of spatial integration in such noncommutative spacetimes (see, e.g., Ref. [17]) is understood. The charges Q P ν can be conveniently analyzed exploiting the Fourier representation of solutions of the equation of motion (14):</p>
+
+				<p><formula>Φ(x) = d 4 k ˜ Φ(k) δ(k µ k µ ) e ikν x ν , (58)</formula></p>
+
+				<p>where the form of the equation of motion is of course codified in δ(k µ k µ ). With this description of the solutions of the equation of motion and the result (15) for the energy-momentum tensor in θ-Minkowski spacetime one easily finds for the energy-momentum charges Q</p>
+
+				<figure>
+					<trash>P ν that Q P ν = 1 2 d 4 k d 4 q ˜ Φ(k) ˜ Φ(q)δ(k 2 )δ(q 2 ) δ 0 ν k ρ q ρ − k 0 q ν − k ν q 0 d 3 x e i(k+q)α x α − 1 2 θ αβ kαq β = 1 2 d 4 k d 4 q ˜ Φ(k) ˜ Φ(q)δ(k 2 )δ(q 2 ) δ 0 ν k ρ q ρ − k 0 q ν − k ν q 0 e i(k+q)αx α − 1 2 θ αβ kαq β δ (3) ( k + q) = 1 2 d 4 k d 4 q ˜ Φ(k) ˜ Φ(q 0 , − k)δ(k 2 )δ(q 2 0 − | k| 2 ) k 0 q 0 − | k| 2 (q 0 − k 0 )k j e i(k+q)0x 0 − 1 2 θ 0j (k0−q0)kj δ (3) ( k + q) , (59) = d 3 k 1 4| k| Φ(| k|, k) ˜ Φ(−| k|, − k)δ(k 0 − | k|) −| k| −k j e −θ 0j | k|kj + d 3 k 1 4| k| Φ(−| k|, k) ˜ Φ(| k|, − k)δ(k 0 + | k|)δ(q 0 − | k|) −| k| k j e θ 0j | k|kj ,</trash>
+
+
+				</figure>
+
+				<p>which is explicitly time (x 0 ) independent. Or is it not? The steps of derivation we highlighted in (59) show that all sources of possible x 0 dependence cancel out, but is this sufficient for establishing that a charge in a noncommutative spacetime is time independent. The main source of our concerns comes from the case of &quot; space/time noncommutativity, i.e. when the time coordinate is itself noncommutative. Think for example of the possibility of replacing Q P ν with Q P ν + iθ 01 + x 1 x 0 − x 0 x 1 : of course the added term vanishes, iθ 01 + x 1 x 0 − x 0 x 1 = 0, but it also &quot; depends on x 0 &quot; in the naive sense that it can be written by formally introducing x 0 .</p>
+
+				<p>The naivety of this example of 3 &quot; time dependent 0 &quot; , which we used to illustrate our concerns, should not lead to underestimating the issue. At least in the physics literature on spacetime noncommutativity concepts such as &quot; time-independent charge &quot; and &quot; stationary fields &quot; have been used as if time independence could be established &quot; by inspection &quot; . We simply observe that &quot; time independence by inspection &quot; could be misleading. On the other hand what essentially we are going to argue is that one can rely on &quot; time independence by inspection &quot; if all steps of the analysis have been performed consistently with a given choice of ordering prescription (this is of course what one typically does anyway, for independent reasons, in physics applications of spacetime noncommutativity, and this is the reason why no puzzling results on time independence were ever discussed). We propose that time independence (as considered for example in the characterization of conserved charges and stationary fields) can be established if one writes the field of interest as an ordered polynomial and finds that the time coordinate does not appear in the expression of the field.</p>
+
+				<p>In order to explore the robustness of this definition it is useful to focus on two examples of ordering convention and of corresponding Weyl maps, and consider what they imply for our example of &quot; time dependent 0 &quot; . With time-to-the-right ordering convention : x j x 0 :→ x j x 0 , : x 0 x j :→ x j x 0 + iθ 0j , and x j x 0 = Ω r (x 0 x j ) , x 0 x j = Ω r (x 0 x j + iθ 0j ) ,</p>
+
+				<figure>
+					<trash>(60) so that : [iθ 01 + x 1 x 0 − x 0 x 1 ] := 0 = Ω −1 r (iθ 01 + x 1 x 0 − x 0 x 1 ) , where Ω −1</trash>
+
+
+				</figure>
+
+				<p>r is the inverse of the Weyl map, taking form noncommutative variables to commutative ones.</p>
+
+				<p>Similarly, for the Weyl ordering convention : x j x 0 :→ 1 2 (x j x 0 + x 0 x j + iθ j0 ) , : x 0 x j :→ 1 2 (x j x 0 + x 0 x j + iθ 0j ) ,</p>
+
+				<figure>
+					<trash>and x j x 0 = Ω w (x 0 x j + i 2 θ j0 ) , x 0 x j = Ω w (x 0 x j + i 2 θ 0j ) , (61) so that : [iθ 01 + x 1 x 0 − x 0 x 1 ] := 0 = Ω −1 w (iθ 01 + x 1 x 0 − x 0 x 1 ) .</trash>
+
+
+				</figure>
+
+				<p>As further evidence of robustness of our definition of time independence we invite our readers to contemplate the equivalent description of Weyl maps given in Section II, centered on the ordering convention for the basis of exponentials used in the Fourier characterization of a field. Evidently, from that perspective our definition of time independence can be equivalently described as the statement that, working consistently within one such ordered basis of exponentials, the Fourier transform f (k) of a time-independent field f (x) should be such that ˜ f (k) ∝ δ(k 0 ) .</p>
+
+				<p>And the fact that this is a sensible definition of time independence is confirmed by the known fact (see, e.g., Refs.[21, 31]) that adopting different ordering conventions for the basis of exponentials (different Weyl maps) leads in general to different Fourier transforms, but the Fourier transforms obtained for a given field according to different ordering conventions always agree in k 0 = 0. It is also important to stress that according to our characterization of time independence one finds that P 0 f (x) = 0 for a time-independent field f (x) in θ-Minkowski:</p>
+
+				<figure>
+					<trash>f (x) = d 3 k ˜ g b ( k)Ω b (e ik· x ) , ⇒ P 0 f (x) = i d 3 k ˜ g b ( k)Ω b (∂ 0 e ik· x ) = 0 . (62)</trash>
+
+
+				</figure>
+
+				<p>And notice that also the reverse it true: if P 0 f (x) = 0 then</p>
+
+				<figure>
+					<trash>P 0 d 4 k ˜ f b (k)Ω b (e ikµx µ ) = 0 , ⇒ ˜ f b (k)k 0 e ikµx µ = 0 . (63)</trash>
+
+
+				</figure>
+
+				<p>where the equality on the right-hand side is a commutative functional equation, whose solution is easily found as ˜ f b (k) = ˜ g b ( k)δ(k 0 ) . (64)</p>
+
+				<p>We are here focusing on θ-Minkowski, but it is easy to check (details can be found in Ref. [32]) that also for the other most studied noncommutative spacetime, the mentioned κ-Minkowski , our definition of time independence is applicable and equally robust.</p>
+
+			</div>
+			<div>
+				<head>VI. CLOSING REMARKS</head>
+
+				<p>We have here contributed to the fast growing maturity of the hypothesis of a Hopf-algebra description of spacetime symmetries. We feel that our main result, showing that conserved charges can be obtained directly from Hopf-algebra symmetry transformations, might have implications that go beyond the specific context of the Noether analysis.</p>
+
+				<p>In particular, by uncovering this robust behavior of finite quantum-group symmetry transformations we hope to provide encouragement for their more direct application also to the description of other aspects of these theories in noncommutative spacetimes.</p>
+
+				<p>Among these possible applications we feel that a special mention is deserved for the investigation of the connection between spin and statistics in noncommutative theories, which may lead to valuable opportunities for phenomenology and has been very actively debated in recent times (see, e.g., Refs. [33–36]). Within the confines of Noether-analysis applications it is noteworthy that so far these have concerned exclusively theories of classical fields in the noncommutative spacetimes, but valuable results could perhaps be obtained in analogous studies of classical point particles. Particularly for the case of classical point particles in κ-Minkowski spacetime it appears reasonable to hope that such an approach might reconcile the alternative scenarios which have so far emerged from analyses based on more indirect arguments [4, 37, 38].</p>
+
+			</div>
+
+			<note place="foot">* giovanni.amelino-camelia@roma1.infn.it</note>
+
+			<note place="foot" n="1"> We use conventions for spacetime indices such that µ, ν ∈ {0, 1, 2, 3}, j, k ∈ {1, 2, 3}, and x 0 is understood as time coordinate.</note>
+
+			<note place="foot" n="2"> We adopt a commonly-used notation, with (anti)symmetrization with respect to pairs of indices denoted by (square)curly brackets.</note>
+
+			<note place="foot">ρ ⊗aρ : [g(x) ⊗ ½] .</note>
+
+			<note place="foot" n="3"> A similarly naive example is the &quot; time dependence of 1 &quot; : 1 = i(x 1 x 0 − x 0 x 1 )/θ 01 .</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">which we examined in detail here in Section V, we feel that an interesting conceptual issue that one could contemplate is whether the availability of such a sharp concept of time independence should be considered necessary for applications in physics. We found that θ-Minkowski (and κ-Minkowski [32]) do admit a sharp concept of time independence</title>
+		<imprint/>
+	</monogr>
+	<note>but. this may well not be the case of other quantum spacetimes</note>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Doplicher</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Fredenhagen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">E</forename>
+				<surname>Roberts</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1994" />
+			<biblScope unit="page">39</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Majid</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Ruegg</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1994" />
+			<biblScope unit="page">348</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Lukierski</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Ruegg</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Zakrzewski</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ann. Phys</title>
+		<imprint>
+			<biblScope unit="volume">243</biblScope>
+			<biblScope unit="page">90</biblScope>
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Amelino-Camelia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Majid</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Mod. Phys</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page">4301</biblScope>
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Chaichian</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">P</forename>
+				<surname>Kulish</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Nishijima</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Tureanu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2004" />
+			<biblScope unit="page">98</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Fiore</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Wess</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">75</biblScope>
+			<biblScope unit="page">105022</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">P</forename>
+				<surname>Balachandran</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Pinzul</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">R</forename>
+				<surname>Queiroz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="page">241</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Amelino-Camelia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Ellis</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<forename type="middle">E</forename>
+				<surname>Mavromatos</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Nanopoulos</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Sarkar</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">393</biblScope>
+			<biblScope unit="page">763</biblScope>
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Amelino-Camelia</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Mod. Phys</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">35</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Hewett</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Petriello</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Rizzo</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="page">075012</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Carroll</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Harvey</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">A</forename>
+				<surname>Kostelecky</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Lane</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Okamoto</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">87</biblScope>
+			<biblScope unit="page">141601</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">E</forename>
+				<surname>Carlson</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">D</forename>
+				<surname>Carone</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">F</forename>
+				<surname>Lebed</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Amelino-Camelia</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">418</biblScope>
+			<biblScope unit="issue">34</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Bertolami</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lect. Notes Phys</title>
+		<imprint>
+			<biblScope unit="volume">633</biblScope>
+			<biblScope unit="page">96</biblScope>
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Bertolami</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">G</forename>
+				<surname>Rosa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">M L</forename>
+				<surname>De Aragao</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Castorina</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Zappala</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">72</biblScope>
+			<biblScope unit="page">025010</biblScope>
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Madore</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Schraml</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Schupp</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Wess</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Eur</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. J</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page">161</biblScope>
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Amelino-Camelia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">F</forename>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">G</forename>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">A</forename>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">P</forename>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">F</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">78</biblScope>
+			<biblScope unit="page">025005</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Doplicher</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Rovelli</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+	<note>gr. -qc]</note>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Smolin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lect. Notes Phys</title>
+		<imprint>
+			<biblScope unit="volume">669</biblScope>
+			<biblScope unit="page">363</biblScope>
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Agostini</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Amelino-Camelia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Arzano</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Marciano</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Tacchi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Mod</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page">1779</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Amelino-Camelia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Gubitosi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Marciano</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Martinetti</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Mercati</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page">298</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Freidel</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Kowalski-Glikman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Nowak</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Freidel</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Kowalski-Glikman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Nowak</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Mod. Phys</title>
+		<editor>hep-th]. [25] P. Kosinski and P. Maslanka</editor>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page">2687</biblScope>
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Oeckl</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2000" />
+			<biblScope unit="page">559</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Aschieri</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Castellani</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int.J.Mod.Phys</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="1667" to="1706" />
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<monogr>
+		<title level="m" type="main">Foundations of Quantum Group Theory</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Majid</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2000" />
+			<publisher>Cambridge University Press</publisher>
+		</imprint>
+	</monogr>
+	<note>paperback. ed. ed.</note>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Majid</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Schupp</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Watts</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Zumino</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun.Math.Phys</title>
+		<imprint>
+			<biblScope unit="volume">157</biblScope>
+			<biblScope unit="page" from="305" to="330" />
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Agostini</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Amelino-Camelia</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<forename type="middle">D</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Mod. Phys</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="issue">5187</biblScope>
+			<biblScope unit="page">0306013</biblScope>
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<monogr>
+		<title level="m" type="main">PhD thesis, in preparation</title>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Mercati</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>soon. to be posted on the arXiv</note>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Balachandran</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Mangano</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Pinzul</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Vaidya</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Mod. Phys</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page" from="3111" to="0508002" />
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Arzano</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Marciano</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="page">125005</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Daszkiewicz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Lukierski</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Woronowicz</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="page">105007</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">A S</forename>
+				<surname>Young</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Zegers</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">797</biblScope>
+			<biblScope unit="page">537</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Smolin</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+	<note>gr. -qc]</note>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Arzano</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Kowalski-Glikman</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

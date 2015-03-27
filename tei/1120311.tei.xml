@@ -1,0 +1,2631 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Correlation functions for Schrödinger backgrounds</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2012-06-27">27 Jun 2012</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Balt</forename>
+								<forename type="middle">C</forename>
+								<surname>Van Rees</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">C. N. Yang Institute for Theoretical Physics</orgName>
+								<orgName type="institution">State University of New York</orgName>
+								<address>
+									<postCode>11794-3840</postCode>
+									<settlement>Stony Brook</settlement>
+									<region>NY</region>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Correlation functions for Schrödinger backgrounds</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2012-06-27">27 Jun 2012</date>
+						</imprint>
+					</monogr>
+					<note>1</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>We work out the holographic dictionary for the three-dimensional Schrödinger spacetimes. The first step in our analysis involves the correct identification of the dual sources from the radial expansion of the bulk fields, which turns out to be surprisingly subtle. We discuss in detail the holographic renormalization procedure at the linearized level and holographically compute the two-point functions of the energy-momentum tensor and an irrelevant vector operator. We discuss the appearance of multi-trace counterterms, parametrize the scheme dependence in our results, identify the non-relativistic Ward identities and compare them with expectations in the literature. Our results lead to valuable general insights regarding holography for spacetimes that are not of an asymptotically AdS form. * vanrees@insti.physics.sunysb.edu</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+				<figure>
+					<trash>Contents 1 Introduction 3 2 Setup 6 3 Analysis for b = 0 8 4 Asymptotic behavior for finite b 13 5 Analysis to first order in b 19 6 Analysis for finite b 25 7 Conclusions 33 A Vector deformations in quantum field theory 35</trash>
+
+
+				</figure>
+
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>In this paper we perform a detailed holographic analysis for the three-dimensional version of the &apos; Schrödinger&apos; spacetimes of [1, 2] with dynamical exponent z = 2, using three-dimensional Einstein gravity coupled to a free massive vector field A µ as the effective theory in the bulk. The metric and vector field of the background spacetime are given by:</p>
+
+				<figure>
+					<trash>ds 2 = dr 2 − b 2 e 4r du 2 + 2e 2r dudv A µ dx µ = be 2r du (1)</trash>
+
+
+				</figure>
+
+				<p>with b a real parameter. For nonzero b this spacetime cannot be conformally compactified in the usual sense [3, 4] and therefore it is not an Asymptotically locally AdS spacetime. Correspondingly, the dual theory is not expected to be conformal in the UV. Instead, significant evidence has been obtained [1, 5, 6, 7] to support the fact that the dual field theory is given by a finite irrelevant deformation of the two-dimensional CFT which is dual to the AdS 3 solution given by (1) with b = 0. Finite irrelevant deformations of field theories generally lead to non-renormalizability and infinitely many counterterms and therefore result in a certain amount of non-locality and also a significant scheme dependence in physical observables. This non-locality and scheme dependence will be found in the holographic analysis as well. Our analysis will ultimately lead to explicit expressions for (the scheme-independent part of) the two-point functions of the energy-momentum tensor T ij and of the vector operator O i dual to A µ . We present these two-point functions in section 6.5 below. The results of this paper also remove any conceptual difficulties in extending the dictionary to higher-point correlation functions, although technically the computations may become very involved.</p>
+
+				<p>Our motivations for performing this analysis are the following. First, the fact that Schrödinger spacetime is &apos;close&apos; to AdS, in the sense that we can smoothly dial b back to zero and obtain precisely an empty AdS spacetime, offers us a unique opportunity to study in a controlled way the field theory dual to a spacetime that is not of an Asymptotically locally AdS (or AlAdS) form. The holographic analysis of such non-AlAdS spacetimes is in many ways still in its infancy and the results obtained in this paper should be very useful for further investigations in this direction. In fact, the gradual loss of locality resulting from an irrelevant deformation is very similar what happens if one gradually lowers a field theory cutoff to finite values (i.e. if one works in inverse powers of Λ) and our general results should therefore also be of relevance for a possible implementation of the Wilsonian renormalization group flow in the bulk theory [8, 9, 10].</p>
+
+				<p>Another motivation for our work are several discussions in the literature surrounding in para so-called null dipole theory, described earlier in [37]. The three-dimensional Schrödinger solutions of the form considered in this paper were also shown to be solutions of type IIB supergravity in [7, 38], where supersymmetric solutions were found as well. The general structure of these solutions is very similar to the five-dimensional case and one may reasonably expect that the dual field theory is again a certain (two-dimensional) null dipole theory. We are however not aware of a consistent truncation to three bulk dimensions involving only the fields considered in this paper (i.e. threedimensional Einstein gravity coupled to a free massive vector field). Although this implies that our results cannot be directly interpreted as a valid string theory computation (yet), we do not expect the correlation functions obtained from for example a &apos;null dipole deformed D1/D5 CFT&apos; to be very different from those presented below. It would of course be very interesting to investigate this further.</p>
+
+			</div>
+			<div>
+				<head n="1.1">Approach</head>
+
+				<p>The main obstacle in the holographic analysis of the background (1) is the unfamiliar asymptotic behavior of the fields near the boundary r → ∞ for nonzero b. As we will see in section 4, this unfamiliar behavior is exacerbated when we consider linearized fluctuations on top of the background (1) and leads to radial expansions of the bulk fields which are much more complicated than in the AdS case. On the other hand, all our solutions turn out to be analytic in b, so when we dial b back to zero we can smoothly return to the linear fluctuations around the AdS background. This simple observation is the key to understanding holography for Schrödinger spacetimes. Namely, when we dial b back up from zero, the perturbative expansion in b is nothing more than an expansion in an irrelevant deformation parameter in the dual field theory. The holographic analysis of perturbatively small irrelevant deformations was worked out in detail in [39, 40] and we can use the results of those papers to find the dual correlation functions up to any finite order in b.</p>
+
+				<p>In this paper we perform a detailed holographic analysis up to order b 4 and use these results to conjecture the result of the asymptotic analysis to all orders in b. Our conjecture passes several consistency tests and could only be incorrect if there would be a significant structural change appearing at order b 5 , a scenario we consider highly unlikely. Combining our knowledge of the linearized bulk solution to all orders in b with our conjecture for the all-order results of the asymptotic analysis then allows us to extract the two-point functions of the dual field theory for finite b.</p>
+
+			</div>
+			<div>
+				<head n="1.2">Outline</head>
+
+				<p>In the next section we set up the bulk problem by introducing the bulk Lagrangian, computing its equations of motion and discussing the linearized analysis. We also explain in more detail how to treat the problem perturbatively in b. We then holographically compute the relevant two-point functions for b = 0, so for empty AdS 3 , in section 3. This gives us the basic correlators that will receive an infinite series of b-dependent corrections once we switch on b. In section 4 we present the solution to the linearized equations of motion for finite values of b. We explain how a careful b → 0 limit leads to a proper identification of the sources in the radial expansion of the fields. The analysis in this section, in particular subsection 4.2, contains the most important conceptual results of this paper. We then continue with the holographic analysis: first to order b 1 in section 5 and then to order b 4 in section 6. In fact, in section 6 we also present our conjecture for the all-order result and compute the associated two-point functions. In the appendix to this paper we briefly discuss the irrelevant deformation from a field theory perspective.</p>
+
+			</div>
+			<div>
+				<head n="2">Setup</head>
+
+				<p>We consider a three-dimensional Einstein-Proca bulk theory with the following action:</p>
+
+				<figure>
+					<trash>S = 1 16πG N d 3 x √ −G(R − 2Λ − 1 4 F µν F µν − 1 2 m 2 A µ A µ ) + 1 8πG N d 2 x √ −γK (2)</trash>
+
+
+				</figure>
+
+				<p>and we set Λ = −1 henceforth. We can also set 16πG N = 1 and we need m 2 = 4 in order for the Schrödinger spacetime with z = 2 to be a solution. The equations of motion take the form:</p>
+
+				<figure>
+					<trash>R µν − 1 2 RG µν − G µν = 1 2 F µρ F ρ ν + 2A µ A ν − G µν ( 1 8 F ρσ F ρσ + A ρ A ρ ) ∇ ν F νµ − 4A µ = 0 (3)</trash>
+
+
+				</figure>
+
+				<p>We will always be working in a radial-axial gauge where:</p>
+
+				<figure>
+					<trash>G µν dx µ dx ν = dr 2 + γ ij dx i dx j . (4)</trash>
+
+
+				</figure>
+
+				<p>In this coordinate system the extrinsic curvature of a slice of constant r is</p>
+
+				<figure>
+					<trash>K ij = 1 2 ˙ γ ij , (5)</trash>
+
+
+				</figure>
+
+				<p>where a dot denotes a radial derivative.</p>
+
+				<p>One solution to the equations of motion is empty AdS 3 with a metric and vanishing vector field:</p>
+
+				<figure>
+					<trash>γ ij dx i dx j = 2e 2r dudv A µ = 0 . (6)</trash>
+
+
+				</figure>
+
+				<p>Another solution to the equations of motion is the Schrödinger spacetime:</p>
+
+				<figure>
+					<trash>γ ij dx i dx j = −b 2 e 4r du 2 + 2e 2r dudv A µ dx µ = be 2r du . (7)</trash>
+
+
+				</figure>
+
+				<p>Notice that we work in conventions where η ij dx i dx j = 2dudv so η uv = 1 and lightcone indices can be raised and lowered without introducing factors of 2.</p>
+
+				<p>When we attempt to compute the on-shell action for the above solutions we find divergences as we integrate all the way to the conformal boundary at r = ∞. We cancel these in the usual fashion by adding a counterterm action. In our case we add counterterms of the form:</p>
+
+				<figure>
+					<trash>S ct = d 2 x √ −γ(−2 + A i A i ) , (8)</trash>
+
+
+				</figure>
+
+				<p>which ensures that the on-shell action remains finite for both of the above solutions. Furthermore, the first variation of the renormalized on-shell action</p>
+
+				<figure>
+					<trash>δ(S +S ct ) = d 2 x √ −γ(−K ij +γ ij (−1+K + 1 2 A k A k )−A i A j )δγ ij + d 2 x √ −γ(F ir +2A i )δA i (9)</trash>
+
+
+				</figure>
+
+				<p>also vanishes on the above backgrounds with this choice of counterterms. We note that this &apos;ad hoc&apos; definition of a counterterm action is somewhat illegal, since in principle one should find the most general asymptotic solution to the equations of motion (to the desired order in the fluctuations) and then one computes rather than postulates the counterterm action by following the usual holographic renormalization methods. However this is precisely what we will do below when we compute the counterterm action for perturbations on top of these backgrounds. Therefore, if our initial guess (8) for the counterterm action happened to be wrong then we will automatically compute, order by order in the fluctuations, the corrections that bring us to the right counterterm action. Of course, our reason for adding (8) is that it provides us with a convenient starting point.</p>
+
+				<p>To find the two-point functions in the dual field theory we will below perform a linearized analysis of small fluctuations around these backgrounds. For the metric variations we stay in the radial-axial gauge so δG rr = 0, δG ri = 0 and we define δγ ij = h ij . For the vector perturbations we define δA µ = a µ and δF µν = f µν . Henceforth γ ij and A i will denote the fixed background metric and gauge field, respectively, and indices are raised with γ ij . In summary, then, we have: γ ij → γ ij + h ij A µ → A µ + a µ . (10)</p>
+
+				<p>We will need to compute the on-shell action to second order in the fluctuations. Expanding (9) we find that this on-shell action takes the form:</p>
+
+				<figure>
+					<trash>S = d 2 x √ −γ(h ij − 1 2 ˙ h ij +γ ij ( 1 2 ˙ h k k +A k a k + 1 2 A k h kl A l )−2A i a j )h ij + d 2 x √ −γ(f ir +2a i )a i (11)</trash>
+
+
+				</figure>
+
+				<p>where ˙ h ij is shorthand for γ ik ˙ h kl γ lj and similarly ˙ h k k = γ kl ˙ h kl . Notice that the bulk term in the onshell action for the fluctuations vanishes because both the background and the fluctuations satisfy the equations of motion.</p>
+
+				<p>As we announced in the introduction to this paper, the main idea of the subsequent computations will be to work perturbatively in the deformation parameter b. In this sense b is exactly like the coupling constant λ of the Φ 3 model considered in [39]. In particular, the solution to the linearized equations of motion will have an expansion in b, a i = a {0}i + a {1}i + a {2}i + . . . h ij = h {0}ij + h {1}ij + h {2}ij + . . .</p>
+
+			</div>
+			<div>
+				<head>(12)</head>
+
+				<p>where the curly brackets indicate the corresponding order in b. Furthermore, the background fields γ ij and A i , which appear in the linearization of the equations of motion (3) and in the on-shell action (11), also have an expansion in b. These expansions however terminate at order b 2 . Again this is just as in the λΦ 3 model of [39] where the on-shell action also contains an explicit λΦ 3 term.</p>
+
+			</div>
+			<div>
+				<head>3</head>
+
+				<p>Analysis for b = 0</p>
+
+				<p>Our first task is to perform the holographic analysis of linearized fluctuations around empty AdS 3 .</p>
+
+				<p>We henceforth work in lightcone momentum space with lightcone momenta q u and q v . The analysis in this section closely follows standard results in the holographic renormalization literature, see in particular [41, 42, 43]. We refer to [44] for an introduction to holographic renormalization.</p>
+
+			</div>
+			<div>
+				<head n="3.1">Linearized asymptotic solution</head>
+
+				<p>The linearization of the equations of motion (3) around the AdS 3 background (6) is straightforward.</p>
+
+				<p>One finds that the metric and vector field fluctuations decouple and the equations are easily solved.</p>
+
+				<p>For the metric we find the following solution:</p>
+
+				<figure>
+					<trash>h ij = e 2r h (0)ij + h (2)ij (13) where the integration constants h (0)ij are the sources and h i (2)i = − 1 2 (∂ i ∂ j h (0)ij − ∂ i ∂ j h i (0)i ) ∂ j h i (2)i − ∂ i h (2)ij = 0 . (14)</trash>
+
+
+				</figure>
+
+				<p>Below, we will be working exclusively in momentum space and in components. In that language the above equations become:</p>
+
+				<figure>
+					<trash>h (2)uv = 1 4 (q 2 v h (0)uu − 2q u q v h (0)uv + q 2 u h (0)vv ) q v h (2)uv − q u h (2)vv = 0 q u h (2)uv − q v h (2)uu = 0 . (15)</trash>
+
+
+				</figure>
+
+				<p>As expected for Einstein gravity in AdS 3 , this solution for h ij is just a linearized diffeomorphism.</p>
+
+				<p>For the massive vector field we obtain the following asymptotic solution to the linearized equation of motion:</p>
+
+				<figure>
+					<trash>a i = a (0)i e 2r + a (2)i + (rã (4)i + a (4)i )e −2r + . . . (16) where a (0</trash>
+
+
+				</figure>
+
+				<p>)i are the source terms and the first two subleading terms are given by:</p>
+
+				<figure>
+					<trash>a (2)u = 1 4 q u (q u a (0)v − q v a (0)u ) ˜ a (4)u = − 1 4 q 3 u q v a (0)v (17)</trash>
+
+
+				</figure>
+
+				<p>and similar equations hold with u and v interchanged. As usual, the a (4)i are not determined by the asymptotic analysis of the equations of motion alone but will be fixed by demanding regularity in the interior of the spacetime.</p>
+
+			</div>
+			<div>
+				<head n="3.2">Holographic renormalization</head>
+
+				<p>Upon substitution of the asymptotic solution into the on-shell action, we find divergences as we send the cutoff r → ∞. These are cancelled by the counterterm action:</p>
+
+				<figure>
+					<trash>S ct = − 1 2 d 2 x √ γ 1 2 a k γ a k + (∂ k a k ) 2 + r( 1 4 a k 2 γ a k + 1 2 ∂ k a k γ ∂ m a m ) (18)</trash>
+
+
+				</figure>
+
+				<p>with γ ≡ e −2r ≡ e −2r δ ij ∂ i ∂ j the Laplacian associated to the induced metric γ ij . This counterterm action can be found with the usual means, in particular we obtained it using the Hamilton- Jacobi method of [45]. We will not repeat its derivation here. Notice that the counterterm action is covariant up to the explicit appearance of the coordinate r, which signals the presence of a conformal anomaly.</p>
+
+			</div>
+			<div>
+				<head n="3.3">One-point functions</head>
+
+				<p>After adding the counterterms, the first variation of the renormalized on-shell action becomes finite and takes the form:</p>
+
+				<figure>
+					<trash>δ(S + S ct,0 ) = d 2 x (4a i (4) − 3 16 2 a i (0) + 1 8 ∂ i ∂ k a (0)k )δa (0)i + (h ij (2) + 1 2 ˜ R[h (0) ]η ij )δh (0)ij (19) with R[h (0) ]</trash>
+
+
+				</figure>
+
+				<p>= ∂ i ∂ j h (0)ij − ∂ i ∂ i h j (0)j the linearized curvature associated to h (0)ij . The one-point functions are then given by:</p>
+
+				<figure>
+					<trash>O i = − 1 −g (0) δ δa (0)i (S + S ct,0 ) = −4a i (4) + 3 16 2 a i (0) − 1 8 ∂ i ∂ k a (0)k T ij = 4π −g (0) δ δh (0)ij (S + S ct,0 ) = 4π(h ij (2) + 1 2 ˜ R[h (0) ]η ij ) . (20)</trash>
+
+
+				</figure>
+
+				<p>These are one-point functions in the presence of sources, so differentiating them once more with respect to the sources gives the two-point functions, see below. The contact terms in O i are schemedependent , although conformal invariance constrains them to a linear combination of ∂ i ∂ j a (0)j and 2 a i (0) . We will elaborate on the scheme dependence of our results in the following sections.</p>
+
+			</div>
+			<div>
+				<head n="3.4">Ward identities</head>
+
+				<p>Equation (20) expresses the one-point function of the energy-momentum tensor in terms of the normalizable modes h (2)ij .</p>
+
+				<p>In the asymptotic analysis of the equation of motion we obtained the constraints (15) for the coefficients h (2)ij . We may now translate these equations into Ward identities involving the energy-momentum tensor. For example, the first equation in (15) leads directly to the trace anomaly:</p>
+
+				<figure>
+					<trash>T i i = A = 2π R[h (0) ] = c 12 R[h (0) ] . (21)</trash>
+
+
+				</figure>
+
+				<p>Reinstating the factor of (16πG N ) −1 , we find c = 3/(2G N ), as expected [46, 47, 48]. Furthermore, one easily finds that the last two equations in (15) become the usual conservation equations:</p>
+
+				<figure>
+					<trash>∂ i T ij = 0 (22) where we also used the first equation in (15). 3.5 Callan-Symanzik equation In [40]</trash>
+
+
+				</figure>
+
+				<p>the holographic derivation of the Callan-Symanzik equation for scale transformation of the on-shell action was explained in complete detail. Although we will need such a detailed analysis at higher orders in b, at this order the analysis is familiar and essentially dates back to [47, 48].</p>
+
+				<p>Following the known prcoedures, then, we find that the Callan-Symanzik equation takes the form:</p>
+
+				<figure>
+					<trash>d 2 x 2 g (0)ij + h (0)ij δ δh (0)ij + 2a (0)i δ δa (0)i S ren = −B . (23)</trash>
+
+
+				</figure>
+
+				<p>Here the integrated conformal anomaly is denoted B. It originates from the manifest radial dependence of the counterterm action, more precisely</p>
+
+				<figure>
+					<trash>B = lim r→∞ ∂ ∂r S ct = d 2 x 1 4 a k (0) 2 a (0)k − 1 2 ∂ k a (0)k ∂ l a (0)l , (24)</trash>
+
+
+				</figure>
+
+				<p>where the partial derivative with respect to r is taken with all the bulk fields fixed. On the left-hand side of (23) all the sources scale with their canonical dimension, so there are no beta functions at this order.</p>
+
+				<p>Notice that the integral of the conformal anomaly A appearing in (21) should in principle be equal to B as given in (24). However in perturbation theory the two are manifestly different. This is firstly because the terms appearing in A are topological invariants (and we will also find total derivatives at higher orders below) and therefore integrate to zero in B, and secondly because the terms appearing in B are all second order in the sources and therefore do not show up in A, which in the linearized analysis is only determined to first order. In perturbation theory, then, the</p>
+
+				<p>Symanzik equation and the trace Ward identity are both valuable and complementary sources of information.</p>
+
+			</div>
+			<div>
+				<head n="3.6">Two-point functions</head>
+
+				<p>The above analysis relied only on the asymptotic analysis of the equation of motion, which is always sufficient to obtain the Ward identitites and the Callan-Symanzik equation. On the other hand, to compute two-point functions we need to demand regularity inside the bulk as well. For the massive vector field the solution to the linearized equations of motion is given in terms of Bessel functions.</p>
+
+				<p>More precisely, we find the regular solution to the equation of motion to be:</p>
+
+				<figure>
+					<trash>a u = a (0)u q u q v K 0 ( 2q u q v e −r ) + 1 4 2q u q v e −r a (0)u (4e 2r + q u q v ) + q 2 u a (0)v K 1 ( 2q u q v e −r ) (25) and similarly with u and v interchanged. We can expand the Bessel functions, K 0 (z) = − γ + 1 4 (1 − γ)z 2 + . . . + log(z/2) 1 + 1 4 z 2 + 1 64 z 4 + . . . K 1 (z) = 1 z + 1 4 (2γ − 1)z + . . . + z 2 log(z/2) 1 + 1 8 z 2 + 1 192 z 4 + . . . (26)</trash>
+
+
+				</figure>
+
+				<p>and compare with (16) to find an exact match for the leading terms and to also find that</p>
+
+				<figure>
+					<trash>a (4)u = 1 8 q 3 u q v (ln(q u q v ) − ln(2) − 1 + 2γ)a (0)v + 1 16 a (0)u q 2 u q 2 v . (27)</trash>
+
+
+				</figure>
+
+				<p>We may now substitute this expression the first equation in (20) and take another functional derivative to obtain the two-point functions. In conventions where</p>
+
+				<figure>
+					<trash>O i (x) = d 2 q (2π) 2 O i (q)e iq·x O i . . . = i δ δa i (0) . . . , (28)</trash>
+
+
+				</figure>
+
+				<p>with q · x = q u u + q v v and the factor of i being a consequence of the Lorentzian signature (see appendix B of [49]), we find that, up to contact terms:</p>
+
+				<figure>
+					<trash>O u (u, v)O u (0) = − i 2 d 2 q (2π) 2 q 3 u q v ln(q u q v − iǫ)e iq·x = − 3 2πu 4 v 2 (29)</trash>
+
+
+				</figure>
+
+				<p>and of course similarly with u and v interchanged. Notice how we inserted an iǫ prescription in this correlation function. This particular iǫ prescription corresponds to a time-ordered two-point function. We will be computing exclusively time-ordered two-point functions in this paper. The iǫ prescription can in principle be found from a careful bulk analysis, see [50, 51] for details, the end result of which will be precisely the insertion as we have written it. 1 To enhance readability we have omitted the corresponding iǫ prescription from the position-space expression, for time-ordered two-point functions it is easily reinstated by replacing t → t − iǫt.</p>
+
+				<p>For the energy-momentum tensor the normalizable coefficients h (2)ij are in fact completely fixed by the Ward identities, which is a reflection of the fact that three-dimensional gravity has no propagating degrees of freedom. We find that</p>
+
+				<figure>
+					<trash>h (2)uu = q u q v h (2)uv = 1 4 ( q 3 u q v h (0)vv + q u q v h (0)uu − 2q 2 u h (0)uv ) (30)</trash>
+
+
+				</figure>
+
+				<p>and therefore, using that in Lorentzian signature insertions of the energy-momentum tensor are defined via</p>
+
+				<figure>
+					<trash>T ij . . . = −4πi δ δh ij . . . , (31) we find that up to contact terms, T uu (u, v)T uu (0) = −4π 2 i d 2 q (2π) 2 q 4 u q u q v − iǫ e iq·x = 12π u 4 , (32)</trash>
+
+
+				</figure>
+
+				<p>and again similar results hold with u and v interchanged. The coefficient of the two-point function is c/2 = 3/(4G N ) if we reinstate the factor 16πG N again, in agreement with expectations. Notice that we rewrote q −1 v as q u /(q u q v − iǫ). Such a prescription should always be understood when we write inverse powers of momenta since it is the correct regularization of the singularity at q v = 0 for time-ordered correlation functions.</p>
+
+			</div>
+			<div>
+				<head n="4">Asymptotic behavior for finite b</head>
+
+				<p>As we emphasized above, our approach will be to treat the parameter b as infinitesimally small and to work perturbatively in b. In this section we however first present the solution to the linearized equation of motion for finite b. Apart from certain technical complications, already discussed in [5], the main conceptual difficulty is the proper redefinition of the integration constants to what will eventually be the source and vev terms in the dual field theory. We shall demonstrate that this redefinition can be performed by taking a careful b → 0 limit.</p>
+
+			</div>
+			<div>
+				<head n="4.1">Asymptotic solution</head>
+
+				<p>For finite b the linearized equations of motion are rather complicated. Exact expressions for these equations can be found in [5], where the asymptotic solution was also presented. Here we will review and slightly rewrite this asymptotic solution.</p>
+
+				<p>We first consider the radial component a r of the vector field. Regarding the dynamical part of a r , we find that we can combine the equations of motion to write a single fourth-order equation involving only a r of the form:</p>
+
+				<figure>
+					<trash>4q 2 u q 2 v a r + 4e 2r q u q v b 2 q 2 v a r − a ′′ r + e 4r −16a ′ r − 4a ′′ r + b 2 q 2 v 8 + b 2 q 2 v a r − 2 2a ′ r + a ′′ r + 4a ′′′ r + a ′′′′ r = 0 (33)</trash>
+
+
+				</figure>
+
+				<p>where a prime denotes a derivative with respect to r. This equation can be solved in terms of</p>
+
+				<p>Bessel functions. In addition to the solution to this equation there is also a non-dynamical part of a r which comes from a linearized diffeomorphism. The most general solution for a r is then of the form:</p>
+
+				<figure>
+					<trash>a r = ib q v χ (2)vv + c 1 I 1 (e −2r q u q v ) + c −1 I −1 (e −2r q u q v ) + c 9 I 9 (e −2r q u q v ) + c −9 I −9 (e −2r q u q v ) (34) where χ (2)vv</trash>
+
+
+				</figure>
+
+				<p>, c ±1 and the c ±9 are five integration constants, which a priori can be arbitrary functions of q u and q v but not of r. (The notation χ (2)vv will be useful below.)</p>
+
+				<figure>
+					<trash>The functions I ±1 (x) and I ±9 (x) take the form: I ±1 (x) ≡ √ 2x(s 1 ± 1)I ±s 1 ( √ 2x) ∓ I −1±s 1 ( √ 2x) I ±9 (x) ≡ √ 2x(s 9 ∓ 3)I ±s 9 ( √ 2x) ∓ I −1±s 9 ( √ 2x) (35) with s 1 = 1 + b 2 q 2 v s 9 = 9 + b 2 q 2 v (36) and I ν (z) the modified Bessel function of the first kind. Recalling the series expansion of the Bessel function, I ν (z) = 2 −ν z ν ∞ k=0 1 4 k Γ(ν + k + 1)k! z 2k (37) we see that the four solutions have asymptotic behavior: I ±1 (e −2r q u q v ) ∼ e −(1±s 1 )r + . . . I ±9 (e −2r q u q v ) ∼ e −(1±s 9 )r + . . . (38)</trash>
+
+
+				</figure>
+
+				<p>where the dots represent infinite series which trail the leading term by powers of exp(−2r). Notice the rather unusual behavior where the power of exp(r) becomes dependent on the lightcone momentum q v . This phenomenon is typical for the Schrödinger spacetimes and shows that the anomalous dimensions in the dual theory become dependent on the momenta.</p>
+
+				<p>As usual, regularity inside the bulk will eventually require us to pick specific linear combinations of these four Bessel functions. More precisely, the regularity condition will lead to two linear relations between the four coefficients c ±1 and c ±9 . It is however important that we only impose such a regularity condition after finishing the asymptotic analysis. This is because the holographic renormalization procedure is equivalent to finding the correct variational principle for the gravitational dynamics [53]. As in ordinary classical mechanics, obtaining such a variational principle requires one to treat the conjugate momenta as unrelated to the position variables. On a practical level, regarding the source and vev terms as independent becomes essential for obtaining correct results in the presence of multi-trace operator mixing [40]. For these reasons we will not yet impose regularity in the interior. Using the above solution for a r one can easily reconstruct the solution for the other component fields using the remaining equations of motion. For the metric components we find that:</p>
+
+				<figure>
+					<trash>h vv = e 2r χ (0)vv + χ (2)vv h uv = − 1 2 b 2 e 4r χ (0)vv − b 2 e 2r rχ (2)vv + e 2r χ (0)uv + χ (2)uv h uu = b 2 e 4r 1 q 2 v (−q u q v χ (0)vv + 4χ (2)vv ) − 2b 2 e 2r r q u q v χ (2)vv + e 2r χ (0)uu + χ (2)uu + c 1 H 1 (e −2r q u q v ) + c −1 H −1 (e −2r q u q v ) (39) where we introduced five new integration constants χ (0)uu , χ (0)uv , χ (0)vv , χ (2)uu and χ (2)uv , whilst χ (2)vv</trash>
+
+
+				</figure>
+
+				<p>and c ±1 were already introduced above. The highlighting will be explained later but we warn the reader that the colored coefficients will not be equal to the sources of the boundary theory.</p>
+
+				<p>The functions H ±1 are slight variations of the combination of Bessel functions I ±1 , namely</p>
+
+				<figure>
+					<trash>H ±1 (x) = ∓8i √ 2b q 2 u q v x −5/2 (6 + 2b 2 q 2 v ∓ 6s 1 + x)I ±s 1 −4 ( √ 2x) + 32ib q 2 u q v x −3 b 2 q 2 v (s 1 ∓ 6) + 12 (s 1 ∓ 1) + (s 1 ∓ 2) x I ±s 1 −3 ( √ 2x) . (40) Furthermore, the coefficients χ (2)ij are related to the χ (0)ij via: χ (2)uv = 1 4 (q 2 v χ (0)uu − 2q u q v χ (0)uv + q 2 u χ (0)vv ) q v χ (2)uv − q u χ (2)vv = 0 q u χ (2)uv − q v χ (2)uu = 0 (41)</trash>
+
+
+				</figure>
+
+				<p>which happens to be identical to (15) in the undeformed theory.</p>
+
+				<p>For later reference we will give the asymptotic expansion of h uu .</p>
+
+				<figure>
+					<trash>Using (37) we find that: h uu = b 2 e 4r 1 q 2 v (−q u q v χ (0)vv + 4χ (2)vv ) − 2b 2 e 2r r q u q v χ (2)vv + e 2r χ (0)uu + e r(3−s 1 ) c 1 − i2 7 2 − 1 2 s 1 b(q u q v ) (1+s 1 )/2 q v s 1 (3 + b 2 q 2 v − 3s 1 )Γ(s 1 − 2) − i2 5 2 − 1 2 s 1 (s 1 − 1)(q u q v ) (3+s 1 )/2 bq 3 v Γ(1 + s 1 ) e −2r + . . . + e r(3+s 1 ) c −1 − i2 7 2 + 1 2 s 1 b(q u q v ) (1−s 1 )/2 q v s 1 (3 + b 2 q 2 v + 3s 1 )Γ(−s 1 − 2) + i2 5 2 + 1 2 s 1 (−s 1 − 1)(q u q v ) (3−s 1 )/2 bq 3 v Γ(1 − s 1 ) e −2r − i2 1 2 + 1 2 s 1 (q u q v ) (5−s 1 )/2 bq 3 v s 1 (−3 + b 2 q 2 v )Γ(−s 1 − 2) e −4r + . . . . (42)</trash>
+
+
+				</figure>
+
+				<p>For a u and a v we find similar expressions as for a r which can again be written in terms of four Bessel functions. We will present only their asymptotic expansions here. These are given by:</p>
+
+				<figure>
+					<trash>a u = e (1−s 1 )r ψ (4)v −2(s 1 − 1) q 2 v + q 2 u (−2 + s 1 ) 4(−3 + b 2 q 2 v ) e −4r + . . . + e (1+s 1 )r ψ (0)u 1 − q 2 u (−1 + b 2 q 2 v + s 1 ) 8b 2 (b 2 q 2 v − 3) e −4r + . . . + e (1−s 9 )r ψ (4)u 1 + q u q v 1 + s 9 e −2r + q 2 u q 2 v (3b 2 q 2 v + 5 + 5s 9 ) 8(11 + b 2 q 2 v + 3s 9 )(3 + b 2 q 2 v + s 9 ) e −4r + . . . − e (1+s 9 )r ψ (0)v 2(s 9 − 3) q 2 v + 2q u (18 − 6s 9 + b 2 q 2 v (2 − s 9 )) q v (8 + b 2 q 2 v )s 9 e −2r + q 2 u (16 + 3b 2 q 2 v − 8s 9 ) 4(8 + b 2 q 2 v )(−2 + s 9 ) e −4r + . . . + e 2r bq u 2q v χ (0)vv − 2b q 2 v χ (2)vv + 1 2 bχ (2)uv (43) and a v = e −(1+s 1 )r ψ (4)v 1 + q u (−1 + s 1 ) 2b 2 q v e −2r + . . . + e −(1−s 1 )r ψ (0)u q 2 v 2(1 + s 1 ) − q u q v 4b 2 e −2r + . . . + e −(1+s 9 )r ψ (4)u q 2 v (s 9 − 2) 2(3 + b 2 q 2 v + s 9 ) + q u q 3 v (−2 + s 9 ) 4(1 + s 9 )(3 + b 2 q 2 v + s 9 ) e −2r + . . . + e (s 9 −1)r ψ (0)v 1 − q u q v (1 + s 9 ) 2(8 + b 2 q v ) e −2r + . . . + 1 2 be 2r χ (0)vv + 1 2 bχ (2)vv . (44) Here we introduced new integration constants ψ (0)i and ψ (4)i which are a related to the c ±1 and c ±9 as: ψ (0)u = − 2 1 2 (1+s 1 ) iq v (q u q v ) 1 2 (1−s 1 ) Γ(1 − s 1 ) c −1 ψ (0)v = − 2 1 2 (1+s 9 ) iq v (q u q v ) 1 2 (1−s 9 ) Γ(1 − s 9 ) c −9 ψ (4)u = − 2 3 2 − 1 2 s 9 (q u q v ) 1 2 (1+s 9 ) 3 + b 2 q 2 v + s 9 iq v (−2 + s 9 ) Γ(1 + s 9 ) c 9 ψ (4)v = 2 1 2 − 1 2 s 1 iq v (q u q v ) 1 2 (1+s 1 ) Γ(1 + s 1 ) c 1 . (45)</trash>
+
+
+				</figure>
+
+				<p>We will henceforth use the integration constants ψ (0)i and ψ (4)i rather than c ±1 and c ±9 .</p>
+
+			</div>
+			<div>
+				<head n="4.2">Interpretation</head>
+
+				<p>The solution presented in the previous subsection appears rather unstructured. In contrast to the b = 0 analysis of section 3, where every component of the various fields had a simple expansion in powers of exp(−2r), here we find several expansions that appear simultaneously in various components of the fields. Let us now discuss how to perform the holographic analysis in this case.</p>
+
+				<p>Our first task is to identify the terms in the radial expansion that correspond to the sources of the bulk theory. This would be a trivial exercise in the usual AdS/CFT setup, where the sources are usually just the leading terms in the radial expansion of the fields, at least up to well-known subtleties for operators with ∆ &lt; d/2 discussed in [54] and up to multi-trace deformations discussed in for example [55, 56, 57, 58, 59, 60, 61, 40]. In our case inspection of the solution naturally leads to the idea that the ψ (0)i and χ (0)ij could be sources in a dual field theory. These are the coefficients marked in red in the above formulas. Indeed, the ψ (0)i are leading terms in an infinite expansion in powers of exp(−2r) and upon sending b → 0 the power of exp(r) accompanying the coefficients ψ (0)u and ψ (0)v becomes precisely exp(2r) in a u and a v , respectively, since in this limit s 1 → 1 and s 9 → 3. The ψ (0)i therefore &apos;land&apos; precisely at the order of the source terms in the b = 0 expansion of the previous section. Similarly, the χ (0)ij appear precisely at the same order, exp(2r), as the sources in the b = 0 case. They might therefore correspond to the energy-momentum tensor in the dual theory. All the other terms in the radial expansion of the fields would then merely be &apos;induced&apos; terms which are sometimes more leading than the source terms [39].</p>
+
+				<p>There is however a problem with the reasoning of the previous paragraph, because upon further inspection the b → 0 limit is not as straightforward as our previous discussion seems to suggest.</p>
+
+				<p>For example, the first subleading term in the expansion multiplying ψ (0)v in the expansion (43) for a u also becomes of order exp(2r) as b → 0 and will therefore mix with ψ (0)u to become the actual source term a (0)u . A similar mixing can be seen to occur for many other coefficients in the radial expansion of the fields. The terms highlighted in red in the above formulas therefore do not precisely reduce to the source terms as b → 0.</p>
+
+				<p>This observation corroborates nicely with the results of [39, 40]. As we mentioned above we view the appearance of b as an irrelevant perturbation. In [39] it was demonstrated that to any finite order in the irrelevant deformation parameter, the source is always equal to the term at order exp(−∆ − r) in the radial expansion of the fields. Here ∆ − is the appropriate scaling dimension for the dual source without the deformation, which in our case happens to be equal to −2 for both the metric and the vector field. This simple prescription leads one directly to the correct identification of the sources, as we will now proceed to demonstrate.</p>
+
+			</div>
+			<div>
+				<head n="4.3">Identification of the sources</head>
+
+				<p>The result of [39] is valid perturbatively in the irrelevant deformation parameter, i.e. in b. This in particular implies that the b-dependent powers of exp(−r), so terms like exp(±s 9 r), should be viewed as infinite series expansions in b before the analysis of [39] can be applied. In order to identify the proper sources we should therefore write such terms as:</p>
+
+				<figure>
+					<trash>exp(±s 9 r) = exp ± 9 + b 2 q 2 v r → exp(±3r) 1 ± 1 6 b 2 q 2 v − 1 216 b 4 q 4 v r + 1 72 b 4 q 4 v r 2 + . . . (46)</trash>
+
+
+				</figure>
+
+				<p>so as a term of order exp(±3r) plus an infinite series of logarithmic terms. 2 As explained in [40], the presence of these logarithmic terms does not modify the identification of the source as the term multiplying simply the exp(−∆ − r) coefficient. For the identification of the sources it is then sufficient to replace exp(±s 9 r) with exp(±3r). Of course the same analysis can be applied to the other b-dependent powers, so:</p>
+
+				<figure>
+					<trash>exp(±s 1 r) = exp ± 1 + b 2 q 2 v r → exp(±r) 1 ± 1 2 b 2 q 2 v − 1 8 b 4 q 4 v r + 1 8 b 4 q 4 v r 2 + . . . . (47)</trash>
+
+
+				</figure>
+
+				<p>Taking into account such an interpretation of the fractional powers of exp(r) allows us to directly read off the correct source terms in the linearized solutions. For example, from (43) and (44) we directly find that the terms of order exp(2r) in the radial expansion of the a i are:</p>
+
+				<figure>
+					<trash>a (0)u ≡ ψ (0)u − 2q u (18 − 6s 9 + b 2 q 2 v (2 − s 9 )) q v (8 + b 2 q 2 v )s 9 ψ (0)v + bq u 2q v χ (0)vv − 2b q 2 v χ (2)vv a (0)v ≡ ψ (0)v + 1 2 bχ (0)vv . (48)</trash>
+
+
+				</figure>
+
+				<p>It will be useful to also define the corresponding &apos;normalizable&apos; terms, which by definition sit at order exp(−2r) in the radial expansion of the fields:</p>
+
+				<figure>
+					<trash>a (4)u ≡ ψ (4)u + q 2 u q 2 v 8(1 − b 2 q 2 v + s 1 ) ψ (0)u + q 3 u q v (2b 2 q 2 v − 5s 9 )(1 + s 9 ) 12(5 + b 2 q 2 v )(8 + b 2 q 2 v )(−3 + s 9 ) ψ (0)v a (4)v ≡ ψ (4)v + q 2 u q 2 v 88 + 8b 2 q 2 v − 24s 9 ψ (0)v − q u q v 4b 2 ψ (0)u . (49) For the metric we find that: h (0)uu ≡ χ (0)uu − 8b q 2 v ψ (4)v + 2q u bq v ψ (0)u h (0)uv ≡ χ (0)uv h (0)vv ≡ χ (0)vv (50)</trash>
+
+
+				</figure>
+
+				<p>are the correct sources in the dual theory, whereas the &apos;normalizable&apos; terms are given by the terms at order one:</p>
+
+				<figure>
+					<trash>h (2)uu ≡ χ (2)uu + q 2 u 2b(2 − s 1 ) ψ (0)u − 4q u (s 1 − 1) bq 3 v ψ (4)v h (2)uv ≡ χ (2)uv h (2)vv ≡ χ (2)vv . (51) 2</trash>
+
+
+				</figure>
+
+				<p>We call terms involving powers of our radial coordinate r &apos;logarithmic&apos; because they are powers of logarithms of the conventional Fefferman-Graham radial coordinate ρ = exp(−r) and also because they correspond to beta functions and conformal anomalies in the dual field theory.</p>
+
+				<p>The above transformation between the correct field theory sources, so h (0)ij and a (0)i , and the natural integration constants, so χ (0)ij and ψ (0)i , is quite remarkable. Indeed, the modes parametrized by the χ ij represent a linearized diffeomorphism whereas the modes parametrized by the ψ i represent a propagating fluctuation. They are thus qualitatively very different and one may naturally try to associate them with different operators in the dual theory. We however now observe that the correct field theory sources h (0)ij and a (0)i are not in one-to-one correspondence with the two sets of solutions parametrized by the χ ij and the ψ i . Rather, each of the field theory sources switches on a combination of these two solutions. This is in fact reminsicent of the analysis of TMG at the chiral point presented in [49], where a similar mixing between the propagating solution (i.e. the Bessel function) and the linearized diffeomorphism occurred.</p>
+
+				<p>We would like to emphasize that the redefinitions (48) and (50) are very non-local because of the factor of q −1 v and q −2 v appearing in the transformation formulae. Notice that, despite appearances, we are using an iǫ prescription such that these factors are in fact non-local in the u direction, see for example the two-point function (32). Any analysis where the χ (0)ij and ψ (0)i are treated as the field theory sources will therefore hide a non-local convolution of the correct field theory correlation functions and may easily lead to erroneous conclusions. 3</p>
+
+			</div>
+			<div>
+				<head n="5">Analysis to first order in b</head>
+
+				<p>Altough we have just presented the solution to the linearized equation of motion for finite values of b, we cannot directly use this solution to compute correlation functions since we are unable to perform the holographic renormalization procedure for finite b. We announced in the introduction that our strategy will be to work perturbatively in b instead. In this section we will make the first step by performing the holographic analysis to first order in b. The structure and methods of this section are exactly the same as that of [39, 40] so the presentation will be rather brief. We will however discuss the field theory results in a little more detail.</p>
+
+			</div>
+			<div>
+				<head>3</head>
+
+				<p>Although the field redefinition from the h (0)ij and a (0)i to the χ (0)ij and ψ (0)i is non-local, there do exist many other field redefinitions which are local and therefore in principle allowed. At large N , the full space of such local field redefinitions also includes local double-trace deformations and Legendre transforms akin to [54]. As explained further in the remaining sections, rather than exhaustively exploring all possible redefinitions we have instead opted to fix this freedom in a rather natural way.</p>
+
+			</div>
+			<div>
+				<head n="5.1">Linearized asymptotic solution</head>
+
+				<p>From the results of the previous section we may easily find the order b correction to the linearized solution of the equations of motion. For the metric perturbation h ij it takes the form:</p>
+
+				<figure>
+					<trash>h {1}uu = −2ba (0)u e 4r + 2brq u q v a (0)u e 2r + 1 2 brq 2 u q 2 v a u(0) + h {1}(2)uu e −2r + . . . h {1}uv = h {1}(2)uv e −2r h {1}vv = h {1}(2)vv e −2r (52)</trash>
+
+
+				</figure>
+
+				<p>where we added the curly bracket {1} to indicate that this is the first-order correction. Notice that there are no (non-logarithmic) terms at order exp(2r). This corresponds to the fact that we set any order b corrections to the source to zero, in agreement with the analysis of [39]. However we did allow for a correction to the normalizable terms, which we indicated with a term h {1}(2)ij .</p>
+
+				<p>In general these corrections would be unknown but in three-dimensional gravity the equations of motion furthermore dictate that:</p>
+
+				<figure>
+					<trash>h {1}(2)uv = − 1 8 bq 2 u q 2 v a (0)v + 2ba {0}(4)v q v h {1}(2)uv − q u h {1}(2)vv = 0 q u h {1}(2)uv − q v h {1}(2)uu = 0 (53)</trash>
+
+
+				</figure>
+
+				<p>which will become the first-order corrections to the Ward identities of the dual field theory. The appearance of the vector field components in h {1}(2)uv already indicates that the Ward identities will change at this order.</p>
+
+				<p>For the vector field the corrections take the form:</p>
+
+				<figure>
+					<trash>a {1}u = b 1 8 q 3 u q v h (0)vv re −2r + a {1}(4)u e −2r + . . . a {1}v = bh {0}(2)vv − br( 1 2 q u q v h {0}(2)vv − 1 8 q 2 u q 2 v h (0)vv )e −2r + a {1}(4)v e −2r + . . . (54)</trash>
+
+
+				</figure>
+
+				<p>The term b exp(2r) in A u , from which all the corrections we wrote above originate, is in our conventions a change in the background vector field and therefore does not appear in the above expansion.</p>
+
+			</div>
+			<div>
+				<head n="5.2">Holographic renormalization</head>
+
+				<p>The computation of the counterterm action is a straightforward implementation of the general methods discussed in [39, 40]. Using Mathematica we found that the counterterm action to first order in b is given by:</p>
+
+				<p><formula>S {1}ct = 1 2 d 2 x √ −γb i h ij ∂ j ∂ k a k − rh ij γ ∂ j ∂ k a k . (55)</formula></p>
+
+				<p>Here we replaced the parameter b with a one-form field b i dx i = b exp(2r)du which allowed us to write the counterterm action in a covariant form. As usual, indices are raised and lowered and covariant derivatives are taken using the background metric γ ij .</p>
+
+			</div>
+			<div>
+				<head n="5.2.1">Scheme dependence</head>
+
+				<p>The counterterm action (55) is not unique, since we may freely add certain scheme-dependent finite counterterms as well. For example, a term of the form:</p>
+
+				<p><formula>d 2 x √ −γb i h ij γ ∂ j ∂ k a k (56)</formula></p>
+
+				<p>is finite as r → ∞ and can therefore in principle be freely added to (55). Although doing so will modify the correlation functions at this order in b by nothing more than contact terms, at higher orders in b the addition of such terms will affect the form of the counterterm action and also the Ward identities. In order to make our results meaningful at every order in b we therefore have to properly identify the scheme dependence. In the next few paragraphs we explain our approach.</p>
+
+				<p>First of all, at every order certain finite counterterms are necessary to maintain general covariance . Since the underlying problem is generally covariant, our counterterms are in principle the expansion of covariant counterterms. For example, a volume counterterm leads to a specific expansion:</p>
+
+				<p><formula>det γ → det γ 1 + 1 2 γ ij h ij + 1 4 (γ ij h ij ) 2 − 1 4 γ ij h jk γ kl h li + . . . (57)</formula></p>
+
+				<p>as γ ij → γ ij + h ij . Even though every single term on the right-hand side appears covariant, it is only the specific linear combination given above that sums to a completely covariant form. 4 To find the relations between the counterterms such that general covariance is retained, we need to verify that we are not accidentally breaking diffeomorphism invariance. This can be easily verified by demanding that the energy-momentum tensor of the boundary theory is exactly conserved. As we will explain in the next subsection, the correct energy-momentum tensor for the deformed boundary theory is the tensor J ij defined in equation (61). Demanding then that ∂ i J ij = 0 (58) to any order in b fixes a large amount of scheme dependence in the counterterms. Notice that J ij already takes into account the transformation properties of the null vector b under diffeomorphisms – indeed, diffeomorphisms in the deformed theory can of course only be unbroken if we allow ourselves to transform b as well.</p>
+
+				<p>After having imposed general covariance we are left with a finite number of finite counterterms at every order in b. Together with perturbative field redefinitions these reflect the true scheme dependence that arises in any covariant renormalization method. In our computations we have identified all those counterterms and we added them with arbitrary coefficients. This allowed us to fully understand the scheme dependence at every order in b. We will indicate any relevant scheme dependence in our results in what follows.</p>
+
+			</div>
+			<div>
+				<head n="5.3">One-point functions</head>
+
+				<p>From the first variation of the renormalized on-shell action we obtain the following one-point functions:</p>
+
+				<figure>
+					<trash>O u = − 1 −g (0) δS δa (0)v = −4(a {0}(4)u + a {1}(4)u ) + (contact terms) O v = − 1 −g (0) δS δa (0)u = −4(a {0}(4)v + a {1}(4)v ) + (c.t.) T uu = 4π −g (0) δS δh (0)vv = 4π h {0}(2)uu + bh {1}(2)uu − 2ba {0}(4)u + (c.t.) T uv = 4π −g (0) δS δh (0)uv = −4π h {0}(2)uv + h {1}(2)uv T vv = 4π −g (0) δS δh (0)uu = 4π h {0}(2)vv + h {1}(2)vv . (59)</trash>
+
+
+				</figure>
+
+				<p>Let us briefly explain the structure of these results. First of all, to avoid clutter we have chosen not to write the various contact terms since they are largely scheme-dependent. (We will reinstate the relevant contact terms in the Ward identities below.) Apart from the contact terms, then, the results at order b 0 are precisely those of equation (20) written out in components. At order b we of course see that the coefficients of the normalizable modes h {0}(2)ij and a {0}(2)i get corrected with the h {1}(2)ij and the a {1}(4)i , as expected from the general arguments of [39]. We also find a new non-contact term appearing in the one-point function of T uu . This term is indicitative of some new structure in the two-point functions, in particular the two-point function T uu O u will be non-zero at this order. Apart from the Ward identities discussed below, this non-contact term is the main nontrivial result of a careful holographic renormalization procedure at this order. We are not aware of any other (possibly faster) way of obtaining it.</p>
+
+			</div>
+			<div>
+				<head n="5.4">Ward identities and Callan-Symanzik equation</head>
+
+				<p>Equations (53) plus their order b 0 counterparts (15) can now be used to find the Ward identities in the deformed theory. We first of all obtain that: 0 = q u T vv + q v T uv 0 = q v T uu − 2πbO u + q u T uv − 2πbO v .</p>
+
+			</div>
+			<div>
+				<head>(60)</head>
+
+				<p>In agreement with general expectations discussed in [5] and in the appendix to this paper, we see that the energy-momentum tensor T ij is no longer conserved. Instead, the correct energymomentum tensor is the non-symmetric combination J ij ≡ T ij − 2πO i b j (61) which satisfies ∂ i J ij = 0 and therefore gives the expected conserved currents associated to translation invariance.</p>
+
+				<p>The deformation parameter b also breaks the scale invariance of the dual theory. Indeed, the classical beta function for O i leads to a modified trace Ward identity for the energy-momentum tensor,</p>
+
+				<figure>
+					<trash>T i i − 4πbO v = A = 2π R[h (0) ] − c 1 bq 2 u q 2 v a (0)v + c 2 bq u q 3 v a (0)u , (62)</trash>
+
+
+				</figure>
+
+				<p>with scheme-dependent coefficients c 1 and c 2 . In the appendix we discuss how the left-hand side is indeed the expected trace Ward identity for a deformation with a vector operator with scaling dimension ∆ = 3 in d = 2.</p>
+
+				<figure>
+					<trash>The Callan-Symanzik equation takes the form: d 2 x 2(g (0)ij + h (0)ij ) δ δh (0)ij + 2(b i + a (0)i ) δ δa (0)i S ren + B = 0 (63) with the integrated conformal anomaly B = 1 2 d 2 q (a (0)v q 3 u q v a (0)v + a (0)u q u q 3 v a (0)u ) − bh (0)vv q 2 u q v (q u a (0)v − q v a (0)u ) + b ˜ R[h (0) ]q 2 v a (0)u . (64)</trash>
+
+
+				</figure>
+
+				<p>The new terms in the conformal anomaly are scheme-independent. From equation (63) we read off that the sources still scale with the same scaling dimension as for b = 0 so there are no beta functions at this order.</p>
+
+				<p>We will present a more extended discussion of the Ward identities and the Callan-Symanzik equation for finite b in the next section.</p>
+
+			</div>
+			<div>
+				<head n="5.5">Two-point functions</head>
+
+				<p>As before, the two-point functions can be found by expressing the normalizable modes a (4)i and h (2)ij in terms of the sources a (0)i and h (0)ij , substituting in (59) and taking another derivative with respect to the sources. Using the fact that we can solve the linearized equations of motion completely for finite b (see section 4 for the asymptotic expansion and section 6 below for the regularity condition) we find the following first-order expressions for the normalizable modes:</p>
+
+				<figure>
+					<trash>a {0}(4)u + a {1}(4)u = 1 8 q 3 u q v ln(q u q v ) − ln(2) − 1 + 2γ a (0)v − 1 2 bh (0)vv + 1 16 q 2 u q 2 v a (0)u + 1 32 bq u q 3 v h (0)uu − 1 16 bq 2 u q 2 v h (0)uv a {0}(4)v + a {1}(4)v = 1 8 q u q 3 v ln(q u q v ) − ln(2) − 1 + 2γ a (0)u − bh (0)uv + 1 2 b q v q u h (0)uu + 1 16 q 2 u q 2 v a (0)v − 1 32 bq 2 u q 2 v h (0)vv . (65)</trash>
+
+
+				</figure>
+
+				<p>The h {1}(2)ij are again completely determined in terms of the sources by the constraints (53).</p>
+
+				<p>Altogether this leads to the following new non-vanishing two-point functions:</p>
+
+				<figure>
+					<trash>T uu O u = −ibπ d 2 q (2π) 2 q 3 u q v log(q u q v − iǫ)e iq·x = − 3b u 4 v 2 T vv O v = ibπ d 2 q (2π) 2 q 4 v log(q u q v − iǫ)e iq·x = 12b uv 5 T uv O v = −ibπ d 2 q (2π) 2 q u q 3 v log(q u q v − iǫ)e iq·x = − 3b u 2 v 4 , (66)</trash>
+
+
+				</figure>
+
+				<p>whereas the other two-point functions are unchanged and we again ignored various contact terms.</p>
+
+				<p>In terms of the currents J ij we find the following complete set of non-zero two-point functions:</p>
+
+				<figure>
+					<trash>J uu J uu = 12π u 4 O u O u = −3 2πu 4 v 2 J vv J vv = 12π v 4 O v O v = −3 2πu 2 v 4 (67) J uv O v = − 3b u 2 v 4 J vv O v = 12b uv 5 .</trash>
+
+
+				</figure>
+
+				<p>The only new correlation functions are those on the last line. The first of these indicates that, although J uv J uv vanishes up to a contact term, the descendant operator ∂ v J uv is not a trivial operator. In the analysis of [16] it was claimed that in a two-dimensional theory with non-relativistic (or &apos;chiral&apos;) scale invariance, at least under certain assumptions, ∂ v J uv had to be a trivial operator and the conservation equation ∂ i J iv would then dictate that ∂ u J vv vanished as well. This would lead to the existence of an antiholomorphic current J vv which together with J uu would lead to two infinite-dimensional symmetry algebras. The last line of (67) however explicitly indicates that this scenario is not realized in the deformed theory already to first order in b. 5</p>
+
+			</div>
+			<div>
+				<head n="6">Analysis for finite b</head>
+
+				<p>The next step in the analysis is to increase the order in b in which we are working. Using Mathematica we have worked out the full holographic analsyis up to and including order b 4 . Our reason for working to this order is that all possible contractions of b i with at most two out of the fields h ij and a i are exhausted at order b 4 , with the final structure given by:</p>
+
+				<p><formula>d 2 x √ γ b i b j b k b l h ij h kl (68)</formula></p>
+
+				<p>and what remains at higher orders are infinite series expansions in the scalar operator b 2 q 2 v . (The above counterterm is indeed necessary at order b 4 , its coefficient happens to be −1/12.)</p>
+
+				<p>The analysis at order b 4 leads to several interesting observations. For example, up to order b 4 we find from equation (76) below that there is no explicit term of the form b u a (4)v in the one-point function of T uv , even though such a term would be allowed by conformal and Lorentz symmetry.</p>
+
+				<p>Although our analysis does not exclude the appearance of such a term at order b 5 , for example with an extra factor b 4 q 4 v , its absence at the lowest two orders leads us to believe that this term will be absent to all orders. Using this and similar observations, we will in this section not only present the results of the perturbative analysis but also conjecture a consistent extrapolation of our results that should be valid to all orders in b. The equations in this section represent the results of this extrapolation, whilst the truncation of the results to order b 4 is based on explicit computations.</p>
+
+				<p>The discussion below in principle follows the pattern of sections 3 and 5. We have however already extensively discussed the asymptotic solution to the linearized equations of motion in section 4 and we will therefore proceed with a discussion of the holographic renormalization procedure.</p>
+
+				<p>In the previous section we indicated the order b correction to for example h (2)ij by h {1}(2)ij and correspondingly introduced h {0}(2)ij to indicate the order b 0 result. In this section we will drop the curly brackets and simply write h (2)ij to denote the all-order result, so:</p>
+
+				<figure>
+					<trash>h (2)ij = h {0}(2)ij + h {1}(2)ij + h {2}(2)ij + . . . (69)</trash>
+
+
+				</figure>
+
+				<p>and we employ a similar change of notation for other coefficients.</p>
+
+			</div>
+			<div>
+				<head>5</head>
+
+				<p>For finite b we will see below that the theory becomes non-local and the spectrum of the non-relativistic dilation operator becomes continuous. This explicitly violates the assumptions of [16] so the results of that paper will then automatically no longer apply. See also [62] for a related discussion.</p>
+
+			</div>
+			<div>
+				<head n="6.1">Holographic renormalization</head>
+
+				<p>As we mentioned above, the procedure for obtaining the counterterm action in the presence of irrelevant deformations was explained in our earlier work [39, 40]. With the aid of Mathematica we obtained the full counterterm action to order b 4 , using the methods explained in subsection 5.2 to ensure covariance of the counterterm action. Furthermore, at each order we have determined all the possible finite local counterterms in order to be able to parametrize all the scheme dependence in our results.</p>
+
+				<p>The full form of the counterterm action is rather complicated and not too illuminating so we will not present it here. Let us however mention that, starting at order b 2 , we also need double-trace counterterms. The full double-trace part of the counterterm action to order b 4 takes the form:</p>
+
+				<figure>
+					<trash>S ct,dt = d 2 x √ −γ (r − c 0 )b i b j σ ik σ k j − d 2 x √ −γ (r − c 1 )b i b j b k π i σ jk + d 2 x √ −γ 3r − 2 3 − c 0 − 2c 1 (b i b j σ ij ) 2 − d 2 x √ −γ b i b j b k b l 1 2 r 2 − r 5 12 + c 1 + 1 12 c 2 σ im ∂ j ∂ k σ m l + c 3 σ ij γ σ kl (70)</trash>
+
+
+				</figure>
+
+				<p>where the c i are scheme-dependent coefficients and σ ij and π i are the renormalized momenta conjugate to h ij and a i , respectively. These are defined as [40]</p>
+
+				<figure>
+					<figDesc>:</figDesc>
+					<trash>σ ij = δ δh ij S bare + S ct,st ) π i = δ δa i S bare + S ct,st ) (71)</trash>
+
+
+				</figure>
+
+				<p>with S ct,st the single-trace piece of the counterterm action. Notice that most of these counterterms are logarithmic in nature, i.e. they involve explicit powers of r, leading to operator mixing between single-and double-trace operators in the Callan-Symanzik equation below. There are no highertrace counterterms since the background conjugate momenta vanish identically and we only expand the action up to second order in the fluctuations.</p>
+
+				<p>As explained in [40], logarithmic double-trace counterterms generally force one to perform field redefinitions in order to retain a correct variational principle. Indeed, for example at order b 2 we find terms in the variation of the on-shell action of the form:</p>
+
+				<figure>
+					<trash>δS ren = d 2 x . . . + h (2)uu δh (0)vv + h (2)vv δh (0)uu − 2h (2)uv δh (0)uv + . . . . . . − b 2 (1 − 2c 0 )h (2)uv δh (2)vv + . . . . (72)</trash>
+
+
+				</figure>
+
+				<p>From the order b 0 metric variations on the first line we find that h (2)vv is a conjugate momentum so its variation should not appear in an action with an appropriately defined variational principle. In order to repair the variational principle at order b 2 we may either choose the scheme where c 0 = 1/2 or alternatively we redefine the sources to be:</p>
+
+				<figure>
+					<trash>h (0)uv → h (0)uv − 1 2 b 2 (1 − 2c 0 )h (2)vv (73)</trash>
+
+
+				</figure>
+
+				<p>so the variation δh (2)vv cancels. The choice between the different prescriptions amounts to adding a finite double-trace counterterm to the theory, see [40] for details.</p>
+
+				<p>In this paper we will opt for the simplest solution and set c 0 = 1/2 so no redefinition of the source terms is necessary. At higher orders we can continue this procedure and fix the finite terms in the multi-trace counterterm action precisely such that no field redefinitions are needed. This leads to the simple prescription that the sources are always the terms of order exp(2r) in both a i and in h ij .</p>
+
+			</div>
+			<div>
+				<head n="6.2">One-point functions</head>
+
+				<p>Let us now present the one-point functions, defined as the first variation of the renormalized on-shell action. We find the following one-point functions for the vector operator:</p>
+
+				<figure>
+					<trash>O u = − 1 −g (0) δS δa (0)v = −4 1 + 1 36 b 2 q 2 v − 1 648 b 4 q 4 v + . . . a (4)u + 5 3 b 2 q 2 u q v 1 + 2 9 b 2 q 2 v + . . . a (4)v + (contact terms) O v = − 1 −g (0) δS δa (0)u = −4 1 + 1 4 b 2 q 2 v − 1 8 b 4 q 4 v + . . . a (4)v + (c.t.) . (74)</trash>
+
+
+				</figure>
+
+				<p>The contact terms here are scheme-dependent and we have omitted them. Although we have computed the on-shell action only to order b 4 , we expect that at higher orders in b no completely new terms will appear in the one-point functions. On the other hand, it seems likely that the expansions in b 2 q 2 v that we enclosed in square brackets in equation (74) will continue indefinitely to form a non-trivial function of b 2 q 2 v . We notice that this function can in fact be removed in perturbation theory by a redefinition of the sources</p>
+
+				<figure>
+					<trash>a (0)i → 1 + #b 2 q 2 v + #b 4 q 4 v + . . . a (0)i (75)</trash>
+
+
+				</figure>
+
+				<p>for some appropriate numerical coefficients we denoted with a # here. Such redefinitions are local to any finite order in b and are therefore an allowed part of the usual scheme dependence in quantum field theory, complementary to the addition of finite local counterterms in order to shift the contact terms in the correlators.</p>
+
+				<p>For the one-point functions of the energy-momentum tensor we find that:</p>
+
+				<figure>
+					<trash>T uu = 4π √ g (0) δS δh (0)vv = 4π h (2)uu − 2b 1 + 1 9 b 2 q 2 v + . . . a (4)u − 7 6 b 3 1 + . . . q u q v a (4)v + (c.t.) T uv = 4π √ g (0) δS δh (0)uv = −4π 1 + 1 4 b 2 q 2 v − 1 8 b 4 q 4 v + . . . h (2)uv + (c.t.) T vv = 4π √ g (0) δS δh (0)uu = 4π 1 + 1 4 b 2 q 2 v − 1 8 b 4 q 4 v + . . . h (2)vv + (c.t.) , (76)</trash>
+
+
+				</figure>
+
+				<p>where we again omitted the contact terms and wrote in square brackets the possibly infinite expansions in b 2 q 2 v . Notice that we did not find any b 2 q 2 v terms multiplying h (2)uu in T uu up to and including order b 4 . Furthermore, the expansions in b 2 q 2 v multiplying h (2)uv and h (2)vv in T uv and T vv are identical at least to order b 4 q 4 v . We will again assume that this is no accident and that this effect persists to all orders, even though we cannot currently offer a detailed explanation.</p>
+
+			</div>
+			<div>
+				<head n="6.3">Ward identities</head>
+
+				<p>The equations (41) combined with the redefinitions (48)-(51) result in constraints for the h (2)ij .</p>
+
+				<p>Using then (76) and (74) we can rewrite these constraints in terms of the one-point functions of the dual operators. This leads to: 0 = q u T vv + q v T uv 0 = q v T uu − 2πbO u + q u T uv − 2πbO v .</p>
+
+			</div>
+			<div>
+				<head>(77)</head>
+
+				<p>The correct energy-momentum tensor is therefore again J ij which we recall was defined in (61) to be equal to J ij = T ij − 2πO i b j . This tensor is the conserved energy-momentum tensor, ∂ i J ij = 0 , (78) which we now claim will hold to all orders in b. (As discussed in section 5, this conservation equation is essentially a consequence of our covariant renormalization scheme.)</p>
+
+				<p>The trace Ward identity again accurately reflects the breaking of scale invariance. With respect to the analysis at order b 1 we find that it is augmented only by contact terms:</p>
+
+				<p><formula>T i i − 4πbO v = A = 2π 1 + #b 2 q 2 v + #b 4 q 4 v + . . . ˜ R[h (0) ] + b # + #b 2 q 2 v + . . . q 2 u q 2 v a (0)v + b # + #b 2 q 2 v + . . . q u q 3 v a (0)u + b 2 # + #b 2 q 2 v + . . . q 2 u q 2 v h (0)vv (79)</formula></p>
+
+				<p>where various (scheme-dependent) numerical coefficients are denoted by #. As we mentioned before, in the appendix to this paper we explain why the left-hand side is the expected trace Ward identity for a deformation with a vector operator with scaling dimension ∆ = 3 in d = 2. The right-hand side is the unintegrated conformal anomaly to first order in the sources.</p>
+
+				<p>As explained in detail in the appendix, we can combine the above equations to find that the current R i , defined as: R i dx i = J uu udu + J vu udv (80) is conserved up to contact terms,</p>
+
+				<figure>
+					<trash>∂ i R i + 1 2 A = 0 , (81)</trash>
+
+
+				</figure>
+
+				<p>reflecting the non-relativistic scale invariance of the theory for finite b. In fact, we may rewrite (79) as:</p>
+
+				<p><formula>J vu = 1 2 A (82)</formula></p>
+
+				<p>which demonstrates that J vu is a trivial operator, i.e. all its correlation functions reduce to contact terms. Since ∂ i J ij = 0, we find that the operator J uu satisfies ∂ v J uu = 0 and therefore generates an infinite-dimensional Virasoro symmetry for finite b as well. This &apos;left-moving&apos; Virasoro algebra is thus unaffected by the deformation.</p>
+
+			</div>
+			<div>
+				<head n="6.4">Callan-Symanzik equation</head>
+
+				<p>The methods for obtaining the Callan-Symanzik equation in the presence of double-trace counterterms were extensively discussed in [40]. We find that it takes the form:</p>
+
+				<figure>
+					<trash>d 2 x 2g (0)ij + 2h (0)ij δS ren δh (0)ij + d 2 x 2b + 2 1 + . . . a (0)u + 1 4 b 3 1 + . . . ∂ u ∂ v h (0)vv + #b 4 1 + . . . ∂ u ∂ 3 v a (0)v δS ren δa (0)u + d 2 x 2 1 + . . . a (0)v + 1 12 b 3 1 + . . . ∂ 2 v h (0)vv δS ren δa (0)v + d 2 x − 1 2 b 2 1 + . . . ˜ R[h (0) ] + b 2 1 + . . . ∂ 2 u h (0)vv + #b 3 1 + . . . ∂ u ∂ 3 v a (0)u + #b 3 1 + . . . ∂ 2 u ∂ 2 v a (0)u δS ren δh (0)uu + d 2 x 2b 3 δS ren δa (0)u δS ren δh (0)uu = −B (83)</trash>
+
+
+				</figure>
+
+				<p>Here the dots represent infinite series in b 2 q 2 v and the # represent scheme-dependent numbers. The conformal anomaly B can be conveniently represented as:</p>
+
+				<figure>
+					<trash>B = s t Bs (84) with s the vector of local sources, s t = a (0)u , a (0)v , h (0)vv , ˜ R[h (0) ] (85) and the matrix B given by: B =        1 2 ∂ u ∂ 3 v #b 2 ∂ 2 u ∂ 4 v − 1 2 b∂ 2 u ∂ 2 v 1 2 b∂ 2 v 0 1 2 ∂ 3 u ∂ v − 1 2 b∂ 3 u ∂ v #b 3 ∂ u ∂ 3 v 0 0 1 4 b 2 ∂ 3 u ∂ v #b 4 ∂ u ∂ 3 v 0 0 0 O(b 6 )        (86)</trash>
+
+
+				</figure>
+
+				<p>where, although we have not written it explicitly here, each term is expected to receive an infinite series of corrections in b 2 q 2 v . Notice that all the terms in B have the correct weight and tensor structure so that B is a scalar of dimension 2.</p>
+
+				<p>Let us now explain these equations a bit further. First of all, we recall from [40] that the final term in (83), which is quadratic in functional derivatives, represents operator mixing between singleand double-trace operators at large N . From this term we conclude that the deforming operator O v mixes with the double-trace operator O v T vv at order b 3 . Furthermore, the new coefficients multiplying the other functional derivatives of the on-shell action in (83) represent the anomalous scaling dimensions of the corresponding operators. We see that all the anomalous scaling dimensions in (83) involve derivatives and therefore vanish for constant sources. This is in agreement with the all-order analysis of [5, 7], although in those papers the (multi-trace) operator mixing was not taken into account.</p>
+
+				<p>Of course, the conformal anomaly and the beta functions involve many terms and there is no clear structural pattern. (The one exception is that h (0)uv and h (0)uu only appear in the linearized curvature R[h (0) ], which is presumably a consequence of our covariant renormalization scheme.)</p>
+
+				<p>Such a plethora of terms is actually to be expected, since an irrelevant deformation generally leads to the addition of all possible counterterms consistent with the residual symmetries. Whenever these counterterms are associated with logarithmic divergences, a corresponding term in the Callan- Symanzik equation appears and this leads to the multitude of terms we observe in the above equations.</p>
+
+				<p>At higher orders in b we expect no new tensor structures to appear in the Callan-Symanzik equation. Instead, we expect that all the terms in the equations (83) and (84) will get corrected with infinite series in the scalar operator b 2 q 2 v . For finite b, such series will generally resum to terms that are non-local in the v direction. This non-locality in the Callan-Symanzik equation is an unavoidable consequence of the finite irrelevant deformation. It signals that for finite values of b the v-dependence of our results will be scheme-dependent and essentially devoid of any physical information. Fortunately, as explained already in [5], our deformation retains locality in the u direction. The u-dependent part of our results is therefore scheme-independent and representative of the actual dynamics of the deformed field theory.</p>
+
+			</div>
+			<div>
+				<head n="6.5">Two-point functions</head>
+
+				<p>The two-point functions can be computed by expressing the normalizable modes a (4)i and h (2)ij in terms of the sources a (0)i and h (0)ij by demanding regularity of the solution in the interior of the spacetime. In our case regularity in the interior can be easily imposed by going back to the solution written in terms of Bessel functions (34) and expanding it around r = −∞. In terms of the integration constants c ±1 and c ±9 introduced in (34) we find that the necessary conditions become c +1 = c −1 and c +9 = c −9 . In terms of the ψ (0)i and ψ (4)i integration constants we then find that:</p>
+
+				<figure>
+					<trash>ψ (4)u = 1 2b 2 χ 9 ψ (0)v ψ (4)v = 1 2b 2 χ 1 q u q v ψ (0)u (87) where we introduced: χ 9 = − 2 2−s 9 b 2 (3 + s 9 )Γ(1 − s 9 ) Γ(2 + s 9 ) q 2 u (q u q v − iǫ) s 9 −2 χ 1 = − 2 −s 1 b 2 Γ(1 − s 1 ) Γ(2 + s 1 ) q 2 v (q u q v − iǫ) s 1 −1 (88)</trash>
+
+
+				</figure>
+
+				<p>to simplify the expressions below. These expressions, combined with the expressions (41) which express the χ (2)ij in terms of the χ (0)ij , can be substituted in our definition for the sources (48)-(51) to express all the normalizable modes in terms of the sources. We can then take a further functional derivative of the one-point functions (74) and (76) to arrive at the two-point functions given below.</p>
+
+				<p>For the two-point functions of the vector field we find it to be advantageous to introduce a new operator O u which will replace O u , defined as:</p>
+
+				<p><formula>˜ O u = 1 − 1 72 b 2 q 2 v − 743 3456 b 4 q 4 v + . . . O u + 1 3 b 2 q u q v 1 + b 2 q 2 v + . . . O v (89)</formula></p>
+
+				<p>which re-diagonalizes the two-point functions in the (O u , O v ) sector and also introduces a convenient normalization for O u . Furthermore, we also define a new normalization for the other operators by introducing:</p>
+
+				<p><formula>ˆ X = X 1 − 1 8 b 2 q 2 v + 11 128 b 4 q 4 v + . . .</formula></p>
+
+				<p>X ∈ {O v , J uu , J uv , J vu , J vv } (90) where the factor on the right-hand side is the square root of the factor [1 + b 2 q 2 v /4 − b 4 q 2 v /8 + . . .] appearing in various one-point functions in (74) and (76).</p>
+
+				<p>With these conventions we find the following correlation functions for two vector operators:</p>
+
+				<figure>
+					<trash>˜ O u ˜ O u = −i 2 b 2 d 2 q (2π) 2 e iq·x χ 9 − 3q 4 u 2(q u q v − iǫ) ˆ O v ˆ O v = −i d 2 q (2π) 2 e iq·x q u q v 2b 2 2χ 1 − 1 1 − χ 1 ˜ O u ˆ O v = 0 (91)</trash>
+
+
+				</figure>
+
+				<p>where on the right-hand side of these equations we omitted scheme-dependent contact terms. Just as for the Callan-Symanzik equation at finite b, these contact terms will generally involve infinite series in b 2 q 2 v , so for finite b they become arbitrary functions of v 2 /b 2 . (Furthermore, analyticity at the origin of momentum space dictates that the corresponding position-space expressions are integrable in the v direction.) This is again precisely the infinite scheme dependence and non-locality typically associated with a finite irrelevant deformation. On the other hand, all of these infinitely many contact terms are at most polynomial in q u and therefore the position-space expressions will indeed be contact terms in the u direction.</p>
+
+				<p>Two-point functions involving one (new) energy-momentum and one vector operators take the form:</p>
+
+				<figure>
+					<trash>ˆ J uu O u = 0 ˆ J vv O u = 0 ˆ J uu O v = 0 ˆ J vv O v = iπ d 2 q (2π) 2 q 2 v b 2χ 1 − 1 1 − χ 1 (92)</trash>
+
+
+				</figure>
+
+				<p>Finally, the two-point functions involving only the energy-momentum tensor become:</p>
+
+				<figure>
+					<trash>ˆ J uû J uu = −4π 2 i d 2 q (2π) 2 e iq·x q 4 u (q u q v − iǫ) = 12π u 4 ˆ J uû J uv = 0 ˆ J uû J vv = 0 ˆ J uv J uv = −2π 2 i d 2 q (2π) 2 e iq·x q u q v (1 − χ 1 ) ˆ J uv J vv = 2π 2 i d 2 q (2π) 2 e iq·x q 2 v (1 − χ 1 ) ˆ J vv J vv = −2π 2 i d 2 q (2π) 2 e iq·x q 4 v (q u q v − iǫ)(1 − χ 1 ) (93)</trash>
+
+
+				</figure>
+
+				<p>where we again suppressed contact terms on the right-hand sides. One may explicitly verify that the Ward identities discussed above are satisfied.</p>
+
+				<p>Performing the inverse Fourier transforms in the above correlation functions seems quite complicated , although it is not hard to see that for small q u and fixed q v , so at large separation in the u direction, all correlation functions reduce to their AdS 3 counterparts. We can also try to scale out the u-dependence to find a mixed position-momentum space expressions. In this way we find that for example the first equation in (91) becomes:</p>
+
+				<figure>
+					<trash>˜ O u (u, q v ) ˜ O u (u ′ , −q v ) ≃ |u − u ′ | −s 9 −1 − 9 πb 2 (u − u ′ ) 4 (94) The last factor can be removed by shifting O u → ˜ O u + 1 2 √ 3 ˆ J uu /(πb</trash>
+
+
+				</figure>
+
+				<p>) although in that case the b → 0 limit of the correlator is no longer smooth. From a non-relativistic viewpoint q v becomes a quantum number (the particle number in condensed matter applications [1, 2]) and the powers of u are the non-relativistic dilatation weights. We see that these weights have become dependent on q v , so for an uncompactified v direction the spectrum of the non-relativistic dilatation operator is continuous. For applications to condensed matter physics one should demand a discrete spectrum.</p>
+
+				<p>One method for obtaining this spectrum is to compactify the lightlike v direction. A discussion of the subtleties associated with this DLCQ can be found in [36]</p>
+
+				<figure>
+					<figDesc>.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="7">Conclusions</head>
+
+				<p>We have holographically computed the two-point functions of the deforming vector operator and the energy-momentum tensor for the field theory dual to the Schrödinger backgrounds using a consistent irrelevant deformation picture. We discussed in detail the non-relativistic Ward identities satisfied by the correlation functions. The holomorphicity of the operator J uu in particular indicates that the deformation keeps the &apos;left-moving&apos; symmetries of the original CFT intact, which is in agreement with the viewpoint that the deformation is exactly marginal from a non-relativistic point of view.</p>
+
+				<p>The right-moving Virasoro is however broken already at first order in b. It is also interesting to note that the Callan-Symanzik equation demonstrates mixing between single-and double-trace operators. This leads one to conclude that the question whether the deformation is of single-or multi-trace form becomes renormalization scheme dependent. It would be interesting to see if our results could be matched to computations in dipole theories.</p>
+
+				<p>One very valuable general lesson arising from our analysis is that, to any finite order in any irrelevant deformation parameter, the sources are always the term of order exp(−∆ − r) in the radial expansion of the fields, with ∆ − being the appropriate scaling dimension for the sources in the absence of the deformation. In other words, the location of the sources in the radial expansion of the fields is unmodified to any finite order in perturbation theory. Only when we consider all-order effects in the deformation parameter do we observe a modification of the location of the source terms. Interestingly, in such cases the analysis becomes very subtle as the sources generally do not correspond to the leading terms of the radial expansion of the bulk fields. We demonstrated the resolution of these issues explicitly in section 4.</p>
+
+				<p>We would like to stress that the proper identification of the source terms lies at the heart of the problem of defining a proper holographic dictionary for these non-AlAdS spacetimes. Notice that this is in essence a gravity question, since the correct identification of the sources also determines the proper boundary conditions for the bulk dynamics. This is an essential step in order to for example define conserved charges, the notion of &apos;asymptotically Schrödinger spacetimes&apos; and the Schrödinger equivalent of &apos;normalizable modes&apos;. In this light it is interesting to note that, if one expresses these proper boundary conditions in terms of the induced bulk fields at finite r, the presence of multitrace counterterms dictates that these boundary conditions will involve the conjugate momenta of the fields as well. Dictating simple falloff conditions for the metric, which happens frequently in for example an asymptotic symmetry group analysis, is therefore not sufficiently general for spacetimes with complicated asymptotics.</p>
+
+				<p>Our results come with a significant scheme dependence which indicates a certain dependence on the UV completion of the boundary theory even at the level of classical bulk gravity. It would be interesting to see whether there perhaps exists a &apos;holographic renormalization scheme&apos; which would be natural from the perspective of the gravity dual. In this light it is also important to realize that at large N one can perform additional redefinitions of the sources which correspond to e.g. multi-trace deformations of the theory. We have fixed this freedom by demanding that the sources are the terms at order exp(−∆ − r) in the radial expansion of the fields, at least to every finite order in perturbation theory. It may however be worthwhile to further explore this freedom.</p>
+
+				<p>Our analysis paves the way for the computation of n-point correlation functions in three dimensions . Furthermore, there should be no conceptual difficulties in the extraction of correlation functions from higher-dimensional Schrödinger spacetimes or from black holes with Schrödinger asymptotics [34, 35, 36]. It would also be very interesting to generalize our results to other spacetimes which are not asymptotically AdS, for example the Lifshitz spacetimes or the spacetimes of [63, 64] dual to non-commutative gauge theories.</p>
+
+			</div>
+			<div>
+				<head>Acknowledgments</head>
+
+				<p>We would like to thank Marco Baggio, Chris Beem, Geoffrey Comp ere, Mukund Rangamani,</p>
+
+			</div>
+			<div>
+				<head>Leonardo</head>
+
+				<p>Rastelli and Andrew Strominger for discussions. We would furthermore like to thank Nikolay Bobev, Kostas Skenderis, Marika Taylor and especially Monica Guica for earlier collaboration on this project as well as numerous discussions. The author would like to acknowledge the KITP in Santa Barbara for hospitality during the final stages of this work. This research was supported in part by the National Science Foundation under Grants PHY-0969739 and PHY-0551164.</p>
+
+			</div>
+			<div>
+				<head>A Vector deformations in quantum field theory</head>
+
+				<p>Consider the partition function Z of a d-dimensional conformal field theory in a background metric g ij deformed by a source b i for a vector operator O i with dimension ∆. In path-integral notation the partition function can be abstractly written as: Z[g ij , b i ] = DΦ exp − iS[g ij , Φ] − i d d x √ gg ij b i O j + (iǫ insertions) . (95) In this appendix we discuss the modification of the field theory Ward identities that this deformation brings about. The iǫ insertions are important for obtaining the correct correlation functions in Lorentzian signature but we will ignore them here.</p>
+
+				<p>In the conventions imposed by the holographic analysis the energy-momentum tensor is defined to be the operator dual to the boundary metric, more precisely</p>
+
+				<figure>
+					<trash>T ij = − 4πi √ −g δ δg ij Z[g ij , b i ] = ˆ T ij − 2π(g ij b k O k − b i O j − b j O i ) (96)</trash>
+
+
+				</figure>
+
+				<p>with T ij the energy-momentum tensor before the deformation. Notice that we hold the one-form b i fixed while varying the metric.</p>
+
+				<p>Under a diffeomorphism along a vector field ζ i both the metric g ij and the vector field b i transform by their Lie derivatives: δg ij = ∇ i ζ j + ∇ j ζ i δb i = ζ j ∇ j b i + b j ∇ i ζ j (97) and in the absence of a diffeomorphism anomaly in the path integral measure we should find that the partition function is invariant,</p>
+
+				<figure>
+					<trash>δ ζ Z = 0 , (98) leading to ∇ i (T ij − 2πO i b j ) + 2π(∇ j b i )O i = 0 . (99)</trash>
+
+
+				</figure>
+
+				<p>We will be working in flat space and with a constant b, so ∇ j b i = 0. In that case we find that the conserved current associated to translation invariance is given by: J ij ≡ T ij − 2πO i b j ∂ i J ij = 0 (100)</p>
+
+				<p>This is indeed confirmed by the holographic analysis in the main text.</p>
+
+				<p>Since the new energy-momentum tensor J ij is not symmetric, Lorentz invariance is manifestly broken, even if ∂ i b j = 0. For example in d = 2 a boost can be implemented by a diffeomorphism with ζ j = ǫ j k x k . In that case we find that</p>
+
+				<figure>
+					<trash>∂ i (T ij ǫ j k x k − 2πb j ǫ j k x k O i ) + 2πb j ǫ j k O k = 0 , (101)</trash>
+
+
+				</figure>
+
+				<p>which does not integrate to a conservation equation.</p>
+
+				<p>Let us now discuss Weyl covariance to first order in b. A local scale transformation is implemented by sending g ij → 2λg ij and b i → λ(∆−d+1)b i with λ the infinitesimal scale transformation parameter. Assuming that the transformation of the path integral measure results in a local conformal anomaly A, the associated Ward identity would become: T i i − 2π(∆ − d + 1)b i O i + A[g ij ] = 0 . (102)</p>
+
+				<p>This equation is valid to first order in b. At higher orders one generally finds that the classical scaling dimensions get corrections, so new one-point functions may appear and the classical scaling dimension ∆ becomes a matrix of anomalous dimensions. Similarly, the conformal anomaly A may receive b-dependent corrections.</p>
+
+				<p>We may combine (102) with the diffeomorphism Ward identity (100) to find that: ∂ i (T ij x j − 2πx j b j O i ) − 2π(∆ − d)b i O i + A[g ij ] = 0 . (103)</p>
+
+				<p>Now let us specialize to the case where d = 2 and b i is null, b i dx i = bdu. For such a vector one verifies that b j ǫ j k = −b k (in conventions where ǫ uv = +1) and therefore we can combine (103) and (101) to find that:</p>
+
+				<figure>
+					<trash>∂ i R i + 1 2 A[g ij ] = 0 , (104) with R i = T ij (x j − (∆ − d)ǫ j k x k ) − 2πb j x j (∆ − d + 1)O i , (105)</trash>
+
+
+				</figure>
+
+				<p>which is the current associated to the non-relativistic scale invariance of the theory. In the main text we have ∆ = 3 and d = 2. In that case the current R i becomes: R u = J uu u R v = J vu u (106)</p>
+
+				<p>In fact, precisely for these values for ∆ and d we see from equation (102) that J vu = − 1 2 A[g ij ] (107) and J vu is therefore &apos;trivial&apos; in the sense that its correlation functions reduce to contact terms. The conservation equation ∂ i J iu therefore dictates that, ∂ v J uu = 0 (108) up to contact terms. We thus immediately see that we can build infinitely many conserved currents of the form:</p>
+
+				<p><formula>J uu u k (109)</formula></p>
+
+				<p>for some integer k. In other words, the left-moving Virasoro algebra is left intact by the deformation.</p>
+
+			</div>
+
+			<note place="foot" n="1"> Another discussion of the real-time subtleties in Schrö spacetimes can be found in [52].</note>
+
+			<note place="foot" n="4"> Such relations between counterterms are not exceptional and also occur in e.g. the non-linear O(N ) model.</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Toward an AdS/cold atoms correspondence: a geometric realization of the Schroedinger symmetry</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">T</forename>
+				<surname>Son</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">78</biblScope>
+			<biblScope unit="issue">046003</biblScope>
+			<biblScope unit="page" from="hep" to="th" />
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Gravity duals for non-relativistic CFTs</title>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Balasubramanian</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Mcgreevy</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">101</biblScope>
+			<biblScope unit="page" from="hep" to="th" />
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Conformal Invariants</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Fefferman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Graham</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Elie Cartan et les Mathé d&apos;aujourd&apos;hui (Asterisque 95)</title>
+		<imprint>
+			<date type="published" when="1985" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<monogr>
+		<title level="m" type="main">Volume and area renormalizations for conformally compact Einstein metrics</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">R</forename>
+				<surname>Graham</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page">9909042</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<monogr>
+		<title level="m" type="main">Holography for Schrodinger backgrounds</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Guica</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Skenderis</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Taylor</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">C</forename>
+				<surname>Van Rees</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="hep" to="th" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title level="m" type="main">Holography for chiral scale-invariant models</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Costa</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Taylor</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="hep" to="th" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title level="m" type="main">Universality and exactness of Schrodinger geometries in string and M-theory</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Kraus</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Perlmutter</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="page">1105</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<title level="m" type="main">Holographic and Wilsonian Renormalization Groups</title>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Heemskerk</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Polchinski</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Integrating out geometry: Holographic Wilsonian RG and the membrane paradigm</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Faulkner</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Liu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Rangamani</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">1108</biblScope>
+			<biblScope unit="issue">051</biblScope>
+			<biblScope unit="page" from="hep" to="th" />
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title level="m" type="main">CFT dual of the AdS Dirichlet problem : Fluid/Gravity on cut-off surfaces</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Brattan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Camps</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Loganayagam</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Rangamani</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="page">1112</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title level="m" type="main">Asymptotic symmetries of Schrodinger spacetimes</title>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Compere</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>De Buyl</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Detournay</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Yoshida</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page" from="hep" to="th" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title level="m" type="main">The Curious Case of Null Warped Space</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Anninos</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Compere</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>De Buyl</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Detournay</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Guica</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2010" />
+			<biblScope unit="page">1011</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title level="m" type="main">A Fefferman-Graham-Like Expansion for Null Warped AdS(3), &quot; arXiv:1111</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Guica</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="hep" to="th" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<title level="m" type="main">Kerr/CFT, dipole theories and nonrelativistic CFTs</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Showk</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Guica</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="hep" to="th" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+		<title level="m" type="main">Warped AdS3/Dipole-CFT Duality</title>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Song</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Strominger</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="hep" to="th" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Chiral Scale and Conformal Invariance in 2D Quantum Field Theory</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">M</forename>
+				<surname>Hofman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Strominger</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev.Lett</title>
+		<imprint>
+			<biblScope unit="volume">107</biblScope>
+			<biblScope unit="issue">161601</biblScope>
+			<biblScope unit="page" from="hep" to="th" />
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<monogr>
+		<title level="m" type="main">Holographic renormalization for coincident Dp-branes</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Wiseman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Withers</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="page">0810</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<monogr>
+		<title level="m" type="main">Precision holography for non-conformal branes</title>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Kanitscheider</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Skenderis</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Taylor</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="hep" to="th" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<title level="m" type="main">Universal hydrodynamics of non-conformal branes</title>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Kanitscheider</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Skenderis</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page">0904</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<monogr>
+		<title level="m" type="main">Holography for Einstein-Maxwell-dilaton theories from generalized dimensional reduction</title>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Gouteraux</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Smolic</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Smolic</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Skenderis</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Taylor</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<title level="m" type="main">Holographic Renormalization of general dilaton-axion gravity</title>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Papadimitriou</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="page">1108</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Holographic renormalization of cascading gauge theories</title>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Aharony</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Buchel</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Yarom</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">72</biblScope>
+			<biblScope unit="issue">066003</biblScope>
+			<biblScope unit="page" from="hep" to="th" />
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Towards Holographic Renormalization of Fake Supergravity</title>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Borodatchenkova</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Haack</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Muck</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="volume">815</biblScope>
+			<biblScope unit="page" from="215" to="2393191" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<monogr>
+		<title level="m" type="main">Holographic renormalization as a canonical transformation</title>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Papadimitriou</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<monogr>
+		<title level="m" type="main">Holographic stress tensor for non-relativistic theories</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">F</forename>
+				<surname>Ross</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Saremi</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page" from="hep" to="th" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Holography for asymptotically locally Lifshitz spacetimes</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">F</forename>
+				<surname>Ross</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Class.Quant.Grav</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="issue">215019</biblScope>
+			<biblScope unit="page" from="hep" to="th" />
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<monogr>
+		<title level="m" type="main">Hamilton-Jacobi Renormalization for Lifshitz Spacetime</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Baggio</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>De Boer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Holsheimer</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<monogr>
+		<title level="m" type="main">Holographic Renormalization for Asymptotically Lifshitz Spacetimes</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">B</forename>
+				<surname>Mann</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Mcnees</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="page">1110</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Griffin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Horava</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">M</forename>
+				<surname>Melby-Thompson</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Conformal Lifshitz Gravity from Holography</title>
+		<imprint>
+			<biblScope unit="page" from="hep" to="th" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<monogr>
+		<title level="m" type="main">Anomalous Breaking of Anisotropic Scaling Symmetry in the Quantum Lifshitz Model</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Baggio</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>De Boer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Holsheimer</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="hep" to="th" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Gravity Duals of Lifshitz-like Fixed Points</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Kachru</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">X</forename>
+				<surname>Liu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Mulligan</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">78</biblScope>
+			<biblScope unit="issue">106005</biblScope>
+			<biblScope unit="page" from="hep" to="th" />
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<monogr>
+		<title level="m" type="main">Non-relativistic holography</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Taylor</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Asymptotically Schroedinger Space-Times: TsT Transformations and Thermodynamics</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Hartong</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Rollier</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP 1101</title>
+		<imprint>
+			<biblScope unit="volume">084</biblScope>
+			<biblScope unit="page" from="hep" to="th" />
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<monogr>
+		<title level="m" type="main">Hot Spacetimes for Cold Atoms</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Adams</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Balasubramanian</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Mcgreevy</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="hep" to="th" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<monogr>
+		<title level="m" type="main">Heating up Galilean holography</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">P</forename>
+				<surname>Herzog</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Rangamani</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">F</forename>
+				<surname>Ross</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="hep" to="th" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Comments on string theory backgrounds with non-relativistic conformal symmetry</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Maldacena</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Martelli</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Tachikawa</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="issue">072</biblScope>
+			<biblScope unit="page" from="hep" to="th" />
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Nonlocal field theories and their gravity duals</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Bergman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Dasgupta</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<forename type="middle">J</forename>
+				<surname>Ganor</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">L</forename>
+				<surname>Karczmarek</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Rajesh</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">066005</biblScope>
+			<biblScope unit="page">65</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Schrodinger Deformations of AdS 3 xS 3</title>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Bobev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">C</forename>
+				<surname>Van Rees</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP</title>
+		<imprint>
+			<biblScope unit="volume">1108</biblScope>
+			<biblScope unit="issue">062</biblScope>
+			<biblScope unit="page" from="hep" to="th" />
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<monogr>
+		<title level="m" type="main">Holographic renormalization for irrelevant operators and multi-trace counterterms</title>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">C</forename>
+				<surname>Van Rees</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="hep" to="th" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<monogr>
+		<title level="m" type="main">Irrelevant deformations and the holographic Callan-Symanzik equation</title>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">C</forename>
+				<surname>Van Rees</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="hep" to="th" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<monogr>
+		<title level="m" type="main">Holographic reconstruction of spacetime and renormalization in the AdS/CFT correspondence</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>De Haro</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">N</forename>
+				<surname>Solodukhin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Skenderis</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Commun. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">217</biblScope>
+			<biblScope unit="page" from="595" to="622" />
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Quantum effective action from the AdS/CFT correspondence</title>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Skenderis</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">N</forename>
+				<surname>Solodukhin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">472</biblScope>
+			<biblScope unit="page" from="316" to="322" />
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Holographic renormalization</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Bianchi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">Z</forename>
+				<surname>Freedman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Skenderis</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">arXiv</biblScope>
+			<biblScope unit="page" from="631" to="159" />
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Lecture notes on holographic renormalization</title>
+		<author>
+			<persName>
+				<surname>Skenderis</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Class. Quant. Grav</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page" from="5849" to="5876" />
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">AdS / CFT correspondence and geometry</title>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Papadimitriou</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Skenderis</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proceedings Strasbourg AdS/CFT correspondence</title>
+		<imprint>
+			<biblScope unit="volume">73</biblScope>
+			<biblScope unit="page">0404176</biblScope>
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<monogr>
+		<title level="m" type="main">Central Charges in the Canonical Realization of Asymptotic Symmetries: An Example from Three-Dimensional Gravity</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">D</forename>
+				<surname>Brown</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Henneaux</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Commun. Math. Phys</title>
+		<imprint>
+			<biblScope unit="volume">104</biblScope>
+			<biblScope unit="page" from="207" to="226" />
+			<date type="published" when="1986" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<monogr>
+		<title level="m" type="main">The holographic Weyl anomaly</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Henningson</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Skenderis</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1998" />
+			<biblScope unit="page" from="07" to="9806087" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Holography and the Weyl anomaly</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Henningson</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Skenderis</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Fortsch. Phys</title>
+		<imprint>
+			<biblScope unit="volume">48</biblScope>
+			<biblScope unit="page" from="125" to="128" />
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<monogr>
+		<title level="m" type="main">Topologically Massive Gravity and the AdS/CFT Correspondence</title>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Skenderis</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Taylor</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">C</forename>
+				<surname>Van Rees</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page" from="hep" to="th" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<monogr>
+		<title level="m" type="main">Real-time gauge/gravity duality</title>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Skenderis</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">C</forename>
+				<surname>Van Rees</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev.Lett</title>
+		<imprint>
+			<biblScope unit="volume">101</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<monogr>
+		<title level="m" type="main">Real-time gauge/gravity duality: Prescription, Renormalization and Examples</title>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Skenderis</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">C</forename>
+				<surname>Van Rees</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="hep" to="th" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<monogr>
+		<title level="m" type="main">Real-Time Correlators and Non-Relativistic Holography</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">G</forename>
+				<surname>Leigh</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<forename type="middle">N</forename>
+				<surname>Hoang</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page" from="hep" to="th" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<monogr>
+		<title level="m" type="main">Thermodynamics of asymptotically locally AdS spacetimes</title>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Papadimitriou</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Skenderis</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2005" />
+			<biblScope unit="page" from="08" to="0505190" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title level="a" type="main">AdS/CFT correspondence and symmetry breaking</title>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">R</forename>
+				<surname>Klebanov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Witten</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">556</biblScope>
+			<biblScope unit="page" from="89" to="114" />
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<monogr>
+		<title level="m" type="main">Multi-Trace Deformations in AdS/CFT: Exploring the Vacuum Structure of the Deformed CFT</title>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Papadimitriou</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2007" />
+			<biblScope unit="page">0705</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<monogr>
+		<title level="m" type="main">Double-trace deformations, boundary conditions and spacetime singularities</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Berkooz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Sever</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Shomer</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2002" />
+			<biblScope unit="page" from="05" to="0112264" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<monogr>
+		<title level="m" type="main">Multitrace operators, boundary conditions, and AdS / CFT correspondence</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Witten</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>hep. -th]</note>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">Multitrace deformations of vector and adjoint theories and their holographic duals An improved correspondence formula for AdS/CFT with multi-trace operators</title>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Elitzur</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Giveon</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Porrati</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Rabinovici</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">006</biblScope>
+			<biblScope unit="issue">02</biblScope>
+			<biblScope unit="page" from="531" to="301" />
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<monogr>
+		<title level="m" type="main">A note on multi-trace deformations and AdS/CFT</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Sever</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Shomer</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2002" />
+			<biblScope unit="page" from="hep" to="th" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<monogr>
+		<title level="m" type="main">Notes on multi-trace operators and holographic renormalization group</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">T</forename>
+				<surname>Akhmedov</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<monogr>
+		<title level="m" type="main">Gravity Dual for Hofman-Strominger Theorem</title>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Nakayama</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title level="a" type="main">Non-commutative Yang-Mills and the AdS/CFT correspondence</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Hashimoto</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Itzhaki</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">465</biblScope>
+			<biblScope unit="page" from="142" to="147" />
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<monogr>
+		<title level="m" type="main">Large N limit of non-commutative gauge theories</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">M</forename>
+				<surname>Maldacena</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">G</forename>
+				<surname>Russo</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1999" />
+			<biblScope unit="page">9908134</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

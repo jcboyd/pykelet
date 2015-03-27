@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Spectral Line Removal in the LIGO Data Analysis System (LDAS)</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName>
+								<forename type="first">Antony</forename>
+								<forename type="middle">C</forename>
+								<surname>Searle</surname>
+							</persName>
+							<email>E-mail: antony.searle@anu.edu.au, susan.scott@anu.edu.au, david.mcclelland@anu.edu.au</email>
+							<affiliation>
+								<orgName type="department" key="dep1">Department of Physics</orgName>
+								<orgName type="department" key="dep2">Faculty of Science</orgName>
+								<orgName type="institution">The Australian National University</orgName>
+								<address>
+									<postCode>0200</postCode>
+									<settlement>Canberra ACT</settlement>
+									<country key="AU">AUSTRALIA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Susan</forename>
+								<forename type="middle">M</forename>
+								<surname>Scott</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department" key="dep1">Department of Physics</orgName>
+								<orgName type="department" key="dep2">Faculty of Science</orgName>
+								<orgName type="institution">The Australian National University</orgName>
+								<address>
+									<postCode>0200</postCode>
+									<settlement>Canberra ACT</settlement>
+									<country key="AU">AUSTRALIA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">David</forename>
+								<forename type="middle">E</forename>
+								<surname>Mcclelland</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department" key="dep1">Department of Physics</orgName>
+								<orgName type="department" key="dep2">Faculty of Science</orgName>
+								<orgName type="institution">The Australian National University</orgName>
+								<address>
+									<postCode>0200</postCode>
+									<settlement>Canberra ACT</settlement>
+									<country key="AU">AUSTRALIA</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Spectral Line Removal in the LIGO Data Analysis System (LDAS)</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<note>arXiv:gr-qc/0308024v1 9 Aug 2003 Submitted to: Class. Quantum Grav.</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords scheme="pacs">PACS numbers: 9555Ym, 0270Hm</keywords>
+			</textClass>
+			<abstract>
+				<p>High power in narrow frequency bands, spectral lines, are a feature of an interferometric gravitational wave detector&apos;s output. Some lines are coherent between interferometers, in particular, the 2 km and 4 km LIGO Hanford instruments. This is of concern to data analysis techniques, such as the stochastic background search, that use correlations between instruments to detect gravitational radiation. Several techniques of &apos;line removal&apos; have been proposed. Where a line is attributable to a measurable environmental disturbance, a simple linear model may be fitted to predict, and subsequently subtract away, that line. This technique has been implemented (as the command oelslr) in the LIGO Data Analysis System (LDAS). We demonstrate its application to LIGO S1 data.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+				<figure>
+					<trash>Spectral Line Removal in the LIGO Data Analysis System (LDAS) 2 0 100 200 300 400 500 600 700 800 900 1000 −60 −40 −20 0 dB (a) H1:LSC−AS_Q 0 100 200 300 400 500 600 700 800 900 1000 −60 −40 −20 0 dB (b) H2:LSC−AS_Q 0 100 200 300 400 500 600 700 800 900 1000 −60 −40 −20 0 frequency (Hz) dB (c) L1:LSC−AS_Q Figure 1</trash>
+
+
+				</figure>
+
+				<p>. LIGO Hanford Observatory (a) 4 km interferometer (H1) and (b) 2 km interferometer (H2) and (c) LIGO Livingston Observatory 4 km interferometer (L1) output power spectra (uncalibrated), before (dotted line) and after (solid line) application of the line removal technique described in §2, for GPS times 714975000– 714975600.</p>
+
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>The broadband sensitivity of the nascent instruments of the Laser Interferometer Gravitational-wave Observatory (LIGO) [1] is dictated by seismic, thermal and shot noise. There are also, however, a number of narrow-band noise sources—spectral lines.</p>
+
+				<p>Resonances of the mirror suspension wires (violin modes) are one example of these. The extreme sensitivity of the LIGO instruments makes them particularly susceptible to contamination from the environment. Seismic noise, dictating the lower limit on the frequency of detectable astrophysical sources is perhaps the most dramatic example. Similarly, the 60 Hz frequency of the United States (US) electrical supply, and its harmonics, form a comb of strong spectral lines in each LIGO instrument, across the entire observation band (Figure 1). These lines are the largest single factor in the coherence between the 2 km and 4 km LIGO Hanford interferometers (Figure 2).</p>
+
+				<p>Spectral lines render data non-Gaussian, increase the required dynamic range of</p>
+
+				<figure>
+					<trash>0 100 200 300 400 500 600 700 800 900 1000 0 0.2 0.4 0.6 0.8 1 coherence (a) 0 100 200 300 400 500 600 700 800 900 1000 0 50 100 150 frequency (Hz) accumulated coherence (b) Figure 2</trash>
+
+
+				</figure>
+
+				<p>. (a) Coherence of H1:LSC-AS Q and H2:LSC-AS Q before (dotted line) and after (solid line) application of the line removal technique described in §2, for GPS times 714975000–714975600. (b) Accumulated coherence of H1:LSC-AS Q and H2:LSC-AS Q before (dotted line) and after (solid line) application of the line removal technique, with the accumulated coherence of H1:LSC-AS Q and L1:LSC- AS Q (dashed line) provided for reference, for GPS times 714975000–714975600. measurements, and obscure possible gravitational wave signals at their own and nearby frequencies. Some environmental noise sources can introduce spurious correlations between interferometers. A number of techniques have been proposed to remove such spectral lines from datasets using a variety of strategies. Many concentrate on producing a model of a line, so that it may be subtracted out. Sintes and Schutz [2] have implemented a technique to exploit common information between line harmonics to build such a line model. Allen, Hua and Ottewill [3] have used frequency-domain linear regression against channels measuring disturbances to the instrument to remove crosstalk between channels. LIGO&apos;s searches for astrophysical sources of gravitational radiation are predominantly performed by the LIGO Data Analysis System (LDAS) [4]. LDAS runs on networks of computers at a number of sites, including the LIGO Observatories, and</p>
+
+				<figure>
+					<trash>ner institutions, including The Australian National University (ANU), where the Australian Consortium for Interferometric Gravitational Astronomy (ACIGA) maintains</trash>
+
+
+				</figure>
+
+				<p>the ACIGA Data Analysis Cluster (ADAC). LDAS encompasses data acquisition, processing and storage. Architecturally, LDAS is divided into a number of inter-communicating processes that run on server machines, which collectively support parallel search codes on Beowulf clusters. The general-purpose Data Conditioning API (datacondAPI) supports a Matlab-like scripting language to perform general non-parallel pre-processing actions on incoming data before it is distributed to the cluster. Spectral line removal is one of the available actions.</p>
+
+				<p>In LDAS, line removal is implemented in the datacondAPI, using the oelslr (Output Error Least Square Line Removal) action. It may be added, in a straightforward manner, to the existing datacondAPI script for an astrophysical search, as another preprocessing stage in the analysis &apos;pipeline&apos;. An optional line removal step has already been added to the data conditioning script for the stochastic background search.</p>
+
+				<p>The obvious figure of merit for line removal is the change it produces in the sensitivity of the astrophysical searches whose data it pre-processes. At this time we do not present any such results (though in the case of the stochastic background search they are forthcoming [5]). There is, as yet, no general test to determine the quality of a line removal algorithm, either in an absolute sense, or with respect to another line removal algorithm. The reduction of correlation, coherence or non-gaussianity, or the recovery of injected signals, have variously been employed to test a technique [2, 3]. We demonstrate both the reduction of coherence and (via power spectra) the reduction of non-gaussian features. (We intend to demonstrate the recovery of injected signals and employ further gaussianity testing [6] in a later paper.) These two effects can reasonably be expected to benefit astrophysical searches. Conversely, line removal can be used to establish that a given astrophysical search is not adversely affected by the presence of spectral lines (see [5] for a detailed discussion of this point in the context of the stochastic background search). Our implementation is intended as the first step in adding line removal functionality to the datacondAPI. Similarly to Allen et al [3], it makes use of the additional information available in the form of a measurement of the disturbance to the instrument—the voltage monitor channels recorded by an observatory (Figure 3). With a known, measured disturbance, we may use system identification theory techniques [7] to construct a model of the interferometer&apos;s response to the disturbance from actual data recorded over some epoch. At subsequent times, the model can then be used to predict the interferometer&apos;s response from the measured disturbance; this prediction can then be subtracted away to remove those lines from the interferometer&apos;s output.</p>
+
+				<figure>
+					<trash>0 100 200 300 400 500 600 700 800 900 1000 −20 0 20 40 60 80 dB (a) H0:PEM−LVEA2_V1 0 100 200 300 400 500 600 700 800 900 1000 −50 0 50 100 (b) L0:PEM−LVEA_V1 frequency (Hz) dB</trash>
+
+					<head>Figure 3.</head>
+
+					<figDesc>(a) LIGO Hanford Observatory and (b) LIGO Livingston Observatory voltage monitor channel (uncalibrated) power spectra for GPS times 714975000– 714975600.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="2">Implementation</head>
+
+				<p>The Finite Impulse Response (FIR) model is the simplest special case of a regression model ‡, where the (possibly complex) input u and output y of a system are related by (following Ljung [7], where t is a discrete sample number)</p>
+
+				<figure>
+					<trash>y(t) ≈ b 1 u(t − 1) + b 2 u(t − 2) + · · · + b m u(t − m), b 1 · · · b m ∈ C, (1)</trash>
+
+
+				</figure>
+
+				<p>where the model for the system is θ = [b 1 . . . b m ] T . The model order m controls the range of samples contributing to the model output.</p>
+
+				<p>If we define ϕ(t) = [u(t − 1) . . . u(t − m)] T , then y(t|θ) = ϕ T (t)θ is the modelled output of the system. For given y and u, the best modeî θ N (which minimises, over θ, the sum over N samples of the square of the prediction error),</p>
+
+				<figure>
+					<trash>ˆ θ N = arg min θ N t=1 [y(t) − ϕ T (t)θ] 2 , (2) can be determined analytically (where ϕ(t) denotes the complex conjugation of ϕ(t)): ˆ θ N = N t=1 ϕ(t)ϕ T (t) −1 N t=1 y(t)ϕ(t). (3) For an FIR model with a white noise (or error ) term, e(t), such that y(t) = b 1 u(t − 1) + b 2 u(t − 2) + · · · + b m u(t − m) + e(t), (4) it is important to note that θ N is an unbiased estimate of θ, converging as N − 1 2 [7]</trash>
+
+
+				</figure>
+
+				<p>.</p>
+
+				<p>In the context of gravitational wave data analysis, we assume that the detector output y(t) would consist of white noise e(t), except for the presence of another channel u(t) that linearly and additively contaminates it with b 1 u(t − 1) + b 2 u(t − 2) + . . . + b m u(t − m). To remove the contamination, we estimate b i and subtract away the model prediction from the measured data:</p>
+
+				<p><formula>y r (t) = y(t) − ϕ T (t) ˆ θ N , (5)</formula></p>
+
+				<p>where y r (t) is the system output with the line removed. Where the contamination is localised in frequency space, as for spectral lines, we perform band selection in the time domain using pre-existing components of the datacondAPI. If u(t) is sampled with a Nyquist frequency f Ny and a line is contained in some interval f ± f Ny /n (where n is a downsampling ratio; see below), then u is first mixed down to zero frequency with multiplication by e −i2πf t/f Ny . The datacondAPI&apos;s non-trivial resample algorithm [8] is then used to downsample to a new time series with Nyquist frequency f Ny /n. Note that resample does not simply return every nth element of a time series; it includes filtering stages to prevent the aliasing of highfrequency components into the result. Restricting the bandwidth to an integer fraction of the Nyquist frequency allows the time-domain resampling to be performed efficiently. The downsampling ratio n may typically be quite large—we use 128 in the following analysis—to identify a narrow band. A side-effect of the resampling algorithm is that any sequences processed by the line remover must contain an integer number of n samples, making it advantageous to have n correspond to some common divisor of the desired sample counts—typically a power of 2. It is on this pre-processed version of u that the model is fitted. The process is reversed to producê y by upsampling (again including a filtering stage) and up-mixing the model prediction §. In the datacondAPI, line removal is performed using the oelslr action to both estimate θ and predict y. Note that, like its underlying C++ implementation [9], the datacondAPI command language allows overloading of function names, so that oelslr may perform different tasks depending on the number and type of arguments supplied to it.</p>
+
+				<p>θ = oelslr(y,u, f f Ny ,n,m); (6) ˆ y = oelslr(u,θ); (7)</p>
+
+				<p>The general purpose sub action is used to perform the final subtraction.</p>
+
+				<p>y r = sub(y,ˆ y); (8)</p>
+
+				<p>Time-domain causal linear filters introduce start-up transients and time-delays. The filters are employed both in the band-selection (via resample) and the model implementation. This introduces start-up transients and time-delays into the prediction.</p>
+
+				<figure>
+					<figDesc>The start-up transients invalidate the first nm samples of the prediction. The bandselection also truncates the prediction by an implementation-defined multiple of n samples (128n samples for the current resample implementation). These issues can be simply addressed by providing u for [t 1 − δt, t 2 + δt) wherê y is required for [t 1 , t 2 ); for typical parameters, δt = O(seconds). A line removal LDAS &apos;job&apos; is composed as follows. An estimation era is sliced from incoming channels (aliased u and y).</figDesc>
+					<trash>ue = slice(u, 0, 1228800, 1); ye = slice(y, 0, 1228800, 1); where slice(y,a,b,c) = z(t) = y(a + ct), t = 0, 1, · · · , b − 1. (9)</trash>
+
+
+				</figure>
+
+				<p>We have &apos;sliced off&apos; b = 1228800 samples, starting from a = 0, with stride c = 1. For these 2048 Hz channels, this corresponds to the first 10 minutes of data for each channel.</p>
+
+				<p>To remove the 180 Hz line, we estimate a model theta from ye and ue, in a region of</p>
+
+				<figure>
+					<trash>(0.17578125 ± 128 −1 )f Ny , with model order m = 8. theta = oelslr(ye, ue, 0.17578125, 128, 8);</trash>
+
+
+				</figure>
+
+				<p>The next stage is to slice a prediction era from u. We wish to predict y for the subsequent 10 minutes, and allowing (for simplicity) a generous δt of 1 minute, we use a slice of u extending for 12 minutes from 9 minutes after the channel began taking data. up = slice(u, 1105920, 1474560, 1);</p>
+
+				<p>To produce a prediction yp requires only the model theta and the predictor up. yp = oelslr(up, theta); Once the prediction has been produced, we reset it to a slice of its own middle 10 minutes (beginning 1 minute into the 12 minute raw prediction), effectively discarding the start-up transients and trailing truncation. yp = slice(yp, 122880, 1228800, 1);</p>
+
+			</div>
+			<div>
+				<head>Spectral Line</head>
+
+				<p>Removal in the LIGO Data Analysis System (LDAS)</p>
+
+			</div>
+			<div>
+				<head>8</head>
+
+				<p>We store the measured values of y for the corresponding times in ym, in preparation for subtracting the prediction from the measurement to produce the line-removed sequence yr. ym = slice(y, 1228800, 1228800, 1); yr = sub(ym, yp);</p>
+
+				<p>The sequence yr can then be output to other LDAS APIs for further processing by astrophysical searches, or, as in §3, written to file for inspection.</p>
+
+			</div>
+			<div>
+				<head n="3">Results</head>
+
+				<p>Data taken during LIGO runs is formatted as frames of named channels. The &apos;gravitational wave channels&apos; of the 4 km (H1) and 2 km (H2) Hanford and 4 km (L1) Livingston observatories are, respectively, H1:LSC-AS Q, H2:LSC-AS Q and L1:LSC-AS Q.</p>
+
+				<p>In this paper, we have used data from the S1 Science Run, specifically from a stretch of &apos;triple-coincidence&apos; data from GPS times 714974400–714975660, during which time all interferometers were locked; all figures are produced using the 10 minutes of data from GPS times 714975000–714975600. The LSC-AS Q channels of all three interferometers show spectral lines at multiples of 60 Hz in their power spectra (Figure 1), particularly for odd harmonics (60 Hz, 180 Hz, 300 Hz, . . . ). These lines are strongly coherent between H1 and H2 (Figure 2), but not between H1 and L1 or H2 and L1 (not shown). The lines are attributed to interference from the 60 Hz alternating current mains supply, and the coherence is attributed to the fact that a common mains supply is shared between H1 and H2 at Hanford, WA, but not by L1 at Livingston, LA, as the electrical grid is not coherent between the sites on this short timescale [10]. The power spectra of the mains voltage at both Hanford and Livingston Observatories (Figure 3) exhibit prominent lines at the odd harmonics of 60 Hz, and weaker lines at the even harmonics. At each observatory, the voltage of the incoming mains supply is measured by several monitors and recorded to corresponding channels; we use H0:PEM-LVEA2 V1 and L0:PEM-LVEA V1. The LSC-AS Q channels are typically strongly coherent with their local voltage monitors at odd harmonics, and weakly coherent at even harmonics (Figure 4). This indicates that the voltage monitor channels should be good predictors of the odd harmonics, and fair predictors of the even harmonics, given the simple linear model used by the line remover. Despite this, our results should be treated with caution. While it is clear that the electrical supply is responsible for the lines we observe at multiples of 60 Hz, if it is due to some non-linear effects then our description of the system is flawed. Assuming that we may regress *:LSC-AS Q against *0:PEM-LVEA* V1, we construct an LDAS job to separately remove lines at each of the 17 multiples of 60 Hz below the 1024 Hz Nyquist frequency of the 2048 Hz *0:PEM-LVEA* V1 channels (the *:LSC-AS Q channels are downsampled from 16384 Hz to 2048 Hz before this stage of the data</p>
+
+				<figure>
+					<trash>0 100 200 300 400 500 600 700 800 900 1000 0 0.5 1 coherence (a) Coherence of H1:LSC−AS_Q and H0:PEM−LVEA2_V1 0 100 200 300 400 500 600 700 800 900 1000 0 0.5 1 (b) Coherence of H2:LSC−AS_Q and H0:PEM−LVEA2_V1 coherence 0 100 200 300 400 500 600 700 800 900 1000 0 0.5 1 coherence</trash>
+
+
+				</figure>
+
+				<p>(c) Coherence of L1:LSC−AS_Q and L0:PEM−LVEA_V1 frequency (Hz) Figure 4. Coherence of (a) H1:LSC-AS Q, (b) H2:LSC-AS Q and (c) L1:LSC-AS Q with their respective voltage monitor channels, H0:PEM-LVEA2 V1 and L0:PEM- LVEA V1, before (dotted line) and after (solid line) application of the line removal technique described in §2.</p>
+
+				<p>conditioning). The technique proceeds for each line as in §2, with the exception that for each gravitational wave channel we store a single prediction sequence consisting of the sum of the predictions for each of the lines for that channel—a single unified y predicting all lines. The parameters m and n used for the line removal have, anecdotally, been found to produce reasonable results; they have not been optimised for this particular task.</p>
+
+				<p>Several features are noteworthy on the power spectra of the predictions (Figure 5).</p>
+
+				<p>Firstly, the power of the prediction never exceeds the power of the *:LSC-AS Q channel. Outside the bands selected for line removal, the power is 5–10 orders of magnitude below the *:LSC-AS Q noise floor. Within the bands selected for line removal, the power (other than at the spectral line itself) is at least 2 orders of magnitude below the *:LSC-AS Q noise floor. Most importantly, for the lines themselves, the power of the prediction is comparable to the power of the lines.</p>
+
+				<figure>
+					<trash>0 100 200 300 400 500 600 700 800 900 1000 −60 −40 −20 0 (a) H1:LSC−AS_Q dB 0 100 200 300 400 500 600 700 800 900 1000 −60 −40 −20 0 (b) H2:LSC−AS_Q dB 0 100 200 300 400 500 600 700 800 900 1000 −60 −40 −20 0 dB Frequency (Hz) (c) L1:LSC−AS_Q</trash>
+
+					<head>Figure 5.</head>
+
+					<figDesc>Power spectra of the predictions for (a) H1:LSC-AS Q, (b) H2:LSC-AS Q and (c) L1:LSC-AS Q (solid line). Corresponding power spectra of the gravitational wave channels are provided for reference (dotted line). When the prediction is subtracted from the measured gravitational wave channel, the lines, as measured in the power spectra of Figure 1, are affected to varying degrees. Many are no longer visible above the noise floor; others have been reduced but are still present; some are unaffected. The residual coherence (Figure 4</figDesc>
+
+				</figure>
+
+				<p>) between the line removed channels and their predictors is similar. For most lines, the coherence has been reduced; for many there is no residual coherence above the noise level of the estimate. Similarly, the line coherence between the H1 and H2 interferometers (Figure 2) has been reduced or removed for almost all lines. (The coherence between H1 or H2 and L1, not shown, is unaffected.) This can be seen, most clearly, by considering the accumulated coherence; lines appear as steps in the accumulation. For H1 and H2, those steps have been reduced or eliminated. Furthermore, the accumulation demonstrates that there has been no significant broadband coherence added to the interferometers. The net effect has been a reduction in the total accumulated coherence between the interferometers, and a significant one, when compared to the noise floor approximated by the accumulated H1–L1 coherence.</p>
+
+			</div>
+			<div>
+				<head n="4">Conclusion</head>
+
+				<p>The datacondAPI oelslr line removal algorithm provides a non-intrusive way for LIGO&apos;s astrophysical searches to reduce the power and inter-instrument coherence of spectral lines attributed to interference from the mains supply. The datacondAPI implementation provides an easy route for searches to add line removal, and provides the building blocks for expansions to the datacondAPI, some of which have already been reused in a Kalman filter implementation. Much remains to be done. The behaviour of the oelslr algorithm needs to be systematically investigated, to fully validate its implementation and to optimise its application. Concerns about the linearity and causality of the relationship between the environmental and detector channels—and hence the validity of the model—must be addressed. Search code integration and performance testing have already begun, and the results of one such investigation are forthcoming [5].</p>
+
+			</div>
+
+			<note place="foot">‡ Line removal in the datacondAPI was originally designed to use the Output-Error (OE) model, but the complexity of an OE model estimator has delayed its implementation.</note>
+
+			<note place="foot">§ This series of operations has been abstracted into a reusable C++ class [9] (datacondAPI::BandSelector) that has already been used in the implementation of the datacondAPI&apos;s Kalman filter.</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+				<head>Acknowledgments</head>
+				<p>We gratefully acknowledge the assistance of the LDAS development team. This work was supported by The ANU Faculties Research Grant Scheme and an award under the Merit Allocation Scheme on the National Facility of the Australian Partnership for Advanced Computing. A Searle was supported by an Australian Postgraduate Award.</p>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title/>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Removing line interference from gravitational wave interferometer data</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Sintes</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B F</forename>
+				<surname>Schutz</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Gravitational Wave Detection II, number 32 in Frontiers Science</title>
+		<editor>S Kawamura and N Mio</editor>
+		<imprint>
+			<publisher>Universal Academy Press</publisher>
+			<date type="published" when="2000" />
+			<biblScope unit="page" from="273" to="278" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title level="m" type="main">Automatic cross-talk removal from multi-channel data. Formal Note P990002-00-E, LIGO, 1999. gr-qc/9909083</title>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Allen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Hua</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Ottewill</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<monogr>
+		<title level="m" type="main">Analysis of first LIGO science data for stochastic gravitational waves</title>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Abbott</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>In. preparation</note>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">A gaussianity measure for laser interferometer data</title>
+		<author>
+			<persName>
+				<forename type="first">S M</forename>
+				<surname>Scott</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Mcclelland</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Searle</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Charlton</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Whiting</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Gurzadyan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>T Jantzen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Ruffini</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the Ninth Marcel Grossmann Meeting on General Relativity</title>
+		<meeting>the Ninth Marcel Grossmann Meeting on General Relativity</meeting>
+		<imprint>
+			<date type="published" when="2002" />
+			<biblScope unit="page" from="1919" to="1920" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title level="m" type="main">System identification: theory for the user. Information and system sciences</title>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Ljung</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1999" />
+			<publisher>Prentice Hall</publisher>
+		</imprint>
+	</monogr>
+	<note>2nd. edition</note>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title/>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<title level="m" type="main">The C++ Programming Language</title>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Stroustrup</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1997" />
+			<publisher>Addison-Wesley</publisher>
+		</imprint>
+	</monogr>
+	<note>3rd. edition</note>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<title level="m" type="main">60 Hz mains correlations for the US power grids</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Lazzarini</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Schofield</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Vicere</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

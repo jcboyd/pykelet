@@ -1,0 +1,2513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Modeling exclusive meson pair production at hadron colliders</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2014-07-21">21 Jul 2014</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">L</forename>
+								<forename type="middle">A</forename>
+								<surname>Harland</surname>
+							</persName>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">–</forename>
+								<surname>Lang</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Institute for Particle Physics Phenomenology</orgName>
+								<orgName type="institution">University of Durham</orgName>
+								<address>
+									<postCode>DH1 3LE</postCode>
+									<settlement>Durham</settlement>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">V</forename>
+								<forename type="middle">A</forename>
+								<surname>Khoze</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Institute for Particle Physics Phenomenology</orgName>
+								<orgName type="institution">University of Durham</orgName>
+								<address>
+									<postCode>DH1 3LE</postCode>
+									<settlement>Durham</settlement>
+								</address>
+							</affiliation>
+							<affiliation>
+								<orgName type="institution" key="instit1">Petersburg Nuclear Physics Institute</orgName>
+								<orgName type="institution" key="instit2">NRC Kurchatov Institute</orgName>
+								<address>
+									<settlement>Gatchina</settlement>
+								</address>
+							</affiliation>
+							<affiliation>
+								<orgName type="institution">St. Petersburg</orgName>
+								<address>
+									<postCode>188300</postCode>
+									<country key="RU">Russia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">M</forename>
+								<forename type="middle">G</forename>
+								<surname>Ryskin</surname>
+							</persName>
+							<affiliation>
+								<orgName type="institution" key="instit1">Petersburg Nuclear Physics Institute</orgName>
+								<orgName type="institution" key="instit2">NRC Kurchatov Institute</orgName>
+								<address>
+									<settlement>Gatchina</settlement>
+								</address>
+							</affiliation>
+							<affiliation>
+								<orgName type="institution">St. Petersburg</orgName>
+								<address>
+									<postCode>188300</postCode>
+									<country key="RU">Russia</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Modeling exclusive meson pair production at hadron colliders</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2014-07-21">21 Jul 2014</date>
+						</imprint>
+					</monogr>
+					<note>IPPP/13/102 DCPT/13/204</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>We present a study of the central exclusive production of light meson pairs, concentrating on the region of lower invariant masses of the central system and/or meson transverse momentum, where perturbative QCD cannot be reliably applied. We describe in detail a phenomenological model, using the tools of Regge theory, that may be applied with some success in this regime, and we present the new, publicly available , Dime Monte Carlo (MC) implementation of this for ππ, KK and ρρ production. The MC includes a fully differential treatment of the survival factor, which in general depends on all kinematic variables, as well as allowing for the so far reasonably un-constrained model parameters to be set by the user. We present predictions for the Tevatron and LHC, discuss and estimate the size of the proton dissociative background, and show how future measurements may further test this Regge–based approach, as well as the soft hadronic model required to calculate the survival factor, in particular in the presence of tagged protons.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>The study of central exclusive production (CEP) processes of the type pp(¯ p) → p + X + p(¯ p) , (1) can significantly extend the physics programme at high–energy hadron colliders. Here X represents a system of invariant mass M X , and the &apos;+&apos; signs denote the presence of large rapidity gaps. Such reactions provide a very promising way to investigate both QCD dynamics COMPASS fixed–target experiment at CERN [34]. Motivated by this, we present in this paper the new public Dime Monte Carlo [35] for meson pair (ππ, KK, ρρ) CEP via this non–perturbative mechanism. We give the user freedom to set the most important aspects and parameters of the model, so that these can be compared with and adjusted to future data. We also include the soft survival factor at the fully differential level, which (as described in e.g. [7]) is crucial to give a complete prediction, in particular when considering the kinematic distributions of the outgoing protons.</p>
+
+				<p>Finally, we note that, with the exception of the dedicated TOTEM + CMS measurements [20–22], the LHC experiments have so far studied CEP processes without the use of forward spectrometers to tag the outgoing intact protons, instead applying a Large Rapidity Gap (LRG) veto on additional particles in a certain rapidity region. Although this can be used to select a reasonable fraction of purely exclusive events, in general certain regions in the forward/backward directions are uninstrumented, and so there is always a possibility of an admixture of events in which the proton dissociates into a hadronic system, with the secondaries from this system not seen in the detector. This contribution will lead to a larger measured cross section than the theoretical predictions for CEP, which assume that the outgoing protons remain intact. This contamination may be particularly important in the case that some suppression is expected in the purely exclusive cross section, due to for example the J P z = 0 + quantum number selection rule (see [14] for some discussion of this in the case of χ c2 production). For this reason, we we will also discuss and present estimates in this paper for the expected size of the proton dissociative contamination in events selected experimentally with a large rapidity gap veto. The outline of this paper is as follows. In Section 2 we describe the different aspects of the model, considering the choice of form factor for the meson–Pomeron coupling in Section 2.1, the possibility of additional particle production in the Pomeron fusion subprocess in Section 2.2, Reggeization of the t–channel meson exchange in Section 2.3, secondary Reggeon contributions in Section 2.4 and soft survival effects in Section 2.5. In Section 3 we describe in more detail the Dime MC, which implements the model described in the preceding sections.</p>
+
+				<p>In Section 4 we present a selection of numerical predictions, and discuss the possibilities for measurements at hadron colliders. In Section 5 we discuss the issue of proton dissociation, as described above. Finally, in Section 6 we conclude.</p>
+
+			</div>
+			<div>
+				<head n="2">Theory</head>
+
+				<p>The model we will consider in this paper applies the well–established tools of Regge theory [17], and is represented in Fig. 1. In this &apos;one–meson exchange&apos; model (see for instance [11, 12, 36]) the mesons are produced via Pomeron–Pomeron fusion, with an intermediate off–shell meson exchanged in the t–channel. The CEP cross section is given by</p>
+
+				<figure>
+					<trash>σ CEP = 1 16π(16π 2 ) 2 dp 2 1⊥ dp 2 2⊥ dy 3 dy 4 dk 2 ⊥ |M| 2 s 2 , (2) Figure 1</trash>
+
+
+				</figure>
+
+				<p>: Representative diagram for the non-perturbative meson pair (M 3 , M 4 ) CEP mechanism , where M * is an intermediate off-shell meson of type M. Eikonal and (an example of) enhanced screening effects are indicated by the shaded areas. where √ s is the c.m.s. energy, p 1⊥ , p 2⊥ are transverse momenta of the outgoing protons, k ⊥ is the meson transverse momentum and y 3,4 are the meson rapidities.</p>
+
+				<p>Ignoring secondary Reggeon contributions and soft survival effects for simplicity (these will be discussed in the sections which follow), the production amplitude, M, is given by the sum M = M ˆ t + M ˆ u of the t and u–channel contributions, with t = (P 1 − k 3 ) 2 , ˆ u = (P 1 − k 4 ) 2 , where P i is the momentum transfer through Pomeron i, and k 3,4 are the meson momenta. We have</p>
+
+				<figure>
+					<trash>M ˆ t = 1 M 2 − ˆ t F p (p 2 1⊥ )F p (p 2 2⊥ )F 2 M ( ˆ t)σ 2 0 ˆ s 13 s 0 α I P (p 2 1⊥ ) ˆ s 24 s 0 α I P (p 2 2⊥ ) , (3) where M is the meson mass, we take s 0 = 1 GeV 2 and α IP (p 2 i⊥ ) = 1.08 − 0.25 p 2 i⊥ , for p 2 i⊥ measured in GeV 2 [37]</trash>
+
+
+				</figure>
+
+				<p>, and s ij = (p ′ i + k j ) 2 is the c.m.s. energy squared of the final–state proton–meson system (ij). The proton form factors are usually taken for simplicity to have an exponential form, F p (t i ) = exp(B i t i /2), as was assumed in the previous work of [14], however as we shall see, the latest fit of [30] for the soft survival factor suggests a different parameterization should be taken, see Section 2.5. We can see from (3) that the cross section normalisation is set by the total meson–proton cross section σ tot (Mp) = σ 0 (s ij /s 0 ) α(0)−1 at the relevant sub–energy; the factor σ 0 can be extracted for example from the fits of [37]. While this is therefore well constrained for the cases of ππ and KK production, there remain other elements and possible additions to the model, which as we shall see are in general quite poorly constrained by the relatively limited available ISR data. These are: the form factor F M ( ˆ t) in (3) of the Pomeron coupling to the off–shell meson, the possibility to produce additional particles in the Pomeron fusion subprocess, and the effect of Reggeization of the meson exchange in the t–channel. We will consider each of these in turn, before discussing the inclusion of secondary Reggeons and soft survival effects.</p>
+
+			</div>
+			<div>
+				<head n="2.1">Off–shell meson form factor</head>
+
+				<p>The F M ( ˆ t) in (3) is the form factor for the coupling of the Pomeron to the outgoing meson and the off–shell t–channel meson exchange. Unfortunately no direct measurement of this form factor for light mesons exists: we will see that data from the ISR place some constraint but nonetheless the shape of the form factor, in particular at higher values of | ˆ t|, is unknown. We therefore treat it as a phenomenological input in our model, and will consider for concreteness three different possibilities</p>
+
+				<figure>
+					<trash>F exp M ( ˆ t) = exp b exp t ′ , (4) F or M ( ˆ t) = exp(−b or − ˆ t ′ + a 2 or + a or b or ) , (5) F pow M ( ˆ t) = 1 1 − ˆ t ′ /b pow , (6) wherê t ′ = ˆ t − M 2</trash>
+
+
+				</figure>
+
+				<p>, and M is the meson mass. That is, a typical &apos;soft&apos; exponential, a power– like behaviour, and a form of the type proposed by Orear [38]. Such &apos;Orear–like&apos; behaviour dσ el (pp)/dt ∝ exp(−b √ −t) was observed experimentally [38] in the case of proton–proton scattering at relatively large |t|, and so we might expect to see a similar type of behaviour here. Theoretically, it was shown in [39] that this behaviour may result from the contribution of a series of diagrams with different numbers of exchanged Pomerons/Reggeons (i.e. multi–Reggeon cuts). Assuming a &apos;soft&apos; exponential behavior (∼ exp(Bt)) for one–Reggeon exchange we get an n–times smaller slope (∼ exp(Bt/n)) for the n–Reggeon exchange amplitude , and the sum of these contributions may be described by an Orear–like form factor (see also [40]). Thus (5) may be considered as an &apos;effective&apos; form factor, containing the contribution of a more complicated set of diagrams (i.e. with additional exchanges between the outgoing mesons in the t–channel) which are not included explicitly in the calculation. We replace √ −t in (5) by −t + a 2 or in order to keep the analytic properties of the amplitude, in particular under t ↔ s crossing. All form factors are defined so that they reach unity if the squared 4–momentum transfer is equal to the meson mass squared M 2 . In Section 4 we will show how a comparison to ISR data for exclusive π + π − and K + K − production allows some approximate values for the parameters (b exp , b or , a or , b pow ) to be extracted. However, as we will see in Section 4 the choice of form factor leads to dramatically different behaviour at higher | ˆ t|, beyond the region probed by the ISR data. Moreover, we note that these relatively simple phenomenological forms (4)–(6) may not be expected to hold across the entire |t ′ | range, for example when the meson transverse momentum, k ⊥ , becomes sufficiently high, and the &apos;perturbative&apos; regime is reached, where the description discussed in [4–6] should be relevant. These therefore represent our best educated guesses for the off–shell meson form factor, the validity of which is to be determined by comparison to future collider data.</p>
+
+			</div>
+			<div>
+				<head n="2.2">Additional particle production</head>
+
+				<p>A correction we may consider to the simple model of (3) is the suppression which comes from the requirement that no additional particles are produced in the meson pair production process, that is due to screening corrections; in terms of the Reggeon formalism these absorptive corrections are described by the exchange of additional (one or more) Pomerons in the diagram shown in Fig. 1. First, there is the exchange between the two incoming (outgoing ) protons: this is just the usual &apos;eikonal&apos; survival factor S eik , which we will discuss in Section 2.5. In addition to this, we have the possibility of rescattering between the protons and the outgoing mesons. However, as discussed in more detail in [14], such an interaction is either suppressed by the small phenomenological value of the triple–Pomeron coupling in the case of proton–Pomeron rescattering, or by the small size of the produced &apos;half–dressed&apos; mesons ∼ 1/ √ ˆ s in the case of proton–meson rescattering. Such effects will therefore be ignored in what follows, and in particular in the Dime MC.</p>
+
+				<p>We must also in principle consider the possibility of additional meson–meson rescattering, that is due to final–state interactions. However, as the meson pair production time in Fig. 1 is practically instantaneous (∼ 1/ √ ˆ s), while a much longer time (∼ √ ˆ s/M 2 ) is needed for the formation of a Reggeon by the secondary meson, there is insufficient time for a Reggeon emitted by one meson to interact with the other. More formally, this can be understood from the fact that, as shown by Mandelstam [41], the leading s contribution in the case of additional Reggeon exchange comes from non–planar diagrams and not from planar graphs, of the type discussed in [42], and to which such a final–state meson–meson interaction corresponds. We refer the reader to [14] for a more detailed discussion of this. However, following [4, 14], it may be necessary to introduce an additional suppression factor of the form ∼ exp(−n(ˆ s)) to the cross section, corresponding to the small Poisson probability not to emit other secondaries in the IP IP → M 3 M 4 process at the initial meson pair production stage (rather than being due to final–state interactions between the mesons). Here n(ˆ s) is the mean number of secondaries. We expect this to grow with the Pomeron- Pomeron energy, ˆ s = (P 1 + P 2 ) 2 , as n ≃ c · ln(ˆ s/s 0 ), with the coefficient c ∼ 0.5 − 1, see [4]. This factor may be described as the Reggeization of the meson M * exchange, which means that we now deal with non–local meson–Pomeron vertices and the t–channel meson M * becomes a non–local object, i.e. it has its own size. More precisely for the case of ππ CEP we can take</p>
+
+				<figure>
+					<trash>n(ˆ s) = 0 √ ˆ s &lt; M f 2 (1270) , n(ˆ s) = c ln s s 0 √ ˆ s ≥ M f 2 (1270) , (7) with s 0 = M 2 f 2 (1270) .</trash>
+
+
+				</figure>
+
+				<p>We take c = 0.7 as a default value for definiteness, but we note that different choices are certainly possible. In this way, we account for the fact that we expect no additional suppression in the lower mass resonance region, where additional interactions at the meson pair production stage lead mainly to the formation of resonances and not to the production of new secondaries.</p>
+
+				<p>A similar although slightly modified procedure is taken for the case of K + K − CEP.</p>
+
+				<p>In particular, we replace M f 2 (1270) in (7) with M f 2 (1525) , and account for the fact that we should expect the number of secondaries n(s KK ) to be a function of the free energy, E free = M KK − 2M K , available for the creation of secondary particles, which can be numerically important because of the larger kaon mass M K . In both cases the parameter c in (7) defines the strength of this additional &apos;Poisson suppression&apos;, and can in principle be extracted from data, i.e. by measurements of the meson pair invariant mass distribution, although this is also sensitive to the form of the off–shell meson form factor described above, as we will see in Section 4.</p>
+
+			</div>
+			<div>
+				<head n="2.3">Reggeization of the exchanged meson</head>
+
+				<p>In principle, as s increases, we may have to account for the fact that the exchanged object in the t–channel is not a simple meson but can correspond to a whole family of exchanges; that is, the Reggeization of the intermediate meson. In such a case we may replace the meson propagator by</p>
+
+				<figure>
+					<trash>1 1 ˆ t − M 2 → 1 ˆ t − M 2 s s 0 α M ( ˆ t) , (8)</trash>
+
+
+				</figure>
+
+				<p>where α M ( ˆ t) is the Regge trajectory to which the exchanged meson belongs. However, some care is needed here, as it is not sufficient that the meson pair invariant mass √ ˆ s should simply be large enough for such a description to be valid: rather, Reggeization occurs in the strongly ordered regimê s ≫ | ˆ t|, and so if we have | ˆ t| ∼ ˆ s at largê s we cannot expect the replacement of (8) to be justified. Indeed, for the experimentally relevant regime where the mesons are required to be produced quite centrally we may expect to be dominantly in this | ˆ t| ∼ ˆ s regime, with meson Reggeization becoming more important as the separation in rapidity between the mesons increases. To account for this, we may instead make the</p>
+
+				<figure>
+					<trash>replacement 1 ˆ t − M 2 → 1 ˆ t − M 2 exp(α M ( ˆ t)|y M 3 − y M 4 |) , (9) where y M 3,4</trash>
+
+
+				</figure>
+
+				<p>are the rapidities of the produced mesons. This has the correct Regge asymptotics in the | ˆ t| ≪ ˆ s regime, while giving no correction as the rapidity separation between the mesons tends to zero (i.e. for | ˆ t| ∼ ˆ s), as it must 2 . However, some care must still be taken, as the standard linear parameterization of the trajectory α M ( ˆ t) = α M (0) + α ′ M t can only be trusted for lower values of | ˆ t| 1 GeV 2 . Here, we choose to simply freeze the trajectory α M ( ˆ t) for |t| &gt; 1 GeV 2 , but clearly there is a significant uncertainty in how to correctly include such an effect in the | ˆ t| 1GeV 2 region. More generally, it is not clear that this effect of meson Reggeization will be important in the relevant kinematic regime, when the mesons are produced relatively centrally, without a large separation in rapidity between them: as we will describe later, we allow the option to include this effect, in the way described above, in the new Dime MC, but by default it is not included.</p>
+
+			</div>
+			<div>
+				<head n="2.4">Secondary Reggeons</head>
+
+				<p>As well as the case of Pomeron exchange shown in Fig. 1, we must in general allow for the possibility of secondary Reggeon exchange between the protons and the produced mesons. This contribution will be subleading for sufficiently high c.m.s. energy squared s, but will not necessarily be completely negligible for the experimentally relevant region, in particular because in (3) the relevant subenergies s 13 , ˆ s 24 ∼ M X √ s (and not s). Moreover, we will present a comparison in Section 4 to ISR data, at √ s = 62 GeV, where it is crucial to include such secondary Reggeons.</p>
+
+				<p>Considering the case of π + π − production, to achieve this in (3) we must make the</p>
+
+				<figure>
+					<trash>placement iσ 0 ˆ s 13 s 0 α I P (p 2 1⊥ ) → η IP σ IP 0 ˆ s 13 s 0 α I P (p 2 1⊥ ) + (η f σ f 0 ± η ρ σ ρ 0 ) ˆ s 13 s 0 α I R (p 2 1⊥ ) (10)</trash>
+
+
+				</figure>
+
+				<p>where the &apos;±&apos; corresponds to the case that particle 3 is a π ± , with a similar replacement made for the (ij) = (14) interaction. The η i are the signature factors of the IP , f 2 and ρ trajectories, given by η IP ≈ i, η ρ = −i − tan(πα IR (0)/2) and η f = i − cot(πα IR (0)/2) while the normalisation factors σ i 0 can be extracted from the fit of [37] to the π ± p cross sections. This gives σ</p>
+
+				<figure>
+					<trash>f 0 = 31.79 mb and σ ρ 0 = 4.23 mb, while σ IP 0 =13.63 mb. For K + K − production we have σ f 2 +a 2 0 = 17.255 mb, σ ρ+ω 0 = 9.105 mb and σ IP 0 =11.82 mb. Finally, the leading Reggeon trajectory is given by [37]X α IR (t) = 0.55 + 0.93 t , (11)</trash>
+
+
+				</figure>
+
+				<p>where t is measured in GeV 2 . We have also made the simplifying assumption that the form factor F p (t) for the Reggeon–proton coupling is the same as in the Pomeron case.</p>
+
+			</div>
+			<div>
+				<head n="2.5">Soft survival effects</head>
+
+				<p>As discussed in Section 2.2, we must account in our cross section calculation for the possibility that the colliding protons can interact in addition to the meson pair production process, spoiling the exclusivity of the final state. The probability that there is no additional proton– proton rescattering 3 is known as the &apos;eikonal&apos; survival factor S 2 eik , see for example [44–47] for more details. As discussed in [7], this factor is not a simple multiplicative constant, but rather depends on the distribution in impact parameter space of the colliding protons. In particular, in the simplest &apos;one–channel&apos; model, see e.g. [48] , which ignores any internal structure of the proton, we can write the average suppression factor as</p>
+
+				<figure>
+					<trash>S 2 eik = d 2 b 1t d 2 b 2t |M(s, b 1t , b 2t )| 2 exp(−Ω(s, b t )) d 2 b 1t d 2 b 2t |M(s, b 1t , b 2t )| 2 , (12)</trash>
+
+
+				</figure>
+
+				<p>where b it is the impact parameter vector of proton i, so that b t = b 1t + b 2t corresponds to the transverse separation between the colliding protons, with b t = |b t |. M(s, b 1t , b 2t ) is the CEP amplitude (3) in impact parameter space, and Ω(s, b t ) is the proton opacity.</p>
+
+				<p>Physically, exp(−Ω(s, b t )) represents the probability that no inelastic scattering occurs at impact parameter b t .</p>
+
+				<p>While the rescattering probability only depends on the magnitude of the proton transverse separation b t , the hard matrix element may have a more general dependence. More specifically, M(s, b 1t , b 2t ) is the Fourier conjugate of the CEP amplitude (3), i.e. we have</p>
+
+				<figure>
+					<trash>M(s, p 1 ⊥ , p 2 ⊥ ) = d 2 b 1t d 2 b 2t e ip 1 ⊥ ·b 1t e −ip 2 ⊥ ·b 2t M(s, b 1t , b 2t ) , (13)</trash>
+
+
+				</figure>
+
+				<p>where the minus sign in the p 2 ⊥ · b 2t exponent is due to the fact that the impact parameter b t is the Fourier conjugate to the momentum transfer q = p 1 ⊥ − p 2 ⊥ . We can therefore see that (12) is dependent on the distribution in the transverse momenta p i ⊥ of the scattered protons, being the Fourier conjugates of the proton impact parameters, b it . This connection can be made clearer by working instead in transverse momentum space, where we should calculate the CEP amplitude including rescattering effects, T res , by integrating over the transverse momentum k ⊥ carried round the Pomeron loop (represented by the grey oval labeled &apos;S 2 eik &apos; in Fig. 1). The amplitude including rescattering corrections is given by</p>
+
+				<figure>
+					<trash>M res (s, p 1 ⊥ , p 2 ⊥ ) = i s d 2 k ⊥ 8π 2 M el (s, k 2 ⊥ ) M(s, p ′ 1 ⊥ , p ′ 2 ⊥ ) , (14) where p ′ 1 ⊥ = (p 1 ⊥ − k ⊥ ) and p ′ 2 ⊥ = (p 2 ⊥ + k ⊥ ), while M el (s, k 2</trash>
+
+
+				</figure>
+
+				<p>⊥ ) is the elastic pp scattering amplitude in transverse momentum space, which is related to the proton opacity via</p>
+
+				<figure>
+					<trash>M el (s, t) = 2s d 2 b t e iq·bt M el (s, b t ) = 2is d 2 b t e iq·bt 1 − e −Ω(s,bt)/2 , (15) where t = −k 2</trash>
+
+
+				</figure>
+
+				<p>⊥ . We must add (14) to the &apos;bare&apos; amplitude excluding rescattering effects to give the full physical amplitude, which we can square to give the CEP cross section including eikonal survival effects</p>
+
+				<figure>
+					<trash>dσ d 2 p 1 ⊥ d 2 p 2 ⊥ ∝ |M(s, p 1 ⊥ , p 2 ⊥ ) + M res (s, p 1 ⊥ , p 2 ⊥ )| 2 , (16)</trash>
+
+
+				</figure>
+
+				<p>where here (and above) we have omitted the dependence of the cross section on all other kinematic variables for simplicity. In this way the expected soft suppression is given by</p>
+
+				<figure>
+					<trash>S 2 eik = d 2 p 1 ⊥ d 2 p 2 ⊥ |M(s, p 1 ⊥ , p 2 ⊥ ) + M res (s, p 1 ⊥ , p 2 ⊥ )| 2 d 2 p 1 ⊥ d 2 p 2 ⊥ |M(s, p 1 ⊥ , p 2 ⊥ )| 2 . (17)</trash>
+
+
+				</figure>
+
+				<p>It can readily be shown that (12) and (17) are equivalent. As we expect, the soft suppression factor depends on the proton transverse momenta, and so may have an important effect on the distribution of the outgoing proton p ⊥i , via (16). A simplified approach, where the soft survival suppression is simply included in the CEP cross section as an overall constant factor will completely omit this effect. We make use of this formulation, in particular (16), in the Dime MC to give a full account of the survival factor and its effect on the distributions of outgoing proton momenta, which will be crucial in the presence of proton tagging. We will show in Section 4 that the interference between the &apos;screened&apos; and &apos;bare&apos; amplitude in (16), given by (14) and (3), respectively, can in particular lead to some interesting diffractive dip phenomena, as was initially observed in [44] (see also [49, 50]). Finally, we note that the formalism described above is only valid within the &apos;one–channel&apos; framework, which considers the pure elastic case, where the proton state is the correct degree of freedom for hadron–hadron scattering. More realistically, in particular to account for the possibility of (low mass) diffractive dissociation p → N * , a more sophisticated &apos;multi– channel&apos; framework is required, in which the incoming proton is considered to be in a coherent superposition of so–called diffractive eigenstates, which can each be described by the above one–channel framework. The above formalism therefore still corresponds to the basic physics input into the model of soft diffraction that we use; the extension to the multi–channel case can be achieved in a quite straightforward manner, and is described in detail in [44–46]. We will make use of the two–channel model of [30] to calculate the eikonal survival factor. In this fit, the coupling of the Pomeron to the diffractive eigenstate i = 1, 2 is parameterized as</p>
+
+				<figure>
+					<trash>F i (t) = exp(−(b i (c i − t)) d i + (b i c i ) d i ) , (18)</trash>
+
+
+				</figure>
+
+				<p>where the b i , c i , d i are extracted from data on hadronic scattering, and are given in [30]. To be consistent, we must then use this in our calculation of the &apos;bare&apos; CEP amplitude (3), i.e. for the proton form factor F p (t).</p>
+
+			</div>
+			<div>
+				<head n="3">Dime MC</head>
+
+				<p>We have implemented the model described in Section 2 for exclusive meson pair production via double Pomeron/Reggeon exchange in the new Dime Monte Carlo, which is available via the HepForge webpage [35]. The basic amplitude is given by (3) (with the replacement of (10)), while the user can set the possible extensions and input parameters described in Sections 2.1–2.3. Specifically, the three different choices for the off–shell meson form factors (4–6) are available, and the parameters (b exp , b or , a or , b pow ) may be set as input, with the default values given according to the comparison with ISR data described in Section 4. The Poisson suppression factor (7) due to the requirement that no additional particles may be produced in the IP IP → M 3 M 4 subprocess can be included or omitted, and the parameter c can be set by the user, with the default given as described in Section 2.2. Reggeization of the intermediate off–shell meson exchange, given by the approach described in Section 2.3, is also available. Finally, soft survival effects are implemented as described in Section 2.5, including the full dependence on the p ⊥i of the outgoing protons, according to the new models described in [30]: a choice between any of the four models, as given by in Table 2 of [30], is available to the user.</p>
+
+				<figure>
+					<trash>Currently, the Dime MC implements π + π − , K + K − , π 0 π 0 , K 0 K 0 and ρ 0 (770)ρ 0 (770) production.</trash>
+
+
+				</figure>
+
+				<p>In the ρ 0 ρ 0 case the mesons are decayed via ρ 0 → π + π − , including the finite ρ 0 width, according to phase space only 4 , while the factor σ 0 in (3) is set by default to the reasonable guess σ IP 0 = 10 mb, i.e. of order the π + π − cross section, but taking a lower value due the larger ρ 0 mass. This somewhat arbitrary input is necessary due to the lack of ρ 0 p scattering data with which to set the normalization (another reasonable choice may be to take σ IP 0 =13.63 mb as in π ± p scattering [37]). For ρ 0 ρ 0 production, secondary Reggeons are not included and any spin effects are currently ignored in the production subprocess. Given the relative uncertainty in the ρ 0 ρ 0 cross section normalisation, we also currently omit any effect from additional particle production, described in Section 2.2, although this could in principle be included in the future.</p>
+
+				<figure>
+					<trash>4 Numerical results 4.1 Comparison to ISR data</trash>
+
+
+				</figure>
+
+				<p>In this section we compare the predictions 5 of this phenomenological model, described in the previous sections and implemented in the new Dime MC [35], with the existing low–energy ISR ( √ s = 62 GeV) data on π + π − [51] and K + K − [52] CEP. In Figs. 2 and 3 we compare our predictions for the π + π − and K + K − invariant mass distributions with this ISR data, taking the three choices of meson form factor F M ( ˆ t) described in Section 2.1, calculated with model 1 of [30] for the eikonal survival factor, and with no meson Reggeization included. Fig. 2 (left/right) shows the prediction with the Poisson suppression ( refspipi) included/excluded, while in Fig. 3 it is included. For a particular choice of parameters defined in (4–6), we can see that the non–resonant contribution to the data appears to be described reasonably well: we take these values, given in Table 1, as the default ones in Dime MC, and will use them in what follows, to present some representative predictions. However, it should be strongly stressed that a very precise comparison and extraction of these parameters is quite difficult from this somewhat limited data set. Firstly, most of the data lie in the resonant region: our model predictions only correspond to the non–resonant contribution to the experimental cross section, while for π</p>
+
+				<figure>
+					<trash>+ π − production the M ππ &lt; 2 GeV region includes contributions from a number of resonances (f 2 (1270), f 0 (1370), f 0 (1500), f ′ 2 (1525), f 2 (1950),...) which 4</trash>
+
+
+				</figure>
+
+				<p>A more complete treatment should account for the different ρ polarization states, which may in general have distinct form factors F M ( ˆ t), however given the lack of information about these we choose to ignore such possible polarization effects in the current version of the MC. 5 Unfortunately in all numerical results which follow, the bare cross sections were not normalized consistently with the two–channel model described in Section 2.5. All absolute cross section predictions presented in this paper should therefore be multiplied by a factor of 1.2, although the qualitative conclusions remain unchanged. b exp [GeV −2 ] a or [GeV −1 ] b or [GeV −1 ] b pow [GeV 2 ]</p>
+
+				<figure>
+					<trash>0.45 0.71 0.91 1.7</trash>
+
+					<head>Table 1:</head>
+
+					<figDesc>Parameters for different choices of meson off–shell form factor (4–6), extracted from ISR data [51, 52]</figDesc>
+
+				</figure>
+
+				<p>.</p>
+
+				<figure>
+					<trash>pow. or. exp. dσ/dM π + π − [µb/GeV], √ s = 62 GeV, |y π | &lt; 1.5, |x p | &gt; 0.9 - M π + π − 3 2.5 2 1.5 1 0.5 0 100 10 1 0.1 pow. or. exp. dσ/dM π + π − [µb/GeV], √ s = 62 GeV, |y π | &lt; 1.5, |x p | &gt; 0.9 No Poisson suppression - M π + π − 3 2.5 2 1.5 1 0.5 0 100 10 1 0.1</trash>
+
+					<head>Figure 2:</head>
+
+					<figDesc>Invariant mass distributions for π</figDesc>
+					<trash>+ π − CEP at √ s = 62 GeV, compared to CERN– ISR data [51]</trash>
+
+
+				</figure>
+
+				<p>. The theory curves are calculated as described in the text, using the three different parameterizations of the meson form factor F M ( ˆ t) given in Section 2.1. In the left/right figure the Poisson suppression described in Section 2.2 is included/excluded. In all cases, the pions are restricted to lie in the rapidity region |y π | &lt; 1.5 and the cut |x p | &gt; 0.9 is imposed on the outgoing protons. overlap with each other, and similarly for the K + K − case. It is not easy to disentangle the resonant and non–resonant contributions, and so our fit to the data can only be considered as a guideline. In particular, the π + π − data are described to an acceptable degree out to the available M ππ ≈ 2 GeV (where there may still be some resonant contribution) with and without the Poisson suppression (7), with the same choice of parameters as in Table 1.</p>
+
+				<p>Secondly, we can see that the three different form factors give comparable fits to the data, with the possible exception of the exponential form factor when the Poisson suppression is included, which appears to undershoot the π + π − data at higher M π + π − . Moreover the ISR data, which only extend out to M π + π − ∼ 2 GeV (and similarly for the kaon case) are insensitive to the higher k ⊥ 1 GeV behaviour of the form factors (4–6). Thus, the default values in Table 1 can only be taken as very rough guides, and the &apos;true&apos; values, and indeed general behaviour of these form factors may be quite different, in particular at higher k ⊥ (see the discussion in Section 2.1).</p>
+
+				<figure>
+					<trash>pow. or. exp. dσ/dM KK [µb/GeV], √ s = 62 GeV, |y K | &lt; 1.5, |x p | &gt; 0.9 - M KK 3 2.5 2 1.5 1 0.5 100 10 1 0.1 0.01 Figure 3: Invariant mass distribution for K + K − CEP at √ s = 62 GeV, compared to CERN– ISR data [52]</trash>
+
+
+				</figure>
+
+				<p>. The theory curves are calculated as described in the text, using the three different parameterizations of the meson form factor F M ( ˆ t) given in Section 2.1. The kaons are restricted to lie in the rapidity region |y K | &lt; 1.5 and the cut |x p | &gt; 0.9 is imposed on the outgoing protons.</p>
+
+			</div>
+			<div>
+				<head n="4.2">Limits from CDF diphoton data</head>
+
+				<p>In</p>
+
+				<p>[53] the observation of 43 γγ events with |η(γ)</p>
+
+				<figure>
+					<trash>| &lt; 1.0 and E T (γ) &gt; 2.5 GeV, with no other particles detected in −7.4 &lt; η &lt; 7.4 was reported, corresponding to a cross section of σ γγ = 2.48 +0.40 −0.35 (stat) +0.40 −0.51 (syst) pb.</trash>
+
+
+				</figure>
+
+				<p>In principle there could be some non–negligible contamination to this data from exclusive π 0 π 0 → 4γ production, with the photons in the π 0 decay merging or one photon being undetected, however this was determined experimentally to be very small, with F π 0 π 0 = N(π 0 π 0 )/N(γγ) &lt; 0.34, at 95% C.L, and a best fit value of zero observed contamination (F π 0 π 0 = 0). Here &apos;N(π 0 π 0 )&apos; is the number of the observed π 0 π 0 events, and similarly for γγ. Once the difference in acceptance due to the π 0 π 0 → 4γ decay is accounted for, this may translate into a somewhat looser limit on the relative cross sections, although this effect should not be too dramatic, as to first approximation the photons from the decay of the very light pions will travel collinear to the original pion direction. This limit is in agreement with the perturbative results of [4], which make the non–trivial prediction that the perturbative contribution to flavour–non–singlet meson pair production (such as π 0 π 0 ) is dynamically suppressed, with in particular σ(π 0 π 0 )/σ(γγ) ∼ 1% within the CDF event selection. However, we should also determine whether the &apos;non–perturbative&apos; approach described above would predict any significant π 0 π 0 contamination in the kinematic region relevant to this CDF data. In Table 2 we show the results of this model for the three different choices (4–6) of meson form factor described in Section 2.1. We take model 1 of [30] for the eikonal survival factor, with no meson Reggeization included, and with the Poisson suppression CDF (γγ) Pert. Exp. Orear Power σ [pb]</p>
+
+				<figure>
+					<trash>2.48 0.01 0.01 30 500 Table 2</trash>
+
+
+				</figure>
+
+				<p>: Cross section predictions for π 0 π 0 CEP, with E ⊥ (π 0 ) &gt; 2.5 GeV, and |η π | &lt; 1, calculated within the Regge–based approach discussed in this paper, for the three choices (4–6) of meson form factor described in Section 2.1. Also shown are the predictions of the perturbative approach described in [4], and, for the sake of comparison, the CDF measurement [53] of for γγ CEP within the same acceptance. (7) included; if the Poisson suppression is excluded the resultant cross sections are larger by almost an order of magnitude, leading to even stronger constraints on the meson form factors. We can see immediately that the difference between these form factors is huge, spanning ∼ 4 orders of magnitude. The reason for this is that these predictions are sensitive to relatively high E ⊥ &gt; 2.5 GeV values, where the difference in the form factors is huge (recall also from (3) that the form factor enters to the fourth power in the cross section). Thus while the ISR data, see Figs. 2 and 3, are only sensitive to relatively low value of the meson E ⊥ (or equivalently, transverse momentum k ⊥ ) where the form factors are roughly similar in size, these high E ⊥ data provide a much more stringent constraint. In particular, we can see that both the power and Orear form factors, at least taking the default slope parameters of Table 1, are completely inconsistent with the observed CDF limit on π 0 π 0 CEP in this region. That is, ignoring acceptance effects for simplicity we have σ(π 0 π 0 ) &lt; 0.35σ(γγ) ≈ 0.8 pb, and with a best fit value that is consistent with zero. Although as discussed above the true limit may be somewhat higher, this is nonetheless clearly much lower than the predicted π 0 π 0 cross sections for the Orear and power form factors. Thus it appears that the CDF data tend to favour a &apos;soft&apos; exponential behaviour (4) for the meson factor, at least in this E ⊥ (π 0 ) &gt; 2.5 GeV, |η π | &lt; 1 region. However, as we shall comment below, new preliminary CDF data on π + π − CEP at √ s = 900 and 1960 GeV, presented in [27, 28], which extend out to M ππ ∼ 5 GeV, and are therefore sensitive to a slightly lower region of meson k ⊥ , appear in fact to favour the &apos;Orear&apos; behaviour of (5), and disfavour this exponential form factor. Clearly then this question of the behaviour of the coupling of the Pomeron to the off–shell meson, which we have parameterized in the simple forms given in Section 2.1, is an uncertain one. More generally we should expect that, at sufficiently high meson k ⊥ , the perturbative approach described in [4–6] should be relevant. As we have discussed above, this approach predicts a strong dynamical suppression in the π 0 π 0 CEP cross section that is not present at all in the non–perturbative model considered here. At sufficiently high meson k ⊥ this suppression should play a role, and the simplified behaviour given by the form factors of (4–6) should break down. It seems reasonable to assume that for the kinematic region probed by the CDF γγ data, for which we have E ⊥ (γ) &gt; 2.5 GeV, a perturbative approach should be applied; indeed, the measured γγ cross section is in good agreement with the predictions of [7], which apply exactly such</p>
+
+				<figure>
+					<trash>pow. or. exp. dσ/dM π + π − [nb/GeV], √ s = 7 TeV, |y π | &lt; 2 . - M π + π − [GeV]</trash>
+
+
+				</figure>
+
+				<p>4</p>
+
+				<p><formula>.5 4 3.5 3 2.5 2 1.5 1 0.5 0 100000 10000 1000 100 10 pow. or. exp.</formula></p>
+
+				<p>dσ/dp ⊥ (π + π − ) [nb/GeV], √ s = 7 TeV, |y π | &lt; 2 . p ⊥ (π + π − ) [GeV]</p>
+
+				<figure>
+					<trash>3 2.5 2 1.5 1 0.5 0 100000 10000 1000 100 10 1 0.1</trash>
+
+					<head>Figure 4:</head>
+
+					<figDesc>Differential cross sections for π + π − CEP at the LHC, √ s = 7 TeV, with respect to the π + π − invariant mass and transverse momentum of the π + π − system (note that in this case the three curves are almost identical). The pions are restricted to lie in the rapidity range |y π | &lt; 2.</figDesc>
+
+				</figure>
+
+				<p>an approach. Nonetheless, the question of when this transition to the &apos;perturbative region&apos; should occur, in particular in the case of π 0 π 0 CEP (and other flavour–non–singlets), for which the pQCD–based approach predicts a strongly suppressed cross section, is an open one, and we may hope that future collider data on meson pair CEP will shed further light on this.</p>
+
+			</div>
+			<div>
+				<head n="4.3">Predictions for high energy colliders</head>
+
+				<p>In this section we present some selected numerical predictions for π + π − and K + K − production , for different c.m.s. energies and cuts on the final state particles, made throughout using the new Dime MC [35]. We present predictions for the three choices of meson form factor described above, with the default parameters given in Table 1</p>
+
+				<figure>
+					<figDesc>: by comparing these predictions with future collider data, we may for example hope to shed some slight on the issues discussed in the previous section. We show in Figs. 4–6 cross section predictions for π + π − CEP at the LHC ( √ s = 7 TeV) and Tevatron ( √ s = 1.96 TeV) collider energies, for the experimentally most relevant rapidity regions. All of the predictions which follow include the Poisson suppression of Section 2.2, and do not include any meson Reggeization. Soft survival effects are calculated using model 1 of [30]</figDesc>
+
+				</figure>
+
+				<p>, however we note that the distributions of the centrally produced particles which we will consider are highly insensitive to this choice (we will see later on that there is some dependence when the distribution of the outgoing protons is considered). Predictions for other c.m.s. energies and model parameters can be readily made using the Dime MC: due to the energy dependence of the soft survival factor, which suppresses the cross section more with increasing √ s, see e.g. [30], we predict that √ s [TeV]</p>
+
+				<figure>
+					<trash>0.5 0.9 1.96 7 14 σ(π + π − ) 28 23 20 17 16 σ(K + K − ) 4.3 4.0 3.6 3.1 3.0 σ(ρ 0 ρ 0 ) 0.29 0.28 0.26 0.26 0.25</trash>
+
+					<head>Table 3:</head>
+
+					<figDesc>Cross sections (in µb) for π + π − , K + K − and ρ 0 ρ 0 production at different √ s values.</figDesc>
+
+				</figure>
+
+				<p>The pions/kaons are restricted to lie in the rapidity region |η π,K | &lt; 2.5, while this cut is imposed on the (π + π − ) decay products of the ρ 0 .</p>
+
+				<figure>
+					<trash>pow. or. exp. dσ/dp ⊥ (π + ) [nb/GeV], √ s = 7 TeV, |y π | &lt; 2 . p ⊥ (π + ) [GeV] 3 2.5 2 1.5 1 0.5 0 100000 10000 1000 100 10 1 0.1 pow. or. exp. dσ/dp ⊥ (π + ) [nb/GeV], √ s = 7 TeV, |y π | &lt; 2, M π + π − &gt; 2 GeV . p ⊥ (π + ) [GeV] 3 2.5 2 1.5 1 0.5 0 100000 10000 1000 100 10 1 0.1</trash>
+
+					<head>Figure 5:</head>
+
+					<figDesc>Differential cross section for π + π − CEP at the LHC, √ s = 7 TeV, with respect to the transverse momentum of the π + . The pions are restricted to lie in the rapidity range |y π | &lt; 2, and the additional cut of M(π + π − ) &gt; 2 GeV is made in the right plot. the total meson pair CEP cross section will decrease gently with c.m.s. energy. This trend can be seen in Table 3</figDesc>
+
+				</figure>
+
+				<p>, where we show the predicted π + π − , K + K − and ρ 0 ρ 0 cross sections at five different experimentally interesting √ s values, for the case that the pions/kaons are restricted to lie in the rapidity region |η π,K | &lt; 2.5 (in the ρ 0 case this cut is imposed on the π + π − decay products). These predictions are made using the &apos;Orear&apos; form factor (5); the π + π − cross section, integrated down to zero transverse momentum, is largely insensitive to this choice, while there is some, O(10%) and O(50%), variation in the case of the higher mass K + K − and ρ 0 ρ 0 states, respectively. The predicted cross sections are very large, O(µb), and so such processes represent very promising observables, even during low luminosity runs, with in particular the potential for making observations in the presence of tagged protons at CMS/ATLAS with the TOTEM/ALFA detectors being a very interesting possibility (see for example [23, 24]).</p>
+
+				<p>In</p>
+
+				<p>Fig. 4 we show differential cross sections for π + π − production at the LHC with respect to the invariant mass and transverse momentum of the π + π − system. For this exclusive</p>
+
+				<figure>
+					<trash>pow. or. exp. dσ/dM π + π − [nb/GeV], √ s = 1.96 TeV, |η π | &lt; 1.3 . - M π + π − [GeV]</trash>
+
+
+				</figure>
+
+				<p>4</p>
+
+				<p><formula>.5 4 3.5 3 2.5 2 1.5 1 0.5 0 100000 10000 1000 100 10 1 pow. or. exp. dσ/dp ⊥ (π + ) [nb/GeV], √ s = 1.96 TeV, |η π | &lt; 1.3 . p ⊥ (π + ) [GeV]</formula></p>
+
+				<figure>
+					<trash>3 2.5 2 1.5 1 0.5 0 100000 10000 1000 100 10 1</trash>
+
+					<head>Figure 6:</head>
+
+					<figDesc>Differential cross sections for π + π − CEP at the Tevatron, √ s = 1.96 TeV, with respect to the π + π − invariant mass and transverse momentum of the π + . The pions are restricted to lie in the pseudorapidity range |η π | &lt; 1.3.</figDesc>
+
+				</figure>
+
+				<p>process, the π + π − system recoils against the intact outgoing protons, and so this transverse momentum distribution is driven by the proton form factors F p (t) in (3). Thus the shape of the predicted differential cross section is essentially independent of the meson form factor, F M ( ˆ t), taken in the production subprocess. Any significant deviation from these distributions for data selected without tagged protons (i.e. by rapidity vetoes within some acceptance regions), in particular the observation of a broader p ⊥ spectrum, may be evidence for a non–exclusive proton dissociative contribution to the data. In the case of the invariant mass distribution, there is a difference between the meson form factors, which becomes transparent above M π + π − 2 GeV, to which the existing ISR data do not extend. This can also be seen in Fig. 5, for the distributions with respect to the transverse momentum p ⊥ of the π + (chosen for definiteness, although of course the π − distribution is completely equivalent), in particular in the region beyond p ⊥ (π + ) ≈ 1 GeV. We also show the case when an additional cut M(π + π − ) &gt; 2 GeV is imposed: this would in general be preferable in order to ensure we are safely away from the resonant region, and so isolate the non–resonant contribution. In Fig. 6 we show similar distributions, but for the Tevatron ( √ s = 1.96 TeV), while in Fig. 7 we show results for K + K − and ρ 0 ρ 0 production at the LHC, and the conclusions are the same. The different form factor predictions can be further distinguished by considering the distribution of the meson (π + , K + ...) transverse momentum in the meson pair rest frame, so that any contribution due to the non–zero p ⊥ of the meson pair (or equivalently, the outgoing protons) is subtracted. In Fig. 8 we show predictions for this at the LHC, √ s = 7</p>
+
+				<p>TeV, for π + π − production, and we find that, in particular for the exponential meson form factor, which has the softest predicted p ⊥ distribution, the difference between the form factor predictions is increased. More generally, it is preferable to consider such a variable as it is</p>
+
+				<figure>
+					<trash>pow. or. exp. dσ/dM KK [nb/GeV], √ s = 7 TeV, |y K | &lt; 2 - M KK 4.5 4 3.5 3 2.5 2 1.5 1 0.5 0 100000 10000 1000 100 10 pow. or. exp. dσ/dM ρρ [nb/GeV], √ s = 7 TeV, |y π | &lt; 2 . - M ρρ [GeV] 4.5 4 3.5 3 2.5 2 1.5 1 0.5 0 10000 1000 100 10 1</trash>
+
+					<head>Figure 7:</head>
+
+					<figDesc>Differential cross sections for K + K</figDesc>
+
+				</figure>
+
+				<p>− and ρ 0 ρ 0 CEP at the LHC, √ s = 7 TeV, with respect to the meson pair invariant mass. The kaons and ρ 0 decay products (π + π − ) are restricted to lie in the rapidity range |y| &lt; 2. independent of the proton p ⊥ distribution (which is dependent on the proton form factors F p (t)) and so it will only be driven by the physics of the meson pair production subprocess, i.e. the choice of meson form factor. Another observable which can be highly sensitive to the choice of meson form factor F M ( ˆ t) is the angular distribution of the mesons in the pair rest frame. Higher values of the meson transverse momentum p ⊥ are disfavoured, and so larger values of the pair invariant mass will be preferentially produced by large rapidity separations between the mesons, where the corresponding meson p ⊥ is minimized. Such a configuration is equivalent to higher values of | cos θ| in the meson pair rest frame, and so we will expect this behaviour to affect the meson angular distributions in a M X dependent way, with the precise quantitative prediction depending on the choice of F M ( ˆ t). A particularly transparent way to examine the mass dependence of these distributions is to consider the expectation values of the Legendre polynomials P l (cos θ), and so in Fig. 9 we show this for π + π − production at √ s = 1.96 TeV for the two lowest non–trivial l = 2, 4 cases 6 (note that the predicted angular distributions are even in cos θ and so the odd l contributions vanish), using the three choices of pion factor given in Section 2.1. The difference between the form factors is immediately clear, and thus such observables may prove very useful in distinguishing between these choices (we also find that these distributions are largely unaffected by the soft survival factor). We note that preliminary measurements of these distributions by the CDF collaboration have been presented in [27,28], and these are in quite encouraging agreement with the predictions of Fig. 9 (which apply the same cuts on the pions as in the CDF analysis) for the case of the &apos;Orear&apos; (5) form</p>
+
+			</div>
+			<div>
+				<head n="6">In Fig. 9</head>
+
+				<p>the angle θ is defined with respect to the beam axis, in the π + π − rest frame. It is also possible to consider a related observable, defined with respect to the incoming Pomeron/Reggeon exchange, however this cannot be determined experimentally in the absence of proton tagging.</p>
+
+				<figure>
+					<trash>pow. or. exp. dσ/dp ⊥ (π + ) r.f. [nb/GeV], √ s = 7 TeV, |y π | &lt; 2 . p ⊥ (π + ) r.f. [GeV] 3 2.5 2 1.5 1 0.5 0 100000 10000 1000 100 10 1 0.1 pow. or. exp. M π + π − &gt; 2 GeV dσ/dp ⊥ (π + ) r.f. [nb/GeV], √ s = 7 TeV, |y π | &lt; 2 . p ⊥ (π + ) r.f. [GeV] 3 2.5 2 1.5 1 0.5 0 10000 1000 100 10 1 0.1 0.01 0.001</trash>
+
+					<head>Figure 8:</head>
+
+					<figDesc>Differential cross sections for π + π</figDesc>
+
+				</figure>
+
+				<p>− CEP at the LHC, √ s = 7 TeV, with respect to the transverse momentum of the π + in the π + π − rest frame. The pions are restricted to lie in the rapidity range |y π | &lt; 2.</p>
+
+				<figure>
+					<trash>pow. exp. or. P 2 (cos(θ)) . - M π + π − [GeV] 5 4.5 4 3.5 3 2.5 2 1.5 1 0.5 0.4 0.3 0.2 0.1 0 -0.1 -0.2 -0.3 -0.4 pow. exp. or. P 4 (cos(θ)) . - M π + π − [GeV] 5 4.5 4 3.5 3 2.5 2 1.5 1 0.5 0.4 0.3 0.2 0.1 0 -0.1 -0.2 -0.3 -0.4 Figure 9</trash>
+
+
+				</figure>
+
+				<p>: Expectation values of the l = 2, 4 Legendre polynomials P l (cos θ), where θ is the angle of the π + with respect to the beam axis, in the π + π − rest frame. The predictions shown correspond to √ s = 1.96 TeV and for the additional cuts p ⊥ (</p>
+
+				<figure>
+					<trash>π) &gt; 0.4 GeV, |η(π)| &lt; 1, |y(π + π − )| &gt; 1.0 imposed, as in [27, 28]. 1 15 13 10 7.6 6.4 model 2 23 21 17 13 11 model 3 15 14 12 10 8.8 model 4 15 14 12 9.1 7.9</trash>
+
+					<head>Table 4:</head>
+
+					<figDesc>Soft suppression S 2</figDesc>
+
+				</figure>
+
+				<p>eik (in %), defined in (17), and calculated using the four soft models described in [30], for π + π − CEP at different c.m.s. energies. The pions are restricted to lie in the rapidity region |y π | &lt; 2.5. factor 7 (there is good agreement as well for the higher l = 6, 8 terms, which are found to be small in the data). While this data appears to favour such a form factor, we recall from Section 4.2 that such a form factor appears to be in strong conflict with the earlier CDF limit [53] on π 0 π 0 CEP for E ⊥ (π 0 ) &gt; 2.5 GeV and |η π | &lt; 1.</p>
+
+				<p>Finally, we consider in more detail the effect of the soft survival factor, see section 2.5, on the cross section predictions. In Table 4 we show predictions for the average suppression factors S 2 eik , defined in (17) 8 by which soft survival effects will suppress the total π + π − cross sections with |y π | &lt; 2.5. We show these for four different soft models described in [30] (see Section 2.5). As discussed in [30], these models corresponds to different input parameters and parameterizations of the Pomeron coupling to Good–Walker eigenstates, and these all provide a good description of the available soft hadronic data on elastic and diffractive scattering. On the other hand, we can see that the predictions for the survival factor vary by as much as a factor of 2 between these model choices, demonstrating the uncertainty in the current models of soft physics. We may also consider what additional information can be provided on the soft survival factor by measuring the momenta of the outgoing intact protons. It is in particular interesting to consider the distribution in the azimuthal angle between the p ⊥ vectors of the outgoing protons (see for instance [44, 49, 50]) which is in general sensitive to both the structure of the production subprocess and spin/parity of the centrally produced state, as well as soft 7 We note in passing that one interesting measurement reported in [27, 28] is a new limit on the χ c0 CEP cross section, via the χ c0 → π + π − , K + K − channels, of dσ/dy| y=0 (χ c0 ) 20 nb at 90% confidence. This appears to suggest a somewhat larger contribution from the higher spin χ c(1,2) states to the χ cJ → J/ψγ combined CDF cross section measurement of [54] than that predicted in [7], and a similar trend is also seen in the preliminary LHCb data [55]. To further clarify this issue we note that an observation of χ c0 → π + π − may be possible if an additional constraint is imposed on the minimum pion p ⊥ (see also [14]) or, equivalently, maximum | cos θ|; while the form factor F M ( ˆ t) will lead to a preference for larger cos θ values as M π + π − is increased, the isotropic χ c0 decay distribution will not, and so by requiring | cos θ| &lt; 0.6 (say) the continuum background will be reduced preferentially, and an increased S/ √ B may be achievable. 8 More precisely, it is Eq. (11) of [30] which is used. We note that the averaged survival factors quoted here cannot be used directly to give the relative cross section predictions for the different models of [30], as the &apos;bare&apos; cross section itself, i.e. the denominator of this Eq. (11), also depends on the model choice through the different couplings of the Pomeron to the Good–Walker eigenstates in each model.</p>
+
+				<figure>
+					<trash>model 4 model 3 model 2 model 1 dσ/dφ [nb], √ s = 13 TeV . - φ 3 2.5 2 1.5 1 0.5 0 7500 7000 6500 6000 5500 5000 4500 4000 3500 3000 model 4 model 3 model 2 model 1 dσ/dφ [nb]</trash>
+
+
+				</figure>
+
+				<p>,</p>
+
+				<figure>
+					<trash>√ s = 13 TeV, p ⊥,1 , p ⊥,2 &gt; 0.5 GeV . - φ 3 2.5 2 1.5 1 0.5 0 700 600 500 400 300 200 100 0 model 4 model 3 model 2 model 1 dσ/dφ [nb]</trash>
+
+
+				</figure>
+
+				<p>,</p>
+
+				<figure>
+					<trash>√ s = 13 TeV, p ⊥,1 &gt; 0.5 GeV, p ⊥,2 &gt; 0.8 GeV . - φ 3 2.5 2 1.5 1 0.5 0 120 100 80 60 40 20 0 model 4 model 3 model 2 model 1 dσ/dφ [nb]</trash>
+
+
+				</figure>
+
+				<p>,</p>
+
+				<figure>
+					<trash>√ s = 13 TeV, p ⊥,1 &gt; 0.5 GeV . - φ 3 2.5 2 1.5 1 0.5 0 1400 1200 1000 800 600 400 200 Figure 10</trash>
+
+
+				</figure>
+
+				<p>: Differential cross section dσ/dφ, where φ is the azimuthal angle between the outgoing proton p ⊥ vectors, at the √ s = 13 TeV LHC, for the four soft models of [30].</p>
+
+				<p>Results are also shown for different cuts on the magnitude of the proton p ⊥ , and for a cut |y π | &lt; 2 on the centrally produced pions. For display purposes the predictions are normalized in the first φ bin, to the model 1 predictions.</p>
+
+				<figure>
+					<trash>p 1⊥ &gt; 0.5 GeV p 1⊥ &gt; 0.5 GeV, p 2⊥ &gt; 0.8 GeV p 1⊥ , p 2⊥ &gt; 0.5 GeV no cuts dσ/dφ [nb]</trash>
+
+
+				</figure>
+
+				<p>,</p>
+
+				<figure>
+					<trash>√ s = 13 TeV, no S 2 . - φ 3 2.5 2 1.5 1 0.5 0 90000 80000 70000 60000 50000 40000 30000 Figure 11</trash>
+
+
+				</figure>
+
+				<p>: Differential cross section dσ/dφ, where φ is the azimuthal angle between the outgoing proton p ⊥ vectors, at the √ s = 13 TeV LHC, with soft survival effects omitted.</p>
+
+				<p>Results are shown for the four choices of cuts shown in Fig. 10, and for a cut |y π | &lt; 2 on the centrally produced pions. For display purposes the predictions are normalized in the first φ bin, to the prediction where no cuts are applied to the outgoing protons. survival effects. In Fig. 10 we show this distribution at the LHC ( √ s = 13 TeV) for the four different soft models described in [30]. While for the full cross section it appears that there is only a fairly small difference in shape between the different models, once cuts are placed on the magnitude of the proton p ⊥ , this difference becomes more apparent. Moreover, we can observe a very distinct &apos;diffractive&apos; dip structure, with the distributions reaching a minimum at a particular value of φ. This is a consequence of the destructive interference between the screened and bare amplitudes in (16), which becomes particularly pronounced at higher proton p ⊥ , corresponding to a less peripheral interaction where survival effects are stronger. For a particular value of φ this interference is strongest, resulting in the observed minimum in the φ distribution (such an effect was predicted in [44], see also [49,50]). For the sake of comparison, in Fig. 11 we show the φ distributions for these different cuts, without survival effects included (i.e. simply taking the &apos;bare&apos; amplitude of (3)), and we can see that this dip behaviour disapears completely. As the form of the screened amplitude depends on the particular soft model, we may expect the position and depth of this minimum to be sensitive to this, as well as depending on the particular cuts imposed on the proton p ⊥ . In fact, it appears from Figs. 10 that the position of the minimum does not depend too strongly on the choice of model, but nonetheless the overall shape of the φ distribution does show some variation. We note that these distributions are largely independent of the details of the meson production subprocess (i.e. the shape taken for meson form factor, although for completeness we note that the exponential form factor (4) is taken here), and so represent a potentially unique handle with which to test the different available models for soft proton interactions. For this reason, the observation of, for example π + π − and/or K + K − CEP with tagged protons would provide valuable insight into this issue.</p>
+
+			</div>
+			<div>
+				<head n="5">The effect of proton dissociation</head>
+
+				<p>As discussed in the introduction, a LRG veto on additional particles in a certain rapidity region is commonly used to experimentally select exclusive events. However, without tagging the outgoing intact protons it is impossible to guarantee that these will be purely exclusive, and there will always in general be some contamination from events where either or both protons dissociate. It is therefore crucial to understand how important such a contribution will be when comparing any data selected with a LRG veto with the purely exclusive prediction presented here.</p>
+
+				<p>To evaluate the size of this possible contamination at the LHC, we can use the recent HERA measurements, by the H1 collaboration, of the elastic and proton–dissociative cross sections for the photoproduction of J/ψ mesons [56] as a guide. In this case, it is found that the ratio of proton-dissociative (pd) to elastic cross sections is quite large, with σ pd /σ el ∼ 0.9, for a proton–dissociative system Y of mass M Y &lt; 10 GeV. If we now consider the LHC, the range of allowed M Y can be estimated by considering the case that the final–state particles in the dissociative system have some average transverse momenta k ⊥ , for which the system spans a rapidity [57] ∆η</p>
+
+				<p><formula>≈ ln M 2 Y k ⊥ m p . (19)</formula></p>
+
+				<p>Taking a sensible value for the transverse momentum k ⊥ ∼ 1 GeV, and a typical LHC central detector coverage out to η = 5, i.e. an uninstrumented ∆η ≈ 4 − 4.5 for √ s = 7 − 14 TeV, then gives M Y 7 − 10 GeV. The H1 data therefore corresponds to a very similar region of M Y , and suggests that the admixture of proton–dissociative events at the LHC could be rather large, although to get a more realistic estimate a MC simulation of the system Y , including the precise detector acceptances, would clearly have to be performed. We recall that an analysis of low energy proton–proton data [58] suggests that the probability of a low mass, p → N * dissociation is about 15%. In the case of high mass dissociation, we can expect about a 10% contribution from secondary Reggeons (using the IP IP IR vertex from [59]), while the remaining 75% must then be caused by the triple–Pomeron (IP IP IP ) term, which is in agreement with the estimates of [59].</p>
+
+				<p>In the case of low mass dissociation (i.e. the first 15% of the proton dissociative contribution ) we expect the distribution over the squared momentum transfer, t, and the impact parameter, b t , to be more or less the same as in the pure elastic CEP case, as these distributions are driven by the same baryon form factors. On the other hand, the contributions described by the triple–Reggeon terms have a different structure, and are not concentrated in the same regions of b t space. First, the size of the IP IP IP and the IP IP IR triple–Reggeon vertices are smaller [59–61] than the proton size. This is seen for example, in the H1 measurement of the slope in proton–dissociative events, b pd = 1.79 ± 0.12 GeV −2 [56], which is lower than that in elastic case, for which b el = 4.88 ± 0.15 GeV −2 . More importantly than this is the fact that this dissociation is described by the one proton– Reggeon vertex, that is by one power of the proton form factor, F p (t), while the elastic cross section contains the form factor squared F p (t) 2 . In other words, while proton dissociation is described by the first power of the wave function, in the elastic exclusive process we deal with the proton wave function (i.e. parton b t distribution) squared, and this contribution is concentrated at much smaller values of b t , where the opacity, and thus the probability of additional inelastic soft interactions, which may fill the rapidity gap, is larger. This was not a problem in the case of photoproduction in ep collisions, studied by H1 [56], as here the effect of absorptive corrections is very small. However the number of additional (multiple) interactions in high–energy proton–proton collisions is large and we have to account for the role of the gap survival factor, S 2 eik (see for more details, e.g. [1, 4, 30, 62]) to give a realistic account of the exclusive and dissociative processes. Thus, to translate from the H1 result to the case of proton–proton interactions we have to multiply the high mass contribution to σ pd /σ el by the ratio of survival factors, r S = S 2 eik (pd)/S 2 eik (el). We must also account for the fact that at the LHC the probability of low mass–dissociation is found to be smaller than at low energies: according to the √ s = 7 TeV measurement by the TOTEM [63], we should instead take a value of 5% for this contribution. Such a change is expected theoretically due to the increased importance of absorptive effects at the higher LHC energies as compared to the fixed–target and ISR data.</p>
+
+				<p>To estimate the value of r S we write the single diffractive cross section, for a pair of mesons of invariant mass M X produced at central rapidity, y X = 0, as</p>
+
+				<figure>
+					<trash>dσ d ln M 2 Y dt ∝ dt ′ β(0) β 2 (t) g 3P (t ′ ) M 2 Y s 0 α(0)−1 s M 2 X α(t)−1 dPS 2 |M h | 2 ˆ s 2 , (20)</trash>
+
+
+				</figure>
+
+				<p>where t is the squared momentum transfer to the intact proton, β(t) is the Pomeron–nucleon coupling, M h is the hard IP IP → M 3 M 4 amplitude (i.e. as given in (3) with the s 13 , s 24 terms, and proton form factors F p (p 2 i⊥ ) removed), which we assume to be point–like and thus have no effect on r S , and dPS 2 indicates the M 3 , M 4 phase space integration. t ′ is the squared momentum transfer in the Pomeron loop between M Y and the hard process |M h | 2 , while we have made the approximation that for centrally produced mesons the cross section scales like ∼ (1/ξ) 2α(t)−2 , where ξ = M X / √ s is the momentum fraction transferred through the Pomeron which connects the intact proton to the hard process 9 . We use the recent two–channel soft interaction model of [30] together with the t–slope measured by H1 in proton–dissociative 9 Strictly speaking, this scaling is not consistent with the behaviour of (3), for which e.g. s 13 /s 0 ∼ M X √ s/s 0 and not ∼ 1/ξ = √ s/M X for centrally produced mesons. Rather, we find this behaviour if we make the arguably more physically reasonable assumption that the correct Regge scaling variable is s 13 /(| ˆ t| + ˜ s 0 ), wherê t corresponds to the off–shellness of the t–channel meson exchange, as in (3), and s 0 is an undetermined soft scale. This is reminiscent of the s/M 2 scaling we find for high–mass dissociation, and is consistent with the (cos θ t ) α(t) behaviour we expect from Regge theory, where θ t is the usual t–channel scattering angle. However, the effect of including this scaling in (3) can be largely, although not completely, absorbed into a redefinition of the off–shell meson form factor and reasonable choice of s 0 , and moreover there (M X , M Y ) [GeV]</p>
+
+				<figure>
+					<trash>(3,5) (3,10) (10,5) (10,10) r S 1.68 1.86 1.88 2.08 Table 5: Ratios r S = S 2 eik (pd)/S 2</trash>
+
+
+				</figure>
+
+				<p>eik (el) of the soft survival factors for single proton dissociative and pure exclusive production of a state X, of mass M X and rapidity y X = 0, and for a mass M Y of the dissociation system. Values are shown for the model 3 of the soft proton interactions described in [30], and with multi–Pomeron vertices g</p>
+
+				<figure>
+					<trash>n m = G 3P (λg N ) n+m−3 included. events [56]</trash>
+
+
+				</figure>
+
+				<p>. In general the value of r S will depend on M X , y X and M Y , due to the non– zero slope of the Reggeon trajectory, which will affect the b t distribution of the amplitude differently depending on the available rapidity intervals. We therefore present in Table 5 estimates for some representative values of M X and M Y , assuming y X = 0 for simplicity. We use model 3 of [30] (which gives an intermediate prediction for the different model choices) for the sake of concreteness and, as well as the triple–Reggeon vertex, G 3P = g 1 2 , we allow for multi–Pomeron vertices g n m = G 3P (λg N ) n+m−3 , which will provide an additional source of screening corrections in proton–proton interactions, when compared to the HERA case.</p>
+
+				<p>Taking other versions of the model in [30] gives values which differ by as much as ±20%, while excluding multi–Pomeron vertices decreases r S by ∼ 30 − 40%. These values also depend on the slope of the Pomeron trajectory, for which we use α</p>
+
+				<figure>
+					<trash>′ P = 0.25 GeV −2 .</trash>
+
+
+				</figure>
+
+				<p>Thus we can see that while there is some reasonable uncertainty and model–dependence in the precise value, the expected enhancement r S in the proton dissociative contribution is quite large, with some gentle increase expected at higher M X and/or M Y . Very roughly, if we ignore any differences between the mass M Y probed at HERA and the LHC (which, as discussed above, are expected to be similar), and we take the value r S = 1.7 and the HERA measurement of σ pd /σ el ∼ 0.75 for high mass dissociation then we expect σ pd (LHC)/σ el (LHC) ≈ 1.5 r S ≈ 2.5, where we have multiplied by 2 to account for the fact that either proton can dissociate (i.e. assuming the unistrumented regions are symmetric in rapidity, which is not the case at e.g. LHCb), and we have ignored the small contribution from low–mass dissociation for simplicity. While this estimate is clearly quite rough, it demonstrates that the contribution from proton dissociation to the current LHC measurements is nonetheless expected to be quite large 10 . This contamination is expected to be is a significant uncertainty and freedom in how to include such a ˆ t dependence when | ˆ t| s 0 . Nonetheless, measurements of central meson production, with and without proton dissociation may be sensitive to such differences. We take this form of the scaling in (20) because we believe it will give a more accurate prediction for the M X dependence of r S , although taking the scaling as in (3) only leads to a ∼ 20% differences for experimentally relevant values of M X . 10 As discussed in [14] the addition of Forward Shower Counters [64, 65], which were recently installed by CMS and successfully used in TOTEM + CMS measurements [20–22], would allow the contribution from events with comparatively high mass and of a large fraction of events with the low–mass diffractive dissociation to be excluded. The Zero Degree Calorimeters (ZDC), which detects neutral particles in the forward direction, see [64–66], could also be used during low–luminosity LHC runs to further exclude such even larger for processes which are dynamically suppressed in the purely exclusive case by the J P z = 0 + selection rule: for example, as discussed in [14], the relative contribution from higher–mass dissociation to χ c(1,2) events selected with a LRG veto (as in [55]) is expected to be enhanced when compared to the χ c0 case due to the J z = 0 suppression of the χ c(1,2) CEP cross sections. However, it is also worth recalling that in the case of higher–mass proton dissociation which, as described above, is expected to give the dominant source of contamination to exclusive events, the momentum transferred to the proton is relatively large, leading to a comparatively high transverse momentum, p X⊥ , of the centrally produced system, and this fact can be used to reduce or subtract such dissociative contamination, e.g. by simply placing a cut on higher values of p X⊥ .</p>
+
+				<p>Finally, we recall that at the Tevatron, previous CDF run II studies (see e.g. [53, 67] for earlier references), for which the events were also selected using a LRG veto, had a nearly full rapidity coverage, and so the contribution from events with unseen proton dissociation was practically negligible. In the new measurement [27, 28] of central π + π − production, where the rapidity coverage is not quite as extensive, the contribution from such events may be somewhat more important, although should still be quite small. In particular the unistrumented rapidity region ranges from ∆η ≈</p>
+
+				<figure>
+					<trash>1 − 1.7 for √ s = 900 − 1960 GeV, corresponding to M Y 1.5−2.2 GeV.</trash>
+
+
+				</figure>
+
+				<p>Such low mass dissociation should only give a small ∼ 20% contribution to the purely exclusive events. Indeed, for √ s = 900 GeV the rapidity interval is particularly small, and so such dissociation should be nearly absent.</p>
+
+			</div>
+			<div>
+				<head n="6">Conclusion</head>
+
+				<p>In this paper we have presented a detailed analysis of central exclusive meson pair production within the framework of Regge theory, as depicted in Fig. 1. Such an approach is expected to be relevant at lower values of the meson transverse momentum k ⊥ and/or pair invariant mass M X , and may be particularly important for the case of flavour–non–singlet mesons (ππ, KK...), for which the perturbative contribution is expected to be dynamically suppressed, see [4]. We have provided a detailed description of a phenomenological model for such processes, which on the one hand applies the well–established tools of Regge theory, but on the other is still currently somewhat unconstrained in its key ingredients. Such a model compares well to the existing ISR data on exclusive π + π − and K + K − production [51,52], but the new preliminary CDF data on π + π − CEP at √ s = 900 and 1960 GeV, presented in [27,28], as well as the forthcoming data from CMS [19], CMS+Totem [20–22], ATLAS+ALFA [23,24], RHIC [25] and LHCb [26] represent a new and potentially extensive test of this approach. This continuum production process also represents an irreducible background to the CEP of resonant states (f 0 , f 2 , χ c(0,2) ...) via two–body decays to mesons.</p>
+
+				<p>Motivated by this, in this paper we have implemented this phenomenological model in the new public Dime Monte Carlo [35] for meson pair (ππ, KK, ρρ) CEP. We give the user dissociative events. freedom to set the most important, and not fully constrained, aspects and parameters of the model, so that these can be compared with and constrained by future data. We also include the soft survival factor at the fully differential level, which (as described in e.g. [7]) is crucial to give a complete prediction, in particular when considering the distribution of the outgoing intact protons.</p>
+
+				<p>In Section 4 we have used this MC to make detailed numerical predictions for the Tevatron and LHC, demonstrating how different observables may be used to further test and constrain the phenomenological model. We have also shown that the distribution in azimuthal angle between the outgoing protons is highly sensitive to soft survival effects, with striking &apos;diffractive dips&apos; appearing when various cuts are placed on the proton p ⊥ . In this way, measurements of exclusive meson pair production with tagged protons may be used as a novel probe of the models of hadronic interactions used to calculate the soft survival factors. Such measurements are possible at the LHC, with the CMS+Totem [20–22] and ATLAS+ALFA [23, 24] during special low luminosity running conditions, and are already begin made at RHIC by the STAR collaboration [25]. In [4,5] it was shown how meson pair CEP may be modelled in a pQCD based framework, which should be relevant at sufficiently high meson transverse momentum k ⊥ . Such an approach leads to many non–trivial predictions and displays some remarkable theoretical features, as summarized in [6]. However, as the meson k ⊥ decreases, we would not expect to trust such an approach, and so we must instead consider a more model–dependent formalism, as described in this paper. Nonetheless, this model, while not firmly grounded in QCD, still presents an interesting and rich phenomenology, which is beginning to be explored with new analyses from the Tevatron and forthcoming data from the LHC and RHIC. More generally, we may hope in the future to experimentally probe the transition between these two regimes, an issue which still remains unclear. In the context of the model discussed in this paper, this transition is highly sensitive to the form factor for the coupling of Pomeron to the meson pair production subprocess. We have seen how the preliminary CDF measurement [27, 28] of π + π − production seems to be described better by an &apos;Orear&apos; type form factor (∼ exp(−bk ⊥ )). On the other hand we have also shown that such a form factor, which falls relatively gently with the meson k ⊥ in comparison to the standard &apos;soft&apos; exponential behaviour (∼ exp(−bk 2 ⊥ )), tends to predict a π 0 π 0 cross section at higher k ⊥ that is in strong conflict with the CDF measurement of γγ CEP [53], and corresponding limit on π 0 π 0 production. Further measurements will therefore be crucial in further clarifying this uncertain question.</p>
+
+				<p>The central exclusive production of meson pairs therefore represents a process of much phenomenological interest, which can shed light on both perturbative and non–perturbative aspects of QCD. Moreover it is of particular experimental relevance, with a range of forthcoming and existing hadron collider data to consider.</p>
+
+				<p>In this paper we have provided the tools for a more in depth comparison of the existing theory with such data, and in this way to shed further light on this interesting process.</p>
+
+			</div>
+
+			<note place="foot" n="1"> Sometimes in the literature a different form for thê t–dependence of the Reggeized meson exchange is used, see for example Eq (17) of [43], however our formulation is equivalent to this up to the (unknown) meson form factor F M ( ˆ t), and so amounts to a simple redefinition of this object. 2 We note that (9) can also be interpreted as the resummation of leading ln(1/x) contributions which may be enhanced with increased rapidity separation of the mesons.</note>
+
+			<note place="foot" n="3"> We note that the discussion below is identical for the case of anti–protons.</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+				<head>Acknowledgements</head>
+				<p>We thank Mike Albrow, Paula Collins, David d&apos;Enterria, Jonathan Hollar, Risto Orava, Kenneth Osterberg, James Stirling and Antoni Szczurek for useful discussions. This work was supported by the grant RFBR 14-02-00004 and by the Federal Program of the Russian State RSGSS-4801.2012.2. MGR thank the IPPP at the University of Durham for hospitality. VAK thanks the Kavli Institute for Theoretical Physics at USCB for hospitality during the preparation of this work.</p>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">D</forename>
+				<surname>Martin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">G</forename>
+				<surname>Ryskin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">A</forename>
+				<surname>Khoze</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Acta</forename>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Polon</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="page" from="1841" to="0903" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">G</forename>
+				<surname>Albrow</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">D</forename>
+				<surname>Coughlin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">R</forename>
+				<surname>Forshaw</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Prog.Part.Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="volume">65</biblScope>
+			<biblScope unit="page" from="149" to="1006" />
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">A</forename>
+				<surname>Harland-Lang</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">A</forename>
+				<surname>Khoze</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">G</forename>
+				<surname>Ryskin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">J</forename>
+				<surname>Stirling</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="1301" to="2552" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">A</forename>
+				<surname>Harland-Lang</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">A</forename>
+				<surname>Khoze</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">G</forename>
+				<surname>Ryskin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">J</forename>
+				<surname>Stirling</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eur.Phys.J</title>
+		<imprint>
+			<biblScope unit="volume">71</biblScope>
+			<biblScope unit="page" from="1714" to="1105" />
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">A</forename>
+				<surname>Harland-Lang</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">A</forename>
+				<surname>Khoze</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">G</forename>
+				<surname>Ryskin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">J</forename>
+				<surname>Stirling</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eur.Phys.J</title>
+		<imprint>
+			<biblScope unit="volume">73</biblScope>
+			<biblScope unit="page" from="2429" to="1302" />
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">A</forename>
+				<surname>Harland-Lang</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">A</forename>
+				<surname>Khoze</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">G</forename>
+				<surname>Ryskin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">J</forename>
+				<surname>Stirling</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="316" to="1304" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">A</forename>
+				<surname>Harland-Lang</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">A</forename>
+				<surname>Khoze</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">G</forename>
+				<surname>Ryskin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">J</forename>
+				<surname>Stirling</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eur.Phys.J</title>
+		<imprint>
+			<biblScope unit="volume">69</biblScope>
+			<biblScope unit="page" from="179" to="1005" />
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">J</forename>
+				<surname>Brodsky</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">P</forename>
+				<surname>Lepage</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page">1808</biblScope>
+			<date type="published" when="1981" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Benayoun</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">L</forename>
+				<surname>Chernyak</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="volume">329</biblScope>
+			<biblScope unit="page">285</biblScope>
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Kaidalov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Ter-Martirosyan</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="volume">75</biblScope>
+			<biblScope unit="page">471</biblScope>
+			<date type="published" when="1974" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<forename type="middle">I</forename>
+				<surname>Azimov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">A</forename>
+				<surname>Khoze</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">M</forename>
+				<surname>Levin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">G</forename>
+				<surname>Ryskin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sov.J.Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page">215</biblScope>
+			<date type="published" when="1975" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Pumplin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Henyey</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="volume">117</biblScope>
+			<biblScope unit="issue">377</biblScope>
+			<date type="published" when="1976" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">R</forename>
+				<surname>Desai</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">C</forename>
+				<surname>Shen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Jacob</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="volume">142</biblScope>
+			<biblScope unit="page">258</biblScope>
+			<date type="published" when="1978" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">A</forename>
+				<surname>Harland-Lang</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">A</forename>
+				<surname>Khoze</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">G</forename>
+				<surname>Ryskin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">J</forename>
+				<surname>Stirling</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eur.Phys.J</title>
+		<imprint>
+			<biblScope unit="volume">72</biblScope>
+			<biblScope unit="page" from="2110" to="1204" />
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Lebiedowicz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Szczurek</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="page" from="036003" to="0912" />
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Lebiedowicz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Szczurek</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="1212" to="0166" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<monogr>
+		<title level="m" type="main">An Introduction to Regge Theory and High-Energy Physics</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">D B</forename>
+				<surname>Collins</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1977" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Lebiedowicz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Nachtmann</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Szczurek</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="1309" to="3913" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<title level="m" type="main">David d&apos;Enterria, private communication</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<monogr>
+		<title level="m" type="main">CMS Collaboration) , talk at EDS Blois 2013 Workshop</title>
+		<author>
+			<persName>
+				<forename type="first">Christina</forename>
+				<surname>Mesropian</surname>
+			</persName>
+		</author>
+		<imprint>
+			<pubPlace>Saariselka, Lapland</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Totem Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Oljemark</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="1310" to="4305" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<title level="m" type="main">Fredrik Oljemark, talk at EDS Blois 2013 Workshop</title>
+		<imprint>
+			<pubPlace>Saariselka, Lapland</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Staszewski</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Lebiedowicz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Trzebinski</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Chwastowski</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Szczurek</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Acta Phys.Polon</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="page" from="1861" to="1104" />
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Tomas</forename>
+				<surname>Sykora</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Blois</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Workshop</title>
+		<imprint>
+			<date type="published" when="2013-09-09" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Leszek</forename>
+				<surname>Adamczyk</surname>
+			</persName>
+		</author>
+		<imprint>
+			<pubPlace>EDS Blois 2013 Workshop, Saariselka, Lapland</pubPlace>
+		</imprint>
+	</monogr>
+	<note>15th. conference on Elastic and Diffractive scattering</note>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<title level="m" type="main">Results and Prospects of Forward Physics at the LHC&apos;, CERN, Feb</title>
+		<author>
+			<persName>
+				<forename type="first">Paula</forename>
+				<surname>Collins</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="11" to="13" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Albrow</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Swiech</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Zurek</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="1310" to="3839" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<monogr>
+		<title level="m" type="main">Mike Albrow, talk at EDS Blois 2013 Workshop</title>
+		<imprint>
+			<pubPlace>Saariselka, Lapland</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">G</forename>
+				<surname>Ryskin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">D</forename>
+				<surname>Martin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">A</forename>
+				<surname>Khoze</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Eur</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.J</title>
+		<imprint>
+			<biblScope unit="volume">60</biblScope>
+			<biblScope unit="page" from="265" to="0812" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">A</forename>
+				<surname>Khoze</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">D</forename>
+				<surname>Martin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">G</forename>
+				<surname>Ryskin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Eur</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">1306.2149. [31] V. Khoze, A. Martin, and M. Ryskin, Eur.Phys.J. C74</title>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="2503" to="2756" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Gotsman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Levin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">U</forename>
+				<surname>Maor</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="1208" to="0898" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Gotsman</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Levin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">U</forename>
+				<surname>Maor</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">85</biblScope>
+			<biblScope unit="page" from="094007" to="1203" />
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Alexander Austregesilo for the COMPASS Collaboration</title>
+		<imprint>
+			<biblScope unit="page">3190</biblScope>
+			<date type="published" when="1310" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<monogr>
+		<title/>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Lebiedowicz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Pasechnik</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Szczurek</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="page" from="1103" to="5642" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Donnachie</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">V</forename>
+				<surname>Landshoff</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1992" />
+			<biblScope unit="page">9209205</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Orear</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev.Lett</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="issue">112</biblScope>
+			<date type="published" when="1964" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Anselm</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Dyatlov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physics Letters B</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page">479</biblScope>
+			<date type="published" when="1967" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Andreev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">M</forename>
+				<surname>Dremin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Pisma</forename>
+				<surname>Zh</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eksp.Teor.Fiz</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">810</biblScope>
+			<date type="published" when="1967" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Mandelstam</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Nuovo</forename>
+				<surname>Cim</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1963" />
+			<biblScope unit="page">1148</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Amati</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Stanghellini</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Fubini</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Nuovo</forename>
+				<surname>Cim</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1962" />
+			<biblScope unit="page">896</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">G</forename>
+				<surname>Yu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">K</forename>
+				<surname>Choi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Kim</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev</title>
+		<imprint>
+			<biblScope unit="volume">83</biblScope>
+			<biblScope unit="page" from="025208" to="1103" />
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">A</forename>
+				<surname>Khoze</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">D</forename>
+				<surname>Martin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">G</forename>
+				<surname>Ryskin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Eur</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.J</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="issue">581</biblScope>
+			<biblScope unit="page">0203122</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">G</forename>
+				<surname>Ryskin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Martin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">A</forename>
+				<surname>Khoze</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Eur</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.J</title>
+		<imprint>
+			<biblScope unit="volume">60</biblScope>
+			<biblScope unit="page" from="249" to="0812" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">G</forename>
+				<surname>Ryskin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">D</forename>
+				<surname>Martin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">A</forename>
+				<surname>Khoze</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Eur</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.J</title>
+		<imprint>
+			<biblScope unit="volume">71</biblScope>
+			<biblScope unit="page" from="1617" to="1102" />
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Khoze</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Martin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Ryskin</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2014" />
+			<biblScope unit="page" from="1402" to="2778" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">A</forename>
+				<surname>Khoze</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">D</forename>
+				<surname>Martin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">G</forename>
+				<surname>Ryskin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Eur</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.J</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">525</biblScope>
+			<biblScope unit="page">0002072</biblScope>
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">A</forename>
+				<surname>Harland-Lang</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">A</forename>
+				<surname>Khoze</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">G</forename>
+				<surname>Ryskin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">J</forename>
+				<surname>Stirling</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eur.Phys.J</title>
+		<imprint>
+			<biblScope unit="volume">71</biblScope>
+			<biblScope unit="page" from="1545" to="10110680" />
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">A</forename>
+				<surname>Harland-Lang</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">A</forename>
+				<surname>Khoze</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">G</forename>
+				<surname>Ryskin</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="1310" to="2759" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Ames-Bologna-Cern-Dortmund-Heidelberg-Warsaw</forename>
+				<surname>Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Breakstone</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Z.Phys</title>
+		<imprint>
+			<biblScope unit="volume">48</biblScope>
+			<biblScope unit="page">569</biblScope>
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Ames-Bologna-Cern-Dortmund-Heidelberg-Warsaw</forename>
+				<surname>Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Breakstone</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Z.Phys</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="page">387</biblScope>
+			<date type="published" when="1989" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Cdf</forename>
+				<surname>Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Aaltonen</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rev.Lett. Phys.Rev.Lett</title>
+		<imprint>
+			<biblScope unit="volume">108</biblScope>
+			<biblScope unit="issue">102</biblScope>
+			<biblScope unit="page" from="081801" to="242001" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Cern-Lhcb</forename>
+				<surname>Lhcb Collaboration</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>H1 Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Alexa</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eur.Phys.J</title>
+		<imprint>
+			<biblScope unit="volume">73</biblScope>
+			<biblScope unit="page" from="2466" to="1304" />
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">B</forename>
+				<surname>Kaidalov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Rept</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="issue">157</biblScope>
+			<date type="published" when="1979" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">B</forename>
+				<surname>Kaidalov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Sov</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J.Nucl.Phys</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page">226</biblScope>
+			<date type="published" when="1971" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">G S</forename>
+				<surname>Luna</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">A</forename>
+				<surname>Khoze</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">D</forename>
+				<surname>Martin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">G</forename>
+				<surname>Ryskin</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eur.Phys.J</title>
+		<imprint>
+			<biblScope unit="volume">59</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="0807" to="4115" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">B</forename>
+				<surname>Kaidalov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">A</forename>
+				<surname>Khoze</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<forename type="middle">F</forename>
+				<surname>Pirogov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<forename type="middle">L</forename>
+				<surname>Ter-Isaakyan</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.Lett</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="page">493</biblScope>
+			<date type="published" when="1973" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Field</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Fox</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1974" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Kaidalov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">A</forename>
+				<surname>Khoze</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">D</forename>
+				<surname>Martin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Ryskin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Eur</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.J</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page" from="521" to="0105145" />
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Totem</forename>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Antchev</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Europhys.Lett</title>
+		<imprint>
+			<biblScope unit="volume">101</biblScope>
+			<biblScope unit="page">21003</biblScope>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Albrow</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JINST</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="10001" to="0811" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<monogr>
+		<title level="m" type="main">Aldo Penzo, talk at Forward Physics at the LHC meeting, Reggio Calabria</title>
+		<imprint>
+			<date type="published" when="2013-07" />
+			<biblScope unit="page" from="15" to="18" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<monogr>
+		<title level="m" type="main">FERMILAB-PUB-10-718-CMS</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">J</forename>
+				<surname>Bell</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Cdf</forename>
+				<surname>Collaboration</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Albrow</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page" from="0909" to="3471" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

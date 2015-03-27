@@ -1,0 +1,1888 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">The Pinch Technique Beyond One Loop: The Gauge-Independent Two-Loop Quark Self-Energy</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="1998-11">November 1998</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName>
+								<forename type="first">N</forename>
+								<forename type="middle">J</forename>
+								<surname>Watson</surname>
+							</persName>
+							<email>Email: jay.watson@rl.ac.uk</email>
+							<affiliation>
+								<orgName type="department">InstitutdePhysiqueNucléaire</orgName>
+								<orgName type="laboratory">Division de Physique Théorique</orgName>
+								<orgName type="institution">UniversitédeParis-Sud</orgName>
+								<address>
+									<postCode>F-91406</postCode>
+									<settlement>OrsayCedex</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+							<affiliation>
+								<orgName type="laboratory">RutherfordAppletonLaboratory</orgName>
+								<address>
+									<postCode>OX110QX</postCode>
+									<settlement>Chilton, Didcot</settlement>
+									<region>Oxon</region>
+									<country key="GB">U.K</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">The Pinch Technique Beyond One Loop: The Gauge-Independent Two-Loop Quark Self-Energy</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="1998-11">November 1998</date>
+						</imprint>
+					</monogr>
+					<note>arXiv:hep-ph/9812202v1 1 Dec 1998</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>It is shown how the pinch technique algorithm may be consistently extended beyond the one-loop level to obtain the gauge-independent two-loop fermion self-energy −î Σ (2) (p) in QCD in the pinch technique approach. The starting point for the construction is the general diagrammatic representation of the two-loop quark self-energy in terms of renormalized one-loop two-and three-point function and tree level Bethe-Salpeter-type quark-gluon scattering kernel insertions in the one-loop quark self-energy. Using factors of longitudinal gluon four-momentum only from lowest order gauge field propagators and triple gauge vertices to trigger the relevant Ward identities, the function −î Σ (2) (p) is explicitly constructed from the consideration of the two-loop QCD corrections to the Compton scattering of a photon off a quark. It is shown that the resulting pinch technique self-energy −î Σ (2) (p) is gauge-independent at all momenta, does not shift the position of the propagator pole and is multiplicatively renormalizable by local counterterms. The demonstration of the gauge independence is based on an efficient diagrammatic method to deal with the several dozen two-loop diagrams involved. It is explicitly shown by this example that the general correspondence between the pinch technique n-point functions and those obtained in the background field method in the Feynman quantum gauge ξ Q = 1 does not persist beyond one loop.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+				<figure>
+					<trash>arXiv:hep-ph/9812202v1 1 Dec 1998 RAL-TR-1998-078 November 1998 The Pinch Technique Beyond One Loop: The Gauge-Independent Two-Loop Quark Self-Energy N.J. Watson 1 Division de Physique Théorique , Institut de Physique Nucléaire , Université de Paris-Sud, F-91406 Orsay Cedex, France.</trash>
+
+
+				</figure>
+
+				<p>Abstract It is shown how the pinch technique algorithm may be consistently extended beyond the one-loop level to obtain the gauge-independent two-loop fermion self-energy −î Σ (2) (p) in QCD in the pinch technique approach. The starting point for the construction is the general diagrammatic representation of the two-loop quark self-energy in terms of renormalized one-loop two-and three-point function and tree level Bethe-Salpeter-type quark-gluon scattering kernel insertions in the one-loop quark self-energy. Using factors of longitudinal gluon four-momentum only from lowest order gauge field propagators and triple gauge vertices to trigger the relevant Ward identities, the function −î Σ (2) (p) is explicitly constructed from the consideration of the two-loop QCD corrections to the Compton scattering of a photon off a quark. It is shown that the resulting pinch technique self-energy −î Σ (2) (p) is gauge-independent at all momenta, does not shift the position of the propagator pole and is multiplicatively renormalizable by local counterterms. The demonstration of the gauge independence is based on an efficient diagrammatic method to deal with the several dozen two-loop diagrams involved. It is explicitly shown by this example that the general correspondence between the pinch technique n-point functions and those obtained in the background field method in the Feynman quantum gauge ξ Q = 1 does not persist beyond one loop.</p>
+
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>The pinch technique (PT) [1–7] is a well-defined algorithm for the rearrangement of contributions to conventional one-loop n-point functions in gauge theories to obtain one-loop &quot; effective &quot; n-point functions which, most notably, are entirely independent of the particular gauge fixing procedure used (covariant, non-covariant, background field etc). This rearrangement of one-loop perturbation theory is based on the systematic use of the tree level Ward identities of the theory to cancel among Feynman integrands all factors of longitudinal four-momentum associated with gauge fields propagating in loops. In addition to being gauge-independent, the PT n-point functions display a wide range of further desirable theoretical properties.</p>
+
+				<p>In particular, they satisfy simple tree-level-like Ward identities corresponding to the gauge invariance of the classical lagrangian. As a result of these properties, the PT has been advocated as the appropriate theoretical framework for a broad range of applications in which one is forced to go beyond the strictly order-by-order computation of S-matrix elements, or to consider amplitudes for explicitly off-shell processes [4–8]. A fundamental criticism of the PT approach, however, is that, to date, it has remained restricted to the one-loop level: it has yet to be shown how the PT algorithm may be consistently extended beyond the one-loop level to obtain one-particle-irreducible (1PI) multi-loop n-point functions with the same desirable properties as at one loop. From a theoretical point of view, this extension is clearly essential if it is to be shown that the PT is more than just an artefact of the one-loop approximation. In particular, one would like to know whether the correspondence [9] between the PT gauge-independent n-point functions and those obtained in the background field method (BFM) [10,11] in the Feynman quantum gauge ξ Q = 1 persists beyond one loop. 2 From a phenomenological point of view, many of the applications of the PT increasingly demand accuracy beyond the one-loop level.</p>
+
+				<p>In attempting to extend the PT beyond the one-loop approximation, two basic problems arise: (1) How to deal consistently with triple gauge vertices all three legs of which are associated with gauge fields propagating in loops? In the PT at the one-loop level, the factors of longitudinal four-momentum associated with gauge fields propagating in loops originate from tree level gauge field propagators and triple gauge vertices. In particular, the triple gauge vertices which occur in one-loop diagrams always have one external leg A a µ (q) and two internal legs A r ρ (k 1 ), A s σ (k 2 ). It is then possible to decompose such vertices so as to isolate unambiguously the longitudinal factors k 1ρ , k 2σ associated with the internal gauge fields. Beyond one loop, however, there occur triple gauge vertices for which all three legs are internal. It is thus unclear how to decompose such vertices in order to identify the associated longitudinal factors which then trigger the PT rearrangement. (2) How to deal consistently with the &quot; induced &quot; factors of longitudinal internal gauge field four-momentum which originate from internal loop corrections? Beyond the one-loop level, in addition to the factors of longitudinal internal gauge field four-momentum from tree level gauge field propagators and triple gauge vertices, there occur further such factors originating from the invariant tensor structure of internal loop corrections. A simple example are the longitudinal factors occurring in the transverse structure of the gluon self-energy in QCD. It is thus unclear whether or not such &quot; induced &quot; factors should also be used to trigger the PT rearrangement; and, if so, how this may be done consistently.</p>
+
+				<p>In addition to these two problems of principle, one is also faced at the diagrammatic level with the algebraic complexity of attempting to implement the PT rearrangement among multi-loop n-point functions starting from arbitrary gauges. The purpose of this paper is to take the first step towards solving the first of the above problems. At the two-loop level to be considered here, the two problems are uncoupled and so can be investigated separately and successively: one has first of all to solve (1) in order to identify the one-loop internal corrections needed before one can address (2). By investigating here only the first problem, we effectively assume that the correct approach will turn out to be not to use the &quot; induced &quot; longitudinal factors to trigger further the PT rearrangement. In particular, throughout this paper, &quot; the PT &quot; will be understood to mean the PT algorithm implemented using only the longitudinal factors from lowest order gauge field propagators and triple gauge vertices. The possibility that one should in fact then go on to use the &quot; induced &quot; longitudinal factors to trigger further the PT rearrangement will be briefly discussed in the conclusions.</p>
+
+				<p>We consider the construction in the PT approach of the two-loop fermion self-energy in QCD. On the one hand, this example is non-trivial in that it involves diagrams with triple gauge vertices all three legs of which are internal. On the other hand, the quark selfenergy is simpler than, e.g., the two-loop gluon self-energy in the PT approach, since (i) the construction of the corresponding PT one-loop function is almost trivial, and (ii) the PT twoloop quark self-energy may be obtained from two-loop processes involving no diagrams with tree level four-point functions (quadruple gauge vertices or, possibly, gauge-ghost vertices). The starting point for the construction is the general diagrammatic representation of the two-loop quark self-energy in terms of renormalized one-loop two-and three-point function and tree level Bethe-Salpeter-type quark-gluon scattering kernel insertions in the one-loop quark self-energy. In terms of this diagrammatic representation, the first problem above may be recast as: how to reorganize consistently the contributions to the two-loop Feynman integrands involved so as to isolate, first, the PT one-loop n-point functions occurring as internal corrections, and thence the corresponding PT tree level Bethe-Salpeter-type kernel insertion? It will be shown here how, for the case of the two-loop fermion self-energy, this first problem may be consistently solved—and that the solution turns out to be remarkably simple. The paper is organized as follows. In section 2, the construction of the PT gaugeindependent one-loop quark self-energy −î Σ (1) (p) is reviewed. In section 3, the general diagrammatic representation which provides the basis for the construction of the PT twoloop quark self-energy −î Σ (2) (p) is described. In section 4, it is shown how the problem of purely internal triple gauge vertices in the PT is solved for the case in hand, enabling the consistent construction of −î Σ (2) (p) starting from the ordinary Feynman gauge. In section 5, the construction is generalized to the class of arbitrary linear covariant gauges in order to demonstrate explicitly the gauge independence of −î Σ (2) (p). In section 6, it is shown that the resulting two-loop function is renormalizable via the explicit calculation of the required twoloop counterterms. It is also shown that the PT two-loop quark self-energy leaves unchanged the position of the pole in the Dyson-summed fermion propagator (to two-loop order), and does not coincide with the self-energy obtained in the BFM at ξ Q = 1. A discussion and conclusions are given in section 7.</p>
+
+			</div>
+			<div>
+				<head>2</head>
+
+				<p>The pinch technique one-loop quark self-energy</p>
+
+				<p>We begin by reviewing the construction of the PT quark self-energy at the one-loop level [3]. This is worthwhile since the technique used here for the rather trivial one-loop case will be extended to the non-trivial two-loop case in the subsequent sections.</p>
+
+				<p>We work in the class of ordinary linear covariant gauges with QCD gauge parameter ξ (ξ = 0 is the Landau gauge). The free gluon and quark propagators are thus given by</p>
+
+				<figure>
+					<trash>iD µν (q, ξ) = i q 2 + iǫ −g µν + (1 − ξ) q µ q ν q 2 , (2.1) iS(q) = i q / − m + iǫ , (2.2)</trash>
+
+
+				</figure>
+
+				<p>respectively, where m is the renormalized mass of the given quark. 3 It will be convenient to introduce transverse and longitudinal projection operators as follows: t µν (</p>
+
+				<figure>
+					<trash>q) = g µν − q µ q ν q 2 , l µν (q) = q µ q ν q 2 . (2.3)</trash>
+
+
+				</figure>
+
+				<p>Also, we use as abbreviation for the volume element appearing in the Feynman integrals [dk]</p>
+
+				<figure>
+					<trash>= µ 2ǫ d d k (2π) d (2.4)</trash>
+
+
+				</figure>
+
+				<p>(we work always in d = 4 − 2ǫ dimensions with &apos;t Hooft mass scale µ).</p>
+
+				<p>In the conventional perturbation theory approach, the renormalized one-loop fermion selfenergy (two-point function) in QCD is specified by the diagrams shown in Fig. 1: Fig. 1a</p>
+
+				<figure>
+					<trash>= −iΣ (1) (p, ξ) = C F g 2 [dk]D ρρ ′ (k, ξ)γ ρ S(p − k)γ ρ ′ +(Z 2 − 1) (1) ξ i(p / − m) − (Z 2 (Z m − 1)) (1) ξ im (2.5) = −i Σ (1) 1 (p 2 , ξ) + (p / − m)Σ (1) 2</trash>
+
+
+				</figure>
+
+				<p>(p 2 , ξ) , (2.6) where C F is the quadratic Casimir coefficient for the fundamental representation (C F = (N 2 − 1)/2N for SU(N )) and g is the renormalized QCD gauge coupling (α s = g 2 /4π).</p>
+
+				<p>In Eq. (2.5), Z 2 and Z m are the quark wavefunction and mass renormalization constants,</p>
+
+			</div>
+			<div>
+				<head>1</head>
+
+				<figure>
+					<trash>(a) = (b) + (c) Fig. 1</trash>
+
+
+				</figure>
+
+				<p>. The Feynman diagrams specifying the conventional renormalized one-loop fermion self-energy −iΣ (1) (p, ξ) in QCD. The straight (curly) line represents the fermion (gluon) propagator. The black blob represents the sum of the fermion wavefunction and fermion mass counterterms. respectively (ψ 0 = Z 1/2 2 ψ and m 0 = Z m m, where the subscript 0 denotes bare quantities); the subscript ξ indictes the class of linear covariant gauges, while the superscript (1) denotes the O(α s ) term in the perturbative expansion. Carrying out the integration, the one-loop functions Σ</p>
+
+				<figure>
+					<trash>(1) 1 and Σ (1) 2</trash>
+
+
+				</figure>
+
+				<p>are given by (cf. e.g. Ref. [12]</p>
+
+				<figure>
+					<trash>) Σ (1) 1 (p 2 , ξ) = α s 4π C F m 3C UV − 3 ln m 2 − p 2 µ 2 + 1 + 3 + ξ − ξ m 2 p 2 L + (Z m − 1) (1) ξ m , (2.7) Σ (1) 2 (p 2 , ξ) = α s 4π C F ξ −C UV + ln m 2 − p 2 µ 2 − 1 − m 2 p 2 L − (Z 2 − 1) (1) ξ , (2.8)</trash>
+
+
+				</figure>
+
+				<p>where C UV = ǫ −1 +ln(4π)−γ E , with γ E Euler&apos;s constant, and L = 1+(m 2 /p 2 ) ln[1−(p 2 /m 2 )].</p>
+
+				<p>In general, and as exemplified by Eqs. (2.7) and (2.8), the conventional self-energy Σ(p, ξ) depends on the particular choice of gauge for all values of the fermion four-momentum p except at p / = M where M is the pole mass, defined from the solution of the transcendental equation p / − m − Σ(p, ξ)</p>
+
+				<figure>
+					<trash>p /=M = 0 . (2.9) The gauge-independent [13]</trash>
+
+
+				</figure>
+
+				<p>(and infrared-finite [14]) pole mass M is related in perturbation theory to the gauge-independent renormalized mass m by</p>
+
+				<figure>
+					<trash>M = m 1 + α s 4π c 1 + α s 4π 2 c 2 + . . . , (2.10)</trash>
+
+
+				</figure>
+
+				<p>where the coefficients c i are renormalization scheme-and scale-dependent. For example, in the modified minimal subtraction (MS) scheme, from Eq. (2.7), c 1 = C F [4 + 3 ln(µ 2 /M 2 )], while c 2 may be found in Refs. [15, 16].</p>
+
+				<p>In the PT approach, the conventional self-energy (2.5) is considered as just one particular correction to a given tree level process 1 + 2 → 3 + 4 involving the fermion as virtual intermediate state. The construction of the PT fermion self-energy is then based on the recognition that the integrands for the conventional vertex and box corrections to this process have welldefined components with exactly the same structure as that of the conventional self-energy. These components occur as a result of the presence in the integrands of factors of longitudinal four-momentum k ρ associated with the gluons A r ρ (k) propagating in loops. When contracted with the adjacent tree level vertices, these longitudinal factors trigger the associated elementary Ward identities. The triggering of these Ward identities results in the rearrangement of the propagator and vertex structure of the integrand. After systematically contracting all</p>
+
+				<figure>
+					<trash>✒ ❅ ❘ p 1 , ν p 2 p 3 , µ p 4 Fig. 2</trash>
+
+
+				</figure>
+
+				<p>. The kinematics of the QCD Compton scattering process qγ → qγ. The wavy lines represent the photons. such longitudinal factors, the contributions to the PT fermion self-energy ( &quot; effective &quot; twopoint function) are identified from the resulting integrands by their naive self-energy-like propagator structure.</p>
+
+				<p>In order to construct the PT one-loop quark self-energy, we consider the O(α s ) QCD corrections to the lowest order Compton scattering qγ → qγ of a photon off a quark with electromagnetic charge Q. The kinematics of this process are shown in Fig. 2. Given that the gluons only couple directly with the quark, this is the very simplest process from which to construct the PT quark self-energy. Indeed, the fact that the non-abelian character of the gluons plays essentially no role at the one-loop level in this process will make the construction almost trivial (one could use more complicated one-loop process involving also purely nonabelian interactions, e.g. the Compton-like scattering qg → qg of a gluon off a quark as in [3]). For convenience, the quarks are taken to be on-shell, although this need not be so [6]. The set of six diagrams specifying the one-loop QCD corrections to the tree level scattering process are shown in Figs. 3a–f (the corresponding set of diagrams with crossed external photon legs are not shown, nor are the counterterm insertion diagrams). The QCD contribution to the PT renormalized one-loop quark self-energy ( &quot; effective &quot; two-point function) −î Σ (1) (p) is defined from the coefficient Σ ′(1) (p, k) of the component of the integrands for the diagrams in Figs. 3a–f which, after the systematic contraction of all factors of longitudinal internal gluon four-momentum, has the following self-energy-like structure: [dk] iQγ µ iS(p)</p>
+
+				<figure>
+					<trash>−î Σ ′(1) (p, k) iS(p) iQγ ν (2.11) where p = p 1 + p 2 = p 3 + p 4 (2.12) and iQγ µ , iQγ ν are the tree level γqq vertices. Then − i ˆ Σ (1) (p) = −i [dk] ˆ Σ ′(1) (p, k) + (Z 2 − 1) (1) PT i(p / − m) − (Z 2 (Z m − 1)) (1) PT im . (2.13)</trash>
+
+
+				</figure>
+
+				<p>In the above expression, Z 2 and Z m are the quark wavefunction and mass renormalization constants in the PT framework, determined at O(α s ) from the divergence structure of the integral in Eq. (2.13) as d → 4. It is emphasized that the definition of the PT &quot; effective &quot; two-point function is in terms of the Feynman integrands corresponding to the diagrams for the interactions: all rearrangements in the PT are carried out under the integral sign(s).</p>
+
+				<figure>
+					<trash>(a) (b) (c) (d) (e) (f)                                                                                      =                                    (g) (h)                                    k ✲ p − k                                    (i) (j) Fig. 3</trash>
+
+
+				</figure>
+
+				<p>. a–f: The Feynman diagrams specifying the one-loop QCD corrections to the Compton scattering process qγ → qγ.</p>
+
+				<p>We first consider the four diagrams shown in Figs. 3a–d. In order to deal efficiently with these one-loop diagrams (and, in later sections, with various two-loop diagrams too) it is convenient to define the connected four-point function G r ρµ (q 1 , q 2 , q 3 , q 4 ) specifying the tree level coupling of a gluon A r ρ (q 1 ) and a photon A µ (q 2 ) to a quark with electromagnetic charge Q. The two relevant diagrams are shown in Fig. 4:</p>
+
+				<figure>
+					<trash>Figs. 4a + 4b = iQg G r ρµ (q 1 , q 2 , q 3 , q 4 ) (2.14) = iQg −γ µ S(q 1 + q 3 )γ ρ T r − γ ρ T r S(q 4 − q 1 )γ µ (2.15) ❄ ✻ q 1 , ρ, r q 2 , µ q 3 q 4 (a) (b) Fig. 4</trash>
+
+
+				</figure>
+
+				<p>. The Feynman diagrams specifying the tree level four-point function G r ρµ (q 1 , q 2 , q 3 , q 4 ). with q 1 + q 2 + q 3 = q 4 . In Eq. (2.15), the hermitian matrices T r are the generators for the fermion representation, satisfying [T a , T b ] = if abc T c .</p>
+
+				<figure>
+					<trash>Using the elementary Ward identity q / = S −1 (q + q ′ ) − S −1 (q ′ ) , (2.16) this four-point function is easily shown to obey the Ward identity q ρ 1 G r ρµ (q 1 , q 2 , q 3 , q 4 ) = γ µ S(q 1 + q 3 )T r S −1 (q 3 ) − S −1 (q 4 )T r S(q 4 − q 1 )γ µ . (2.17) As indicated in Fig. 3</trash>
+
+
+				</figure>
+
+				<p>, the sum of the four diagrams 3a–d may be expressed as the sum of all possible contractions of the diagrams 3g and 3h with the diagrams 3i and 3j, where the straight (curly) line between these diagrams represents the propagator for the fermion (gluon) propagating in the loops. The sums of the diagrams 3g+3h and 3i+3j are each just the connected four-point function defined in Eq. (2.15). Thus, the sum of the four one-loop diagrams 3a–d for arbitrary ξ may be written as</p>
+
+				<figure>
+					<trash>Figs. 3a−d = Q 2 g 2 [dk] D ρρ ′ (k, ξ)G r ρµ (k, −p 3 , p − k, p 4 )S(p − k)G r ρ ′ ν (−k, p 1 , p 2 , p − k) (2.18)</trash>
+
+
+				</figure>
+
+				<p>(spinors for the on-shell external fermions have been omitted). In order to identify the PT &quot; effective &quot; two-point component of these diagrams, it is then necessary to contract systematically the factors of longitudinal gluon four-momentum occurring in the integrand in Eq. (2.18), triggering the tree level Ward identities. Using the Ward identity (2.17), together with the fact that S −1 (p 2 ) = S −1 (p 4 ) = 0 for the on-shell external fermions, we easily obtain</p>
+
+				<figure>
+					<trash>Figs. 3a−d = −Q 2 g 2 [dk] 1 k 2 G r ρµ (k, −p 3 , p − k, p 4 )S(p − k)G ρ,r ν (−k, p 1 , p 2 , p − k) −C F (1 − ξ) 1 k 2 γ µ S(p)γ ν . (2.19) It remains to consider the two external leg corrections in Figs. 3e and 3f. These diagrams are given by Figs. 3e + 3f = 1 2 Q 2 g 2 [dk] D ρρ ′ (k, ξ) γ µ S(p)γ ν S(p 2 )γ ρ T r S(p 2 − k)γ ρ ′T r + γ ρ T r S(p 4 − k)γ ρ ′T r S(p 4 )γ µ S(p)γ ν . (2.20) k ρ ✲ (a) pinch ✲ + (b) + · · · k ρ ✲ (c) pinch ✲ − (d) Fig. 5</trash>
+
+
+				</figure>
+
+				<p>. The elementary cancellation occurring among the diagrams i and j in Fig. 3 when contracted with the gluon longitudinal four-momentum k ρ , and expressed in the Ward identity Eq. (2.17).</p>
+
+				<figure>
+					<trash>Using the elementary Ward identity (2.16) for the longitudinal factors k ρ , k ρ ′ occurring in Eq. (2.20), together with S −1 (p 2 ) = S −1 (p 4 ) = 0 for the on-shell external fermions, we obtain Figs. 3e + 3f = − 1 2 C F Q 2 g 2 [dk] 1 k 2 γ µ S(p)γ ν S(p 2 )γ ρ S(p 2 − k)γ ρ ′ + γ ρ S(p 4 − k)γ ρ ′S (p 4 )γ µ S(p)γ ν + 2(1 − ξ) 1 k 2 γ µ S(p)γ ν . (2.21) Combining the expressions (2.19) and (2.21), the last terms cancel, giving Figs. 3a−f = −Q 2 g 2 [dk] 1 k 2 G r ρµ (k, −p 3 , p − k, p 4 )S(p − k)G ρ,r ν (−k, p 1 , p 2 , p − k) + 1 2 C F γ µ S(p)γ ν S(p 2 )γ ρ S(p 2 − k)γ ρ ′ + γ ρ S(p 4 − k)γ ρ ′S (p 4 )γ µ S(p)γ ν . (2.22)</trash>
+
+
+				</figure>
+
+				<p>Having thus contracted all longitudinal factors appearing in the integrands in Eqs. (2.18) and (2.20), the expressions for the two four-point functions may now be substituted into the resulting Eq. (2.22). The PT &quot; effective &quot; two-point component of the integrand may then be isolated according to the definition (2.11):</p>
+
+				<figure>
+					<trash>Figs. 3a−f | 2−pt = −C F Q 2 g 2 [dk] 1 k 2 γ µ S(p)γ ρ S(p − k)γ ρ S(p)γ ν . (2.23) Then, from the definitions (2.11) and (2.13), − i ˆ Σ (1) (p) = −C F g 2 [dk] 1 k 2 + iǫ γ ρ S(p − k)γ ρ + (Z 2 − 1) (1) PT i(p / − m) − (Z 2 (Z m − 1)) (1) PT im (2.24) where</trash>
+
+
+				</figure>
+
+				<p>the +iǫ prescription has been restored in the gluon propagator.</p>
+
+				<p>Several remarks are in order: (1) In the contribution to the PT self-energy Eq. (2.24) from the diagrams 3a–d, an elementary cancellation has occurred between (i) the component of the diagram 3i in which the internal fermion propagator S(p) has been cancelled (pinched) by the action of the ξdependent longitudinal factor k ρ from the gluon propagator, and (ii) the entire contribution of the diagram 3j in which the internal fermion propagator S(p 4 − k) has been cancelled (pinched) by the action of the same factor. This cancellation is illustrated in Fig. 5, and is encoded in the Ward identity (2.17) for the four-point function G r µρ in Eq. (2.18). An identical cancellation takes place for the diagrams 3g and 3h when contracted with the factor k ρ ′ . By dealing with the set of diagrams 3a–d, as opposed to individual diagrams, we have been able to make these cancellations among the conventional self-energy, vertex and box functions simply and immediately. These cancellations leave just the tadpole-like term proportional to (1−ξ)k −4 in Eq. (2.19), which is then cancelled algebraically by a similar term in Eq. (2.21) for the external leg corrections. 4 While elementary in the one-loop case, this approach, involving the simultaneous consideration of subsets of diagrams, when extended to the two-loop case will greatly facilitate the construction of the PT two-loop quark self-energy in the following sections, in particular the demonstration of its gauge independence. (2) Here we have chosen to work in the class of ordinary linear covariant gauges. However, we could have started in any gauge, i.e. with gluon propagator</p>
+
+				<figure>
+					<trash>iD µν (q, a, b) = i q 2 + iǫ −g µν + a µ (q)q ν + q µ a ν (q) + b(q)q µ q ν . (2.25)</trash>
+
+
+				</figure>
+
+				<p>For example, in the class of non-covariant gauges defined by adding to the classical lagrangian the gauge-fixing term L gf = −(n · A a ) 2 /2λ for some four-vector n µ and constant λ, one has a µ (q) = n µ /n · q and b(q) = −(n 2 + λq 2 )/(n · q) 2 .</p>
+
+				<p>In all cases, an exactly similar algebraic cancellation takes place among contributions to the PT &quot; effective &quot; two-point component of the interaction. In particular, all integrands involving terms (n·k) −1 , (n·k) −2 cancel algebraically, and so present no difficulties. Thus, the PT self-energy Eq. (2.24) is fully gauge-independent. (3) The PT gauge-independent one-loop quark self-energy coincides with that obtained in the conventional Feynman gauge ξ = 1, which in turn coincides with that obtained in the BFM in the Feynman quantum gauge ξ Q = 1 [3]:</p>
+
+				<figure>
+					<trash>− i ˆ Σ (1) (p) = −iΣ (1) (p, ξ = 1) = −iΣ (1) BFM (p, ξ Q = 1) . (2.26)</trash>
+
+
+				</figure>
+
+				<p>This is in fact obvious: in the integrands for the one-loop corrections to the process qγ → qγ, the only sources of factors of longitudinal internal gluon four-momentum are the gluon propagators. Starting from the gauge ξ = 1, these factors are not present. Thus, for this particular process in this particular gauge, no Ward identities are triggered (there is &quot; no pinching &quot; ), and one obtains the PT one-loop quark self-energy directly from the conventional self-energy. (4) The above construction of Σ (1) (p) involved the process qγ → qγ. However, we could have used any one-loop process involving the quark as intermediate virtual state, i.e. the self-energy Eq</p>
+
+				<figure>
+					<trash>. (2.24) is universal. 2 (a) = 1 (b) + 1 (c) + 1 (d) + 1 (e) − 0 (f) + (g) = (h) + (i) + (j) + (k) + (l) + (m) + (n) + (o) Fig. 6</trash>
+
+
+				</figure>
+
+				<p>. The Feynman diagrams specifying the renormalized two-loop vacuum polarization in QED.</p>
+
+				<p>The grey blobs marked &quot; 1 &quot; represent the renormalized one-loop internal corrections. The grey box marked &quot; 0 &quot; represents the lowest order contribution to the electron-positron scattering kernel. The black blobs represent the counterterm insertions.</p>
+
+			</div>
+			<div>
+				<head>3</head>
+
+				<p>The pinch technique two-loop quark self-energy</p>
+
+				<p>We now turn to the 1PI two-loop quark self-energy in the PT approach. In this section, the general diagrammatic representation of the two-loop quark self-energy in terms of one-loop two-and three-point function and tree level Bethe-Salpeter-type kernel insertions in the oneloop quark self-energy is described. It is this diagrammatic representation which will provide the basis for the explicit construction of the PT two-loop quark self-energy −î Σ (2) (p) in the subsequent sections.</p>
+
+				<p>In order to gain insight, it is instructive to consider first the renormalized two-loop photon self-energy (vacuum polarization) iΠ (2) µν (p) in QED. The diagrams which contribute to this function are shown in Fig. 6. In Figs. 6b–g, the two-loop vacuum polarization has been written in terms of renormalized one-loop two-and three-point functions, represented by the grey blobs, inserted in all possible ways in the diagram for the one-loop vacuum polarization iΠ (1) µν (p), minus a contribution involving the lowest order term in the perturbative expansion of the electron-positron scattering kernel K, represented by the grey box, inserted in the diagram for iΠ (1) µν (p). The kernel K is characterized by the fact that it has no contributions involving annihilation into a one-particle (photon) intermediate state and is 2PI with respect to the electron-positron pair of lines (cf. e.g. chapter 19 of Ref. [17]). The contribution in Fig. 6g is the two-loop counterterm required finally to renormalize the two-loop function. The representation in Figs. 6b–g involving the electron-positron scattering kernel follows from the Dyson-Schwinger equations for QED (cf. in particular Fig. 19.45 of Ref. [17]; for a review of the applications of Dyson-Schwinger equations, see Ref. [18]). The diagrams which contribute to the one-loop internal corrections and at lowest order to the scattering kernel are in turn</p>
+
+			</div>
+			<div>
+				<head>1</head>
+
+				<figure>
+					<trash>(a) = (b) + (c) 1 (d) = (e) + (f) 0 (g) = (h) Fig. 7</trash>
+
+
+				</figure>
+
+				<p>. The Feynman diagrams specifying the renormalized one-loop fermion self-energy (7a) and photon-fermion vertex (7d), and the lowest order contribution to the electron-positron scattering kernel (7g) in QED.</p>
+
+				<p>shown in Fig. 7. Substituting the diagrams of Fig. 7 into the representation in Figs. 6b–g, we recover the usual two-loop perturbation theory diagrams for the vacuum polarization as shown in Figs. 6h–o. In particular, in the language of individual two-loop Feynman diagrams, the effect of the kernel insertion contribution of Fig. 6f is to compensate for the overcounting which would otherwise occur due to the two vertex insertion contributions of Figs. 6d and 6e. For the case of the conventional renormalized two-loop fermion self-energy −iΣ (2) (p, ξ) in QCD, the diagrams which contribute to this function are shown in Fig. 8. In Figs. 8b–g, the two-loop fermion self-energy has been written in terms of renormalized one-loop twoand three-point functions, represented by the grey blobs, inserted in all possible ways in the diagram for the one-loop fermion self-energy −iΣ (1) (p, ξ), minus the contribution shown in Fig. 8f involving the grey box inserted in the diagram for −iΣ (1) (p, ξ). The representation of the two-loop QCD fermion self-energy in Figs. 8b–g is the exact analogue of the representation of the two-loop QED photon self-energy in Figs. 6b–g. In particular, the component represented by the grey box in Fig. 8f consists of all possible ways of coupling an incoming and an outgoing quark-gluon pair (with external legs truncated) at tree level, except for the contribution involving annihilation into a one-particle (quark) intermediate state. The box in Fig. 8f is thus the lowest order contribution to a Bethe-Salpeter-type kernel V , the analogue for the quark-gluon pair of the lowest order QED electron-positron kernel appearing in Fig. 6f. The contribution in Fig. 8g represents the two-loop counterterms required finally to renormalize the two-loop function. The diagrams which contribute to the one-loop internal corrections in Figs. 8b–e and the tree level Bethe-Salpeter-type quark-gluon kernel in Fig. 8f</p>
+
+				<figure>
+					<trash>2 (a) = 1 (b) + 1 (c) + 1 (d) + 1 (e) − 0 (f) + (g) = (h) + (i) + (j) + (k) + (l) + (m) + (n) + (o) + (p) + (q) + (r) Fig. 8</trash>
+
+
+				</figure>
+
+				<p>. The Feynman diagrams specifying the conventional renormalized two-loop fermion self-energy in QCD. The grey blobs marked &quot; 1 &quot; represent the renormalized conventional one-loop internal corrections . The grey box marked &quot; 0 &quot; represents the conventional lowest order contribution to the Bethe- Salpeter-type quark-gluon kernel. The black blobs represent the conventional counterterm insertions. are in turn shown in Fig. 9. 5 Substituting the diagrams of Fig. 9 into the representation in Figs. 8b–g, we recover the usual two-loop perturbation theory diagrams for the conventional quark self-energy as shown in Figs. 8h–r. Just as in the case of the two-loop vacuum polarization , when the representation in Figs. 8b–g is written in terms of individual two-loop Feynman diagrams, the effect of the kernel insertion contribution in Fig. 8f is to compensate for the overcounting which would otherwise occur due to the two vertex insertion contributions in Figs. 8d and 8e. From the point of view of the PT, the significance of the diagrammatic representations shown in Figs. 6b–g and 8b–g lies in the fact that they provide an entirely general representation of the respective two-loop two-point functions which is: (i) explicitly in terms of renormalized one-loop corrections to the tree level propagators and vertices occurring in the corresponding one-loop two-point function, these corrections being just those obtained in perturbation theory at the one-loop level; and (ii) symmetric, in the sense that the internal corrections appear inserted in all possible ways in the corresponding one-loop two-point function , so that no orientation of the overall set of diagrams is preferred. 6 In the case of the two-loop fermion self-energy in the PT framework, it is this symmetric property of the</p>
+
+			</div>
+			<div>
+				<head>1</head>
+
+				<figure>
+					<trash>(a) = (b) + (c) 1 (d) = (e) + (f) + (g) + (h) 1 (i) = (j) + (k) + (l) 0 (m) = (n) + (o) Fig. 9</trash>
+
+
+				</figure>
+
+				<p>. The Feynman diagrams specifying the conventional renormalized one-loop quark self-energy (9a), gluon self-energy (9d) and quark-gluon vertex (9i), and the lowest order contributions to the conventional Bethe-Salpeter-type quark-gluon kernel (9m) in QCD. The dashed lines represent ghosts. representation which will enable the consistent solution of the first problem described in the introduction.</p>
+
+				<p>In the above examples, the renormalized one-loop corrections and the tree level kernels, the one-loop diagrams into which they are inserted and the two-loop counterterms are each the gauge-dependent functions obtained in conventional perturbation theory. If the extension of the PT beyond one loop to construct the PT 1PI two-loop fermion self-energy −î Σ (2) (p) in QCD is to be consistent, then clearly the one-loop corrections to the tree level propagators and vertices appearing in the contributions to −î Σ (2) (p) analogous to Figs. 8b–e must consist of the PT renormalized gauge-independent one-loop corrections inserted in the diagram for the PT gauge-independent one-loop fermion self-energy −î Σ (1) (p). 7 It then remains to determine the PT tree level quark-gluon kerneî V (0) which appears in the contribution analogous to that in Fig. 8e; and also the required PT two-loop counterterm contributions, analogous to those</p>
+
+				<figure>
+					<trash>2 ˆ (a) = 1 ˆ (b) + 1 ˆ (c) + 1 ˆ (d) + 1 ˆ (e) − 0 ˆ (f) + ˆ (g) Fig. 10</trash>
+
+
+				</figure>
+
+				<p>. The diagrammatic representation of the PT renormalized two-loop fermion self-energy in QCD. The grey, hatted blobs marked &quot; 1 &quot; represent the PT renormalized one-loop internal corrections.</p>
+
+				<p>The grey, hatted box marked &quot; 0 &quot; represents the as-yet-undetermined PT tree level quark-gluon kernel.</p>
+
+				<p>The black, hatted blob represents the as-yet-undetermined PT two-loop counterterm contributions.</p>
+
+				<p>The gluon propagators are all as in the Feynman gauge.</p>
+
+			</div>
+			<div>
+				<head>in Fig. 8f</head>
+
+				<p>. The contributions to −î Σ (2) (p) are thus as illustrated in Fig. 10, in which the hats denote the PT n-point functions, the as-yet-undetermined PT quark-gluon kernel and the as-yet-undetermined PT two-loop counterterms. It is at this point that we encounter the first problem described in the introduction, concerning purely internal triple gauge vertices in the PT approach. In the PT at the oneloop level, the factors of longitudinal four-momentum k 1ρ , k 2σ originating from the tree level interaction of an external gluon A a µ (q) and two internal gluons A r ρ (k 1 ), A s σ (k 2 ) are isolated using the now-familiar decomposition of the triple gauge vertex:</p>
+
+				<figure>
+					<trash>Γ µρσ (q, k 1 , k 2 ) = Γ F µρσ (q; k 1 , k 2 ) + Γ P µρσ (q; k 1 , k 2 ) , (3.1) where Γ F µρσ (q; k 1 , k 2 ) = (k 1 − k 2 ) µ g ρσ − 2q ρ g σµ + 2q σ g ρµ , (3.2) Γ P µρσ (q; k 1 , k 2 ) = −k 1ρ g σµ + k 2σ g ρµ , (3.3) with q + k 1 + k 2 = 0</trash>
+
+
+				</figure>
+
+				<p>. The component Γ F by definition contributes no factors of longitudinal internal four-momentum k 1ρ , k 2σ , and obeys a Ward identity q µ Γ F µρσ (q; k 1 , k 2 ) = (k 2 2 − k 2 1 )g ρσ involving the difference of two inverse gluon propagators in the Feynman gauge. The terms in Γ F have simple interpretations: the term (k 1 − k 2 ) µ g ρσ is a convection term, independent of the spin of the fields to which the gluon A a µ (q) couples, while the term −2q ρ g σµ + 2q σ g ρµ is a spin-1 magnetic interaction. The vertex Γ F coincides with that specifying the tree level interaction of a background gluon A a µ (q) and two quantum gluons Q r ρ (k 1 ), Q s σ (k 2 ) in the BFM in the Feynman quantum gauge ξ Q = 1. It is this component Γ F which appears as the triple gauge vertex in the PT one-loop n-point functions. 8 The component Γ P by definition involves only the factors of longitudinal internal four-momentum k 1ρ , k 2σ . It is this component Γ P which generates the &quot; pinch parts &quot; of the corresponding diagrams. The decomposition (3.1)–(3.3) is represented diagrammatically in Fig. 11. Using the representation of Fig. 11, the diagrams contributing to the PT one-loop quark self-energy, gluon self-energy and quark-gluon vertex are shown in Fig. 12 (all gluon propagators in Fig. 12</p>
+
+				<figure>
+					<figDesc>are as in the Feynman gauge).</figDesc>
+					<trash>q, µ k 1 , ρ k 2 , σ Γ µρσ (q, k 1 , k 2 ) = Γ F µρσ (q; k 1 , k 2 ) + ✡ ✡ ✣ ❏ ❏ ❫ Γ P µρσ (q; k 1 , k 2 ) Fig. 11. The diagrammatic representation of the decomposition Eq. (3.1) of the triple gauge vertex. 1 ˆ (a) = (b) + ˆ (c) 1 ˆ (d) = (e) + (f) + (g) + ˆ (h) 1 ˆ (i) = (j) + (k) + ˆ (l) Fig. 12</trash>
+
+
+				</figure>
+
+				<p>. The Feynman diagrams specifying the PT renormalized one-loop quark self-energy (12a), gluon self-energy (12d) and quark-gluon vertex (12i). The gluon propagators are all as in the Feynman gauge. These Feynman diagrams coincide with those of the BFM in the Feynman quantum gauge ξ Q = 1.</p>
+
+				<p>In the case of the PT two-loop quark self-energy −î Σ (2) (p), the first problem of section 1 therefore becomes that of how to decompose the triple gauge vertices involved so as to obtain, first of all, and starting from an arbitrary gauge, the internal one-loop pinch parts required to construct the PT gauge-independent one-loop self-energy and vertex functions of Fig. 12 as the internal corrections shown in Figs. 10b–e. The key to the required rearrangement will turn out to be a second, new decomposition of the triple gauge vertex:</p>
+
+				<figure>
+					<trash>Γ ρστ (k 1 , k 2 , k 3 ) ≡ −2Γ P τ ρσ (k 3 ; k 1 , k 2 ) + Γ F ρστ (k 1 ; k 2 , k 3 ) + Γ F στ ρ (k 2 ; k 3 , k 1 ) − Γ F τ ρσ (k 3 ; k 1 , k 2 ) . (3.4) Using the definitions (3.2) and (3.3</trash>
+
+
+				</figure>
+
+				<p>), it is easily verified that the above identity indeed holds. This identity is to be compared with the trivial identity relating the diagram in Fig. 8m to</p>
+
+				<figure>
+					<trash>k 1 , ρ, r k 2 , σ, s p − k 1 p + k 2 ˆ 0 (a) = (b) + (c) Fig. 13</trash>
+
+
+				</figure>
+
+				<p>. The Feynman diagrams specifying the contributions to the PT tree level Bethe-Salpetertype quark-gluon kernel. The gluon propagator in (b) is as in the Feynman gauge. the triple gauge vertex contributions to the one-loop vertex corrections in Figs. 8d and 8e and the kernel in Fig. 8f for the case of the conventional two-loop quark self-energy:</p>
+
+				<figure>
+					<trash>Γ ρστ (k 1 , k 2 , k 3 ) ≡ Γ ρστ (k 1 , k 2 , k 3 ) + Γ στ ρ (k 2 , k 3 , k 1 ) − Γ τ ρσ (k 3 , k 1 , k 2 ) . (3.5)</trash>
+
+
+				</figure>
+
+				<p>In the context of the process qγ → qγ, the construction of the PT renormalized two-loop quark self-energy −î Σ (2) (p) may thus be broken down into three steps: 1. The rearrangement of the integrands for the conventional two-loop QCD corrections to qγ → qγ to obtain as self-energy-like ( &quot; effective &quot; two-point) components the integrands for the contributions to −î Σ (2) (p) involving the PT one-loop n-point functions as internal corrections shown in Figs. 10b–e. 2. The isolation of the remaining self-energy-like component of the two-loop corrections to qγ → qγ in order to determine the PT tree level quark-gluon kerneî V (0) appearing in the contribution to −î Σ (2) (p) shown in Fig. 10f. 3. The calculation of the ultraviolet-divergent part of the contributions in Figs. 10b–f in order to determine the PT O</p>
+
+				<figure>
+					<trash>(α 2 s ) renormalization constants (Z 2 − 1) (2) PT and (Z m − 1) (2) PT required finally to renormalize −î Σ (2) (p), and shown in Fig. 10g.</trash>
+
+
+				</figure>
+
+				<p>We see that, assuming the first step can be successfully made, the construction of the PT two-loop quark self-energy reduces to obtaining the PT tree level quark-gluon kernel and the required PT two-loop counterterms. At this point, it is important to remark that it is by no means clear that, having made the first of the above steps, the second and third steps can be consistently carried out too. Thus, in the second step, it is not clear that the resulting PT kerneî V (0) appearing in the diagram 10f will, for example, indeed have no contributions involving annihilation into a one-particle (quark) intermediate state. And in the third step, it is not clear that the rearrangement of the two-loop contributions required in the first two steps will result in no divergences of the form, for example, ǫ −1 ln(−p 2 /µ 2 ) which then cannot be renormalized by local counterterms.</p>
+
+				<p>In the remainder of this paper, it is shown how the construction outlined above can indeed be consistently carried out to obtain the two-loop quark self-energy −î Σ (2) (p) in the PT approach. In particular, it is demonstrated that the contributions to the PT tree level quark-gluon kerneî V (0) are as shown in Fig. 13, i.e. exactly those of the conventional Feynman gauge quark-gluon kernel except that the triple gauge vertex involves just the component Γ F .</p>
+
+				<p>Thus, when inserted in some diagram, e.g. as in Fig. 10f, the PT kernel provides no factors of longitudinal gluon four-momentum to trigger the Ward identities for the adjacent vertices. It is explicitly shown that the PT self-energy −î Σ (2) (p) thus obtained is gauge-independent at all momenta, is multiplicatively renormalizable by local counterterms and does not shift the propagator pole position (to O(α 2 s )). Furthermore, it is shown that the PT two-loop quark self-energy differs from that obtained in the BFM at ξ Q = 1.</p>
+
+				<figure>
+					<trash>4 Construction of −î Σ (2) (p)</trash>
+
+
+				</figure>
+
+				<p>In this section, we consider the first two steps in the construction of −î Σ (2) (p) just outlined.</p>
+
+				<p>To this end, we consider the O(α 2 s ) corrections to qγ → qγ consisting of &quot; genuine &quot; two-loop diagrams, i.e. involving two d-dimensional loop momentum integrals. In order to make the required rearrangements, it will be convenient to divide these two-loop diagrams into three distinct classes. Furthermore, for simplicity, we choose here to start from the Feynman gauge ξ = 1; the generalization of the construction to arbitrary ξ will be presented in section 5. We note immediately that in the Feynman gauge the conventional self-energy diagrams 8b and 8h provide directly the required contribution to −î Σ (2) (p) of the diagram 10b, involving the renormalized PT one-loop quark self-energy as an internal correction to, in turn, the PT one-loop quark self-energy. 4.1 Two-loop corrections involving one-loop gluon self-energy insertions We first consider the two-loop QCD corrections to the process qγ → qγ which consist of one-loop gluon self-energy insertions in the one-loop QCD corrections. The conventional renormalized one-loop covariant gauge gluon self-energy is specified by the diagrams shown in Figs. 9d–h: Fig. 9d</p>
+
+				<figure>
+					<trash>= iΠ (1) µν (q, ξ) = i [dk] Π ′(1) µν (q, k, ξ) − (Z 3 − 1) (1) ξ iq 2 t µν (q) . (4.1) In the above expression, Π ′(1) µν (q, k, ξ</trash>
+
+
+				</figure>
+
+				<p>) is the gauge-dependent integrand, given directly by the usual covariant gauge Feynman rules for the diagrams 9e–g, while the last term is the O(α s ) contribution of the covariant gauge counterterm diagram 9h, where Z 3 is the gluon wavefunction renormalization constant (</p>
+
+				<figure>
+					<trash>A a 0µ = Z 1/2 3 A a µ ). The integrand in Eq. (4.1) may be written as the difference between the integrand Π ′(1) µν (q, k) for the PT gauge-independent one-loop gluon self-energy and the integrand ∆Π ′(1) µν (q, k, ξ) for the gauge-dependent &quot; pinch part &quot; of the conventional self-energy: Π ′(1) µν (q, k, ξ) = ˆ Π ′(1) µν (q, k) − ∆Π ′(1) µν (q, k, ξ) . (4.2) The pinch part −∆Π ′(1) µν (q, k, ξ</trash>
+
+
+				</figure>
+
+				<p>) of the conventional self-energy is that which is cancelled by the gauge-dependent self-energy-like pinch part +∆Π ′(1) µν (q, k, ξ) of the integrands for one-loop vertex and box diagrams in the PT at the one-loop level. This cancellation leaves Π ′(1) µν (q, k) as the integrand for the unrenormalized PT gauge-independent one-loop gluon &quot; effective &quot; two-point function.</p>
+
+				<figure>
+					<trash>The PT integrand Π ′(1) µν (q, k) coincides [9]</trash>
+
+
+				</figure>
+
+				<p>with that obtained using the Feynman rules of the BFM [10] with ξ Q = 1.</p>
+
+				<p>In the particular case of the Feynman gauge ξ = 1, the pinch part of the self-energy</p>
+
+				<figure>
+					<trash>integrand (4.1) is given by 9 i∆Π ′(1) µν (q, k, 1) = 1 2 C A g 2 1 k 2 (k + q) 2 −Γ F µρσ (q; k, −k − q)Γ F,ρσ ν (−q; −k, k + q) − 2(2k + q) µ (2k + q) ν + Γ µρσ (q, k, −k − q)Γ ρσ ν (−q, −k, k + q) + k µ (k + q) ν + (k + q) µ k ν (4.3) = iq 2 t µν (q)∆Π ′(1) (q, k, 1) (4.4) where ∆Π ′(1) (q, k, 1) = −2iC A g 2 1 k 2 (k + q) 2 . (4.5)</trash>
+
+					<figDesc>In the above expressions, C A is the quadratic Casimir coefficient for the adjoint representation (C A = N for SU(N )). We note that the integrand ∆Π</figDesc>
+					<trash>′(1) µν (q, k, 1) is explicitly transverse.</trash>
+
+
+				</figure>
+
+				<p>The set of two-loop diagrams for the O(α 2 s ) QCD corrections to qγ → qγ which involve the unrenormalized one-loop gluon self-energy as internal corrections are shown in Figs. 14a–f (the corresponding set of diagrams with crossed photon legs are not shown). Just as in the case of the one-loop QCD corrections to qγ → qγ discussed in section 2, and as indicated in Fig. 14, the sum of the four diagrams 14a–d may be expressed as the sum of all possible contractions of the diagrams 14g and 14h with the diagrams 14i and 14j, where the curly line with the grey blob between these diagrams represents the unrenormalized one-loop-corrected covariant gauge gluon propagator. The sums of the diagrams 14g+14h and 14i+14j are again each just the connected four-point function defined in Eq. (2.15). Thus, the sum of the four two-loop diagrams 14a–d for arbitrary ξ may be written</p>
+
+				<figure>
+					<trash>Figs. 14a−d = −Q 2 g 2 [dk 1 ][dk 2 ] 1 k 4 1 Π ′(1)ρρ ′ (k 1 , k 2 , ξ) ×G r ρµ (k 1 , −p 3 , p − k 1 , p 4 )S(p − k 1 )G r ρ ′ ν (−k 1 , p 1 , p 2 , p − k 1 ) . (4.6) Eq. (4.6</trash>
+
+
+				</figure>
+
+				<p>) is precisely the two-loop analogue of Eq. (2.18); the two expressions differ only by the fact that, instead of the tree level gluon propagator in (2.18), there appears the one-loopcorrected gluon propagator in (4.6). Substituting in (4.6) the decomposition (4.2) of the gluon self-energy integrand, and then using the expression (4.4) for the case of the Feynman gauge gives</p>
+
+				<figure>
+					<trash>Figs. 14a−d| ξ=1 = −Q 2 g 2 [dk 1 ][dk 2 ] 1 k 4 1 ˆ Π ′(1)ρρ ′ (k 1 , k 2 ) − k 2 1 t ρρ ′ (k 1 )∆Π ′(1) (k 1 , k 2 , 1) ×G r ρµ (k 1 , −p 3 , p − k 1 , p 4 )S(p − k 1 )G r ρ ′ ν (−k 1 , p 1 , p 2 , p − k 1 ) . (4.7) (a) (b) (c) (d) (e) (f)                                                                                      =                                    (g) (h)                                    k 1 ✲ p − k 1                                    (i) (j) Fig. 14</trash>
+
+
+				</figure>
+
+				<p>. a–f: The two-loop QCD corrections to the process qγ → qγ consisting of unrenormalized oneloop gluon self-energy insertions, represented by the grey blobs, in the one-loop QCD corrections.</p>
+
+				<p>We now contract the longitudinal factors k</p>
+
+				<figure>
+					<trash>ρ 1 , k ρ ′ 1 which appear explicitly in the transverse tensor t ρρ ′ (k 1 ) in (4.7), triggering the Ward identity (2.17) obeyed by the four-point functions G r ρµ , G r ρ ′ ν . Using this Ward identity, together with the fact that S −1 (p 2 ) = S −1 (p 4 ) = 0 for the on-shell external fermions, one obtains Figs. 14a−d| ξ=1 = −Q 2 g 2 [dk 1 ][dk 2 ] 1 k 4 1 ˆ Π ′(1)ρρ ′ (k 1 , k 2 ) − k 2 1 g ρρ ′ ∆Π ′(1) (k 1 , k 2 , 1) ×G r ρµ (k 1 , −p 3 , p − k 1 , p 4 )S(p − k 1 )G r ρ ′ ν (−k 1 , p 1 , p 2 , p − k 1 ) + C F ∆Π ′(1) (k 1 , k 2 , 1)γ µ S(p)γ ν . (4.8)</trash>
+
+
+				</figure>
+
+				<p>There remain the two external leg corrections shown in Figs. 14e and 14f. The sum of these two diagrams for arbitrary ξ is given by</p>
+
+				<figure>
+					<trash>Figs. 14e + 14f = − 1 2 Q 2 g 2 [dk 1 ][dk 2 ] 1 k 4 1 Π ′(1)ρρ ′ (k 1 , k 2 , ξ) × γ µ S(p)γ ν S(p 2 )γ ρ T r S(p 2 − k 1 )γ ρ ′T r + γ ρ T r S(p 4 − k 1 )γ ρ ′T r S(p 4 )γ µ S(p)γ ν . (4.9)</trash>
+
+
+				</figure>
+
+				<p>We again substitute the decomposition (4.2) for the gluon self-energy integrand, and then the expression (4.4) for the particular case of the Feynman gauge. In an exactly similar way to the analogous one-loop corrections in Figs. 2e and 2f, the longitudinal factors k</p>
+
+				<figure>
+					<trash>ρ 1 , k ρ ′ 1 which appear in the transverse tensor t ρρ ′ (k 1 ) for the pinch part of the gluon self-energy in (4.9) trigger the elementary Ward identity (2.16), giving Figs. 14e + 14f| ξ=1 = −Q 2 g 2 [dk 1 ][dk 2 ] 1 k 4 1 ˆ Π ′(1)ρρ ′ (k 1 , k 2 ) − k 2 1 g ρρ ′ ∆Π ′(1) (k 1 , k 2 , 1) × 1 2 C F γ µ S(p)γ ν S(p 2 )γ ρ S(p 2 − k 1 )γ ρ ′ + γ ρ S(p 4 − k 1 )γ ρ ′S (p 4 )γ µ S(p)γ ν − C F ∆Π ′(1) (k 1 , k 2 , 1) γ µ S(p)γ ν . (4.10) Combining the expressions (4.8) and (4.10), the last terms cancel, giving Figs. 14a−f | ξ=1 = −Q 2 g 2 [dk 1 ][dk 2 ] 1 k 4 1 ˆ Π ′(1)ρρ ′ (k 1 , k 2 ) − k 2 1 g ρρ ′ ∆Π ′(1) (k 1 , k 2 , 1) × G r ρµ (k 1 , −p 3 , p − k 1 , p 4 )S(p − k 1 )G r ρ ′ ν (−k 1 , p 1 , p 2 , p − k 1 ) + 1 2 C F γ µ S(p)γ ν S(p 2 )γ ρ S(p 2 − k 1 )γ ρ ′ + γ ρ S(p 4 − k 1 )γ ρ ′S (p 4 )γ µ S(p)γ ν . (4.11) Having cancelled among the integrands in Eqs. (4.6) and (4.9) the factors of longitudinal fourmomentum k ρ 1 , k ρ ′ 1 occurring in the pinch part −k 2 1 t ρρ ′ (k 1 )∆Π ′(1) (k 1 , k 2 , 1) of</trash>
+
+
+				</figure>
+
+				<p>the integrand for the one-loop gluon self-energy insertions, the PT two-loop &quot; effective &quot; two-point component of the diagrams 14a–f may now be identified from the fermion propagator structure of the integrands in the resulting expression (4.11):</p>
+
+				<figure>
+					<trash>Figs. 14a−f | ξ=1,2−pt = −C F Q 2 g 2 [dk 1 ][dk 2 ] 1 k 4 1 ˆ Π ′(1) ρρ ′ (k 1 , k 2 ) − k 2 1 g ρρ ′∆Π ′(1) (k 1 , k 2 , 1) ×γ µ S(p)γ ρ S(p − k 1 )γ ρ ′ S(p)γ ν . (4.12)</trash>
+
+
+				</figure>
+
+				<p>The first term in Eq. (4.12) is the two-loop integrand required for the contribution to −î Σ (2) (p) of the diagram 10c, involving the PT one-loop gluon self-energy insertion in the PT one-loop fermion self-energy, here embedded in the process qγ → qγ. The second term in Eq. (4.12) is the g ρρ ′ component of the pinch part −∆Π</p>
+
+			</div>
+			<div>
+				<head>′(1)</head>
+
+				<p>ρρ ′ of the conventional ξ = 1 self-energy, the k 1ρ k 1ρ ′ component having exactly cancelled among the diagrams 14a–f as just described. In the next subsection, it will be shown how this second term is exactly cancelled by pinch contributions from the two-loop diagrams involving a single triple gauge vertex.</p>
+
+			</div>
+			<div>
+				<head n="4.2">Two-loop corrections involving one triple gauge vertex</head>
+
+				<p>We next consider the O(α 2 s ) QCD corrections to qγ → qγ consisting of two-loop diagrams involving a single triple gauge vertex. Eight of the set of ten such corrections are shown in Figs. 15a–h (the remaining two are external leg corrections which, in the Feynman gauge, make no contribution to the &quot; effective &quot; two-point component of the interaction; as before, there is also a corresponding set of diagrams with crossed external photon legs). As indicated in Fig. 15, the sums of the diagrams 15a–d, 15e+15f and 15g+15h may be written in terms of the tree level four-point function defined in Eq. (2.15). It is for these two-loop diagrams that we shall use the decomposition of the triple gauge vertex given in Eq. (3.4).</p>
+
+				<p>We consider first the four diagrams 15a–d. In the Feynman gauge, the sum of these four diagrams may be written</p>
+
+				<figure>
+					<trash>Figs. 15a−d| ξ=1 = −Q 2 g 4 [dk 1 ][dk 2 ] 1 k 2 1 k 2 2 k 2 3 f rst Γ ρστ (k 1 , k 2 , k 3 ) ×G s σµ (−k 2 , −p 3 , p + k 2 , p 4 )S(p + k 2 )γ τ T t S(p − k 1 )G r ρν (−k 1 , p 1 , p 2 , p − k 1 ) , (4.13)</trash>
+
+
+				</figure>
+
+				<p>where Γ ρστ (k 1 , k 2 , k 3 ) is the triple gauge vertex appearing in Fig. 15k, with k 1 + k 2 + k 3 = 0. The decomposition (3.4) substituted directly into the expression (4.13) for Figs. 15a–d is represented diagrammatically in Fig. 16. In particular, the four terms on the right hand side of Eq. (3.4) are shown in Figs. 16c–f, respectively. We now consider the contraction of the diagrams 16a+16b and 16g+16h with each of the four diagrams 16c–f in turn (the contractions will be represented by the symbol ⊗).</p>
+
+				<p>The first term −2Γ P,τ ρσ (k 3 ; k 1 , k 2 ) = 2k ρ 1 g στ − 2k σ 2 g ρτ from the decomposition (3.4) is shown in Fig. 16c. Substituting this term into the expression (4.13), then using the Ward identity (2.17), together with S −1 (p 2 ) = S −1 (p 4 ) = 0 for the on-shell external fermions, and also f rst T s T t T r =</p>
+
+				<figure>
+					<trash>1 2 iC A C F , one obtains Figs. (16a + 16b) ⊗ 16c ⊗ (16g + 16h)| ξ=1 = iC A C F Q 2 g 4 [dk 1 ][dk 2 ] 1 k 2 1 k 2 2 (k 1 + k 2 ) 2 γ µ S(p)γ ρ S(p − k 1 ) + S(p + k 2 ) γ ρ S(p)γ ν + γ µ S(p)γ ρ S(p − k 1 )γ ν S(p 2 − k 1 )γ ρ + γ ρ S(p 4 + k 2 )γ µ S(p + k 2 )γ ρ S(p)γ ν . (4.14)</trash>
+
+
+				</figure>
+
+				<p>The four terms on the r.h.s. of Eq. (4.14) are represented in Figs. 16i, 16j, 16n and 16r, respectively. Each of these four terms involves an internal one-loop gluon self-energy-like pinch part: the first two terms, shown in Figs. 16i and 16j, are internal pinch contributions to the conventional one-loop gluon self-energy insertion in the quark self-energy correction shown in Fig. 14a, i.e. they are contributions to the PT two-loop &quot; effective &quot; two-point component of the interaction; and the third and fourth terms, shown in Figs. 16n and 16r, are internal pinch contributions to the conventional one-loop gluon self-energy insertion in the vertex corrections shown in Figs. 14b and 14c, respectively. Isolating just the first two terms from Eq. (4.14), making the change of variables k 1 ↔ −k 2 in the second and then using Eq. (4.5) gives the &quot; effective &quot; two-point component of the integrand:</p>
+
+				<p><formula>(a) (b) (c) (d)                                                                                      =                                    (i) (j)                                    k 1 ✲ p − k 1      (k)      k 2 ✛ p + k 2                                    (l) (m) (e) (f)                                    =                (n)                k 2 ✛ p + k 2                                    (o) (p) (g) (h)                                    =                                    (s)                                    k 1 ✲ p − k 1                (q) (r) Fig. 15</formula></p>
+
+				<p>. a–h: The two-loop QCD corrections to the process qγ → qγ consisting of diagrams with one triple gauge vertex (the two such diagrams representing external leg corrections are not shown).</p>
+
+				<p><formula>(a) (b)                                    k 1 ✲ p − k 1                                                        ✛ ✲ −2 (c) + (d) + (e) − (f)                                                        k 2 ✛ p + k 2                                    (g) (h)                                    = (i) + (j) + (k) + (l) − (m) + (n) + (o) + (p) − (q) + (r) + (s) + (t) − (u) + (v) + (w) − (x) Fig. 16</formula></p>
+
+				<p>. a–h: The tree level diagrams shown in Figs. 15i–m, the contraction of which gives the twoloop diagrams shown in Figs. 15a–d, here with the decomposition (3.4) of the triple gauge vertex represented explicitly (16c–f). i–x: The contraction of these components. The diagrams in the first line (16i–m) are contributions to the PT self-energy correction; those in the second and third lines (16n–u) are contributions to the PT vertex corrections; and those in the fourth line (16v–x) are contributions to the PT box correction.</p>
+
+				<figure>
+					<trash>Figs. (16a + 16b) ⊗ 16c ⊗ (16g + 16h)| ξ=1,2−pt = −C F Q 2 g 2 [dk 1 ][dk 2 ] 1 k 2 1 ∆Π ′(1) (k 1 , k 2 , 1)γ µ S(p)γ ρ S(p − k 1 )γ ρ S(p)γ ν . (4.15)</trash>
+
+					<figDesc>We immediately see that the contribution Eq. (4.15) exactly cancels the g ρρ ′ component of the pinch part −∆Π ′(1) ρρ ′ of the conventional Feynman gauge one-loop gluon self-energy in Eq. (4.12). This cancellation leaves in Eq. (4.12) precisely the required integrand Π ′(1)</figDesc>
+
+				</figure>
+
+				<p>ρρ ′ (k 1 , k 2 ) for the unrenormalized PT gauge-independent one-loop gluon self-energy insertion. Adding the diagram 8i, with the PT one-loop renormalization constant (Z 3 − 1)</p>
+
+			</div>
+			<div>
+				<head>(1)</head>
+
+				<p>PT as the gluon selfenergy counterterm insertion, we have therefore succeeded in obtaining the contribution to the PT two-loop quark self-energy −î Σ (2) (p) of the diagram 10c, involving the renormalized PT one-loop gluon self-energy correction inserted into the PT one-loop quark self-energy, embedded in the process qγ → qγ.</p>
+
+				<p>The second and third terms Γ F ρστ (k 1 ; k 2 , k 3 ) and Γ F στ ρ (k 2 ; k 3 , k 1 ) from the decomposition (3.4) are shown in Figs. 16d and 16e. The corrections to qγ → qγ from these two components of the triple gauge vertex in Eq. (4.13) are represented diagrammatically in Figs. 16k, 16o, 16t and 16v and Figs. 16l, 16p, 16s and 16w, respectively. The contributions represented in Figs. 16k and 16l are self-energy-like ( &quot; effective &quot; two-point) corrections to the process. We see immediately that they give precisely the contribution of the diagram 14c to the PT one-loop quark-gluon vertex insertions appearing in the diagrams 10d and 10e, respectively, for the PT two-loop quark self-energy −î Σ (2) (p), embedded in the process qγ → qγ. The contributions represented in Figs. 16o, 16p, 16s and 16t are vertex-like corrections to qγ → qγ, while those in Figs. 16v and 16w are box-like corrections.</p>
+
+				<p>The last term −Γ F τ ρσ (k 3 ; k 1 , k 2 ) from the decomposition (3.4) is shown in Fig. 16f. The corrections to qγ → qγ from this component of the triple gauge vertex in Eq. (4.13) are represented in Figs. 16m, 16q, 16u and 16x, including explicitly in each case the associated minus sign. The contribution in Fig. 16m is a self-energy-like correction; those in Fig. 16q and 16u are vertex-like corrections; and that in Fig. 16x is a box-like correction. Having obtained, as just described, the required contributions from the diagrams of Fig. 15, thence Fig. 16, to the diagrams 10b–e for the PT two-loop fermion self-energy −î Σ (2) (p), the self-energy-like contribution of Fig. 16m is a contribution to the diagram 10f involving the PT quark-gluon kerneî V (0) , all embedded in the process qγ → qγ. The contribution of Fig. 16m thus gives the component of the PT kernel shown in Fig. 13b, involving just the component Γ F of the triple gauge vertex. There remain from Fig. 15 the diagrams 15e–h. In the Feynman gauge, the sum of these diagrams may be written</p>
+
+				<figure>
+					<trash>Figs. 15e−h| ξ=1 = Q 2 g 4 [dk 1 ][dk 2 ] 1 k 2 1 k 2 2 k 2 3 f rst Γ ρστ (k 1 , k 2 , k 3 ) × G s σµ (−k 2 , −p 3 , p + k 2 , p 4 )S(p + k 2 )γ ν S(p 2 + k 2 )γ τ T t S(p 2 − k 1 )γ ρ T r + γ σ T s S(p 4 + k 2 )γ τ T t S(p 4 − k 1 )γ µ S(p − k 1 )G r ρν (−k 1 , p 1 , p 2 , p − k 1 ) (4.16) with k 1 + k 2 + k 3 = 0</trash>
+
+
+				</figure>
+
+				<p>. For these diagrams, we again use the decomposition (3.4) for the triple gauge vertex in Eq. (4.16). It is found that, in the Feynman gauge, the diagrams 15e–h make no contribution to the PT self-energy-like ( &quot; effective &quot; two-point) component of the process qγ → qγ. Instead, the first term −2Γ P,τ ρσ (k 3 ; k 1 , k 2 ) from Eq. (3.4) results in a pair of two-loop vertex corrections similar and identical in magnitude to the diagrams 16n and 16r involving internal one-loop gluon self-energy-like pinch parts, together with a pair of two-loop external leg corrections, also involving internal one-loop gluon self-energy-like pinch parts. The remaining three terms from the decomposition Eq. (3.4) of the triple gauge vertex in Eq. (4.16) produce twelve diagrams, corresponding to the three different Γ F components from Eq. (3.4) substituted for the triple gauge vertices in the diagrams 15e–h (the orientations and signs should be clear).</p>
+
+			</div>
+			<div>
+				<head n="4.3">Two-loop gluonic corrections involving no triple gluon vertices</head>
+
+				<p>Finally, we consider the O(α 2 s ) gluonic corrections to qγ → qγ consisting both of one-particleirreducible and one-particle-reducible two-loop diagrams with no triple gauge vertices. The set of such QED-like diagrams are shown in Fig. 17 (the diagrams from this set which are purely external leg corrections are not shown; nor, as always, are the corresponding diagrams involving crossed external photon legs). In the Feynman gauge ξ = 1, there appear no factors of longitudinal gluon four-momentum in the corresponding two-loop integrands for these diagrams. Thus, in this gauge, no Ward identities are triggered (there is &quot; no pinching &quot; ), and the diagrams in Fig. 17 contribute directly to the PT two-loop self-energy, vertex and box corrections to qγ → qγ as shown. In particular, the only two contributions to the PT 1PI two-loop quark self-energy ( &quot; effective &quot; two-point) correction are from the diagrams 17a and 17b (the diagram 17a ′ gives the one-particle-reducible chain of two PT one-loop quark self-energies). From the diagram 17a, adding the corresponding diagrams involving the PT one-loop fermion self-energy counterterms (Z 2 − 1)</p>
+
+				<figure>
+					<trash>(1) PT and (Z m − 1) (1)</trash>
+
+					<figDesc>PT , we immediately obtain the required contribution to the PT two-loop fermion self-energy −î Σ (2) (p) of Fig. 10b</figDesc>
+
+				</figure>
+
+				<p>, involving the renormalized PT one-loop quark self-energy as an internal correction to, in turn, the PT one-loop quark self-energy, all embedded in the process qγ → qγ. This is as remarked at the beginning of this section. From the diagram 17b, however, we first have to add and subtract another identical such contribution. In this way, we obtain from twice the diagram 17b the required contribution of the diagram 12j to the PT one-loop quark-gluon vertex insertions appearing in the diagrams 10d and 10e, respectively, for −î Σ (2) (p), all embedded in the process qγ → qγ. It then remains to subtract again the contribution of the diagram 17b to avoid overcounting. Having now obtained all of the required contributions to the diagrams 10b–e, this subtracted contribution to −î Σ (2) (p) is a contribution to the the diagram 10f involving the PT quark-gluon kerneî V (0) , again all embedded in the process qγ → qγ. The contribution of minus Fig. 17b thus gives the component of the PT kernel shown in Fig. 13c.</p>
+
+				<figure>
+					<trash>(a) (b) (c) (d) (e) (f) (g) (h) (i) (j) (k) (l) (m) (n) (o) (p) (q) (r) (s) (t) (u) (v) (w) (x) (y) (z) (a ′ ) (b ′ ) (c ′ ) (d ′ ) (e ′ ) (f ′ ) (g ′ ) (h ′ ) (i ′ ) (j ′ ) (k ′ ) (l ′ ) Fig. 17</trash>
+
+
+				</figure>
+
+				<p>. The two-loop one-particle-irreducible (17a–z) and one-particle-reducible (17a ′ –l ′ ) gluonic corrections to the process qγ → qγ consisting of diagrams with no triple gauge vertices (the diagrams representing purely external leg corrections are not shown).</p>
+
+			</div>
+			<div>
+				<head n="4.4">Remarks</head>
+
+				<p>The analysis presented in this section may be summarized and commented upon as follows: (1) In section 4.1, the longitudinal k 1ρ k 1ρ ′ component of the pinch part −∆Π</p>
+
+				<figure>
+					<trash>′(1) ρρ ′ (k 1 , k 2 , 1) of</trash>
+
+
+				</figure>
+
+				<p>the Feynman gauge one-loop gluon self-energy insertion exactly cancelled among the integrands in Eqs. (4.6) and (4.9) for the diagrams 14a–f. This algebraic cancellation is identical to the cancellation of the longitudinal k ρ k ρ ′ component of the lowest order gluon propagator among the integrands in Eqs. (2.18) and (2.20) for the diagrams 3a–f, described in section 2 for the construction of the PT one-loop quark self-energy. (2) In section 4.2, the elementary decomposition Eq. (3.4) of the triple gauge vertex, substituted into Eq. (4.13) for the diagrams 15a–d, provided precisely the required contributions to −î Σ (2) (p) of the diagrams 10c–e involving the PT one-loop gluon self-energy and quarkgluon vertex internal corrections, and also a contribution to the diagram 10f involving the PT quark-gluon kernel insertion: • The first term −2Γ P τ ρσ (k 3 ; k 1 , k 2 ) provided the longitudinal factors which gave the twoloop self-energy-like ( &quot; effective &quot; two-point) contributions shown in Figs. 16i and 16j, involving internal one-loop gluon self-energy-like pinch parts. These contributions exactly cancelled the g ρρ ′ component of the pinch part −∆Π</p>
+
+			</div>
+			<div>
+				<head>′(1)</head>
+
+				<p>ρρ ′ (k 1 , k 2 , 1) of the Feynman gauge one-loop gluon self-energy appearing in Fig. 14a. This cancellation, together with that described in section 4.1, left just the required contribution to −î Σ (2) (p) of the diagram 10c, involving the PT one-loop gluon self-energy insertion. • The second and third terms Γ F ρστ (k 1 ; k 2 , k 3 ), Γ F στ ρ (k 2 ; k 3 , k 1 ) gave the two-loop selfenergy-like contributions shown in Figs. 16k and 16l. These contributions provided just the required triple gauge vertex component of the contribution to −î Σ (2) (p) of the diagrams 10d and 10e, involving the PT one-loop quark-gluon vertex insertions. • The last term −Γ F τ ρσ (k 3 ; k 1 , k 2 ) gave the two-loop self-energy-like contribution shown in Fig. 16m. Having obtained the required terms involving triple gauge vertices in the contributions to −î Σ (2) (p) of the diagrams 10c–e, this term provided a contribution to the diagram 10f, involving the PT tree level quark-gluon kernel insertion. This contribution to the PT quark-gluon kernel is shown in Fig. 13b. It is remarkable that the elementary decomposition Eq. (3.4) of the triple gauge vertex not only results in the required components of the diagrams 10c–e, but also that the remaining two-loop fermion self-energy-like contribution, allocated to the PT kernel insertion diagram 10f, involves just the component Γ F of the triple gauge vertex, and appears automatically with the appropriate minus sign. Thus, as in the PT at one loop, all tree level triple gauge vertices which occur in the PT two-loop quark self-energy −î Σ (2) (p) involve only the component Γ F of the triple gauge vertex, given in Eq. (3.2). (3) In section 4.3, the diagrams 17a and 17b provided just the required QED-like components of the contributions to −î Σ (2) (p) of the diagrams 10b, 10d and 10e involving the PT one-loop fermion self-energy and quark-gluon vertex internal corrections, and also a second contribution to the diagram 10f involving the PT quark-gluon kernel insertion. This contribution to the PT quark-gluon kernel is shown in Fig. 13c. Given that in the Feynman gauge there occur no longitudinal factors in the integrands for the diagrams of Fig. 17, this was trivial. (4) The resulting PT tree level Bethe-Salpeter-type quark-gluon kernel thus corresponds, as stated in section 3, to the diagrams shown in Fig. 13: Fig. 13a</p>
+
+				<figure>
+					<trash>= i ˆ V (0)rs ρσ (p, k 1 , k 2 ) = ig 2 if mrs T m Γ F µρσ (−k 1 − k 2 ; k 1 , k 2 )D µν (k 1 + k 2 , 1)γ ν − T r T s γ ρ S(p − k 1 + k 2 )γ σ . (4.17)</trash>
+
+
+				</figure>
+
+				<p>It is emphasized that, having obtained the required contributions to −î Σ (2) (p) shown in Figs. 10b–e, the PT kernel insertion contribution shown in Fig. 10f emerged immediately as the remaining self-energy-like component of the two-loop diagrams, without any further rearrangement. It is seen from Fig. 13 that the PT kernel indeed has no contributions involving annihilation into a one-particle (quark) intermediate state. Furthermore, and as already stated in section 3, the fact that the diagram 13b involves only the component Γ F µρσ of the triple gauge vertex, with the internal gluon propagator as in the Feynman gauge, means that the PT tree level quark-gluon kerneî V (0)rs ρσ (p, k 1 , k 2 ) provides no factors of longitudinal gluon four-momentum k 1ρ , k 2σ associated with the external gluon legs A r ρ (k 1 ), A s σ (k 2 ). When inserted in some diagram, e.g. as in Fig. 10f, the PT kernel therefore does not trigger any Ward identities, and so does not cause any further PT rearrangement (it triggers no &quot; pinching &quot; ). With hindsight, this is seen to be crucial for the consistency of the PT algorithm at the two-loop level. For if, having obtained the required contributions to −î Σ (2) (p) shown in Figs. 10b–e, thus accounting for the first three terms on the r.h.s. of the decomposition (3.4) of the triple gauge vertex appearing in Fig. 15k, the remaining term in (3.4) had involved further longitudinal factors k 1ρ , k 2σ , then these factors would have produced further internal one-loop pinch parts. The allocation of the contributions to Figs. 10c–e would then have been ambiguous. (5) The conventional tree level quark-gluon kernel shown in Figs. 9m–o can be written in terms of the PT kernel as Fig. 9m</p>
+
+				<figure>
+					<trash>= iV (0)rs ρσ (p, k 1 , k 2 , ξ) (4.18) = i ˆ V (0)rs ρσ (p, k 1 , k 2 ) + g 2 f rsm T m 1 (k 1 + k 2 ) 2 −k 1ρ γ σ + k 2σ γ ρ − (1 − ξ) k 2 1 t ρσ (k 1 ) − k 2 2 t ρσ (k 2 ) 1 (k 1 + k 2 ) 2 (k / 1 + k / 2 ) . (4.19)</trash>
+
+
+				</figure>
+
+				<p>For the case in which the gluon legs A r ρ (k 1 ), A s σ (k 2 ) are on-shell, contracting the above expression with polarization vectors ǫ ρ (k 1 ), ǫ * σ (−k 2 ) for the incoming and outgoing gluon legs, and using k 1 ·</p>
+
+				<figure>
+					<trash>ǫ(k 1 ) = k 2 · ǫ * (−k 2 ) = k 2 1 = k 2 2 = 0, we obtain V (0)rs ρσ (p, k 1 , k 2 , ξ)ǫ ρ (k 1 )ǫ * σ (−k 2 ) = ˆ V (0)rs ρσ (p, k 1 , k 2 )ǫ ρ (k 1 )ǫ * σ (−k 2 ) . (4.20)</trash>
+
+
+				</figure>
+
+				<p>Thus, for the case of tree level quark-gluon scattering in which both the incoming and outgoing gluons are on-shell, the amplitudes given by the PT and conventional kernels for the contributions not involving a one-particle (quark) intermediate state exactly coincide. (6) Although not explicitly considered here, it requires only a little more effort to obtain the two-loop QCD contributions to the PT quark-photon vertex ( &quot; effective &quot; three-point function ), quark-photon box ( &quot; effective &quot; four-point function) and quark external leg corrections to qγ → qγ. In contrast to the case of the self-energy component, some or all of the external legs of these functions are on-shell. In the particular case of the QCD contribution to PT two-loop quark-photon vertex Γ (2) µ , this function is given by attaching an external photon leg in all possible ways to the internal fermion lines occurring in the diagrams for the PT two-loop quark self-energy −î Σ (2) . It is then straightforward to verify the simple QED-like Ward identity for these two-loop functions:</p>
+
+				<figure>
+					<trash>q µ ˆ Γ (2) µ (q, p 1 , p 2 ) = ˆ Σ (2) (p 1 ) − ˆ Σ (2) (p 2 ) (4.21)</trash>
+
+
+				</figure>
+
+				<p>where q + p 1 = p 2 . Furthermore, the two-loop external quark leg corrections are given by precisely the same self-energy function −î Σ (2) as that just obtained from the &quot; effective &quot; twopoint component of the process. These two facts are also essential for the consistency of the PT approach.</p>
+
+				<figure>
+					<trash>5 Gauge independence of −î Σ (2) (p)</trash>
+
+
+				</figure>
+
+				<p>In this section, we again consider the first two steps in the construction of −î Σ (2) (p) outlined at the end of section 3, but now starting from an arbitrary linear covariant gauge, i.e. arbitrary ξ. It is explicitly shown that the PT two-loop quark self-energy constructed in the previous section starting from the Feynman gauge ξ = 1 is in fact ξ-independent. The strategy is to show that the additional contributions to the PT self-energy-like ( &quot; effective &quot; two-point) component of the interaction qγ → qγ which occur when one moves away from the Feynman gauge exactly cancel among themselves. This cancellation takes place at the level of the two-loop integrands. In order to demonstrate this cancellation, it will again be convenient to deal separately with the three classes of two-loop QCD corrections to qγ → qγ considered in sections 4.1, 4.2 and 4.3, respectively.</p>
+
+			</div>
+			<div>
+				<head>5.1</head>
+
+				<p>Two-loop corrections involving one-loop gluon self-energy insertions</p>
+
+				<p>The set of diagrams for the two-loop corrections to qγ → qγ involving unrenormalized one-loop gluon self-energy insertions are as shown already in Figs. 14a–f. Using the usual covariant gauge Feynman rules for the diagram shown in Fig. 9e, the integrand in Eq. (4.1) for the conventional one-loop covariant gauge gluon self-energy may be written</p>
+
+				<figure>
+					<trash>iΠ ′(1) µν (q, k, ξ) = iΠ ′(1) µν (q, k, 1) + C A g 2 1 k 2 (k + q) 2 Γ µρσ (q, k, −k − q)Γ νρ ′ σ ′(−q, −k, k + q) × (1 − ξ)l ρρ ′ (k)g σσ ′ − 1 2 (1 − ξ) 2 l ρρ ′ (k)l σσ ′ (k + q) , (5.1)</trash>
+
+
+				</figure>
+
+				<p>where k and k + q are the four-momenta of the gluons propagating in the loop in Fig. 9e. The contraction of the longitudinal terms l ρρ ′ (k), l σσ ′ (k + q) in Eq. (5.1) is most easily carried out using the elementary Ward identities for the triple gauge vertex:</p>
+
+				<figure>
+					<trash>q ρ 1 Γ ρστ (q 1 , q 2 , q 3 ) = q 2 3 t στ (q 3 ) − q 2 2 t στ (q 2 ) , (5.2) q ρ 1 q σ 2 Γ ρστ (q 1 , q 2 , q 3 ) = 1 2 (q 2 − q 1 ) τ ′ q 2 3 t τ ′ τ (q 3 ) . (5.3)</trash>
+
+
+				</figure>
+
+				<p>The pinch part of the one-loop covariant gauge gluon self-energy integrand Eq</p>
+
+				<figure>
+					<trash>. (5.1), defined in Eq. (4.2) and given in Eqs. (4.4) and (4.5) for ξ = 1, may be written for arbitrary ξ as ∆Π ′(1) µν (q, k, ξ) = ∆Π ′(1) µν (q, k, 1) + 3 i=1 ∆Π ′(1) i,µν (q, k, ξ) . (5.4) In Eq. (5.4), the contributions to Π ′(1) µν (q, k, ξ), hence ∆Π ′(1)</trash>
+
+
+				</figure>
+
+				<p>µν (q, k, ξ), which occur for ξ = 1 have been written as three distinct components. In the construction of the PT one-loop gauge-independent gluon self-energy starting from a four-fermion process, these terms are distinguished as follows: the component ∆Π ′(1) 1,µν (q, k, ξ) is that which is cancelled by the ξ = 1 self-energy-like pinch parts of the conventional one-loop vertex diagrams involving the triple gauge vertex; the component ∆Π ′(1) 2,µν (q, k, ξ) is that which is cancelled by the ξ = 1 selfenergy-like pinch parts from the conventional one-loop box diagrams plus the conventional one-loop vertex diagrams not involving the triple gauge vertex (i.e. the QED-like diagrams); and the remaining component ∆Π ′(1) 3,µν (q, k, ξ), purely longitudinal i.e. proportional to q µ q ν , vanishes when the external fermions are on-shell, as is the case in the S-matrix PT. These three components are given by 10</p>
+
+				<figure>
+					<trash>∆Π ′(1) 1,µν (q, k, ξ) = 2A q 2 t µν (q) − (k + q) 2 t µν (k + q) + B ρρ ′ g ρ µ t ρ ′ ν (q) + t ρ µ (q)g ρ ′ ν , (5.5) ∆Π ′(1) 2,µν (q, k, ξ) = A (k + q) 2 − q 2 g µν − B µν , (5.6) ∆Π ′(1) 3,µν (q, k, ξ) = A q 2 − (k + q) 2 [1 − 2l ρρ ′(q)t ρρ ′ (k + q)] l µν (q) + B ρρ ′ l ρ µ (q)l ρ ′ ν (q) . (5.7)</trash>
+
+					<figDesc>In the above expressions, for brevity we have introduced</figDesc>
+					<trash>A = −i(1 − ξ)C A g 2 1 k 4 (k + q) 2 q 2 , (5.8) B ρρ ′ = i(1 − ξ) 2 C A g 2 (2k + q) ρ (2k + q) ρ ′ 8k 4 (k + q) 4 q 4 . (5.9) Substituting Eq. (5.4) into Eq. (4.6), the sum of the four diagrams 14a–d for arbitrary ξ can be written as Figs. 14a−d = Figs. 14a−d| ξ=1 + Q 2 g 2 [dk 1 ][dk 2 ] 1 k 4 1 3 i=1 ∆Π ′(1)ρρ ′ i (k 1 , k 2 , ξ) ×G r ρµ (k 1 , −p 3 , p − k 1 , p 4 )S(p − k 1 )G r ρ ′ ν (−k 1 , p 1 , p 2 , p − k 1 ) . (5.10) For the purely longitudinal pinch part term ∆Π ′(1)ρρ ′ 3 (k 1 , k 2 , ξ) in Eq. (5.10), proportional to k ρ 1 k ρ ′ 1</trash>
+
+
+				</figure>
+
+				<p>, the effect of the longitudinal factors is precisely analogous to the effect of the longitudinal factors from the tree level gluon propagator appearing in Eq</p>
+
+				<figure>
+					<trash>. (2.18) for Figs. 3a–d, or the 10 In Eq. (5.7), the dimensional regularization rule [dk]</trash>
+
+
+				</figure>
+
+				<p>k −2 = 0 has been used to drop terms which vanish upon integration. longitudinal factors from the pinch part k 2 1 t ρρ ′ (k 1 )∆Π ′(1) (k 1 , k 2 , 1) of the one-loop-corrected gluon propagator in Eq. (4.7) for Figs. 14a–d in the Feynman gauge. Thus, using the Ward identity Eq. (2.17), the i = 3 term in Eq. (5.10) results in a p-independent contribution which is cancelled algebraically by two corresponding contributions from the expression Eq</p>
+
+				<figure>
+					<trash>. (4.9) for Figs. 14e and 14f. The term ∆Π ′(1)ρρ ′ 3</trash>
+
+
+				</figure>
+
+				<p>(k 1 , k 2 , ξ) therefore makes no net contribution to the process qγ → qγ. The remaining i = 1, 2 pinch part terms in Eq. (5.10) are neither purely longitudinal nor purely proportional to g ρρ ′ . At this point, we could project out the k</p>
+
+				<figure>
+					<trash>ρ 1 k ρ ′ 1 and g ρρ ′ components of ∆Π ′(1)ρρ ′ i (k 1 , k 2 , ξ), i = 1, 2</trash>
+
+
+				</figure>
+
+				<p>. The purely longitudinal components would then each give no net contribution, as in the case of ∆Π ρρ ′ 3 (k 1 , k 2 , ξ). This would leave just the g ρρ ′ components in Eq. (5.10). In Fig. 14a, these latter are then a contribution to the PT self-energy-like component of the process, in Figs. 14b and 14c they are contributions to the PT vertexlike component of the process and in Fig. 14d they are a contribution to the PT box-like component of the process. The task would then be to show that these g ρρ ′ components are cancelled by corresponding terms from the remaining two-loop diagrams in Figs. 15 and 17. However, we shall show in the next two subsections that the full functions ∆Π</p>
+
+				<figure>
+					<trash>′(1)ρρ ′ i (k 1 , k 2 , ξ), i = 1, 2</trash>
+
+
+				</figure>
+
+				<p>, in fact emerge naturally from the remaining two-loop diagrams in exactly the form of Eq. (5.10) but with the opposite sign. The cancellation of the one-loop gluon self-energy pinch parts ∆Π ′(1)ρρ ′ i (k 1 , k 2 , ξ), i = 1, 2, therefore occurs immediately, and there is thus no need to do make this projection.</p>
+
+			</div>
+			<div>
+				<head n="5.2">Two-loop diagrams with one triple gauge vertex</head>
+
+				<p>The subset of two-loop QCD corrections to qγ → qγ involving one triple gauge vertex are as shown already in Fig. 15 (purely external leg corrections are not shown). As indicated in Fig. 15, the sum of these eight two-loop diagrams may be written in terms of the four-point function (2.15):</p>
+
+				<figure>
+					<trash>Figs. 15a−h = Q 2 g 4 [dk 1 ][dk 2 ] D ρρ ′ (k 1 , ξ)D σσ ′ (k 2 , ξ)D τ τ ′ (k 3 , ξ)f rst Γ ρ ′ σ ′ τ ′(k 1 , k 2 , k 3 ) × G s σµ (−k 2 , −p 3 , p + k 2 , p 4 )S(p + k 2 )γ τ T t S(p − k 1 )G r ρν (−k 1 , p 1 , p 2 , p − k 1 ) −G s σµ (−k 2 , −p 3 , p + k 2 , p 4 )S(p + k 2 )γ ν S(p 2 + k 2 )γ τ T t S(p 2 − k 1 )γ ρ T r −γ σ T s S(p 4 + k 2 )γ τ T t S(p 4 − k 1 )γ µ S(p − k 1 )G r ρν (−k 1 , p 1 , p 2 , p − k 1 ) , (5.11) with k 1 + k 2 + k 3 = 0.</trash>
+
+
+				</figure>
+
+				<p>In the above expression, the first term on the r.h.s. corresponds to the sum of the diagrams 15a–d, the second term to the diagrams 15e + 15f, and the third term to the diagrams 15g + 15h. Eq. (5.11) is just the generalization to ξ = 1 of Eqs. (4.13) and (4.16). Using the expression (2.1) together with the Ward identities (5.2) and (5.3), the contraction of the three gluon propagators with the triple gauge vertex in Eq</p>
+
+				<figure>
+					<trash>. (5.11) may be written in the form D ρρ ′ (k 1 , ξ)D σσ ′ (k 2 , ξ)D τ τ ′ (k 3 , ξ)Γ ρ ′ σ ′ τ ′(k 1 , k 2 , k 3 ) = D ρρ ′ (k 1 , 1)D σσ ′ (k 2 , 1)D τ τ ′ (k 3 , 1)Γ ρ ′ σ ′ τ ′(k 1 , k 2 , k 3 ) + (1 − ξ) 1 k 2 1 k 2 2 k 2 3 × k ρ 1 k 2 1 k 2 3 t στ (k 3 ) − k 2 2 t στ (k 2 ) + c.p. + (1 − ξ) k ρ 1 k σ 2 2k 2 1 k 2 2 (k 1 − k 2 ) τ ′ k 2 3 t τ ′ τ (k 3 ) − k σ 2 4k 2 2 k 2 3 (k 1 + (k 2 − k 3 )) τ (k 2 − k 3 ) ρ ′ k 2 1 t ρ ′ ρ (k 1 ) − k ρ 1 4k 2 1 k 2 3 (k 2 − (k 3 − k 1 )) τ (k 3 − k 1 ) σ ′ k 2 2 t σ ′ σ (k 2 ) , (5.12)</trash>
+
+
+				</figure>
+
+				<p>where &quot; c.p. &quot; indicates cyclic permutations of {k 1 , ρ}, {k 2 , σ}, {k 3 , τ }. Substituting the above expression into Eq. (5.11) and using the Ward identities (2.16) and (2.17), together with S −1 (p 2 ) = S −1 (p 4 ) = 0 for the on-shell external fermions, it is a matter of straightforward algebra to obtain</p>
+
+				<figure>
+					<trash>Figs. 15a−h = Figs. 15a−h| ξ=1 − i(1 − ξ)C A Q 2 g 4 [dk 1 ][dk 2 ] 1 k 2 1 k 2 2 k 2 3 × 1 2k 2 2 k 2 3 t ρρ ′ (k 3 ) − k 2 1 t ρρ ′ (k 1 ) + 1 2k 2 3 k 2 2 t ρρ ′ (k 2 ) − k 2 1 t ρρ ′ (k 1 ) + (1 − ξ) k 2 1 8k 2 2 k 2 3 (k 2 − k 3 ) ρ ′ (k 2 − k 3 ) τ t ρ τ (k 1 ) ×G r ρ ′ µ (k 1 , −p 3 , p − k 1 , p 4 )S(p − k 1 )G r ρν (−k 1 , p 1 , p 2 , p − k 1 ) + 1 2k 2 1 k 2 3 t σσ ′ (k 3 ) − k 2 2 t σσ ′ (k 2 ) + 1 2k 2 3 k 2 1 t σσ ′ (k 1 ) − k 2 2 t σσ ′ (k 2 ) + (1 − ξ) k 2 2 8k 2 1 k 2 3 t σ τ (k 2 )(k 1 − k 3 ) τ (k 1 − k 3 ) σ ′ ×G s σµ (−k 2 , −p 3 , p + k 2 , p 4 )S(p + k 2 )G s σ ′ ν (k 2 , p 1 , p 2 , p + k 2 ) + γ µ S(p)γ ν · · · + · · · γ µ S(p)γ ν . (5.13)</trash>
+
+
+				</figure>
+
+				<p>In the above expression, the ellipses in the last line post-and pre-multiplying γ µ S(p)γ ν stand for complicated expressions which are contributions to the external leg corrections. Making the change of variables k 1 ↔ −k 2 in the term in Eq</p>
+
+				<figure>
+					<trash>. (5.13) involving S(p + k 2 ) and using the definition Eq. (5.5) then gives Figs. 15a−h = Figs. 15a−h| ξ=1 − Q 2 g 2 [dk 1 ][dk 2 ] 1 k 4 1 ∆Π ′(1)ρρ ′ 1 (k 1 , k 2 , ξ) ×G r ρµ (k 1 , −p 3 , p − k 1 , p 4 )S(p − k 1 )G r ρ ′ ν (−k 1 , p 1 , p 2 , p − k 1 ) + γ µ S(p)γ ν · · · + · · · γ µ S(p)γ ν . (5.14) Comparing Eq. (5.14) with Eq. (5.10), we immediately see that the i = 1 pinch part component ∆Π ′(1)ρρ ′ 1</trash>
+
+
+				</figure>
+
+				<p>(k 1 , k 2 , ξ) of the conventional one-loop gluon self-energy insertion is cancelled individually for each of the diagrams 14a–d.</p>
+
+				<p><formula>q 1 , ρ, r q 2 , σ, s q 3 , µ q 4 q 5</formula></p>
+
+				<p>× six perms. Fig. 18. The Feynman diagrams specifying the &quot; abelian-like &quot; five-point function G rs ρσµ (q 1 , q 2 , q 3 , q 4 , q 5 ).</p>
+
+			</div>
+			<div>
+				<head n="5.3">Two-loop diagrams involving no triple gauge vertices</head>
+
+				<p>Finally, we consider the two-loop gluonic corrections to qγ → qγ consisting of diagrams with no triple gauge vertices. The sets of one-particle-irreducible and one-particle-reducible such diagrams are as shown already in Figs. 17a–z and 17a ′ –l ′ , respectively.</p>
+
+				<p>In order to deal efficiently with the diagrams 17a–z, it is very convenient to define the connected &quot; abelian-like &quot; five-point function G rs ρσµ (q 1 , q 2 , q 3 , q 4 , q 5 ), specifying the tree level coupling of a pair of gluons A r ρ (q 1 ), A s σ (q 2 ) and a photon A r µ (q 3 ) to a quark with electromagnetic charge Q via quark-gauge boson vertices only, i.e. excluding triple gauge vertices. The six relevant diagrams are as shown in Fig. 18: Fig. 18</p>
+
+				<figure>
+					<trash>= −Qg 2 G rs ρσµ (q 1 , q 2 , q 3 , q 4 , q 5 ) (5.15) = −Qg 2 iγ ρ T r S(q 5 − q 1 )G s σµ (q 2 , q 3 , q 4 , q 5 − q 1 ) +iγ σ T s S(q 5 − q 2 )G r ρµ (q 1 , q 3 , q 4 , q 5 − q 2 ) −iγ µ S(q 5 − q 3 ) γ σ T s S(q 4 + q 1 )γ ρ T r + γ ρ T r S(q 4 + q 2 )γ σ T s . (5.16)</trash>
+
+
+				</figure>
+
+				<p>In Eq. (5.16), advantage has been taken of the four-point function (2.15) to simplify the expression. This five-point function satisfies the following &quot; Ward &quot; identities:</p>
+
+				<figure>
+					<trash>q ρ 1 G rs ρσµ (q 1 , q 2 , q 3 , q 4 , q 5 ) = f rst G t σµ (q 1 + q 2 , q 3 , q 4 , q 5 ) −iG s σµ (q 2 , q 3 , q 4 + q 1 , q 5 )S(q 4 + q 1 )T r S −1 (q 4 ) +iS −1 (q 5 )T r S(q 5 − q 1 )G s σµ (q 2 , q 3 , q 4 , q 5 − q 1 ) , (5.17) q ρ 1 q σ 2 G rs ρσµ (q 1 , q 2 , q 3 , q 4 , q 5 ) = 1 2 f rst (q 2 − q 1 ) τ G t τ µ (q 1 + q 2 , q 3 , q 4 , q 5 ) − 1 2 i{T r , T s }γ µ S(q 4 + q 1 + q 2 )S −1 (q 4 ) − 1 2 i{T r , T s }S −1 (q 5 )S(q 5 − q 1 − q 2 )γ µ +iT r T s S −1 (q 5 )S(q 5 − q 1 )γ µ S(q 4 + q 2 )S −1 (q 4 ) +iT s T r S −1 (q 5 )S(q 5 − q 2 )γ µ S(q 4 + q 1 )S −1 (q 4 ) . (5.18)</trash>
+
+
+				</figure>
+
+				<p>It is easy to see that the eighteen diagrams 17a–r may be obtained simply by contracting together via a fermion and two gluon propagators a pair of the above five-point functions, with an overall factor of one half in order to account for the symmetry under interchange of the two gluons. Furthermore, the two sets of four diagrams 17s–v and 17w–z may be written in terms of the four-point function (2.15). Explicitly, we have</p>
+
+				<figure>
+					<trash>Figs. 17a−z = −iQ 2 g 4 [dk 1 ][dk 2 ]</trash>
+
+
+				</figure>
+
+				<p>D</p>
+
+				<figure>
+					<trash>ρρ ′ (k 1 , ξ)D σσ ′ (k 2 , ξ) × 1 2 G rs ρσµ (k 1 , k 2 , −p 3 , p − k 1 − k 2 , p 4 )S(p − k 1 − k 2 )G rs ρ ′ σ ′ ν (−k 1 , −k 2 , p 1 , p 2 , p − k 1 − k 2 ) +G r ρµ (k 1 , −p 3 , p − k 1 , p 4 )S(p − k 1 )γ ν S(p 2 − k 1 )γ σ T s S(p 2 − k 1 − k 2 ) × γ σ ′T s S(p 2 − k 1 )γ ρ ′T r + γ ρ ′T r S(p 2 − k 2 )γ σ ′T s + γ ρ ′T r S(p 4 − k 1 )γ σ ′T s + γ σ ′T s S(p 4 − k 2 )γ ρ ′T r ×S(p 4 − k 1 − k 2 )γ σ T s S(p 4 − k 1 )γ µ S(p − k 1 )G r ρν (−k 1 , p 1 , p 2 , p − k 1 ) . (5.19)</trash>
+
+
+				</figure>
+
+				<p>In the above expression, the term involving S(p − k 1 − k 2 ) accounts for the diagrams 17a–r, the term involving G r ρµ (k 1 , −p 3 , p − k 1 , p 4 ) accounts for the diagrams 17s–v and the term involving G r ρν (−k 1 , p 1 , p 2 , p − k 1 ) accounts for the diagrams 17w–z. Using the Ward identities (2.16), (2.17) (5.17) and (5.18) for the factors of longitudinal four-momentum originating from the gluon propagators in Eq. (5.19), together with S −1 (p 2 ) = S −1 (p 4 ) = 0, after some algebra the resulting expression may be written</p>
+
+				<figure>
+					<trash>Figs. 17a−z = Figs. 17a−z| ξ=1 − i(1 − ξ)Q 2 g 4 [dk 1 ][dk 2 ] 1 k 2 1 k 4 2 × G t τ µ (k 1 + k 2 , −p 3 , p − k 1 − k 2 , p 4 )S(p − k 1 − k 2 )G t τ ′ ν (−k 1 − k 2 , p 1 , p 2 , p − k 1 − k 2 ) ×C A g τ τ ′ − (1 − ξ) (k 1 − k 2 ) τ (k 1 − k 2 ) τ ′ 8k 2 1 + (C F − C A )G r ρµ (k 1 , −p 3 , p − k 1 , p 4 )S(p − k 1 )G r,ρ ν (−k 1 , p 1 , p 2 , p − k 1 ) + γ µ S(p)γ ν · · · + · · · γ µ S(p)γ ν . (5.20)</trash>
+
+
+				</figure>
+
+				<p>In the above expression, the ellipses post-and pre-multiplying γ µ S(p)γ ν again stand for complicated expressions which are contributions to the external leg corrections. There remain the one-particle-reducible diagrams 17a ′ –l ′ . These diagrams may be written in terms of the connected four-point function defined in Eq. (2.15):</p>
+
+				<figure>
+					<trash>Figs. 17a ′ −l ′ = iQ 2 g 4 [dk 1 ][dk 2 ]</trash>
+
+
+				</figure>
+
+				<p>D</p>
+
+				<figure>
+					<trash>ρρ ′ (k 1 )D σσ ′ (k 2 ) × G s σµ (−k 2 , −p 3 , p + k 2 , p 4 )S(p + k 2 )γ σ ′T s S(p)γ ρ ′T r S(p − k 1 )G r ρν (−k 1 , p 1 , p 2 , p − k 1 ) + 1 2 G r ρµ (k 1 , −p 3 , p − k 1 , p 4 )S(p − k 1 )G r ρ ′ ν (−k 1 , p 1 , p 2 , p − k 1 ) S(p 2 )γ σ T s S(p 2 − k 2 )γ σ ′T s + 1 2 γ σ T s S(p 4 − k 2 )γ σ ′T s S(p 4 ) G r ρµ (k 1 , −p 3 , p − k 1 , p 4 )S(p − k 1 )G r ρ ′ ν (−k 1 , p 1 , p 2 , p − k 1 ) . (5.21)</trash>
+
+
+				</figure>
+
+				<p>In the above expression, the first term on the r.h.s. accounts for the diagrams 17a ′ –d ′ , the second term for the diagrams 17e ′ –h ′ and the third term for the diagrams 17i ′ –l ′ . The second and third terms are each just the expression (2.18) for the one-loop corrections shown in Figs. 3a–d, post-and pre-multiplied, respectively, by the expression for the one-loop external leg corrections. Using the Ward identities (2.16) and (2.17) for the factors of longitudinal four-momentum from the gluon propagators in Eq</p>
+
+				<figure>
+					<trash>. (5.21), together with S −1 (p 2 ) = S −1 (p 4 ) = 0, we obtain Figs. 17a ′ −l ′ = Figs. 17a ′ −l ′ | ξ=1 + i(1 − ξ)Q 2 g 4 [dk 1 ][dk 2 ] 1 k 2 1 k 4 2 ×C F G r ρµ (k 1 , −p 3 , p − k 1 , p 4 )S(p − k 1 )G r ρ ′ ν (−k 1 , p 1 , p 2 , p − k 1 ) + γ µ S(p)γ ν · · · + · · · γ µ S(p)γ ν . (5.22)</trash>
+
+
+				</figure>
+
+				<p>Making the changes of variables k 2 → −k 2 followed by k 1 → k 1 + k 2 in the term in Eq. (5.20) proportional to S(p − k 1 − k 2 ), then combining Eqs. (5.20) and (5.22) and using the definition Eq. (5.6), we finally obtain for the sum of all of the diagrams in Fig. 17 Figs. 17a−l</p>
+
+				<figure>
+					<trash>′ = Figs. 17a−l ′ | ξ=1 − Q 2 g 2 [dk 1 ][dk 2 ] 1 k 4 1 ∆Π ρρ ′ 2 (k 1 , k 2 , ξ) ×G r ρµ (k 1 , −p 3 , p − k 1 , p 4 )S(p − k 1 )G r ρ ′ ν (−k 1 , p 1 , p 2 , p − k 1 ) + γ µ S(p)γ ν · · · + · · · γ µ S(p)γ ν . (5.23) Comparing Eq. (5.23) with Eq. (5.10</trash>
+
+
+				</figure>
+
+				<p>), we see that, just like the i = 1 pinch part component, the i = 2 pinch part component ∆Π</p>
+
+				<figure>
+					<trash>′(1)ρρ ′ 2</trash>
+
+
+				</figure>
+
+				<p>(k 1 , k 2 , ξ) of the conventional one-loop gluon selfenergy insertion is cancelled individually for each of the diagrams 14a–d.</p>
+
+				<p>We have thus succeeded in showing (i) that in the integrands for each of the two-loop QCD corrections to qγ → qγ shown in Figs. 14a–d, the additional pinch parts of the conventional one-loop gluon self-energy insertion which occur for ξ = 1 are each exactly cancelled by corresponding pinch terms from the remaining two-loop corrections shown in Figs. 15a–h and 17a–l ′ , and (ii) that this cancellation exhausts the additional terms from the corrections shown in Figs. 15 and 17 which occur for ξ = 1 (for simplicitly, this latter was only shown explicitly up to terms which are two-loop external leg corrections).</p>
+
+				<p>In the particular case of the PT self-energy-like component of the process qγ → qγ, we have thus explicitly demonstrated the gauge independence of the contributions of the two-loop diagrams in Figs. 14, 15 and 17 to the PT two-loop quark self-energy −î Σ (2) (p).</p>
+
+			</div>
+			<div>
+				<head n="5.4">Remarks</head>
+
+				<p>We finish this section with two remarks: (1) At the one-loop level, the simple technique used in section 2 to implement the PT simultaneously among subsets of diagrams, rather than individual diagrams, lead to little saving of effort. At the two-loop level, by contrast, with several dozen diagrams and more factors of longitudinal gluon four-momentum to deal with, this technique enormously facilitated the implementation of the PT. Furthermore, by grouping the diagrams for the two-loop QCD corrections to qγ → qγ as in the above three subsections, the gauge cancellation mechanism which results in the gauge independence of the PT two-loop quark self-energy −î Σ (2) (p) is seen to be essentially the same as that which results in the gauge independence of the PT one-loop gluon self-energy i ˆ Π (1) (p); only here, the PT one-loop gluon self-energy occurs as internal corrections in a two-loop process. This fact is consistent with the analysis of Ref. [6], where it was shown that the PT one-loop gluon self-energy may be obtained from one-loop processes in which the &quot; external &quot; fields are explicitly off-shell, i.e. the process does not constitute a one-loop S-matrix element, as in the S-matrix PT [2]. Indeed, the diagrammatic technique used here is the extension to two loops of that used in Ref. [6]. (2) In the above analysis, we did not consider the O(α 2 s ) QCD corrections to qγ → qγ consisting of one-loop diagrams with one-loop counterterm insertions. These counterterm insertions are, of course, those obtained in the PT at one loop. For the diagrams involving the one-loop quark-gluon vertex, quark wavefunction or quark mass renormalization constants (Z 1 − 1)</p>
+
+				<figure>
+					<trash>(1) PT , (Z 2 − 1) (1) PT and (Z m − 1) (1)</trash>
+
+
+				</figure>
+
+				<p>PT , respectively. the implementation of the PT algorithm, in particular the gauge cancellation mechanism, is precisely as for the O(α s ) QCD corrections to qγ → qγ described in section 2. However, the counterterm corresponding to the one-loop gluon wavefunction renormalization has the form</p>
+
+				<figure>
+					<trash>− i(Z 3 − 1) (1) PT k 2 t µν (k) (5.24) i.e</trash>
+
+
+				</figure>
+
+				<p>. it is transverse. This follows from the fact that the PT one-loop gluon self-energy is transverse . When the counterterm (5.24) is contracted with a pair of tree level gluon propagators, the gauge-dependent longitudinal parts of the propagators thus vanish. 11 There remain, however, the longitudinal factors from the counterterm itself. If, as here, the &quot; induced &quot; longitudinal factors from the PT one-loop gluon self-energy insertions are not to be used to trigger the PT rearrangement, then clearly the corresponding longitudinal factors from the counterterm (5.24) must not be used either; for to do so would spoil the renormalizability of the PT two-loop quark self-energy (cf. section 6).</p>
+
+				<figure>
+					<trash>6 Renormalization of −î Σ (2) (p)</trash>
+
+
+				</figure>
+
+				<p>Finally, we consider the third and last step outlined in section 3, viz. the calculation of the O(α 2 s ) renormalization constants (Z 2 − 1)</p>
+
+				<figure>
+					<trash>(2) PT and (Z m − 1) (2)</trash>
+
+
+				</figure>
+
+				<p>PT required to renormalize the PT two-loop quark self-energy. For this task, we shall make use of Z 1 , Z 2 , Z 3 and Z m to O(α s ) in both the class of linear covariant gauges and the PT, and also Z 2 and Z m to O(α 2 s ) in the class of linear covariant gauges. In the minimal subtraction (MS) scheme, with n f active flavours of fermion, the O(α s ) terms are given by [2, 20] (Z 1 − 1)</p>
+
+				<figure>
+					<trash>(1) ξ = α s 4π − 3 + ξ 4 C A − ξC F 1 ǫ , (Z 1 − 1) (1) PT = α s 4π −C F 1 ǫ , (Z 2 − 1) (1) ξ = α s 4π −ξC F 1 ǫ , (Z 2 − 1) (1) PT = α s 4π −C F 1 ǫ , (Z 3 − 1) (1) ξ = α s 4π 13 − 3ξ 6 C A − 4 3 T F n f 1 ǫ , (Z 3 − 1) (1) PT = α s 4π 11 3 C A − 4 3 T F n f 1 ǫ , (Z m − 1) (1) ξ = α s 4π −3C F 1 ǫ , (Z m − 1) (1) PT = α s 4π −3C F 1 ǫ , (6.1</trash>
+
+					<figDesc>) where T F is the normalization of the generators for the fermion representation (T F = 1 2 for the fundamental representation). The required O(α 2 s ) covariant gauge terms are given by [21, 22]</figDesc>
+
+				</figure>
+
+				<p>(Z 2 − 1)</p>
+
+				<figure>
+					<trash>(2) ξ = α s 4π 2 C F ξ 2 +3ξ 4 C A + ξ 2 2 C F 1 ǫ 2 + − ξ 2 +8ξ +25 8 C A + T F n f + 3 4 C F 1 ǫ , (6.2) (Z m − 1) (2) ξ = α s 4π 2 C F 11 2 C A − 2T F n f + 9 2 C F 1 ǫ 2 + − 97 12 C A + 5 3 T F n f − 3 4 C F 1 ǫ . (6.3) Note that Z m (= m 0 /m) is gauge-independent. In order to obtain (Z 2 − 1) (2) PT and (Z m − 1) (2)</trash>
+
+
+				</figure>
+
+				<p>PT , we first write the PT renormalized two-loop self-energy in terms of the conventional self-energy as follows:</p>
+
+				<figure>
+					<trash>ˆ Σ (2) (p) = Σ (2) (p, ξ) + ∆Σ (2) (p, ξ) . (6.4)</trash>
+
+
+				</figure>
+
+				<p>The explicit expression for the conventional covariant gauge self-energy Σ (2) (p, ξ) for arbitrary ξ has recently been given in Ref. [16]. The function ∆Σ (2) (p, ξ) is the sum of the self-energylike pinch parts of the two-loop vertex and box corrections to the given process involving the quark as virtual intermediate state. However, having explicitly constructed Σ (2) (p) in the previous sections directly from subsets of diagrams, rather than via the consideration of the pinch parts of individual vertex and box diagrams, we will here obtain ∆Σ (2) (p) simply as the difference between the PT and conventional self-energies. Given the above renormalization constants, together with the fact that the renormalized function Σ (2) (p, ξ) is finite, it is then sufficient to determine the counterterm contributions required to make finite the function</p>
+
+				<figure>
+					<trash>∆Σ (2) (p, ξ) in Eq. (6.4) in order to obtain (Z 2 − 1) (2) PT and (Z m − 1) (2) PT .</trash>
+
+
+				</figure>
+
+				<p>The function ∆Σ (2) (p, ξ) is conveniently decomposed into four contributions, corresponding to the difference between the diagrams 10b and 8b, 10c and 8c, 10d–f and 8d–f, and 10g and 8g, respectively:</p>
+
+				<figure>
+					<trash>∆Σ (2) (p, ξ) = 4 i=1 ∆Σ (2) i (p, ξ) . (6.5)</trash>
+
+
+				</figure>
+
+				<p>Given that the PT self-energy is gauge-independent, we are at liberty to choose the value of ξ for which the function ∆Σ (2) (p, ξ) is simplest, i.e. ξ = 1. We have:</p>
+
+				<figure>
+					<trash>− i∆Σ (2) 1 (p, 1) = Fig. 10b</trash>
+
+
+				</figure>
+
+				<p>− Fig. 8b| ξ=1 = C F g 2 [dk 1 ] − [dk 2 ]∆Π</p>
+
+				<figure>
+					<trash>′(1) (k 1 , k 2 , 1) + (Z 3 − 1) (1) PT − (Z 3 − 1) (1) ξ=1 × 1 k 2 1 t ρρ ′ (k 1 )γ ρ S(p − k 1 )γ ρ ′ ; (6.6) −i∆Σ (2) 2 (p, 1) = Fig. 10c − Fig. 8c| ξ=1 = 0 ; (6.7) −i∆Σ (2) 3 (p, 1) = Figs. 10d−f − Figs. 8d−f| ξ=1 = −C A C F g 4 [dk 1 ][dk 2 ] i k 2 1 k 2 2 k 2 3 Γ P τ ρσ (k 3 ; k 1 , k 2 ) γ σ S(p + k 2 )γ τ S(p − k 1 )γ ρ −2 (Z 1 − 1) (1) PT − (Z 1 − 1) (1) ξ=1 C F g 2 [dk 1 ] 1 k 2 1 γ ρ S(p − k 1 )γ ρ ; (6.8) −i∆Σ (2) 4 (p, 1) = Fig. 10g − Fig. 8g| ξ=1 = (Z 2 − 1) (2) PT − (Z 2 − 1) (2) ξ=1 i(p / − m) − (Z 2 (Z m − 1)) (2) PT − (Z 2 (Z m − 1)) (2) ξ=1 im . (6.9) In Eq. (6.6), we have used Eqs. (4.2)–(4.5</trash>
+
+
+				</figure>
+
+				<p>) for the difference between the PT and Feynman gauge one-loop gluon self-energy insertions. In Eq. (6.7), we have used the fact that the PT and Feynman gauge renormalized one-loop quark self-energies coincide. And in Eq. (6.8), we have used Eqs. (3.4) and (3.5) for the difference between the two sets of triple gauge vertices involved. Substituting the expressions (4.5) and (3.3) for ∆Π ′(1) and Γ P τ ρσ , respectively, in Eqs. (6.6) and (6.7), and then using the elementary Ward identity (2.16) in the latter case, the g ρρ ′ part of the ∆Π ′(1) term in Eq. (6.6) is cancelled by an internal pinch term in Eq. (6.7). This is just the cancellation described in section 4.2. Carrying out the k 2 integration in Eq. (6.6), and substituting the expresions (6.1) for the O(α s ) renormalization constants, the sum of the</p>
+
+				<figure>
+					<trash>expressions (6.6)–(6.9) may be written −i∆Σ (2) (p, 1) = C A C F g 4 [dk 1 ] G(k 2 1 /µ 2 , ǫ) 1 k 4 1 k / 1 S(p − k 1 )k / 1 + [dk 1 ][dk 2 ] i k 2 1 k 2 2 (k 1 + k 2 ) 2 γ µ F µ (p, k 1 , k 2 )S −1 (p) + S −1 (p)F µ (p, k 1 , k 2 )γ µ + (Z 2 − 1) (2) PT − (Z 2 − 1) (2) ξ=1 i(p / − m) − (Z m − 1) (2) PT − (Z m − 1) (2) ξ=1 im (6.10) In the above expression, for brevity we have defined F µ (p, k 1 , k 2 ) = S(p + k 2 )γ µ S(p − k 1 ) , (6.11) G(k 2 1 /µ 2 , ǫ) = 1 8π 2 ǫ Γ(1 + ǫ)Γ 2 (1 − ǫ) Γ(2 − 2ǫ) −k 2 1 4πµ 2 −ǫ − 1 . (6.12) − i∆Σ (2) (p, 1) = α s 4π 2 C A C F 1 ǫ 2 + 1 ǫ + (Z 2 − 1) (2) PT − (Z 2 − 1) (2) ξ=1 i(p / − m) − (Z m − 1) (2) PT − (Z m − 1) (2) ξ im + terms which are finite as ǫ → 0 . (6.13)</trash>
+
+
+				</figure>
+
+				<p>Requiring that the function ∆Σ (2) (p, 1) be finite as ǫ → 0 then determines the required O(α 2 s ) PT renormalization constants: in the MS scheme,</p>
+
+				<figure>
+					<trash>(Z 2 − 1) (2) PT = α s 4π 2 C F 1 2 C F 1 ǫ 2 + − 21 4 C A + T F n f + 3 4 C F 1 ǫ , (6.14) (Z m − 1) (2) PT = (Z m − 1) (2) ξ . (6.15) Using Eqs. (6.4) and (6.13</trash>
+
+
+				</figure>
+
+				<p>), the PT renormalized gauge-independent two-loop quark selfenergy −î Σ (2) (p) in the MS scheme may be written in terms of the corresponding conventional Feynman gauge self-energy as</p>
+
+				<figure>
+					<trash>−î Σ (2) (p) = −iΣ (2) (p, ξ = 1) + C A C F g 4 [dk 1 ]G(k 2 1 /µ 2 , ǫ) 1 k 4 1 S −1 (p)S(p − k 1 )S −1 (p) − S −1 (p) + [dk 1 ][dk 2 ] i k 2 1 k 2 2 (k 1 + k 2 ) 2 γ ρ F ρ (p, k 1 , k 2 )S −1 (p) + S −1 (p)F ρ (p, k 1 , k 2 )γ ρ + 1 (4π) 4 − 1 ǫ 2 − 1 ǫ iS −1 (p) . (6.16)</trash>
+
+
+				</figure>
+
+				<p>The integral expression Eq. (6.16) is our final result. We finish this section with three remarks: (1) In this section, we have shown by explicit calculation that the two-loop quark selfenergy obtained in the PT is multiplicatively renormalizable by local counterterms. It is emphasized that this result was not obvious a priori. In particular, the worry was that the rearrangements which gave the contributions to −î Σ (2) (p) shown in Figs. 10b–f would result in divergent terms of the form, e.g., ǫ −1 ln(−p 2 /µ 2 ) which then could not be cancelled by local counterterms, shown in Fig. 10g. (2) From Eq. (6.16), given that S −1 (p) vanishes at p / = m, it is immediately clear that the PT two-loop quark self-energy does not shift the position of the propagator pole (to O</p>
+
+				<figure>
+					<trash>(α 2 s )): ˆ Σ (2) (p) p /=M = Σ (2) (p, ξ = 1) p /=M + O(α 3 s ) . (6.17)</trash>
+
+
+				</figure>
+
+				<p>This is an essential requirement for the consistency of the PT approach, and is in fact expected on rather general grounds [4]. (3) The quark self-energy obtained in the BFM with quantum gauge parameter ξ Q coincides with that obtained in the class of linear covariant gauges with gauge parameter ξ = ξ Q to all orders 12 in perturbation theory: −iΣ (n) BFM (p, ξ Q ) = −iΣ (n) (p, ξ = ξ Q ). At the two-loop level, we therefore obtain immediately from Eq</p>
+
+				<figure>
+					<trash>. (6.16) − i ˆ Σ (2) (p) = −iΣ (2) BFM (p, ξ Q = 1) . (6.18)</trash>
+
+
+				</figure>
+
+				<p>We thus conclude that the correspondence between the PT gauge-independent n-point functions and those obtained in the BFM in the Feynman quantum gauge ξ Q = 1 does not persist beyond one loop.</p>
+
+			</div>
+			<div>
+				<head n="7">Summary and Conclusions</head>
+
+				<p>The extension of the pinch technique (PT) beyond the one-loop approximation requires the solution of the two problems described in the introduction: (1) how to deal consistently with triple gauge vertices all three legs of which are associated with gauge fields propagating in loops; and (2) whether or not to use the &quot; induced &quot; longitudinal factors from internal loop corrections to trigger further the PT rearrangement, and, if so, how. In this paper, it has been shown how the first of these problems is consistently solved for the simplest non-trivial case, viz. the construction in the PT approach of the 1PI two-loop fermion self-energy −î Σ (2) (p) in QCD. We began (section 2) by reviewing the construction of the PT gauge-independent one-loop quark self-energy −î Σ (1) (p) [3]. This function was obtained from the &quot; effective &quot; two-point component of the integrands for the one-loop QCD corrections to the Compton scattering qγ → qγ of a photon off a quark. The fact that gluons do not couple directly to the photons meant that, for the construction of −î Σ (1) (p), this process was considerably simpler than, e.g., the Compton-like scattering qg → qg of a gluon off a quark. Although the one-loop case was almost trivial, this review was useful in order to introduce the simple technique used subsequently at two loops to implement the PT simultaneously among subsets of diagrams, rather than individual diagrams. We then turned to the construction of the 1PI two-loop quark self-energy −î Σ (2) (p) in the PT approach. By investigating here only the first of the above problems, it was effectively assumed that the correct approach to the second problem will turn out to be not to use the &quot; induced &quot; longitudinal factors to trigger further the PT rearrangement. Thus, &quot; the PT &quot; here referred to the PT algorithm implemented using longitudinal factors only from lowest order gauge field propagators and triple gauge vertices. The starting point for the construction (section 3) was the general diagrammatic representation of the renormalized two-loop quark self-energy in terms of renormalized one-loop twoand three-point function and tree level Bethe-Salpeter-type quark-gluon scattering kernel insertions in the one-loop quark self-energy, shown in Figs. 8b–g for the case of the conventional self-energy. This representation is precisely analogous to the familiar representation [17] of the renormalized two-loop QED photon self-energy (vacuum polarization) in terms of renormalized one-loop two-and three-point function and tree level electron-positron scattering kernel insertions in the one-loop photon self-energy, shown in Figs. 6b–g. The significance of these representations is two-fold: first, they are explicitly in terms of renormalized one-loop n-point functions obtained in perturbation theory at the one-loop level; and second, they are symmetric, in the sense that no orientation of the overall sets of diagrams is preferred. This latter property, made possible by the introduction of the kernel insertion contributions, would appear to be essential for the consistent solution of the first problem for the case of the two-loop quark self-energy in the PT approach.</p>
+
+				<p>In order for the PT approach to be consistent, it was first of all required that the contributions to −î Σ (2) (p) analogous to those shown in Figs. 8b–e for the conventional case consist of the PT renormalized gauge-independent one-loop n-point functions appearing as internal corrections in the PT gauge-independent one-loop quark self-energy −î Σ (1) (p). It then remained to determine the PT analogue of the contribution in Fig. 8f involving the tree level quark-gluon kernel; and finally the PT analogue of the two-loop counterterm insertions shown in Fig. 8g. The contributions to −î Σ (2) (p) are thus as shown in Figs. 10b–g.</p>
+
+				<p>In order to carry out the explicit construction of −î Σ (2) (p) (section 4), we considered the two-loop QCD corrections to qγ → qγ, starting from the Feynman gauge. The key to the construction was the elementary decomposition Eq. (3.4) of the triple gauge vertex which occurs in the two-loop diagrams shown in Figs. 15a–h. It was shown that this decomposition not only results in precisely the internal one-loop gluon self-energy-like pinch parts and triple gauge vertex components Γ F required to obtain the contributions to −î Σ (2) (p) shown in Figs. 10c–e, involving the PT one-loop internal corrections; but also the contribution to the PT quark-gluon kernel, obtained from the remaining two-loop self-energy-like component of Figs.15a–h, involves just the component Γ F of the triple gauge vertex which occurs in the PT one-loop functions. The resulting PT tree level kernel, shown in Fig. 13, thus provides no factors of longitudinal four-momentum associated with the external gluon legs. As explained at the end of the section (fourth remark), this is crucial to the consistency of the PT construction.</p>
+
+				<p>In order to demonstrate the gauge independence of −î Σ (2) (p) (section 5), we again considered the two-loop QCD corrections to qγ → qγ, but now starting from arbitrary ξ. With ξ = 1, there then occurred many further factors of longitudinal gluon four-momentum in the corresponding Feynman integrands. In the case of the forty-six two-loop diagrams shown in Figs. 15 and 17, these factors were efficiently dealt with by writing the diagrams in terms of tree level four-and five-point functions contracted together via quark and gluon propagators . Using the Ward identities for these tree level n-point functions, we were then able to implement the PT directly among entire subsets of these diagrams, rather than diagram-bydiagram . In this way, we were able to demonstrate the algebraic cancellation of the additional contributions which occur for ξ = 1 not only to the 1PI two-loop self-energy-like component of the process, but also the vertex-like and box-like components. The gauge independence of −î Σ (2) (p) was thus explicitly demonstrated in the class of linear covariant gauges.</p>
+
+				<p>In order to obtain the two-loop renormalization constants required finally to renormalize −î Σ (2) (p) (section 6), rather than evaluating the divergent part of the diagrams in Figs. 10b–f directly, we computed only the difference between the divergent part of these diagrams and that of the corresponding conventional self-energy diagrams in Figs. 8b–f in the Feynman gauge. Knowing the two-loop Feynman gauge counterterms, we were then able to obtain the required two-loop PT counterterms. In this way, it was explicitly shown that the PT two-loop quark self-energy −î Σ (2) (p) is renormalizable. Before finishing, we briefly turn to the second problem outlined in the introduction. It is clear from the analysis in sections 2 and 4 that if the integrand Π ′(1)ρρ ′ (k 1 , k 2 , ξ) for the conventional one-loop gluon self-energy insertions shown in Figs. 14a–f and given in Eqs. (4.6) and (4.9) is explicitly written in terms of the transverse tensor k</p>
+
+				<figure>
+					<trash>2 1 g ρρ ′ − k ρ 1 k ρ ′ 1 , then the entire longitudinal k ρ 1 k ρ ′</trash>
+
+					<figDesc>1 component exactly cancels among the integrands for the six diagrams.</figDesc>
+
+				</figure>
+
+				<p>This cancellation is identical to that of the longitudinal component of the tree level gluon propagators described in section 2, and the longitudinal component of the pinch part of the Feynman gauge one-loop gluon self-energy described in section 4.1.</p>
+
+				<p>Regarding the role of the longitudinal component of the gauge field propagator, it was shown some years ago in an elegant paper by Llewellyn Smith [23] that the covariant gauge fixing parameter ξ in QCD may legitimately be replaced in the lagrangian by an operator ξ(∂ 2 ). This operator may then in principle be chosen so that the radiatively-corrected gauge field propagator i∆ µν (q, ξ) is proportional to g µν to all orders in perturbation theory. In this way, it was shown that the longitudinal component of the radiatively-corrected covariant gauge field propagator in QCD makes no contribution to S-matrix elements to all orders (a result which is relatively obvious in QED). The cancellation described above among the diagrams of Fig. 14 is just an explicit two-loop example of this. From the point of view of the PT, it therefore seems plausible that the &quot; induced &quot; factors of longitudinal gauge field four-momentum from internal corrections should indeed be used to trigger further the PT rearrangement. However, in order that the resulting n-point functions continue to satisfy simple QED-like Ward identities, it is necessary to use such factors not only from the gauge field self-energies, but also the gauge field vertices. For these latter, it is thus necessary to use the associated invariant tensor decompositions (cf. e.g. Refs. [24,25]) to isolate the longitudinal factors. The way in which this works for the case of the O(α 2 s n f ) i.e. mixed fermionic-bosonic contribution to the two-loop gluon self-energy has been described in Ref. [26]. There are two reasons, however, to believe that the correct approach will turn out to be not to use the &quot; induced &quot; longitudinal factors to trigger further the PT rearrangement—as was the effective assumption in this paper. First, it turns out that the longitudinal factors from internal vertex corrections, if used to trigger the PT rearrangement, make non-vanishing contributions to the n-point functions which, in contrast to the case at one loop, do not have a simple interpretation in terms of ghosts [2, 6]. The role of the &quot; induced &quot; longitudinal factors is therefore qualitatively different from that of the lowest order longitudinal factors which appear in the PT at the one-loop level. Second, it is hard to see how such an approach could ever be obtained from a formulation at the level of the path integral—essential if the PT is to be put on a firm field-theoretic footing. In particular, the required tensor decompositions of the internal corrections are complicated for all but the self-energy function; and such an approach clearly precludes a set of Feynman rules.</p>
+
+				<p>To conclude, the analysis presented in this paper represents the first, non-trivial step towards extending the pinch technique beyond the one-loop level. It is emphasized that, although the analysis has been complicated, the result—expressed essentially in the diagrams shown in Figs. 10 to 13—is remarkably simple. It remains to be seen if this extension can be generalized beyond the case considered here.</p>
+
+			</div>
+
+			<note place="foot" n="1"> Present address: Rutherford Appleton Laboratory, Chilton, Didcot, Oxon., OX11 0QX, U.K. Email: jay.watson@rl.ac.uk</note>
+
+			<note place="foot" n="2"> For explanations of why the PT one-loop n-point functions are distinguished on physical grounds from those obtained in the BFM for arbitrary values of the quantum gauge fixing parameter ξQ, see Refs. [5, 7].</note>
+
+			<note place="foot" n="3"> Throughout, our approach is purely perturbative; all issues of confinement are ignored.</note>
+
+			<note place="foot" n="4"> Note that we do not set these integrals to zero in dimensional regularization.</note>
+
+			<note place="foot" n="5"> For the one-loop gluon self-energy in Fig. 9d, the diagram involving the quadruple gauge vertex has been omitted since it vanishes in dimensional regularization. 6 It should be pointed out that the symmetric organisations shown in Figs. 6b–g and 8b–g of the contributions to the two-loop photon and quark self-energies differ from the asymmetric organisations obtained directly from the Dyson-Schwinger equation for the respective self-energies, expanded out to two-loop order in terms of renormalized one-loop internal corrections (cf. e.g. Ref. [18]). It is precisely the introduction of the kernel insertion contributions which enables the self-energies to be represented in the symmetric way shown in Figs. 6b–g and 8b–g.</note>
+
+			<note place="foot" n="7"> In the case of the vacuum polarization in QED, the corresponding requirement is trivial to satisfy: the PT one-loop n-point functions in QED coincide with those obtained in the ordinary Feynman gauge, so that one has simply to set ξ = 1 in Figs. 6b–f (recall that the vacuum polarization in QED is gauge-independent to all orders).</note>
+
+			<note place="foot" n="8"> For a discussion of the role played by the vertex Eq. (3.2) in the decomposition of QCD amplitudes into supersymmetric and non-supersymmetric parts, see Ref. [19].</note>
+
+			<note place="foot" n="9"> In Eq. (4.3), the conventional covariant gauge ghost term has been symmetrized. In Eq. (4.4), the dimensional regularization rule [dk] k −2 = 0 has been used to drop terms which vanish upon integration.</note>
+
+			<note place="foot" n="11"> This statement does not hold for the case in which one starts from a non-covariant gauge. In this case, the entire analysis of this section would be much more complicated, although the results are expected to be the same.</note>
+
+			<note place="foot" n="12"> This statement is not entirely obvious due to the question of the renormalization of the quantum fields in the BFM beyond one loop. For a lucid discussion of this issue, see Ref. [11].</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+				<p>Acknowledgements I am very grateful to the theory group at the Institut de Physique Nucléaire , Orsay, in particular Jan Stern, for their encouragement and support of this work. I thank Chris Llewellyn Smith for bringing Ref. [23] to my attention.</p>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<surname>Cornwall</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the French-American Seminar on Theoretical Aspects of Quantum Chromodynamics</title>
+		<editor>J.W. Dash</editor>
+		<meeting>the French-American Seminar on Theoretical Aspects of Quantum Chromodynamics<address><addrLine>Marseille, France</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1981" />
+		</imprint>
+	</monogr>
+	<note>Centre. de Physique Thé report no. CPT-81/P-1345</note>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">D26 (1982) 1453</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">M</forename>
+				<surname>Cornwall</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Rev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">C</forename>
+				<surname>Kennedy</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">W</forename>
+				<surname>Lynn</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">) 3179 and Phys. Rev. D47 (1992) 4728; G. Degrassi and A. Sirlin</title>
+		<imprint>
+			<date type="published" when="1989" />
+			<biblScope unit="page" from="40" to="41" />
+		</imprint>
+	</monogr>
+	<note>3104. ; J. Papavassiliou</note>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Watson</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1995" />
+			<biblScope unit="page">349</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">J. Papavassiliou, Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">856</biblScope>
+			<biblScope unit="page">51</biblScope>
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Papavassiliou</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Pilaftsis</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett. Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">75</biblScope>
+			<biblScope unit="issue">3060</biblScope>
+			<biblScope unit="page" from="53" to="2128" />
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Papavassiliou</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Pilaftsis</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">54</biblScope>
+			<biblScope unit="issue">5315</biblScope>
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<forename type="middle">J</forename>
+				<surname>Watson</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">494</biblScope>
+			<biblScope unit="issue">388</biblScope>
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Papavassiliou</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>De Rafael</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<forename type="middle">J</forename>
+				<surname>Watson</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="page" from="503" to="79" />
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">M</forename>
+				<surname>Cornwall</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">S</forename>
+				<surname>Hou</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">E</forename>
+				<surname>King</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<editor>173</editor>
+		<editor>G. Degrassi, B. Kniehl and A. Sirlin</editor>
+		<imprint>
+			<biblScope unit="volume">3963</biblScope>
+			<biblScope unit="page" from="153" to="48" />
+			<date type="published" when="1985" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">D48 (1993) 4255 and Phys. Rev. D52 (1995) 2355 D50 (1994) 3059; J. Papavassiliou and A. Sirlin</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Papavassiliou</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Philippides</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<forename type="middle">K</forename>
+				<surname>Rev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Hagiwara</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Papavassiliou and C. Parrinello, Phys. Rev. Phys. Rev. Z. Phys. Phys. J. Nucl. Phys. Phys. Lett. Phys. Rev</title>
+		<editor>95</editor>
+		<editor>K. Hagiwara et al. G. Alexanian and V.P. Nair 435</editor>
+		<editor>M. Passera and K. Sasaki</editor>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="issue">5763</biblScope>
+			<biblScope unit="page" from="352" to="54" />
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+	<note>and. Eur</note>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">B367 (1996) 377 and Nucl</title>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Phillippides</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Sirlin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys</title>
+		<imprint>
+			<biblScope unit="page" from="477" to="59" />
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">B472 (1996) 271 and Nucl. Phys. B490 (1997) 472; S. Peris and E. de Rafael, Nucl. Phys. B500 (1997) 325; A</title>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Sasaki</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. Pilaftsis, Nucl. Phys. Phys. Rev. J.M. Cornwall, Phys. Rev</title>
+		<editor>61</editor>
+		<editor>S. Dawson, S. Alam and R. Szalapski</editor>
+		<imprint>
+			<biblScope unit="volume">117</biblScope>
+			<biblScope unit="issue">5519</biblScope>
+			<biblScope unit="page" from="369" to="57" />
+			<date type="published" when="1577" />
+		</imprint>
+	</monogr>
+	<note>3694. ; R. Szalapski, Phys. Rev</note>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Papavassiliou</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Pilaftsis</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett. Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">80</biblScope>
+			<biblScope unit="page" from="58" to="053002" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">B333 (1994) 420 and Nucl</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Denner</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Weiglein</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Dittmaier</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<forename type="middle">S</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Hashimoto</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Phys. Rev</title>
+		<editor>7066</editor>
+		<editor>E. de Rafael and N.J. Watson</editor>
+		<imprint>
+			<biblScope unit="volume">440</biblScope>
+			<biblScope unit="issue">50</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+	<note>unpublished</note>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<forename type="middle">F</forename>
+				<surname>Abbott</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">189</biblScope>
+			<biblScope unit="page">185</biblScope>
+			<date type="published" when="1981" />
+		</imprint>
+	</monogr>
+	<note>and. references therein</note>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">M</forename>
+				<surname>Capper</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Maclean</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="page" from="203" to="413" />
+			<date type="published" when="1982" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Coquereaux</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ann. Phys</title>
+		<imprint>
+			<biblScope unit="volume">125</biblScope>
+			<biblScope unit="issue">401</biblScope>
+			<date type="published" when="1980" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">B156 (1979) 301</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Atkinson</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Fry</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="middle">J C</forename>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">J</forename>
+				<surname>Breckenridge</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">G</forename>
+				<surname>Lavelle</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Steele</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Z. Phys</title>
+		<imprint>
+			<biblScope unit="volume">155</biblScope>
+			<biblScope unit="page">65</biblScope>
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">S</forename>
+				<surname>Kronfeld</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="page">58</biblScope>
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Gray</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Z. Phys</title>
+		<imprint>
+			<biblScope unit="volume">673</biblScope>
+			<biblScope unit="page">48</biblScope>
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Fleischer</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page">9803493</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">D</forename>
+				<surname>Bjorken</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">D</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Relativistic Quantum Fields</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>McGraw-Hill</publisher>
+			<date type="published" when="1965" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">D</forename>
+				<surname>Roberts</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">G</forename>
+				<surname>Williams</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Prog. Part. Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page">477</biblScope>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+				<surname>Bern</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Dixon</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">A</forename>
+				<surname>Kosower</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ann. Rev. Nucl. Part. Sci</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="issue">109</biblScope>
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<monogr>
+		<title level="m" type="main">Quantum Field Theory</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Itzykson</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">B</forename>
+				<surname>Zuber</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1980" />
+			<publisher>McGraw–Hill</publisher>
+			<pubPlace>New York</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Tarrach</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1981" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Nachtmann</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Wetzel</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">187</biblScope>
+			<biblScope unit="issue">333</biblScope>
+			<date type="published" when="1981" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">H</forename>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Llewellyn</forename>
+				<surname>Smith</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">423</biblScope>
+			<biblScope unit="page">165</biblScope>
+			<date type="published" when="1980" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">D22 (1980) 2542 and Phys</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">S</forename>
+				<surname>Ball</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">W</forename>
+				<surname>Chiu</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Rev. Phys. Rev</title>
+		<editor>25] A.I. Davychev, P. Osland and O.V. Tarasov</editor>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="issue">4087</biblScope>
+			<biblScope unit="page">54</biblScope>
+			<date type="published" when="1980" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<forename type="middle">J</forename>
+				<surname>Watson</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of QCD98</title>
+		<meeting>QCD98<address><addrLine>Montpellier, France</addrLine></address></meeting>
+		<imprint/>
+	</monogr>
+	<note>Suppl</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

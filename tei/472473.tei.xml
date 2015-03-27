@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Lessons from the 3d U (1) Gross-Neveu Model</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Susan</forename>
+								<forename type="middle">E</forename>
+								<surname>Morrison</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department">Department of Physics</orgName>
+								<orgName type="institution">University of Wales Swansea</orgName>
+								<address>
+									<addrLine>Singleton Park</addrLine>
+									<postCode>SA2 8PP</postCode>
+									<settlement>Swansea</settlement>
+									<country key="GB">U.K</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Lessons from the 3d U (1) Gross-Neveu Model</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<note>arXiv:hep-lat/9806033v1 29 Jun 1998 1</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>The effectiveness of the Glasgow algorithm is explored via implementation in the 3d U(1) Gross-Neveu model and the realisation of the Goldstone mechanism in this model is compared and contrasted with its realisation in QCD.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>In QCD the fermion determinant is complex for chemical potential, µ non-zero, therefore generating an ensemble at µ = 0 is impracticable. The fermion number density, J 0 , measures the excess of quarks relative to anti-quarks and is expected to start to rise from zero at some value, µ o . The onset, µ o corresponds to the point where the phase of nuclear matter is more energetically favourable than the vacuum state (for which J 0 = 0). Chiral symmetry restoration occurs at µ c and we expect [2] that µ 0 &lt; ∼ µ c ≃ m p /3, where m p is the proton mass. Quenched simulations, on the other hand, predict µ c ≃ m π /2 suggesting that in the limit where the bare quark mass, m q → 0 chiral symmetry is restored for any µ = 0. This result is unphysical because the pion should not couple to the baryon chemical potential.</p>
+
+				<p>First attempts to simulate full QCD using the Glasgow method [3] also produced perplexing results [4]. On an 8 4 lattice with bare quark mass m q = 0.01 at β = 5.1 we found µ o ≃ 0.1 which differs considerably from the strong coupling analysis [5] prediction µ c ≃ 0.65 for β = 5.0. Furthermore the scaling of µ o with m q was consistent with a Goldstone boson controlling the onset. This result has motivated an assessment of the effectiveness of the Glasgow method via its implementation in a simpler model. The method involves expansion of the Grand Canonical Partition Function (GCPF) as a polynomial in the fugacity variable (e µ/T ). Consider the conventional expression for the GCPF in lattice QCD Z ∼ [dU] det (M(U, µ meas , m q )) e</p>
+
+				<figure>
+					<trash>−Sg(U ) (1)</trash>
+
+
+				</figure>
+
+				<p>The GCPF (for fixed m q ) can be rescaled and expressed as an ensemble average of det M at µ = 0: Z(µ) = [dU]</p>
+
+				<figure>
+					<trash>det M (µmeas) det M (µ upd =0) det M(µ upd = 0) e −Sg[U ] [dU]</trash>
+
+
+				</figure>
+
+				<p>det M(µ upd = 0) e −Sg[U ]</p>
+
+				<figure>
+					<trash>= det M(µ meas ) det M(µ upd = 0) µ upd =0</trash>
+
+
+				</figure>
+
+				<p>where µ upd is the chemical potential at which the statistical ensemble is updated and is distinct from µ meas which appears in the functional measure for the exact hybrid Monte Carlo (HMC) simulations and in R rw below. Note that generating the ensemble at µ upd = 0 allows us to circumvent the problem of the complex action in the HMC algorithm. For optimum efficiency of the Glasgow method we require a large overlap between the ensemble generated using det M(µ upd ) and the exact ensemble generated using det M(µ meas ). Let us define a reweighting factor R rw ≡ det M (µmeas,m) det M (µ upd ,m)</p>
+
+			</div>
+			<div>
+				<head>. The relative magnitude of the factor</head>
+
+				<p>R rw configuration by configuration gives a measure of the overlap. If there is poor overlap between the simulated ensemble and the true ensemble it is conceivable that only a small fraction of the configurations will contribute significantly to Z (those where R rw is large in magnitude) in which case very high statistics would be required to extract realistic observables.</p>
+
+				<p>The relevant features of the 3d Gross-Neveu (GN) model for µ = 0 studies are that it has a chiral transition with a massless pion in the broken phase and it can be formulated such that the fermion determinant is positive definite for µ = 0.</p>
+
+				<p>Mirroring the Glasgow reweighting technique implemented in full QCD (µ = 0) simulations we performed an expansion of the Grand Canonical partition function (GCPF) for the 3d GN action in the fugacity variable e µ/T .</p>
+
+				<p>The full lattice action for the bosonized GN model with U(1) chiral symmetry is given in [6,7]. The functional measure used in the HMC algorithm is det(M</p>
+
+				<figure>
+					<trash>† M). The Dirac fermion matrices, M and M † , can be conveniently expressed in terms of matrices G and V where G contains all the spacelike links while V (V † ) contains the forward(backward) timelike links 2iM xy (µ) = Y xy + G xy + V xy e µ + V † xy e −µ ; −2iM † xy (µ) = Y † xy + G xy + V xy e µ + V † xy e −µ (2)</trash>
+
+					<figDesc>and the term describing the Yukawa couplings of scalars to fermions is given (in terms of the auxiliary fields σ and π on dual lattice sites x) by</figDesc>
+					<trash>Y xy = 2i(m q + 1 8 &lt;x,˜ x&gt; (σ(˜ x) + iǫπ(˜ x)))δ xy . (3)</trash>
+
+
+				</figure>
+
+				<p>The determinants of these fermion matrices are related to that of the propagator matrix P (following Gibbs [1]):</p>
+
+				<figure>
+					<trash>P = −GV − Y V V −V 0 (4) by det(2iM) = e µn 3 s nt det(P − e −µ ) ; det(2iM † ) = e µn 3 s nt det((P −1 ) † − e −µ ) (5)</trash>
+
+
+				</figure>
+
+				<p>Since det M has been expressed in terms of the determinant of a matrix which is diagonal in e −µ we can expand det M as a polynomial in e µ . We can measure the averaged characteristic polynomial over the ensemble generated at µ = 0 and provided that the coefficients are sufficiently well determined, we can use this to provide an analytic continuation to any non-zero µ. Consider a lattice with n s spatial and n t temporal dimensions.</p>
+
+				<figure>
+					<trash>0.0 0.2 0.4 0.6 0.8 1.0 CHEMICAL POTENTIAL (µ) 0.0 0.1 0.2 0.3 0.4 0.5 NUMBER DENSITY (J 0 ) µ upd =µ meas. exact HMC µ upd =0.0 µ upd =0.7 µ upd =0.8</trash>
+
+					<head>Figure 1.</head>
+
+					<figDesc>Fermion number densities comparing simulations for three different values of µ upd with the exact hybrid Monte-Carlo simulation on a 16</figDesc>
+					<trash>3 lattice with 1/g 2 = 0.5 and m = 0.01.</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Determination of the eigenvalues of P nt allows us to construct the complete fugacity expansion for the GCPF:</figDesc>
+					<trash>Z = 2ns 2 n=−2ns 2 b |n| e nµnt = 2ns 2 n=−2ns 2 e −(ǫn−nµ)/T . (6)</trash>
+
+
+				</figure>
+
+				<p>The expansion coefficients b |n| are evaluated in the simulation and thermodynamic observables can be obtained from derivatives of ln Z The simulated 3d GN U(1) model has a positive definite functional measure so we can choose µ upd = 0 to investigate the influence of this choice on the observables. Exact hybrid Monte Carlo (HMC) simulations [6] showed a clear separation of the scales m π /2 and µ c indicating that the existence of a Goldstone mode in the spectrum of a theory need not precipitate chiral symmetry restoration for µ ≪ m p /3 in QCD. Does the poor overlap in the Glasgow algorithm prevent us from seeing the discontinuity in the number density at µ c ≫ m π /2? We will compare exact HMC and Glasgow method simulations on a 16 3 lattice at a fourfermi coupling of 1/g 2 = 0.5 and m = 0.01. We simulated the N f = 12 (N=3 staggered) model. In the exact simulations for this parameter set there was a clear discontinuity (at µ c = 0.725(25)) in fermion number density as a function of the chemical potential.</p>
+
+				<p>There was no evidence of an onset in the number density at µ ≃ m π /2 = 0.18(1). In fact µ o &lt; ∼ µ c for the exact HMC simulation. It is clear that the chemical potential µ upd at which the statistical ensemble is generated has a strong influence on the thermodynamic observables of the simulation. Fig. 1 shows the number density for the exact HMC simulation (discussed above) and for three simulations with the Glasgow method: one for µ upd = 0.0 another for µ upd = 0.7( &lt; ∼ µ c ) and finally with µ upd = 0.8(&gt; µ c ) The discontinuity at µ c associated with the fermion losing dynamical mass, which is clearly evident in the exact HMC data is not consistently</p>
+
+				<p><formula>0.50 0.60 0.70 0.80 0.90 Re µ -0.20 -0.10 0.00 0.10 0.20 Im µ 0.5 0.6 0.7 0.8 0.9 Re µ -0.2 -0.1 0.0 0.1 0.2 Im µ</formula></p>
+
+				<figure>
+					<head>Figure 2.</head>
+
+					<figDesc>Partition function zeros for two simulations: upper diagram with µ upd = 0.0 showing two isolated zeros emerging from lobes and lower diagram with µ upd = 0.7 showing an arc of zeros approaching the real axis at µ ≃ µ c . Simulations on 16 3 lattice with 1/g 2 = 0.5 and m = 0.01.</figDesc>
+
+				</figure>
+
+				<p>reproduced by the Glasgow algorithm. In fact the chiral transition is seen only when µ upd &lt; ∼ µ c . For µ upd &gt; µ c , J 0 reflects only the chirally symmetric phase (where m f = m q ) of the exact HMC data while for µ upd = 0, J 0 reflects only the phase of broken chiral symmetry (where m f ≫ m q ). This suggests that there is insufficient overlap. The Lee-Yang zeros [8] in the complex µ plane are the zeros of Eqn. 6 and their distribution should reflect µ c . We expect the zero with the smallest imaginary part to approach the real axis as the lattice volume is increased. A phase transition occurs whenever a root approaches the real axis in the infinite volume limit. The zeros for the µ upd = 0.0, 0.7 are plotted in Fig. 2. For µ upd = 0 notice the two zeros emerging from the body of the distribution. These two isolated zeros are located at a chemical potential µ ≃ µ c . There was no evidence for µ c in J 0 for µ upd = 0 so it is more likely these two zeros are associated with µ o rather than µ c . For µ upd = 0.7 we did see a discontinuity in J 0 at µ c and in this case we see an arc of zeros forming which intersects the real µ-axis at µ ≃ µ c .</p>
+
+				<p>How do we explain the fact that µ o ≃ µ c in simulations of this model but not in QCD? Consider the lattice Ward identity for the chiral condensate:</p>
+
+				<figure>
+					<trash>y ¯ ψγ 5 ψ(y) ¯ ψγ 5 ψ(x) = y tr(G † −µ (x, y)G +µ (x, y)) − (trγ 5 G(x, x))(trγ 5 G(y, y)) = − ¯ ψ(x)ψ(x) m q (7)</trash>
+
+
+				</figure>
+
+				<p>The pion susceptibility Eqn.(7) consists of a connected channel and a disconnected channel. In QCD the pion has a dominant connected contribution therefore we can identify the pion mass in QCD with a pole in the pseudoscalar propagator, G ps , defined by (with G</p>
+
+				<figure>
+					<trash>= M −1 ): G ps (t) = x G +µ ( x, t)G † −µ ( x, t) ≃ e −mπt (8) 0 1000 2000 3000 4000 Number of iterations -100 -80 -60 -40 -20 0 Real part disconnected diagram (µ=0) 0 1000 2000 3000 4000 Number of iterations 0.0 0.2 0.4 0.6 0.8 1.0 Connected diagram (µ=0) Figure 3</trash>
+
+
+				</figure>
+
+				<p>. Measurements at µ = 0.0 showing the disconnected and connected contributions to the pion susceptibility on a 16 3 lattice with 1/g 2 = 0.5 and m = 0.01.</p>
+
+			</div>
+			<div>
+				<head>Gibbs [1]</head>
+
+				<p>derived a relation between the eigenvalues of P and m π in QCD. If λ ps is an eigenvalue of P associated with the mass pole in G ps and assuming the pion susceptibility has a dominant connected contribution it follows that m π = 2 ln |λ ps |. Let us consider how the existence of this mass pole could affect µ o . Notice that det M can be simply expressed in terms of the eigenvalues of P and Z can be similarly expressed in terms of its zeros α i in the e µ plane:</p>
+
+				<p><formula>det M = e n 3 s ntµ 4n 3 s nt i=1 (e µ − λ i ) ; Z = e n 3 s ntµ 4n 3 s nt i=1 (e µ − α i ). (9)</formula></p>
+
+				<p>Since Z = det(M) we see that on a single configuration α i = λ i . Note however that the ensemble averaged α i &apos;s are not in general the same as the ensemble averages of the λ i &apos;s. The number density on a single configuration J i 0 ∼ ∂ ln det M/∂µ whereas the ensemble average is given by J 0 ∼ ∂ lndet M/∂µ. Presumably the unphysical singularity at µ o ≃ m π /2 in J 0 associated with the pole in G ps at m π /2 could disappear if we achieved the α i appropriate to the correct statistical ensemble and we envisage that µ o would cancel in the large ensemble limit. The mass pole at m π /2 should disappear if we have a confining theory.</p>
+
+				<p>It will be shown that in the 3d GN U(1) model the Goldstone pole forms in the disconnected channel therefore the state described by G ps no longer corresponds to the Goldstone pion. Instead we find:</p>
+
+				<p><formula>G ps ≃ e −2m f (µ=0)t (10)</formula></p>
+
+				<p>Since |λ ps | will now correspond to the dynamical fermion mass m f rather than m π /2 we have no reason to expect an early onset associated with the Goldstone pole in the 3d GN U(1) model. Fig. 3 shows the disconnected contribution to the Ward identity for a simulation at zero chemical potential. For this simulation we found ψ ¯ ψ/m q ≃ 40, therefore we require that the sum of the connected and disconnected diagrams be of similar order so that Eqn. 7 is satisfied. The connected contribution was stable at a value of around 0.5 therefore the dominant contribution must come from the disconnected diagram. We found that the disconnected contribution was very noisy with large downward peaks. The data suggests that considering the connected contribution alone will never be sufficient to satisfy Eqn. 7. We repeated our measurements for a non-zero chemical potential. We chose µ = 0.5 thus ensuring that we were still in the phase of broken chiral symmetry. The results were consistent with those at zero chemical potential as one would expect.</p>
+
+				<figure>
+					<figDesc>The disconnected contribution to the pion susceptibility gives a very noisy signal which suggests that a very long run would be required to equilibrate sufficiently to satisfy the lattice Ward identity. The Glasgow algorithm is most effective at predicting µ c for µ &lt; ∼ µ c when the configurations of the statistical ensemble reflect the system close to criticality . In QCD the pseudoscalar channel pole is formed from connected diagrams corresponding to G +µ (t)G † −µ (t). A baryonic pion forms from a quark and a conjugate quark and condenses in this channel which explains why we find µ o = m π /2 [9]</figDesc>
+
+				</figure>
+
+				<p>. This induces the unphysical early onset of chiral symmetry restoration in the quenched theory and will persist in the Glasgow algorithm unless either large statistics or sufficient overlap is achieved so that the phase of the determinant eliminates the conjugate quarks.</p>
+
+				<p>In 3d GN U(1) the Goldstone mechanism is realised by a pseudoscalar channel pole formed from disconnected diagrams and the state G +µ (t)G † −µ (t) yields a bound state of mass 2m f (µ = 0) which is considerably heavier than the pion. Even on individual configurations in this model we expect µ o ≃ µ c ≫ m π /2 because no baryonic pion condenses in the connected channel.</p>
+
+			</div>
+
+			<note place="foot">* This work was supported by EU contract no. ERBFMRXCT97-0122</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Gibbs</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">182</biblScope>
+			<biblScope unit="issue">172</biblScope>
+			<biblScope unit="page">53</biblScope>
+			<date type="published" when="1986" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">A</forename>
+				<surname>Halasz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">D</forename>
+				<surname>Jackson</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">E</forename>
+				<surname>Shrock</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">A J J M</forename>
+				<surname>Stephanov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Verbaarschot</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="hep" to="ph" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">M</forename>
+				<surname>Barbour</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">J</forename>
+				<surname>Bell</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">372</biblScope>
+			<biblScope unit="page">385</biblScope>
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Barbour</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">these proceedings</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">B</forename>
+				<surname>Barbour</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">E</forename>
+				<surname>Kogut</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Morrison</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Suppl.) B53</title>
+		<meeting>. Suppl.) B53</meeting>
+		<imprint>
+			<date type="published" when="1997" />
+			<biblScope unit="page">456</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Bili´</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Petersson</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1992" />
+			<biblScope unit="page">615</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Hands</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Kim</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">B</forename>
+				<surname>Kogut</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">442</biblScope>
+			<biblScope unit="page">364</biblScope>
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="m">these proceedings</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">D</forename>
+				<surname>Lee</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">N</forename>
+				<surname>Yang</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">87</biblScope>
+			<biblScope unit="issue">87</biblScope>
+			<biblScope unit="page">410</biblScope>
+			<date type="published" when="1952" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">P</forename>
+				<surname>Lombardo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">E</forename>
+				<surname>Morrison</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Hands</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Barbour</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">B</forename>
+				<surname>Kogut</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>paper. in preparation</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

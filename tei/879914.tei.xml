@@ -1,0 +1,2137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Confinement from semiclassical gluon fields in SU(2) gauge theory</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2010-12-06">6 Dec 2010 December 6, 2010</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Kurt</forename>
+								<surname>Langfeld</surname>
+							</persName>
+							<affiliation>
+								<orgName type="department" key="dep1">School of Computing &amp; Statistics</orgName>
+								<orgName type="department" key="dep2">Institut fürPhysik</orgName>
+								<orgName type="institution">University of Plymouth Plymouth</orgName>
+								<address>
+									<postCode>PL4 8AA</postCode>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Ernst-Michael</forename>
+								<surname>Ilgenfritz</surname>
+							</persName>
+							<affiliation>
+								<orgName type="institution">Humboldt-UniversitätzuBerlin</orgName>
+								<address>
+									<postCode>D-12489</postCode>
+									<settlement>Berlin</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Confinement from semiclassical gluon fields in SU(2) gauge theory</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2010-12-06">6 Dec 2010 December 6, 2010</date>
+						</imprint>
+					</monogr>
+					<note>PACS: 11.15.Ha, 12.38.Aw, 12.38.Lg 1</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>The infrared structure of SU (2) Yang-Mills theory is studied by means of lattice gauge simulations using a new constrained cooling technique. This method reduces the action while all Polyakov lines on the lattice remain unchanged. In contrast to unconstrained cooling, quark confinement is still intact. A study of the Hessian of the Yang-Mills action shows that low action (semi-) classical configurations can be achieved, with a characteristic splitting between collective modes and higher momentum modes. Besides confinement, the semiclassical configurations also support the topological susceptibility and generate spontaneous breakdown of chiral symmetry .We show that they possess a cluster structure of locally mainly (anti-) selfdual objects. By contrast to an instanton or a meron medium, the topological charge of individual clusters is smoothly distributed.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>More than thirty years ago, Callan, Dashen and Gross [1, 2] (CDG) attempted to derive the non-perturbative properties of QCD from classical solutions of the Euclidean equations of motion in Yang-Mills theory. Such solution had been found few years before and called pseudoparticles or instantons [3], carrying unit winding number (topological charge). The program initiated by CDG was only partly successful: while chiral symmetry breaking became immediately understandable, confinement remained unexplained in terms of instantons . Thus, CDG assigned the property of confinement to singular solutions (merons), objects with infinite action [4] and half-integer topological charge. The phase of (confining ) QCD was thought to be realised on top of a Kosterlitz-Thouless transition where the dissociation of instantons into merons is probed by a action/entropy trade-off. This mechanism, however, was beyond the possibilities of a semiclassical calculation and was not worked out further at that time.</p>
+
+				<p>Since lattice simulations have become possible, one of the aims was to learn about the mechanism of confinement from the structure of lattice configurations. The simplest method to search for a non-perturbative background is cooling [5, 6]. Normal cooling makes visible a granular structure of action and topological charge. It appeared natural to interprete the lumps as instantons. Using improved actions, even unstable instanton-antiinstanton pairs became relatively stabilised and observable under cooling [7].</p>
+
+				<p>The problem is when cooling should be stopped.</p>
+
+				<p>Ignoring ad-hoc recipes derived from the instanton model itself, self-stopping algorithms are preferable. Restricted cooling [8, 9] is such an example. It tolerates a certain violation of the classical lattice equation of motions in order to locally stop the relaxation. It turns out that this imposes a certain scale (other than the lattice spacing) and leads to a scale-dependent characterisation of the vacuum structure. Topological structure with a clear scale dependence is also provided by spectral filtering techniques based on the lattice Dirac or Laplacian operator [10, 11, 12, 13], respectively, which do not modify the underlying gauge field.</p>
+
+				<p>So far, the most diligent approach making use of cooling was a combination of blocking and inverse blocking. Here, inverse blocking meant cooling on a fine lattice with a perfect action, constrained to preserve the long-range structure kept in form of blocked lattice configurations [14, 15, 16, 17]. In this form, iterated cycles of blocking and inverse blocking avoid the collapse to the trivial vacuum. It automatically finishes with a nontrivial &quot; background &quot; configuration stabilised by the blocked configuration. This numerically very expensive procedure was later mapped to simple APE-type smearing [18]. By extrapolating back to the &quot; no smearing &quot; limit, the instanton content of SU(2) [20] and SU(3) [21] pure gauge theory and full QCD with dynamical fermions [22] has been described. There is a caveat, however. The attempted reconstruction of the lattice configurations by reduction to their &quot; instanton content &quot; (positions and sizes) does not reproduce confinement and the correct hadron spectrum [19]. Kovacs [23] showed that other (low-action) degrees of freedom (torons) must be extracted from the individual lattice configurations as well and added to the model configurations in order to mimic the original lattice ensemble in a satisfactory way.</p>
+
+				<p>At finite temperature, calorons (finite-T instanton solutions) more general than previously known have been found and described by Kraan and van Baal [24, 25] and Lee and Lu [26]). These solutions have two advantages over instantons: they are explicitely dependent on the embedding holonomy, and the moduli space contains the necessary degrees of freedom to permit dissociation into N c constituents, dyons carrying fractional topological charge. One of the dyons carries the zero mode that would otherwise assigned to the whole caloron. A gas of moderately dissociated calorons is able to predict confinement provided the holonomy parameter is maximally nontrivial (i.e. the external Polyakov loop vanishes) [27, 28].</p>
+
+				<p>Although this semiclassical model has not been completely worked out to the extent that the effective potential of the Polyakov loop and the confining force could be obtained as functions of the temperature, the expected caloron/dyon structures could be actually detected on realistic lattice configurations below the deconfinement transition [29, 30, 31].</p>
+
+				<p>In later studies cooling has not been used. Instead, modes of chiral (overlap) fermions were used as probes. In the deconfined phase the symmetry between dyons is broken, and only the light ones are abundant [32].</p>
+
+				<p>In a model-independent way, the question of confinement facilitated by semiclassical configurations has been asked again and affirmatively answered by Gonzalez Arroyo and collaborators [33, 34, 35]. They have used cooling, however employing twisted boundary conditions [36, 37, 38]. Under these circumstances a trivial vacuum is avoided and fractional topological charges can be observed.</p>
+
+				<p>At present, a semiclassical picture for confinement seems not very popular. As far as a mechanism of confinement is concerned, the overwhelming opinion is that exclusively defects like vortices and monopoles [39, 40] play this role 1 . Practically, they are exposed as defects of gauge fixing. It is not excluded, however, that certain non-Abelian extended objects (e.g. &quot; thick vortices &quot; [42]) exist, which become merely localised by the process of gauge fixing and projection to the Abelian degrees of freedom. We should mention that also calorons lead to a characteristic monopole and vortex structure [28].</p>
+
+				<p>A common feature of the last examples, beginning with inverse blocking, is the interplay of topological configurations and certain constraints or boundary conditions imposed to the cooling process. We think it is worth to pursue this guiding idea further. In a preceding paper, one of us has explored the feasibility of constrained cooling that preserves the property of confinement [43] by keeping fixed Wilson loop ratios in the given configuration at a given &quot; macroscopic &quot; (infrared) length scale. The cooling constrained by large-scale (infrared) observables is formulated by adding Lagrange multiplier forces to the lattice equations of motion. This constrained cooling has also led to a gas formed by clusters of action. Not surprisingly, the cooled configurations reproduce the conventional confinement criteria despite the low action and the apparent absence of strong fluctuations. In this paper we explore the possibilities of another type of constrained cooling. It uses the information stored in the (locally varying) Polyakov loop. Because we study first the situation at T = 0, we preserve the Polyakov loops in all (temporal and spatial) directions.</p>
+
+				<p>The paper is organised as follows. In the following Sect. 2.1 we consider in general terms the connection between classical configurations, constrained cooling and streamline configurations. In Sect. 2.2 we explain how cooling constrained by Polyakov loops can be realised. Here we report about the easiest available observations, the behaviour of action and Creutz ratios under cooling, and contrast this with standard unconstrained cooling: confinement is preserved. The next Sect. 2.3 is devoted to the spectrum of gluonic excitation modes on the background of streamline configurations and the difference to the spectrum on standard-cooled configurations. In Sect. 3 we describe the lumpy structure in terms of action and topological charge. In addition, the degree of (anti-)selfduality and the localisation and dimensionality of action and topological density is analysed. Sect. 4 describes how the spectrum of the staggered Dirac operator depends on constrained cooling and gives a comparison with standard cooling. In the case of constrained cooling we find that a set on near-zero modes survives, indicating that chiral symmetry breaking survives.</p>
+
+				<p>In Sect. 5 we draw conclusions for further work. In an Appendix more details about solving the constraints during cooling are worked out.</p>
+
+				<figure>
+					<trash>2 Confinement from Yang-Mills streamlines 2.1 Classical configurations, streamlines and cooling</trash>
+
+
+				</figure>
+
+				<p>As an illustration, let us consider a scalar field φ(x) with the Euclidean action S[φ]. Let the action possess several degenerate absolute minima which might arise from a discrete symmetry of the action. These minima are separated by potential wells over the multidimensional configuration space. The well known double-well problem [44] might serve as an example: there, the two minima of the action are related by the reflection φ → −φ of the corresponding scalar fields. If this symmetry is not spontaneously (or anomalously) broken , a semi-classical calculation of the partition function starts by taking into account the contributions of all absolute minima weighted by the contribution from Gaussian fluctuations around each ground state configuration. The implicit assumption for a semi-classical treatment is that only configurations close to these absolute vacuum states are relevant and tunnelling is rare. It is evident that this treatment breaks down if the potential wells between the minima are small and tunnelling becomes frequent. Formally, this can be seen that space-time dependent field configurations (e.g. kinks) which interpolate in configuration space between two possible vacuum states possess an action close to the vacuum action implying that, depending on entropy, those kink configurations are relevant as well in the full quantum theory.</p>
+
+				<p>Low action solutions are generically obtained by the so-called cooling procedures which minimises the action. If we consider a gas of as many kink as anti-kinks, excessive cooling results in an annihilation of kink anti-kink pairs leading to the trivial vacuum. If interesting non-perturbative phenomenons can be attributed to the kink configurations, cooling must be stopped by either an ad hoc criterion or by additional physical input.</p>
+
+				<p>Reducing the action by means of the steepest descent method, in other words standard cooling, can be considered as a flow in configuration space where the field picks up an additional dependence on the &quot; cooling time &quot; τ , i.e., φ(x) → φ(τ, x). By constrained cooling, we address a method which reduces the action while preserving a constraint, such as</p>
+
+				<figure>
+					<trash>x n(x) φ(x) = constant, x n 2 (x) = 1 . (1)</trash>
+
+
+				</figure>
+
+				<p>Both cooling methods can be formally defined by the flow equation: ∂φ(τ, x) ∂τ = − δS[φ] δφ(τ, x) + y n(y) δS[φ] δφ(τ, y) n(x) . (2)</p>
+
+				<p>It is easy to show that ∂ ∂τ x n(x) φ(τ, x) = 0 implying that the constraint (1) has been implemented exactly. Note that the flow equation for standard cooling is obtained by setting n(x) = 0.</p>
+
+				<p>Consider φ c (x) as a low action solution for the case the constraint has been switched off, i.e., n(x) = 0. If φ c (x) is, according to some norm, close to a minimum configuration φ min (x), the difference between φ c (x) and φ(τ, x), ∆φ(τ, x) := φ(τ, x) − φ c (x) , is small for some large value τ . Note that, with the constraint in place, the constraint has to be sufficiently weak such that ∆φ can be small. Whether this is indeed the case for a particular theory has to be justified by a numerical experiment. With the above assumption, we might then approximate the action by a second order polynomial: S[φ] = S[φ c ] + x ∆φ(x) f [φ c ]</p>
+
+				<figure>
+					<trash>(x) (3) + 1 2 xy ∆φ(x) M[φ c ]</trash>
+
+
+				</figure>
+
+				<p>(x, y) ∆φ(y) + O(∆φ 3 ) .</p>
+
+				<p>The drift force f and Hessian M are thereby given by f [φ c ](x) = δS[φ] δφ(x) φ=φ c , M[φ c ](x, y) = δ 2 S[φ] δφ(x) δφ(x)</p>
+
+				<figure>
+					<trash>φ=φ c . (4) Inserting (3) in the flow equation (2), we find: ∂φ(τ, x) ∂τ = − f x − M xy ∆φ y + n y [f y + M yz ∆φ z ] n x , (5)</trash>
+
+
+				</figure>
+
+				<p>where we have introduced the convention to sum over indices which appear twice. Introducing the projector P xy = δ xy − n x n y , P 2 = P , the last equation can be written in compact notation:</p>
+
+				<figure>
+					<trash>∂φ(τ, x) ∂τ = − F x − M xy ∆φ y , (6) F = P f , M = P M . (7) The flow equation can be easily solved φ(τ ) = φ c + exp −M τ φ(0) − 1 − exp −M τ G , (8) where MG = F ⇒ G = (P MP ) −1 F</trash>
+
+
+				</figure>
+
+				<p>given that P MP is invertible in the projected space.</p>
+
+				<p>We firstly study standard cooling where we have:</p>
+
+				<figure>
+					<trash>n(x) = 0, M = M = M T , F = f .</trash>
+
+
+				</figure>
+
+				<p>Since the Hessian M is symmetric, we can introduce its eigenmodes as a complete basis,</p>
+
+				<figure>
+					<trash>i.e., M xy ψ (n) y = λ n ψ (n) x , λ 1 ≤ λ 2 ≤ . . . (9) and expand ∆φ x = n c n (τ ) ψ (n) x , f [φ c ] x = n f n ψ (n) x . (10) The solution (8) of the flow equation now translates into c n (τ ) = c n (0) exp{−λ n τ } − f n λ n 1 − exp{−λ n τ } . (11)</trash>
+
+
+				</figure>
+
+				<p>In the limit τ → ∞, we observe c n → −f n /λ n and φ approaches the true minimum of the action (3), i.e., φ → φ min (</p>
+
+				<figure>
+					<trash>x): lim τ →∞ φ(τ ) = φ c − M −1 f = φ min . (12)</trash>
+
+
+				</figure>
+
+				<p>The crucial idea is to stop cooling by only admitting τ ≤ τ stop . As explained by Huang in [44], the success of a semi-classical expansion critically depends on the existence of a gap in the eigenmode spectrum of the Hessian. Assume that such a gap occurs at the ith eigenvalue, i.e., λ i ≪ λ i+1 .</p>
+
+				<p>In this case, we will find a range R of τ values with R = τ ∈ [τ l , τ h ] λ i τ h ≪ 1, λ i+1 τ l ≫ 1 . (13)</p>
+
+				<p>For τ ∈ R, the higher eigenmodes have died out, c n (τ ) ≈ 0 for n ≥ i + 1 , while the lower eigenmodes are &quot; drifting &quot; along the gradients of the action: c n (τ ) = − f n τ for n ≤ i .</p>
+
+				<p>Hence, by choosing τ stop ∈ R (13), it is possible to separate Gaussian fluctuations from the low-action collective modes. Those configurations, which are not quite minima of the actions, are called streamlines throughout this paper.</p>
+
+				<p>Although it might be feasible in practice to choose τ stop ∈ R hence generating a streamline configuration, the properties of those streamline configurations might still depend on the ad hoc chosen τ stop . It would be highly desirable to replace the ad hoc stopping of cooling by a physical criterion thereby linking the properties of the streamlines to a feature of the theory. Constrained cooling is precisely delivering that. To see this, let us return to the flow equation (8) now with the constraint in place, i.e., n(x) not all zero. We do not artificially stop cooling and consider the limit τ → ∞ (although we admit that this is likely to be impracticable in an actual computer simulation):</p>
+
+				<figure>
+					<trash>lim τ →∞ φ(τ ) = φ c − (P MP ) −1 P f = φ min . (14)</trash>
+
+
+				</figure>
+
+				<p>Note that if the constraint is sufficiently weak in the sense (P MP ) −1 P f ≈ M −1 f , the limiting configuration would correspond to a streamline configuration of the un-constrained theory.</p>
+
+				<p>Below, we will detail that the above assumptions are met for the case of an SU(2) gauge theory where the constraint is in place to conserve the quark confinement.</p>
+
+			</div>
+			<div>
+				<head n="2.2">Constrained cooling in Yang-Mills theory</head>
+
+				<p>In Yang-Mills theories, minimal action solutions are the celebrated instanton configurations which are characterised according to their integer-valued topological charge Q. Most relevant at quantum level is the sector with vanishing topological charge: to this sector, a gas or liquid of as many instantons (Q = 1) as anti-instantons (Q = −1) would contribute besides the empty perturbative vacuum. Highly relevant properties of the Yang-Mills vacuum such as the spontaneous breaking of chiral symmetry can be attributed to the instanton medium. It is well known that excessive cooling leads to an annihilation of instanton anti-instanton pairs or even to charge changing (anti-)instanton elimination. Since we are eventually left with the empty vacuum, cooling has to be stopped to retain viable nonperturbative vacuum structure. Here, we will show that the constrained cooling detailed below results in Yang-Mills streamline configurations which not only give rise to spontaneous chiral symmetry, but also to quark confinement. The stucture, however, differs from a gas or liquid of instantons.</p>
+
+				<p>For this purpose, we extract streamline configurations, which are non-perturbatively relevant , from Monte Carlo configurations occurring within the lattice formulation. Starting from a snapshot taken from the Markoff chain simulation of the path integral, we propose a constrained minimisation of the action. We shall describe the procedure for SU(2) Yang-Mills theory and characterise the emerging field configurations. In the present work we concentrate on the zero temperature situation (vacuum state) and use a symmetric N</p>
+
+			</div>
+			<div>
+				<head>4</head>
+
+				<p>Euclidean lattice with periodic boundary conditions and finite lattice spacing a. As usual for SU(2) gauge theory, the gluon degrees of freedom are represented by unitary matrices</p>
+
+				<figure>
+					<trash>U µ (x) = u 0 µ (x) + i u µ (x) τ , u 0 µ (x) 2 + u µ (x) 2 = 1 , (15)</trash>
+
+
+				</figure>
+
+				<p>associated with the links of the lattice. We are going to work with the Wilson action</p>
+
+				<figure>
+					<trash>S Wilson = x, µ&gt;ν 1 − 1 2 tr P µν (x) , (16) P µν (x) = U µ (x) U ν (x + µ) U † µ (x + ν) U † ν (x) . (17)</trash>
+
+
+				</figure>
+
+				<p>The Yang-Mills partition function is given as the discrete functional integral Z = DU exp{−β S Wilson } , (18) where β = 4/g 2 is related to the bare gauge coupling, and represents the relative importance of gauge field configurations. This fixes also the length scale by the corresponding lattice spacing a = f (β). The integration measure comprises the Haar measure for each link. Observables A(U) are calculated by means of a Markoff chain Monte-Carlo approach which allows to obtain expectation values by importance sampling of relevant lattice configurations {U µ } and averaging over A(U).</p>
+
+				<p>Starting from such an importance-sampled lattice configuration, a configuration with reduced action is obtained by a mapping summarising the cooling procedure:</p>
+
+				<p><formula>{U} cooling −→ {U c } .</formula></p>
+
+				<p>Thereby, we are concentrating on the streamline regime when the Gaussian fluctuations have been removed already. In practice, we will monitor the evolution of observables, averaged over an ensemble of Monte Carlo configurations, as a function of the number N cool of cooling sweeps. It is well known (and will be demonstrated again below), that if cooling is performed by steepest descent with respect to the gauge action, confinement fades away with N cool → ∞.</p>
+
+				<p>Using the constrained cooling procedure proposed in this paper, our aim is to generate streamline configurations from the Monte Carlo configurations, such that an ensemble of them, hopefully, still supports the properties of quark confinement and chiral symmetry breaking. To this aim, we take a radical attitude as announced above and design a cooling procedure which largely reduces the action while it does not allow to change every single Polyakov line in all Euclidean directions on the lattice.</p>
+
+				<figure>
+					<trash>If P 4 denotes one Polyakov line in time-like direction, x 4 = t, P 4 ( x) = tr t U 4 (t, x), x = (t, x) the static, colour averaged quark-antiquark potential V (r) can be obtained via the correlator of two Polyakov lines exp{−V (r)Na} = P 4 ( x) P 4 ( y) , | x − y| = r , (19)</trash>
+
+					<figDesc>where the average . . . is over an ensemble of configurations {U}. If . . . c denotes the average over cooled configurations {U c }, the constraint trivially implies that the cooled configurations reproduce the static colour averaged potential</figDesc>
+					<trash>P 4 ( x) P 4 ( y) c = P 4 ( x) P 4 ( y) = exp{−V (r)Na} , (20)</trash>
+
+
+				</figure>
+
+				<p>that could also be measured on the ensemble of non-cooled configurations. We will point out that not only the static quark-antiquark potential is preserved, but also the potential between charges of higher representations. At zero temperature, the four Euclidean directions should be equivalent. Therefore we formulate the constraint for cooling such that also spatial Polyakov loops are not allowed to change. In the result, one can expect that this constrained cooling reproduces also the area law for fundamental Wilson loops that gives the colour singlet quark-antiquark potential. This will be checked below in this subsection.</p>
+
+				<p>The only way that our original hope could fail is when the constrained cooling fails to reduce the action by a significant amount. If the cooling sweeps would be seriously inhibited by the constraints, the action would be reduced only by an insignificant amount. This would imply that the &quot; streamline configurations &quot; we are looking for would not be smooth semiclassical fields. Whether this is the case or not can be decided by a numerical experiment. Below, we will show that the specific constraints do not prevent the cooling procedure from largely reducing the action. The constrained cooling is easy to formulate. Defining the staples as usual by</p>
+
+				<figure>
+					<trash>B µ (x) = ν =µ U ν (x + µ) U † µ (x + ν) U † ν (x) + U † ν (x + µ − ν) U † µ (x − ν) U ν (x − ν) , (21) 1 10 100 1000 10000 cooling step 1e-06 0.0001 0.01 1 action density standard constrained fit 100 1000 10000 cooling step 0.0001 0.001 0.01 0.1 χ 88 standard χ 88 constrained χ 88 constrained χ 77 constrained χ 66</trash>
+
+					<head>Figure 1:</head>
+
+					<figDesc>The action density s (left) and some Creutz ratios χ nn (right) as a function of the number of (constrained) cooling sweeps for an ensemble of 784 Monte Carlo configurations created at β = 2.4 on a lattice 16 4 . For comparison, the case of standard cooling is also shown for s and χ 88 (1008 configurations). the part s µ (x) to which a link U µ (x) contributes is given by</figDesc>
+					<trash>s µ (x) = − tr U µ (x) B µ (x) . (22) In order to implement the constraints, we define incomplete Polyakov lines in any direction µ, P µ (x) = N −1 n=1 U µ (x + n e µ ) , (23) such that the trace of the Polyakov line through some point x can be written as P µ ( x) = tr U µ (x) P µ (x) , ∀ x µ . (24)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>In order to preserve the (hypercubic) isotropy we impose the condition that Polyakov lines remain unchanged to all directions µ. The update is done sequentially. If U</figDesc>
+					<trash>(n) µ is the link before the update into U (n+1) µ , and P (n) µ (x</trash>
+
+
+				</figure>
+
+				<p>) is the incomplete Polyakov loop with all previous updates performed, then the following is required to hold:</p>
+
+				<figure>
+					<trash>tr U µ (x) P µ (x) = tr U (n) µ (x) P (n) µ (x) = tr U (n+1) µ (x) P (n) µ (x) , ∀ x, µ , (25) where U (0) µ (x) = U µ (x). Thus, the original Polyakov loops are preserved. The latter condition is built in as a constraint using Lagrange multipliers λ µ (x). When a particular link U µ (x) becomes subject to relaxation U (n) µ → U (n+1) µ , we are led to minimise the principal action A µ (x) = s µ (x) − λ µ (x) tr U µ (x) P (n) µ (x) = − tr U µ (x) B (n) µ (x) + λ µ (x) P (n) µ (x) (26)</trash>
+
+
+				</figure>
+
+				<p>with respect to the link U µ (x), the result to be stored as part of the iterated configuration U (n+1) µ . This is particularly easily done for the gauge group SU(2). Thereby B (n) µ (x) is the staple formed out of links with all previous updates performed. We find the global minimum of the principal action for any choice of the Lagrange multiplier to be attained for</p>
+
+				<figure>
+					<trash>U (n+1) µ (x) = 1 N B (n) † µ (x) + λ µ (x) P (n) † (x) , N := det 1/2 B (n) µ (x) + λ µ (x) P (n) µ (x) . (27)</trash>
+
+
+				</figure>
+
+				<p>The remaining task is to fix the Lagrange multiplier such that the constraint in (25) is satisfied. Details of the calculation are left to the appendix A. It turns out that there is a unique solution for λ µ . The final result is</p>
+
+				<figure>
+					<trash>λ µ = − 1 2 tr(B (n) † µ P (n) µ ) + 1 2 tr(U (n) µ P (n) µ ) N (28) N = det(B (n) µ ) − 1 4 tr 2 (B (n) † µ P (n) µ ) 1 − 1 4 tr 2 (U (n) µ P (n) µ ) , (29) or in summary U (n+1) µ (x) = 1 N B (n) † µ (x) − 1 2 tr B (n) † µ P (n) µ P (n) † µ + 1 2 tr U (n) µ P (n) µ P (n) † µ . (30)</trash>
+
+
+				</figure>
+
+				<p>Here no summation over µ is implied. This result has an intuitive interpretation: while the B (n) † term in the square brackets minimises the action locally, the remaining terms implement the constraints by projection.</p>
+
+				<figure>
+					<head>The constrained cooling method works as follows:</head>
+
+					<figDesc>• generate a thermalised configuration of links {U µ } = {U</figDesc>
+					<trash>(0) µ };</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>• randomly choose a link, say U µ (x) on the lattice and &quot; update &quot; the link accordingly to local cooling: U</figDesc>
+					<trash>(n) µ (x) → U (n+1) µ (x); if</trash>
+
+
+				</figure>
+
+				<p>this is repeated 4N 4 times (equal to the number of links on the lattice !) this is considered as one cooling sweep; • for a sufficiently large (but for practical reasons finite) number N cool , we obtain the desired semi-classical configuration.</p>
+
+				<p>In practice, the quantities calculated with these configurations will be carefully monitored for a possible residual dependence on N cool .</p>
+
+				<p>We finally mention a technical point: excessive accumulation of rounding errors can deteriorate the Polyakov line values in the chain</p>
+
+				<figure>
+					<trash>tr U (0) µ (x) P (0) µ (x) ≈ . . . ≈ tr U (n) µ (x) P (n) µ (x) = tr U (0) µ (x) P (0) µ (x) of equalities. For N cool bigger than O(10 4 ), we would advise to modify the cooling step (30) by U (n+1) µ (x) = 1 N B (n) † µ (x) − 1 2 tr B (n) † µ P (n) µ P (n) † µ + 1 2 tr U (0) µ P (0) µ P (n) † µ (31) N = det(B (n) µ ) − 1 4 tr 2 (B (n) † µ P (n) µ ) 1 − 1 4 tr 2 (U (0) µ P (0) µ ) . It is easy to check that the constraints are exactly satisfied: tr U (n+1) µ (x) P (n) µ (x) = tr U (0) µ (x) P (0) µ (x) .</trash>
+
+
+				</figure>
+
+				<p>Below, we will compare the outcome of our new cooling method with results obtained with standard (un-constrained) cooling. The standard local cooling step is given by applying</p>
+
+				<figure>
+					<trash>U (n+1) µ (x) = 1 N B (n) † µ (x) , N := det 1/2 B (n) µ (x) , (standard) (32)</trash>
+
+					<figDesc>to a randomly selected link. Again we call 4N 4 local cooling steps one cooling sweep. The configuration reached after N cool sweeps is called &quot; cooled configuration &quot; . We label an ensemble of such configurations by the number of sweeps, N cool</figDesc>
+					<trash>U c µ (x) = U (N cool ) µ (x) , (33) even though the actual number of updates some particular link has experienced may differ because of the random selection.</trash>
+
+
+				</figure>
+
+				<p>We have tested the constrained cooling approach using an equilibrium ensemble of thermalised configurations generated on a N 4 = 16 4 lattice with Wilson&apos;s one-plaquette action at β = 2.4. For this inverse coupling the lattice spacing a in units of the string tension σ is roughly given by σa 2 = 0.0738(5) [45]. The left panel of Figure 1 shows the ensemble average of the space-time averaged action density</p>
+
+				<figure>
+					<trash>s = 1 N 4 x µ&lt;ν 1 − 1 2 tr P µν (x) , (34)</trash>
+
+
+				</figure>
+
+				<p>where P µν (x) is the plaquette (17), as a function of the cooling sweep for our constrained cooling method and for the standard one. It turns out that, despite of the constraint, average plaquette values very close to 1 are reached. We also mention that if the Polyakov lines of a particular configuration are not constant over the orthogonal 3-volume, constrained cooling can never settle with the empty vacuum since this state is incompatible with varying Polyakov lines. Indeed, if we fit the action density averaged over the ensemble of constrained cooled configurations as a function of the number n = N cool of cooling sweeps, we find empirically</p>
+
+				<figure>
+					<trash>s ≈ 0.0012(1) + 0.074(1) n −0.60(1) , χ 2 = 0.02 . (35)</trash>
+
+
+				</figure>
+
+				<p>The fit is also shown in figure 1 and seems to be a fair representation of the data for n ≥ 100.</p>
+
+				<p>The circumstance that the Polyakov line correlator from the constrained-cooled configurations equals the correlator from the original Monte Carlo ensemble, implies that the cooled configurations share the same quark-antiquark potential with the uncooled SU(2) theory. It is also instructive to investigate the amount of disorder remaining in the Wilson loops.</p>
+
+				<figure>
+					<trash>For this purpose, we consider the Creutz ratios χ ts = − ln W (t, s) W (t − 1, s − 1) W (t − 1, s) W (t, s − 1) , (36) where W (t</trash>
+
+					<figDesc>, s) are rectangular Wilson loops with extension t in time and extension s in spatial direction. We consider here only diagonal Creutz ratios χ nn . For n such large that the excited states have died out, the Wilson loop expectation factorises into an exponential term with circumference and area term and a t-independent overlap matrix element. In this case, the Creutz ratios exhibit only the area term and approach the asymptotic force from below as a function of n lim</figDesc>
+					<trash>n→∞ χ nn = σ a 2 , (37) where σa 2</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>is the string tension in units of the lattice spacing. The right panel of Figure 1</figDesc>
+
+				</figure>
+
+				<p>shows some Creutz ratios χ nn as functions of the cooling sweep. We observe that χ nn approaches the string tension for an increasing number n, as it must be. In fact, we observe for constrained cooling that the string tension is approached from below with increasing n. Without any cooling the Creutz ratios approach the string tension from above. The reason for this apparent discrepance is easily understood by noting that the Creutz ratio can be interpreted as the derivative of the static quark potential,</p>
+
+				<figure>
+					<trash>χ nn ≈ a 2 dV dr r=rn ≈ 1 n 2 + σa 2 .</trash>
+
+
+				</figure>
+
+				<p>Since cooling efficiently wipes out the Coulombic part of the quark potential, there is no reason anymore that Creutz ratios tend to overestimate the string tension. For χ nn at n = 8, we still observe a slight deviation from the un-cooled value. We attribute this observation to a decrease of the gap between between ground state and excited state energies during cooling. In this case, even larger values of n (and, in fact, larger lattices) would be neccessary to recover the asymptotic value.</p>
+
+				<figure>
+					<trash>0 5 10 15 eigenvalue 0 0.2 0.4 0.6 0.8 1 1.2 1.4 probability distribution vacuum no cooling 0 5 10 15 eigenvalue 0 0.2 0.4 0.6 0.8 probability distribution vacuum 500 sweeps 1000 sweeps</trash>
+
+					<head>Figure 2:</head>
+
+					<figDesc>Left: the spectral density of the Hessian as a function of its eigenvalues for the perturbative vacuum and the average spectrum from un-cooled configurations. Right: the spectral density after 500 and 1000 sweeps of constrained cooling. Results are shown for 320 configurations of a 4 4 lattice at β = 2.3 and one configuration corresponding to β = ∞ (perturbative vacuum). Standard cooling yields a quite different picture. There χ 88 is rapidly decreasing and the asymptotic value is compatible with zero. This confirms the common wisdom that configurations which arise from standard cooling do not sustain quark confinement. 2.3 How good is the semi-classical expansion? Since we have discovered above low action constrained solutions which support important features of Yang-Mills theory such as quark confinement, the question arises whether a semi-classical expansion around these configurations could be a reliable tool to describe the theory even quantitatively. As detailed by Huang in [44]</figDesc>
+
+				</figure>
+
+				<p>and explained in subsection 2.1, a first indication would be finding a gap in the eigenvalue spectrum of the Hessian. In this subsection, we will show that a clear separation between Gaussian fluctuations (in the bulk) and low lying collective modes is clearly observed for our streamline background configurations.</p>
+
+				<p>In the context of gauge theories, the parameterisation of the fluctuations must be carefully chosen in order to obtain eigenvalues of the Hessian which are invariant with respect to gauge transformations of the background field. A suitable parameterisation was given by Luescher and Weisz [46] and will be adopted here: if {U</p>
+
+				<figure>
+					<head>Figure 3:</head>
+
+					<figDesc>Left: the spectral density of the Hessian as a function of its eigenvalues after 10000 sweeps of constrained cooling. Right: the spectral density after the same number of standard cooling sweeps. The densities are the result of averaging over 320 independent 4 4 configurations. into U µ (x) = exp{i q µ (x) } U</figDesc>
+					<trash>c µ (x) , q µ (x) = q a µ (x)τ a , (38) where the q a µ</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>(x) represent the fluctuations. These fields change under a gauge transformation Ω(x) as follows:</figDesc>
+					<trash>U Ω µ (x) = Ω(x) U µ (x) Ω † (x + µ) , U c Ω µ (x) = Ω(x) U c µ (x) Ω † (x + µ) , (39) q Ω µ (x) = Ω(x) q µ (x) Ω † (x) . (40)</trash>
+
+
+				</figure>
+
+				<figure>
+					<figDesc>Gauge transformations simply rotate the fluctuation field q</figDesc>
+					<trash>a µ (x): q a Ω µ (x) = R ab (x) q b µ (x) , R ab (x) τ b = Ω(x) τ a Ω † (x) . (41)</trash>
+
+
+				</figure>
+
+				<p>Expanding the Yang-Mills action up to second order in the fluctuations yields:</p>
+
+			</div>
+			<div>
+				<head>S[U]</head>
+
+				<p>= S[U c ] +</p>
+
+				<figure>
+					<trash>x,aµ q a µ (x) f a µ [U c ] + 1 2 xy,ab,µν q a µ (x) M ab µν (x, y) q b ν (y) + O(q 3 ) , (42) where f a</trash>
+
+
+				</figure>
+
+				<p>µ is the drift force and M ab µν is the Hessian. Because the action is gauge invariant and in view of the transformation properties (40), one easily finds that the Hessian transforms homogeneously under a gauge transformation of the background field: M ab µν (x, y)[U c Ω ] = R ac (x) M cd µν (x, y)[U c ] (</p>
+
+				<p><formula>R T ) db (y) . (43)</formula></p>
+
+				<p>This implies that the eigenvalues of the Hessian are gauge invariant, and the corresponding eigenmodes are a mere rotation of the eigenvectors of M ab µν [U c ].</p>
+
+				<figure>
+					<figDesc>For the Wilson action (16) and with the definition</figDesc>
+					<trash>δ a U µ (x) = i τ a U µ (x) , δ a U † µ (x) = [δ a U µ (x)] † = −i U † µ (x) τ a , the Hessian is given by: M ab µν (x, y) = 1 2 tr U µ (x)B µ (x) δ a,b δ x,y δ µ,ν − 1 2 δ a U µ (x) δ b U ν (x + µ) U † µ (x + ν) U † ν (x) δ y,x+µ [1 − δ µ,ν ] − 1 2 δ a U µ (x) U ν (x + µ) δ b U † µ (x + ν) U † ν (x) δ y,x+ν δ µ,ν − 1 2 δ a U µ (x) U ν (x + µ) U † µ (x + ν) δ b U † ν (x) δ y,x [1 − δ µ,ν ] − 1 2 δ a U µ (x) δ b U † ν (x + µ − ν) U † µ (x − ν) U ν (x − ν) δ y,x+µ−ν [1 − δ µ,ν ] − 1 2 δ a U µ (x) U † ν (x + µ − ν) δ b U † µ (x − ν) U ν (x − ν) δ y,x−ν δ µ,ν − 1 2 δ a U µ (x) U † ν (x + µ − ν) U † µ (x − ν) δ b U ν (x − ν) δ y,x−ν [1 − δ µ,ν ]</trash>
+
+
+				</figure>
+
+				<p>.</p>
+
+			</div>
+			<div>
+				<head>(44)</head>
+
+				<p>The spectral density ρ(λ) is defined by the number ρ(λ) dλ of eigenvalues λ of the Hessian in the interval between λ and λ + dλ. We have investigated this spectral density over the whole range of eigenvalues for a small lattice of size 4 4 since the gross features of the spectrum can be already illustrated using rather small volumes.</p>
+
+				<p>Let us firstly study the empty, i.e. perturbative, vacuum where all links are set to unity, U µ (x) = 1, ∀x, µ. The result is shown by the open bars in the left panel of Figure 2.</p>
+
+				<figure>
+					<figDesc>The spectrum resembles that of the Laplacian operator besides of a rather large number of zero modes. This shows that the empty vacuum possesses a huge number of flat directions.</figDesc>
+
+				</figure>
+
+				<p>This has been previously pointed out in [47, 48, 49]. In order to imagine one of these flat directions, let us assume that all time-like links pointing forward from a given time slice is set to an arbitrary SU(2) element, let us say U. In this case, all plaquettes on the lattice are still equal to 1. In other words, this configuration is degenerate with what we have called perturbative vacuum. On the other hand, the Polyakov line of the new configuration is given by tr U, which is different from tr 1 of the perturbative vacuum. Since the Polyakov line is gauge invariant, the new configuration is not gauge equivalent to our starting configuration. Variation of the action with respect to the degrees of freedom of U hence will produce genuine zero modes of the Hessian.</p>
+
+				<p>In the left panel of Figure 2, the full bars show the spectral density averaged over 320 independent configurations from a thermalised 4 4 lattice obtained at β = 2.3. The discrete spectrum from the perturbative vacuum is now washed out. In addition, negative eigenvalues naturally appear since a thermalised configurations does not represent a local minimum of the action.</p>
+
+				<p>The right panel of Figure 2 show the spectral densities corresponding to different numbers of constrained cooling sweeps. Note that there is very little change if the number of cooling sweeps is increased from 500 to 1000. As expected, the modes which are present for a empty vacuum background get emphasised during cooling. More importantly, there is a certain amount of near zero, i.e. collective modes which seem to remain stable under constrained cooling. Among those there are also negative eigenvalues of the Hessian. Those modes would normally exponentially grow, destroying the streamline configuration. It is this growth which is inhibited by the constraints imposed upon the cooling process.</p>
+
+				<p>Note that there is also a gap between the collective low-lying modes and the higher modes.</p>
+
+				<p>The latter we therefore identify with the fluctuations, while the collective modes represent collective deformations of the streamline configuration. It is interesting to compare the spectrum obtained in the result of constrained cooling with that calculated for configurations emerging under standard cooling. Our spectral results after 10000 cooling sweeps in either case are compared in the left and right panels of Figure 3. The inlays show the eigenvalue spectrum near the peak at zero in finer resolution (implying a change in the scale due to the fixed normalisation of the spectral distribution). In sharp contrast to constrained cooling, the collective modes disappear after a sufficiently large amount of standard cooling.</p>
+
+				<p>The gap between the collective near-zero modes and the Gaussian fluctuations at intermediate eigenvalues in the bulk spectrum is a generic feature of constrained cooling. According to the inspiring paper by Huang [44], both the presence of near-zero modes and the spectral gap between them and the bulk spectrum are the hallmark of semiclassical configurations. Admittedly, the SU(2) gauge theory with β = 2.3 using an 4 4 lattice might be close to the finite-volume pseudo-deconfinement transition. We therefore checked the spectrum of the Hessian for the same β value using an 8 4 lattice. This setting comfortably belongs to the confinement phase of the theory. In order to obtain all eigenvalues of the Hessian, the matrix has been exactly diagonalised using the 256 nodes of the dedicated cluster at the HPCC, Plymouth. Already the eigenvalue spectrum from a single lattice configuration shows the familiar pattern (see figure 4): a clear separation between collective and Gaussian modes.</p>
+
+				<figure>
+					<head>Figure 4:</head>
+
+					<figDesc>The spectral density of the Hessian as a function of its eigenvalues for a single configuration prepared at β = 2.3 on a 8 4 lattice, after 1000 sweeps of constrained cooling. The insert shows the vicinity of zero.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="3">Space-time texture 3.1 Action and topological charge</head>
+
+				<p>Since standard cooling and its refinements (improved action, restricted cooling) have been developed with the original intention to analyse deeper the vacuum texture, an inhomogeneous structure visible in action and topological charge, it is clear that we also have to further analyse the space-time structure which characterises the configuration after constrained cooling. A particularly important questions is whether the emerging streamline configurations are related in any way to instantons, the apparent structures believed to be seen in some stage of standard cooling.</p>
+
+				<p>To define the notation, we briefly review the basic properties of an 1-instanton configuration . In the continuum formulation, the gluon field and the field strength tensor are given by (in the regular gauge)</p>
+
+				<figure>
+					<trash>A a µ (x) = η a µν x ν 2 x 2 + ρ 2 , (45) F a µν (x) = − η a µν 4ρ 2 [x 2 + ρ 2 ] 2 , (46) with η a 0i = −η a i0 = δ ai and η a</trash>
+
+					<figDesc>ik = ǫ aik . The action of the instanton is independent of the</figDesc>
+					<trash>P 1 ν P 2 P µ x 3 P 4 0 200 400 600 800 1000 cooling step 120 130 140 150 160 170 180 χ 1/4 [MeV]</trash>
+
+
+				</figure>
+
+				<p>constrained cooling standard cooling Figure 5: Left: the field strength defined as the clover average over plaquettes touching in the point x: C µν (x) = (P 1 + P 2 + P 3 + P 4 )/4. Right: the topological susceptibility χ top as a function of the cooling sweep for constrained and standard cooling. The configurations have been prepared on a 16 4 lattice at β = 2.4. instanton radius ρ and is given by</p>
+
+				<figure>
+					<trash>S 1−instant = 1 4g 2 µνa d 4 x F a µν (x)F a µν (x) = 8π 2 g 2 . (47)</trash>
+
+
+				</figure>
+
+				<p>The (anti-)instanton is an (anti-)selfdual solution of the Yang-Mills equation of motion:</p>
+
+				<figure>
+					<trash>F a µν (x) = ± F a µν (x), F a µν (x) = 1 2 ǫ µναβ F a αβ (x) . (48)</trash>
+
+
+				</figure>
+
+				<p>We also introduce for convenience the colour electric and colour magnetic fields (i, k, l ∈</p>
+
+				<figure>
+					<trash>{1, 2, 3}): F a 0i (x) = E a i (x) , F a ik (x) = ǫ ikl B a l (x) . (49)</trash>
+
+					<figDesc>Smooth configurations composed out of (anti-)instantons are characterised by their topological charge, expressible in terms of the field strength by</figDesc>
+					<trash>Q = 1 64π 2 µ,ν,α,β a d 4 xǫ µναβ F a µν (x)F a αβ (x) = d 4 x q(x) , (50) with the topological density q(x) = 1 8π 2 i=1,3;a E a i (x)B a i (x) . (51) lump number N lump Q lump A lump 1 4251 0.6318327E+00 0.3244866E+01 2 5123 0.1609389E+00 0.1796208E+01 3 509 0.5354339E+00 0.1027845E+01 4 82 0.3428497E+00 0.3697114E+00 5 1 0.1496636E-03 0.4925571E-03 6 1 -0.1994387E-03 0.4756932E-03 7 1 0.3741456E-03 0.4675257E-03 8 1 -0.7509839E-04 0.4525436E-03 9 1 -0.3260709E-03 0.4070134E-03 10 3 0.1876750E-03 0.3783614E-03 lump number N lump Q lump A lump 1 1600 -0.1349146E+01 0.1967493E+01 2 1536 0.7005824E+00 0.1241354E+01 3 130 -0.6418117E+00 0.6956997E+00 4 2841 -0.4728359E+00 0.1499717E+01 5 2077 0.2547383E+00 0.9045169E+00 6 17 0.1862375E-02 0.8850131E-02 7 12 0.1632629E-02 0.9739530E-02 8 44 0.1126855E-02 0.1116815E-01 9 10 0.1124477E-02 0.7585276E-02 10 50 -0.1077576E-02 0.1420463E-01</trash>
+
+					<head>Table 1:</head>
+
+
+				</figure>
+
+				<p>Typical lump structures on a 10 4 lattice, originally prepared at β = 2.3, after 1000 constrained cooling sweeps. Left: action-based definition with a threshold t = 20% . Right: charge-based definition with a threshold t = 10% .</p>
+
+				<p>We have used the standard notation F µν := F</p>
+
+				<figure>
+					<trash>a µν t a and tr(t a t b ) = 1 2 δ ab , where t a (= λ a /2 for SU(3</trash>
+
+					<figDesc>)) are the generators of the su(N c ) Lie algebra. The action and the topological charge of a dilute gas of n I instantons and ¯ n I anti-instantons are given by</figDesc>
+					<trash>S = 8π 2 g 2 n I + ¯ n I , Q = n I − ¯ n I . (52) For convenience, we also introduce the &quot; normalised &quot; action A by A = 1 16π 2 i a d 4 x E a i (x)E a i (x) + B a i (x)B a i (x) , (53) with the density s(x) = 1 16π 2 E a i (x)E a i (x) + B a i (x)B a i (x) (54) which gives rise to the global inequality A ≥ |Q| (55) and a local variant of it: − s(x) ≤ q(x) ≤ s(x) . (56)</trash>
+
+
+				</figure>
+
+				<p>Let us briefly write down the lattice analog of the above quantities. Since this paper presents a first exploration of a new cooling procedure, we decided to use the most unambitious (unimproved) lattice observables. This is not doomed to failure since our cooled configurations are quite smooth. For example, there is no need for an improved definition of the field strength which uses other Wilson loops rather than the plaquette. In order to associate the field strength tensor with each lattice site, we introduce the clover-leaf average of the plaquettes attached to this site as indicated in the left panel of Figure 5. Each of the quantities P 1...4 represents an untraced plaquette as defined in (17) with the difference that tadpole improved links</p>
+
+				<figure>
+					<trash>U µ (x)/u 0 , u 0 = 1 N c tr P µν 1/4</trash>
+
+					<head>Figure 6:</head>
+
+					<figDesc>Sample configuration obtained after 1000 constrained cooling sweeps applied to a Monte Carlo configuration originally prepared on an 16 4 lattice at β = 2.4. Left: action density. Right: modulus of the topological charge density.</figDesc>
+
+				</figure>
+
+				<p>were used in place of the standard links. For smooth configurations, i.e. if a 2 F µν (x) ≪ 1, the clover average C µν (x) can be expanded with respect to the field strength:</p>
+
+				<figure>
+					<trash>C µν (x) = 1 + i a 2 F a µν (x) t a + . . . . (57)</trash>
+
+
+				</figure>
+
+				<p>It is the latter equation which we use to define the colour components of the field strength tensor on the lattice:</p>
+
+				<figure>
+					<trash>a 2 F a µν (x) = − 2 i tr t a C µν (x) . (58)</trash>
+
+					<figDesc>As a first check, we investigated whether our cooled configurations still sustain the U A (1) anomaly. To this aim, we calculated the topological susceptibility</figDesc>
+					<trash>χ = 1 V Q 2 (59)</trash>
+
+
+				</figure>
+
+				<p>where the average is over configurations obtained after constrained cooling from the Monte Carlo ensemble. The result for 400 independent lattice configurations of size 16 4 originating from a simulation at β = 2.4 is shown in the right panel of Figure 5 as a function of the cooling iteration number up to 1000 sweeps. We observe that the maximal value is reached after O(50) cooling sweeps. The asymptotic value is not essentially less. Using the string tension σ = [440 MeV] 2 to set the reference scale, our estimate for the asymptotic value (derived from the largest number of cooling steps) is χ 1/4 = (168 ± 3) MeV (60) is somewhat larger than the value reported in one of the earliest investigations [5] for the SU(2) gauge theory. There, minimising the action by a variant of the Metropolis algorithm (formally taking β → ∞) until the (first) plateau value of the action is reached, together with the twisted-plaquette definition of the topological charge density have allowed to</p>
+
+				<figure>
+					<trash>0 1 2 3 4 5 6 7 8 9 10 lump number n 0.6 0.8 1 1.2 1.4 1.6 1.8 2 A(n)/A total or |Q(n)| / |Q total | Q, t=20% Q, t=10% A, t=20% A, t=10%</trash>
+
+
+				</figure>
+
+				<p>Figure 7: Left: action versus topological charge in a 2d-histogram (the colour-code gives the counts). Right: Fraction of the total action and of the total topological charge carried by the leading, action-based clusters up to ordinal number n (see the main text for a proper definition of the cluster construction and enumeration). estimate the topological charge of lattice configurations. Given the lattice sizes of the early simulations, we deem our result to be in agreement with the previous results for a SU(2) gauge theory. Figure 6 visualises the action density (left panel) and the modulus of the topological charge density (right panel) of a generic 16 4 lattice configuration after 1000 sweeps of constrained cooling. We stress two important features: (i) both densities are well localised in the same, in space-time well separated objects; (ii) at first sight, the clusters seem to be (anti-) selfdual. We will quantify the selfduality, more precisely the degree of saturation of (56), below.</p>
+
+				<p>The left panel of Figure 7 shows a scatterplot of the total action versus the total topological charge. An ensemble of 4000 independent configurations prepared at β = 2.3 on a 10 4 lattice has contributed to this result. We observe that, while the topological charge Q is quantised to a good extent as expected, the normalised action (53) is widely spread in the scatter plot. This result is strikingly different from what a dilute gas pattern of instantons and antiinstantons would show: in that case, the action would be quantised as well (see (52)).</p>
+
+				<p>In the further analysis of the space-time structure, we have to identify the &quot; lumps &quot; , i.e., clusters in a given configuration. We will employ different definitions of the clusters and compare the cluster properties arising in either case.</p>
+
+				<p>Action-based clusters:</p>
+
+				<figure>
+					<trash>-6 -4 -2 0 2 4 6 Q sum 0 2000 4000 6000 8000 10000 12000 count -6 -4 -2 0 2 4 6 Q lump 0 500 1000 1500 2000 count Figure 8</trash>
+
+
+				</figure>
+
+				<p>: Left: histogram with respect to the summed topological charge q n of chargebased clusters. Right: histogram of q n provided by the individual charge-based clusters. Note that the central peak, which reaches as high as 16000 counts was capped at 2000 counts to fit into the figure. (i) At first, we scan the lattice for the maximal value s max of the action density. Let this maximal value occur at point x 0 . (ii) Then, we label all points x k which form a cluster connected to x 0 and with an action density s(x k ) ≥ t × s max . All &quot; connected &quot; sites are connected to each other (directly or indirectly) by links. The threshold parameter t can be chosen 0 ≤ t &lt; 1. The set of all these points x k defines the first cluster C 1 of the given configuration. This cluster gets the ordinal number n = 1. In later cycles of this cluster algorithm (see below) further clusters C n with n = 2, 3, ... are defined. We then sum over the action density, a n = x∈Cn s(x), and the topological charge density, q n = x∈Cn q(x), of all points which have been identified previously as part of the cluster C n . Apart from action and topological charge, each cluster is characterised by v n = x∈Cn 1, the number of points (cluster volume). (iii) We go back to step (i) and repeat the search for the maximal action density, but this time points which have previously been identified to be part of a cluster are ignored.</p>
+
+				<p>After the cycle (i) to (iii) was repeated until all lattice points have been assigned to a cluster, we sort all the clusters according to their action a n in descending order 2 and store for the 10 biggest clusters a n , q n and v n for further analysis.</p>
+
+				<p>To give the reader an impression, a typical result from a single lattice configuration for a 10 4 lattice prepared at β = 2.3 before it underwent constrained cooling, is listed in the left half of Table 1. Since the clusters are ordered and indexed according to the action, say, by n = 1 . . . 10, we can ask how much of the total action and how much of the total topological charge is carried by a small number of leading clusters. To answer these questions, we define the cumulative quantities</p>
+
+				<p><formula>A n = n i=1 a i , Q n = n i=1 q i , (61) V n = n i=1 v i .</formula></p>
+
+				<p>Note that all three quantities implicitly depend on the threshold t parameter via the cluster definition. The right panel of Figure 7 shows that, with the above definition of the actionbased clusters, a few of them already account for a good deal of both, action and topological charge of the whole configuration.</p>
+
+				<p>In order to get further insights into the texture, we also defined the clusters using the topological charge density rather than the action density. Those clusters are obtained as follows.</p>
+
+				<p>Charge-based clusters: (i) At first, we search for the maximal value of |q(x)|, where q(x) is the topological charge density defined in (51). Assume that this maximal value occurs at point x 0 .</p>
+
+				<p>We then define the &quot; sign &quot; of the cluster to be defined first as σ = sign(q(x 0 )). (ii) Then, we search all points x k which are connected to x 0 and which satisfy σ q(x) ≥ t |q(x 0 )|, where t is the threshold parameter. The set of all these points defines the first charge-based cluster C 1 (with ordinal number n = 1) of the given configuration.</p>
+
+				<p>In later cycles of this cluster algorithm (see below) further clusters C n with n = 2, 3, ... are defined. As in the case of action-based clusters, the action a n = x∈Cn s(x), the topological charge q n = x∈Cn q(x) and the volume v n = x∈Cn 1 are assigned to the cluster. (iii) We go back to step (i) and repeat the scan for the maximal value of |q(x)| ignoring those points which already are part of a cluster.</p>
+
+				<p>After the cycle (i) to (iii) was repeated until all lattice points have been assigned to a cluster, this time we sort all the clusters according to the modulus of the topological charge q n in descending order and store the data of the first 10 clusters. Figure 9: Scatter plots involving the volume v n , the action a n and the topological charge q n of all individual charge-based clusters.</p>
+
+				<p>A sample result of the cluster analysis with a threshold t = 10% applied to a single configuration on a 10 4 lattice, Monte-Carlo generated at β = 2.3 and then constrainedcooled , can be found in the right half of Table 1. We then sum up the topological charges of the 10 leading charge-based clusters. By definition, summing up the charge of all clusters would yield the total topological charge Q of the lattice. We find, however, that – in particular if the threshold t is chosen smaller than 20% – the sum of the leading 10 lumps already gives a very good approximation to the total topological charge, i.e., Q 10 ≈ Q.</p>
+
+				<p>We emphasise the observation that applying a lower threshold parameter t leads to a more rapid convergence of the sum for the cumulative action and cumulative topological charge for the given configuration.</p>
+
+				<p>The left panel of Figure 8 (left panel) shows the abundance of the cumulative topological charges Q sum = Q 10 for charged-based clusters using the minimal threshold t = 0 for the cluster analysis of 10 4 lattices prepared at β = 2.3. For this result, 4000 independent configurations have been analysed for their cluster structure. The lattice configurations underwent 1000 sweeps of constrained cooling. For small values of Q 10 , the cumulative topological charge peaks at integer values while for larger values a gradual shift to smaller, non-integer values is observed. We interpret these findings as follows: for small values of Q 10 the lump texture is quite smooth allowing for an accurate estimate of the (integer) topological charge using the naive clover type of definition. For larger values of Q 10 , the configurations are more rough and call for an improved definition of the topological charge. With this caveat, connected clusters of action with charges up to Q 10 ≤ 6 have been observed.</p>
+
+				<p>In order to investigate whether the topological charge Q lum = q n of the individual chargebased clusters is quantised, we have also calculated their abundance. The result is shown in the right panel of Figure 8. The cluster decomposition was performed using a threshold parameter t = 0. We observe a sharp peak around q n ≈ 0. This peak originates from a huge number of isolated micro-clusters (fluctuations) which contribute very little to the topological charge. More striking is the fact that the distribution is smooth for larger values of q n with a maximum around ≈ 2. No sign of an integer quantisation is visible</p>
+
+				<figure>
+					<trash>0 200 400 600 800 1000 cooling step 0.84 0.86 0.88 0.9 0.92 0.94 R 0 200 400 600 800 1000 cooling step 0 0.001 0.002 0.003 0.004 F 4 D 4</trash>
+
+					<head>Figure 10:</head>
+
+					<figDesc>Left: the selfduality measure R. Right: the inverse participation ratios F 4 and D 4 . All quantities are shown as functions of the cooling sweep.</figDesc>
+
+				</figure>
+
+				<p>as one would expect from a dilute gas of instantons. The charge-based clusters carry a broad spectrum of topological charges. Only the sum of their individual contributions is quantised.</p>
+
+			</div>
+			<div>
+				<head>In Figure 9</head>
+
+				<p>, we finally present scatter plots of data describing individual charge-based clusters with minimal threshold t = 0, involving their volume v n , action a n and topological charge q n . Each point in these figures corresponds to one cluster. There is a close correlation and monotonic relation between action and topological charge: the higher the action, the higher is the modulus of charge. This relation is not far from saturation, |q n | 3 4 a n .</p>
+
+				<p>Nevertheless, the space-time distribution of action and topological charge is not identical. Note that, in contrast to an instanton or meron gas configuration, the topological charge varies smoothly with the volume or the action of the cluster. We also observe a smooth correlation between the volume of a cluster and its charge and action, respectively. There are bounds a n ≤ 10v n /N 4 and |q n | ≤ 7v n /N 4 .</p>
+
+			</div>
+			<div>
+				<head n="3.2">Selfduality and inverse participation ratios</head>
+
+				<p>In the following, we will analyse to which extent the clusters are selfdual or anti-selfdual and which portion of space-time they do occupy. For this purpose, we introduce for each</p>
+
+				<figure>
+					<trash>14 4 16 4 18 4 20 4 R 0.9244(1) 0.9147(5) 0.9379(5) 0.9432(4) F 4 2.1(1) × 10 −3 1.64(5) × 10 −3 1.18(3) × 10 −3 0.80(1) × 10 −3 D 4 0.50(2) × 10 −2 0.36(1) × 10 −2 0.248(7) × 10 −2 0.160(3) × 10 −2</trash>
+
+					<head>Table 2:</head>
+
+					<figDesc>The selfduality measure R and the inverse participation ratios for the field strength and the modulus of the topological charge density for 1000 constrained cooling sweeps.</figDesc>
+
+				</figure>
+
+				<p>lattice configurations two normalised densities, &quot; unit &quot; vectors derived from s(x) and q(x):</p>
+
+				<figure>
+					<trash>F x [U] = s(x) x s(x) 2 , x F x F x = 1 , (62) D x [U] = q(x) x q(x) 2 , x D x D x = 1 . (63)</trash>
+
+
+				</figure>
+
+				<p>At first we notice that the ensemble expectation value x F x [U]D x [U] (64) vanishes upon the integration over the link fields. In order to find out whether a high field strength is linked to a high modulus of the topological charge density, we consider the expectation value R, 0 ≤ R = x F x [U] D x [U]</p>
+
+				<figure>
+					<trash>≤ 1 . (65)</trash>
+
+
+				</figure>
+
+				<p>Note that R = 1 corresponds to a perfect uniform alignment between the modulus of the topological charge density and the field strength. Let us also point out that the overall scale of the colour electric and colour magnetic action density drops out from the definitions for R, F and D implying that not only regions of large action and charge density contribute. Also &quot; small &quot; , aligned fluctuations can make a sizable contribution to these quantities.</p>
+
+				<p>We have studied R for a 16 4 lattice and for β = 2.4. The result is shown in the left panel of Figure 10 as a function of the cooling sweep. We find that R gradually increases with cooling reaching values as large as 0.9344(6) after 1000 cooling sweeps. This finding indicates that the constraints, imposed upon cooling, do not hamper to reach a high degree of selfduality of the final cooled configuration.</p>
+
+				<p>Furthermore, we studied the inverse participation ratios (IPRs) of the action density and the modulus of the topological density:</p>
+
+				<figure>
+					<trash>F 4 := x F 4 x , D 4 := x D 4 x , (66) lattice size 0 0.001 0.002 0.003 0.004 0.005 F 4 D 4 fit fit</trash>
+
+					<head>Figure 11:</head>
+
+					<figDesc>The inverse participation ratios F 4 and D 4 after 1000 constrained cooling sweeps as a function of the linear lattice size N (N 4 being the lattice volume) for 400 configurations of each size prepared at β = 2.4.</figDesc>
+
+				</figure>
+
+				<p>If the configurations would be extremely localised, i.e., F x 0 would be not vanishing only at one site, we would find F 4 = 1. On the other hand, if F and D are smeared out over a sub-manifold of dimension d, we would obtain (with V = N 4 the lattice volume) F 4 = 1 N d → 0 .</p>
+
+				<p>Our result for F 4 and D 4 for a fixed number N is shown in the right panel of Figure 10. We find that these quantities are increasing during cooling. This indicates an increase of the localisation of the configurations during cooling as expected. We also point out that the IPR for topological charge density, i.e., D 4 , is roughly twice as big as F 4 . This finding signals that the topological charge density is more localised than the action density. This could mean that the clusters of action possess one or more selfdual centres (giving rise to the localised topological charge density) and an halo of action made from more generic (not necessarily selfdual) fields.</p>
+
+				<p>In order to study the effective dimension d of the cluster structure, the IPRs F 4 and D</p>
+
+			</div>
+			<div>
+				<head>4</head>
+
+				<p>(and also R) were calculated for configurations with the lattice sizes 14 4 , 16 4 , 18 4 and 20 4 , all prepared at β = 2.4. The results obtained from an average over 400 independent configuration are summarised in Table 2 and in Figure 11. The results are fitted by</p>
+
+				<figure>
+					<trash>F 4 ≈ 1.9(1) × N −2.6(1) , D 4 ≈ 13(1) × N −3.0(1) . (67)</trash>
+
+
+				</figure>
+
+				<p>Note that not only the absolute values for the IPRs F 4 and D 4 are quite different as already noticed, but also the exponents are slightly different. At the same time, we observed a strong correlation between regions of large action density and of large topological charge density (brought to light by R). This indicates that there is a subtle difference in the arrangements of action density and topological charge density which are hardly visible by the naked eye (see Figure 6). Let us also stress that the data fitted by (67) are obtained for a fixed number of cooling steps (i.e. 1000 sweeps). These figures might still change if the number of cooling sweeps is further increased. A systematic study of this effect is left to future work.</p>
+
+			</div>
+			<div>
+				<head n="4">Spontaneous chiral symmetry breaking</head>
+
+				<p>Besides confinement, the spontaneous breakdown of chiral symmetry is another outstanding feature of QCD which shapes the hadron spectrum and therefore the structure of matter. The crucial test for spontaneous chiral symmetry breaking is a non-vanishing quark condensate ¯ qq. It is related to the eigenvalue spectrum ρ(λ) of the fermion operator M[U] by virtue of the Banks-Casher relation:</p>
+
+				<figure>
+					<trash>¯ qq = π ρ(0) . (68)</trash>
+
+
+				</figure>
+
+				<p>For simplicity, we adopt staggered fermions which avoid fermion doubling while keeping a subset of chiral symmetry intact. The massless Dirac operator is M[U]</p>
+
+				<figure>
+					<trash>= 4 µ=1 η µ (x) U µ (x) δ x+µ,y − U † µ (x − µ) δ x−µ,y , (69) where the phase factors are given by η µ (x) = (−1) x 1 +...+x µ−1 .</trash>
+
+
+				</figure>
+
+				<p>We have numerically estimated the spectrum of the low lying modes for configurations created on a 10 4 lattice with β = 2.4. For this aim, we have calculated the 50 modes with λ closest to zero, taking them as entries to a histogram. We then averaged the histograms over 400 independent configurations. The result for un-cooled configurations is shown in the upper left picture in Figure 12. As expected, the eigenvalue spectrum is non-vanishing at zero eigenvalues. We subsequently studied the eigenvalues spectrum after 10, 100 and 1000 sweeps of constrained cooling. It turns out that cooling pushes the eigenvalues away from zero while a group of eigenvalues remains forming a peak near zero eigenvalue. It is striking that number of near-zero modes firstly decreases, but that the full strength of the spectral density near zero seems to be regained asymptotically. We finally compare the spectrum after 1000 sweeps of our new constrained cooling technique with that from standard cooling (see figure 13). While the near zero-modes are protected throughout the constrained cooling sweeps, the near-zero modes have practically disappeared after 1000 sweeps of standard cooling.</p>
+
+				<figure>
+					<trash>-1 -0.5 0 0.5 1 eigenvalue 0 1 2 3 4 probability distribution no cooling -1 -0.5 0 0.5 1 eigenvalue 0 1 2 3 4 probability distribution 10 sweeps -1 -0.5 0 0.5 1 eigenvalue 0 1 2 3 4 probability distribution 100 sweeps -1 -0.5 0 0.5 1 eigenvalue 0 1 2 3 4 probability distribution 1000 sweeps</trash>
+
+					<head>Figure 12:</head>
+
+					<figDesc>The spectral density of the staggered Dirac operator as a function of its eigenvalues for several numbers of constrained cooling sweeps.</figDesc>
+					<trash>-1 -0.5 0 0.5 1 eigenvalue 0 1 2 3 4 probability distribution 1000 constrained cooling no cooling -1 -0.5 0 0.5 1 eigenvalue 0 1 2 3 4 probability distribution 1000 standard cooling no cooling</trash>
+
+
+				</figure>
+
+				<figure>
+					<head>Figure 13:</head>
+
+					<figDesc>The spectral density of the staggered Dirac operator as a function of its eigenvalues after 1000 sweeps of cooling. Left: for constrained cooling; right: for standard cooling.</figDesc>
+
+				</figure>
+
+			</div>
+			<div>
+				<head n="5">Conclusions</head>
+
+				<p>Standard cooling finally approaches classical Yang-Mills configurations which lack important low energy features of the quantized theory such as confinement. As a tool for analysis, standard cooling has to be stopped by an ad hoc criterion. Although it might be possible by this procedure to generate an ensemble of configurations which grasp the essence of low energy Yang-Mills theory, the persuasiveness of the approach is flawed since the properties of the configurations might still depend on the stopping parameters.</p>
+
+				<p>Constrained cooling in the spirit firstly proposed in [43] and detailed in the present paper removes this deficiency. Here, as well as in [43], the respective physical constraint makes it unnecessary to monitor and stop the cooling process at all. Instead, the physical constraints ensure that the configurations hardly change after many cooling sweeps and that, at the same time, the emerging (semi-) classical configurations retain the important IR properties. A natural choice for such a constraint is to retain the asymptotic form of the static quark-antiquark potential.</p>
+
+				<p>In this paper, we achieved this by demanding that every Polyakov line on the lattice, i.e., through each lattice site and in every direction, does not change during the cooling process. Despite of the huge amount of constraints, we find that smooth (semi-) classical configurations with very low action emerge (see the discussion in subsection 2.2 which quantifies this statement). Once the confining property of the (semi-) classical configurations is established, we find that other important low energy properties are conserved as well: the topological susceptibility is largely unaffected by constrained cooling, and the investigation of the eigenvalue spectrum of the staggered Dirac operator indicates that these configurations provide spontaneous chiral symmetry breaking as well.</p>
+
+				<p>A thorough analysis of the space-time structure of the configuration emerging from constrained cooling has been performed. It turns out that these configurations can be described by connected clusters which are (anti-) selfdual to a good extent (see subsection 3.2 for quantitative details). We find that these objects are genuinely different from instantons: while the total topological charge of each configuration is quantised in integers (as it should be), the topological charge of individual clusters takes values which are continuously distributed . Data showing the topological charge of individual clusters versus their action, see figure 9, seem to fall on a well-defined curve in the action-topological charge histogram (rather than populating isolated islands as it would be the case for instanton ensembles).</p>
+
+				<p>To explore these many observables reported here with a high-level statistics, these first results have been obtained by using an extremely simple lattice set-up. In view of our findings , it is certainly worthwhile to further study the configurations exposed by constrained cooling employing an improved lattice action, an improved definition of the topological charge density and a more elaborate Dirac operator with maximal chiral symmetry. We also expect that extending the investigations to finite temperatures will provide valuable insight in the nature of the deconfinement phase transition and possibly in some features of the quark gluon plasma close to T c . This, as well as an extension to SU(3), is planned for future work.</p>
+
+				<p>Acknowledgments: The calculations have been carried out within the DiRAC framework at the High Performance Computing Centre at University of Plymouth. We are indebted to the staff for support. This work is a project of the UKQCD collaboration. DiRAC is supported by STFC. Both authors acknowledge discussions with Biagio Lucini and Derek Leinweber. E.-M. I. is grateful for a temporal position at the Faculty of Physics of the University of Bielefeld he held during the first phase of this project. He is obliged to his collaborators in the QCDSF collaboration, in particular Gerrit Schierholz and Volker Weinberg, in the collaboration between Humboldt University and ITEP, in particular Michael Müller -Preussker and Boris Martemyanov, and recently at the University of Regensburg, in particular Falk Bruckmann and Florian Gruber, for many discussions concerning the topological structure of QCD and its description.</p>
+
+			</div>
+			<div>
+				<head>A Solving the constraint</head>
+
+				<p>Using (27), the task is to determine the Lagrange multiplier such that the constraint in (25) is satisfied. We firstly note that</p>
+
+				<figure>
+					<trash>N 2 = det(B µ ) + λ µ tr(B † µ P µ ) + λ 2 µ , and squaring the constraint equation (25) leads to a quadratic equation for λ µ : λ 2 µ + λ µ tr(B † µ P µ ) + 1 4 tr 2 (B † µ P µ ) − det(B µ ) 1 4 tr 2 (U µ P µ ) 1 − 1 4 tr 2 (U µ P µ ) = 0. Since both U µ , P µ ∈ SU(2), we point out out that 1 − 1 4 tr 2 (U µ P µ ) ≥ 0 . We find two solutions: λ ± µ = − 1 2 tr(B † µ P µ ) ± 1 2 tr(U µ P µ ) det(B µ ) − 1 4 tr 2 (B † µ P µ ) 1 − 1 4 tr 2 (U µ P µ ) .</trash>
+
+
+				</figure>
+
+				<p>One of the solution is spurious, since we have squared the constraint equation to derive them.</p>
+
+				<figure>
+					<trash>Indeed, calculating N 2 tr(U c µ P µ ) = 1 2 tr (B † µ + λ ± µ P † µ )P µ = ± 1 2 tr(U µ P µ ) det(B µ ) − 1 4 tr 2 (B † µ P µ ) 1 − 1 4 tr 2 (U µ P µ ) rules out the solution λ − µ since N &gt; 0. We also find the normalisation factor to be N = det(B µ ) − 1 4 tr 2 (B † µ P µ ) 1 − 1 4 tr 2 (U µ P µ ) .</trash>
+
+
+				</figure>
+
+			</div>
+
+			<note place="foot" n="1"> We refer to Ref. [41] for a way to reconcile the two points of view.</note>
+
+			<note place="foot">c µ } denotes the streamline configuration , i.e., the background field, in the neighbourhood a particular link is decomposed</note>
+
+			<note place="foot" n="2"> Therefore, these clusters are called action-based.</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">References</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">G</forename>
+				<surname>Jr</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">F</forename>
+				<surname>Dashen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">J</forename>
+				<surname>Gross</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">G</forename>
+				<surname>Jr</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">F</forename>
+				<surname>Dashen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">J</forename>
+				<surname>Gross</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="19" to="1826" />
+			<date type="published" when="1978" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">A</forename>
+				<surname>Belavin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">M</forename>
+				<surname>Polyakov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">S</forename>
+				<surname>Schwartz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Yu</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">S. Tyupkin, Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">85</biblScope>
+			<biblScope unit="page">59</biblScope>
+			<date type="published" when="1975" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">G</forename>
+				<surname>Jr</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<forename type="middle">F</forename>
+				<surname>Dashen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">J</forename>
+				<surname>Gross</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1977" />
+			<biblScope unit="page">66</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Teper</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1986" />
+			<biblScope unit="page">171</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">–</forename>
+				<forename type="middle">M</forename>
+				<surname>Ilgenfritz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">L</forename>
+				<surname>Laursen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Schierholz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Mü-Preussker</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Schiller</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">693</biblScope>
+			<biblScope unit="page">268</biblScope>
+			<date type="published" when="1986" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<surname>Ph</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">Garcia</forename>
+				<surname>De Forcrand</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">– O</forename>
+				<surname>Perez</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Stamatescu</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="9701012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">Garcia</forename>
+				<surname>Perez</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Philipsen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">– O</forename>
+				<surname>Stamatescu</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">293</biblScope>
+			<biblScope unit="page">551</biblScope>
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">Garcia</forename>
+				<surname>Perez</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">O</forename>
+				<surname>Philipsen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<forename type="middle">– O</forename>
+				<surname>Stamatescu</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. Proc</title>
+		<imprint>
+			<biblScope unit="volume">839909029</biblScope>
+			<biblScope unit="issue">541</biblScope>
+			<biblScope unit="page" from="hep" to="lat" />
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+	<note>Suppl. .</note>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Horvath</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">J</forename>
+				<surname>Dong</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Draper</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<forename type="middle">X</forename>
+				<surname>Lee</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">F</forename>
+				<surname>Liu</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">B</forename>
+				<surname>Thacker</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">B</forename>
+				<surname>Zhang</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">67</biblScope>
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E.-M</forename>
+				<surname>Ilgenfritz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Koller</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<surname>Koma</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Schierholz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Streuer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Weinberg</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Bruckmann</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E.-M</forename>
+				<surname>Ilgenfritz</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">D72 (2005) 114502</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">E.-M</forename>
+				<surname>Ilgenfritz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Leinweber</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Moran</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Koller</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Schierholz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<surname>Wein-Berg</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="page">074502</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">A</forename>
+				<surname>Degrand</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Hasenfratz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Zhu</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">A</forename>
+				<surname>Degrand</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Hasenfratz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Zhu</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Feurstein</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">– M</forename>
+				<surname>Ilgenfritz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Mü-Preussker</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Thurner</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys</title>
+		<imprint>
+			<biblScope unit="volume">421</biblScope>
+			<biblScope unit="page">511</biblScope>
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Feurstein</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">– M</forename>
+				<surname>Ilgenfritz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Markum</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Mü-Preussker</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Thurner</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Proc</title>
+		<imprint>
+			<biblScope unit="volume">639709140</biblScope>
+			<biblScope unit="issue">480</biblScope>
+			<biblScope unit="page" from="hep" to="lat" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+	<note>Suppl</note>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">A</forename>
+				<surname>Degrand</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Hasenfratz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">G</forename>
+				<surname>Kovacs</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<title level="m" type="main">B420 (1998) 97. [arXiv:hep-lat</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">A</forename>
+				<surname>Degrand</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Hasenfratz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">G</forename>
+				<surname>Kovacs</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="9710078" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">B520 (1998) 301. [arXiv:hep-lat/9711032</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">A</forename>
+				<surname>Degrand</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Hasenfratz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">G</forename>
+				<surname>Kovacs</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett</title>
+		<editor>A. Hasenfratz and C. Nieter</editor>
+		<imprint>
+			<biblScope unit="volume">9806026</biblScope>
+			<biblScope unit="page" from="439" to="366" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">B476 (2000) 188. [arXiv:hep-lat/9912053</title>
+		<author>
+			<persName>
+				<forename type="first">]</forename>
+				<forename type="middle">A</forename>
+				<surname>Hasenfratz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Kovacs, Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">62</biblScope>
+			<biblScope unit="page">034502</biblScope>
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">C</forename>
+				<surname>Kraan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">5339805168</biblScope>
+			<biblScope unit="issue">627</biblScope>
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<forename type="middle">C</forename>
+				<surname>Kraan</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Van Baal</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1998" />
+			<biblScope unit="page">435</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">D58 (1998) 025011. [arXiv:hep-th</title>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Nucl. Phys</title>
+		<editor>K.–M. Lee and C.–h. Lu Ph. Gerhold, E.–M. Ilgenfritz, and M. Mü-Preussker</editor>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page">760</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Bruckmann</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">– M</forename>
+				<surname>Ilgenfritz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">V</forename>
+				<surname>Martemyanov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Bo</forename>
+				<surname>Zhang</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="page">81</biblScope>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">] E.-M</forename>
+				<surname>Ilgenfritz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">V</forename>
+				<surname>Martemyanov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Mü-Preussker</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Shcheredin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">I</forename>
+				<surname>Veselov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Phys. Rev</title>
+		<editor>30] E.–M. Ilgenfritz, B. V. Martemyanov, M. Mü-Preussker, and A. I. Veselov</editor>
+		<imprint>
+			<biblScope unit="volume">66</biblScope>
+			<biblScope unit="page" from="73" to="094509" />
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">G</forename>
+				<surname>Bornyakov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">– M</forename>
+				<surname>Ilgenfritz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">V</forename>
+				<surname>Martemyanov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<forename type="middle">M</forename>
+				<surname>Morozov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Mü-Preussker</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">I</forename>
+				<surname>Veselov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="page">054505</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">G</forename>
+				<surname>Bornyakov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<forename type="middle">– M</forename>
+				<surname>Ilgenfritz</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">V</forename>
+				<surname>Martemyanov</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Mü-Preussker</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">79</biblScope>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<monogr>
+		<title level="m" type="main">B359 (1995) 159. [arXiv:hep-lat</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Gonzalez-Arroyo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Martinez</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Montero</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<monogr>
+		<title level="m" type="main">B387 (1996) 823. [arXiv:hep-th</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Gonzalez-Arroyo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Montero</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Gonzalez-Arroyo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Montero</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Suppl. 53</title>
+		<meeting>. Suppl. 53</meeting>
+		<imprint>
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">Garcia</forename>
+				<surname>Perez</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Gonzalez-Arroyo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Soderberg</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="1990" />
+			<biblScope unit="page">235</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">A26 (1993) 2667. [arXiv:hep-lat</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Garcia</forename>
+				<surname>Perez</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Gonzalez-Arroyo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">M. Garcia Perez, and others, Phys. Lett. B305</title>
+		<imprint>
+			<date type="published" when="1993" />
+			<biblScope unit="page" from="hep" to="lat" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Greensite</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Prog. Part. Nucl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">51</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<monogr>
+		<title level="m" type="main">G34 (2007) S3. [arXiv:hep-ph/0610365]] [41] V. I. Zakharov, [arXiv:hep-ph</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Alkofer</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Greensite</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Phys</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="602141" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<monogr>
+		<title level="m" type="main">B442 (1998) 273. [arXiv:hep-th</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Gonzalez-Arroyo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Montero</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Phys</forename>
+				<surname>Lett</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="m">Langfeld, PoS (QCD-TNT09) (2009) 022</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">5280. [arXiv:hep-ph/9605461</title>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D Phys. Rev. D Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">549504006</biblScope>
+			<biblScope unit="issue">452</biblScope>
+			<biblScope unit="page">213</biblScope>
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">]</forename>
+				<forename type="middle">A</forename>
+				<surname>Keurentjes</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<surname>Rosly</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">V</forename>
+				<surname>Smilga</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">589805183</biblScope>
+			<biblScope unit="page">081701</biblScope>
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">71</biblScope>
+			<biblScope unit="page">105012</biblScope>
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Langfeld</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">N</forename>
+				<surname>Lages</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Reinhardt</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Lat2005</forename>
+				<surname>Pos</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

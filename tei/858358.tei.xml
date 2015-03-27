@@ -1,0 +1,1516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/joseph/Desktop/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Visible Effects of Invisible Hidden Valley Radiation</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2010-09-02">2 Sep 2010</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename type="first">Lisa</forename>
+								<surname>Carloni</surname>
+							</persName>
+							<email>E-mail: lisa.carloni@thep.lu.se</email>
+							<affiliation>
+								<orgName type="department">Theoretical High Energy Physics Department of Astronomy and Theoretical Physics</orgName>
+								<orgName type="institution">Lund University</orgName>
+								<address>
+									<addrLine>Sölvegatan14A</addrLine>
+									<postCode>223-62</postCode>
+									<settlement>Lund</settlement>
+									<region>SE</region>
+									<country key="SE">Sweden</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName>
+								<forename type="first">Torbjörn</forename>
+								<surname>Sjöstrand</surname>
+							</persName>
+							<email>torbjorn@thep.lu.se</email>
+							<affiliation>
+								<orgName type="department">Theoretical High Energy Physics Department of Astronomy and Theoretical Physics</orgName>
+								<orgName type="institution">Lund University</orgName>
+								<address>
+									<addrLine>Sölvegatan14A</addrLine>
+									<postCode>223-62</postCode>
+									<settlement>Lund</settlement>
+									<region>SE</region>
+									<country key="SE">Sweden</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Visible Effects of Invisible Hidden Valley Radiation</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2010-09-02">2 Sep 2010</date>
+						</imprint>
+					</monogr>
+					<note>Preprint typeset in JHEP style -HYPER VERSION</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>Beyond Standard Model, Phenomenological Models *</keywords>
+			</textClass>
+			<abstract>
+				<p>Assuming there is a new gauge group in a Hidden Valley, and a new type of radiation, can we observe it through its effect on the kinematic distributions of recoiling visible particles? Specifically, what are the collider signatures of radiation in a hidden sector? We address these questions using a generic SU (N)-like Hidden Valley model that we implement in Pythia. We find that in both the e + e − and the LHC cases the kinematic distributions of the visible particles can be significantly affected by the valley radiation. Without a proper understanding of such effects, inferred masses of &quot; communicators &quot; and of invisible particles can be substantially off.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+				<figure>
+					<trash>Contents 1. Introduction 1 2. Hidden Valley scenarios 4 3. Monte Carlo Tools in PYTHIA 8 5 3.1 Particle content 5 3.2 Production processes 6 3.3 Parton showers 7 4. The model: SM and SU (3) v radiation 8 5. Effects of SU (3) c radiation at e + e − colliders 12 5.1 Collisions in the center-of-mass frame 12 5.2 Collisions not in the center-of-mass frame: MT2 16 6. Effects of SU (3) v radiation at LHC 20 6.1 LHC with 7 TeV 21 6.2 LHC with 14 TeV 24 7. Conclusions 27</trash>
+
+
+				</figure>
+
+			<div>
+				<head n="1">Introduction</head>
+
+				<p>One common feature in New Physics models is the conservation (or near conservation) of a new quantum number. Often it is associated with a parity symmetry, like R-parity in supersymmetric models or T-parity in Little Higgs ones. Such conserved parity-like symmetries serve two basic model-building purposes: firstly, they forbid odd-parity tree level corrections to electroweak precision observables, and secondly, they make the lowest lying odd-parity state stable, thus providing a possible dark matter candidate. The new charge may alternatively come from a continuous symmetry, a global symmetry or a new gauge symmetry, for example, and still fulfill the same purposes.</p>
+
+				<p>Regardless of the specific model realization, we can imagine that a new conserved quantum number is discovered at LHC.</p>
+
+				<p>In this article, we wish to take some first steps towards addressing a general phenomenological question: if a new apparently conserved charge should be discovered, is it possible to determine experimentally whether it arises from a discrete, a global or a gauge symmetry? Specifically, is it possible to determine whether it is the source of a new field?</p>
+
+			</div>
+			<div>
+				<head>– 1 –</head>
+
+				<p>In principle, a continuous symmetry has additive quantum number conservation whereas a discrete one has multiplicative conservation. To distinguish between gauge and global symmetries one could look for Gauge bosons, for Goldstone bosons and in general at the particle spectrum. The new sector however may be &quot; hidden &quot; . That is, the carriers of the new symmetry, for the two basic reasons mentioned above, could lie entirely within the new sector and be neutral under (or have very weak) SM interactions. Indeed, a new unbroken symmetry would have to be invisible or else it would have already been found. Thus any radiation or other dynamic phenomena associated with it would be invisible to SM matter. If the charge did radiate in the new sector, would we be still be able to observe indirectly the effects of the hidden radiation? How would the kinematic distributions of the visible particles be affected? Could we extract information from these kinematic distributions about the dynamics within the hidden sector? Could one distinguish Abelian from non- Abelian gauge groups, study the different particle (or unparticle) contents or measure the strength of the couplings? This could lead to a better understanding of the higher-energy dynamics, the ultraviolet completion of the theory, the symmetries involved, and possibly even the mechanism by which they are broken.</p>
+
+				<p>The ideal terrain to begin to explore these effects is Hidden Valley models [1]. We extend this name to the class of models satisfying the following criteria. First, there must be a new light hidden sector (the valley), decoupled from the visible SM one, that has not yet been discovered because of some barrier. This can be an energy barrier or of another nature, e.g. symmetry-forbidding tree-level couplings. Second, the decoupling of the new hidden valley sector from the visible SM one must happen at relatively low energies, around the TeV scale, in such a way that the cross sections for Standard visible particles disappearing into the hidden sector (and vice versa) are small enough to evade the current experimental limits, and yet large enough to be observable at LHC. These experimental limits are of course model dependent, as we will discuss in sections 2 and 4.</p>
+
+				<p>Typically, the valley particles &quot; v-particles &quot; are charged under a valley group G v and neutral under the SM group G SM , and the SM particles are neutral under G v . In order to have interactions between the two sectors there has to be a &quot; communicator &quot; which couples to both SM and valley particles. A common choice is to have a coupling via a Z ′ or via loops of heavy particles carrying both G SM and G v charges. Examples of Hidden Valleys can be found in many models, such as String Theory [3], Twin Higgs models [4], folded SUSY [5, 6], and Unparticle models [2, 7]. Hidden Valley scenarios can naturally provide candidates for Dark Matter and can easily fit cosmological constraints. Just to give an example, in [1] the v-interactions ensure that all particles efficiently decay to the lightest mesons. These mesons are allowed to annihilate to neutral π 0 v s, which can then tunnel back into the SM. So long as the lifetime of the π 0 v is τ ≪ 1 sec, the number of πs left will decay exponentially before big-bang nucleosynthesis.</p>
+
+				<p>The reason why these scenarios are ideal to study the effects of radiation is the large disparity in the masses of the communicators and the v-particles. Typically, the communicator has a mass around the decoupling scale, say the TeV scale, while the v-particle – 2 – mass may be as low as 1–10 GeV. If both the communicator and the v-particle are charged under a new gauge G v , they will radiate gauge bosons, and the larger their mass ratio the larger the amount of phase space available for the radiation, both in the normal and in the hidden sector. Thus if any effect at all are to be observable, it would be in this kind of scenario.</p>
+
+				<p>We have devised a Hidden Valley toy model to tackle the issue, and have implemented it in the Pythia 8 Monte Carlo event generator [9]. The implementation allows for different valley flavour contents, particle masses, gauge groups and v-gauge couplings. In this way one may accommodate a range of different Hidden Valley scenarios. MC event generators offer flexible approaches to model radiation and parton shower evolution in great detail. One new central feature in the Pythia 8 implementation is the &quot; competition &quot; mechanism between the hidden and the SM radiation, which is implemented as an &quot; interleaved &quot; shower, wherein different kinds of emissions, SM and hidden, can alternate if viewed in terms of a common shower evolution scale. As a consequence, subsequent emissions in the visible sector, of gluons or photons, will then tend to have a lower energy than they would have had, had the hidden radiation not been there. This is the key mechanism whereby we gain access to the information about the radiation in the hidden sector.</p>
+
+				<p>The intention of this article is not a full-fledged experimental analysis of how a new sector should be discovered and explored, neither with respect to potential background processes nor to detector-specific capabilities — since our implementation is publicly available, we safely leave it to the experimental community to assess. What we want to ascertain here is if there are observable signals of hidden valley radiation at all, at the simple parton and hadron levels. It is not trivial to decide which visible particle kinematic distributions one should study to reveal valley radiation effects and to discriminate between different models. For instance, at an e + e − collider the rise of the communicator pair-production cross section near threshold could allow to determine its spin, and thereafter the absolute size of the cross section could suggest the presence of new &quot; colour &quot; factors — recall that the pair-production of particles in the fundamental representation of a new SU (N ) group gives a factor N in the cross section. Such measurements would not directly probe the hidden sector, however: they would not reveal whether a new group is gauged, or what is the coupling strength in it. For a hadron collider, like the LHC, the uncertainty in the event-by-event subcollision energy √ ˆ s undermines analyses solely based upon the value of cross-section. The best strategy is thus to complement cross-section with invariant mass measurements and the study of other boost-invariant quantities (for a recent review see the proceedings [16]). This is the reason why we choose to study MT2 [15] distributions, which give relations between communicator and v-particle mass. These observables are specifically designed to be boost-invariant and to deal with BSM models in which more than one particle escapes detection, such as in our toy model. But we also study &quot; hidden observables &quot; , like the invariant mass distribution of a hidden particle together with its associated hidden radiation.</p>
+
+				<p>The effects of the hidden radiation on these distributions and how much one may – 3 – observe depends on the details of the scenario considered, of course, but also depend heavily upon the collider type considered, on its center of mass energy, and on its integrated luminosity L. We consider two different LHC scenarios, one for the early data (the first 18 to 24 months at 7 TeV with an expected integrated luminosity L = 1 fb −1 ) and one for later data ( √ s = 14 TeV and integrated luminosity L = 100 fb −1 ). The conclusions in the two cases will be quite different. For e + e − collisions we will mainly refer to an ILC at 800</p>
+
+				<p>GeV, though we mention CLIC production cross sections at 3 TeV. The paper is organized as follows: we give a first overview of the various valley scenarios in the literature, in section 2, and then describe the tools that are now available in Pythia in section 3. In section 4 we explain the model and the main features of interleaved SM and hidden radiation. Finally, in the last two sections we study the effects of hidden radiation on collider phenomenology. In section 5 we discuss the e + e − case and in section 6 the LHC one.</p>
+
+			</div>
+			<div>
+				<head n="2">Hidden Valley scenarios</head>
+
+				<p>As mentioned in the introduction a Hidden Valley is a light hidden sector, consisting of particles which, depending on the model, might have masses as low as 10 GeV. The detailed spectrum of the v-particles and their dynamics within the hidden valley depends upon the valley gauge group G v , the spin and number of particles present in the theory, and the representation they belong to.</p>
+
+				<p>The effects of the hidden sector on the visible particle spectra will depend upon the way the hidden sector communicates with the SM, whether it is via a Higgs, multiple Higgses, a Z ′ , heavy sterile neutrinos or via loop of heavy particles charged under both SM and valley gauge interactions. We would like to give a panoramic view of the different Hidden Valley scenarios without going into details and to underline those features that may be simulated with the new tools.</p>
+
+				<p>The simplest possibility is a QCD-like scenario, with a strong coupling constant, which may run like the QCD coupling does, with QCD-like hadronization generating valley pions, v-ηs, v-Ks, v-nucleons etc. The Standard Model SU (3) c × SU (2) × U (1) sector could couple ultra-weakly with the hidden SU (N ) sector via a neutral Z ′ . This scenario was investigated by Strassler and Zurek with tools analogous to the ones used to simulate QCD [1]. It displays some rather startling features. For instance, a v-π could have a displaced decay in the muon spectrometer in the ATLAS detector, resulting in a large number of charged hadrons traversing the spectrometer, or it could decay in the hadronic calorimeter producing a jet with no energy deposited in the electromagnetic calorimeter and no associated tracks in the inner detector. Experimental studies for these scenarios are currently under way, by the D0, CDF, LHCb, ATLAS and CMS collaborations. Typical hidden valley-like signatures appear also in Unparticle models with mass gaps [7]. These models display a conformal dynamic above the mass gap, and a hidden valley behaviour when the conformal symmetry is broken. Regardless of the dynamics above the mass gap, whether it is strongly coupled or weakly coupled, the signatures are similar to the ones mentioned in the previous scenario (displaced vertices and missing energy – 4 – signals). This is because only the lower energy states, light stable hidden hadrons can decay back into Standard Model particles. The higher energy states, be they narrow resonances or a continuum of resonances, decay rapidly to these lower light stable hadrons. As for the previous scenario, a parton shower is a key tool to study these models, not so much to determine the phenomenology qualitatively, but because it the only element of the hidden dynamics which is sensitive to the higher-energy conformal (or next-to-conformal) dynamics. The conformal dynamics will be reflected in the parton shower evolution, which can be rather different from the regular QCD one, especially in theories with a strong dynamics above the mass gap. There are of course many other Hidden-Valley related models, such as Quirky models [8], just to give an example, in which the parton shower evolution does not play the key role it does in the previous cases. Typically their phenomenology is better captured in terms of string dynamics and string fragmentation.</p>
+
+				<p>In this paper we do not address the issue of string fragmentation or hadronization.</p>
+
+				<p>Our main focus is on the parton shower, as this best captures the nature of the hidden radiation.</p>
+
+				<p>The model we built to investigate the existence of a this new radiation exploits but a few features common in many hidden valley scenarios: the presence of a new unbroken hidden gauge group, of a heavy communicator, charged under both SM and hidden sector gauge group and decaying into a visible and an invisible light particle, charged only under the new gauge group. These characteristics fit many Hidden Valley models, we however make an additional assumption, which is that the production cross sections 1 should be large enough for the effects of the hidden radiation to be discernable. This model was then implemented in the Pythia event generator. Notice however, that the shower mechanism we implemented is rather different from the ones mentioned above, as we will discuss in the next section.</p>
+
+			</div>
+			<div>
+				<head n="3">Monte Carlo Tools in PYTHIA 8</head>
+
+				<p>In order to allow detailed studies of a set of scenarios, the models have been implemented in the Pythia event generator, and will be publicly available from version 8.140 onwards.</p>
+
+			</div>
+			<div>
+				<head n="3.1">Particle content</head>
+
+				<p>For simplicity we assume that the HV contains either an Abelian U (1) or a non-Abelian SU (N c ) gauge group, with spin 1 gauge bosons. The former group could be unbroken or broken, while the latter always is assumed unbroken. Casimir constants could be generalized to encompass other gauge groups, should the need arise, but for now we do not see that need. The gauge bosons are called γ v and g v , respectively. A particle content has been introduced to mirror the Standard Model flavour structure. These particles, collectively called F v , are charged under both the SM and the HV symmetry groups. Each new particle couples flavour-diagonally to a corresponding SM state, and has</p>
+
+			</div>
+			<div>
+				<head>1</head>
+
+				<p>We will discuss the production cross sections in section 4.</p>
+
+				<figure>
+					<trash>– 5 – name partner code name partner code D v d 4900001 E v e 4900011 U v u 4900002 ν Ev ν e 4900012 S v s 4900003 M U v µ 4900013 C v c 4900004 ν M U v ν µ 4900014 B v b 4900005 T AU v τ 4900015 T v t 4900006 ν T AU v ν τ 4900016 g v 4900021 γ v 4900022 q v 4900101</trash>
+
+					<head>Table 1:</head>
+
+
+				</figure>
+
+				<p>The allowed particle content in the HV scenarios, with their SM partners, where relevant. The code is an integer identifier, in the spirit of the PDG codes, but is not part of the current Amsler:2008zzb standard. the same SM charge and colour, but in addition is in the fundamental representation of the HV colour, see Table 1. Their masses and widths can be set individually. It would also be possible to expand the decay tables to allow for flavour mixing. These particles can decay to the corresponding SM particle, plus an invisible, massive HV particle q v , that then also has to be in the fundamental representation of the HV colour: F v → f q v . The notation is intended to make contact with SM equivalents, but obviously it cannot be pushed too far. For instance, not both F v and q v can be fermions. We allow the F v to have either of spin 0, 1/2 and 1. Currently the choice of q v spin is not important but, for the record, it is assumed to be spin 1/2 if the F v is a boson and either of spin 0 and 1 if F v is a fermion.</p>
+
+			</div>
+			<div>
+				<head n="3.2">Production processes</head>
+
+				<p>The HV particles have to be pair-produced. The production processes we have implemented are the QCD ones, gg → Q v Q v and qq → Q v Q v , for the coloured subset Q v of F v states, and the electroweak f f → γ * /Z 0 → F v F v for all states. All of them would contribute at a hadron collider, but for a lepton one only the latter would be relevant. Each process can be switched on individually, e.g. if one would like to simulate a scenario with only the first F v generation. Note that pair production cross sections contain a factor of N c , with N c = 1 for an U (1) group, for the pair production of new particles in the fundamental representation of the HV gauge group, in addition to the ordinary colour factor for Q v . Other things equal, this could be used to determine N c from data, as already discussed. For the case of a spin 1 F v it is possible to include an anomalous magnetic dipole moment, κ = 1.</p>
+
+				<p>The spin structure of the F v → f q v decay is currently not specified, so the decay is isotropic. Also the Yukawa couplings in decays are not set as such, but are implicit in the choice of widths for the F v states.</p>
+
+				<p>The kinematics of the decay is strongly influenced by the q v mass. This mass is almost unconstrained, and can therefore range from close to zero to close to the F v masses. We – 6 – will assume it is not heavier than them, however, so that we do not have to consider the phenomenology of stable F v particles.</p>
+
+			</div>
+			<div>
+				<head n="3.3">Parton showers</head>
+
+				<p>Both the F v and the q v can radiate, owing to their charge under the new gauge group, i.e. F v → F v γ v and q v → q v γ v for a U (1) group, and F v → F v g v and q v → q v g v for a SU (N c ) one. In the latter case also non-Abelian branchings g v → g v g v are allowed. Currently both γ v and g v are assumed massless, but a broken U (1) with a massive γ v is foreseen. These showers form an integrated part of the standard final-state showering machinery . Specifically, HV radiation is interleaved with SM radiation in a common sequence of decreasing p ⊥ . That is, at the stage before the F v &apos;s decay, they may radiate g, γ and γ v /g v , in any order. For the i&apos;th emission, the p ⊥ evolution starts from the maximum scale given by the previous emission. The overall starting scale p ⊥0 is set by the scale of the hard process. Thus the probability to pick a given p ⊥ takes the form</p>
+
+				<figure>
+					<trash>dP dp ⊥ = dP QCD dp ⊥ + dP QED dp ⊥ + dP HV dp ⊥ exp − p ⊥i−1 p ⊥ dP QCD dp ′ ⊥ + dP QED dp ′ ⊥ + dP HV dp ′ ⊥ dp ′ ⊥ (3.1) where</trash>
+
+
+				</figure>
+
+				<p>the exponential corresponds to the Sudakov form factor. Implicitly one must also sum over all partons that can radiate.</p>
+
+				<p>To be more precise, radiation is based on a dipole picture, where it is a pair of partons that collectively radiates a new parton. The dipole assignment is worked out in the limit of infinitely many (HV or ordinary) colours, so that only planar colour flows need be considered. Technically the total radiation of the dipole is split into two ends, where one end acts as radiator and the other as recoiler. The recoiler ensures that total energy and momentum is conserved during the emission, with partons on the mass shell before and after the emission. In general the dipoles will be different for QCD, QED and HV.</p>
+
+				<p>To take an example, consider qq → Q v Q v , which proceeds via an intermediate schannel gluon. Since this gluon carries no QED or HV charge it follows that the Q v Q v pair forms a dipole with respect to these two emission kinds. The gluon does carry QCD octet charge, however, so Q v Q v do not form a QCD dipole. Instead each of them is attached to another parton, either the beam remnant that carries the corresponding anticolour or some other parton emitted as part of the initial-state shower. This means that QCD radiation can change the invariant mass of the Q v Q v system, while QED and HV radiation could not. When a γ or γ v is emitted the dipole assignments are not modified, since these bosons do not carry away any charge. A g or g v would, and so a new dipole would be formed. For QCD the dipole between Q v and one beam remnant, say, would be split into one between the Q v and the g, and one further from the g to the remnant. For HV the Q v Q v dipole would be spit into two, Q v g v and g v Q v . As the shower evolves, the three different kinds of dipoles will diverge further. Note that, in the full event-generation machinery, the final-state radiation considered here is also interleaved in p ⊥ with the initial-state showers and with multiple parton-parton interactions. – 7 – There is made a clean separation between radiation in the production stage of the F v F v pair and in their respective decay. Strictly speaking this would only be valid when the F v width is small, but that is the case that interests us here. In the decay F v → f q v the QCD and QED charges go with the f and the HV one with q v . For all three interactions the dipole is formed between the f and the q v , so that radiation preserves the F v system mass, but in each case only the relevant dipole end is allowed to radiate the kind of gauge bosons that goes with its charge. (Strictly speaking dipoles are stretched between the f or q v and the &quot; hole &quot; left behind by the decaying F v . The situation is closely analogous to t → bW + decays.) The HV shower only contains two parameters. The main one is the coupling strength α v , i.e. the equivalent of α s . This coupling is taken to be a constant, i.e. no running is included.</p>
+
+				<p>From a practical point of view it is doubtful that such a running could be pinned down anyway, and from a theory point of view it means we do not have to specify the full flavour structure of the hidden sector. The second parameter is the lower cutoff scale for shower evolution, by default chosen the same as for the QCD shower, p ⊥min = 0.4 GeV.</p>
+
+				<p>The HV showers are not matched onto higher-order matrix elements for the emissions of hard γ v /g v in the production process, and so contain an element of uncertainty in that region. For the decay process the matching to first-order matrix elements have been worked out for all the colour and spin combinations that occurs in the MSSM [13], and is recycled for the HV scenarios, with spin 1 replaced by 0 for non-existing (in MSSM) combinations. This means that the full phase space is filled with (approximately) the correct rate. Some further approximations exists, e.g. in the handling of mass effects in the soft region. The chosen behaviour has been influenced by our experience with QCD, however, and so should provide a good first estimate. More than that we do not aim for in this study. 4. The model: SM and SU(3) v radiation</p>
+
+				<p>To be specific, in the following we explore two similar Hidden Valley experimental scenarios. In the first, the communicator E v is a spin 1/2 particle charged under both the SM SU (2)× U (1) and the valley gauge group SU (3) v . We assume it has the same SM charges an electron would have, so it may be pair-produced in e + e − collisions, via Z/γ ⋆ . Under the unbroken SU (3) v , it transforms like a 3, so it radiates both γs and massless hidden valley gluons g v s. After the parton shower, the E v eventually decays into a visible SM electron e and an invisible spin 0 valley &quot; quark &quot; q v . This q v belongs to the fundamental representation of SU (3) v and is not charged under the SM gauge group, so it only radiates g v s. See Fig. 1. The key feature is interleaved radiation, already introduced above. In the current context it works as follows. Once the E v has been produced it may radiate a SM γ, say. This radiation will subtract energy from the E v and the following emission, be it another SM photon or a valley gluon, will have less phase space to radiate into. In an analogous way, assuming a valley g v is emitted next, it subtracts energy from E v and affects the following emissions which, again, could be either visible or invisible.</p>
+
+				<figure>
+					<trash>– 8 –</trash>
+
+					<head>Figure 1:</head>
+
+					<figDesc>An E v ¯</figDesc>
+
+				</figure>
+
+				<p>E v pair is produced via Z/γ ⋆ . Since E v is charged under both SU (2) × U (1) and SU (3) v , it radiates both γs and g v s. It eventually decays into e and q v . These then each radiate into their respective sector. Notice that q v here refers to a spin 0 particle. Figure 2: Pair production of hidden valley D v s. Each D v can radiate gs and g v s, and eventually decays D v → q v d. The visible d then can radiate further gs and the invisible q v further g v s.</p>
+
+				<p>In the second scenario the communicator between SM sector and Hidden Valley sector is a quark-like, spin 1/2 object Q v , belonging to the (3, 3) representation of the gauge group SU (3) c × SU (3) v . The Q v s are pair produced (mostly) via strong interactions (gluon-gluon or q ¯ q fusion). We choose the scenario in which only one vector-like Q v is produced, the D v .</p>
+
+				<p>This D v emits massless valley gluons (since the SU (3) v is assumed to be unbroken) and these may in turn radiate more g v s. During the shower evolution, both types of gluons are radiated until finally each D v decays into a visible SM d quark an invisible spin 0 valley q v . The decays are flavour diagonal, D v → d + q v .</p>
+
+				<p>The SM quark d transforms as a (3, 1) under SU (3) c × SU (3) v , so it radiates only SM gluons, while the valley q v belongs to the (1, 3) representation of SU (3) c × SU (3) v , so not having any SM color charge, it radiates only g v s., see figure 2.</p>
+
+				<p>In both scenarios there are just three parameters left to vary: the size of the valley coupling constant α v , the masses of the communicator particles M Ev or M Dv and the mass of the valley scalar M qv .</p>
+
+				<p>Below, in Table 2, we list the total production cross sections at different colliders:</p>
+
+				<figure>
+					<trash>– 9 – ILC CLIC LHC LHC (800 GeV) (3 TeV) (7 TeV) (14 TeV) M Ev = 300 GeV 398 fb 44 fb M Dv = 300 GeV 1.39 · 10 4 fb 1.04 · 10 5 fb M Ev = 500 GeV - 41 fb M Dv = 500 GeV 654 fb 7.27 · 10 3 fb M Ev = 1 TeV - 32 fb M Dv = 1 TeV 3.21 fb 124 fb</trash>
+
+					<head>Table 2:</head>
+
+					<figDesc>The order of magnitude of the total production cross sections, in f b, at ILC (via Z/γ</figDesc>
+					<trash>⋆ ), LHC (via q ¯ q or gg fusion) with √ s = 7 TeV and 14</trash>
+
+
+				</figure>
+
+				<p>TeV, for various values of the communicator mass. The spin of the communicator is assumed to be 1/2.</p>
+
+				<figure>
+					<head>Figure 3:</head>
+
+					<figDesc>The spin dependence of the E v ¯</figDesc>
+
+				</figure>
+
+				<p>E v production cross section at e + e − colliders for E v spin 1/2, 0 and 1. M Ev = 250 GeV, the mass spread Γ Ev = 2 GeV, M qv = 50 GeV. The spin 0 curve has been scaled by a factor 30.</p>
+
+				<figure>
+					<trash>e + e − with √ s = 800 GeV or √ s = 3 TeV, and LHC with √ s = 7 TeV or √ s = 14 TeV for some typical M Ev , M Dv mass values.</trash>
+
+
+				</figure>
+
+				<p>We also show the spin dependence of the E v ¯ E v production cross section at e + e − colliders for the three cases: F v spin 0 and q v spin 1/2, F v spin 1/2 and q v spin 0 or 1, and F v spin 1 and q v spin 1/2, Fig. 3. The higher the spin, the larger the cross section. Indeed, the curve corresponding to E v spin 0 has been scaled by a factor 30 to emphasize the similarity in shape with the spin 1 curve. Note that the processes proceed through the s-channel exchange of a spin 1 γ * /Z * . Thus the production of a spin 1/2 pair has only a threshold factor β from phase space, where β is the velocity of the produced pair in the γ * /Z * decay vertex, while the other two have an (approximate) additional factor β 2 from helicity considerations. The results have again been obtained with a SU (3) v group, and are directly proportional to the N c chosen. Since we would not expect gauge groups with N c above (some multiple of) 30, the conclusion would be that a threshold scan of the cross section could be used to determine both the E v spin and the number of hidden colours, as well as the E v mass, of course. A caveat would be that we have here only considered the E v gauge production mechanism, not the possibility of a significant t−channel Yukawa contribution. The reason – 10 – Figure 4: Left: the effective invariant mass distribution for the q v at LHC for α v = 0.1, 0.4, 0.8. M Dv = 300 GeV, nominal q v mass M qv = 10 GeV and √ s = 7 TeV. Right: the effective invariant mass distribution for the q v at LHC for α v =</p>
+
+				<figure>
+					<trash>0.1, 0.4, 0.8. M Dv = 1 TeV, nominal q v mass M qv = 10 GeV and √ s = 14 TeV.</trash>
+
+					<figDesc>Notice how the mean value of the distribution shifts from the bare mass m qv = 10 GeV towards m max qv = m Dv GeV as the coupling constant grows. for not including this production channel is that it would imply a large decay width for the E v , which would give additional large and model dependent effects to the cross section around threshold (see below). The experimental constraints on these two types of setup are similar to the ones for New Charged Leptons and Leptoquark production 2 . For the New Charged Leptons the PDG [10]</figDesc>
+
+				</figure>
+
+				<p>gives the lower bound m L ± &gt; 100.8 GeV. For scalar and vector Leptoquark states we use the direct limits coming from leptoquark pair production and subsequent LQ → νq decay searches [11]. For the all generation search m LQ &gt; 136 GeV in the scalar case and m LQ &gt; 200 GeV in the vector case, where one assumes the branching ratio B(νq) = 1. Bounds on the leptoquark mass for the third generation decaying into νb are more stringent [12], m LQ &gt; 229 GeV. We view these boundaries as simply indicative of the mass range we should contemplate and chose masses that are well beyond these boundaries. Our studies are in any case not critically dependent on them. We assumed the communicators to be massive, M Ev in the range [250,300] GeV for the ILC case, M Dv in the range [300, 500] GeV for the LHC 7 TeV run, and [0.5,1] TeV for the 14 TeV run. The hidden scalar is taken to be light, M qv as light as 10 GeV. The α v parameter is allowed to vary over a wide range, and results shown for interesting values. Depending on the size of these parameters, the effects of the radiation on the lepton or quark kinematic distributions can be significant, as we will show in the next two sections. But whether these effects will be observable strongly depends on the statistics at hand. We assume an integrated luminosity L = 200 fb −1 for the ILC, 1 fb −1 for the 7 TeV LHC run and 100 fb −1 for the 14 TeV one. The hidden radiation affects the visible particle kinematics through two mechanisms. The first one, interleaved radiation from the E v or D v , we already discussed. The second is radiation off the q v after E v /D v decay. This causes the invariant mass for the system made out of q v and the radiated g v s to be larger than the on-shell q v mass. This invariant mass can be viewed as the off-shell mass with which the q v is produced at the decay vertex. In Fig. 4 one may see the effects of the valley radiation on the off-shell mass, for the D v → d + q v case. As the hidden valley coupling α v increases, the q v radiates more and more into the hidden sector, and the mean value of the distribution shifts from M qv towards M Dv . At the same time more and more energy is subtracted from the visible recoiling particle, in this case the d and its system of emitted gluons.</p>
+
+				<p>The effect is more obvious when the mass difference M Dv − M qv is large, since more phase space is available for the radiation.</p>
+
+				<p>The size of the deviations induced by these two combined mechanisms is very much dependent on the collider, as we already stressed above. In the next two sections we will discuss the various cases separately.</p>
+
+				<figure>
+					<trash>5. Effects of SU(3) c radiation at e + e − colliders</trash>
+
+
+				</figure>
+
+				<p>We begin by studying the e + e − → γ * /Z → ¯ E v E v , scenario, which allows for many simplifications compared to the quark case, and therefore offers a convenient warmup. For the ILC with √ s = 800 GeV and an assumed integrated luminosity of L = 200 fb −1 per year an M Ev = 300 GeV translates into about 80000 ¯ E v E v pairs.</p>
+
+			</div>
+			<div>
+				<head n="5.1">Collisions in the center-of-mass frame</head>
+
+				<p>To illustrate the principles, as a very first step we will neglect bremsstrahlung and beamstrahlung . We then only need to consider two types of interactions, electromagnetic and valley SU (3) v radiation in the final state, with coupling constants α and α v . No fragmentation or hadronization need to be taken into account.</p>
+
+				<p>Since the center of mass (CM) of the collision is at rest, there is a clean relationship between the mass of the hidden valley q v , M qv , and that of the communicator M Ev . In the absence of radiation (hidden or standard), this can be inferred from the distribution of the energy of the emitted electrons, in particular from the upper endpoint of this distribution, describing the electron maximum energy. This is obtained when the electron is emitted in the same direction as the E v is moving in, with the q v in the opposite direction. One may use this maximization condition to derive the relationship between M qv and M Ev .</p>
+
+				<p>In the rest frame of the E v , neglecting the electron mass,</p>
+
+				<figure>
+					<trash>P Ev = (M Ev , 0, 0, 0) , P qv = M 2 Ev + M 2 qv 2M Ev , 0, 0, − M 2 Ev − M 2 qv 2M 2 Ev , P e = ( M 2 Ev − M 2 qv 2M Ev , 0, 0, M 2 Ev − M 2 qv 2M Ev ) . (5.1) – 12 –</trash>
+
+
+				</figure>
+
+				<p>Assuming the boost to the CM rest frame is at an angle θ with respect to the e direction in the E v rest frame, the electron energy will be given by E ′ e = γ(E e + β|p e | cos θ) =</p>
+
+				<figure>
+					<trash>√ s 4 1 − M 2 qv M 2 Ev   1 + 1 − 4M 2 Ev s cos θ   , (5.2)</trash>
+
+
+				</figure>
+
+				<p>where cos θ = ±1 gives the upper and lower edge of the energy spectrum. If the decay is assumed isotropic, dP/d cos θ = constant, the electron energy spectrum is flat between the limits. So if one can measure the maximum and minimum energy E ′ e , one may solve for M Ev and M qv . Fig. 6 shows the energy distribution E e of the electrons produced with and without hidden radiation. In the latter case the spectrum is shifted to lower values, as the hidden sector takes a bigger fraction of the available energy, by radiation off both the E v and the q v . The endpoints remain the same, as there is always a fraction of events where radiation is negligible. As we have assumed a modest width of 1 GeV for the E v there is a tiny tail beyond the expected edge. (We could cope with a wide range of widths, but have picked values in the GeV range, so that the possibility of a Breit-Wigner-shaped mass broadening is not overlooked, while still maintaining a credible simulation in terms of resonance diagrams only.) The key point to observe, however, is how the upper &quot; shoulder &quot; is softened by the hidden radiation. Thereby a precision measurement of this region would offer a direct check on the amount of hidden radiation. At the lower end, QED cascades such as e − → e − γ → e − e + e − contribute to the spectrum, but are easily eliminated if only the highest-energy lepton is considered, right side of Fig. 6, or at least only the highest two. We should clarify that the electron energy studied in this section includes photons emitted near the electron direction, since we here include a Durham &quot; jet &quot; algorithm that clusters photons within a 3 GeV p T sin θ/2 distance of the electron. Whether and how well one would actually be able to observe these endpoints will be very model and detector dependant. Regardless of the background or detector sensitivity, we expect that the endpoints of the distribution will have low statistics, given that they correspond to extreme kinematical configurations. Most likely, one will need to rely on data points in the shoulder region to fit the curve and extrapolate the endpoint E ′ e,max . These shoulder data points would be the ones most affected by the radiation, so the mass M Ev and M qv inferred from them would be significantly different when hidden radiation is included. On the one hand, the curve corresponding to having valley radiation is always softer than the one without, so some mean of the threshold region will give too low an endpoint. On the other hand, if one only tries e.g. a linear fit, the shape of the fall-off in the threshold region would suggest too high an endpoint. A readiness to include a parametric shape for the endpoint region, that takes into account a tuneable radiation contribution, will help ensure a better extraction of the relevant mass parameters. Notice that the curve corresponding to having valley radiation always lies below the one without, implying that the value of E ′ e,max with the radiation would always be higher than the one without. This is a reflection of the two mechanisms we mentioned in the previous section: first, the the valley gluons g v subtract energy from the E v , ultimately Figure 5: the energy distribution of the visible electrons. Looking at the upper shoulder of the distribution, the upper (black) and lower (red) curves give the prediction for E v → e − q v when hidden valley radiation is not or is take into account; in both cases electromagnetic radiation is included. Center of mass energy √ s = 800 GeV, M Ev = 300 GeV, M qv = 50 GeV and α v = 0.05. Number of events per 6 GeV bins, luminosity L = 200 fb −1 . The error is purely statistical.</p>
+
+				<figure>
+					<head>Figure 6:</head>
+
+					<figDesc>The energy distribution of the most energetic electron in each event, under the same conditions.</figDesc>
+
+				</figure>
+
+				<p>subtracting it from the es, and second, when they are emitted by the q v , they change its effective mass, M eff qv &gt; M qv , as one may see in Fig. 4, again subtracting energy from the decay e.</p>
+
+				<p>Would it be possible to describe the curves with hidden radiation using a model without it, but with different mass parameters M Ev and M qv ? Fig. 7 shows the effects of changing the invisible particle mass M qv in model with and without radiation. The &quot; fingerprint &quot; of the v-radiation is clear: a softening in the shoulder of the distribution which leaves the endpoints fixed. A simple change in the mass parameters of the model without hidden radiation (in this case M qv ) changes the endpoints and leaves the sharp drop of the shoulder unchanged. Notice how so long as the mass difference M Ev − M qv &gt; 40 GeV one may always distinguish between any two curves with and without radiation. This of course α v dependent. In Fig. 8</p>
+
+				<figure>
+					<figDesc>instead one can see the α v dependence of the energy distribution for the visible electrons in each event. Notice how even for a coupling as low as α v = 0.05 the effects of the v-radiation on the shoulder region are already sizeable. There are some parameter regions (e.g. when the E v -to-q v mass splitting is small) where the shape of the distribution of the hardest leptons is no longer conclusive in distinguishing between a model with and one without valley radiation. In this case one may consider other observables which have an &quot; orthogonal &quot; dependence on the valley parameters. We studied η, linearized sphericity S and the number of emitted leptons, for example. There is no unique strategy in this case, one must perform a case by case study of the different observables in the different parameter regions to determine which one displays the largest – 14 – Figure 7</figDesc>
+
+				</figure>
+
+				<p>: We compare the energy distributions of the most energetic electron emitted in each event, in the case √ s = 800 GeV. The communicator mass is fixed at M Ev = 200 GeV, while M qv is allowed to vary between 20 and 190 GeV. The valley gauge coupling is fixed at α v = 0.1 in order to isolate the mass dependence. Each endpoint corresponds to two curves, the lower one being the one with and the top one the one without hidden valley radiation. Figure 8: α v dependence of the energy of the visible electrons. The (black) squared-off curve corresponds to the model with no valley radiation, the uppermost if one looks at the shoulder. Below it are the curves corresponding to valley coupling constant α v = 0.05 and α v = 0.1. Number of electrons per 6 GeV bin, √ s = 800 GeV, M Ev = 300 GeV and M qv = 50 GeV. separation between the model with and the model without radiation. As a general rule, we found that three observables were normally sufficient to distinguish the two.</p>
+
+			</div>
+			<div>
+				<head>– 15 – 5.2</head>
+
+				<p>Collisions not in the center-of-mass frame: MT2</p>
+
+				<p>We now consider the effect of initial-state radiation (ISR). This causes unobservable radiation , mainly along the beamline, but also some transverse kicks. Beamstrahlung is highly machine-dependent and thus not included, but is purely longitudinal. The methods we will introduce to handle bremsstrahlung also automatically handle beamstrahlung with little or no degradation of performance, so from now on we will not address the latter specifically.</p>
+
+				<p>For our theoretical studies, in order to avoid the clustering of ISR γ radiation with the leptons coming from the hard interaction, we apply a cut on the η &gt; 5. The symmetry of the system now being cylindrical, we also changed the clustering algorithm to the cylindrical fastjet [14].</p>
+
+				<p>The major consequence of ISR is that the collision now no longer happens in the CM rest frame, with the information connected to the p z , the momentum along the beampipe, no longer available. In this case it is convenient to introduce a new variable called Cambridge MT2, see [15].</p>
+
+				<p>The MT2 variable was invented precisely to treat events in which the new particles are pair-produced and then each decay into one particle that is directly observable and another particle whose existence may only be inferred from from missing transverse momenta. This observable is somewhat inspired by the transverse mass m T used at hadron colliders to measure the mass of the W boson in the decay W → eν. The neutrino escapes detection, its only trace in the detector being missing momentum. In this case one can construct the variable</p>
+
+				<p><formula>m 2 T = 2(E e T E N T − p e T · p N T ). (5.3)</formula></p>
+
+				<p>Here E T is defined as E T = m 2 + p 2 T , although in this particular case the electron and neutrino masses can be neglected, of course. The m 2 T variable has the property that</p>
+
+				<p><formula>m 2 T ≤ m 2 W (5.4)</formula></p>
+
+				<p>If there is enough statistics to ensure that the kinematic configuration corresponding to the maximum is hit, this gives a measurement of (a lower bound on) the W mass.</p>
+
+				<p>Analogously, one may build a variable called MT2, with the property that its upper bound describes the mass of the communicators, i.e. the particles that were pair-produced. Now consider the process described in Fig. 9. Two particles Y are pair-produced, then each of them decays into a visible particle (a or b in the figure) and one that escapes detection, called N 1,2 . One cannot use the transverse momentum in this case since there are two particles escaping detection, both contributing to the missing transverse momentum p T . The observable MT2 is defined as</p>
+
+				<figure>
+					<trash>MT2 ≡ min p T 1 + p T 2 = p T max m 2 T (p T a , p T 1 ), m 2 T (p T b , p T 2 ) . (5.5) where p T 1,T 2</trash>
+
+
+				</figure>
+
+				<p>are all the possible 2-momenta taken away by the N s, such that their sum gives the observed missing momenta, p T 1 + p T 2 = p T . MT2 coincides with the mass of the communicator Y , i.e. MT2 has a maximum, when for both communicator decays the visible and the invisible particles are produced at the – 16 – Figure 9: The MT2 diagram for the shortest , simplest decay chain . Two communicator particles are pair-produced and each decay into a visible (a or b) and an invisible (N 1 and N 2 ) particle. Upstream transverse momentum (before the decay) is also possible, but it must be known. Longitudinal momentum information is not available. Figure 10: An example of the MT2 method applied to the communicator mass M Ev . Histogram of the MT2 values obtained for a communicator mass M Ev = 200 GeV and M qv and an invisible particle mass M qv = 100 GeV. The small tail in the distribution is due to the Γ = 1 GeV spread in the mass distribution (more about his in the follow- ing).</p>
+
+				<figure>
+					<trash>same rapidity and p a E a − p 1 E 1 ∝ p b E b − p 2 E 2 . (5.6)</trash>
+
+
+				</figure>
+
+				<p>For the studies in this article we used a particularly simple version of the MT2 algorithm [20], the source code of which can be downloaded from http://daneel.phyics.uc.davis.edu/ Cheng:2008hk/mt2-1.01a/test. A more sophisticated algorithm is described in [23]. The simpler method is based on the use of &quot; kinematic constraints &quot; [21, 22, 17, 20]</p>
+
+				<figure>
+					<trash>p 2 1 = p 2 2 = µ 2 N (p 1 + p a ) 2 = (p 2 + p b ) 2 = µ 2 Y p x 1 + p x 2 = p x p y 1 + p y 2 = p y (5.7)</trash>
+
+
+				</figure>
+
+				<p>In the case of two invisible and at least two visible particles as in Fig. 9 the two methods actually coincide [20]. The inputs of the MT2 method are m N , m a , m b , p a T , p b T and p T . Notice that m a and m b may change quite substantially from event to event, since they each correspond – 17 – Figure 11: The effect of valley radiation on the variable MT2 for different α v = 0.05, 0.1, 0.2 values (close-up on the shoulder region) at CLIC. The distributions were obtained assuming a luminosity L = 1 fb −1 , √ s = 1 TeV and M qv = 50 GeV. Left: the effect for a hypothetical M Ev = 200 GeV.</p>
+
+				<p>Right: the effect of valley radiation on MT2 for a hypothetical M Ev = 300 GeV. to the invariant masses of the clustered visible particles (in this case the lepton and the photons) of each branch. The output of the MT2 method is one single MT2 value per event. Fig. 10 illustrates a typical use of the MT2 variable. If one histograms the MT2 values over a large number of events, the upper edge of this distribution gives a lower limit on the communicator mass M Y .</p>
+
+				<p>Whether the event rate in the upper-edge kinematic region defined in eq. (5.6) is large enough to be able to extract the endpoint MT2 max = M Y , for a given luminosity, depends of course on the interactions. Even more than for the energy variable in the previous section, it is not unlikely that MT2 max might have to be extrapolated from points in the shoulder region. There are many other methods to determine mass relations between the the new particles , [17, 18], just to cite some. Some of these are very closely related to MT2, such as [19]. Some of these require cascade decay chains, or make assumptions about the new particles involved in the decay chain being on shell, or require high luminosity. Where this information is actually available, one should of course make use of it, [24, 25]. The assumptions in this study, though, are that each of the identical decay chains consists of a single two-body decay and that the integrated luminosity, at least for the LHC at 7 TeV study, might be rather low (1 fb −1 ). These effectively preclude the use of many of the above methods.</p>
+
+				<p>In</p>
+
+				<p>Fig. 11 one may see the effect of the valley radiation on the MT2 distribution for different α v values and communicator mass parameters. The interesting region is again represented by the &quot; shoulder &quot; of the distribution. Notice how the amount of invisible radiation, and thus the effect on MT2 max , increases with M Ev − M qv , analogously to what happens in the energy distributions. The size of these effects may be compared with the effects coming from ISR, in Fig. 12. The MT2 distribution might present a tail, due to the Breit-Wigner spread Γ that we allow for, see Fig. 13. As one may see, all the MT2 data points which lie above – 18 – Figure 13: Left: the (right side of the) Breit-Wigner mass distribution of the communicator E v with an M 0 = M Ev = 300 GeV and a width Γ Ev = 3 GeV. Right: MT2 distribution for the same points. The upper (red) points correspond to considering only E v s having masses within the |m Ev − M Ev | &lt; Γ Ev GeV interval. The lower points (green) describe the MT2 points corresponding to both E v s having a mass greater than M Ev + Γ Ev . All other effects have been switched off. Number of events per 1 GeV bin, √ s = 800 GeV, M qv = 50 GeV, integrated luminosity L = 200 fb −1 . The error is purely statistical. MT2 max = M Ev = 300 GeV correspond to E v s which actually have a larger mass than the nominal M Ev .</p>
+
+				<p>As we already stated above, m N , Figure 12: The effects of initial-state radiation on the MT2 distribution and on the value of the M Ev mass one infers. Number of events per 4 GeV bin, for an e + e</p>
+
+				<figure>
+					<trash>− collider with √ s = 1 TeV, L = 1 fb −1 , M Ev = 300 GeV, Γ Ev = 2 GeV, M qv = 50 GeV.</trash>
+
+					<figDesc>All other effects have been switched off.</figDesc>
+
+				</figure>
+
+				<p>the mass of the invisible particle, is an input parameter. MT2 max only gives one single relation between M Y and m N . Depending upon the decay chain topology and the presence or not of upstream transverse momentum (UTM, in the following, may come from ISR or from previous decays ), there are different strategies to determine both masses simultaneously: the MT2 &quot; kink &quot; method [19], the invariant mass endpoint [26, 27, 28, 29] or the constrained kinematic method [24], the polynomial intersection method [25], and p T reconstruction [30, 31, 32], just to cite some possibilities . Most methods, however [26, 27, 28, 29, 24], [25], require longer decay chains (at least two two-body decays) or a special topology, such as 4 on-shell intermediate resonances [24] or 5 or more on-shell intermediate resonances [25].</p>
+
+				<p>If each decay chain consists of a single two-body decay, where the visible one may or may not be a composite of visible particles, as described in Fig. 9, one may use the MT2 &quot; kink method &quot; [19] to fix the value of m N , i.e. exploit the fact that MT2 max as a function – 19 – of the invisible particle trial mass µ N has a &quot; kink &quot; for µ N = m N . The authors of [33] point out that in order to have a substantial change in the gradient dM T 2 max dµ N | ν N =m N , there must be substantial event-by-event changes, though. This can be triggered by substantial O(M Y ) differences in the ν N , caused by the visible system being a collection of two or more particles, or by a large UTM. Otherwise the kinematics is so constrained that the gradients for µ N &lt; m N and µ N &gt; m N have to be the same, and no kink is possible. If a sizable UTM p T is present, one may use the MT2⊥ method [34]. This method uses the fact that N (µ N ), the number of times the M T 2( mu N , p T ) is larger than M T 2(µ N , 0), has a minimum for µ N = m N . The advantage of using this method rather that MT2kink is that M T 2(µ N , 0) may be calculated analytically and measured using the whole data sample, regardless the p T . This may be shown by using the fact that M T 2(µ N , 0) corresponds to MT2 max ⊥ (</p>
+
+				<figure>
+					<trash>µ N ), MT2 max T ⊥ = min P ⊥ =p 1T ⊥ +p 2T ⊥ max M 2 1T ⊥ , M 2 2T ⊥ , (5.8) the one-dimensional analogue of MT2, where M 2 iT = m 2 i + µ 2 N + 2(E iT E N iT − p iT · p N iT ) M 2 iT ⊥ = m 2 i + µ 2 N + 2(E iT ⊥ E N iT ⊥ − p iT ⊥ · p N iT ⊥ ),</trash>
+
+
+				</figure>
+
+				<p>and where ⊥ and refer to the projections of the p T along the direction of the UTM. We will not discuss further the different methods to extract the two new particle masses, but refer the interested reader to the proceedings from the TeV 2009 [16] conference and to the review [33]. We however wish to make a few remarks about the impact that valley radiation might have on these observables. Consider the MT2⊥ case, for example.</p>
+
+				<p>In the presence of valley radiation one needs to consider two sources of deviations. Firstly, the tails coming from the interleaved radiation mechanism, see the MT2 distributions in Fig. 11. Secondly, as discussed in the previous section, in the presence of valley radiation, we expect the mean value of the invisible particle q v invariant mass to shift from its Breit-Wigner central value M eff qv = µ N towards the communicator mass M Ev (or M Dv ) value. We will show in subsection 6.2 that the MT2 distribution one obtains may be significantly affected, see Fig. 4</p>
+
+				<figure>
+					<figDesc>for th LHC case. The MT2 max T ⊥ (µ N ) should be similarly affected. The number of events having M Y (µ N , P T ) &gt; ˜ M Y (µ N , 0) would then change accordingly, as would the minimum point µ N = M N .</figDesc>
+
+				</figure>
+
+				<p>We will return on the issue of the the trial mass and the radiation in subsection 6.2.</p>
+
+				<p>In the following, unless otherwise specified, the analysis will always assume µ N = m N . 6. Effects of SU(3) v radiation at LHC At LHC the D v communicators are (mostly) pair-produced by gg or q ¯ q fusion and decay flavour diagonally into a SM d quark and a valley q v . For our study we assume the D v s to be spin 1/2 particles, and the q v s to be scalars. As earlier this choice affects the production cross section, but now both s-and t-channel exchange are involved, which complicates the pattern. Each D v radiates both SM gs and valley g v s. These in turn may radiate further gs – 20 – and g v s, respectively. Once the D v has decayed, the q radiates gluons, while the q v radiates g v s. The amount of hidden radiation emitted depends upon the valley coupling constant α v and on the mass ratio M qv /M Dv , see Fig. 4. At the LHC the communicator mass reach will be larger than for the ILC, so typically there will be more phase space available for the radiation. Both the valley gluons radiated by the D v and those radiated by the q v have an impact on the visible particle distributions. The lighter the particle, the lower the cut-off scale for the radiation however, so it will be the q v that radiates the most, as before. When compared with the CLIC case, the LHC scenario presents several complications.</p>
+
+				<p>Firstly one needs to convolute the production cross section with parton distribution functions . Thus the hard interaction — the production of the D v pair — no longer happens in or close to the center-of-mass rest frame. In this case it is crucial to consider longitudinally boost invariant observables such as MT2. Secondly, both initial-and final-state QCD radiation are more intense than the QED one is for the ILC case, resulting in a considerably larger upstream transverse momentum and an increased misassignment of radiation.</p>
+
+				<p>Thirdly, there is an underlying-event activity that gives rise both to a generic low-p ⊥ background and to occasional further hard partons that may be confused with the ones related to the valley process. Fourthly, the partons hadronize into more-or-less well-defined hadronic jets, the reconstruction of which introduces further smearing of the relevant kinematic distributions. And finally, the set of possible background processes is much more varied and challenging to suppress. In our study we will take into account the first four points, but leave the last one to the experimental community, where already a large number of background-suppression techniques have been developed for various scenarios.</p>
+
+			</div>
+			<div>
+				<head n="6.1">LHC with 7 TeV</head>
+
+				<p>The LHC will initially be running at of √ s = 7 TeV and it is expected to deliver 1 fb −1 of data in 2010–2011. Under these conditions we need to consider much lower masses M Dv for the communicator than for the ultimate energy and luminosity case, in order to have large enough production cross sections, see Table 2.</p>
+
+				<p>Based on the above discussions, we choose to study the MT2 distribution, and specifically its dependence on the v-radiation and on the α v value. In Fig. 14 we have plotted the α v dependence for three different mass values M Dv = 300, 400 and 500 GeV. The larger the mass difference M Dv − M qv the more phase space is available for the radiation. The smaller the M qv , the lower the cut-off on the momenta, so the larger the amount of soft radiation. Given the low statistics, the (purely statistical) error bars on the endpoints are rather large, and even in the shoulder of the distribution it is hard to distinguish the curve with an α v = 0.1 from the curve with no radiation for the 300 GeV mass. In the intermediate case M Dv = 400 GeV, we need to have a rather strong α v = 0.2 coupling before the two curves can be separated.</p>
+
+				<p>In</p>
+
+				<p>Fig. 15 we show the MT2 dependence on the invisible q v mass M qv , where the trial mass µ qv is assumed to coincide with M qv . Whether we look at the curves with a valley radiation (valley coupling α v = 0.1, left plot in Fig. 15) or at the curves without hidden radiation (right plot in Fig. 15), the data points corresponding to M qv = 10, 50 GeV are – 21 – Figure 14: The dependence of the MT2 distribution on the α v value for M Dv = 300, 400, 500 GeV and M qv = 10 GeV. The black curve corresponds to having no valley radiation. The red, green and blue curve correspond to α v = 0.1, 0.2, 0.4 respectively. For the first 2 years LHC is assumed to run √ s = 7 TeV and to yield an integrated luminosity of 1 fb −1 . The y axis corresponds to the number of events per 10 GeV mass bin, for this integrated luminosity of 1 fb −1 .</p>
+
+				<p>hardly distinguishable. The independence of the MT2 on the M qv value appears to be a characteristic which the radiation leaves unchanged. – 22 – Figure 15: Left: the M qv dependence of the MT2 when the valley radiation has α v = 0.1. The blue curve corresponds to M qv = 10 GeV and the red one to M qv = 50 GeV. Right: The same M qv dependence of the MT2 in the case of no valley radiation. M Dv = 400 GeV, √ s = 7 TeV and L = 1 fb − 1. Figure 16: Left: model a) decay D v → dq v with no v-radiation, M qv has a fixed value; right: model b) decay D v → dq v with v-radiation, the system q v + g v s has an invariant mass distribution.</p>
+
+				<p>One could argue that the fact that MT2 is hardly dependent on the M qv is due to the mass ratio M Dv /M qv being fairly large compared to the difference between the two M qv values we considered. Would this argument still hold true when the v-radiation is larger? For larger values of the α v one should consider the fact that the MT2 input parameter M qv corresponds to the mass of the q v as seen by the visible particles. The visible particle momenta, i.e. the momenta of the d and the g radiated by it, which enter MT2, actually correspond to the invariant mass M eff qv rather than the nominal mass value M qv .</p>
+
+				<p>In</p>
+
+				<p>Fig. 4 we show this invariant mass distribution and how this changes as a function of the coupling constant α v . As α v grows q v emits more and more valley gluons g v . The invariant mass of the q v + g v s system then grows, i.e the mean effective mass of the q v as seen from the SM q shifts from the bare M qv = 10 GeV towards M max qv = M Dv . The energy which is left for the d quark then gets smaller as the M eff qv → M Dv as shown by</p>
+
+				<figure>
+					<trash>E d = M 2 Dv − M 2 qv 2M Dv , (6.1)</trash>
+
+
+				</figure>
+
+				<p>where for simplicity we have put the m d = 0. Were this distribution a very narrow peak around M a,eff qv , there would be no difference between the two cases in Fig. 16 so long as M a,eff qv = M b qv , i.e. between a fixed M b qv value – 23 – Figure 17: MT2 distribution function for the communicator masses M Dv = 1 TeV when there is valley radiation α v = 0.1 (red), 0.4 (green), 0.8 (blue) and when there is not (black curve). √ s = 14</p>
+
+				<p>TeV, M qv = 10 GeV. Number of events per 15 GeV bin.</p>
+
+				<p>and an invariant mass distribution. One could speculate that so long as the mean value of the invariant mass M eff qv ≪ M Dv the MT2 would basically remain unaffected. Imagine though having a v-radiation large enough to shift the M eff qv substantially, M eff qv → M Dv , e.g. α = 0.4. One would na¨vely think that replacing the M qv with M eff qv would give a better description of the case with radiation. However Fig. 4 shows that for α v &gt; 0.1 the invariant mass distribution would also have a large spread around this central value. We will show in the next section that this spread causes further complications. It is precisely the spread in the distribution which constitutes the difference between case a) and case b), and it is this spread which is ultimately responsible for the different behaviour of the MT2 in the two cases.</p>
+
+			</div>
+			<div>
+				<head n="6.2">LHC with 14 TeV</head>
+
+				<p>If we now assume that LHC will collect 100 fb −1 of data at center of mass energy √ s =14</p>
+
+				<p>TeV, then one may consider larger communicator masses, O(1TeV), and still deal with a sufficient number of events, see Table 2. If the q v remains light, the mass ratio M Dv /M qv can be considerable and consequently the phase space available for radiation can be large. We expect the effects of the radiation to be significant.</p>
+
+				<p>In</p>
+
+				<p>Fig. 17 we show the dependence of the MT2 distribution on the hidden valley coupling constant α v , assuming we know the mass of the invisible particle so µ qv = M qv .</p>
+
+				<p>In this case we are describing the strong coupling regime α v = 0.1, 0.4, 0.8. Notice how in this case one can actually separate (at least before any background or detector simulation is taken into account) the curve with α v = 0.1 and the one without the radiation.</p>
+
+				<p>In the above study the assumption is that events are generated with a bare mass M qv and analyzed with the same (or almost the same) trial mass µ qv = M qv . From the – 24 – Figure 18: Left: model a) comparison between different µ qv = 1, 100, 350 GeV for M qv = 395 GeV. Right: model b) comparison between different µ qv for M qv = 10 GeV, α v = 0.28, M eff qv = 395 GeV. In both models M Dv = 1 TeV, √ s = 14 TeV and the luminosity is assumed to be L = 100 fb −1 , 20 GeV bins. discussion in subsection 5.2, we could conclude that it is not very likely that we would know the mass of the q v with high precision when valley radiation is present.</p>
+
+				<p>In a hidden valley scenario the mass of the q v is assumed to be much lighter than the D v mass, so we do not expect the MT2 to be very sensitive to q v mass differences of the order ∆M qv ≪ M Dv . Indeed, the authors of [19] and [33] show that the MT2 max mass dependence on the trial mass µ qv is rather weak so long as µ qv &lt; M qv , whereas MT2 max grows much more rapidly when µ qv &gt; M qv . The µ qv &lt; M qv case is exactly what one observes in Fig. 18. Let us however make the conservative assumption that we only know the order of magnitude of the M qv . Imagine trying to distinguish between the two models we described in Fig. 16, a) the model with no radiation and b) the model with the radiation, when M b,eff qv = M b qv . To be more concrete, assume a) has a fixed value mass M a qv = 395 GeV and b) has an invisible particle mass M b qv = 10 GeV and α v = 0.28. We choose the value α v = 0.28 so that M b,eff qv = M a qv .</p>
+
+				<p>In</p>
+
+				<p>Fig. 18, left side, we see the MT2 distribution for model a) for the case M Dv = 1 TeV. As one may observe, this is a function of the trial mass µ qv , the best profile being the one with µ qv = M qv . For µ qv ≪ M a qv , even for substantial changes in µ qv the MT2 max does not change much. This essentially confirms what was reported by [19, 33].</p>
+
+				<p>On the right side of Fig. 18 one may see the same distributions for the model with radiation. Contrary to what one would expect from the na¨ve arguments given in the previous subsection, we see that choosing µ qv ∼ M b,eff qv does not give the best description of the system. The MT2 curve overshoots the M Dv value by a good 10%. As anticipated in the previous subsection, this is due to the invariant mass distribution spread. Looking at Fig. 19, one may see that the invariant mass distribution has a wide spread, so event by event there could be large variations in the M b,eff qv . If one chooses a µ qv ≪ M b,eff qv to analyze the set of events, for example the µ qv = 1 GeV chosen in Figure 18, most of the events will have a &quot; real &quot; q v mass, the invariant mass M b,eff qv , larger than the trial mass µ qv .</p>
+
+				<figure>
+					<trash>Since MT2 max (µ qv ) &lt; MT2 max (M b,eff qv ) when µ qv &lt; M b,eff qv , these points do not contribute – 25 –</trash>
+
+					<head>Figure 19:</head>
+
+
+				</figure>
+
+				<p>The invariant mass distribution for the q v and the trial masses we considered, µ qv = 1, 100, 350 GeV.</p>
+
+				<figure>
+					<head>Figure 20:</head>
+
+					<figDesc>MT2 distribution when both q v invariant masses M</figDesc>
+					<trash>b,eff qv &lt; µ qv (upper) and when both are M b,eff qv &gt; µ qv (bottom), when M b qv = 10 GeV, α v = 0.28 and µ qv = 350 GeV.</trash>
+
+
+				</figure>
+
+				<p>to increase the MT2 max value much, and the distribution will resemble rather closely the one obtains for M b qv = 10 GeV, apart from the softening in the shoulder. This is precisely what happens in the µ qv = 1, 100 GeV curves in Fig. 18. When one takes a µ qv ∼ M b,eff qv instead, e.g. µ qv = 350 GeV (which according to the na¨ve arguments of the last subsection should have been the best of the three µ qv choices), more and more events have a &quot; real &quot; invisible particle mass M b,eff qv &lt; µ qv . In Fig. 19 these are the points to the left of the µ qv = 350 GeV line. These events will, if there is enough statistics, give MT2 max (µ qv ) &gt;MT2 max (M b,eff qv ), the real M Dv value. This is what happens to the curve for µ qv = 350 GeV.</p>
+
+				<p>To prove this point, we separately plot the MT2 distributions for the events with M b,eff qv &lt; µ qv and the ones with M b,eff qv &gt; µ qv . As Fig. 20 shows, for the former set MT2 max ≥ M Dv .</p>
+
+				<p>This said, we may return to the issue of distinguishing between the two models a) and b). As one may see in Figure 21, the two curves corresponding to the two models have very different shapes, the one with no radiation being the sharper one. Notice however that now the curve with radiation lies above the one without. This is not in contradiction with what we have shown in the previous sections.</p>
+
+				<p>Summarizing, in the not-so-strong coupling regime α v ∼ 0.1, when the invariant mass distribution is strongly peaked in M qv , one may 3 distinguish two models with the same values for M Dv and M qv , one with v-radiation and one without. The curve corresponding to the no hidden radiation model will have a steeper drop in the shoulder region. For larger couplings, α v &gt; 0.2, one should note that two MT2 distributions with the same endpoints may correspond to different M Dv values in the two cases, depending on whether the majority of the events have an invariant mass which is greater or smaller than the trial mass. A very conservative approach to solving this problem could simply be to assume µ qv = 0 GeV or in any case µ qv ≪ M eff qv .</p>
+
+			</div>
+			<div>
+				<head n="7">Conclusions</head>
+
+				<figure>
+					<head>Figure 21:</head>
+
+					<figDesc>Comparison between model a) M qv =</figDesc>
+					<trash>395 GeV and b) M b qv = 10 GeV, α v = 0.28, M b,eff qv = 395 GeV for µ qv = 350 GeV. In both models M Dv = 1 TeV, √ s = 14</trash>
+
+
+				</figure>
+
+				<p>TeV and the luminosity is assumed to be L = 100 fb −1 , 20 GeV bins. Notice that in this case the curve with the radiation is the lower one.</p>
+
+				<p>We have here addressed the issue of detecting and identifying hidden radiation through its influence on SM parton showers, and in general through its impact on visible particle kinematic distributions . We have done so in the context of Hidden Valley models, which we find are well suited to display the effects, but the specific models studied should be viewed only as representatives of a broad range of possible models with new symmetries. Thus, while we focus on the phenomenology of a fairly generic toy model, we also provide tools in Pythia 8 to simulate the effects of hidden radiation in various other hidden valley scenarios, e.g. different gauge groups, particle contents, and gauge and decay couplings. The novel feature in these tools is the interleaved SM and valley parton shower, i.e. the competition between visible and hidden radiation. Our preliminary study of the phenomenology of the toy model at e + e − and at LHC colliders shows the following. At an 800 GeV ILC collider we could expect to observe hidden radiation for valley gauge couplings as small as α v ≥ 0.05, so long as the mass of the communicator is smaller than 300 GeV and M qv ≪ M Ev .</p>
+
+				<p>For the LHC phenomenology we need to distinguish between the first two year running with √ s = 7 TeV and L = 1 fb −1 and later years with full design energy √ s = 14 TeV and L = 100 fb −1 . Whether one could observe hidden radiation or not depends strongly on the communicator mass, which determines the amount of statistics. The main signal of the hidden radiation — at least in our studies — is the softening of the shoulder of the MT2 distribution. In the lower-energy case, for communicator masses around 500 GeV or higher, the statistics is so poor that one cannot expect to distinguish even a very strong coupling α v = 0.4. For two models with and without hidden radiation, with equal M Dv masses in the [300, 400] GeV range and equal M qv ≤ 50 GeV, one would need a valley coupling of the order α v ≥ 0.2 or larger to induce large enough effects on the MT2 distribution to distinguish between the two. In the higher-energy case, for order TeV communicator masses and M qv smaller than 100 GeV, the MT2 distributions show sizable changes already for α v = 0.1.</p>
+
+				<figure>
+					<figDesc>We have also studied how the MT2 distribution depends upon the M qv , the invariant mass M eff qv , and the trial mass µ v . In the case of a Hidden Valley scenario, M qv is always – 27 –</figDesc>
+
+				</figure>
+
+				<p>assumed to be M qv ≪ M Dv . Taking a trial mass µ qv ≪ M Dv as an input parameter for the MT2 is thus a natural choice. When the q v mass is larger though, e.g. M qv ∼ M Dv , the issue of the trial mass µ qv is no longer so trivial. The M eff qv can be a broad distribution when radiation is present. Especially in the strong interaction case, α v ≥ 0.2, M eff is strongly shifted towards M Dv . This means that when one chooses a trial mass µ qv ∼ M eff , roughly half of the events will have µ qv &gt; M eff , causing the MT2 max to overshoot the real value.</p>
+
+				<p>In this case the new masses thus have to be extracted from a combined fit, in which both masses and couplings enter as unknowns. Further studies of the background and detector simulations should follow, both for the kind of scenarios we have explored here and for other possible ones. This preliminary study, however, shows unequivocably that parton showers are a key tool in determining the presence of new hidden gauge groups and in the exploration of the hidden sector gauge group dynamics.</p>
+
+			</div>
+
+			<note place="foot" n="2"> We do not make use of the limits coming from the D0 or CDF q → j + ET searches, because these depend upon the chosen mSUGRA scenario. – 11 –</note>
+
+			<note place="foot">– 13 –</note>
+
+			<note place="foot" n="3"> At least before background and detector analysis. – 26 –</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+				<head>Acknowledgments</head>
+				<p>We would like to thank Peter Skands for suggesting this study and for the profitable exchanges we had throughout the whole project. We also acknowledge helpful discussions with Matt Strassler.</p>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Echoes of a hidden valley at hadron colliders</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Strassler</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">M</forename>
+				<surname>Zurek</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">651</biblScope>
+			<biblScope unit="issue">374</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Unparticle Physics</title>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Georgi</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">98</biblScope>
+			<biblScope unit="page">221601</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Toward realistic intersecting D-brane models</title>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Blumenhagen</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Cvetic</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Langacker</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Shiu</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ann. Rev. Nucl. Part. Sci</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="page">71</biblScope>
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">The twin Higgs: Natural electroweak breaking from mirror symmetry</title>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+				<surname>Chacko</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">S</forename>
+				<surname>Goh</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">R</forename>
+				<surname>Harnik</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">96</biblScope>
+			<biblScope unit="page">231802</biblScope>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<monogr>
+		<title level="m" type="main">Possible effects of a hidden valley on supersymmetric phenomenology</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">J</forename>
+				<surname>Strassler</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Multi-Component Dark Matter</title>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">M</forename>
+				<surname>Zurek</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">79</biblScope>
+			<biblScope unit="page">115002</biblScope>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title level="m" type="main">Why Unparticle Models with Mass Gaps are Examples of Hidden Valleys</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">J</forename>
+				<surname>Strassler</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>hep. -ph]</note>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<title level="m" type="main">Macroscopic Strings and &apos;Quirks&apos; at Colliders</title>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Kang</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">A</forename>
+				<surname>Luty</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page">065</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<title level="m" type="main">A Brief Introduction to PYTHIA 8 Comput</title>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Sjö</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">S</forename>
+				<surname>Mrenna</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<forename type="middle">Z</forename>
+				<surname>Skands</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Commun</title>
+		<imprint>
+			<biblScope unit="volume">178</biblScope>
+			<biblScope unit="issue">852</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<surname>Amsler</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Particle Data Group] Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">667</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title/>
+		<imprint>
+			<biblScope unit="page">28</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Search for scalar leptoquarks in the acoplanar jet topology in p¯ p collisions at √ s = 1.96-TeV</title>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">M</forename>
+				<surname>Abazov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">D0 Collaboration Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">640</biblScope>
+			<biblScope unit="page">230</biblScope>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<title/>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">V</forename>
+				<forename type="middle">M</forename>
+				<surname>Abazov</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">D0 Collaboration Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">99</biblScope>
+			<biblScope unit="page">061801</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">QCD radiation off heavy particles</title>
+		<author>
+			<persName>
+				<forename type="first">E</forename>
+				<surname>Norrbin</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">T</forename>
+				<surname>Sjö</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">603</biblScope>
+			<biblScope unit="issue">297</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Dispelling the N 3 myth for the k t jet-finder</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Cacciari</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<forename type="middle">P</forename>
+				<surname>Salam</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">641</biblScope>
+			<biblScope unit="issue">57</biblScope>
+			<biblScope unit="page" from="hep" to="ph" />
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Measuring masses of semiinvisibly decaying particles pair produced at hadron colliders</title>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">G</forename>
+				<surname>Lester</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">J</forename>
+				<surname>Summers</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">4639906349</biblScope>
+			<biblScope unit="issue">99</biblScope>
+			<biblScope unit="page" from="hep" to="ph" />
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<title level="m" type="main">New Physics at the LHC. A Les Houches Report: Physics at TeV Colliders 2009 -New Physics Working Group</title>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Brooijmans</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="hep" to="ph" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Precision SUSY measurements at LHC</title>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Hinchliffe</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<forename type="middle">E</forename>
+				<surname>Paige</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">D</forename>
+				<surname>Shapiro</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<surname>Soderqvist</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<surname>Yao</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="issue">5520</biblScope>
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Measuring the SUSY mass scale at the LHC</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">R</forename>
+				<surname>Tovey</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Lett. B</title>
+		<imprint>
+			<biblScope unit="volume">498</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">W</forename>
+				<forename type="middle">S</forename>
+				<surname>Cho</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Choi</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Y</forename>
+				<forename type="middle">G</forename>
+				<surname>Kim</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">B</forename>
+				<surname>Park</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Gluino Stransverse Mass Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">100</biblScope>
+			<biblScope unit="page">171801</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<monogr>
+		<title level="m" type="main">Minimal Kinematic Constraints and MT2</title>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">C</forename>
+				<surname>Cheng</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+				<surname>Han</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="page">063</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Measurements of masses in SUGRA models at CERN LHC</title>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<surname>Bachacou</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">I</forename>
+				<surname>Hinchliffe</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<forename type="middle">E</forename>
+				<surname>Paige</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">629907518</biblScope>
+			<biblScope unit="page">015009</biblScope>
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<monogr>
+		<title level="m" type="main">Measuring sparticle masses in non-universal string inspired models at the LHC</title>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">C</forename>
+				<surname>Allanach</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">G</forename>
+				<surname>Lester</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">A</forename>
+				<surname>Parker</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">R</forename>
+				<surname>Webber</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2000" />
+			<biblScope unit="page">004</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<title/>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">G</forename>
+				<surname>Lester</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>mT2. homepage</note>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<monogr>
+		<title level="m" type="main">Mass Determination in SUSY-like Events with Missing Energy</title>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">C</forename>
+				<surname>Cheng</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">F</forename>
+				<surname>Gunion</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+				<surname>Han</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Marandella</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Mcelrath</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2007" />
+			<biblScope unit="page">076</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Accurate Mass Determinations in Decay Chains with Missing Energy</title>
+		<author>
+			<persName>
+				<forename type="first">H</forename>
+				<forename type="middle">C</forename>
+				<surname>Cheng</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Engelhardt</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">J</forename>
+				<forename type="middle">F</forename>
+				<surname>Gunion</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">Z</forename>
+				<surname>Han</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Mcelrath</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">100</biblScope>
+			<biblScope unit="page">252001</biblScope>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Measurement of SUSY masses via cascade decays for SPS 1a</title>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<forename type="middle">K</forename>
+				<surname>Gjelsten</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">J</forename>
+				<surname>Miller</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Osland</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JHEP 0412</title>
+		<imprint>
+			<biblScope unit="page">003</biblScope>
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<monogr>
+		<title level="m" type="main">Supersymmetric particle mass measurement with invariant mass correlations</title>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<surname>Costanzo</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">R</forename>
+				<surname>Tovey</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page">084</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Using kinematic boundary lines for particle mass measurements and disambiguation in SUSY-like events with missing energy</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Burns</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">T</forename>
+				<surname>Matchev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Park</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">JHEP 0905</title>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page">094</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<monogr>
+		<title level="m" type="main">Precise reconstruction of sparticle masses without ambiguities</title>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">T</forename>
+				<surname>Matchev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">F</forename>
+				<surname>Moortgat</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">L</forename>
+				<surname>Pape</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Park</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<monogr>
+		<title/>
+		<imprint>
+			<biblScope unit="page">29</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">A new SUSY mass reconstruction method at the CERN LHC</title>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Kawagoe</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">M</forename>
+				<surname>Nojiri</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Polesello</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">71</biblScope>
+			<biblScope unit="page">035008</biblScope>
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">A hybrid method for determining SUSY particle masses at the LHC with fully identified cascade decays</title>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<forename type="middle">M</forename>
+				<surname>Nojiri</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">G</forename>
+				<surname>Polesello</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">D</forename>
+				<forename type="middle">R</forename>
+				<surname>Tovey</surname>
+			</persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">JHEP 0805</title>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="page">014</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<monogr>
+		<title level="m" type="main">Mass determination in sequential particle decay chains</title>
+		<author>
+			<persName>
+				<forename type="first">B</forename>
+				<surname>Webber</surname>
+			</persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<monogr>
+		<title level="m" type="main">A Review of the Mass Measurement Techniques proposed for the Large Hadron Collider</title>
+		<author>
+			<persName>
+				<forename type="first">A</forename>
+				<forename type="middle">J</forename>
+				<surname>Barr</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">C</forename>
+				<forename type="middle">G</forename>
+				<surname>Lester</surname>
+			</persName>
+		</author>
+		<imprint>
+			<biblScope unit="page" from="hep" to="ph" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<monogr>
+		<title level="m" type="main">Superpartner mass measurements with 1D decomposed MT2</title>
+		<author>
+			<persName>
+				<forename type="first">P</forename>
+				<surname>Konar</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<surname>Kong</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">K</forename>
+				<forename type="middle">T</forename>
+				<surname>Matchev</surname>
+			</persName>
+		</author>
+		<author>
+			<persName>
+				<forename type="first">M</forename>
+				<surname>Park</surname>
+			</persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<monogr>
+		<title/>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>
