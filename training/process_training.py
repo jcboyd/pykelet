@@ -1,7 +1,5 @@
-import json
-import requests
-import re
 import sys
+import requests
 
 MIN_RECORD = 1000 ; MAX_RECORD = 10000
 
@@ -30,12 +28,12 @@ class DocumentManager():
                     f.write(xml.content)
                     f.close()
                     xmls_downloaded += 1
-
                 if pdf.status_code != 404:
                     f = open(self.pdf_output + '%s.pdf' % (i), "wb")
                     f.write(pdf.content)
                     f.close()
                     pdfs_downloaded += 1
+
                 print '\rCompleted: %.02f%%' %\
                     (100. * (i + 1 - MIN_RECORD) / (MAX_RECORD - MIN_RECORD)),
                 sys.stdout.flush()
