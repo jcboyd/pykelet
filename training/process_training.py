@@ -1,7 +1,8 @@
 import sys
 import requests
+from bs4 import BeautifulSoup
 
-MIN_RECORD = 1000 ; MAX_RECORD = 10000
+MIN_RECORD = 987 ; MAX_RECORD = 10000
 
 class DocumentManager():
     """
@@ -11,7 +12,17 @@ class DocumentManager():
         self.xml_output = xml_output
         self.pdf_output = pdf_output
 
-    def retrieve_training_documents(self):
+    def get_publisher(self, html):
+        """
+        Retrieves publisher meta data field--if present--from html document.
+        """
+        soup = BeautifulSoup(html)
+        try:
+            return soup.find("meta", {"name":"citation_publisher"})['content']
+        except TypeError:
+            return None
+
+    def retrieve_training_documents(self, publisher):
         """
         Downloads xml and pdf for articles in the SCOAP3 repository.
         """
@@ -20,8 +31,11 @@ class DocumentManager():
         for i in xrange(MIN_RECORD, MAX_RECORD):
             try:
                 page = 'http://repo.scoap3.org/record/%s' % (i)
-                xml = requests.get(page + '/files/main.xml')
-                pdf = requests.get(page + '/files/main.pdf?subformat=pdfa')
+                html = requests.get(page)
+                if self.get_publisher(html.content) != publisher:
+                    continue
+                xml = requests.get(page + '/files/fulltext.xml')
+                pdf = requests.get(page + '/files/fulltext.pdf?subformat=pdfa')
 
                 if xml.status_code != 404:
                     f = open(self.xml_output + '%s.xml' % (i), "wb")
@@ -37,11 +51,16 @@ class DocumentManager():
                 print '\rCompleted: %.02f%%' %\
                     (100. * (i + 1 - MIN_RECORD) / (MAX_RECORD - MIN_RECORD)),
                 sys.stdout.flush()
-            except IOError:
-                print 'Output folder not found...'
+            except requests.exceptions.SSLError:
+                print 'Invalid certificate'
                 continue
+            except IOError:
+                print 'Output folder not found'
+                continue
+            except KeyboardInterrupt:
+                sys.exit()
             except:
-                print 'Could not retrieve document...'
+                print 'Could not retrieve document'
                 continue
 
         print "\nStats:"
@@ -49,6 +68,6 @@ class DocumentManager():
                          ('PDFs downloaded', pdfs_downloaded)):
             print '\t%s: %d' % (str, val)
 
-if __name__ == "__main__":
-    dm = DocumentManager("scoap_xmls/", "scoap_pdfs/")
-    dm.retrieve_training_documents()
+if __name__ == '__main__':
+    dm = DocumentManager('scoap_xmls/', 'scoap_pdfs/')
+    dm.retrieve_training_documents('Hindawi Publishing Corporation')
