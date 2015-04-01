@@ -55,7 +55,7 @@ grobid-server onsists of a web interface for Grobid, running on Jetty (Java) HTT
 
 \begin{figure}[!ht]
 \center
-\includegraphics[width=5in]{figures/cascade.pdf}
+\includegraphics[width=7in]{figures/cascade.pdf}
 \caption{Cascade of models used by Grobid}
 \label{fig:cascade}
 \end{figure}
@@ -192,7 +192,7 @@ A model is typically a large file (as much as 100Mb). At the top of the file, th
 
 \subsection{Evaluation}
 
-Training may be done with a split defined by the developer, which Grobid will use to set aside a proportion of the training data for evaluation. The evaluation of a model produced by training follows identical procedures, preparing the same input data. The output, however, is not a model but a the input data with labels. Grobid compares its predictions with the ground truth and outputs \emph{precision}, \emph{accuracy} and \emph{F1 scores} as performance indicators, at the token, instance and ?? levels.
+Training may be done with a split defined by the developer, which Grobid will use to set aside a proportion of the training data for evaluation. The evaluation of a model produced by training follows identical procedures, preparing the same input data. The output, however, is not a model but a the input data with labels. Grobid compares its predictions with the ground truth and outputs \emph{precision}, \emph{accuracy} and \emph{F1 scores} as performance indicators, at the token, field, and instance levels. A token refers to a single contiguous string of characters (without spaces), a field is a block of contiguous tokens, and an instance is an entire document. Accuracy of an instance is therefore judged by the correctness of all tagging for the whole document, a difficult thing to achieve without any mistakes.
 
 \subsection{Prediction}
 
@@ -208,6 +208,26 @@ Figure \ref{fig:flow} shows the flow of information from input to output, as wel
 \subsection{Other Functionality}
 
 In addition to the above, Grobid provides a means of producing training sets semi-automatically. This consists of applying the existing models on the training set to produce the XML inputs. Of course, each field must be checked against a ground truth and errors corrected before it is used as a training set. We intend to use this functionality to generate training data for benchmarking Grobid on HEP papers.
+
+\begin{center}
+\begin{table}
+\begin{tabular}{ | p{0.2\linewidth} | p{0.8\linewidth} |}
+	\hline
+	Model & Labels \\ \hline
+    	Header & <title>, <author>, <affiliation>, <reference>, <submission>, <abstract>, <address>, <keyword>, <degree>, <pubnum>, <email>, <date>, <copyright>, <intro>, <web>, <note>, <phone>, <dedication>, <entitle>, <grant>, <date-submission> \\ \hline
+	Affiliation address & <institution>, <other>, <settlement>, <department>, <postcode>, <contry>, <marker>, <region>, <addrLine>, <laboratory>, <postbox>, <other>, <null> \\ \hline
+	Name/Header & <forname>, <surname>, <marker>, <middlename>, <other>, <suffix>, <title> \\ \hline
+	Name/Citation & <surname>, <forname>, <other>, <middlename> \\ \hline
+	Citation & <journal>, <volume>, <other>, <issue>, <pages>, <date>, <author>, <title>, <booktitle>, <location>, <pubnum>, <note>, <publisher>, <editor>, <institution>, <tech>, <web>, <issue> \\ \hline
+	Date & <other>, <day>, <month>, <year> \\ \hline
+	Segmentation & <headnote>, <header>, <body>, <page>, <references>, <footnote>, <cover>, <acknowledgement>, <annex> \\ \hline
+	Reference-Segmenter & <label>, <reference>, <other> \\ \hline
+	Fulltext & <section>, <paragraph>, <citation\_marker>, <other>, <table\_marker>, <figure\_marker>, <figure\_head>, <trash>, <figDesc>, <equation>, <item> \\ \hline
+\end{tabular}
+\caption{We have here excluded the Patent, Entities, and E-book models as these are experimental models not currently used by Grobid.}
+\label{fig:featurelist}
+\end{table}
+\end{center}
 
 %
 %For each model, there is a template of "macros" (grobid-trainer/resources/dataset/[MODEL]/crfpp-tempates/) which follow a format common to Wapiti and CRF++. These macros describe feature "templates" which may be expanded into the many features functions of the model...
