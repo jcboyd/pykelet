@@ -16,6 +16,8 @@
 \usepackage{colortbl}
 \usepackage{caption}
 \usepackage{bbm}
+\usepackage{amssymb}
+\usepackage{amsmath}
 \DeclareCaptionFont{blue}{\color{LightSteelBlue3}}
 
 \newcommand{\foo}{\color{LightSteelBlue3}\makebox[0pt]{\textbullet}\hskip-0.5pt\vrule width 1pt\hspace{\labelsep}}
@@ -230,7 +232,18 @@ Now, for example, when we run \texttt{createTrainingHeader} to create a header t
 \item PDF-NAME.header
 \end{enumerate}
 
-Files (1) and (2), are the training data for the affiliation-address and author models respectively. Files (3) and (4) are jointly required for training the Header model: file (3) simply contains the tagged data, but file (4) contains the feature (untagged) for each token, including OCR information. We must additionally store (4) as the OCR information cannot be derived from the plaintext TEI file. That the processing does not tag the blocks allows the programmer to intervens and correct and discrepancies with the ground truth. These the header files need only be corrected then moved to a separate folder for training.
+Files (1) and (2), are the training data for the affiliation-address and author models respectively. Files (3) and (4) are jointly required for training the Header model: file (3) simply contains the tagged data, but file (4) contains the feature (untagged) for each token, including OCR information. We must additionally store (4) as the OCR information cannot be derived from the plaintext TEI file. That the processing does not tag the blocks allows the programmer to intervens and correct and discrepancies with the ground truth. Thus the header files need only be corrected then moved to a separate folder for training. Notice training data for the segmentation models may be harder to generate automatically.
+
+Notice that there is no method for creating citation training data, $\mathcal{D}_{tr}$ directly. This data is created as part of \texttt{createTrainingFulltext}. This creates four files also:
+
+\begin{enumerate}
+\item PDF-NAME.training.citations.authors.tei.xml
+\item PDF-NAME.training.references.tei.xml
+\item PDF-NAME.training.fulltext.tei.xml
+\item PDF-NAME.training.fulltext
+\end{enumerate}
+
+File (1) contains a refinement of the author names found in file (2), thus can be used as training data for the Name-citation model. File (2) contains the training data for the Citation model, in the format apparent in the training corpus. As should be expected, the name and date fields for this data are not resolved into their subcomponents, this task being left to the smaller models dedicated to these tasks. Files (3) and (4) are the files required for training the citation model.
 
 \begin{center}
 \begin{table}
