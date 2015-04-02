@@ -60,6 +60,8 @@ grobid-server onsists of a web interface for Grobid, running on Jetty (Java) HTT
 \label{fig:cascade}
 \end{figure}
 
+Finding the header is typically easy, as we can assume it always to constitute the first page or so of the document. For this reason, when we call \texttt{processHeader} on its own, the Segmentation model is not called. On the other hand, though references are almost invariably at the end of an article, it is difficult to guess where it begins, and the reference model would suffer more from garbage than the header model. For this reason, the Segmentation model is called when we call \texttt{processReferences}, before calling the Reference-segmenter model to slice the reference list (identified by Segmentation) into individual citations.
+
 Grobid manages the training, evaluation and usage of a set of models, each addressing a part of the information extraction. Higher level models such as the Header, Segmentation, and Reference Segmentation models may applied directly to PDFs, while the other, more specific models, such as the Date model, operate only on plaintext inputs. Though they have much in common, the models vary in the labels they assign, the features they exploit, and, due to the varying size of the vocabulary (compare say, the number of possible month names to the number of possible author names), the size (dimensionality) of the models. Calling \texttt{processFullText} runs all available models on a batch of PDF documents. The output of training is a model, which takes takes the form of a text or binary file, depending on the engine. These models are then ``loaded'' at prediction time for the labelling of new documents. Some models are in practice not used independently, rather, they form part of a ``cascade'' of models that progressively address finer subcomponents of the classification problem. As shown in Figure \ref{fig:cascade}, reference extraction begins with segmentation models, which classify each line of a document, resulting in homogenous blocks of lines e.g. header, paragraph, figure, references. This information is then distributed to the other models, for example the Reference Segmentation model, which further breaks down the reference list into individual references. The Citation model then classifies the parts of each reference into classes, for example, date, affiliation, and author. Finally, the atomic subcomponents of these are classified by their respective models. Note that the citation branch of the hierarchy has the option of further cross-checking extracted references with the third-party CrossRef web service.
 
 \subsection{Training}
@@ -209,6 +211,27 @@ Figure \ref{fig:flow} shows the flow of information from input to output, as wel
 
 In addition to the above, Grobid provides a means of producing training sets semi-automatically. This consists of applying the existing models on the training set to produce the XML inputs. Of course, each field must be checked against a ground truth and errors corrected before it is used as a training set. We intend to use this functionality to generate training data for benchmarking Grobid on HEP papers.
 
+These methods are,
+
+\begin{enumerate}
+\item createTrainingHeader
+\item createTrainingFulltext
+\item createTrainingSegmentation
+\item createTrainingReferenceSegmentation
+\item createTrainingCitationPatent
+\end{enumerate}
+
+Now, for example, when we run \texttt{createTrainingHeader} to create a header training set, grobid creates four files per pdf:
+
+\begin{enumerate}
+\item PDF-NAME.affiliation.tei.xml
+\item PDF-NAME.authors.tei.xml
+\item PDF-NAME.header.tei.xml
+\item PDF-NAME.header
+\end{enumerate}
+
+Files (1) and (2), are the training data for the affiliation-address and author models respectively. Files (3) and (4) are jointly required for training the Header model: file (3) simply contains the tagged data, but file (4) contains the feature (untagged) for each token, including OCR information. We must additionally store (4) as the OCR information cannot be derived from the plaintext TEI file. That the processing does not tag the blocks allows the programmer to intervens and correct and discrepancies with the ground truth. These the header files need only be corrected then moved to a separate folder for training.
+
 \begin{center}
 \begin{table}
 \begin{tabular}{ | p{0.2\linewidth} | p{0.8\linewidth} |}
@@ -224,10 +247,33 @@ In addition to the above, Grobid provides a means of producing training sets sem
 	Reference-Segmenter & <label>, <reference>, <other> \\ \hline
 	Fulltext & <section>, <paragraph>, <citation\_marker>, <other>, <table\_marker>, <figure\_marker>, <figure\_head>, <trash>, <figDesc>, <equation>, <item> \\ \hline
 \end{tabular}
-\caption{We have here excluded the Patent, Entities, and E-book models as these are experimental models not currently used by Grobid.}
+\caption{We have here excluded the Patent, Entities, and E-book models as these are experimental models not currently used by Grobid. Of the models listed, we will be focusing on Header, probably Segmentation, and perhaps Reference-Segmenter and Citation also. This is because these are likely to require special training and configuration for HEP papers. Others such as Name and Date are unlikely to improve with training on HEP papers.}
 \label{fig:featurelist}
 \end{table}
 \end{center}
+
+\begin{figure}
+\begin{verbatim}
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+	<author>
+		<persName>
+			<forename>B</forename>.
+			<surname>GARRIGUES</surname>
+		</persName>
+		ET
+		<persName>
+			<forename>A</forename>.
+			<surname>MUNOZ</surname>
+		</persName>
+	</author>
+</analytic></biblStruct></sourceDesc></fileDesc></teiHeader>
+</tei>
+\end{verbatim}
+\caption{Sample TEI (input and output) format for the Name-header model.}
+\label{fig:traininput}
+\end{figure}
 
 %
 %For each model, there is a template of "macros" (grobid-trainer/resources/dataset/[MODEL]/crfpp-tempates/) which follow a format common to Wapiti and CRF++. These macros describe feature "templates" which may be expanded into the many features functions of the model...
