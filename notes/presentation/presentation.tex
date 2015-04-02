@@ -70,14 +70,14 @@
 %\usecolortheme{whale}
 %\usecolortheme{wolverine}
 
-%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
-%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
 
-%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
 }
 
 \usepackage{graphicx} % Allows including images
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{amssymb}
+\usepackage{amsmath}
 
 \title[Automatic Metadata Extraction]{Automatic Metadata Extraction with Conditional Random Fields} % The short title appears at the bottom of every slide, the full title is only on the title page
 
@@ -125,6 +125,32 @@
 
 %------------------------------------------------
 
+\subsection{Logistic Regression}
+\begin{frame}
+\frametitle{Logistic Regression}
+\begin{itemize}
+\item A logistic regression is used for classifying a data sample into two (binary) or more (multi) categories, thus,
+$$\hat{\text{y}}_{prediction} = \boldsymbol\beta^{T} \cdot \boldsymbol{x}_{sample},$$
+where $\hat{y}$ is our prediction (represented as a probability), $\boldsymbol{x} = [x_0, x_1, ..., x_D]^T$ is a data sample, and $\boldsymbol\beta = [\beta_0, \beta_1, ..., \beta_D]^T$ is the vector of parameters we must \emph{learn}
+\item We construct a cost function in terms of this parameter vector,
+$$\mathcal{L}(\boldsymbol\beta) = \sum_{n=1}^N y_n\boldsymbol\beta^T\boldsymbol{x}_n - \log[1 + \exp(\boldsymbol\beta^T\boldsymbol{x}_n)]$$
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Solving a Logistic Regression}\begin{itemize}
+\item Building a regression model is equivalent to solving a convex optimisation problem (i.e. maximising the cost function)
+\item We know the form of the model, and we have a set of (training) data
+\item We want to choose the model parameters for which the error is minimised (think line of best fit)
+\end{itemize}
+Take home message: we can automatically build mathematical functions for making predictions
+\end{frame}
+
+%------------------------------------------------
+
+\subsection{Hidden Markov Models}
 \begin{frame}
 \frametitle{Hidden Markov Models (HMMs)}
 \begin{itemize}
@@ -138,6 +164,33 @@
 
 %------------------------------------------------
 
+\begin{frame}
+\frametitle{Hidden Markov Models (HMMs) - Example}
+\begin{itemize}
+\item Lorem ipsum dolor sit amet, consectetur adipiscing elit
+\item Aliquam blandit faucibus nisi, sit amet dapibus enim tempus eu
+\item Nulla commodo, erat quis gravida posuere, elit lacus lobortis est, quis porttitor odio mauris at libero
+\item Nam cursus est eget velit posuere pellentesque
+\item Vestibulum faucibus velit a augue condimentum quis convallis nulla gravida
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Solving Hidden Markov Models}
+\begin{itemize}
+\item Solved using dynamic programming techniques
+\item Aliquam blandit faucibus nisi, sit amet dapibus enim tempus eu
+\end{itemize}
+
+Take home message: once we have the model, we can make predictions for a given input \emph{efficiently}.
+
+\end{frame}
+
+%------------------------------------------------
+
+\subsection{Conditional Random Fields}
 \begin{frame}
 \frametitle{Conditional Random Fields (CRFs)}
 \begin{itemize}
