@@ -132,7 +132,7 @@
 \item A logistic regression is used for classifying a data sample into two (binary) or more (multi) categories, thus,
 $$\hat{\text{y}}_{prediction} = \boldsymbol\beta^{T} \cdot \boldsymbol{x}_{sample},$$
 where $\hat{y}$ is the prediction (represented as a probability), $\boldsymbol{x} = [x_0, x_1, ..., x_D]^T$ is a data sample, and $\boldsymbol\beta = [\beta_0, \beta_1, ..., \beta_D]^T$ is the vector of parameters we must \emph{learn}
-\item We construct a cost function in terms of this parameter vector,
+\item We construct a (maximum log likelihood) cost function in terms of this parameter vector,
 $$\mathcal{L}(\boldsymbol\beta) = \sum_{n=1}^N y_n\boldsymbol\beta^T\boldsymbol{x}_n - \log[1 + \exp(\boldsymbol\beta^T\boldsymbol{x}_n)]$$
 \end{itemize}
 \end{frame}
@@ -144,6 +144,8 @@ $$\mathcal{L}(\boldsymbol\beta) = \sum_{n=1}^N y_n\boldsymbol\beta^T\boldsymbol{
 \item Building a regression model is equivalent to solving a convex optimisation problem (i.e. maximising the cost function)
 \item We know the form of the model, and we have a set of (training) data
 \item We want to choose the model parameters for which the error is minimised (think line of best fit)
+\item We use a numerical method to obtain the global minimum of error, for example, the method of gradient descent:
+$$\boldsymbol\beta^{k+1} = \boldsymbol\beta^{k} - \alpha\nabla\mathcal{L}(\boldsymbol\beta^{k})$$
 \end{itemize}
 Take home message: we can automatically build mathematical functions for making predictions
 \end{frame}
