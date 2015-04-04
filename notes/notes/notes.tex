@@ -355,11 +355,25 @@ M. Stefanescu, O. Dicea, and G. Tari, " Influence of extension and compression o
 \label{fig:segerror}
 \end{figure}
 
-By contrast, the training of these two models may be performed independently. It does not matter to the citation model if the references in its training set are not contiguous members of the same reference list; the \texttt{citation} model operates at the reference string level. For this reason, creating our training set (as per the pipeline) for the citation model is simplified: if, when preparing the set, we notice a ground truth reference is missing from the output, we can just ignore this and continue. On the other hand, it matters very much that the \texttt{reference-segmenter} identifies the correct number of references, as this is the goal of the model, and it has a knock-on effect for the \texttt{citation} model below it. See for example Figure \ref{fig:segerror}, showing an error made by the pre-trained (Cora) \texttt{reference-segmenter} model shipped with Grobid.  It is rather surprising that such obviously strong indicators as the square brackets in the citation label, ``[21]'', are insufficient to classify it as such, especially when this error seems to happen rather often. This may be the result of poor feature engineering, a limited test set, or a mixture of the two.
+By contrast, the training of these two models may be performed independently. It does not matter to the citation model if the references in its training set are not contiguous members of the same reference list; the \texttt{citation} model operates at the reference string level. For this reason, creating our training set (as per the pipeline) for the citation model is simplified: if, when preparing the set, we notice a ground truth reference is missing from the output, we can just ignore this and continue. On the other hand, it matters very much that the \texttt{reference-segmenter} identifies the correct number of references, as this is the goal of the model, and it has a knock-on effect for the \texttt{citation} model below it. See for example Figure \ref{fig:segerror}, showing an error made by the pre-trained (Cora) \texttt{reference-segmenter} model shipped with Grobid.  It is rather surprising that such obviously strong indicators as the square brackets in the citation label, ``[21]'', are insufficient to classify it as such, especially when this error seems to happen rather often. This may be the result of poor feature engineering, a limited test set, or a mixture of the two. To see how citation model would tag the correctly segmented reference ``[20]'', see Figure \ref{fig:citsample}.
 
+\begin{figure}
+\begin{verbatim}
+<bibl><author>D. A. Hill</author>, &quot; <title level="a">Fields of horizontal 
+currents located above the earth</title>, &quot; <title level="j">IEEE Transactions
+on Geoscience and Remote Sensing</title>, vol. <biblScope type="vol">26
+</biblScope>, no. <biblScope type="issue">6</biblScope>, pp. <biblScope type="pp">
+726–732</biblScope>, <date>1988</date>. [<editor>21] A. M. Badescu, V. Savu, and
+O. Fratu</editor>, &quot; <title level="a">Preliminary tests in Unirea salt mine</title>
+(<pubPlace>Slanic Prahova, Romania</pubPlace>), &quot; <note type="report">
+Report 4</note>, <orgName>University Politehnica of Bucharest</orgName>,
+ <pubPlace>Bucharest, Romania</pubPlace>, <date>2011</date>.</bibl>
+\end{verbatim}
+\caption{Citation tagging of the correctly identified reference number 20 as shown in Figure \ref{fig:segerror}.}
+\label{fig:citsample}
+\end{figure}
 
-
-
+If we are to correct the segmentation done when creating the reference segmenter training set, it is useful to note segmentation is done simply by placing the delimeters, i.e. the labels.
 
 \end{document}
 
