@@ -268,7 +268,8 @@ File (1) contains a refinement of the author names found in file (2), thus can b
 \begin{figure}
 \begin{verbatim}
 <?xml version="1.0" encoding="UTF-8"?>
-<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
 <teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 	<author>
 		<persName>
@@ -329,6 +330,34 @@ File (1) contains a refinement of the author names found in file (2), thus can b
 %indicating "model", 2 (???--perhaps indicating binary inputs), 10960 weights 
 %
 %* * *
+
+\subsection{Pipeline}
+
+\subsection{Training - References}
+
+To prepare Grobid for practical reference extraction, our task is twofold, involving the training of both the \texttt{reference-segmenter } and \texttt{citation} models. The overall success of the citation model in tagging an entire reference list depends on the reliability of the citation blocks fed to it by its parent model. To illustrate, even a citation model that is perfect in its own right will not help very muchin the reference extraction if the \texttt{reference-segmenter} above it is incapable of finding the references. Note that, to be precise, there is a further dependency on the accuracy of the \texttt{segmenter} model, the most high-level model in Grobid's arsenal, which is responsible for identifying the reference section for the before it is segmented, however we will assume temporarily that this is accurate enough in practice. \emph{Instance-level} accuracy for the citation model, measured over a whole document, will be the number of correctly tagged references \emph{as a fraction of} the references correctly found by the \texttt{reference-segmenter}.
+
+\begin{figure}
+\begin{verbatim}
+<bibl>
+<label>[20]</label>
+D. A. Hill, " Fields of horizontal currents located above the earth, " IEEE Transactions
+on Geoscience and Remote Sensing, vol. 26, no. 6, pp. 726-732, 1988. [21] 
+A. M. Badescu, V. Savu, and O. Fratu, " Preliminary tests in Unirea salt mine (Slanic
+Prahova, Romania), " Report 4, University Politehnica of Bucharest, Bucharest,
+Romania, 2011.
+</bibl>
+<bibl>
+<label>[22]</label>
+M. Stefanescu, O. Dicea, and G. Tari, " Influence of extension and compression on
+\end{verbatim}
+\caption{Sample error made by the (cora-trained) \texttt{reference-segmenter} model: the model fails to spot the citation label for reference [21], and the references are consequently merged. The \texttt{citation} model will then fail to match the ground truth.}
+\label{fig:segerror}
+\end{figure}
+
+By contrast, the training of these two models may be performed independently. It does not matter to the citation model if the references in its training set are not contiguous members of the same reference list; the \texttt{citation} model operates at the reference string level. For this reason, creating our training set (as per the pipeline) for the citation model is simplified: if, when preparing the set, we notice a ground truth reference is missing from the output, we can just ignore this and continue. On the other hand, it matters very much that the \texttt{reference-segmenter} identifies the correct number of references, as this is the goal of the model, and it has a knock-on effect for the \texttt{citation} model below it. See for example Figure \ref{fig:segerror}, showing an error made by the pre-trained (Cora) \texttt{reference-segmenter} model shipped with Grobid.  It is rather surprising that such obviously strong indicators as the square brackets in the citation label, ``[21]'', are insufficient to classify it as such, especially when this error seems to happen rather often. This may be the result of poor feature engineering, a limited test set, or a mixture of the two.
+
+
 
 
 
