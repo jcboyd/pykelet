@@ -24,10 +24,10 @@ class GrobidCore():
     """
     def processHeader(self):
         self.bootloader.main(['-gH', self.grobid_home,
-                        '-gP', self.grobid_properties,
-                        '-dIn', grobid_input,
-                        '-dOut', grobid_output,
-                        '-exe', 'processHeader'])
+                              '-gP', self.grobid_properties,
+                              '-dIn', grobid_input,
+                              '-dOut', grobid_output,
+                              '-exe', 'processHeader'])
     """
     Wrapper for calling processFullText
     """
