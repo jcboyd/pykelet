@@ -1,8 +1,20 @@
 from os import environ, path
 
+class GrobidTrainer():
+    """
+    Wrapper class for calling grobid core
+    """
+    def __init__(self):
+        pass
+    """
+    Wrapper class for calling grobid core
+    """
+    def createTraining():
+        pass
+
 class GrobidCore():
     """
-    Wrapper class for calling grobid
+    Wrapper class for calling grobid core
     """
     def __init__(self,
                  classpath,
