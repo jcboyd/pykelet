@@ -44,47 +44,37 @@ class Validator():
     """
     Correct reference_segmenter TEI
     """
-    def reference_segmenter_correction(self, ground_truth, bs):
+    def __reference_segmenter_correction(self, ground_truth, bs):
         gt_ref = ground_truth.back.find('ref-list').find('ref')
         bs_ref = bs.find('listBibl').find('bibl')
 
         while gt_ref is not None:
-            # print gt_ref.label.string, bs_ref
-            if bs_ref.label is None:
-                frag = bs_ref.text
+            find_index = bs_ref.text.find("[" + gt_ref.label.string + "]")
+            if bs_ref.label is None or find_index == -1:
+                # Merge fragments
                 prev_bs_ref = bs_ref.find_previous('bibl')
+                frag = bs_ref.label.string + bs_ref.label.next_sibling.string
                 prev_frag = prev_bs_ref.label.next_sibling.string
-                prev_bs_ref.label.next_sibling.string = prev_frag + frag
+                prev_bs_ref.label.next_sibling. \
+                    replaceWith(prev_frag + frag)
                 bs_ref.extract()
-                bs_ref = prev_bs_ref
                 gt_ref = gt_ref.find_previous('ref')
-                print bs_ref
-            elif ("[" + gt_ref.label.string + "]") != bs_ref.label.string:
+            elif find_index >= 0:
                 bs_ref = bs_ref.find_previous('bibl')
-                if bs_ref.text.find("[" + gt_ref.label.string + "]") >= 0:
-                    # Split fragment around correct delimeter
-                    split = bs_ref.label.next_sibling.string. \
-                            split("[" + gt_ref.label.string + "]")
-                    # Construct new bibl and insert
-                    bibl_tag = bs.new_tag('bibl')
-                    label_tag = bs.new_tag('label')
-                    label_tag.string = "[" + gt_ref.label.string + "]"
-                    bibl_tag.insert(0, label_tag)
-                    bibl_tag.insert(1, split[1])
-                    bs_ref.insert_after(bibl_tag)
-                    # Correct previous bibl
-                    bs_ref.label.next_sibling.replaceWith(split[0])
-                    bs_ref = bs_ref.findNext('bibl')
-                else: # merge previous and current
-                    next_bs_ref = bs_ref.findNext('bibl')
-                    next_frag = next_bs_ref.label.string + \
-                                next_bs_ref.label.next_sibling.string
-                    prev_frag = bs_ref.label.next_sibling.string
-                    bs_ref.label.next_sibling. \
-                                 replaceWith(prev_frag + next_frag)
-                    next_bs_ref.extract()
-                    gt_ref = gt_ref.find_previous('ref')
-            else:
+                # Split fragment around correct delimeter
+                split = bs_ref.label.next_sibling.string. \
+                        split("[" + gt_ref.label.string + "]")
+                # Construct new bibl and insert
+                bibl_tag = bs.new_tag('bibl')
+                label_tag = bs.new_tag('label')
+                label_tag.string = "[" + gt_ref.label.string + "]"
+                bibl_tag.insert(0, label_tag)
+                bibl_tag.insert(1, split[1])
+                bs_ref.insert_after(bibl_tag)
+                # Correct previous bibl
+                bs_ref.label.next_sibling.replaceWith(split[0])
+                bs_ref = bs_ref.findNext('bibl')
+            else: # Proceed to next pair
                 gt_ref = gt_ref.findNext('ref')
                 bs_ref = bs_ref.findNext('bibl')
         return bs
@@ -92,7 +82,7 @@ class Validator():
     Correct directory of reference_segmenter training files
     """
     def reference_segmenter_validation(self):
-        for file in bs_directory:
+        for file in filter(lambda x : x.startswith('reference'), os.listdir(bs_directory)):
             bs = BeautifulSoup(open(file))
             # find ground_truth file
             ground_truth = BeautifulSoup(open(file))
