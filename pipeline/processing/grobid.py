@@ -100,7 +100,6 @@ class GrobidCore():
                               '-dIn', grobid_input,
                               '-dOut', grobid_output,
                               '-exe', 'createTrainingReferenceSegmentation'])
-        pass
 
 if __name__ == '__main__':
     directory = path.dirname(path.realpath(__file__))
