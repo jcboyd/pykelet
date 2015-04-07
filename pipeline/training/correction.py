@@ -1,8 +1,7 @@
-import os
 import json
-from bs4 import BeautifulSoup
 import re
-import sys
+from os import environ, path
+from bs4 import BeautifulSoup
 
 class JsonDocument():
     """Class for manipulating JSON document"""
@@ -35,46 +34,93 @@ class JsonDocument():
         else: # Leaf node
             yield (subtree, path)
 
-def loop_over_tei():
-    # Load records
-    print 'Loading records...'
-    records = json.load(open('training/records-core-10k.json'))
-    print 'Processing files...'
-    num_docs = 0 ; title_corrected = 0 ; abstract_corrected = 0
-    directory = os.listdir('tei/output')
-    
-    for file_name in directory:
-        num_docs += 1
-        f = open('tei/output/' + file_name)
-        doc = BeautifulSoup(f)
-        f.close()
+class Validator():
+    """
+    Class for validating training set produced by grobid
+    """
+    def __init__(self, ground_truth_directory, bs_directory):
+        self.ground_truth_directory = ground_truth_directory
+        self.bs_directory = bs_directory
+    """
+    Correct reference_segmenter TEI
+    """
+    def reference_segmenter_correction(self, ground_truth, bs):
+        gt_ref = ground_truth.back.find('ref-list').find('ref')
+        bs_ref = bs.find('listBibl').find('bibl')
 
-        #Get grobid extracted references
-        # reference_list = doc.back.listbibl.findAll('biblstruct')
+        while gt_ref is not None:
+            # print gt_ref.label.string, bs_ref
+            if bs_ref.label is None:
+                frag = bs_ref.text
+                prev_bs_ref = bs_ref.find_previous('bibl')
+                prev_frag = prev_bs_ref.label.next_sibling.string
+                prev_bs_ref.label.next_sibling.string = prev_frag + frag
+                bs_ref.extract()
+                bs_ref = prev_bs_ref
+                gt_ref = gt_ref.find_previous('ref')
+                print bs_ref
+            elif ("[" + gt_ref.label.string + "]") != bs_ref.label.string:
+                bs_ref = bs_ref.find_previous('bibl')
+                if bs_ref.text.find("[" + gt_ref.label.string + "]") >= 0:
+                    # Split fragment around correct delimeter
+                    split = bs_ref.label.next_sibling.string. \
+                            split("[" + gt_ref.label.string + "]")
+                    # Construct new bibl and insert
+                    bibl_tag = bs.new_tag('bibl')
+                    label_tag = bs.new_tag('label')
+                    label_tag.string = "[" + gt_ref.label.string + "]"
+                    bibl_tag.insert(0, label_tag)
+                    bibl_tag.insert(1, split[1])
+                    bs_ref.insert_after(bibl_tag)
+                    # Correct previous bibl
+                    bs_ref.label.next_sibling.replaceWith(split[0])
+                    bs_ref = bs_ref.findNext('bibl')
+                else: # merge previous and current
+                    next_bs_ref = bs_ref.findNext('bibl')
+                    next_frag = next_bs_ref.label.string + \
+                                next_bs_ref.label.next_sibling.string
+                    prev_frag = bs_ref.label.next_sibling.string
+                    bs_ref.label.next_sibling. \
+                                 replaceWith(prev_frag + next_frag)
+                    next_bs_ref.extract()
+                    gt_ref = gt_ref.find_previous('ref')
+            else:
+                gt_ref = gt_ref.findNext('ref')
+                bs_ref = bs_ref.findNext('bibl')
+        return bs
+    """
+    Correct directory of reference_segmenter training files
+    """
+    def reference_segmenter_validation(self):
+        for file in bs_directory:
+            bs = BeautifulSoup(open(file))
+            # find ground_truth file
+            ground_truth = BeautifulSoup(open(file))
+            correction = self.__reference_segmenter_correction(ground_truth, bs)
+            file = open("SOMETHING.xml", "wb")
+            file.write(bs.prettify().encode('utf-8'))
+    """
+    Correct citation training TEI file
+    """
+    def __citation_correction(self):
+        pass
+    """
+    Correct directory of citation training files
+    """
+    def citation_validation(self):
+        pass
 
-        rec_id = int(file_name.split('.')[0])
-        
-        ground_truth = None
-        for record in records:
-            if record['recid'] == rec_id:
-                ground_truth = JsonDocument(record, "")
+if __name__ == '__main__':
+    # directory = path.dirname(path.realpath(__file__))
 
-        for entry in ground_truth.dfs():
-            # print entry[1]
-            if entry[1].startswith('/title/title'):
-                if doc.title.string != entry[0]:
-                    doc.title.string = entry[0]
-                    title_corrected += 1
-            elif entry[1].startswith('/abstract'):
-                if doc.abstract != entry[0]:
-                    doc.title.string = entry[0]
-                    abstract_corrected += 1
+    # scoap3_xmls = directory + '../../training/hindawi_scoap_xmls'
+    # grobid_output = directory + '../../grobid/output'
+    # val = Validator(ground_truth_directory = scoap3_xmls, 
+    #                 bs_directory = grobid_output)
+    # val.reference_segmenter_validation()
 
-        print '\rCompleted: %.02f%%' % (num_docs * 100. / len(directory)),
-        sys.stdout.flush()
-
-    print '\nStats:'
-    for str, val in (('# corrected titles', title_corrected),
-                     ('# corrected abstracts', abstract_corrected),
-                     ('# corrected titles', title_corrected)):
-        print '\t%s: %d (%.02f%%)' % (str, val, val*100./num_docs)
+    val = Validator("", "")
+    bs = BeautifulSoup(open('987.training.referenceSegmenter.tei.xml'), 'xml')
+    # find ground_truth file
+    ground_truth = BeautifulSoup(open('987.xml'), 'xml')
+    val.reference_segmenter_correction(ground_truth = ground_truth, bs = bs)
