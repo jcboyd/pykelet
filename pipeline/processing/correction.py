@@ -92,7 +92,6 @@ class Validator():
     def reference_segmenter_validation(self):
         for file in filter(lambda x : x.endswith('referenceSegmenter.tei.xml'), listdir(self.bs_directory)):
             bs = BeautifulSoup(open(self.bs_directory + file), 'xml')
-            print bs
             # find ground_truth file
             ground_truth = BeautifulSoup(open(self.ground_truth_directory + file.split(".")[0] + '.xml'), 'xml')
             correction = self.__reference_segmenter_correction(ground_truth, bs)
