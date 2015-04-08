@@ -38,9 +38,10 @@ class Validator():
     """
     Class for validating training set produced by grobid
     """
-    def __init__(self, ground_truth_directory, bs_directory):
+    def __init__(self, ground_truth_directory, bs_directory, output_directory):
         self.ground_truth_directory = ground_truth_directory
         self.bs_directory = bs_directory
+        self.output_directory = output_directory
     """
     Correct reference_segmenter TEI
     """
@@ -94,8 +95,7 @@ class Validator():
             # find ground_truth file
             ground_truth = BeautifulSoup(open(self.ground_truth_directory + file.split(".")[0] + '.xml'), 'xml')
             correction = self.__reference_segmenter_correction(ground_truth, bs)
-            print correction
-            file = open("SOMETHING.xml", "wb")
+            file = open(output_directory + file, "wb")
             file.write(correction.prettify().encode('utf-8'))
     """
     Correct citation training TEI file
@@ -122,9 +122,13 @@ class Validator():
 if __name__ == '__main__':
     directory = path.dirname(path.realpath(__file__))
 
-    scoap3_xmls = directory + '/../../training/hindawi_scoap_xmls/'
-    grobid_output = directory + '/../../grobid/output/'
+    scoap3_xmls = directory + '/../training/hindawi_scoap_xmls/'
+    input_directory = directory + '/../grobid/output/'
+    output_directory = directory + \
+    '/../grobid/grobid-trainer/resources/dataset/reference-segmenter/corpus/'
+
     val = Validator(ground_truth_directory = scoap3_xmls, 
-                    bs_directory = grobid_output)
+                    bs_directory = input_directory,
+                    output_directory = output_directory)
     val.reference_segmenter_validation()
     # val.citation_validation()
