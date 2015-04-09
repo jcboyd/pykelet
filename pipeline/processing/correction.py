@@ -1,7 +1,7 @@
-import json
 from re import compile, split, findall
-from os import environ, path, listdir
+from os import path, listdir
 from bs4 import BeautifulSoup
+
 
 class JsonDocument():
 
@@ -10,12 +10,12 @@ class JsonDocument():
     def __init__(self, document, root):
         self.document = document
         self.root = root
-        
+
     def index(self, path):
         """Return value at path, return None if not found."""
         try:
-            indices = [int(x) if x.isdigit() else x for x in re.split(r'[\/\[\]]+', path[1:])]
-            return reduce(lambda x, y : x[y], indices, self.document)
+            indices = [int(x) if x.isdigit() else x for x in split(r'[\/\[\]]+', path[1:])]
+            return reduce(lambda x, y: x[y], indices, self.document)
         except:
             return None
 
@@ -33,17 +33,23 @@ class JsonDocument():
             for node in subtree:
                 for child in self.__dfs(subtree[node], path + "/" + node):
                     yield child
-        else: # Leaf node
+        else:  # Leaf node
             yield (subtree, path)
+
 
 class Validator():
 
     """Class for validating training set produced by grobid."""
-    
-    def __init__(self, ground_truth_directory, bs_directory, output_directory):
+
+    def __init__(self,
+                 ground_truth_directory,
+                 bs_directory,
+                 reference_segmenter_output,
+                 citation_output):
         self.ground_truth_directory = ground_truth_directory
         self.bs_directory = bs_directory
-        self.output_directory = output_directory
+        self.reference_segmenter_output = reference_segmenter_output
+        self.citation_output = citation_output
 
     def __reference_segmenter_correction(self, bs):
         """Rewrite reference segmentation."""
@@ -61,31 +67,34 @@ class Validator():
             bibl_tag.insert(0, label_tag)
             bibl_tag.insert(1, ref)
             bs.find('listBibl').append(bibl_tag)
-    
+
     def reference_segmenter_validation(self):
         """Correct directory of reference_segmenter training files."""
         for file in filter(lambda x: x.endswith('referenceSegmenter.tei.xml'), listdir(self.bs_directory)):
             print "Processing", file
             bs = BeautifulSoup(open(self.bs_directory + file), 'xml')
-            # find ground_truth file
-            # ground_truth = BeautifulSoup(open(self.ground_truth_directory + file.split(".")[0] + '.xml'), 'xml')
             self.__reference_segmenter_correction(bs)
-            file = open(output_directory + file, "wb")
+            file = open(self.reference_segmenter_output + file, "wb")
             file.write(bs.prettify().encode('utf-8'))
-    
-    def __citation_correction(self):
+
+    def __citation_correction(self, bs, ground_truth):
         """Correct citation training TEI file."""
-        pass
-    
+        bs_ref = bs.findNext('bibl')
+        gt_ref = ground_truth.findNext('ref')
+        while gt_ref is not None:
+            if gt_ref.find('article-title') != bs_ref.title:
+                pass
+            gt_ref = gt_ref.findNext('ref')
+
     def citation_validation(self):
         """Correct directory of citation training files."""
-        for file in filter(lambda x : x.startswith('citation'), os.listdir(bs_directory)):
+        for file in filter(lambda x: x.startswith('citation'), listdir(bs_directory)):
             print "Processing", file
             bs = BeautifulSoup(open(file), 'xml')
             # find ground_truth file
-            ground_truth = BeautifulSoup(open(file), 'xml')
+            ground_truth = BeautifulSoup(open(self.ground_truth_directory + file.split(".")[0] + '.xml'), 'xml')
             self.__citation_correction(ground_truth, bs)
-            file = open("SOMETHING.xml", "wb")
+            file = open(self.citation_output + file, "wb")
             file.write(bs.prettify().encode('utf-8'))
 
 if __name__ == '__main__':
@@ -93,10 +102,11 @@ if __name__ == '__main__':
 
     scoap3_xmls = directory + '/../training/hindawi_scoap_xmls/'
     input_directory = '/home/joseph/Desktop/grobid/grobid-trainer/resources/dataset/reference-segmenter/corpus/tei/'
-    output_directory = directory + \
-    '/../grobid/grobid-trainer/resources/dataset/reference-segmenter/corpus/tei/'
+    reference_segmenter_output = directory + '/../grobid/grobid-trainer/resources/dataset/reference-segmenter/corpus/tei/'
+    citation_output = directory + '/../grobid/grobid-trainer/resources/dataset/citation/corpus/'
 
-    val = Validator(ground_truth_directory = scoap3_xmls, 
-                    bs_directory = input_directory,
-                    output_directory = output_directory)
+    val = Validator(ground_truth_directory=scoap3_xmls,
+                    bs_directory=input_directory,
+                    reference_segmenter_output=reference_segmenter_output,
+                    citation_output=citation_output)
     val.reference_segmenter_validation()
