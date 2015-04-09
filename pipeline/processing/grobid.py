@@ -1,9 +1,9 @@
 from os import environ, path
 
 class GrobidTrainer():
-    """
-    Wrapper class for calling grobid core
-    """
+    
+    """Wrapper class for calling grobid core."""
+
     def __init__(self, classpath, grobid_home, model):
         self.grobid_home = grobid_home
         self.model = model
@@ -12,30 +12,26 @@ class GrobidTrainer():
 
         from jnius import autoclass # $ pip install cython jnius
         self.bootloader = autoclass('com.simontuffs.onejar.Boot')
-    """
-    Wrapper for training model
-    """
+    
     def train(self):
+        """Wrapper for training model."""
         self.bootloader.main(['0', self.model,
                               '-gH', self.grobid_home])
-    """
-    Wrapper for evaluating model
-    """
+    
     def evaluate(self):
-        self.bootloader.main(['1', self.model,
-                              '-gH', self.grobid_home])
-    """
-    Wrapper for training and evaluating model
-    """
+        """Wrapper for evaluating model."""
+        self.bootloader.main(['1', self.model, '-gH', self.grobid_home])
+
     def trainAndEvaluate(self, split):
+        """Wrapper for training and evaluating model."""
         self.bootloader.main(['2', self.model,
                               '-gH', self.grobid_home,
                               '-s', split])
 
 class GrobidCore():
-    """
-    Wrapper class for calling grobid core
-    """
+    
+    """Wrapper class for calling grobid core."""
+
     def __init__(self,
                  classpath,
                  grobid_home,
@@ -51,58 +47,49 @@ class GrobidCore():
 
         from jnius import autoclass # $ pip install cython jnius
         self.bootloader = autoclass('com.simontuffs.onejar.Boot')
-    """
-    Wrapper for calling processHeader
-    """
+    
     def processHeader(self):
+        """Wrapper for calling processHeader."""
         self.bootloader.main(['-gH', self.grobid_home,
                               '-gP', self.grobid_properties,
                               '-dIn', self.grobid_input,
                               '-dOut', self.grobid_output,
                               '-exe', 'processHeader'])
-    """
-    Wrapper for calling processFullText
-    """
+    
     def processFullText(self):
+        """Wrapper for calling processFullText."""
         pass
-    """
-    Wrapper for calling processDate
-    """
+    
     def processDate(self):
+        """Wrapper for calling processDate."""
         pass
-    """
-    Wrapper for calling processAuthorsHeader
-    """
+    
     def processAuthorsHeader(self):
+        """Wrapper for calling processAuthorsHeader."""
         pass
-        """
-    Wrapper for calling processAuthorsCitation
-    """
+        
     def processAuthorsCitation(self):
+        """Wrapper for calling processAuthorsCitation."""
         pass
-    """
-    Wrapper for calling processAffiliation
-    """
+    
     def processAffiliation(self):
+        """Wrapper for calling processAffiliation."""
         pass
-    """
-    Wrapper for calling processRawReference
-    """
+    
     def processRawReference(self):
+        """Wrapper for calling processRawReference."""
         pass
-    """
-    Wrapper for calling processReferences
-    """
+    
     def processReferences(self):
+        """Wrapper for calling processReferences."""
         self.bootloader.main(['-gH', self.grobid_home,
                               '-gP', self.grobid_properties,
                               '-dIn', self.grobid_input,
                               '-dOut', self.grobid_output,
                               '-exe', 'processReferences'])
-    """
-    Wrapper for calling processReferences
-    """
+    
     def createTrainingReferenceSegmentation(self):
+        """Wrapper for calling processReferences."""
         self.bootloader.main(['-gH', self.grobid_home,
                               '-gP', self.grobid_properties,
                               '-dIn', self.grobid_input,
@@ -119,7 +106,7 @@ if __name__ == '__main__':
 
     classpath_core = directory + '/../grobid/grobid-core.jar'
     grobid_core = GrobidCore(classpath = classpath_core,
-                             grobid_home = exitgrobid_home,
+                             grobid_home = grobid_home,
                              grobid_properties = grobid_properties,
                              grobid_input = grobid_input,
                              grobid_output = grobid_output)
