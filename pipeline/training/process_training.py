@@ -5,17 +5,15 @@ from bs4 import BeautifulSoup
 MIN_RECORD = 987 ; MAX_RECORD = 10000
 
 class DocumentManager():
-    """
-    Downloads xml and pdf for articles in the SCOAP3 repository.
-    """
+    
+    """Downloads xml and pdf for articles in the SCOAP3 repository."""
+
     def __init__(self, xml_output, pdf_output):
         self.xml_output = xml_output
         self.pdf_output = pdf_output
 
     def get_publisher(self, html):
-        """
-        Retrieves publisher meta data field--if present--from html document.
-        """
+        """Retrieves publisher meta data field--if present--from html document."""
         soup = BeautifulSoup(html)
         try:
             return soup.find("meta", {"name":"citation_publisher"})['content']
@@ -23,9 +21,7 @@ class DocumentManager():
             return None
 
     def retrieve_training_documents(self, publisher):
-        """
-        Downloads xml and pdf for articles in the SCOAP3 repository.
-        """
+        """Downloads xml and pdf for articles in the SCOAP3 repository."""
         pdfs_downloaded = 0 ; xmls_downloaded = 0
 
         for i in xrange(MIN_RECORD, MAX_RECORD):
