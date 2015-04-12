@@ -19,57 +19,7 @@
 
 \mode<presentation> {
 
-% The Beamer class comes with a number of default slide themes
-% which change the colors and layouts of slides. Below this is a list
-% of all the themes, uncomment each in turn to see what they look like.
-
-%\usetheme{default}
-%\usetheme{AnnArbor}
-%\usetheme{Antibes}
-%\usetheme{Bergen}
-%\usetheme{Berkeley}
-%\usetheme{Berlin}
-%\usetheme{Boadilla}
-%\usetheme{CambridgeUS}
-%\usetheme{Copenhagen}
-%\usetheme{Darmstadt}
-%\usetheme{Dresden}
-%\usetheme{Frankfurt}
-%\usetheme{Goettingen}
-%\usetheme{Hannover}
-%\usetheme{Ilmenau}
-%\usetheme{JuanLesPins}
-%\usetheme{Luebeck}
 \usetheme{Madrid}
-%\usetheme{Malmoe}
-%\usetheme{Marburg}
-%\usetheme{Montpellier}
-%\usetheme{PaloAlto}
-%\usetheme{Pittsburgh}
-%\usetheme{Rochester}
-%\usetheme{Singapore}
-%\usetheme{Szeged}
-%\usetheme{Warsaw}
-
-% As well as themes, the Beamer class has a number of color themes
-% for any slide theme. Uncomment each of these in turn to see how it
-% changes the colors of your current slide theme.
-
-%\usecolortheme{albatross}
-%\usecolortheme{beaver}
-%\usecolortheme{beetle}
-%\usecolortheme{crane}
-%\usecolortheme{dolphin}
-%\usecolortheme{dove}
-%\usecolortheme{fly}
-%\usecolortheme{lily}
-%\usecolortheme{orchid}
-%\usecolortheme{rose}
-%\usecolortheme{seagull}
-%\usecolortheme{seahorse}
-%\usecolortheme{whale}
-%\usecolortheme{wolverine}
-
 
 \setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
 }
@@ -78,13 +28,18 @@
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
 \usepackage{amssymb}
 \usepackage{amsmath}
+\usepackage{textpos}
+\usepackage{subfigure}
+\usepackage{cite}
+
+\DeclareMathOperator*{\argmax}{\arg\!\max}
 
 \title[Automatic Metadata Extraction]{Automatic Metadata Extraction with Conditional Random Fields} % The short title appears at the bottom of every slide, the full title is only on the title page
 
 \author{Joseph Boyd} % Your name
 \institute[EPFL] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 {
-\'Ecole Polytechnique F\'ed\'erale de Lausanne \\ % Your institution for the title page
+\'Ecole Polytechnique F\'eq\'erale de Lausanne \\ % Your institution for the title page
 \medskip
 \textit{joseph.boyd@epfl.ch} % Your email address
 }
@@ -98,37 +53,129 @@
 
 %------------------------------------------------
 
-\section{Project Objectives}
+\section{The Problem}
 \begin{frame}[noframenumbering]{Outline}
-\tableofcontents[currentsection]
+\tableofcontents[currentsection, currentsubsection]
 \end{frame}
 
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Project Objectives}
+\frametitle{The Problem}
 \begin{itemize}
-\item Take the existing state-of-the-art in metadata extraction and optimise it for HEP papers
-\item We will use Conditional Random Fields (CRFs) to build a probabilistic model
-\item CRFs combine ideas from log linear models (logistic regressions) and hidden Markov models (HMMs)
+\item Metadata extraction of scientific articles is a difficult and well-studied problem
+\item Metadata usually refers to header information (title, authors, affiliations, publisher...), bibliographic information (citations and their sub-components), document structure (sections, etc.)
+\item Extraction of metadata refers to processing and then \emph{classifying} text blocks and other components of the document.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{The Problem - An Illustration}
+\begin{figure}[!t]
+\center
+\subfigure{\includegraphics[width=2.25in]{figures/header1.pdf} \label{fig:predictionerror}}
+%\hfill
+%\subfigure{\raisebox{19mm}{\includegraphics[width=0.5in]{Figures/plus.png} \label{fig:predictionerror}}}
+%\hfill
+\subfigure{\includegraphics[width=2.25in]{figures/header2.pdf} \label{fig:logvsrand}}
+\end{figure}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{The Problem - Some Assumptions}
+\begin{itemize}
+\item We are always dealing with PDF documents, and an OCR tool gives us access to the plaintext and OCR information (font, size, orientation,...)
+\item Metadata has structure and is not completely random, but it is infeasible to model this deterministically $\Rightarrow$ the task is inherently error-prone
+\item There is no one-size-fits-all model for processing a full document $\Rightarrow$ the problem must be decomposed.
 \end{itemize}
 \end{frame}
 
 %------------------------------------------------
 
+\begin{frame}
+\frametitle{The Problem - Solutions}
+There are a number of approaches to metadata extraction:
+\begin{itemize}
+\item Template-based
+\item Knowledge base (consult online repositories)
+\item Machine learning techniques (HMMs, SVMs, CRFs)
+\end{itemize}
+In practice, tools for metadata extraction combine these approaches (an example of which we will see later) % \cite{comparison}
+\end{frame}
+
+%------------------------------------------------
+
 \section{Theory}
+\subsection{Hidden Markov Models}
+
+%------------------------------------------------
+
 \begin{frame}[noframenumbering]{Outline}
-\tableofcontents[currentsection]
+\tableofcontents[currentsubsection]
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Hidden Markov Models (HMMs)}
+\begin{itemize}
+\item Hidden Markov Models (HMM) build a probabilistic model on sequential data, 
+\item We have a sequence of observations, and we want to predict the ``hidden'' states which generate them
+\item The Markov condition postulates a dependence of one state to the next as we move in time
+\item HMMs have applications in fields as diverse as text processing, bioinformatics, and artificial intelligence.
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+A well-known application of HMMs is from Natural Language Processing (NLP) - Part of Speech (PoS) tagging.
+\frametitle{Hidden Markov Models (HMMs) - Example}
+\begin{figure}[!ht]
+\center
+\includegraphics[width=3in]{figures/pos1.pdf}
+\end{figure}
+
+\begin{figure}[!ht]
+\center
+\includegraphics[width=3in]{figures/pos2.png}
+\end{figure}
+Metadata extraction is a similar problem...
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Hidden Markov Models (HMMs) - Prediction}
+\begin{itemize}
+\item A Hidden Markov Model factorises in the following way:
+$$p(\mathbf{x}, \mathbf{y}) = \prod_{t=1}^T p(y_t | y_{t-1})p(x_t | y_t)$$
+\item The probabilities $p(y_t | y_{t-1})$ are ``transition'' probabilities, and $p(x_t | y_t) $``emission'' probabilities, and must be calculated in advance.
+\item When it comes to prediction, we use dynamic programming Viterbi algorithm ($\mathcal{O}(T|S|^2))$ to maximise the conditional distribution:
+$$\textbf{y}_{prediction} = \argmax_{\textbf{y}} p(\textbf{y} | \textbf{x}) = \argmax_{\textbf{y}}\Bigg\{\prod_{t=1}^T p(y_t | y_{t-1})p(x_t | y_t)\Bigg\}$$
+\end{itemize}
+Take home message: we can (efficiently) predict the hidden sequence by maximising a likelihood
 \end{frame}
 
 %------------------------------------------------
 
 \subsection{Logistic Regression}
+
+%------------------------------------------------
+
+\begin{frame}[noframenumbering]{Outline}
+\tableofcontents[currentsubsection]
+\end{frame}
+
+%------------------------------------------------
+
 \begin{frame}
 \frametitle{Logistic Regression}
 \begin{itemize}
 \item A logistic regression is used for classifying a data sample into two (binary) or more (multi) categories, thus,
-$$\hat{\text{y}}_{prediction} = \boldsymbol\beta^{T} \cdot \boldsymbol{x}_{sample},$$
+$$\hat{\text{y}}_{prediction} = \sigma\big(\boldsymbol\beta^{T} \cdot \boldsymbol{x}_{sample}\big),$$
 where $\hat{y}$ is the prediction (represented as a probability), $\boldsymbol{x} = [x_0, x_1, ..., x_D]^T$ is a data sample, and $\boldsymbol\beta = [\beta_0, \beta_1, ..., \beta_D]^T$ is the vector of parameters we must \emph{learn}
 \item We construct a (maximum log likelihood) cost function in terms of this parameter vector,
 $$\mathcal{L}(\boldsymbol\beta) = \sum_{n=1}^N y_n\boldsymbol\beta^T\boldsymbol{x}_n - \log[1 + \exp(\boldsymbol\beta^T\boldsymbol{x}_n)]$$
@@ -150,32 +197,66 @@ Take home message: we can automatically build mathematical functions for making 
 
 %------------------------------------------------
 
-\subsection{Hidden Markov Models}
-\begin{frame}
-\frametitle{Hidden Markov Models (HMMs)}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Hidden Markov Models (HMMs) - Example}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Solving Hidden Markov Models}
-\begin{itemize}
-\item Solved using dynamic programming techniques
-\end{itemize}
-Take home message: once we have the model, we can make predictions for a given input \emph{efficiently}.
-\end{frame}
-
-%------------------------------------------------
-
 \subsection{Conditional Random Fields}
+
+%------------------------------------------------
+
+\begin{frame}[noframenumbering]{Outline}
+\tableofcontents[currentsubsection]
+\end{frame}
+
+%------------------------------------------------
+
 \begin{frame}
 \frametitle{Conditional Random Fields (CRFs)}
+\begin{itemize}
+\item CRFs belong with HMMs to a broader class of models called \emph{graphical} models
+\item Classifiers such as logistic regression only predict a single class; graphical models predict a full sequence
+\item Because modelling the conditional probability, $p(\textbf{y} | \textbf{x})$ is sufficient for classification, a CRF avoids modelling the distribution on $\textbf{x}$, while allowing freedom over the choice of features (expressed as feature functions)
+\item Whereas with a HMM we model the observation of word tokens, with a CRF, we can also model richer information about a token
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------
+
+\begin{frame}
+
+\frametitle{Conditional Random Fields (CRFs)}
+\begin{itemize}
+\item A conditional random field factorises as,
+$$p(\textbf{y}|\textbf{x}) = \frac{p(\textbf{x}, \textbf{y})}{\sum_{y'}{p(\textbf{x}, \textbf{y}')}},$$ where
+$$
+p(\textbf{x}, \textbf{y}) = \text{exp} \Bigg\{
+\sum_{i \in S}
+\sum_{j \in S}
+\lambda_{ij}
+F_{ij}(\textbf{y})
++ 
+\sum_{i \in S}
+\sum_{o \in O}
+\mu_{io}
+F_{io}(\textbf{x}, \textbf{y})
+\Bigg\}
+$$
+$F_{io}(\textbf{x}, \textbf{y}) \approx \text{feature extraction}$
+\end{itemize}
+
+\end{frame}
+
+
+%IT'S ALL VERY WELL FOR HMMS WHICH DROP THE P(X) ANYWAY WHEN IT COMES TO PREDICTION, BUT THIS IS NO GOOD FOR TRAINING A CLASSIFIER. AND SO WE DIVIDE THROUGH WITH THE P(X) AND FACTOR IT OUT IMPLICITLY BY THE LAW OF TOTAL PROBABILITIES. THIS IS THE TRICK OF CONDITIONAL RANDOM FIELDS.
+
+% ------------------------------------------------
+
+\begin{frame}
+\frametitle{Conditional Random Fields (CRFs)}
+\begin{itemize}
+\item Like a logistic regression we have a cost function to minimise using greatest ascent techniques and solve for model parameters
+\item There are some further tricks during training (inference algorithms)
+\item And the optimisation algorithm is usually an approximation (l-BFGS)
+\item But in the end, because the cost is dependent on the labels, we use the Viterbi algorithm to do predictions, just like HMMs.
+\end{itemize}
+Take home message: CRFs are very similar to HMMs; we predict in the same way; but we learn the parameters through training like logistic regression; and modelling the conditional distribution gives us the freedom of exploiting richer features.
 \end{frame}
 
 % ------------------------------------------------
@@ -192,12 +273,12 @@ Take home message: once we have the model, we can make predictions for a given i
 \begin{itemize}
 \item Grobid (GeneRation Of BIbliographic Data) is a Java-based tool for managing CRF models 
 \item It coordinates the training and usage of a ``cascade'' of models, computed with a CRF engine backend
+\item CROSSREF
 \end{itemize}
 \begin{figure}[!ht]
 \center
 \includegraphics[width=4in]{figures/cascade.pdf}
 \caption{Cascade of models used by Grobid}
-\label{fig:cascade}
 \end{figure}
 \end{frame}
 
@@ -205,6 +286,7 @@ Take home message: once we have the model, we can make predictions for a given i
 
 \begin{frame}
 \frametitle{Grobid - Details}
+TEI example
 \end{frame}
 
 %------------------------------------------------
@@ -218,6 +300,7 @@ Take home message: once we have the model, we can make predictions for a given i
 
 \begin{frame}
 \frametitle{Initial Results}
+TABLE HERE
 \end{frame}
 
 %------------------------------------------------
@@ -234,5 +317,28 @@ Take home message: once we have the model, we can make predictions for a given i
 \end{frame}
 
 %------------------------------------------------
+
+\begin{frame}
+\frametitle{Project Objectives}
+\begin{itemize}
+\item There are some special cases we want to deal with in HEP papers
+\item Take the existing state-of-the-art in metadata extraction and optimise it for HEP papers
+\item We will use Conditional Random Fields (CRFs) to build a probabilistic model
+\item CRFs combine ideas from log linear models (logistic regressions) and hidden Markov models (HMMs)
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{References}
+
+\begin{thebibliography}{0}
+
+\bibitem{comparison} LIPINSKI, M., YAO, K., BREITINGER, C., BEEL, J., AND GIPP, B. Evaluation of header metadata extraction approaches and tools for scientific PDF documents. In JCDL (2013), pp. 385-386.
+
+\end{thebibliography}
+
+\end{frame}
 
 \end{document} 
