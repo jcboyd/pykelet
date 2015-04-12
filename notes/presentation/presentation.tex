@@ -31,6 +31,38 @@
 \usepackage{textpos}
 \usepackage{subfigure}
 \usepackage{cite}
+\usepackage[T1]{fontenc}
+
+\usepackage{listings}
+
+
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  showstringspaces=false,
+  commentstyle=\color{gray}\upshape
+numbers=right, 
+                numberstyle=\tiny, 
+                breaklines=true,
+                numbersep=5pt,
+                xleftmargin=.25in,
+                xrightmargin=.25in
+}
+
+\lstdefinelanguage{XML}
+{
+  morestring=[b]",
+  morestring=[s]{>}{<},
+  morecomment=[s]{<?}{?>},
+  stringstyle=\color{black},
+  identifierstyle=\color{darkblue},
+  keywordstyle=\color{cyan},
+  morekeywords={xmlns,version,type}% list your attributes here
+}
 
 \DeclareMathOperator*{\argmax}{\arg\!\max}
 
@@ -64,8 +96,9 @@
 \frametitle{The Problem}
 \begin{itemize}
 \item Metadata extraction of scientific articles is a difficult and well-studied problem
-\item Metadata usually refers to header information (title, authors, affiliations, publisher...), bibliographic information (citations and their sub-components), document structure (sections, etc.)
+\item Metadata usually refers to header information (title, authors, publisher, abstract...), bibliographic information (citations and their sub-components), document structure (sections, etc.)
 \item Extraction of metadata refers to processing and then \emph{classifying} text blocks and other components of the document.
+\item The problem is hard because of the wide variety of document formats that may appear
 \end{itemize}
 \end{frame}
 
@@ -121,7 +154,7 @@ In practice, tools for metadata extraction combine these approaches (an example 
 \begin{frame}
 \frametitle{Hidden Markov Models (HMMs)}
 \begin{itemize}
-\item Hidden Markov Models (HMM) build a probabilistic model on sequential data, 
+\item Hidden Markov Models (HMM) build a probabilistic model on sequential data
 \item We have a sequence of observations, and we want to predict the ``hidden'' states which generate them
 \item The Markov condition postulates a dependence of one state to the next as we move in time
 \item HMMs have applications in fields as diverse as text processing, bioinformatics, and artificial intelligence.
@@ -156,7 +189,7 @@ $$p(\mathbf{x}, \mathbf{y}) = \prod_{t=1}^T p(y_t | y_{t-1})p(x_t | y_t)$$
 \item When it comes to prediction, we use dynamic programming Viterbi algorithm ($\mathcal{O}(T|S|^2))$ to maximise the conditional distribution:
 $$\textbf{y}_{prediction} = \argmax_{\textbf{y}} p(\textbf{y} | \textbf{x}) = \argmax_{\textbf{y}}\Bigg\{\prod_{t=1}^T p(y_t | y_{t-1})p(x_t | y_t)\Bigg\}$$
 \end{itemize}
-Take home message: we can (efficiently) predict the hidden sequence by maximising a likelihood
+Take home message: we can (efficiently) predict the hidden sequence by maximising a likelihood.
 \end{frame}
 
 %------------------------------------------------
@@ -192,7 +225,7 @@ $$\mathcal{L}(\boldsymbol\beta) = \sum_{n=1}^N y_n\boldsymbol\beta^T\boldsymbol{
 \item We use a numerical method to find the global minimum of error, for example, the method of gradient descent:
 $$\boldsymbol\beta^{k+1} = \boldsymbol\beta^{k} - \alpha\nabla\mathcal{L}(\boldsymbol\beta^{k})$$
 \end{itemize}
-Take home message: we can automatically build mathematical functions for making predictions
+Take home message: we can automatically build mathematical functions for making predictions.
 \end{frame}
 
 %------------------------------------------------
@@ -212,6 +245,7 @@ Take home message: we can automatically build mathematical functions for making 
 \begin{itemize}
 \item CRFs belong with HMMs to a broader class of models called \emph{graphical} models
 \item Classifiers such as logistic regression only predict a single class; graphical models predict a full sequence
+\item CRFs learn paramaters like logistic regression, unlike HMMs where they are precomputed
 \item Because modelling the conditional probability, $p(\textbf{y} | \textbf{x})$ is sufficient for classification, a CRF avoids modelling the distribution on $\textbf{x}$, while allowing freedom over the choice of features (expressed as feature functions)
 \item Whereas with a HMM we model the observation of word tokens, with a CRF, we can also model richer information about a token
 \end{itemize}
@@ -284,9 +318,34 @@ Take home message: CRFs are very similar to HMMs; we predict in the same way; bu
 
 %------------------------------------------------
 
-\begin{frame}
+\begin{frame}[fragile]
 \frametitle{Grobid - Details}
-TEI example
+
+\begin{figure}
+\lstset{language=XML}
+\begin{lstlisting}
+<bibl>
+	<author>V. Gundelach and D. Eisenburger</author>, \&quot; 
+	<title level="a">Principle of a direction sensitive borehole antenna with advanced technology and data examples</title>, \&quot; in 
+	<title level="m">Proceedings of the 4th International Workshop on Advanced Ground Penetrating Radar (IWAGPR \&apos;07)</title>, pp. 
+	<biblScope type="pp">28–31</biblScope>, 
+	<date>June 2007</date>.
+</bibl>
+\end{lstlisting}
+\caption{Sample tagged citation for Grobid training input.}
+\end{figure}
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Grobid - Training and Prediction}
+\begin{figure}[!ht]
+\center
+\includegraphics[width=4.5in]{figures/grobid.pdf}
+\caption{Training and prediction with Grobid}
+\end{figure}
 \end{frame}
 
 %------------------------------------------------
@@ -299,21 +358,79 @@ TEI example
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Initial Results}
-TABLE HERE
-\end{frame}
+\frametitle{Initial Results - Reference Segmentation}
+\begin{center}
+\begingroup
 
-%------------------------------------------------
+\fontsize{8pt}{10pt}\selectfont
+\begin{table}[h]
+\begin{tabular}{ccccc}
+\hline
+label		&accuracy	&precision	&recall		&f1 \\
+\hline
+<label>		&99.78		&99.56		&100		&99.78\\
+<reference>		&100		&100		&100		&100\\
+\hline
+(micro average) & 99.89		&99.78		&100		&99.89	\\
+(macro average) &	99.89 & 99.78	& 100 & 99.89	\\
+\hline
+\end{tabular}
+\caption[Table caption text]{Evaluation results for reference segmentation}
+\end{table}
 
-\section{Next Steps}
-\begin{frame}[noframenumbering]{Outline}
-\tableofcontents[currentsection]
+\endgroup
+\end{center}
+
 \end{frame}
 
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Next Steps}
+\frametitle{Initial Results - Citations}
+
+\begin{center}
+\begingroup
+\fontsize{8pt}{10pt}\selectfont
+
+\begin{table}[h]
+\begin{tabular}{ccccc}
+\hline
+label & accuracy & precision & recall & f1 \\
+\hline
+<author>	&92.97&49.07&91.31&63.84 \\
+<journal>	&	97.06&		78.61	&	68.69	&	73.32\\
+<volume>&		97.72&		97.57	&	63.25	&	76.75\\
+<title>&		95.93	&	61.96	&	91.51	&	73.89\\
+<pages>&		96.5		&67.71	&	87.66	&	76.41\\
+<date>&		95.99	&	74.38	&	72.93	&	73.65\\
+<booktitle>&		98.79	&	60	&	9.02	&	15.69\\
+<location>&		98.89&		0	&	0	&	0\\
+<issue>&		99.47	&	0	&	0	&	0\\
+<note>&		99.77	&	0	&	0	&	0\\
+<editor>&		99.77&		0	&	0	&	0\\
+<publisher>&		99.37&		0	&	0	&	0\\
+<web>&		99.97	&	0	&	0	&	0\\
+<tech>&		99.85	&	0	&	0	&	0\\
+<institution>&	99.82	&	0	&	0	&	0\\
+<pubnum>&		99.96	&	0	&	0	&	0\\
+\hline
+(micro average) & 98.24	&	66.23&		71.71	&	68.86	\\
+(macro average) & 98.24&		30.58&		30.27&		28.35	\\
+\hline
+\end{tabular}
+\caption[Table caption text]{Evaluation results for citations}
+\end{table}
+
+\endgroup
+\end{center}
+
+\end{frame}
+
+%------------------------------------------------
+
+\section{Project Objectives}
+\begin{frame}[noframenumbering]{Outline}
+\tableofcontents[currentsection]
 \end{frame}
 
 %------------------------------------------------
@@ -336,6 +453,7 @@ TABLE HERE
 \begin{thebibliography}{0}
 
 \bibitem{comparison} LIPINSKI, M., YAO, K., BREITINGER, C., BEEL, J., AND GIPP, B. Evaluation of header metadata extraction approaches and tools for scientific PDF documents. In JCDL (2013), pp. 385-386.
+\bibitem{crfs} C. Sutton and A. McCallum (2006), An Introduction to Conditional Random Fields for Relational Learning., In, In Introduction to Statistical Relational Learning., MIT Press.
 
 \end{thebibliography}
 
