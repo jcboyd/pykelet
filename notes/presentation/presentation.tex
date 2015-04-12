@@ -95,10 +95,10 @@ numbers=right,
 \begin{frame}
 \frametitle{The Problem}
 \begin{itemize}
-\item Metadata extraction of scientific articles is a difficult and well-studied problem
+\item Metadata extraction of scientific articles is a well-studied problem
 \item Metadata usually refers to header information (title, authors, publisher, abstract...), bibliographic information (citations and their sub-components), document structure (sections, etc.)
 \item Extraction of metadata refers to processing and then \emph{classifying} text blocks and other components of the document.
-\item The problem is hard because of the wide variety of document formats that may appear
+\item The problem is difficult because of the wide variety of document formats that may appear
 \end{itemize}
 \end{frame}
 
@@ -119,8 +119,8 @@ numbers=right,
 \begin{frame}
 \frametitle{The Problem - Some Assumptions}
 \begin{itemize}
-\item We are always dealing with PDF documents, and an OCR tool gives us access to the plaintext and OCR information (font, size, orientation,...)
-\item Metadata has structure and is not completely random, but it is infeasible to model this deterministically $\Rightarrow$ the task is inherently error-prone
+\item We are always dealing with PDF documents, and an OCR tool gives us access to the plaintext and OCR information (font, size, orientation,...).
+\item Metadata has structure and is not completely random, but it is infeasible to model deterministically $\Rightarrow$ the task is inherently error-prone.
 \item There is no one-size-fits-all model for processing a full document $\Rightarrow$ the problem must be decomposed.
 \end{itemize}
 \end{frame}
@@ -135,7 +135,7 @@ There are a number of approaches to metadata extraction:
 \item Knowledge base (consult online repositories)
 \item Machine learning techniques (HMMs, SVMs, CRFs)
 \end{itemize}
-In practice, tools for metadata extraction combine these approaches (an example of which we will see later) % \cite{comparison}
+In practice, tools for metadata extraction combine these approaches (an example of which we will see later). % \cite{comparison}
 \end{frame}
 
 %------------------------------------------------
@@ -154,9 +154,9 @@ In practice, tools for metadata extraction combine these approaches (an example 
 \begin{frame}
 \frametitle{Hidden Markov Models (HMMs)}
 \begin{itemize}
-\item Hidden Markov Models (HMM) build a probabilistic model on sequential data
-\item We have a sequence of observations, and we want to predict the ``hidden'' states which generate them
-\item The Markov condition postulates a dependence of one state to the next as we move in time
+\item Hidden Markov Models (HMM) form a probabilistic model on sequential data.
+\item We have a sequence of observations, and we want to predict the ``hidden'' states which generate them.
+\item The Markov condition postulates a dependence of one state to the next as we move in time.
 \item HMMs have applications in fields as diverse as text processing, bioinformatics, and artificial intelligence.
 \end{itemize}
 \end{frame}
@@ -219,7 +219,7 @@ $$\mathcal{L}(\boldsymbol\beta) = \sum_{n=1}^N y_n\boldsymbol\beta^T\boldsymbol{
 
 \begin{frame}
 \frametitle{Solving a Logistic Regression}\begin{itemize}
-\item Building a regression model is equivalent to solving a convex optimisation problem (i.e. maximising the cost function)
+\item Building a regression model is equivalent to solving a convex optimisation problem (i.e. minimising the cost function)
 \item We know the form of the model, and we have a set of (training) data
 \item We want to choose the model parameters for which the error is minimised (think line of best fit)
 \item We use a numerical method to find the global minimum of error, for example, the method of gradient descent:
@@ -243,11 +243,11 @@ Take home message: we can automatically build mathematical functions for making 
 \begin{frame}
 \frametitle{Conditional Random Fields (CRFs)}
 \begin{itemize}
-\item CRFs belong with HMMs to a broader class of models called \emph{graphical} models
-\item Classifiers such as logistic regression only predict a single class; graphical models predict a full sequence
-\item CRFs learn paramaters like logistic regression, unlike HMMs where they are precomputed
-\item Because modelling the conditional probability, $p(\textbf{y} | \textbf{x})$ is sufficient for classification, a CRF avoids modelling the distribution on $\textbf{x}$, while allowing freedom over the choice of features (expressed as feature functions)
-\item Whereas with a HMM we model the observation of word tokens, with a CRF, we can also model richer information about a token
+\item CRFs belong with HMMs to a class of models called \emph{graphical} models.
+\item Classifiers such as logistic regression only predict a single class; graphical models predict a full sequence.
+\item CRFs learn paramaters like logistic regression, unlike HMMs where they are precomputed.
+\item Modelling the conditional probability, $p(\textbf{y} | \textbf{x})$ is sufficient for classification, so a CRF avoids modelling the distribution on $\textbf{x}$, while allowing a freer choice of features (expressed as feature functions).
+\item Whereas with a HMM we model an observation's \emph{occurrence}, with a CRF we can  model richer information about an observation.
 \end{itemize}
 \end{frame}
 
@@ -270,9 +270,9 @@ F_{ij}(\textbf{y})
 \sum_{o \in O}
 \mu_{io}
 F_{io}(\textbf{x}, \textbf{y})
-\Bigg\}
+\Bigg\}.
 $$
-$F_{io}(\textbf{x}, \textbf{y}) \approx \text{feature extraction}$
+Choosing $F_{io}(\textbf{x}, \textbf{y}) \approx \text{feature engineering}$
 \end{itemize}
 
 \end{frame}
@@ -285,12 +285,12 @@ $F_{io}(\textbf{x}, \textbf{y}) \approx \text{feature extraction}$
 \begin{frame}
 \frametitle{Conditional Random Fields (CRFs)}
 \begin{itemize}
-\item Like a logistic regression we have a cost function to minimise using greatest ascent techniques and solve for model parameters
-\item There are some further tricks during training (inference algorithms)
-\item And the optimisation algorithm is usually an approximation (l-BFGS)
-\item But in the end, because the cost is dependent on the labels, we use the Viterbi algorithm to do predictions, just like HMMs.
+\item Like a logistic regression we have a cost function to minimise using greatest ascent techniques and solve for model parameters.
+\item And the optimisation algorithm is usually an approximation (l-BFGS).
+\item There are some further tricks during training (inference algorithms).
+\item Prediction is (as with HMMs) done using the Viterbi algorithm, since our factorisation is a function of both observations ($\mathbf{x}$) and states ($\mathbf{y}$).
 \end{itemize}
-Take home message: CRFs are very similar to HMMs; we predict in the same way; but we learn the parameters through training like logistic regression; and modelling the conditional distribution gives us the freedom of exploiting richer features.
+Take home message: CRFs are very similar to HMMs: we predict in the same way, but we learn parameters through training. Modelling the conditional distribution gives us the freedom to exploit richer features.
 \end{frame}
 
 % ------------------------------------------------
@@ -305,13 +305,13 @@ Take home message: CRFs are very similar to HMMs; we predict in the same way; bu
 \begin{frame}
 \frametitle{Grobid}
 \begin{itemize}
-\item Grobid (GeneRation Of BIbliographic Data) is a Java-based tool for managing CRF models 
-\item It coordinates the training and usage of a ``cascade'' of models, computed with a CRF engine backend
-\item CROSSREF
+\item Grobid (GeneRation Of BIbliographic Data) is a Java-based tool for managing CRF models for metadata extraction.
+\item It coordinates the training and usage of a ``cascade'' of models, computed with a CRF engine backend.
+\item It may also query the web service ``CrossRef'' for verification.
 \end{itemize}
 \begin{figure}[!ht]
 \center
-\includegraphics[width=4in]{figures/cascade.pdf}
+\includegraphics[width=3.75in]{figures/cascade.pdf}
 \caption{Cascade of models used by Grobid}
 \end{figure}
 \end{frame}
@@ -438,10 +438,9 @@ label & accuracy & precision & recall & f1 \\
 \begin{frame}
 \frametitle{Project Objectives}
 \begin{itemize}
-\item There are some special cases we want to deal with in HEP papers
-\item Take the existing state-of-the-art in metadata extraction and optimise it for HEP papers
-\item We will use Conditional Random Fields (CRFs) to build a probabilistic model
-\item CRFs combine ideas from log linear models (logistic regressions) and hidden Markov models (HMMs)
+\item HEP papers have some particularities, such as collaborations of thousands of authors.
+\item We aim to create tailored feature functions that improve performance (probably focusing on the header and segmentation).
+\item As well as to configure Grobid for live use.
 \end{itemize}
 \end{frame}
 
