@@ -1,0 +1,185 @@
+357 tei files
+* Load patterns
+* Load training data
+   1000 sequences loaded
+   2000 sequences loaded
+   3000 sequences loaded
+* Initialize the model
+* Summary
+    nb train:    3263
+    nb labels:   34
+    nb blocks:   614349
+    nb features: 20888988
+* Train the model with l-bfgs
+  [   1] obj=260186,99  act=1149574  err=50,27%/100,00% time=38,01s/38,01s
+  [   2] obj=229463,38  act=1196999  err=46,38%/100,00% time=21,47s/59,48s
+  [   3] obj=189501,29  act=1127883  err=39,74%/100,00% time=21,75s/81,23s
+  [   4] obj=175783,84  act=1009767  err=48,17%/100,00% time=22,43s/103,66s
+  [   5] obj=117607,78  act=1106168  err=28,02%/100,00% time=23,11s/126,77s
+  [   6] obj=109462,03  act=1016932  err=24,61%/100,00% time=22,69s/149,45s
+* Save the model
+* Done
+[Wapiti] Loading model: "/home/joseph/Desktop/grobid/grobid-home/models/citation/model.wapiti"
+Model path: /home/joseph/Desktop/grobid/grobid-home/models/citation/model.wapiti
+Labeling took: 2029 ms
+total: 28358
+
+===== Token-level results =====
+
+<journal>	<journal> (token): true positives: 1135
+		false positives:167
+		true negatives: 26167
+		false negatives: 889
+		all expected: 2023
+
+<author>	<author> (token): true positives: 7716
+		false positives:2363
+		true negatives: 18186
+		false negatives: 93
+		all expected: 7810
+
+<title>	<title> (token): true positives: 7430
+		false positives:2065
+		true negatives: 18327
+		false negatives: 536
+		all expected: 7966
+
+<volume>	<volume> (token): true positives: 401
+		false positives:10
+		true negatives: 27706
+		false negatives: 241
+		all expected: 642
+
+<other>	<other> (token): true positives: 3562
+		false positives:569
+		true negatives: 23054
+		false negatives: 1173
+		all expected: 4735
+
+<pages>	<pages> (token): true positives: 1708
+		false positives:395
+		true negatives: 26010
+		false negatives: 245
+		all expected: 1953
+
+<date>	<date> (token): true positives: 602
+		false positives:206
+		true negatives: 27196
+		false negatives: 354
+		all expected: 956
+
+<booktitle>	<booktitle> (token): true positives: 17
+		false positives:12
+		true negatives: 27117
+		false negatives: 1212
+		all expected: 1229
+
+<location>	<location> (token): true positives: 0
+		false positives:0
+		true negatives: 28080
+		false negatives: 278
+		all expected: 278
+
+<issue>	<issue> (token): true positives: 0
+		false positives:0
+		true negatives: 28302
+		false negatives: 56
+		all expected: 56
+
+<note>	<note> (token): true positives: 0
+		false positives:0
+		true negatives: 28283
+		false negatives: 75
+		all expected: 75
+
+<editor>	<editor> (token): true positives: 0
+		false positives:0
+		true negatives: 28151
+		false negatives: 207
+		all expected: 207
+
+<publisher>	<publisher> (token): true positives: 0
+		false positives:0
+		true negatives: 28216
+		false negatives: 142
+		all expected: 142
+
+<web>	<web> (token): true positives: 0
+		false positives:0
+		true negatives: 28317
+		false negatives: 41
+		all expected: 41
+
+<tech>	<tech> (token): true positives: 0
+		false positives:0
+		true negatives: 28266
+		false negatives: 92
+		all expected: 92
+
+<institution><institution> (token): true positives: 0
+		false positives:0
+		true negatives: 28230
+		false negatives: 128
+		all expected: 128
+
+<pubnum>	<pubnum> (token): true positives: 0
+		false positives:0
+		true negatives: 28333
+		false negatives: 25
+		all expected: 25
+
+label		accuracy	precision	recall		f1
+
+<journal>		96.28		87.17		56.08		68.25
+<author>		91.34		76.56		98.81		86.27
+<title>		90.83		78.25		93.27		85.1
+<volume>		99.11		97.57		62.46		76.16
+<other>		93.86		86.23		75.23		80.35
+<pages>		97.74		81.22		87.46		84.22
+<date>		98.03		74.5		62.97		68.25
+<booktitle>		95.68		58.62		1.38		2.7
+<location>		99.02		0		0		0
+<issue>		99.8		0		0		0
+<note>		99.74		0		0		0
+<editor>		99.27		0		0		0
+<publisher>		99.5		0		0		0
+<web>		99.86		0		0		0
+<tech>		99.68		0		0		0
+<institution>	99.55		0		0		0
+<pubnum>		99.91		0		0		0
+
+all labels		97.6		79.59		79.59		79.59	(micro average)
+			97.6		100		31.63		32.43	(macro average)
+
+===== Field-level results =====
+
+label		accuracy	precision	recall		f1
+
+<author>		92.97		49.07		91.31		63.84
+<journal>		97.06		78.61		68.69		73.32
+<volume>		97.72		97.57		63.25		76.75
+<title>		95.93		61.96		91.51		73.89
+<pages>		96.5		67.71		87.66		76.41
+<date>		95.99		74.38		72.93		73.65
+<booktitle>		98.79		60		9.02		15.69
+<location>		98.89		0		0		0
+<issue>		99.47		0		0		0
+<note>		99.77		0		0		0
+<editor>		99.77		0		0		0
+<publisher>		99.37		0		0		0
+<web>		99.97		0		0		0
+<tech>		99.85		0		0		0
+<institution>	99.82		0		0		0
+<pubnum>		99.96		0		0		0
+
+all fields		98.24		66.23		71.71		68.86	(micro average)
+			98.24		30.58		30.27		28.35	(macro average)
+
+===== Instance-level results =====
+
+Total expected instances: 		828
+Correct instances: 		156
+Instance-level recall:	18.84
+
+
+Split, training and evaluation for citation model is realized in 162554 ms
