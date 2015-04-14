@@ -1,0 +1,18 @@
+- 541:submission	455 papers
+
+	- 541__c:submission not 980:thesis	238 papers (GENERAL)
+
+		- tc c and not 0247:doi and 541:submission [and not tc t]	36 papers (CONFERENCE WITH NO DOI)
+
+		- tc c and 0247:doi and 541:submission [and not tc t]		31 papers (CONFERENCE WITH DOI)
+
+		- -0247:doi  541:submission -980:thesis -arxiv -980:conferencepaper		41 papers (NOT THESIS, NOT CONFERENCE--OTHER)
+
+		- => 541__c:submission not 980:thesis not 980:conferencepaper and (0247:doi OR arxiv)		130 papers (GENERAL)
+
+	- (541__c:submission  980:thesis) OR (tc t and 541:submission)	217 papers (THESES)
+
+Note:
+	tc c = 980:conferencepaper;
+	tc t = 980:thesis;
+
