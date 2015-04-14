@@ -371,4 +371,15 @@ Report 4</note>, <orgName>University Politehnica of Bucharest</orgName>,
 
 If we are to correct the segmentation done when creating the reference segmenter training set, it is useful to note segmentation is done simply by placing the delimeters, i.e. the labels. If the delimeter is correctly placed, the entire reference is correctly segmented. We may therefore proceed by checking the delimeters. If one of them is missing, it indicates a problem such as shown in Figure \ref{fig:segerror}, and further processing is required. Again, we are assuming the reliability of the OCR tool and the initial \texttt{segmentation} model to provide the \texttt{reference-segmenter} with the correct block of text as reference list.
 
+\subsection{Evaluation}
+\subsubsection{Why we use the F1 Statistic}
+
+Accuracy can be a misleading statistic when we have uneven representations of classes in the dataset, for example a majority of negatives examples. We may have high accuracy, where accuracy $= (TP + TN) / (TP + FN + FP + TN)$ i.e. the proportion of correct classifcations to total classifications. But we may still have inferior precision and recall:
+
+precision = $TP / (TP + FP)$ i.e. the proportion positives correctly claimed
+
+recall = $TP / TP + FN$ i.e. the number of all positives correctly claimed, (or the accuracy over positives)
+
+But here we see that if TN is large, accuracy may be very high, but not necessarily precision and recall. This might occur when the number of negatives, and in fact, when the number of negatives predominates, one can achieve excellent accuracy simply by always predicting negatives. This is why we need the alternative statistics of precision and recall. The F1 statistic is a nice way of summarising both at once as it is simply the harmonic mean of the two. Furthermore, because of this, a large imbalance in recall and precision resuts in a lower F1 score. It is necessary to be good in both precision and recall to have a good F1 score; the harmonic mean of any data is always upper-bounded by its arithmetic mean
+
 \end{document}
