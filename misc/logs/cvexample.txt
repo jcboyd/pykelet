@@ -1,0 +1,57 @@
+from sklearn.cross_validation import KFold 
+
+In [2]: KFold?
+
+In [3]: KFold(10, n_folds=5, indices=True)
+/home/joseph/anaconda/lib/python2.7/site-packages/sklearn/cross_validation.py:65: DeprecationWarning: The indices parameter is deprecated and will be removed (assumed True) in 0.17
+  stacklevel=1)
+Out[3]: sklearn.cross_validation.KFold(n=10, n_folds=5, shuffle=False, random_state=None)
+
+In [4]: list(KFold(10, n_folds=5, indices=True))
+/home/joseph/anaconda/lib/python2.7/site-packages/sklearn/cross_validation.py:65: DeprecationWarning: The indices parameter is deprecated and will be removed (assumed True) in 0.17
+  stacklevel=1)
+Out[4]: 
+[(array([2, 3, 4, 5, 6, 7, 8, 9]), array([0, 1])),
+ (array([0, 1, 4, 5, 6, 7, 8, 9]), array([2, 3])),
+ (array([0, 1, 2, 3, 6, 7, 8, 9]), array([4, 5])),
+ (array([0, 1, 2, 3, 4, 5, 8, 9]), array([6, 7])),
+ (array([0, 1, 2, 3, 4, 5, 6, 7]), array([8, 9]))]
+
+In [5]: import numpy as np
+
+In [6]: a = np.array(, dtype=np.ob)
+np.obj2sctype  np.object      np.object0     np.object_     
+
+In [6]: a = np.array(, dtype=np.obje)
+np.object   np.object0  np.object_  
+
+In [6]: a = np.array(["a.pdf", "b.pdf", "c.pdf", "d.pdf", "e.pdf", "f.pdf", "h.pdf", "i.pdf", "j.pdf", "k.pdf"], dtype=np.object)
+
+In [7]: a
+Out[7]: 
+array(['a.pdf', 'b.pdf', 'c.pdf', 'd.pdf', 'e.pdf', 'f.pdf', 'h.pdf',
+       'i.pdf', 'j.pdf', 'k.pdf'], dtype=object)
+
+In [8]: folds = list(KFold(10, n_folds=5, indices=True))
+/home/joseph/anaconda/lib/python2.7/site-packages/sklearn/cross_validation.py:65: DeprecationWarning: The indices parameter is deprecated and will be removed (assumed True) in 0.17
+  stacklevel=1)
+
+In [9]: folds
+Out[9]: 
+[(array([2, 3, 4, 5, 6, 7, 8, 9]), array([0, 1])),
+ (array([0, 1, 4, 5, 6, 7, 8, 9]), array([2, 3])),
+ (array([0, 1, 2, 3, 6, 7, 8, 9]), array([4, 5])),
+ (array([0, 1, 2, 3, 4, 5, 8, 9]), array([6, 7])),
+ (array([0, 1, 2, 3, 4, 5, 6, 7]), array([8, 9]))]
+
+In [10]: folds[0][0]
+Out[10]: array([2, 3, 4, 5, 6, 7, 8, 9])
+
+In [11]: a[folds[0][0]]
+Out[11]: 
+array(['c.pdf', 'd.pdf', 'e.pdf', 'f.pdf', 'h.pdf', 'i.pdf', 'j.pdf',
+       'k.pdf'], dtype=object)
+
+In [12]: a[folds[0][1]]
+Out[12]: array(['a.pdf', 'b.pdf'], dtype=object)
+
