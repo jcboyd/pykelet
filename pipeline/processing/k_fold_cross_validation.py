@@ -1,43 +1,85 @@
-from os import open, close, dup, O_WRONLY
+import os
+import sys
+import shutil
+import re
+
 from sklearn.cross_validation import KFold
 from grobid import GrobidTrainer
-import shutil
-import os
 
-def k_fold_cross_validation(folds, corpus, evaluate, log):
-    grobid_trainer = grobid.GrobidTrainer()
+
+def redirect_stdout(output):
+    """http://stackoverflow.com/questions/8804893/redirect-stdout-from-python-for-c-calls"""
+    sys.stdout.flush()  # <--- important when redirecting to files
+    newstdout = os.dup(1)
+    redirection = os.open(output, os.O_WRONLY)
+    os.dup2(redirection, 1)
+    os.close(redirection)
+    sys.stdout = os.fdopen(newstdout, 'w')
+
+
+def k_fold_cross_validation(corpus, evaluate, log, n_folds):
+    redirect_stdout(open('log.txt', 'wb').name)
+
+    grobid_home = '/home/joseph/Desktop/pykelet/pipeline/grobid/grobid-home'
+    classpath_trainer = '/home/joseph/Desktop/pykelet/pipeline/grobid/grobid-trainer.jar'
+    model = 'segmentation'
+    grobid_trainer = GrobidTrainer(classpath=classpath_trainer,
+                                   grobid_home=grobid_home,
+                                   model=model)
 
     training_set = os.listdir(corpus)
     shutil.rmtree(evaluate)
     os.mkdir(evaluate)
 
-    folds = list(KFold(len(training_set), n_folds=folds))
+    folds = list(KFold(len(training_set), n_folds=n_folds))
 
     for fold in folds:
         # move all fold files to evaluate folder
-        for index in fold[0][1]:
-            shutil.move(corpus + corpus[index], evaluate)
+        for index in fold[1]:
+            shutil.move(corpus + training_set[index], evaluate)
 
         grobid_trainer.train()
 
-        old = dup(1)
-        close(1)
-        open(log + , O_WRONLY) # should open on 1
-
         grobid_trainer.evaluate()
 
-        close(1)
-        dup(old) # should dup to 1
-        close(old) # get rid of left overs
-
         # move fold files back to corpus folder
-        for index in fold[0][1]:
+        for index in fold[1]:
             shutil.move(evaluate + corpus[index], corpus)
 
-if __name__ == '__main__':
-    folds = 5
-    corpus = 'path/to/corpus'
-    evaluate = 'path/to/evaluate'
-    log = '/path/to/log'
 
-    k_fold_cross_validation(folds, corpus, evaluate, log)
+def read_output():
+    f = open('log.txt')
+
+    results = re.split(r'===== Token-level results =====|\
+                         ===== Field-level results =====|\
+                         ===== Instance-level results =====',
+                       f.read())[1:]
+    f.close()
+    print results[0]
+
+    from pylab import *
+
+    spread = rand(50) * 100
+    center = ones(25) * 50
+    flier_high = rand(10) * 100 + 100
+    flier_low = rand(10) * -100
+    data = concatenate((spread, center, flier_high, flier_low), 0)
+    spread = rand(50) * 100
+    center = ones(25) * 40
+    flier_high = rand(10) * 100 + 100
+    flier_low = rand(10) * -100
+    d2 = concatenate((spread, center, flier_high, flier_low), 0)
+    data.shape = (-1, 1)
+    d2.shape = (-1, 1)
+    data = [data, d2, d2[::2, 0]]
+    figure()
+    boxplot(data)
+    show()
+
+if __name__ == '__main__':
+    corpus = '/home/joseph/Desktop/pykelet/pipeline/grobid/grobid-trainer/resources/dataset/segmentation/corpus/tei/'
+    evaluate = '/home/joseph/Desktop/pykelet/pipeline/grobid/grobid-trainer/resources/dataset/segmentation/evaluation/tei/'
+    log = '/home/joseph/Desktop/'
+    n_folds = 5
+
+    k_fold_cross_validation(corpus, evaluate, log, n_folds)

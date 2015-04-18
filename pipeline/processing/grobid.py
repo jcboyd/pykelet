@@ -12,7 +12,7 @@ class GrobidTrainer():
         environ['CLASSPATH'] = classpath
 
         from jnius import autoclass  # $ pip install cython jnius
-        self.bootloader = autoclass('com.simontuffs.onejar.Boot')
+        self.bootloader = autoclass('com.simontuffs.onejar.Boot')  # autoclass('org.grobid.core.main.batch.GrobidMain')
 
     def train(self):
         """Wrapper for training model."""
