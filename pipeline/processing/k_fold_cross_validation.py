@@ -17,34 +17,35 @@ def redirect_stdout(output):
     sys.stdout = os.fdopen(newstdout, 'w')
 
 
-def k_fold_cross_validation(corpus, evaluate, log, n_folds):
-    redirect_stdout(open('log.txt', 'wb').name)
-
-    grobid_home = '/home/joseph/Desktop/pykelet/pipeline/grobid/grobid-home'
-    classpath_trainer = '/home/joseph/Desktop/pykelet/pipeline/grobid/grobid-trainer.jar'
-    model = 'segmentation'
+def k_fold_cross_validation(grobid, model, n_folds, log):
+    grobid_home = grobid + '/grobid-home'
+    corpus = grobid + '/grobid-trainer/resources/dataset/' \
+                      'segmentation/corpus/tei/'
+    evaluation = grobid + '/grobid-trainer/resources/dataset/' \
+                          'segmentation/evaluation/tei/'
+    classpath_trainer = grobid + '/grobid-trainer.jar'
     grobid_trainer = GrobidTrainer(classpath=classpath_trainer,
                                    grobid_home=grobid_home,
                                    model=model)
-
     training_set = os.listdir(corpus)
-    shutil.rmtree(evaluate)
-    os.mkdir(evaluate)
+    shutil.rmtree(evaluation)
+    os.mkdir(evaluation)
 
     folds = list(KFold(len(training_set), n_folds=n_folds))
 
     for fold in folds:
-        # move all fold files to evaluate folder
-        for index in fold[1]:
-            shutil.move(corpus + training_set[index], evaluate)
+        try:
+            # move all fold files to evaluate folder
+            for index in fold[1]:
+                shutil.move(corpus + training_set[index], evaluation)
 
-        grobid_trainer.train()
-
-        grobid_trainer.evaluate()
-
-        # move fold files back to corpus folder
-        for index in fold[1]:
-            shutil.move(evaluate + corpus[index], corpus)
+            grobid_trainer.train()
+            # redirect_stdout(open('log.txt', 'wb').name)
+            grobid_trainer.evaluation()
+        finally:
+            # move fold files back to corpus folder
+            for index in fold[1]:
+                shutil.move(evaluation + corpus[index], corpus)
 
 
 def read_output():
@@ -59,27 +60,15 @@ def read_output():
 
     from pylab import *
 
-    spread = rand(50) * 100
-    center = ones(25) * 50
-    flier_high = rand(10) * 100 + 100
-    flier_low = rand(10) * -100
-    data = concatenate((spread, center, flier_high, flier_low), 0)
-    spread = rand(50) * 100
-    center = ones(25) * 40
-    flier_high = rand(10) * 100 + 100
-    flier_low = rand(10) * -100
-    d2 = concatenate((spread, center, flier_high, flier_low), 0)
-    data.shape = (-1, 1)
-    d2.shape = (-1, 1)
-    data = [data, d2, d2[::2, 0]]
+    data = [1, 2, 3, 4, 5]
     figure()
     boxplot(data)
     show()
 
 if __name__ == '__main__':
-    corpus = '/home/joseph/Desktop/pykelet/pipeline/grobid/grobid-trainer/resources/dataset/segmentation/corpus/tei/'
-    evaluate = '/home/joseph/Desktop/pykelet/pipeline/grobid/grobid-trainer/resources/dataset/segmentation/evaluation/tei/'
+    grobid = '/home/joseph/Desktop/pykelet/pipeline/grobid/'
+    model = 'segmentation'
     log = '/home/joseph/Desktop/'
     n_folds = 5
 
-    k_fold_cross_validation(corpus, evaluate, log, n_folds)
+    k_fold_cross_validation(grobid, model, n_folds, log)
