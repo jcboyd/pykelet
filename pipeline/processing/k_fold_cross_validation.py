@@ -1,5 +1,4 @@
-import os
-import sys
+from os import path, listdir
 import shutil
 import re
 
@@ -7,29 +6,18 @@ from sklearn.cross_validation import KFold
 from grobid import GrobidTrainer
 
 
-def redirect_stdout(output):
-    """http://stackoverflow.com/questions/8804893/redirect-stdout-from-python-for-c-calls"""
-    sys.stdout.flush()  # <--- important when redirecting to files
-    newstdout = os.dup(1)
-    redirection = os.open(output, os.O_WRONLY)
-    os.dup2(redirection, 1)
-    os.close(redirection)
-    sys.stdout = os.fdopen(newstdout, 'w')
-
-
-def k_fold_cross_validation(grobid, model, n_folds, log):
+def k_fold_cross_validation(grobid, model, n_folds, log_path):
     grobid_home = grobid + '/grobid-home'
-    corpus = grobid + '/grobid-trainer/resources/dataset/' \
-                      'segmentation/corpus/tei/'
-    evaluation = grobid + '/grobid-trainer/resources/dataset/' \
-                          'segmentation/evaluation/tei/'
-    classpath_trainer = grobid + '/grobid-trainer.jar'
+    corpus = grobid + \
+        '/grobid-trainer/resources/dataset/%s/corpus/tei/' % (model)
+    evaluation = grobid + \
+        '/grobid-trainer/resources/dataset/%s/evaluation/tei/' % (model)
+    classpath_trainer = grobid + \
+        '/grobid-trainer/target/grobid-trainer-0.3.4-SNAPSHOT.jar'
+
     grobid_trainer = GrobidTrainer(classpath=classpath_trainer,
-                                   grobid_home=grobid_home,
-                                   model=model)
-    training_set = os.listdir(corpus)
-    shutil.rmtree(evaluation)
-    os.mkdir(evaluation)
+                                   grobid_home=grobid_home)
+    training_set = listdir(corpus)
 
     folds = list(KFold(len(training_set), n_folds=n_folds))
 
@@ -39,36 +27,42 @@ def k_fold_cross_validation(grobid, model, n_folds, log):
             for index in fold[1]:
                 shutil.move(corpus + training_set[index], evaluation)
 
-            grobid_trainer.train()
-            # redirect_stdout(open('log.txt', 'wb').name)
-            grobid_trainer.evaluation()
+            grobid_trainer.train(model)
+            grobid_trainer.evaluate(model, log_path + "/%s_%s" %
+                                   (model, folds.index(fold)))
+        except IOError:
+            print 'Error: check folder configuration'
         finally:
             # move fold files back to corpus folder
             for index in fold[1]:
-                shutil.move(evaluation + corpus[index], corpus)
+                shutil.move(evaluation + training_set[index], corpus)
 
 
-def read_output():
-    f = open('log.txt')
+def read_output(log_path):
+    f = open(log_path)
 
     results = re.split(r'===== Token-level results =====|\
                          ===== Field-level results =====|\
-                         ===== Instance-level results =====',
+                         ===== Instance-level results =====|\
+                         ===== Confusion matrix =====',
                        f.read())[1:]
     f.close()
     print results[0]
 
-    from pylab import *
+    # from pylab import *
 
-    data = [1, 2, 3, 4, 5]
-    figure()
-    boxplot(data)
-    show()
+    # data = [1, 2, 3, 4, 5]
+    # figure()
+    # boxplot(data)
+    # show()
 
 if __name__ == '__main__':
-    grobid = '/home/joseph/Desktop/pykelet/pipeline/grobid/'
-    model = 'segmentation'
-    log = '/home/joseph/Desktop/'
+    directory = path.dirname(path.realpath(__file__))
+
+    grobid = directory + '/../grobid/'
+    log_path = directory + '/logs/'
+    model = 'date'
     n_folds = 5
 
-    k_fold_cross_validation(grobid, model, n_folds, log)
+    k_fold_cross_validation(grobid=grobid, model=model,
+                            n_folds=n_folds, log_path=log_path)

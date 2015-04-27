@@ -9,6 +9,7 @@ class GrobidTrainer():
         self.grobid_home = grobid_home
 
         environ['CLASSPATH'] = classpath
+        print classpath
 
         from jnius import autoclass  # $ pip install cython jnius
         self.trainer = autoclass('org.grobid.trainer.TrainerRunner')
@@ -17,13 +18,18 @@ class GrobidTrainer():
         """Wrapper for training model."""
         self.trainer.main(['0', model, '-gH', self.grobid_home])
 
-    def evaluate(self, model):
+    def evaluate(self, model, log_path):
         """Wrapper for evaluating model."""
-        self.trainer.main(['1', model, '-gH', self.grobid_home])
+        self.trainer.main(['1', model,
+                           '-gH', self.grobid_home,
+                           '-l', log_path])
 
-    def trainAndEvaluate(self, model, split):
+    def trainAndEvaluate(self, model, split, log_path):
         """Wrapper for training and evaluating model."""
-        self.trainer.main(['2', model, '-gH', self.grobid_home, '-s', split])
+        self.trainer.main(['2', model,
+                          '-gH', self.grobid_home,
+                          '-s', split,
+                          '-l', log_path])
 
 
 class GrobidCore():

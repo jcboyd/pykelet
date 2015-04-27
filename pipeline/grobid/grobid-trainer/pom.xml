@@ -30,6 +30,31 @@
 	<build>
 		<plugins>
 			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<!-- <addClasspath>true</addClasspath>
+							<classpathPrefix>../../grobid-core/target</classpathPrefix> -->
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>../../lib/</classpathPrefix>
+							<!-- <classpathMavenRepositoryLayout>true</classpathMavenRepositoryLayout> -->
+							<mainClass>org.grobid.trainer.TrainerRunner</mainClass>	
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+
+			<plugin>
 				<groupId>com.jolira</groupId>
 				<artifactId>onejar-maven-plugin</artifactId>
 				<version>1.4.4</version>
@@ -37,25 +62,16 @@
 					<execution>
 						<configuration>
 							<mainClass>org.grobid.trainer.TrainerRunner</mainClass>
-							<!-- Optional 
+							<!-- Optional -->
 							<onejarVersion>0.97</onejarVersion>
 							<attachToBuild>true</attachToBuild>
-							<classifier>onejar</classifier>-->
+							<classifier>onejar</classifier>
 						</configuration>
 						<goals>
 							<goal>one-jar</goal>
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.5.1</version>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
