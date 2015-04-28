@@ -32,7 +32,7 @@
 \begin{document}
 \maketitle
 
-Grobid (GeneRatiOn of BIbliographic Data) is a Java wrapper for applying conditional random fields (CRF) to the problem of metadata extraction of scientific papers. The wrapper sits atop a CRF engine that performs the abstract CRF computations. Wrapper and engine are combined through the use of the Java Native Interface (JNI). Grobid is divided into four packages: grobid-home, grobid-core, grobid-trainer, and grobid-server. Grobid produces a set of models, each addressing a different part of the metadata extraction, and each trained separately on its own spectrum of features. In the case of citation processing, the models are applied according to a hierarchy, starting with the segmentation of the reference list, followed by the tagging of each part of each reference, and finally a set of micro-models to further classify these reference parts.
+Grobid (GeneRatiOn of BIbliographic Data) is an open source (Apache license) Java tool for applying conditional random fields (CRF) to the problem of metadata extraction of scientific papers. The tool is a wrapper that sits atop a CRF engine that performs the abstract CRF computations. Wrapper and engine are combined through the use of the Java Native Interface (JNI). Grobid is divided into four packages: grobid-home, grobid-core, grobid-trainer, and grobid-server. Grobid produces a set of models, each addressing a different part of the metadata extraction, and each trained separately on its own spectrum of features. In the case of citation processing, the models are applied according to a hierarchy, starting with the segmentation of the reference list, followed by the tagging of each part of each reference, and finally a set of micro-models to further classify these reference parts.
 
 \subsection{Engines}
 
@@ -406,7 +406,7 @@ In an abuse of notation, training data leaves the </teiHeader> tags essentially 
 
 Remember: tokens are lines in the segmentation model (as they are in fulltext)
 
-Things get contentious when head- and footnotes appear in positions. It's important to recognise that Grobid is relying on the OCR tool for the correct sequencing of these elements as they appear on the page. This implies that if the OCR tool dependency were to change, we should revise the training set. It is possible, on the other hand, that the OCR tool provides a standard representation, and any alternative would provide Grobid with the same information. In any case, blocks of text e.g. footnotes etc. should not be moved around in the correction process, even if their places appears illogical. Only the tags themselves should be moved where required. This is best illustrated in the case of an article whose body is arranged into two columns of text. Where there are footnotes, these are considered to be part of the column, and so, though it may appear more logical to declare all the footnotes are at the base of the page and should all come after the body sections as a group, the tool will order them thus:
+Things become contentious when head- and footnotes appear in positions. It's important to recognise that Grobid is relying on the OCR tool for the correct sequencing of these elements as they appear on the page. This implies that if the OCR tool dependency were to change, we should revise the training set. It is possible, on the other hand, that the OCR tool provides a standard representation, and any alternative would provide Grobid with the same information. In any case, blocks of text e.g. footnotes etc. should not be moved around in the correction process, even if their places appears illogical. Only the tags themselves should be moved where required. This is best illustrated in the case of an article whose body is arranged into two columns of text. Where there are footnotes, these are considered to be part of the column, and so, though it may appear more logical to declare all the footnotes are at the base of the page and should all come after the body sections as a group, the tool will order them thus:
 
 <body>[LEFT COLUMN]</body>
 <note place="footnote">[LEFT COLUMN FOOTNOTES]</note>
@@ -423,12 +423,18 @@ Things get contentious when head- and footnotes appear in positions. It's import
 \subsection{Evaluation}
 \subsubsection{Why we use the F1 Statistic}
 
-Accuracy can be a misleading statistic when we have uneven representations of classes in the dataset, for example a majority of negatives examples. We may have high accuracy, where accuracy $= (TP + TN) / (TP + FN + FP + TN)$ i.e. the proportion of correct classifcations to total classifications. But we may still have inferior precision and recall:
+ Accuracy is defined to be, $ \frac{TP + TN}{TP + FN + FP + TN}$, that is, the proportion of correct classifications to total classifications, where TP is the number \emph{true positives}, the correctly predicted positive classes, where \emph{positive} indicates any given class; TN is the number of \emph{true negatives}, the correctly predicted \emph{negative} classes; FN is the number of \emph{false positives}, the incorrectly predicted positive classes; and TN is the number of \emph{true negatives}. Accuracy can be a misleading statistic when we have uneven representations of classes in the dataset. In the event we have high bias on the number of negatives, we can achieve excellent accuracy simply by always predicting the negative class. For this reason, we consider other statistics too. \emph{Precision} is the proportion of positives correctly claimed, i.e., $\frac{TP}{TP + FP}$. \emph{Recall} is the proportion of positives correctly predicted to the total number of positive occurrences (equivalently, the accuracy over the positive class), i.e., $\frac{TP}{TP + FN}$. Notice that in the case described above, both precision and recall would be 0.
 
-precision = $TP / (TP + FP)$ i.e. the proportion positives correctly claimed
+The $F_1$ statistic is a common measure used to assess binary classifiers, and is defined as,
 
-recall = $TP / TP + FN$ i.e. the number of all positives correctly claimed, (or the accuracy over positives)
+$$F_1 = \frac{2}{\frac{1}{\text{precision}} + \frac{1}{\text{recall}}},$$
 
-But here we see that if TN is large, accuracy may be very high, but not necessarily precision and recall. This might occur when the number of negatives, and in fact, when the number of negatives predominates, one can achieve excellent accuracy simply by always predicting negatives. This is why we need the alternative statistics of precision and recall. The F1 statistic is a nice way of summarising both at once as it is simply the harmonic mean of the two. Furthermore, because of this, a large imbalance in recall and precision resuts in a lower F1 score. It is necessary to be good in both precision and recall to have a good F1 score; the harmonic mean of any data is always upper-bounded by its arithmetic mean
+that is, the harmonic mean of precision and recall (the ``1'' in $F_1$ indicates the two are evenly weighted). The $F_1$ statistic is a nice way of summarising both at once as it is simply the harmonic mean of the two. Furthermore, because of this, a large imbalance in recall and precision resuts in a lower $F_1$ score. It is necessary to be good in both precision and recall to have a good $F_1$ score; the harmonic mean of any data is always upper-bounded by its arithmetic mean
+
+\subsubsection{Evaluation in Grobid}
+
+In Grobid, evaluation is done at the token, field, and instance levels, that is, Grobid calculates the aforementioned statistics for individual token or words, and then for the classes themselves. Finally, it calculates the number of correct instances, that is, entire samples with no classification errors. 
+
+We supplement the Grobid evaluation output with a confusion matrix, and example of which is shown in Figure XX. Whereas the statistics allow us to compare one model to another, a confusion matrix can be used to see exactly which misclassifications are being made, which can in turn inform our feature engineering.
 
 \end{document}
