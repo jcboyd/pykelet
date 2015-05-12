@@ -5,6 +5,16 @@ import re
 from sklearn.cross_validation import KFold
 from grobid import GrobidTrainer
 
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+class Category:
+    TOKEN = 0
+    FIELD = 1
+    INSTANCE = 2
+    CONFUSION = 3
+
 
 def k_fold_cross_validation(grobid, model, n_folds, log_path):
     grobid_home = grobid + '/grobid-home'
@@ -43,13 +53,13 @@ def k_fold_cross_validation(grobid, model, n_folds, log_path):
 def read_output(log_path):
     f = open(log_path)
 
-    results = re.split(r'===== Token-level results =====|\
-                         ===== Field-level results =====|\
-                         ===== Instance-level results =====|\
-                         ===== Confusion matrix =====',
-                       f.read())[1:]
+    results = filter(bool, re.split(r'===== Token-level results =====|\
+                                      ===== Field-level results =====|\
+                                      ===== Instance-level results =====|\
+                                      ===== Confusion matrix =====',
+                                    f.read()))
     f.close()
-    print results[0]
+    # print results[0]
 
     # from pylab import *
 
@@ -57,6 +67,20 @@ def read_output(log_path):
     # figure()
     # boxplot(data)
     # show()
+
+    confusion_matrix = filter(bool, results[Category.CONFUSION].split('\n'))
+    labels = np.matrix([row.split('\t')[0] for row in confusion_matrix])
+    counts = np.matrix([row.split('\t')[1:] for row in confusion_matrix])
+
+    fig, ax = plt.subplots()
+    ax.set_xticklabels(labels.tolist()[0])
+
+    row = counts[0].tolist()[0]
+
+    bars = ax.bar(range(len(row)), [int(val) for val in row])
+
+    plt.show()
+
 
 if __name__ == '__main__':
     directory = path.dirname(path.realpath(__file__))
