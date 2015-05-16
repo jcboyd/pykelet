@@ -23,7 +23,7 @@ class GrobidTrainer():
         self.trainer.main(['1', model,
                            '-gH', self.grobid_home])
 
-        def trainAndEvaluate(self, model, split):
+    def trainAndEvaluate(self, model, split):
         """Wrapper for training and evaluating model."""
         self.trainer.main(['2', model,
                           '-gH', self.grobid_home,
