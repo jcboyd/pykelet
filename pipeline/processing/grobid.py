@@ -18,18 +18,16 @@ class GrobidTrainer():
         """Wrapper for training model."""
         self.trainer.main(['0', model, '-gH', self.grobid_home])
 
-    def evaluate(self, model, log_path):
+    def evaluate(self, model):
         """Wrapper for evaluating model."""
         self.trainer.main(['1', model,
-                           '-gH', self.grobid_home,
-                           '-l', log_path])
+                           '-gH', self.grobid_home])
 
-    def trainAndEvaluate(self, model, split, log_path):
+        def trainAndEvaluate(self, model, split):
         """Wrapper for training and evaluating model."""
         self.trainer.main(['2', model,
                           '-gH', self.grobid_home,
-                          '-s', split,
-                          '-l', log_path])
+                          '-s', split])
 
 
 class GrobidCore():

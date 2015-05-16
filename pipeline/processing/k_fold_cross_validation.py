@@ -16,14 +16,12 @@ class Category:
     CONFUSION = 3
 
 
-def k_fold_cross_validation(grobid, model, n_folds, log_path):
+def k_fold_cross_validation(grobid, classpath_trainer, model, n_folds):
     grobid_home = grobid + '/grobid-home'
     corpus = grobid + \
-        '/grobid-trainer/resources/dataset/%s/corpus//' % (model)
+        '/grobid-trainer/resources/dataset/%s/corpus/tei/' % (model)
     evaluation = grobid + \
-        '/grobid-trainer/resources/dataset/%s/evaluation//' % (model)
-    classpath_trainer = grobid + \
-        '/grobid-trainer/target/grobid-trainer-0.3.4-SNAPSHOT.jar'
+        '/grobid-trainer/resources/dataset/%s/evaluation/tei/' % (model)
 
     grobid_trainer = GrobidTrainer(classpath=classpath_trainer,
                                    grobid_home=grobid_home)
@@ -40,7 +38,7 @@ def k_fold_cross_validation(grobid, model, n_folds, log_path):
                 shutil.move(corpus + training_set[index], evaluation)
 
             grobid_trainer.train(model)
-            grobid_trainer.evaluate(model, log_path + "/%s_%s" % (model, i))
+            grobid_trainer.evaluate(model)
             i += 1
         except IOError:
             print 'Error: check folder configuration'
@@ -83,12 +81,26 @@ def read_output(log_path):
 
 
 if __name__ == '__main__':
-    directory = path.dirname(path.realpath(__file__))
 
-    grobid = directory + '/../grobid/'
-    log_path = directory + '/logs/'
-    model = 'date'
+    batches = '/home/joseph/Desktop/Batches/'
     n_folds = 5
 
-    k_fold_cross_validation(grobid=grobid, model=model,
-                            n_folds=n_folds, log_path=log_path)
+    directory = path.dirname(path.realpath(__file__))
+    classpath = directory + \
+        '/../grobid/grobid-trainer/target/grobid-trainer-0.3.4-SNAPSHOT.jar'
+
+    for file in listdir(batches):
+        if file.startswith('H'):
+            k_fold_cross_validation(batches + file, classpath, 'header', n_folds)
+        elif file.startswith('S'):
+            k_fold_cross_validation(batches + file, classpath, 'segmentation', n_folds)
+
+    # directory = path.dirname(path.realpath(__file__))
+
+    # grobid = directory + '/../grobid/'
+    # log_path = directory + '/logs/'
+    # model = 'date'
+    # n_folds = 5
+
+    # k_fold_cross_validation(grobid=grobid, model=model,
+    #                         n_folds=n_folds, log_path=log_path)
