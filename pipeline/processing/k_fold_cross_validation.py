@@ -3,7 +3,8 @@ import shutil
 import re
 
 from sklearn.cross_validation import KFold
-from grobid import GrobidTrainer
+# from grobid import GrobidTrainer
+from grobid_shell import GrobidTrainer
 
 import numpy as np
 import matplotlib.pyplot as plt
