@@ -7,7 +7,7 @@ from sklearn.cross_validation import KFold
 from grobid_shell import GrobidTrainer
 
 import numpy as np
-import matplotlib.pyplot as plt
+from pylab import *
 
 
 class Category:
@@ -15,6 +15,13 @@ class Category:
     FIELD = 1
     INSTANCE = 2
     CONFUSION = 3
+
+
+class Stat:
+    ACCURACY = 0
+    PRECISION = 1
+    RECALL = 2
+    F1 = 3
 
 
 def k_fold_cross_validation(grobid, classpath_trainer, model, n_folds):
@@ -49,36 +56,75 @@ def k_fold_cross_validation(grobid, classpath_trainer, model, n_folds):
                 shutil.move(evaluation + training_set[index], corpus)
 
 
-def read_output(log_path):
-    f = open(log_path)
+def read_output(log_path, fig_path):
 
-    results = filter(bool, re.split(r'===== Token-level results =====|\
-                                      ===== Field-level results =====|\
-                                      ===== Instance-level results =====|\
-                                      ===== Confusion matrix =====',
-                                    f.read()))
-    f.close()
-    # print results[0]
+    token_stats = []
+    field_stats = []
+    instance_stats = []
+    labels = []
 
-    # from pylab import *
+    for file in listdir(log_path):
+        f = open(log_path + '/' + file)
+        results = filter(bool, re.split('===== Token-level results =====|' +
+                                        '===== Field-level results =====|' +
+                                        '===== Instance-level results =====|' +
+                                        '===== Confusion matrix =====',
+                                        f.read().strip('\n')))
+        f.close()
 
-    # data = [1, 2, 3, 4, 5]
-    # figure()
-    # boxplot(data)
-    # show()
+        tokens = np.matrix([map(lambda x:float(x),
+                            filter(bool, row.split('\t'))[1:]) for row in
+                            filter(bool, results[Category.TOKEN].split('\n'))
+                            [1:-2]])
 
-    confusion_matrix = filter(bool, results[Category.CONFUSION].split('\n'))
-    labels = np.matrix([row.split('\t')[0] for row in confusion_matrix])
-    counts = np.matrix([row.split('\t')[1:] for row in confusion_matrix])
+        fields = np.matrix([map(lambda x:float(x),
+                            filter(bool, row.split('\t'))[1:]) for row in
+                            filter(bool, results[Category.FIELD].split('\n'))
+                            [1:-2]])
 
-    fig, ax = plt.subplots()
-    ax.set_xticklabels(labels.tolist()[0])
+        confusion = filter(bool, results[Category.CONFUSION].split('\n'))
 
-    row = counts[0].tolist()[0]
+        labels = map(lambda x: x.strip('<>'),
+                     [row.split('\t')[0] for row in confusion])
 
-    bars = ax.bar(range(len(row)), [int(val) for val in row])
+        counts = np.matrix([row.split('\t')[1:] for row in confusion])
 
-    plt.show()
+        token_stats.append(tokens)
+        field_stats.append(fields)
+        instance_stats.append(results[Category.INSTANCE])
+
+    aggregate_stats('Token-level', labels, token_stats, fig_path)
+    aggregate_stats('Field-level', labels, field_stats, fig_path)
+    plot_confusion_matrix(labels, counts, fig_path)
+
+
+def plot_confusion_matrix(labels, counts, path):
+    N = len(labels)
+    ind = np.arange(N)
+    width = 0.5
+
+    for label in labels:
+        figure()
+        row = [int(val) for val in counts.tolist()[labels.index(label)]]
+        bar(ind, row, width, color='r')
+        ylabel('Counts')
+        title('%s - Confusion' % (label.capitalize()))
+        xticks(ind + width/2., labels, rotation='vertical')
+        savefig(path + '/' + label + '.pdf')
+        close()
+
+
+def aggregate_stats(name, labels, stats, path):
+    data = []
+
+    for label in labels:
+        data.append([matrix[labels.index(label), Stat.F1] for matrix in stats])
+
+    figure()
+    boxplot(data)
+    xticks(range(len(labels) + 1)[1:], labels, rotation='45')
+    title('%s - F1' % (name.capitalize()))
+    savefig(path + "/confusion_" + name + '.pdf')
 
 
 if __name__ == '__main__':
@@ -95,13 +141,3 @@ if __name__ == '__main__':
             k_fold_cross_validation(batches + file, classpath, 'header', n_folds)
         elif file.startswith('S'):
             k_fold_cross_validation(batches + file, classpath, 'segmentation', n_folds)
-
-    # directory = path.dirname(path.realpath(__file__))
-
-    # grobid = directory + '/../grobid/'
-    # log_path = directory + '/logs/'
-    # model = 'date'
-    # n_folds = 5
-
-    # k_fold_cross_validation(grobid=grobid, model=model,
-    #                         n_folds=n_folds, log_path=log_path)

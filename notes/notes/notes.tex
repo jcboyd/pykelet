@@ -437,4 +437,36 @@ In Grobid, evaluation is done at the token, field, and instance levels, that is,
 
 We supplement the Grobid evaluation output with a confusion matrix, and example of which is shown in Figure XX. Whereas the statistics allow us to compare one model to another, a confusion matrix can be used to see exactly which misclassifications are being made, which can in turn inform our feature engineering.
 
+\subsubsection{Modelling Collaborations}
+
+\begin{verbatim}
+joseph@joseph-HP-Compaq-8200-Elite-CMT-PC:~/Desktop/grobid/grobid-trainer/resources/dataset/header/corpus/tei$ grep -nr "Collaboration"* .
+./55004899.header.tei.xml:17:	<note type="other">This is a reprint of a Cochrane review, prepared and maintained by The Cochrane Collaboration and published in The Cochrane Library<lb/> 2009, Issue 3<lb/></note>
+./55004899.header.tei.xml:23:	<note type="copyright">Copyright © 2009 The Cochrane Collaboration. Published by John Wiley &amp; Sons, Ltd.</note>
+./header994.tei:11:		<note type="other">for the STAR Collaboration<lb/></note>
+./55000939.header.tei.xml:10:	<titlePart>CoDoc: Multi-mode Collaboration<lb/> over Documents<lb/></titlePart>
+./header1002.tei:11:		<note type="other">(for<lb/> the ALICE Collaboration)<lb/></note>
+./header1015.tei:13:		<note type="other"> for the ALICE Collaboration<lb/></note>
+./55001560.header.tei.xml:33:	<keyword>Keywords: Computer-Supported Cooperative Work, Collaboration, Editor, Replication<lb/></keyword>
+./header1020.tei:11:		<note type="other">(for the ALICE Collaboration)<lb/></note>
+./header355.tei:11:			<titlePart type="main">Search for Chargino and Neutralino <lb/>Production Using the OPAL Detector <lb/>at <lb/>s = 130 136 GeV at LEP <lb/>The OPAL Collaboration <lb/></titlePart>
+./header1006.tei:14:		<note type="other">for the ALICE Collaboration<lb/></note>
+\end{verbatim}
+
+These should be 
+
+This is from a search of 2749 CORA articles... from a set of only  36 HEP conference papers, we get at least as many again.
+
+\subsubsection{Obtaining Training Data}
+
+\subsubsection{Improving Grobid}
+
+Grobid . One approach to improving the tool is therefore to identify the weakest parts of the cascade . Regarding the HEP use case, it is unlikely we will find anything particular to improve; after all, a HEP date is a CORA date. This same point applies to the other lower-tier models. By the same token . In practical use, the most important models are those at the top, as without accurate classification from these, the lower levels . Segmentation provides the most interesting .  . And  although the header model is the best trained of all models (with a current training set of 2775 articles) . As we discovered, the interplay between the segmentation and header models provided an interesting starting point for our improvements.
+
+The header model requires not only improvement through training , but also extension. In particular HEP papers require the modelling of additional fields, such as
+
+\subsubsection{Training Data}
+
+
+
 \end{document}
