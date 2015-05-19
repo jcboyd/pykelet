@@ -6,7 +6,6 @@ from sklearn.cross_validation import KFold
 # from grobid import GrobidTrainer
 from grobid_shell import GrobidTrainer
 
-import numpy as np
 from pylab import *
 
 
@@ -24,15 +23,22 @@ class Stat:
     F1 = 3
 
 
-def k_fold_cross_validation(grobid, classpath_trainer, model, n_folds):
+def k_fold_cross_validation(grobid,
+                            classpath_trainer,
+                            model,
+                            n_folds,
+                            evaluate_raw):
     grobid_home = grobid + '/grobid-home'
     corpus = grobid + '/grobid-trainer/resources/dataset/%s/corpus/tei/' % (model)
     evaluation = grobid + '/grobid-trainer/resources/dataset/%s/evaluation/tei/' % (model)
+    evaluate_raw = grobid + '/grobid-trainer/resources/dataset/%s/evaluation/%s/' % (model, evaluate_raw)
 
-    grobid_trainer = GrobidTrainer(classpath=classpath_trainer,
-                                   grobid_home=grobid_home)
-    training_set = listdir(corpus)
-    folds = list(KFold(len(training_set), n_folds=n_folds))
+    evaluation_set = listdir(evaluate_raw)
+
+    grobid_trainer = GrobidTrainer(classpath=classpath_trainer, grobid_home=grobid_home)
+    # k-fold evaluation only for those raw files in evaluate
+    k_fold_set = filter(lambda x: x.strip('.tei.xml') in evaluation_set, listdir(corpus))
+    folds = list(KFold(len(k_fold_set), n_folds=n_folds))
 
     i = 1
 
@@ -40,7 +46,7 @@ def k_fold_cross_validation(grobid, classpath_trainer, model, n_folds):
         try:
             # move all fold files to evaluate folder
             for index in fold[1]:
-                shutil.move(corpus + training_set[index], evaluation)
+                shutil.move(corpus + k_fold_set[index], evaluation)
 
             grobid_trainer.train(model)
             grobid_trainer.evaluate(model)
@@ -50,7 +56,7 @@ def k_fold_cross_validation(grobid, classpath_trainer, model, n_folds):
         finally:
             # move fold files back to corpus folder
             for index in fold[1]:
-                shutil.move(evaluation + training_set[index], corpus)
+                shutil.move(evaluation + k_fold_set[index], corpus)
 
 
 def read_output(log_path, fig_path):
@@ -165,6 +171,14 @@ if __name__ == '__main__':
 
     for file in listdir(batches):
         if file.startswith('H'):
-            k_fold_cross_validation(batches + file, classpath, 'header', n_folds)
+            k_fold_cross_validation(grobid=batches + file,
+                                    classpath_trainer=classpath,
+                                    model='header',
+                                    n_folds=n_folds,
+                                    evaluate_raw='headers')
         elif file.startswith('S'):
-            k_fold_cross_validation(batches + file, classpath, 'segmentation', n_folds)
+            k_fold_cross_validation(grobid=batches + file,
+                                    classpath_trainer=classpath,
+                                    model='segmentation',
+                                    n_folds=n_folds,
+                                    evaluate_raw='raw')
