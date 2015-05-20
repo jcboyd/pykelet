@@ -174,7 +174,7 @@ if __name__ == '__main__':
     directory = path.dirname(path.realpath(__file__))
     classpath = directory + \
         '/../grobid/grobid-trainer/target/grobid-trainer-0.3.4-SNAPSHOT.jar'
-    batches = directory + '/../batches'
+    batches = directory + '/../batches/'
 
     for file in listdir(batches):
         if file.startswith('H'):
