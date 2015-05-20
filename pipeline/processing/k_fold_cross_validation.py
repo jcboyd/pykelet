@@ -29,15 +29,21 @@ def k_fold_cross_validation(grobid,
                             n_folds,
                             evaluate_raw):
     grobid_home = grobid + '/grobid-home'
-    corpus = grobid + '/grobid-trainer/resources/dataset/%s/corpus/tei/' % (model)
-    evaluation = grobid + '/grobid-trainer/resources/dataset/%s/evaluation/tei/' % (model)
-    evaluate_raw = grobid + '/grobid-trainer/resources/dataset/%s/evaluation/%s/' % (model, evaluate_raw)
+    corpus = grobid + \
+        '/grobid-trainer/resources/dataset/%s/corpus/tei/' % (model)
+    evaluation = grobid + \
+        '/grobid-trainer/resources/dataset/%s/evaluation/tei/' % (model)
+    evaluate_raw = grobid + \
+        '/grobid-trainer/resources/dataset/%s/evaluation/%s/' % (model,
+                                                                 evaluate_raw)
 
     evaluation_set = listdir(evaluate_raw)
 
-    grobid_trainer = GrobidTrainer(classpath=classpath_trainer, grobid_home=grobid_home)
+    grobid_trainer = GrobidTrainer(classpath=classpath_trainer,
+                                   grobid_home=grobid_home)
     # k-fold evaluation only for those raw files in evaluate
-    k_fold_set = filter(lambda x: x.strip('.tei.xml') in evaluation_set, listdir(corpus))
+    k_fold_set = filter(lambda x: x.strip('.tei.xml') in evaluation_set,
+                        listdir(corpus))
     folds = list(KFold(len(k_fold_set), n_folds=n_folds))
 
     i = 1
@@ -108,7 +114,8 @@ def read_output(log_path, fig_path):
         for row_label in labels:
             count_dict = {}
             for col_label in labels:
-                count_dict[col_label] = counts[labels.index(row_label)][labels.index(col_label)]
+                count_dict[col_label] = counts[
+                    labels.index(row_label)][labels.index(col_label)]
             confusion[row_label] = count_dict
 
         token_stats.append(tokens)
@@ -162,12 +169,12 @@ def plot_box_plots(name, stats, path):
 
 if __name__ == '__main__':
 
-    batches = '/home/joseph/Desktop/Batches/'
     n_folds = 5
 
     directory = path.dirname(path.realpath(__file__))
     classpath = directory + \
         '/../grobid/grobid-trainer/target/grobid-trainer-0.3.4-SNAPSHOT.jar'
+    batches = directory + '../batches'
 
     for file in listdir(batches):
         if file.startswith('H'):
