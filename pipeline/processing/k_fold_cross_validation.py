@@ -129,7 +129,7 @@ def read_output(name, log_path, fig_path):
     plot_box_plots('Field-level (F1) - %s' % (name), 'field-level',
                    field_stats, fig_path)
     # Currently just produce confusion on the last fold
-    plot_confusion_matrix(id, confusion, fig_path)
+    plot_confusion_matrix(name, confusion, fig_path)
 
 
 def plot_confusion_matrix(name, confusion, path):
