@@ -1,5 +1,6 @@
 \documentclass[11pt, oneside]{scrartcl}   	% use "amsart" instead of "article" for AMSLaTeX format
 \usepackage[top=2cm,right=2cm,bottom=2.5cm,left=2cm]{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+% \usepackage[top=4cm,right=4cm,bottom=4cm,left=4cm]{geometry}
 \geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
 %\geometry{landscape}                		% Activate for for rotated page geometry
 %\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
@@ -31,6 +32,37 @@
 
 \begin{document}
 \maketitle
+
+\section{Introduction}
+
+[STATE GOALS HERE]
+
+\subsection{Terminology}
+
+We briefly present important terms found in this report. Words contained in the same entry are used interchangeably.
+
+\begin{itemize}
+\item Grobid - the Java-based tool 
+\item Wapiti - the principal CRF engine used by Grobid
+\item CRF++ - a secondary CRF engine available to Grobid
+\item Token - a character string or ``word'', delimited from other tokens by white space--the atomic unit of data.
+\item Observation - a sequence of tokens subjecting to a sequence of classifications
+\item Class(affection)/label/annotation - used interchangeably to refer to the prediction of a single token.
+\item Document/article - 
+\item Corpus/training set - the body of annotated documents used for creating a model
+\item Evaluation/test set - the body of annotated documents used for evaluating a model
+\item Header/front matter - the parts of the document containing identifying information, typically located at the very top of an article, prior to the introduction. Header matter is however often discontinuous, found after the start of the document body, in the first footnote or even at the very end of the article. Not to be confused with a headnote (the opposite of a footnote).
+\end{itemize}
+
+\section{The Problem - Automatic Metadata Extraction}
+
+\section{Conditional Random Fields and Probabilistic Approaches}
+
+\section{Results}
+
+\section{Appendix}
+
+\section{Notes - Work In Progress}
 
 Grobid (GeneRatiOn of BIbliographic Data) is an open source (Apache license) Java tool for applying conditional random fields (CRF) to the problem of metadata extraction of scientific papers. The tool is a wrapper that sits atop a CRF engine that performs the abstract CRF computations. Wrapper and engine are combined through the use of the Java Native Interface (JNI). Grobid is divided into four packages: grobid-home, grobid-core, grobid-trainer, and grobid-server. Grobid produces a set of models, each addressing a different part of the metadata extraction, and each trained separately on its own spectrum of features. In the case of citation processing, the models are applied according to a hierarchy, starting with the segmentation of the reference list, followed by the tagging of each part of each reference, and finally a set of micro-models to further classify these reference parts.
 
@@ -231,7 +263,7 @@ Now, for example, when we run \texttt{createTrainingHeader} to create a header t
 
 Files (1) and (2), are the training data for the affiliation-address and author models respectively. Files (3) and (4) are jointly required for training the Header model: file (3) simply contains the tagged data, but file (4) contains the feature (untagged) for each token, including OCR information. We must additionally store (4) as the OCR information cannot be derived from the plaintext TEI file. That the processing does not tag the blocks allows the programmer to intervens and correct and discrepancies with the ground truth. Thus the header files need only be corrected then moved to a separate folder for training. Notice training data for the segmentation models may be harder to generate automatically.
 
-Notice that there is no method for creating citation training data, $\mathcal{D}_{tr}$ directly. This data is created as part of \texttt{createTrainingFulltext}. This creates four files also:
+Notice that there is no method for creating citation training data, $\mathcal{D}_{tr}$, directly. This data is created as part of \texttt{createTrainingFulltext}. This creates four files also:
 
 \begin{enumerate}
 \item PDF-NAME.training.citations.authors.tei.xml
@@ -427,13 +459,13 @@ Things become contentious when head- and footnotes appear in positions. It's imp
 
 The $F_1$ statistic is a common measure used to assess binary classifiers, and is defined as,
 
-$$F_1 = \frac{2}{\frac{1}{\text{precision}} + \frac{1}{\text{recall}}},$$
+$$F_1 = \frac{2 \times \text{precision} \times \text{recall}}{\text{precision} + \text{recall}},$$
 
 that is, the harmonic mean of precision and recall (the ``1'' in $F_1$ indicates the two are evenly weighted). The $F_1$ statistic is a nice way of summarising both at once as it is simply the harmonic mean of the two. Furthermore, because of this, a large imbalance in recall and precision resuts in a lower $F_1$ score. It is necessary to be good in both precision and recall to have a good $F_1$ score; the harmonic mean of any data is always upper-bounded by its arithmetic mean
 
 \subsubsection{Evaluation in Grobid}
 
-In Grobid, evaluation is done at the token, field, and instance levels, that is, Grobid calculates the aforementioned statistics for individual token or words, and then for the classes themselves. Finally, it calculates the number of correct instances, that is, entire samples with no classification errors. 
+In Grobid, evaluation is done at the token, field, and instance levels, that is, Grobid calculates the aforementioned statistics for individual token or words, and then for the classes themselves. Finally, it calculates the number of correct instances, that is, entire samples with no classification errors.
 
 We supplement the Grobid evaluation output with a confusion matrix, and example of which is shown in Figure XX. Whereas the statistics allow us to compare one model to another, a confusion matrix can be used to see exactly which misclassifications are being made, which can in turn inform our feature engineering.
 
@@ -457,15 +489,40 @@ These should be
 
 This is from a search of 2749 CORA articles... from a set of only  36 HEP conference papers, we get at least as many again.
 
-\subsubsection{Obtaining Training Data}
-
-\subsubsection{Improving Grobid}
-
-Grobid . One approach to improving the tool is therefore to identify the weakest parts of the cascade . Regarding the HEP use case, it is unlikely we will find anything particular to improve; after all, a HEP date is a CORA date. This same point applies to the other lower-tier models. By the same token . In practical use, the most important models are those at the top, as without accurate classification from these, the lower levels . Segmentation provides the most interesting .  . And  although the header model is the best trained of all models (with a current training set of 2775 articles) . As we discovered, the interplay between the segmentation and header models provided an interesting starting point for our improvements.
-
-The header model requires not only improvement through training , but also extension. In particular HEP papers require the modelling of additional fields, such as
-
 \subsubsection{Training Data}
+
+Obtaining workable training data is a notoriously time-consuming task, given that a single data sample consists of a partially of fully annotated document. This challenge is often referred to with dismay in the literature [CITATION HERE]. Evidently, constructing a training set is an inherently manual task, involving the diligence and discretion of a human labourer to. Attempts to automate this task were found to be futile. This of course stands to reason, given that automating training set creation is a problem precisely equivalent to that we wish to solve, namely, automatic metadata extraction. Though there are some publishers that provide complete annotations of their publications, they typically impose a rigid format on the aricles. Building a training from highly select documents in such a way can only result in a homogeneous training set that is not representative of a real world corpus and can only underperform at prediction time. Thus, the researcher is effectively resigned to spend endless hours on manual training data creation. With Grobid, however, there is a shortcut; Grobid provides utilities for ``creating'' training data, that is to say, for running an existing model on new articles and producing a ``first pass'' attempt at extracting the ground truth metadata. It is then the job of the researcher to correct and validate this output to ensure the gold standard. Thus, Grobid does most of the hard work in writing to an XML in the TEI format. This notwithstanding, the validation process takes an enormous amount of time.
+
+As one would expect, the model that is most worth improving--segmentation--is the least effective at assisting in training data creation, and its mistakes are plentiful. Nevertheless, Grobid provides us with a good starting point by producing ``predictions'' for our sampled HEP papers. Though the shipped model is produced from as few as 120 articles, it is quite accurate at identifying the front matter (header) prior to the start of the body, and the reference section(s). The body matter is usually correctly classified (giving a high true positive (TP) rate), since with a limited training set, predicting the most frequent class can still give a relatively high likelihood. On the other hand, the number of false positives (FP) is significant, with footnotes, headnotes and page numbers regularly overlooked and absorbed into the body. Figure \ref{fig:seg_confusion_1} shows this effect. Though in this project we are not interested in classifying page numbers etc., we are mindful of the potential use of our data to future research with Grobid, and we dutifully correct all mistakes we encounter.
+
+\begin{figure}[!ht]
+\center
+\includegraphics[width=6in]{figures/confusion.pdf}
+\caption{Heat map visualisation of the confusion matrix for the shipped segmentation model. The main diagonal shows the majority correctness of the model, Notably, classification for <body> gives a high true positive rate (TP) (observe the contrast in the <body> row), but a high number of false positives (observe the confusion in the <body> column), i.e. the false \emph{negatives} of other classes.}
+\label{fig:seg_confusion_1}
+\end{figure}
+
+The header model has its own problems. Despite being much more accurate (the developers have evidently spent far more time on this model--the shipped training set numbers over 2700 annotated articles, 20 times as many as that of segmentation) [THIS COULD BE A FOOTNOTE].  
+
+%\subsubsection{Improving Grobid}
+%
+%Grobid . One approach to improving the tool is therefore to identify the weakest parts of the cascade . Regarding the HEP use case, it is unlikely we will find anything particular to improve; after all, a HEP date is a CORA date. This same point applies to the other lower-tier models. By the same token . In practical use, the most important models are those at the top, as without accurate classification from these, the lower levels . Segmentation provides the most interesting .  . And  although the header model is the best trained of all models (with a current training set of 2775 articles) . As we discovered, the interplay between the segmentation and header models provided an interesting starting point for our improvements.
+%
+%The header model requires not only improvement through training , but also extension. In particular HEP papers require the modelling of additional fields, such as
+
+
+
+\section{Conclusions}
+
+Failing to admit the futility of attempting to automate training data creation, as well as the subsequent effort required to do it manually, was an enormous hindrance to the \emph{d\'eroulement} of the project.
+
+[REFER TO GOALS HERE]
+
+\section{References}
+
+
+
+\section{Appendices}
 
 
 
