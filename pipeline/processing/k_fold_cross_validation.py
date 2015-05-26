@@ -5,8 +5,9 @@ import re
 from sklearn.cross_validation import KFold
 # from grobid import GrobidTrainer
 from grobid_shell import GrobidTrainer
-from numpy import array
+from numpy import array, random
 from matplotlib import cm
+from bs4 import BeautifulSoup
 
 from pylab import *
 
@@ -25,11 +26,19 @@ class Stat:
     F1 = 3
 
 
+def getFileId(file_path):
+    with open(file_path) as f:
+        try:
+            return BeautifulSoup(f, 'xml').fileDesc.attrs['xml:id']
+        except:
+            return False
+
+
 def k_fold_cross_validation(grobid,
                             classpath_trainer,
                             model,
                             n_folds,
-                            evaluate_raw):
+                            raw_folder):
     grobid_home = grobid + '/grobid-home'
     corpus = grobid + \
         '/grobid-trainer/resources/dataset/%s/corpus/tei/' % (model)
@@ -37,16 +46,22 @@ def k_fold_cross_validation(grobid,
         '/grobid-trainer/resources/dataset/%s/evaluation/tei/' % (model)
     evaluate_raw = grobid + \
         '/grobid-trainer/resources/dataset/%s/evaluation/%s/' % (model,
-                                                                 evaluate_raw)
+                                                                 raw_folder)
 
-    evaluation_set = listdir(evaluate_raw)
+    evaluation_set = [x[:x.find('.')] for x in listdir(evaluate_raw)]
+
+    # k-fold evaluation only for those raw files in evaluate/
+    k_fold_set = array(filter(lambda x: getFileId(corpus + x)
+                       in evaluation_set, listdir(corpus)))
+
+    # perform reproducible random shuffling
+    random.seed(0)
+    random.shuffle(k_fold_set)
+
+    folds = list(KFold(len(k_fold_set), n_folds=n_folds))
 
     grobid_trainer = GrobidTrainer(classpath=classpath_trainer,
                                    grobid_home=grobid_home)
-    # k-fold evaluation only for those raw files in evaluate
-    k_fold_set = filter(lambda x: x.strip('.tei.xml') in evaluation_set,
-                        listdir(corpus))
-    folds = list(KFold(len(k_fold_set), n_folds=n_folds))
 
     i = 1
 
@@ -145,7 +160,7 @@ def plot_confusion_matrix(name, confusion, path):
     figure()
     xticks(range(len(labels)), labels, rotation='90', fontsize=8)
     yticks(range(len(labels)), labels[::-1], fontsize=8)
-    pcolor(array(counts[::-1]), cmap=cm.Blues)  # , interpolation='nearest')
+    pcolor(array(counts[::-1]), cmap=cm.Blues)
     grid(True)
     title('Confusion matrix - %s' % (name))
     plt.tight_layout()
@@ -190,16 +205,16 @@ if __name__ == '__main__':
                                     classpath_trainer=classpath,
                                     model='header',
                                     n_folds=n_folds,
-                                    evaluate_raw='headers')
+                                    raw_folder='headers')
         elif file.startswith('S'):
             k_fold_cross_validation(grobid=batches + file,
                                     classpath_trainer=classpath,
                                     model='segmentation',
                                     n_folds=n_folds,
-                                    evaluate_raw='raw')
+                                    raw_folder='raw')
 
-# k_fold_cross_validation.read_output('Segmentation (HEP)', '../logs/logs_S_H', '../figs/figs_S_H')
 # k_fold_cross_validation.read_output('Segmentation (CORA)', '../logs/logs_S_C', '../figs/figs_S_C')
+# k_fold_cross_validation.read_output('Segmentation (HEP)', '../logs/logs_S_H', '../figs/figs_S_H')
 # k_fold_cross_validation.read_output('Segmentation (CORA + HEP)', '../logs/logs_S_CH', '../figs/figs_S_CH')
 # k_fold_cross_validation.read_output('Segmentation (HEP app. CORA)', '../logs/logs_S_HappC', '../figs/figs_S_HappC')
 # k_fold_cross_validation.read_output('Segmentation (Cora app. HEP)', '../logs/logs_S_CappH', '../figs/figs_S_CappH')
