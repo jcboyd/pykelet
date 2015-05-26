@@ -5,7 +5,8 @@ import re
 from sklearn.cross_validation import KFold
 # from grobid import GrobidTrainer
 from grobid_shell import GrobidTrainer
-from numpy import array, random
+from numpy import array
+from numpy.random import seed, shuffle
 from matplotlib import cm
 from bs4 import BeautifulSoup
 
@@ -55,8 +56,8 @@ def k_fold_cross_validation(grobid,
                        in evaluation_set, listdir(corpus)))
 
     # perform reproducible random shuffling
-    random.seed(0)
-    random.shuffle(k_fold_set)
+    seed(0)
+    shuffle(k_fold_set)
 
     folds = list(KFold(len(k_fold_set), n_folds=n_folds))
 
