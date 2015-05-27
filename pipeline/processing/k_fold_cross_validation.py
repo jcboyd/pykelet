@@ -9,6 +9,7 @@ from numpy import array
 from numpy.random import seed, shuffle
 from matplotlib import cm
 from bs4 import BeautifulSoup
+import matplotlib.ticker as ticker
 
 from pylab import *
 
@@ -84,10 +85,11 @@ def k_fold_cross_validation(grobid,
 
 
 def read_output(name, log_path, fig_path):
-
     token_stats = []
     field_stats = []
     instance_stats = []
+    confusions = []
+    all_labels = set([])
 
     for file in listdir(log_path):
         f = open(log_path + '/' + file)
@@ -126,6 +128,7 @@ def read_output(name, log_path, fig_path):
 
         labels = [row.split('\t')[0].strip('<>') for row in
                   filter(bool, results[Category.CONFUSION].split('\n'))]
+
         counts = [map(lambda x: int(x), row.split('\t')[1:]) for row in
                   filter(bool, results[Category.CONFUSION].split('\n'))]
 
@@ -135,17 +138,36 @@ def read_output(name, log_path, fig_path):
                 count_dict[col_label] = counts[
                     labels.index(row_label)][labels.index(col_label)]
             confusion[row_label] = count_dict
+            all_labels.add(row_label)
 
         token_stats.append(tokens)
         field_stats.append(fields)
         instance_stats.append(results[Category.INSTANCE])
+        confusions.append(confusion)
 
     plot_box_plots('Token-level (F1) - %s' % (name), 'token-level',
                    token_stats, fig_path)
     plot_box_plots('Field-level (F1) - %s' % (name), 'field-level',
                    field_stats, fig_path)
     # Currently just produce confusion on the last fold
-    plot_confusion_matrix(name, confusion, fig_path)
+    plot_confusion_matrix(name=name,
+                          confusion=aggregate_confusion(all_labels, confusions),
+                          path=fig_path)
+
+
+def aggregate_confusion(labels, confusion_matrices):
+    total_confusion = {}
+    for row_label in labels:
+        total_confusion[row_label] = {}
+        for col_label in labels:
+            total_confusion[row_label][col_label] = 0
+
+    for matrix in confusion_matrices:
+        for row_label in matrix.keys():
+            for col_label in matrix[row_label].keys():
+                total_confusion[row_label][col_label] += matrix[row_label][col_label]
+
+    return total_confusion
 
 
 def plot_confusion_matrix(name, confusion, path):
@@ -159,8 +181,17 @@ def plot_confusion_matrix(name, confusion, path):
         counts.append(scaled_row_counts)
 
     figure()
-    xticks(range(len(labels)), labels, rotation='90', fontsize=8)
-    yticks(range(len(labels)), labels[::-1], fontsize=8)
+    # Keep major ticks labeless
+    xticks(range(len(labels)), [])
+    yticks(range(len(labels)), [])
+    # Place labels on minor ticks
+    gca().set_xticks([x + 0.5 for x in range(len(labels))], minor=True)
+    gca().set_xticklabels(labels, rotation='90', fontsize=8, minor=True)
+    gca().set_yticks([y + 0.5 for y in range(len(labels))], minor=True)
+    gca().set_yticklabels(labels[::-1], fontsize=8, minor=True)
+    # Finally, hide minor tick marks...
+    gca().tick_params('both', width=0, which='minor')
+
     pcolor(array(counts[::-1]), cmap=cm.Blues)
     grid(True)
     title('Confusion matrix - %s' % (name))
