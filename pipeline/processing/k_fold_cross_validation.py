@@ -9,7 +9,6 @@ from numpy import array
 from numpy.random import seed, shuffle
 from matplotlib import cm
 from bs4 import BeautifulSoup
-import matplotlib.ticker as ticker
 
 from pylab import *
 
@@ -53,8 +52,9 @@ def k_fold_cross_validation(grobid,
     evaluation_set = [x[:x.find('.')] for x in listdir(evaluate_raw)]
 
     # k-fold evaluation only for those raw files in evaluate/
-    k_fold_set = array(filter(lambda x: getFileId(corpus + x)
-                       in evaluation_set, listdir(corpus)))
+    k_fold_set = array(filter(lambda x: (getFileId(corpus + x)
+                       in evaluation_set or x.strip('.tei.xml')
+                       in listdir(evaluate_raw)), listdir(corpus)))
 
     # perform reproducible random shuffling
     seed(0)
