@@ -78,6 +78,7 @@ def k_fold_cross_validation(grobid,
             i += 1
         except IOError:
             print 'Error: check folder configuration'
+            raise exception
         finally:
             # move fold files back to corpus folder
             for index in fold[1]:
