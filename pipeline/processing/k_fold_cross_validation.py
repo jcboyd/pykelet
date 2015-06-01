@@ -152,8 +152,9 @@ def read_output(name, log_path, fig_path):
                    field_stats, fig_path)
     # Currently just produce confusion on the last fold
     plot_confusion_matrix(name=name,
-                          confusion=aggregate_confusion(all_labels, confusions),
-                          path=fig_path)
+                          matrix=aggregate_confusion(all_labels, confusions),
+                          path=fig_path,
+                          show_counts=True)
 
 
 def aggregate_confusion(labels, confusion_matrices):
@@ -166,20 +167,23 @@ def aggregate_confusion(labels, confusion_matrices):
     for matrix in confusion_matrices:
         for row_label in matrix.keys():
             for col_label in matrix[row_label].keys():
-                total_confusion[row_label][col_label] += matrix[row_label][col_label]
+                total_confusion[row_label][col_label] += \
+                    matrix[row_label][col_label]
 
     return total_confusion
 
 
-def plot_confusion_matrix(name, confusion, path):
-    labels = [key.strip('<>') for key in sorted(confusion.keys())]
+def plot_confusion_matrix(name, matrix, path, show_counts):
+    labels = [key.strip('<>') for key in sorted(matrix.keys())]
     counts = []
+    proportions = []
     for label in labels:
-        count_dict = confusion[label]
+        count_dict = matrix[label]
         row_counts = [count_dict[key] for key in sorted(count_dict.keys())]
+        counts.append(row_counts)
         scaled_row_counts = [0 if sum(row_counts) == 0 else
                              1. * val / sum(row_counts) for val in row_counts]
-        counts.append(scaled_row_counts)
+        proportions.append(scaled_row_counts)
 
     figure()
     # Keep major ticks labeless
@@ -193,7 +197,16 @@ def plot_confusion_matrix(name, confusion, path):
     # Finally, hide minor tick marks...
     gca().tick_params('both', width=0, which='minor')
 
-    pcolor(array(counts[::-1]), cmap=cm.Blues)
+    pcolor(array(proportions[::-1]), cmap=cm.Reds)
+    if show_counts:
+        for y in range(len(counts)):
+            for x in range(len(counts[y])):
+                if counts[::-1][y][x] != 0:
+                    text(x + 0.5, y + 0.5, counts[::-1][y][x],
+                         fontsize=6,
+                         horizontalalignment='center',
+                         verticalalignment='center')
+
     grid(True)
     title('Confusion matrix - %s' % (name))
     plt.tight_layout()
