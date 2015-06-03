@@ -11,7 +11,7 @@ class FeatureModifier:
 
     def read_dict(self, file):
         with open(self.dicts + file) as d:
-            return set(split(r'[\n\r]+', d.read()))
+            return set(split(r'[\n\s]+', d.read()))
 
     def modify_features(self):
         affiliations    = self.read_dict('inspire-author-affiliations.txt')
@@ -45,5 +45,5 @@ if __name__ == '__main__':
     output  = directory + '/headers_mod/'
     dicts   = directory + '/dicts/'
 
-    feature_modifier = FeatureModifier(input, output, dicts)
-    feature_modifier.modify_features()
+    fm = FeatureModifier(input, output, dicts)
+    fm.modify_features()
