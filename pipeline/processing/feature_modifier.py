@@ -1,5 +1,6 @@
 from os import listdir, path
 from re import split
+from nltk.corpus import stopwords
 
 
 class FeatureModifier:
@@ -10,15 +11,18 @@ class FeatureModifier:
         self.dicts = dicts
 
     def read_dict(self, file):
-        with open(self.dicts + file) as d:
-            return set(split(r'[\n\s]+', d.read()))
+        with open(self.dicts + file, encoding='utf-8') as d:
+            sw = stopwords.words()
+            print len(sw)
+            dictionary = split(r'[\n\s]+', d.read())
+            return set(filter(lambda w: u'hi' in sw, dictionary))
 
     def modify_features(self):
-        affiliations    = self.read_dict('inspire-author-affiliations.txt')
-        authors         = self.read_dict('inspire-author-names.txt')
-        collaborations  = self.read_dict('inspire-collaborations.txt')
-        journals        = self.read_dict('inspire-journals.txt')
-        titles          = self.read_dict('inspire-titles.txt')
+        affiliations = self.read_dict('inspire-author-affiliations.txt')
+        authors = self.read_dict('inspire-author-names.txt')
+        collaborations = self.read_dict('inspire-collaborations.txt')
+        journals = self.read_dict('inspire-journals.txt')
+        titles = self.read_dict('inspire-titles.txt')
 
         inputs = listdir(self.input)
 
@@ -26,13 +30,13 @@ class FeatureModifier:
             with open(self.input + file, 'r') as i:
                 with open(self.output + file, 'w') as o:
                     for line in i:
-                        token = line.split(' ')[0]
+                        token = line.split()[0]
                         feats = line.strip('\n')
-                        o.write(feats + ' %s' % (int(token in affiliations))
-                                      + ' %s' % (int(token in authors))
-                                      + ' %s' % (int(token in collaborations))
-                                      + ' %s' % (int(token in journals))
-                                      + ' %s' % (int(token in titles))
+                        o.write(feats + ' %d' % (int(token in affiliations))
+                                      + ' %d' % (int(token in authors))
+                                      + ' %d' % (int(token in collaborations))
+                                      + ' %d' % (int(token in journals))
+                                      + ' %d' % (int(token in titles))
                                       + '\n')
 
             print '\r%.02f%%' % (100. * (1 + inputs.index(file)) / len(inputs))
@@ -41,9 +45,9 @@ class FeatureModifier:
 if __name__ == '__main__':
     directory = path.dirname(path.realpath(__file__))
 
-    input   = directory + '/headers/'
-    output  = directory + '/headers_mod/'
-    dicts   = directory + '/dicts/'
+    input = directory + '/headers/'
+    output = directory + '/headers_mod/'
+    dicts = directory + '/dicts/'
 
     fm = FeatureModifier(input, output, dicts)
     fm.modify_features()
