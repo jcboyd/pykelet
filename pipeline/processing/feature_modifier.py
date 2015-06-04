@@ -11,11 +11,10 @@ class FeatureModifier:
         self.dicts = dicts
 
     def read_dict(self, file):
-        with open(self.dicts + file, encoding='utf-8') as d:
-            sw = stopwords.words()
-            print len(sw)
-            dictionary = split(r'[\n\s]+', d.read())
-            return set(filter(lambda w: u'hi' in sw, dictionary))
+        with open(self.dicts + file) as d:
+            sw = set(stopwords.words())
+            dictionary = set(split(r'[\n\s]+', d.read()))
+            return dictionary.difference(sw)
 
     def modify_features(self):
         affiliations = self.read_dict('inspire-author-affiliations.txt')
@@ -29,7 +28,7 @@ class FeatureModifier:
         for file in inputs:
             with open(self.input + file, 'r') as i:
                 with open(self.output + file, 'w') as o:
-                    for line in i:
+                    for line in filter(lambda x: x != '\n', [l for l in i]):
                         token = line.split()[0]
                         feats = line.strip('\n')
                         o.write(feats + ' %d' % (int(token in affiliations))
