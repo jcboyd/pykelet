@@ -49,12 +49,10 @@ class FeatureModifier:
 
 if __name__ == '__main__':
     directory = path.dirname(path.realpath(__file__))
-    directory = '/home/joseph/Desktop/batches/H_HappC/grobid-trainer/resources/dataset/header/evaluation'
 
-    inputs = directory + '/headers (copy)/'
-    outputs = directory + '/headers/'
-    # dicts = directory + '/dicts/'
-    dicts = '/home/joseph/Desktop/dicts/'
+    inputs = directory + '/headers/'
+    outputs = directory + '/headers_mods/'
+    dicts = directory + '/dicts/'
 
     fm = FeatureModifier(inputs, outputs, dicts)
     fm.modify_features()
