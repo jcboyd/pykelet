@@ -56,6 +56,8 @@ def k_fold_cross_validation(grobid,
                        in evaluation_set or x.strip('.tei.xml')
                        in listdir(evaluate_raw)), listdir(corpus)))
 
+    print k_fold_set
+
     # perform reproducible random shuffling
     seed(0)
     shuffle(k_fold_set)

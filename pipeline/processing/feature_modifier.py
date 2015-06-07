@@ -1,6 +1,6 @@
 from os import listdir, path
 from re import split
-from nltk.corpus import stopwords
+from nltk import corpus
 
 
 class FeatureModifier:
@@ -12,9 +12,7 @@ class FeatureModifier:
 
     def read_dict(self, file):
         with open(self.dicts + file) as d:
-            sw = set(stopwords.words())
-            dictionary = set(split(r'[\n\s]+', d.read()))
-            return dictionary.difference(sw)
+            return set(split(r'[\n\s]+', d.read()))
 
     def modify_features(self):
         affiliations = self.read_dict('inspire-author-affiliations.txt')
@@ -22,20 +20,21 @@ class FeatureModifier:
         collaborations = self.read_dict('inspire-collaborations.txt')
         journals = self.read_dict('inspire-journals.txt')
         titles = self.read_dict('inspire-titles.txt')
+        stop_words = set(corpus.stopwords.words())
 
         inputs = listdir(self.input)
 
         for file in inputs:
             with open(self.input + file, 'r') as i:
                 with open(self.output + file, 'w') as o:
-                    for line in filter(lambda x: x != '\n', [l for l in i]):
+                    for feats in filter(bool, [line.strip() for line in i]):
                         token = line.split()[0]
-                        feats = line.strip('\n')
                         o.write(feats + ' %d' % (int(token in affiliations))
                                       + ' %d' % (int(token in authors))
                                       + ' %d' % (int(token in collaborations))
                                       + ' %d' % (int(token in journals))
                                       + ' %d' % (int(token in titles))
+                                      + ' %d' % (int(token in stop_words))
                                       + '\n')
 
             print '\r%.02f%%' % (100. * (1 + inputs.index(file)) / len(inputs))
