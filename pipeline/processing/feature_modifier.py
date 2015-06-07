@@ -56,3 +56,8 @@ if __name__ == '__main__':
 
     fm = FeatureModifier(inputs, outputs, dicts)
     fm.modify_features()
+
+    # directory = '/home/joseph/Desktop/batches/H_HappC/grobid-trainer/resources/dataset/header/evaluation'
+    # inputs = directory + '/headers (copy)/'
+    # outputs = directory + '/headers/'
+    # dicts = '/home/joseph/Desktop/dicts/'
