@@ -1,17 +1,19 @@
 from os import listdir, path
+from sys import stdout
 from re import split
 from nltk import corpus
 
 
 class FeatureModifier:
 
-    def __init__(self, input, output, dicts):
-        self.input = input
-        self.output = output
+    def __init__(self, inputs, outputs, dicts):
+        self.inputs = inputs
+        self.outputs = outputs
         self.dicts = dicts
 
-    def read_dict(self, file):
-        with open(self.dicts + file) as d:
+    def read_dict(self, f):
+        print 'Reading %s...' % (f)
+        with open(self.dicts + f) as d:
             return set(split(r'[\n\s]+', d.read()))
 
     def modify_features(self):
@@ -22,13 +24,15 @@ class FeatureModifier:
         titles = self.read_dict('inspire-titles.txt')
         stop_words = set(corpus.stopwords.words())
 
-        inputs = listdir(self.input)
+        inputs = listdir(self.inputs)
 
-        for file in inputs:
-            with open(self.input + file, 'r') as i:
-                with open(self.output + file, 'w') as o:
+        print 'Modifying features...'
+
+        for f in inputs:
+            with open(self.inputs + f, 'r') as i:
+                with open(self.outputs + f, 'w') as o:
                     for feats in filter(bool, [line.strip() for line in i]):
-                        token = line.split()[0]
+                        token = feats.split()[0]
                         o.write(feats + ' %d' % (int(token in affiliations))
                                       + ' %d' % (int(token in authors))
                                       + ' %d' % (int(token in collaborations))
@@ -37,15 +41,20 @@ class FeatureModifier:
                                       + ' %d' % (int(token in stop_words))
                                       + '\n')
 
-            print '\r%.02f%%' % (100. * (1 + inputs.index(file)) / len(inputs))
+            print '\r%.02f%%' % (100. * (1 + inputs.index(f)) / len(inputs)),
+            stdout.flush()
+
+        print '\rComplete!'
 
 
 if __name__ == '__main__':
     directory = path.dirname(path.realpath(__file__))
+    directory = '/home/joseph/Desktop/batches/H_HappC/grobid-trainer/resources/dataset/header/evaluation'
 
-    input = directory + '/headers/'
-    output = directory + '/headers_mod/'
-    dicts = directory + '/dicts/'
+    inputs = directory + '/headers (copy)/'
+    outputs = directory + '/headers/'
+    # dicts = directory + '/dicts/'
+    dicts = '/home/joseph/Desktop/dicts/'
 
-    fm = FeatureModifier(input, output, dicts)
+    fm = FeatureModifier(inputs, outputs, dicts)
     fm.modify_features()
