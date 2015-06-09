@@ -18,6 +18,7 @@ class Category:
     FIELD = 1
     INSTANCE = 2
     CONFUSION = 3
+    CONFUSION_AVE = 4
 
 
 class Stat:
@@ -90,6 +91,7 @@ def read_output(name, log_path, fig_path):
     field_stats = []
     instance_stats = []
     confusions = []
+    confusion_aves = []
     all_labels = set([])
 
     for file in listdir(log_path):
@@ -98,6 +100,7 @@ def read_output(name, log_path, fig_path):
                                         '===== Field-level results =====|' +
                                         '===== Instance-level results =====|' +
                                         '===== Confusion matrix =====|' +
+                                        '===== Confusion matrix ave. =====|' +
                                         '===== Top 5 Classifications =====',
                                         f.read().strip('\n')))
         f.close()
@@ -142,36 +145,68 @@ def read_output(name, log_path, fig_path):
             confusion[row_label] = count_dict
             all_labels.add(row_label)
 
+        aves = [map(lambda x: int(x), row.split('\t')[1:]) for row in
+                filter(bool, results[Category.CONFUSION_AVE].split('\n'))]
+
+        for row_label in labels:
+            ave_dict = {}
+            for col_label in labels:
+                ave_dict[col_label] = aves[
+                    labels.index(row_label)][labels.index(col_label)]
+            confusion_ave[row_label] = ave_dict
+
         token_stats.append(tokens)
         field_stats.append(fields)
         instance_stats.append(results[Category.INSTANCE])
         confusions.append(confusion)
+        confusion_aves.append(confusion_ave)
 
     plot_box_plots('Token-level (F1) - %s' % (name), 'token-level',
                    token_stats, fig_path)
     plot_box_plots('Field-level (F1) - %s' % (name), 'field-level',
                    field_stats, fig_path)
-    # Currently just produce confusion on the last fold
     plot_confusion_matrix(name=name,
-                          matrix=aggregate_confusion(all_labels, confusions),
+                          matrix=sum_confusion(all_labels, confusions),
+                          path=fig_path,
+                          show_counts=True)
+
+    plot_confusion_matrix(name=name,
+                          matrix=sum_confusion(all_labels, confusions),
                           path=fig_path,
                           show_counts=True)
 
 
-def aggregate_confusion(labels, confusion_matrices):
-    total_confusion = {}
+def sum_confusions(labels, confusion_matrices):
+    sum_confusion = {}
     for row_label in labels:
-        total_confusion[row_label] = {}
+        sum_confusion[row_label] = {}
         for col_label in labels:
-            total_confusion[row_label][col_label] = 0
+            sum_confusion[row_label][col_label] = 0
 
     for matrix in confusion_matrices:
         for row_label in matrix.keys():
             for col_label in matrix[row_label].keys():
-                total_confusion[row_label][col_label] += \
+                sum_confusion[row_label][col_label] += \
                     matrix[row_label][col_label]
 
-    return total_confusion
+    return sum_confusion
+
+
+def average_confusions(labels, confusion_matrices):
+    average_confusion = {}
+    for row_label in labels:
+        average_confusion[row_label] = {}
+        for col_label in labels:
+            average_confusion[row_label][col_label] = 0
+
+    for row_label in matrix.keys():
+        for col_label in matrix[row_label].keys():
+            for matrix in confusion_matrices:
+                average_confusion[row_label][col_label] += \
+                    matrix[row_label][col_label]
+            average_confusion[row_label][col_label] /= len(confusion_matrices)
+
+    return average_confusion
 
 
 def plot_confusion_matrix(name, matrix, path, show_counts):

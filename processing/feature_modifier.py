@@ -14,7 +14,10 @@ class FeatureModifier:
     def read_dict(self, f):
         print 'Reading %s...' % (f)
         with open(self.dicts + f) as d:
-            return set(split(r'[\n\s]+', d.read()))
+            # return set(split(r'[\n\s\.\,]+', d.read()))
+            stop_words = set(corpus.stopwords.words())
+            dictionary = set(split(r'[\n\s\.\,]+', d.read()))
+            return dictionary.difference(stop_words)
 
     def modify_features(self):
         affiliations = self.read_dict('inspire-author-affiliations.txt')
@@ -38,7 +41,7 @@ class FeatureModifier:
                                       + ' %d' % (int(token in collaborations))
                                       + ' %d' % (int(token in journals))
                                       + ' %d' % (int(token in titles))
-                                      + ' %d' % (int(token in stop_words))
+                                      # + ' %d' % (int(token in stop_words))
                                       + '\n')
 
             print '\r%.02f%%' % (100. * (1 + inputs.index(f)) / len(inputs)),
