@@ -97,7 +97,8 @@ def read_output(name, log_path, fig_path):
         results = filter(bool, re.split('===== Token-level results =====|' +
                                         '===== Field-level results =====|' +
                                         '===== Instance-level results =====|' +
-                                        '===== Confusion matrix =====',
+                                        '===== Confusion matrix =====|' +
+                                        '===== Top 5 Classifications =====',
                                         f.read().strip('\n')))
         f.close()
 
