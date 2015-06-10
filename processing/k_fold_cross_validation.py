@@ -49,7 +49,7 @@ def k_fold_cross_validation(grobid,
     evaluate_raw = grobid + \
         '/grobid-trainer/resources/dataset/%s/evaluation/%s/' % (model,
                                                                  raw_folder)
-
+    classpath_trainer = grobid + '/grobid-trainer/target/grobid-trainer-0.3.4-SNAPSHOT.jar'
     evaluation_set = [x[:x.find('.')] for x in listdir(evaluate_raw)]
 
     # k-fold evaluation only for those raw files in evaluate/
