@@ -145,8 +145,10 @@ def read_output(name, log_path, fig_path):
             confusion[row_label] = count_dict
             all_labels.add(row_label)
 
-        aves = [map(lambda x: int(x), row.split('\t')[1:]) for row in
+        aves = [map(lambda x: round(float(x), 2), row.split('\t')[1:]) for row in
                 filter(bool, results[Category.CONFUSION_AVE].split('\n'))]
+
+        confusion_ave = {}
 
         for row_label in labels:
             ave_dict = {}
@@ -166,12 +168,14 @@ def read_output(name, log_path, fig_path):
     plot_box_plots('Field-level (F1) - %s' % (name), 'field-level',
                    field_stats, fig_path)
     plot_confusion_matrix(name=name,
-                          matrix=sum_confusion(all_labels, confusions),
+                          type='totals',
+                          matrix=sum_confusions(all_labels, confusions),
                           path=fig_path,
                           show_counts=True)
 
     plot_confusion_matrix(name=name,
-                          matrix=sum_confusion(all_labels, confusions),
+                          type='averages',
+                          matrix=average_confusions(all_labels, confusion_aves),
                           path=fig_path,
                           show_counts=True)
 
@@ -199,9 +203,11 @@ def average_confusions(labels, confusion_matrices):
         for col_label in labels:
             average_confusion[row_label][col_label] = 0
 
-    for row_label in matrix.keys():
-        for col_label in matrix[row_label].keys():
+    for row_label in labels:  # matrix.keys():
+        for col_label in labels:  # matrix[row_label].keys():
             for matrix in confusion_matrices:
+                if row_label not in matrix.keys() or col_label not in matrix.keys():
+                    continue
                 average_confusion[row_label][col_label] += \
                     matrix[row_label][col_label]
             average_confusion[row_label][col_label] /= len(confusion_matrices)
@@ -209,7 +215,7 @@ def average_confusions(labels, confusion_matrices):
     return average_confusion
 
 
-def plot_confusion_matrix(name, matrix, path, show_counts):
+def plot_confusion_matrix(name, type, matrix, path, show_counts):
     labels = [key.strip('<>') for key in sorted(matrix.keys())]
     counts = []
     proportions = []
@@ -246,7 +252,7 @@ def plot_confusion_matrix(name, matrix, path, show_counts):
     grid(True)
     title('Confusion matrix - %s' % (name))
     plt.tight_layout()
-    savefig(path + '/confusion.pdf')
+    savefig(path + '/confusion_%s.pdf' % (type))
     close()
 
 
@@ -295,13 +301,32 @@ if __name__ == '__main__':
                                     n_folds=n_folds,
                                     raw_folder='raw')
 
-# k_fold_cross_validation.read_output('Segmentation (CORA)', '../logs/baseline/logs_S_C', '../figs/baseline/figs_S_C')
-# k_fold_cross_validation.read_output('Segmentation (HEP)', '../logs/baseline/logs_S_H', '../figs/baseline/figs_S_H')
-# k_fold_cross_validation.read_output('Segmentation (CORA + HEP)', '../logs/baseline/logs_S_CH', '../figs/baseline/figs_S_CH')
-# k_fold_cross_validation.read_output('Segmentation (HEP app. CORA)', '../logs/baseline/logs_S_HappC', '../figs/baseline/figs_S_HappC')
-# k_fold_cross_validation.read_output('Segmentation (Cora app. HEP)', '../logs/baseline/logs_S_CappH', '../figs/baseline/figs_S_CappH')
-# k_fold_cross_validation.read_output('Header (CORA)', '../logs/baseline/logs_H_C', '../figs/baseline/figs_H_C')
-# k_fold_cross_validation.read_output('Header (HEP)', '../logs/baseline/logs_H_H', '../figs/baseline/figs_H_H')
-# k_fold_cross_validation.read_output('Header (CORA + HEP)', '../logs/baseline/logs_H_CH', '../figs/baseline/figs_H_CH')
-# k_fold_cross_validation.read_output('Header (HEP app. CORA)', '../logs/baseline/logs_H_HappC', '../figs/baseline/figs_H_HappC')
-# k_fold_cross_validation.read_output('Header (Cora app. HEP)', '../logs/baseline/logs_H_CappH', '../figs/baseline/figs_H_CappH')
+# k_fold_cross_validation.read_output('Segmentation (CORA)', '../logs/baseline/S_C', '../figs/baseline/S_C')
+# k_fold_cross_validation.read_output('Segmentation (HEP)', '../logs/baseline/S_H', '../figs/baseline/S_H')
+# k_fold_cross_validation.read_output('Segmentation (CORA + HEP)', '../logs/baseline/S_CH', '../figs/baseline/S_CH')
+# k_fold_cross_validation.read_output('Segmentation (HEP app. CORA)', '../logs/baseline/S_HappC', '../figs/baseline/S_HappC')
+# k_fold_cross_validation.read_output('Segmentation (Cora app. HEP)', '../logs/baseline/S_CappH', '../figs/baseline/S_CappH')
+# k_fold_cross_validation.read_output('Header (CORA)', '../logs/baseline/H_C', '../figs/baseline/H_C')
+# k_fold_cross_validation.read_output('Header (HEP)', '../logs/baseline/H_H', '../figs/baseline/H_H')
+# k_fold_cross_validation.read_output('Header (CORA + HEP)', '../logs/baseline/H_CH', '../figs/baseline/H_CH')
+# k_fold_cross_validation.read_output('Header (HEP app. CORA)', '../logs/baseline/H_HappC', '../figs/baseline/H_HappC')
+# k_fold_cross_validation.read_output('Header (Cora app. HEP)', '../logs/baseline/H_CappH', '../figs/baseline/H_CappH')
+
+# k_fold_cross_validation.read_output('Header (HEP app. 1/3 CORA)', '../logs/baseline/H_HappC333', '../figs/baseline/H_HappC333')
+# k_fold_cross_validation.read_output('Header (HEP app. 2/3 CORA)', '../logs/baseline/H_HappC666', '../figs/baseline/H_HappC666')
+
+# k_fold_cross_validation.read_output('Segmentation (HEP)', '../logs/dicts/S_H_dicts', '../figs/dicts/S_H_dicts')
+# k_fold_cross_validation.read_output('Segmentation (HEP app. CORA)', '../logs/dicts/S_HappC_dicts', '../figs/dicts/S_HappC_dicts')
+# k_fold_cross_validation.read_output('Header (HEP)', '../logs/dicts/H_H_dicts', '../figs/dicts/H_H_dicts')
+# k_fold_cross_validation.read_output('Header (HEP app. CORA)', '../logs/dicts/H_HappC_dicts', '../figs/dicts/H_HappC_dicts')
+
+# k_fold_cross_validation.read_output('Segmentation (HEP)', '../logs/dicts_stops/S_H_dicts_stops', '../figs/dicts_stops/S_H_dicts_stops')
+# k_fold_cross_validation.read_output('Segmentation (HEP app. CORA)', '../logs/dicts_stops/S_HappC_dicts_stops', '../figs/dicts_stops/S_HappC_dicts_stops')
+# k_fold_cross_validation.read_output('Header (HEP)', '../logs/dicts_stops/H_H_dicts_stops', '../figs/dicts_stops/H_H_dicts_stops')
+# k_fold_cross_validation.read_output('Header (HEP app. CORA)', '../logs/dicts_stops/H_HappC_dicts_stops', '../figs/dicts_stops/H_HappC_dicts_stops')
+
+# k_fold_cross_validation.read_output('Header (HEP)', '../logs/regularisation/H_H_L20', '../figs/regularisation/H_H_L20')
+# k_fold_cross_validation.read_output('Header (HEP)', '../logs/regularisation/H_H_L2e-6', '../figs/regularisation/H_H_L2e-6')
+# k_fold_cross_validation.read_output('Header (HEP)', '../logs/regularisation/H_H_L2e-5', '../figs/regularisation/H_H_L2e-5')
+# k_fold_cross_validation.read_output('Header (HEP)', '../logs/regularisation/H_H_L2e-4', '../figs/regularisation/H_H_L2e-4')
+# k_fold_cross_validation.read_output('Header (HEP)', '../logs/regularisation/H_H_L2e-3', '../figs/regularisation/H_H_L2e-3')
