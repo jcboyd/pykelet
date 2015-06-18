@@ -278,7 +278,7 @@ if __name__ == '__main__':
     n_folds = 5
 
     directory = path.dirname(path.realpath(__file__))
-    jar = '/grobid-trainer-0.3.4-SNAPSHOT.jar'
+    jar = '/grobid-trainer/target/grobid-trainer-0.3.4-SNAPSHOT.jar'
     batches = directory + '/../batches/'
 
     for file in listdir(batches):
