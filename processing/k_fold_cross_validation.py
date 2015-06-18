@@ -49,24 +49,19 @@ def k_fold_cross_validation(grobid,
     evaluate_raw = grobid + \
         '/grobid-trainer/resources/dataset/%s/evaluation/%s/' % (model,
                                                                  raw_folder)
-    classpath_trainer = grobid + '/grobid-trainer/target/grobid-trainer-0.3.4-SNAPSHOT.jar'
     evaluation_set = [x[:x.find('.')] for x in listdir(evaluate_raw)]
+
+    grobid_trainer = GrobidTrainer(classpath=classpath_trainer,
+                                   grobid_home=grobid_home)
 
     # k-fold evaluation only for those raw files in evaluate/
     k_fold_set = array(filter(lambda x: (getFileId(corpus + x)
                        in evaluation_set or x.strip('.tei.xml')
                        in listdir(evaluate_raw)), listdir(corpus)))
-
     # perform reproducible random shuffling
     seed(0)
     shuffle(k_fold_set)
-
     folds = list(KFold(len(k_fold_set), n_folds=n_folds))
-
-    grobid_trainer = GrobidTrainer(classpath=classpath_trainer,
-                                   grobid_home=grobid_home)
-
-    i = 1
 
     for fold in folds:
         try:
@@ -76,7 +71,6 @@ def k_fold_cross_validation(grobid,
 
             grobid_trainer.train(model)
             grobid_trainer.evaluate(model)
-            i += 1
         except IOError, e:
             print 'Error: check folder configuration'
             print e
@@ -145,8 +139,8 @@ def read_output(name, log_path, fig_path):
             confusion[row_label] = count_dict
             all_labels.add(row_label)
 
-        aves = [map(lambda x: round(float(x), 2), row.split('\t')[1:]) for row in
-                filter(bool, results[Category.CONFUSION_AVE].split('\n'))]
+        aves = [map(lambda x: round(float(x), 2), row.split('\t')[1:]) for row
+                in filter(bool, results[Category.CONFUSION_AVE].split('\n'))]
 
         confusion_ave = {}
 
@@ -175,7 +169,8 @@ def read_output(name, log_path, fig_path):
 
     plot_confusion_matrix(name=name,
                           type='averages',
-                          matrix=average_confusions(all_labels, confusion_aves),
+                          matrix=average_confusions(all_labels,
+                                                    confusion_aves),
                           path=fig_path,
                           show_counts=True)
 
@@ -283,20 +278,19 @@ if __name__ == '__main__':
     n_folds = 5
 
     directory = path.dirname(path.realpath(__file__))
-    classpath = directory + \
-        '/../grobid/grobid-trainer/target/grobid-trainer-0.3.4-SNAPSHOT.jar'
+    jar = '/grobid-trainer-0.3.4-SNAPSHOT.jar'
     batches = directory + '/../batches/'
 
     for file in listdir(batches):
         if file.startswith('H'):
             k_fold_cross_validation(grobid=batches + file,
-                                    classpath_trainer=classpath,
+                                    classpath_trainer=batches + file + jar,
                                     model='header',
                                     n_folds=n_folds,
                                     raw_folder='headers')
         elif file.startswith('S'):
             k_fold_cross_validation(grobid=batches + file,
-                                    classpath_trainer=classpath,
+                                    classpath_trainer=batches + file + jar,
                                     model='segmentation',
                                     n_folds=n_folds,
                                     raw_folder='raw')
