@@ -14,10 +14,10 @@ class FeatureModifier:
     def read_dict(self, f):
         print 'Reading %s...' % (f)
         with open(self.dicts + f) as d:
-            # return set(split(r'[\n\s\.\,]+', d.read()))
-            stop_words = set(corpus.stopwords.words())
-            dictionary = set(split(r'[\n\s\.\,]+', d.read()))
-            return dictionary.difference(stop_words)
+            return set(split(r'[\n\s\.\,]+', d.read()))
+            # stop_words = set(corpus.stopwords.words())
+            # dictionary = set(split(r'[\n\s\.\,]+', d.read()))
+            # return dictionary.difference(stop_words)
 
     def modify_features(self):
         affiliations = self.read_dict('inspire-author-affiliations.txt')
