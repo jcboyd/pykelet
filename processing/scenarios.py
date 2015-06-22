@@ -5,10 +5,38 @@ import re
 
 class Scenarios:
 
+    # baseline
     H_H = {'id': 0, 'path': '../logs/baseline/H_H/'}
     H_HappC333 = {'id': 1, 'path': '../logs/baseline/H_HappC333/'}
     H_HappC666 = {'id': 2, 'path': '../logs/baseline/H_HappC666/'}
     H_HappC = {'id': 3, 'path': '../logs/baseline/H_HappC/'}
+    H_C = {'id': 4, 'path': '../logs/baseline/H_C/'}
+    H_CH = {'id': 5, 'path': '../logs/baseline/H_CH/'}
+    H_CappH = {'id': 6, 'path': '../logs/baseline/H_CappH/'}
+    S_H = {'id': 7, 'path': '../logs/baseline/S_H/'}
+    S_HappC = {'id': 8, 'path': '../logs/baseline/S_HappC/'}
+    S_C = {'id': 9, 'path': '../logs/baseline/S_C/'}
+    S_CH = {'id': 10, 'path': '../logs/baseline/S_CH/'}
+    S_CappH = {'id': 11, 'path': '../logs/baseline/S_CappH/'}
+
+    # dicts
+    H_H_dicts = {'id': 12, 'path': '../logs/dicts/H_H_dicts/'}
+    H_HappC_dicts = {'id': 13, 'path': '../logs/dicts/H_HappC_dicts/'}
+    S_H_dicts = {'id': 14, 'path': '../logs/dicts/S_H_dicts/'}
+    S_HappC_dicts = {'id': 15, 'path': '../logs/dicts/S_HappC_dicts/'}
+
+    # dicts_stops
+    H_H_dicts_stops = {'id': 16, 'path': '../logs/dicts_stops/H_H_dicts_stops/'}
+    H_HappC_dicts_stops = {'id': 17, 'path': '../logs/dicts_stops/H_HappC_dicts_stops/'}
+    S_H_stops = {'id': 18, 'path': '../logs/dicts_stops/S_H_dicts_stops/'}
+    S_HappC_dicts_stops = {'id': 19, 'path': '../logs/dicts_stops/S_HappC_dicts_stops/'}
+
+    # regularisation
+    H_H_L20 = {'id': 20, 'path': '../logs/regularisation/H_H_L2=0/'}
+    H_H_L2em6 = {'id': 21, 'path': '../logs/regularisation/H_H_L2=e-6/'}
+    H_H_L2em5 = {'id': 22, 'path': '../logs/regularisation/H_H_L2=e-5/'}
+    H_H_L2em4 = {'id': 23, 'path': '../logs/regularisation/H_H_L2=e-4/'}
+    H_H_L2em3 = {'id': 24, 'path': '../logs/regularisation/H_H_L2=e-3/'}
 
 
 class Category:
@@ -63,14 +91,28 @@ if __name__ == '__main__':
     n_folds = 5
     scenarios = []
 
+    # directories = [Scenarios.H_H['path'],
+    #                Scenarios.H_HappC333['path'],
+    #                Scenarios.H_HappC666['path'],
+    #                Scenarios.H_HappC['path']]
+
+    # directories = [Scenarios.H_H_L20['path'],
+    #                Scenarios.H_H_L2em6['path'],
+    #                Scenarios.H_H_L2em5['path'],
+    #                Scenarios.H_H_L2em4['path'],
+    #                Scenarios.H_H_L2em3['path']]
+
+    # directories = [Scenarios.H_H['path'],
+    #                Scenarios.H_HappC['path'],
+    #                Scenarios.H_HappC_dicts['path'],
+    #                Scenarios.H_HappC_dicts_stops['path']]
+
     directories = [Scenarios.H_H['path'],
-                   Scenarios.H_HappC333['path'],
-                   Scenarios.H_HappC666['path'],
-                   Scenarios.H_HappC['path']]
+                   Scenarios.H_H_dicts_stops['path']]
 
     # Load data
     for directory in directories:
-        scenario = Scenario(directory)
+        scenario = Scenario(path.basename(directory[:-1]))
         files = sorted(listdir(directory))
         for file in files:
             it = Iteration(files.index(file))
@@ -94,7 +136,7 @@ if __name__ == '__main__':
             scenario.add_iteration(it)
         scenarios.append(scenario)
 
-    field = 'collaboration'
+    field = 'title'
 
     # Plot data
     titles_0 = [x.iterations[0].fields[field].f1 for x in scenarios]
@@ -115,16 +157,17 @@ if __name__ == '__main__':
     plt.xlabel('Scenario', fontsize=18)
     plt.ylabel('F1', fontsize=16)
     gca().set_xticks(range(4))
-    gca().set_xticklabels(['H_H', 'H_Happ1/3C', 'H_Happ2/3C', 'H_HappC'], rotation='0', fontsize=12)
+    gca().set_xticklabels([s.name for s in scenarios], rotation='90', fontsize=12)
 
-    plt.plot(range(4), titles_0, marker='.', color='b', linestyle=':', linewidth='1')
-    plt.plot(range(4), titles_1, marker='.', color='b', linestyle=':', linewidth='1')
-    plt.plot(range(4), titles_2, marker='.', color='b', linestyle=':', linewidth='1')
-    plt.plot(range(4), titles_3, marker='.', color='b', linestyle=':', linewidth='1')
-    plt.plot(range(4), titles_4, marker='.', color='b', linestyle=':', linewidth='1')
-    plt.plot(range(4), averages, marker='.', color='b', linestyle='-', linewidth='2')
+    plt.plot(range(len(scenarios)), titles_0, marker='.', color='b', linestyle=':', linewidth='1')
+    plt.plot(range(len(scenarios)), titles_1, marker='.', color='b', linestyle=':', linewidth='1')
+    plt.plot(range(len(scenarios)), titles_2, marker='.', color='b', linestyle=':', linewidth='1')
+    plt.plot(range(len(scenarios)), titles_3, marker='.', color='b', linestyle=':', linewidth='1')
+    plt.plot(range(len(scenarios)), titles_4, marker='.', color='b', linestyle=':', linewidth='1')
+    plt.plot(range(len(scenarios)), averages, marker='.', color='b', linestyle='-', linewidth='2')
 
     plt.tight_layout()
 
     # show()
-    plt.savefig(directory + '/../figs/subsampling/cv_%s.pdf' % (field))
+    plt.savefig('/home/joseph/Desktop/%s.pdf' % (field))
+    # plt.savefig(directory + '/../figs/subsampling/%s.pdf' % (field))
