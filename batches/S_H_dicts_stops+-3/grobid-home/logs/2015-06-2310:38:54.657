@@ -1,0 +1,284 @@
+
+===== Token-level results =====
+
+
+label		accuracy	precision	recall		f1
+
+<header>		99.45		93.16		95.26		94.2
+<body>		94.31		94.18		98.68		96.38
+<page>		99.78		91.96		86.84		89.32
+<headnote>		99.42		89.24		58.01		70.31
+<acknowledgement>	99.91		84.25		89.92		86.99
+<references>	99.6		95.21		96.56		95.88
+<footnote>		99.47		65.44		37.08		47.34
+<annex>		95.67		48.07		13.14		20.64
+<cover>		100		100		100		100
+
+all fields		98.62		93.4		93.4 		93.4	(micro average)
+			98.62		84.61		75.06		77.9	(macro average)
+
+===== Field-level results =====
+
+label		accuracy	precision	recall		f1
+
+<header>		98.46		83.78		86.11		84.93
+<body>		95.53		86.76		95.54		90.93
+<page>		94.35		92.16		86.77		89.38
+<headnote>		92.67		93.58		69.15		79.53
+<acknowledgement>	99.72		94.12		84.21		88.89
+<references>	98.95		86.76		90.77		88.72
+<footnote>		95.05		80.36		42.86		55.9
+<annex>		98.67		33.33		11.76		17.39
+<cover>		100		100		100		100
+
+all fields		97.05		89.08		80.67 		84.67	(micro average)
+			97.05		83.43		74.13		77.3	(macro average)
+
+===== Instance-level results =====
+
+Total expected instances: 		34
+Correct instances: 		6
+Instance-level recall:	17.65
+
+===== Confusion matrix =====
+
+<acknowledgement>	107	3	9	0	0	0	0	0	0
+<annex>	0	212	1357	0	0	33	0	0	11
+<body>	20	222	28462	0	31	45	5	8	49
+<cover>	0	0	0	32	0	0	0	0	0
+<footnote>	0	1	106	0	89	15	16	4	9
+<header>	0	3	71	0	6	1689	2	2	0
+<headnote>	0	0	128	0	4	24	257	16	14
+<page>	0	0	37	0	6	3	0	343	6
+<references>	0	0	51	0	0	4	8	0	1769
+
+
+===== Confusion matrix ave. =====
+
+<acknowledgement>	0.8611	0.0278	0.1111	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000
+<annex>	0.0000	0.0291	0.5709	0.0000	0.0000	0.2000	0.0000	0.0000	0.2000
+<body>	0.0006	0.0041	0.9915	0.0000	0.0011	0.0006	0.0004	0.0003	0.0014
+<cover>	0.0000	0.0000	0.0000	1.0000	0.0000	0.0000	0.0000	0.0000	0.0000
+<footnote>	0.0000	0.0007	0.1661	0.0000	0.5282	0.1204	0.0567	0.0761	0.0517
+<header>	0.0000	0.0080	0.0544	0.0000	0.0088	0.9267	0.0004	0.0017	0.0000
+<headnote>	0.0000	0.0000	0.1747	0.0000	0.0021	0.0799	0.7278	0.0084	0.0071
+<page>	0.0000	0.0000	0.0879	0.0000	0.0334	0.0127	0.0000	0.8497	0.0164
+<references>	0.0000	0.0000	0.0086	0.0000	0.0000	0.0051	0.0039	0.0000	0.9824
+
+
+===== Top 5 Classifications =====
+
+(<acknowledgement>, <acknowledgement>)
+	1329896.training.segmentation.tei.xml - 1.0000 (18)
+	1329869.training.segmentation.tei.xml - 1.0000 (16)
+	1340791.training.segmentation.tei.xml - 1.0000 (10)
+	1343657.training.segmentation.tei.xml - 1.0000 (9)
+	1342383.training.segmentation.tei.xml - 1.0000 (8)
+(<acknowledgement>, <annex>)
+	1348569.training.segmentation.tei.xml - 0.5000 (3)
+(<acknowledgement>, <body>)
+	1345420.training.segmentation.tei.xml - 1.0000 (5)
+	1345110.training.segmentation.tei.xml - 1.0000 (4)
+(<acknowledgement>, <cover>)
+(<acknowledgement>, <footnote>)
+(<acknowledgement>, <header>)
+(<acknowledgement>, <headnote>)
+(<acknowledgement>, <page>)
+(<acknowledgement>, <references>)
+(<annex>, <acknowledgement>)
+(<annex>, <annex>)
+	1359029.training.segmentation.tei.xml - 0.1455 (212)
+(<annex>, <body>)
+	1345110.training.segmentation.tei.xml - 1.0000 (81)
+	1340408.training.segmentation.tei.xml - 1.0000 (31)
+	1359029.training.segmentation.tei.xml - 0.8545 (1245)
+(<annex>, <cover>)
+(<annex>, <footnote>)
+(<annex>, <header>)
+	1358092.training.segmentation.tei.xml - 1.0000 (33)
+(<annex>, <headnote>)
+(<annex>, <page>)
+(<annex>, <references>)
+	1351324.training.segmentation.tei.xml - 1.0000 (11)
+(<body>, <acknowledgement>)
+	1340791.training.segmentation.tei.xml - 0.0191 (20)
+(<body>, <annex>)
+	1343657.training.segmentation.tei.xml - 0.1397 (222)
+(<body>, <body>)
+	1359031.training.segmentation.tei.xml - 1.0000 (1743)
+	.gitkeep - 1.0000 (1609)
+	1341561.training.segmentation.tei.xml - 1.0000 (1294)
+	1329896.training.segmentation.tei.xml - 1.0000 (1148)
+	1348569.training.segmentation.tei.xml - 1.0000 (1003)
+(<body>, <cover>)
+(<body>, <footnote>)
+	1335465.training.segmentation.tei.xml - 0.0140 (4)
+	1340793.training.segmentation.tei.xml - 0.0129 (14)
+	1335052.training.segmentation.tei.xml - 0.0065 (3)
+	1359029.training.segmentation.tei.xml - 0.0027 (10)
+(<body>, <header>)
+	1359029.training.segmentation.tei.xml - 0.0075 (28)
+	1329661.training.segmentation.tei.xml - 0.0072 (4)
+	1358092.training.segmentation.tei.xml - 0.0062 (13)
+(<body>, <headnote>)
+	1504.01918.training.segmentation.tei.xml - 0.0096 (2)
+	1340408.training.segmentation.tei.xml - 0.0028 (1)
+	1345111.training.segmentation.tei.xml - 0.0019 (1)
+	1351324.training.segmentation.tei.xml - 0.0009 (1)
+(<body>, <page>)
+	1351324.training.segmentation.tei.xml - 0.0045 (5)
+	1335052.training.segmentation.tei.xml - 0.0043 (2)
+	1504.04710.training.segmentation.tei.xml - 0.0010 (1)
+(<body>, <references>)
+	1340791.training.segmentation.tei.xml - 0.0468 (49)
+(<cover>, <acknowledgement>)
+(<cover>, <annex>)
+(<cover>, <body>)
+(<cover>, <cover>)
+	1335052.training.segmentation.tei.xml - 1.0000 (22)
+	1351324.training.segmentation.tei.xml - 1.0000 (10)
+(<cover>, <footnote>)
+(<cover>, <header>)
+(<cover>, <headnote>)
+(<cover>, <page>)
+(<cover>, <references>)
+(<footnote>, <acknowledgement>)
+(<footnote>, <annex>)
+	1348569.training.segmentation.tei.xml - 0.0159 (1)
+(<footnote>, <body>)
+	1340408.training.segmentation.tei.xml - 1.0000 (1)
+	1335054.training.segmentation.tei.xml - 0.7838 (29)
+	1348569.training.segmentation.tei.xml - 0.7302 (46)
+	1358092.training.segmentation.tei.xml - 0.6207 (18)
+	1359029.training.segmentation.tei.xml - 0.4000 (8)
+(<footnote>, <cover>)
+(<footnote>, <footnote>)
+	1335052.training.segmentation.tei.xml - 1.0000 (25)
+	1342207.training.segmentation.tei.xml - 1.0000 (3)
+	1504.04710.training.segmentation.tei.xml - 1.0000 (3)
+	1505.01654.training.segmentation.tei.xml - 1.0000 (2)
+	1343657.training.segmentation.tei.xml - 1.0000 (2)
+(<footnote>, <header>)
+	1353185.training.segmentation.tei.xml - 1.0000 (4)
+	1504.01918.training.segmentation.tei.xml - 1.0000 (1)
+	1329869.training.segmentation.tei.xml - 0.2857 (2)
+	1340793.training.segmentation.tei.xml - 0.2500 (1)
+	1342383.training.segmentation.tei.xml - 0.1176 (2)
+(<footnote>, <headnote>)
+	1340791.training.segmentation.tei.xml - 1.0000 (1)
+	1335054.training.segmentation.tei.xml - 0.1622 (6)
+	1348569.training.segmentation.tei.xml - 0.1429 (9)
+(<footnote>, <page>)
+	1345420.training.segmentation.tei.xml - 1.0000 (1)
+	1340793.training.segmentation.tei.xml - 0.7500 (3)
+(<footnote>, <references>)
+	.gitkeep - 1.0000 (2)
+	1358092.training.segmentation.tei.xml - 0.1034 (3)
+	1335054.training.segmentation.tei.xml - 0.0541 (2)
+	1348569.training.segmentation.tei.xml - 0.0317 (2)
+(<header>, <acknowledgement>)
+(<header>, <annex>)
+	1344709.training.segmentation.tei.xml - 0.2727 (3)
+(<header>, <body>)
+	1345420.training.segmentation.tei.xml - 0.8148 (22)
+	1335052.training.segmentation.tei.xml - 0.6154 (32)
+	1344709.training.segmentation.tei.xml - 0.1818 (2)
+	1342207.training.segmentation.tei.xml - 0.1667 (13)
+	1335551.training.segmentation.tei.xml - 0.0400 (1)
+(<header>, <cover>)
+(<header>, <footnote>)
+	1335465.training.segmentation.tei.xml - 0.2105 (4)
+	1345923.training.segmentation.tei.xml - 0.0455 (1)
+	1504.04710.training.segmentation.tei.xml - 0.0435 (1)
+(<header>, <header>)
+	1345110.training.segmentation.tei.xml - 1.0000 (50)
+	1351388.training.segmentation.tei.xml - 1.0000 (45)
+	1353185.training.segmentation.tei.xml - 1.0000 (45)
+	1348569.training.segmentation.tei.xml - 1.0000 (30)
+	1359029.training.segmentation.tei.xml - 1.0000 (29)
+(<header>, <headnote>)
+	1342207.training.segmentation.tei.xml - 0.0128 (1)
+	1340791.training.segmentation.tei.xml - 0.0014 (1)
+(<header>, <page>)
+	.gitkeep - 0.0526 (1)
+	1329896.training.segmentation.tei.xml - 0.0041 (1)
+(<header>, <references>)
+(<headnote>, <acknowledgement>)
+(<headnote>, <annex>)
+(<headnote>, <body>)
+	1340793.training.segmentation.tei.xml - 0.8333 (70)
+	1348569.training.segmentation.tei.xml - 0.8182 (9)
+	1329869.training.segmentation.tei.xml - 0.8000 (4)
+	1335054.training.segmentation.tei.xml - 0.5000 (5)
+	1358092.training.segmentation.tei.xml - 0.3671 (29)
+(<headnote>, <cover>)
+(<headnote>, <footnote>)
+	1358092.training.segmentation.tei.xml - 0.0506 (4)
+(<headnote>, <header>)
+	1504.01918.training.segmentation.tei.xml - 1.0000 (2)
+	1335054.training.segmentation.tei.xml - 0.3000 (3)
+	1342383.training.segmentation.tei.xml - 0.2500 (2)
+	1359029.training.segmentation.tei.xml - 0.1047 (9)
+	1504.04710.training.segmentation.tei.xml - 0.1000 (1)
+(<headnote>, <headnote>)
+	1353185.training.segmentation.tei.xml - 1.0000 (26)
+	.gitkeep - 1.0000 (15)
+	1345923.training.segmentation.tei.xml - 1.0000 (14)
+	1345111.training.segmentation.tei.xml - 1.0000 (12)
+	1342207.training.segmentation.tei.xml - 1.0000 (10)
+(<headnote>, <page>)
+	1358092.training.segmentation.tei.xml - 0.2025 (16)
+(<headnote>, <references>)
+	1340793.training.segmentation.tei.xml - 0.1190 (10)
+	1358092.training.segmentation.tei.xml - 0.0506 (4)
+(<page>, <acknowledgement>)
+(<page>, <annex>)
+(<page>, <body>)
+	1335054.training.segmentation.tei.xml - 0.8750 (7)
+	1348569.training.segmentation.tei.xml - 0.8462 (11)
+	1358092.training.segmentation.tei.xml - 0.5152 (17)
+	1329869.training.segmentation.tei.xml - 0.4000 (2)
+(<page>, <cover>)
+(<page>, <footnote>)
+	1342383.training.segmentation.tei.xml - 0.7500 (3)
+	1329869.training.segmentation.tei.xml - 0.2000 (1)
+	1358092.training.segmentation.tei.xml - 0.0303 (1)
+	1359029.training.segmentation.tei.xml - 0.0204 (1)
+(<page>, <header>)
+	1342383.training.segmentation.tei.xml - 0.2500 (1)
+	1504.04710.training.segmentation.tei.xml - 0.1000 (1)
+	1358092.training.segmentation.tei.xml - 0.0303 (1)
+(<page>, <headnote>)
+(<page>, <page>)
+	1340791.training.segmentation.tei.xml - 1.0000 (32)
+	1353185.training.segmentation.tei.xml - 1.0000 (26)
+	1329661.training.segmentation.tei.xml - 1.0000 (19)
+	1343657.training.segmentation.tei.xml - 1.0000 (18)
+	1329896.training.segmentation.tei.xml - 1.0000 (18)
+(<page>, <references>)
+	1329869.training.segmentation.tei.xml - 0.2000 (1)
+	1335054.training.segmentation.tei.xml - 0.1250 (1)
+	1358092.training.segmentation.tei.xml - 0.0909 (3)
+	1348569.training.segmentation.tei.xml - 0.0769 (1)
+(<references>, <acknowledgement>)
+(<references>, <annex>)
+(<references>, <body>)
+	1329896.training.segmentation.tei.xml - 0.2825 (50)
+	1335551.training.segmentation.tei.xml - 0.0112 (1)
+(<references>, <cover>)
+(<references>, <footnote>)
+(<references>, <header>)
+	1340408.training.segmentation.tei.xml - 0.1739 (4)
+(<references>, <headnote>)
+	1340408.training.segmentation.tei.xml - 0.0435 (1)
+	1359031.training.segmentation.tei.xml - 0.0408 (2)
+	1359029.training.segmentation.tei.xml - 0.0240 (3)
+	1329869.training.segmentation.tei.xml - 0.0227 (2)
+(<references>, <page>)
+(<references>, <references>)
+	.gitkeep - 1.0000 (128)
+	1340791.training.segmentation.tei.xml - 1.0000 (125)
+	1329661.training.segmentation.tei.xml - 1.0000 (119)
+	1341561.training.segmentation.tei.xml - 1.0000 (85)
+	1358092.training.segmentation.tei.xml - 1.0000 (79)
+

@@ -1,0 +1,480 @@
+
+===== Token-level results =====
+
+
+label		accuracy	precision	recall		f1
+
+<reference>		98.92		78.92		71.92		75.26
+<note>		97.61		26.79		7.94		12.24
+<title>		99.92		99.21		98.95		99.08
+<author>		99.51		96.4		99.73		98.03
+<affiliation>	98.65		90.72		92.38		91.54
+<address>		99.06		92.58		91.15		91.86
+<submission>	99.03		80.92		68.33		74.1
+<date>		99.8		85.11		76.92		80.81
+<abstract>		98.89		97.68		99.98		98.81
+<email>		99.47		90.45		97.56		93.87
+<copyright>		99.37		100		8.2		15.15
+<pubnum>		99.85		95.11		97.77		96.42
+<keyword>		98.94		74.32		100		85.27
+<grant>		100		100		100		100
+<collaboration>	100		100		100		100
+<web>		99.69		0		0		0
+
+all fields		99.29		94.02		94.02 		94.02	(micro average)
+			99.29		81.76		75.68		75.78	(macro average)
+
+===== Field-level results =====
+
+label		accuracy	precision	recall		f1
+
+<reference>		99.05		87.5		70		77.78
+<note>		95.7		33.33		12.5		18.18
+<title>		99.52		100		93.55		96.67
+<author>		96.9		80		93.02		86.02
+<affiliation>	95.7		86.49		88.89		87.67
+<address>		96.66		90.91		88.24		89.55
+<submission>	98.33		75		54.55		63.16
+<date>		99.28		92.86		86.67		89.66
+<abstract>		98.57		84.85		96.55		90.32
+<email>		99.05		91.89		97.14		94.44
+<copyright>		99.52		100		33.33		50
+<pubnum>		99.76		100		94.74		97.3
+<keyword>		99.05		77.78		100		87.5
+<grant>		100		100		100		100
+<collaboration>	100		100		100		100
+<web>		99.52		0		0		0
+
+all fields		98.54		87.47		86.06 		86.76	(micro average)
+			98.54		81.29		75.57		76.77	(macro average)
+
+===== Instance-level results =====
+
+Total expected instances: 		31
+Correct instances: 		7
+Instance-level recall:	22.58
+
+===== Confusion matrix =====
+
+<abstract>	4124	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+<address>	2	474	40	2	0	0	0	1	0	0	0	0	0	1	0	0
+<affiliation>	1	25	655	13	0	0	0	15	0	0	0	0	0	0	0	0
+<author>	0	0	3	1097	0	0	0	0	0	0	0	0	0	0	0	0
+<collaboration>	0	0	0	0	7	0	0	0	0	0	0	0	0	0	0	0
+<copyright>	47	0	0	0	0	5	0	0	0	0	0	0	0	9	0	0
+<date>	7	0	0	4	0	0	40	0	0	0	0	0	0	0	0	0
+<email>	6	2	1	0	0	0	0	360	0	0	0	0	0	0	0	0
+<grant>	0	0	0	0	0	0	0	0	70	0	0	0	0	0	0	0
+<keyword>	0	0	0	0	0	0	0	0	0	275	0	0	0	0	0	0
+<note>	4	11	23	18	0	0	0	13	0	62	15	0	39	0	3	0
+<pubnum>	4	0	0	0	0	0	0	0	0	0	0	175	0	0	0	0
+<reference>	0	0	0	0	0	0	0	0	0	33	16	9	146	0	0	0
+<submission>	18	0	0	0	0	0	7	9	0	0	24	0	0	123	0	0
+<title>	0	0	0	4	0	0	0	0	0	0	0	0	0	0	376	0
+<web>	9	0	0	0	0	0	0	0	0	0	0	0	0	19	0	0
+
+
+===== Confusion matrix ave. =====
+
+<abstract>	0.9997	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0003	0.0000	0.0000	0.0000	0.0000	0.0000
+<address>	0.0370	0.8255	0.0951	0.0370	0.0000	0.0000	0.0000	0.0012	0.0000	0.0000	0.0000	0.0000	0.0000	0.0041	0.0000	0.0000
+<affiliation>	0.0357	0.0228	0.8848	0.0442	0.0000	0.0000	0.0000	0.0125	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000
+<author>	0.0000	0.0000	0.0180	0.9820	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000
+<collaboration>	0.0000	0.0000	0.0000	0.0000	1.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000
+<copyright>	0.3333	0.0000	0.0000	0.0000	0.0000	0.3333	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.3333	0.0000	0.0000
+<date>	0.0538	0.0000	0.0000	0.0440	0.0000	0.0000	0.9022	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000
+<email>	0.0200	0.0100	0.0033	0.0000	0.0000	0.0000	0.0000	0.9667	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000
+<grant>	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	1.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000
+<keyword>	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	1.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000
+<note>	0.0190	0.0326	0.0731	0.0782	0.0000	0.0000	0.0000	0.1429	0.0000	0.2667	0.1875	0.0000	0.1000	0.0000	0.1000	0.0000
+<pubnum>	0.0202	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.9798	0.0000	0.0000	0.0000	0.0000
+<reference>	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0643	0.1111	0.1111	0.7135	0.0000	0.0000	0.0000
+<submission>	0.1818	0.0000	0.0000	0.0000	0.0000	0.0000	0.0909	0.0190	0.0000	0.0000	0.0655	0.0000	0.0000	0.6428	0.0000	0.0000
+<title>	0.0000	0.0000	0.0000	0.0088	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.9912	0.0000
+<web>	0.5000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.5000	0.0000	0.0000
+
+
+===== Top 5 Classifications =====
+
+(<abstract>, <abstract>)
+	1338131.header.tei.xml - 1.0000 (390)
+	1345389.header.tei.xml - 1.0000 (331)
+	1345198.header.tei.xml - 1.0000 (284)
+	1343231.header.tei.xml - 1.0000 (262)
+	1358294.header.tei.xml - 1.0000 (220)
+(<abstract>, <address>)
+(<abstract>, <affiliation>)
+(<abstract>, <author>)
+(<abstract>, <collaboration>)
+(<abstract>, <copyright>)
+(<abstract>, <date>)
+(<abstract>, <email>)
+(<abstract>, <grant>)
+(<abstract>, <keyword>)
+(<abstract>, <note>)
+	1347419.header.tei.xml - 0.0085 (1)
+(<abstract>, <pubnum>)
+(<abstract>, <reference>)
+(<abstract>, <submission>)
+(<abstract>, <title>)
+(<abstract>, <web>)
+(<address>, <abstract>)
+	1347418.header.tei.xml - 1.0000 (2)
+(<address>, <address>)
+	1341555.header.tei.xml - 1.0000 (58)
+	1347450.header.tei.xml - 1.0000 (58)
+	1356926.header.tei.xml - 1.0000 (34)
+	1340791.header.tei.xml - 1.0000 (32)
+	1338131.header.tei.xml - 1.0000 (28)
+(<address>, <affiliation>)
+	1347299.header.tei.xml - 0.6667 (2)
+	1347307.header.tei.xml - 0.6000 (3)
+	1357062.header.tei.xml - 0.4286 (3)
+	1343231.header.tei.xml - 0.4194 (13)
+	1344709.header.tei.xml - 0.1923 (5)
+(<address>, <author>)
+	1351848.header.tei.xml - 1.0000 (2)
+(<address>, <collaboration>)
+(<address>, <copyright>)
+(<address>, <date>)
+(<address>, <email>)
+	1343231.header.tei.xml - 0.0323 (1)
+(<address>, <grant>)
+(<address>, <keyword>)
+(<address>, <note>)
+(<address>, <pubnum>)
+(<address>, <reference>)
+(<address>, <submission>)
+	1345110.header.tei.xml - 0.1111 (1)
+(<address>, <title>)
+(<address>, <web>)
+(<affiliation>, <abstract>)
+	1347418.header.tei.xml - 1.0000 (1)
+(<affiliation>, <address>)
+	1345198.header.tei.xml - 0.2750 (11)
+	1356926.header.tei.xml - 0.1778 (8)
+	1335054.header.tei.xml - 0.1200 (3)
+	1340793.header.tei.xml - 0.0476 (2)
+	1345913.header.tei.xml - 0.0189 (1)
+(<affiliation>, <affiliation>)
+	1345389.header.tei.xml - 1.0000 (52)
+	1340791.header.tei.xml - 1.0000 (48)
+	1344709.header.tei.xml - 1.0000 (48)
+	1343231.header.tei.xml - 1.0000 (47)
+	1345414.header.tei.xml - 1.0000 (42)
+(<affiliation>, <author>)
+	1351848.header.tei.xml - 1.0000 (2)
+	1345913.header.tei.xml - 0.1887 (10)
+	1338131.header.tei.xml - 0.0476 (1)
+(<affiliation>, <collaboration>)
+(<affiliation>, <copyright>)
+(<affiliation>, <date>)
+(<affiliation>, <email>)
+	1342203.header.tei.xml - 0.2750 (11)
+	1345913.header.tei.xml - 0.0755 (4)
+(<affiliation>, <grant>)
+(<affiliation>, <keyword>)
+(<affiliation>, <note>)
+(<affiliation>, <pubnum>)
+(<affiliation>, <reference>)
+(<affiliation>, <submission>)
+(<affiliation>, <title>)
+(<affiliation>, <web>)
+(<author>, <abstract>)
+(<author>, <address>)
+(<author>, <affiliation>)
+	1358294.header.tei.xml - 0.3333 (1)
+	1345110.header.tei.xml - 0.1667 (1)
+	1335054.header.tei.xml - 0.0588 (1)
+(<author>, <author>)
+	1340793.header.tei.xml - 1.0000 (444)
+	1351848.header.tei.xml - 1.0000 (137)
+	1340791.header.tei.xml - 1.0000 (103)
+	1341555.header.tei.xml - 1.0000 (44)
+	1347450.header.tei.xml - 1.0000 (44)
+(<author>, <collaboration>)
+(<author>, <copyright>)
+(<author>, <date>)
+(<author>, <email>)
+(<author>, <grant>)
+(<author>, <keyword>)
+(<author>, <note>)
+(<author>, <pubnum>)
+(<author>, <reference>)
+(<author>, <submission>)
+(<author>, <title>)
+(<author>, <web>)
+(<collaboration>, <abstract>)
+(<collaboration>, <address>)
+(<collaboration>, <affiliation>)
+(<collaboration>, <author>)
+(<collaboration>, <collaboration>)
+	1342203.header.tei.xml - 1.0000 (3)
+	1341555.header.tei.xml - 1.0000 (2)
+	1347450.header.tei.xml - 1.0000 (2)
+(<collaboration>, <copyright>)
+(<collaboration>, <date>)
+(<collaboration>, <email>)
+(<collaboration>, <grant>)
+(<collaboration>, <keyword>)
+(<collaboration>, <note>)
+(<collaboration>, <pubnum>)
+(<collaboration>, <reference>)
+(<collaboration>, <submission>)
+(<collaboration>, <title>)
+(<collaboration>, <web>)
+(<copyright>, <abstract>)
+	1345414.header.tei.xml - 1.0000 (47)
+(<copyright>, <address>)
+(<copyright>, <affiliation>)
+(<copyright>, <author>)
+(<copyright>, <collaboration>)
+(<copyright>, <copyright>)
+	1335054.header.tei.xml - 1.0000 (5)
+(<copyright>, <date>)
+(<copyright>, <email>)
+(<copyright>, <grant>)
+(<copyright>, <keyword>)
+(<copyright>, <note>)
+(<copyright>, <pubnum>)
+(<copyright>, <reference>)
+(<copyright>, <submission>)
+	1340793.header.tei.xml - 1.0000 (9)
+(<copyright>, <title>)
+(<copyright>, <web>)
+(<date>, <abstract>)
+	1345198.header.tei.xml - 0.7000 (7)
+(<date>, <address>)
+(<date>, <affiliation>)
+(<date>, <author>)
+	1343231.header.tei.xml - 0.5714 (4)
+(<date>, <collaboration>)
+(<date>, <copyright>)
+(<date>, <date>)
+	1358091.header.tei.xml - 1.0000 (4)
+	1356926.header.tei.xml - 1.0000 (3)
+	1341555.header.tei.xml - 1.0000 (3)
+	1340769.header.tei.xml - 1.0000 (3)
+	1347419.header.tei.xml - 1.0000 (3)
+(<date>, <email>)
+(<date>, <grant>)
+(<date>, <keyword>)
+(<date>, <note>)
+(<date>, <pubnum>)
+(<date>, <reference>)
+(<date>, <submission>)
+(<date>, <title>)
+(<date>, <web>)
+(<email>, <abstract>)
+	1340769.header.tei.xml - 0.4000 (6)
+(<email>, <address>)
+	1343231.header.tei.xml - 0.2000 (2)
+(<email>, <affiliation>)
+	1340769.header.tei.xml - 0.0667 (1)
+(<email>, <author>)
+(<email>, <collaboration>)
+(<email>, <copyright>)
+(<email>, <date>)
+(<email>, <email>)
+	1345389.header.tei.xml - 1.0000 (40)
+	1356926.header.tei.xml - 1.0000 (38)
+	1345198.header.tei.xml - 1.0000 (30)
+	1344709.header.tei.xml - 1.0000 (29)
+	1338131.header.tei.xml - 1.0000 (26)
+(<email>, <grant>)
+(<email>, <keyword>)
+(<email>, <note>)
+(<email>, <pubnum>)
+(<email>, <reference>)
+(<email>, <submission>)
+(<email>, <title>)
+(<email>, <web>)
+(<grant>, <abstract>)
+(<grant>, <address>)
+(<grant>, <affiliation>)
+(<grant>, <author>)
+(<grant>, <collaboration>)
+(<grant>, <copyright>)
+(<grant>, <date>)
+(<grant>, <email>)
+(<grant>, <grant>)
+	1345198.header.tei.xml - 1.0000 (46)
+	1335201.header.tei.xml - 1.0000 (24)
+(<grant>, <keyword>)
+(<grant>, <note>)
+(<grant>, <pubnum>)
+(<grant>, <reference>)
+(<grant>, <submission>)
+(<grant>, <title>)
+(<grant>, <web>)
+(<keyword>, <abstract>)
+(<keyword>, <address>)
+(<keyword>, <affiliation>)
+(<keyword>, <author>)
+(<keyword>, <collaboration>)
+(<keyword>, <copyright>)
+(<keyword>, <date>)
+(<keyword>, <email>)
+(<keyword>, <grant>)
+(<keyword>, <keyword>)
+	1343231.header.tei.xml - 1.0000 (35)
+	1334001.header.tei.xml - 1.0000 (32)
+	1345198.header.tei.xml - 1.0000 (31)
+	1356926.header.tei.xml - 1.0000 (29)
+	1338131.header.tei.xml - 1.0000 (26)
+(<keyword>, <note>)
+(<keyword>, <pubnum>)
+(<keyword>, <reference>)
+(<keyword>, <submission>)
+(<keyword>, <title>)
+(<keyword>, <web>)
+(<note>, <abstract>)
+	1334001.header.tei.xml - 0.1905 (4)
+(<note>, <address>)
+	1340793.header.tei.xml - 0.1724 (5)
+	1344709.header.tei.xml - 0.1538 (6)
+(<note>, <affiliation>)
+	1340793.header.tei.xml - 0.5517 (16)
+	1344709.header.tei.xml - 0.1795 (7)
+(<note>, <author>)
+	1334001.header.tei.xml - 0.3810 (8)
+	1340793.header.tei.xml - 0.2759 (8)
+	1342203.header.tei.xml - 0.1250 (2)
+(<note>, <collaboration>)
+(<note>, <copyright>)
+(<note>, <date>)
+(<note>, <email>)
+	1347307.header.tei.xml - 1.0000 (4)
+	1334001.header.tei.xml - 0.4286 (9)
+(<note>, <grant>)
+(<note>, <keyword>)
+	1358091.header.tei.xml - 1.0000 (20)
+	1345198.header.tei.xml - 1.0000 (16)
+	1335054.header.tei.xml - 0.6667 (26)
+(<note>, <note>)
+	1335201.header.tei.xml - 1.0000 (1)
+	1342203.header.tei.xml - 0.8750 (14)
+(<note>, <pubnum>)
+(<note>, <reference>)
+	1344709.header.tei.xml - 0.6667 (26)
+	1335054.header.tei.xml - 0.3333 (13)
+(<note>, <submission>)
+(<note>, <title>)
+	1345110.header.tei.xml - 1.0000 (3)
+(<note>, <web>)
+(<pubnum>, <abstract>)
+	1334001.header.tei.xml - 0.3636 (4)
+(<pubnum>, <address>)
+(<pubnum>, <affiliation>)
+(<pubnum>, <author>)
+(<pubnum>, <collaboration>)
+(<pubnum>, <copyright>)
+(<pubnum>, <date>)
+(<pubnum>, <email>)
+(<pubnum>, <grant>)
+(<pubnum>, <keyword>)
+(<pubnum>, <note>)
+(<pubnum>, <pubnum>)
+	1345110.header.tei.xml - 1.0000 (15)
+	1345414.header.tei.xml - 1.0000 (15)
+	1340793.header.tei.xml - 1.0000 (12)
+	1356926.header.tei.xml - 1.0000 (10)
+	1357062.header.tei.xml - 1.0000 (10)
+(<pubnum>, <reference>)
+(<pubnum>, <submission>)
+(<pubnum>, <title>)
+(<pubnum>, <web>)
+(<reference>, <abstract>)
+(<reference>, <address>)
+(<reference>, <affiliation>)
+(<reference>, <author>)
+(<reference>, <collaboration>)
+(<reference>, <copyright>)
+(<reference>, <date>)
+(<reference>, <email>)
+(<reference>, <grant>)
+(<reference>, <keyword>)
+	1347307.header.tei.xml - 0.5789 (33)
+(<reference>, <note>)
+	.gitkeep - 1.0000 (16)
+(<reference>, <pubnum>)
+	1334001.header.tei.xml - 1.0000 (9)
+(<reference>, <reference>)
+	1358091.header.tei.xml - 1.0000 (44)
+	1335054.header.tei.xml - 1.0000 (21)
+	1345110.header.tei.xml - 1.0000 (19)
+	1338131.header.tei.xml - 1.0000 (19)
+	1340793.header.tei.xml - 1.0000 (10)
+(<reference>, <submission>)
+(<reference>, <title>)
+(<reference>, <web>)
+(<submission>, <abstract>)
+	1341555.header.tei.xml - 1.0000 (14)
+	1347418.header.tei.xml - 1.0000 (4)
+(<submission>, <address>)
+(<submission>, <affiliation>)
+(<submission>, <author>)
+(<submission>, <collaboration>)
+(<submission>, <copyright>)
+(<submission>, <date>)
+	.gitkeep - 1.0000 (7)
+(<submission>, <email>)
+	1345389.header.tei.xml - 0.2093 (9)
+(<submission>, <grant>)
+(<submission>, <keyword>)
+(<submission>, <note>)
+	1345110.header.tei.xml - 0.4643 (13)
+	1345389.header.tei.xml - 0.2558 (11)
+(<submission>, <pubnum>)
+(<submission>, <reference>)
+(<submission>, <submission>)
+	1338131.header.tei.xml - 1.0000 (20)
+	1345414.header.tei.xml - 1.0000 (19)
+	1334001.header.tei.xml - 1.0000 (17)
+	1335054.header.tei.xml - 1.0000 (16)
+	1347450.header.tei.xml - 1.0000 (7)
+(<submission>, <title>)
+(<submission>, <web>)
+(<title>, <abstract>)
+(<title>, <address>)
+(<title>, <affiliation>)
+(<title>, <author>)
+	1338131.header.tei.xml - 0.1250 (2)
+	1345414.header.tei.xml - 0.0769 (1)
+	1358294.header.tei.xml - 0.0714 (1)
+(<title>, <collaboration>)
+(<title>, <copyright>)
+(<title>, <date>)
+(<title>, <email>)
+(<title>, <grant>)
+(<title>, <keyword>)
+(<title>, <note>)
+(<title>, <pubnum>)
+(<title>, <reference>)
+(<title>, <submission>)
+(<title>, <title>)
+	1351848.header.tei.xml - 1.0000 (27)
+	1347307.header.tei.xml - 1.0000 (20)
+	1347450.header.tei.xml - 1.0000 (19)
+	1345389.header.tei.xml - 1.0000 (16)
+	1345110.header.tei.xml - 1.0000 (15)
+(<title>, <web>)
+(<web>, <abstract>)
+	1334001.header.tei.xml - 1.0000 (9)
+(<web>, <address>)
+(<web>, <affiliation>)
+(<web>, <author>)
+(<web>, <collaboration>)
+(<web>, <copyright>)
+(<web>, <date>)
+(<web>, <email>)
+(<web>, <grant>)
+(<web>, <keyword>)
+(<web>, <note>)
+(<web>, <pubnum>)
+(<web>, <reference>)
+(<web>, <submission>)
+	1338131.header.tei.xml - 1.0000 (19)
+(<web>, <title>)
+(<web>, <web>)
+
