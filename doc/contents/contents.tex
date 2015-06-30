@@ -20,6 +20,7 @@
 \usepackage{bbm}
 \usepackage{amssymb}
 \usepackage{amsmath}
+\usepackage{mathtools}
 \usepackage{float}
 \DeclareCaptionFont{blue}{\color{LightSteelBlue3}}
 
@@ -40,6 +41,7 @@
 \tableofcontents
 
 \section{Introduction} % 3 - 10
+
 \subsection{Motivation}
 \subsection{Aims}
 \subsection{Main Results}
@@ -51,16 +53,35 @@
 \subsection{Conditional Random Fields}
 \subsubsection{Feature Engineering}
 \subsubsection{Wapiti}
+Lack of support for numeric features imposes constraints on the choice of features possible. Any numeric-based idea must be discretised
 \section{Automatic Metadata Extraction}
 \subsection{Metadata Extraction}
 \subsection{Related Work}
 \subsection{GROBID}
+[Show here Grobid vs. refextract]
 \section{Implementation and Data}
 \subsection{Extensions}
 \subsection{Data Acquisition}
 \section{Results and Analysis}
+\[
+  \text{lev}_{a, b}(i, j) = 
+  \begin{cases} 
+  	\text{max}(i, j) &\quad\text{if min(i, j) = 0} \\
+	\text{min}
+		\begin{cases}
+			\text{lev}_{a, b}(i - 1, j) + 1 \\
+			\text{lev}_{a, b}(i, j - 1) + 1 \\
+			\text{lev}_{a, b}(i - 1, j - 1) + 1_{a_i \neq b_j} \\
+		\end{cases} &\quad\text{otherwise} \\
+  \end{cases}
+\]
+
+$$\Bigg \lfloor \frac{10 \times \text{lev}_{a, b}(|a|, |b|)}{\text{max}(|a|, |b|)}\Bigg  \rfloor$$
+
 \subsection{Experiment Setup}
-\subsection{Evaluation Method} 
+Months of CPU time? (parallelised), 64 experiments (before an combination experiments are run)
+Mind you, though we aren't explicitly interested in identifying headnotes, footnotes, page numbers etc., correctly classifying them does spare the important categories (header, references) from garbage data.
+\subsection{Evaluation Method}
 \subsection{Baseline}
 \subsubsection{Header model - Cora dataset}
 \subsubsection{Header model - Cora dataset appending HEP dataset}
@@ -120,6 +141,8 @@
 \subsection{Summary}
 \subsubsection{Key Results}
 \subsection{Future Work}
+* expand training sets
+* model collaborations in the citation model
 \section{References}
 \section{Appendices}
 
