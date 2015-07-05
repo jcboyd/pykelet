@@ -101,9 +101,7 @@ and,
 Thus, we may rewrite the factorisation of the HMM as,
 
 \begin{equation}
-\begin{aligned}
-p(\mathbf{x}, \mathbf{y}) = \prod_{t=1}^T p(y_t | y_{t-1})p(x_t | y_t)
-\end{aligned}
+\p(\mathbf{x}, \mathbf{y}) = \prod_{t=1}^T p(y_t | y_{t-1})p(x_t | y_t)
 \label{eq:factorisedHMM}
 \end{equation}
 
@@ -119,25 +117,17 @@ Thus, the hidden state sequence prediction is chosen to be the one maximising th
 \subsection{Viterbi Algorithm}
 \label{subsec:viterbi}
 
-The Viterbi algorithm is used to efficiently compute the most likely sequence, $\textbf{y}$, given an observation sequence, $\textbf{x}$. The algorithm can do this efficiently by working along the sequence from state to state, and choosing the transitions which maximise the likelihood of the sequence fragment. To show this we define $v_t(s) = \max_{\mathbf{y}_{1:t-1}} \p(\mathbf{y}_{1:t-1}, y_t = s | \mathbf{x})$, that is, the most likely sequence from the first $t-1$ states, with the choice of state $s$ at time $t$. Thus, we may write $v_t(s) = \max_{\mathbf{y}_{1:t-1}} \p(\mathbf{y}_{1:t-1} | \mathbf{x}) \p(y_{t-1}, y_t = s) \p(x_t | y_t = s)$. Finally, $v_t(s) = \max_{\mathbf{y}_{1:t-1}} v_{t-1}(y_{t-1}) \p(y_{t-1}, y_t = s) \p(x_t | y_t = s)$, and we may see the recursion. When the all states are computed at time $t$, the maximum may be chosen and the algorithm proceeds to time $t+1$. Pseudocode for the Viterbi algorithm is given in Algorithm \ref{alg:viterbi}. The algorithm must test all $|S|$ transitions from the previous state to each of the $|S|$ current states, and it does that at for each of the $|T|$ steps in the sequence. Hence the complexity of the algorithm is a workable $\mathcal{O}(T|S|^2)$.
+The Viterbi algorithm is used to efficiently compute the most likely sequence, $\textbf{y}$, given an observation sequence, $\textbf{x}$. The algorithm can do this efficiently by working along the sequence from state to state, and choosing the transitions which maximise the likelihood of the sequence fragment. To show this we define, $v_t(s) = \max_{\mathbf{y}_{1:t-1}} \p(\mathbf{y}_{1:t-1}, y_t = s | \mathbf{x})$, that is, the most likely sequence from the first $t-1$ states, with the choice of state $s$ at time $t$. Thus, we may write,
 
-\begin{algorithm}[!ht]
- \KwData{Observation sequence, $\mathbf{x}$, and model parameters, $\theta=(\mathbf{A}, \mathbf{B}, \mathbf{I})$}
- \KwResult{Most likely sequence, \textbf{y*}}
- Initialise $\mathbf{y}*$ as a zero-length sequence
-  \For {s $\in$ S}{
-   $v_1(s) = \mathbf{I}(s) \times \mathbf{B}(x_1, s)$
-  }
-  \For{$t = 2$ to T}{
-   \For{s $\in$ S}{
-    $v_t(s) = \max_{s'}(\mathbf{A}(s', s) \times v_{t-1}(s')) \times \mathbf{B}(x_t, s)$ \\
-    Append s to $\mathbf{y}*$
-    }
- }
- Return $\mathbf{y}*$
- \caption{The Viterbi algorithm ($\mathcal{O}(T|S|^2))$ for computing the most likely hidden sequence for a given observation sequence of an HMM.}
- \label{alg:viterbi}
-\end{algorithm}
+\begin{equation}
+\begin{aligned}
+v_t(s) &= \max_{\mathbf{y}_{1:t-1}} \p(\mathbf{y}_{1:t-1} | \mathbf{x}) \p(y_{t-1}, y_t = s) \p(x_t | y_t = s) \\
+&= \max_{\mathbf{y}_{1:t-1}} v_{t-1}(y_{t-1}) \p(y_{t-1}, y_t = s) \p(x_t | y_t = s), 
+\end{aligned}
+\label{eq:factorisedHMM}
+\end{equation}
+
+and we may see the recursion. When the all states are computed at time $t$, the maximum may be chosen and the algorithm proceeds to time $t+1$. Pseudocode for the Viterbi algorithm is given in Algorithm \ref{alg:viterbi}. The algorithm must test all $|S|$ transitions from the previous state to each of the $|S|$ current states, and it does that at for each of the $|T|$ steps in the sequence. Hence the complexity of the algorithm is a workable $\mathcal{O}(T|S|^2)$.
 
 \subsection{Forward-backward Algorithm}
 
@@ -172,61 +162,35 @@ Thus, we may see the recursion, as well al the way the forward variables will be
 
 From equations \ref{eq:forward} and \ref{eq:backward} comes Algorithm \ref{alg:fb}. The complexity of the algorithm comes from noting that at each of the $T$ steps in the sequence (in either direction), we compute $|S|$ variables, involving a summation of $|S|$ products. Hence, like the Viterbi algorithm, the complexity of the forward-backward algorithm is $\mathcal{O}(T|S|^2)$.
 
-\begin{algorithm}[!ht]
- \KwData{Observation sequence, $\mathbf{x}$, and model parameters, $\theta=(\mathbf{A}, \mathbf{B}, \mathbf{I})$}
- \KwResult{Set of forward variables, $\{\alpha_t(s)\}_{s \in S, t \in T}$, and backward variables, $\{\beta_t(s)\}_{s \in S, t \in T}$}
- \For {$s \in S$}{
-  $\alpha_1(s) = B(x_1, s) \times \mathbf{I}(s)$ \\
-  \For {t = 2 to T}{
-   $\alpha_t(s) = \sum_{s'} \mathbf{A}(s, s')  \times \mathbf{B}(x_t, s) \times \alpha_{t-1}(s')$
-  }
- }
- \For {$s \in S$}{
-  $\beta_T(s) = 1$ \\
-  \For {t = T-1 to 1}{
-   $\beta_t(s) = \sum_{s'} \beta_{t+1}(s') \times \mathbf{A}(s, s')  \times \mathbf{B}(x_t, s)$
-  }
- }
-Return the sets of backward and forward variables
-\caption{The forward-backward algorithm - $\mathcal{O}(T|S|^2)$}
-\label{alg:fb}
-\end{algorithm}
-
 \subsection{Maximum Entropy Classifiers}
 
 Maximum entropy classifiers are
 
 \subsection{L-BFGS}
 
-The L-BFGS algorithm is
+$$\boldsymbol\beta^{k+1} = \boldsymbol\beta^{k} - \alpha\nabla\mathcal{L}(\boldsymbol\beta^{k})$$
 
-\subsection{Maximum Entropy Markov Models}
+$$\boldsymbol\beta^{k+1} = \boldsymbol\beta^{k} - \alpha_k \mathbf{H_k}^{-1} \mathbf{g}_k$$
 
-Maximum Entropy Markov models (MEMM) combine aspects of HMMs and maximum entropy classifiers.
+Whereas for smaller problems, the classical gradient descent approach is an adequate solver, for models of very large dimension, such as those encountered in metadata extraction, which may run up into the millions, smarter approaches are required. The \emph{limited memory Broyden--Fletcher--Goldfarb--Shanno} (l-BFGS) algorithm makes savings on both the computation and storage of the Hessian matrix central to the second-order Newton's method., and has come to be the standard learning algorithm for ?? . The original BFGS already being a quasi-Newton method, saving on the \emph{computation} of the . The l-BFGS l-algorithm is the tool of choice for many problems.\cite{murphy2012machine}
 
 \subsection{Conditional Random Fields}
 
-Conditional Random Fields (CRF) are an elaboration of MEMMs.
+Conditional Random Fields (CRFs) are . They are an improvement to the similar, Maximum Entropy Markov models (MEMM), which combine aspects of maximum entropy classifiers and Hidden Markov models.
 
+Classification over relational data can benefit greatly from rich features, that is, describing observed attributes about an observation beyond simply its identity as we modelled for HMMs. However, the resulting model complexity of defining rich, context-aware features will be typically too great to be workable. In conditional random fields (CRF), we circumvent this problem by instead modelling the conditional distribution, $p(\mathbf{y}, \mathbf{x})$ of the graph structure giving us a free choice over features, which we may choose and implicitly define a distribution over $\mathbf{x}$ without having to model this distribution at all.\cite{sutton2006introduction} Furthermore, modelling the conditional distribution is sufficient for classification wherein the observation sequence is given. This freedom for rich feature engineering is what make CRFs the current state of the art in metadata extraction, where arbitrarily defined features may make for good indicators.
+
+With CRFs, as with HMMs, our objective is to make a sequence prediction for a sequence of structured data.
 
 \begin{enumerate}
-\item HMMs
-\item logistic regressions, (and optimisation thereof)
-\item Maxent and how they differ to CRFs ~\cite{peng2006information}
-\item Inference algorithms
-\item l-bfgs
 \item mention sequence learning, graphical models, random fields, Hammersley-Clifford
 \item define discriminative etc.
-\item feature engineering
-\item segue into Wapiti
 \end{enumerate}
 
-\subsection{Log-linear Models}
-\subsection{Graphical Models}
-\subsubsection{Hidden Markov Models}
-\subsection{Conditional Random Fields}
-\subsubsection{Feature Engineering}
-\subsubsection{Wapiti}
+\subsection{Beyond Conditional Random Fields}
+
+\subsection{Feature Engineering}
+\subsection{Wapiti}
 Lack of support for numeric features imposes constraints our feature engineering. Any numeric-based idea must be discretised\footnote{this is a footnote, and it's crazy easy to make in latex.}.
 
 Both approaches yield the same input data for the CRF engine, and so evaluation is in fact equivalent to prediction, despite the initial difference in input formats. Figure \ref{fig:traininput} shows an excerpt from an input file to the CRF engine for training. These features are for inputs ``January 1994'' and ``July 1996'', for training the Date model. The features range from token identity, to a variety of prefixes and punctuation features. It should be noted that OCR information is only used in higher level models, that is, the Header and Segmentation models. The input for lower-level models such as Date is plaintext, and so features are typically simple, but dictionary-based features, where information about a token is referenced in a dictionary resource within Grobid, are also used. Note the features shown are only those pertaining to the token itself. The full range of features (including those involving concatenations of the token's neighbours etc.) are defined by a set of feature templates. The feature templates for each model are contained in a separate file. An excerpt of this is shown in Figure \ref{fig:template}. These are given as a separate input to the CRF engine, and it is with these that the engine constructs all feature functions for the model. It is therefore vital that the feature extraction, which is generated by Grobid, is aligned with the template file, which is manually configured by the developer. As depicted in Figure \ref{fig:flow}, there is a strong coupling between these two parts of Grobid. The excerpt shown is from the Wapiti model, but the notation is the same for CRF++, which first standardised the syntax. This subset of five feature templates capture information about the capitalisation of a token and its neighbours. The notation has the structure, [identifier]:[\%x][row, col], where row is the offset from the current token, and col indicates the feature index. Thus, ``U50:\%[0,11]'', denotes that the feature template identified as ``U50'' takes the 11th feature for the current token (0 offset). This feature will be equal to 1 if a token is capitalised, and 0 otherwise. ``U52:\%[-1,11]'' indicates the same thing, but based on the capitalisation of the \emph{previous} token. ``U54:\%x[-1,11]/\%x[0,11]'' is a binary function for detecting the capitalisation of the current \emph{and} the following token.
@@ -291,6 +255,9 @@ where $F_{ij} = \sum_t\mathbbm{1}_{\{y_t = i\}}\mathbbm{1}_{\{y_{t-1} = j\}}$ an
 \end{figure}
 
 A model is typically a large file (as much as 100Mb). At the top of the file, the feature templates are declared, just as they are in the input. Because of this, that file is not required at prediction time. Following this the labels are declared. Then come two longer sections: first, the feature functions themselves as defined. Figure \ref{fig:model} shows the first 12 features produced from the first token in the first sample in the training set--``November''. Because this is the first token in the string, we see the first three feature macros, which relate to the identity of the token's predecessors, remain unresolved. The fourth, however, shows the indicator for the token. This function will be true if a token is equal to ``November''. The fifth function is an indicator for if the token's successor is equal to ``19'', and so on. The final (and usually largest) section of the model file defines the non-zero weights for the feature functions. The weights are represented in scientific notation and in hexadecimal representation, presumably to avoid arithmetic underflow (a common problem when dealing with with the computation of HMMs and related models).
+
+
+\pagebreak
 
 \section{Automatic Metadata Extraction}
 \label{sec:ame}
@@ -430,493 +397,52 @@ Mind you, though we aren't explicitly interested in identifying headnotes, footn
 \section{References}
 \section{Appendices}
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{algorithm}[!ht]
+ \KwData{Observation sequence, $\mathbf{x}$, and model parameters, $\theta=(\mathbf{A}, \mathbf{B}, \mathbf{I})$}
+ \KwResult{Most likely sequence, \textbf{y*}}
+ Initialise $\mathbf{y}*$ as a zero-length sequence
+  \For {s $\in$ S}{
+   $v_1(s) = \mathbf{I}(s) \times \mathbf{B}(x_1, s)$
+  }
+  \For{$t = 2$ to T}{
+   \For{s $\in$ S}{
+    $v_t(s) = \max_{s'}(\mathbf{A}(s', s) \times v_{t-1}(s')) \times \mathbf{B}(x_t, s)$ \\
+    Append s to $\mathbf{y}*$
+    }
+ }
+ Return $\mathbf{y}*$
+ \caption{The Viterbi algorithm ($\mathcal{O}(T|S|^2))$ for computing the most likely hidden sequence for a given observation sequence of an HMM.}
+ \label{alg:viterbi}
+\end{algorithm}
+
+
+\begin{algorithm}[!ht]
+ \KwData{Observation sequence, $\mathbf{x}$, and model parameters, $\theta=(\mathbf{A}, \mathbf{B}, \mathbf{I})$}
+ \KwResult{Set of forward variables, $\{\alpha_t(s)\}_{s \in S, t \in T}$, and backward variables, $\{\beta_t(s)\}_{s \in S, t \in T}$}
+ \For {$s \in S$}{
+  $\alpha_1(s) = B(x_1, s) \times \mathbf{I}(s)$ \\
+  \For {t = 2 to T}{
+   $\alpha_t(s) = \sum_{s'} \mathbf{A}(s, s')  \times \mathbf{B}(x_t, s) \times \alpha_{t-1}(s')$
+  }
+ }
+ \For {$s \in S$}{
+  $\beta_T(s) = 1$ \\
+  \For {t = T-1 to 1}{
+   $\beta_t(s) = \sum_{s'} \beta_{t+1}(s') \times \mathbf{A}(s, s')  \times \mathbf{B}(x_t, s)$
+  }
+ }
+Return the sets of backward and forward variables
+\caption{The forward-backward algorithm - $\mathcal{O}(T|S|^2)$}
+\label{alg:fb}
+\end{algorithm}
 
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/H_C/boxplot-field-level.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/H_C/boxplot-token-level.pdf}}
-% \end{figure}
 
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/H_C/confusion_totals.pdf}}
-% \end{figure}
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \subsubsection{Header model - Cora dataset appending HEP dataset}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/H_CappH/boxplot-field-level.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/H_CappH/boxplot-token-level.pdf}}
-% \end{figure}
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/H_CappH/confusion_totals.pdf}}
-% \end{figure}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \subsubsection{Header model - Cora and HEP combined datasets}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/H_CH/boxplot-field-level.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/H_CH/boxplot-token-level.pdf}}
-% \end{figure}
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/H_CH/confusion_averages.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/H_CH/confusion_totals.pdf}}
-% \end{figure}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \subsubsection{Header model - HEP dataset}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/H_H/boxplot-field-level.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/H_H/boxplot-token-level.pdf}}
-% \end{figure}
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/H_H/confusion_averages.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/H_H/confusion_totals.pdf}}
-% \end{figure}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \subsubsection{Header model - HEP dataset appending CORA dataset}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/H_HappC/boxplot-field-level.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/H_HappC/boxplot-token-level.pdf}}
-% \end{figure}
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/H_HappC/confusion_averages.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/H_HappC/confusion_totals.pdf}}
-% \end{figure}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \subsubsection{Header model - HEP dataset appending 1/3 CORA dataset}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/H_HappC333/boxplot-field-level.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/H_HappC333/boxplot-token-level.pdf}}
-% \end{figure}
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/H_HappC333/confusion_averages.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/H_HappC333/confusion_totals.pdf}}
-% \end{figure}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \subsubsection{Header model - HEP dataset appending 2/3 CORA dataset}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/H_HappC666/boxplot-field-level.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/H_HappC666/boxplot-token-level.pdf}}
-% \end{figure}
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/H_HappC666/confusion_averages.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/H_HappC666/confusion_totals.pdf}}
-% \end{figure}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \subsubsection{Segmentation model - Cora dataset}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/S_C/boxplot-field-level.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/S_C/boxplot-token-level.pdf}}
-% \end{figure}
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/S_C/confusion_totals.pdf}}
-% \end{figure}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \subsubsection{Segmentation model - Cora dataset appending HEP dataset}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/S_CappH/boxplot-field-level.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/S_CappH/boxplot-token-level.pdf}}
-% \end{figure}
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/S_CappH/confusion_totals.pdf}}
-% \end{figure}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \subsubsection{Segmentation model - Cora and HEP combined datasets}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/S_CH/boxplot-field-level.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/S_CH/boxplot-token-level.pdf}}
-% \end{figure}
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/S_CH/confusion_totals.pdf}}
-% \end{figure}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \subsubsection{Segmentation model - HEP dataset}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/S_H/boxplot-field-level.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/S_H/boxplot-token-level.pdf}}
-% \end{figure}
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/S_H/confusion_totals.pdf}}
-% \end{figure}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \subsubsection{Segmentation model - HEP dataset appending CORA dataset}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/S_HappC/boxplot-field-level.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/S_HappC/boxplot-token-level.pdf}}
-% \end{figure}
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/baseline/S_HappC/confusion_totals.pdf}}
-% \end{figure}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \subsection{Regularisation}
-% \subsubsection{Header model - $L2 = 0$}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/regularisation/H_H_L20/boxplot-field-level.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/regularisation/H_H_L20/boxplot-token-level.pdf}}
-% \end{figure}
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/regularisation/H_H_L20/confusion_averages.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/regularisation/H_H_L20/confusion_totals.pdf}}
-% \end{figure}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \subsubsection{Header model - $L2 = 1e^{-6}$}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/regularisation/H_H_L2e-6/boxplot-field-level.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/regularisation/H_H_L2e-6/boxplot-token-level.pdf}}
-% \end{figure}
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/regularisation/H_H_L2e-6/confusion_averages.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/regularisation/H_H_L2e-6/confusion_totals.pdf}}
-% \end{figure}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \subsubsection{Header model - $L2 = 1e^{-5}$}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/regularisation/H_H_L2e-5/boxplot-field-level.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/regularisation/H_H_L2e-5/boxplot-token-level.pdf}}
-% \end{figure}
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/regularisation/H_H_L2e-5/confusion_averages.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/regularisation/H_H_L2e-5/confusion_totals.pdf}}
-% \end{figure}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \subsubsection{Header model - $L2 = 1e^{-4}$}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/regularisation/H_H_L2e-4/boxplot-field-level.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/regularisation/H_H_L2e-4/boxplot-token-level.pdf}}
-% \end{figure}
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/regularisation/H_H_L2e-4/confusion_averages.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/regularisation/H_H_L2e-4/confusion_totals.pdf}}
-% \end{figure}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \subsubsection{Header model - $L2 = 1e^{-3}$}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/regularisation/H_H_L2e-3/boxplot-field-level.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/regularisation/H_H_L2e-3/boxplot-token-level.pdf}}
-% \end{figure}
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/regularisation/H_H_L2e-3/confusion_averages.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/regularisation/H_H_L2e-3/confusion_totals.pdf}}
-% \end{figure}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \subsection{Dictionaries}
-% \subsubsection{Header model - HEP dataset}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts/H_H_dicts/boxplot-field-level.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts/H_H_dicts/boxplot-token-level.pdf}}
-% \end{figure}
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts/H_H_dicts/confusion_averages.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts/H_H_dicts/confusion_totals.pdf}}
-% \end{figure}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \subsubsection{Header model - HEP dataset appending CORA dataset}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts/H_HappC_dicts/boxplot-field-level.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts/H_HappC_dicts/boxplot-token-level.pdf}}
-% \end{figure}
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts/H_HappC_dicts/confusion_averages.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts/H_HappC_dicts/confusion_totals.pdf}}
-% \end{figure}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \subsubsection{Segmentation model - HEP dataset}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts/S_H_dicts/boxplot-field-level.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts/S_H_dicts/boxplot-token-level.pdf}}
-% \end{figure}
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts/S_H_dicts/confusion_averages.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts/S_H_dicts/confusion_totals.pdf}}
-% \end{figure}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \subsubsection{Segmentation model - HEP dataset appending CORA dataset}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts/S_HappC_dicts/boxplot-field-level.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts/S_HappC_dicts/boxplot-token-level.pdf}}
-% \end{figure}
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts/S_HappC_dicts/confusion_averages.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts/S_HappC_dicts/confusion_totals.pdf}}
-% \end{figure}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \subsubsection{Header Model - HEP dataset - $2^{nd}$ Degree Features}
-% \subsubsection{Header Model - HEP dataset Appending CORA - $2^{nd}$ Degree Features}
-% \subsubsection{Header Model - HEP dataset - $3^{rd}$ Degree Features}
-% \subsubsection{Header Model - HEP dataset Appending CORA - $3^{rd}$ Degree Features}
-
-% \subsection{Dictionaries + stop words}
-% \subsubsection{Header model - HEP dataset}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts_stops/H_H_dicts_stops/boxplot-field-level.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts_stops/H_H_dicts_stops/boxplot-token-level.pdf}}
-% \end{figure}
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts_stops/H_H_dicts_stops/confusion_averages.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts_stops/H_H_dicts_stops/confusion_totals.pdf}}
-% \end{figure}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \subsubsection{Header model - HEP dataset appending CORA dataset}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts_stops/H_HappC_dicts_stops/boxplot-field-level.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts_stops/H_HappC_dicts_stops/boxplot-token-level.pdf}}
-% \end{figure}
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts_stops/H_HappC_dicts_stops/confusion_averages.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts_stops/H_HappC_dicts_stops/confusion_totals.pdf}}
-% \end{figure}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \subsubsection{Segmentation model - HEP dataset}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts_stops/S_H_dicts_stops/boxplot-field-level.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts_stops/S_H_dicts_stops/boxplot-token-level.pdf}}
-% \end{figure}
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts_stops/S_H_dicts_stops/confusion_averages.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts_stops/S_H_dicts_stops/confusion_totals.pdf}}
-% \end{figure}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \subsubsection{Segmentation model - HEP dataset appending CORA dataset}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts_stops/S_HappC_dicts_stops/boxplot-field-level.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts_stops/S_HappC_dicts_stops/boxplot-token-level.pdf}}
-% \end{figure}
-
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts_stops/S_HappC_dicts_stops/confusion_averages.pdf}}\\
-%   \subfloat[][]{\includegraphics[width=0.75\textwidth]{../../figs/dicts_stops/S_HappC_dicts_stops/confusion_totals.pdf}}
-% \end{figure}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \subsubsection{Header Model - HEP dataset - $2^{nd}$ Degree Features}
-% \subsubsection{Header Model - HEP dataset Appending CORA - $2^{nd}$ Degree Features}
-% \subsubsection{Header Model - HEP dataset - $3^{rd}$ Degree Features}
-% \subsubsection{Header Model - HEP dataset Appending CORA - $3^{rd}$ Degree Features}
-
-% \subsection{Token Selection}
-% \subsubsection{Segmentation Model - HEP dataset - 5 Tokens}
-% \subsubsection{Segmentation Model - HEP dataset - 10 Tokens}
-% \subsubsection{Segmentation Model - HEP dataset - 15 Tokens}
-% \subsubsection{Segmentation Model - HEP dataset - 20 Tokens}
-
-% \subsection{Levenshtein}
-% \subsubsection{Segmentation Model - HEP dataset - Binary Threshold (0.05)}
-% \subsubsection{Segmentation Model - HEP dataset - Binary Threshold (0.1)}
-% \subsubsection{Segmentation Model - HEP dataset - Binary Threshold (0.2)}
-% \subsubsection{Segmentation Model - HEP dataset - Binary Threshold (0.4)}
-% \subsubsection{Segmentation Model - HEP dataset - Binary Threshold (0.8)}
-% \subsubsection{Segmentation Model - HEP dataset - Ternary Threshold}
-% \subsubsection{Segmentation Model - HEP dataset - Quaternary Threshold}
-
-% \subsection{Line Shape}
-% \subsubsection{Segmentation Model - HEP dataset - Binary Threshold}
-% \subsubsection{Segmentation Model - HEP dataset - Ternary Threshold}
-
-% \subsection{Template Matching}
-% \subsubsection{Segmentation Model - HEP dataset}
-
-% \section{Conclusion}
-% \subsection{Summary}
-% \subsubsection{Key Results}
-% \subsection{Future Work}
-
-% \section{References}
-% % http://dblp.uni-trier.de/
-
-% \section{Appendices}
 
 \bibliographystyle{plain}
 \bibliography{refs}
+
+
 
 \end{document}
