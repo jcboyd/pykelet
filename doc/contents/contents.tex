@@ -23,9 +23,14 @@
 \usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage{float}
+\usepackage[]{algorithm2e}
 \DeclareCaptionFont{blue}{\color{LightSteelBlue3}}
+\DeclareMathOperator*{\argmax}{\arg\!\max}
 
-\newcommand{\foo}{\color{LightSteelBlue3}\makebox[0pt]{\textbullet}\hskip-0.5pt\vrule width 1pt\hspace{\labelsep}}
+\newcommand{\foo}{\color{LightSteelBlue3}\makebox[0pt]{\textbullet}\hskip-0.5pt\vrule width 1pt
+\hspace{\labelsep}}
+
+\newcommand{\p}{\text{p}}
 
 \definecolor{light-gray}{gray}{0.7}
 
@@ -47,8 +52,119 @@
 \subsection{Aims}
 \subsection{Main Results}
 \subsection{Outline}
+
+\pagebreak
+
 \section{Supervised Sequence Learning}
 \emph{In this section we present the state-of-the-art technique for metadata extraction, conditional random fields (CRF). For completeness, we include a background history of related machine learning techniques and their optimisation algorithms. Notably, we pinpoint the piece of the mathematical model relevant to our work on feature engineering. Finally, we describe Wapiti, a general-purpose ``engine'' for training and applying CRF models.}
+
+\subsection{Hidden Markov Models}
+
+Hidden Markov models (HMMs) are a staple of natural language processing (NLP). An HMM models a probability distribution over an unknown, ``hidden'' sequence of length $T$, $\mathbf{y} = (y_1, y_2, ..., y_T)$, whose elements take on values in a finite set of states, S, and its corresponding known sequence of ``observations'', $\mathbf{x} = (x_1, x_2, ..., x_T)$, similarly taking values in a finite set, O. Properties of the model may then be deduced through statistical inference, for example a prediction of the the most likely hidden sequence can be computed with the Viterbi algorithm (section 80). The graphical structure of an HMM (Figure \ref{fig:HMM}) shows the dependencies between consecutive hidden states (these are modelled with ``transition probabilities'', and states and their observations (these are modelled with ``emission probabilities''). The first dependency is referred to as the Markov condition which postulates the dependence of each hidden state on its k precursors in the hidden sequence. In the discussion that follows, we assume the first-degree Markov condition (that is, $k =1$). Incidentally, higher order HMMs may always be reconstructed to this simplest form. The second dependency may be referred to as ``limited lexical conditioning'', referring to the the dependency of an observation only on its hidden state. 
+
+\begin{figure}[!ht]
+\center
+\includegraphics[width=4in]{figures/HMM.pdf}
+\caption{Illustration of the graphical structure of a Hidden Markov Model (HMM). The arrows indicate the dependencies running from dependent to dependee.}
+\label{fig:HMM}
+\end{figure}
+
+We may build the HMM first by forming the joint probability distribution of the hidden state sequence and the observation sequence,
+
+\begin{equation}
+\p(\mathbf{x}, \mathbf{y}) = \p(\mathbf{x} | \mathbf{y}) \p(\mathbf{y})
+\label{eq:joint}
+\end{equation}
+
+Applying the chain rule the dependency assumptions we acquire,
+
+\begin{equation}
+\begin{aligned}
+\p(\mathbf{x} | \mathbf{y}) &= \p(x_1|\mathbf{y}) \p(x_2|x_1, \mathbf{y}) ... \p(x_T|\mathbf{x}_{1:T-1}\mathbf{y}) \\
+&= \p(x_1|y_1) \p(x_2|y_2) ... \p(x_T|y_T)
+\end{aligned}
+\label{eq:conditional}
+\end{equation}
+
+and,
+
+\begin{equation}
+\begin{aligned}
+\p(\mathbf{y}) &= \p(y_1) \p(y_2|y_1) ... \p(y_T, \mathbf{y}_{1:T-1}) \\
+&= \p(y_1) \p(y_2|y_1) ... \p(y_T, y_{T-1}),
+\end{aligned}
+\label{eq:prior}
+\end{equation}
+
+Thus, we may rewrite the factorisation of the HMM as,
+
+$$p(\mathbf{x}, \mathbf{y}) = \prod_{t=1}^T p(y_t | y_{t-1})p(x_t | y_t)$$
+
+The probabilities $p(y_t | y_{t-1})$ are ``transition'' probabilities, and $p(x_t | y_t) $ ``emission'' probabilities. These probabilities constitute the model parameters, $\theta = (\mathbf{A}, \mathbf{B}, \mathbf{I})$, where $\mathbf{A}$ is the $|S| \times |S|$ matrix of probabilities of transitioning from one state to another, $\mathbf{B}$ is the $|S| \times |O|$ matrix of probabilities of emitting an observation given an underlying hidden state, and $\mathbf{I}$ if the vector of probabilities of initial states, which are of course independent of any previous state. The model parameters must be precomputed, for example estimated through application of the Baum-Welch algorithm on an unsupervised training set. Now, given a sequence of observations, $\textbf{x}$, we may predict the hidden state sequence, $\mathbf{y}*$, by maximising the conditional distribution, $\p(\mathbf{y} | \mathbf{x})$. Thus,
+
+\begin{equation}
+\textbf{y}* = \argmax_{\textbf{y}}\Bigg\{\prod_{t=1}^T p(y_t | y_{t-1})p(x_t | y_t)\Bigg\}.
+\label{eq:argmax}
+\end{equation}
+
+HMMs have shown to be successful in statistical modelling problems . In Part of Speech (PoS) tagging, the hidden parts of speech (nouns, verbs, and so on) of a word sequence (sentence). In this case, .
+
+are predicted by maximising the likelihood over all possible hidden sequences. This seemingly intractable problem may be solved in quadratic time in the first-order Markov case by using dynamic programming.
+
+\subsection{Viterbi Algorithm}
+
+The Viterbi algorithm is used to efficiently compute the most likely sequence, $\textbf{y}$, given an observation sequence, $\textbf{x}$. The algorithm can do this efficiently by working along the sequence from state to state, and choosing the transitions which maximise the likelihood of the sequence fragment. To show this we define $v_t(s) = \max_{\mathbf{y}_{1:t-1}} \p(\mathbf{y}_{1:t-1}, y_t = s | \mathbf{x})$, that is, the best sequence from the first $t-1$ states, with the choice of s at time $t$. Thus, we may write $v_t(s) = \max_{\mathbf{y}_{1:t-1}} \p(\mathbf{y}_{1:t-1} | \mathbf{x}) \p(y_{t-1}, y_t = s) \p(x_t | y_t = s)$. Finally, $v_t(s) = \max_{\mathbf{y}_{1:t-1}} v_{t-1}(y_{t-1}) \p(y_{t-1}, y_t = s) \p(x_t | y_t = s)$, and we may see the recursion. Pseudocode is given in Algorithm \ref{alg:viterbi}. Clearly the algorithm must test all $|S|$ transitions from the previous state to each of the $|S|$ current states, and it does that at for each of the $|T|$ steps in the sequence. Hence the complexity of the algorithm is a modest $\mathcal{O}(T|S|^2)$.
+
+\begin{algorithm}[!ht]
+ \KwData{Observation sequence, $\mathbf{x}$, and model parameters, $\theta=(\mathbf{A}, \mathbf{B}, \mathbf{I})$}
+ \KwResult{Most likely sequence, \textbf{y*}}
+  \For {s $\in$ S}{
+   $v_1(s) = \mathbf{I}_s \times \mathbf{B}_s(x_1)$
+  }
+  \For{$t = 2$ to T}{
+   \For{s $\in$ S}{
+    $v_t(s) = \mathbf{B}_s(x_t) \times \max_{s'}(\mathbf{A}_{s'}(s) \times v_{t-1}(s'))$
+    }
+ }
+ The maximising sequence may then be read backward
+ \caption{The Viterbi algorithm - $\mathcal{O}(T|S|^2)$}
+ \label{alg:viterbi}
+\end{algorithm}
+
+\subsection{Forward Backward Algorithm}
+
+Another important algorithm to sequence learning is the forward backward algorithm, so called for its. It is yet another example of a dynamic programming algorithm and is used to compute the so-called ``forward-backward'' variables, which are the conditional probabilities of the individual hidden states (not the whole sequence) at each time step, given the observation sequence and model parameters, namely, $\p(y_t = s | \mathbf{x}, \theta)$.
+
+The conditional distribution has many useful applications, including in the Baum-Welch algorithm for estimating model parameters.
+
+\begin{algorithm}[!ht]
+ \KwData{Observation sequence, $\mathbf{x}$, and model parameters, $\theta=(\mathbf{A}, \mathbf{B}, \mathbf{I})$}
+ \KwResult{Most likely sequence, \textbf{y*}}
+  \For {s $\in$ S}{
+   $v_1(s) = \mathbf{I}_s \times \mathbf{B}_s(x_1)$
+  }
+  \For{$t = 2$ to T}{
+   \For{s $\in$ S}{
+    $v_t(s) = \mathbf{B}_s(x_t) \times \max_{s'}(\mathbf{A}_{s'}(s) \times v_{t-1}(s'))$
+    }
+ }
+ The maximising sequence may then be read backward
+ \caption{The forward-backward algorithm - $\mathcal{O}(T|S|^2)$}
+ \label{alg:fb}
+\end{algorithm}
+
+\subsection{L-BFGS}
+
+\subsection{Maximum Entropy Classifiers}
+
+\subsection{Maximum Entropy Markov Models}
+
+Maximum Entropy Markov models (MEMM) combine aspects of HMMs and maximum entropy classifiers.
+
+\subsection{Conditional Random Fields}
+
+Conditional Random Fields (CRF) are an elaboration of MEMMs.
+
 
 \begin{enumerate}
 \item HMMs
