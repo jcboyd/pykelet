@@ -46,6 +46,8 @@
 
 \tableofcontents
 
+\pagebreak
+
 \section{Introduction} % 3 - 10
 
 \subsection{Motivation}
@@ -127,7 +129,7 @@ v_t(s) &= \max_{\mathbf{y}_{1:t-1}} \p(\mathbf{y}_{1:t-1} | \mathbf{x}) \p(y_{t-
 \label{eq:factorisedHMM}
 \end{equation}
 
-and we may see the recursion. When the all states are computed at time $t$, the maximum may be chosen and the algorithm proceeds to time $t+1$. Pseudocode for the Viterbi algorithm is given in Algorithm \ref{alg:viterbi}. The algorithm must test all $|S|$ transitions from the previous state to each of the $|S|$ current states, and it does that at for each of the $|T|$ steps in the sequence. Hence the complexity of the algorithm is a workable $\mathcal{O}(T|S|^2)$.
+and we may see the recursion. Once all states have been computed at time $t$, the maximum may be chosen and the algorithm proceeds to time $t+1$. Pseudocode for the Viterbi algorithm is given in Algorithm \ref{alg:viterbi} in \ref{sec:appendix}. The algorithm must test all $|S|$ transitions from the previous state to each of the $|S|$ current states, and it does that at for each of the $|T|$ steps in the sequence. Hence the complexity of the algorithm is a workable $\mathcal{O}(T|S|^2)$.
 
 \subsection{Forward-backward Algorithm}
 
@@ -149,7 +151,7 @@ where the ``forward'' variable, $\alpha_t(s) = \p(\mathbf{x}_{t+1:n}|y_t = s, \m
 \label{eq:forward}
 \end{equation}
 
-Thus, we may see the recursion, as well al the way the forward variables will be computed, traversing the sequence in the forward direction with each forward variable of a given time a weighted product of the those from the previous time. Likewise, for the backward variables, we may write,
+Thus, we may see the recursion, as well as the way the forward variables will be computed, traversing the sequence in the forward direction with each forward variable of a given time a weighted product of the those from the previous time. Likewise, for the backward variables, we may write,
 
 \begin{equation}
 \begin{aligned}
@@ -164,17 +166,30 @@ From equations \ref{eq:forward} and \ref{eq:backward} comes Algorithm \ref{alg:f
 
 \subsection{Maximum Entropy Classifiers}
 
-Maximum entropy classifiers are
+Maximum entropy classifiers, also known as multinomial logistic regression, are
 
 \subsection{L-BFGS}
 
-$$\boldsymbol\beta^{k+1} = \boldsymbol\beta^{k} - \alpha\nabla\mathcal{L}(\boldsymbol\beta^{k})$$
+The classic first-order gradient descent algorithm defines the iteration step to be,
 
-$$\boldsymbol\beta^{k+1} = \boldsymbol\beta^{k} - \alpha_k \mathbf{H_k}^{-1} \mathbf{g}_k$$
+\begin{equation}
+\boldsymbol\beta^{k+1} = \boldsymbol\beta^{k} - \alpha\nabla\mathcal{L}(\boldsymbol\beta^{k}),
+\label{eq:gd}
+\end{equation}
 
-Whereas for smaller problems, the classical gradient descent approach is an adequate solver, for models of very large dimension, such as those encountered in metadata extraction, which may run up into the millions, smarter approaches are required. The \emph{limited memory Broyden--Fletcher--Goldfarb--Shanno} (l-BFGS) algorithm makes savings on both the computation and storage of the Hessian matrix central to the second-order Newton's method., and has come to be the standard learning algorithm for ?? . The original BFGS already being a quasi-Newton method, saving on the \emph{computation} of the . The l-BFGS l-algorithm is the tool of choice for many problems.\cite{murphy2012machine}
+where ... Newton's method takes a step in the direction minimising a second-order approximation of the cost function,
+
+\begin{equation}
+\boldsymbol\beta^{k+1} = \boldsymbol\beta^{k} - \alpha_k \mathbf{H_k}^{-1} \mathbf{g}_k,
+\label{eq:newton}
+\end{equation}
+
+where $\mathbf{H}$ is the $(D \times D)$ Hessian matrix of partial derivatives. Whereas for smaller problems, these algorithms are adequate, for models of large dimension, such as those encountered in metadata extraction, which may run up into the millions, smarter approaches are required. The \emph{limited memory Broyden--Fletcher--Goldfarb--Shanno} (L-BFGS) algorithm makes savings on both the computation and storage of the Hessian matrix central to the second-order Newton's method., and has come to be the standard learning algorithm for ?? . The original BFGS already being a quasi-Newton method, saving on the \emph{computation} of the . The L-BFGS algorithm is the tool of choice for many problems\cite{murphy2012machine} and is the algorithm we use in our analysis.
+
+\subsection{$l_2$ Regularisation}
 
 \subsection{Conditional Random Fields}
+\label{subsec:crfs}
 
 Conditional Random Fields (CRFs) are . They are an improvement to the similar, Maximum Entropy Markov models (MEMM), which combine aspects of maximum entropy classifiers and Hidden Markov models.
 
@@ -334,67 +349,25 @@ Months of CPU time? (parallelised), 64 experiments (before an combination experi
 Mind you, though we aren't explicitly interested in identifying headnotes, footnotes, page numbers etc., correctly classifying them does spare the important categories (header, references) from garbage data.
 \subsection{Evaluation Method}
 \subsection{Baseline}
-\subsubsection{Header model - Cora dataset}
-\subsubsection{Header model - Cora dataset appending HEP dataset}
-\subsubsection{Header model - Cora and HEP combined datasets}
-\subsubsection{Header model - HEP dataset}
-\subsubsection{Header model - HEP dataset appending CORA dataset}
-\subsubsection{Header model - HEP dataset appending 1/3 CORA dataset}
-\subsubsection{Header model - HEP dataset appending 2/3 CORA dataset}
-\subsubsection{Segmentation model - Cora dataset}
-\subsubsection{Segmentation model - Cora dataset appending HEP dataset}
-\subsubsection{Segmentation model - Cora and HEP combined datasets}
-\subsubsection{Segmentation model - HEP dataset}
-\subsubsection{Segmentation model - HEP dataset appending CORA dataset}
 \subsection{Regularisation}
-\subsubsection{Header model - $L2 = 0$}
-\subsubsection{Header model - $L2 = 1e^{-6}$}
-\subsubsection{Header model - $L2 = 1e^{-5}$}
-\subsubsection{Header model - $L2 = 1e^{-4}$}
-\subsubsection{Header model - $L2 = 1e^{-3}$}
 \subsection{Dictionaries}
-\subsubsection{Header model - HEP dataset}
-\subsubsection{Header model - HEP dataset appending CORA dataset}
-\subsubsection{Segmentation model - HEP dataset}
-\subsubsection{Segmentation model - HEP dataset appending CORA dataset}
-\subsubsection{Header Model - HEP dataset - $2^{nd}$ Degree Features}
-\subsubsection{Header Model - HEP dataset Appending CORA - $2^{nd}$ Degree Features}
-\subsubsection{Header Model - HEP dataset - $3^{rd}$ Degree Features}
-\subsubsection{Header Model - HEP dataset Appending CORA - $3^{rd}$ Degree Features}
 \subsection{Dictionaries + stop words}
-\subsubsection{Header model - HEP dataset}
-\subsubsection{Header model - HEP dataset appending CORA dataset}
-\subsubsection{Segmentation model - HEP dataset}
-\subsubsection{Segmentation model - HEP dataset appending CORA dataset}
-\subsubsection{Header Model - HEP dataset - $2^{nd}$ Degree Features}
-\subsubsection{Header Model - HEP dataset Appending CORA - $2^{nd}$ Degree Features}
-\subsubsection{Header Model - HEP dataset - $3^{rd}$ Degree Features}
-\subsubsection{Header Model - HEP dataset Appending CORA - $3^{rd}$ Degree Features}
 \subsection{Token Selection}
-\subsubsection{Segmentation Model - HEP dataset - 5 Tokens}
-\subsubsection{Segmentation Model - HEP dataset - 10 Tokens}
-\subsubsection{Segmentation Model - HEP dataset - 15 Tokens}
-\subsubsection{Segmentation Model - HEP dataset - 20 Tokens}
 \subsection{Levenshtein}
-\subsubsection{Segmentation Model - HEP dataset - Binary Threshold (0.05)}
-\subsubsection{Segmentation Model - HEP dataset - Binary Threshold (0.1)}
-\subsubsection{Segmentation Model - HEP dataset - Binary Threshold (0.2)}
-\subsubsection{Segmentation Model - HEP dataset - Binary Threshold (0.4)}
-\subsubsection{Segmentation Model - HEP dataset - Binary Threshold (0.8)}
-\subsubsection{Segmentation Model - HEP dataset - Ternary Threshold}
-\subsubsection{Segmentation Model - HEP dataset - Quaternary Threshold}
 \subsection{Line Shape}
-\subsubsection{Segmentation Model - HEP dataset - Binary Threshold}
-\subsubsection{Segmentation Model - HEP dataset - Ternary Threshold}
-\subsection{Template Matching}
-\subsubsection{Segmentation Model - HEP dataset}
+\subsection{Character Classes}
 \section{Conclusion}
 \subsection{Summary}
 \subsubsection{Key Results}
 \subsection{Future Work}
 * expand training sets
 * model collaborations in the citation model
-\section{References}
+
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\pagebreak
+
 \section{Appendices}
 
 \begin{algorithm}[!ht]
@@ -435,14 +408,5 @@ Return the sets of backward and forward variables
 \caption{The forward-backward algorithm - $\mathcal{O}(T|S|^2)$}
 \label{alg:fb}
 \end{algorithm}
-
-
-
-
-
-\bibliographystyle{plain}
-\bibliography{refs}
-
-
 
 \end{document}
