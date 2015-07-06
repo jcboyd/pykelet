@@ -177,7 +177,7 @@ The classic first-order gradient descent algorithm defines the iteration step to
 \label{eq:gd}
 \end{equation}
 
-where ... Newton's method takes a step in the direction minimising a second-order approximation of the cost function,
+where ... Newton's method (also known as Iterated Reweighted Least Squares, IRLS) takes a step in the direction minimising a second-order approximation of the cost function,
 
 \begin{equation}
 \boldsymbol\beta^{k+1} = \boldsymbol\beta^{k} - \alpha_k \mathbf{H_k}^{-1} \mathbf{g}_k,
@@ -185,6 +185,7 @@ where ... Newton's method takes a step in the direction minimising a second-orde
 \end{equation}
 
 where $\mathbf{H}$ is the $(D \times D)$ Hessian matrix of partial derivatives. Whereas for smaller problems, these algorithms are adequate, for models of large dimension, such as those encountered in metadata extraction, which may run up into the millions, smarter approaches are required. The \emph{limited memory Broyden--Fletcher--Goldfarb--Shanno} (L-BFGS) algorithm makes savings on both the computation and storage of the Hessian matrix central to the second-order Newton's method., and has come to be the standard learning algorithm for ?? . The original BFGS already being a quasi-Newton method, saving on the \emph{computation} of the . The L-BFGS algorithm is the tool of choice for many problems\cite{murphy2012machine} and is the algorithm we use in our analysis.
+
 
 \subsection{$l_2$ Regularisation}
 
@@ -227,7 +228,7 @@ p(\textbf{x}, \textbf{y}) = \text{exp} \Bigg\{\sum_t{
 \mu_{io}\mathbbm{1}_{\{y_t = i\}}\mathbbm{1}_{\{x_t = o\}}
 }
 }\Bigg\},
-\label{eq:joint}
+\label{eq:jointcrf}
 \end{equation}
 
 Here $\textbf{x}$ is a sequence of observations and $\textbf{y}$ is a sequence of labels. $S$ is the set of all labels, $O$ is set of observations (the vocabulary of the tokens to be labelled). When the coefficients $\lambda_{ij} = \log p(y_t=i, y_{t - 1}=j)$ and $\mu_{ij} = \log p(y_t=i,x_t=o)$, this joint distribution is equivalent to a Hidden Markov Model (HMM), with coefficients, $\lambda_{ij}$ as transition probabilities and $\mu_{ij}$ emission probabilities. In this simple case, features are based solely on the token's identity, i.e. feature functions are an indicator function. For clarity, we may write,
@@ -244,7 +245,7 @@ F_{ij}(\textbf{y})
 \mu_{io}
 F_{io}(\textbf{x}, \textbf{y})
 \Bigg\},
-\label{eq:joint}
+\label{eq:crffeatures}
 \end{equation}
 
 where $F_{ij} = \sum_t\mathbbm{1}_{\{y_t = i\}}\mathbbm{1}_{\{y_{t-1} = j\}}$ and $F_{io} = \sum_t\mathbbm{1}_{\{y_t = i\}}\mathbbm{1}_{\{x_t = o\}}$. In a CRF, however, we may replace the indicator function for observations with any sort of function, typically binary, extracting rich features from a token. Thus, $F_{io} = \sum_t\mathbbm{1}_{\{y_t = i\}}f_{io}(\textbf{x})$. The set of functions, $\{f_{io}\}$, are the functions that we define in the feature template files. Note that, unlike an HMM, the vocabulary is not pre-defined, it is ``discovered'' through training on samples. Therefore, the number of actual features depends on the training set itself, whereas the feature template is fixed. Since we use indicator functions, which produce a feature for every observation, we may end up with an enormous number of features. Take the Date model for example: 5815 features are produced for a single block (not counting the one representing the label), and there are seven labels. As per our formulation in (\ref{eq:joint}) we therefore have 7 * 7 ``transition'' features and 5815 * 7 ``emission'' features, totalling 40754 features. This is corroborated by the model output in Figure \ref{fig:output}. Wapiti automatically constructs this vast feature space from the inputs we provide. In the Date model, the labels are I-<day>, I-<month>, I-<year>, I-<other>, <day>, <month>, and <other>. The I (probably) stands for ``initial'', as in training these are assigned to the first tokens of this class found in the string.
@@ -258,19 +259,18 @@ where $F_{ij} = \sum_t\mathbbm{1}_{\{y_t = i\}}\mathbbm{1}_{\{y_{t-1} = j\}}$ an
     nb blocks:   5816
     nb features: 40754
 * Train the model with l-bfgs
-  [   1] obj=1688,58    act=16482    err=25,80\%/50,91\% time=0,08s/0,08s
-  [   2] obj=1221,30    act=15580    err=19,11\%/35,50\% time=0,05s/0,12s
-  [   3] obj=922,15     act=13869    err=17,20\%/33,67\% time=0,04s/0,17s
-  [   4] obj=638,04     act=10845    err= 6,53\%/15,21\% time=0,04s/0,20s
-  [   5] obj=478,72     act=10582    err= 5,68\%/13,59\% time=0,04s/0,24s
-  [   6] obj=416,15     act=9926     err= 3,77\%/ 9,53\% time=0,04s/0,28s
+  [   1] obj=1688,58    act=16482    err=25,80%/50,91% time=0,08s/0,08s
+  [   2] obj=1221,30    act=15580    err=19,11%/35,50% time=0,05s/0,12s
+  [   3] obj=922,15     act=13869    err=17,20%/33,67% time=0,04s/0,17s
+  [   4] obj=638,04     act=10845    err= 6,53%/15,21% time=0,04s/0,20s
+  [   5] obj=478,72     act=10582    err= 5,68%/13,59% time=0,04s/0,24s
+  [   6] obj=416,15     act=9926     err= 3,77%/ 9,53% time=0,04s/0,28s
 \end{verbatim}
 \caption{Output from training date model}
 \label{fig:output}
 \end{figure}
 
 A model is typically a large file (as much as 100Mb). At the top of the file, the feature templates are declared, just as they are in the input. Because of this, that file is not required at prediction time. Following this the labels are declared. Then come two longer sections: first, the feature functions themselves as defined. Figure \ref{fig:model} shows the first 12 features produced from the first token in the first sample in the training set--``November''. Because this is the first token in the string, we see the first three feature macros, which relate to the identity of the token's predecessors, remain unresolved. The fourth, however, shows the indicator for the token. This function will be true if a token is equal to ``November''. The fifth function is an indicator for if the token's successor is equal to ``19'', and so on. The final (and usually largest) section of the model file defines the non-zero weights for the feature functions. The weights are represented in scientific notation and in hexadecimal representation, presumably to avoid arithmetic underflow (a common problem when dealing with with the computation of HMMs and related models).
-
 
 \pagebreak
 
@@ -281,6 +281,7 @@ A model is typically a large file (as much as 100Mb). At the top of the file, th
 \subsection{GROBID}
 
 \begin{table}[h]
+\begin{center}
 \begin{tabular}{ccccc}
 \hline
 label		&accuracy	&precision	&recall		&f1 \\
@@ -293,9 +294,11 @@ label		&accuracy	&precision	&recall		&f1 \\
 \hline
 \end{tabular}
 \caption[Table caption text]{Evaluation results for reference segmentation}
+\end{center}
 \end{table}
 
 \begin{table}[h]
+\begin{center}
 \begin{tabular}{ccccccccc}
 \hline
 label & accuracy & precision & recall & f1 \\
@@ -322,6 +325,7 @@ label & accuracy & precision & recall & f1 \\
 \hline
 \end{tabular}
 \caption[Table caption text]{Evaluation results for citations}
+\end{center}
 \end{table}
 
 [Show here Grobid vs. refextract]
@@ -329,6 +333,18 @@ label & accuracy & precision & recall & f1 \\
 \subsection{Extensions}
 \subsection{Data Acquisition}
 \section{Results and Analysis}
+
+\subsection{Experiment Setup}
+Months of CPU time? (parallelised), 64 experiments (before an combination experiments are run)
+Mind you, though we aren't explicitly interested in identifying headnotes, footnotes, page numbers etc., correctly classifying them does spare the important categories (header, references) from garbage data.
+\subsection{Evaluation Method}
+\subsection{Baseline}
+\subsection{Regularisation}
+\subsection{Dictionaries}
+\subsection{Dictionaries + stop words}
+\subsection{Token Selection}
+\subsection{Levenshtein}
+
 \[
   \text{lev}_{a, b}(i, j) = 
   \begin{cases} 
@@ -344,16 +360,6 @@ label & accuracy & precision & recall & f1 \\
 
 $$\text{similarity}_{a, b} =1 - \frac{\text{lev}_{a, b}(|a|, |b|)}{\text{max}(|a|, |b|)}$$
 
-\subsection{Experiment Setup}
-Months of CPU time? (parallelised), 64 experiments (before an combination experiments are run)
-Mind you, though we aren't explicitly interested in identifying headnotes, footnotes, page numbers etc., correctly classifying them does spare the important categories (header, references) from garbage data.
-\subsection{Evaluation Method}
-\subsection{Baseline}
-\subsection{Regularisation}
-\subsection{Dictionaries}
-\subsection{Dictionaries + stop words}
-\subsection{Token Selection}
-\subsection{Levenshtein}
 \subsection{Line Shape}
 \subsection{Character Classes}
 \section{Conclusion}
@@ -387,7 +393,6 @@ Mind you, though we aren't explicitly interested in identifying headnotes, footn
  \caption{The Viterbi algorithm ($\mathcal{O}(T|S|^2))$ for computing the most likely hidden sequence for a given observation sequence of an HMM.}
  \label{alg:viterbi}
 \end{algorithm}
-
 
 \begin{algorithm}[!ht]
  \KwData{Observation sequence, $\mathbf{x}$, and model parameters, $\theta=(\mathbf{A}, \mathbf{B}, \mathbf{I})$}
