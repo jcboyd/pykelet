@@ -1,5 +1,10 @@
 \documentclass[10pt, oneside]{scrartcl}   	% use "amsart" instead of "article" for AMSLaTeX format
-\usepackage[top=2cm,right=2cm,bottom=2.5cm,left=2cm]{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\usepackage[top=2cm,right=2cm,bottom=2.5cm,left=2cm]{geometry}                		% See geometry.pdf to learn the 
+
+%\documentclass[11pt, oneside]{scrartcl}   	% use "amsart" instead of "article" for AMSLaTeX format
+%\usepackage[top=4cm,right=4cm,bottom=4cm,left=4cm]{geometry}                		% See geometry.pdf to learn the 
+\linespread{1.1}
+
 % \usepackage[top=4cm,right=4cm,bottom=4cm,left=4cm]{geometry}
 \geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
 %\geometry{landscape}                		% Activate for for rotated page geometry
@@ -166,7 +171,42 @@ From equations \ref{eq:forward} and \ref{eq:backward} comes Algorithm \ref{alg:f
 
 \subsection{Maximum Entropy Classifiers}
 
-Maximum entropy classifiers, also known as multinomial logistic regression, are
+Maximum entropy classifiers, also known as multinomial logistic regression, are a family of classification techniques.  A prediction is a discrete (categorical) scalar \emph{class}, rather than a class sequence as it is for HMMs. To build a model, we require a \emph{training set} consisting of a $N \times D$ matrix, $\mathbf{X}$, of $N$ training samples of dimension $D$, as well as the $N$ corresponding classifications in the form of a vector, $\mathbf{y}$. A convex cost function known as a maximum log-likelihood function is constructed and subsequently optimised over the choice of model parameters, denoted $\beta$. Thus, building a model is equivalent to solving a convex optimisation problem. A classification (prediction), $y*$, for an unseen data sample, $\mathbf{x}$, is made by applying these optimal model parameters linearly. The result is then passed through a non-linear \emph{logistic} function, denoted $\sigma$ to obtain a probability. Formally,
+
+\begin{equation}
+y* = \sigma(\beta^T\mathbf{x}).
+\label{eq:logisticprediction}
+\end{equation}
+
+The simplest form of maximum entropy classifier is binary logistic regression, where the number of classes to predict from is two denoted $C_1$ and $C_2$. In this case, $\p(y_n = C_1|\mathbf{x}_n;\beta) = \sigma(\beta^T\mathbf{x})$, and $\p(y_n = C_1|\mathbf{x}_n;\beta) = 1 - \sigma(\beta^T\mathbf{x})$ , where $C_1$ and $C_2$ are encoded as 0 and 1 respectively. Notice the probabilities sum to 1. Now, the log-likelihood can be expressed as,
+
+\begin{equation}
+\begin{aligned}
+\log\p(\mathbf{y}|\mathbf{X}, \boldsymbol\beta) = \log\prod_{n=1}^N \p(y_n, \mathbf{x}_n)
+&= \log\Bigg(\prod_{n:y_n = C_1}^N \sigma(\beta^T\mathbf{x}) \prod_{n:y_n = C_2}^N 1 - \sigma(\beta^T\mathbf{x})\Bigg) \\
+&=  \log\prod_{n = 1}^N \sigma(\beta^T\mathbf{x})^{y_i}(1 - \sigma(\beta^T\mathbf{x}))^{1 - y_i}
+\end{aligned}
+\label{eq:logistic2}
+\end{equation}
+
+where $y \in \{0, 1\}$. We may then generalise to,
+
+\begin{equation}
+\begin{aligned}
+\log \prod_{n = 1}^N \prod_{c = 1}^C \mu_{i, c}^{y_{ic}},
+\end{aligned}
+\label{eq:multinomial}
+\end{equation}
+
+where $y_{ic} = \mathbbm{1}_{y_i = c}$ and $y_i$ is a bit vector indicating the class of the $i$th sample. In this general, multinomial case, the probabilities are written, $\mu_{i, c} = \frac{\exp(\beta_c^T\mathbf{x}_i)}{\sum_{c' = 1}^C \exp(\beta_c^T\mathbf{x}_i)}$, which are normalised to ensure they sum to 1, and $\beta_c$ is part of a set of $C$ parameter vectors notated as $D \times C$ matrix, $\mathbf{B}$ . From this we obtain a cost function,
+
+\begin{equation}
+\mathcal{L}(\mathbf{B}) = 
+\log\p(\mathbf{y}|\mathbf{X}, \boldsymbol\beta) = \sum_{n=1}^N  \Bigg( \sum_{c = 1}^C y_{ic}\beta_c^T \mathbf{x}_n \Bigg) - \log \Bigg( \sum_{c' = 1}^C \exp(\beta_c^T\mathbf{x}_n) \Bigg).
+\label{eq:logisticcost}
+\end{equation}
+
+We then require an optimisation algorithm to solve for $\mathbf{B}$.
 
 \subsection{L-BFGS}
 
@@ -186,13 +226,12 @@ where ... Newton's method (also known as Iterated Reweighted Least Squares, IRLS
 
 where $\mathbf{H}$ is the $(D \times D)$ Hessian matrix of partial derivatives. Whereas for smaller problems, these algorithms are adequate, for models of large dimension, such as those encountered in metadata extraction, which may run up into the millions, smarter approaches are required. The \emph{limited memory Broyden--Fletcher--Goldfarb--Shanno} (L-BFGS) algorithm makes savings on both the computation and storage of the Hessian matrix central to the second-order Newton's method., and has come to be the standard learning algorithm for ?? . The original BFGS already being a quasi-Newton method, saving on the \emph{computation} of the . The L-BFGS algorithm is the tool of choice for many problems\cite{murphy2012machine} and is the algorithm we use in our analysis.
 
-
 \subsection{$l_2$ Regularisation}
 
 \subsection{Conditional Random Fields}
 \label{subsec:crfs}
 
-Conditional Random Fields (CRFs) are . They are an improvement to the similar, Maximum Entropy Markov models (MEMM), which combine aspects of maximum entropy classifiers and Hidden Markov models.
+Conditional Random Fields (CRFs) are . They are an improvement to the similar, Maximum Entropy Markov models (MEMM)\cite{mccallum2000maximum}, which combine aspects of maximum entropy classifiers and Hidden Markov models.\cite{lafferty2001conditional}
 
 Classification over relational data can benefit greatly from rich features, that is, describing observed attributes about an observation beyond simply its identity as we modelled for HMMs. However, the resulting model complexity of defining rich, context-aware features will be typically too great to be workable. In conditional random fields (CRF), we circumvent this problem by instead modelling the conditional distribution, $p(\mathbf{y}, \mathbf{x})$ of the graph structure giving us a free choice over features, which we may choose and implicitly define a distribution over $\mathbf{x}$ without having to model this distribution at all.\cite{sutton2006introduction} Furthermore, modelling the conditional distribution is sufficient for classification wherein the observation sequence is given. This freedom for rich feature engineering is what make CRFs the current state of the art in metadata extraction, where arbitrarily defined features may make for good indicators.
 
