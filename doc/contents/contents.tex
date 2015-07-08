@@ -1,9 +1,9 @@
-%\documentclass[10pt, oneside]{scrartcl}   	% use "amsart" instead of "article" for AMSLaTeX format
-%\usepackage[top=2cm,right=2cm,bottom=2.5cm,left=2cm]{geometry}                		% See geometry.pdf to learn the 
+\documentclass[10pt, oneside]{scrartcl}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage[top=2cm,right=2cm,bottom=2.5cm,left=2cm]{geometry}                		% See geometry.pdf to learn the 
 
-\documentclass[11pt, oneside]{scrartcl}   	% use "amsart" instead of "article" for AMSLaTeX format
-\usepackage[top=4cm,right=4cm,bottom=4cm,left=4cm]{geometry}                		% See geometry.pdf to learn the 
-\linespread{1.2}
+%\documentclass[11pt, oneside]{scrartcl}   	% use "amsart" instead of "article" for AMSLaTeX format
+%\usepackage[top=4cm,right=4cm,bottom=4cm,left=4cm]{geometry}                		% See geometry.pdf to learn the 
+%\linespread{1.2}
 
 % \usepackage[top=4cm,right=4cm,bottom=4cm,left=4cm]{geometry}
 \geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
@@ -63,11 +63,11 @@
 \pagebreak
 
 \section{Supervised Sequence Learning}
-\emph{In this section we present the state-of-the-art technique for metadata extraction, conditional random fields (CRF). For completeness, we include a background history of related machine learning techniques and their optimisation algorithms. We begin with a presentation of Hidden Markov Models (HMM) and their inference algorithms. Following this we present multinomial classifiers, that is scalar classifiers. From these former topics we show how their ideas are combined to produce Maximum Entropy Markov Models (MEMM) and CRFs. Notably, we pinpoint the part of the mathematical model relevant to our work on feature engineering. Finally, we describe Wapiti, a general-purpose software ``engine'' for training and applying CRF models.}
+\emph{In this section we present the state-of-the-art technique for metadata extraction, conditional random fields (CRF). For completeness, we include a background history of related machine learning techniques and their optimisation algorithms. We begin with a presentation of Hidden Markov Models (HMM) and their inference algorithms. Following this we present multinomial classifiers, that is scalar classifiers. From these former topics we show how their ideas are combined to produce Maximum Entropy Markov Models (MEMM) and CRFs. Notably, we pinpoint the part of the mathematical model relevant to our work on feature engineering. Finally, we describe Wapiti, a general-purpose software engine for training and applying CRF models.}
 
 \subsection{Hidden Markov Models}
 
-Hidden Markov models (HMMs) are a staple of natural language processing (NLP) and other engineering fields. An HMM models a probability distribution over an unknown, ``hidden'' sequence state variables of length $T$, $\mathbf{y} = (y_1, y_2, ..., y_T)$, whose elements take on values in a finite set of states, S, and follow a Markov process. For each element in this hidden sequence, there is a corresponding observation element, forming a sequence of ``observations'', $\mathbf{x} = (x_1, x_2, ..., x_T)$, similarly taking values in a finite set, O. The graphical structure of an HMM (Figure \ref{fig:HMM}) shows the dependencies between consecutive hidden states (these are modelled with ``transition probabilities''), and states and their observations (modelled with ``emission probabilities''). The first dependency is referred to as the Markov condition, which postulates the dependency of each hidden state, $y_t$, on its k precursors in the hidden sequence, namely, $\mathbf{y}_{t-k:t-1}$. In the discussion that follows, we assume the first-degree Markov condition (that is, $k =1$). Incidentally, higher-order HMMs may always be reconstructed to this simplest form. The second dependency may be referred to as ``limited lexical conditioning'', referring to the dependency of an observation only on its hidden state. Properties of the model may then be deduced through statistical inference, for example a prediction of the the most likely hidden sequence can be computed with the Viterbi algorithm (section \ref{subsec:viterbi}).
+Hidden Markov models (HMMs) are a staple of natural language processing (NLP) and other engineering fields. An HMM models a probability distribution over an unknown, ``hidden'' sequence state variables of length $T$, $\mathbf{y} = (y_1, y_2, ..., y_T)$, whose elements take on values in a finite set of states, S, and follow a Markov process. For each element in this hidden sequence, there is a corresponding observation element, forming a sequence of \emph{observations}, $\mathbf{x} = (x_1, x_2, ..., x_T)$, similarly taking values in a finite set, O. The graphical structure of an HMM (Figure \ref{fig:HMM}) shows the dependencies between consecutive hidden states (these are modelled with \emph{transition} probabilities), and states and their observations (modelled with \emph{emission} probabilities). The first dependency is referred to as the Markov condition, which postulates the dependency of each hidden state, $y_t$, on its k precursors in the hidden sequence, namely, $\mathbf{y}_{t-k:t-1}$. In the discussion that follows, we assume the first-degree Markov condition (that is, $k =1$). Incidentally, higher-order HMMs may always be reconstructed to this simplest form. The second dependency may be referred to as \emph{limited lexical conditioning}, referring to the dependency of an observation only on its hidden state. Properties of the model may then be deduced through statistical inference, for example a prediction of the the most likely hidden sequence can be computed with the Viterbi algorithm (section \ref{subsec:viterbi}).
 
 HMMs have shown to be successful in statistical modelling problems. In Part of Speech (PoS) tagging, a classic NLP problem for disambiguating natural language, the parts of speech (nouns, verbs, and so on) of a word sequence (sequence) are modelled as hidden states, and the words themselves are the observations. The PoS sequence may be modelled and predicted using an HMM. Even a simple HMM can achieve an accuracy of well over $90\%$. The problem of metadata extraction is clearly similar in form to PoS tagging, as we further show in section \ref{sec:ame}.
 
@@ -112,7 +112,7 @@ Thus, we may rewrite the factorisation of the HMM as,
 \label{eq:factorisedHMM}
 \end{equation}
 
-The probabilities $p(y_t | y_{t-1})$ are known as ``transition'' probabilities, and $p(x_t | y_t) $ as ``emission'' probabilities. These probabilities constitute the model parameters, $\theta = (\mathbf{A}, \mathbf{B}, \mathbf{I})$, where $\mathbf{A}$ is the $|S| \times |S|$ matrix of probabilities of transitioning from one state to another, $\mathbf{B}$ is the $|S| \times |O|$ matrix of probabilities of emitting an observation given an underlying hidden state, and $\mathbf{I}$ is the vector of probabilities of initial states, which are of course independent of any previous state. The model parameters must be precomputed, for example estimated through application of the Baum-Welch algorithm on an unsupervised training set. Now, given a sequence of observations, $\textbf{x}$, we may predict the hidden state sequence, $\mathbf{y}*$, by maximising the conditional distribution, $\p(\mathbf{y} | \mathbf{x})$. Thus,
+The probabilities $p(y_t | y_{t-1})$ are known as \emph{transition} probabilities, and $p(x_t | y_t) $ as \emph{emission} probabilities. These probabilities constitute the model parameters, $\theta = (\mathbf{A}, \mathbf{B}, \mathbf{I})$, where $\mathbf{A}$ is the $|S| \times |S|$ matrix of probabilities of transitioning from one state to another, $\mathbf{B}$ is the $|S| \times |O|$ matrix of probabilities of emitting an observation given an underlying hidden state, and $\mathbf{I}$ is the vector of probabilities of initial states, which are of course independent of any previous state. The model parameters must be precomputed, for example estimated through application of the Baum-Welch algorithm on an unsupervised training set. Now, given a sequence of observations, $\textbf{x}$, we may predict the hidden state sequence, $\mathbf{y}*$, by maximising the conditional distribution, $\p(\mathbf{y} | \mathbf{x})$. Thus,
 
 \begin{equation}
 \textbf{y}* = \argmax_{\textbf{y}}\Bigg\{\prod_{t=1}^T p(y_t | y_{t-1})p(x_t | y_t)\Bigg\}.
@@ -138,14 +138,14 @@ and we may see the recursion. Once all states have been computed at time $t$, th
 
 \subsection{Forward-backward Algorithm}
 
-Another key algorithm to sequence learning is the forward-backward algorithm, so called for its computation of variables in both directions along the sequence. It is yet another example of a dynamic programming algorithm and is used to compute the so-called ``forward-backward'' variables, which are the conditional probabilities of the individual hidden states at each time step (not the whole sequence), given the observation sequence and model parameters, namely, $\p(y_t = s | \mathbf{x}, \theta)$. These conditional probabilities have many useful applications, for example in the Baum-Welch algorithm for estimating model parameters, but also for CRFs, as will be shown in section \ref{subsec:crfs}. We may write the forward-backward variable as,
+Another key algorithm to sequence learning is the forward-backward algorithm, so called for its computation of variables in both directions along the sequence. It is yet another example of a dynamic programming algorithm and is used to compute the so-called \emph{forward-backward} variables, which are the conditional probabilities of the individual hidden states at each time step (not the whole sequence), given the observation sequence and model parameters, namely, $\p(y_t = s | \mathbf{x}, \theta)$. These conditional probabilities have many useful applications, for example in the Baum-Welch algorithm for estimating model parameters, but also for CRFs, as will be shown in section \ref{subsec:crfs}. We may write the forward-backward variable as,
 
 \begin{equation}
 \gamma_t(s) = \p(y_t = s | \mathbf{x}, \theta) = \frac{\alpha_t(s) \beta_t(s)}{\sum_{s' \in S} \alpha_t(s') \beta_t(s')},
 \label{eq:fb}
 \end{equation}
 
-where the ``forward'' variable, $\alpha_t(s) = \p(\mathbf{x}_{t+1:n}|y_t = s, \mathbf{x}_{1:t}) = \p(\mathbf{x}_{t+1:n}|y_t = s)$, and the ``backward'' variable, $\beta_t(s) = \p(y_t = s, \mathbf{x}_{1:t})$. To derive the forward-backward algorithm we write, by the law of total probability,
+where the \emph{forward} variable, $\alpha_t(s) = \p(\mathbf{x}_{t+1:n}|y_t = s, \mathbf{x}_{1:t}) = \p(\mathbf{x}_{t+1:n}|y_t = s)$, and the \emph{backward} variable, $\beta_t(s) = \p(y_t = s, \mathbf{x}_{1:t})$. To derive the forward-backward algorithm we write, by the law of total probability,
 
 \begin{equation}
 \begin{aligned}
@@ -178,22 +178,22 @@ y* = \sigma(\beta^T\mathbf{x}).
 \label{eq:logisticprediction}
 \end{equation}
 
-The simplest form of maximum entropy classifier is binary logistic regression, where the number of classes to predict from is two denoted $C_1$ and $C_2$. In this case, $\p(y_n = C_1|\mathbf{x}_n;\beta) = \sigma(\beta^T\mathbf{x})$, and $\p(y_n = C_1|\mathbf{x}_n;\beta) = 1 - \sigma(\beta^T\mathbf{x})$ , where $C_1$ and $C_2$ are encoded as 0 and 1 respectively. Notice the probabilities sum to 1. Now, the log-likelihood can be expressed as,
+The simplest form of maximum entropy classifier is binary logistic regression, where the number of classes to predict from is two denoted $C_1$ and $C_2$. In this case, $\p(y_n = C_1|\mathbf{x}_n;\beta) = \sigma(\beta^T\mathbf{x}_n)$, and $\p(y_n = C_2|\mathbf{x}_n;\beta) = 1 - \sigma(\beta^T\mathbf{x}_n)$ , where $C_1$ and $C_2$ are encoded as 0 and 1 respectively. Notice the probabilities sum to 1. Now, the log-likelihood can be expressed as,
 
 \begin{equation}
 \begin{aligned}
 \log\p(\mathbf{y}|\mathbf{X}, \boldsymbol\beta) = \log\prod_{n=1}^N \p(y_n, \mathbf{x}_n)
-&= \log\Bigg(\prod_{n:y_n = C_1}^N \sigma(\beta^T\mathbf{x}) \prod_{n:y_n = C_2}^N 1 - \sigma(\beta^T\mathbf{x})\Bigg) \\
-&=  \log\prod_{n = 1}^N \sigma(\beta^T\mathbf{x})^{y_i}(1 - \sigma(\beta^T\mathbf{x}))^{1 - y_i}
+&= \log\Bigg(\prod_{n:y_n = C_1}^N \sigma(\beta^T\mathbf{x}_n) \prod_{n:y_n = C_2}^N 1 - \sigma(\beta^T\mathbf{x}_n)\Bigg) \\
+&=  \log\prod_{n = 1}^N \sigma(\beta^T\mathbf{x}_n)^{y_i}(1 - \sigma(\beta^T\mathbf{x}_n))^{1 - y_i}
 \end{aligned}
 \label{eq:logistic2}
 \end{equation}
 
-where $y \in \{0, 1\}$. We may then generalise to,
+where $y_i \in \{0, 1\}$. We may then generalise to,
 
 \begin{equation}
 \begin{aligned}
-\log \prod_{n = 1}^N \prod_{c = 1}^C \mu_{i, c}^{y_{ic}},
+\log\p(\mathbf{y}|\mathbf{X}, \boldsymbol\beta) = \log \prod_{n = 1}^N \prod_{c = 1}^C \mu_{ic}^{y_{ic}},
 \end{aligned}
 \label{eq:multinomial}
 \end{equation}
@@ -202,7 +202,7 @@ where $y_{ic} = \mathbbm{1}_{y_i = c}$ and $y_i$ is a bit vector indicating the 
 
 \begin{equation}
 \mathcal{L}(\mathbf{B}) = 
-\log\p(\mathbf{y}|\mathbf{X}, \boldsymbol\beta) = \sum_{n=1}^N  \Bigg( \sum_{c = 1}^C y_{ic}\beta_c^T \mathbf{x}_n \Bigg) - \log \Bigg( \sum_{c' = 1}^C \exp(\beta_c^T\mathbf{x}_n) \Bigg).
+\log\p(\mathbf{y}|\mathbf{X}, \boldsymbol\beta) = \sum_{n=1}^N  \Bigg( \sum_{c = 1}^C y_{ic}\beta_c^T \mathbf{x}_n \Bigg) - \log \Bigg( \sum_{c' = 1}^C \exp(\beta_{c'}^T\mathbf{x}_n) \Bigg).
 \label{eq:logisticcost}
 \end{equation}
 
@@ -228,35 +228,20 @@ where $\mathbf{H}$ is the $(D \times D)$ Hessian matrix of partial derivatives. 
 
 \subsection{$l_2$ Regularisation}
 
+To avoid overfitting. $l_1$ is another option, but incompatible with the solution algorithms we use.
+
 \subsection{Conditional Random Fields}
 \label{subsec:crfs}
 
-Conditional Random Fields (CRFs) are . They are an improvement to the similar, Maximum Entropy Markov models (MEMM)\cite{mccallum2000maximum}, which combine aspects of maximum entropy classifiers and Hidden Markov models.\cite{lafferty2001conditional}
+Conditional Random Fields (CRFs) are . They are an improvement to the similar, Maximum Entropy Markov models (MEMM)\cite{mccallum2000maximum}, which combine aspects of maximum entropy classifiers and Hidden Markov models.\cite{lafferty2001conditional}. They are a member of class of structured sequence called \emph{random fields}, which are part of a broader family known as \emph{graphical models}, which includes within it \emph{Bayesian networks}.
 
-Classification over relational data can benefit greatly from rich features, that is, describing observed attributes about an observation beyond simply its identity as we modelled for HMMs. However, the resulting model complexity of defining rich, context-aware features will be typically too great to be workable. In conditional random fields (CRF), we circumvent this problem by instead modelling the conditional distribution, $p(\mathbf{y}, \mathbf{x})$ of the graph structure giving us a free choice over features, which we may choose and implicitly define a distribution over $\mathbf{x}$ without having to model this distribution at all.\cite{sutton2006introduction} Furthermore, modelling the conditional distribution is sufficient for classification wherein the observation sequence is given. This freedom for rich feature engineering is what make CRFs the current state of the art in metadata extraction, where arbitrarily defined features may make for good indicators.
+Classification over relational data can benefit greatly from rich features, that is, describing observed attributes about an observation beyond simply its identity as we modelled for HMMs. However, the resulting model complexity of defining rich, context-aware features will be typically too great to be workable. In conditional random fields (CRF), we circumvent this problem by instead modelling the conditional distribution (making it a discriminative model rather than a generative one), $p(\mathbf{y}, \mathbf{x})$ of the graph structure giving us a free choice over features, which we may choose and implicitly define a distribution over $\mathbf{x}$ without having to model this distribution at all.\cite{sutton2006introduction}. If we wish to model the interdependencies in a generative model, we must either extend the model (which may be difficult) and entail intractable solution algorithms, or we must simplify and thereby compromise model performance. Furthermore, modelling the conditional distribution is sufficient for classification wherein the observation sequence is given. This freedom for rich feature engineering is what make CRFs the current state of the art in metadata extraction, where arbitrarily defined features may make for good indicators.
 
-With CRFs, as with HMMs, our objective is to make a sequence prediction for a sequence of structured data.
+Clearly we could simply use a logistic regression for this task, but this would fail to take into account the contextual information. For example in the metadata extraction of a reference, it is more likely for a publication title to follow an author list, and for a journal name to follow a author list, and an abstract to \ref{sec:ame}. This is what we mean by structured sequence learning, where the data to predict exhibits interdependencies and are correlated.
 
-\begin{enumerate}
-\item mention sequence learning, graphical models, random fields, Hammersley-Clifford
-\item define discriminative etc.
-\end{enumerate}
+When the graph structure of the prediction is the same as for an HMM, we have what is called a \emph{linear-chain} CRF. HMMs and linear-chain CRFs form what is called a generative-discriminative pair. In the general case, where the graph structure is more complex, we have what is called \emph{skip-chain} CRFs. In this case the problem becomes far more complex, and we will not discuss those here.
 
-\subsection{Beyond Conditional Random Fields}
-
-\subsection{Feature Engineering}
-\subsection{Wapiti}
-Lack of support for numeric features imposes constraints our feature engineering. Any numeric-based idea must be discretised\footnote{this is a footnote, and it's crazy easy to make in latex.}.
-
-Both approaches yield the same input data for the CRF engine, and so evaluation is in fact equivalent to prediction, despite the initial difference in input formats. Figure \ref{fig:traininput} shows an excerpt from an input file to the CRF engine for training. These features are for inputs ``January 1994'' and ``July 1996'', for training the Date model. The features range from token identity, to a variety of prefixes and punctuation features. It should be noted that OCR information is only used in higher level models, that is, the Header and Segmentation models. The input for lower-level models such as Date is plaintext, and so features are typically simple, but dictionary-based features, where information about a token is referenced in a dictionary resource within Grobid, are also used. Note the features shown are only those pertaining to the token itself. The full range of features (including those involving concatenations of the token's neighbours etc.) are defined by a set of feature templates. The feature templates for each model are contained in a separate file. An excerpt of this is shown in Figure \ref{fig:template}. These are given as a separate input to the CRF engine, and it is with these that the engine constructs all feature functions for the model. It is therefore vital that the feature extraction, which is generated by Grobid, is aligned with the template file, which is manually configured by the developer. As depicted in Figure \ref{fig:flow}, there is a strong coupling between these two parts of Grobid. The excerpt shown is from the Wapiti model, but the notation is the same for CRF++, which first standardised the syntax. This subset of five feature templates capture information about the capitalisation of a token and its neighbours. The notation has the structure, [identifier]:[\%x][row, col], where row is the offset from the current token, and col indicates the feature index. Thus, ``U50:\%[0,11]'', denotes that the feature template identified as ``U50'' takes the 11th feature for the current token (0 offset). This feature will be equal to 1 if a token is capitalised, and 0 otherwise. ``U52:\%[-1,11]'' indicates the same thing, but based on the capitalisation of the \emph{previous} token. ``U54:\%x[-1,11]/\%x[0,11]'' is a binary function for detecting the capitalisation of the current \emph{and} the following token.
-
-Now we may see an alignment with the mathematical model. Recall a linear chain CRF is expressed in the simplest case as,
-
-\begin{equation}
-p(\textbf{y}|\textbf{x}) = \frac{p(\textbf{x}, \textbf{y})}{\sum_{y'}{p(\textbf{x}, \textbf{y}')}},
-\end{equation}
-
-where, 
+An HMM may be expressed by the joint probability,
 
 \begin{equation}
 p(\textbf{x}, \textbf{y}) = \text{exp} \Bigg\{\sum_t{
@@ -269,6 +254,43 @@ p(\textbf{x}, \textbf{y}) = \text{exp} \Bigg\{\sum_t{
 }\Bigg\},
 \label{eq:jointcrf}
 \end{equation}
+
+where $\lambda_{ij}$ give the transition probabilities and $\mu_{ij}$ are the emission probabilities. The indicator functions activate the probabilities in accordance with the identity of the states and observations. For a cleaner abusive notation, we define \emph{feature functions}, $F_{k}(y_t, y_{t-1}, x_t) = \mathbbm{1}_{\{y_t = i\}}\mathbbm{1}_{\{y_{t-1} = j\}}$ for a transition feature, and $F_{k}(y_t, y_{t-1}, x_t) = \mathbbm{1}_{\{y_t = i\}}\mathbbm{1}_{\{x_{i} = o\}}$ for an emission feature. Thus, we acquire a more compact expression,
+
+\begin{equation}
+\p(\textbf{x}, \textbf{y}) = \text{exp} \Bigg\{\sum_k{
+\lambda_{ij}F_{k}(y_t, y_{t-1}, x_t)
+}\Bigg\},
+\label{eq:jointcrfff}
+\end{equation}
+
+Now we may define a discriminative model corresponding to this joint distribution; the linear-chain CRF,
+
+\begin{equation}
+p(\textbf{y}|\textbf{x}) = \frac{p(\textbf{x}, \textbf{y})}{\sum_{y'}{p(\textbf{x}, \textbf{y}')}} = \frac{1}{Z(\mathbf{x})}\exp \Bigg\{\sum_k{
+\lambda_{ij}F_{k}(y_t, y_{t-1}, x_t)
+}\Bigg\},
+\end{equation}
+
+where $Z(\mathbf{x}) = \sum_{y'}\exp \Big\{\sum_k{\lambda_{ij}F_{k}(y'_t, y'_{t-1}, x_t)}\Big\}$ is known as the partition function ensuring probabilities summing to 1. Whereas for Hidden Markov models the identity of a word, with conditional random fields we may define arbitrarily complex features describing rich information about a word, its attributes, and its context. This may be seen . And thus we may define the feature function to be anything.
+
+To cut a long story short, the cost function for all this is,
+
+\begin{equation}
+l(\theta) = \sum_{i=1}^N\sum_{t=1}^T\sum_{k=1}^K\lambda_kF_{k}(y_t, y_{t-1}, x_t) - \sum_{i=1}^N\log Z(\mathbf{x}^{(i)}) - \sum_{k=1}^K \frac{\lambda_k^2}{2\sigma^2}.
+\end{equation}
+
+This is called penalised maximum log likelihood. The penalty term imposes an $l_2$ regularisation on the solution parameters. However, according to McCallum et al. (2004), even varying this term by orders of magnitude has little effect on the outcome\cite{mccallum}, a claim we corroborate in section \ref{sec:results}. This cost function provides a strictly convex function to be solved using numerical methods such as L-BFGS (see section \ref{sec:lbfgs}). We require the forward-backward algorithm (section \ref{sec:fb}) at each iteration to compute the conditional probabilities that come out of differentiating, as well as to compute the partition function. Finally, the Viterbi algorithm (section \ref{subsec:viterbi}) is used to make a prediction with a trained model. For a full demonstration of all this, see Mccallum.
+
+\subsection{Wapiti}
+Lack of support for numeric features imposes constraints our feature engineering. Any numeric-based idea must be discretised\footnote{this is a footnote, and it's crazy easy to make in latex.}.
+
+Both approaches yield the same input data for the CRF engine, and so evaluation is in fact equivalent to prediction, despite the initial difference in input formats. Figure \ref{fig:traininput} shows an excerpt from an input file to the CRF engine for training. These features are for inputs ``January 1994'' and ``July 1996'', for training the Date model. The features range from token identity, to a variety of prefixes and punctuation features. It should be noted that OCR information is only used in higher level models, that is, the Header and Segmentation models. The input for lower-level models such as Date is plaintext, and so features are typically simple, but dictionary-based features, where information about a token is referenced in a dictionary resource within Grobid, are also used. Note the features shown are only those pertaining to the token itself. The full range of features (including those involving concatenations of the token's neighbours etc.) are defined by a set of feature templates. The feature templates for each model are contained in a separate file. An excerpt of this is shown in Figure \ref{fig:template}. These are given as a separate input to the CRF engine, and it is with these that the engine constructs all feature functions for the model. It is therefore vital that the feature extraction, which is generated by Grobid, is aligned with the template file, which is manually configured by the developer. As depicted in Figure \ref{fig:flow}, there is a strong coupling between these two parts of Grobid. The excerpt shown is from the Wapiti model, but the notation is the same for CRF++, which first standardised the syntax. This subset of five feature templates capture information about the capitalisation of a token and its neighbours. The notation has the structure, [identifier]:[\%x][row, col], where row is the offset from the current token, and col indicates the feature index. Thus, ``U50:\%[0,11]'', denotes that the feature template identified as ``U50'' takes the 11th feature for the current token (0 offset). This feature will be equal to 1 if a token is capitalised, and 0 otherwise. ``U52:\%[-1,11]'' indicates the same thing, but based on the capitalisation of the \emph{previous} token. ``U54:\%x[-1,11]/\%x[0,11]'' is a binary function for detecting the capitalisation of the current \emph{and} the following token.
+
+Now we may see an alignment with the mathematical model. Recall a linear chain CRF is expressed in the simplest case as,
+
+where, 
+
 
 Here $\textbf{x}$ is a sequence of observations and $\textbf{y}$ is a sequence of labels. $S$ is the set of all labels, $O$ is set of observations (the vocabulary of the tokens to be labelled). When the coefficients $\lambda_{ij} = \log p(y_t=i, y_{t - 1}=j)$ and $\mu_{ij} = \log p(y_t=i,x_t=o)$, this joint distribution is equivalent to a Hidden Markov Model (HMM), with coefficients, $\lambda_{ij}$ as transition probabilities and $\mu_{ij}$ emission probabilities. In this simple case, features are based solely on the token's identity, i.e. feature functions are an indicator function. For clarity, we may write,
 
