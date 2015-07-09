@@ -1,0 +1,45 @@
+% Appendix A
+
+\chapter{Algorithms} % Main appendix title
+
+\label{AppendixA} % For referencing this appendix elsewhere, use \ref{AppendixA}
+
+\lhead{Appendix A. \emph{Appendix Title Here}} % This is for the header on each page - perhaps a shortened title
+
+\begin{algorithm}[!ht]
+ \KwData{Observation sequence, $\mathbf{x}$, and model parameters, $\theta=(\mathbf{A}, \mathbf{B}, \mathbf{I})$}
+ \KwResult{Most likely sequence, \textbf{y*}}
+ Initialise $\mathbf{y}*$ as a zero-length sequence
+  \For {s $\in$ S}{
+   $v_1(s) = \mathbf{I}(s) \times \mathbf{B}(x_1, s)$
+  }
+  \For{$t = 2$ to T}{
+   \For{s $\in$ S}{
+    $v_t(s) = \max_{s'}(\mathbf{A}(s', s) \times v_{t-1}(s')) \times \mathbf{B}(x_t, s)$ \\
+    Append s to $\mathbf{y}*$
+    }
+ }
+ Return $\mathbf{y}*$
+ \caption{The Viterbi algorithm ($\mathcal{O}(T|S|^2))$ for computing the most likely hidden sequence for a given observation sequence of an HMM.}
+ \label{alg:viterbi}
+\end{algorithm}
+
+\begin{algorithm}[!ht]
+ \KwData{Observation sequence, $\mathbf{x}$, and model parameters, $\theta=(\mathbf{A}, \mathbf{B}, \mathbf{I})$}
+ \KwResult{Set of forward variables, $\{\alpha_t(s)\}_{s \in S, t \in T}$, and backward variables, $\{\beta_t(s)\}_{s \in S, t \in T}$}
+ \For {$s \in S$}{
+  $\alpha_1(s) = B(x_1, s) \times \mathbf{I}(s)$ \\
+  \For {t = 2 to T}{
+   $\alpha_t(s) = \sum_{s'} \mathbf{A}(s, s')  \times \mathbf{B}(x_t, s) \times \alpha_{t-1}(s')$
+  }
+ }
+ \For {$s \in S$}{
+  $\beta_T(s) = 1$ \\
+  \For {t = T-1 to 1}{
+   $\beta_t(s) = \sum_{s'} \beta_{t+1}(s') \times \mathbf{A}(s, s')  \times \mathbf{B}(x_t, s)$
+  }
+ }
+Return the sets of backward and forward variables
+\caption{The forward-backward algorithm - $\mathcal{O}(T|S|^2)$}
+\label{alg:fb}
+\end{algorithm}
