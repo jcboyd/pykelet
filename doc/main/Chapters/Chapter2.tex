@@ -78,7 +78,7 @@ The Viterbi algorithm is used to efficiently compute the most likely sequence, $
 v_t(s) &= \max_{\mathbf{y}_{1:t-1}} \p(\mathbf{y}_{1:t-1} | \mathbf{x}) \p(y_{t-1}, y_t = s) \p(x_t | y_t = s) \\
 &= \max_{\mathbf{y}_{1:t-1}} v_{t-1}(y_{t-1}) \p(y_{t-1}, y_t = s) \p(x_t | y_t = s), 
 \end{aligned}
-\label{eq:factorisedHMM}
+\label{eq:viterbi}
 \end{equation}
 
 and we may see the recursion. Once all states have been computed at time $t$, the maximum may be chosen and the algorithm proceeds to time $t+1$. Pseudocode for the Viterbi algorithm is given in Algorithm \ref{alg:viterbi} in \ref{sec:appendix}. The algorithm must test all $|S|$ transitions from the previous state to each of the $|S|$ current states, and it does that for each of the $|T|$ steps in the sequence. Hence the complexity of the algorithm is a workable $\mathcal{O}(T|S|^2)$.
@@ -186,63 +186,67 @@ Classification over relational data can benefit greatly from rich features, that
 
 When the graph structure of the CRF model is the same as for a HMM (Figure \ref{fig:HMM}), we have what is called a \emph{linear-chain} CRF. HMMs and linear-chain CRFs form what is called a generative-discriminative pair. In the general case, where the graph structure is more complex, we have what is called \emph{skip-chain} CRFs. In this case the problem becomes far more complex, and we will not discuss general CRFs here. A HMM may alternatively be expressed by the joint probability,
 
-\begin{equation}
-p(\textbf{x}, \textbf{y}) = \text{exp} \Bigg\{\sum_t{
-\sum_{i, j \in S}{
-\lambda_{ij}\mathbbm{1}_{\{y_t = i\}}\mathbbm{1}_{\{y_{t-1} = j\}}
-}
-+ \sum_t\sum_{i \in S}\sum_{o \in O}{
-\mu_{io}\mathbbm{1}_{\{y_t = i\}}\mathbbm{1}_{\{x_t = o\}}
-}
-}\Bigg\},
-\label{eq:jointcrf}
-\end{equation}
-
-where $\lambda_{ij}$ are the transition probabilities and $\mu_{ij}$ are the emission probabilities. The indicator functions activate the probabilities in accordance with the identity of the states and observations. Regardless, this formulation is equivalent to \ref{eq:factorisedHMM}. In works on CRFs,  authors commonly write, through some notational abuse, a more succinct definition, albeit with some loss of clarity. We may prefer a formulation oriented towards \emph{feature functions}, such as,
+% \begin{equation}
+% p(\textbf{x}, \textbf{y}) = \text{exp} \Bigg\{\sum_t{
+% \sum_{i, j \in S}{
+% \lambda_{ij}\mathbbm{1}_{\{y_t = i\}}\mathbbm{1}_{\{y_{t-1} = j\}}
+% }
+% + \sum_t\sum_{i \in S}\sum_{o \in O}{
+% \mu_{io}\mathbbm{1}_{\{y_t = i\}}\mathbbm{1}_{\{x_t = o\}}
+% }
+% }\Bigg\},
+% \label{eq:jointcrf}
+% \end{equation}
 
 \begin{equation}
 p(\textbf{x}, \textbf{y}) = \text{exp} \Bigg\{
-\sum_{i \in S}
-\sum_{j \in S}
-\lambda_{ij}
-F_{ij}(\textbf{y})
-+ 
-\sum_{i \in S}
-\sum_{o \in O}
-\mu_{io}
-F_{io}(\textbf{x}, \textbf{y})
+\sum_{i, j \in S}{
+\lambda_{ij}F_{i,j}(y_t, y_{t-1}, x_t)
+}
++
+\sum_{i \in S}\sum_{o \in O}{
+\mu_{io}F_{i,o}(y_t, y_{t-1}, x_t)
+}
 \Bigg\},
-\label{eq:crffeatures}
+\label{eq:jointcrf}
 \end{equation}
 
-where $F_{ij} = \sum_t\mathbbm{1}_{\{y_t = i\}}\mathbbm{1}_{\{y_{t-1} = j\}}$ and $F_{io} = \sum_t\mathbbm{1}_{\{y_t = i\}}\mathbbm{1}_{\{x_t = o\}}$. That is, for each dependency in the model, be it between states, or between a state and an observation, we define functions that respond to their identities at any time $t$. In a CRF, however, we may replace the indicator function for observations with any sort of function, typically binary, extracting rich features from a token. Thus, $F_{io} = \sum_t\mathbbm{1}_{\{y_t = i\}}f_{io}(\textbf{x})$. The set of functions, $\{f_{io}\}$, are the \emph{feature functions} that we define in the feature template files of Wapiti, as we will see in Section \ref{sec:wapiti}.
-
-With some notational abuse we define \emph{feature functions}, $F_{k}(y_t, y_{t-1}, x_t) = \mathbbm{1}_{\{y_t = i\}}\mathbbm{1}_{\{y_{t-1} = j\}}$ for a transition feature, and $F_{k}(y_t, y_{t-1}, x_t) = \mathbbm{1}_{\{y_t = i\}}\mathbbm{1}_{\{x_{i} = o\}}$ for an emission feature. Thus, we acquire a more compact expression,
+where $\lambda_{ij}$ are the transition probabilities and $\mu_{ij}$ are the emission probabilities. $F_{i,j}(y_t, y_{t-1}, x_t) = \sum_t^T\mathbbm{1}_{\{y_t = i\}}\mathbbm{1}_{\{y_{t-1} = j\}}$ is a \emph{feature function} used to activate the transition probabilities, and $F_{i,o}(y_t, y_{t-1}, x_t) = \sum_t^T\mathbbm{1}_{\{y_t = i\}}\mathbbm{1}_{\{x_{i} = o\}}$ for the emissions. The indicator functions activate the probabilities in accordance with the identity of the states and observations. Regardless, this formulation is equivalent to \ref{eq:factorisedHMM}. With some notational abuse we can define the more compact expression,
 
 \begin{equation}
 \p(\textbf{x}, \textbf{y}) = \text{exp} \Bigg\{\sum_k{
-\lambda_{ij}F_{k}(y_t, y_{t-1}, x_t)
-}\Bigg\},
-\label{eq:jointcrfff}
+\lambda_{k}F_{k}(y_t, y_{t-1}, x_t)
+}\Bigg\}.
+\label{eq:jointcrfcompact}
 \end{equation}
 
-Now we may define the discriminative counterpart to this model to this joint distribution; the linear-chain CRF,
+Where $F_k$ is a general feature function and $\lambda_k$ a general feature weight. Now we may define the discriminative counterpart to this joint distribution; the linear-chain CRF,
 
 \begin{equation}
 p(\textbf{y}|\textbf{x}) = \frac{p(\textbf{x}, \textbf{y})}{\sum_{y'}{p(\textbf{x}, \textbf{y}')}} = \frac{1}{Z(\mathbf{x})}\exp \Bigg\{\sum_k{
-\lambda_{ij}F_{k}(y_t, y_{t-1}, x_t)
+\lambda_{k}F_{k}(y_t, y_{t-1}, x_t)
 }\Bigg\},
 \end{equation}
 
-where $Z(\mathbf{x}) = \sum_{y'}\exp \Big\{\sum_k{\lambda_{ij}F_{k}(y'_t, y'_{t-1}, x_t)}\Big\}$ is known as the partition function ensuring probabilities summing to 1. Whereas Hidden Markov models effectively model only the \emph{occurence} of a word, with conditional random fields we may define arbitrarily complex features describing rich information about a word, its attributes, and its context.  From these defintions, we may define a cost function in the following way,
+where $Z(\mathbf{x}) = \sum_{y'}\exp \Big\{\sum_k{\lambda_{ij}F_{k}(y'_t, y'_{t-1}, x_t)}\Big\}$ is known as the partition function, ensuring probabilities sum to 1. Whereas HMMs model only the \emph{occurence} of a word, with conditional random fields we may choose $F_k$ to define arbitrarily complex features, describing rich information about a word, its attributes, and its context. Finally, we may define a cost function in the following way,
 
 \begin{equation}
-l(\theta) = \sum_{i=1}^N\sum_{t=1}^T\sum_{k=1}^K\lambda_kF_{k}(y_t, y_{t-1}, x_t) - \sum_{i=1}^N\log Z(\mathbf{x}^{(i)}) - \sum_{k=1}^K \frac{\lambda_k^2}{2\sigma^2}.
+l(\theta) = \sum_{i=1}^N\sum_{t=1}^T\sum_{k=1}^K\lambda_kF_{k}(y_t, y_{t-1}, x_t) - \sum_{i=1}^N\log Z(\mathbf{x}^{(i)}) - \sum_{k=1}^K \frac{\lambda_k^2}{2\sigma^2},
 \end{equation}
 
-This is called penalised maximum log likelihood. The penalty term imposes an $l_2$ regularisation on the solution parameters. However, according to McCallum et al. (2004), even varying this term by orders of magnitude has little effect on the outcome\cite{mccallum}, a claim we corroborate in section \ref{sec:results}. This cost function represents a strictly convex function, solvable using numerical methods such as L-BFGS (see section \ref{sec:lbfgs}). Forward-backward processing (section \ref{sec:fb}) is performed at each iteration to compute the partition function, as well as the conditional probabilities resulting from forming the partial derivatives. Finally, the Viterbi algorithm (section \ref{subsec:viterbi}) is used to make a prediction with the trained model. A detailed exposition of this is given in \cite{Mccallum}.
+where $\theta = \{\lambda_k\}_{k=1}^K$. This is called penalised maximum log likelihood. The penalty term, $\sum_{k=1}^K\frac{\lambda_k^2}{2\sigma^2}$, imposes an $l_2$ regularisation on the solution parameters, $\lambda_k$. However, according to McCallum et al. (2004), varying the tuning parameter, $\sigma^2$ (the variance), by orders of magnitude has little effect on the outcome\cite{mccallum}, a claim we corroborate in section \ref{sec:results}. This cost function represents a strictly convex function, solvable using numerical methods such as L-BFGS (see section \ref{sec:lbfgs}). Forward-backward processing (section \ref{sec:fb}) is performed at each iteration to compute the partition function, as well as the conditional probabilities resulting from forming the partial derivatives. Finally, the Viterbi algorithm (section \ref{subsec:viterbi}) is used to make a prediction with the trained model, that is, the best state sequence is found given the optimal parameter set found in training. A detailed exposition of this is given in \cite{Mccallum}.
+
+\section{Feature Functions}
+
+In the simple HMM case (equation \ref{eq:jointcrf}), there is a single feature function for each $(i, j)$ and $(i, o)$ pair. Furthermore, they are merely indicator functions to facilitate the activation of the transition and emission probabilities. In CRFs, however, we may define arbitrarily many and varied feature functions of the form $F_k(\mathbf{x}, y) = \sum_t^T f_k(\mathbf{x}, y)$, where $f_k$ is a (typically boolean) function describing one of several features about a token. Notice that while such a function is centered on a given token, that is, a specific element of $\mathbf{x}$, the function has access to the full vector $\mathbf{x}$, enabling the creation of context-aware features, combining information about a tokens with its neighbours. Further notice that the summation over the sequence is what enables instances (token sequences) of varying lengths to remain compatible with the model.
+
+The form of the functions themselves, $f(\cdot)$, are known in Wapiti (section \ref{sec:wapiti}) as \emph{templates}. It is in choosing these explicitly that we perform feature engineering. The literal feature functions, $\{f_k\}_{k=1}^K$, are determined through the vocabularly of features encountered in the extraction process prior to model training. In this way, we may see how model complexity depends on the \emph{vocabulary} encountered in training, and consequently, for smaller training sets, a model will have fewer feature functions. 
 
 \section{Wapiti}
+\label{sec:wapiti}
+
+There are several open source softwares for the general purpose training and application of conditional random fields and related models. Wapiti is the tool of choice for this project, given its compatibility with metadata extraction tool GROBID (section \ref{sec:grobid}), its speed advantage over altneratives, and its recency of its development. It is developed by Thomas Lavergne at LIMSI, a computer science laboratory in Orsay affiliated with Paris-Sud University.
+
 Lack of support for numeric features imposes constraints our feature engineering. Any numeric-based idea must be discretised\footnote{this is a footnote, and it's crazy easy to make in latex.}.
 
 Both approaches yield the same input data for the CRF engine, and so evaluation is in fact equivalent to prediction, despite the initial difference in input formats. Figure \ref{fig:traininput} shows an excerpt from an input file to the CRF engine for training. These features are for inputs ``January 1994'' and ``July 1996'', for training the Date model. The features range from token identity, to a variety of prefixes and punctuation features. It should be noted that OCR information is only used in higher level models, that is, the Header and Segmentation models. The input for lower-level models such as Date is plaintext, and so features are typically simple, but dictionary-based features, where information about a token is referenced in a dictionary resource within Grobid, are also used. Note the features shown are only those pertaining to the token itself. The full range of features (including those involving concatenations of the token's neighbours etc.) are defined by a set of feature templates. The feature templates for each model are contained in a separate file. An excerpt of this is shown in Figure \ref{fig:template}. These are given as a separate input to the CRF engine, and it is with these that the engine constructs all feature functions for the model. It is therefore vital that the feature extraction, which is generated by Grobid, is aligned with the template file, which is manually configured by the developer. As depicted in Figure \ref{fig:flow}, there is a strong coupling between these two parts of Grobid. The excerpt shown is from the Wapiti model, but the notation is the same for CRF++, which first standardised the syntax. This subset of five feature templates capture information about the capitalisation of a token and its neighbours. The notation has the structure, [identifier]:[\%x][row, col], where row is the offset from the current token, and col indicates the feature index. Thus, ``U50:\%[0,11]'', denotes that the feature template identified as ``U50'' takes the 11th feature for the current token (0 offset). This feature will be equal to 1 if a token is capitalised, and 0 otherwise. ``U52:\%[-1,11]'' indicates the same thing, but based on the capitalisation of the \emph{previous} token. ``U54:\%x[-1,11]/\%x[0,11]'' is a binary function for detecting the capitalisation of the current \emph{and} the following token.
