@@ -84,6 +84,7 @@ v_t(s) &= \max_{\mathbf{y}_{1:t-1}} \p(\mathbf{y}_{1:t-1} | \mathbf{x}) \p(y_{t-
 and we may see the recursion. Once all states have been computed at time $t$, the maximum may be chosen and the algorithm proceeds to time $t+1$. Pseudocode for the Viterbi algorithm is given in Algorithm \ref{alg:viterbi} in \ref{sec:appendix}. The algorithm must test all $|S|$ transitions from the previous state to each of the $|S|$ current states, and it does that for each of the $|T|$ steps in the sequence. Hence the complexity of the algorithm is a workable $\mathcal{O}(T|S|^2)$.
 
 \section{Forward-backward Algorithm}
+\label{sec:fb}
 
 Another key algorithm to sequence learning is the forward-backward algorithm, so called for its computation of variables in both directions along the sequence. It is another example of a dynamic programming algorithm and is used to compute the so-called \emph{forward-backward} variables, which are the conditional probabilities of the individual hidden states at each time step (that is, not the whole sequence), given the observation sequence and model parameters, namely, $\p(y_t = s | \mathbf{x}, \theta)$. These conditional probabilities have many useful applications, for example in the Baum-Welch algorithm for estimating model parameters, but also for in the training of \emph{conditional random fields}, as we show in section \ref{subsec:crfs}. We may write the forward-backward variables as,
 
@@ -156,7 +157,8 @@ where $y_{ic} = \mathbbm{1}_{y_i = c}$ and $y_i$ is a bit vector indicating the 
 We then require an optimisation algorithm to solve for $\mathbf{B}$.
 
 \section{L-BFGS}
-\label{subsec:lbfgs}
+\label{sec:lbfgs}
+
 Convex optimisation problems may be solved numerically using variants of the method of greatest descent. These methods find the optimal model parameters by iteratively approaching the global minimum cost by taking steps along the cost function hypersurface opposite to the gradient. The classic first-order gradient descent algorithm defines its iteration step to be,
 
 \begin{equation}
@@ -234,20 +236,110 @@ where $Z(\mathbf{x}) = \sum_{y'}\exp \Big\{\sum_k{\lambda_{ij}F_{k}(y'_t, y'_{t-
 l(\theta) = \sum_{i=1}^N\sum_{t=1}^T\sum_{k=1}^K\lambda_kF_{k}(y_t, y_{t-1}, x_t) - \sum_{i=1}^N\log Z(\mathbf{x}^{(i)}) - \sum_{k=1}^K \frac{\lambda_k^2}{2\sigma^2},
 \end{equation}
 
-where $\theta = \{\lambda_k\}_{k=1}^K$. This is called penalised maximum log likelihood. The penalty term, $\sum_{k=1}^K\frac{\lambda_k^2}{2\sigma^2}$, imposes an $l_2$ regularisation on the solution parameters, $\lambda_k$. However, according to McCallum et al. (2004), varying the tuning parameter, $\sigma^2$ (the variance), by orders of magnitude has little effect on the outcome\cite{mccallum}, a claim we corroborate in section \ref{sec:results}. This cost function represents a strictly convex function, solvable using numerical methods such as L-BFGS (see section \ref{sec:lbfgs}). Forward-backward processing (section \ref{sec:fb}) is performed at each iteration to compute the partition function, as well as the conditional probabilities resulting from forming the partial derivatives. Finally, the Viterbi algorithm (section \ref{subsec:viterbi}) is used to make a prediction with the trained model, that is, the best state sequence is found given the optimal parameter set found in training. A detailed exposition of this is given in \cite{Mccallum}.
+where $\theta = \{\lambda_k\}_{k=1}^K$. This is called penalised maximum log likelihood. The penalty term, $\sum_{k=1}^K\frac{\lambda_k^2}{2\sigma^2}$, imposes an $l_2$ regularisation on the solution parameters, $\lambda_k$. However, according to McCallum et al. (2004), varying the tuning parameter, $\sigma^2$ (the variance), by orders of magnitude has little effect on the outcome\cite{mccallum}, a claim we corroborate in section \ref{sec:results}. This cost function represents a strictly convex function, solvable using numerical methods such as L-BFGS (see section \ref{sec:lbfgs}). Forward-backward processing (section \ref{sec:fb}) is performed at each iteration to compute the partition function, as well as the conditional probabilities resulting from forming the partial derivatives required for gradient descent. Finally, the Viterbi algorithm (section \ref{subsec:viterbi}) is used to make a prediction with the trained model, that is, the best state sequence is found given the optimal parameter set found in training. A detailed exposition of this is given in \cite{Mccallum}.
 
 \section{Feature Functions}
+\label{sec:featurefunctions}
 
-In the simple HMM case (equation \ref{eq:jointcrf}), there is a single feature function for each $(i, j)$ and $(i, o)$ pair. Furthermore, they are merely indicator functions to facilitate the activation of the transition and emission probabilities. In CRFs, however, we may define arbitrarily many and varied feature functions of the form $F_k(\mathbf{x}, y) = \sum_t^T f_k(\mathbf{x}, y)$, where $f_k$ is a (typically boolean) function describing one of several features about a token. Notice that while such a function is centered on a given token, that is, a specific element of $\mathbf{x}$, the function has access to the full vector $\mathbf{x}$, enabling the creation of context-aware features, combining information about a tokens with its neighbours. Further notice that the summation over the sequence is what enables instances (token sequences) of varying lengths to remain compatible with the model.
+In the simple HMM case (equation \ref{eq:jointcrf}), there is a single feature function for each $(i, j)$ and $(i, o)$ pair. Furthermore, they are merely indicator functions that facilitate the activation of the transition and emission probabilities. In CRFs, however, we may define arbitrarily many and varied feature functions of the form $F_k(\mathbf{x}, y) = \sum_t^T f_k(\mathbf{x}, y)$, where $f_k$ is a (typically boolean) function describing one of several features about a token. Notice that while such a function is centered on a given token, that is, a specific element of $\mathbf{x}$, the function has access to the full vector $\mathbf{x}$, enabling the creation of context-aware features, combining information about a tokens with its neighbours. Further notice that the summation over the sequence is what enables instances (token sequences) of varying lengths to remain compatible with the model.
 
-The form of the functions themselves, $f(\cdot)$, are known in Wapiti (section \ref{sec:wapiti}) as \emph{templates}. It is in choosing these explicitly that we perform feature engineering. The literal feature functions, $\{f_k\}_{k=1}^K$, are determined through the vocabularly of features encountered in the extraction process prior to model training. In this way, we may see how model complexity depends on the \emph{vocabulary} encountered in training, and consequently, for smaller training sets, a model will have fewer feature functions. 
+The form of the functions themselves, $f(\cdot)$, are known in Wapiti (section \ref{sec:wapiti}) as \emph{templates}. It is in choosing these explicitly that we perform feature engineering. The literal feature functions, $\{f_k\}_{k=1}^K$, are formed by resolving the templates over the \emph{vocabularly} of features encountered in the extraction process prior to model training. In this way, we may see how model complexity depends on the diversity of the training set, and consequently, for smaller training sets, a model will have fewer feature functions. 
 
 \section{Wapiti}
 \label{sec:wapiti}
 
-There are several open source softwares for the general purpose training and application of conditional random fields and related models. Wapiti is the tool of choice for this project, given its compatibility with metadata extraction tool GROBID (section \ref{sec:grobid}), its speed advantage over altneratives, and its recency of its development. It is developed by Thomas Lavergne at LIMSI, a computer science laboratory in Orsay affiliated with Paris-Sud University.
+There are several open source softwares for the general purpose training and application of conditional random fields and related models. Wapiti is the tool of choice for this project, given its compatibility with metadata extraction tool GROBID (section \ref{sec:grobid}), its speed advantage over alternatives, and its recency of its development. It is developed by Thomas Lavergne at LIMSI, a computer science laboratory in Orsay affiliated with Paris-Sud University.
 
-Lack of support for numeric features imposes constraints our feature engineering. Any numeric-based idea must be discretised\footnote{this is a footnote, and it's crazy easy to make in latex.}.
+[Here some information about Wapiti's capabilities] parallelisable
+
+INCLUDE CITATION OF WAPITI
+
+Wapiti's main functions are training models and tagging. Training requires two inputs:
+
+\begin{enumerate}
+\item a feature template file, and;
+\item a file of extracted features.
+\end{enumerate}
+
+The output of training is a model file. Tagging requires three inputs:
+
+\begin{enumerate}
+\item a feature template file;
+\item a file of extracted features, and;
+\item a trained model.
+\end{enumerate}
+
+The output of tagging is the file of extraction features appended with the classifications of each token.
+
+\subsection{Feature Templates}
+
+Feature templates are the main access point for modelling with Wapiti. These files use a special syntax introduced by an older CRF engine, \emph{CRF++} (also supported by GROBID), allowing the operator to specify the form of the feature functions to be implemented in the model (see Section \ref{sec:featurefunctions}). The features are listed in a manner such as seen in Figure \ref{fig:featuretemplatefile}.
+
+\begin{figure}
+\begin{verbatim}
+* Initialize the model
+* Summary
+    nb train:    493
+    nb labels:   7
+    nb blocks:   5816
+    nb features: 40754
+* Train the model with l-bfgs
+  [   1] obj=1688,58    act=16482    err=25,80%/50,91% time=0,08s/0,08s
+  [   2] obj=1221,30    act=15580    err=19,11%/35,50% time=0,05s/0,12s
+  [   3] obj=922,15     act=13869    err=17,20%/33,67% time=0,04s/0,17s
+  [   4] obj=638,04     act=10845    err= 6,53%/15,21% time=0,04s/0,20s
+  [   5] obj=478,72     act=10582    err= 5,68%/13,59% time=0,04s/0,24s
+  [   6] obj=416,15     act=9926     err= 3,77%/ 9,53% time=0,04s/0,28s
+\end{verbatim}
+\caption{Output from training date model}
+\label{fig:featuretemplatefile}
+\end{figure}
+
+
+\subsection{Extracted Features}
+
+\subsection{Models}
+
+
+\begin{figure}
+\begin{verbatim}
+* Initialize the model
+* Summary
+    nb train:    493
+    nb labels:   7
+    nb blocks:   5816
+    nb features: 40754
+* Train the model with l-bfgs
+  [   1] obj=1688,58    act=16482    err=25,80%/50,91% time=0,08s/0,08s
+  [   2] obj=1221,30    act=15580    err=19,11%/35,50% time=0,05s/0,12s
+  [   3] obj=922,15     act=13869    err=17,20%/33,67% time=0,04s/0,17s
+  [   4] obj=638,04     act=10845    err= 6,53%/15,21% time=0,04s/0,20s
+  [   5] obj=478,72     act=10582    err= 5,68%/13,59% time=0,04s/0,24s
+  [   6] obj=416,15     act=9926     err= 3,77%/ 9,53% time=0,04s/0,28s
+\end{verbatim}
+\caption{Output from training date model}
+\label{fig:output}
+\end{figure}
+
+\begin{figure}
+\begin{verbatim}
+* Initialize the model
+* Summary
+    nb train:    493
+    nb labels:   7
+    nb blocks:   5816
+    nb features: 40754
+* Train the model with l-bfgs
+  [   1] obj=1688,58    act=16482    err=25,80%/50,91% time=0,08s/0,08s
+  [   2] obj=1221,30    act=15580    err=19,11%/35,50% time=0,05s/0,12s
+  [   3] obj=922,15     act=13869    err=17,20%/33,67% time=0,04s/0,17s
+  [   4] obj=638,04     act=10845    err= 6,53%/15,21% time=0,04s/0,20s
+  [   5] obj=478,72     act=10582    err= 5,68%/13,59% time=0,04s/0,24s
+  [   6] obj=416,15     act=9926     err= 3,77%/ 9,53% time=0,04s/0,28s
+\end{verbatim}
+\caption{Output from training date model}
+\label{fig:output}
+\end{figure}
 
 Both approaches yield the same input data for the CRF engine, and so evaluation is in fact equivalent to prediction, despite the initial difference in input formats. Figure \ref{fig:traininput} shows an excerpt from an input file to the CRF engine for training. These features are for inputs ``January 1994'' and ``July 1996'', for training the Date model. The features range from token identity, to a variety of prefixes and punctuation features. It should be noted that OCR information is only used in higher level models, that is, the Header and Segmentation models. The input for lower-level models such as Date is plaintext, and so features are typically simple, but dictionary-based features, where information about a token is referenced in a dictionary resource within Grobid, are also used. Note the features shown are only those pertaining to the token itself. The full range of features (including those involving concatenations of the token's neighbours etc.) are defined by a set of feature templates. The feature templates for each model are contained in a separate file. An excerpt of this is shown in Figure \ref{fig:template}. These are given as a separate input to the CRF engine, and it is with these that the engine constructs all feature functions for the model. It is therefore vital that the feature extraction, which is generated by Grobid, is aligned with the template file, which is manually configured by the developer. As depicted in Figure \ref{fig:flow}, there is a strong coupling between these two parts of Grobid. The excerpt shown is from the Wapiti model, but the notation is the same for CRF++, which first standardised the syntax. This subset of five feature templates capture information about the capitalisation of a token and its neighbours. The notation has the structure, [identifier]:[\%x][row, col], where row is the offset from the current token, and col indicates the feature index. Thus, ``U50:\%[0,11]'', denotes that the feature template identified as ``U50'' takes the 11th feature for the current token (0 offset). This feature will be equal to 1 if a token is capitalised, and 0 otherwise. ``U52:\%[-1,11]'' indicates the same thing, but based on the capitalisation of the \emph{previous} token. ``U54:\%x[-1,11]/\%x[0,11]'' is a binary function for detecting the capitalisation of the current \emph{and} the following token.
 
@@ -278,3 +370,5 @@ Note that, unlike an HMM, the vocabulary is not pre-defined, it is ``discovered'
 \end{figure}
 
 A model is typically a large file (as much as 100Mb). At the top of the file, the feature templates are declared, just as they are in the input. Because of this, that file is not required at prediction time. Following this the labels are declared. Then come two longer sections: first, the feature functions themselves as defined. Figure \ref{fig:model} shows the first 12 features produced from the first token in the first sample in the training set--``November''. Because this is the first token in the string, we see the first three feature macros, which relate to the identity of the token's predecessors, remain unresolved. The fourth, however, shows the indicator for the token. This function will be true if a token is equal to ``November''. The fifth function is an indicator for if the token's successor is equal to ``19'', and so on. The final (and usually largest) section of the model file defines the non-zero weights for the feature functions. The weights are represented in scientific notation and in hexadecimal representation, presumably to avoid arithmetic underflow (a common problem when dealing with with the computation of HMMs and related models).
+
+Nevertheless, lack of support for numeric features imposes constraints our feature engineering. Any numeric-based idea must be discretised.
