@@ -12,32 +12,37 @@
 
 \section{Metadata Extraction}
 
-Automatic metadata extraction (AME) has been referred to as `one of the hardest problems in document engineering'. In our work we are concerned with extraction for scientific articles that are usually (though not necessarily) in the form of a PDF document, as these predominate in the INSPIRE-HEP digital library. Nevertheless, the same techniques will be effective for books, theses, or  and even have novel applications\footnote{Such as for segmenting cooking recipes, as reported in The New York Times (http://open.blogs.nytimes.com/2015/04/09/extracting-structured-data-from-recipes-using-conditional-random-fields/?\_r=0).}. At CERN, the problem has been partially solved, albeit in a rudimentary way \ref{subsec:refextract}, and also entails a lot of manual curation to complete the work.
+Automatic metadata extraction (AME) has been referred to as `one of the hardest problems in document engineering'. In our work we are concerned with extraction for scientific articles that are usually (though not necessarily) in the form of a PDF document, as these predominate in the INSPIRE-HEP digital library. Nevertheless, the same techniques will be effective for books, theses, or may even have novel applications\footnote{Such as for segmenting cooking recipes, as reported in The New York Times (http://open.blogs.nytimes.com/2015/04/09/extracting-structured-data-from-recipes-using-conditional-random-fields/?\_r=0).}. At CERN, the problem has been partially solved, albeit in a rudimentary way, and also entails a lot of manual curation to complete the work. See Section \ref{subsec:refextract} for a comparison between this existing solution and GROBID, the leading tool for metadata extraction.
 
-\begin{definition}
-Here is a definition.
-\end{definition}
+\emph{Metadata} refers to various information explicitly or implicitly contained in a scientific article. Perhaps the most important metadata for an article is that contained in the header, that is, the text at the front of a document, typically containing the title of the article as well as the names, affilations and often the contact details of the authors, concluding finally with the article abstract. As a general rule, this is tantamount to the text of the document falling before the first section of the body (usually called 'Introduction'), though as we find in Chapter \ref{Chapter4}, sometimes significant amounts of front matter is held in unexpected places. Other important types of metadata may be the references of the article, typically classified into fields such as publication title, authors, data of publication, and so on. Another potential metadata type is that of the document structure, its chapters and sections. All of these types are modelled by GROBID.
 
-\emph{Metadata} refers to various information explicitly or implicitly contained in 
+\emph{Extraction} could refer to either of two distinct concepts. First, it may be the parsing of a PDF document and extraction of plaintext and images. This in itself is a complex problem, and may involve machine learning techniques for OCR analysis, depending on the rendering of the document. Or, it may be the  \emph{classification} of document content into predefined categories. It is on the second idea that we are focused within this work. Indeed, GROBID addresses both of these points, but the first is merely a precondition for the analysis it is primarily concerned with, and it houses a third-party PDF to XML conversion tool, \emph{pdftoxml}, developed at Xerox Research Centre Europe (XRCE), to handle this (\cite{dejean2006system}).
 
-\emph{Extraction} can refer to two distinct concepts:
+To appreciate the difficulty of automating such a task, consider Figure \ref{fig:headers}, contrasting the header sections of two articles from our dataset. Though the same sorts of information are present in both headers--title, author names, affilations, and document abstract--the arrangement and presentation of these fields are different, for example the sizing and placement of the document title, the juxtapositioning of authors (which are in variable in number) and author details, and labelling of the abstract block. Furthermore, the second header is more complete, in that it contains information not present in the other, for example copyright and publication details. The contents of a document header do not follow a predictable sequencing, making the problem hard, but are not entirely random, a condition that would render the problem impossible to solve. There is structure to a document, but it is likely infeasible to model deterministically. Therefore, we must look to probabilistic approaches, and accept that these will be error-prone.
+
+\begin{figure}[!ht]
+\subfloat[Header of article on CRFs.\label{subfig-1:dummy}]{%
+  \includegraphics[width=0.45\textwidth]{Figures/header1.pdf}
+}
+\hfill
+\subfloat[Header of HEP paper.\label{subfig-2:dummy}]{%
+  \includegraphics[width=0.45\textwidth]{Figures/header2.pdf}
+}
+\caption{Two differing header sections of articles from our dataset.}
+\label{fig:headers}
+\end{figure}
+
+\section{Solution Methods}
+
+Three main approaches have been considered for AME. They are:
 
 \begin{enumerate}
-\item The parsing of a PDF document and extraction of plaintext and images
-\item The \emph{classification} of document text into predefined categories.
+\item template-based;
+\item knowledge base, and;
+\item machine learning approaches.
 \end{enumerate}
 
-It is on the second definition that we are concerned with in this work, despite the fact that GROBID as a tool addresses both of these problems.
-
-To appreciate the difficulty of automating such a task, consider Figure X . Though the same sorts of information are there. The contents of a document header are unpredictable, which makes the problem hard, but are not entirely random, a condition that would render the problem impossible.
-
-% \begin{figure}[!t]
-% \center
-% \subfig{\includegraphics[width=3.5in]{Figures/header1.pdf} \label{fig:predictionerror}}
-% \subfig{\includegraphics[width=3.5in]{Figures/header2.pdf} \label{fig:logvsrand}}
-% \end{figure}
-
-\section{Solutions Methods}
+There is evidence to suggest the best approach is a combination of the three.
 
 Mention here the different solution types. Also mention the paper comparison used to select GROBID.
 
