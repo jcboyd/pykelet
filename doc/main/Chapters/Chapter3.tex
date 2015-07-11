@@ -61,7 +61,22 @@ GROBID (https://github.com/kermitt2/grobid) is a Java-based tool for automatic m
 
 \subsection{Text Encoding Initiative}
 
-One of GROBID's features is to transform Wapiti outputs into a standard output conforming to the Text Encoding Initiative, therefore we briefly describe it here. The Text Encoding Initiative (TEI) is a standard encoding format for describing documents of any kind. In Figure Y we show a sample of a TEI document used to represent a date. The structured XML format gives information about the class of each of the tokens in a sequence.
+One of GROBID's features is to transform Wapiti outputs into a standard output conforming to the Text Encoding Initiative (TEI)stanard, therefore we briefly describe it here. TEI is a text encoding standard maintained by the TEI constortium. It specifies an XML representation of a document contents from the front matter, to the document body, to the document rear. It gives structure and semantic meaning to document components, with little restriction to the level of detail desired. It is therefore apt as a file format for annotating a document's metadata. GROBID uses TEI to format its outputs, as well as its training data. In Figure \ref{fig:teicitation} we show a sample of a TEI document used to represent a date. The structured XML format gives information about the class of each of the tokens in a sequence.
+
+\begin{figure}
+\lstset{language=XML}
+\begin{lstlisting}
+<bibl>
+    <author>V. Gundelach and D. Eisenburger</author>, &quot; 
+    <title level="a">Principle of a direction sensitive borehole antenna with advanced technology and data examples</title>, &quot; in 	
+    <title level="m">Proceedings of the 4th International Workshop on Advanced Ground Penetrating Radar (IWAGPR &apos;07)</title>, pp. 
+    <biblScope type="pp">28-31</biblScope>, 
+    <date>June 2007</date>.
+</bibl>
+\end{lstlisting}
+\label{fig:teicitation}
+\caption{Sample tagged citation for Grobid training input.}
+\end{figure}
 
 \subsection{Comparison with REFEXTRACT}
 \label{subsec:refextract}
@@ -86,7 +101,7 @@ label		&accuracy	&precision	&recall		&f1 \\
 \begin{center}
 \begin{tabular}{|c|cccc|cccc|}
 \hline
- & GROBID & & & & REFEXTRACT & & & \\
+engine &  \multicolumn{4}{c}{GROBID} & \multicolumn{4}{c}{REFEXTRACT}\\
 \hline
 label & accuracy & precision & recall & f1 & acc. & prec. & rec. & f1\\
 \hline
