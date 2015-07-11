@@ -8,6 +8,21 @@
 
 %----------------------------------------------------------------------------------------
 
-\section{Metadata Extraction}
-\section{Related Work}
-\section{GROBID}
+\section{Extensions}
+\section{Data Acquisition}
+\section{Feature Engineering}
+
+\[
+  \text{lev}_{a, b}(i, j) = 
+  \begin{cases} 
+  	\text{max}(i, j) &\quad\text{if min(i, j) = 0} \\
+	\text{min}
+		\begin{cases}
+			\text{lev}_{a, b}(i - 1, j) + 1 \\
+			\text{lev}_{a, b}(i, j - 1) + 1 \\
+			\text{lev}_{a, b}(i - 1, j - 1) + 1_{a_i \neq b_j} \\
+		\end{cases} &\quad\text{otherwise} \\
+  \end{cases}
+\]
+
+Radar plots here

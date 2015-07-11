@@ -197,7 +197,7 @@
 %-------------------------------------------------   
 \keywords{} % Keywords for your thesis - this is not currently used anywhere in the template, cite it with \keywordnames if you want it
 %-------------------------------------------------   
-\university{\texorpdfstring{\href{http://www.university.com} % Your university's URL
+\university{\texorpdfstring{\href{http://www.epfl.ch} % Your university's URL
                 {\'Ecole Polytechnique F\'ed\'erale de Lausanne}} % Your university's name - this is currently used in the title page
                 {University Name}}
 %-------------------------------------------------   
@@ -205,13 +205,13 @@
                 {EPFL}} % Your university's name in capitals - this is currently used in the abstract page
                 {EPFL)}}
 %-------------------------------------------------                
-\department{\texorpdfstring{\href{Department or School Web Site URL Here (include http://)} % Your department's URL
-                {Department or School Name}} % Your department's name - used in the title page and abstract
-                {Department or School Name}}
+\department{\texorpdfstring{\href{http://ic.epfl.ch/} % Your department's URL
+                {School of Computer and Communications Sciences}} % Your department's name - used in the title page and abstract
+                {School of Computer and Communications Sciences}}
 %-------------------------------------------------                
-\DEPARTMENT{\texorpdfstring{\href{Department or School Web Site URL Here (include http://)} % Your department's URL
-                {DEPARTMENT OR SCHOOL NAME (IN BLOCK CAPITALS)}} % Your department's name in capitals - this is not currently used anywhere in the template, cite it with \DEPTNAME if you want it
-                {DEPARTMENT OR SCHOOL NAME (IN BLOCK CAPITALS)}}
+\DEPARTMENT{\texorpdfstring{\href{http://ic.epfl.ch/} % Your department's URL
+                {SCHOOL OF COMPUTER AND COMMUNICATION SCIENCES}} % Your department's name in capitals - this is not currently used anywhere in the template, cite it with \DEPTNAME if you want it
+                {SCHOOL OF COMPUTER AND COMMUNICATION SCIENCES}}
 %-------------------------------------------------                
 \group{\texorpdfstring{\href{Research Group Web Site URL Here (include http://)} % Your research group's URL
                 {Research Group Name}} % Your research group's name - this is currently used in the title page 
