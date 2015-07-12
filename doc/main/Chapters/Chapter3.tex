@@ -18,37 +18,55 @@ Automatic metadata extraction (AME) has been referred to as `one of the hardest 
 
 \emph{Extraction} could refer to either of two distinct concepts. First, it may be the parsing of a PDF document and extraction of plaintext and images. This in itself is a complex problem, and may involve machine learning techniques for OCR analysis, depending on the rendering of the document. Or, it may be the  \emph{classification} of document content into predefined categories. It is on the second idea that we are focused within this work. Indeed, GROBID addresses both of these points, but the first is merely a precondition for the analysis it is primarily concerned with, and it houses a third-party PDF to XML conversion tool, \emph{pdftoxml}, developed at Xerox Research Centre Europe (XRCE), to handle this (\cite{dejean2006system}).
 
-To appreciate the difficulty of automating such a task, consider Figure \ref{fig:headers}, contrasting the header sections of two articles from our dataset. Though the same sorts of information are present in both headers--title, author names, affilations, and document abstract--the arrangement and presentation of these fields are different, for example the sizing and placement of the document title, the juxtapositioning of authors (which are in variable in number) and author details, and labelling of the abstract block. Furthermore, the second header is more complete, in that it contains information not present in the other, for example copyright and publication details. The contents of a document header do not follow a predictable sequencing, making the problem hard, but are not entirely random, a condition that would render the problem impossible to solve. There is structure to a document, but it is likely infeasible to model deterministically. Therefore, we must look to probabilistic approaches, and accept that these will be error-prone.
-
 \begin{figure}[!ht]
-\subfloat[Header of article on CRFs.\label{subfig-1:dummy}]{%
+\subfloat[Header of article on CRFs.\label{subfig-1:header1}]{%
   \includegraphics[width=0.45\textwidth]{Figures/header1.pdf}
 }
 \hfill
-\subfloat[Header of HEP paper.\label{subfig-2:dummy}]{%
+\subfloat[Header of a HEP paper.\label{subfig-2:header2}]{%
   \includegraphics[width=0.45\textwidth]{Figures/header2.pdf}
 }
 \caption{Two differing header sections of articles from our dataset.}
 \label{fig:headers}
 \end{figure}
 
+To appreciate the difficulty of automating such a task, consider Figure \ref{fig:headers}, contrasting the header sections of two articles from our dataset. Though the same sorts of information are present in both headers--title, author names, affilations, and document abstract--the arrangement and presentation of these fields are different, for example the sizing and placement of the document title, the juxtapositioning of authors (which are in variable in number) and author details, and labelling of the abstract block. Furthermore, the second header is more complete, in that it contains information not present in the other, for example copyright and publication details. The contents of a document header do not follow a predictable sequencing, making the problem hard, but are not entirely random, a condition that would render the problem impossible to solve. There is structure to a document, but it is likely infeasible to model deterministically. Therefore, we must look to probabilistic approaches, and accept that these will be error-prone.
+
+[IMAGE OF TAGGED DOCUMENT HERE]
+
 \section{Solution Methods}
 
-Three main approaches have been considered for AME. They are:
+A 2013 study of metadata extraction techniques \cite{lipinski2013evaluation} identified three fundamental methods for AME:
 
 \begin{enumerate}
-\item template-based;
+\item stylistic analysis;
 \item knowledge base, and;
 \item machine learning approaches.
 \end{enumerate}
 
-There is evidence to suggest the best approach is a combination of the three.
-
-Mention here the different solution types. Also mention the paper comparison used to select GROBID.
+\emph{Stylistic analysis} refers to heuristic approaches to analysing physical characteristics of text font and layout. \emph{Knowledge base} methods rely on online repositories to cross reference extracted information. \emph{Machine learning} refers here either to the state-of-the-art conditional random fields, or to other approaches such as hidden Markov models or support vector machines. There is evidence to suggest that the best approach is a combination of the three, and the study admits software systems such as GROBID (Section \ref{sec:grobid}) do so. The study included a comparison of the leading AME tools based on an ad hoc scoring system over fixed header extraction test data. GROBID  performed best by a considerable margin, ahead of commercial applications Mendeley Desktop and ParsCit.
 
 \section{GROBID}
 \label{sec:grobid}
-GROBID (https://github.com/kermitt2/grobid) is a Java-based tool for automatic metadata extraction 
+GROBID (GeneRatiOn of BIbliographic Data) (https://github.com/kermitt2/grobid) is an open-source (Apache license) is a Java-based tool for automatic metadata extraction. It has been in development by Patrice Lopez at the French Institute for Research in Computer Science and Automation (INRIA) since 2008.
+
+Grobid manages the training, evaluation and usage of a set of models, each addressing a part of the information extraction. Higher level models such as the Header, Segmentation, and Reference Segmentation models may applied directly to PDFs, while the other, more specific models, such as the Date model, operate only on plaintext inputs. Though they have much in common, the models vary in the labels they assign, the features they exploit, and, due to the varying size of the vocabulary (compare say, the number of possible month names to the number of possible author names), the size (dimensionality) of the models. Calling \texttt{processFullText} runs all available models on a batch of PDF documents. The output of training is a model, which takes takes the form of a text or binary file, depending on the engine. These models are then ``loaded'' at prediction time for the labelling of new documents. Some models are in practice not used independently, rather, they form part of a ``cascade'' of models that progressively address finer subcomponents of the classification problem. As shown in Figure \ref{fig:cascade}, reference extraction begins with segmentation models, which classify each line of a document, resulting in homogenous blocks of lines e.g. header, paragraph, figure, references. This information is then distributed to the other models, for example the Reference Segmentation model, which further breaks down the reference list into individual references. The Citation model then classifies the parts of each reference into classes, for example, date, affiliation, and author. Finally, the atomic subcomponents of these are classified by their respective models. Note that the citation branch of the hierarchy has the option of further cross-checking extracted references with the third-party CrossRef web service. Thus, the overall accuracy of the system is dependent on the combined accuracy of models.
+
+Both training and evaluation are performed on sets of XML documents following the Text Encoding Initiative (TEI) standard for representing electronic texts (http://www.tei-c.org/index.xml). This is also the output format for prediction, so there is consistency between input and output formats. It may appear paradoxical to \emph{evaluate} on well-structured data, when the tool is ultimately intended to operate on unstructured PDF documents, that is, at prediction time. However, with closer inspection of the source code, an equivalence can be seen between:
+
+Both approaches yield the same input data for the CRF engine, and so evaluation is in fact equivalent to prediction, despite the initial difference in input formats. Figure \ref{fig:traininput} shows an excerpt from an input file to the CRF engine for training. These features are for inputs ``January 1994'' and ``July 1996'', for training the Date model. The features range from token identity, to a variety of prefixes and punctuation features. It should be noted that OCR information is only used in higher level models, that is, the Header and Segmentation models. The input for lower-level models such as Date is plaintext, and so features are typically simple, but dictionary-based features, where information about a token is referenced in a dictionary resource within Grobid, are also used. Note the features shown are only those pertaining to the token itself. The full range of features (including those involving concatenations of the token's neighbours etc.) are defined by a set of feature templates. The feature templates for each model are contained in a separate file. An excerpt of this is shown in Figure \ref{fig:template}. These are given as a separate input to the CRF engine, and it is with these that the engine constructs all feature functions for the model. It is therefore vital that the feature extraction, which is generated by Grobid, is aligned with the template file, which is manually configured by the developer. As depicted in Figure \ref{fig:flow}, there is a strong coupling between these two parts of Grobid. The excerpt shown is from the Wapiti model, but the notation is the same for CRF++, which first standardised the syntax. This subset of five feature templates capture information about the capitalisation of a token and its neighbours. The notation has the structure, [identifier]:[\%x][row, col], where row is the offset from the current token, and col indicates the feature index. Thus, ``U50:\%[0,11]'', denotes that the feature template identified as ``U50'' takes the 11th feature for the current token (0 offset). This feature will be equal to 1 if a token is capitalised, and 0 otherwise. ``U52:\%[-1,11]'' indicates the same thing, but based on the capitalisation of the \emph{previous} token. ``U54:\%x[-1,11]/\%x[0,11]'' is a binary function for detecting the capitalisation of the current \emph{and} the following token.
+
+\subsection{Evaluation}
+
+Training may be done with a split defined by the developer, which Grobid will use to set aside a proportion of the training data for evaluation. The evaluation of a model produced by training follows identical procedures, preparing the same input data. The output, however, is not a model but a the input data with labels. Grobid compares its predictions with the ground truth and outputs \emph{precision}, \emph{accuracy} and \emph{F1 scores} as performance indicators, at the token, field, and instance levels. A token refers to a single contiguous string of characters (without spaces), a field is a block of contiguous tokens, and an instance is an entire document. Accuracy of an instance is therefore judged by the correctness of all tagging for the whole document, a difficult thing to achieve without any mistakes.
+
+\subsection{Prediction}
+
+Figure \ref{fig:flow} shows the flow of information from input to output, as well as the relationship between training and prediction. When it comes to labelling (prediction), the starting point is a PDF document. With a third-party tool, pdftoxml, this is transformed into an XML file containing OCR information (font, style, orientation) for every token in the document. This information is stored in LayoutToken objects within Grobid. These tokens are arranged into blocks and features are extracted as they were for training and evaluation. Excepting the absence of tokens, the input is the same. The model created in the training phase is first loaded, and then the EngineTagger calls the CRF engine to label the inputs. Unlike for training, the feature template file is not required, as these have already been absorbed into the model file. After processing, Wapiti returns the same file with tags inserted. Grobid then further processes this information to transform it into the final TEI format.
+
+\subsection{Other Functionality}
+
+In addition to the above, Grobid provides a means of producing training sets semi-automatically. This consists of applying the existing models on the training set to produce the XML inputs. Of course, each field must be checked against a ground truth and errors corrected before it is used as a training set. We intend to use this functionality to generate training data for benchmarking Grobid on HEP papers.
 
 \begin{figure}[!ht]
 \center
@@ -64,26 +82,12 @@ GROBID (https://github.com/kermitt2/grobid) is a Java-based tool for automatic m
 \label{fig:cascade}
 \end{figure}
 
-\subsection{Text Encoding Initiative}
-
-One of GROBID's features is to transform Wapiti outputs into a standard output conforming to the Text Encoding Initiative (TEI)stanard, therefore we briefly describe it here. TEI is a text encoding standard maintained by the TEI constortium. It specifies an XML representation of a document contents from the front matter, to the document body, to the document rear. It gives structure and semantic meaning to document components, with little restriction to the level of detail desired. It is therefore apt as a file format for annotating a document's metadata. GROBID uses TEI to format its outputs, as well as its training data. In Figure \ref{fig:teicitation} we show a sample of a TEI document used to represent a date. The structured XML format gives information about the class of each of the tokens in a sequence.
-
-\begin{figure}
-\lstset{language=XML}
-\begin{lstlisting}
-<bibl>
-    <author>V. Gundelach and D. Eisenburger</author>, &quot; 
-    <title level="a">Principle of a direction sensitive borehole antenna with advanced technology and data examples</title>, &quot; in 	
-    <title level="m">Proceedings of the 4th International Workshop on Advanced Ground Penetrating Radar (IWAGPR &apos;07)</title>, pp. 
-    <biblScope type="pp">28-31</biblScope>, 
-    <date>June 2007</date>.
-</bibl>
-\end{lstlisting}
-\label{fig:teicitation}
-\caption{Sample tagged citation for Grobid training input.}
-\end{figure}
-
 \subsection{Comparison with REFEXTRACT}
+
+By way of a benchmarking evaluation for GROBID, we compare it with REFEXTRACT, the existing solution. As mentioned earlier, this existing tool is incomplete and greatly lacking in the . It is capable only of retrieving references\footnote{A comparatively easy task; GROBID's citation model usually performs at a significantly higher accuracy than, say, the header model.}, and the classification itself is quite basic. Since the modelling of reference fields differs between the two, a comparison is difficult to make. A comparison will at least be indicative, however, and we are able to make reasonable comparisons on the most important fields. The dataset for the comparison consists of 60 articles coming from the SCOAP$^3$ online repository\footnote{Scoap$^3$ (Sponsoring Open Consortium for Open Access Publishing in Particle Physics) is an open access digital library hosted at CERN, backed by an international partnership of research institutions.}.
+
+Unlike REFEXTRACT, GROBID requires two separate models to classify the citations of a given article: the reference-segmenter and citation models\footnote{Strictly speaking, there is another model, (full) Segmentation, above the reference-segmenter, and so citation accuracy depends on this also. But because one focus of our work is to improve this model, we accept this omission.}. The former . Therefore, the accuracy of the citation model is ultimately subject to the accuracy of the refernence block inputs supplied to it. The citation model, unlike
+
 \label{subsec:refextract}
 \begin{table}[h]
 \begin{center}
