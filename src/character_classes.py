@@ -1,9 +1,13 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.path import Path
 from matplotlib.spines import Spine
 from matplotlib.projections.polar import PolarAxes
 from matplotlib.projections import register_projection
+from pylab import *
 
 
 def _radar_factory(num_vars):
@@ -66,17 +70,17 @@ def radar_graph(labels=[], values=[]):
     #plt.show()
     plt.savefig("radar.png", dpi=100)
 
-labels = ['Space', 'a-z', 'A-Z', 'Numeric', 'Punct.', 'Special']
-values = [0.21, 0.00, 0.67, 0.10, 0.02, 0.00]
 
-radar_graph(labels, values)
-
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 import re
 
-string = '32 ND I NTERNATIONAL C OSMIC R AY C ONFERENCE , B EIJING 2011'
+# string = u'σ(E)/E = 10%/ E ⊕ 1% and σ(E)/E = 69%/ E ⊕ 9% (with E in GeV), respectively.'
+# string = u'25G. Haefeli 39 , C. Haen 38 , S.C. Haines 47 , S. Hall 53 , B. Hamilton 58 , T. Hampson 46 , X. Han 11 ,'
+# string = u'AGH - University of Science and Technology, Faculty of Physics and Applied Computer Science,'
+# string = u'[7] R. Aaij et al., Performance of the LHCb Vertex Locator, JINST 9 (2014) P09007,'
+# string = u'I. BISWAS, A. DHILLON, J. HURTUBISE, AND R. A. WENTWORTH'
+# string = u'candidates for a so-called linking procedure. This procedure involves merging SVs that'
+string = u'9'
 
 num_space = len(re.findall(r'[\s]', string))
 num_alpha_lower = len(re.findall(r'[a-z]', string))
@@ -91,3 +95,11 @@ print '%.02f' % (1. * num_alpha_upper / len(string))
 print '%.02f' % (1. * num_numeric / len(string))
 print '%.02f' % (1. * num_punct / len(string))
 print '%.02f' % (1. * num_special / len(string))
+
+labels = ['Space', 'a-z', 'A-Z', 'Numeric', 'Punct.', 'Special']
+
+values = [num_space, num_alpha_lower, num_alpha_upper, num_numeric, num_punct, num_special]
+
+radar_graph(labels, values)
+
+show()
