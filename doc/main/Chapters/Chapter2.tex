@@ -14,11 +14,11 @@
 
 \section{Hidden Markov Models}
 
-Hidden Markov models (HMMs) (\cite{rabiner1989tutorial}) are a staple of natural language processing (NLP) and other engineering fields. A HMM models a probability distribution over an unknown, \emph{hidden} sequence of state variables of length $T$, $\mathbf{y} = (y_1, y_2, ..., y_T)$, whose elements take on values in a finite set of states, $S$, and follow a Markov process. For each element in this hidden sequence, there is a corresponding observation element, forming a sequence of \emph{observations}, $\mathbf{x} = (x_1, x_2, ..., x_T)$, similarly taking values in a finite set, $O$. The graphical structure of a HMM (Figure \ref{fig:HMM}) shows the dependencies between consecutive hidden states (these are modelled with \emph{transition} probabilities), and states and their observations (modelled with \emph{emission} probabilities). The first dependency is referred to as the Markov condition, which postulates the dependency of each hidden state, $y_t$, on its k precursors in the hidden sequence, namely, $\mathbf{y}_{t-k:t-1}$\footnote{In the following we use the notation $\mathbf{x}_{a:b}$ to refer to the elements of vector $\mathbf{x}$ from index $a$ through $b$ inclusive.}. In the discussion that follows, we assume the Markov condition to be of first degree, that is, $k =1$. Incidentally, higher-order HMMs may always be reconstructed to this simplest form (\cite{reference}). The second dependency may be referred to as \emph{limited lexical conditioning}, referring to the dependency of an observation only on its hidden state. Properties of the model may then be deduced through statistical inference, for example, a prediction of the most likely hidden sequence can be computed with the Viterbi algorithm (Section \ref{sec:viterbi}).
+Hidden Markov models (HMMs) (\cite{rabiner1989tutorial}) are a staple of natural language processing (NLP) and other engineering fields. A HMM models a probability distribution over an unknown, \emph{hidden} sequence of state variables of length $T$, $\mathbf{y} = (y_1, y_2, ..., y_T)$, whose elements take on values in a finite set of states, $S$, and follow a Markov process. For each element in this hidden sequence, there is a corresponding observation element, forming a sequence of \emph{observations}, $\mathbf{x} = (x_1, x_2, ..., x_T)$, similarly taking values in a finite set, $O$. The graphical structure of a HMM (Figure \ref{fig:HMM}) shows the dependencies between consecutive hidden states (these are modelled with \emph{transition} probabilities), and states and their observations (modelled with \emph{emission} probabilities). The first dependency is referred to as the Markov condition, which postulates the dependency of each hidden state, $y_t$, on its k precursors in the hidden sequence, namely, $\mathbf{y}_{t-k:t-1}$\footnote{In the following we use the notation $\mathbf{x}_{a:b}$ to refer to the elements of vector $\mathbf{x}$ from index $a$ through $b$ inclusive.}. In the discussion that follows, we assume the Markov condition to be of first degree, that is, $k =1$. Incidentally, higher-order HMMs may always be reconstructed to this simplest form (\cite{reference}). The second dependency assumption may be referred to as \emph{limited lexical conditioning}, referring to the dependency of an observation only on its hidden state. Properties of the model may then be deduced through statistical inference, for example, a prediction of the most likely hidden sequence can be computed with the Viterbi algorithm (Section \ref{sec:viterbi}).
 
 HMMs have been shown to be successful in statistical modelling problems. In Part of Speech (PoS) tagging, a classic NLP problem for disambiguating natural language sentences, the parts of speech (nouns, verbs, and so on) of a word sequence (sentence) are modelled as hidden states, and the words themselves are the observations. The PoS sequence may be modelled and predicted for as a HMM. Even a simple HMM can achieve an accuracy of well over $90\%$. The problem of metadata extraction is clearly similar in form to PoS tagging, as we further show in Chapter \ref{Chapter3}.
 
-\begin{figure}[!ht]
+\begin{figure}[t]
 \center
 \includegraphics[width=4in]{Figures/HMM.pdf}
 \caption{An illustration of the graphical structure of a Hidden Markov Model (HMM). The arrows indicate the dependencies running from dependee to dependent.}
@@ -46,13 +46,13 @@ and,
 
 \begin{equation}
 \begin{aligned}
-\p(\mathbf{y}) &= \p(y_1) \p(y_2|y_1) ... \p(y_T, \mathbf{y}_{1:T-1}) \\
-&= \p(y_1) \p(y_2|y_1) ... \p(y_T, y_{T-1}).
+\p(\mathbf{y}) &= \p(y_1) \p(y_2|y_1) ... \p(y_T|\mathbf{y}_{1:T-1}) \\
+&= \p(y_1) \p(y_2|y_1) ... \p(y_T|y_{T-1}),
 \end{aligned}
 \label{eq:prior}
 \end{equation}
 
-Combining \ref{eq:conditional} and \ref{eq:prior}, we may rewrite the factorisation of the HMM as,
+where $\p(y_1|y_0) = \p(y_1)$. Combining \ref{eq:conditional} and \ref{eq:prior}, we may rewrite the factorisation of the HMM as,
 
 \begin{equation}
 \p(\mathbf{x}, \mathbf{y}) = \prod_{t=1}^T \p(y_t | y_{t-1})\p(x_t | y_t).
@@ -119,7 +119,7 @@ From Equations \ref{eq:forward} and \ref{eq:backward} comes Algorithm \ref{alg:f
 
 \section{Maximum Entropy Classifiers}
 
-Maximum entropy classifiers, also known as multinomial logistic regression, are a family of classification techniques.  A prediction is a discrete (categorical), scalar \emph{class}, rather than a class sequence as it is for HMMs. To build a model, we require a \emph{training set} consisting of a $N \times D$ matrix, $\mathbf{X}$, of $N$ training samples of dimension $D$\footnote{The dimensions of a model is synonymous with the model fields or features.}, as well as the $N$ corresponding classifications in the form of a vector, $\mathbf{y}$. A convex cost function known as a maximum log-likelihood function is constructed and subsequently optimised over the choice of model parameters, denoted $\boldsymbol\beta$. Thus, building a model is equivalent to solving a convex optimisation problem. A classification (prediction), $y*$, for an unseen data sample, $\mathbf{x}$, is made by employing these optimal model parameters in a linear function. The result is then passed through a non-linear \emph{logistic} function, denoted $\sigma$, to obtain a probability. Formally,
+Maximum entropy classifiers, also known as multinomial logistic regression, are a family of classification techniques.  A prediction is a discrete (categorical), scalar \emph{class}, rather than a class sequence as it is for HMMs. To build a model, we require a \emph{training set} consisting of a $N \times D$ matrix, $\mathbf{X}$, of $N$ training samples of dimension $D$\footnote{The dimensions of a model is synonymous with the model fields or features.}, as well as the $N$ corresponding classifications in the form of a vector, $\mathbf{y}$. A convex cost function known as a maximum log-likelihood function is constructed and subsequently optimised over the choice of model parameters, denoted $\boldsymbol\beta$. Thus, building a model is equivalent to solving a convex optimisation problem. A classification (prediction), $y*$, for an unseen data sample, $\mathbf{x}$, is made by employing these optimal model parameters in a linear function. The result is then passed through a non-linear \emph{logistic} function, denoted $\sigma = \frac{1}{1 + e^{-x}}$, to obtain a probability. Formally,
 
 \begin{equation}
 y* = \sigma(\boldsymbol\beta^T\mathbf{x}).
@@ -131,13 +131,13 @@ The simplest form of maximum entropy classifier is binary logistic regression, w
 \begin{equation}
 \begin{aligned}
 \log\p(\mathbf{y}|\mathbf{X}, \boldsymbol\beta) = \log\prod_{n=1}^N \p(y_n, \mathbf{x}_n)
-&= \log\Bigg(\prod_{n:y_n = C_1}^N \sigma(\boldsymbol\beta^T\mathbf{x}_n) \prod_{n:y_n = C_2}^N 1 - \sigma(\boldsymbol\beta^T\mathbf{x}_n)\Bigg) \\
+&= \log\Bigg(\prod_{n:y_n = C_1} \sigma(\boldsymbol\beta^T\mathbf{x}_n) \prod_{n:y_n = C_2} 1 - \sigma(\boldsymbol\beta^T\mathbf{x}_n)\Bigg) \\
 &=  \log\prod_{n = 1}^N \sigma(\boldsymbol\beta^T\mathbf{x}_n)^{y_i}(1 - \sigma(\boldsymbol\beta^T\mathbf{x}_n))^{1 - y_i}
 \end{aligned}
 \label{eq:logistic2}
 \end{equation}
 
-where $y_i \in \{0, 1\}$. We may then generalise to,
+where $y_i \in \{0, 1\}$ and i.i.d. We may then generalise to,
 
 \begin{equation}
 \begin{aligned}
@@ -146,7 +146,7 @@ where $y_i \in \{0, 1\}$. We may then generalise to,
 \label{eq:multinomial}
 \end{equation}
 
-where $y_{nc} = \mathbbm{1}_{\{y_n = c\}}$ and $y_n$ is a bit vector indicating the class of the $n$th sample. In this general, multinomial case, the probabilities are written, $\mu_{nc} = \frac{\exp(\boldsymbol\beta_c^T\mathbf{x}_n)}{\sum_{c' = 1}^C \exp(\boldsymbol\beta_c^T\mathbf{x}_n)}$, which are normalised to ensure they sum to 1, and $\boldsymbol\beta_c$ is part of a set of $C$ parameter vectors notated as $D \times C$ matrix, $\mathbf{B}$. From this we obtain a cost function,
+where $y_{nc} = \mathbbm{1}_{\{y_n = c\}}$ and $y_n$ is a bit vector indicating the class of the $n$th sample. In this general, multinomial case, the probabilities are written, $\mu_{nc} = \frac{\exp(\boldsymbol\beta_c^T\mathbf{x}_n)}{\sum_{c' = 1}^C \exp(\boldsymbol\beta_{c'}^T\mathbf{x}_n)}$, which are normalised to ensure they sum to 1, and $\boldsymbol\beta_c$ is part of a set of $C$ parameter vectors notated as $D \times C$ matrix, $\mathbf{B}$. From this we obtain a cost function,
 
 \begin{equation}
 \mathcal{L}(\mathbf{B}) = 
@@ -169,7 +169,7 @@ Convex optimisation problems may be solved numerically using variants of the met
 where $\boldsymbol\beta$ is the vector of model parameters, $\alpha$ is the step size, and $\mathcal{L}$ is the cost function. Newton's method (also known as Iterated Reweighted Least Squares (IRLS)) takes a step in the direction minimising a second-order approximation of the cost function,
 
 \begin{equation}
-\boldsymbol\beta^{k+1} = \boldsymbol\beta^{k} - \alpha_k \mathbf{H_k}^{-1}\nabla\mathcal{L}(\boldsymbol\beta^{k}),
+\boldsymbol\beta^{k+1} = \boldsymbol\beta^{k} - \alpha_k [\mathbf{H_k\mathcal{L}(\boldsymbol\beta^{k})}]^{-1}\nabla\mathcal{L}(\boldsymbol\beta^{k}),
 \label{eq:newton}
 \end{equation}
 
@@ -177,7 +177,7 @@ where $\mathbf{H}$ is the $(D \times D)$ Hessian matrix of partial second deriva
 
 \section{Regularisation}
 
-To avoid overfitting, we add a penalty to the cost function. This imposes a cost proportional to the size of the parameters for each dimension. Large parameters are therefore discouraged and this helps prevent the creation of complex models during training that do not fit test data well. This is equivalent to adding constraints to the optimisation problem. The two most common regularisation types are known as $l_1$ ad $l_2$ regularisation. The former imposes a \emph{Laplace} prior distribution on the parameters, and the latter a \emph{Gaussian}\footnote{A prior distribution in the Bayesian sense is the initial distribution of a variable taken independently.}. According to a probabilistic interpretation, this makes large parameters less likely and moderates their choices, and this is expressed in the cost function as the penalty. In our work, $l_2$ is the only type of regularisation compatible with L-BFGS (Section \ref{sec:lbfgs}).
+To avoid overfitting, we add a penalty to the cost function. This imposes a cost proportional to the size of the parameters for each dimension. Large parameters are therefore discouraged and this helps prevent the creation of complex models during training that do not fit test data well. This is equivalent to adding constraints to the optimisation problem. The two most common regularisation types are known as $l_1$ ad $l_2$ regularisation. The former imposes a \emph{Laplace} prior distribution on the parameters, and the latter a \emph{Gaussian}\footnote{A prior distribution in the Bayesian sense is the initial distribution of a variable taken independently. In $l_2$, the penalty is $\frac{1}{2}\lambda\beta^T\beta = \log e^{\frac{\lambda}{2}\beta^T\beta} = \log \mathcal{N}(\beta|0, 1/\lambda) = \log\p(\beta)$.}. According to a probabilistic interpretation, this makes large parameters less likely and moderates their choices, and this is expressed in the cost function as the penalty. In our work, $l_2$ is the only type of regularisation compatible with L-BFGS (Section \ref{sec:lbfgs}).
 
 \section{Conditional Random Fields}
 \label{subsec:crfs}

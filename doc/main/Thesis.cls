@@ -181,9 +181,9 @@
 %	defined as \examname above so you cite it as \examname
 %----------------------------------------------------------------------------------------
 
-\thesistitle{Automatic Metadata Extaction - The High Energy Physics Use Case} % Your thesis title - this is used in the title and abstract
+\thesistitle{Automatic Metadata Extaction - \\  The High Energy Physics Use Case} % Your thesis title - this is used in the title and abstract
 %-------------------------------------------------  
-\supervisor{Dr. Gilles \textsc{Louppe}} % You supervisor's name - this is used in the title page
+\supervisor{Dr. Martin \textsc{Rajman} \\ Dr. Gilles \textsc{Louppe}} % You supervisor's name - this is used in the title page
 %-------------------------------------------------   
 \examiner{} % Your examiner's name - this is not currently used anywhere in the template, cite it with \examname if you want it
 %-------------------------------------------------   
