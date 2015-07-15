@@ -8,7 +8,7 @@
 
 %----------------------------------------------------------------------------------------
 
-\emph{In this chapter we define the problem of automatic metadata extraction, giving illustrations of the problem, its complexities, and a discussion on the methods by which the problem may be solved. Moreover, we introduce GROBID, the metadata extraction tool around which our work is based, and describe the cascade of CRF models it uses to classify a full document. Notably, we provide a comparison between GROBID and the existing solution for metadata extraction at CERN, refextract.}
+\emph{In this chapter we define the problem of automatic metadata extraction, giving illustrations of the problem, its complexities, and a discussion on the methods by which the problem may be solved. Moreover, we introduce GROBID, the metadata extraction tool around which our work is based, and describe the cascade of CRF models it uses to classify a full document.}
 
 \section{Metadata Extraction}
 
@@ -105,7 +105,7 @@ Both training and evaluation are performed on sets of TEI documents (see Section
 
 Both approaches yield the same input data for the CRF engine, and so the evaluation inputs are, in effect, the same as for prediction, despite the initial differences.
 
-Training may be done with a split defined by the developer, which GROBID uses to set aside a proportion of the training data for evaluation. The evaluation of a model produced by training follows identical procedures, preparing the same input data. The output, however, is not a model but the tagged data. GROBID compares these predictions with the ground truth and reports \emph{precision}, \emph{accuracy} and \emph{F1} scores as performance indicators, at the token, field, and instance levels. A token usually refers to a single contiguous string of characters (without spaces), but in the case of the \emph{segmentation} and \emph{fulltext}, a token is a line. A field is a block of contiguous tokens sharing a class, and an instance is the whole data sample. The accuracy of an instance is therefore judged by the correctness of all tagging for the whole sample (which may a whole document), a difficult thing to achieve without any mistakes.
+Training may be done with a split defined by the developer, which GROBID uses to set aside a proportion of the training data for evaluation. The evaluation of a model produced by training follows identical procedures, preparing the same input data. The output, however, is not a model but the tagged data. GROBID compares these predictions with the ground truth and reports \emph{accuracy}, \emph{precision}, \emph{recall}, and \emph{F1} scores as performance indicators, at the token, field, and instance levels. A token usually refers to a single contiguous string of characters (without spaces), but in the case of the \emph{segmentation} and \emph{fulltext}, a token is a line. A field is a block of contiguous tokens sharing a class, and an instance is the whole data sample. The accuracy of an instance is therefore judged by the correctness of all tagging for the whole sample (which may a whole document), a difficult thing to achieve without any mistakes.
 
 \subsection{Prediction}
 
@@ -113,12 +113,12 @@ Figure \ref{fig:flow} shows the flow of information from input to output, as wel
 
 \subsection{Other Functionality}
 
-In addition to the above, Grobid provides a means of producing training sets semi-automatically. This consists of applying the existing models on a batch PDF training set to produce the XML inputs. Of course, each field must be checked against a ground truth and errors corrected before it is used as a training set. We use this functionality to generate training data for benchmarking GROBID on HEP papers (see \ref{Chapter4}).
+In addition to the above, GROBID provides a means of producing training sets semi-automatically. This consists of applying the existing models on a batch PDF training set to produce the XML inputs. Of course, each field must be checked against a ground truth and errors corrected before it is used as a training set. We use this functionality to generate training data for benchmarking GROBID on HEP papers (see Chapter \ref{Chapter4}).
 
 \begin{figure}[!ht]
 \center
 \includegraphics[width=\textwidth]{Figures/grobid.pdf}
-\caption{An illustration of the interactions between GROBID and Wapiti for the two main functions of training and tagging.}
+\caption{An illustration of the interactions between GROBID and Wapiti for the two main functions of training and tagging. The dashed arrows indicate training operations; the solid arrows, tagging.}
 \label{fig:flow}
 \end{figure}
 
@@ -129,67 +129,4 @@ In addition to the above, Grobid provides a means of producing training sets sem
 \label{fig:cascade}
 \end{figure}
 
-\subsection{Comparison with \emph{refextract}}
 
-As a first result for GROBID, we compare it with \emph{refextract}, the existing solution for automatic reference extraction at CERN. \emph{refextract} is an example of a \emph{stylistic analysis} tool, as it employs regular expressions in a heuristic framework for extraction. As previously mentioned, \emph{refextract} is incomplete and greatly lacking in both breadth and depth of detail. It is capable only of retrieving references\footnote{A comparatively easy task; GROBID's citation model usually performs at a significantly higher accuracy than, say, its \emph{header} model.}, and the classification itself is quite basic. Since the modelling of reference fields differs between the two, a comparison is difficult to make. Our results will at least be indicative, however, and we are able to make reasonable comparisons on the most important fields. The dataset for the comparison consists of 60 articles coming from the SCOAP$^3$ online repository\footnote{Scoap$^3$ (Sponsoring Open Consortium for Open Access Publishing in Particle Physics) is an open access digital library hosted at CERN, backed by an international partnership of research institutions.}.
-
-Unlike \emph{refextract}, GROBID requires two separate models to classify the citations of a given article: the \emph{reference-segmenter} and \emph{citation} models\footnote{Strictly speaking, there is another model, (full) \emph{segmentation}, above the \emph{reference-segmenter}, and so \emph{citation} accuracy depends on this also. But because one focus of our work is to improve this model, we accept this omission.}. The \emph{reference-segmenter} model is the simplest model in GROBID's arsenal, and is responsible for segmenting a reference list block into individual references. Therefore, the accuracy of the citation model is ultimately subject to the accuracy of the reference block inputs supplied to it by the \emph{reference-segmenter} above. The results for training and evaluating the \emph{reference-segmenter} on 60 SCOAP$^3$ papers with an 80--20 split are given in Table \ref{table:referencesegmenterresults}. The results show the \emph{reference-segmenter} is extremely accurate. In fact, only 5 token misclassifications out of 622 were made for the <label> class, and from a grand total of 12981.
-
-\label{subsec:refextract}
-\begin{table}[h]
-\begin{center}
-\begin{tabular}{|c|cccc|}
-\hline
-label           & accuracy  & precision  & recall   & f1 \\
-\hline
-<label>         & 99.96     & 100        & 99.2     & 99.6\\
-<reference>     & 99.96     & 99.96      & 100      & 99.98\\
-\hline
-(micro average) & 99.96     & 99.96      & 99.96    & 99.96  \\
-(macro average) & 99.96     & 99.98      & 99.6     & 99.79  \\
-\hline
-\end{tabular}
-\caption[Evaluation results for reference segmentation]{Evaluation results for reference segmentation}
-\label{table:referencesegmenterresults}
-\end{center}
-\end{table}
-
-The most significant difference between the tools is the set of classes modelled. \emph{refextract} attempts only to classify to the minimum detail required for identifying the originating document within the digital library. Therefore, there are no equivalents to GROBID's classes, <volume>, <pages>, and so on. Rather, these parts of references are absorbed into other, higher-level classes, and are indicated by a dash (-) in the results table. Comparisons can be made, however on fields, <title>, <author>, <journal>, and <date>. There we see the superiority of GROBID over \emph{refextract}. Note that here the \emph{citation} was not trained on the evaluation set, and in particular this may explain its dismal performance in \emph{date} precision, and \emph{pubnum} recall. The dataset instances contained a recurring publication number that was almost uniformly misclassified by GROBID as a date. Notice that this is an example of a domain specificity of HEP papers. Had we trained on these papers, we could expect an improvement.
-
-That \emph{refextract} has perfect recall in the given fields is due to the way the evaluation was conducted, namely...
-
-For an explanation of the performance metrics, see Section \ref{sec:evaluation}.
-
-\begin{table}[h]
-\begin{center}
-\begin{tabular}{|c|cccc|cccc|}
-\hline
-engine &  \multicolumn{4}{c}{GROBID} & \multicolumn{4}{c}{\emph{refextract}}\\
-\hline
-label & accuracy & precision & recall & f1 & acc. & prec. & rec. & f1\\
-\hline
-<author>    & 99.85 &   99.68   &   99.75   &   99.72   & 98.33 &   100 &   92.22   &   95.95   \\
-<title> &   99.59   &   98.87   &   99.25   &   99.06   & 94.89 &   100 &   71.75   &   83.55   \\
-<journal>   & 98.84 &   88.87   &   93.98   &   91.35   & 97.12 &   100 &   46.78   &   63.74   \\
-<volume>&   99.95   &   99.07   &   98.15   &   98.6    & -     &   -   &   -       &   -   \\
-<issue> &   99.93   &   100     &   94.63   &   97.24   & -     &   -   &   -       &   -   \\
-<pages> &   99.75   &   93.51   &   99.45   &   96.39   & -     &   -   &   -       &   -   \\
-<date>  &   98.39   &   57.39   &   98.31   &   72.47   & 98.88 &   100 &   37.55   &   54.6    \\
-<pubnum>&   98.71   &   100     &   12.96   &   22.95   & -     &   -   &   -       &   -   \\
-<note>  &   99.4    &   43.75   &   35      &   38.89   & -     &   -   &   -       &   -   \\
-<publisher>&99.81   &   63.46   &   94.29   &   75.86   & -     &   -   &   -       &   -   \\
-<location>& 99.81   &   86.32   &   91.11   &   88.65   & -     &   -   &   -       &   -   \\
-<institution>& 99.78&   25      &   25      &   25      & -     &   -   &   -       &   -   \\
-<booktitle>&    98.7&   55.56   &   41.67   &   47.62   & -     &   -   &   -       &   -   \\
-<web>   &   99.64   &   51.85   &   100     &   68.29   & -     &   -   &   -       &   -   \\
-<editor>    &  99.93&   100     &46.67      &   63.64   & -     &   -   &   -       &   -   \\
-<tech>  &   99.95   &   83.33   &   50      &   62.5    & -     &   -   &   -       &   -   \\
-\hline
-(micro average) & 99.5  &   93.63   &   94.77   &   94.19 & -    &   - &   -   &   -   \\
-(macro average) & 99.5  &   77.92   &   73.76   &   71.76 & -    &   -  &   -   &   -   \\
-\hline
-\end{tabular}
-\caption[Evaluation results for citations]{Evaluation results for citations}
-\label{table:citationcomparison}
-\end{center}
-\end{table}
