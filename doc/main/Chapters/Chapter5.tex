@@ -10,7 +10,7 @@
 
 As a first result for GROBID, we compare it with \emph{refextract}, the existing solution for automatic reference extraction at CERN. \emph{refextract} is an example of a \emph{stylistic analysis} tool, as it employs regular expressions in a heuristic framework for extraction. As previously mentioned, \emph{refextract} is incomplete and greatly lacking in both breadth and depth of detail. It is capable only of retrieving references\footnote{A comparatively easy task; GROBID's citation model usually performs at a significantly higher accuracy than, say, its \emph{header} model.}, and the classification itself is quite basic. Since the modelling of reference fields differs between the two, a comparison is difficult to make. Our results will at least be indicative, however, and we are able to make reasonable comparisons on the most important fields. The dataset for the comparison consists of 60 articles coming from the SCOAP$^3$ online repository\footnote{Scoap$^3$ (Sponsoring Open Consortium for Open Access Publishing in Particle Physics) is an open access digital library hosted at CERN, backed by an international partnership of research institutions.}.
 
-Unlike \emph{refextract}, GROBID requires two separate models to classify the citations of a given article: the \emph{reference-segmenter} and \emph{citation} models\footnote{Strictly speaking, there is another model, (full) \emph{segmentation}, above the \emph{reference-segmenter}, and so \emph{citation} accuracy depends on this also. But because one focus of our work is to improve this model, we accept this omission.}. The \emph{reference-segmenter} model is the simplest model in GROBID's arsenal, and is responsible for segmenting a reference list block into individual references. Therefore, the accuracy of the citation model is ultimately subject to the accuracy of the reference block inputs supplied to it by the \emph{reference-segmenter} above. The results for training and evaluating the \emph{reference-segmenter} on 60 SCOAP$^3$ papers with an 80--20 split are given in Table \ref{table:referencesegmenterresults}. The results show the \emph{reference-segmenter} is extremely accurate. In fact, only 5 token misclassifications out of 622 were made for the <label> class, and from a grand total of 12981.
+Unlike \emph{refextract}, GROBID requires two separate models to classify the citations of a given article: the \emph{reference-segmenter} and \emph{citation} models\footnote{Strictly speaking, there is another model, (full) \emph{segmentation}, above the \emph{reference-segmenter}, and so \emph{citation} accuracy depends on this also. But because one focus of our work is to improve this model, we accept this omission.}. The \emph{reference-segmenter} model is the simplest model in GROBID's arsenal, and is responsible for segmenting a reference list block into individual references. Therefore, the accuracy of the citation model is ultimately subject to the accuracy of the reference block inputs supplied to it by the \emph{reference-segmenter} above. The results for training and evaluating the \emph{reference-segmenter} on 60 SCOAP$^3$ papers with an 80--20 split are given in Table \ref{table:referencesegmenterresults}. The results show the \emph{reference-segmenter} is extremely accurate. In fact, only 5 token misclassifications out of 622 were made for the <label> class, and from a grand total of 12,981.
 
 \label{subsec:refextract}
 \begin{table}[h]
@@ -97,7 +97,7 @@ Token Extension & +5, +10, +15, +20 & Header & HEP app. 1/3 CORA, HEP app. 2/3 C
 \hline
 Block Size & Height, Width, Height \& Width, Area & Segmentation, Header & HEP \\
 \hline
-Levenshtein & Lev$\geq0.05$, Lev$\geq0.1$, Lev$\geq0.2$, Lev$\geq0.4$, Lev$\geq0.8$, Lev$\geq0.1 \& \geq0.4$ LevAll & Header & HEP \\
+Levenshtein & $T_1 = 0.05$, Lev$\geq0.1$, Lev$\geq0.2$, Lev$\geq0.4$, Lev$\geq0.8$, Lev$\geq0.1 \& \geq0.4$ LevAll & Header & HEP \\
 \hline
 Character Classes & Binary, Decimal, Decimal only & Segmentation & HEP \\
 \hline
@@ -109,17 +109,17 @@ Character Classes & Binary, Decimal, Decimal only & Segmentation & HEP \\
 
 \section{Baseline}
 
-\section{Regularisation}
+\section{Block Size}
+
+
+\section{Character Classes}
 
 \section{Dictionaries}
 
 \section{Dictionaries + Stop Words}
 
-\section{Token Selection}
-
 \section{Levenshtein}
 
-\section{Line Shape}
+\section{Regularisation}
 
-\section{Character Classes}
-
+\section{Token Selection}
