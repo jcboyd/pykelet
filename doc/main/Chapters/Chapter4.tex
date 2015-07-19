@@ -138,8 +138,20 @@ To automate the experimention process, we developed a pipeline of scripts in Pyt
 The pipeline begins with using GROBID (including all necessary extensions) to generate raw feature files for all TEI files in the ground truth dataset. These are then manually assembled into a stripped-down copy of GROBID (containing all necessary Java executables and additional data) and put into a directory, \texttt{batches/}, with other scenarios. The assemblage of training data depends on the data scenario desired. If we want to cross-vallidate over all data, we simply ensure that both \texttt{training/} and \texttt{evaluate/} directories within GROBID contain all the \emph{raw} files, and that all TEI files are in \texttt{training}. The cross validation will move a fold from the training directory to the evaluation directory, and return it when the iteration is complete. If, however, we wish to \emph{append} data for training, yet exclude it from evaluation, we ensure just to place raw files . The pipeline script will then withold for evluation only on those files present in the \texttt{evaluate/} folder. GROBID requires both TEI and raw files to be present or else they are ignored. This trick allows us to run such complex experiments without modifying GROBID or its directory structure. Each iteration of the cross-validation produces a log file of results exported from GROBID's evaluation utilities. These are then post-processed by another script that aggregates the file contents (token- and field-level performance metrics and confusion matrices) and visualises them automatically.
 
 The scripts consist of a Python wrapper, \text{grobid.py} for GROBID, written using \texttt{pyjnius}, a library for Python enabling manipulation of Java executables using the Java Native Interface (JNI)\footnote{Certain limitations on this caused us to write a simpler \texttt{subprocess} wrapper also.}. Cross-validation (CV), \texttt{k\_fold\_cross\_validation.py} creates a \texttt{grobid} object in the following way. It uses Python mathematics library, \texttt{numpy}, to randomly shuffle data (according to a fixed seed), and then Python machine learning library \texttt{scikit-learn} to create CV folds. The folds are excluded for training and evaluated on for each iteration of CV. The output of CV is a set of log files containing results. These are processsed by a pair of scripts, [NAME HERE] and [OTHER NAME HERE] to produce visualisation of confusion matrices and performance metric comparisons.
+\\
+\begin{lstlisting}[language=python, caption=blabla, label={lst:grobid}]
+grobid_trainer = GrobidTrainer(classpath=classpath_trainer,
+                               grobid_home=grobid_home)
+grobid_trainer.train(model)
+grobid_trainer.evaluate(model)
+\end{lstlisting}
 
-[INCLUDE SOME CODE HERE]
+\begin{figure}[!ht]
+\center
+\includegraphics[width=\textwidth]{Figures/pipeline.pdf}
+\caption{An illustration of the way a header section might be segmented and classified. The classes modelled are colour-coded (title in yellow, authors in green, and so on).}
+\label{fig:grobid}
+\end{figure}
 
 \section{Feature Engineering}
 
