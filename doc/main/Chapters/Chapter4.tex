@@ -10,7 +10,7 @@
 
 \section{Objectives}
 
-As articulated in Chapter \ref{Chapter3}, GROBID manages a hierarchy of models that propagates classified information from top to bottom in a cascade. Our objectives are therefore to enhance some models within the cascade for HEP papers. It does not, on the other hand, make sense to attempt to improve all models. After all, we may assume a HEP \emph{date} is no different from dates printed in other scientific papers. Aside for feature engineering, it is hard to imagine improving performance of these models which exemplary. The same goes for names, and with little exception\footnote{It is in fact true that HEP collaborations feature in isolated references in HEP papers (see Section \ref{sec:futurework}).}, reference lists and their contents. Undoubtedly, the models with the most promising scope for improvement are the \emph{header} and \emph{segmentation} models. It is these models that address the parts of an article most distinct in HEP papers. In particular, some physical journals have recurrent styles and formats for headers sections that are distinct from others publishers. In addition, the vocabularly of a physics headers will be distinct from that papers from other branches of sceience. These should be trained for and additionally engineered for, for example through the use of dictionary-based features (see Section \ref{subsec:dicts}). Thus, the \emph{header} model may be improved for a number of reasons, including:
+As articulated in Chapter \ref{Chapter3}, GROBID manages a hierarchy of models that propagates classified information from top to bottom in a cascade. Our objectives are therefore to enhance some models within the cascade for HEP papers. It does not, on the other hand, make sense to attempt to improve all models. After all, we may assume a HEP \emph{date} is no different from dates printed in other scientific papers. Aside for feature engineering, it is hard to imagine improving performance of these models which exemplary. The same goes for names, and with little exception\footnote{It is in fact true that HEP collaborations feature in isolated references in HEP papers (see Section \ref{sec:futurework}).}, reference lists and their contents. Undoubtedly, the models with the most promising scope for improvement are the \emph{header} and \emph{segmentation} models. It is these models that address the parts of an article most distinct in HEP papers. In particular, some physical journals have recurrent styles and formats for headers sections that are distinct from others publishers. In addition, the vocabularly of a physics headers will be distinct from that papers from other branches of sceience. These should be trained for and additionally engineered for, for example through the use of dictionary-based features (see Section \ref{subsec:dicts}). Exceptionally, the \emph{header} model is not, by default, part of the cascade, rather, the header section is extracted separately using heuristics based on locating the start of the body (usually identified by the heading, `Introduction'). Accoring to the author, the reason for this approach is that, on average, it is more accurate than relying on the \emph{segmentation} model for finding front matter, given the limited amount of \emph{segmentation} training data. However, this precludes the modelling of \emph{discontinuous} front matter, which may occur at the base of a first page, at the very end of an article, or just about anywhere else (see Figure \ref{fig:articlesamples}). Reconnecting the \emph{header} model with with the \emph{segmentation} model is therefore an implementation objective. Thus, the \emph{header} model may be improved for a number of reasons, including:
 
 \begin{enumerate}
 \item physics publishers present a unique format not found in CORA papers;
@@ -79,27 +79,14 @@ Segmentation & \textbf{169 papers} & 125 papers \\
 
 \subsection{CORA dataset}
 \label{subsec:cora}
-The CORA dataset (\cite{mccallum2000automating}) is a substantial dataset of some 2506 header instances. It is popular in metadata extraction studies, as creating custom training data is a stupendously time-consuming task, and has come to be a sort of standard (\cite{Peng04accurateinformation}). From One of the questions we ask in Section \ref{sec:results} is therefore, what 
+The CORA dataset (\cite{mccallum2000automating}) is a substantial dataset of some 2506 header instances. It is popular in metadata extraction studies, as creating custom training data is a stupendously time-consuming task, and has come to be a sort of standard (\cite{Peng04accurateinformation}). We use it in combination with our own HEP dataset. Despite the overall quality of the dataset, we did encounter some small mistakes, as do (\cite{Peng04accurateinformation}) \blockquote{The \emph{note} field is the one most confused with others, and upon inspection is actually labeled inconsistently in the training data.} For the \emph{segmentation} model, the baseline dataset is not part of CORA, but rather is part of the GROBID project, but for simplicity we refer to this also as \emph{CORA}.
 
-\begin{enumerate}
-\item the dataset is small (we more than double it in Section \ref{sec:data})
-\item the dataset is small (we more than double it in Section \ref{sec:data})
-\item the dataset is small (we more than double it in Section \ref{sec:data})
-\item the dataset is small (we more than double it in Section \ref{sec:data})
-\end{enumerate}
-
-Despite the overall quality of the dataset, we did encounter some small mistakes, as do (\cite{Peng04accurateinformation})
-
-\blockquote{The \emph{note} field is the one most confused with others, and upon inspection is actually labeled inconsistently in the training data.}
-
-\subsection{HEP dataset - Header}
+\subsection{HEP dataset}
 \label{subsec:hepdatasetheader}
 
-For \emph{header} training data, the command for this is \texttt{createTrainingHeader}.
+For \emph{header} training data, the command for this is \texttt{createTrainingHeader}. Modifications had to be made to GROBID to produce features for the entire document, rather than for the first two pages as per the heuristic. This was essential to obtain features for any discontinuous front matter in other parts of the document. Wherever such matter was found, it was necessary firstly to manually append to the TEI file, following the TEI XML standard, then to copy the discontinuous segments of the extracted features into the master copy. Whenever a copyist mistake was made, these entailed runtime errors, and reparations had to be made.
 
-Modifications had to be made to GROBID to produce features for the entire document, rather than for the first two pages as per the heuristic. This was essential to obtain features for any discontinuous front matter in other parts of the document. Wherever such matter was found, it was necessary firstly to manually append to the TEI file, following the TEI XML standard, then to copy the discontinuous segments of the extracted features into the master copy. Whenever a copyist mistake was made, these entailed runtime errors, and reparations had to be made.
-
-We were therefore able to experiment with combining the two datasets of HEP papers, as well as subsampling the CORA dataset to see . After all, in spite of common wisdom that increasing the amount of training data will increase generalisation and model performance, it is not clear what effects combining different ground truths, namely CORA and HEP, will have. One may imagine that generalising over a hybrid dataset might construct a misleading model when it comes to evaluate on a pure HEP dataset, especially when the CORA set dwarfs our HEP one. Therefore one of our research questions is whether such a mixture is beneficial, and we experiment with different CORA sample sizes in Section \ref{Chapter5}.
+We were therefore able to experiment with combining the two datasets of HEP papers, as well as subsampling the CORA dataset to see . After all, in spite of common wisdom that increasing the amount of training data will increase generalisation and model performance, it is not clear what effects combining different ground truths, namely CORA and HEP, will have. One may imagine that generalising over a hybrid dataset might construct a misleading model when it comes to evaluate on a pure HEP dataset, especially when the CORA set dwarfs our HEP one. Therefore one of our research questions is whether such a mixture is beneficial, and we experiment with different CORA sample sizes in Section \ref{Chapter5}. For \emph{segmentation} training data, the command for this is \texttt{createTrainingSegmentation}. We were therefore able to experiment with combining the two datasets of HEP papers
 
 \begin{figure}
 \centering
@@ -112,13 +99,6 @@ We were therefore able to experiment with combining the two datasets of HEP pape
 \caption{Figure (A) shows a collaboration field in a header section. Figure (B) shows discontinuous front matter that sits on the first page, but apart from the main header section and within the introduction section. Figures (C) and (D) give the authors list and affiliations from a large HEP collaboration; the author list begins on page . Figure (B) from (\cite{maguire2012taxonomy}), other excerpts from (\cite{aaij2015identification}).}
 \label{fig:articlesamples}
 \end{figure}
-
-\subsection{HEP dataset - Segmentation}
-\label{subsec:hepdatasetsegmentation}
-
-For \emph{segmentation} training data, the command for this is \texttt{createTrainingSegmentation}. 
-
-We were therefore able to experiment with combining the two datasets of HEP papers
 
 \section{Extensions}
 
@@ -150,9 +130,7 @@ The most significant extension made was with the class, \texttt{ConfusionMatrix.
 \section{Pipeline}
 \label{sec:pipeline}
 
-To automate the experimention process, we developed a pipeline of scripts in Python, chosen for its ubiquity in INSPIRE-HEP. The repository is open source and hosted GitHub\footnote{https://github.com/jcboyd/pykelet/src}. The pipeline begins with using GROBID (including all necessary extensions) to generate raw feature files for all TEI files in the ground truth dataset. These are then manually assembled into a stripped-down copy of GROBID (containing all necessary Java executables and additional data) and placed in directory, \texttt{batches/}, with other scenarios. The assemblage of training data depends on the data scenario desired. If we wish to cross-validate over all data, we simply ensure that both the \texttt{training/} and \texttt{evaluation/} directories within the GROBID project contain all the feature files, and that all TEI files are in \texttt{training/}. The cross validation (CV) process will move a fold from the training directory to the evaluation directory, and return it when the iteration is complete. If, however, we wish to \emph{append} data for training, yet exclude it from CV and evaluation, we place the features files only under \texttt{training/}. The process will then cross-validate only on those files present in the \texttt{evaluation/} folder. GROBID requires both TEI and feature files to be present or else they are ignored. This trick allows us to run such complex experiments without modifying GROBID or its directory structure. Each iteration of the cross-validation produces a log file of results exported from GROBID's evaluation utilities. These are then post-processed by another script that aggregates the file contents (token- and field-level performance metrics and confusion matrices) and visualises them automatically. The pipeline process is visualised in Figure \ref{fig:pipeline}.
-
-The pipeline consists of a Python wrapper, \texttt{grobid.py}, for GROBID, written using \texttt{pyjnius}, a Python library for the manipulation of Java executables through the Java Native Interface (JNI)\footnote{Certain limitations on this led us to write a simpler \texttt{subprocess} wrapper also.}. CV, \texttt{k\_fold\_cross\_validation.py}, creates a \texttt{GrobidTrainer} object in the following way:\\
+To automate the experimention process, we developed a pipeline of scripts in Python, chosen for its ubiquity in INSPIRE-HEP. The repository is open source and hosted GitHub\footnote{https://github.com/jcboyd/pykelet/src}. The pipeline begins with using GROBID (including all necessary extensions) to generate raw feature files for all TEI files in the ground truth dataset. These are then manually assembled into a stripped-down copy of GROBID (containing all necessary Java executables and additional data) and placed in directory, \texttt{batches/}, with other scenarios. The assemblage of training data depends on the data scenario desired. If we wish to cross-validate over all data, we simply ensure that both the \texttt{training/} and \texttt{evaluation/} directories within the GROBID project contain all the feature files, and that all TEI files are in \texttt{training/}. The cross validation (CV) process will move a fold from the training directory to the evaluation directory, and return it when the iteration is complete. If, however, we wish to \emph{append} data for training, yet exclude it from CV and evaluation, we place the features files only under \texttt{training/}. The process will then cross-validate only on those files present in the \texttt{evaluation/} folder. GROBID requires both TEI and feature files to be present or else they are ignored. This trick allows us to run such complex experiments without modifying GROBID or its directory structure. Each iteration of the cross-validation produces a log file of results exported from GROBID's evaluation utilities. These are then post-processed by another script that aggregates the file contents (token- and field-level performance metrics and confusion matrices) and visualises them automatically. The pipeline process is visualised in Figure \ref{fig:pipeline}. The pipeline consists of a Python wrapper, \texttt{grobid.py}, for GROBID, written using \texttt{pyjnius}, a Python library for the manipulation of Java executables through the Java Native Interface (JNI)\footnote{Certain limitations on this led us to write a simpler \texttt{subprocess} wrapper also.}. CV, \texttt{k\_fold\_cross\_validation.py}, creates a \texttt{GrobidTrainer} object in the following way:\\
 
 \begin{lstlisting}[language=python, caption=Excerpt from our Python wrapper for GROBID, label={lst:grobid}]
 grobid_trainer = GrobidTrainer(classpath=classpath_trainer,
@@ -195,7 +173,7 @@ One characteristic that is distinct about article layout are the varied dimensio
 where $B$ is the set of blocks in the header instance, and $C$ is a discretisation constant (in our experiments $C = 10$).
 
 \subsection{Character Classes}
-
+\label{subsec:characterclasses}
 A visual scan of any scientific paper allows one to see that lines from different sections are most easily distinguished by the composition of characters. It therefore stands to reason that we can build informative features for the \emph{segmentation} model on this basis. Indeed, it may be that a line may be more effectively characterised at the \emph{character} level than the \emph{word} level. For an illustration of this effect, see Figure \ref{fig:radar}. Note that the baseline feature function set does include some basic capitalisation and punctuation indicators, but we advocate our approach for several reasons:
 
 \begin{enumerate}
@@ -219,12 +197,12 @@ for each character class, $\text{class}_i$, where $C$ is the discretisation fact
 \hline
 Class & Regex\\
 \hline
-Spacing & \verb|r`[\s]'|\\
-Lower case & \verb|r`[a-z]'|\\
-Upper case & \verb|r`[A-Z]'|\\
-Numeric & \verb|r`[\d]'|\\
-Punctuation & \verb|r`[\(\).,?:;]'|\\
-Special character & \verb|r`[^\sa-zA-Z\d\(\).,?:;]'|\\
+Spacing & r`[\textbackslash s]'\\
+Lower case & r`[a-z]'\\
+Upper case & r`[A-Z]'\\
+Numeric & r`[\textbackslash d]'\\
+Punctuation & r`[\(\).,?:;]'\\
+Special character & r`[\^{}\textbackslash sa-zA-Z\ d\(\).,?:;]'\\
 \hline
 \end{tabular}
 \caption[Character classes used as features, along with the regular expressions used to count them.]{Character classes used as features, along with the regular expressions used to count them.}
