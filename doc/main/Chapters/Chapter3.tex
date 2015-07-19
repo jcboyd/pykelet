@@ -89,10 +89,10 @@ In GROBID, models are trained in isolation. The models produced by Wapiti (Secti
 
 \begin{enumerate}
 \item a TEI file, and;
-\item a \emph{raw} file containing extracted features.
+\item a raw feature file containing extracted features.
 \end{enumerate}
 
-Other, simpler models, require only the former. Together, the files form an abstraction over the CRF engine inputs. The reason for including the raw files is because the original PDF files are assumed not to be available at training time, and therefore any features derived from text styling or positioning must be extracted in advance. The TEI files simply provide the classifications of the plaintext required to build a ground truth. The feature extraction itself is done by a module of GROBID. Since feature files and feature template files, which are configured manually by the developer, must agree, there is a strong coupling between this module and the templates.
+Other, simpler models, require only the former. Together, the files form an abstraction over the CRF engine inputs. The reason for including the feature files is because the original PDF files are assumed not to be available at training time, and therefore any features derived from text styling or positioning must be extracted in advance. The TEI files simply provide the classifications of the plaintext required to build a ground truth. The feature extraction itself is done by a module of GROBID. Since feature files and feature template files, which are configured manually by the developer, must agree, there is a strong coupling between this module and the templates.
 
 \subsection{Evaluation}
 
@@ -100,7 +100,7 @@ Both training and evaluation are performed on sets of TEI documents (see Section
 
 \begin{enumerate}
 \item applying the \emph{pdftoxml} tool, tokenising the output and transforming to CRF input data, and;
-\item extracting tokens from TEI documents (and possibly \emph{raw} files also--see Section \ref{subsec:training}), and transforming to CRF input data.
+\item extracting tokens from TEI documents (and possibly feature files also--see Section \ref{subsec:training}), and transforming to CRF input data.
 \end{enumerate}
 
 Both approaches yield the same input data for the CRF engine, and so the evaluation inputs are, in effect, the same as for prediction, despite the initial differences.
