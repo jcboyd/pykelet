@@ -6,6 +6,8 @@
 
 \lhead{Chapter 5. \emph{Results and Analysis}} % This is for the header on each page - perhaps a shortened title
 
+\emph{In this section we present the results of our experimentation with feature engineering. We notably begin with a comparison between GROBID and refextract, the existing partial solution for metadata extraction at INSPIRE-HEP. Following this we detail the evaluation method and our approach to running experiments. Finally, we present the results of our experimentation and provide our analysis and interpretations.}
+
 \section{Comparison with \emph{refextract}}
 
 As a first result for GROBID, we compare it with \emph{refextract}, the existing solution for automatic reference extraction at CERN. \emph{refextract} is an example of a \emph{stylistic analysis} tool, as it employs regular expressions in a heuristic framework for extraction. As previously mentioned, \emph{refextract} is incomplete and greatly lacking in both breadth and depth of detail. It is capable only of retrieving references\footnote{A comparatively easy task; GROBID's citation model usually performs at a significantly higher accuracy than, say, its \emph{header} model.}, and the classification itself is quite basic. Since the modelling of reference fields differs between the two, a comparison is difficult to make. Our results will at least be indicative, however, and we are able to make reasonable comparisons on the most important fields. The dataset for the comparison consists of 60 articles coming from the SCOAP$^3$ online repository\footnote{Scoap$^3$ (Sponsoring Open Consortium for Open Access Publishing in Particle Physics) is an open access digital library hosted at CERN, backed by an international partnership of research institutions.}.
@@ -41,7 +43,7 @@ For an explanation of the performance metrics, see Section \ref{sec:evaluation}.
 \begin{center}
 \begin{tabular}{|c|cccc|cccc|}
 \hline
-engine &  \multicolumn{4}{c}{GROBID} & \multicolumn{4}{c}{\emph{refextract}}\\
+engine &  \multicolumn{4}{|c|}{GROBID} & \multicolumn{4}{c|}{\emph{refextract}}\\
 \hline
 label & accuracy & precision & recall & f1 & acc. & prec. & rec. & f1\\
 \hline
@@ -110,7 +112,6 @@ Character Classes & Binary, Decimal, Decimal only & Segmentation & HEP \\
 \section{Baseline}
 
 \section{Block Size}
-
 
 \section{Character Classes}
 
