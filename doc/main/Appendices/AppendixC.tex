@@ -15,7 +15,7 @@ To substantiate our claim that stop word frequency varies according to header se
 \label{fig:means}
 \end{figure}
 
-To confirm the significance of this result, we first performed an ANOVA (Figure \ref{fig:anova}) on the frequency data. The test reported a p-value of ($< 0.01$), permitting us to reject the null hypothesis that the means are equal ($\text{H}_0: \mu_1 = \mu_2 = \dots = \mu_k$), thereby confirming the statistical significance of the varying means. We further performed pairwise t tests (Figure \ref{fig:ttest}) to show the significance of the result for each class, with each p-value of ($< 0.01$).
+To confirm the significance of this result, we first performed an ANOVA in R (Figure \ref{fig:anova}) on the frequency data. The test reported a p-value of ($< 0.01$), permitting us to reject the null hypothesis that the means are equal ($\text{H}_0: \mu_1 = \mu_2 = \dots = \mu_k$), thereby confirming the statistical significance of the varying means. We further performed pairwise t tests (Figure \ref{fig:ttest}) to show the significance of the result for each class, with each p-value of ($< 0.01$).
 
 \begin{figure}
 \centering
@@ -26,7 +26,7 @@ Residuals   57 0.5317  0.0093
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 \end{BVerbatim}
-\caption{Excerpt of capitalisation features templates or \emph{macros}.}
+\caption{ANOVA showed the average stop word frequency of header sections varies significantly.}
 \label{fig:anova}
 \end{figure}
 
@@ -43,6 +43,6 @@ Title   1.6e-14  0.0016
 
 P value adjustment method: bonferroni
 \end{BVerbatim}
-\caption{Excerpt of capitalisation features templates or \emph{macros}.}
+\caption{Pairwise t-tests showed significance for each comparison.}
 \label{fig:ttest}
 \end{figure}

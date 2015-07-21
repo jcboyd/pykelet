@@ -38,6 +38,19 @@ class Scenarios:
     H_H_L2em4 = {'path': '../logs/regularisation/H_H_L2=e-4/'}
     H_H_L2em3 = {'path': '../logs/regularisation/H_H_L2=e-3/'}
 
+    # levenshtein
+    S_H_Lev01 = {'path': '../logs/levenshtein/S_H_Lev0.1/'}
+    S_H_Lev0104 = {'path': '../logs/levenshtein/S_H_Lev0.1+0.4/'}
+    S_H_Lev02 = {'path': '../logs/levenshtein/S_H_Lev0.2/'}
+    S_H_Lev04 = {'path': '../logs/levenshtein/S_H_Lev0.4/'}
+    S_H_Lev005 = {'path': '../logs/levenshtein/S_H_Lev0.05/'}
+    S_H_Lev08 = {'path': '../logs/levenshtein/S_H_Lev0.8/'}
+    S_H_LevAll = {'path': '../logs/levenshtein/S_H_LevAll/'}
+
+    # levenshtein
+    S_H_class_binary = {'path': '../logs/classes/S_H_class_binary/'}
+    S_H_class_decimal = {'path': '../logs/classes/S_H_class_decimal/'}
+
 
 class Category:
 
@@ -107,9 +120,9 @@ if __name__ == '__main__':
     #                Scenarios.H_HappC_dicts['path'],
     #                Scenarios.H_HappC_dicts_stops['path']]
 
-    directories = [Scenarios.H_H['path'],
-                   Scenarios.H_H_dicts['path'],
-                   Scenarios.H_H_dicts_stops['path']]
+    directories = [Scenarios.S_H['path'],
+                   Scenarios.S_H_class_decimal['path'],
+                   Scenarios.S_H_LevAll['path']]
 
     # Load data
     for directory in directories:
@@ -144,7 +157,7 @@ if __name__ == '__main__':
             scenario.add_iteration(it)
         scenarios.append(scenario)
 
-    field = 'micro'
+    field = 'references'
 
     # Plot data
     titles_0 = [x.iterations[0].fields[field].f1 for x in scenarios]

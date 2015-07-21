@@ -237,7 +237,7 @@ Special character & r`[\^{}\textbackslash sa-zA-Z\ d\(\).,?:;]'\\
 \subsection{Dictionaries}
 \label{subsec:dicts}
 
-As mentioned previously, the vocabulary of a HEP paper is distinct from other branches of science, containing jargon and terminology particular to high energy physics. Aside from token indicators, we can support this characteristic with features based on dictionary membership. To achieve this, we exported the full set of author names, affiliations, journal names, article titles, and collaborations from the INSPIRE-HEP database. Each dictionary required extensive cleaning prior to being fit for purpose. In addition, we used the Natural Language Toolkit (\texttt{nltk}) for Python to create a dictionary of stop words, the expectation being that different classes contain stop words in varying amounts. For example, prosaic text, such as an abstract will contain stop words in greater number than summary information such as a keyword term, or an author details block. The dictionary feature functions may therefore be written formally as,
+As mentioned previously, the vocabulary of a HEP paper \emph{header} is distinct from other branches of science, containing jargon and terminology particular to high energy physics. Aside from token indicators, we can support this characteristic with features based on dictionary membership. To achieve this, we exported the full set of author names, affiliations, journal names, article titles, and collaborations from the INSPIRE-HEP database. Each dictionary required extensive cleaning prior to being fit for purpose. In addition, we used the Natural Language Toolkit (\texttt{nltk}) for Python to create a dictionary of stop words, the expectation being that different classes contain stop words in varying amounts. For example, prosaic text, such as an abstract will contain stop words in greater number than summary information such as a keyword term, or an author details block. We confirmed this hypothesis with statistical ANOVA and pairwise t-tests in $R$, showing significant differences of stop word frequency according to header section (see Appendix \ref{AppendixC}). The dictionary feature functions may therefore be written formally as,
 
 \begin{equation}
 f_{\text{dict}_i}(x_t) = \mathbbm{1}_{\{x_t \in \text{dict}_i\}},
@@ -274,7 +274,7 @@ With some exploratory data analysis we may see that the average edit distance va
 Due to the constraints on numeric features (see Section \ref{sec:wapiti}), we must discretise the result. Thus, for a given line, $x_t$, we define the feature function, 
 
 \begin{equation}
-  \text{f}_{lev}(x_t) =
+  f_{lev}(x_t) =
   \begin{cases}
   	0 & \quad \text{if } 0 \leq \text{similarity}(x_t, x_{t-1}) \leq T_1 \\
 	1 & \quad \text{if } T_1 \leq \text{similarity}(x_t, x_{t-1}) \leq T_2\\
