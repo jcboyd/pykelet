@@ -28,7 +28,6 @@ The \emph{segmentation} model may also be improved for a number of reasons:
 
 Note that the \emph{segmentation} model is the parent model of the entire cascade, and therefore any improvement to it will benefit all other models at prediction time. Aside from being the root of the cascade, the \emph{segmentation} model is special in that it models a full line at the token level, rather than a single character string such as for the \emph{header} model. We are mindful of this distinction as we go about our feature engineering. Our focus is therefore on the two models, \emph{header} and \emph{segmentation}. Hence, we require two separate training sets of HEP papers, one for each model. Incidentally, both models require that for each paper we produce a TEI representation and a feature file of extracted features, as introduced in Section \ref{sec:grobid}.
 
-
 \begin{figure}[b]
 \centering
 \begin{tabular}{cc}
@@ -185,7 +184,7 @@ f_{size}(x_t) = \big\lfloor C \cdot\hat f_{size}(x_t)\big\rfloor,
 \label{eq:areafunctiondisc}
 \end{equation}
 
-where $C$ is a discretisation factor, in our experiments $C = 10$, giving a categorical variable of 10 values.
+where $C$ is a discretisation factor. In our experiments $C = 10$, giving a categorical variable of 10 values.
 
 \subsection{Character Classes}
 \label{subsec:characterclasses}
