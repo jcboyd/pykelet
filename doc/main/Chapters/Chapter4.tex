@@ -26,7 +26,7 @@ The \emph{segmentation} model may also be improved for a number of reasons:
 \item the dataset is small (we more than double it in Section \ref{sec:data}).
 \end{enumerate}
 
-Note that the \emph{segmentation} model is the parent model of the entire cascade, and therefore any improvement to it will benefit all other models at prediction time. Aside from being the root of the cascade, the \emph{segmentation} model is special in that it models a full line at the token level, rather than a single character string such as for the \emph{header} model. A comparison is given in Table \ref{table:headervssegmentation}. We are mindful of this distinction as we go about our feature engineering. Our focus is therefore on the two models, \emph{header} and \emph{segmentation}. Hence, we require two separate training sets of HEP papers, one for each model. Incidentally, both models require that for each paper we produce a TEI representation and a feature file of extracted features, as introduced in Section \ref{sec:grobid}.
+Note that the \emph{segmentation} model is the parent model of the entire cascade, and therefore any improvement to it will benefit all other models at prediction time. Aside from being the root of the cascade, the \emph{segmentation} model is special in that it models a full line at the token level, rather than a single character string such as for the \emph{header} model. We are mindful of this distinction as we go about our feature engineering. Our focus is therefore on the two models, \emph{header} and \emph{segmentation}. Hence, we require two separate training sets of HEP papers, one for each model. Incidentally, both models require that for each paper we produce a TEI representation and a feature file of extracted features, as introduced in Section \ref{sec:grobid}.
 
 
 \begin{figure}[b]
@@ -41,21 +41,21 @@ Note that the \emph{segmentation} model is the parent model of the entire cascad
 \label{fig:articlesamples}
 \end{figure}
 
-\begin{table}[b]
-\begin{center} 
-\begin{tabular}{|c|c|c|}
-\hline
-Model & Token & Instance \\
-\hline
-Header & Character string & Header section \\
-\hline
-Segmentation & Full line & Full document \\
-\hline
-\end{tabular}
-\caption[Comparison of token and instance entities for \emph{header} and \emph{segmentation} models. For information on \emph{fields} tagged by these models, see Section \ref{sec:grobid}.]{Evaluation results for reference segmentation}
-\label{table:headervssegmentation}
-\end{center}
-\end{table}
+% \begin{table}[b]
+% \begin{center} 
+% \begin{tabular}{|c|c|c|}
+% \hline
+% Model & Token & Instance \\
+% \hline
+% Header & Character string & Header section \\
+% \hline
+% Segmentation & Full line & Full document \\
+% \hline
+% \end{tabular}
+% \caption[Comparison of token and instance entities for \emph{header} and \emph{segmentation} models. For information on \emph{fields} tagged by these models, see Section \ref{sec:grobid}.]{Evaluation results for reference segmentation}
+% \label{table:headervssegmentation}
+% \end{center}
+% \end{table}
 
 \section{Data Acquisition}
 \label{sec:data}
@@ -95,10 +95,7 @@ At the recommendation of an INSPIRE-HEP digital library curator, we selected a s
 \item general papers;
 \end{enumerate}
 
-This totalled 191 papers\footnote{Originally this numbered in excess of 200, but certain papers could not be parsed by \emph{pdf2xml}.}, however according to our adjudications, we additionally removed documents found to be unsuitable for training, such as books-length article compendiums. 
-To start creating HEP \emph{header} model training data, we execute GROBID command, \texttt{createTrainingHeader}. Modifications were made to GROBID to produce header features for an entire document, rather than just the first two pages as per the default. This was essential in order to obtain features for any discontinuous front matter in other parts of a document. Wherever such matter was found, it was necessary first to manually append this material to the TEI file, following the TEI XML standard, then to copy the discontinuous segments of the extracted features into the master copy feature file. Whenever a copyist mistake was made, this entailed runtime errors, and lengthy corrections. For \emph{segmentation} training data, we run command \texttt{createTrainingSegmentation}. The starting point for building a \emph{segmentation} training set is invariably worse than for \emph{header}, due to the lower accuracy of this model. Typically each instance contains many recurrent misclassifications which sometimes may be corrected efficiently using regular expressions.
-
-We were therefore able to experiment with combining the two datasets of HEP papers, as well as subsampling the CORA dataset to find the ideal mixture. After all, in spite of the common wisdom that increasing the amount of training data will improve generalisation and model performance, it is not clear what effects combining different ground truths, namely CORA and HEP, will have. One may imagine that generalising over a hybrid dataset might construct a misleading model when it comes to evaluate on a pure HEP dataset, especially when the CORA \emph{header} set dwarfs our HEP one.
+This totalled 191 papers\footnote{Originally this numbered in excess of 200, but certain papers could not be parsed by \emph{pdf2xml}.}, however according to our adjudications, we additionally removed documents found to be unsuitable for training, such as books-length article compendiums. To start creating HEP \emph{header} model training data, we execute GROBID command, \texttt{createTrainingHeader}. Modifications were made to GROBID to produce header features for an entire document, rather than just the first two pages as per the default. This was essential in order to obtain features for any discontinuous front matter in other parts of a document. Wherever such matter was found, it was necessary first to manually append this material to the TEI file, following the TEI XML standard, then to copy the discontinuous segments of the extracted features into the master copy feature file. Whenever a copyist mistake was made, this entailed runtime errors, and lengthy corrections. For \emph{segmentation} training data, we run command \texttt{createTrainingSegmentation}. The starting point for building a \emph{segmentation} training set is invariably worse than for \emph{header}, due to the lower accuracy of this model. Typically each instance contains many recurrent misclassifications which sometimes may be corrected efficiently using regular expressions.
 
 % Therefore one of our research questions is whether such a mixture is beneficial, and we experiment with different CORA sample sizes in Chapter \ref{Chapter5}. 
 
@@ -117,7 +114,7 @@ The effects of our extensions are seen in Sections \ref{subsec:pipeline}, \ref{s
 
 The most significant extension made was with the class, \texttt{ConfusionMatrix.java}, used within GROBID's \texttt{EvaluationUtilities.java} framework to create confusion matrix outputs, ultimately visualised by the pipeline (see Chapter \ref{Chapter5}). These allowed us to see which misclassifications were made most frequently. In addition, \texttt{ConfusionMatrix.java} tracks the documents on which the the model committed the most errors for each misclassification. A sample output is given in Figure \ref{fig:topk}. Modelling collaborations as a class of the \emph{header} model involved extending GROBID's training and tagging modules alike. An XML structure conforming to the TEI standard (Section \ref{subsec:tei}) was selected. An example of a successful prediction of a collaboration is given in Figure \ref{fig:collaboration}.
 
-\begin{figure}[b]
+\begin{figure}[h]
 \centering
 \begin{BVerbatim}
 (<header>, <body>)
@@ -131,7 +128,7 @@ The most significant extension made was with the class, \texttt{ConfusionMatrix.
 \label{fig:topk}
 \end{figure}
 
-\begin{figure}[t]
+\begin{figure}[h]
 \lstset{language=XML}
 \begin{lstlisting}
 <author>
@@ -252,7 +249,7 @@ Special character & r`[\^{}\textbackslash sa-zA-Z\ d\(\).,?:;]'\\
 \subsection{Dictionaries}
 \label{subsec:dicts}
 
-As mentioned previously, the vocabulary of a HEP paper \emph{header} is distinct from other branches of science, containing jargon and terminology particular to high energy physics. Aside from token indicators, we can support this characteristic with features based on dictionary membership. To achieve this, we exported the full set of author names, affiliations, journal names, article titles, and collaborations from the INSPIRE-HEP database. Each dictionary required extensive cleaning prior to being fit for purpose. In addition, we used the Natural Language Toolkit (\texttt{nltk}) for Python to create a dictionary of stop words, the expectation being that different classes contain stop words in varying amounts. For example, prosaic text, such as an abstract will contain stop words in greater number than summary information such as a keyword term, or an author details block. We confirmed this hypothesis with statistical ANOVA and pairwise t-tests in $R$, showing significant differences of stop word frequency according to header section (see Appendix \ref{AppendixC}). The dictionary feature functions may therefore be written formally as,
+As mentioned previously, the vocabulary of a HEP paper \emph{header} is distinct from other branches of science, containing jargon and terminology particular to high energy physics. Aside from token indicators, we can support this characteristic with features based on dictionary membership. To achieve this, we exported the full set of author names, affiliations, journal names, article titles, and collaborations from the INSPIRE-HEP database. Each dictionary required extensive cleaning prior to being fit for purpose. In addition, we used the Natural Language Toolkit (\texttt{nltk}) for Python to create a dictionary of stop words, the expectation being that different classes contain stop words in varying amounts. For example, prosaic text, such as an abstract, will contain stop words in greater number than summary information such as a keyword term, or an author details block. We confirmed this hypothesis with statistical ANOVA and pairwise t-tests in $R$, showing significant differences of stop word frequency according to header section (see Appendix \ref{sec:stopwordfrequency}). The dictionary feature functions may therefore be written formally as,
 
 \begin{equation}
 f_{\text{dict}_i}(x_t) = \mathbbm{1}_{\{x_t \in \text{dict}_i\}},
@@ -303,7 +300,7 @@ where $T_1, T_2, ..., T_{N-1}$ are thresholds selected to create the $N$ categor
 
 \subsection{Regularisation}
 
-We additionally cross-validated the tuning parameter for the model, the variance for $l_2$ regularisation, $\sigma^2$, for values on a logarithmic scale, $\sigma^2 = 0$, $\sigma^2 = \exp\{-6\}$, $\sigma^2 = \exp\{-5\}$\footnote{Wapiti default value.}, $\sigma^2 = \exp\{-4\}$, and $\sigma^2 = \exp\{-3\}$.
+We additionally cross-validated the tuning parameter for the model, the variance for $l_2$ regularisation, $\sigma^2$, for values on a logarithmic scale: $\sigma^2 = 0$, $\sigma^2 = \exp\{-6\}$, $\sigma^2 = \exp\{-5\}$\footnote{Wapiti default value.}, $\sigma^2 = \exp\{-4\}$, and $\sigma^2 = \exp\{-3\}$. This tuning was performed on the HEP training data with the baseline feature set.
 
 \subsection{Token Extensions}
 
