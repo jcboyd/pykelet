@@ -265,6 +265,8 @@ def plot_box_plots(name, file_name, stats, path):
                         filter(lambda x: label in x.keys(), stats)])
     figure()
     boxplot(f1_data)
+    print f1_data
+
     xticks(range(1, len(labels) + 1), labels, rotation='90', fontsize=8)
     yticks(range(0, 120, 20), [0, 0.2, 0.4, 0.6, 0.8, 1.0], fontsize=8)
     title(name)

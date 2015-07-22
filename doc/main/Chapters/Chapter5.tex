@@ -77,6 +77,19 @@ label & accuracy & precision & recall & f1 & acc. & prec. & rec. & f1\\
 \label{sec:experimentsetup}
 Here talk about k-fold, number of iterations, computing resources etc.
 
+\begin{figure}
+\centering
+\begin{tabular}{cc}
+\subfloat[K-fold cross-validation with HEP dataset]{\includegraphics[width=0.4\textwidth]{Figures/CV_HEP.pdf}} & 
+\subfloat[K-fold cross-validation with CORA dataset]{\includegraphics[width=0.4\textwidth]{Figures/CV_CORA.pdf}}\\
+\subfloat[K-fold cross-validation with HEP dataset, appending CORA dataset for training.]{\includegraphics[width=0.5\textwidth]{Figures/CV_HEPappCORA.pdf}} & 
+\subfloat[K-fold cross-validation with CORA dataset, appending HEP dataset for training.]{\includegraphics[width=0.5\textwidth]{Figures/CV_CORAappHEP.pdf}}\\ 
+\subfloat[K-fold cross-validation with HEP and CORA datasets]{\includegraphics[width=0.4\textwidth]{Figures/CV_HEP+CORA.pdf}} \\
+\end{tabular}
+\caption{The different cross-validation configurations used in our experimentation.}
+\label{fig:radar}
+\end{figure}
+
 \section{Evaluation Method}
 
 Accuracy is defined to be,
@@ -162,6 +175,14 @@ Character Classes & Binary, Decimal, Decimal only & Segmentation & HEP \\
 \caption{}
 \label{fig:segmentation_baseline_confusion}
 \end{figure}
+
+\begin{figure}[h]
+\center
+\includegraphics[width=5.5in]{Figures/micro_subsampling.pdf}
+\caption{}
+\label{fig:references}
+\end{figure}
+
 
 \subsection{Block Size}
 
