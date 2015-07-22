@@ -4,13 +4,13 @@
 
 \label{Chapter4} % For referencing the chapter elsewhere, use \ref{Chapter1} 
 
-\lhead{Chapter 4. \emph{Implementation and Data}} % This is for the header on each page - perhaps a shortened title
+\lhead{Chapter 4. \emph{Data, Methods, and Implementation}} % This is for the header on each page - perhaps a shortened title
 
-\emph{In this chapter we present our work, which centers around 66 cross-validated feature engineering experiments including a baseline evaluation. The work is divided into four components: first, the procurement of HEP training data with which to perform the experiments; then, the extensions made to GROBID to facilitate our feature engineering and evaluations; next, the pipeline assembled for automating the experimentation; and finally, the different categories of feature engineering, and our reasons for choosing them.}
+\emph{In this chapter we present the different strands of our work. The work is divided into three components: first, the procurement of HEP training data with on to perform the experiments; then, our implementations of extensions to GROBID to facilitate our feature engineering and evaluations, as well as the pipeline assembled for automating the experimentation; and finally, the different categories of feature engineering, and our reasons for choosing them, supplying, where relevant, statistical analyses to support our intuitions.}
 
-\section{Objectives}
+\section{Assessments}
 
-As articulated in Chapter \ref{Chapter3}, GROBID manages a hierarchy of models that propagates classified information from top to bottom in a cascade. Our objectives are therefore to enhance some models within the cascade for HEP papers. It does not, on the other hand, make sense to attempt to improve all models. After all, we may assume a HEP \emph{date} is no different from dates printed in other scientific papers. Aside from feature engineering, it is hard to imagine improving performance of these models which id exemplary. The same goes for author names, and with little exception\footnote{It is in fact true that HEP collaborations feature in isolated references in HEP papers (see Section \ref{sec:futurework}).}, reference lists and their contents. Undoubtedly, the models with the most promising scope for improvement are the \emph{header} and \emph{segmentation} models. It is these models that address the parts of an article most distinct in scientific papers. Specifically, physics journals have recurring styles and layouts for headers sections that are distinct from others publishers. In addition, the vocabulary of a HEP paper header will be distinct from that of papers from other branches of science. These should be both trained for and engineered for, for example through the use of dictionary-based features (see Section \ref{subsec:dicts}). Exceptionally, the \emph{header} model is not, by default, part of the cascade, rather, the header section is extracted separately using heuristics based on locating the start of the body (usually identified by the heading, `Introduction'). According to the author, the reason for this approach is that, on average, it is more accurate than relying on the \emph{segmentation} model for finding front matter, given the limited amount of \emph{segmentation} training data. However, this precludes the modelling of \emph{discontinuous} front matter, which may occur at the base of a first page, at the very end of an article, or just about anywhere else (see Figure \ref{fig:articlesamples}). Reconnecting the \emph{header} model with with the \emph{segmentation} model is therefore an implementation objective. Thus, the \emph{header} model may be improved for a number of reasons, including:
+As articulated in Chapter \ref{Chapter3}, GROBID manages a hierarchy of models that propagates classified information from top to bottom in a cascade. Our objectives are therefore to enhance some models within the cascade for HEP papers. It does not, on the other hand, make sense to attempt to improve all models. After all, we may assume a HEP \emph{date} is no different from dates printed in other scientific papers. Aside from feature engineering, it is hard to imagine improving performance of these models which is exemplary. The same goes for author names, and with little exception\footnote{It is in fact true that HEP collaborations feature in isolated references in HEP papers (see Section \ref{sec:futurework}).}, reference lists and their contents. Undoubtedly, the models with the most promising scope for improvement are the \emph{header} and \emph{segmentation} models. It is these models that address the parts of an article most distinct in scientific papers. Specifically, physics journals have recurring styles and layouts for headers sections that are distinct from others publishers. In addition, the vocabulary of a HEP paper header will be distinct from that of papers from other branches of science. These should be both trained for and engineered for, for example through the use of dictionary-based features (see Section \ref{subsec:dicts}). Exceptionally, the \emph{header} model is not, by default, part of the cascade, rather, the header section is extracted separately using heuristics based on locating the start of the body (usually identified by the heading, `Introduction'). The reason for this approach is that, on average, it is more accurate than relying on the \emph{segmentation} model for finding front matter, given the limited amount of \emph{segmentation} training data. However, this precludes the modelling of \emph{discontinuous} front matter, which may occur at the base of a first page, at the very end of an article, or just about anywhere else (see Figure \ref{fig:articlesamples}). Reconnecting the \emph{header} model with with the \emph{segmentation} model is therefore an implementation objective. Thus, the \emph{header} model may be improved for a number of reasons, including:
 
 \begin{enumerate}
 \item physics publishers present a unique format not found in CORA papers;
@@ -26,10 +26,23 @@ The \emph{segmentation} model may also be improved for a number of reasons:
 \item the dataset is small (we more than double it in Section \ref{sec:data}).
 \end{enumerate}
 
-Note that the \emph{segmentation} model is the parent model of the entire cascade, and therefore any improvement to it will benefit all other models at prediction time. Aside from being the root of the cascade, the \emph{segmentation} model is special in that it models a full line at the token level, rather than a single character string such as for the \emph{header} model. A comparison is given in Table \ref{table:headervssegmentation}. We are mindful of this distinction as we go about our feature engineering.
+Note that the \emph{segmentation} model is the parent model of the entire cascade, and therefore any improvement to it will benefit all other models at prediction time. Aside from being the root of the cascade, the \emph{segmentation} model is special in that it models a full line at the token level, rather than a single character string such as for the \emph{header} model. A comparison is given in Table \ref{table:headervssegmentation}. We are mindful of this distinction as we go about our feature engineering. Our focus is therefore on the two models, \emph{header} and \emph{segmentation}. Hence, we require two separate training sets of HEP papers, one for each model. Incidentally, both models require that for each paper we produce a TEI representation and a feature file of extracted features, as introduced in Section \ref{sec:grobid}.
 
-\begin{table}[h]
-\begin{center}
+
+\begin{figure}[b]
+\centering
+\begin{tabular}{cc}
+\subfloat[Collaboration field in header section.]{\includegraphics[width=0.45\textwidth]{Figures/collaboration.pdf}}\label{fig:articlesamplesA}&
+\subfloat[Discontinuous header data.]{\includegraphics[width=0.45\textwidth]{Figures/eamonn.pdf}} \\
+\subfloat[Collaboration author list.]{\includegraphics[width=0.45\textwidth]{Figures/authors.pdf}} & 
+\subfloat[Collaboration affiliation list.]{\includegraphics[width=0.45\textwidth]{Figures/affiliations.pdf}}\\
+\end{tabular}
+\caption{Figure (A) shows a collaboration field in a header section. Figure (B) shows discontinuous front matter that sits on the first page, but apart from the main header section and within the introductory section. Figures (C) and (D) give the authors list and affiliations for a large HEP collaboration; the author list begins on page 8 and continues to page 33. Figure (B) from (\cite{maguire2012taxonomy}), other excerpts from (\cite{aaij2015identification}).}
+\label{fig:articlesamples}
+\end{figure}
+
+\begin{table}[b]
+\begin{center} 
 \begin{tabular}{|c|c|c|}
 \hline
 Model & Token & Instance \\
@@ -44,22 +57,10 @@ Segmentation & Full line & Full document \\
 \end{center}
 \end{table}
 
-Our focus is therefore on the two models, \emph{header} and \emph{segmentation}. Hence, we require two separate training sets of HEP papers, one for each model. Incidentally, both models require that for each paper we produce a TEI representation and a feature file of extracted features, as introduced in Section \ref{sec:grobid}.
-
 \section{Data Acquisition}
 \label{sec:data}
 
-At the recommendation of an INSPIRE-HEP digital library curator, we selected a set of articles deemed to be a representative sample of the database. It contains the following varieties of papers:
-
-\begin{enumerate}
-\item conference papers (with DOI);
-\item conference papers (without DOI);
-\item miscellaneous papers (including non-English language), and;
-\item collaboration papers.
-\item general papers;
-\end{enumerate}
-
-This totalled 191 papers\footnote{Originally this numbered in excess of 200, but certain papers could not be parsed by \emph{pdf2xml}.}, however according to our adjudications, we additionally removed documents found to be unsuitable for training, such as books-length article compendiums. In Sections \ref{subsec:cora}, \ref{subsec:hepdataset}, we detail the mixture of data we have assembled. The starting point for generating training data is to apply the existing, shipped models of GROBID on our new dataset of PDF papers. This creates a pair of TEI and feature file for each document, in a first attempt at a ground truth, and a structure on which to work. The researcher must then manually correct the inevitable myriad errors to achieve a gold standard of training data. In the case of \emph{segmentation}, this involves the validation of a full document, which may contain many recurring misclassifications, rendering the task stupendously time-consuming and a barrier to actual research. In the case of the \emph{header} model, this is often simpler, as it involves validating a single section. However, wherever discontinuous front matter exists, changes must be made to both the TEI \emph{and} feature files. This first involves a modification to GROBID such that it extract features for all tokens rather than just those contained in the header. Then, the unseen front matter must be manually formatted and appended to the TEI file, and the corresponding features copied to the feature file. This is error-prone, as there must be a one-to-one correspondence between the token in the TEI file and the features in the feature file. Hence, any copyist mistake will invoke errors at training time.
+The starting point for generating training data is to apply the existing, shipped models of GROBID on our new dataset of PDF papers. This creates a pair of TEI and feature file for each document, in a first attempt at a ground truth, and a structure on which to work. Though this is greatly preferable to starting from scratch, researcher must then manually correct the inevitable myriad errors to achieve a gold standard of training data. In the case of \emph{segmentation}, this involves the validation of a full document, which may contain many recurring misclassifications, rendering the task stupendously time-consuming and a barrier to actual research. In the case of the \emph{header} model, this is often simpler, as it involves validating a single section. However, wherever discontinuous front matter exists, changes must be made to both the TEI \emph{and} feature files. This first involves a modification to GROBID such that it extract features for all tokens rather than just those contained in the header. Then, the unseen front matter must be manually formatted and appended to the TEI file, and the corresponding features copied to the feature file. This is error-prone, as there must be a one-to-one correspondence between the token in the TEI file and the features in the feature file. Hence, any copyist mistake will invoke errors at training time. In Sections \ref{subsec:cora}, \ref{subsec:hepdataset}, we detail the mixture of training data that we have assembled. Table \ref{table:hepvscora} gives a breakdown of the data for each model.
 
 \begin{table}[h]
 \begin{center}
@@ -73,7 +74,7 @@ Segmentation & \textbf{169 papers} & 125 papers \\
 \hline
 \end{tabular}
 \caption[Number of training instances for each model from each dataset.]{Number of training instances for each model from each dataset.}
-\label{table:headervssegmentation}
+\label{table:hepvscora}
 \end{center}
 \end{table}
 
@@ -82,29 +83,29 @@ Segmentation & \textbf{169 papers} & 125 papers \\
 The CORA dataset (\cite{mccallum2000automating}) is a substantial dataset of annotated documents. It is popular in metadata extraction studies, and has come to be a sort of standard due to the difficulty of creating custom data (\cite{Peng04accurateinformation}). We use it in combination with our own HEP dataset. For the \emph{segmentation} model, the baseline dataset is not part of CORA, but rather part of the GROBID project, but for brevity we refer to this also as \emph{CORA}.
 
 \subsection{HEP dataset}
-\label{subsec:hepdatasetheader}
+\label{subsec:hepdataset}
 
+At the recommendation of an INSPIRE-HEP digital library curator, we selected a set of articles deemed to be a representative sample of the database. It contains the following varieties of papers:
+
+\begin{enumerate}
+\item conference papers (with DOI);
+\item conference papers (without DOI);
+\item miscellaneous papers (including non-English language), and;
+\item collaboration papers.
+\item general papers;
+\end{enumerate}
+
+This totalled 191 papers\footnote{Originally this numbered in excess of 200, but certain papers could not be parsed by \emph{pdf2xml}.}, however according to our adjudications, we additionally removed documents found to be unsuitable for training, such as books-length article compendiums. 
 To start creating HEP \emph{header} model training data, we execute GROBID command, \texttt{createTrainingHeader}. Modifications were made to GROBID to produce header features for an entire document, rather than just the first two pages as per the default. This was essential in order to obtain features for any discontinuous front matter in other parts of a document. Wherever such matter was found, it was necessary first to manually append this material to the TEI file, following the TEI XML standard, then to copy the discontinuous segments of the extracted features into the master copy feature file. Whenever a copyist mistake was made, this entailed runtime errors, and lengthy corrections. For \emph{segmentation} training data, we run command \texttt{createTrainingSegmentation}. The starting point for building a \emph{segmentation} training set is invariably worse than for \emph{header}, due to the lower accuracy of this model. Typically each instance contains many recurrent misclassifications which sometimes may be corrected efficiently using regular expressions.
 
 We were therefore able to experiment with combining the two datasets of HEP papers, as well as subsampling the CORA dataset to find the ideal mixture. After all, in spite of the common wisdom that increasing the amount of training data will improve generalisation and model performance, it is not clear what effects combining different ground truths, namely CORA and HEP, will have. One may imagine that generalising over a hybrid dataset might construct a misleading model when it comes to evaluate on a pure HEP dataset, especially when the CORA \emph{header} set dwarfs our HEP one.
 
 % Therefore one of our research questions is whether such a mixture is beneficial, and we experiment with different CORA sample sizes in Chapter \ref{Chapter5}. 
 
-\begin{figure}
-\centering
-\begin{tabular}{cc}
-\subfloat[Collaboration field in header section.]{\includegraphics[width=0.45\textwidth]{Figures/collaboration.pdf}}\label{fig:articlesamplesA}&
-\subfloat[Discontinuous header data.]{\includegraphics[width=0.45\textwidth]{Figures/eamonn.pdf}} \\
-\subfloat[Collaboration author list.]{\includegraphics[width=0.45\textwidth]{Figures/authors.pdf}} & 
-\subfloat[Collaboration affiliation list.]{\includegraphics[width=0.45\textwidth]{Figures/affiliations.pdf}}\\
-\end{tabular}
-\caption{Figure (A) shows a collaboration field in a header section. Figure (B) shows discontinuous front matter that sits on the first page, but apart from the main header section and within the introductory section. Figures (C) and (D) give the authors list and affiliations for a large HEP collaboration; the author list begins on page 8 and continues to page 33. Figure (B) from (\cite{maguire2012taxonomy}), other excerpts from (\cite{aaij2015identification}).}
-\label{fig:articlesamples}
-\end{figure}
+\section{Implementation}
+\subsection{Extensions to GROBID}
 
-\section{Extensions}
-
-The effects of our extensions are seen in Sections \ref{sec:pipeline}, \ref{sec:featurengineering} and finally in Chapter \ref{Chapter5} and wherever appropriate we indicate them. Extensions were made as a branch of GROBID in the following ways:
+The effects of our extensions are seen in Sections \ref{subsec:pipeline}, \ref{sec:featurengineering} and finally in Chapter \ref{Chapter5} and wherever appropriate we indicate them. Extensions were made as a branch of GROBID in the following ways:
 
 \begin{enumerate}
 \item reconnecting the \emph{segmentation} and \emph{header} models;
@@ -130,7 +131,7 @@ The most significant extension made was with the class, \texttt{ConfusionMatrix.
 \label{fig:topk}
 \end{figure}
 
-\begin{figure}[b]
+\begin{figure}[t]
 \lstset{language=XML}
 \begin{lstlisting}
 <author>
@@ -141,8 +142,8 @@ The most significant extension made was with the class, \texttt{ConfusionMatrix.
 \label{fig:collaboration}
 \end{figure}
 
-\section{Pipeline}
-\label{sec:pipeline}
+\subsection{Experiment Pipeline}
+\label{subsec:pipeline}
 
 To automate the experimentation process, we developed a pipeline of scripts in Python, the language chosen for its ubiquity in INSPIRE-HEP. The repository is open source and hosted on GitHub\footnote{https://github.com/jcboyd/pykelet/src}. The pipeline begins with using GROBID (including all necessary extensions) to generate raw feature files for all TEI files in the ground truth dataset. These are then manually assembled into a stripped-down copy of GROBID (containing all necessary Java executables and additional data) and placed in directory, \texttt{batches/}, with other scenarios. The assemblage of training data depends on the data scenario desired. If we wish to cross-validate over all data, we simply ensure that both the \texttt{training/} and \texttt{evaluation/} directories within the GROBID project contain all the feature files, and that all TEI files are in \texttt{training/}. The cross validation (CV) process will move a fold from the training directory to the evaluation directory, and return it when the iteration is complete. If, however, we wish to \emph{append} data for training, yet exclude it from CV and evaluation, we place the features files only under \texttt{training/}. The process will then cross-validate only on those files present in \texttt{evaluation/}. GROBID requires both TEI and feature files to be present or else they are ignored. This trick allows us to run such complex experiments without modifying GROBID or its directory structure. Each iteration of CV produces a log file of results exported from GROBID's evaluation utilities. These are then post-processed by another script that aggregates the file contents (token- and field-level performance metrics and confusion matrices) and visualises them automatically. The pipeline process is depicted in Figure \ref{fig:pipeline}. The pipeline consists of a Python wrapper for GROBID, \texttt{grobid.py}, written using \texttt{pyjnius}, a Python library for the manipulation of Java executables through the Java Native Interface (JNI)\footnote{Certain limitations on this led us to write a simpler Python \texttt{subprocess}-based wrapper also.}. For an iteration of CV, (\texttt{k\_fold\_cross\_validation.py}), our wrapper may be used in the following way:\\
 
@@ -153,7 +154,7 @@ grobid_trainer.train(model)
 grobid_trainer.evaluate(model)
 \end{lstlisting}
 
-The process uses Python mathematics library, \texttt{numpy}, to randomly shuffle training data (according to a fixed seed), and then Python machine learning library \texttt{scikit-learn} to create CV folds. The folds are withheld during training and are evaluated upon in the conventional way. The output of CV is a set of log files containing results. These results are processed by further scripts to produce visualisations of confusion matrices and performance metric comparisons.
+The process uses Python scientific computing library, \texttt{numpy}, to randomly shuffle training data (according to a fixed seed), and then Python machine learning library \texttt{scikit-learn} to create CV folds. The folds are withheld during training and are evaluated upon in the conventional way. The output of CV is a set of log files containing results. These results are processed by further scripts to produce visualisations of confusion matrices and performance metric comparisons.
 
 \begin{figure}[!ht]
 \center
@@ -162,10 +163,10 @@ The process uses Python mathematics library, \texttt{numpy}, to randomly shuffle
 \label{fig:pipeline}
 \end{figure}
 
-\section{Feature Engineering}
+\section{Methods}
 \label{sec:featurengineering}
 
-Here we list the ideas for feature functions that we implemented and cross-validate for (see Chapter \ref{Chapter5}). The features were computed either by making changes to GROBID directly, or by modifying baseline features with an external script from our pipeline (Section \ref{sec:pipeline}). In the following we use a notation consistent with that introduced in Chapter \ref{Chapter2}, that is, $x$ represents a token, $\mathbf{x}$ an instance, and $y$ and $\textbf{y}$ the corresponding label and label vectors.
+Here we list the ideas for feature functions that we have implemented and cross-validate for in Chapter \ref{Chapter5}. The features were extracted either with changes made to GROBID directly, or by modifying baseline features with an external script from our pipeline (Section \ref{subsec:pipeline}). In the following we use a notation consistent with that introduced in Chapter \ref{Chapter2}, that is, $x$ represents a token, $\mathbf{x}$ an instance, and $y$ and $\textbf{y}$ the corresponding label and label vectors. Where discretisation is necessary, we first present the unaltered numeric feature function, $\hat f(\cdot)$, then its discretised version, $f(\cdot) = \lfloor C \cdot \hat f(\cdot)\rfloor$, where $C$ is some discretisation factor assigning the floating point values to $C$ bins.
 
 \subsection{Baseline}
 
@@ -173,14 +174,21 @@ To set a benchmark by which to compare our results, we ran a series of experimen
 
 \subsection{Block Size}
 
-One characteristic that is distinct about article layout are the varied dimensions of blocks. This is most striking in the header section, where different blocks manifest in distinct sizes. For example, an article title is usually wider than any other element, an abstract is the longest element, and so on. It seems reasonable that the dimensions of a block to which a token belongs may provide information on the class of the token. We therefore devise features based on the pixel lengths and widths of header text blocks, information that comes from \emph{pdftoxml}. We try four variations on this idea: block width, block height, block width and height together, and block area, each normalised by the largest block dimensions. For example, for area, the feature function is,
+A block is a collection of lines physically grouped together. The block to which each token belongs is specified in the \emph{pdftoxml} outputs. One characteristic that is distinct about article layout are the varied dimensions of blocks. This is most striking in the header section, where different blocks manifest in distinct sizes. For example, an article title is usually wider than any other element, an abstract is the longest element, and so on. It seems reasonable that the dimensions of a block to which a token belongs may provide information on the class of the token. We therefore devise features based on the pixel lengths and widths of header text blocks, information that comes from \emph{pdftoxml}. We try four variations on this idea: block width, block height, block width and height together, and block area, each normalised by the largest block dimensions. For example, for area, the feature function is,
 
 \begin{equation}
-f_{size}(x_t) =  \Bigg\lfloor\frac{C \cdot \sum_{b \in B} \mathbbm{1}_{x_t \in b} \cdot\text{height}(b)\cdot\text{width}(b)}{\text{max}_{b' \in B} \text{height}(b') \cdot \text{max}_{b'' \in B} \text{width}(b'')} \Bigg\rfloor,
+\hat f_{size}(x_t) = \frac{\sum_{b \in B} \mathbbm{1}_{\{x_t \in b\}} \cdot\text{height}(b)\cdot\text{width}(b)}{\text{max}_{b' \in B} \text{height}(b') \cdot \text{max}_{b'' \in B} \text{width}(b'')},
 \label{eq:areafunction}
 \end{equation}
 
-where $B$ is the set of blocks in the header instance, and $C$ is a discretisation constant (in our experiments $C = 10$).
+where $x_t$ is a token (hence a word for the \emph{header} model) and $B$ is the set of blocks in the header instance. We then define,
+
+\begin{equation}
+f_{size}(x_t) = \big\lfloor C \cdot\hat f_{size}(x_t)\big\rfloor,
+\label{eq:areafunctiondisc}
+\end{equation}
+
+where $C$ is a discretisation factor, in our experiments $C = 10$, giving a categorical variable of 10 values.
 
 \subsection{Character Classes}
 \label{subsec:characterclasses}
@@ -195,11 +203,18 @@ A visual scan of any scientific paper allows one to see that lines from differen
 In Table \ref{table:characterclasses}, we give a list of the character classes used to model features. The regular expressions (regexes) were used to count the number  of characters in a token (line) belonging to each class. This was then normalised over the line length. Because such a result is numeric, we have necessarily to discretise it. We tried four different discretisation strategies: binary (according to some \emph{ad hoc} threshold), decimal (round down), decimal (round to nearest), and 20-point discretisation\footnote{In this final discretisation case we categorised results by each $5th$ percentage point, capping at $50\%$, such that we model 10 categories in total.}. For the decimal case (rounding down),
 
 \begin{equation}
-f_{\text{class}_i}(x_t) = \Bigg\lfloor \frac{C}{|x_t|}\sum_n^{|x_t|} \mathbbm{1}_{x_t[n] \in \text{class}_i} \Bigg\rfloor,
+\hat f_{\text{class}_i}(x_t) = \frac{1}{|x_t|}\sum_{n=1}^{|x_t|} \mathbbm{1}_{\{x_{ti} \in \text{class}_i\}},
 \label{eq:classfunctions}
 \end{equation}
 
-for each character class, $\text{class}_i$, where $C$ is the discretisation factor (here $C = 10$). The other discretisation strategies may be defined similarly.
+for each character class, $\text{class}_i$, where $x_t$ is a token (hence a line for the \emph{segmentation} model), and $x_{ti}$ is the $ith$ character in the line. For the decimal (round down) case, we then define,
+
+\begin{equation}
+f_{\text{class}_i}(x_t) = \big\lfloor C \cdot\hat f_{\text{class}_i}(x_t)\big\rfloor,
+\label{eq:classfunctionsdisc}
+\end{equation}
+
+where $C$ is the discretisation factor and $C = 10$. The other discretisation strategies may be defined similarly.
 
 \begin{table}[h]
 \begin{center}
@@ -284,7 +299,7 @@ Due to the constraints on numeric features (see Section \ref{sec:wapiti}), we mu
 \label{eq:levenshteinfunction}
 \end{equation}
 
-where $T_1, T_2, ..., T_{N-1}$ are selected thresholds invoking $N$ categories. We try several thresholding strategies in our experimentation (see Section \ref{sec:experimentsetup}).
+where $T_1, T_2, ..., T_{N-1}$ are thresholds selected to create the $N$ categories. We try several thresholding strategies in our experimentation (see Section \ref{sec:experimentsetup}).
 
 \subsection{Regularisation}
 

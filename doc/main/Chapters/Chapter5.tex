@@ -6,7 +6,7 @@
 
 \lhead{Chapter 5. \emph{Results and Analysis}} % This is for the header on each page - perhaps a shortened title
 
-\emph{In this section we present the results of our experimentation with feature engineering. We notably begin with a comparison between GROBID and refextract, the existing partial solution for metadata extraction at INSPIRE-HEP. Following this we detail our evaluation method and approach to running experiments. Finally, we present the results of our experimentation and provide our analysis and interpretations.}
+\emph{In this section we present the results of our experimentation with feature engineering, which comprises of 66 cross-validated feature engineering experiments including a baseline evaluation. We notably begin with a comparison between GROBID and refextract, the existing partial solution for metadata extraction at INSPIRE-HEP. Following this we detail our evaluation method and approach to running experiments. Finally, we present the results of our experimentation and provide our analysis and interpretations.}
 
 \section{Comparison with \emph{refextract}}
 
@@ -75,19 +75,22 @@ label & accuracy & precision & recall & f1 & acc. & prec. & rec. & f1\\
 
 \section{Experiment Setup}
 \label{sec:experimentsetup}
-Here talk about k-fold, number of iterations, computing resources etc.
+
+In conjunction with our feature engineering variations, we tried different configurations of data. Figure \ref{fig:cv} illustrates our five approaches to cross-validation with different combinations of HEP and CORA training data. Where we \emph{append} data, we include it in the training, but exclude from the evaluation. Thus, HEP app. CORA denotes the training of a model on, but cross-validation folds taken only from the HEP. Of most interest, naturally, were those evaluating purely on HEP papers, that is, those we denote \emph{HEP} and {HEP app. CORA}, and these were the only configurations run beyond the baseline.
+
+Our resources for experimentation consisted of two powerful virtual machines on the CERN LXPLUS computing grid, each possessing 16 CPUs and 32 GB of RAM. The experiments were configured and uploaded to in these server machines in batches, and were processed by our experimentation pipeline (see Section \ref{subsec:pipeline}). The sparse nature of the models led to long training times. To control the runtime of training, we enforced a maximum number of 500 iterations for Wapiti's L-BFGS algorithm. This number was chosen from observing the diminishing improvements of models trained to this extent\footnote{There is also the argument that training to convergence may cause overfitting.}. With Wapiti parallelised to 8 cores, we were able to run two processes on each virtual machine when required. Even with this parallelised setup, our experiment batches took several days to process each time, and the sum total of our experiments amounts to perhaps months of CPU time.
 
 \begin{figure}
 \centering
 \begin{tabular}{cc}
-\subfloat[K-fold cross-validation with HEP dataset]{\includegraphics[width=0.4\textwidth]{Figures/CV_HEP.pdf}} & 
-\subfloat[K-fold cross-validation with CORA dataset]{\includegraphics[width=0.4\textwidth]{Figures/CV_CORA.pdf}}\\
-\subfloat[K-fold cross-validation with HEP dataset, appending CORA dataset for training.]{\includegraphics[width=0.5\textwidth]{Figures/CV_HEPappCORA.pdf}} & 
-\subfloat[K-fold cross-validation with CORA dataset, appending HEP dataset for training.]{\includegraphics[width=0.5\textwidth]{Figures/CV_CORAappHEP.pdf}}\\ 
-\multicolumn{2}{c}{\subfloat[K-fold cross-validation with HEP and CORA datasets]{\includegraphics[width=0.4\textwidth]{Figures/CV_HEP+CORA.pdf}}} \\
+\subfloat[CV HEP]{\includegraphics[width=0.4\textwidth]{Figures/CV_HEP.pdf}} & 
+\subfloat[CV CORA]{\includegraphics[width=0.4\textwidth]{Figures/CV_CORA.pdf}}\\
+\subfloat[CV HEP append CORA]{\includegraphics[width=0.5\textwidth]{Figures/CV_HEPappCORA.pdf}} & 
+\subfloat[CV CORA append HEP]{\includegraphics[width=0.5\textwidth]{Figures/CV_CORAappHEP.pdf}}\\ 
+\multicolumn{2}{c}{\subfloat[CV HEP + CORA]{\includegraphics[width=0.4\textwidth]{Figures/CV_HEP+CORA.pdf}}} \\
 \end{tabular}
-\caption{The different cross-validation configurations used in our experimentation.}
-\label{fig:radar}
+\caption{The different cross-validation configurations used in our experiments.}
+\label{fig:cv}
 \end{figure}
 
 \section{Evaluation Method}
