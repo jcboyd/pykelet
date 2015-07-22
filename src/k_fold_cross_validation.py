@@ -234,13 +234,13 @@ def plot_confusion_matrix(name, type, matrix, path, show_counts):
     # Finally, hide minor tick marks...
     gca().tick_params('both', width=0, which='minor')
 
-    pcolor(array(proportions[::-1]), cmap=cm.Reds)
+    pcolor(array(proportions[::-1]), cmap=cm.Blues)
     if show_counts:
         for y in range(len(counts)):
             for x in range(len(counts[y])):
                 if counts[::-1][y][x] != 0:
                     text(x + 0.5, y + 0.5, counts[::-1][y][x],
-                         fontsize=6,
+                         fontsize=8,
                          horizontalalignment='center',
                          verticalalignment='center')
 
@@ -265,7 +265,6 @@ def plot_box_plots(name, file_name, stats, path):
                         filter(lambda x: label in x.keys(), stats)])
     figure()
     boxplot(f1_data)
-    print f1_data
 
     xticks(range(1, len(labels) + 1), labels, rotation='90', fontsize=8)
     yticks(range(0, 120, 20), [0, 0.2, 0.4, 0.6, 0.8, 1.0], fontsize=8)

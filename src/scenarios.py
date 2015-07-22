@@ -128,7 +128,7 @@ def plotBoxPlot(data, scenarios, field):
     ax1.set_ylabel('F1')
 
     # Now fill the boxes with desired colors
-    boxColors = ['darkred', 'royalblue']
+    boxColors = ['crimson', 'royalblue']
     numBoxes = numDists
     medians = range(numBoxes)
     for i in range(numBoxes):
@@ -197,6 +197,8 @@ def plotBoxPlot(data, scenarios, field):
     # plt.figtext(0.815, 0.013, ' Average Value', color='black', weight='roman',
     #             size='x-small')
     # plt.show()
+    ax1.set_axis_bgcolor((0.98, 0.98, 0.98))
+    # fig.patch.set_facecolor((0.9, 0.9, 0.9))
     plt.tight_layout()
     plt.savefig('/home/joseph/Desktop/%s.pdf' % (field))
 
@@ -206,15 +208,15 @@ if __name__ == '__main__':
     n_folds = 5
     scenarios = []
 
-    directories = [Scenarios.H_H['path'],
-                   Scenarios.H_HappC333['path'],
-                   Scenarios.H_HappC666['path'],
-                   Scenarios.H_HappC['path']]
+    # directories = [Scenarios.H_H['path'],
+    #                Scenarios.H_HappC333['path'],
+    #                Scenarios.H_HappC666['path'],
+    #                Scenarios.H_HappC['path']]
 
-    names = [Scenarios.H_H['name'],
-             Scenarios.H_HappC333['name'],
-             Scenarios.H_HappC666['name'],
-             Scenarios.H_HappC['name']]
+    # names = [Scenarios.H_H['name'],
+    #          Scenarios.H_HappC333['name'],
+    #          Scenarios.H_HappC666['name'],
+    #          Scenarios.H_HappC['name']]
 
     # directories = [Scenarios.H_H_L20['path'],
     #                Scenarios.H_H_L2em6['path'],
@@ -227,13 +229,13 @@ if __name__ == '__main__':
     #                Scenarios.H_HappC_dicts['path'],
     #                Scenarios.H_HappC_dicts_stops['path']]
 
-    # directories = [Scenarios.S_H['path'],
-    #                Scenarios.S_H_class_decimal['path'],
-    #                Scenarios.S_H_LevAll['path']]
+    directories = [Scenarios.S_H['path'],
+                   Scenarios.S_H_class_decimal['path'],
+                   Scenarios.S_H_LevAll['path']]
 
-    # names = [Scenarios.S_H['name'],
-    #          Scenarios.S_H_class_decimal['name'],
-    #          Scenarios.S_H_LevAll['name']]
+    names = [Scenarios.S_H['name'],
+             Scenarios.S_H_class_decimal['name'],
+             Scenarios.S_H_LevAll['name']]
 
     # Load data
     for directory in directories:
@@ -268,7 +270,7 @@ if __name__ == '__main__':
             scenario.add_iteration(it)
         scenarios.append(scenario)
 
-    field = 'micro'
+    field = 'references'
 
     # Plot data
 
