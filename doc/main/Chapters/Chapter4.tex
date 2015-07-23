@@ -96,68 +96,7 @@ At the recommendation of an INSPIRE-HEP digital library curator, we selected a s
 
 This totalled 191 papers\footnote{Originally this numbered in excess of 200, but certain papers could not be parsed by \emph{pdf2xml}.}, however according to our adjudications, we additionally removed documents found to be unsuitable for training, such as books-length article compendiums. To start creating HEP \emph{header} model training data, we execute GROBID command, \texttt{createTrainingHeader}. Modifications were made to GROBID to produce header features for an entire document, rather than just the first two pages as per the default. This was essential in order to obtain features for any discontinuous front matter in other parts of a document. Wherever such matter was found, it was necessary first to manually append this material to the TEI file, following the TEI XML standard, then to copy the discontinuous segments of the extracted features into the master copy feature file. Whenever a copyist mistake was made, this entailed runtime errors, and lengthy corrections. For \emph{segmentation} training data, we run command \texttt{createTrainingSegmentation}. The starting point for building a \emph{segmentation} training set is invariably worse than for \emph{header}, due to the lower accuracy of this model. Typically each instance contains many recurrent misclassifications which sometimes may be corrected efficiently using regular expressions.
 
-% Therefore one of our research questions is whether such a mixture is beneficial, and we experiment with different CORA sample sizes in Chapter \ref{Chapter5}. 
-
-\section{Implementation}
-\subsection{Extensions to GROBID}
-
-The effects of our extensions are seen in Sections \ref{subsec:pipeline}, \ref{sec:featurengineering} and finally in Chapter \ref{Chapter5} and wherever appropriate we indicate them. Extensions were made as a branch of GROBID in the following ways:
-
-\begin{enumerate}
-\item reconnecting the \emph{segmentation} and \emph{header} models;
-\item modelling HEP specific header field, \emph{collaboration};
-\item producing new features;
-\item logging results automatically, and;
-\item extending the evaluation utilities for our analysis and reporting aims.
-\end{enumerate}
-
-The most significant extension made was with the class, \texttt{ConfusionMatrix.java}, used within GROBID's \texttt{EvaluationUtilities.java} framework to create confusion matrix outputs, ultimately visualised by the pipeline (see Chapter \ref{Chapter5}). These allowed us to see which misclassifications were made most frequently. In addition, \texttt{ConfusionMatrix.java} tracks the documents on which the the model committed the most errors for each misclassification. A sample output is given in Figure \ref{fig:topk}. Modelling collaborations as a class of the \emph{header} model involved extending GROBID's training and tagging modules alike. An XML structure conforming to the TEI standard (Section \ref{subsec:tei}) was selected. An example of a successful prediction of a collaboration is given in Figure \ref{fig:collaboration}.
-
-\begin{figure}[h]
-\centering
-\begin{BVerbatim}
-(<header>, <body>)
-	1343657.training.segmentation.tei.xml - 0.7292 (35)
-	1342206.training.segmentation.tei.xml - 0.3571 (5)
-	1345915.training.segmentation.tei.xml - 0.3333 (7)
-	1344707.training.segmentation.tei.xml - 0.1765 (3)
-	1347299.training.segmentation.tei.xml - 0.1667 (8)
-\end{BVerbatim}
-\caption{Misclassification of <header> to <body> proportion and count (given in parentheses) for five papers in an evaluation fold, an output of the confusion matrix utility.}
-\label{fig:topk}
-\end{figure}
-
-\begin{figure}[h]
-\lstset{language=XML}
-\begin{lstlisting}
-<author>
-    <orgName>ALICE Collaboration</orgName>
-</author>
-\end{lstlisting}
-\caption{Example of successfully classified collaboration. The choice of XML tags is ours and was selected to be consistent with the TEI standard.}
-\label{fig:collaboration}
-\end{figure}
-
-\subsection{Experiment Pipeline}
-\label{subsec:pipeline}
-
-To automate the experimentation process, we developed a pipeline of scripts in Python, the language chosen for its ubiquity in INSPIRE-HEP. The repository is open source and hosted on GitHub\footnote{https://github.com/jcboyd/pykelet/src}. The pipeline begins with using GROBID (including all necessary extensions) to generate raw feature files for all TEI files in the ground truth dataset. These are then manually assembled into a stripped-down copy of GROBID (containing all necessary Java executables and additional data) and placed in directory, \texttt{batches/}, with other scenarios. The assemblage of training data depends on the data scenario desired. If we wish to cross-validate over all data, we simply ensure that both the \texttt{training/} and \texttt{evaluation/} directories within the GROBID project contain all the feature files, and that all TEI files are in \texttt{training/}. The cross validation (CV) process will move a fold from the training directory to the evaluation directory, and return it when the iteration is complete. If, however, we wish to \emph{append} data for training, yet exclude it from CV and evaluation, we place the features files only under \texttt{training/}. The process will then cross-validate only on those files present in \texttt{evaluation/}. GROBID requires both TEI and feature files to be present or else they are ignored. This trick allows us to run such complex experiments without modifying GROBID or its directory structure. Each iteration of CV produces a log file of results exported from GROBID's evaluation utilities. These are then post-processed by another script that aggregates the file contents (token- and field-level performance metrics and confusion matrices) and visualises them automatically. The pipeline process is depicted in Figure \ref{fig:pipeline}. The pipeline consists of a Python wrapper for GROBID, \texttt{grobid.py}, written using \texttt{pyjnius}, a Python library for the manipulation of Java executables through the Java Native Interface (JNI)\footnote{Certain limitations on this led us to write a simpler Python \texttt{subprocess}-based wrapper also.}. For an iteration of CV, (\texttt{k\_fold\_cross\_validation.py}), our wrapper may be used in the following way:\\
-
-\begin{lstlisting}[language=python, caption=Excerpt from our Python wrapper for GROBID, label={lst:grobid}]
-grobid_trainer = GrobidTrainer(classpath=classpath_trainer,
-                               grobid_home=grobid_home)
-grobid_trainer.train(model)
-grobid_trainer.evaluate(model)
-\end{lstlisting}
-
-The process uses Python scientific computing library, \texttt{numpy}, to randomly shuffle training data (according to a fixed seed), and then Python machine learning library \texttt{scikit-learn} to create CV folds. The folds are withheld during training and are evaluated upon in the conventional way. The output of CV is a set of log files containing results. These results are processed by further scripts to produce visualisations of confusion matrices and performance metric comparisons.
-
-\begin{figure}[!ht]
-\center
-\includegraphics[width=\textwidth]{Figures/pipeline.pdf}
-\caption{An illustration of the experimentation pipeline.}
-\label{fig:pipeline}
-\end{figure}
+% Therefore one of our research questions is whether such a mixture is beneficial, and we experiment with different CORA sample sizes in Chapter \ref{Chapter5}.
 
 \section{Methods}
 \label{sec:featurengineering}
@@ -301,8 +240,71 @@ where $T_1, T_2, ..., T_{N-1}$ are thresholds selected to create the $N$ categor
 
 \subsection{Regularisation}
 
-We additionally cross-validated the tuning parameter for the model, the variance for $l_2$ regularisation, $\sigma^2$, for values on a logarithmic scale: $\sigma^2 = 0$, $\sigma^2 = \exp\{-6\}$, $\sigma^2 = \exp\{-5\}$\footnote{Wapiti default value.}, $\sigma^2 = \exp\{-4\}$, and $\sigma^2 = \exp\{-3\}$. This tuning was performed on the HEP training data with the baseline feature set.
+We additionally cross-validated the tuning parameter for the model, the variance for $l_2$ regularisation, $\sigma^2$, for values on a logarithmic scale: $\sigma^2 = 0$, $\sigma^2 = \exp\{-6\}$, $\sigma^2 = \exp\{-5\}$\footnote{Wapiti default value.}, $\sigma^2 = \exp\{-4\}$, and $\sigma^2 = \exp\{-3\}$.
+ % This tuning was performed on the HEP training data with the baseline feature set.
 
 \subsection{Token Extensions}
 
 In the baseline \emph{segmentation} model, only the first two words from each line are modelled as features. The model might therefore benefit from modelling more of the line. However, unlike character class features (Section \ref{subsec:characterclasses}), modelling the features and does not reduce the dimensionality of the model. The signal from these token extensions may therefore be too diffuse to make useful indicators. We nevertheless tried four variations on this idea, extending the feature set to model the first 5, 10, 15, and 20 words of each line.
+
+\section{Implementation}
+\subsection{Extensions to GROBID}
+
+The effects of our extensions are seen in Sections \ref{subsec:pipeline}, \ref{sec:featurengineering} and finally in Chapter \ref{Chapter5} and wherever appropriate we indicate them. Extensions were made as a branch of GROBID in the following ways:
+
+\begin{enumerate}
+\item reconnecting the \emph{segmentation} and \emph{header} models;
+\item modelling HEP specific header field, \emph{collaboration};
+\item producing new features;
+\item logging results automatically, and;
+\item extending the evaluation utilities for our analysis and reporting aims.
+\end{enumerate}
+
+The most significant extension made was with the class, \texttt{ConfusionMatrix.java}, used within GROBID's \texttt{EvaluationUtilities.java} framework to create confusion matrix outputs, ultimately visualised by the pipeline (see Chapter \ref{Chapter5}). These allowed us to see which misclassifications were made most frequently. In addition, \texttt{ConfusionMatrix.java} tracks the documents on which the the model committed the most errors for each misclassification. A sample output is given in Figure \ref{fig:topk}. Modelling collaborations as a class of the \emph{header} model involved extending GROBID's training and tagging modules alike. An XML structure conforming to the TEI standard (Section \ref{subsec:tei}) was selected. An example of a successful prediction of a collaboration is given in Figure \ref{fig:collaboration}.
+
+\begin{figure}[h]
+\centering
+\begin{BVerbatim}
+(<header>, <body>)
+	1343657.training.segmentation.tei.xml - 0.7292 (35)
+	1342206.training.segmentation.tei.xml - 0.3571 (5)
+	1345915.training.segmentation.tei.xml - 0.3333 (7)
+	1344707.training.segmentation.tei.xml - 0.1765 (3)
+	1347299.training.segmentation.tei.xml - 0.1667 (8)
+\end{BVerbatim}
+\caption{Misclassification of <header> to <body> proportion and count (given in parentheses) for five papers in an evaluation fold, an output of the confusion matrix utility.}
+\label{fig:topk}
+\end{figure}
+
+\begin{figure}[h]
+\lstset{language=XML}
+\begin{lstlisting}
+<author>
+    <orgName>ALICE Collaboration</orgName>
+</author>
+\end{lstlisting}
+\caption{Example of successfully classified collaboration. The choice of XML tags is ours and was selected to be consistent with the TEI standard.}
+\label{fig:collaboration}
+\end{figure}
+
+\subsection{Experiment Pipeline}
+\label{subsec:pipeline}
+
+To automate the experimentation process, we developed a pipeline of scripts in Python, the language chosen for its ubiquity in INSPIRE-HEP. The repository is open source and hosted on GitHub\footnote{https://github.com/jcboyd/pykelet/src}. The pipeline begins with using GROBID (including all necessary extensions) to generate raw feature files for all TEI files in the ground truth dataset. These are then manually assembled into a stripped-down copy of GROBID (containing all necessary Java executables and additional data) and placed in directory, \texttt{batches/}, with other scenarios. The assemblage of training data depends on the data scenario desired. If we wish to cross-validate over all data, we simply ensure that both the \texttt{training/} and \texttt{evaluation/} directories within the GROBID project contain all the feature files, and that all TEI files are in \texttt{training/}. The cross validation (CV) process will move a fold from the training directory to the evaluation directory, and return it when the iteration is complete. If, however, we wish to \emph{append} data for training, yet exclude it from CV and evaluation, we place the features files only under \texttt{training/}. The process will then cross-validate only on those files present in \texttt{evaluation/}. GROBID requires both TEI and feature files to be present or else they are ignored. This trick allows us to run such complex experiments without modifying GROBID or its directory structure. Each iteration of CV produces a log file of results exported from GROBID's evaluation utilities. Another script then aggregates the file contents (token- and field-level performance metrics and confusion matrices) and visualises them automatically. The pipeline process is depicted in Figure \ref{fig:pipeline}. The pipeline consists of a Python wrapper for GROBID, \texttt{grobid.py}, written using \texttt{pyjnius}, a Python library for the manipulation of Java executables through the Java Native Interface (JNI)\footnote{Certain limitations on this led us to write a simpler Python \texttt{subprocess}-based wrapper also.}. For an iteration of CV, (\texttt{k\_fold\_cross\_validation.py}), our wrapper may be used in the following way:\\
+
+\begin{lstlisting}[language=python, caption=Excerpt from our Python wrapper for GROBID, label={lst:grobid}]
+grobid_trainer = GrobidTrainer(classpath=classpath_trainer,
+                               grobid_home=grobid_home)
+grobid_trainer.train(model)
+grobid_trainer.evaluate(model)
+\end{lstlisting}
+
+The process uses Python scientific computing library, \texttt{numpy}, to randomly shuffle training data (according to a fixed seed), and then Python machine learning library \texttt{scikit-learn} to create CV folds. The folds are withheld during training and are evaluated upon in the conventional way. The output of CV is a set of log files containing results. These results are processed by further scripts to produce visualisations of confusion matrices and performance metric comparisons.
+
+\begin{figure}[!ht]
+\center
+\includegraphics[width=\textwidth]{Figures/pipeline.pdf}
+\caption{An illustration of the experimentation pipeline.}
+\label{fig:pipeline}
+\end{figure}
+
