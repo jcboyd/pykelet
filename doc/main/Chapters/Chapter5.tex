@@ -6,13 +6,63 @@
 
 \lhead{Chapter 5. \emph{Results and Analysis}} % This is for the header on each page - perhaps a shortened title
 
-\emph{In this section we present the results of our experimentation with feature engineering, which comprises of 66 cross-validated feature engineering experiments including a baseline evaluation. We notably begin with a comparison between GROBID and refextract, the existing partial solution for metadata extraction at INSPIRE-HEP. Following this we detail our evaluation method and approach to running experiments. Finally, we present the results of our experimentation and provide our analysis and interpretations.}
+\emph{In this chapter we present the results of our implementation work, which comprises of 66 cross-validated feature engineering experiments including a baseline evaluation. We notably begin with a comparison between GROBID and refextract, the existing partial solution for metadata extraction within INSPIRE-HEP. Following this we detail our evaluation method and approach to running experiments. Finally, we present our experimental results and provide our analysis and interpretations.}
+
+\section{Evaluation Method}
+\subsection{Evaluation Metrics}
+\label{subsec:evaluationmethod}
+
+In this chapter we refer to various standard measures of classification performance. We define these presently. Accuracy is defined to be,
+
+\begin{equation}
+\text{Accuracy} = \frac{TP + TN}{TP + FN + FP + TN},
+\label{eq:accuracy}
+\end{equation}
+
+that is, the proportion of correct classifications to total classifications, where TP is the number \emph{true positives}, the correctly predicted positive classes, where in the general case \emph{positive} refers to the given class for which we are computing accuracy; TN is the number of \emph{true negatives}, the correctly predicted \emph{negative} classes; FN is the number of \emph{false negatives}, the incorrectly predicted positive classes; and TN is the number of \emph{true negatives}. Accuracy can be a misleading statistic when we have uneven representations of classes in the dataset. In the event that we have a sufficiently high bias, we can achieve excellent accuracy simply by always predicting this class. For this reason, we consider other statistics too. \emph{Precision} is the number of times a class is \emph{correctly} predicted proportional to the overall number of times it is predicted, that is,
+
+\begin{equation}
+\text{Precision} = \frac{TP}{TP + FP}.
+\label{eq:precision}
+\end{equation}
+
+This, however, does not inform us as to whether we have missed any occurences, which would be shown in the number of false negatives, FN. We could therefore have a very high precision with limited accuracy. \emph{Recall} is the number of times a class is \emph{correctly} predicted proportional to the number of occurences of that class (equivalently, the accuracy respective to the class), that is,
+
+\begin{equation}
+\text{Recall} = \frac{TP}{TP + FN}.
+\label{eq:recall}
+\end{equation}
+
+However, a simple strategy of always predicting one class will give perfect recall for that class, because then misclassifications are only captured by $FP$. The $F_1$ statistic is a common measure used to assess classifiers that combines precision and recall, and is defined as,
+
+\begin{equation}
+F_1 = \frac{2 \times \text{precision} \times \text{recall}}{\text{precision} + \text{recall}},
+\label{eq:f1}
+\end{equation}
+
+that is, the harmonic mean of precision and recall (the ``1'' in $F_1$ indicates the two are evenly weighted). The $F_1$ statistic is a nice way of summarising both at once as it is simply the harmonic mean of the two. Furthermore, because of this, a large imbalance in recall and precision resuts in a lower $F_1$ score. It is necessary to be good in both precision and recall to have a good $F_1$ score; the harmonic mean of any data is always upper-bounded by its arithmetic mean. Thus, the $F_1$ score addresses their shortcomings simultaneously. To summarise each of these statistics over an array of classes, we adopt two approaches: macro and micro averages. A macro average is the aggregation of statistics \emph{a posteriori}. For example, for accuracy,
+
+\begin{equation}
+\text{Accuracy}_{macro} = \frac{1}{N}\sum_{i=1}^{N}Accuracy_i,
+\label{eq:macroaccuracy}
+\end{equation}
+
+where $Accuracy_i$ is the accuracy for the $ith$ of $N$ classes. By contrast, a micro average is an aggregation of statistics that is in effect weighted by population size. For example, again for accuracy,
+
+\begin{equation}
+\text{Accuracy}_{micro} = \frac{\sum_{i=1}^N TP_i + TN_i}{\sum_{i=1}^N TP_i + FN_i + FP_i + TN_i},
+\label{eq:microaccuracy}
+\end{equation}
+
+\subsection{Evaluation in GROBID}
+
+In GROBID, evaluation is done at the token, field, and instance levels, that is, GROBID calculates the aforementioned statistics for individual tokens or words, and then for the classes themselves. Finally, GROBID calculates the number of correct instances, that is, entire evaluation samples with no classification errors. In our results (Section \ref{sec:results}), we concentrate on the $F_1$ score micro average and scores for key classes (depending on the model we consider). We supplement the GROBID evaluation output with our own confusion matrices, and example of which is shown in Figure XX. Whereas the statistics allow us to compare one model to another, a confusion matrix can be used to see exactly which misclassifications are being made, which can in turn inform our feature engineering.
 
 \section{Comparison with \emph{refextract}}
 
-As a first result for GROBID, we compare it with \emph{refextract}, the existing solution for automatic reference extraction at CERN. \emph{refextract} is an example of a \emph{stylistic analysis} tool (see Section \ref{sec:solutionmethods}), as it employs regular expressions in a heuristic framework for extraction. As previously mentioned, \emph{refextract} is incomplete and greatly lacking in both breadth and depth of detail. It is capable only of retrieving references\footnote{A comparatively easy task; GROBID's citation model usually performs at a significantly higher accuracy than, say, its \emph{header} model.}, and the classification itself is quite basic. Since the modelling of reference fields differs between the two, a comparison is difficult to make. Our results will at least be indicative, however, and we are able to make reasonable comparisons on the most important fields. The dataset for the comparison consists of 60 articles coming from the SCOAP$^3$ online repository\footnote{Scoap$^3$ (Sponsoring Open Consortium for Open Access Publishing in Particle Physics) is an open access digital library hosted at CERN, backed by an international partnership of research institutions.}.
+As a first result for GROBID, we compare it with \emph{refextract}, the existing solution for automatic reference extraction at CERN. \emph{refextract} is an example of a \emph{stylistic analysis} tool (see Section \ref{sec:solutionmethods}), as it employs regular expressions in a heuristic framework for metadata extraction. As previously mentioned, \emph{refextract} is incomplete and greatly lacking in both breadth and depth of detail. It is capable only of retrieving references\footnote{A comparatively easy task; GROBID's citation model usually performs at a significantly higher accuracy than, say, its \emph{header} model.}, and the classification itself is quite basic. Since the modelling of reference fields differs between the two, a comparison is difficult to make. Our results will at least be indicative, however, and we are able to make reasonable comparisons across the most important fields. The dataset for the comparison consists of 60 articles coming from the SCOAP$^3$ online repository\footnote{Scoap$^3$ (Sponsoring Open Consortium for Open Access Publishing in Particle Physics) is an open access digital library hosted at CERN, backed by an international partnership of research institutions.}.
 
-Unlike \emph{refextract}, GROBID requires two separate models to classify the citations of a given article: the \emph{reference-segmenter} and \emph{citation} models\footnote{Strictly speaking, there is another model, (full) \emph{segmentation}, above the \emph{reference-segmenter}, and so \emph{citation} accuracy depends on this also. But because one focus of our work is to improve this model, we accept this omission.}. The \emph{reference-segmenter} model is the simplest model in GROBID's arsenal, and is responsible for segmenting a reference list block into individual references. Therefore, the accuracy of the citation model is ultimately subject to the accuracy of the reference block inputs supplied to it by the \emph{reference-segmenter} above. The results for training and evaluating the \emph{reference-segmenter} on 60 SCOAP$^3$ papers with an 80--20 split are given in Table \ref{table:referencesegmenterresults}. The results show the \emph{reference-segmenter} is extremely accurate. In fact, only 5 token misclassifications out of 622 were made for the <label> class, and from a grand total of 12,981.
+Unlike \emph{refextract}, GROBID requires two separate models to classify the citations of a given article: the \emph{reference-segmenter} and \emph{citation} models\footnote{Strictly speaking, there is another model, (full) \emph{segmentation}, above the \emph{reference-segmenter}, and so \emph{citation} accuracy depends on this also. But because one focus of our work is to improve this model, we permit this omission.}. The \emph{reference-segmenter} model is the simplest model in GROBID's arsenal, and is responsible for segmenting a reference list block into individual references. Therefore, the accuracy of the citation model is ultimately subject to the accuracy of the reference block inputs supplied to it by the \emph{reference-segmenter} above. The results for training and evaluating the \emph{reference-segmenter} on 60 SCOAP$^3$ papers with an 80--20 split are given in Table \ref{table:referencesegmenterresults}. The results show the \emph{reference-segmenter} is extremely accurate. In fact, only 5 token misclassifications out of 622 were made for the <label> class, and from a grand total of 12,981.
 
 \label{subsec:refextract}
 \begin{table}[h]
@@ -28,16 +78,14 @@ label           & accuracy  & precision  & recall   & f1 \\
 (macro average) & 99.96     & 99.98      & 99.6     & 99.79  \\
 \hline
 \end{tabular}
-\caption[Evaluation results for reference segmentation]{Evaluation results for reference segmentation}
+\caption[Token-level evaluation results for reference segmentation.]{Token-level evaluation results for reference segmentation.}
 \label{table:referencesegmenterresults}
 \end{center}
 \end{table}
 
-The most significant difference between the tools is the set of classes modelled. \emph{refextract} attempts only to classify to the minimum detail required for identifying the originating document within INSPIRE-HEP. Therefore, there are no equivalents to GROBID's classes, <volume>, <pages>, and so on. Rather, these parts of references are absorbed into other, higher-level classes, and are indicated by a dash (-) in the results table. Comparisons can be made, however on fields, <title>, <author>, <journal>, and <date>. There we see the superiority of GROBID over \emph{refextract}. Note that here the \emph{citation} model was not trained on the evaluation set, and in particular this may explain its dismal performance in precision for the date field, and recall for \emph{pubnum}. The dataset instances contained a recurring publication number that was almost uniformly misclassified by GROBID as a date. Notice that this is an example of a domain specificity of HEP papers. Had we trained on these papers, we could expect an improvement.
+The most significant difference between the tools is the set of classes modelled. \emph{refextract} attempts only to classify to the minimum detail required for identifying the originating document within INSPIRE-HEP. Therefore, there are no equivalents to GROBID's classes, <volume>, <pages>, and so on. Rather, these parts of references are absorbed into other, higher-level classes, and are indicated by a dash (-) in the results table, Table \ref{table:citationcomparison}. Comparisons can be made, however on fields, <title>, <author>, <journal>, and <date>. There we see the superiority of GROBID over \emph{refextract}. Note that here the \emph{citation} model was not trained on the evaluation set, and in particular this may explain its dismal performance in precision for the date field, and recall for \emph{pubnum}. The dataset instances contained a recurring publication number that was almost uniformly misclassified by GROBID as a date. Notice that this is an example of a domain specificity of HEP papers. Had we trained on these papers, we could expect an improvement.
 
-That \emph{refextract} has perfect recall in the given fields is due to the way the evaluation was conducted, namely...
-
-For an explanation of the performance metrics, see Section \ref{sec:evaluation}.
+That \emph{refextract} has reported perfect recall is a result of a flaw in our simplistic evaluation, where missing expected classifications were simply assigned to a \emph{null} class, and so \emph{false positives} (FP) were not counted; only \emph{false negatives}. Therefore, the true performance of \emph{refextract} is upper-bounded by the figures in Table \ref{table:citationcomparison}. The table is one of the outputs of GROBID's evaluation utilities. For an explanation of the performance metrics, see Section \ref{subsec:evaluationmethod}.
 
 \begin{table}[h]
 \begin{center}
@@ -68,7 +116,7 @@ label & accuracy & precision & recall & f1 & acc. & prec. & rec. & f1\\
 (macro average) & 99.5  &   77.92   &   73.76   &   71.76 & -    &   -  &   -   &   -   \\
 \hline
 \end{tabular}
-\caption[Evaluation results for citations]{Evaluation results for citations}
+\caption[Token-level evaluation results for citations for GROBID and \emph{refextract}.]{Token-level evaluation results for citations for GROBID and \emph{refextract}.}
 \label{table:citationcomparison}
 \end{center}
 \end{table}
@@ -92,44 +140,6 @@ Our resources for experimentation consisted of two powerful virtual machines on 
 \caption{The different cross-validation configurations used in our experiments.}
 \label{fig:cv}
 \end{figure}
-
-\section{Evaluation Method}
-
-Accuracy is defined to be,
-
-\begin{equation}
-\text{Accuracy} = \frac{TP + TN}{TP + FN + FP + TN},
-\label{eq:accuracy}
-\end{equation}
-
-that is, the proportion of correct classifications to total classifications, where TP is the number \emph{true positives}, the correctly predicted positive classes, where \emph{positive} indicates any given class; TN is the number of \emph{true negatives}, the correctly predicted \emph{negative} classes; FN is the number of \emph{false positives}, the incorrectly predicted positive classes; and TN is the number of \emph{true negatives}. Accuracy can be a misleading statistic when we have uneven representations of classes in the dataset. In the event that we have high bias on the number of negatives, we can achieve excellent accuracy simply by always predicting the negative class. For this reason, we consider other statistics too. \emph{Precision} is the proportion of positives correctly claimed, that is,
-
-\begin{equation}
-\text{Precision} = \frac{TP}{TP + FP}.
-\label{eq:precision}
-\end{equation}
-
-\emph{Recall} is the proportion of positives correctly predicted to the total number of positive occurrences (equivalently, the accuracy over the positive class), that is,
-
-\begin{equation}
-\text{Recall} = \frac{TP}{TP + FN}.
-\label{eq:recall}
-\end{equation}
-
-Notice that in the case described above, both precision and recall would be 0. The $F_1$ statistic is a common measure used to assess classifiers, and is defined as,
-
-\begin{equation}
-F_1 = \frac{2 \times \text{precision} \times \text{recall}}{\text{precision} + \text{recall}},
-\label{eq:f1}
-\end{equation}
-
-that is, the harmonic mean of precision and recall (the ``1'' in $F_1$ indicates the two are evenly weighted). The $F_1$ statistic is a nice way of summarising both at once as it is simply the harmonic mean of the two. Furthermore, because of this, a large imbalance in recall and precision resuts in a lower $F_1$ score. It is necessary to be good in both precision and recall to have a good $F_1$ score; the harmonic mean of any data is always upper-bounded by its arithmetic mean
-
-\subsection{Evaluation in Grobid}
-
-In Grobid, evaluation is done at the token, field, and instance levels, that is, Grobid calculates the aforementioned statistics for individual token or words, and then for the classes themselves. Finally, it calculates the number of correct instances, that is, entire samples with no classification errors.
-
-We supplement the Grobid evaluation output with a confusion matrix, and example of which is shown in Figure XX. Whereas the statistics allow us to compare one model to another, a confusion matrix can be used to see exactly which misclassifications are being made, which can in turn inform our feature engineering.
 
 \begin{table}[h]
 \begin{center}
@@ -162,7 +172,7 @@ Character Classes & Binary, Decimal, Decimal only & Segmentation & HEP \\
 \end{table}
 
 \section{Results}
-
+\label{sec:results}
 \subsection{Baseline}
 
  We were therefore able to experiment with combining the two datasets of HEP papers, as well as subsampling the CORA dataset to find the ideal mixture. After all, in spite of the common wisdom that increasing the amount of training data will improve generalisation and model performance, it is not clear what effects combining different ground truths, namely CORA and HEP, will have. One may imagine that generalising over a hybrid dataset might construct a misleading model when it comes to evaluate on a pure HEP dataset, especially when the CORA \emph{header} set dwarfs our HEP one.
