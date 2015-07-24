@@ -43,11 +43,11 @@ F_1 = \frac{2 \times \text{precision} \times \text{recall}}{\text{precision} + \
 that is, the harmonic mean of precision and recall (the ``1'' in $F_1$ indicates the two are evenly weighted). The $F_1$ statistic is a nice way of summarising both at once as it is simply the harmonic mean of the two. Furthermore, because of this, a large imbalance in recall and precision resuts in a lower $F_1$ score. It is necessary to be good in both precision and recall to have a good $F_1$ score; the harmonic mean of any data is always upper-bounded by its arithmetic mean. Thus, the $F_1$ score addresses their shortcomings simultaneously. To summarise each of these statistics over an array of classes, we adopt two approaches: macro and micro averages. A macro average is the aggregation of statistics \emph{a posteriori}. For example, for accuracy,
 
 \begin{equation}
-\text{Accuracy}_{macro} = \frac{1}{N}\sum_{i=1}^{N}Accuracy_i,
+\text{Accuracy}_{macro} = \frac{1}{N}\sum_{i=1}^{N}\text{Accuracy}_i,
 \label{eq:macroaccuracy}
 \end{equation}
 
-where $Accuracy_i$ is the accuracy for the $ith$ of $N$ classes. By contrast, a micro average is an aggregation of statistics that is in effect weighted by population size. For example, again for accuracy,
+where $\text{Accuracy}_i$ is the accuracy for the $ith$ of $N$ classes. By contrast, a micro average is an aggregation of statistics that is in effect weighted by population size. For example, again for accuracy,
 
 \begin{equation}
 \text{Accuracy}_{micro} = \frac{\sum_{i=1}^N TP_i + TN_i}{\sum_{i=1}^N TP_i + FN_i + FP_i + TN_i},
@@ -57,6 +57,58 @@ where $Accuracy_i$ is the accuracy for the $ith$ of $N$ classes. By contrast, a 
 \subsection{Evaluation in GROBID}
 
 In GROBID, evaluation is done at the token, field, and instance levels, that is, GROBID calculates the aforementioned statistics for individual tokens or words, and then for the classes themselves. Finally, GROBID calculates the number of correct instances, that is, entire evaluation samples with no classification errors. In our results (Section \ref{sec:results}), we concentrate on the $F_1$ score micro average and scores for key classes (depending on the model we consider). We supplement the GROBID evaluation output with our own confusion matrices, and example of which is shown in Figure XX. Whereas the statistics allow us to compare one model to another, a confusion matrix can be used to see exactly which misclassifications are being made, which can in turn inform our feature engineering.
+
+\section{Experiment Setup}
+\label{sec:experimentsetup}
+
+Our resources for experimentation consisted of two powerful virtual machines on the CERN LXPLUS computing cluster, each possessing 16 CPUs and 32 GB of RAM. The experiments were configured and uploaded to these server machines in batches, and were processed by our experimentation pipeline (see Section \ref{subsec:pipeline}). The sparse nature of the models led to long training times. To control the runtime of training, we enforced a maximum number of 500 iterations for Wapiti's L-BFGS algorithm. This number was chosen from observing the diminishing improvements of models trained to this extent\footnote{There is also the argument that training to convergence may cause overfitting.}. With Wapiti parallelised to 8 cores, we were able to run two processes on each virtual machine when required. Even with this parallelised setup, our experiment batches took several days to process each time, and the sum total of our experiments amounts to perhaps months of CPU time.
+
+In conjunction with our feature engineering variations, we tried different configurations of data. Figure \ref{fig:cv} illustrates our five approaches to cross-validation with different combinations of HEP and CORA training data. Where we \emph{append} data, we include it in the training, but exclude from the evaluation. Thus, HEP app. CORA denotes the training of a model on, but cross-validation folds taken only from the HEP. Of most interest, naturally, were those evaluating purely on HEP papers, that is, those we denote \emph{HEP} and {HEP app. CORA}, and these were the only configurations run beyond the baseline. In Section \ref{sec:results}, we refer to these configurations as we present the results. All experiments were run with $5-$fold cross validation.
+
+\begin{figure}[h]
+\centering
+\begin{tabular}{cc}
+\subfloat[CV HEP]{\includegraphics[width=0.36\textwidth]{Figures/CV_HEP.pdf}} & 
+\subfloat[CV CORA]{\includegraphics[width=0.36\textwidth]{Figures/CV_CORA.pdf}}\\
+\subfloat[CV HEP append CORA]{\includegraphics[width=0.45\textwidth]{Figures/CV_HEPappCORA.pdf}} & 
+\subfloat[CV CORA append HEP]{\includegraphics[width=0.45\textwidth]{Figures/CV_CORAappHEP.pdf}}\\ 
+\multicolumn{2}{c}{\subfloat[CV HEP + CORA]{\includegraphics[width=0.36\textwidth]{Figures/CV_HEP+CORA.pdf}}} \\
+\end{tabular}
+\caption{The different cross-validation configurations used in our experiments. Figures (A) and (B) show cross-validation on HEP and CORA sets independently, and (E) on their combination. Figures (C) and (D) show cross-validation on the HEP and CORA datasets respectively, appending the other at training time.}
+\label{fig:cv}
+\end{figure}
+
+The variety of $66$ experiments that we cross-validated are presented in Table \ref{fig:cv}, organised into 8 categories. We also distinguish by model, running some experiments for both models, and some for one alone. Generally speaking, we chose feature engineering ideas with a particular model in mind, that is, either \emph{header} or \emph{segmentation}. Finally, we distinguish by the data configurations. For dictionary-based features, whcih may be derived from a baseline feature file alone, we may try all data configurations. However, as we do not have access to the original PDF papers for the CORA dataset, we cannot extract our new features. In these cases, our cross-validation was performed on our own purely HEP dataset.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ | p{0.2\linewidth} | p{0.25\linewidth} | p{0.15\linewidth} | p{0.3\linewidth} |}
+\hline
+Feature Category & Variations & Models & Data\\
+\hline
+Baseline & - & Segmentation, header & CORA, CORA app. HEP, CORA + HEP, HEP, HEP app. CORA \\
+\hline
+Baseline & - & Header & HEP app. 1/3 CORA, HEP app. 2/3 CORA \\
+\hline
+Dictionaries & First order, second order, third order & Segmentation, header & HEP, HEP app. CORA \\
+\hline
+Dicts. + Stops & First order, second order, third order, stops only & Segmentation, header & HEP, HEP app. CORA \\
+\hline
+Regularisation & $\sigma^2=0$, $\sigma^2=\exp\{-6\}$, $\sigma^2=\exp\{-5\}$, $\sigma^2=\exp\{-4\}$, $\sigma^2=\exp\{-3\}$, & Header & HEP \\
+\hline
+Token Extension & First 5 words, first 10, first 15, first 20 & Segmentation & HEP \\
+\hline
+Block Size & Height, width, height \& width, area & Header & HEP \\
+\hline
+Levenshtein & $T_1 = 0.05$, $T_1 = 0.1$, $T_1 = 0.2$, $T_1 = 0.4$, $T_1 = 0.8$, ($T_1 = 0.1, T_2 = 0.4$), All & Segmentation & HEP \\
+\hline
+Character Classes & Binary, decimal (round down), decimal (round), decimal (20 point) & Segmentation & HEP \\
+\hline
+\end{tabular}
+\caption[A summary of our experiments, organised by category, models trained for, and data configurations used.]{A summary of our experiments, organised by category, models trained for, and data configurations used.}
+\label{table:experiments}
+\end{center}
+\end{table}
 
 \section{Comparison with \emph{refextract}}
 
@@ -89,7 +141,7 @@ The most significant difference between the tools is the set of classes modelled
 \begin{center}
 \begin{tabular}{|c|cccc|cccc|}
 \hline
-engine &  \multicolumn{4}{c|}{GROBID} & \multicolumn{4}{c|}{\emph{refextract}}\\
+system &  \multicolumn{4}{c|}{GROBID} & \multicolumn{4}{c|}{\emph{refextract}}\\
 \hline
 label & accuracy & precision & recall & f1 & acc. & prec. & rec. & f1\\
 \hline
@@ -107,7 +159,7 @@ label & accuracy & precision & recall & f1 & acc. & prec. & rec. & f1\\
 <institution>& 99.78&   25      &   25      &   25      & -     &   -   &   -       &   -   \\
 <booktitle>&    98.7&   55.56   &   41.67   &   47.62   & -     &   -   &   -       &   -   \\
 <web>   &   99.64   &   51.85   &   100     &   68.29   & -     &   -   &   -       &   -   \\
-<editor>    &  99.93&   100     &46.67      &   63.64   & -     &   -   &   -       &   -   \\
+<editor>    &  99.93&   100     &	46.67   &   63.64   & -     &   -   &   -       &   -   \\
 <tech>  &   99.95   &   83.33   &   50      &   62.5    & -     &   -   &   -       &   -   \\
 \hline
 (micro average) & 99.5  &   93.63   &   94.77   &   94.19 & -    &   - &   -   &   -   \\
@@ -119,59 +171,6 @@ label & accuracy & precision & recall & f1 & acc. & prec. & rec. & f1\\
 \end{center}
 \end{table}
 
-\section{Experiment Setup}
-\label{sec:experimentsetup}
-
-Our resources for experimentation consisted of two powerful virtual machines on the CERN LXPLUS computing cluster, each possessing 16 CPUs and 32 GB of RAM. The experiments were configured and uploaded to these server machines in batches, and were processed by our experimentation pipeline (see Section \ref{subsec:pipeline}). The sparse nature of the models led to long training times. To control the runtime of training, we enforced a maximum number of 500 iterations for Wapiti's L-BFGS algorithm. This number was chosen from observing the diminishing improvements of models trained to this extent\footnote{There is also the argument that training to convergence may cause overfitting.}. With Wapiti parallelised to 8 cores, we were able to run two processes on each virtual machine when required. Even with this parallelised setup, our experiment batches took several days to process each time, and the sum total of our experiments amounts to perhaps months of CPU time.
-
-In conjunction with our feature engineering variations, we tried different configurations of data. Figure \ref{fig:cv} illustrates our five approaches to cross-validation with different combinations of HEP and CORA training data. Where we \emph{append} data, we include it in the training, but exclude from the evaluation. Thus, HEP app. CORA denotes the training of a model on, but cross-validation folds taken only from the HEP. Of most interest, naturally, were those evaluating purely on HEP papers, that is, those we denote \emph{HEP} and {HEP app. CORA}, and these were the only configurations run beyond the baseline. In Section \ref{sec:results}, we refer to these configurations as we present the results. All experiments were run with $5-$fold cross validation.
-
-\begin{figure}[h]
-\centering
-\begin{tabular}{cc}
-\subfloat[CV HEP]{\includegraphics[width=0.36\textwidth]{Figures/CV_HEP.pdf}} & 
-\subfloat[CV CORA]{\includegraphics[width=0.36\textwidth]{Figures/CV_CORA.pdf}}\\
-\subfloat[CV HEP append CORA]{\includegraphics[width=0.45\textwidth]{Figures/CV_HEPappCORA.pdf}} & 
-\subfloat[CV CORA append HEP]{\includegraphics[width=0.45\textwidth]{Figures/CV_CORAappHEP.pdf}}\\ 
-\multicolumn{2}{c}{\subfloat[CV HEP + CORA]{\includegraphics[width=0.36\textwidth]{Figures/CV_HEP+CORA.pdf}}} \\
-\end{tabular}
-\caption{The different cross-validation configurations used in our experiments. Figures (A) and (B) show cross-validation on HEP and CORA sets independently, and (E) on their combination. Figures (C) and (D) show cross-validation on the HEP and CORA datasets respectively, appending the other at training time.}
-\label{fig:cv}
-\end{figure}
-
-The variety of $66$ experiments that we cross-validated are presented in Table \ref{fig:cv}, organised into 8 categories. We also distinguish by model, running some experiments for both models, and some for one alone. Generally speaking, we chose feature engineering ideas with a particular model in mind, that is, either \emph{header} or \emph{segmentation}. Finally, we distinguish by the data configurations. For dictionary-based features, whcih may be derived from a baseline feature file alone, we may try all data configurations. However, as we do not have access to the original PDF papers for the CORA dataset, we cannot extract our new features. In these cases, our cross-validation was performed on our own purely HEP dataset.
-
-
-\begin{table}[h]
-\begin{center}
-\begin{tabular}{ | p{0.2\linewidth} | p{0.25\linewidth} | p{0.15\linewidth} | p{0.3\linewidth} |}
-\hline
-Feature Category & Variations & Models & Data\\
-\hline
-Baseline & - & Segmentation, header & CORA, CORA app. HEP, CORA + HEP, HEP, HEP app. CORA \\
-\hline
-Baseline & - & Header & HEP app. 1/3 CORA, HEP app. 2/3 CORA \\
-\hline
-Dictionaries & First order, second order, third order & Segmentation, header & HEP, HEP app. CORA \\
-\hline
-Dicts. + Stops & First order, second order, third order, stops only & Segmentation, header & HEP, HEP app. CORA \\
-\hline
-Regularisation & $\sigma^2=0$, $\sigma^2=\exp\{-6\}$, $\sigma^2=\exp\{-5\}$, $\sigma^2=\exp\{-4\}$, $\sigma^2=\exp\{-3\}$, & Header & HEP \\
-\hline
-Token Extension & First 5 words, first 10, first 15, first 20 & Segmentation & HEP \\
-\hline
-Block Size & Height, width, height \& width, area & Header & HEP \\
-\hline
-Levenshtein & $T_1 = 0.05$, $T_1 = 0.1$, $T_1 = 0.2$, $T_1 = 0.4$, $T_1 = 0.8$, ($T_1 = 0.1, T_2 = 0.4$), All & Segmentation & HEP \\
-\hline
-Character Classes & Binary, decimal (round down), decimal (round), decimal (20 point) & Segmentation & HEP \\
-\hline
-\end{tabular}
-\caption[A summary of our experiments, organised by category, models trained for, and data configurations used.]{A summary of our experiments, organised by category, models trained for, and data configurations used.}
-\label{table:experiments}
-\end{center}
-\end{table}
-
 \section{Results}
 \label{sec:results}
 \subsection{Baseline}
@@ -180,25 +179,24 @@ We were therefore able to experiment with combining the two datasets of HEP pape
 
 \begin{figure}[h]
 \center
-\includegraphics[width=5.5in]{Figures/header_baseline_confusion.pdf}
-\caption{}
+\includegraphics[width=5.5in]{Figures/baseline_confusion_header.pdf}
+\caption{Comparison of baseline, levenshtein and character class features on header matter.}
 \label{fig:header_baseline_confusion}
 \end{figure}
 
 \begin{figure}[h]
 \center
-\includegraphics[width=5.5in]{Figures/segmentation_baseline_confusion.pdf}
-\caption{}
+\includegraphics[width=5.5in]{Figures/baseline_confusion_segmentation.pdf}
+\caption{Comparison of baseline, levenshtein and character class features on header matter.}
 \label{fig:segmentation_baseline_confusion}
 \end{figure}
 
 \begin{figure}[h]
 \center
 \includegraphics[width=5.5in]{Figures/micro_subsampling.pdf}
-\caption{}
+\caption{Comparison of baseline, levenshtein and character class features on header matter.}
 \label{fig:references}
 \end{figure}
-
 
 \subsection{Block Size}
 
@@ -219,20 +217,27 @@ We were therefore able to experiment with combining the two datasets of HEP pape
 \begin{figure}[h]
 \center
 \includegraphics[width=5.5in]{Figures/micro.pdf}
-\caption{}
+\caption{Comparison of baseline, levenshtein and character class features on header matter.}
 \label{fig:micro}
 \end{figure}
 
 \begin{figure}[h]
 \center
+\includegraphics[width=5.5in]{Figures/macro.pdf}
+\caption{Comparison of baseline, levenshtein and character class features on header matter.}
+\label{fig:macro}
+\end{figure}
+
+\begin{figure}[h]
+\center
 \includegraphics[width=5.5in]{Figures/header.pdf}
-\caption{}
+\caption{Comparison of baseline, levenshtein and character class features on header matter.}
 \label{fig:header}
 \end{figure}
 
 \begin{figure}[h]
 \center
 \includegraphics[width=5.5in]{Figures/references.pdf}
-\caption{}
+\caption{Comparison of baseline, levenshtein and character class features on header matter.}
 \label{fig:references}
 \end{figure}
