@@ -182,7 +182,7 @@ As specified earlier, we use the micro average of F1 scores of all model classes
 \subsection{Baseline}
 \label{subsec:baslineresults}
 
-Given the data sets available (see Section \ref{sec:data}) with combining the two datasets of HEP papers, as well as subsampling the CORA dataset to find the ideal mixture. After all, in spite of the common wisdom that increasing the amount of training data will improve generalisation and model performance, it is not clear what effects combining different ground truths, namely CORA and HEP, will have. One may imagine that generalising over a hybrid dataset might construct a misleading model when it comes to evaluate on a pure HEP dataset, especially when the CORA \emph{header} set dwarfs our HEP one. The baseline results are given in Table \ref{table:baslineresults} and these show the micro average of F1 scores for each of the data configurations. Of most importance are the scenarios involving the HEP training set taken alone, and the HEP training set appending the CORA set, as these are the ones used in the other experiments. Surprisingly, for the \emph{header} model, there is a degradation of performance when the CORA set is appended. We pursue this curiosity in Table \ref{table:subsampling}, where we see mixed results for \emph{subsampling} CORA data, appending an extra randomly chosen third of the data at a time. The pure HEP set with no appending of CORA yields a model $(\mu = 90.19, \sigma = 2.63)$ second only to the case where we append $2/3$ of the CORA dataset $(\mu = 90.19, \sigma = 2.63)$. The case of appending $1/3$ CORA experienced a major outlier in the third iteration of cross-validation, where it scored an F1 micro average of as little as $78.15$, performing badly across all classes. This result notwithstanding, it seems there is some value in using a hybrid dataset yet increasing the proportion of CORA papers ultimately degrades performance. This strongly supports our hypothesis that there a qualitative difference between HEP papers and general papers, and that training a successful model demands an expansion of the HEP dataset. In further sections, we see the same effect when we train on the HEP dataset and HEP appending CORA.
+Given the data sets available (see Section \ref{sec:data}) with combining the two datasets of HEP papers, as well as subsampling the CORA dataset to find the ideal mixture. After all, in spite of the common wisdom that increasing the amount of training data will improve generalisation and model performance, it is not clear what effects combining different ground truths, namely CORA and HEP, will have. One may imagine that generalising over a hybrid dataset might construct a misleading model when it comes to evaluate on a pure HEP dataset, especially when the CORA \emph{header} set dwarfs our HEP one. The baseline results are given in Table \ref{table:baselineresults} and these show the micro average of F1 scores for each of the data configurations. Of most importance are the scenarios involving the HEP training set taken alone, and the HEP training set appending the CORA set, as these are the ones used in the other experiments. Surprisingly, for the \emph{header} model, there is a degradation of performance when the CORA set is appended. We pursue this curiosity in Table \ref{table:subsampling}, where we see mixed results for \emph{subsampling} CORA data, appending an extra randomly chosen third of the data at a time. The pure HEP set with no appending of CORA yields a model $(\mu = 90.19, \sigma = 2.63)$ second only to the case where we append $2/3$ of the CORA dataset $(\mu = 90.19, \sigma = 2.63)$. The case of appending $1/3$ CORA experienced a major outlier in the third iteration of cross-validation, where it scored an F1 micro average of as little as $78.15$, performing badly across all classes. This result notwithstanding, it seems there is some value in using a hybrid dataset yet increasing the proportion of CORA papers ultimately degrades performance. This strongly supports our hypothesis that there a qualitative difference between HEP papers and general papers, and that training a successful model demands an expansion of the HEP dataset. In further sections, we see the same effect when we train on the HEP dataset and HEP appending CORA. For a visualisation of the subsampling results, see Figure \ref{fig:subsampling_micro} in Appendix \ref{AppendixB}.
 
 \begin{table}[h]
 \begin{center}
@@ -224,7 +224,7 @@ Features & Model & Variation & Data & Mean & Std.\\
 \end{center}
 \end{table}
 
-In contrast, the \emph{segmentation} model generally benefitted from combining data sets, with HEP appending CORA $(\mu = 93.58, \sigma = 1.65)$ and CORA appending HEP $(\mu = 94.39, \sigma = 2.72)$ respectively improving over HEP only $(\mu = 92.98, \sigma = 0.79)$ and CORA only $(\mu = 94.02, \sigma = 2.96)$. This seems reasonable, as the HEP set in this case is larger than the CORA one (see Section), and appending the CORA dataset can assist model performance without overwhelming the HEP characteristics as it does for the \emph{header} model. Figure \ref{fig:segmentation_baseline_confusion} gives a confusion matrix for the \emph{segmentation} model evaluated with the baseline feature on the HEP training set. The main diagonal (in dark blue) shows the majority correctness of the model. Notably, the \emph{body} class (the lines belonging to the main article sections) shows a high true positive (TP) rate (observe the contrast in the \emph{body} row), but also a high number of false positives (observe the confusion in the body column), equivalently, the false \emph{negatives} of other classes. Thus, lower precision and higher recall. This is to be expected, as \emph{body} is the dominant class for the \emph{segmentation} model, and (a similar result may be seen for the \emph{abstract} class in the \emph{header} model). The confusion matrix also reveals large amounts of \emph{header} matter lost to the \emph{body} class. This is of greatest concern, as the extracted data ought to supply the \emph{header} model with its inputs at prediction time.
+In contrast, the \emph{segmentation} model generally benefitted from combining data sets, with HEP appending CORA $(\mu = 93.58, \sigma = 1.65)$ and CORA appending HEP $(\mu = 94.39, \sigma = 2.72)$ respectively improving over HEP only $(\mu = 92.98, \sigma = 0.79)$ and CORA only $(\mu = 94.02, \sigma = 2.96)$. This seems reasonable, as the HEP set in this case is larger than the CORA one (see Section), and appending the CORA dataset can assist model performance without overwhelming the HEP characteristics as it does for the \emph{header} model. Figure \ref{fig:segmentation_baseline_confusion} gives a confusion matrix for the \emph{segmentation} model evaluated with the baseline feature on the HEP training set. The main diagonal (in dark blue) shows the majority correctness of the model. Notably, the \emph{body} class (the lines belonging to the main article sections) shows a high true positive (TP) rate (observe the contrast in the \emph{body} row), but also a high number of false positives (observe the confusion in the body column), equivalently, the false \emph{negatives} of other classes. Thus, lower precision and higher recall. This is to be expected, as \emph{body} is the dominant class for the \emph{segmentation} model, and (a similar result may be seen for the \emph{abstract} class in the \emph{header} model, a visualisation of which may be seen in \ref{fig:confusion_header} in Appendix \ref{AppendixB}.). The confusion matrix also reveals large amounts of \emph{header} matter lost to the \emph{body} class. This is of greatest concern, as the extracted data ought to supply the \emph{header} model with its inputs at prediction time. Our extension (Section \ref{subsec:extensions}) allows us to see which documents the misclassifications are most attributed to.
 
 % \begin{figure}[h]
 % \center
@@ -236,18 +236,20 @@ In contrast, the \emph{segmentation} model generally benefitted from combining d
 \begin{figure}[h]
 \center
 \includegraphics[width=5.5in]{Figures/baseline_confusion_segmentation.pdf}
-\caption{Comparison of baseline, levenshtein and character class features on header matter.}
+\caption{Confusion matrix for \emph{segmentation} model with baseline features, trained on pure HEP dataset. Counts are given, as well as a heatmap to indicate the most frequent classifications.}
 \label{fig:segmentation_baseline_confusion}
 \end{figure}
 
-\begin{figure}[h]
-\center
-\includegraphics[width=5.5in]{Figures/micro_subsampling.pdf}
-\caption{Comparison of baseline, levenshtein and character class features on header matter.}
-\label{fig:references} 
-\end{figure}
+% \begin{figure}[h]
+% \center
+% \includegraphics[width=5.5in]{Figures/micro_subsampling.pdf}
+% \caption{Comparison of baseline, levenshtein and character class features on header matter.}
+% \label{fig:references} 
+% \end{figure}
 
 \subsection{Block Size}
+
+The results for block size (Table \ref{table:blockshaperesults}) were disappointing, with only the most marginal differences with respect to the baseline $(\mu = 90.19, \sigma = 2.63)$. The category combining height and width features suffered a major outlier in the XXXth iteration. The results are otherwise quite uniform. We may speculate as to the by noticing that the block size feature are calculated  Do not make good indicators .
 
 \begin{table}[h]
 \begin{center}
@@ -255,9 +257,9 @@ In contrast, the \emph{segmentation} model generally benefitted from combining d
 \hline
 Features & Model & Variation & Data & Mean & Std.\\
 \hline
-\multirow{4}{*}{Baseline} & \multirow{4}{*}{Header} & Height & HEP & 90.5 & 2.55\\\cline{3-6}
+\multirow{4}{*}{Block size} & \multirow{4}{*}{Header} & \textbf{Height} & HEP & 90.5 & 2.55\\\cline{3-6}
 & & Width & HEP & 90.46 & 2.75\\\cline{3-6}
-& & Height & HEP  & 88.47 & 3.1\\\cline{3-6}
+& & Height \& width & HEP  & 88.47 & 3.1\\\cline{3-6}
 & & Area & HEP  & 90.42 & 2.55\\\cline{3-6}
 \hline
 \end{tabular}
@@ -266,9 +268,9 @@ Features & Model & Variation & Data & Mean & Std.\\
 \end{center}
 \end{table}
 
-The results for block size (Table \ref{table:blockshaperesults}) were disappointing. The effect  Do not make good indicators $(\mu = 90.19, \sigma = 2.63)$.
-
 \subsection{Character Classes}
+
+Almost every character class strategy made an improvement over the baseline (with the exception of the simple \emph{binary} variation). A visualisation of the results may be seen in Figure \ref{fig:classes_micro} in Appendix \ref{AppendixB}. Thus, the results support our intuitions about features based on character classes. The variations \emph{binary only} and \emph{decimal only} refer to the removal of the basic baseline features addressing punctuation. Interestingly, removing these \emph{improved} performance, even for the baseline. The best result was for the \emph{20-point} variation $(\mu = 93.75, \sigma = 2.56)$ compared with the baseline, $(\mu = 92.98, \sigma = 0.79)$, corresponding with an $11\%$ reduction in error on the micro average level, as well as a $13\%$ reduction in error (F1) for \emph{references}, and a $20\%$ reduction in error for the \emph{header}, the two most important classes. The \emph{20-point} variation used a finer discretisation than the others. Future work might therefore try further refining the discretisation strategies. See Section \ref{sec:keyresults} for further comparisons.
 
 \begin{table}[h]
 \begin{center}
@@ -281,17 +283,13 @@ Features & Model & Variation & Data & Mean & Std.\\
 & & Decimal (round down) & HEP & 93.57 & 2.2\\\cline{3-6}
 & & Decimal only & HEP & 93.61 & 1.99\\\cline{3-6}
 & & Decimal (round nearest) & HEP & 93.37 & 2.27\\\cline{3-6}
-& & Decimal (20 point) & HEP & 93.75 & 2.56\\\cline{3-6}
+& & \textbf{Decimal (20 point)} & HEP & 93.75 & 2.56\\\cline{3-6}
 \hline
 \end{tabular}
-\caption[Mean and standard deviation for tuning the variance of the $l_2$ variance parameter.]{Mean and standard deviation for tuning the variance of the $l_2$ variance parameter.}
+\caption[Mean and standard deviation for character class discretisation strategies.]{Mean and standard deviation for character class discretisation strategies.}
 \label{table:characterclassresults}
 \end{center}
 \end{table}
-
-Interestingly, removing the basic baseline features addressing punctuation \emph{improved} performance, both with and without our own character class features (compare Binary with Binary only etc.).
-
-!![MICRO PLOT]!!
 
 \subsection{Dictionaries}
 
@@ -337,6 +335,8 @@ Features & Model & Variation & Data & Mean & Std.\\
 
 \subsection{Levenshtein Distance}
 
+All levenshtein distance feature thresholding strategies performed better than the baseline, and the scenarios combining multiple thresholds, ($T_1 = 0.1, T_2 = 0.4$) and \emph{all} show a clear superiority to the others. A visualisation of the results can be seen in Figure \ref{fig:levenshtein_micro} in Appendix \ref{AppendixB}. The strategy, \emph{all}, which used all of the listed thresholds to make a $5-point$ categorical variable for levenshtein distance gave the best performance of $(\mu = 94.06, \sigma = 1.81)$, compared with the baseline, $(\mu = 92.98, \sigma = 0.79)$, corresponding with an $15\%$ reduction in error on the micro average level, as well as a $20\%$ reduction in error (F1) for \emph{references}, and a $19\%$ reduction in error for the \emph{header}, the two most important classes. The results therefore support of intutions of the effectiveness of this feature. Such as it is, from the laborious data acquisition process (Section \ref{sec:data}), our observations were of the regular misclassification of delimiting token classes such as \emph{page} and \emph{headnote} most, raising the FP rate for classes such as references, hence lowering the precision and $F_1$ scores alike. It is therefore highly  
+
 \begin{table}[h]
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|}
@@ -348,7 +348,7 @@ Features & Model & Variation & Data & Mean & Std.\\
 & & $T_1 = 0.4$ & HEP & 93.44 & 1.28\\\cline{3-6}
 & & $T_1 = 0.8$ & HEP & 93.07 & 1.07\\\cline{3-6}
 & & $T_1 = 0.1, T_2 = 0.4$ & HEP & 93.78 & 1.83\\\cline{3-6}
-& & \textbf{All} & HEP & \textbf{94.06} & \textbf{1.81}\\\cline{3-6}
+& & \textbf{All} & HEP & 94.06 & 1.81\\\cline{3-6}
 \hline
 \end{tabular}
 \caption[Mean and standard deviation for tuning the variance of the $l_2$ variance parameter.]{Mean and standard deviation for tuning the variance of the $l_2$ variance parameter.}
@@ -356,23 +356,7 @@ Features & Model & Variation & Data & Mean & Std.\\
 \end{center}
 \end{table}
 
-All performed better than the baseline, and the scenarios combining multiple thresholds, ($T_1 = 0.1, T_2 = 0.4$) and All.
-
-\begin{figure}[h]
-\center
-\includegraphics[width=5.5in]{Figures/levenshtein_micro.pdf}
-\caption{Comparison of baseline, levenshtein and character class features on header matter.}
-\label{fig:micro}
-\end{figure}
-
 \subsection{Regularisation}
-
-\begin{figure}[h]
-\center
-\includegraphics[width=3.5in]{Figures/histogram.pdf}
-\caption{Comparison of baseline, levenshtein and character class features on header matter.}
-\label{fig:histogram}
-\end{figure}
 
 Our experiments in tuning the variance of the $l_2$ regularisation confirmed the earlier findings of (\cite{Peng04accurateinformation}). There is little observable difference in the performance of different choices of variance parameter, which we give in Table \ref{table:regularisationresults}. Performance is marginally worse at the extremities, namely where no penalty is imposed, and for the greatest penalty, $\sigma^2 = \exp\{-3\}$. Naturally, as a penalty is increased towards infinity, the model parameters go to 0, and performance degrades maximally. Figure \ref{fig:histogram} shows an empirical Normal distribution for a normalised model. That regularisation has little effect implies that it is difficult to overfit the model, and that the high dimensionality of the model perhaps provides in-built regularisation. Training with another algorithm supporting a different regularisation technique (such as $l_1$) could form the basis of future work.
 
@@ -393,6 +377,13 @@ Features & Model & Variation & Mean & Std.\\
 \label{table:regularisationresults}
 \end{center}
 \end{table}
+
+\begin{figure}[h]
+\center
+\includegraphics[width=3.5in]{Figures/histogram.pdf}
+\caption{Comparison of baseline, levenshtein and character class features on header matter.}
+\label{fig:histogram}
+\end{figure}
 
 \subsection{Token Extensions}
 \label{subsec:tokenextensionresults}
@@ -416,7 +407,7 @@ Features & Model & Variation & Data & Mean & Std.\\
 \end{center}
 \end{table}
 
-\subsection{Results Summary}
+\section{Key Results}
 
 Here we visualise the most interesting comparisons drawn from results from Sections \ref{subsec:baselineresults} to \ref{subsec:tokenextensionresults}.
 
