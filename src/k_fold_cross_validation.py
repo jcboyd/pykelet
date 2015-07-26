@@ -228,9 +228,9 @@ def plot_confusion_matrix(name, type, matrix, path, show_counts):
     yticks(range(len(labels)), [])
     # Place labels on minor ticks
     gca().set_xticks([x + 0.5 for x in range(len(labels))], minor=True)
-    gca().set_xticklabels(labels, rotation='90', fontsize=8, minor=True)
+    gca().set_xticklabels(labels, rotation='90', fontsize=10, minor=True)
     gca().set_yticks([y + 0.5 for y in range(len(labels))], minor=True)
-    gca().set_yticklabels(labels[::-1], fontsize=8, minor=True)
+    gca().set_yticklabels(labels[::-1], fontsize=10, minor=True)
     # Finally, hide minor tick marks...
     gca().tick_params('both', width=0, which='minor')
 
@@ -240,7 +240,7 @@ def plot_confusion_matrix(name, type, matrix, path, show_counts):
             for x in range(len(counts[y])):
                 if counts[::-1][y][x] != 0:
                     text(x + 0.5, y + 0.5, counts[::-1][y][x],
-                         fontsize=8,
+                         fontsize=9,
                          horizontalalignment='center',
                          verticalalignment='center')
 
