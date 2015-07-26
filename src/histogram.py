@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 with open('hex') as f:
     floats = [float.fromhex(x) for x in f.read().split()]
 
-n, bins, patches = plt.hist(floats, 50, facecolor='blue')
+n, bins, patches = plt.hist(floats, 50, facecolor='royalblue')
 
 plt.xlabel(r'$\beta$')
 plt.ylabel('Density')

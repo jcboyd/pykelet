@@ -175,10 +175,9 @@ label & accuracy & precision & recall & f1 & acc. & prec. & rec. & f1\\
 \end{table}
 
 \section{Results}
+\label{sec:results}
 
 As specified earlier, we use the micro average of model F1 scores to compare model performance, only looking to specific fields when more nuanaced comparison are necessary. We hereafter state micro averages unless otherwise specified.
-
-\label{sec:results}
 
 \subsection{Baseline}
 \label{subsec:baslineresults}
@@ -271,11 +270,30 @@ Features & Model & Variation & Data & Mean & Std.\\
 \end{center}
 \end{table}
 
-The results for block size (Table \ref{table:blockshaperesults}) were disappointing. The effect  Do not make good indicators.
-
-!![TABLE??]!!
+The results for block size (Table \ref{table:blockshaperesults}) were disappointing. The effect  Do not make good indicators $(\mu = 90.19, \sigma = 2.63)$.
 
 \subsection{Character Classes}
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Features & Model & Variation & Data & Mean & Std.\\
+\hline
+\multirow{6}{*}{Character classes} & \multirow{6}{*}{Segmentation} & Binary & HEP & 92.82 & 1.26\\\cline{3-6}
+& & Binary only & HEP & 93.5 & 2.17\\\cline{3-6}
+& & Decimal (round down) & HEP & 93.57 & 2.2\\\cline{3-6}
+& & Decimal only & HEP & 93.61 & 1.99\\\cline{3-6}
+& & Decimal (round nearest) & HEP & 93.37 & 2.27\\\cline{3-6}
+& & Decimal (20 point) & HEP & 93.75 & 2.56\\\cline{3-6}
+\hline
+\end{tabular}
+\caption[Mean and standard deviation for tuning the variance of the $l_2$ variance parameter.]{Mean and standard deviation for tuning the variance of the $l_2$ variance parameter.}
+\label{table:characterclassresults}
+\end{center}
+\end{table}
+
+Interestingly, removing the basic baseline features addressing punctuation \emph{improved} performance, both with and without our own character class features (compare Binary with Binary only etc.).
 
 !![MICRO PLOT]!!
 
@@ -321,7 +339,28 @@ Features & Model & Variation & Data & Mean & Std.\\
 \end{center}
 \end{table}
 
-\subsection{Levenshtein}
+\subsection{Levenshtein Distance}
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Features & Model & Variation & Data & Mean & Std.\\
+\hline
+\multirow{6}{*}{Levenshtein Distance} & \multirow{6}{*}{Segmentation} & $T_1 = 0.1$ & HEP & 93.51 & 1.37\\\cline{3-6}
+& & $T_1 = 0.2$ & HEP & 92.95 & 1.19\\\cline{3-6}
+& & $T_1 = 0.4$ & HEP & 93.44 & 1.28\\\cline{3-6}
+& & $T_1 = 0.8$ & HEP & 93.07 & 1.07\\\cline{3-6}
+& & $T_1 = 0.1, T_2 = 0.4$ & HEP & 93.78 & 1.83\\\cline{3-6}
+& & \textbf{All} & HEP & \textbf{94.06} & \textbf{1.81}\\\cline{3-6}
+\hline
+\end{tabular}
+\caption[Mean and standard deviation for tuning the variance of the $l_2$ variance parameter.]{Mean and standard deviation for tuning the variance of the $l_2$ variance parameter.}
+\label{table:levenshteinresults}
+\end{center}
+\end{table}
+
+All performed better than the baseline, and the scenarios combining multiple thresholds, ($T_1 = 0.1, T_2 = 0.4$) and All.
 
 \begin{figure}[h]
 \center
@@ -362,6 +401,8 @@ Features & Model & Variation & Mean & Std.\\
 \subsection{Token Extensions}
 \label{subsec:tokenextensionresults}
 
+The results for token extensions (Table \ref{table:tokenextensions}) are quite modest. None significantly exceed the baseline result with the same data configuration $(\mu = 92.98, \sigma = 0.79)$. Of note is the low variance across the variations compared with other feature categories. The result supports our earlier intuitions. Though it may be helpful to establish a vocabularly that can differentiate between sections, the result is a feature space that is too diffuse to learn useful indicators for lines, which are better characterised, for example, by character class features (Section \ref{subsec:characterclasses}).
+
 \begin{table}[h]
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|}
@@ -375,7 +416,7 @@ Features & Model & Variation & Data & Mean & Std.\\
 \hline
 \end{tabular}
 \caption[Mean and standard deviation for tuning the variance of the $l_2$ variance parameter.]{Mean and standard deviation for tuning the variance of the $l_2$ variance parameter.}
-\label{table:baselineresults}
+\label{table:tokenextensions}
 \end{center}
 \end{table}
 

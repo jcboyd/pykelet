@@ -258,23 +258,23 @@ if __name__ == '__main__':
     n_folds = 5
     scenarios = []
 
-    # theme = 'Levenshtein'
+    theme = 'Levenshtein'
 
-    # directories = [Scenarios.S_H_Lev02['path'],
-    #                Scenarios.S_H_Lev08['path'],
-    #                Scenarios.S_H_Lev005['path'],
-    #                Scenarios.S_H_Lev04['path'],
-    #                Scenarios.S_H_Lev01['path'],
-    #                Scenarios.S_H_Lev0104['path'],
-    #                Scenarios.S_H_LevAll['path']]
+    directories = [Scenarios.S_H_Lev02['path'],
+                   Scenarios.S_H_Lev08['path'],
+                   Scenarios.S_H_Lev005['path'],
+                   Scenarios.S_H_Lev04['path'],
+                   Scenarios.S_H_Lev01['path'],
+                   Scenarios.S_H_Lev0104['path'],
+                   Scenarios.S_H_LevAll['path']]
 
-    # names = [Scenarios.S_H_Lev02['name'],
-    #          Scenarios.S_H_Lev08['name'],
-    #          Scenarios.S_H_Lev005['name'],
-    #          Scenarios.S_H_Lev04['name'],
-    #          Scenarios.S_H_Lev01['name'],
-    #          Scenarios.S_H_Lev0104['name'],
-    #          Scenarios.S_H_LevAll['name']]
+    names = [Scenarios.S_H_Lev02['name'],
+             Scenarios.S_H_Lev08['name'],
+             Scenarios.S_H_Lev005['name'],
+             Scenarios.S_H_Lev04['name'],
+             Scenarios.S_H_Lev01['name'],
+             Scenarios.S_H_Lev0104['name'],
+             Scenarios.S_H_LevAll['name']]
 
     # directories = [Scenarios.H_H['path'],
     #                Scenarios.H_HappC333['path'],
@@ -461,17 +461,17 @@ if __name__ == '__main__':
     #          Scenarios.S_H_dicts_stops_3['name'],
     #          Scenarios.S_HappC_dicts_stops_3['name']]
 
-    theme = 'Extensions'
+    # theme = 'Extensions'
 
-    directories = [Scenarios.S_H_5['path'],
-                   Scenarios.S_H_10['path'],
-                   Scenarios.S_H_15['path'],
-                   Scenarios.S_H_20['path']]
+    # directories = [Scenarios.S_H_5['path'],
+    #                Scenarios.S_H_10['path'],
+    #                Scenarios.S_H_15['path'],
+    #                Scenarios.S_H_20['path']]
 
-    names = [Scenarios.S_H_5['name'],
-             Scenarios.S_H_10['name'],
-             Scenarios.S_H_15['name'],
-             Scenarios.S_H_20['name']]
+    # names = [Scenarios.S_H_5['name'],
+    #          Scenarios.S_H_10['name'],
+    #          Scenarios.S_H_15['name'],
+    #          Scenarios.S_H_20['name']]
 
     # Load data
     for directory in directories:

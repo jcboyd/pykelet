@@ -6,11 +6,11 @@
 
 \lhead{Chapter 4. \emph{Data, Methods, and Implementation}} % This is for the header on each page - perhaps a shortened title
 
-\emph{This chapter presents the different strands of the work. The work is divided into three components: first, the procurement of HEP training data with on which to perform the experiments; then, the implementations of extensions to GROBID to facilitate the feature engineering and evaluations, as well as the pipeline assembled for automating the experimentation; and finally, the different categories of feature engineering, and our reasons for choosing them, supplying, where relevant, statistical analyses to support our intuitions.}
+\emph{This chapter presents the different strands of our work. The work is divided into three components: first, the procurement of HEP training data on which to perform experiments; the implementations of extensions to GROBID to facilitate the feature engineering and evaluations, as well as the pipeline assembled for automating the experimentation; and finally, the different categories of feature engineering, and our reasons for choosing them, supplying, where relevant, statistical analyses to support our intuitions.}
 
 \section{Assessments}
 
-As articulated in Chapter \ref{Chapter3}, GROBID manages a hierarchy of models that propagates classified information from top to bottom in a cascade. Our objectives are therefore to enhance some models within the cascade for HEP papers. It does not, on the other hand, make sense to attempt to improve all models. After all, we may assume a HEP \emph{date} is no different from dates printed in other scientific papers. Aside from feature engineering, it is hard to imagine improving performance of these models which is exemplary. The same goes for author names, and with little exception\footnote{It is in fact true that HEP collaborations feature in isolated references in HEP papers (see Section \ref{sec:futurework}).}, reference lists and their contents. Undoubtedly, the models with the most promising scope for improvement are the \emph{header} and \emph{segmentation} models. It is these models that address the parts of an article most distinct in scientific papers. Specifically, physics journals have recurring styles and layouts for headers sections that are distinct from others publishers. In addition, the vocabulary of a HEP paper header will be distinct from that of papers from other branches of science. These should be both trained for and engineered for, for example through the use of dictionary-based features (see Section \ref{subsec:dicts}). Exceptionally, the \emph{header} model is not, by default, part of the cascade, rather, the header section is extracted separately using heuristics based on locating the start of the body (usually identified by the heading, `Introduction'). The reason for this approach is that, on average, it is more accurate than relying on the \emph{segmentation} model for finding front matter, given the limited amount of \emph{segmentation} training data. However, this precludes the modelling of \emph{discontinuous} front matter, which may occur at the base of a first page, at the very end of an article, or just about anywhere else (see Figure \ref{fig:articlesamples}). Reconnecting the \emph{header} model with with the \emph{segmentation} model is therefore an implementation objective. Thus, the \emph{header} model may be improved for a number of reasons, including:
+As articulated in Chapter \ref{Chapter3}, GROBID manages a hierarchy of models that propagates classified information from top to bottom in a cascade. Our objectives are therefore to enhance some models within the cascade for HEP papers. It does not, on the other hand, make sense to attempt to improve all models. After all, we may assume a HEP \emph{date} is no different from dates printed in other scientific papers.The same goes for author names, and with little exception\footnote{It is in fact true that HEP collaborations feature in isolated references in HEP papers (see Section \ref{sec:futurework}).}, reference lists and their contents. Undoubtedly, the models with the most promising scope for improvement are the \emph{header} and \emph{segmentation} models. It is these models that address the parts of an article most distinct in scientific papers. Specifically, physics journals have recurring styles and layouts for headers sections that are distinct from others publishers. In addition, the vocabulary of a HEP paper header will be distinct from that of papers from other branches of science. These should be both trained for and engineered for, for example through the use of dictionary-based features (see Section \ref{subsec:dicts}). Exceptionally, the \emph{header} model is not, by default, part of the cascade, rather, the header section is extracted separately using heuristics based on locating the start of the body (usually identified by the heading, `Introduction'). The reason for this approach is that, on average, it is more accurate than relying on the \emph{segmentation} model for finding front matter, given the limited amount of \emph{segmentation} training data. However, this precludes the modelling of \emph{discontinuous} front matter, which may occur at the base of a first page, at the very end of an article, or just about anywhere else (see Figure \ref{fig:articlesamples}). Reconnecting the \emph{header} model with with the \emph{segmentation} model is therefore an implementation objective. Thus, the \emph{header} model may be improved for a number of reasons, including:
 
 \begin{enumerate}
 \item physics publishers present a unique format not found in CORA papers;
@@ -26,7 +26,7 @@ The \emph{segmentation} model may also be improved for a number of reasons:
 \item the dataset is small (we more than double it in Section \ref{sec:data}).
 \end{enumerate}
 
-Note that the \emph{segmentation} model is the parent model of the entire cascade, and therefore any improvement to it will benefit all other models at prediction time. Aside from being the root of the cascade, the \emph{segmentation} model is special in that it models a full line at the token level, rather than a single character string such as for the \emph{header} model. We are mindful of this distinction as we go about our feature engineering. Our focus is therefore on the two models, \emph{header} and \emph{segmentation}. Hence, we require two separate training sets of HEP papers, one for each model. Incidentally, both models require that for each paper we produce a TEI representation and a feature file of extracted features, as introduced in Section \ref{sec:grobid}.
+Note that the \emph{segmentation} model is the parent model of the entire cascade, and therefore any improvement to it will benefit all other models at prediction time. Aside from being the root of the cascade, the \emph{segmentation} model is special in that it models a full line at the token level, rather than a single character string such as for the \emph{header} model. We are mindful of this distinction as we go about our feature engineering. Our focus is therefore on the two models, \emph{header} and \emph{segmentation}. Hence, we require two separate training sets of HEP papers. Both models require that for each paper we produce a TEI representation and a feature file of extracted features, as introduced in Section \ref{sec:grobid}.
 
 \begin{figure}[b]
 \centering
@@ -262,7 +262,7 @@ The effects of our extensions are seen in Sections \ref{subsec:pipeline}, \ref{s
 
 The most significant extension made was with the class, \texttt{ConfusionMatrix.java}, used within GROBID's \texttt{EvaluationUtilities.java} framework to create confusion matrix outputs, ultimately visualised by the pipeline (see Chapter \ref{Chapter5}). These allowed us to see which misclassifications were made most frequently. In addition, \texttt{ConfusionMatrix.java} tracks the documents on which the the model committed the most errors for each misclassification. A sample output is given in Figure \ref{fig:topk}. Modelling collaborations as a class of the \emph{header} model involved extending GROBID's training and tagging modules alike. An XML structure conforming to the TEI standard (Section \ref{subsec:tei}) was selected. An example of a successful prediction of a collaboration is given in Figure \ref{fig:collaboration}.
 
-\begin{figure}[h]
+\begin{figure}[t]
 \centering
 \begin{BVerbatim}
 (<header>, <body>)
@@ -276,7 +276,7 @@ The most significant extension made was with the class, \texttt{ConfusionMatrix.
 \label{fig:topk}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[t]
 \lstset{language=XML}
 \begin{lstlisting}
 <author>
@@ -307,4 +307,3 @@ The process uses Python scientific computing library, \texttt{numpy}, to randoml
 \caption{An illustration of the experimentation pipeline.}
 \label{fig:pipeline}
 \end{figure}
-
