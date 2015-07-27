@@ -46,14 +46,14 @@ F_1 = \frac{2 \times \text{precision} \times \text{recall}}{\text{precision} + \
 that is, the harmonic mean of precision and recall (the ``1'' in $F_1$ indicates the two are evenly weighted). The $F_1$ statistic is a nice way of summarising both at once as it is simply the harmonic mean of the two. Furthermore, because of this, a large imbalance in recall and precision resuts in a lower $F_1$ score. It is necessary to be good in both precision and recall to have a good $F_1$ score; the harmonic mean of any data is always upper-bounded by its arithmetic mean. Thus, the $F_1$ score addresses their shortcomings simultaneously. To summarise each of these statistics over an array of classes, we adopt two approaches: macro and micro averages. A macro average is the aggregation of statistics \emph{a posteriori}. For example, for accuracy,
 
 \begin{equation}
-\text{Accuracy}_{macro} = \frac{1}{N}\sum_{i=1}^{N}\text{Accuracy}_i,
+\text{Accuracy}_{macro} = \frac{1}{N}\sum_{n=1}^{N}\text{Accuracy}_n,
 \label{eq:macroaccuracy}
 \end{equation}
 
-where $\text{Accuracy}_i$ is the accuracy for the $ith$ of $N$ classes. By contrast, a micro average is an aggregation of statistics that is in effect weighted by population size. For example, again for accuracy,
+where $\text{Accuracy}_n$ is the accuracy for the $nth$ of $N$ classes. By contrast, a micro average is an aggregation of statistics that is in effect weighted by population size. For example, again for accuracy,
 
 \begin{equation}
-\text{Accuracy}_{micro} = \frac{\sum_{i=1}^N TP_i + TN_i}{\sum_{i=1}^N TP_i + FN_i + FP_i + TN_i},
+\text{Accuracy}_{micro} = \frac{\sum_{n=1}^N TP_n + TN_n}{\sum_{n=1}^N TP_n + FN_n + FP_n + TN_n},
 \label{eq:microaccuracy}
 \end{equation}
 
@@ -103,7 +103,7 @@ Token Extension & First 5 words, first 10, first 15, first 20 & Segmentation & H
 \hline
 Block Size & Height, width, height \& width, area & Header & HEP \\
 \hline
-Levenshtein & $T_1 = 0.05$, $T_1 = 0.1$, $T_1 = 0.2$, $T_1 = 0.4$, $T_1 = 0.8$, ($T_1 = 0.1, T_2 = 0.4$), All & Segmentation & HEP \\
+Levenshtein Distance & $T_1 = 0.05$, $T_1 = 0.1$, $T_1 = 0.2$, $T_1 = 0.4$, $T_1 = 0.8$, ($T_1 = 0.1, T_2 = 0.4$), All & Segmentation & HEP \\
 \hline
 Character Classes & Binary, decimal (round down), decimal (round), decimal (20 point) & Segmentation & HEP \\
 \hline
