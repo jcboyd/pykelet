@@ -93,9 +93,9 @@ Baseline & - & Segmentation, header & CORA, CORA app. HEP, CORA + HEP, HEP, HEP 
 \hline
 Baseline & - & Header & HEP app. 1/3 CORA, HEP app. 2/3 CORA \\
 \hline
-Dictionaries & First order, second order, third order & Segmentation, header & HEP, HEP app. CORA \\
+Dictionaries & 1\textsuperscript{st} order, 2\textsuperscript{nd} order, 3\textsuperscript{rd} order & Segmentation, header & HEP, HEP app. CORA \\
 \hline
-Dicts. + Stops & First order, second order, third order, stops only & Segmentation, header & HEP, HEP app. CORA \\
+Dicts. + Stops & 1\textsuperscript{st} order, 2\textsuperscript{nd} order, 3\textsuperscript{rd} order, stops only & Segmentation, header & HEP, HEP app. CORA \\
 \hline
 Regularisation & $\sigma^2=0$, $\sigma^2=\exp\{-6\}$, $\sigma^2=\exp\{-5\}$, $\sigma^2=\exp\{-4\}$, $\sigma^2=\exp\{-3\}$, & Header & HEP \\
 \hline
@@ -182,7 +182,7 @@ As specified earlier, we use the micro average of F1 scores of all model classes
 \subsection{Baseline}
 \label{subsec:baslineresults}
 
-Given the data sets available (see Section \ref{sec:data}) we are able to experiment with the combination of HEP and CORA papers, as well as subsampling the CORA data set to find the ideal mixture. After all, in spite of the common wisdom that increasing the amount of training data will improve generalisation and model performance, it is not clear what effects combining different ground truths will have. One may imagine that generalising over a hybrid data set might construct a misleading model when it comes to evaluate on a pure HEP data set, especially when the CORA \emph{header} set dwarfs our HEP one. The baseline results are given in Table \ref{table:baselineresults} and these show the micro average of F1 scores (see Section \ref{sec:evaluationmethod}) for each of the data configurations. Of most importance are the scenarios involving the HEP training set taken alone, and the HEP training set appending the CORA set, as these evaluate on HEP papers only, and are the configurations used in the other experiments. Surprisingly, for the \emph{header} model, there is a degradation of performance when the CORA set is appended. We pursue this curiosity in Table \ref{table:subsampling}, where we see mixed results for \emph{subsampling} CORA data, appending an extra randomly chosen third of the data at a time. The pure HEP set with no appending of CORA yields a model $(\mu = 90.19, \sigma = 2.63)$ second only to the case where we append $2/3$ of the CORA data set $(\mu = 90.19, \sigma = 2.63)$. The case of appending $1/3$ CORA experienced a major outlier in the third iteration of cross-validation, where it scored an F1 micro average of as little as $78.15$, performing badly across all classes. This result notwithstanding, it seems there is some value in using a hybrid data set yet increasing the proportion of CORA papers ultimately degrades performance. This strongly supports our hypothesis that there a qualitative difference between HEP papers and general papers, and that training a successful model demands an expansion of the HEP data set. In further sections, we see the same effect when we train on the HEP data set and HEP appending CORA. For a visualisation of the subsampling results, see Figure \ref{fig:subsampling_micro} in Appendix \ref{AppendixB}.
+Given the data sets available (see Section \ref{sec:data}) we are able to experiment with the combination of HEP and CORA papers, as well as subsampling the CORA data set to find the ideal mixture. After all, in spite of the common wisdom that increasing the amount of training data will improve generalisation and model performance, it is not clear what effects combining different ground truths will have. One may imagine that generalising over a hybrid data set might construct a misleading model when it comes to evaluate on a pure HEP data set, especially when the CORA \emph{header} set dwarfs our HEP one. The baseline results are given in Table \ref{table:baselineresults} and these show the micro average of F1 scores (see Section \ref{sec:evaluationmethod}) for each of the data configurations. Of most importance are the scenarios involving the HEP training set taken alone, and the HEP training set appending the CORA set, as these evaluate on HEP papers only, and are the configurations used in the other experiments. Surprisingly, for the \emph{header} model, there is a degradation of performance when the CORA set is appended. We pursue this curiosity in Table \ref{table:subsampling}, where we see mixed results for \emph{subsampling} CORA data, appending an extra randomly chosen third of the data at a time. The pure HEP set with no appending of CORA yields a model $(\mu = 90.19, \sigma = 2.63)$ second only to the case where we append $2/3$ of the CORA data set $(\mu = 90.19, \sigma = 2.63)$. The case of appending $1/3$ CORA experienced a major outlier in the third iteration of cross-validation, where it scored an F1 micro average of as little as $78.15$, performing badly across all classes. This result notwithstanding, it seems there is some value in using a hybrid data set yet increasing the proportion of CORA papers ultimately degrades performance. This strongly supports our hypothesis that there a qualitative difference between HEP papers and general papers, and that training a successful model demands an expansion of the HEP data set. In further sections, we see the same effect when we train on the HEP data set and HEP appending CORA. For a visualisation of the subsampling results, see Figure \ref{fig:subsampling_micro} in Appendix \ref{AppendixB}. It should be noted, in addition, the successful predictions of our newly introduced collaboration class for the header model (see Section \ref{sec:implementation}).
 
 \begin{table}[t]
 \begin{center}
@@ -215,7 +215,7 @@ Features & Model & Variation & Data & Mean & Std.\\
 \hline
 \multirow{4}{*}{Baseline} & \multirow{4}{*}{Header} & \multirow{4}{*}{-} & HEP & 90.19 & 2.63\\\cline{4-6}
 & & & HEP app. 1/3 CORA & 89.15 & 5.75\\\cline{4-6}
-& & & HEP app. 2/3 CORA & 92.1 & 2.43\\\cline{4-6}
+& & & \textcolor{red}{HEP app. 2/3 CORA} & 92.1 & 2.43\\\cline{4-6}
 & & & HEP app. CORA & 89.54 & 3.76\\\cline{4-6}
 \hline
 \end{tabular}
@@ -241,7 +241,7 @@ In contrast, the \emph{segmentation} model generally benefitted from combining d
 \hline
 Features & Model & Variation & Data & Mean & Std.\\
 \hline
-\multirow{4}{*}{Block size} & \multirow{4}{*}{Header} & \textbf{Height} & HEP & 90.5 & 2.55\\\cline{3-6}
+\multirow{4}{*}{Block size} & \multirow{4}{*}{Header} & \textcolor{red}{Height} & HEP & 90.5 & 2.55\\\cline{3-6}
 & & Width & HEP & 90.46 & 2.75\\\cline{3-6}
 & & Height \& width & HEP  & 88.47 & 3.1\\\cline{3-6}
 & & Area & HEP  & 90.42 & 2.55\\\cline{3-6}
@@ -269,7 +269,7 @@ Features & Model & Variation & Data & Mean & Std.\\
 & & Decimal (round down) & HEP & 93.57 & 2.2\\\cline{3-6}
 & & Decimal only & HEP & 93.61 & 1.99\\\cline{3-6}
 & & Decimal (round nearest) & HEP & 93.37 & 2.27\\\cline{3-6}
-& & \textbf{Decimal (20 point)} & HEP & 93.75 & 2.56\\\cline{3-6}
+& & \textcolor{red}{Decimal (20 point)} & HEP & 93.75 & 2.56\\\cline{3-6}
 \hline
 \end{tabular}
 \caption[Mean and standard deviation for character class discretisation strategies.]{Mean and standard deviation for character class discretisation strategies.}
@@ -287,31 +287,31 @@ Dictionary-based features, as described in Section \ref{subsec:dicts}, make use 
 \hline
 Features & Model & Variation & Data & Mean & Std.\\
 \hline
-\multirow{12}{*}{Dictionaries} & \multirow{6}{*}{Header} & \multirow{2}{*}{+/-1} & HEP & 90.75 & 2.5\\\cline{4-6}
+\multirow{12}{*}{Dictionaries} & \multirow{6}{*}{Header} & \multirow{2}{*}{\textcolor{red}{1\textsuperscript{st} order}} & \textcolor{red}{HEP} & 90.75 & 2.5\\\cline{4-6}
 & & & HEP app. CORA & 87.65 & 6.49\\\cline{3-6}
-& & \multirow{2}{*}{+/-2} & HEP & 90.75 & 3.01\\\cline{4-6}
+& & \multirow{2}{*}{2\textsuperscript{nd} order} & HEP & 90.75 & 3.01\\\cline{4-6}
 & & & HEP app. CORA & 88.78 & 7.46\\\cline{3-6}
-& & \multirow{2}{*}{+/-3} & HEP & 87.67 & 7.55\\\cline{4-6}
+& & \multirow{2}{*}{3\textsuperscript{rd} order} & HEP & 87.67 & 7.55\\\cline{4-6}
 & & & HEP app. CORA & 89.78 & 5.99\\\cline{2-6}
-& \multirow{6}{*}{Segmentation} & \multirow{2}{*}{+/-1} & HEP & 93.56 & 1.79\\\cline{4-6}
-& & & HEP app. CORA & 93.91 & 2.07\\\cline{3-6}
-& & \multirow{2}{*}{+/-2} & HEP & 92.16 & 1.61\\\cline{4-6}
+& \multirow{6}{*}{Segmentation} & \multirow{2}{*}{\textcolor{red}{1\textsuperscript{st} order}} & HEP & 93.56 & 1.79\\\cline{4-6}
+& & & \textcolor{red}{HEP app. CORA} & 93.91 & 2.07\\\cline{3-6}
+& & \multirow{2}{*}{2\textsuperscript{nd} order} & HEP & 92.16 & 1.61\\\cline{4-6}
 & & & HEP app. CORA & 93.37 & 1.75\\\cline{3-6}
-& & \multirow{2}{*}{+/-3} & HEP & 93.11 & 2.6\\\cline{4-6}
+& & \multirow{2}{*}{3\textsuperscript{rd} order} & HEP & 93.11 & 2.6\\\cline{4-6}
 & & & HEP app. CORA & 93.58 & 1.89\\
 \hline
-\multirow{12}{*}{Dicts. \& Stop Words} & \multirow{6}{*}{Header} & \multirow{2}{*}{+/-1} & HEP & 91.21 & 2.03\\\cline{4-6}
+\multirow{12}{*}{Dicts. \& Stop Words} & \multirow{6}{*}{Header} & \multirow{2}{*}{1\textsuperscript{st} order} & HEP & 91.21 & 2.03\\\cline{4-6}
 & & & HEP app. CORA & 88.43 & 5.92\\\cline{3-6}
-& & \multirow{2}{*}{+/-2} & HEP & 88.9 & 7.25\\\cline{4-6}
+& & \multirow{2}{*}{2\textsuperscript{nd} order} & HEP & 88.9 & 7.25\\\cline{4-6}
 & & & HEP app. CORA & 89.87 & 5.03\\\cline{3-6}
-& & \multirow{2}{*}{+/-3} & HEP & 91.35 & 3.1\\\cline{4-6}
+& & \multirow{2}{*}{\textcolor{red}{3\textsuperscript{rd} order}} & \textcolor{red}{HEP} & 91.35 & 3.1\\\cline{4-6}
 & & & HEP app. CORA & 89.76 & 5.99\\\cline{2-6}
-& \multirow{6}{*}{Segmentation} & \multirow{2}{*}{+/-1} & HEP & 93.21 & 1.13\\\cline{4-6}
+& \multirow{6}{*}{Segmentation} & \multirow{2}{*}{1\textsuperscript{st} order} & HEP & 93.21 & 1.13\\\cline{4-6}
 & & & HEP app. CORA & 93.48 & 2.04\\\cline{3-6}
-& & \multirow{2}{*}{+/-2} & HEP & 93.03 & 1.78\\\cline{4-6}
+& & \multirow{2}{*}{2\textsuperscript{nd} order} & HEP & 93.03 & 1.78\\\cline{4-6}
 & & & HEP app. CORA & 93.24 & 3.49\\\cline{3-6}
-& & \multirow{2}{*}{+/-3} & HEP & 93.25 & 2.77\\\cline{4-6}
-& & & HEP app. CORA & 93.58 & 2.66\\
+& & \multirow{2}{*}{\textcolor{red}{3\textsuperscript{rd} order}} & HEP & 93.25 & 2.77\\\cline{4-6}
+& & & \textcolor{red}{HEP app. CORA} & 93.58 & 2.66\\
 \hline
 \end{tabular}
 \caption[Mean and standard deviation for tuning the variance of the $l_2$ variance parameter.]{Mean and standard deviation for tuning the variance of the $l_2$ variance parameter.}
@@ -334,7 +334,7 @@ Features & Model & Variation & Data & Mean & Std.\\
 & & $T_1 = 0.4$ & HEP & 93.44 & 1.28\\\cline{3-6}
 & & $T_1 = 0.8$ & HEP & 93.07 & 1.07\\\cline{3-6}
 & & $T_1 = 0.1, T_2 = 0.4$ & HEP & 93.78 & 1.83\\\cline{3-6}
-& & \textbf{All} & HEP & 94.06 & 1.81\\\cline{3-6}
+& & \textcolor{red}{All} & HEP & 94.06 & 1.81\\\cline{3-6}
 \hline
 \end{tabular}
 \caption[Mean and standard deviation for tuning the variance of the $l_2$ variance parameter.]{Mean and standard deviation for tuning the variance of the $l_2$ variance parameter.}
@@ -353,7 +353,7 @@ Our experiments in tuning the variance of the $l_2$ regularisation confirmed the
 Features & Model & Variation & Mean & Std.\\
 \hline
 \multirow{4}{*}{Baseline} & \multirow{4}{*}{Header} & $\sigma^2 = 0$ & 90.4 & 2.58\\
-& & $\sigma^2 = \exp\{-6\}$ & 90.68 & 3.78\\
+& & $\mathbf \sigma^2 = \exp\{-6\}$ & 90.68 & 3.78\\
 & & $\sigma^2 = \exp\{-5\}$ & 90.64 & 3.78\\
 & & $\sigma^2 = \exp\{-4\}$ & 90.66 & 3.69\\
 & & $\sigma^2 = \exp\{-3\}$ & 90.44 & 2.77\\
@@ -366,7 +366,7 @@ Features & Model & Variation & Mean & Std.\\
 
 \begin{figure}[h]
 \center
-\includegraphics[width=3.5in]{Figures/histogram.pdf}
+\includegraphics[width=5in]{Figures/histogram.pdf}
 \caption{Distribution of model parameters with $l_2$ regularisation.}
 \label{fig:histogram}
 \end{figure}
@@ -382,7 +382,7 @@ The results for token extensions (Table \ref{table:tokenextensions}) are quite m
 \hline
 Features & Model & Variation & Data & Mean & Std.\\
 \hline
-\multirow{4}{*}{Token Extension} & \multirow{4}{*}{Segmentation} & First 5 & HEP & 93.38 & 1.6\\\cline{3-6}
+\multirow{4}{*}{Token Extension} & \multirow{4}{*}{Segmentation} & \textcolor{red}{First 5} & HEP & 93.38 & 1.6\\\cline{3-6}
 & & First 10 & HEP & 92.8 & 1.08\\\cline{3-6}
 & & First 15 & HEP & 93.12 & 1.5\\\cline{3-6}
 & & First 20 & HEP & 93.29 & 1.75\\\cline{3-6}
@@ -394,26 +394,41 @@ Features & Model & Variation & Data & Mean & Std.\\
 \end{table}
 
 \section{Key Results}
+\label{sec:keyresults}
 
 In this section we visualise the most interesting and significant comparisons drawn from the results in Section \ref{sec:results}.
 
 \subsection{Header Model}
 
+\begin{figure}[h]
+\center
+\includegraphics[width=5.5in]{Figures/micro_header.pdf}
+\caption{Comparison of baseline, levenshtein and character class features on header matter.}
+\label{fig:micro}
+\end{figure}
+
 \subsection{Segmentation Model}
 
 \begin{figure}[h]
 \center
-\includegraphics[width=5.5in]{Figures/micro.pdf}
+\includegraphics[width=5.5in]{Figures/classes_confusion_segmentation.pdf}
 \caption{Comparison of baseline, levenshtein and character class features on header matter.}
 \label{fig:micro}
 \end{figure}
 
 \begin{figure}[h]
 \center
-\includegraphics[width=5.5in]{Figures/macro.pdf}
+\includegraphics[width=5.5in]{Figures/micro_segmentation.pdf}
 \caption{Comparison of baseline, levenshtein and character class features on header matter.}
-\label{fig:macro}
+\label{fig:micro}
 \end{figure}
+
+% \begin{figure}[h]
+% \center
+% \includegraphics[width=5.5in]{Figures/macro.pdf}
+% \caption{Comparison of baseline, levenshtein and character class features on header matter.}
+% \label{fig:macro}
+% \end{figure}
 
 \begin{figure}[h]
 \center

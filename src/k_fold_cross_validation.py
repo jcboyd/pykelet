@@ -234,7 +234,7 @@ def plot_confusion_matrix(name, type, matrix, path, show_counts):
     # Finally, hide minor tick marks...
     gca().tick_params('both', width=0, which='minor')
 
-    pcolor(array(proportions[::-1]), cmap=cm.Blues)
+    pcolor(array(proportions[::-1]), cmap=cm.Reds)
     if show_counts:
         for y in range(len(counts)):
             for x in range(len(counts[y])):
@@ -353,6 +353,10 @@ if __name__ == '__main__':
 # k_fold_cross_validation.read_output('Header (HEP)', '../logs/classes/S_H_class_binary', '../figs/classes/S_H_class_binary')
 # k_fold_cross_validation.read_output('Header (HEP)', '../logs/classes/S_H_class_decimal', '../figs/classes/S_H_class_decimal')
 # k_fold_cross_validation.read_output('Header (HEP)', '../logs/classes/S_H_classes_decimal_only', '../figs/classes/S_H_classes_decimal_only')
+# k_fold_cross_validation.read_output('Header (HEP)', '../logs/classes/S_H_class_20_point', '../figs/classes/S_H_class_20_point')
+# k_fold_cross_validation.read_output('Header (HEP)', '../logs/classes/S_H_class_binary_only', '../figs/classes/S_H_class_binary_only')
+# k_fold_cross_validation.read_output('Header (HEP)', '../logs/classes/S_H_class_decimal_only', '../figs/classes/S_H_class_decimal_only')
+# k_fold_cross_validation.read_output('Header (HEP)', '../logs/classes/S_H_class_decimal_round', '../figs/classes/S_H_class_decimal_round')
 
 # k_fold_cross_validation.read_output('Header (HEP)', '../logs/levenshtein/S_H_Lev0.1', '../figs/levenshtein/S_H_Lev0.1')
 # k_fold_cross_validation.read_output('Header (HEP)', '../logs/levenshtein/S_H_Lev0.1+0.4', '../figs/levenshtein/S_H_Lev0.1+0.4')

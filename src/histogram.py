@@ -8,7 +8,7 @@ n, bins, patches = plt.hist(floats, 50, facecolor='royalblue')
 
 plt.xlabel(r'$\beta$')
 plt.ylabel('Density')
-plt.title(r'$\mathrm{Histogram\ of\ Regularised\ Model\ Parameter\ Values}$')
+plt.title('Histogram of Regularised Model Parameter Values')
 plt.grid(True)
 
 plt.show()

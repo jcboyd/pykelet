@@ -9,14 +9,14 @@ import re
 class Scenarios:
 
     # baseline
-    H_H = {'name': 'Base. HEP', 'path': '../logs/baseline/H_H/'}
+    H_H = {'name': 'Baseline', 'path': '../logs/baseline/H_H/'}
     H_HappC333 = {'name': 'Base. HEP app. 1/3CORA', 'path': '../logs/baseline/H_HappC333/'}
     H_HappC666 = {'name': 'Base. HEP app. 2/3CORA', 'path': '../logs/baseline/H_HappC666/'}
     H_HappC = {'name': 'Base. HEP app. CORA', 'path': '../logs/baseline/H_HappC/'}
     H_C = {'name': 'Base. CORA', 'path': '../logs/baseline/H_C/'}
     H_CH = {'name': 'Base. CORA + HEP', 'path': '../logs/baseline/H_CH/'}
     H_CappH = {'name': 'Base. CORA app. HEP', 'path': '../logs/baseline/H_CappH/'}
-    S_H = {'name': 'Base. HEP', 'path': '../logs/baseline/S_H/'}
+    S_H = {'name': 'Baseline', 'path': '../logs/baseline/S_H/'}
     S_HappC = {'name': 'Base. HEP app. C', 'path': '../logs/baseline/S_HappC/'}
     S_C = {'name': 'Base. CORA', 'path': '../logs/baseline/S_C/'}
     S_CH = {'name': 'Base. CORA + HEP', 'path': '../logs/baseline/S_CH/'}
@@ -29,36 +29,36 @@ class Scenarios:
     H_H_width_height = {'name': 'Height + Width', 'path': '../logs/block_shape/H_H_width+height/'}
 
     # dicts
-    H_H_dicts = {'name': 'Dicts', 'path': '../logs/dicts/H_H_dicts/'}
-    H_HappC_dicts = {'name': 'Dicts', 'path': '../logs/dicts/H_HappC_dicts/'}
-    S_H_dicts = {'name': 'Dicts', 'path': '../logs/dicts/S_H_dicts/'}
-    S_HappC_dicts = {'name': 'Dicts', 'path': '../logs/dicts/S_HappC_dicts/'}
+    H_H_dicts = {'name': 'Dicts.', 'path': '../logs/dicts/H_H_dicts/'}
+    H_HappC_dicts = {'name': 'Dicts.', 'path': '../logs/dicts/H_HappC_dicts/'}
+    S_H_dicts = {'name': 'Dicts.', 'path': '../logs/dicts/S_H_dicts/'}
+    S_HappC_dicts = {'name': 'Dicts.', 'path': '../logs/dicts/S_HappC_dicts/'}
 
-    H_H_dicts_2 = {'name': 'Dicts +- 2', 'path': '../logs/dicts/H_H_dicts+-2/'}
-    H_HappC_dicts_2 = {'name': 'Dicts +- 2', 'path': '../logs/dicts/H_HappC_dicts+-2/'}
-    H_H_dicts_3 = {'name': 'Dicts +- 3', 'path': '../logs/dicts/H_H_dicts+-3/'}
-    H_HappC_dicts_3 = {'name': 'Dicts +- 3', 'path': '../logs/dicts/H_HappC_dicts+-3/'}
+    H_H_dicts_2 = {'name': 'Dicts. $\pm$ 2', 'path': '../logs/dicts/H_H_dicts+-2/'}
+    H_HappC_dicts_2 = {'name': 'Dicts. $\pm$ 2', 'path': '../logs/dicts/H_HappC_dicts+-2/'}
+    H_H_dicts_3 = {'name': 'Dicts. $\pm$ 3', 'path': '../logs/dicts/H_H_dicts+-3/'}
+    H_HappC_dicts_3 = {'name': 'Dicts. $\pm$ 3', 'path': '../logs/dicts/H_HappC_dicts+-3/'}
 
-    S_H_dicts_2 = {'name': 'Dicts  +- 2', 'path': '../logs/dicts/S_H_dicts+-2/'}
-    S_HappC_dicts_2 = {'name': 'Dicts  +- 2', 'path': '../logs/dicts/S_HappC_dicts+-2/'}
-    S_H_dicts_3 = {'name': 'Dicts  +- 3', 'path': '../logs/dicts/S_H_dicts+-3/'}
-    S_HappC_dicts_3 = {'name': 'Dicts  +- 3', 'path': '../logs/dicts/S_HappC_dicts+-3/'}
+    S_H_dicts_2 = {'name': 'Dicts. $\pm$ 2', 'path': '../logs/dicts/S_H_dicts+-2/'}
+    S_HappC_dicts_2 = {'name': 'Dicts. $\pm$ 2', 'path': '../logs/dicts/S_HappC_dicts+-2/'}
+    S_H_dicts_3 = {'name': 'Dicts. $\pm$ 3', 'path': '../logs/dicts/S_H_dicts+-3/'}
+    S_HappC_dicts_3 = {'name': 'Dicts. $\pm$ 3', 'path': '../logs/dicts/S_HappC_dicts+-3/'}
 
     # dicts_stops
-    H_H_dicts_stops = {'name': 'Dicts + Stops', 'path': '../logs/dicts_stops/H_H_dicts_stops/'}
-    H_HappC_dicts_stops = {'name': 'Dicts + Stops', 'path': '../logs/dicts_stops/H_HappC_dicts_stops/'}
-    S_H_dicts_stops = {'name': 'Dicts + Stops', 'path': '../logs/dicts_stops/S_H_dicts_stops/'}
-    S_HappC_dicts_stops = {'name': 'Dicts + Stops', 'path': '../logs/dicts_stops/S_HappC_dicts_stops/'}
+    H_H_dicts_stops = {'name': 'Dicts., Stops', 'path': '../logs/dicts_stops/H_H_dicts_stops/'}
+    H_HappC_dicts_stops = {'name': 'Dicts., Stops', 'path': '../logs/dicts_stops/H_HappC_dicts_stops/'}
+    S_H_dicts_stops = {'name': 'Dicts., Stops', 'path': '../logs/dicts_stops/S_H_dicts_stops/'}
+    S_HappC_dicts_stops = {'name': 'Dicts., Stops', 'path': '../logs/dicts_stops/S_HappC_dicts_stops/'}
 
-    H_H_dicts_stops_2 = {'name': 'Dicts + Stops +- 2', 'path': '../logs/dicts_stops/H_H_dicts_stops+-2/'}
-    H_HappC_dicts_stops_2 = {'name': 'Dicts + Stops +- 2', 'path': '../logs/dicts_stops/H_HappC_dicts_stops+-2/'}
-    H_H_dicts_stops_3 = {'name': 'Dicts + Stops +- 3', 'path': '../logs/dicts_stops/H_H_dicts_stops+-3/'}
-    H_HappC_dicts_stops_3 = {'name': 'Dicts + Stops +- 3', 'path': '../logs/dicts_stops/H_HappC_dicts_stops+-3/'}
+    H_H_dicts_stops_2 = {'name': 'Dicts., Stops $\pm$ 2', 'path': '../logs/dicts_stops/H_H_dicts_stops+-2/'}
+    H_HappC_dicts_stops_2 = {'name': 'Dicts., Stops $\pm$ 2', 'path': '../logs/dicts_stops/H_HappC_dicts_stops+-2/'}
+    H_H_dicts_stops_3 = {'name': 'Dicts., Stops $\pm$ 3', 'path': '../logs/dicts_stops/H_H_dicts_stops+-3/'}
+    H_HappC_dicts_stops_3 = {'name': 'Dicts., Stops $\pm$ 3', 'path': '../logs/dicts_stops/H_HappC_dicts_stops+-3/'}
 
-    S_H_dicts_stops_2 = {'name': 'Dicts +- 2', 'path': '../logs/dicts_stops/S_H_dicts_stops+-2/'}
-    S_HappC_dicts_stops_2 = {'name': 'Dicts +- 2', 'path': '../logs/dicts_stops/S_HappC_dicts_stops+-2/'}
-    S_H_dicts_stops_3 = {'name': 'Dicts +- 3', 'path': '../logs/dicts_stops/S_H_dicts_stops+-3/'}
-    S_HappC_dicts_stops_3 = {'name': 'Dicts +- 3', 'path': '../logs/dicts_stops/S_HappC_dicts_stops+-3/'}
+    S_H_dicts_stops_2 = {'name': 'Dicts., Stops $\pm$ 2', 'path': '../logs/dicts_stops/S_H_dicts_stops+-2/'}
+    S_HappC_dicts_stops_2 = {'name': 'Dicts., Stops $\pm$ 2', 'path': '../logs/dicts_stops/S_HappC_dicts_stops+-2/'}
+    S_H_dicts_stops_3 = {'name': 'Dicts., Stops $\pm$ 3', 'path': '../logs/dicts_stops/S_H_dicts_stops+-3/'}
+    S_HappC_dicts_stops_3 = {'name': 'Dicts., Stops $\pm$ 3', 'path': '../logs/dicts_stops/S_HappC_dicts_stops+-3/'}
 
     # regularisation
     H_H_L20 = {'name': '$\sigma^2 = 0$', 'path': '../logs/regularisation/H_H_L2=0/'}
@@ -74,7 +74,7 @@ class Scenarios:
     S_H_Lev04 = {'name': 'Lev. (0.4)', 'path': '../logs/levenshtein/S_H_Lev0.4/'}
     S_H_Lev005 = {'name': 'Lev. (0.05)', 'path': '../logs/levenshtein/S_H_Lev0.05/'}
     S_H_Lev08 = {'name': 'Lev. (0.8)', 'path': '../logs/levenshtein/S_H_Lev0.8/'}
-    S_H_LevAll = {'name': 'Lev. (All)', 'path': '../logs/levenshtein/S_H_LevAll/'}
+    S_H_LevAll = {'name': 'Levenshtein distance (all)', 'path': '../logs/levenshtein/S_H_LevAll/'}
 
     # classes
     S_H_class_binary = {'name': 'Bin.', 'path': '../logs/classes/S_H_class_binary/'}
@@ -83,7 +83,7 @@ class Scenarios:
     S_H_class_20_point = {'name': 'Dec. (20 point)', 'path': '../logs/classes/S_H_class_20_point/'}
 
     S_H_class_binary_only = {'name': 'Bin. only', 'path': '../logs/classes/S_H_class_binary_only/'}
-    S_H_class_decimal_only = {'name': 'Dec. only', 'path': '../logs/classes/S_H_class_decimal_only/'}
+    S_H_class_decimal_only = {'name': 'Character classes (decimal only)', 'path': '../logs/classes/S_H_class_decimal_only/'}
     S_H_class_baseline_none = {'name': 'Baseline none', 'path': '../logs/classes/S_H_baseline_no_classes/'}
 
     S_H_5 = {'name': '+5', 'path': '../logs/extension/S_H+5/'}
@@ -160,7 +160,7 @@ def plotBoxPlot(data, scenarios, field, theme):
 
     # Hide these grid behind plot objects
     ax1.set_axisbelow(True)
-    ax1.set_title('%s: 5-Fold Cross Validation of %s (F1)' % (theme,
+    ax1.set_title('%s - %s (F1)' % (theme,
                   field.capitalize()), fontsize=16)
     ax1.set_xlabel('Scenario', fontsize=14)
     ax1.set_ylabel('F1', fontsize=14)
@@ -192,12 +192,12 @@ def plotBoxPlot(data, scenarios, field, theme):
             medians[i] = medianY[0]
         # Finally, overplot the sample averages, with horizontal alignment
         # in the center of each box
-        plt.plot([np.average(med.get_xdata())], [np.average(data[i])],
-                 color='w', marker='o', markeredgecolor='k')
+        # plt.plot([np.average(med.get_xdata())], [np.average(data[i])],
+        #          color='w', marker='x', markeredgecolor='k')
 
     # Set the axes ranges and axes labels
     ax1.set_xlim(0.5, numBoxes+0.5)
-    top = min(100, max([max(x) for x in data])*1.05)
+    top = min(100, max([max(x) for x in data])*1.02)
     bottom = min([min(x) for x in data])*0.99
     ax1.set_ylim(bottom, top)
     xtickNames = plt.setp(ax1, xticklabels=scenarios)
@@ -215,7 +215,7 @@ def plotBoxPlot(data, scenarios, field, theme):
 
     plt.plot(np.arange(numBoxes) + 1,
              [np.round(np.average(data[i]), 2) for i in range(len(data))],
-             marker='o', linestyle='--', color='darkgrey')
+             marker='x', linestyle='--', color='orangered')
 
     for tick, label in zip(range(numBoxes), ax1.get_xticklabels()):
         k = tick % 2
@@ -258,23 +258,23 @@ if __name__ == '__main__':
     n_folds = 5
     scenarios = []
 
-    theme = 'Levenshtein'
+    # theme = 'Levenshtein'
 
-    directories = [Scenarios.S_H_Lev02['path'],
-                   Scenarios.S_H_Lev08['path'],
-                   Scenarios.S_H_Lev005['path'],
-                   Scenarios.S_H_Lev04['path'],
-                   Scenarios.S_H_Lev01['path'],
-                   Scenarios.S_H_Lev0104['path'],
-                   Scenarios.S_H_LevAll['path']]
+    # directories = [Scenarios.S_H_Lev02['path'],
+    #                Scenarios.S_H_Lev08['path'],
+    #                Scenarios.S_H_Lev005['path'],
+    #                Scenarios.S_H_Lev04['path'],
+    #                Scenarios.S_H_Lev01['path'],
+    #                Scenarios.S_H_Lev0104['path'],
+    #                Scenarios.S_H_LevAll['path']]
 
-    names = [Scenarios.S_H_Lev02['name'],
-             Scenarios.S_H_Lev08['name'],
-             Scenarios.S_H_Lev005['name'],
-             Scenarios.S_H_Lev04['name'],
-             Scenarios.S_H_Lev01['name'],
-             Scenarios.S_H_Lev0104['name'],
-             Scenarios.S_H_LevAll['name']]
+    # names = [Scenarios.S_H_Lev02['name'],
+    #          Scenarios.S_H_Lev08['name'],
+    #          Scenarios.S_H_Lev005['name'],
+    #          Scenarios.S_H_Lev04['name'],
+    #          Scenarios.S_H_Lev01['name'],
+    #          Scenarios.S_H_Lev0104['name'],
+    #          Scenarios.S_H_LevAll['name']]
 
     # directories = [Scenarios.H_H['path'],
     #                Scenarios.H_HappC333['path'],
@@ -313,12 +313,22 @@ if __name__ == '__main__':
     #          Scenarios.S_H_class_decimal['name'],
     #          Scenarios.S_H_LevAll['name']]
 
+    # theme = 'Segmentation Best Features'
+
     # directories = [Scenarios.S_H['path'],
-    #                Scenarios.S_H_class_decimal['path'],
+    #                Scenarios.S_H_LevAll['path'],
+    #                Scenarios.S_H_class_decimal_only['path']]
+
+    # names = [Scenarios.S_H['name'],
+    #          Scenarios.S_H_LevAll['name'],
+    #          Scenarios.S_H_class_decimal_only['name']]
+
+    # directories = [Scenarios.S_H['path'],
+    #                Scenarios.S_H_class_decimal_only['path'],
     #                Scenarios.S_H_LevAll['path']]
 
     # names = [Scenarios.S_H['name'],
-    #          Scenarios.S_H_class_decimal['name'],
+    #          Scenarios.S_H_class_decimal_only['name'],
     #          Scenarios.S_H_LevAll['name']]
 
     # theme = 'Character Classes'
@@ -337,13 +347,15 @@ if __name__ == '__main__':
     #          Scenarios.S_H_class_decimal_only['name'],
     #          Scenarios.S_H_class_20_point['name']]
 
-    # directories = [Scenarios.H_H['path'],
-    #                Scenarios.H_H_dicts['path'],
-    #                Scenarios.H_H_dicts_stops['path']]
+    theme = 'Header Best Features'
 
-    # names = [Scenarios.H_H['name'],
-    #          Scenarios.H_H_dicts['name'],
-    #          Scenarios.H_H_dicts_stops['name']]
+    directories = [Scenarios.H_H['path'],
+                   Scenarios.H_H_dicts['path'],
+                   Scenarios.H_H_dicts_stops_3['path']]
+
+    names = [Scenarios.H_H['name'],
+             Scenarios.H_H_dicts['name'],
+             Scenarios.H_H_dicts_stops_3['name']]
 
     # theme = 'Block Shape'
 
