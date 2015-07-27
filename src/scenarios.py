@@ -74,7 +74,7 @@ class Scenarios:
     S_H_Lev04 = {'name': 'Lev. (0.4)', 'path': '../logs/levenshtein/S_H_Lev0.4/'}
     S_H_Lev005 = {'name': 'Lev. (0.05)', 'path': '../logs/levenshtein/S_H_Lev0.05/'}
     S_H_Lev08 = {'name': 'Lev. (0.8)', 'path': '../logs/levenshtein/S_H_Lev0.8/'}
-    S_H_LevAll = {'name': 'Levenshtein distance (all)', 'path': '../logs/levenshtein/S_H_LevAll/'}
+    S_H_LevAll = {'name': 'Lev. (all)', 'path': '../logs/levenshtein/S_H_LevAll/'}
 
     # classes
     S_H_class_binary = {'name': 'Bin.', 'path': '../logs/classes/S_H_class_binary/'}
@@ -83,7 +83,7 @@ class Scenarios:
     S_H_class_20_point = {'name': 'Dec. (20 point)', 'path': '../logs/classes/S_H_class_20_point/'}
 
     S_H_class_binary_only = {'name': 'Bin. only', 'path': '../logs/classes/S_H_class_binary_only/'}
-    S_H_class_decimal_only = {'name': 'Character classes (decimal only)', 'path': '../logs/classes/S_H_class_decimal_only/'}
+    S_H_class_decimal_only = {'name': 'Dec. only', 'path': '../logs/classes/S_H_class_decimal_only/'}
     S_H_class_baseline_none = {'name': 'Baseline none', 'path': '../logs/classes/S_H_baseline_no_classes/'}
 
     S_H_5 = {'name': '+5', 'path': '../logs/extension/S_H+5/'}
@@ -347,15 +347,15 @@ if __name__ == '__main__':
     #          Scenarios.S_H_class_decimal_only['name'],
     #          Scenarios.S_H_class_20_point['name']]
 
-    theme = 'Header Best Features'
+    # theme = 'Header Best Features'
 
-    directories = [Scenarios.H_H['path'],
-                   Scenarios.H_H_dicts['path'],
-                   Scenarios.H_H_dicts_stops_3['path']]
+    # directories = [Scenarios.H_H['path'],
+    #                Scenarios.H_H_dicts['path'],
+    #                Scenarios.H_H_dicts_stops_3['path']]
 
-    names = [Scenarios.H_H['name'],
-             Scenarios.H_H_dicts['name'],
-             Scenarios.H_H_dicts_stops_3['name']]
+    # names = [Scenarios.H_H['name'],
+    #          Scenarios.H_H_dicts['name'],
+    #          Scenarios.H_H_dicts_stops_3['name']]
 
     # theme = 'Block Shape'
 
@@ -429,17 +429,17 @@ if __name__ == '__main__':
     #          Scenarios.S_CappH['name'],
     #          Scenarios.S_CH['name']]
 
-    # theme = 'Subsampling'
+    theme = 'Subsampling'
 
-    # directories = [Scenarios.H_H['path'],
-    #                Scenarios.H_HappC333['path'],
-    #                Scenarios.H_HappC666['path'],
-    #                Scenarios.H_HappC['path']]
+    directories = [Scenarios.H_H['path'],
+                   Scenarios.H_HappC333['path'],
+                   Scenarios.H_HappC666['path'],
+                   Scenarios.H_HappC['path']]
 
-    # names = [Scenarios.H_H['name'],
-    #          Scenarios.H_HappC333['name'],
-    #          Scenarios.H_HappC666['name'],
-    #          Scenarios.H_HappC['name']]
+    names = [Scenarios.H_H['name'],
+             Scenarios.H_HappC333['name'],
+             Scenarios.H_HappC666['name'],
+             Scenarios.H_HappC['name']]
 
     # theme = 'Header Dicts + Stops'
 
