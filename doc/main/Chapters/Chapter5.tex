@@ -6,11 +6,11 @@
 
 \lhead{Chapter 5. \emph{Results and Analysis}} % This is for the header on each page - perhaps a shortened title
 
-\emph{This chapter presents the results of our implementation work, which comprises of 66 cross-validated feature engineering experiments including a baseline evaluation. It notably begins with a comparison between GROBID and refextract, the existing partial solution for metadata extraction within INSPIRE-HEP. Following this it details the evaluation method and approach to running experiments. Finally, our experimental results are presented and we provide our analysis and interpretations. The results are first shown by category, in accordance with the methods described in Chapter \ref{Chapter4}, then inter-category results are shown to highlight the most significant improvements.}
+\emph{This chapter presents the results of our implementation work, which comprises of 66 cross-validated feature engineering experiments including a baseline evaluation. It notably begins with a comparison between GROBID and refextract, the existing partial solution for metadata extraction within INSPIRE-HEP. Following this, the evaluation method and approach to running experiments are detailed. Finally, the experimental results are presented and we provide our analysis and interpretations. The results are first shown by category, in accordance with the methods described in Chapter \ref{Chapter4}, then inter-category results are shown to highlight the most significant improvements.}
 
 \section{Evaluation Method}
 
-Cross-validation (see Section \ref{sec:experimentsetup}) is use to give an estimation of model generalisation error. When it comes to reporting results, we focus on the cross-validated performance metric, micro average. This is more informative than a macro average due to the skew in representation between classes. For example, the <abstract> class contains on average far more tokens than any other class in the \emph{header} model; likewise, <body> for \emph{segmentation}. The micro average effectively gives a weighted average that says more about general token accuracy. Where necessary, we further look at the cross-validated performance in individual fields. For the \emph{segmentation} model, the key fields are <header> and <references>. For the \emph{header} model, they are <title>, <authors>, and <abstract>.
+Cross-validation (see Section \ref{sec:experimentsetup}) is use to give an estimation of model generalisation error. When it comes to reporting results, we focus on the cross-validated performance metric, micro average (see Section \ref{subsec:evaluationmethod}). This is more informative than a \emph{macro} average due to the skew in class representation. For example, the <abstract> class contains on average far more tokens than any other class in the \emph{header} model; likewise, <body> for \emph{segmentation}. The micro average effectively gives a weighted average that says more about general token accuracy. Where necessary, we further look at model performance in individual fields. For the \emph{segmentation} model, the key fields are <header> and <references>. For the \emph{header} model, they are <title>, <authors>, and <abstract>.
 
 \subsection{Evaluation Metrics}
 \label{subsec:evaluationmethod}
@@ -22,7 +22,7 @@ The findings of this chapter refer to various standard measures of classificatio
 \label{eq:accuracy}
 \end{equation}
 
-that is, the proportion of correct classifications to total classifications, where TP is the number of \emph{true positives}, the correct predictions that a given class has occurred; TN is the number of \emph{true negatives}, the correct predictions that a given class has not cured; FN is the number of \emph{false negatives}, the incorrect predictions that a given class has not occur ed; and TN is the number of \emph{true negatives}, the correct predictions that a given class has occur ed. Accuracy can be a misleading statistic when we have uneven representations of classes in the dataset. In the event that we have a sufficiently high bias, we can achieve excellent accuracy simply by always predicting this class. For this reason, we consider other statistics too. \emph{Precision} is the number of times a class is \emph{correctly} predicted proportional to the overall number of predictions for that class, that is,
+that is, the proportion of correct classifications to total classifications, where TP is the number of \emph{true positives}, the number of times a class is correctly predicted to have occurred; TN is the number of \emph{true negatives}, the number of times a given class is correctly predicted not to have occurred; FN is the number of \emph{false negatives}, the number of times a class is incorrectly predicted to have occurred; and FN is the number of \emph{false negatives}, the number of times a class is incorrectly predicted not to have occurred. Accuracy can be a misleading statistic when we have uneven representations of classes in the dataset. In the event that we have a sufficiently high bias, we can achieve excellent accuracy simply by always predicting the dominant class. For this reason, we consider other statistics too. \emph{Precision} is the number of times a class is \emph{correctly} predicted proportional to the overall number of predictions for that class, that is,
 
 \begin{equation}
 \text{Precision} = \frac{TP}{TP + FP}.
@@ -43,7 +43,7 @@ F_1 = \frac{2 \times \text{precision} \times \text{recall}}{\text{precision} + \
 \label{eq:f1}
 \end{equation}
 
-that is, the harmonic mean of precision and recall (the ``1'' in $F_1$ indicates the two are evenly weighted). The $F_1$ statistic is a neat way of summarising both metrics at once. Furthermore, a large imbalance in precision and recall results in a lower $F_1$ score. It is necessary to be good in both precision and recall to have a good $F_1$ score; the harmonic mean of any data is always upper-bounded by its arithmetic mean. Thus, the $F_1$ score addresses their shortcomings simultaneously. To summarise each of these statistics over an set of classes, we may adopt two approaches: macro and micro averages. A macro average is the aggregation of statistics \emph{a posteriori}. For example, for accuracy,
+that is, the harmonic mean of precision and recall (the ``1'' in $F_1$ indicates the two are evenly weighted). The $F_1$ statistic is a neat way of summarising both metrics at once. Furthermore, a large imbalance in precision and recall results in a lower $F_1$ score. It is necessary to be good in both precision and recall to have a good $F_1$ score; the harmonic mean of any data is always upper-bounded by its arithmetic mean. Thus, the $F_1$ score addresses their shortcomings simultaneously. To summarise each of these statistics over a set of classes, we may adopt two approaches: macro and micro averages. A macro average is the aggregation of statistics \emph{a posteriori}. For example, for accuracy,
 
 \begin{equation}
 \text{Accuracy}_{macro} = \frac{1}{N}\sum_{n=1}^{N}\text{Accuracy}_n,
@@ -53,20 +53,20 @@ that is, the harmonic mean of precision and recall (the ``1'' in $F_1$ indicates
 where $\text{Accuracy}_n$ is the accuracy for the $nth$ of $N$ classes. By contrast, a micro average is an aggregation of statistics that is in effect weighted by the proportion of each class. For example, again for accuracy,
 
 \begin{equation}
-\text{Accuracy}_{micro} = \frac{\sum_{n=1}^N TP_n + TN_n}{\sum_{n=1}^N TP_n + FN_n + FP_n + TN_n},
+\text{Accuracy}_{micro} = \frac{\sum_{n=1}^N TP_n + TN_n}{\sum_{n=1}^N TP_n + FP_n + FN_n + TN_n},
 \label{eq:microaccuracy}
 \end{equation}
 
 \subsection{Evaluation in GROBID}
 
-GROBID evaluates at the token, field, and instance levels, that is, GROBID calculates the aforementioned statistics for individual tokens or words, then for the classes themselves, and finally, GROBID calculates the number of correct instances, that is, entire evaluation samples with no classification errors. In our results (Section \ref{sec:results}), we concentrate on the $F_1$ score micro average and scores for key classes (depending on the model we consider) at the \emph{token} level. We supplement the GROBID evaluation output with our own confusion matrices, an example of which is shown in Figure \ref{fig:segmentation_baseline_confusion}. Whereas the metrics allow us to compare one model to another, a confusion matrix can be used to see exactly which misclassifications are being made, which can in turn inform our feature engineering.
+GROBID calculates the aforementioned statistics for each of the classes in each model. In our results (Section \ref{sec:results}), we concentrate on the $F_1$ score micro average and scores for key classes (depending on the model we consider) at the \emph{token} level. We supplement the GROBID evaluation output with our own confusion matrices, an example of which is shown in Figure \ref{fig:segmentation_baseline_confusion}. Whereas the metrics allow us to compare one model to another, a confusion matrix can be used to see exactly which misclassifications are being made, which can in turn inform our feature engineering.
 
 \section{Experiment Setup}
 \label{sec:experimentsetup}
 
-Our computing resources for experimentation consisted of two powerful virtual machines on the CERN LXPLUS cluster, each possessing 16 CPUs and 32 GB of RAM. The experiments were configured and uploaded to these machines in batches, and were processed by our experimentation pipeline (see Section \ref{subsec:pipeline}). The high dimensionality of the models (up to tens of millions of features) led to long runtimes. To control the runtime of training, we enforced a maximum number of 500 iterations for Wapiti's L-BFGS algorithm. This number was chosen from observing the diminishing improvements of models trained to this extent\footnote{There is also the argument that training to convergence may cause overfitting.}. With Wapiti parallelised to 8 cores, we were able to run two processes on each virtual machine when required. Even with this parallelised setup, our experiment batches took several days to process each time, and the sum total of our experiments amounts to perhaps months of CPU time.
+Our computing resources for experimentation consisted of two powerful virtual machines on the CERN LXPLUS cluster, each possessing 16 CPUs and 32 GB of RAM. The experiments were configured and uploaded to these machines in batches, and were processed by our experimentation pipeline (see Section \ref{subsec:pipeline}). The high dimensionality of the models (up to tens of millions of features) led to long runtimes. To control the runtime of training, we enforced a maximum number of 500 iterations for Wapiti's L-BFGS algorithm. This number was chosen from observing the diminishing improvements of models trained to this extent\footnote{There is also the argument that training to convergence may cause overfitting.}. With Wapiti parallelised to 8 cores, we were able to run two processes on each virtual machine when required. Even with this parallelised setup, our experiment batches took several days to process each time, and the sum total of our experiments amounts to perhaps months of CPU time. Recall that model training time is dependent on both the number of training samples and the model dimensionality, which is itself dependent on the number of samples (see Section \ref{sec:lbfgs}).
 
-In conjunction with our feature engineering variations, we tried different configurations of data. Figure \ref{fig:cv} illustrates our five approaches to cross-validation with different combinations of HEP and CORA training data. Where we \emph{append} data, we include it in training, but exclude it from evaluation. Thus, HEP app. CORA denotes the training of a model on HEP and CORA combined, but cross-validation and evaluation only on HEP. Of most interest, naturally, were those configurations evaluating purely on HEP papers, that is, those we denote \emph{HEP} and {HEP app. CORA}, and these were the only configurations run beyond the baseline. In Section \ref{sec:results}, we refer to these configurations as we present the results. All experiments were run with $5-$fold cross validation\footnote{Note that by a happy coincidence this allows us to read individual CV iteration results from our boxplots as they correspond directly with $Q_1$, $Q_2$, $Q_3$, and the two outliers (see Section \ref{sec:results})}. The dataset was randomly shuffled prior to cross-validation, but with a fixed seed, such that models trained on the same data configuration could be compared equitably.
+In conjunction with our feature engineering variations, we tried different configurations of data. Figure \ref{fig:cv} illustrates our four approaches to cross-validation with different combinations of HEP and CORA training data. Where we \emph{append} data, we include it in training, but exclude it from evaluation. Thus, HEP app. CORA denotes the training of a model on HEP and CORA combined, but cross-validation and evaluation only on HEP. Of most interest, naturally, were those configurations evaluating purely on HEP papers, that is, those we denote \emph{HEP} and {HEP app. CORA}, and these were the only configurations run beyond the baseline. In Section \ref{sec:results}, we refer to these configurations as we present the results. All experiments were run with $5-$fold cross validation\footnote{Note that by a happy coincidence this allows us to read individual CV iteration results from our boxplots as they correspond directly with $Q_1$, $Q_2$, $Q_3$, and the two outliers (see Section \ref{sec:results})}. The dataset was randomly shuffled prior to cross-validation, but with a fixed seed, such that models trained on the same data configuration could be compared equitably.
 
 \begin{figure}[h]
 \centering
@@ -75,13 +75,13 @@ In conjunction with our feature engineering variations, we tried different confi
 \subfloat[CV CORA]{\includegraphics[width=0.36\textwidth]{Figures/CV_CORA.pdf}}\\
 \subfloat[CV HEP append CORA]{\includegraphics[width=0.45\textwidth]{Figures/CV_HEPappCORA.pdf}} & 
 \subfloat[CV CORA append HEP]{\includegraphics[width=0.45\textwidth]{Figures/CV_CORAappHEP.pdf}}\\ 
-\multicolumn{2}{c}{\subfloat[CV HEP + CORA]{\includegraphics[width=0.36\textwidth]{Figures/CV_HEP+CORA.pdf}}} \\
+% \multicolumn{2}{c}{\subfloat[CV HEP + CORA]{\includegraphics[width=0.36\textwidth]{Figures/CV_HEP+CORA.pdf}}} \\
 \end{tabular}
-\caption{The different cross-validation configurations used in our experiments. Figures (A) and (B) show cross-validation on HEP and CORA sets independently, and (E) on their combination. Figures (C) and (D) show cross-validation on the HEP and CORA datasets respectively, appending the other at training time.}
+\caption{The different cross-validation configurations used in our experiments. Figures (A) and (B) show cross-validation on HEP and CORA sets independently. Figures (C) and (D) show cross-validation on the HEP and CORA datasets respectively, appending the other at training time.}
 \label{fig:cv}
 \end{figure}
 
-The variety of $66$ experiments that we cross-validated are presented in Table \ref{fig:cv}, organised into 8 categories. We also distinguish by model, running some experiments for both models, and some for one alone. Generally speaking, we chose feature engineering ideas with a particular model in mind, that is, either \emph{header} or \emph{segmentation}. Finally, we distinguish by data configuration. For dictionary-based features, which may be derived from a baseline feature file alone, we may try all data configurations. However, as we do not have access to the original PDF papers for the CORA dataset, we cannot extract our other feature ideas. In these cases, our cross-validation was performed on our pure HEP dataset.
+The variety of $66$ experiments that we cross-validated are presented in Table \ref{fig:cv}, organised into 8 categories. We also distinguish by model, running some experiments for both models, and some for one alone. Generally speaking, we chose feature engineering ideas with a particular model in mind, that is, either \emph{header} or \emph{segmentation}. Finally, we distinguish by data configuration. For dictionary-based features, which may be derived from a baseline feature file alone, we may try all data configurations. However, as we do not have access to the original PDF papers for the CORA dataset, we can only extract our other feature ideas on the HEP dataset.
 
 \begin{table}[h]
 \begin{center}
@@ -97,7 +97,7 @@ Dictionaries & 1\textsuperscript{st} order, 2\textsuperscript{nd} order, 3\texts
 \hline
 Dicts. + Stops & 1\textsuperscript{st} order, 2\textsuperscript{nd} order, 3\textsuperscript{rd} order, stops only & Segmentation, header & HEP, HEP app. CORA \\
 \hline
-Regularisation & $\sigma^2=0$, $\sigma^2=\exp\{-6\}$, $\sigma^2=\exp\{-5\}$, $\sigma^2=\exp\{-4\}$, $\sigma^2=\exp\{-3\}$, & Header & HEP \\
+Regularisation & $\sigma^2=0$, $\sigma^2 = 10^{-6}$, $\sigma^2 = 10^{-5}$, $\sigma^2 = 10^{-4}$, $\sigma^2 = 10^{-3}$, & Header & HEP \\
 \hline
 Token Extension & First 5 words, first 10, first 15, first 20 & Segmentation & HEP \\
 \hline
@@ -118,7 +118,7 @@ Character Classes & Binary, decimal (round down), decimal (round), decimal (20 p
 
 As a first result for GROBID, we compare its reference list classification performance with that of \emph{refextract}, the existing solution for automatic reference extraction at CERN. \emph{refextract} is an example of a \emph{stylistic analysis} tool (see Section \ref{sec:solutionmethods}), as it employs regular expressions in a heuristic framework for metadata extraction. As previously mentioned, \emph{refextract} is incomplete and greatly lacking in both breadth and depth of detail. It is capable only of retrieving an article's references\footnote{A comparatively easy task; GROBID's citation model usually performs at a significantly higher accuracy than, say, its \emph{header} model.}, and the classification itself is quite simplistic. Since the modelling of reference classes differs between the two, a comparison is difficult to make. Our results will however be at least indicative and we are able to make reasonable comparisons across the most important classes. The dataset for the comparison consists of 60 articles retrieved from the SCOAP$^3$ online repository\footnote{SCOAP$^3$ (Sponsoring Consortium for Open Access Publishing in Particle Physics) is an open access digital library hosted at CERN, backed by an international partnership of research institutions.}.
 
-Unlike \emph{refextract}, GROBID requires two separate models to classify the citations of a given article: the \emph{reference-segmenter} and \emph{citation} models\footnote{Strictly speaking, there is another model, (full) \emph{segmentation}, above the \emph{reference-segmenter}, and so \emph{citation} accuracy depends on this also. But because one focus of our work is to improve this model, we permit this omission.}. The \emph{reference-segmenter} model is the simplest model in GROBID's arsenal, and is responsible for segmenting a reference list block into individual references. Therefore, the accuracy of the citation model is ultimately subject to the accuracy of the reference block inputs supplied it by the \emph{reference-segmenter} above. The results for training and evaluating the \emph{reference-segmenter} on 60 SCOAP$^3$ papers with an 80--20 split are given in Table \ref{table:referencesegmenterresults}. The results show the \emph{reference-segmenter} to be extremely accurate. In fact, only 5 token misclassifications out of 622 were made for the <label> class, and from a grand total of 12,981.
+Unlike \emph{refextract}, GROBID requires two separate models to classify the citations of a given article: the \emph{reference-segmenter} and \emph{citation} models\footnote{Strictly speaking, there is another model, (full) \emph{segmentation}, above the \emph{reference-segmenter}, and so \emph{citation} accuracy depends on this also. But because one focus of our work is to improve this model, we permit this omission.}. The \emph{reference-segmenter} model is the simplest model in GROBID's arsenal, and is responsible for segmenting a reference list block into individual references. It does this by modelling two classes, <label>, the delimiting tokens between individual references, and <reference>. Therefore, the accuracy of the citation model is ultimately subject to the accuracy of the reference block inputs supplied it by the \emph{reference-segmenter} above. The results for training and evaluating the \emph{reference-segmenter} on 60 SCOAP$^3$ papers with an 80--20 split are given in Table \ref{table:referencesegmenterresults}. The results show the \emph{reference-segmenter} to be extremely accurate. In fact, only 5 token misclassifications out of 622 were made for the <label> class, and from a grand total of 12,981.
 
 \begin{table}[h]
 \begin{center}
@@ -138,7 +138,7 @@ label           & accuracy  & precision  & recall   & f1 \\
 \end{center}
 \end{table}
 
-The most significant difference between the tools is the set of classes modelled. \emph{refextract} attempts only to classify to the minimum detail required for identifying the originating document within INSPIRE-HEP. Therefore, there are no equivalents to GROBID's classes, <volume>, <pages>, and so on. Rather, these parts of references are absorbed into other, higher-level classes, and are indicated by a dash (-) in the results table, Table \ref{table:citationcomparison}. Comparisons can be made, however, on fields, <title>, <author>, <journal>, and <date>. There we see the superiority of GROBID over \emph{refextract}. Note that here the \emph{citation} model was not trained on the evaluation set, and in particular this may explain its dismal performance in precision for the <date> class, and recall for <pubnum>. The dataset instances contained a recurring publication number that was almost uniformly misclassified by GROBID as a date. Notice that this is an example of a domain specificity of HEP papers. Had we trained on these papers, we could expect an improvement. That \emph{refextract} has reported perfect recall is a result of a flaw in our simplistic evaluation, where missing expected classifications were simply assigned to a <null> class, and so \emph{false positives} (FP) were not counted; only \emph{false negatives} (FN). Therefore, the true performance of \emph{refextract} is upper-bounded by the figures in Table \ref{table:citationcomparison}. The table contents are one of the outputs of GROBID's evaluation utilities. For an explanation of the performance metrics, see Section \ref{subsec:evaluationmethod}.
+The most significant difference between the tools is the set of classes modelled. \emph{refextract} attempts only to classify to the minimum detail required for identifying the originating document within INSPIRE-HEP. Therefore, there are no equivalents to GROBID's classes, <volume>, <pages>, and so on. Rather, these parts of references are absorbed into other, higher-level classes, and are indicated by a dash (-) in the results table, Table \ref{table:citationcomparison}. Comparisons can be made, however, on fields, <title>, <author>, <journal>, and <date>. There we see the superiority of GROBID over \emph{refextract}. Note that here the \emph{citation} model was not trained on the evaluation set, and in particular this may explain its dismal performance in precision for the <date> class, and recall for <pubnum>. The dataset instances contained a recurring publication number that was almost uniformly misclassified by GROBID as a date. Notice that this is an example of a domain specificity of HEP papers. Had we trained on these papers, we could expect an improvement. That \emph{refextract} has reported perfect recall is the result of a flaw in our simplistic evaluation, where missing expected classifications were simply assigned to a <null> class, and so \emph{false positives} (FP) were not counted; only \emph{false negatives} (FN). Therefore, the true performance of \emph{refextract} is upper-bounded by the figures in Table \ref{table:citationcomparison}. The table contents are one of the outputs of GROBID's evaluation utilities. For an explanation of the performance metrics, see Section \ref{subsec:evaluationmethod}.
 
 \begin{table}[h]
 \begin{center}
@@ -177,35 +177,12 @@ label & accuracy & precision & recall & f1 & acc. & prec. & rec. & f1\\
 \section{Results}
 \label{sec:results}
 
-As specified earlier, we use the micro average of $F_1$ scores of all model classes to compare model performance, only looking to specific fields when more nuanced comparisons are required. We hereafter state $F_1$ micro averages unless otherwise specified.
+As specified earlier, we use the micro average of $F_1$ scores of all model classes to compare model performance, only looking to specific fields when more nuanced comparisons are required. We hereafter state $F_1$ micro averages unless otherwise specified. Note that Section \ref{sec:keyresults} presents the key results and comparisons from this section.
 
 \subsection{Baseline}
 \label{subsec:baslineresults}
 
-Given the datasets available (see Section \ref{sec:data}), we are able to experiment with combinations of HEP and CORA papers, as well as with subsampling the CORA dataset to find the ideal mixture. After all, in spite of the common wisdom that increasing the amount of training data will improve generalisation and model performance, it is not clear what effects combining different ground truths will have. One may imagine that generalising over a hybrid dataset might learn a model that is misleading when it comes to evaluate on a pure HEP dataset, especially when the CORA \emph{header} set dwarfs our HEP one. The baseline results are given in Table \ref{table:baselineresults} and these show the micro average of $F_1$ scores (see Section \ref{subsec:evaluationmethod}) for each of the data configurations. Of most importance are the scenarios involving the HEP training set taken alone, and the HEP training set appending the CORA set, as these evaluate on HEP papers only, and are the configurations used in the other experiments. Surprisingly, for the \emph{header} model, there is a degradation of performance when the CORA set is appended. We pursue this curiosity in Table \ref{table:subsampling}, where we see mixed results for \emph{subsampling} CORA data, appending an extra, randomly chosen third of the $2506$ instances each time. The pure HEP set with no appending of CORA data $(\mu = 90.19, \sigma = 2.63)$ yields a model second only to the case where we append $2/3$ of the CORA dataset $(\mu = 92.1, \sigma = 2.43)$. The case of appending $1/3$ CORA experienced a major outlier in the third iteration of cross-validation, where it scored an $F_1$ micro average of as little as $78.15$, performing badly across all classes. This result notwithstanding, it seems there is some value in using a hybrid dataset, yet increasing the proportion of CORA papers ultimately degrades performance. This strongly supports our hypothesis that there a qualitative difference between HEP papers and general papers, and that training a successful model demands an expansion of the HEP dataset. In further sections, we see the same effect when we train on the HEP dataset and HEP appending CORA. For a visualisation of the subsampling results, see Figure \ref{fig:subsampling_micro} in Appendix \ref{AppendixB}. The successful predictions of our newly introduced collaboration class for the header model (see Section \ref{subsec:extensions}) should be noted also.
-
-% \begin{table}[t]
-% \begin{center}
-% \begin{tabular}{|c|c|c|c|c|c|}
-% \hline
-% Features & Model & Variation & Data & Mean & Std.\\
-% \hline
-% \multirow{10}{*}{Baseline} & \multirow{5}{*}{Header} & \multirow{5}{*}{-} & HEP & 90.19 & 2.63\\\cline{4-6}
-% & & & HEP app. CORA & 89.54 & 3.76\\\cline{4-6}
-% & & & CORA & 82.22 & 2.03\\\cline{4-6}
-% & & & CORA app. HEP & 81.8 & 2.76\\\cline{4-6}
-% & & & HEP \& CORA & 81.02 & 1.74\\\cline{2-6}
-% & \multirow{5}{*}{Segmentation} & \multirow{5}{*}{-} & HEP & 92.98 & 0.79\\\cline{4-6}
-% & & & HEP app. CORA & 93.58 & 1.65\\\cline{4-6}
-% & & & CORA & 94.02 & 2.96\\\cline{4-6}
-% & & & CORA app. HEP & 94.39 & 2.72\\\cline{4-6}
-% & & & HEP \& CORA & 92.93 & 2.94\\\cline{4-6}
-% \hline
-% \end{tabular}
-% \caption[Mean and standard deviation for tuning the variance of the $l_2$ variance parameter.]{Mean and standard deviation for tuning the variance of the $l_2$ variance parameter.}
-% \label{table:baselineresults}
-% \end{center}
-% \end{table}
+Given the datasets available (see Section \ref{sec:data}), we are able to experiment with combinations of HEP and CORA papers, as well as with subsampling the CORA dataset to find the ideal mixture. After all, in spite of the common wisdom that increasing the amount of training data will improve generalisation and model performance, it is not clear what effects combining different ground truths will have. One may imagine that generalising over a hybrid dataset might learn a model that is misleading when it comes to evaluate on a pure HEP dataset, especially when the CORA \emph{header} set dwarfs our HEP one. The baseline results are given in Table \ref{table:baselineresults} and these show the micro average of $F_1$ scores (see Section \ref{subsec:evaluationmethod}) for each of the data configurations. Of most importance are the scenarios involving the HEP training set taken alone, and the HEP training set appending the CORA set, as these evaluate on HEP papers only, and are the configurations used in the other experiments. Surprisingly, for the \emph{header} model, there is a degradation of performance when the CORA set is appended. We pursue this curiosity in Table \ref{table:subsampling}, where we see mixed results for \emph{subsampling} CORA data, appending an extra, randomly chosen third of the $2506$ training instances each time. The pure HEP set with no appending of CORA data $(\mu = 90.19, \sigma = 2.63)$ yields a model second only to the case where we append $2/3$ of the CORA dataset $(\mu = 92.1, \sigma = 2.43)$. The case of appending $1/3$ CORA experienced a major outlier in the third iteration of cross-validation, where it scored an $F_1$ micro average of as little as $78.15$, performing badly across all classes. This result notwithstanding, it seems there is some value in using a hybrid dataset, yet increasing the proportion of CORA papers ultimately degrades performance. This strongly supports our hypothesis that there a qualitative difference between HEP papers and general papers, but that training a successful model demands an expansion of the HEP dataset. In further sections, we see the same effect when we train on the HEP dataset and HEP appending CORA. For a visualisation of the subsampling results, see Figure \ref{fig:subsampling_micro} in Appendix \ref{AppendixB}. The successful predictions of our newly introduced collaboration class for the header model (see Section \ref{subsec:extensions}) should be noted also.
 
 \begin{table}[t]
 \begin{center}
@@ -213,16 +190,15 @@ Given the datasets available (see Section \ref{sec:data}), we are able to experi
 \hline
 Model & Variation & Data & Mean & Std.\\
 \hline
-\multirow{5}{*}{Header} & \multirow{5}{*}{-} & HEP & 90.19 & 2.63\\\cline{3-5}
+\multirow{4}{*}{Header} & \multirow{4}{*}{-} & HEP & 90.19 & 2.63\\\cline{3-5}
 & & HEP app. CORA & 89.54 & 3.76\\\cline{3-5}
 & & CORA & 82.22 & 2.03\\\cline{3-5}
 & & CORA app. HEP & 81.8 & 2.76\\\cline{3-5}
-& & HEP \& CORA & 81.02 & 1.74 \\ \hline
-\multirow{5}{*}{Segmentation} & \multirow{5}{*}{-} & HEP & 92.98 & 0.79\\\cline{3-5}
+\hline
+\multirow{4}{*}{Segmentation} & \multirow{4}{*}{-} & HEP & 92.98 & 0.79\\\cline{3-5}
 & & HEP app. CORA & 93.58 & 1.65\\\cline{3-5}
 & & CORA & 94.02 & 2.96\\\cline{3-5}
 & & CORA app. HEP & 94.39 & 2.72\\\cline{3-5}
-& & HEP \& CORA & 92.93 & 2.94\\\cline{3-5}
 \hline
 \end{tabular}
 \caption{Mean and standard deviation for baseline data configurations.}
@@ -264,7 +240,8 @@ In contrast, the \emph{segmentation} model generally benefited from combining da
 \hline
 Model & Variation & Data & Mean & Std.\\
 \hline
-\multirow{4}{*}{Header} & \textbf{Height} & \textbf{HEP} & \textbf{90.5} & \textbf{2.55}\\\cline{2-5}
+\multirow{5}{*}{Header} & \emph{Baseline} & \emph{HEP} & \emph{90.19} & \emph{2.63} \\\cline{2-5}
+& \textbf{Height} & \textbf{HEP} & \textbf{90.5} & \textbf{2.55}\\\cline{2-5}
 & Width & HEP & 90.46 & 2.75\\\cline{2-5}
 & Height \& width & HEP  & 88.47 & 3.1\\\cline{2-5}
 & Area & HEP  & 90.42 & 2.55\\\cline{2-5}
@@ -288,7 +265,8 @@ Almost every character class strategy made an improvement over the baseline (wit
 \hline
 Model & Variation & Data & Mean & Std.\\
 \hline
-\multirow{6}{*}{Segmentation} & Binary & HEP & 92.82 & 1.26\\\cline{2-5}
+\multirow{7}{*}{Segmentation} & \emph{Baseline} & \emph{HEP} & \emph{92.98} & \emph{0.79} \\\cline{2-5}
+& Binary & HEP & 92.82 & 1.26\\\cline{2-5}
 & Binary only & HEP & 93.5 & 2.17\\\cline{2-5}
 & Decimal (round down) & HEP & 93.57 & 2.2\\\cline{2-5}
 & Decimal only & HEP & 93.61 & 1.99\\\cline{2-5}
@@ -301,29 +279,9 @@ Model & Variation & Data & Mean & Std.\\
 \end{center}
 \end{table}
 
-% \begin{table}[h]
-% \begin{center}
-% \begin{tabular}{|c|c|c|c|c|c|}
-% \hline
-% Features & Model & Variation & Data & Mean & Std.\\
-% \hline
-% \multirow{6}{*}{Character classes} & \multirow{6}{*}{Segmentation} & Binary & HEP & 92.82 & 1.26\\\cline{3-6}
-% & & Binary only & HEP & 93.5 & 2.17\\\cline{3-6}
-% & & Decimal (round down) & HEP & 93.57 & 2.2\\\cline{3-6}
-% & & Decimal only & HEP & 93.61 & 1.99\\\cline{3-6}
-% & & Decimal (round nearest) & HEP & 93.37 & 2.27\\\cline{3-6}
-% & & \textbf{Decimal (20 point)} & HEP & 93.75 & 2.56\\\cline{3-6}
-% \hline
-% \end{tabular}
-% \caption[Mean and standard deviation for character class discretisation strategies.]{Mean and standard deviation for character class discretisation strategies.}
-% \label{table:characterclassresults}
-% \end{center}
-% \end{table}
-
-
 \subsection{Dictionaries}
 \label{subsec:dictionaries}
-Dictionary-based features, as described in Section \ref{subsec:dicts}, make use of domain knowledge to establish a vocabulary for \emph{header} model tokens and give a binary indicator, modelling a token's memberships in a set of five dictionaries (titles, authors, journals, collaborations, and keywords), extracted from INSPIRE-HEP. We varied the degree of context-awareness provided to a token, creating features indicating the dictionary membership of a token's immediate neighbours, that is, the tokens either side of it in the text, in addition to its own membership, as well as second and third degree neighbours. The results for these variations are given in Table \ref{table:dictionaryresults}. Though these features were designed with the \emph{header} model in mind, the same experimental variations were run for \emph{segmentation}. The features were expected to be more meaningful for the \emph{header} model, as they give a dimensionality reduction for a full token, mapping it to some combination of dictionaries. In the \emph{segmentation} model, this is done only for the leading word per line, and it is hard to imagine this characterising a line effectively. Predictably, the \emph{header} model benefited significantly more from dictionary-based features, with clear improvements over the baseline: $(\mu =  90.19, \sigma = 2.63)$ for the \emph{header} model trained on HEP, and $(\mu =  92.98, \sigma = 0.79)$ for the \emph{segmentation} model. The most successful variation was the 1\textsuperscript{st} degree for both \emph{header} $(\mu = 90.75, \sigma = 2.5)$ and \emph{segmentation} $(\mu = 93.91, \sigma = 2.07)$ models. When stop words were included (Table \ref{table:dictsstopsresults}) the benefits were even greater. This reflects the significant varying of stop word frequency between classes discovered in Section \ref{sec:stopwordfrequency} in Appendix \ref{AppendixC}. The most successful variation in this case was the 3\textsuperscript{rd} degree for both \emph{header} $(\mu = 91.35, \sigma = 3.1)$ and \emph{segmentation} $(\mu = 93.58, \sigma = 2.66)$ models. The results for the \emph{header} models are selected for closer examination in Section \ref{sec:keyresults}. Of further note was the near uniform superiority of the pure HEP data configuration versus that of appending CORA data, reinforcing our findings about subsampling from the baseline results (Section \ref{subsec:baslineresults}. It is after this experiment batch that we choose to be more focused in the scenarios chosen, concentrating on the pure HEP dataset and the models expected to most benefit from the respective feature experiments.
+Dictionary-based features, as described in Section \ref{subsec:dicts}, make use of domain knowledge to establish a vocabulary for \emph{header} model tokens and give a binary indicator, modelling a token's memberships in a set of five dictionaries (titles, authors, journals, collaborations, and keywords), extracted from INSPIRE-HEP. We varied the degree of context-awareness provided to a token, creating features indicating the dictionary membership of a token's immediate neighbours, that is, the tokens either side of it in the text, in addition to its own membership, as well as second and third degree neighbours. The results for these variations are given in Table \ref{table:dictionaryresults}. Though these features were designed with the \emph{header} model in mind, the same experimental variations were run for \emph{segmentation}. The features were expected to be more meaningful for the \emph{header} model, as they give a dimensionality reduction for a full token, mapping it to some combination of dictionaries. In the \emph{segmentation} model, this is done only for the leading word per line, and it is hard to imagine this characterising a line effectively. Predictably, the \emph{header} model benefited significantly more from dictionary-based features, with clear improvements over the baseline: $(\mu =  90.19, \sigma = 2.63)$ for the \emph{header} model trained on HEP, and $(\mu =  92.98, \sigma = 0.79)$ for the \emph{segmentation} model. The most successful variation was the 1\textsuperscript{st} degree for both \emph{header} $(\mu = 90.75, \sigma = 2.5)$ and \emph{segmentation} $(\mu = 93.91, \sigma = 2.07)$ models. When stop words were included (Table \ref{table:dictsstopsresults}) the benefits were even greater for the \emph{header} model. This reflects the significant varying of stop word frequency between classes discovered in Section \ref{sec:stopwordfrequency} in Appendix \ref{AppendixC}. The most successful variation in this case was the 3\textsuperscript{rd} degree for both \emph{header} $(\mu = 91.35, \sigma = 3.1)$ and \emph{segmentation} $(\mu = 93.58, \sigma = 2.66)$ models. The results for the \emph{header} models are selected for closer examination in Section \ref{sec:keyresults}. Of further note was the near uniform superiority of the pure HEP data configuration versus that of appending CORA data, reinforcing our findings about subsampling from the baseline results (Section \ref{subsec:baslineresults}. It is after this experiment batch that we choose to be more focused in the scenarios chosen, concentrating on the pure HEP dataset and the models expected to most benefit from the respective feature experiments.
 
 \begin{table}[h]
 \begin{center}
@@ -331,13 +289,15 @@ Dictionary-based features, as described in Section \ref{subsec:dicts}, make use 
 \hline
 Model & Variation & Data & Mean & Std.\\
 \hline
-\multirow{6}{*}{Header} & \multirow{2}{*}{\textbf{1\textsuperscript{st} order}} & \textbf{HEP} & \textbf{90.75} & \textbf{2.5}\\\cline{3-5}
+\multirow{7}{*}{Header} & \emph{Baseline} & \emph{HEP} & \emph{90.19} & \emph{2.63} \\\cline{3-5}
+& \multirow{2}{*}{\textbf{1\textsuperscript{st} order}} & \textbf{HEP} & \textbf{90.75} & \textbf{2.5}\\\cline{3-5}
 & & HEP app. CORA & 87.65 & 6.49\\\cline{2-5}
 & \multirow{2}{*}{2\textsuperscript{nd} order} & HEP & 90.75 & 3.01\\\cline{3-5}
 & & HEP app. CORA & 88.78 & 7.46\\\cline{2-5}
 & \multirow{2}{*}{3\textsuperscript{rd} order} & HEP & 87.67 & 7.55\\\cline{3-5}
 & & HEP app. CORA & 89.78 & 5.99\\ \hline
-\multirow{6}{*}{Segmentation} & \multirow{2}{*}{\textbf{1\textsuperscript{st} order}} & HEP & 93.56 & 1.79\\\cline{3-5}
+\multirow{7}{*}{Segmentation} & \emph{Baseline} & \emph{HEP} & \emph{92.98} & \emph{0.79} \\\cline{2-5}
+& \multirow{2}{*}{\textbf{1\textsuperscript{st} order}} & HEP & 93.56 & 1.79\\\cline{3-5}
 & & \textbf{HEP app. CORA} & \textbf{93.91} & \textbf{2.07}\\\cline{2-5}
 & \multirow{2}{*}{2\textsuperscript{nd} order} & HEP & 92.16 & 1.61\\\cline{3-5}
 & & HEP app. CORA & 93.37 & 1.75\\\cline{2-5}
@@ -355,13 +315,16 @@ Model & Variation & Data & Mean & Std.\\
 \begin{tabular}{|c|c|c|c|c|}
 \hline
 Model & Variation & Data & Mean & Std.\\
-\hline \multirow{6}{*}{Header} & \multirow{2}{*}{1\textsuperscript{st} order} & HEP & 91.21 & 2.03\\\cline{3-5}
+\hline
+\multirow{7}{*}{Header} & \emph{Baseline} & \emph{HEP} & \emph{90.19} & \emph{2.63} \\\cline{2-5}
+& \multirow{2}{*}{1\textsuperscript{st} order} & HEP & 91.21 & 2.03\\\cline{3-5}
 & & HEP app. CORA & 88.43 & 5.92\\\cline{2-5}
 & \multirow{2}{*}{2\textsuperscript{nd} order} & HEP & 88.9 & 7.25\\\cline{3-5}
 & & HEP app. CORA & 89.87 & 5.03\\\cline{2-5}
 & \multirow{2}{*}{\textbf{3\textsuperscript{rd} order}} & \textbf{HEP} & \textbf{91.35} & \textbf{3.1}\\\cline{3-5}
 & & HEP app. CORA & 89.76 & 5.99\\ \hline
-\multirow{6}{*}{Segmentation} & \multirow{2}{*}{1\textsuperscript{st} order} & HEP & 93.21 & 1.13\\\cline{3-5}
+\multirow{7}{*}{Segmentation} & \emph{Baseline} & \emph{HEP} & \emph{92.98} & \emph{0.79} \\\cline{2-5}
+& \multirow{2}{*}{1\textsuperscript{st} order} & HEP & 93.21 & 1.13\\\cline{3-5}
 & & HEP app. CORA & 93.48 & 2.04\\\cline{2-5}
 & \multirow{2}{*}{2\textsuperscript{nd} order} & HEP & 93.03 & 1.78\\\cline{3-5}
 & & HEP app. CORA & 93.24 & 3.49\\\cline{2-5}
@@ -384,7 +347,8 @@ All Levenshtein distance feature thresholding strategies performed better than t
 \hline
 Model & Variation & Data & Mean & Std.\\
 \hline
-\multirow{6}{*}{Segmentation} & $T_1 = 0.1$ & HEP & 93.51 & 1.37\\\cline{2-5}
+\multirow{7}{*}{Segmentation} & \emph{Baseline} & \emph{HEP} & \emph{92.98} & \emph{0.79} \\\cline{2-5}
+& $T_1 = 0.1$ & HEP & 93.51 & 1.37\\\cline{2-5}
 & $T_1 = 0.2$ & HEP & 92.95 & 1.19\\\cline{2-5}
 & $T_1 = 0.4$ & HEP & 93.44 & 1.28\\\cline{2-5}
 & $T_1 = 0.8$ & HEP & 93.07 & 1.07\\\cline{2-5}
@@ -406,7 +370,7 @@ Model & Variation & Data & Mean & Std.\\
 \label{fig:histogram}
 \end{figure}
 
-Our experiments in tuning the variance of the $l_2$ regularisation confirmed the earlier findings of (\cite{Peng04accurateinformation}). There is little observable difference in the performance of different choices of variance parameter, which we give in Table \ref{table:regularisationresults}. Performance is marginally worse at the extremities, namely where no penalty is imposed, and for the greatest penalty, $\sigma^2 = \exp\{-3\}$. Naturally, as a penalty is increased toward infinity, the model parameters go to 0, and performance degrades maximally. Figure \ref{fig:histogram} shows an empirical Normal distribution for a normalised model. That regularisation has little effect implies that it is difficult to overfit the model, and that the high dimensionality of the model perhaps provides in-built regularisation. Training with another algorithm supporting a different regularisation technique (such as $l_1$) could form the basis of future work.
+Our experiments in tuning the variance of the $l_2$ regularisation confirmed the earlier findings of (\cite{Peng04accurateinformation}). There is little observable difference in the performance of different choices of variance parameter, which we give in Table \ref{table:regularisationresults}. Performance is marginally worse at the extremities, namely where no penalty is imposed, and for the greatest penalty, $\sigma^2 = 10^{-3}$. Naturally, as a penalty is increased toward infinity, the model parameters go to 0, and performance degrades maximally. Figure \ref{fig:histogram} shows an empirical Normal distribution for a normalised model. That regularisation has little effect implies that it is difficult to overfit the model, and that the high dimensionality of the model perhaps provides in-built regularisation. Training with another algorithm supporting a different regularisation technique (such as $l_1$) could form the basis of future work.
 
 \begin{table}[h]
 \begin{center}
@@ -414,11 +378,12 @@ Our experiments in tuning the variance of the $l_2$ regularisation confirmed the
 \hline
 Model & Variation & Data & Mean & Std.\\
 \hline
-\multirow{4}{*}{Header} & $\sigma^2 = 0$ & HEP & 90.4 & 2.58\\\cline{2-5}
-& $\mathbf \sigma^2 = \exp\{-6\}$ & HEP & 90.68 & 3.78\\\cline{2-5}
-& $\sigma^2 = \exp\{-5\}$ & HEP & 90.64 & 3.78\\\cline{2-5}
-& $\sigma^2 = \exp\{-4\}$ & HEP & 90.66 & 3.69\\\cline{2-5}
-& $\sigma^2 = \exp\{-3\}$ & HEP & 90.44 & 2.77\\\cline{2-5}
+\multirow{5}{*}{Header} & \emph{Baseline} & \emph{HEP} & \emph{90.19} & \emph{2.63} \\\cline{2-5}
+& $\sigma^2 = 0$ & HEP & 90.4 & 2.58\\\cline{2-5}
+& $\mathbf \sigma^2 = 10^{-6}$ & HEP & 90.68 & 3.78\\\cline{2-5}
+& $\sigma^2 = 10^{-5}$ & HEP & 90.64 & 3.78\\\cline{2-5}
+& $\sigma^2 = 10^{-4}$ & HEP & 90.66 & 3.69\\\cline{2-5}
+& $\sigma^2 = 10^{-3}$ & HEP & 90.44 & 2.77\\\cline{2-5}
 \hline
 \end{tabular}
 \caption{Mean and standard deviation for tuning the variance of the $l_2$ variance parameter.}
@@ -429,7 +394,7 @@ Model & Variation & Data & Mean & Std.\\
 \subsection{Token Extensions}
 \label{subsec:tokenextensionresults}
 
-The results for token extensions (Table \ref{table:tokenextensions}) are quite modest. No variation significantly exceeds the baseline result with the same data configuration $(\mu = 92.98, \sigma = 0.79)$. Of note is the low variance across the variations compared with other feature categories. The result supports our earlier intuitions that though it may be helpful to establish a vocabulary that can differentiate between sections, the result of modelling each word in a line token individually is a feature space that is too diffuse to learn useful indicators, given the encountering the same words often. Line tokens are therefore better characterised, for example, at the character- rather than word-level, such as by character class features (Section \ref{subsec:characterclassresults}).
+The results for token extensions (Table \ref{table:tokenextensions}) are quite modest. No variation significantly exceeds the baseline result with the same data configuration $(\mu = 92.98, \sigma = 0.79)$. Of note is the low variance across the variations compared with other feature categories. The result supports our earlier intuitions that though it may be helpful to establish a vocabulary that can differentiate between sections, the result of modelling each word in a line token individually is a feature space that is too diffuse to learn useful indicators, given that encountering the same combination of words occurs only rarely. Line tokens are therefore better characterised, for example, at the character- rather than word-level, such as by character class features (Section \ref{subsec:characterclassresults}).
 
 \begin{table}[h]
 \begin{center}
@@ -437,7 +402,8 @@ The results for token extensions (Table \ref{table:tokenextensions}) are quite m
 \hline
 Model & Variation & Data & Mean & Std.\\
 \hline
-\multirow{4}{*}{Segmentation} & \textbf{First 5} & \textbf{HEP} & \textbf{93.38} & \textbf{1.6}\\\cline{2-5}
+\multirow{5}{*}{Segmentation} & \emph{Baseline} & \emph{HEP} & \emph{92.98} & \emph{0.79} \\\cline{2-5}
+& \textbf{First 5} & \textbf{HEP} & \textbf{93.38} & \textbf{1.6}\\\cline{2-5}
 & First 10 & HEP & 92.8 & 1.08\\\cline{2-5}
 & First 15 & HEP & 93.12 & 1.5\\\cline{2-5}
 & First 20 & HEP & 93.29 & 1.75\\\cline{2-5}
@@ -489,7 +455,7 @@ For the \emph{segmentation} model, two feature categories offered significant im
 \label{fig:references}
 \end{figure}
 
-The confusion matrix for character classes (decimal only) on HEP papers in Figure \ref{fig:confusion_segmentation} shows a dramatic improvement over the baseline (Figure \ref{fig:confusion_header}). Of particular interest is the increase across the main diagonal, that is true positives (TP) in every class but one, <annex>, where it decreases from 1805 to 1573. Also of interest is the huge reduction (906 to 312) of false negatives for the <header> class to the <body>, explaining where the improvements are being made. Note that this was accompanied by a smaller increase of false positives from <body> to <header> (303 to 530). Another remarkable improvement is the $100\%$ reduction (from 115 to 0) of false positives for the <acknowledgement> class for an expected <references> class. In general, classifications of the <acknowledgement> class improved considerably. Also, <header> lines previously lost to the <cover> page were reduced from 43 to 1.  We may conclude, finally, that though the overall performance of CC was slightly lower than the LD, we should prefer the CC feature variation due to its magnificent performance in key classes, <header> and <references>. In combination, the two features did not yield any additional gains.
+The confusion matrix for character classes (decimal only) on HEP papers in Figure \ref{fig:confusion_segmentation} shows a dramatic improvement over the baseline (Figure \ref{fig:confusion_header}). Of particular interest is the increase across the main diagonal, that is true positives (TP) in every class but one, <annex>, where it decreases from 1805 to 1573. Also of interest is the huge reduction (906 to 312) of false negatives for the <header> class to the <body>, explaining where the improvements are being made. Note that this was accompanied by a smaller increase of false positives from <body> to <header> (303 to 530). Another remarkable improvement is the reduction (from 115 to 0) of false positives for the <acknowledgement> class for an expected <references> class. In general, classifications of the <acknowledgement> class improved considerably. Also, <header> lines previously lost to the <cover> page were reduced from 43 to 1.  We may conclude, finally, that though the overall performance of CC was slightly lower than the LD, we should prefer the CC feature variation due to its outstanding performance in key classes, <header> and <references>. In combination, the two features did not yield any additional gains.
 
 \begin{figure}[h]
 \center

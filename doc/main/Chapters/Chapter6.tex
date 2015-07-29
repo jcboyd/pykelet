@@ -1,10 +1,10 @@
 % Chapter 6
 
-\chapter{Conclusion} % Main chapter title
+\chapter{Conclusions} % Main chapter title
 
 \label{Chapter6} % For referencing the chapter elsewhere, use \ref{Chapter1} 
 
-\lhead{Chapter 6. \emph{Conclusion}} % This is for the header on each page - perhaps a shortened title
+\lhead{Chapter 6. \emph{Conclusions}} % This is for the header on each page - perhaps a shortened title
 
 %----------------------------------------------------------------------------------------
 
@@ -17,14 +17,16 @@ Our overarching hypothesis is that HEP papers are a special case and have qualit
 \item to engineer specialised features conducive to better generalisation on HEP papers.
 \end{enumerate}
 
-Compiling a custom training set required much tedious manual work, and furthermore had to be done for both \emph{header} and \emph{segmentation} models.  One positive outcome of the data acquisition, however, was that we more than doubled the existing training set for the \emph{segmentation} model. There may also be value in the 60 SCOAP\textsuperscript{3} papers that we configured for training in our successful comparison of GROBID with \emph{refextract} (Section \ref{sec:refextract}). This also increases the \emph{reference-segmenter} model training set substantially.
+Compiling a custom training set required much tedious manual work, and furthermore had to be done for both \emph{header} and \emph{segmentation} models.  One positive outcome of the data acquisition, however, was that we more than doubled the existing training set for the \emph{segmentation} model. There may also be value in the 60 SCOAP\textsuperscript{3} papers that we configured for training in our successful comparison of GROBID with \emph{refextract} (Section \ref{sec:refextract}). This also increases the \emph{reference-segmenter} model training set substantially. This new data may be reused and incorporated into the open source GROBID project.
 
-Our feature engineering ideas were based on domain-specific features, such as INSPIRE-HEP-derived dictionary features for the \emph{header} model, or by addressing the unique structural characteristics of HEP papers in the \emph{segmentation} model. Of particular success were the features based on the character class composition for line tokens in the \emph{segmentation} model. This gave our best overall results, proving to be highly effective indicators for differentiating between token classes. Levenshtein distance between lines, realised as a single categorical variable, also proved to be effective. These latter features further demonstrated the value in more elaborate and systematic approaches to feature engineering, whereas the baseline feature set is rather simplistic and heuristic. Our results suggest that the best features are those giving a \emph{dimensionality reduction} to tokens, that is, those features offering a mapping to a lower-dimensional variable. Block shape features were unsuccessful because they did not characterise the individual token well, rather addressing rich information of token groups (blocks). In contrast, for the \emph{header} model our best results were dictionary-based features, which map word tokens to a lower-dimensional group. This was best results in our novel \emph{stop word} dictionary, which achieved an error reduction in F1 of $12\%$, as well as large error reductions for several key classes. We may note additionally that applying conditional random fields to \emph{line} tokens, as in the \emph{segmentation} model, offers far greater scope for creativity and novelty than the \emph{header} model. Our most significant overall improvement were our character class features, which achieved error reductions to key classes, <header> and <references>, of $24\%$ and $21\%$ respectively. Our Levenshtein distance features are exceptional in that they model differences between successive lines of text. This appears to have resolved many of the transitional misclassifications observed in our data acquisition (Section \ref{sec:data}).
+Our feature engineering ideas were based on domain-specific features, such as INSPIRE-HEP-derived dictionary features for the \emph{header} model, or by addressing the unique structural characteristics of HEP papers in the \emph{segmentation} model. Of particular success were the features based on the character class composition for line tokens in the \emph{segmentation} model. This gave our best overall results, proving to be highly effective indicators for differentiating between token classes. Levenshtein distance between lines, realised as a single categorical variable, also proved to be effective. These latter features further demonstrated the value in more elaborate and systematic approaches to feature engineering, whereas the baseline feature set is rather simplistic and heuristic. Our results suggest that the best features are those giving a \emph{dimensionality reduction} to tokens, that is, those features offering a mapping to a lower-dimensional variable. Block shape features were unsuccessful because they did not characterise the individual token well, rather addressing rich information of token groups (blocks). In contrast, for the \emph{header} model our best results were dictionary-based features, which map word tokens to a lower-dimensional group. This was best realised in our novel \emph{stop word} dictionary, which achieved an error reduction in F1 of $12\%$, as well as large error reductions for several key classes. We may note additionally that applying conditional random fields to \emph{line} tokens, as in the \emph{segmentation} model, offers far greater scope for creativity and novelty than the \emph{header} model. Our most significant overall improvement were our character class features, which achieved error reductions to key classes, <header> and <references>, of $24\%$ and $21\%$ respectively. Our Levenshtein distance features are exceptional in that they model differences between successive lines of text. This appears to have resolved many of the transitional misclassifications observed in our data acquisition (Section \ref{sec:data}).
+
+We may note finally that GROBID, including our extensions and custom data, will shortly be in use within INSPIRE-HEP.
 
 \section{Future Work}
 \label{sec:futurework}
 
-We hereby state some ideas for extending the work we that have completed so far:
+We hereby state some ideas for extending the work that we have completed so far:
 
 \begin{enumerate}
 
@@ -34,7 +36,7 @@ We hereby state some ideas for extending the work we that have completed so far:
 
 \item Not much came of our regularisation experiments other than to reinforce the findings in the literature. It would be interesting to try other forms of regularisation, such as $l_1$. This requires an optimisation algorithm that is not gradient-based, but Wapiti does offer such alternatives to L-BFGS.
 
-\item In terms of feature engineering, it would be interesting to combine some of our feature ideas. With the exception of combining dictionaries and stop word features, we did not find any ways to improve. Our strongest pair of features for the \emph{segmentation} model did not yield additional gains in combination. Investigations could therefore be made into the interaction of feature categories, and a methodology derived for how best to combine them.
+\item It would be interesting to combine some of our feature ideas. With the exception of combining dictionaries with stop word features, we did not find any useful feature pairs. Our strongest pair of features for the \emph{segmentation} model did not yield additional gains in combination. Investigations could therefore be made into the interaction of feature categories, and a methodology derived for how best to combine them.
 
 \item Our approach could be made easier with further enhancements to GROBID's evaluation utilities. For example, it would be useful to see exactly which tokens are being misclassified when misclassifications occur. We went some way towards this in \ref{subsec:extensions} where we tracked the $k$ documents most contributing to classification error.
 

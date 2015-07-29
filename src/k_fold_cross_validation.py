@@ -234,7 +234,7 @@ def plot_confusion_matrix(name, type, matrix, path, show_counts):
     # Finally, hide minor tick marks...
     gca().tick_params('both', width=0, which='minor')
 
-    pcolor(array(proportions[::-1]), cmap=cm.Reds)
+    pcolor(array(proportions[::-1]), cmap=cm.Blues)
     if show_counts:
         for y in range(len(counts)):
             for x in range(len(counts[y])):
