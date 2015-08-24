@@ -26,6 +26,7 @@
 
 \usepackage{graphicx} % Allows including images
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{bbm}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{textpos}
@@ -141,11 +142,11 @@ Take existing state-of-the-art system for metadata extraction to:
 
 \begin{frame}
 \frametitle{Mathematical Formulation}
-\begin{equation}
+$$
 \p(\textbf{y}|\textbf{x}) = \frac{\p(\textbf{x}, \textbf{y})}{\sum_{y'}{\p(\textbf{x}, \textbf{y}')}} = \frac{1}{Z(\mathbf{x})}\exp \Bigg\{\sum_k{
 \lambda_{k}F_{k}(y_t, y_{t-1}, x_t)
 }\Bigg\},
-\end{equation}
+$$
 
 where $Z(\mathbf{x}) = \sum_{y'}\exp \Big\{\sum_k{\lambda_{ij}F_{k}(y'_t, y'_{t-1}, x_t)}\Big\}$ is known as the partition function, ensuring probabilities sum to 1.
 
@@ -223,7 +224,7 @@ lipinski2013evaluation}
 
 %------------------------------------------------
 
-\section{Data, Methods, and Implementation}
+\section{Data and Features}
 
 %------------------------------------------------
 
@@ -234,14 +235,14 @@ lipinski2013evaluation}
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{}
+\frametitle{HEP Paper Characteristics}
 \begin{figure}[h]
 \centering
 \begin{tabular}{cc}
-\subfloat[Collaboration field in header section.]{\includegraphics[width=0.45\textwidth]{Figures/collaboration.pdf}}\label{fig:articlesamplesA}&
-\subfloat[Discontinuous header data.]{\includegraphics[width=0.45\textwidth]{Figures/eamonn.pdf}} \\
-\subfloat[Collaboration author list.]{\includegraphics[width=0.45\textwidth]{Figures/authors.pdf}} & 
-\subfloat[Collaboration affiliation list.]{\includegraphics[width=0.45\textwidth]{Figures/affiliations.pdf}}\\
+\subfloat[Collaboration field in header section.]{\includegraphics[width=0.3\textwidth]{Figures/collaboration.pdf}}\label{fig:articlesamplesA}&
+\subfloat[Discontinuous header data.]{\includegraphics[width=0.3\textwidth]{Figures/eamonn.pdf}} \\
+\subfloat[Collaboration author list.]{\includegraphics[width=0.3\textwidth]{Figures/authors.pdf}} & 
+\subfloat[Collaboration affiliation list.]{\includegraphics[width=0.3\textwidth]{Figures/affiliations.pdf}}\\
 \end{tabular}
 \caption{Figure (A) shows a collaboration field in a header section. Figure (B) shows discontinuous front matter that sits on the first page, but apart from the main header section and within the introductory section. Figures (C) and (D) give the authors list and affiliations for a large HEP collaboration; the author list begins on page 8 and continues to page 33. Figure (B) from (\cite{maguire2012taxonomy}), other excerpts from (\cite{aaij2015identification}).}
 \label{fig:articlesamples}
@@ -251,7 +252,8 @@ lipinski2013evaluation}
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{}
+\frametitle{Training Data}
+Two models addressed: \emph{header} and \emph{segmentation}
 \begin{table}[h]
 \begin{center}
 \begin{tabular}{|c|c|c|}
@@ -272,7 +274,75 @@ Segmentation & \textbf{169 papers} & 125 papers \\
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{}
+\frametitle{Dictionary Features}
+
+Dictionaries for INSPIRE-HEP affilations, authors, collaborations, journals, and titles. Stop words modelled as additional dictionary.
+
+$$
+f_{\text{dict}_i}(x_t) = \mathbbm{1}_{\{x_t \in \text{dict}_i\}},
+\label{eq:classfunctions}
+$$
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Character Class Features}
+
+$$
+f_{\text{class}_i}(x_t) = \frac{1}{|x_t|}\sum_{n=1}^{|x_t|} \mathbbm{1}_{\{x_{ti} \in \text{class}_i\}},
+\label{eq:classfunctions}
+$$
+
+for each character class, $\text{class}_i$, where $x_t$ is a token (hence a line for the \emph{segmentation} model), and $x_{ti}$ is the $ith$ character in the line. For the decimal (round down) case, we then define,
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|l|l|}
+\hline
+Class & Regex\\
+\hline
+Spacing & r`[\textbackslash s]'\\
+Lower case & r`[a-z]'\\
+Upper case & r`[A-Z]'\\
+Numeric & r`[\textbackslash d]'\\
+Punctuation & r`[\(\).,?:;]'\\
+Special character & r`[\^{}\textbackslash sa-zA-Z\ d\(\).,?:;]'\\
+\hline
+\end{tabular}
+\caption[Character classes used as features, along with the regular expressions used to count them.]{Character classes used as features, along with the regular expressions used to count them.}
+\label{table:characterclasses}
+\end{center}
+\end{table}
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Levenshtein Distance Features}
+
+$$
+\text{similarity}(a, b) = 1 - \frac{\text{lev}_{a, b}(|a|, |b|)}{\text{max}(|a|, |b|)}.
+\label{eq:levenshteinsimilarity}
+$$
+
+Due to the constraints on numeric features (see Section \ref{sec:wapiti}), we must discretise the result. Thus, for a given line, $x_t$, we define the feature function, 
+
+$$
+  f_{lev}(x_t) =
+  \begin{cases}
+  	0 & \quad \text{if } 0 \leq \text{similarity}(x_t, x_{t-1}) \leq T_1 \\
+	1 & \quad \text{if } T_1 \leq \text{similarity}(x_t, x_{t-1}) \leq T_2\\
+	\vdots & \qquad \vdots \\
+	$N-1$ & \quad \text{if } T_{N-1} \leq \text{similarity}(x_t, x_{t-1}) \leq 1 \\
+  \end{cases}
+\label{eq:levenshteinfunction}
+$$
+
+where $T_1, T_2, ..., T_{N-1}$ are thresholds selected to create the $N$ categories. We try several thresholding strategies in our experimentation (see Section \ref{sec:experimentsetup}).
+
 \end{frame}
 
 %------------------------------------------------
@@ -289,6 +359,73 @@ Segmentation & \textbf{169 papers} & 125 papers \\
 
 \begin{frame}
 \frametitle{Experiment Setup}
+\begin{figure}[h]
+\centering
+\begin{tabular}{cc}
+\subfloat[CV HEP]{\includegraphics[width=0.36\textwidth]{Figures/CV_HEP.pdf}} & 
+\subfloat[CV CORA]{\includegraphics[width=0.36\textwidth]{Figures/CV_CORA.pdf}}\\
+\subfloat[CV HEP append CORA]{\includegraphics[width=0.45\textwidth]{Figures/CV_HEPappCORA.pdf}} & 
+\subfloat[CV CORA append HEP]{\includegraphics[width=0.45\textwidth]{Figures/CV_CORAappHEP.pdf}}\\ 
+% \multicolumn{2}{c}{\subfloat[CV HEP + CORA]{\includegraphics[width=0.36\textwidth]{Figures/CV_HEP+CORA.pdf}}} \\
+\end{tabular}
+\caption{The different cross-validation configurations used in our experiments. Figures (A) and (B) show cross-validation on HEP and CORA sets independently. Figures (C) and (D) show cross-validation on the HEP and CORA datasets respectively, appending the other at training time.}
+\label{fig:cv}
+\end{figure}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{}
+\begin{figure}[h]
+\center
+\includegraphics[width=4in]{Figures/micro_subsampling.pdf}
+\caption{Baseline confusion segmentation}
+\end{figure}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{}
+\begin{figure}[h]
+\center
+\includegraphics[width=4in]{Figures/micro_header.pdf}
+\caption{Baseline confusion segmentation}
+\end{figure}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{}
+\begin{figure}[h]
+\center
+\includegraphics[width=4in]{Figures/micro_segmentation.pdf}
+\caption{Baseline confusion segmentation}
+\end{figure}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{}
+\begin{figure}[h]
+\center
+\includegraphics[width=4in]{Figures/header.pdf}
+\caption{Baseline confusion segmentation}
+\end{figure}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{}
+\begin{figure}[h]
+\center
+\includegraphics[width=4in]{Figures/references.pdf}
+\caption{Baseline confusion segmentation}
+\end{figure}
 \end{frame}
 
 %------------------------------------------------
@@ -298,7 +435,7 @@ Segmentation & \textbf{169 papers} & 125 papers \\
 \begin{figure}[h]
 \center
 \includegraphics[width=4in]{Figures/baseline_confusion_segmentation.pdf}
-\caption{Baseline confusion segmentation}
+\caption{Classes confusion segmentation}
 \end{figure}
 \end{frame}
 
@@ -315,12 +452,6 @@ Segmentation & \textbf{169 papers} & 125 papers \\
 
 %------------------------------------------------
 
-\begin{frame}
-\frametitle{}
-\end{frame}
-
-%------------------------------------------------
-
 \section{Conclusions}
 
 %------------------------------------------------
@@ -332,7 +463,11 @@ Segmentation & \textbf{169 papers} & 125 papers \\
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{}
+\frametitle{Conclusions}
+\begin{itemize}
+\item Qualitative difference between HEP and general papers demonstrated (through inspection, subsampling)
+\item Most successful features were those offering a dimensionality reduction: dictionaries ($12\%$ error reduction), character classes ($24\%$ and $21\%$ on header and reference classifications)
+\end{itemize}
 \end{frame}
 
 %------------------------------------------------
