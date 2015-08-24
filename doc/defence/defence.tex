@@ -30,10 +30,13 @@
 \usepackage{amsmath}
 \usepackage{textpos}
 % \usepackage{subfigure}
-\usepackage{cite}
+% \usepackage{cite}
 \usepackage[T1]{fontenc}
 \usepackage{subfig}
 \usepackage{listings}
+\usepackage{mathtools}
+
+\newcommand{\p}{\text{p}}
 
 \definecolor{gray}{rgb}{0.4,0.4,0.4}
 \definecolor{darkblue}{rgb}{0.0,0.0,0.6}
@@ -92,12 +95,24 @@ numbers=right,
 
 \begin{frame}
 \frametitle{Motivation}
+\begin{itemize}
+\item INSPIRE-HEP digital library at CERN contains over 1 Million documents
+\item Manual curation of high energy physics (HEP) papers may be automated with machine learning techniques
+\item Custom datasets and specialised features required to model HEP paper characteristics
+\end{itemize}
 \end{frame}
 
 %------------------------------------------------
 
 \begin{frame}
 \frametitle{Aims}
+Take existing state-of-the-art system for metadata extraction to:
+\begin{itemize}
+\item demonstrate a qualitative difference between HEP and general papers;
+\item propose improvements to model features;
+\item run experiments to confirm these improvements, and;
+\item draw conclusions about what characterises good feature engineering.
+\end{itemize}
 \end{frame}
 
 %------------------------------------------------
@@ -114,18 +129,40 @@ numbers=right,
 
 \begin{frame}
 \frametitle{Why CRFs?}
+\begin{itemize}
+\item Transition interdependencies implies graphical structure best modelled as a structured sequence
+\item Modelling conditional distribution, $p(\textbf{y}|\textbf{x})$ sufficient for classification
+\item Exploit rich information about observations, $\textbf{x}$, without explicitly modelling the underlying probability distribution
+\item Classifying metadata may greatly benefit from modelling rich text features (punctuation, font size, layout,...)
+\end{itemize}
 \end{frame}
 
 %------------------------------------------------
 
 \begin{frame}
 \frametitle{Mathematical Formulation}
+\begin{equation}
+\p(\textbf{y}|\textbf{x}) = \frac{\p(\textbf{x}, \textbf{y})}{\sum_{y'}{\p(\textbf{x}, \textbf{y}')}} = \frac{1}{Z(\mathbf{x})}\exp \Bigg\{\sum_k{
+\lambda_{k}F_{k}(y_t, y_{t-1}, x_t)
+}\Bigg\},
+\end{equation}
+
+where $Z(\mathbf{x}) = \sum_{y'}\exp \Big\{\sum_k{\lambda_{ij}F_{k}(y'_t, y'_{t-1}, x_t)}\Big\}$ is known as the partition function, ensuring probabilities sum to 1.
+
+$F_k(\mathbf{x}, y) = \sum_t^T f_k(\mathbf{x}, y)$, where $f_k$ is a (typically boolean) function describing one of several features about a token.
+
+The form of the functions themselves, $f(\cdot)$, are known in Wapiti (Section \ref{sec:wapiti}) as \emph{templates}. It is in choosing these explicitly that we perform feature engineering.
 \end{frame}
 
 %------------------------------------------------
 
 \begin{frame}
 \frametitle{Solution Approach}
+\begin{itemize}
+\item Formuluate convex maximum log likelihood estimator, $l(\Lambda)$, where $\Lambda = \{\lambda_k\}_{k=1}^K$
+\item Train (determine $\Lambda$) with gradient ascent technique, L-BFGS. Each iteration, $I$, requires forward-backward algorithm to compute $Z(\mathbf{x^{(n)}})$ for each of $N$ samples -- $\mathcal{O}(INT|S|^2)$.
+\item Prediction with Viterbi algorithm -- $\mathcal{O}(T|S|^2)$.
+\end{itemize}
 \end{frame}
 
 %------------------------------------------------
@@ -142,11 +179,21 @@ numbers=right,
 
 \begin{frame}
 \frametitle{Metadata Extraction}
-\frametitle{GROBID - CRF Cascade}
+\begin{itemize}
+\item \emph{Metadata} refers to content useful to the identification of the document
+\item \emph{Extraction} refers to the identification of metadata within the document text
+\item Several automatic approaches exist: stylistic analysis, knowledge-base, machine learning, ...
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Metadata Extraction (Illustration)}
 \begin{figure}[h]
 \center
-\includegraphics[width=4in]{Figures/extraction.pdf}
-\caption{Cascade of models used by Grobid}
+\includegraphics[width=3in]{Figures/extraction.pdf}
+\caption{Tagging of a document header section.}
 \end{figure}
 \end{frame}
 
@@ -154,6 +201,13 @@ numbers=right,
 
 \begin{frame}
 \frametitle{GROBID}
+\begin{itemize}
+\item Selected according to performance in study comparing AME systems \cite{
+lipinski2013evaluation}
+\item Open source Java-based tool developed at INRIA, France
+\item Manages \emph{cascade} of CRF models for annotating papers in progressively finer detail
+\item Uses C++ library \emph{Wapiti} for back-end calculations (training, prediction)
+\end{itemize}
 \end{frame}
 
 %------------------------------------------------
@@ -234,6 +288,12 @@ Segmentation & \textbf{169 papers} & 125 papers \\
 %------------------------------------------------
 
 \begin{frame}
+\frametitle{Experiment Setup}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
 \frametitle{}
 \begin{figure}[h]
 \center
@@ -276,5 +336,8 @@ Segmentation & \textbf{169 papers} & 125 papers \\
 \end{frame}
 
 %------------------------------------------------
+
+\bibliographystyle{ieeetr} % Use the "unsrtnat" BibTeX style for formatting the Bibliography
+\bibliography{Bibliography} % The references (bibliography) information are stored in the file named "Bibliography.bib"
 
 \end{document} 
