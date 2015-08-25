@@ -129,12 +129,12 @@ Take existing state-of-the-art system for metadata extraction to:
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Why CRFs?}
+\frametitle{Why Conditional Random Fields?}
 \begin{itemize}
 \item Transition interdependencies implies graphical structure best modelled as a structured sequence
-\item Modelling conditional distribution, $p(\textbf{y}|\textbf{x})$ sufficient for classification
+\item Modelling conditional distribution, $p(\textbf{y}|\textbf{x})$, sufficient for classification
 \item Exploit rich information about observations, $\textbf{x}$, without explicitly modelling the underlying probability distribution
-\item Classifying metadata may greatly benefit from modelling rich text features (punctuation, font size, layout,...)
+\item Classifying metadata may greatly benefit from modelling rich text features (punctuation, font size, layout ...)
 \end{itemize}
 \end{frame}
 
@@ -142,17 +142,23 @@ Take existing state-of-the-art system for metadata extraction to:
 
 \begin{frame}
 \frametitle{Mathematical Formulation}
+
+A CRF factorises in the following as,
+
 $$
 \p(\textbf{y}|\textbf{x}) = \frac{\p(\textbf{x}, \textbf{y})}{\sum_{y'}{\p(\textbf{x}, \textbf{y}')}} = \frac{1}{Z(\mathbf{x})}\exp \Bigg\{\sum_k{
 \lambda_{k}F_{k}(y_t, y_{t-1}, x_t)
 }\Bigg\},
 $$
 
-where $Z(\mathbf{x}) = \sum_{y'}\exp \Big\{\sum_k{\lambda_{ij}F_{k}(y'_t, y'_{t-1}, x_t)}\Big\}$ is known as the partition function, ensuring probabilities sum to 1.
 
-$F_k(\mathbf{x}, y) = \sum_t^T f_k(\mathbf{x}, y)$, where $f_k$ is a (typically boolean) function describing one of several features about a token.
 
-The form of the functions themselves, $f(\cdot)$, are known in Wapiti (Section \ref{sec:wapiti}) as \emph{templates}. It is in choosing these explicitly that we perform feature engineering.
+\begin{itemize}
+\item  $Z(\mathbf{x}) = \sum_{y'}\exp \Big\{\sum_k{\lambda_{ij}F_{k}(y'_t, y'_{t-1}, x_t)}\Big\}$, known as the parition function.
+\item $F_k(\mathbf{x}, y) = \sum_t^T f_k(\mathbf{x}, y)$, where $f_k$ is a function expressing a feature.
+\item It is in choosing the form of the functions, $f(\cdot)$, explicitly that we perform feature engineering.
+\end{itemize}
+
 \end{frame}
 
 %------------------------------------------------
@@ -160,7 +166,7 @@ The form of the functions themselves, $f(\cdot)$, are known in Wapiti (Section \
 \begin{frame}
 \frametitle{Solution Approach}
 \begin{itemize}
-\item Formuluate convex maximum log likelihood estimator, $l(\Lambda)$, where $\Lambda = \{\lambda_k\}_{k=1}^K$
+\item Formuluate convex function, maximum log likelihood estimator, $l(\Lambda)$, where $\Lambda = \{\lambda_k\}_{k=1}^K$.
 \item Train (determine $\Lambda$) with gradient ascent technique, L-BFGS. Each iteration, $I$, requires forward-backward algorithm to compute $Z(\mathbf{x^{(n)}})$ for each of $N$ samples -- $\mathcal{O}(INT|S|^2)$.
 \item Prediction with Viterbi algorithm -- $\mathcal{O}(T|S|^2)$.
 \end{itemize}
@@ -181,9 +187,9 @@ The form of the functions themselves, $f(\cdot)$, are known in Wapiti (Section \
 \begin{frame}
 \frametitle{Metadata Extraction}
 \begin{itemize}
-\item \emph{Metadata} refers to content useful to the identification of the document
-\item \emph{Extraction} refers to the identification of metadata within the document text
-\item Several automatic approaches exist: stylistic analysis, knowledge-base, machine learning, ...
+\item \emph{Metadata} refers to content useful to the bibliographpic identification of the document
+\item \emph{Extraction} refers to the classification of metadata within the document text
+\item Several automatic approaches exist: stylistic analysis, knowledge-base, machine learning (CRFs, HMMs, SVMs) ...
 \end{itemize}
 \end{frame}
 
@@ -207,7 +213,7 @@ The form of the functions themselves, $f(\cdot)$, are known in Wapiti (Section \
 lipinski2013evaluation}
 \item Open source Java-based tool developed at INRIA, France
 \item Manages \emph{cascade} of CRF models for annotating papers in progressively finer detail
-\item Uses C++ library \emph{Wapiti} for back-end calculations (training, prediction)
+\item Uses C++ library \emph{Wapiti} for back-end calculations (model training, prediction)
 \end{itemize}
 \end{frame}
 
@@ -217,7 +223,7 @@ lipinski2013evaluation}
 \frametitle{GROBID - CRF Cascade}
 \begin{figure}[h]
 \center
-\includegraphics[width=4in]{Figures/cascade.pdf}
+\includegraphics[width=\textwidth]{Figures/cascade.pdf}
 \caption{Cascade of models used by Grobid}
 \end{figure}
 \end{frame}
@@ -235,17 +241,38 @@ lipinski2013evaluation}
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{HEP Paper Characteristics}
+\frametitle{HEP Paper Characteristics (i)}
 \begin{figure}[h]
-\centering
-\begin{tabular}{cc}
-\subfloat[Collaboration field in header section.]{\includegraphics[width=0.3\textwidth]{Figures/collaboration.pdf}}\label{fig:articlesamplesA}&
-\subfloat[Discontinuous header data.]{\includegraphics[width=0.3\textwidth]{Figures/eamonn.pdf}} \\
-\subfloat[Collaboration author list.]{\includegraphics[width=0.3\textwidth]{Figures/authors.pdf}} & 
-\subfloat[Collaboration affiliation list.]{\includegraphics[width=0.3\textwidth]{Figures/affiliations.pdf}}\\
-\end{tabular}
-\caption{Figure (A) shows a collaboration field in a header section. Figure (B) shows discontinuous front matter that sits on the first page, but apart from the main header section and within the introductory section. Figures (C) and (D) give the authors list and affiliations for a large HEP collaboration; the author list begins on page 8 and continues to page 33. Figure (B) from (\cite{maguire2012taxonomy}), other excerpts from (\cite{aaij2015identification}).}
-\label{fig:articlesamples}
+\center
+\includegraphics[width=3in]{Figures/collaboration.pdf}
+\caption{Collaboration field in header section.}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{HEP Paper Characteristics (ii)}
+\begin{figure}[h]
+\center
+\includegraphics[width=3in]{Figures/eamonn.pdf}
+\caption{Discontinuous header data.}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{HEP Paper Characteristics (iii)}
+\begin{figure}[h]
+\center
+\includegraphics[width=3in]{Figures/authors.pdf}
+\caption{Collaboration author list.}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{HEP Paper Characteristics (iv)}
+\begin{figure}[h]
+\center
+\includegraphics[width=3in]{Figures/affiliations.pdf}
+\caption{Collaboration affiliation list.}
 \end{figure}
 \end{frame}
 
@@ -253,7 +280,14 @@ lipinski2013evaluation}
 
 \begin{frame}
 \frametitle{Training Data}
-Two models addressed: \emph{header} and \emph{segmentation}
+
+\begin{itemize}
+\item Two models addressed: \emph{header} and \emph{segmentation}
+\item Custom HEP training sets collected for each
+\item Customs sets combined with existing CORA datasets during experimentation
+
+\end{itemize}
+
 \begin{table}[h]
 \begin{center}
 \begin{tabular}{|c|c|c|}
@@ -266,7 +300,6 @@ Segmentation & \textbf{169 papers} & 125 papers \\
 \hline
 \end{tabular}
 \caption[Number of training instances for each model from each dataset.]{Number of training instances for each model from each dataset.}
-\label{table:hepvscora}
 \end{center}
 \end{table}
 \end{frame}
@@ -274,28 +307,76 @@ Segmentation & \textbf{169 papers} & 125 papers \\
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Dictionary Features}
+\frametitle{Feature Engineering}
 
-Dictionaries for INSPIRE-HEP affilations, authors, collaborations, journals, and titles. Stop words modelled as additional dictionary.
+\begin{itemize}
+\item Experiments run for different features designed to enhance the models \emph{header} and \emph{segmentation}
+\end{itemize}
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+Method & Model \\
+\hline
+Baseline & both \\
+\hline
+Block Size & {header} \\
+\hline
+Character Classes & {segmentation} \\
+\hline
+Dictionaries & {header} \\
+\hline
+Levenshtein Distance & {segmentation} \\
+\hline
+Regularisation & {header} \\
+\hline
+Token Extensions & {segmentation} \\
+\hline
+\end{tabular}
+\caption[]{Feature engineering experiments}
+\end{center}
+\end{table}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Dictionary Features (\emph{header})}
+
+Dictionaries were derived from the INSPIRE-HEP corpus:
+
+\begin{itemize}
+\item affiliations
+\item authors
+\item collaborations
+\item journals
+\item titles
+\item stop words*
+\end{itemize}
+
+Dictionary-based features were then modelled as,
 
 $$
 f_{\text{dict}_i}(x_t) = \mathbbm{1}_{\{x_t \in \text{dict}_i\}},
-\label{eq:classfunctions}
 $$
+
+for each dictionary, $\text{dict}_i$.
 
 \end{frame}
 
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Character Class Features}
+\frametitle{Character Class Features (\emph{segmentation})}
+
+Feature functions defined to be,
 
 $$
 f_{\text{class}_i}(x_t) = \frac{1}{|x_t|}\sum_{n=1}^{|x_t|} \mathbbm{1}_{\{x_{ti} \in \text{class}_i\}},
-\label{eq:classfunctions}
 $$
 
-for each character class, $\text{class}_i$, where $x_t$ is a token (hence a line for the \emph{segmentation} model), and $x_{ti}$ is the $ith$ character in the line. For the decimal (round down) case, we then define,
+for each character class, $\text{class}_i$, where $x_t$ is a token (line), and $x_{ti}$ is the $ith$ character in the line.
 
 \begin{table}[h]
 \begin{center}
@@ -311,8 +392,7 @@ Punctuation & r`[\(\).,?:;]'\\
 Special character & r`[\^{}\textbackslash sa-zA-Z\ d\(\).,?:;]'\\
 \hline
 \end{tabular}
-\caption[Character classes used as features, along with the regular expressions used to count them.]{Character classes used as features, along with the regular expressions used to count them.}
-\label{table:characterclasses}
+\caption[]{Character classes used as features.}
 \end{center}
 \end{table}
 
@@ -321,14 +401,15 @@ Special character & r`[\^{}\textbackslash sa-zA-Z\ d\(\).,?:;]'\\
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Levenshtein Distance Features}
+\frametitle{Levenshtein Distance Features (\emph{segmentation})}
+
+Define similarity function,
 
 $$
 \text{similarity}(a, b) = 1 - \frac{\text{lev}_{a, b}(|a|, |b|)}{\text{max}(|a|, |b|)}.
-\label{eq:levenshteinsimilarity}
 $$
 
-Due to the constraints on numeric features (see Section \ref{sec:wapiti}), we must discretise the result. Thus, for a given line, $x_t$, we define the feature function, 
+Then feature function,
 
 $$
   f_{lev}(x_t) =
@@ -338,10 +419,9 @@ $$
 	\vdots & \qquad \vdots \\
 	$N-1$ & \quad \text{if } T_{N-1} \leq \text{similarity}(x_t, x_{t-1}) \leq 1 \\
   \end{cases}
-\label{eq:levenshteinfunction}
 $$
 
-where $T_1, T_2, ..., T_{N-1}$ are thresholds selected to create the $N$ categories. We try several thresholding strategies in our experimentation (see Section \ref{sec:experimentsetup}).
+where $T_1, T_2, ..., T_{N-1}$ are thresholds selected to create the $N$ categories.
 
 \end{frame}
 
@@ -359,94 +439,99 @@ where $T_1, T_2, ..., T_{N-1}$ are thresholds selected to create the $N$ categor
 
 \begin{frame}
 \frametitle{Experiment Setup}
+
+\begin{itemize}
+\item 66 experiments run testing combinations of features, model and CV configuration.
+\item Models judged primarily on micro average $F_1$ score, but also with reference to key classes where necessary.
+\end{itemize}
+
 \begin{figure}[h]
 \centering
 \begin{tabular}{cc}
-\subfloat[CV HEP]{\includegraphics[width=0.36\textwidth]{Figures/CV_HEP.pdf}} & 
-\subfloat[CV CORA]{\includegraphics[width=0.36\textwidth]{Figures/CV_CORA.pdf}}\\
-\subfloat[CV HEP append CORA]{\includegraphics[width=0.45\textwidth]{Figures/CV_HEPappCORA.pdf}} & 
-\subfloat[CV CORA append HEP]{\includegraphics[width=0.45\textwidth]{Figures/CV_CORAappHEP.pdf}}\\ 
+\subfloat[CV HEP]{\includegraphics[width=0.28\textwidth]{Figures/CV_HEP.pdf}} & 
+\subfloat[CV CORA]{\includegraphics[width=0.28\textwidth]{Figures/CV_CORA.pdf}}\\
+\subfloat[CV HEP append CORA]{\includegraphics[width=0.35\textwidth]{Figures/CV_HEPappCORA.pdf}} & 
+\subfloat[CV CORA append HEP]{\includegraphics[width=0.35\textwidth]{Figures/CV_CORAappHEP.pdf}}\\ 
 % \multicolumn{2}{c}{\subfloat[CV HEP + CORA]{\includegraphics[width=0.36\textwidth]{Figures/CV_HEP+CORA.pdf}}} \\
 \end{tabular}
-\caption{The different cross-validation configurations used in our experiments. Figures (A) and (B) show cross-validation on HEP and CORA sets independently. Figures (C) and (D) show cross-validation on the HEP and CORA datasets respectively, appending the other at training time.}
-\label{fig:cv}
+\caption{Cross-validation configurations used in experiments.}
 \end{figure}
 \end{frame}
 
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{}
+\frametitle{Header Model (Subsampling CORA dataset)}
 \begin{figure}[h]
 \center
 \includegraphics[width=4in]{Figures/micro_subsampling.pdf}
-\caption{Baseline confusion segmentation}
+\caption{Appending subsamples of CORA dataset in baseline evaluation.}
 \end{figure}
 \end{frame}
 
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{}
+\frametitle{Header Model (Best Features)}
 \begin{figure}[h]
 \center
 \includegraphics[width=4in]{Figures/micro_header.pdf}
-\caption{Baseline confusion segmentation}
+\caption{Best features for header model.}
 \end{figure}
 \end{frame}
 
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{}
+\frametitle{Segmentation Model (Best Features)}
 \begin{figure}[h]
 \center
 \includegraphics[width=4in]{Figures/micro_segmentation.pdf}
-\caption{Baseline confusion segmentation}
+\caption{Best features for segmentation model.}
 \end{figure}
 \end{frame}
 
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{}
+\frametitle{Segmentation Model (Header Field)}
 \begin{figure}[h]
 \center
 \includegraphics[width=4in]{Figures/header.pdf}
-\caption{Baseline confusion segmentation}
+\caption{Best features for segmentation model <header> field.}
 \end{figure}
 \end{frame}
 
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{}
+\frametitle{Segmentation Model (References Field)}
 \begin{figure}[h]
 \center
 \includegraphics[width=4in]{Figures/references.pdf}
-\caption{Baseline confusion segmentation}
+\caption{Best features for segmentation model <references> field.}
 \end{figure}
 \end{frame}
 
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{}
+\frametitle{Segmentation Model (Baseline Confusion Matrix)}
 \begin{figure}[h]
 \center
 \includegraphics[width=4in]{Figures/baseline_confusion_segmentation.pdf}
-\caption{Classes confusion segmentation}
+\caption{Baseline confusion matrix for segmentation model.}
 \end{figure}
 \end{frame}
 
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{}
+\frametitle{Segmentation Model (Character Class Confusion Matrix)}
 \begin{figure}[h]
 \center
 \includegraphics[width=4in]{Figures/classes_confusion_segmentation.pdf}
-\caption{Classes confusion segmentation}
+\caption{Confusion matrix for segmentation model with character classes.}
 \end{figure}
 \end{frame}
 
@@ -465,8 +550,9 @@ where $T_1, T_2, ..., T_{N-1}$ are thresholds selected to create the $N$ categor
 \begin{frame}
 \frametitle{Conclusions}
 \begin{itemize}
-\item Qualitative difference between HEP and general papers demonstrated (through inspection, subsampling)
-\item Most successful features were those offering a dimensionality reduction: dictionaries ($12\%$ error reduction), character classes ($24\%$ and $21\%$ on header and reference classifications)
+\item Qualitative difference between HEP and general papers demonstrated (through inspection, subsampling).
+\item Valuable new datasets produced.
+\item Successful features offered a dimensionality reduction: dictionaries ($12\%$ error reduction), character classes ($24\%$ and $21\%$ on <header> and <references> classifications).
 \end{itemize}
 \end{frame}
 
