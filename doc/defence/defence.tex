@@ -118,61 +118,61 @@ Take existing state-of-the-art system for metadata extraction to:
 
 %------------------------------------------------
 
-\section{Theory}
-
-%------------------------------------------------
-
-\begin{frame}[noframenumbering]{Outline}
-\tableofcontents[currentsection, currentsubsection]
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Why Conditional Random Fields?}
-\begin{itemize}
-\item Transition interdependencies implies graphical structure best modelled as a structured sequence
-\item Modelling conditional distribution, $p(\textbf{y}|\textbf{x})$, sufficient for classification
-\item Exploit rich information about observations, $\textbf{x}$, without explicitly modelling the underlying probability distribution
-\item Classifying metadata may greatly benefit from modelling rich text features (punctuation, font size, layout ...)
-\end{itemize}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Mathematical Formulation}
-
-A CRF factorises in the following as,
-
-$$
-\p(\textbf{y}|\textbf{x}) = \frac{\p(\textbf{x}, \textbf{y})}{\sum_{y'}{\p(\textbf{x}, \textbf{y}')}} = \frac{1}{Z(\mathbf{x})}\exp \Bigg\{\sum_k{
-\lambda_{k}F_{k}(y_t, y_{t-1}, x_t)
-}\Bigg\},
-$$
-
-
-
-\begin{itemize}
-\item  $Z(\mathbf{x}) = \sum_{y'}\exp \Big\{\sum_k{\lambda_{ij}F_{k}(y'_t, y'_{t-1}, x_t)}\Big\}$, known as the parition function.
-\item $F_k(\mathbf{x}, y) = \sum_t^T f_k(\mathbf{x}, y)$, where $f_k$ is a function expressing a feature.
-\item It is in choosing the form of the functions, $f(\cdot)$, explicitly that we perform feature engineering.
-\end{itemize}
-
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Solution Approach}
-\begin{itemize}
-\item Formuluate convex function, maximum log likelihood estimator, $l(\Lambda)$, where $\Lambda = \{\lambda_k\}_{k=1}^K$.
-\item Train (determine $\Lambda$) with gradient ascent technique, L-BFGS. Each iteration, $I$, requires forward-backward algorithm to compute $Z(\mathbf{x^{(n)}})$ for each of $N$ samples -- $\mathcal{O}(INT|S|^2)$.
-\item Prediction with Viterbi algorithm -- $\mathcal{O}(T|S|^2)$.
-\end{itemize}
-\end{frame}
-
-%------------------------------------------------
+%\section{Theory}
+%
+%%------------------------------------------------
+%
+%\begin{frame}[noframenumbering]{Outline}
+%\tableofcontents[currentsection, currentsubsection]
+%\end{frame}
+%
+%%------------------------------------------------
+%
+%\begin{frame}
+%\frametitle{Why Conditional Random Fields?}
+%\begin{itemize}
+%\item Transition interdependencies implies graphical structure best modelled as a structured sequence
+%\item Modelling conditional distribution, $p(\textbf{y}|\textbf{x})$, sufficient for classification
+%\item Exploit rich information about observations, $\textbf{x}$, without explicitly modelling the underlying probability distribution
+%\item Classifying metadata may greatly benefit from modelling rich text features (punctuation, font size, layout ...)
+%\end{itemize}
+%\end{frame}
+%
+%%------------------------------------------------
+%
+%\begin{frame}
+%\frametitle{Mathematical Formulation}
+%
+%A CRF factorises in the following as,
+%
+%$$
+%\p(\textbf{y}|\textbf{x}) = \frac{\p(\textbf{x}, \textbf{y})}{\sum_{y'}{\p(\textbf{x}, \textbf{y}')}} = \frac{1}{Z(\mathbf{x})}\exp \Bigg\{\sum_k{
+%\lambda_{k}F_{k}(y_t, y_{t-1}, x_t)
+%}\Bigg\},
+%$$
+%
+%
+%
+%\begin{itemize}
+%\item  $Z(\mathbf{x}) = \sum_{y'}\exp \Big\{\sum_k{\lambda_{ij}F_{k}(y'_t, y'_{t-1}, x_t)}\Big\}$, known as the parition function.
+%\item $F_k(\mathbf{x}, y) = \sum_t^T f_k(\mathbf{x}, y)$, where $f_k$ is a function expressing a feature.
+%\item It is in choosing the form of the functions, $f(\cdot)$, explicitly that we perform feature engineering.
+%\end{itemize}
+%
+%\end{frame}
+%
+%%------------------------------------------------
+%
+%\begin{frame}
+%\frametitle{Solution Approach}
+%\begin{itemize}
+%\item Formulate convex function, maximum log likelihood estimator, $l(\Lambda)$, where $\Lambda = \{\lambda_k\}_{k=1}^K$.
+%\item Train (determine $\Lambda$) with gradient ascent technique, L-BFGS. Each iteration, $I$, requires forward-backward algorithm to compute $Z(\mathbf{x^{(n)}})$ for each of $N$ samples -- $\mathcal{O}(INT|S|^2)$.
+%\item Prediction with Viterbi algorithm -- $\mathcal{O}(T|S|^2)$.
+%\end{itemize}
+%\end{frame}
+%
+%%------------------------------------------------
 
 \section{Automatic Metadata Extraction}
 
@@ -202,6 +202,18 @@ $$
 \includegraphics[width=3in]{Figures/extraction.pdf}
 \caption{Tagging of a document header section.}
 \end{figure}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Why Conditional Random Fields?}
+\begin{itemize}
+\item Transition interdependencies implies graphical structure best modelled as a structured sequence
+\item Modelling conditional distribution, $p(\textbf{y}|\textbf{x})$, sufficient for classification
+\item Exploit rich information about observations, $\textbf{x}$, without explicitly modelling the underlying probability distribution
+\item Classifying metadata may greatly benefit from modelling rich text features (punctuation, font size, layout ...)
+\end{itemize}
 \end{frame}
 
 %------------------------------------------------
@@ -249,17 +261,10 @@ lipinski2013evaluation}
 \end{figure}
 \end{frame}
 
-\begin{frame}
-\frametitle{HEP Paper Characteristics (ii)}
-\begin{figure}[h]
-\center
-\includegraphics[width=3in]{Figures/eamonn.pdf}
-\caption{Discontinuous header data.}
-\end{figure}
-\end{frame}
+%------------------------------------------------
 
 \begin{frame}
-\frametitle{HEP Paper Characteristics (iii)}
+\frametitle{HEP Paper Characteristics (ii)}
 \begin{figure}[h]
 \center
 \includegraphics[width=3in]{Figures/authors.pdf}
@@ -267,8 +272,10 @@ lipinski2013evaluation}
 \end{figure}
 \end{frame}
 
+%------------------------------------------------
+
 \begin{frame}
-\frametitle{HEP Paper Characteristics (iv)}
+\frametitle{HEP Paper Characteristics (iii)}
 \begin{figure}[h]
 \center
 \includegraphics[width=3in]{Figures/affiliations.pdf}
@@ -278,11 +285,25 @@ lipinski2013evaluation}
 
 %------------------------------------------------
 
+
+\begin{frame}
+\frametitle{HEP Paper Characteristics (iv)}
+\begin{figure}[h]
+\center
+\includegraphics[width=3in]{Figures/eamonn.pdf}
+\caption{Discontinuous header data.}
+\end{figure}
+\end{frame}
+
+%------------------------------------------------
+
 \begin{frame}
 \frametitle{Training Data}
 
+Two models addressed:
 \begin{itemize}
-\item Two models addressed: \emph{header} and \emph{segmentation}
+\item \emph{header} model, which classifies \emph{word} tokens as <title>, <author>, <abstract>, etc.
+\item \emph{segmentation} model, which classifies \emph{line} tokens as <header>, <body>, <refernces>, etc.
 \item Custom HEP training sets collected for each
 \item Customs sets combined with existing CORA datasets during experimentation
 
