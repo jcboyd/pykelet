@@ -110,8 +110,8 @@ numbers=right,
 Take existing state-of-the-art system for metadata extraction to:
 \begin{itemize}
 \item demonstrate a qualitative difference between HEP and general papers;
-\item propose improvements to model features;
-\item run experiments to confirm these improvements, and;
+\item propose new features to enhance models;
+\item run experiments to test these new features, and;
 \item draw conclusions about what characterises good feature engineering.
 \end{itemize}
 \end{frame}
@@ -189,7 +189,7 @@ Take existing state-of-the-art system for metadata extraction to:
 \begin{itemize}
 \item \emph{Metadata} refers to content useful to the bibliographpic identification of the document
 \item \emph{Extraction} refers to the classification of metadata within the document text
-\item Several automatic approaches exist: stylistic analysis, knowledge-base, machine learning (CRFs, HMMs, SVMs) ...
+\item Several automatic approaches exist: stylistic analysis, knowledge-base, machine learning (CRFs, HMMs, SVMs)...
 \end{itemize}
 \end{frame}
 
@@ -209,7 +209,7 @@ Take existing state-of-the-art system for metadata extraction to:
 \begin{frame}
 \frametitle{Why Conditional Random Fields?}
 \begin{itemize}
-\item Transition interdependencies implies graphical structure best modelled as a structured sequence
+\item Transition interdependencies implies graphical structure $\rightarrow$ model as a structured sequence
 \item Modelling conditional distribution, $p(\textbf{y}|\textbf{x})$, sufficient for classification
 \item Exploit rich information about observations, $\textbf{x}$, without explicitly modelling the underlying probability distribution
 \item Classifying metadata may greatly benefit from modelling rich text features (punctuation, font size, layout ...)
@@ -236,7 +236,7 @@ lipinski2013evaluation}
 \begin{figure}[h]
 \center
 \includegraphics[width=\textwidth]{Figures/cascade.pdf}
-\caption{Cascade of models used by Grobid}
+\caption{Cascade of models used by GROBID}
 \end{figure}
 \end{frame}
 
@@ -305,7 +305,7 @@ Two models addressed:
 \item \emph{header} model, which classifies \emph{word} tokens as <title>, <author>, <abstract>, etc.
 \item \emph{segmentation} model, which classifies \emph{line} tokens as <header>, <body>, <refernces>, etc.
 \item Custom HEP training sets collected for each
-\item Customs sets combined with existing CORA datasets during experimentation
+\item HEP dataset combined with existing CORA datasets during experimentation
 
 \end{itemize}
 
@@ -574,6 +574,7 @@ where $T_1, T_2, ..., T_{N-1}$ are thresholds selected to create the $N$ categor
 \begin{itemize}
 \item Qualitative difference between HEP and general papers demonstrated (through inspection, subsampling).
 \item Valuable new datasets produced.
+\item Performance-enhancing features found for both HEP and general cases.
 \item Successful features offered a dimensionality reduction: dictionaries ($12\%$ error reduction), character classes ($24\%$ and $21\%$ on <header> and <references> classifications).
 \end{itemize}
 \end{frame}
