@@ -71,7 +71,7 @@ numbers=right,
 
 \title[Automatic Metadata Extraction]{Automatic Metadata Extraction \\ The High Energy Physics Use Case} % The short title appears at the bottom of every slide, the full title is only on the title page
 
-\author{Joseph Boyd} % Your name
+\author{Joseph Boyd \\ Supervisors: Dr. Martin Rajman, Dr. Gilles Louppe} % Your name
 \institute[EPFL] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 {
 \'Ecole Polytechnique F\'ed\'erale de Lausanne \\ % Your institution for the title page
@@ -138,31 +138,6 @@ Take existing state-of-the-art system for metadata extraction to:
 %\end{itemize}
 %\end{frame}
 %
-%%------------------------------------------------
-%
-%\begin{frame}
-%\frametitle{Mathematical Formulation}
-%
-%A CRF factorises in the following as,
-%
-%$$
-%\p(\textbf{y}|\textbf{x}) = \frac{\p(\textbf{x}, \textbf{y})}{\sum_{y'}{\p(\textbf{x}, \textbf{y}')}} = \frac{1}{Z(\mathbf{x})}\exp \Bigg\{\sum_k{
-%\lambda_{k}F_{k}(y_t, y_{t-1}, x_t)
-%}\Bigg\},
-%$$
-%
-%
-%
-%\begin{itemize}
-%\item  $Z(\mathbf{x}) = \sum_{y'}\exp \Big\{\sum_k{\lambda_{ij}F_{k}(y'_t, y'_{t-1}, x_t)}\Big\}$, known as the parition function.
-%\item $F_k(\mathbf{x}, y) = \sum_t^T f_k(\mathbf{x}, y)$, where $f_k$ is a function expressing a feature.
-%\item It is in choosing the form of the functions, $f(\cdot)$, explicitly that we perform feature engineering.
-%\end{itemize}
-%
-%\end{frame}
-%
-%%------------------------------------------------
-%
 %\begin{frame}
 %\frametitle{Solution Approach}
 %\begin{itemize}
@@ -202,6 +177,27 @@ Take existing state-of-the-art system for metadata extraction to:
 \includegraphics[width=3in]{Figures/extraction.pdf}
 \caption{Tagging of a document header section.}
 \end{figure}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Mathematical Formulation}
+
+A CRF factorises in the following as,
+
+$$
+\p(\textbf{y}|\textbf{x}) = \frac{\p(\textbf{x}, \textbf{y})}{\sum_{y'}{\p(\textbf{x}, \textbf{y}')}} = \frac{1}{Z(\mathbf{x})}\exp \Bigg\{\sum_k{
+\lambda_{k}F_{k}(y_t, y_{t-1}, x_t)
+}\Bigg\},
+$$
+
+\begin{itemize}
+\item  $Z(\mathbf{x}) = \sum_{y'}\exp \Big\{\sum_k{\lambda_{ij}F_{k}(y'_t, y'_{t-1}, x_t)}\Big\}$, known as the parition function.
+\item $F_k(\mathbf{x}, y) = \sum_t^T f_k(\mathbf{x}, y)$, where $f_k$ is a function expressing a feature.
+\item It is in choosing the form of the functions, $f(\cdot)$, explicitly that we perform feature engineering.
+\end{itemize}
+
 \end{frame}
 
 %------------------------------------------------
@@ -577,7 +573,7 @@ where $T_1, T_2, ..., T_{N-1}$ are thresholds selected to create the $N$ categor
 \item Qualitative difference between HEP and general papers demonstrated (through inspection, subsampling).
 \item Valuable new datasets produced.
 \item Performance-enhancing features found for both HEP and general cases.
-\item Successful features offered a dimensionality reduction: dictionaries ($12\%$ error reduction), character classes ($24\%$ and $21\%$ on <header> and <references> classifications).
+\item Successful features yielded error reductions: dictionaries ($12\%$ error reduction), character classes ($24\%$ and $21\%$ on <header> and <references> classifications).
 \end{itemize}
 \end{frame}
 
